@@ -1,5 +1,7 @@
-## dev
-### 开发环境
+###[shopify cli 官方文档](https://shopify.dev/docs/themes/tools/cli/commands)
+<br>
+### dev
+#### 开发环境
 
 ```sh
 npm run dev
@@ -38,6 +40,3 @@ shopify theme publish -s urtopia-de.myshopify.com
 # 这个命令会直接发布到线上，请谨慎😃
 
 ```
-
-
-[shopify cli 官方文档](https://shopify.dev/docs/themes/tools/cli/commands)
