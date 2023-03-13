@@ -6,7 +6,7 @@
 
 <script>
     {% for page in pages -%}
-        console.log('{{ page.url | link_to: page.url }}');
+        console.log('{{ page.title | link_to: page.url }}');
     {%- endfor %}
 
     
