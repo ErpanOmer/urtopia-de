@@ -253,11 +253,13 @@
     var expires = d.toGMTString();
 
     document.cookie = `selectLang=${currCode};expires=${expires}`;
-    if(currCode==='de'){
+
+
+    {% comment %} if(currCode==='de'){
       window.location.href = "/" + window.location.pathname;
     }else{
       window.location.href = "/" + currCode + window.location.pathname;
-    }
+    } {% endcomment %}
     
     console.log("currCode", currCode);
   };
