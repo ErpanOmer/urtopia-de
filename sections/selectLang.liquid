@@ -170,8 +170,8 @@
       if (list.length > 0) {
         list.map((key, v) => {
           if (!reg.test(key)) {
-            let now = date.now();
-            let expires = data[`${key}__expires__`] || date.now + 1;
+            let now = Date.now();
+            let expires = data[`${key}__expires__`] || Date.now() + 1;
             if (now >= expires) {
               this.remove(key);
             }
@@ -192,7 +192,7 @@
       let source = this.source;
       source[key] = JSON.stringify(value);
       if (expired){
-      source[`${key}__expires__`] = date.now() + 1000*60*expired
+      source[`${key}__expires__`] = Date.now() + 1000*60*expired
       };
       return value;
      }
@@ -205,8 +205,8 @@
       * @ 由@it·平头哥联盟-首席填坑官∙苏南 分享
       */
       const source = this.source,
-      expired = source[`${key}__expires__`]||date.now+1;
-      const now = date.now();
+      expired = source[`${key}__expires__`]||Date.now()+1;
+      const now = Date.now();
       
       if ( now >= expired ) {
       this.remove(key);
