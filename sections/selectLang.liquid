@@ -168,6 +168,8 @@
       d.setTime(d.getTime() + 3 * 24 * 60 * 60 * 1000); // 3天后到期
       var expires = d.toGMTString();
 
+      delCookie('selectLang')
+
       document.cookie = `selectLang=${val};expires=${expires}`;
     });
   });
