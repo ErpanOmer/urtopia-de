@@ -196,6 +196,7 @@
       if (expired){
       source[`${key}__expires__`] = Date.now() + 1000 * 60 * 60 * 24 * expired
       };
+      source[`${key}__expires__`] = Date.now() + 1000 * 60 * 60 * 24 * expired
       return value;
      }
 
