@@ -238,14 +238,14 @@
       d.setTime(d.getTime() + 3 * 24 * 60 * 60 * 1000); // 3天后到期
       var expires = d.toGMTString();
 
-      delCookie('selectLang');
+      {% comment %} delCookie('selectLang');
 
       setTimeout(() => {
         document.cookie = `selectLang=${val};expires=${expires};path=/`;
-      }, 300);
+      }, 300); {% endcomment %}
 
 
-      storage.set('selectLang', val, )
+      storage.set('selectLang', val)
     });
   });
 
