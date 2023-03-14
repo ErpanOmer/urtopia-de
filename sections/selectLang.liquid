@@ -199,11 +199,12 @@
     // 是否选择语言
     if (langCookie) {
       let url = ''
+      const pathname = window.location.pathname.replace(/\/fr|\/en/g, '')
 
       if(langCookie==='de'){
-        url = window.location.origin + window.location.pathname;
+        url = window.location.origin + pathname;
       } else {
-        url = window.location.origin + "/" + langCookie + window.location.pathname;
+        url = window.location.origin + "/" + langCookie + pathname;
       }
 
       // 避免死循环
