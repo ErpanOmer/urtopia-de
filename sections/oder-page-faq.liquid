@@ -98,12 +98,12 @@
                   </div>
                 </div>
               </div>
-              {% comment %} <script src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/swiper-3.4.2.min.js?v=1665987091"></script> {% endcomment %}
+              <script src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/swiper-3.4.2.min.js?v=1665987091"></script>
               <script>
                 var faqSwiper = new Swiper('#faq-list.swiper', {
                   slidesPerView: 'auto',
                   centeredSlides: true,
-                  pagination: '.faq-navigation .swiper-pagination',
+                  {% comment %} pagination: '.faq-navigation .swiper-pagination', {% endcomment %}
                   paginationType: 'fraction',
                 });
                 function faqSwiperPrev() {
@@ -122,6 +122,10 @@
                   $(this).parent().siblings().find('.faq-title').children('i').addClass('faq-content-plus');
                 });
               </script>
+
+              <script>
+              </script>
+
               <style>
                 .faq-navigation {
                   display: flex;
