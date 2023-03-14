@@ -199,11 +199,20 @@
     // 是否选择语言
     if (langCookie) {
       if (langCookie !== locale) {
+          let url = ''
+
          if(langCookie==='de'){
-          window.location.href = window.location.origin + window.location.pathname;
+          url = window.location.origin + window.location.pathname;
         }else{
-          window.location.href = window.location.origin + "/" + langCookie + window.location.pathname;
-        }        
+          url = window.location.origin + "/" + langCookie + window.location.pathname;
+        }
+        
+        // 避免死循环
+        if (window.location.href === url) {
+          return
+        }
+
+        window.location.href = url
       }
     } else {
       let notShowModal =
