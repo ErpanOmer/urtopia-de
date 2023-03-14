@@ -103,7 +103,7 @@
                 var faqSwiper = new Swiper('#faq-list.swiper', {
                   slidesPerView: 'auto',
                   centeredSlides: true,
-                  {% comment %} pagination: '.faq-navigation .swiper-pagination', {% endcomment %}
+                  pagination: '.faq-navigation .swiper-pagination',
                   paginationType: 'fraction',
                 });
                 function faqSwiperPrev() {
@@ -124,6 +124,12 @@
               </script> {% endcomment %}
 
               <script>
+                  var faqSwiper = new Swiper('#faq-list.swiper', {
+                    slidesPerView: 'auto',
+                    centeredSlides: true,
+                    {% comment %} pagination: '.faq-navigation .swiper-pagination', {% endcomment %}
+                    {% comment %} paginationType: 'fraction', {% endcomment %}
+                  });
               </script>
 
               <style>
