@@ -342,13 +342,8 @@
     }, 300); {% endcomment %}
 
     storage.set('selectLang', currCode)
-    const pathname = window.location.pathname.replace(/\/fr|\/en/g, '');
-
-    if (currCode === 'de') {
-      window.location.href = window.location.origin + pathname;
-    } else {
-      window.location.href = window.location.origin + '/' + currCode + window.location.pathname;
-    }
+    
+    gotoLocation(currCode)
 
     console.log('currCode', currCode);
   };
