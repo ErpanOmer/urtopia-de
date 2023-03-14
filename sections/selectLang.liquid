@@ -170,6 +170,7 @@
       let list = Object.keys(data);
       if (list.length > 0) {
         list.map((key, v) => {
+          console.log(key,reg.test(key))
           if (!reg.test(key)) {
             let now = Date.now();
             let expires = data[`${key}__expires__`] || Date.now() + 1;
