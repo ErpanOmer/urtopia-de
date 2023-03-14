@@ -190,7 +190,7 @@
       * @ 由@it·平头哥联盟-首席填坑官∙苏南 分享
       */
       let source = this.source;
-      source[key] = json.stringify(value);
+      source[key] = JSON.stringify(value);
       if (expired){
       source[`${key}__expires__`] = date.now() + 1000*60*expired
       };
@@ -212,7 +212,7 @@
       this.remove(key);
       return;
       }
-      const value = source[key] ? json.parse(source[key]) : source[key];
+      const value = source[key] ? JSON.parse(source[key]) : source[key];
       return value;
      }
 
