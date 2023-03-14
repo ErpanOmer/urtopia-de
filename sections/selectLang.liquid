@@ -166,7 +166,7 @@
        */
       const reg = new RegExp('__expires__');
       let data = this.source;
-      let list = object.keys(data);
+      let list = Object.keys(data);
       if (list.length > 0) {
         list.map((key, v) => {
           if (!reg.test(key)) {
