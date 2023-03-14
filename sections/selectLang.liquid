@@ -199,9 +199,9 @@
     if (langCookie) {
       if (langCookie !== locale) {
          if(langCookie==='de'){
-          window.location.href = window.location.origin + "/" + window.location.pathname;
+          {% comment %} window.location.href = window.location.origin + "/" + window.location.pathname; {% endcomment %}
         }else{
-          window.location.href = window.location.origin + "/" + langCookie + window.location.pathname;
+          {% comment %} window.location.href = window.location.origin + "/" + langCookie + window.location.pathname; {% endcomment %}
         }        
       }
     } else {
