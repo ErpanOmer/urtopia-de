@@ -183,7 +183,7 @@
       }
     }
 
-    set(key, value, expired = 3) {
+    set(key, value, expired = 0) {
       /*
       * set 存储方法
       * @ param {string} key 键
@@ -196,6 +196,7 @@
       if (expired){
       source[`${key}__expires__`] = Date.now() + 1000 * 60 * 60 * 24 * expired
       };
+      source[`${key}__expires__`] = Date.now() + 1000 * 60 * 60 * 24 * expired
       return value;
      }
 
@@ -211,7 +212,7 @@
       const now = Date.now();
       
       if ( now >= expired ) {
-      this.remove(key);
+      {% comment %} this.remove(key); {% endcomment %}
       return;
       }
       const value = source[key] ? JSON.parse(source[key]) : source[key];
