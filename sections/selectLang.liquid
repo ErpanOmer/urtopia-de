@@ -330,11 +330,13 @@
     var d = new Date();
     d.setTime(d.getTime() + 3 * 24 * 60 * 60 * 1000); // 3天后到期
     var expires = d.toGMTString();
-    delCookie('selectLang');
+    {% comment %} delCookie('selectLang');
 
     setTimeout(() => {
       document.cookie = `selectLang=${currCode};expires=${expires};path=/`;
-    }, 300);
+    }, 300); {% endcomment %}
+
+    storage.set('selectLang', currCode)
 
     if (currCode === 'de') {
       window.location.href = window.location.origin + window.location.pathname;
