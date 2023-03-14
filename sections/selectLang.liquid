@@ -249,6 +249,24 @@
     });
   });
 
+  function gotoLocation (code = 'de') {
+    let url = '';
+      const pathname = window.location.pathname.replace(/\/fr|\/en/g, '');
+
+      if (code === 'de') {
+        url = window.location.origin + pathname;
+      } else {
+        url = window.location.origin + '/' + code + pathname;
+      }
+
+      // 避免死循环
+      if (window.location.href === url) {
+        return;
+      }
+
+      window.location.href = url;
+  }
+
   const langmap = {
     en: {
       code: 'en',
@@ -337,9 +355,10 @@
     }, 300); {% endcomment %}
 
     storage.set('selectLang', currCode)
+    const pathname = window.location.pathname.replace(/\/fr|\/en/g, '');
 
     if (currCode === 'de') {
-      window.location.href = window.location.origin + window.location.pathname;
+      window.location.href = window.location.origin + pathname;
     } else {
       window.location.href = window.location.origin + '/' + currCode + window.location.pathname;
     }
