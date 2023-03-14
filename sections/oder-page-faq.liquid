@@ -124,11 +124,10 @@
               </script> {% endcomment %}
 
               <script>
-                  var faqSwiper = new Swiper('#faq-list.swiper', {
-                    slidesPerView: 'auto',
-                    centeredSlides: true,
-                    {% comment %} pagination: '.faq-navigation .swiper-pagination', {% endcomment %}
-                    {% comment %} paginationType: 'fraction', {% endcomment %}
+                  $('.faq-title').click(function () {
+                    $(this).siblings('.faq-content').slideToggle().parent().siblings().find('.faq-content').slideUp();
+                    $(this).children('i').toggleClass('faq-content-plus');
+                    $(this).parent().siblings().find('.faq-title').children('i').addClass('faq-content-plus');
                   });
               </script>
 
