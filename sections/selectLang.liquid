@@ -1,0 +1,297 @@
+<div class="selectLangModal" id="selectLangModal">
+  <div class="selectLangContainer">
+    <h2>Select Your Language</h2>
+    <p>Would you like to Select a language that you’re more comfortable with?</p>
+    <div class="bottomButton">
+      <div class="selectContainer" onclick="setLangOpen()">
+        <div class="selectBox">
+          <span id="curentLang" data_code="en">English</span>
+        </div>
+        <ul class="downSelectBox">
+          <li
+            data-code="en"
+            data-value="English"
+            onclick="updateLang(this)"
+          >
+            English
+          </li>
+          <li data-code="de" data-value="German" onclick="updateLang(this)">German</li>
+          <li data-code="fr" data-value="French" onclick="updateLang(this)">French</li>
+        </ul>
+      </div>
+      <button type="button" onclick="goToPage()">Select</button>
+    </div>
+  </div>
+</div>
+
+<style>
+   .selectLangModal {
+     position: fixed;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     background-color: #000000b3;
+     display: none;
+     justify-content: center;
+     align-items: center;
+     z-index:999;
+   }
+   .selectLangModal.open{
+     display:flex
+   }
+   .selectLangContainer {
+     width: 80%;
+     max-width: 700px;
+     aspect-ratio: 700/350;
+     border-radius: 10px;
+     background-color: white;
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+   }
+   .selectLangContainer h2 {
+     margin: 0 0 20px 0px;
+     font: normal normal 600 24px/28px urbane;
+   }
+   .selectLangContainer p {
+     max-width: 358px;
+     text-align: center;
+     font: normal normal 300 17px/24px urbane;
+   }
+   .selectContainer {
+     position: relative;
+     margin-right: 10px;
+   }
+   .selectContainer .selectBox {
+     width: 224px;
+     height: 47px;
+     padding: 0 25px;
+     font: normal normal 500 16px/19px urbane;
+     line-height: 47px;
+     border-radius: 30px;
+     border: 1px solid black;
+     cursor: pointer;
+     display: flex;
+     align-items: center;
+   }
+   .selectLangContainer button {
+     padding: 16px 30px;
+     height: 47px;
+     border-radius: 30px;
+     background-color: #000;
+     color: #fff;
+     border: none;
+     cursor: pointer;
+   }
+   .downSelectBox {
+     position: absolute;
+     top: 60px;
+     left: 0;
+     margin: 0;
+     padding: 0;
+     background-color: #fff;
+     box-shadow: 0px 0px 10px #00000019;
+     border-radius: 12px;
+     width: 100%;
+     display: none;
+   }
+   .downSelectBox li {
+     list-style-type: none;
+     padding: 13px;
+     cursor: pointer;
+   }
+   .bottomButton {
+     margin-top:60px;
+     display: flex;
+   }
+   .selectBox::after {
+     content: "";
+     display: inline-block;
+     width: 7px;
+     height: 7px;
+     margin: 0 5px 0 auto;
+     border-width: 0 1px 1px 0;
+     border-style: solid;
+     border-color: #000;
+     opacity: 0.9;
+     transform: rotate(45deg) translate(0, -40%);
+     transition: 0.3s ease;
+   }
+   .selectContainer.open .selectBox::after {
+     transform: rotate(-135deg) translate(-2px, 0);
+   }
+   .selectContainer.open .downSelectBox {
+     display: block;
+   }
+  @media screen and (max-width: 768px) {
+    .selectLangContainer{
+      aspect-ratio: 305/278;
+     padding: 0 16px;
+    }
+    .selectLangContainer h2 {
+       font: normal normal 600 20px/24px urbane;
+    }
+    .selectLangContainer p {
+       font: normal normal 300 15px/21px urbane;
+     }
+    .selectContainer .selectBox{
+      width: 150px;
+      height: 40px;
+      padding: 0 16px;
+      font: normal normal 500 14px/19px urbane;
+    }
+    .selectLangContainer button{
+      padding: 0 16px;
+      height: 40px;
+    }
+  }
+</style>
+
+<script>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  // 监听页面语言插件切换
+  document.querySelectorAll(".tl-options .tl-option").forEach((v) => {
+    v.addEventListener("click", () => {
+      let val = v.getAttribute("data-value");
+      var d = new Date();
+      d.setTime(d.getTime() + 3 * 24 * 60 * 60 * 1000); // 3天后到期
+      var expires = d.toGMTString();
+
+      document.cookie = `selectLang=${val};expires=${expires}`;
+    });
+  });
+
+  const langmap = {
+    en: {
+      code: "en",
+      value: "English",
+    },
+    de: {
+      code: "de",
+      value: "German",
+    },
+    fr: {
+      code: "fr",
+      value: "French",
+    },
+  };
+  window.onload = () => {
+    console.log("加载了");
+    let langCode = window.CozyCountryRedirect.country;
+    let locale = window.Shopify.locale;
+
+    let langCookie = getCookie("selectLang");
+
+    console.log("当前国家", langCode, "当前语言", locale);
+    // 是否选择语言
+    if (langCookie) {
+      if (langCookie !== locale) {
+         if(langCookie==='de'){
+          window.location.href = "/" + window.location.pathname;
+        }else{
+          window.location.href = "/" + langCookie + window.location.pathname;
+        }        
+      }
+    } else {
+      let notShowModal =
+        (langCode === "de" && locale === "de") ||
+        (langCode === "fr" && locale === "fr") ||
+        (langCode !== "de" && langCode !== "fr" && locale === "en");
+
+      let recommendCode = langmap[langCode]?.code || "en";
+      let recommendVal = langmap[langCode]?.value || "English";
+      document
+        .querySelector("#curentLang")
+        .setAttribute("data_code", recommendCode);
+      document.querySelector("#curentLang").innerText = recommendVal;
+
+      if (!notShowModal) {
+        document.querySelector("#selectLangModal").classList.add("open");
+      }
+    }
+  };
+  const updateLang = (el) => {
+    let code = el.getAttribute("data-code");
+    let val = el.getAttribute("data-value");
+
+    document.querySelector("#curentLang").setAttribute("data_code", code);
+    document.querySelector("#curentLang").innerText = val;
+  };
+
+  const setLangOpen = () => {
+    if (
+      document
+        .querySelector(".selectContainer")
+        .classList.value.indexOf("open") !== -1
+    ) {
+      document.querySelector(".selectContainer").classList.remove("open");
+    } else {
+      document.querySelector(".selectContainer").classList.add("open");
+    }
+  };
+
+  const goToPage = () => {
+    let currCode = document
+      .querySelector("#curentLang")
+      .getAttribute("data_code");
+
+    document.querySelector("#selectLangModal").classList.remove("open");
+
+    var d = new Date();
+    d.setTime(d.getTime() + 3 * 24 * 60 * 60 * 1000); // 3天后到期
+    var expires = d.toGMTString();
+
+    document.cookie = `selectLang=${currCode};expires=${expires}`;
+    if(currCode==='de'){
+      window.location.href = "/" + window.location.pathname;
+    }else{
+      window.location.href = "/" + currCode + window.location.pathname;
+    }
+    
+    console.log("currCode", currCode);
+  };
+
+  function getCookie(cname) {
+    var name = cname + "=";
+    var ca = document.cookie.split(";");
+    for (var i = 0; i < ca.length; i++) {
+      var c = ca[i].trim();
+      if (c.indexOf(name) == 0) return c.substring(name.length, c.length);
+    }
+    return "";
+  }
+
+
+
+
+
+
+
+
+
+
+</script>
+
+{% schema %}
+{
+  "name": "Section name",
+  "settings": []
+}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}
