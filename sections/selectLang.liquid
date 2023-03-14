@@ -171,7 +171,7 @@
       delCookie('selectLang')
 
       setTimeout(() => {
-        document.cookie = `selectLang=${val};expires=${expires};path=/;`;
+        document.cookie = `selectLang=${val};expires=${expires};path=/`;
       }, 300)
     });
   });
@@ -268,7 +268,7 @@
     delCookie('selectLang')
 
     setTimeout(() => {
-      document.cookie = `selectLang=${currCode};expires=${expires};path=/;`;
+      document.cookie = `selectLang=${currCode};expires=${expires};path=/`;
     }, 300)
 
     if(currCode==='de'){
@@ -295,7 +295,7 @@
     exp.setTime(exp.getTime() - 1);
     var cval=getCookie(name);
     if (cval!=null) {
-      document.cookie= name + "="+cval+";expires=Thu, 01 Jan 1970 00:00:00 UTC;path=/;";
+      document.cookie= name + "="+cval+";expires=Thu, 01 Jan 1970 00:00:00 UTC;path=/";
     }
   }
 
