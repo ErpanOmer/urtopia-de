@@ -116,6 +116,7 @@
     },
     "oder-page-faq": {
       "type": "oder-page-faq",
+      "disabled": true,
       "settings": {
       }
     }
