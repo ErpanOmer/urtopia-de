@@ -212,7 +212,7 @@
       const now = Date.now();
       
       if ( now >= expired ) {
-      {% comment %} this.remove(key); {% endcomment %}
+      this.remove(key);
       return;
       }
       const value = source[key] ? JSON.parse(source[key]) : source[key];
