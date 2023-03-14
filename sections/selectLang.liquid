@@ -197,14 +197,12 @@
     // 是否选择语言
     if (langCookie) {
       if (langCookie !== locale) {
-                
+         if(langCookie==='de'){
+          window.location.href = window.location.origin + window.location.pathname;
+        }else{
+          window.location.href = window.location.origin + "/" + langCookie + window.location.pathname;
+        }        
       }
-
-      if(langCookie==='de'){
-        window.location.href = window.location.origin + window.location.pathname;
-      }else{
-        window.location.href = window.location.origin + "/" + langCookie + window.location.pathname;
-      } 
     } else {
       let notShowModal =
         (langCode === "de" && locale === "de") ||
