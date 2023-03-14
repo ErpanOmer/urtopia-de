@@ -171,11 +171,10 @@
       if (list.length > 0) {
         list.map((key, v) => {
           if (!reg.test(key)) {
-            console.log(key,reg.test(key))
             let now = Date.now();
             let expires = data[`${key}__expires__`] || Date.now() + 1;
             if (now >= expires) {
-              {% comment %} this.remove(key); {% endcomment %}
+              this.remove(key);
             }
           }
           return key;
@@ -183,7 +182,7 @@
       }
     }
 
-    set(key, value, expired = 0) {
+    set(key, value, expired = 3) {
       /*
       * set 存储方法
       * @ param {string} key 键
@@ -196,7 +195,6 @@
       if (expired){
       source[`${key}__expires__`] = Date.now() + 1000 * 60 * 60 * 24 * expired
       };
-      source[`${key}__expires__`] = Date.now() + 1000 * 60 * 60 * 24 * expired
       return value;
      }
 
