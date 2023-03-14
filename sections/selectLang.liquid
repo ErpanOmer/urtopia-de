@@ -175,7 +175,7 @@
             let now = Date.now();
             let expires = data[`${key}__expires__`] || Date.now() + 1;
             if (now >= expires) {
-              this.remove(key);
+              {% comment %} this.remove(key); {% endcomment %}
             }
           }
           return key;
