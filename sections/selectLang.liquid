@@ -267,7 +267,10 @@
     var expires = d.toGMTString();
     delCookie('selectLang')
 
-    document.cookie = `selectLang=${currCode};expires=${expires}`;
+    setTimeout(() => {
+      document.cookie = `selectLang=${currCode};expires=${expires}`;
+    }, 300)
+
     if(currCode==='de'){
       window.location.href = window.location.origin + window.location.pathname;
     }else{
