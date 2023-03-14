@@ -164,7 +164,7 @@
        * @ param {string} expired 过期时间，以分钟为单位
        * @ 由@it·平头哥联盟-首席填坑官∙苏南 分享
        */
-      const reg = new regexp('__expires__');
+      const reg = new RegExp('__expires__');
       let data = this.source;
       let list = object.keys(data);
       if (list.length > 0) {
