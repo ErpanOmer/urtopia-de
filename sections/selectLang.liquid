@@ -171,7 +171,7 @@
       delCookie('selectLang')
 
       setTimeout(() => {
-        document.cookie = `selectLang=${val};expires=${expires}`;
+        document.cookie = `selectLang=${val};expires=${expires};path=/;`;
       }, 300)
     });
   });
@@ -268,7 +268,7 @@
     delCookie('selectLang')
 
     setTimeout(() => {
-      document.cookie = `selectLang=${currCode};expires=${expires}`;
+      document.cookie = `selectLang=${currCode};expires=${expires};path=/;`;
     }, 300)
 
     if(currCode==='de'){
