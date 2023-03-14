@@ -113,11 +113,17 @@
       "type": "pf-b10ddb73",
       "settings": {
       }
+    },
+    "pf-fe61573d": {
+      "type": "pf-fe61573d",
+      "settings": {
+      }
     }
   },
   "order": [
     "main",
     "product-recommendations",
-    "pf-b10ddb73"
+    "pf-b10ddb73",
+    "pf-fe61573d"
   ]
 }
