@@ -198,22 +198,20 @@
     console.log(window.location.origin + "/" + langCookie + window.location.pathname)
     // 是否选择语言
     if (langCookie) {
-      if (langCookie !== locale) {
-          let url = ''
+      let url = ''
 
-         if(langCookie==='de'){
-          url = window.location.origin + window.location.pathname;
-        }else{
-          url = window.location.origin + "/" + langCookie + window.location.pathname;
-        }
-        
-        // 避免死循环
-        if (window.location.href === url) {
-          return
-        }
-
-        window.location.href = url
+      if(langCookie==='de'){
+        url = window.location.origin + window.location.pathname;
+      } else {
+        url = window.location.origin + "/" + langCookie + window.location.pathname;
       }
+
+      // 避免死循环
+      if (window.location.href === url) {
+        return
+      }
+
+      window.location.href = url
     } else {
       let notShowModal =
         (langCode === "de" && locale === "de") ||
