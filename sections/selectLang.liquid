@@ -287,7 +287,7 @@
     let langCode = window.CozyCountryRedirect.country;
     let locale = window.Shopify.locale;
 
-    let langCookie = storage.get('selectLang')
+    let langCookie = storage.get('selectLang') || ''
 
     console.log('当前国家', langCode, '当前语言', locale, 'langCookie', langCookie);
     console.log(window.location.origin + window.location.pathname);
