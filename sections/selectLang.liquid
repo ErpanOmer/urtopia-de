@@ -181,6 +181,22 @@
       }
     }
 
+    set(key, value, expired) {
+      /*
+      * set 存储方法
+      * @ param {string} key 键
+      * @ param {string} value 值，
+      * @ param {string} expired 过期时间，以分钟为单位，非必须
+      * @ 由@it·平头哥联盟-首席填坑官∙苏南 分享
+      */
+      let source = this.source;
+      source[key] = json.stringify(value);
+      if (expired){
+      source[`${key}__expires__`] = date.now() + 1000*60*expired
+      };
+      return value;
+     }
+
     get(key) {
       /*
       * get 获取方法
