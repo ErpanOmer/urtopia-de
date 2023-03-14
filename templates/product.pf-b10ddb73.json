@@ -114,8 +114,8 @@
       "settings": {
       }
     },
-    "pf-fe61573d": {
-      "type": "pf-fe61573d",
+    "oder-page-faq": {
+      "type": "oder-page-faq",
       "settings": {
       }
     }
@@ -124,6 +124,6 @@
     "main",
     "product-recommendations",
     "pf-b10ddb73",
-    "pf-fe61573d"
+    "oder-page-faq"
   ]
 }
