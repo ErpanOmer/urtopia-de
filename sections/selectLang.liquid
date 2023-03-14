@@ -150,6 +150,7 @@
 </style>
 
 <script>
+  
   class MyStorage {
     constructor(props) {
       this.props = props || {};
@@ -293,21 +294,7 @@
     console.log(window.location.origin + '/' + langCookie + window.location.pathname);
     // 是否选择语言
     if (langCookie) {
-      let url = '';
-      const pathname = window.location.pathname.replace(/\/fr|\/en/g, '');
-
-      if (langCookie === 'de') {
-        url = window.location.origin + pathname;
-      } else {
-        url = window.location.origin + '/' + langCookie + pathname;
-      }
-
-      // 避免死循环
-      if (window.location.href === url) {
-        return;
-      }
-
-      window.location.href = url;
+      gotoLocation(langCookie)
     } else {
       let notShowModal =
         (langCode === 'de' && locale === 'de') ||
@@ -384,6 +371,7 @@
       document.cookie = name + '=' + cval + ';expires=Thu, 01 Jan 1970 00:00:00 UTC;path=/;';
     }
   }
+
 </script>
 
 {% schema %}
