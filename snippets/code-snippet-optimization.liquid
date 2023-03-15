@@ -1,5 +1,9 @@
 <script>
-    console.log(JSON.stringify({{ pages | json }}))
+
+    {% for page in pages %}
+        console.log(JSON.stringify({{ page | json }}))
+    {% endfor %}
+    
 
 </script>
 
