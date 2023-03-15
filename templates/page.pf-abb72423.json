@@ -1,12 +1,17 @@
 {
   "sections": {
     "pf-abb72423": {
+      "disabled": true,
       "type": "pf-abb72423",
       "settings": {
       }
+    },
+    "about-us": {
+      "type": "about-us"
     }
   },
   "order": [
-    "pf-abb72423"
+    "pf-abb72423",
+    "about-us"
   ]
 }

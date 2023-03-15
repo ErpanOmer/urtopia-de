@@ -1,0 +1,17 @@
+{{ 'about-us.scss.css' | asset_url | stylesheet_tag }}
+
+<div>
+    <h4>Hello world !  </h4>  
+    
+<div>
+
+
+<script>
+    {% comment %} {% for page in pages -%}
+        console.log('{{ page.title | link_to: page.url }}');
+    {%- endfor %} {% endcomment %}
+    
+</script>
+
+
+{{ 'about-us.js' | asset_url | script_tag }}

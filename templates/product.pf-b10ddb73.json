@@ -113,11 +113,18 @@
       "type": "pf-b10ddb73",
       "settings": {
       }
+    },
+    "oder-page-faq": {
+      "type": "oder-page-faq",
+      "disabled": true,
+      "settings": {
+      }
     }
   },
   "order": [
     "main",
     "product-recommendations",
-    "pf-b10ddb73"
+    "pf-b10ddb73",
+    "oder-page-faq"
   ]
 }
