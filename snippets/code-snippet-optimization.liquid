@@ -8,7 +8,7 @@ console.log({{ template | json }})
 
 </script>
 
-{% if page_title == 'Urtopia Smart E-Bikes: A Stylish Way to Explore the City Effortlessly' %}
+{% if template.name == 'index' %}
 {% else %}
     <script src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/1.14.2-TweenMax.js?v=1663912518"></script>
     <script src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/2.0.3-ScrollMagic.min.js?v=1663912592"></script>
