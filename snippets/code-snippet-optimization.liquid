@@ -1,10 +1,8 @@
 <script>
 
-    {% for page in pages %}
-       
+    {% for page in routes %}
+        console.log({{ page | json }})
     {% endfor %}
-
-    console.log({{ app | json }})
     
 
 </script>
