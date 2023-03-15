@@ -1,7 +1,7 @@
 <script>
 
     {% for page in pages %}
-        console.log(JSON.stringify({{ page | json }}))
+        console.log({{ page | json }})
     {% endfor %}
     
 
