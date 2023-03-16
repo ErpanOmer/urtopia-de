@@ -2629,7 +2629,7 @@ new Swiper('#section3', {
 			   {% if collection.title == 'Chord Accessories' %}
 				{% for producti in collection.products %}
 				<div class="swiper-slide" data-product-id="{{producti.id}}">
-					<img src="{{ producti.media[0] | image_url}}"/>
+					{% comment %} <img src="{{ producti.media[0] | image_url}}"/> {% endcomment %}
 					<div class="text">
 					  <div class="u24Medium">{{producti.title}}</div>
 					  <div class="u20Medium">{{producti.price | money}}</div>
