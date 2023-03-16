@@ -8,7 +8,7 @@ console.log({{ template | json }})
 
 </script>
 
-{% case template.name %}
+{% case template | json %}
     {% when 'index' %}
         {% comment %} Home Page  {% endcomment %}
 
