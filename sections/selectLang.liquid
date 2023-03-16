@@ -344,10 +344,14 @@
     }
   };
 
-  const goToPage = () => {
+  const goToPage = isClose => {
     let currCode = document.querySelector('#curentLang').getAttribute('data_code');
 
     document.querySelector('#selectLangModal').classList.remove('open');
+
+    if (isClose) {
+      return
+    }
 
     var d = new Date();
     d.setTime(d.getTime() + 3 * 24 * 60 * 60 * 1000); // 3天后到期
