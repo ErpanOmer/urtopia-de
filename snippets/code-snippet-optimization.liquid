@@ -1,5 +1,5 @@
 <script>
-console.log(JSON.stringify({{ localization.country }}))
+console.log(JSON.stringify({{ localization.country | json }}))
 </script>
 
 {% case template | json %}
