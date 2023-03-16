@@ -249,8 +249,6 @@
 
   const storage = new MyStorage()
 
-  console.log(storage)
-
   // 监听页面语言插件切换
   document.querySelectorAll('.tl-options .tl-option').forEach((v) => {
     v.addEventListener('click', () => {
@@ -324,7 +322,7 @@
       document.querySelector('#curentLang').setAttribute('data_code', recommendCode);
       document.querySelector('#curentLang').innerText = recommendVal;
 
-      if (!notShowModal) {
+      if (!notShowModal && window.__SHOPIFY_CLI_ENV__) {
         document.querySelector('#selectLangModal').classList.add('open');
       }
     }
