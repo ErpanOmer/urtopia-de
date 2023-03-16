@@ -331,7 +331,7 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
         %}  {% for option in product.options_with_values %} 
 				   {% assign option_name = option.name %}
 				   {% assign formatted_option_name = option.name | replace: '"', '&quot;' %}
-				<label data-pf-type="OptionLabel" class="pf-variant-label">{{option.name}}</label>  {% if keys contains option_name %}
+				<label data-pf-type="OptionLabel" class="pf-variant-label" style="color: #000">{{option.name}}</label>  {% if keys contains option_name %}
 					        {% for i in (0..length) %}
 						        {% assign originalKey = keys[i] %}
 						        {% assign key = originalKey | replace: '"', '&quot;' %}
