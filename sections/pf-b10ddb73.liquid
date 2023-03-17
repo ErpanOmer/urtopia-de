@@ -70,122 +70,91 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
             {% when 'model' %}<span class="sc-fkJVfC iZiXnt"><svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg"><path opacity="0.6" d="M14.1301 3.27971L9.00008 0.319707C8.69604 0.144171 8.35115 0.0517578 8.00008 0.0517578C7.649 0.0517578 7.30411 0.144171 7.00008 0.319707L1.88008 3.31971C1.5719 3.49759 1.31675 3.75447 1.14097 4.06385C0.965185 4.37323 0.875124 4.72391 0.880077 5.07971V10.9997C0.875124 11.3555 0.965185 11.7062 1.14097 12.0156C1.31675 12.3249 1.5719 12.5818 1.88008 12.7597L7.00008 15.7597C7.30411 15.9352 7.649 16.0277 8.00008 16.0277C8.35115 16.0277 8.69604 15.9352 9.00008 15.7597L14.1201 12.7597C14.4283 12.5818 14.6834 12.3249 14.8592 12.0156C15.035 11.7062 15.125 11.3555 15.1201 10.9997V4.99971C15.119 4.65165 15.0271 4.30991 14.8535 4.00825C14.6798 3.7066 14.4305 3.45547 14.1301 3.27971ZM7.73008 14.3797L2.61008 11.3797C2.54095 11.34 2.48167 11.2852 2.43666 11.2194C2.39164 11.1536 2.36205 11.0785 2.35008 10.9997V4.99971C2.3504 4.90601 2.37556 4.81407 2.42299 4.73327C2.47042 4.65246 2.53843 4.58567 2.62008 4.53971L7.74008 1.53971C7.82065 1.49319 7.91204 1.4687 8.00508 1.4687C8.09811 1.4687 8.18951 1.49319 8.27008 1.53971L13.3901 4.53971L8.67008 7.21971C8.45972 7.33976 8.28614 7.51498 8.16806 7.72646C8.04999 7.93793 7.9919 8.17764 8.00008 8.41971V14.4197C7.91475 14.4413 7.8254 14.4413 7.74008 14.4197L7.73008 14.3797Z" fill="black"></path></svg></span>{% when 'external_video' or 'video' %}<span class="sc-fkJVfC iZiXnt"><svg width="11" height="14" viewBox="0 0 11 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path opacity="0.6" d="M1.71795 0.719814C1.56631 0.627985 1.39299 0.578117 1.21573 0.57532C1.03847 0.572523 0.863662 0.616896 0.7092 0.703896C0.554738 0.790895 0.42618 0.917392 0.336696 1.07043C0.247212 1.22346 0.200019 1.39754 0.199951 1.57481V12.3108C0.199976 12.4926 0.249526 12.6708 0.343274 12.8265C0.437022 12.9822 0.571425 13.1094 0.732038 13.1945C0.89265 13.2795 1.0734 13.3191 1.25486 13.3092C1.43632 13.2992 1.61163 13.24 1.76195 13.1378L10.112 7.46081C10.2504 7.36662 10.363 7.23915 10.4394 7.09011C10.5158 6.94107 10.5536 6.77523 10.5492 6.6078C10.5448 6.44038 10.4985 6.27673 10.4144 6.13189C10.3303 5.98704 10.2112 5.86564 10.068 5.77881L1.71795 0.718814V0.719814Z" fill="black"></path></svg></span>{% endcase %}</div>{% endfor %}</div></div><div class="splide__arrows"><button type="button" class="splide__arrow splide__arrow--prev"><i class="pfa pfa-angle-up"></i></button><button type="button" class="splide__arrow splide__arrow--next"><i class="pfa pfa-angle-down"></i></button></div></div></div>{%- if first_3d_model -%} <div class="sc-fGoOlv bXVzHL pf-ar-btn-wrapper pf-ar-btn-hidden"><button class="pf-ar-btn" type="button" aria-label="View in your space" data-shopify-xr="true" data-shopify-model3d-id="{{ first_3d_model.id }}" data-shopify-title="{{ product.title | escape }}" data-shopify-xr-hidden="true"><svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg"><path opacity="0.6" d="M14.1301 3.27971L9.00008 0.319707C8.69604 0.144171 8.35115 0.0517578 8.00008 0.0517578C7.649 0.0517578 7.30411 0.144171 7.00008 0.319707L1.88008 3.31971C1.5719 3.49759 1.31675 3.75447 1.14097 4.06385C0.965185 4.37323 0.875124 4.72391 0.880077 5.07971V10.9997C0.875124 11.3555 0.965185 11.7062 1.14097 12.0156C1.31675 12.3249 1.5719 12.5818 1.88008 12.7597L7.00008 15.7597C7.30411 15.9352 7.649 16.0277 8.00008 16.0277C8.35115 16.0277 8.69604 15.9352 9.00008 15.7597L14.1201 12.7597C14.4283 12.5818 14.6834 12.3249 14.8592 12.0156C15.035 11.7062 15.125 11.3555 15.1201 10.9997V4.99971C15.119 4.65165 15.0271 4.30991 14.8535 4.00825C14.6798 3.7066 14.4305 3.45547 14.1301 3.27971ZM7.73008 14.3797L2.61008 11.3797C2.54095 11.34 2.48167 11.2852 2.43666 11.2194C2.39164 11.1536 2.36205 11.0785 2.35008 10.9997V4.99971C2.3504 4.90601 2.37556 4.81407 2.42299 4.73327C2.47042 4.65246 2.53843 4.58567 2.62008 4.53971L7.74008 1.53971C7.82065 1.49319 7.91204 1.4687 8.00508 1.4687C8.09811 1.4687 8.18951 1.49319 8.27008 1.53971L13.3901 4.53971L8.67008 7.21971C8.45972 7.33976 8.28614 7.51498 8.16806 7.72646C8.04999 7.93793 7.9919 8.17764 8.00008 8.41971V14.4197C7.91475 14.4413 7.8254 14.4413 7.74008 14.4197L7.73008 14.3797Z" fill="black"></path></svg> View in your space</button>{% for media_item in media %} 
                       {% if media_item.media_type == 'model'%}
                     <script type="application/json" id="ModelJSON-{{media_item.id}}">{{media_item | json}}</script> {% endif %}
-               {% endfor %} </div>{%- endif -%}</div></div><div data-pf-type="Custom.HTML" class="sc-AjmGg eCTxfx pf-12_ pf-hide"><div class="fenders-and-kickstand">
-  <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20230307-201732.jpg?v=1678191479"/>
-  <div style="margin: 0 5% 0 5%;">
-		<div class="btn">FREE</div>
-	   <div class="price">€128.00</div>
-  </div>
-  <div>
-		<div>Fenders and Kickstand</div>
-	   <div class="u17Light">Enjoy a ride with free kickstand and fenders included in packaging.</div>
-  </div>
-</div>
+               {% endfor %} </div>{%- endif -%}</div></div><div data-pf-type="Custom.HTML" class="sc-AjmGg eCTxfx pf-12_ pf-hide">
+                <div class="fenders-and-kickstand">
+                  <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20230307-201732.jpg?v=1678191479"/>
+                  <div class="u17Light">Free Fenders, Kickstand, <br> 1-Year eSIM Service Included</div>
+                  <div class="price">€128.00</div>
+                  <div class="btn">FREE</div>
+              </div>
 
-<style>
-  .fenders-and-kickstand {
-	  background-color: #F7F8FA;
-	  display: flex;
-     align-items: center;
-		padding: 6px;
-	  border-radius: 10px;
-	   margin-left: 15%;
-  }
-  
-  .fenders-and-kickstand img {
-	  width: 116px;
-	}
-  
-  .fenders-and-kickstand > div:first-child {
-	   flex: 1;
-	   
-   }
-  
-  .fenders-and-kickstand .btn { 
-	   padding: 7px 12px;
-	   color: #fff;
-	   background-color: #263B55;
-	   border-radius: 7px;
-	   line-height: 16px;
-  }
-  
-  .fenders-and-kickstand .price {
-		margin-top: 12px;
-		text-decoration: line-through;
-  	}
-  
-  .fenders-and-kickstand .u17Light {
-	  font-size: 14px;
-    margin-top: 5px;
-   }
-  
-  .fenders-and-kickstand > div:last-child {
-	      font-size: 16px;
-		  font-weight: bold;
-		  flex: 0 0 50%;
-		  text-align: left;
-		  color: #000;
-   }
-</style></div><div data-pf-type="Custom.HTML" class="sc-AjmGg eCTxfx pf-13_ pf-hide"><div
+              <style>
+                .fenders-and-kickstand {
+                    background-color: #F7F8FA;
+                    display: flex;
+                    align-items: center;
+                    padding: 10px;
+                    border-radius: 10px;
+                    overflow: hidden;
+                    transform: translateX(7%);
+                }
+                
+                .fenders-and-kickstand img {
+                    width: 116px;
+                  }
+                
+                .fenders-and-kickstand .btn { 
+                     padding: 7px 12px;
+                     color: #fff;
+                     background-color: #263B55;
+                     border-radius: 7px;
+                     line-height: 16px;
+                     margin: 0 20px;
+                }
+                
+                .fenders-and-kickstand .price {
+                      text-decoration: line-through;
+                    }
+                
+                .fenders-and-kickstand .u17Light {
+                    font-size: 18px;
+                    line-height: 25px;
+                    font-weight: 600;
+                    margin: 0 30px 0 20px;
+                 }
+              </style>
+            </div><div data-pf-type="Custom.HTML" class="sc-AjmGg eCTxfx pf-13_ pf-hide"><div
   style="--g-sm: 0px; --l-sm: 4; --gc-xs: 0; --gc-sm: 15.789473684210527%"
   class="sc-iseIHH gbtrtF left-list pf-xs-hide-list chrod"
 >
   <div class="wrapped">
     <div class="spec_item">
-      <img
-        src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18103.svg?v=1677642192"
-        alt="urtopia"
-      />
+      {% render 'svg-icons', index: '1' %}
       <div class="right_content">
         <div class="spec_name">Torque</div>
         <h3>45 NM</h3>
       </div>
     </div>
     <div class="spec_item">
-      <img
-        src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_19389.svg?v=1677649742"
-        alt="urtopia"
-      />
+      <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18428.svg?v=1679033898"/>
       <div class="right_content">
-        <div class="spec_name">4 x 8</div>
-        <h3>Modes X Gears</h3>
+        <div class="spec_name">Modes X Gears</div>
+        <h3>4 x 8</h3>
       </div>
     </div>
     <div class="spec_item">
-      <img
-        src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18100.svg?v=1677649742"
-        alt="urtopia"
-      />
+      {% render 'svg-icons', index: '3' %}
       <div class="right_content">
         <div class="spec_name">Adaptive</div>
         <h3>Torque Sensor</h3>
       </div>
     </div>
     <div class="spec_item">
-      <img
-        src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18102.svg?v=1677649742"
-        alt="urtopia"
-      />
+      {% render 'svg-icons', index: '4' %}
       <div class="right_content">
         <div class="spec_name">Range</div>
         <h3>120 Km</h3>
       </div>
     </div>
     <div class="spec_item">
-      <img
-        src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18104.svg?v=1677649742"
-        alt="urtopia"
-      />
+      <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18429.svg?v=1679033973"/>
       <div class="right_content">
         <div class="spec_name">Phone App</div>
         <h3>iOS, Android</h3>
       </div>
     </div>
     <div class="spec_item">
-      <img
-        src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18101.svg?v=1677649742"
-        alt="urtopia"
-      />
+      {% render 'svg-icons', index: '6' %}
       <div class="right_content">
         <div class="spec_name">Anti-theft</div>
         <h3>GPS Tracking</h3>
@@ -198,7 +167,7 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
   .chrod .wrapped {
     display: flex;
     direction: ltr;
-    justify-content: space-around;
+    justify-content: space-between;
     flex-wrap: wrap;
   }
   .chrod .wrapped .spec_item {
@@ -230,7 +199,7 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
   	}
   }
 </style>
-</div></div></div><div class="pf-c" style="--c-xs:12;--c-sm:5;--c-md:4;--c-lg:4"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-14_"><h1 data-product-type="title" data-product-id="{{ product.id }}" data-pf-type="ProductTitle" class="sc-hgKiOD dlknTu pf-15_">{{ product.title }}</h1><div data-pf-type="JudgeMe" class="sc-eZhRLC gtfCKx pf-16_ order-djs"><div class="pf-judme">{% render "judgeme_widgets", widget_type: "judgeme_preview_badge", jm_style: "", concierge_install: false, product: product %}</div></div><div data-pf-type="Custom.HTML" class="sc-AjmGg eCTxfx pf-17_"><div class="chrod_text">
+</div></div></div><div class="pf-c" style="--c-xs:12;--c-sm:5;--c-md:4;--c-lg:4"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-14_"><h1 data-product-type="title" data-product-id="{{ product.id }}" style="font-weight: 600;" data-pf-type="ProductTitle" class="sc-hgKiOD dlknTu pf-15_">{{ product.title }}</h1><div data-pf-type="JudgeMe" class="sc-eZhRLC gtfCKx pf-16_ order-djs"><div class="pf-judme">{% render "judgeme_widgets", widget_type: "judgeme_preview_badge", jm_style: "", concierge_install: false, product: product %}</div></div><div data-pf-type="Custom.HTML" class="sc-AjmGg eCTxfx pf-17_"><div class="chrod_text">
  Meet the new lightweight city ebike 2023 - the perfect smart electric town bike for urban adventurers. With a range of up to 120km, this ebike is ideal for commuting or leisurely rides around town. With the extra safety and convenience that comes with smart features like anti-theft GPS, onboard navigation and automatic synchronization of ride data, the Chord Ebike is your first step into a new era of cycling.
   <a href="#section1"> Read more</a>
 </div>
@@ -258,30 +227,25 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
     text-decoration: underline;
   }
 </style>
-</div><div data-pf-type="Custom.HTML" class="sc-AjmGg eCTxfx pf-18_"><div class="fenders-and-kickstand-mobile">
-        <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20230307-201732.jpg?v=1678191479">
-        <div style="margin-left: 14px;">
-            <div class="right">
-                <span class="btn">FREE</span>
-                <span class="bold">Fenders and Kickstand</span>
-            </div>
-            <div class="u17Light">Enjoy a ride with free kickstand and fenders included in packaging.</div>
+</div><div data-pf-type="Custom.HTML" class="sc-AjmGg eCTxfx pf-18_">
+  <div class="fenders-and-kickstand-mobile">
+    <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20230307-201732.jpg?v=1678191479">
+    <div style="margin-left: 25px;">
+        <div class="right">
+            <span class="btn">FREE</span>
+            <span style="font-weight: 600;text-decoration: line-through;">$157.00</span>
         </div>
+        <div class="u17Light">Free Fenders, Kickstand <br> 1-Year eSIM Service Included</div>
     </div>
+</div>
 <style>
-    .fenders-and-kickstand-mobile {
+  .fenders-and-kickstand-mobile {
 	  background-color: #F7F8FA;
 	  display: flex;
       align-items: center;
-	  padding: 6px;
+	  padding: 10px;
 	  border-radius: 10px;
-	  margin-top: 20px;
     }
-  
-  .fenders-and-kickstand-mobile .bold {
-	   white-space: nowrap;
-		font: normal normal bold 14px/14px urbane;
-   }
 
     .fenders-and-kickstand-mobile .right {
         display: flex;
@@ -289,7 +253,7 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
     }
 
     .fenders-and-kickstand-mobile img {
-	  width: 33%;
+	  width: 80px;
 	}
 
     .fenders-and-kickstand-mobile .btn { 
@@ -299,10 +263,11 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
 	   border-radius: 7px;
 	   line-height: 16px;
        margin-right: 7px;
+       
     }
 
     .fenders-and-kickstand-mobile .u17Light {
-	  font-size: 12px;
+	  font-size: 14px;
       margin-top: 10px;
     }
 
@@ -331,7 +296,7 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
         %}  {% for option in product.options_with_values %} 
 				   {% assign option_name = option.name %}
 				   {% assign formatted_option_name = option.name | replace: '"', '&quot;' %}
-				<label data-pf-type="OptionLabel" class="pf-variant-label">{{option.name}}</label>  {% if keys contains option_name %}
+				<label data-pf-type="OptionLabel" class="pf-variant-label" style="color: #000">{{option.name}}</label>  {% if keys contains option_name %}
 					        {% for i in (0..length) %}
 						        {% assign originalKey = keys[i] %}
 						        {% assign key = originalKey | replace: '"', '&quot;' %}
@@ -394,10 +359,11 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
 <!-- end Placement -->
 
 </div><div data-pf-type="Custom.HTML" class="sc-AjmGg eCTxfx pf-30_"><div class="chrod_code">
-  <img
+  {% comment %} <img
     src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_20664.svg?v=1678094921"
     alt="urtopia"
-  />
+  /> {% endcomment %}
+  {% render 'svg-icons', index: '11' %}
   <div class="text-container">
     <span class="chrod_des"
       ><strong>€700</strong> OFF with Early Bird Code</span
@@ -410,14 +376,21 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
   .chrod_code {
     position: relative;
   }
+
+  .chrod_code svg {
+    height: 40px;
+    width: 100%;
+  }
+
+  
   .chrod_code .text-container {
     position: absolute;
-    top: 0;
+    top: -3px;
     left: 0;
     width: 100%;
     height: 100%;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
 	color:#fff;
   }
@@ -432,6 +405,7 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
     height: 100%;
     border: 1.5px dashed #000;
     width: 0;
+    margin: 0 2%;
   }
   @media (max-width: 1025px){
 	.chrod_code .chrod_des {
@@ -449,6 +423,7 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
   data-adding="Adding..."
   type="button"
   class="addToCartBtn"
+  style="font-size: 16px"
   onclick="addAllToCart('atc')"
   id="addToCart"
 >
@@ -1591,52 +1566,34 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
 </script></div><div data-pf-type="Custom.HTML" class="sc-AjmGg eCTxfx pf-33_"><div class="chrod_info">
   <div class="ship_wrapped">
     <div class="ship_item">
-      <img
-        src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_17960.svg?v=1677667036"
-      />
+      {% render 'svg-icons', index: '7' %}
       <div>Free<br/>Shipping</div>
     </div>
     <div class="ship_item">
-      <img
-        src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_17959.svg?v=1677667197"
-      />
+      {% render 'svg-icons', index: '8' %}
       <div>14-Day<br/>Return</div>
     </div>
     <div class="ship_item">
-      <img
-        src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_17958.svg?v=1677667197"
-      />
+      {% render 'svg-icons', index: '9' %}
       <div>2-Year<br/>Warranty</div>
     </div>
   </div>
   <ul class="others">
     <li id="sizefit-btn">
       <span>Size & Fit</span>
-      <img
-        src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_20411.svg?v=1677667997"
-        alt="urtopia"
-      />
+      {% render 'svg-icons', index: '10' %}
     </li>
     <li id="tspec-btn">
       <span>Technical Specifications</span>
-      <img
-        src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_20411.svg?v=1677667997"
-        alt="urtopia"
-      />
+      {% render 'svg-icons', index: '10' %}
     </li>
     <li id="ucare-btn">
       <span>Support & Service</span>
-      <img
-        src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_20411.svg?v=1677667997"
-        alt="urtopia"
-      />
+      {% render 'svg-icons', index: '10' %}
     </li>
     <li id="faqs-btn">
       <span>FAQs</span>
-      <img
-        src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_20411.svg?v=1677667997"
-        alt="urtopia"
-      />
+      {% render 'svg-icons', index: '10' %}
     </li>
   </ul>
 </div>
@@ -1650,7 +1607,7 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
 	display:flex;
 	align-items: center;
   }
-  .ship_wrapped .ship_item > img {
+  .ship_wrapped .ship_item > svg {
 	margin-right:13px;
     width: 30px;
     height: 30px;
@@ -1709,60 +1666,42 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
 >
   <div class="wrapped">
     <div class="spec_item">
-      <img
-        src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18103.svg?v=1677642192"
-        alt="urtopia"
-      />
+      {% render 'svg-icons', index: '1' %}
       <div class="right_content">
         <div class="spec_name">Torque</div>
         <h3>45 NM</h3>
       </div>
     </div>
     <div class="spec_item">
-      <img
-        src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_19389.svg?v=1677649742"
-        alt="urtopia"
-      />
+      {% render 'svg-icons', index: '2' %}
       <div class="right_content">
-        <div class="spec_name">4 x 8</div>
-        <h3>Modes X Gears</h3>
+        <div class="spec_name">Modes X Gears</div>
+        <h3>4 x 8</h3>
       </div>
     </div>
     <div class="spec_item">
-      <img
-        src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18100.svg?v=1677649742"
-        alt="urtopia"
-      />
+      {% render 'svg-icons', index: '3' %}
       <div class="right_content">
         <div class="spec_name">Adaptive</div>
         <h3>Torque Sensor</h3>
       </div>
     </div>
     <div class="spec_item">
-      <img
-        src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18102.svg?v=1677649742"
-        alt="urtopia"
-      />
+      {% render 'svg-icons', index: '4' %}
       <div class="right_content">
         <div class="spec_name">Range</div>
         <h3>70 miles</h3>
       </div>
     </div>
     <div class="spec_item">
-      <img
-        src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18104.svg?v=1677649742"
-        alt="urtopia"
-      />
+      {% render 'svg-icons', index: '5' %}
       <div class="right_content">
         <div class="spec_name">Phone App</div>
         <h3>iOS, Android</h3>
       </div>
     </div>
     <div class="spec_item">
-      <img
-        src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18101.svg?v=1677649742"
-        alt="urtopia"
-      />
+      {% render 'svg-icons', index: '6' %}
       <div class="right_content">
         <div class="spec_name">Anti-theft</div>
         <h3>GPS Tracking</h3>
@@ -2033,9 +1972,16 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
         margin: 0;
     }
     
+    .section2-smart .swiper-slide .text svg {
+      width: 65px;
+      height: 40px;
+      margin-right: 12px;
+      margin-top: 0;
+    }
+
     .section2-smart .swiper-slide .text img {
-        width: 40px;
-        margin-right: 12px;
+       width: 40px;
+       margin-right: 12px;
     }
 
     .section2-smart .swiper-slide .text .u20DemiBold {
@@ -2194,7 +2140,7 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
             <div class="swiper-slide">
                 <div class="texts">
                     <div class="text">
-                        <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18101.svg?v=1677912553" width="40" alt="">
+                      {% render 'svg-icons', index: '6' %}
                         <div>
                             <div class="u20DemiBold">Built-in Navigation</div>
                             <div class="u17Light">Goodbye phone, no more struggling to navigate with a tiny screen.</div>
@@ -2208,7 +2154,7 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
                         </div>
                     </div>
                     <div class="text">
-                        <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18104.svg?v=1677913432" width="40" alt="">
+                      {% render 'svg-icons', index: '13' %}
                         <div>
                             <div class="u20DemiBold">Bluetooth Music</div>
                             <div class="u17Light">It’s like having a personal DJ accompanying you everywhere when you ride.</div>
