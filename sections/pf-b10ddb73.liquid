@@ -2514,7 +2514,7 @@ new Swiper('#section3', {
 
     #section5 .swiper-scrollbar {
         position: static;
-        {% comment %} margin-top: 60px; {% endcomment %}
+        margin-top: 60px;
     }
     
     #section5 img {
@@ -2599,12 +2599,12 @@ new Swiper('#section3', {
 			   {% if collection.title == 'Chord Accessories' %}
 				{% for producti in collection.products %}
 				<div class="swiper-slide" data-product-id="{{producti.id}}">
-					<img src="{{ producti.media[0] | image_url}}"/>
+					{% comment %} <img src="{{ producti.media[0] | image_url}}"/> {% endcomment %}
 					<div class="text">
 					  <div class="u24Medium">{{producti.title}}</div>
 					  <div class="u20Medium">{{producti.price | money}}</div>
 					</div>
-					{% comment %} <a class="my-button my-button-white" href="">Add to Cart</a> {% endcomment %}
+					<a class="my-button my-button-white" href="">Add to Cart</a>
 				</div>
 					{% endfor %}
 			   {% endif %}
@@ -2613,9 +2613,6 @@ new Swiper('#section3', {
       <div class="swiper-button-prev"></div><!--左箭头。如果放置在swiper外面，需要自定义样式。-->
      <div class="swiper-button-next"></div><!--右箭头。如果放置在swiper外面，需要自定义样式。-->
      <div class="swiper-scrollbar"></div>
-     <div>
-      <a href="/collections/accessories" class="my-button my-button-black">Order now</a>
-    </div>
   </div>
 
 
