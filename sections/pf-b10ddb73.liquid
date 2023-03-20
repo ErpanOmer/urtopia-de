@@ -2598,7 +2598,6 @@ new Swiper('#section3', {
 			  {% for collection in collections %}
 			   {% if collection.title == 'Chord Accessories' %}
 				{% for producti in collection.products %}
-          <a>
             <div class="swiper-slide" data-product-id="{{producti.id}}">
               {% comment %} <img src="{{ producti.media[0] | image_url}}"/> {% endcomment %}
               <div class="text">
@@ -2607,7 +2606,6 @@ new Swiper('#section3', {
               </div>
               {% comment %} <a class="my-button my-button-white" href="">Add to Cart</a> {% endcomment %}
             </div>
-           </a>
 					{% endfor %}
 			   {% endif %}
 			{% endfor %}
