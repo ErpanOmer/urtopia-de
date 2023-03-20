@@ -164,25 +164,5 @@ const shopInfoList = {
         "09:00–19:00",
       ],
     },
-    "+49 1741 767149": {
-      name: "Test Ride Spot",
-      testRideSize: "M/L",
-      testrideSpot: "Frankfurt",
-      imgUrl:
-        "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/testrideshopimg-Frankfurt.jpg?v=1667370876",
-      add: "Am Sonnigen Hang 21 55127 Mainz Germany",
-      timezone: "Mainz, Germany (GMT+1)",
-      email: "yicxie2017@gmail.com",
-      phone: "+49 1741 767140",
-      businessHours: [
-        "09:00–19:00",
-        "09:00–19:00",
-        "09:00–19:00",
-        "09:00–19:00",
-        "",
-        "09:00–19:00",
-        "09:00–19:00",
-      ],
-    },
   },
 };
