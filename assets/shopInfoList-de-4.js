@@ -164,7 +164,7 @@ const shopInfoList = {
         "09:00–19:00",
       ],
     },
-    "+49 1741 767144": {
+    "+49 1741 767149": {
       name: "Test Ride Spot",
       testRideSize: "M/L",
       testrideSpot: "Frankfurt",
