@@ -2,7 +2,8 @@
   "sections": {
     "pf-abb72423": {
       "type": "pf-abb72423",
-      "settings": {}
+      "settings": {
+      }
     },
     "about-us": {
       "type": "about-us",
