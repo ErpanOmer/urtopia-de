@@ -2544,6 +2544,10 @@ new Swiper('#section3', {
       /* transform: translateX(-20px); */
     }
 
+    #section5 .swiper-slide {
+      cursor: pointer;
+    }
+
     #section5 .swiper-slide .text {
       margin-top: 40px;
       height: 100px;
@@ -2598,9 +2602,9 @@ new Swiper('#section3', {
 			  {% for collection in collections %}
 			   {% if collection.title == 'Chord Accessories' %}
 				{% for producti in collection.products %}
-            <script>
+            {% comment %} <script>
               console.log({{ producti | json }})
-            </script>
+            </script> {% endcomment %}
             <div class="swiper-slide" data-product-id="{{producti.id}}" onclick="gotoAccessor('{{ producti.handle }}')">
               <img src="{{ producti.media[0] | image_url}}"/>
               <div class="text">
