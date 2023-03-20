@@ -20,6 +20,7 @@ class InsuranceProduct extends HTMLElement {
     this.mainVariantSelector = document.querySelector('input[name="id"][data-product-id]');
     this.variantLabels = document.querySelectorAll('[data-option-name] > label');
     this.addToCart = document.querySelector(selectors.addToCart);
+    console.log('this.addToCart', this.addToCart);
     this.variantIdInput = document.querySelector('.js-product-variant-id');
     this.languageCode = document.querySelector('html').getAttribute('lang');
     this.fakeAddToCart = null;
@@ -270,10 +271,11 @@ class Insurance {
 }
 
 const insurance = new Insurance();
-
+var accessories_global = []
 
 
 function addToCartInsurance(parse) {
+  console.log('accessories_global', accessories_global);
   const cartListNew = {items:[]};
   const cart1New =
     document.querySelector("cart-notification") ||
@@ -322,6 +324,9 @@ function addToCartInsurance(parse) {
       const sections = cart1New.getSectionsToRender().map((section) => section.id);
     	cartListNew.sections = sections.join(",");
     }
+
+    // 和配件合并
+    cartListNew.items = cartListNew.items.concat(accessories_global.items || []);
     
     fetch("/cart/add.js", {
       method: "POST",

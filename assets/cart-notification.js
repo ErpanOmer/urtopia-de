@@ -54,17 +54,19 @@ class CartNotification extends HTMLElement {
       .then((res1) => {
         let discountSavedPrice = 0;
         res1.items.forEach((item) => {
-          if (item.product_title .indexOf("Carbon One")!=-1||item.product_title .indexOf("Urtopia Chord")!=-1) {
+          if (item.product_title .indexOf("Carbon 1")!=-1||item.product_title .indexOf("Urtopia Chord")!=-1) {
             bikeQuantity += item.quantity;
           }
             discountSavedPrice += (item.original_line_price - item.final_line_price);
         });
         discountSavedPrice /= 100;
-        if (bikeQuantity) {
+        console.log('bikeQuantity', bikeQuantity)
+        if (bikeQuantity) {/*  */
           const formatter = new Intl.NumberFormat("de-DE", {
             style: "currency",
             currency: "EUR",
           });
+          console.log('this.notification', this.notification)
           $(this.notification)
             .find(".notification-tips>span:nth-child(3)")
             .html(formatter.format(discountSavedPrice+bikeQuantity*600));
@@ -90,6 +92,7 @@ class CartNotification extends HTMLElement {
     });
 
     if (this.header) this.header.reveal();
+    console.log('open')
     this.open();
   }
 
