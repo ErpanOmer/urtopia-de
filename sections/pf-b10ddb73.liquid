@@ -2598,7 +2598,9 @@ new Swiper('#section3', {
 			  {% for collection in collections %}
 			   {% if collection.title == 'Chord Accessories' %}
 				{% for producti in collection.products %}
-            {{ producti }}
+            <script>
+              console.log({{producti | json }})
+            </script>
             <div class="swiper-slide" data-product-id="{{producti.id}}" onclick="gotoAccessor('{{ producti.title }}')">
               <img src="{{ producti.media[0] | image_url}}"/>
               <div class="text">
