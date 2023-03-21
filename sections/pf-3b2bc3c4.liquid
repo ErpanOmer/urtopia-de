@@ -312,7 +312,7 @@ const createContent = city => {
                     </ul>
                     <div class="u20DemiBold">ADD:</div>
                     <div class="u20Medium address">${store.add}</div>
-                    <div class="my-button my-button-black" onclick="CalendarOpen('${city}', '${JSON.stringify(store).replace(/"/g, "\\'")}')">Select</div>
+                    <div class="my-button my-button-black" onclick="CalendarOpen('${city}', '${JSON.stringify({ [store['phone']]: store }).replace(/"/g, "\\'")}')">Select</div>
                 </div>`
                 
                 }).join('')}
