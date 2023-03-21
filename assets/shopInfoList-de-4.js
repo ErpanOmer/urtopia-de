@@ -146,3 +146,71 @@ const shopInfoList = {
     }
   },
 };
+
+
+
+const testRides = [
+  {
+    city: 'Frankfurt am Main',
+    cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/testrideshopimg-Frankfurt.jpg',
+    stores: [
+      {
+        name: 'TP',
+        phone: '+0049 1741 767140',
+        email: 'yicxie2017@gmail.com',
+        timezone: "Mainz, Germany (GMT+1)",
+        add: "Am Sonnigen Hang 21 55127 Mainz Germany",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/testrideshopimg-Frankfurt.jpg?v=1667370876",
+        testrideSpot: "Frankfurt",
+        testRideSize: "M/L",
+        businessHours: [
+          "09:00–19:00",
+          "09:00–19:00",
+          "09:00–19:00",
+          "09:00–19:00",
+          "",
+          "09:00–19:00",
+          "09:00–19:00",
+        ],
+      },
+      {
+        name: 'Service Zentrum',
+        phone: '+004961032076414',
+        email: 'yiming.song@iedau.com',
+        timezone: "Mainz, Germany (GMT+1)",
+        add: "IED Fulfillment-Service GmbH c/o Urtopia Service Otto-Hahn-Str. 5-7 63225 Langen",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/testrideshopimg-Frankfurt.jpg?v=1667370876",
+        testrideSpot: "Frankfurt",
+        testRideSize: "",
+        businessHours: [
+          "09:00–19:00",
+          "09:00–19:00",
+          "09:00–19:00",
+          "09:00–19:00",
+          "",
+          "09:00–19:00",
+          "09:00–19:00",
+        ],
+      },
+      {
+        name: 'mein-fahrradhaendler',
+        phone: '+00496101 9951561',
+        email: 'yicxie2017@gmail.com',
+        timezone: "Mainz, Germany (GMT+1)",
+        add: "Alt Erlenbach 35, 60437 Frankfurt/Main",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/testrideshopimg-Frankfurt.jpg?v=1667370876",
+        testrideSpot: "Frankfurt",
+        testRideSize: "L",
+        businessHours: [
+          "09:00–19:00",
+          "09:00–19:00",
+          "09:00–19:00",
+          "09:00–19:00",
+          "",
+          "09:00–19:00",
+          "09:00–19:00",
+        ],
+      }
+    ]
+  }
+]
