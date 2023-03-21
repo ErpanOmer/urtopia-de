@@ -357,7 +357,7 @@ function showTestRides (city) {
          setTimeout(() => {
             STOREPOINT.destroy()
             box.destroy()
-        })
+        }, 100)
       }
   }).setContent(createContent(city)).open()
 }
