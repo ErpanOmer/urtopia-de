@@ -350,17 +350,13 @@ function showTestRides (city, target) {
   var b=document.getElementsByTagName("script")[0];
   b.parentNode.insertBefore(a,b);
 
-  const box = new jBox('Modal', {
+  setTimeout(() => {
+    const box = new jBox('Modal', {
       width: isMobile ? 'calc(100vw - 30px)' : 1000,
       height: 'auto',
       title: `Book a Test Ride in ${city}`,
       closeButton: 'title',
       onCreated: function () {
-          var a=document.createElement("script");
-          a.type="text/javascript";
-          a.src="https://cdn.storepoint.co/api/v1/js/162f21804990ff.js";
-          var b=document.getElementsByTagName("script")[0];
-          b.parentNode.insertBefore(a,b);
       },
       onClose: function () {
          setTimeout(() => {
@@ -368,7 +364,8 @@ function showTestRides (city, target) {
             box.destroy()
         }, 100)
       }
-  }).setContent($('.store-list')).open()
+  }).setContent($('.hide .store-list')).open()
+  }, 1000)
 }
 
 let spotsTemplate = ''
