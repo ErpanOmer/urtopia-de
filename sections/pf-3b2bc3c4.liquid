@@ -354,8 +354,10 @@ function showTestRides (city) {
           b.parentNode.insertBefore(a,b);
       },
       onClose: function () {
-         STOREPOINT.destroy()
-         box.destroy()
+         setTimeout(() => {
+          STOREPOINT.destroy()
+          box.destroy()
+        })
       }
   }).setContent(createContent(city)).open()
 }
