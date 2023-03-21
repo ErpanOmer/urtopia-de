@@ -365,7 +365,7 @@ function showTestRides (city) {
 let spotsTemplate = ''
 testRides.forEach(city => {
   spotsTemplate += `<div class="store-section-item">
-	  <div class="store-section-shop-item" onclick="showTestRides('${city.city}')">
+	  <div class="store-section-shop-item" onclick="showTestRides('${city.city}', this)">
 		<div class="img-mask">
 		  <div class="shop-item-img lozad" data-background-image="${city.cityBackground}">
 		  </div>
