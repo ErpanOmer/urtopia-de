@@ -622,17 +622,17 @@ const testRides = [
     ]
   },
   {
-    city: 'Dresden',
+    city: 'Nürnberg',
     cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/testride-munster.jpg?v=1671252848',
     stores: [
       {
-        name: 'bike Store',
-        phone: '+00493512728755',
+        name: 'P.O.S. Partner of Sports Nürnberg',
+        phone: '+0049911 538530',
         email: 'bikestore@resewski.de',
         timezone: "Mainz, Germany (GMT+1)",
-        add: "Otto-Mohr-Straße 4, 01237 Dresden",
+        add: "Rennweg 7, 90489 Nürnberg",
         imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20221214-125750.jpg?v=1670993888",
-        testrideSpot: "Dresden",
+        testrideSpot: "Nürnberg",
         testRideSize: "M",
         businessHours: [
           "09:00–19:00",
@@ -647,17 +647,17 @@ const testRides = [
     ]
   },
   {
-    city: 'Dresden',
+    city: 'Regensburg',
     cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/testride-munster.jpg?v=1671252848',
     stores: [
       {
         name: 'bike Store',
-        phone: '+00493512728755',
-        email: 'bikestore@resewski.de',
+        phone: '+00491632379785',
+        email: 'info@radfahrwerk.de',
         timezone: "Mainz, Germany (GMT+1)",
-        add: "Otto-Mohr-Straße 4, 01237 Dresden",
+        add: "St. Emmerams Ring 493309 Kelheim",
         imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20221214-125750.jpg?v=1670993888",
-        testrideSpot: "Dresden",
+        testrideSpot: "Regensburg",
         testRideSize: "M",
         businessHours: [
           "09:00–19:00",
