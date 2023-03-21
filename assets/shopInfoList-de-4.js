@@ -216,5 +216,28 @@ const testRides = [
   {
     city: 'Düsseldorf',
     cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/testrideshopimg-Frankfurt.jpg',
+    stores: [
+      {
+        {
+          name: 'DownTownBikes',
+          phone: '+0049211 26194969',
+          email: 'david@downtownbikes.de',
+          timezone: "Mainz, Germany (GMT+1)",
+          add: "Immermannstraße 3440210 Düsseldorf",
+          imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/testrideshopimg-Frankfurt.jpg?v=1667370876",
+          testrideSpot: "Frankfurt am Main",
+          testRideSize: "L",
+          businessHours: [
+            "09:00–19:00",
+            "09:00–19:00",
+            "09:00–19:00",
+            "09:00–19:00",
+            "",
+            "09:00–19:00",
+            "09:00–19:00",
+          ],
+        }
+      }
+    ]
   }
 ]
