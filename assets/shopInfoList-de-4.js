@@ -239,5 +239,9 @@ const testRides = [
         }
       }
     ]
+  },
+  {
+    city: 'Berlin',
+    cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/testrideshopimg-Frankfurt.jpg',
   }
 ]
