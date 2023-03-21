@@ -309,7 +309,7 @@ const createContent = city => {
                     </ul>
                     <div class="u20DemiBold">ADD:</div>
                     <div class="u20Medium address">${store.add}</div>
-                    <div class="my-button my-button-black" onclick="CalendarOpen('${city}', '${JSON.stringify({ [store['phone']]: store })}')">Select</div>
+                    <div class="my-button my-button-black" onclick="CalendarOpen('${city}', ${JSON.stringify({ [store['phone']]: store })})">Select</div>
                 </div>`).join('')}
             </div>
             <div id="storepoint-container" data-tags="de,Test Ride,${city}" data-map-id="162f21804990ff"></div></div>`
