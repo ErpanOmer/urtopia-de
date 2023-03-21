@@ -266,7 +266,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 	      showSide: true,
 	      showInfoBottom: true,
 	      type: 'date',
-	      shopList: shop,
+	      shopList: typeof shop === 'string' ? JSON.parse(shop) : shop,
 	      isSpecDay:specday,
 	      TimePeriodization:timetp,
 	      //  shopInfo: shopInfo
