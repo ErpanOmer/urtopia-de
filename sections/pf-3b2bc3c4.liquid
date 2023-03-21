@@ -196,20 +196,20 @@ function showTestRides (city) {
     return CalendarOpen(city, { [find.stores[0]['phone']]: find.stores[0] })
   }
 
-    new jBox('Modal', {
-        width: isMobile ? 'calc(100vw - 30px)' : 1000,
-        height: 'auto',
-        title: 'Book a Test Ride',
-        closeButton: 'title',
-        onCreated: function () {
-            var a=document.createElement("script");
-            a.type="text/javascript";
-            // a.defer=!0;
-            a.src="https://cdn.storepoint.co/api/v1/js/162f21804990ff.js";
-            var b=document.getElementsByTagName("script")[0];
-            b.parentNode.insertBefore(a,b);
-        },
-    }).setContent(createContent('Frankfurt am Main')).open()
+  new jBox('Modal', {
+      width: isMobile ? 'calc(100vw - 30px)' : 1000,
+      height: 'auto',
+      title: `Book a Test Ride in ${city}`,
+      closeButton: 'title',
+      onCreated: function () {
+          var a=document.createElement("script");
+          a.type="text/javascript";
+          // a.defer=!0;
+          a.src="https://cdn.storepoint.co/api/v1/js/162f21804990ff.js";
+          var b=document.getElementsByTagName("script")[0];
+          b.parentNode.insertBefore(a,b);
+      },
+  }).setContent(createContent(city)).open()
 }
 
 let spotsTemplate = ''
