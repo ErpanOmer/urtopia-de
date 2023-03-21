@@ -328,6 +328,65 @@ const testRides = [
   },
   {
     city: 'München',
-    cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20221214-125750.jpg?v=1670993888',
+    cityBackground: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20230119-111546.jpg?v=1674098187',
+    stores: [
+      {
+        name: 'TP: Len Lucas',
+        phone: '+0049 1512 8804444',
+        email: 'len.lucas@gmx.de',
+        timezone: "Mainz, Germany (GMT+1)",
+        add: "",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20221214-125750.jpg?v=1670993888",
+        testrideSpot: "Düsseldorf",
+        testRideSize: "M",
+        businessHours: [
+          "09:00–19:00",
+          "09:00–19:00",
+          "09:00–19:00",
+          "09:00–19:00",
+          "",
+          "09:00–19:00",
+          "09:00–19:00",
+        ],
+      },
+      {
+        name: 'TP: Len Lucas',
+        phone: '+0049 1512 8804444',
+        email: 'len.lucas@gmx.de',
+        timezone: "Mainz, Germany (GMT+1)",
+        add: "",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20221214-125750.jpg?v=1670993888",
+        testrideSpot: "Düsseldorf",
+        testRideSize: "M",
+        businessHours: [
+          "09:00–19:00",
+          "09:00–19:00",
+          "09:00–19:00",
+          "09:00–19:00",
+          "",
+          "09:00–19:00",
+          "09:00–19:00",
+        ],
+      },
+      {
+        name: 'TP: Len Lucas',
+        phone: '+0049 1512 8804444',
+        email: 'len.lucas@gmx.de',
+        timezone: "Mainz, Germany (GMT+1)",
+        add: "",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20221214-125750.jpg?v=1670993888",
+        testrideSpot: "Düsseldorf",
+        testRideSize: "M",
+        businessHours: [
+          "09:00–19:00",
+          "09:00–19:00",
+          "09:00–19:00",
+          "09:00–19:00",
+          "",
+          "09:00–19:00",
+          "09:00–19:00",
+        ],
+      }
+    ]
   }
 ]
