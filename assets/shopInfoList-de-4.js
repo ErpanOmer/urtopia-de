@@ -553,7 +553,7 @@ const testRides = [
       {
         name: 'alf bikes & coffee',
         phone: '+004951145014270',
-        email: 'simon@alleliebenfahrrad.de',
+        email: 'post@fahrradcafe.de',
         timezone: "Mainz, Germany (GMT+1)",
         add: "Asternstraße 230167 Hannover",
         imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20221214-125750.jpg?v=1670993888",
