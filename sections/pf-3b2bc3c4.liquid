@@ -353,7 +353,7 @@ function showTestRides (city, target) {
           b.parentNode.insertBefore(a,b);
 
           setTimeout(() => {
-            STOREPOINT.reload_locations()
+            console.log(STOREPOINT.reload_locations())
           }, 2000)
       },
       onClose: function () {
