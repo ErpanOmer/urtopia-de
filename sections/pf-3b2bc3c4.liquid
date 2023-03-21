@@ -344,7 +344,7 @@ function showTestRides (city, target) {
 
   $('.hide').html(createContent(city))
 
-  const box = new jBox('Modal', {
+  {% comment %} const box = new jBox('Modal', {
       width: isMobile ? 'calc(100vw - 30px)' : 1000,
       height: 'auto',
       title: `Book a Test Ride in ${city}`,
@@ -362,7 +362,7 @@ function showTestRides (city, target) {
             box.destroy()
         }, 100)
       }
-  }).setContent($('.store-list')).open()
+  }).setContent($('.store-list')).open() {% endcomment %}
 }
 
 let spotsTemplate = ''
