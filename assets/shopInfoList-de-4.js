@@ -326,4 +326,8 @@ const testRides = [
       }
     ]
   },
+  {
+    city: 'München',
+    cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20221214-125750.jpg?v=1670993888',
+  }
 ]
