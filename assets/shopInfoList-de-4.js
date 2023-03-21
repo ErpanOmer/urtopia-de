@@ -357,7 +357,7 @@ const testRides = [
         add: "Regerplatz 481541 München",
         imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20221214-125750.jpg?v=1670993888",
         testrideSpot: "Düsseldorf",
-        testRideSize: "M",
+        testRideSize: "L",
         businessHours: [
           "09:00–19:00",
           "09:00–19:00",
