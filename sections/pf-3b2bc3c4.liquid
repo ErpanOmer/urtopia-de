@@ -346,7 +346,7 @@ function showTestRides (city, target) {
       height: 'auto',
       title: `Book a Test Ride in ${city}`,
       closeButton: 'title',
-      onOpenComplete: function () {
+      onCreated: function () {
           var a=document.createElement("script");
           a.type="text/javascript";
           a.defer=!0;
