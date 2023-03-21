@@ -149,7 +149,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       })
   }
 
-function showTestRides (city, length) {
+function showTestRides (city) {
   // 如果城市传入为空
   if (!city) {
     return
@@ -157,13 +157,13 @@ function showTestRides (city, length) {
 
   const find = testRides.find(c => c.city === city)
 
-  // 如果查不到城市
+  // 如果匹配不到城市
   if (!find) {
       return
   }
 
   // 如果当前城市只有一个test ride
-  if (length === 1) {
+  if (find.stores.length === 1) {
 
     return
   }
@@ -172,7 +172,7 @@ function showTestRides (city, length) {
 let spotsTemplate = ''
 testRides.forEach(city => {
   spotsTemplate += `<div class="store-section-item">
-	  <div class="store-section-shop-item" onclick="showTestRides('${city.city}', ${city.stores.length})">
+	  <div class="store-section-shop-item" onclick="showTestRides('${city.city}')">
 		<div class="img-mask">
 		  <div class="shop-item-img lozad" data-background-image="${city.cityBackground}">
 		  </div>
