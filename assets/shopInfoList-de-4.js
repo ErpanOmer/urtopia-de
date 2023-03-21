@@ -337,7 +337,7 @@ const testRides = [
         timezone: "Mainz, Germany (GMT+1)",
         add: "",
         imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20221214-125750.jpg?v=1670993888",
-        testrideSpot: "Düsseldorf",
+        testrideSpot: "München",
         testRideSize: "M",
         businessHours: [
           "09:00–19:00",
@@ -356,7 +356,7 @@ const testRides = [
         timezone: "Mainz, Germany (GMT+1)",
         add: "Regerplatz 481541 München",
         imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20221214-125750.jpg?v=1670993888",
-        testrideSpot: "Düsseldorf",
+        testrideSpot: "München",
         testRideSize: "L",
         businessHours: [
           "09:00–19:00",
@@ -375,7 +375,7 @@ const testRides = [
         timezone: "Mainz, Germany (GMT+1)",
         add: "Am Mitterfeld 381829 München",
         imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20221214-125750.jpg?v=1670993888",
-        testrideSpot: "Düsseldorf",
+        testrideSpot: "München",
         testRideSize: "L",
         businessHours: [
           "09:00–19:00",
