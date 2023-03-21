@@ -164,8 +164,9 @@ function showTestRides (city) {
 
   // 如果当前城市只有一个test ride
   if (find.stores.length === 1) {
-
-    return
+    return CalendarOpen({
+      [find.stores[0]['phone']]: find.stores[0] 
+    })
   }
 }
 
