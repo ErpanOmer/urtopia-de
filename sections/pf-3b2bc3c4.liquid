@@ -175,6 +175,9 @@ const createContent = city => {
         `
 }
 
+const width = document.body.clientWidth
+const isMobile = width < 768
+
 function showTestRides (city) {
   // 如果城市传入为空
   if (!city) {
@@ -192,6 +195,21 @@ function showTestRides (city) {
   if (find.stores.length === 1) {
     return CalendarOpen(city, { [find.stores[0]['phone']]: find.stores[0] })
   }
+
+    new jBox('Modal', {
+        width: isMobile ? 'calc(100vw - 30px)' : 1000,
+        height: 'auto',
+        title: 'Book a Test Ride',
+        closeButton: 'title',
+        onCreated: function () {
+            var a=document.createElement("script");
+            a.type="text/javascript";
+            // a.defer=!0;
+            a.src="https://cdn.storepoint.co/api/v1/js/162f21804990ff.js";
+            var b=document.getElementsByTagName("script")[0];
+            b.parentNode.insertBefore(a,b);
+        },
+    }).setContent(createContent('Frankfurt am Main')).open()
 }
 
 let spotsTemplate = ''
