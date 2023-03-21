@@ -148,6 +148,31 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       })
   }
 
+const createContent = city => {
+    const find = testRides.find(c => c.city === city)
+
+    if (!find) {
+        return console.log('city', city)
+    }
+
+    return `<div class="store-list">
+            <div class="list">
+                ${find.stores.map(store => `<div class="item">
+                    <div class="u30DemiBold">${store.name}</div>
+                    <div class="u20DemiBold">Available Model:</div>
+                    <ul>
+                        <li class="u20Medium">Carbon One Size ${store.testRideSize}</li>
+                    </ul>
+                    <div class="u20DemiBold">ADD:</div>
+                    <div class="u20Medium address">${store.add}</div>
+                    <div class="my-button my-button-black">Select</div>
+                </div>`)}
+            </div>
+            <div id="storepoint-container" data-tags="de,Test Ride,${city}" data-map-id="162f21804990ff"></div>
+        </div>
+        `
+}
+
 function showTestRides (city) {
   // 如果城市传入为空
   if (!city) {
