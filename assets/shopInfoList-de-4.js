@@ -214,6 +214,31 @@ const testRides = [
     ]
   },
   {
+    city: 'Düsseldorf',
+    cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20221214-125750.jpg?v=1670993888',
+    stores: [
+      {
+        name: 'DownTownBikes',
+        phone: '+0049211 26194969',
+        email: 'david@downtownbikes.de',
+        timezone: "Mainz, Germany (GMT+1)",
+        add: "Immermannstraße 3440210 Düsseldorf",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20221214-125750.jpg?v=1670993888",
+        testrideSpot: "Düsseldorf",
+        testRideSize: "L",
+        businessHours: [
+          "09:00–19:00",
+          "09:00–19:00",
+          "09:00–19:00",
+          "09:00–19:00",
+          "",
+          "09:00–19:00",
+          "09:00–19:00",
+        ],
+      }
+    ]
+  },
+  {
     city: 'Berlin',
     cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20221214-125750.jpg?v=1670993888',
     stores: [
