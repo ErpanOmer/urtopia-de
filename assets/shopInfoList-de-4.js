@@ -129,7 +129,7 @@ const shopInfoList = {
       testRideSize: "M/L",
       testrideSpot: "Frankfurt",
       imgUrl:
-        "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/testrideshopimg-Frankfurt.jpg?v=1667370876",
+        "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Frankfurt_am_Main.jpg?v=1679406972",
       add: "Am Sonnigen Hang 21 55127 Mainz Germany",
       timezone: "Mainz, Germany (GMT+1)",
       email: "yicxie2017@gmail.com",
@@ -152,7 +152,7 @@ const shopInfoList = {
 const testRides = [
   {
     city: 'Frankfurt am Main',
-    cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/testrideshopimg-Frankfurt.jpg',
+    cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Frankfurt_am_Main.jpg?v=1679406972',
     stores: [
       {
         name: 'TP',
@@ -160,7 +160,7 @@ const testRides = [
         email: 'yicxie2017@gmail.com',
         timezone: "Mainz, Germany (GMT+1)",
         add: "Am Sonnigen Hang 21 55127 Mainz Germany",
-        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/testrideshopimg-Frankfurt.jpg?v=1667370876",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Frankfurt_am_Main.jpg?v=1679406972",
         testrideSpot: "Frankfurt am Main",
         testRideSize: "M/L",
         businessHours: [
@@ -179,7 +179,7 @@ const testRides = [
         email: 'yiming.song@iedau.com',
         timezone: "Mainz, Germany (GMT+1)",
         add: "Otto-Hahn-Str. 5-7 63225 Langen",
-        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/testrideshopimg-Frankfurt.jpg?v=1667370876",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Frankfurt_am_Main.jpg?v=1679406972",
         testrideSpot: "Frankfurt am Main",
         testRideSize: "",
         businessHours: [
@@ -198,7 +198,7 @@ const testRides = [
         email: 'yicxie2017@gmail.com',
         timezone: "Mainz, Germany (GMT+1)",
         add: "Alt Erlenbach 35, 60437 Frankfurt/Main",
-        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/testrideshopimg-Frankfurt.jpg?v=1667370876",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Frankfurt_am_Main.jpg?v=1679406972",
         testrideSpot: "Frankfurt am Main",
         testRideSize: "L",
         businessHours: [
