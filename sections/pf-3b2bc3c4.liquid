@@ -301,7 +301,10 @@ const createContent = city => {
 
     return `<div class="store-list">
             <div class="list">
-                ${find.stores.map(store => `<div class="item">
+                ${find.stores.map(store => {
+                  console.log(${JSON.stringify({ [store['phone']]: store })})
+
+                  return `<div class="item">
                     <div class="u30DemiBold">${store.name}</div>
                     <div class="u20DemiBold">Available Model:</div>
                     <ul>
@@ -309,8 +312,10 @@ const createContent = city => {
                     </ul>
                     <div class="u20DemiBold">ADD:</div>
                     <div class="u20Medium address">${store.add}</div>
-                    <div class="my-button my-button-black" onclick="CalendarOpen('${city}', ${JSON.stringify({ [store['phone']]: store })})">Select</div>
-                </div>`).join('')}
+                    <div class="my-button my-button-black" onclick="CalendarOpen('${city}')">Select</div>
+                </div>`
+                
+                }).join('')}
             </div>
             <div id="storepoint-container" data-tags="de,Test Ride,${city}" data-map-id="162f21804990ff"></div></div>`
 }
