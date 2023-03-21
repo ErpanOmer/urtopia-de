@@ -288,10 +288,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   }
 
 const createContent = city => {
+    console.log('createContent', city)
     const find = testRides.find(c => c.city === city)
 
     if (!find) {
-        return console.log('city', city)
+        return
     }
 
     return `<div class="store-list">
@@ -314,7 +315,7 @@ const width = document.body.clientWidth
 const isMobile = width < 768
 
 function showTestRides (city) {
-  console.log('city', city)
+  console.log('showTestRides', city)
   // 如果城市传入为空
   if (!city) {
     return
