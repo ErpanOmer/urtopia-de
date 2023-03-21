@@ -161,7 +161,7 @@ const testRides = [
         timezone: "Mainz, Germany (GMT+1)",
         add: "Am Sonnigen Hang 21 55127 Mainz Germany",
         imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/testrideshopimg-Frankfurt.jpg?v=1667370876",
-        testrideSpot: "Frankfurt",
+        testrideSpot: "Frankfurt am Main",
         testRideSize: "M/L",
         businessHours: [
           "09:00–19:00",
@@ -180,7 +180,7 @@ const testRides = [
         timezone: "Mainz, Germany (GMT+1)",
         add: "IED Fulfillment-Service GmbH c/o Urtopia Service Otto-Hahn-Str. 5-7 63225 Langen",
         imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/testrideshopimg-Frankfurt.jpg?v=1667370876",
-        testrideSpot: "Frankfurt",
+        testrideSpot: "Frankfurt am Main",
         testRideSize: "",
         businessHours: [
           "09:00–19:00",
@@ -199,7 +199,7 @@ const testRides = [
         timezone: "Mainz, Germany (GMT+1)",
         add: "Alt Erlenbach 35, 60437 Frankfurt/Main",
         imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/testrideshopimg-Frankfurt.jpg?v=1667370876",
-        testrideSpot: "Frankfurt",
+        testrideSpot: "Frankfurt am Main",
         testRideSize: "L",
         businessHours: [
           "09:00–19:00",
