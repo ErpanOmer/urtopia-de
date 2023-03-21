@@ -150,8 +150,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   }
 
 function showTestRides (city, length) {
+  // 如果城市传入为空
   if (!city) {
     return
+  }
+
+  const find = testRides.find(c => c.city === city)
+
+  // 如果不存在
+  if (!find) {
+      return
   }
 
   // 如果当前城市只有一个test ride
