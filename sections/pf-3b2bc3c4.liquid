@@ -238,8 +238,7 @@ function showTestRides (city) {
   console.log('city', city)
 }
 
-const spotsTemplate = ''
-
+let spotsTemplate = ''
 testRides.forEach(city => {
   spotsTemplate += `<div class="store-section-item">
 	  <div class="store-section-shop-item" onclick="showTestRides('${city.city}')">
