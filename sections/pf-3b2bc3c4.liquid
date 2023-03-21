@@ -112,39 +112,43 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   let isSepcDay1={};
   
   function CalendarOpen(shopPoint,specific,isSpecDay,timetop) {
-	var shopList = shopInfoList[shopPoint]
-    var spec = specific || 0;
-	var specday = isSpecDay || false;
-	var timetp = timetop ||0;
-    laydate.render({
-      elem: '#urtopia-calendar',
-	  lang: 'en',
-	  min: 0,
-	  max: 90,
-	  showBottom: false,
-	  position: "static",
-	  showSide: true,
-	  showInfoBottom: true,
-	  type: 'date',
-	  shopList:shopList,
-	  isSpecDay:specday,
-	  TimePeriodization:timetp,
-	  //  shopInfo: shopInfo
-    });  
-  let body = {
-    trace_name: "testride-bookNow",
-	extras: {
-        "test1": shopPoint,
-    }
+	    var shopList = shopInfoList[shopPoint]
+      var spec = specific || 0;
+	    var specday = isSpecDay || false;
+	    var timetp = timetop ||0;
+
+      laydate.render({
+        elem: '#urtopia-calendar',
+	      lang: 'en',
+	      min: 0,
+	      max: 90,
+	      showBottom: false,
+	      position: "static",
+	      showSide: true,
+	      showInfoBottom: true,
+	      type: 'date',
+	      shopList:shopList,
+	      isSpecDay:specday,
+	      TimePeriodization:timetp,
+	      //  shopInfo: shopInfo
+      });
+
+      let body = {
+        trace_name: "testride-bookNow",
+	      extras: {
+          "test1": shopPoint,
+        }
+      }
+
+
+      fetch("https://api.newurtopia.com/third_part/book_ride/traces", {
+        method: "POST",
+        body: JSON.stringify(body),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      })
   }
-  fetch("https://api.newurtopia.com/third_part/book_ride/traces", {
-    method: "POST",
-    body: JSON.stringify(body),
-    headers: {
-      "Content-Type": "application/json",
-    },
-  })
-}
 
 function showTestRides (city, length) {
   if (!city) {
