@@ -551,7 +551,7 @@ const testRides = [
         ],
       },
       {
-        name: 'alf bikes & coffee',
+        name: 'Fahrradcafé GmbH',
         phone: '+004951145014270',
         email: 'post@fahrradcafe.de',
         timezone: "Mainz, Germany (GMT+1)",
@@ -559,6 +559,31 @@ const testRides = [
         imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20221214-125750.jpg?v=1670993888",
         testrideSpot: "Hannover",
         testRideSize: "L",
+        businessHours: [
+          "09:00–19:00",
+          "09:00–19:00",
+          "09:00–19:00",
+          "09:00–19:00",
+          "",
+          "09:00–19:00",
+          "09:00–19:00",
+        ],
+      },
+    ]
+  },
+  {
+    city: 'Essen',
+    cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/testride-munster.jpg?v=1671252848',
+    stores: [
+      {
+        name: 'Fahrradcafé GmbH',
+        phone: '+004920137648405',
+        email: 'team.mertes@fahrrad-essen.eu',
+        timezone: "Mainz, Germany (GMT+1)",
+        add: "Heidhauser Str. 72, 45239 Essen",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20221214-125750.jpg?v=1670993888",
+        testrideSpot: "Essen",
+        testRideSize: "M",
         businessHours: [
           "09:00–19:00",
           "09:00–19:00",
