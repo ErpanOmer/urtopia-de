@@ -350,7 +350,7 @@ function showTestRides (city, target) {
   var b=document.getElementsByTagName("script")[0];
   b.parentNode.insertBefore(a,b);
 
-  {% comment %} const box = new jBox('Modal', {
+  const box = new jBox('Modal', {
       width: isMobile ? 'calc(100vw - 30px)' : 1000,
       height: 'auto',
       title: `Book a Test Ride in ${city}`,
@@ -368,7 +368,7 @@ function showTestRides (city, target) {
             box.destroy()
         }, 100)
       }
-  }).setContent($('.store-list')).open() {% endcomment %}
+  }).setContent($('.store-list')).open()
 }
 
 let spotsTemplate = ''
