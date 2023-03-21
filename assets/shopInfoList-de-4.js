@@ -576,7 +576,7 @@ const testRides = [
     cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/testride-munster.jpg?v=1671252848',
     stores: [
       {
-        name: 'Fahrradcafé GmbH',
+        name: 'Fahrradladen Heimatliebe Mertes',
         phone: '+004920137648405',
         email: 'team.mertes@fahrrad-essen.eu',
         timezone: "Mainz, Germany (GMT+1)",
