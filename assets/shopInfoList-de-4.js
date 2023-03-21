@@ -482,5 +482,49 @@ const testRides = [
         ],
       },
     ]
+  },
+  {
+    city: 'Stuttgart',
+    cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/testride-munster.jpg?v=1671252848',
+    stores: [
+      {
+        name: 'e-bike schahl OHG Stuttgart',
+        phone: '+0049711 2865012',
+        email: 'info@e-bike-stuttgart.com',
+        timezone: "Mainz, Germany (GMT+1)",
+        add: "Schubartstraße 16-1870190 Stuttgart",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20221214-125750.jpg?v=1670993888",
+        testrideSpot: "Stuttgart",
+        testRideSize: "M",
+        businessHours: [
+          "09:00–19:00",
+          "09:00–19:00",
+          "09:00–19:00",
+          "09:00–19:00",
+          "",
+          "09:00–19:00",
+          "09:00–19:00",
+        ],
+      },
+      {
+        name: 'alf bikes & coffee',
+        phone: '+0049 178 149 47 22',
+        email: 'simon@alleliebenfahrrad.de',
+        timezone: "Mainz, Germany (GMT+1)",
+        add: "Villastraße 14, 70190 Stuttgart",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20221214-125750.jpg?v=1670993888",
+        testrideSpot: "Stuttgart",
+        testRideSize: "M",
+        businessHours: [
+          "09:00–19:00",
+          "09:00–19:00",
+          "09:00–19:00",
+          "09:00–19:00",
+          "",
+          "09:00–19:00",
+          "09:00–19:00",
+        ],
+      },
+    ]
   }
 ]
