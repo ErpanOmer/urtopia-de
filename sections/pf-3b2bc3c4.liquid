@@ -340,7 +340,7 @@ function showTestRides (city) {
     return CalendarOpen(city, { [find.stores[0]['phone']]: find.stores[0] })
   }
 
-  new jBox('Modal', {
+  const box = new jBox('Modal', {
       width: isMobile ? 'calc(100vw - 30px)' : 1000,
       height: 'auto',
       title: `Book a Test Ride in ${city}`,
@@ -353,6 +353,10 @@ function showTestRides (city) {
           var b=document.getElementsByTagName("script")[0];
           b.parentNode.insertBefore(a,b);
       },
+      onClose: function () {
+         STOREPOINT.destroy()
+         box.destroy()
+      }
   }).setContent(createContent(city)).open()
 }
 
