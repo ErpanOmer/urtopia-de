@@ -314,16 +314,17 @@ const width = document.body.clientWidth
 const isMobile = width < 768
 
 function showTestRides (city) {
+  console.log('city', city)
   // 如果城市传入为空
   if (!city) {
-    return console.log('city', city)
+    return
   }
 
   const find = testRides.find(c => c.city === city)
 
   // 如果匹配不到城市 或者 stores 小于1
   if (!find || find.stores.length < 1) {
-      return console.log('city', city)
+      return
   }
 
   // 如果当前城市只有一个test ride
