@@ -538,7 +538,7 @@ const testRides = [
         timezone: "Mainz, Germany (GMT+1)",
         add: "Fröbelstraße 130451 Hannover",
         imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20221214-125750.jpg?v=1670993888",
-        testrideSpot: "Stuttgart",
+        testrideSpot: "Hannover",
         testRideSize: "L",
         businessHours: [
           "09:00–19:00",
@@ -552,13 +552,13 @@ const testRides = [
       },
       {
         name: 'alf bikes & coffee',
-        phone: '+0049 178 149 47 22',
+        phone: '+004951145014270',
         email: 'simon@alleliebenfahrrad.de',
         timezone: "Mainz, Germany (GMT+1)",
-        add: "Villastraße 14, 70190 Stuttgart",
+        add: "Asternstraße 230167 Hannover",
         imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20221214-125750.jpg?v=1670993888",
-        testrideSpot: "Stuttgart",
-        testRideSize: "M",
+        testrideSpot: "Hannover",
+        testRideSize: "L",
         businessHours: [
           "09:00–19:00",
           "09:00–19:00",
