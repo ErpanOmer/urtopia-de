@@ -248,7 +248,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="store-section-title">Monthly Testride Spots</div>
   <div class="store-section-content"></div>
 </div>
-<div class="hide"></div>
 <script>
   let isSepcDay1={};
   
@@ -341,22 +340,18 @@ function showTestRides (city, target) {
     return CalendarOpen(city, { [find.stores[0]['phone']]: find.stores[0] })
   }
 
-
-  $('.hide').html(createContent(city))
-  var a=document.createElement("script");
-  a.type="text/javascript";
-  a.defer=!0;
-  a.src="https://cdn.storepoint.co/api/v1/js/162f21804990ff.js";
-  var b=document.getElementsByTagName("script")[0];
-  b.parentNode.insertBefore(a,b);
-
-  setTimeout(() => {
-    const box = new jBox('Modal', {
+  const box = new jBox('Modal', {
       width: isMobile ? 'calc(100vw - 30px)' : 1000,
       height: 'auto',
       title: `Book a Test Ride in ${city}`,
       closeButton: 'title',
       onCreated: function () {
+          var a=document.createElement("script");
+          a.type="text/javascript";
+          a.defer=!0;
+          a.src="https://cdn.storepoint.co/api/v1/js/162f21804990ff.js";
+          var b=document.getElementsByTagName("script")[0];
+          b.parentNode.insertBefore(a,b);
       },
       onClose: function () {
          setTimeout(() => {
@@ -364,8 +359,7 @@ function showTestRides (city, target) {
             box.destroy()
         }, 100)
       }
-  }).setContent($('.hide .store-list')).open()
-  }, 5000)
+  }).setContent(createContent(city)).open()
 }
 
 let spotsTemplate = ''
