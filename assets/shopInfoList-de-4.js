@@ -414,4 +414,29 @@ const testRides = [
       }
     ]
   },
+  {
+    city: 'Köln',
+    cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/testride-munster.jpg?v=1671252848',
+    stores: [
+      {
+        name: 'TP: Hartmut Geyssel',
+        phone: '+0049 611 1370 5755',
+        email: 'urtopiakoeln@hophopik.com',
+        timezone: "Mainz, Germany (GMT+1)",
+        add: "Neusser Straße 35, 50670 Köln",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20221214-125750.jpg?v=1670993888",
+        testrideSpot: "Köln",
+        testRideSize: "M",
+        businessHours: [
+          "09:00–19:00",
+          "09:00–19:00",
+          "09:00–19:00",
+          "09:00–19:00",
+          "",
+          "09:00–19:00",
+          "09:00–19:00",
+        ],
+      }
+    ]
+  },
 ]
