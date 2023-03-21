@@ -183,13 +183,13 @@ const testRides = [
         testrideSpot: "Frankfurt am Main",
         testRideSize: "",
         businessHours: [
-          "09:00–19:00",
-          "09:00–19:00",
-          "09:00–19:00",
-          "09:00–19:00",
           "",
-          "09:00–19:00",
-          "09:00–19:00",
+          "09:00–18:00",
+          "09:00–18:00",
+          "09:00–18:00",
+          "09:00–18:00",
+          "09:00–18:00",
+          "",
         ],
       },
       {
@@ -201,15 +201,7 @@ const testRides = [
         imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/testrideshopimg-Frankfurt.jpg?v=1667370876",
         testrideSpot: "Frankfurt am Main",
         testRideSize: "L",
-        businessHours: [
-          "09:00–19:00",
-          "09:00–19:00",
-          "09:00–19:00",
-          "09:00–19:00",
-          "",
-          "09:00–19:00",
-          "09:00–19:00",
-        ],
+        
       }
     ]
   },
@@ -217,7 +209,15 @@ const testRides = [
     city: 'Düsseldorf',
     cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20221214-125750.jpg?v=1670993888',
     stores: [
-      {
+      {businessHours: [
+        "",
+        "10:00–18:00",
+        "10:00–18:00",
+        "10:00–15:00",
+        "10:00–18:00",
+        "10:00–18:00",
+        "10:00–15:00",
+      ],
         name: 'DownTownBikes',
         phone: '+0049211 26194969',
         email: 'david@downtownbikes.de',
@@ -651,7 +651,7 @@ const testRides = [
     cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/testride-munster.jpg?v=1671252848',
     stores: [
       {
-        name: 'bike Store',
+        name: 'RADFAHRWERK',
         phone: '+00491632379785',
         email: 'info@radfahrwerk.de',
         timezone: "Mainz, Germany (GMT+1)",
