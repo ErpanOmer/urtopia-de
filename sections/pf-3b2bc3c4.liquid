@@ -358,7 +358,7 @@ function showTestRides (city, target) {
       onClose: function () {
          setTimeout(() => {
             STOREPOINT.destroy()
-            box.destroy()
+            {% comment %} box.destroy() {% endcomment %}
         }, 100)
       }
   }).setContent(createContent(city)).open()
