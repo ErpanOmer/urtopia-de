@@ -315,7 +315,7 @@ const createContent = city => {
                 
                 }).join('')}
             </div>
-            <div id="storepoint-container" data-tags="de,Test Ride,frankfurt am main" data-map-id="162f21804990ff"></div></div>`
+            <div id="storepoint-container" data-tags="de,Test Ride,${city}" data-map-id="162f21804990ff"></div></div>`
 }
 
 const width = document.body.clientWidth
@@ -351,9 +351,7 @@ function showTestRides (city, target) {
           a.type="text/javascript";
           a.src="https://cdn.storepoint.co/api/v1/js/162f21804990ff.js";
           var b=document.getElementsByTagName("script")[0];
-          setTimeout(() => {
-            b.parentNode.insertBefore(a,b)
-          }, 1000)
+          b.parentNode.insertBefore(a,b);
       },
       onClose: function () {
          setTimeout(() => {
