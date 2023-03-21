@@ -394,11 +394,11 @@ const testRides = [
     cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/testride-munster.jpg?v=1671252848',
     stores: [
       {
-        name: 'Pirate',
-        phone: '+004941018194571',
-        email: 'ron@pirate.biz',
+        name: 'TP: Wilfried Beurich',
+        phone: '+0174 9610700',
+        email: 'wbeurich@muenster.de',
         timezone: "Mainz, Germany (GMT+1)",
-        add: "Dockenhudener Chaussee 11925469 Halstenbek",
+        add: "Wilfried Beurich",
         imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20221214-125750.jpg?v=1670993888",
         testrideSpot: "Münster",
         testRideSize: "L",
