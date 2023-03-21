@@ -178,7 +178,7 @@ const testRides = [
         phone: '+004961032076414',
         email: 'yiming.song@iedau.com',
         timezone: "Mainz, Germany (GMT+1)",
-        add: "IED Fulfillment-Service GmbH c/o Urtopia Service Otto-Hahn-Str. 5-7 63225 Langen",
+        add: "Otto-Hahn-Str. 5-7 63225 Langen",
         imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/testrideshopimg-Frankfurt.jpg?v=1667370876",
         testrideSpot: "Frankfurt am Main",
         testRideSize: "",
@@ -219,13 +219,13 @@ const testRides = [
     stores: [
       {
         name: 'TP: Stefan Gehrke',
-        phone: '+0049211 26194969',
-        email: 'david@downtownbikes.de',
+        phone: '+0049 30-91706139',
+        email: 'urtopia@bfnd.de',
         timezone: "Mainz, Germany (GMT+1)",
-        add: "Immermannstraße 3440210 Düsseldorf",
+        add: "buero fuer neues denken, Bötzowstr. 18, 10407 Berlin",
         imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/testrideshopimg-Frankfurt.jpg?v=1667370876",
         testrideSpot: "Berlin",
-        testRideSize: "L",
+        testRideSize: "M",
         businessHours: [
           "09:00–19:00",
           "09:00–19:00",
