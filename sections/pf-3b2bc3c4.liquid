@@ -111,8 +111,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <script>
   let isSepcDay1={};
   
-  function CalendarOpen(shopPoint, isSpecDay, timetop) {
-	    var shopList = shopInfoList[shopPoint]
+  function CalendarOpen(shopPoint, shop, isSpecDay, timetop) {
 	    var specday = isSpecDay || false;
 	    var timetp = timetop ||0;
 
@@ -126,7 +125,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 	      showSide: true,
 	      showInfoBottom: true,
 	      type: 'date',
-	      shopList:shopList,
+	      shopList: shop,
 	      isSpecDay:specday,
 	      TimePeriodization:timetp,
 	      //  shopInfo: shopInfo
@@ -164,9 +163,8 @@ function showTestRides (city) {
 
   // 如果当前城市只有一个test ride
   if (find.stores.length !== 1) {
-    return CalendarOpen({
-      [find.stores[0]['phone']]: find.stores[0] 
-    })
+    console.log({ [find.stores[0]['phone']]: find.stores[0] })
+    return CalendarOpen(city, { [find.stores[0]['phone']]: find.stores[0] })
   }
 }
 
