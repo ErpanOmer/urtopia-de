@@ -238,10 +238,10 @@ function showTestRides (city) {
   console.log('city', city)
 }
 
-const spots = ''
+const spotsTemplate = ''
 
 testRides.forEach(city => {
-  spots += `<div class="store-section-item">
+  spotsTemplate += `<div class="store-section-item">
 	  <div class="store-section-shop-item" onclick="showTestRides('${city.city}')">
 		<div class="img-mask">
 		  <div class="shop-item-img lozad" data-background-image="${city.cityBackground}">
@@ -254,7 +254,7 @@ testRides.forEach(city => {
 	</div>`
 })
 
-console.log(testRides)
+console.log(spotsTemplate)
 
 
 </script>
