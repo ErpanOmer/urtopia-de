@@ -341,6 +341,9 @@ function showTestRides (city, target) {
     return CalendarOpen(city, { [find.stores[0]['phone']]: find.stores[0] })
   }
 
+
+  $('.hide').html(createContent(city))
+
   const box = new jBox('Modal', {
       width: isMobile ? 'calc(100vw - 30px)' : 1000,
       height: 'auto',
@@ -363,7 +366,7 @@ function showTestRides (city, target) {
             box.destroy()
         }, 100)
       }
-  }).setContent(createContent(city)).open()
+  }).setContent($('.store-list')).open()
 }
 
 let spotsTemplate = ''
