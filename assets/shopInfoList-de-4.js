@@ -93,7 +93,7 @@ const shopInfoList = {
       testRideSize: "M",
       testrideSpot: "Berlin",
       imgUrl:
-        "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20221214-125750.jpg?v=1670993888",
+        "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Dusseldorf.jpg?v=1679406972",
       add: "buero fuer neues denken, Bötzowstr. 18, 10407 Berlin",
       timezone: "Berlin, Germany (GMT+1)",
       email: "urtopia@bfnd.de",
@@ -215,7 +215,7 @@ const testRides = [
   },
   {
     city: 'Düsseldorf',
-    cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20221214-125750.jpg?v=1670993888',
+    cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Dusseldorf.jpg?v=1679406972',
     stores: [
       {
         name: 'DownTownBikes',
@@ -223,7 +223,7 @@ const testRides = [
         email: 'david@downtownbikes.de',
         timezone: "Mainz, Germany (GMT+1)",
         add: "Immermannstraße 3440210 Düsseldorf",
-        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20221214-125750.jpg?v=1670993888",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Dusseldorf.jpg?v=1679406972",
         testrideSpot: "Düsseldorf",
         testRideSize: "L",
         businessHours: [
@@ -240,7 +240,7 @@ const testRides = [
   },
   {
     city: 'Berlin',
-    cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20221214-125750.jpg?v=1670993888',
+    cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Dusseldorf.jpg?v=1679406972',
     stores: [
       {
         name: 'TP: Stefan Gehrke',
@@ -248,7 +248,7 @@ const testRides = [
         email: 'urtopia@bfnd.de',
         timezone: "Mainz, Germany (GMT+1)",
         add: "buero fuer neues denken, Bötzowstr. 18, 10407 Berlin",
-        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20221214-125750.jpg?v=1670993888",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Dusseldorf.jpg?v=1679406972",
         testrideSpot: "Berlin",
         testRideSize: "M",
         businessHours: [
@@ -267,7 +267,7 @@ const testRides = [
         email: 'fahrradladen-wulf@gmx.de',
         timezone: "Mainz, Germany (GMT+1)",
         add: "Kopenhagener Straße 73, 10437 Berlin",
-        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20221214-125750.jpg?v=1670993888",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Dusseldorf.jpg?v=1679406972",
         testrideSpot: "Berlin",
         testRideSize: "L",
         businessHours: [
@@ -286,7 +286,7 @@ const testRides = [
         email: 'info@duundich-bikes.de',
         timezone: "Mainz, Germany (GMT+1)",
         add: "Erich-Weinert-Str. 15010409 Berlin",
-        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20221214-125750.jpg?v=1670993888",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Dusseldorf.jpg?v=1679406972",
         testrideSpot: "Berlin",
         testRideSize: "M",
         businessHours: [
@@ -303,7 +303,7 @@ const testRides = [
   },
   {
     city: 'Hamburg',
-    cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20221214-125750.jpg?v=1670993888',
+    cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Dusseldorf.jpg?v=1679406972',
     stores: [
       {
         name: 'Pirate',
@@ -311,7 +311,7 @@ const testRides = [
         email: 'ron@pirate.biz',
         timezone: "Mainz, Germany (GMT+1)",
         add: "Dockenhudener Chaussee 11925469 Halstenbek",
-        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20221214-125750.jpg?v=1670993888",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Dusseldorf.jpg?v=1679406972",
         testrideSpot: "Düsseldorf",
         testRideSize: "L",
         businessHours: [
@@ -336,7 +336,7 @@ const testRides = [
         email: 'len.lucas@gmx.de',
         timezone: "Mainz, Germany (GMT+1)",
         add: "",
-        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20221214-125750.jpg?v=1670993888",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Dusseldorf.jpg?v=1679406972",
         testrideSpot: "München",
         testRideSize: "M",
         businessHours: [
@@ -355,7 +355,7 @@ const testRides = [
         email: 'radsport.holzbauer@web.de',
         timezone: "Mainz, Germany (GMT+1)",
         add: "Regerplatz 481541 München",
-        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20221214-125750.jpg?v=1670993888",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Dusseldorf.jpg?v=1679406972",
         testrideSpot: "München",
         testRideSize: "L",
         businessHours: [
@@ -374,7 +374,7 @@ const testRides = [
         email: 'info@supercycles.de',
         timezone: "Mainz, Germany (GMT+1)",
         add: "Am Mitterfeld 381829 München",
-        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20221214-125750.jpg?v=1670993888",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Dusseldorf.jpg?v=1679406972",
         testrideSpot: "München",
         testRideSize: "L",
         businessHours: [
@@ -399,7 +399,7 @@ const testRides = [
         email: 'wbeurich@muenster.de',
         timezone: "Mainz, Germany (GMT+1)",
         add: "Wilfried Beurich",
-        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20221214-125750.jpg?v=1670993888",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Dusseldorf.jpg?v=1679406972",
         testrideSpot: "Münster",
         testRideSize: "L",
         businessHours: [
@@ -424,7 +424,7 @@ const testRides = [
         email: 'urtopiakoeln@hophopik.com',
         timezone: "Mainz, Germany (GMT+1)",
         add: "Neusser Straße 35, 50670 Köln",
-        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20221214-125750.jpg?v=1670993888",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Dusseldorf.jpg?v=1679406972",
         testrideSpot: "Köln",
         testRideSize: "M",
         businessHours: [
@@ -443,7 +443,7 @@ const testRides = [
         email: 'verkauf@lastenrad-koeln.de',
         timezone: "Mainz, Germany (GMT+1)",
         add: "Rothgerberbach 2, 50676 Köln",
-        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20221214-125750.jpg?v=1670993888",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Dusseldorf.jpg?v=1679406972",
         testrideSpot: "Köln",
         testRideSize: "M/L",
         businessHours: [
@@ -468,7 +468,7 @@ const testRides = [
         email: 'greenturtle-germany@web.de',
         timezone: "Mainz, Germany (GMT+1)",
         add: "Weißestr. 2604299 Leipzig",
-        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20221214-125750.jpg?v=1670993888",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Dusseldorf.jpg?v=1679406972",
         testrideSpot: "Leipzig",
         testRideSize: "M",
         businessHours: [
@@ -493,7 +493,7 @@ const testRides = [
         email: 'info@e-bike-stuttgart.com',
         timezone: "Mainz, Germany (GMT+1)",
         add: "Schubartstraße 16-1870190 Stuttgart",
-        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20221214-125750.jpg?v=1670993888",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Dusseldorf.jpg?v=1679406972",
         testrideSpot: "Stuttgart",
         testRideSize: "M",
         businessHours: [
@@ -512,7 +512,7 @@ const testRides = [
         email: 'simon@alleliebenfahrrad.de',
         timezone: "Mainz, Germany (GMT+1)",
         add: "Villastraße 14, 70190 Stuttgart",
-        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20221214-125750.jpg?v=1670993888",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Dusseldorf.jpg?v=1679406972",
         testrideSpot: "Stuttgart",
         testRideSize: "M",
         businessHours: [
@@ -537,7 +537,7 @@ const testRides = [
         email: 'linden@fahrradcafe.de',
         timezone: "Mainz, Germany (GMT+1)",
         add: "Fröbelstraße 130451 Hannover",
-        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20221214-125750.jpg?v=1670993888",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Dusseldorf.jpg?v=1679406972",
         testrideSpot: "Hannover",
         testRideSize: "L",
         businessHours: [
@@ -556,7 +556,7 @@ const testRides = [
         email: 'post@fahrradcafe.de',
         timezone: "Mainz, Germany (GMT+1)",
         add: "Asternstraße 230167 Hannover",
-        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20221214-125750.jpg?v=1670993888",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Dusseldorf.jpg?v=1679406972",
         testrideSpot: "Hannover",
         testRideSize: "L",
         businessHours: [
@@ -581,7 +581,7 @@ const testRides = [
         email: 'team.mertes@fahrrad-essen.eu',
         timezone: "Mainz, Germany (GMT+1)",
         add: "Heidhauser Str. 72, 45239 Essen",
-        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20221214-125750.jpg?v=1670993888",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Dusseldorf.jpg?v=1679406972",
         testrideSpot: "Essen",
         testRideSize: "M",
         businessHours: [
@@ -606,7 +606,7 @@ const testRides = [
         email: 'bikestore@resewski.de',
         timezone: "Mainz, Germany (GMT+1)",
         add: "Otto-Mohr-Straße 4, 01237 Dresden",
-        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20221214-125750.jpg?v=1670993888",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Dusseldorf.jpg?v=1679406972",
         testrideSpot: "Dresden",
         testRideSize: "M",
         businessHours: [
@@ -631,7 +631,7 @@ const testRides = [
         email: 'bikestore@resewski.de',
         timezone: "Mainz, Germany (GMT+1)",
         add: "Rennweg 7, 90489 Nürnberg",
-        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20221214-125750.jpg?v=1670993888",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Dusseldorf.jpg?v=1679406972",
         testrideSpot: "Nürnberg",
         testRideSize: "M",
         businessHours: [
@@ -656,7 +656,7 @@ const testRides = [
         email: 'info@radfahrwerk.de',
         timezone: "Mainz, Germany (GMT+1)",
         add: "St. Emmerams Ring 493309 Kelheim",
-        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20221214-125750.jpg?v=1670993888",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Dusseldorf.jpg?v=1679406972",
         testrideSpot: "Regensburg",
         testRideSize: "M",
         businessHours: [
