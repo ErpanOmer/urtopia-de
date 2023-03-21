@@ -157,8 +157,8 @@ function showTestRides (city) {
 
   const find = testRides.find(c => c.city === city)
 
-  // 如果匹配不到城市
-  if (!find) {
+  // 如果匹配不到城市 或者 stores 小于1
+  if (!find || find.stores.length < 1) {
       return console.log('city', city)
   }
 
