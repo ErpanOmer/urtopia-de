@@ -153,6 +153,10 @@ const testRides = [
   {
     city: 'Frankfurt am Main',
     cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Frankfurt_am_Main.jpg?v=1679406972',
+    series: [
+      'Urtopia Chord',
+      'Urtopia Carbon 1'
+    ],
     stores: [
       {
         name: 'TP',
