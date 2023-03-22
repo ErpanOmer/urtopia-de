@@ -355,7 +355,7 @@ const testRides = [
         phone: '+0049 1512 8804444',
         email: 'len.lucas@gmx.de',
         timezone: "Mainz, Germany (GMT+1)",
-        add: "",
+        add: "Killerstrasse 15 82166 Graefelfing, Munich, Bavaria",
         imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Munchen.jpg?v=1679406972",
         testrideSpot: "München",
         testRideSize: "M",
