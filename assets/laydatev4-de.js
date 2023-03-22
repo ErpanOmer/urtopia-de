@@ -1965,6 +1965,7 @@
       (function () {
         var html = [];
         html.push(
+          '<div>Available Model:</div>'
           '<div class="info-title">Test ride bike - Carbon E-Bike Size <span class="no-span">' +
             options.shopInfo.testRideSize +
             "</span></div>"
