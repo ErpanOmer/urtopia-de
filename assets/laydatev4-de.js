@@ -2640,6 +2640,12 @@
       if (options.shopInfo.name === "Stefan Gehrke" && YMD.join("-") === "2023-3-10") {
         item.addClass("disabled-day");
       }
+
+      if (options.shopInfo.disableDate && options.shopInfo.disableDate.includes(YMD.join("-"))) {
+        item.addClass("disabled-day");
+      }
+
+
       item.attr("lay-ymd", YMD.join("-")).html(YMD[2]);
       //改-增加每日星期
       item.attr("data-day", index_ % 7);
