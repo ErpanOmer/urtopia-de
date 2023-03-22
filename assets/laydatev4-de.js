@@ -3073,7 +3073,7 @@
         lay(divBookingFormSubmit).html(
           (function () {
             var html = [];
-            html.push('<button class="submit-btn">Pick a Date</button>');
+            html.push('<button class="submit-btn">Confirm Booking</button>');
             return html.join("");
           })()
         );
