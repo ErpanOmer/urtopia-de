@@ -276,9 +276,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="store-section-content"></div>
 </div>
 <script>
-  let isSepcDay1={};
+  let box = null
   
   function CalendarOpen(shopPoint, shop, isSpecDay = false, timetp = 0) {
+      box && box.close()
+
       laydate.render({
         elem: '#urtopia-calendar',
 	      lang: 'en',
@@ -364,7 +366,7 @@ function showTestRides (city, target) {
     return CalendarOpen(city, { [find.stores[0]['phone']]: find.stores[0] })
   }
 
-  const box = new jBox('Modal', {
+  box = new jBox('Modal', {
       width: isMobile ? 'calc(100vw - 30px)' : 1000,
       height: 'auto',
       title: `Book a Test Ride in ${city}`,
