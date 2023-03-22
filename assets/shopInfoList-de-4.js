@@ -220,6 +220,10 @@ const testRides = [
   {
     city: 'Düsseldorf',
     cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Dusseldorf.jpg?v=1679406972',
+    series: [
+      'Urtopia Chord',
+      'Urtopia Carbon 1'
+    ],
     stores: [
       {
         name: 'DownTownBikes',
@@ -245,6 +249,10 @@ const testRides = [
   {
     city: 'Berlin',
     cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Berlin.jpg?v=1679406972',
+    series: [
+      'Urtopia Chord',
+      'Urtopia Carbon 1'
+    ],
     stores: [
       {
         name: 'TP: Stefan Gehrke',
@@ -308,6 +316,10 @@ const testRides = [
   {
     city: 'Hamburg',
     cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Hamburg.jpg?v=1679406972',
+    series: [
+      'Urtopia Chord',
+      'Urtopia Carbon 1'
+    ],
     stores: [
       {
         name: 'Pirate',
@@ -333,6 +345,10 @@ const testRides = [
   {
     city: 'München',
     cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Munchen.jpg?v=1679406972',
+    series: [
+      'Urtopia Chord',
+      'Urtopia Carbon 1'
+    ],
     stores: [
       {
         name: 'TP: Len Lucas',
@@ -396,6 +412,10 @@ const testRides = [
   {
     city: 'Münster',
     cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/testride-munster.jpg?v=1671252848',
+    series: [
+      'Urtopia Chord',
+      'Urtopia Carbon 1'
+    ],
     stores: [
       {
         name: 'TP: Wilfried Beurich',
@@ -421,6 +441,10 @@ const testRides = [
   {
     city: 'Köln',
     cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Koln.jpg?v=1679406972',
+    series: [
+      'Urtopia Chord',
+      'Urtopia Carbon 1'
+    ],
     stores: [
       {
         name: 'TP: Hartmut Geyssel',
@@ -465,6 +489,10 @@ const testRides = [
   {
     city: 'Leipzig',
     cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Leipzig.jpg?v=1679406972',
+    series: [
+      'Urtopia Chord',
+      'Urtopia Carbon 1'
+    ],
     stores: [
       {
         name: 'Sportshop Bittner',
@@ -490,6 +518,10 @@ const testRides = [
   {
     city: 'Stuttgart',
     cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Stuttgart.jpg?v=1679406972',
+    series: [
+      'Urtopia Chord',
+      'Urtopia Carbon 1'
+    ],
     stores: [
       {
         name: 'e-bike schahl OHG Stuttgart',
@@ -534,6 +566,10 @@ const testRides = [
   {
     city: 'Hannover',
     cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Hannover.jpg?v=1679406972',
+    series: [
+      'Urtopia Chord',
+      'Urtopia Carbon 1'
+    ],
     stores: [
       {
         name: 'Fahrradcafé GmbH',
@@ -578,6 +614,10 @@ const testRides = [
   {
     city: 'Essen',
     cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Essen.jpg?v=1679406971',
+    series: [
+      'Urtopia Chord',
+      'Urtopia Carbon 1'
+    ],
     stores: [
       {
         name: 'Fahrradladen Heimatliebe Mertes',
@@ -603,6 +643,10 @@ const testRides = [
   {
     city: 'Dresden',
     cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Dresden.jpg?v=1679406972',
+    series: [
+      'Urtopia Chord',
+      'Urtopia Carbon 1'
+    ],
     stores: [
       {
         name: 'bike Store',
@@ -628,6 +672,10 @@ const testRides = [
   {
     city: 'Nürnberg',
     cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Nurnberg.jpg?v=1679406972',
+    series: [
+      'Urtopia Chord',
+      'Urtopia Carbon 1'
+    ],
     stores: [
       {
         name: 'P.O.S. Partner of Sports Nürnberg',
@@ -653,6 +701,10 @@ const testRides = [
   {
     city: 'Regensburg',
     cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Regensburg.jpg?v=1679406972',
+    series: [
+      'Urtopia Chord',
+      'Urtopia Carbon 1'
+    ],
     stores: [
       {
         name: 'RADFAHRWERK',
