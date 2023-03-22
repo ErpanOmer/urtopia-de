@@ -1952,7 +1952,7 @@
     var divShopName = lay.elem("div", {
       class: "shop-name",
     });
-    lay(divShopName).html(options.shopInfo.name);
+    lay(divShopName).html('Book a Test Ride');
     var divShopImg = lay.elem("img", {
       class: "shop-img",
       src: options.shopInfo.imgUrl,
@@ -1989,7 +1989,7 @@
     //   })()
     // );
 
-    const template = `<div class="u30DemiBold">ELV Bikes</div>
+    const template = `<div class="u30DemiBold">${options.shopInfo.name}</div>
     <div class="u20DemiBold">Available Model:</div>
     <ul>
         <li class="u20Medium">Carbon One Size ${options.shopInfo.testRideSize}</li>
