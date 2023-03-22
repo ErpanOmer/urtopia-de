@@ -399,7 +399,7 @@ const testRides = [
         email: 'wbeurich@muenster.de',
         timezone: "Mainz, Germany (GMT+1)",
         add: "Wilfried Beurich",
-        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Dusseldorf.jpg?v=1679406972",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/testride-munster.jpg?v=1671252848",
         testrideSpot: "Münster",
         testRideSize: "L",
         businessHours: [
