@@ -1961,33 +1961,52 @@
     var divShopDetail = lay.elem("div", {
       class: "shop-detail",
     });
-    lay(divShopDetail).html(
-      (function () {
-        var html = [];
-        html.push(
-          '<div class="info-title">Test ride bike - Carbon E-Bike Size <span class="no-span">' +
-            options.shopInfo.testRideSize +
-            "</span></div>"
-        );
-        html.push(
-          '<div class="info-title">ADD: <span>' +
-            options.shopInfo.add +
-            "</span></div>"
-        );
-        html.push(
-          '<div class="info-title">Email: <span>' +
-            options.shopInfo.email +
-            "</span></div>"
-        );
-        html.push(
-          '<div class="info-title">Phone: <span>' +
-            options.shopInfo.phone +
-            "</span></div>"
-        );
+    // lay(divShopDetail).html(
+    //   (function () {
+    //     var html = [];
+    //     html.push(
+    //       '<div class="info-title">Test ride bike - Carbon E-Bike Size <span class="no-span">' +
+    //         options.shopInfo.testRideSize +
+    //         "</span></div>"
+    //     );
+    //     html.push(
+    //       '<div class="info-title">ADD: <span>' +
+    //         options.shopInfo.add +
+    //         "</span></div>"
+    //     );
+    //     html.push(
+    //       '<div class="info-title">Email: <span>' +
+    //         options.shopInfo.email +
+    //         "</span></div>"
+    //     );
+    //     html.push(
+    //       '<div class="info-title">Phone: <span>' +
+    //         options.shopInfo.phone +
+    //         "</span></div>"
+    //     );
 
-        return html.join("");
-      })()
-    );
+    //     return html.join("");
+    //   })()
+    // );
+
+    lay(divShopDetail).html(`div class="u30DemiBold">ELV Bikes</div>
+    <div class="u20DemiBold">Available Model:</div>
+    <ul>
+        <li class="u20Medium">Carbon One Size M/L</li>
+    </ul>
+    <div class="item">
+        <label class="u20DemiBold">ADD:</label>
+        <span class="u20Medium">425 S. Broadway, Los Angeles, CA 90013</span>
+    </div>
+    <div class="item">
+        <label class="u20DemiBold">Email:</label>
+        <span class="u20Medium">425 S. Broadway, Los Angeles, CA 90013</span>
+    </div>
+    <div class="item">
+        <label class="u20DemiBold">Phone:</label>
+        <span class="u20Medium">425 S. Broadway, Los Angeles, CA 90013</span>
+    </div>`)
+
     elemShop[0].appendChild(divShopName);
     elemShop[0].appendChild(divShopImg);
     elemShop[0].appendChild(divShopDetail);
