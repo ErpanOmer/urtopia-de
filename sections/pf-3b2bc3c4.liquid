@@ -382,6 +382,7 @@ testRides.forEach(city => {
 		</div>
 		<div class="shop-item-series">
       <span>Available Model:</span><br>
+      ${city?.series.map(s => `<span>${s}</span>`).join('')}
     </div>
 	  </div>
 	</div>`
