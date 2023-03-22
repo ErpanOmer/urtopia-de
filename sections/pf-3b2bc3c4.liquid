@@ -251,10 +251,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <script>
   let isSepcDay1={};
   
-  function CalendarOpen(shopPoint, shop, isSpecDay, timetop) {
-	    var specday = isSpecDay || false;
-	    var timetp = timetop ||0;
-
+  function CalendarOpen(shopPoint, shop, isSpecDay = false, timetp = 0) {
       laydate.render({
         elem: '#urtopia-calendar',
 	      lang: 'en',
@@ -266,7 +263,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 	      showInfoBottom: true,
 	      type: 'date',
 	      shopList: typeof shop === 'string' ? JSON.parse(shop.replace(/'/g, '"')) : shop,
-	      isSpecDay:specday,
+	      isSpecDay,
 	      TimePeriodization:timetp,
 	      //  shopInfo: shopInfo
       });
