@@ -1992,11 +1992,11 @@
     const template = `<div class="u30DemiBold">ELV Bikes</div>
     <div class="u20DemiBold">Available Model:</div>
     <ul>
-        <li class="u20Medium">Carbon One Size M/L</li>
+        <li class="u20Medium">Carbon One Size ${options.shopInfo.testRideSize}</li>
     </ul>
     <div class="item">
         <label class="u20DemiBold">ADD:</label>
-        <span class="u20Medium">425 S. Broadway, Los Angeles, CA 90013</span>
+        <span class="u20Medium">${options.shopInfo.add}</span>
     </div>
     <div class="item">
         <label class="u20DemiBold">Email:</label>
