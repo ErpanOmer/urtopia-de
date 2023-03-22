@@ -2000,11 +2000,11 @@
     </div>
     <div class="item">
         <label class="u20DemiBold">Email:</label>
-        <span class="u20Medium">425 S. Broadway, Los Angeles, CA 90013</span>
+        <span class="u20Medium">${options.shopInfo.email}</span>
     </div>
     <div class="item">
         <label class="u20DemiBold">Phone:</label>
-        <span class="u20Medium">425 S. Broadway, Los Angeles, CA 90013</span>
+        <span class="u20Medium">${options.shopInfo.phone}</span>
     </div>`
 
     lay(divShopDetail).html(template)
