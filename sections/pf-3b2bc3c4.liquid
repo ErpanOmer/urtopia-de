@@ -23,7 +23,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   }
   .store-section-shop-item{
 	cursor:pointer;
-	padding:20px;
 	background:#F2F2F2;
 	border-radius:10px;
 	overflow:hidden;
@@ -36,16 +35,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 	transform:scale(1.05);
   }
   .store-section-shop-item:hover .shop-item-img:after{
-	background:rgba(0,0,0,0.15)
+	   
   }
   .img-mask{
 	  width:100%;
 	  height:auto;
 	  aspect-ratio:157/90;
-	overflow:hidden;
-	border-radius:10px;
-
+	  overflow:hidden;
+	  border-radius:10px;
+    position: relative;
+    border-radius: 10px 10px 0 0;
   }
+
   .shop-item-img{
 	width:100%;
 	height:100%;
@@ -65,10 +66,35 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 	border-radius:10px;
 	  aspect-ratio:157/90;
     transition: background 400ms cubic-bezier(0.4, 0, 0.25, 1) 0ms;
+    background:rgba(0,0,0,0.25);
 }
-  .shop-item-name{
-	margin-top: 12px;
+  .shop-item-name {
+    position: absolute;
+    bottom: 3%;
+    left: 6%;
+    color: #fff;
+    z-index: 1;
   }
+
+  .shop-item-series {
+    text-align: left;
+    display: flex;
+    width: 100%;
+    padding: 3% 0 6% 6%;
+    flex-direction: column;
+    font-size: 24px;
+    line-height: 28px;
+  }
+
+
+  .shop-item-series span + span {
+    margin-top: 6px;
+    font-size: 20px;
+    line-height: 24px;
+    font-weight: normal;
+  }
+
+
   @media screen and (max-width:750px){
 	.store-section-title{
 	  font: 600 24px/30px Urbane; 
@@ -81,152 +107,370 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 	  margin:0px;
   	}
   	.store-section-shop-item{
-	  height: calc(100% - 9px);
-	  font: 600 20px/25px Urbane;
-	  padding:9px;
-	  margin:4px;
+      height: calc(100% - 9px);
+      font: 600 20px/25px Urbane;
+      margin:4px;
   	}
-  	.store-section-shop-item:hover .shop-item-img{
-  	}
-  	.store-section-shop-item:hover .shop-item-img:after{
-  	}
-  	.shop-item-img{
-	}
-  	.shop-item-img:after {
-	}
-	.shop-item-name{
-	
-  }
+
+
+    .shop-item-series {
+      padding: 6px 0 12px 12px;
+      font-size: 17px;
+      line-height: 20px;
+    }
+
+
+    .shop-item-series span + span {
+      margin-top: 6px;
+      font-size: 15px;
+      line-height: 18px;
+      font-weight: normal;
+    }
   }
 </style>
-<script src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/shopInfoList-de-4.js?v=1677579741"></script>
-<script src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/laydatev4-de.js?v=1677582961"></script>
+
+
+<style>
+  .store-list {
+      display: grid !important;
+      grid-template-columns: 1fr 1fr;
+      grid-column-gap: 1%;
+      /* margin: -20px; */
+  }
+  
+  .store-list .list {
+      max-height: 593px;
+      overflow: auto;
+      padding-right: 10%;
+  }
+  
+  .store-list .list .item {
+      padding: 12px 0;
+  }
+  
+  .store-list .list .item + .item {
+      border-top: 1px solid #ccc;
+  }
+  
+  
+  
+  
+  .store-list .list .u30DemiBold {
+      line-height: 50px;
+  }
+  
+  .store-list .list ul {
+      margin: 6px 0 12px;
+      padding: 0;
+      padding-left: 20px;
+  }
+  
+  .store-list .list .u20Medium {
+      margin-bottom: 6px;
+      font-size: 17px;
+      color: #555;
+  }
+  
+  .store-list .list .address {
+      padding-top: 6px;
+      padding-bottom: 30px;
+  }
+  
+  .store-list .list ul>li::marker {
+      color: #FD4B17;
+  }
+  
+  .store-list .list .my-button {
+      background-color: #FD4B17;
+      padding: 10px 40px;
+  }
+  
+  
+  @media (max-width: 767px) {
+      .store-list {
+          margin: -20px 0 auto;
+          /* grid-template-columns: 1fr; */
+          /* grid-template-rows: 1fr 3fr; */
+          display: flex !important;
+          flex-direction: column;
+      }
+  
+    .store-list .list {
+          order: 1;
+          padding: 0;
+          flex: 1;
+          max-height: none;
+     }
+  
+     .store-list .list .u30DemiBold {
+          font-size: 24px;
+          line-height: 30px;
+          margin-bottom: 12px;
+     }
+  
+     .store-list .list .u20DemiBold,
+     .store-list .list .u20Medium {
+          font-size: 16px;
+          line-height: 20px;
+     }
+  
+     .store-list .list .my-button {
+          width: 100%;
+          text-align: center;
+     }
+  
+     .store-list .list .address {
+       height: auto;
+       padding-bottom: 0;
+     }
+  
+     .store-list .list ul {
+        margin-bottom: 0;
+     }
+    }
+  </style>
+  
+  
+  <style>
+    #storepoint-tag-dropdown,
+    #storepoint-search,
+    #storepoint-panel {
+     display:none!important;
+    }
+    
+    #storepoint-map,
+    #storepoint-container {
+      width: 100% !important;
+      height: 593px !important;
+    }
+  
+    /* #storepoint-container .mapboxgl-ctrl-top-right {
+          display: none;
+    } */
+    
+    @media (max-width: 767px) {
+    #storepoint-container,
+      #storepoint-map {
+          max-height: 30vh !important;
+          height: 30vh !important;
+      /* min-height: calc(100vw - 30px); */
+      }
+    }
+  
+    /* @media (min-width: 768px) {
+      #storepoint-container {
+          pointer-events: none;
+      }
+  
+      #storepoint-container .stpt-marker {
+          pointer-events: all;
+      }    
+    } */
+  </style>
+
+  <style>
+    .shop-detail {}
+    
+    .shop-detail .u30DemiBold {
+        line-height: 36px;
+        margin-bottom: 12px;
+    }
+    
+    .shop-detail .u20Medium {
+        margin-bottom: 6px;
+        font-size: 17px;
+        color: #555;
+    }
+    
+    .shop-detail ul {
+        margin: 6px 0 12px;
+        padding: 0;
+        padding-left: 20px;
+    }
+    
+    .shop-detail  ul>li::marker {
+        color: #FD4B17;
+    }
+    
+    .shop-detail .item {
+        display: flex;
+        margin-bottom: 6px;
+    }
+    
+    
+    .shop-detail label {
+        display: inline-block;
+        min-width: 66px;
+        font-size: 17px;
+    }
+    
+    
+    @media (max-width: 767px) {
+    
+        .shop-detail .u30DemiBold {
+            font-size: 24px;
+            line-height: 30px;
+            margin-bottom: 12px;
+       }
+    
+       .shop-detail .u20DemiBold,
+       .shop-detail .u20Medium {
+            font-size: 16px;
+            line-height: 20px;
+       }
+    
+    }
+    </style>
+  
+<link href="https://cdn.jsdelivr.net/gh/StephanWagner/jBox@v1.3.3/dist/jBox.all.min.css" rel="stylesheet">
+{{ 'shopInfoList-de-4.js' | asset_url | script_tag }}
+{{ 'laydatev4-de.js' | asset_url | script_tag }}
+<script src="https://cdn.jsdelivr.net/gh/StephanWagner/jBox@v1.3.3/dist/jBox.all.min.js"></script>
 <div id="urtopia-calendar">
 </div>
 <div class="store-section">
-  <div class="store-section-title">
-	Monthly Testride Spots
-  </div>
-  <div class="store-section-content">
-	<div class="store-section-item">
-	  <div class="store-section-shop-item" onclick="CalendarOpen('Frankfurt',0,false,1)">
-		<div class="img-mask">
-		  <div class="shop-item-img lozad" data-background-image="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/testrideshopimg-Frankfurt.jpg">
-		  </div>
-		</div>
-		<div class="shop-item-name">
-		  Frankfurt
-		</div>
-	  </div>
-	</div>
-	<div class="store-section-item">
-	  <div class="store-section-shop-item" onclick="CalendarOpen('Berlin',0,true,1)">
-		<div class="img-mask">
-		  <div class="shop-item-img lozad" data-background-image="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20221214-125750.jpg?v=1670993888">
-		  </div>
-		</div>
-		<div class="shop-item-name">
-		  Berlin
-		</div>
-	  </div>
-	</div>
-	<div class="store-section-item">
-	  <div class="store-section-shop-item" onclick="CalendarOpen('Münster',0,false,1)">
-		<div class="img-mask">
-		  <div class="shop-item-img lozad" data-background-image="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/testride-munster.jpg?v=1671252848">
-		  </div>
-		</div>
-		<div class="shop-item-name">
-		  Münster
-		</div>
-	  </div>
-	</div>
-	<div class="store-section-item"  style="display: none;">
-	  <div class="store-section-shop-item" onclick="CalendarOpen('Troisdorf')">
-		<div class="img-mask">
-		  <div class="shop-item-img lozad" data-background-image="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/testrideshopimg-SatKing.jpg?v=1665386296">
-		  </div>
-		</div>
-		<div class="shop-item-name">
-		  Cologne
-		</div>
-	  </div>
-	</div>
-	
-	
-	<div class="store-section-item"  style="display: none;">
-	  <div class="store-section-shop-item" onclick="CalendarOpen('Hamburg')">
-		<div class="img-mask">
-		  <div class="shop-item-img lozad" data-background-image="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/testrideshopimg-Bike_station.jpg?v=1665386295">
-		  </div>
-		</div>
-		<div class="shop-item-name">
-		  Hamburg
-		</div>
-	  </div>
-	</div>
-	<div class="store-section-item">
-	  <div class="store-section-shop-item" onclick="CalendarOpen('Munich',0,false,2)">
-		<div class="img-mask">
-		  <div class="shop-item-img lozad" data-background-image="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20230119-111546.jpg?v=1674098187">
-		  </div>
-		</div>
-		<div class="shop-item-name">
-		  Munich
-		</div>
-	  </div>
-	</div>
-	<!--
-	<div class="store-section-item">
-	  <div class="store-section-shop-item" onclick="CalendarOpen('Nuremberg')">
-		<div class="img-mask">
-		  <div class="shop-item-img lozad" data-background-image="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/testrideshopimg-Nuremberg.jpg">
-		  </div>
-		</div>
-		<div class="shop-item-name">
-		  Nuremberg
-		</div>
-	  </div>
-	</div>-->
-  </div>
+  <div class="store-section-title">Monthly Testride Spots</div>
+  <div class="store-section-content"></div>
 </div>
 <script>
-  let isSepcDay1={};
-  
-  function CalendarOpen(shopPoint,specific,isSpecDay,timetop) {
-	var shopList = shopInfoList[shopPoint]
-    var spec = specific || 0;
-	var specday = isSpecDay || false;
-	var timetp = timetop ||0;
-    laydate.render({
-      elem: '#urtopia-calendar',
-	  lang: 'en',
-	  min: 0,
-	  max: 90,
-	  showBottom: false,
-	  position: "static",
-	  showSide: true,
-	  showInfoBottom: true,
-	  type: 'date',
-	  shopList:shopList,
-	  isSpecDay:specday,
-	  TimePeriodization:timetp,
-	  //  shopInfo: shopInfo
-    });  
-  let body = {
-    trace_name: "testride-bookNow",
-	extras: {
-        "test1": shopPoint,
-    }
-  }
-  fetch("https://api.newurtopia.com/third_part/book_ride/traces", {
-    method: "POST",
-    body: JSON.stringify(body),
-    headers: {
-      "Content-Type": "application/json",
-    },
+  let box = null
+
+  $('.store-list .list').scroll(e => {
+    console.log(e)
   })
+  
+  function CalendarOpen(shopPoint, shop, isSpecDay = false, timetp = 0) {
+      box && box.close()
+
+      laydate.render({
+        elem: '#urtopia-calendar',
+	      lang: 'en',
+	      min: 0,
+	      max: 90,
+	      showBottom: false,
+	      position: "static",
+	      showSide: true,
+	      showInfoBottom: true,
+	      type: 'date',
+	      shopList: typeof shop === 'string' ? JSON.parse(shop.replace(/'/g, '"')) : shop,
+	      isSpecDay,
+	      TimePeriodization:timetp,
+	      //  shopInfo: shopInfo
+      });
+
+      let body = {
+        trace_name: "testride-bookNow",
+	      extras: {
+          "test1": shopPoint,
+        }
+      }
+
+
+      fetch("https://api.newurtopia.com/third_part/book_ride/traces", {
+        method: "POST",
+        body: JSON.stringify(body),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      })
+  }
+
+const createContent = city => {
+    console.log('createContent', city)
+    const find = testRides.find(c => c.city === city)
+
+    if (!find) {
+        return
+    }
+
+    return `<div class="store-list">
+            <div class="list">
+                ${find.stores.map(store => {
+                  console.log()
+
+                  return `<div class="item">
+                    <div class="u30DemiBold">${store.name}</div>
+                    <div class="u20DemiBold">Available Model:</div>
+                    <ul>
+                        <li class="u20Medium">Carbon One Size ${store.testRideSize}</li>
+                    </ul>
+                    <div class="u20DemiBold">ADD:</div>
+                    <div class="u20Medium address">${store.add}</div>
+                    <div class="my-button my-button-black" onclick="CalendarOpen('${city}', '${JSON.stringify({ [store['phone']]: store }).replace(/"/g, "\\'")}')">Select</div>
+                </div>`
+                
+                }).join('')}
+            </div>
+            <div id="storepoint-container" data-tags="de,Test Ride,${city}" data-map-id="162f21804990ff"></div></div>`
 }
+
+const width = document.body.clientWidth
+const isMobile = width < 768
+
+function showTestRides (city, target) {
+
+  console.log('showTestRides', city, target)
+  // 如果城市传入为空
+  if (!city) {
+    return
+  }
+
+  const find = testRides.find(c => c.city === city)
+
+  // 如果匹配不到城市 或者 stores 小于1
+  if (!find || find.stores.length < 1) {
+      return
+  }
+
+  // 如果当前城市只有一个test ride
+  if (find.stores.length === 1) {
+    return CalendarOpen(city, { [find.stores[0]['phone']]: find.stores[0] })
+  }
+
+  box = new jBox('Modal', {
+      width: isMobile ? 'calc(100vw - 30px)' : 1000,
+      height: 'auto',
+      title: `Book a Test Ride in ${city}`,
+      closeButton: 'title',
+      onCreated: function () {
+          var a=document.createElement("script");
+          a.type="text/javascript";
+          a.defer=!0;
+          a.src="https://cdn.storepoint.co/api/v1/js/162f21804990ff.js";
+          var b=document.getElementsByTagName("script")[0];
+          b.parentNode.insertBefore(a,b);
+      },
+      onClose: function () {
+         setTimeout(() => {
+            STOREPOINT.destroy()
+            box.destroy()
+        }, 100)
+      }
+  }).setContent(createContent(city)).open()
+}
+
+let spotsTemplate = ''
+testRides.forEach(city => {
+  spotsTemplate += `<div class="store-section-item">
+	  <div class="store-section-shop-item" onclick="showTestRides('${city.city}', this)">
+		<div class="img-mask">
+		  <div class="shop-item-img lozad" data-background-image="${city.cityBackground}">
+		  </div>
+      <div class="shop-item-name">${city.city}</div>
+		</div>
+		<div class="shop-item-series">
+      <span>Available Model:</span>
+      ${ city.series.length === 11 ? `<span>${city.series[0]}</span><span>&nbsp;</span>` : city?.series.map(s => `<span>${s}</span>`).join('')}
+    </div>
+	  </div>
+	</div>`
+})
+
+$(".store-section .store-section-content").html(spotsTemplate)
+
+console.log('testRides', testRides)
+
+
 </script>
 
 </div><a data-pf-type="Button" id="Book-Now-btn" class="sc-iqseJM fFuGRG pf-30_"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-32_">Button Text</span></a></div></div></div></div></div><div data-section-id="pf-3f0e" data-pf-type="Section" class="sc-fmciRz bheIgq pf-33_ pf-sm-hide pf-hide"><div style="--cw:1300px" class="sc-gjNHFA gwWIgj"><div class="sc-ezbkAF A-dmbO pf-34_ pf-r pf-c-cm pf-r-eh" style="--s-xs:15px;--s-lg:0px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-md:12;--c-lg:12"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-35_"><h2 data-pf-type="Heading" class="sc-cTAqQK eHolsa pf-36_ Title"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-38_">How to Test Ride</span></h2><div class="sc-ezbkAF A-dmbO pf-39_ pf-r pf-r-eh" style="--s-xs:15px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-sm:6;--c-md:3;--c-lg:3"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-40_"><div data-pf-type="Image" class="sc-jgrJph bzUUvT pf-41_"><img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/bookingicon-1663993018126.png?v=1663993020" srcSet="https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/bookingicon-1663993018126.png?v=1663993020 1536w" width="40" height="40"/></div><h3 data-pf-type="Heading" class="sc-cTAqQK eHolsa pf-42_"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-44_">Book It</span></h3><p class="sc-jtXEFf jydWoQ pf-45_" data-pf-type="Paragraph"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-47_">Choose a location and pick the date, you will receive an email to welcome and confirm.</span></p></div></div><div class="pf-c" style="--c-xs:12;--c-sm:6;--c-md:3;--c-lg:3"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-48_"><div data-pf-type="Image" class="sc-jgrJph bzUUvT pf-49_"><img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/shopicon-1663993018129.png?v=1663993032" srcSet="https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/shopicon-1663993018129.png?v=1663993032 1536w" width="40" height="40"/></div><h3 data-pf-type="Heading" class="sc-cTAqQK eHolsa pf-50_"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-52_">Meet us</span></h3><p class="sc-jtXEFf jydWoQ pf-53_" data-pf-type="Paragraph"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-55_">Bring nothing other than your curiosity. Meet our experts in store.</span></p></div></div><div class="pf-c" style="--c-xs:12;--c-sm:6;--c-md:3;--c-lg:3"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-56_"><div data-pf-type="Image" class="sc-jgrJph bzUUvT pf-57_"><img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/ridingbikeicon-1663993018128.png?v=1663993028" srcSet="https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/ridingbikeicon-1663993018128.png?v=1663993028 1536w" width="40" height="40"/></div><h3 data-pf-type="Heading" class="sc-cTAqQK eHolsa pf-58_"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-60_">Ride it out</span></h3><p class="sc-jtXEFf jydWoQ pf-61_" data-pf-type="Paragraph"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-63_">Scan the QR code at store to login. Unlock the bike and all the fun.</span></p></div></div><div class="pf-c" style="--c-xs:12;--c-sm:6;--c-md:3;--c-lg:3"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-64_"><div data-pf-type="Image" class="sc-jgrJph bzUUvT pf-65_"><img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/mailicon-1663993018127.png?v=1663993024" srcSet="https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/mailicon-1663993018127.png?v=1663993024 1536w" width="40" height="40"/></div><h3 data-pf-type="Heading" class="sc-cTAqQK eHolsa pf-66_"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-68_">Receive stats</span></h3><p class="sc-jtXEFf jydWoQ pf-69_" data-pf-type="Paragraph"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-71_">A taste of our smart experience will be sent to your email after the ride.</span></p></div></div></div></div></div></div></div></div><div data-section-id="pf-d9bf" data-pf-type="Section" class="sc-fmciRz bheIgq pf-72_ pf-lg-hide pf-md-hide"><div style="--cw:1300px" class="sc-gjNHFA gwWIgj"><div class="sc-ezbkAF A-dmbO pf-73_ pf-r pf-c-cm pf-r-eh" style="--s-xs:15px;--s-lg:0px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-md:12;--c-lg:12"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-74_"><h2 data-pf-type="Heading" class="sc-cTAqQK eHolsa pf-75_ Title"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-77_">How to Test Ride</span></h2><div class="sc-ezbkAF A-dmbO pf-78_ pf-r pf-r-eh" style="--s-xs:15px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-md:12;--c-lg:12"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-79_"><div data-pf-type="Custom.HTML" class="sc-AjmGg eCTxfx pf-80_"><div id="section2-mb">
