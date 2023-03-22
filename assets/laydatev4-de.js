@@ -3027,7 +3027,7 @@
       // lay(".layui-laydate-info-footer .time-zone span").html(
       //   options.shopInfo.timezone
       // );
-      lay(".layui-laydate-info-footer .time-zone span").html('');
+      lay(".layui-laydate-info-footer .time-zone").html('');
       if (that.haveStep0) {
         lay(".back-btn").removeClass("hidden-btn");
         lay(".back-btn-mb").removeClass("hidden-btn");
