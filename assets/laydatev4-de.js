@@ -3024,9 +3024,10 @@
       lay(
         ".booking-shop-content .shop-detail .info-title:nth-child(4) span"
       ).html(options.shopInfo.phone);
-      lay(".layui-laydate-info-footer .time-zone span").html(
-        options.shopInfo.timezone
-      );
+      // lay(".layui-laydate-info-footer .time-zone span").html(
+      //   options.shopInfo.timezone
+      // );
+      lay(".layui-laydate-info-footer .time-zone span").html('');
       if (that.haveStep0) {
         lay(".back-btn").removeClass("hidden-btn");
         lay(".back-btn-mb").removeClass("hidden-btn");
