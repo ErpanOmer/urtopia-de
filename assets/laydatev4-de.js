@@ -2636,11 +2636,7 @@
       }
       YMD[1]++;
       YMD[2] = st + 1;
-      // 改-2023-3-10禁止点击
-      if (options.shopInfo.name === "Stefan Gehrke" && YMD.join("-") === "2023-3-10") {
-        item.addClass("disabled-day");
-      }
-
+      
       if (options.shopInfo.disableDate && options.shopInfo.disableDate.includes(YMD.join("-"))) {
         item.addClass("disabled-day");
       }
