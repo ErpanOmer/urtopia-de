@@ -222,7 +222,7 @@ const testRides = [
     cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Dusseldorf.jpg?v=1679406972',
     series: [
       'Urtopia Chord',
-      'Urtopia Carbon 1'
+      // 'Urtopia Carbon 1'
     ],
     stores: [
       {
@@ -251,7 +251,7 @@ const testRides = [
     cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Berlin.jpg?v=1679406972',
     series: [
       'Urtopia Chord',
-      'Urtopia Carbon 1'
+      // 'Urtopia Carbon 1'
     ],
     stores: [
       {
@@ -318,7 +318,7 @@ const testRides = [
     cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Hamburg.jpg?v=1679406972',
     series: [
       'Urtopia Chord',
-      'Urtopia Carbon 1'
+      // 'Urtopia Carbon 1'
     ],
     stores: [
       {
@@ -347,7 +347,7 @@ const testRides = [
     cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Munchen.jpg?v=1679406972',
     series: [
       'Urtopia Chord',
-      'Urtopia Carbon 1'
+      // 'Urtopia Carbon 1'
     ],
     stores: [
       {
@@ -414,7 +414,7 @@ const testRides = [
     cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/testride-munster.jpg?v=1671252848',
     series: [
       'Urtopia Chord',
-      'Urtopia Carbon 1'
+      // 'Urtopia Carbon 1'
     ],
     stores: [
       {
@@ -443,7 +443,7 @@ const testRides = [
     cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Koln.jpg?v=1679406972',
     series: [
       'Urtopia Chord',
-      'Urtopia Carbon 1'
+      // 'Urtopia Carbon 1'
     ],
     stores: [
       {
@@ -491,7 +491,7 @@ const testRides = [
     cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Leipzig.jpg?v=1679406972',
     series: [
       'Urtopia Chord',
-      'Urtopia Carbon 1'
+      // 'Urtopia Carbon 1'
     ],
     stores: [
       {
@@ -520,7 +520,7 @@ const testRides = [
     cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Stuttgart.jpg?v=1679406972',
     series: [
       'Urtopia Chord',
-      'Urtopia Carbon 1'
+      // 'Urtopia Carbon 1'
     ],
     stores: [
       {
@@ -568,7 +568,7 @@ const testRides = [
     cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Hannover.jpg?v=1679406972',
     series: [
       'Urtopia Chord',
-      'Urtopia Carbon 1'
+      // 'Urtopia Carbon 1'
     ],
     stores: [
       {
@@ -616,7 +616,7 @@ const testRides = [
     cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Essen.jpg?v=1679406971',
     series: [
       'Urtopia Chord',
-      'Urtopia Carbon 1'
+      // 'Urtopia Carbon 1'
     ],
     stores: [
       {
@@ -645,7 +645,7 @@ const testRides = [
     cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Dresden.jpg?v=1679406972',
     series: [
       'Urtopia Chord',
-      'Urtopia Carbon 1'
+      // 'Urtopia Carbon 1'
     ],
     stores: [
       {
@@ -674,7 +674,7 @@ const testRides = [
     cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Nurnberg.jpg?v=1679406972',
     series: [
       'Urtopia Chord',
-      'Urtopia Carbon 1'
+      // 'Urtopia Carbon 1'
     ],
     stores: [
       {
@@ -703,7 +703,7 @@ const testRides = [
     cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Regensburg.jpg?v=1679406972',
     series: [
       'Urtopia Chord',
-      'Urtopia Carbon 1'
+      // 'Urtopia Carbon 1'
     ],
     stores: [
       {
