@@ -267,6 +267,60 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       }    
     } */
   </style>
+
+  <style>
+    .shop-detail {}
+    
+    .shop-detail .u30DemiBold {
+        line-height: 36px;
+        margin-bottom: 12px;
+    }
+    
+    .shop-detail .u20Medium {
+        margin-bottom: 6px;
+        font-size: 17px;
+        color: #555;
+    }
+    
+    .shop-detail ul {
+        margin: 6px 0 12px;
+        padding: 0;
+        padding-left: 20px;
+    }
+    
+    .shop-detail  ul>li::marker {
+        color: #FD4B17;
+    }
+    
+    .shop-detail .item {
+        display: flex;
+        margin-bottom: 6px;
+    }
+    
+    
+    .shop-detail label {
+        display: inline-block;
+        min-width: 66px;
+        font-size: 17px;
+    }
+    
+    
+    @media (max-width: 767px) {
+    
+        .shop-detail .u30DemiBold {
+            font-size: 24px;
+            line-height: 30px;
+            margin-bottom: 12px;
+       }
+    
+       .shop-detail .u20DemiBold,
+       .shop-detail .u20Medium {
+            font-size: 16px;
+            line-height: 20px;
+       }
+    
+    }
+    </style>
   
 <link href="https://cdn.jsdelivr.net/gh/StephanWagner/jBox@v1.3.3/dist/jBox.all.min.css" rel="stylesheet">
 {{ 'shopInfoList-de-4.js' | asset_url | script_tag }}
