@@ -255,7 +255,7 @@ const testRides = [
     ],
     stores: [
       {
-        name: 'TP: Stefan Gehrke',
+        name: 'Stefan Gehrke',
         phone: '+0049 30-91706139',
         email: 'urtopia@bfnd.de',
         timezone: "Mainz, Germany (GMT+1)",
@@ -351,7 +351,7 @@ const testRides = [
     ],
     stores: [
       {
-        name: 'TP: Len Lucas',
+        name: 'Len Lucas',
         phone: '+0049 1512 8804444',
         email: 'len.lucas@gmx.de',
         timezone: "Mainz, Germany (GMT+1)",
@@ -418,7 +418,7 @@ const testRides = [
     ],
     stores: [
       {
-        name: 'TP: Wilfried Beurich',
+        name: 'Wilfried Beurich',
         phone: '+0174 9610700',
         email: 'wbeurich@muenster.de',
         timezone: "Mainz, Germany (GMT+1)",
@@ -447,7 +447,7 @@ const testRides = [
     ],
     stores: [
       {
-        name: 'TP: Hartmut Geyssel',
+        name: 'Hartmut Geyssel',
         phone: '+0049 611 1370 5755',
         email: 'urtopiakoeln@hophopik.com',
         timezone: "Mainz, Germany (GMT+1)",
