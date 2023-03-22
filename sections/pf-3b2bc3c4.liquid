@@ -277,6 +277,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </div>
 <script>
   let box = null
+
+  document.addEventListener('scroll', e => {
+
+    console.log(e)
+  })
   
   function CalendarOpen(shopPoint, shop, isSpecDay = false, timetp = 0) {
       box && box.close()
