@@ -1989,8 +1989,7 @@
     //   })()
     // );
 
-    lay(divShopDetail).html(`div class="u30DemiBold">ELV Bikes</div>
-    <div class="u20DemiBold">Available Model:</div>
+    lay(divShopDetail).html(`div class="u30DemiBold">ELV Bikes</div><div class="u20DemiBold">Available Model:</div>
     <ul>
         <li class="u20Medium">Carbon One Size M/L</li>
     </ul>
