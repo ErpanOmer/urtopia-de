@@ -45,7 +45,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 	  border-radius:10px;
     position: relative;
   }
-  
+
   .shop-item-img{
 	width:100%;
 	height:100%;
@@ -369,10 +369,9 @@ testRides.forEach(city => {
 		<div class="img-mask">
 		  <div class="shop-item-img lozad" data-background-image="${city.cityBackground}">
 		  </div>
+      <div class="shop-item-name">${city.city}</div>
 		</div>
-		<div class="shop-item-name">
-		  ${city.city}
-		</div>
+		<div class="shop-item-bikes">${city.city}</div>
 	  </div>
 	</div>`
 })
