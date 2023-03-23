@@ -2938,23 +2938,23 @@
           class: ELEM_TIME_TEXT,
         }),
         //滚动条定位
-        scroll = function () {
-          lay(ul)
-            .find("ol")
-            .each(function (i) {
-              var ol = this,
-                li = lay(ol).find("li");
-              ol.scrollTop = 30 * (that[startEnd][hms[i]] - 2);
-              if (ol.scrollTop <= 0) {
-                li.each(function (ii, item) {
-                  if (!lay(this).hasClass(DISABLED)) {
-                    ol.scrollTop = 30 * (ii - 2);
-                    return true;
-                  }
-                });
-              }
-            });
-        },
+        // scroll = function () {
+        //   lay(ul)
+        //     .find("ol")
+        //     .each(function (i) {
+        //       var ol = this,
+        //         li = lay(ol).find("li");
+        //       ol.scrollTop = 30 * (that[startEnd][hms[i]] - 2);
+        //       if (ol.scrollTop <= 0) {
+        //         li.each(function (ii, item) {
+        //           if (!lay(this).hasClass(DISABLED)) {
+        //             ol.scrollTop = 30 * (ii - 2);
+        //             return true;
+        //           }
+        //         });
+        //       }
+        //     });
+        // },
         haveSpan = lay(elemHeader[2]).find("." + ELEM_TIME_TEXT);
 
       scroll();
@@ -3293,11 +3293,11 @@
                 "</span></div>"
             );
           }
-          html.push(
-            '<div class="info-title">timezone: <span>' +
-              options.shopInfo.timezone +
-              "</span></div>"
-          );
+          // html.push(
+          //   '<div class="info-title">timezone: <span>' +
+          //     options.shopInfo.timezone +
+          //     "</span></div>"
+          // );
           html.push(
             '<div class="info-title">ADD: <span>' +
               options.shopInfo.add +
@@ -3827,7 +3827,7 @@
             timeList.push(h + ":00");
             i += 1;
           }
-        } else if (options.TimePeriodization == 2) {
+        } else if (options.TimePeriodization = 2) {
           if (timeSnipt != "") {
             timeSnipt.split(",").forEach((item) => {
               timeList.push(item);
@@ -3837,7 +3837,7 @@
           if (timeSnipt != "") {
             var time = timeSnipt.split("–");
             if (time[0] > "12:00") {
-              timeList.push(time[0] + time[1]);
+              timeList.push(time[0] + "–" + time[1]);
             } else {
               timeList.push(time[0] + "-12:00");
               timeList.push("12:00-" + time[1]);

@@ -8,7 +8,7 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
     {% render 'pagefly-head' %}
 
     <!-- Cozy Country Redirect Optimization Code Start -->
-    {{ shop.metafields.CCR.shopat_script }}
+    {% comment %} {{ shop.metafields.CCR.shopat_script }} {% endcomment %}
     <!-- Cozy Country Redirect Optimization Code Start -->
 
     <!-- Basic page needs ================================================== -->
@@ -19,22 +19,8 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
     <meta name="google-site-verification" content="4CyyxbiT2JJKwsI1xsr_c7Qf-ihbvBm4WMiPhI0rOeA">
     <meta name="google-site-verification" content="1L3RQDlBxPuNpF21De0Ah8NwPfQRUDie4JA9sbgKwfo">
 
-    <script src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/1.9.1-jquery.min.js?v=1663911504"></script>
-    <script src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/1.14.2-TweenMax.js?v=1663912518"></script>
-    <script src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/2.0.3-ScrollMagic.min.js?v=1663912592"></script>
-    <script src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/2.0.3-animation.gsap.js?v=1663912682"></script>
-    <script
-      src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/2.0.3-debug.addIndicators.js?v=1663912891"
-    ></script>
-    <script src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/8-swiper-bundle.min.js?v=1663912984"></script>
-    <script src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/1.0.8-lozad.js?v=1663913078"></script>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-205871538-3"></script>
-    <script
-      defer
-      crossorigin="anonymous"
-      src="https://connect.facebook.net/de_DE/sdk.js#xfbml=1&version=v14.0"
-      nonce="nryZARoa"
-    ></script>
+    {% render 'code-snippet-optimization' %}
+
     <!-- likebutton -->
     <!-- a/b Test -->
     <script src="https://www.googleoptimize.com/optimize.js?id=OPT-52Q8D8M"></script>
@@ -56,7 +42,7 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
     <!-- End Google Tag Manager -->
 
     <!-- Google tag (gtag.js) ga4 -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2WKKVDX6JH"></script>
+    
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
@@ -225,12 +211,14 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
         height:0;
       }
       :root {
-        --font-body-family: {{ settings.type_body_font.family }}, {{ settings.type_body_font.fallback_families }};
+        /* --font-body-family: {{ settings.type_body_font.family }}, {{ settings.type_body_font.fallback_families }}; */
+        --font-body-family: 'Urbane';
         --font-body-style: {{ settings.type_body_font.style }};
         --font-body-weight: {{ settings.type_body_font.weight }};
         --font-body-weight-bold: {{ settings.type_body_font.weight | plus: 300 | at_most: 1000 }};
 
-        --font-heading-family: {{ settings.type_header_font.family }}, {{ settings.type_header_font.fallback_families }};
+        /* --font-heading-family: {{ settings.type_header_font.family }}, {{ settings.type_header_font.fallback_families }}; */
+        --font-heading-family: 'Urbane';
         --font-heading-style: {{ settings.type_header_font.style }};
         --font-heading-weight: {{ settings.type_header_font.weight }};
 
