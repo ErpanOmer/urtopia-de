@@ -47,15 +47,21 @@
 }
 
 .banner .my-button {
+    
+    transform: translateX(-50%);
+   
+    box-shadow: 0 0 20px rgb(0 0 0 / 10%);
+    
+}
+
+.banner .buttons {
     position: absolute;
     top: 250px;
     left: 50%;
-    transform: translateX(-50%);
-    margin: auto;
-    box-shadow: 0 0 20px rgb(0 0 0 / 10%);
     z-index: 1;
-
+    margin: auto;
 }
+
 
 @media (min-width: 768px) {
     .mobileHide {
@@ -167,7 +173,6 @@
     background-color: #ccc;
     /* color: #fff; */
 }
-
 
 @media (max-width: 767px) {
     #banner {
