@@ -46,16 +46,20 @@
     font-weight: 400;
 }
 
-.banner .my-button {
+.banner .my-button {   
+    box-shadow: 0 0 20px rgb(0 0 0 / 10%);
+    margin: 0 15px;
+}
+
+.banner .buttons {
     position: absolute;
     top: 250px;
     left: 50%;
-    transform: translateX(-50%);
-    margin: auto;
-    box-shadow: 0 0 20px rgb(0 0 0 / 10%);
     z-index: 1;
-
+    margin: auto;
+    transform: translateX(-50%);
 }
+
 
 @media (min-width: 768px) {
     .mobileHide {
@@ -97,8 +101,11 @@
         position: static;
         margin: 0;
         box-shadow: none;
-        margin-top: 35px;
         transform: none;
+    }
+
+    .banner-mobile .my-button + .my-button{
+      margin-top: 20px;
     }
 
     .banner-mobile .u24Light {
@@ -108,6 +115,15 @@
 
     .banner-mobile .u42DemiBold {
         margin: 5px 0 20px;
+    }
+
+
+    .banner .buttons {
+      position: static;
+      margin: 0;
+      box-shadow: none;
+      margin-top: 35px;
+      transform: none;
     }
 }
 </style>
@@ -168,7 +184,6 @@
     /* color: #fff; */
 }
 
-
 @media (max-width: 767px) {
     #banner {
         height: auto;
@@ -212,7 +227,10 @@
                         <div class="u60DemiBold">New Arrival</div>
                         <div class="u17Light">Early birds enjoy €700 off</div>
                     </div>
-                    <a class="my-button" href="/pages/lightweight-commuter-ebike-urtopia-chord">Shop Now</a>
+                    <div class="buttons">
+                      <a class="my-button" href="/pages/lightweight-commuter-ebike-urtopia-chord">Shop Now</a>
+                      <a class="my-button my-button-black" href="/pages/test-ride">Test Rides</a>
+                    </div>
                     <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230306-093453.png?v=1678066544" />
                     <div>
                         <div class="u60DemiBold">Urtopia Chord</div>
@@ -224,8 +242,9 @@
                         <div class="u24Light">New Arrival</div>
                         <div class="u42DemiBold">Chord</div>
                         <div class="u17Light">Early birds enjoy €700 off on our limited-time offer.</div>
-                        <div style="z-index:2;">
+                        <div class="buttons" style="z-index:2;">
                             <a class="my-button" href="/pages/lightweight-commuter-ebike-urtopia-chord">Shop Now</a>
+                            <a class="my-button my-button-ghost" href="/pages/test-ride">Test Rides</a>
                         </div>
                     </div>
                     <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230306-095205.png?v=1678067541" />
@@ -249,7 +268,7 @@
 <script src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/8-swiper-bundle.min.js?v=1663912984"> </script>
 <script>
  new Swiper('#banner', {
-        autoplay: {
+        {% comment %} autoplay: {
             disableOnInteraction: false,
             pauseOnMouseEnter: true,
             delay: 5000,
@@ -259,7 +278,7 @@
         pagination: {
             el:'.swiper-pagination',
             clickable: true
-        },
+        }, {% endcomment %}
     })
 
 </script>
