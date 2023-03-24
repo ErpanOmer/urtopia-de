@@ -3250,6 +3250,13 @@ let show = function(index){
   // accessories_global = JSON.parse(JSON.stringify(cartList));
 }
 
+var accessories_global = [
+    {"id":7966185259224,'quantity': 1},
+    {"id":7966184964312,'quantity': 1},
+    {"id":7966184702168,'quantity': 1}
+]
+console.log('accessories_global', accessories_global)
+
 window.onload=function(){
   $("ul.splide__pagination li").attr("onclick","this.querySelector('button').click()");
     let timer = setInterval(()=>{
