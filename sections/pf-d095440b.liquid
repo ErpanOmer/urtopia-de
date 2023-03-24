@@ -659,10 +659,14 @@ letter-spacing: 0px;
     aspect-ratio: 7/1.35;
 	overflow:hidden;
   }
-</style></div><div data-pf-type="Custom.HTML" class="sc-AjmGg eCTxfx pf-32_ pf-lg-hide pf-md-hide pf-sm-hide pf-hide"><div class="order-tips">
-<div class="option-title">
-
-</div>
+</style></div>
+    
+    
+  <div data-pf-type="Custom.HTML" class="sc-AjmGg eCTxfx pf-32_ pf-lg-hide pf-md-hide pf-sm-hide pf-hide">
+    <div class="order-tips">
+      <div class="option-title">
+      
+      </div>
 <div class="Giveaway-swiper">
  <div class="swiper-wrapper">
 	 <div class="swiper-slide Giveaway-item" data-index="0">
@@ -747,7 +751,10 @@ letter-spacing: 0px;
   $(".Giveaway-item").on("click",function(index){
 	giveawaySwiper.slideTo($(this).attr("data-index"))
   })*/
-</script></div><div data-display="radio" data-label="true" data-product-id="{{ product.id }}" style="--o-xs:8px;--o-md:16px;--g-xs:4px;--g-md:8px" data-sw-id="{% liquid
+</script></div>
+  
+  
+  <div data-display="radio" data-label="true" data-product-id="{{ product.id }}" style="--o-xs:8px;--o-md:16px;--g-xs:4px;--g-md:8px" data-sw-id="{% liquid
     assign min = 10000000000
     assign max = 99999999999
     assign diff = max | minus: min
@@ -821,7 +828,10 @@ letter-spacing: 0px;
 						{% else %} 
 					
                             {% assign key = option_name | replace: '"', '&quot;' %}
-                        <div class="pf-option-swatches" data-swatch-type="radio" data-unique-id="{{option.position}}">{% for option_value in option.values %}{% capture option_id %}pf-sw{{swatches_count}}-{{key}}-{{option_value | remove: '"' | replace: ' ', '-' }}{% endcapture %}{% assign optionValue = option_value | replace: '"', '&quot;' %}<div data-option-name="{{key | default: formatted_option_name}}" class="pf-vs-radio"><input {% if option.selected_value == option_value %}checked{% endif %} type="radio" id="{{option_id}}" name="sw{{swatches_count}}-{{key}}" value="{{optionValue}}"/><label style="overflow:hidden" for="{{option_id}}"><span>{{option_value}}</span></label></div>{% endfor %}</div>{% endif %} {% endfor %}</div>{% endunless %}</div><div data-pf-type="Custom.HTML" class="sc-AjmGg eCTxfx pf-40_"><div class="order-tips">
+                        <div class="pf-option-swatches" data-swatch-type="radio" data-unique-id="{{option.position}}">{% for option_value in option.values %}{% capture option_id %}pf-sw{{swatches_count}}-{{key}}-{{option_value | remove: '"' | replace: ' ', '-' }}{% endcapture %}{% assign optionValue = option_value | replace: '"', '&quot;' %}<div data-option-name="{{key | default: formatted_option_name}}" class="pf-vs-radio"><input {% if option.selected_value == option_value %}checked{% endif %} type="radio" id="{{option_id}}" name="sw{{swatches_count}}-{{key}}" value="{{optionValue}}"/><label style="overflow:hidden" for="{{option_id}}"><span>{{option_value}}</span></label></div>{% endfor %}</div>{% endif %} {% endfor %}</div>{% endunless %}</div>
+  
+  <-- 配件开始 -->
+  <div data-pf-type="Custom.HTML" class="sc-AjmGg eCTxfx pf-40_"><div class="order-tips">
 <div class="option-title">
  Gears you need
 </div>
