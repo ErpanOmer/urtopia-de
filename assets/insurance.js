@@ -331,7 +331,7 @@ function addToCartInsurance(parse) {
     
     fetch("/cart/add.js", {
       method: "POST",
-      body: JSON.stringify(cartListNew), // formData
+      body: JSON.stringify(accessories_global), // formData
       headers: {
         'Content-Type': 'application/json'
       }
