@@ -523,8 +523,12 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
     <div data-pf-type="JudgeMe" class="sc-eZhRLC gtfCKx pf-25_ order-djs">
         <div class="pf-judme">{% render "judgeme_widgets", widget_type: "judgeme_preview_badge", jm_style: "", concierge_install: false, product: product %}</div>
   </div>
-
-  <style>
+  
+  
+  <div data-pf-type="ProductPrice2" id="product-price" class="sc-kTqLtj ihdlmX pf-26_ order-price"><div data-product-type="price" data-product-id="{{ product.id }}" data-product-price="true" data-pf-type="ProductPrice2Item" class="sc-haTkiu fcLDTw pf-27_">{{ product.variants[0].price | money }}</div><div data-product-type="compare_at_price" data-product-id="{{ product.id }}" data-pf-type="ProductPrice2Item" class="sc-haTkiu fcLDTw pf-28_ pf-lg-hide pf-md-hide pf-hide">{{ product.variants[0].compare_at_price | money }}</div></div>
+  
+  
+    <style>
 .eggs {
     max-width: 450px;
     margin-bottom: 30px;
@@ -631,9 +635,9 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
             </div>
         </div>
     </div>
-  
-  
-  <div data-pf-type="ProductPrice2" id="product-price" class="sc-kTqLtj ihdlmX pf-26_ order-price"><div data-product-type="price" data-product-id="{{ product.id }}" data-product-price="true" data-pf-type="ProductPrice2Item" class="sc-haTkiu fcLDTw pf-27_">{{ product.variants[0].price | money }}</div><div data-product-type="compare_at_price" data-product-id="{{ product.id }}" data-pf-type="ProductPrice2Item" class="sc-haTkiu fcLDTw pf-28_ pf-lg-hide pf-md-hide pf-hide">{{ product.variants[0].compare_at_price | money }}</div></div><p class="sc-bBHHxi fhourC pf-29_" tabindex="0" spellcheck="false" data-pf-type="Paragraph3"><span style="color: rgb(253, 75, 23);">●</span>&nbsp;Bold City-chic Style<br><span style="color: rgb(253, 75, 23);">●</span> Luxury Carbon Fiber<br><span style="color: rgb(253, 75, 23);">●</span> Completely Owned Design</p><div data-pf-type="Custom.HTML" class="sc-AjmGg eCTxfx pf-31_ pf-lg-hide pf-md-hide pf-sm-hide pf-hide">
+    
+    
+    <div data-pf-type="Custom.HTML" class="sc-AjmGg eCTxfx pf-31_ pf-lg-hide pf-md-hide pf-sm-hide pf-hide">
   <div class="endof" style="font: normal normal 700 14px/34px Urbane">
 	Price goes up in:
   </div>
