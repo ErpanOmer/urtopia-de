@@ -275,7 +275,6 @@ const insurance = new Insurance();
 
 
 function addToCartInsurance(parse) {
-  console.log('accessories_global', accessories_global);
   const cartListNew = {items:[]};
   const cart1New =
     document.querySelector("cart-notification") ||
@@ -326,7 +325,9 @@ function addToCartInsurance(parse) {
     }
 
     // 和配件合并
+    console.log('accessories_global', accessories_global);
     cartListNew.items = cartListNew.items.concat(accessories_global.items || []);
+    console.log(' cartListNew.items',  cartListNew.items);
     
     fetch("/cart/add.js", {
       method: "POST",
