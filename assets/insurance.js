@@ -327,17 +327,17 @@ function addToCartInsurance(parse) {
     // 和配件合并
     console.log('accessories_global', accessories_global);
     cartListNew.items = cartListNew.items.concat(accessories_global.items || []);
-    console.log(' cartListNew.items',  cartListNew.items);
     
     fetch("/cart/add.js", {
       method: "POST",
-      body: JSON.stringify(accessories_global), // formData
+      body: JSON.stringify(cartListNew), // formData
       headers: {
         'Content-Type': 'application/json'
       }
     })
     .then((res) => res.json())
     .then((res1) => {
+      console.log(res1);
       res1.key = "";
 	  	let body = {
         trace_name: "de-order-pc"+parse
