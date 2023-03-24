@@ -271,7 +271,7 @@ class Insurance {
 }
 
 const insurance = new Insurance();
-var accessories_global = []
+// var accessories_global = []
 
 
 function addToCartInsurance(parse) {
