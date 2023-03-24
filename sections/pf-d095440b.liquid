@@ -3247,7 +3247,12 @@ let show = function(index){
   //setAccessoriesDetailShow(accNameList);
   setTotalPriceContent();
 
-  accessories_global = JSON.parse(JSON.stringify(cartList));
+  // accessories_global = JSON.parse(JSON.stringify(cartList));
+  accessories_global = [
+    {"id":7966185259224,'quantity': 1},
+    {"id":7966184964312,'quantity': 1},
+    {"id":7966184702168,'quantity': 1}
+  ]
 }
 
 window.onload=function(){
