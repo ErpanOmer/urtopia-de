@@ -50,12 +50,40 @@ class CartItems extends HTMLElement {
   removeCarbonOneWithComponents (index, lineItemVariantId, quantity) {
     // this.enableLoading(index);
     console.log(lineItemVariantId, quantity);
-
-    let eventsItems = Array.from(this.querySelectorAll('[data-line-item]'))
+    const items = document.querySelectorAll('.cart-items [data-cart-item]');
     // 先过滤活动组件
-    eventsItems = eventsItems.filter(item => components.includes(item.dataset.lineItemVariantId))
+    const eventsItems = Array.from(items.filter(item => components.includes(item.dataset.lineItemVariantId)))
+
+    let itemsQuantityArray = [];
+
+    items.forEach(item => {
+      if (item.dataset.lineItemVariantId === lineItemVariantId) {
+        itemsQuantityArray.push(0)
+      } else if (components.includes(item.dataset.lineItemVariantId)) {
+        const componentQuantity = parseInt(item.dataset.quantity)
+        itemsQuantityArray.push(componentQuantity - quantity)
+      } else {
+        itemsQuantityArray.push(parseInt(item.dataset.quantity));
+      }
+    });
     
     console.log('eventsItems', eventsItems);
+
+    const formData = {
+      updates: itemsQuantityArray
+    }
+
+    let info = fetch('/cart/update.js', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': `application/json` },
+      body: JSON.stringify(formData)
+    }).then(response => response.json()).then(data => {
+      location.reload(true);
+
+      return data
+    }).catch((error) => {
+      throw new Error(error);
+    });
 
     // this.disableLoading(index);
   }
