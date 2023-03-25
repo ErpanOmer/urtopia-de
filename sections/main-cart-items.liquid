@@ -345,7 +345,7 @@ padding-bottom: {{ section.settings.padding_bottom }}px;
                       {{ 'products.product.quantity.label' | t }}
                     </label>
 
-                    {% if is_event_components and has_carbon_one %}
+                    {% if item.product.id!=7633738727640 and discountTitle contains 'Easter Promotion' %}
                       <div style="width: 100%;display: flex;align-items: center;justify-content: center;">{{ item.quantity }}</div>
                     {% else %}
                         <quantity-input class="quantity{% if has_insurance_product or is_insurance_product %} is-hidden{% endif %}">
