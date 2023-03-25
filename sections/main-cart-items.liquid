@@ -90,6 +90,14 @@ padding-bottom: {{ section.settings.padding_bottom }}px;
               {% if item.id == 42615024976088 %}
               {% assign customizedMudguardsQuantity = customizedMudguardsQuantity | plus: item.quantity %}
               {% endif %}
+
+
+              {% comment %} 是否有carbon one {% endcomment %}
+                {% assign has_carbon_one = false %}
+                {%- if item.product_id == 7633738727640 -%}
+                  {%- assign has_carbon_one = true -%}
+                  {%- break -%}
+                {%- endif -%}
             {% endfor %}
 
             <!-- all -->
@@ -124,8 +132,6 @@ padding-bottom: {{ section.settings.padding_bottom }}px;
 
               {% comment %} 活动配件 {% endcomment %}
               {%- assign is_event_components = false %}
-              {% comment %} 是否有carbon one {% endcomment %}
-              {% assign has_carbon_one = false %}
               
               {%- comment -%} Check if the item has an active Insurance product in cart {%- endcomment -%}
               {%- for insurance_item in cart.items -%}
@@ -146,11 +152,6 @@ padding-bottom: {{ section.settings.padding_bottom }}px;
                           {%- assign is_event_components = true -%}
                             {%- break -%}
                   {%- endif -%}
-
-                {%- if item.product_id == 7633738727640 -%}
-                  {%- assign has_carbon_one = true -%}
-                  {%- break -%}
-                {%- endif -%}
                 
               {%- endfor -%}
             
