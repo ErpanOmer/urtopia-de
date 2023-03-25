@@ -57,7 +57,7 @@ class CartItems extends HTMLElement {
 
     items.forEach((item, index) => {
       if (item.dataset.lineItemVariantId === lineItemVariantId) {
-        const insuranceId = lineItem.dataset.insuranceVariantId;
+        const insuranceId = item.dataset.insuranceVariantId;
         if (insuranceId) {
           const insuranceItem = document.querySelector(`.cart-items [data-line-item-variant-id=${insuranceId}]`)
           console.log('insuranceItem', insuranceItem)
