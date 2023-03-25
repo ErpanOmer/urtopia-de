@@ -105,7 +105,7 @@ class CartItems extends HTMLElement {
   }
 
   onChange(event) {
-       console.log('event', event.target);
+       console.log('event', event.target.value);
     ////购物车逻辑
    /* var data = event.target.dataset;
    if(data.type && data.type.indexOf("Carbon One")>-1)
