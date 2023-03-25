@@ -113,6 +113,8 @@ class CartItems extends HTMLElement {
      var accessoriesNum = {hNum:Number(data.hnum),gNum:Number(data.gnum),kNum:Number(data.knum),mNum:Number(data.mnum),wNum:Number(data.wnum),bNum:Number(data.bnum),bikeID:data.id}
      this.updateQuantityLabour(data.index, event.target.value, document.activeElement.getAttribute('name'),accessoriesNum,discountTitle);
    }
+
+   console.log('event', event.target);
       
    else{*/
       this.updateQuantity(event.target.dataset.index, event.target.value, document.activeElement.getAttribute('name'));
