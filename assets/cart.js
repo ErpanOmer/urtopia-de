@@ -59,6 +59,18 @@ class CartItems extends HTMLElement {
     const formData = {
       updates: itemsQuantityArray
     }
+
+    let info = fetch('/cart/update.js', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': `application/json` },
+      body: JSON.stringify(formData)
+    }).then(response => response.json()).then(data => {
+      location.reload(true);
+
+      return data
+    }).catch((error) => {
+      throw new Error(error);
+    });
   }
 
   removeInsuranceProducts(lineItemId, insuranceId) {
