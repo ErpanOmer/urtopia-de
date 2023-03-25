@@ -337,24 +337,29 @@ padding-bottom: {{ section.settings.padding_bottom }}px;
                       {{ 'products.product.quantity.label' | t }}
                     </label>
 
-                    <quantity-input class="quantity{% if has_insurance_product or is_insurance_product or is_event_components %} is-hidden{% endif %}">
-                      <button class="quantity__button no-js-hidden" name="minus" type="button">
-                        <span class="visually-hidden">{{ 'products.product.quantity.decrease' | t: product:
-                          item.product.title | escape }}</span>
-                        {% render 'icon-minus' %}
-                      </button>
-
-                      <input class="quantity__input" type="number" name="updates[]" value="{{ item.quantity }}" min="0"
-                        aria-label="{{ 'products.product.quantity.input_label' | t: product: item.product.title | escape }}"
-                        id="Quantity-{{ item.index | plus: 1 }}" data-index="{{ item.index | plus: 1 }}">
-
-
-                      <button class="quantity__button no-js-hidden" name="plus" type="button">
-                        <span class="visually-hidden">{{ 'products.product.quantity.increase' | t: product:
-                          item.product.title | escape }}</span>
-                        {% render 'icon-plus' %}
-                      </button>
-                    </quantity-input>
+                    {% if is_event_components %}
+                      <span>{{ item.quantity }}</span>
+                    {% else %}
+                        <quantity-input class="quantity{% if has_insurance_product or is_insurance_product %} is-hidden{% endif %}">
+                          <button class="quantity__button no-js-hidden" name="minus" type="button">
+                            <span class="visually-hidden">{{ 'products.product.quantity.decrease' | t: product:
+                              item.product.title | escape }}</span>
+                            {% render 'icon-minus' %}
+                          </button>
+    
+                          <input class="quantity__input" type="number" name="updates[]" value="{{ item.quantity }}" min="0"
+                            aria-label="{{ 'products.product.quantity.input_label' | t: product: item.product.title | escape }}"
+                            id="Quantity-{{ item.index | plus: 1 }}" data-index="{{ item.index | plus: 1 }}">
+    
+    
+                          <button class="quantity__button no-js-hidden" name="plus" type="button">
+                            <span class="visually-hidden">{{ 'products.product.quantity.increase' | t: product:
+                              item.product.title | escape }}</span>
+                            {% render 'icon-plus' %}
+                          </button>
+                        </quantity-input>
+                    {% endif %}
+                    
                     {% assign discountTitle = item.discounts.first.title %}
                     <cart-remove-button id="Remove-{{ item.index | plus: 1 }}" data-index="{{ item.index | plus: 1 }}" style="{% if is_event_components %}opacity: 0;visibility: hidden;pointer-events: none;{% endif %}">
                       <a href="{{ item.url_to_remove }}" class="button button--tertiary" {% if item.product.id!=7633738727640 and
