@@ -115,8 +115,9 @@
       const has_carbon = document.querySelector(`.cart-items [data-line-item-product-id="7633738727640"]`)
       const has_chord = document.querySelector(`.cart-items [data-line-item-product-id="7952778658008"]`)
 
-      console.log(has_carbon)
-      console.log(has_chord)
+      if (has_carbon && has_chord) {
+        document.querySelector(`.product_code .bold`).innerHTML = 'OK300 and <br> Chord 700'
+      }
       
     </script>
                           
