@@ -46,7 +46,7 @@ class CartItems extends HTMLElement {
 
   removeCarbonOneWithComponents (lineItemVariantId, quantity) {
     console.log(lineItemVariantId, quantity);
-    console.log(this);
+    console.log(this.querySelectorAll('[data-line-item]'));
   }
 
   updateCarbonOneWithComponents (lineItemVariantId, quantity = 0) {
