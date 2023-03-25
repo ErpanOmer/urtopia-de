@@ -56,6 +56,7 @@ class CartItems extends HTMLElement {
 
     items.forEach(item => {
       if (item.dataset.lineItemVariantId === lineItemVariantId) {
+        const carbonOneQuantity = parseInt(item.dataset.quantity)
         itemsQuantityArray.push(0)
       } else if (components.includes(item.dataset.lineItemVariantId)) {
         const componentQuantity = parseInt(item.dataset.quantity)
