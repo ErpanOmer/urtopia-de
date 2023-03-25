@@ -125,23 +125,23 @@
     </div>
     <script>
       function refreshProductCode () {
-          const has_carbon = document.querySelector(`.cart-items [data-line-item-product-id="7633738727640"]`)
-          const has_chord = document.querySelector(`.cart-items [data-line-item-product-id="7952778658008"]`)
+          const has_carbon = document.querySelectorAll(`.cart-items [data-line-item-product-id="7633738727640"]`)
+          const has_chord = document.querySelectorAll(`.cart-items [data-line-item-product-id="7952778658008"]`)
     
           if (has_carbon && has_chord) {
             document.querySelector(`.product_code .bold`).innerHTML = 'OK300 and <br> Chord 700'
-            document.querySelector(`.product_code .carbon_text > div:nth-child(1) span`).innerHTML = 'Save €1000.00!'
+            document.querySelector(`.product_code .carbon_text > div:nth-child(1) span`).innerHTML = `Save €${has_carbon.length * 300 + has_chord.length * 700}.00!`
             document.querySelector(`.product_code .carbon_text > div:nth-child(2) span`).innerHTML = 'Free Accessories'
           } else if (has_chord) { 
             document.querySelector(`.product_code .bold`).innerHTML = 'Chord 700'
-            document.querySelector(`.product_code .carbon_text > div:nth-child(1) span`).innerHTML = 'Save €700.00!'
+            document.querySelector(`.product_code .carbon_text > div:nth-child(1) span`).innerHTML = `Save €${has_chord.length * 700}.00!`
             document.querySelector(`.product_code .carbon_text > div:nth-child(2)`).innerHTML = ''
           } else {
             if (!has_carbon) {
                document.querySelector(`.product_code`).innerHTML = ''
             } else {
               document.querySelector(`.product_code .bold`).innerHTML = 'OK300'
-              document.querySelector(`.product_code .carbon_text > div:nth-child(1) span`).innerHTML = 'Save €300.00!'
+              document.querySelector(`.product_code .carbon_text > div:nth-child(1) span`).innerHTML = `Save €${has_carbon.length * 300}.00!`
               document.querySelector(`.product_code .carbon_text > div:nth-child(2) span`).innerHTML = 'Free Accessories'
             }
           }
