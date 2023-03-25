@@ -60,12 +60,13 @@ class CartItems extends HTMLElement {
       if (item.dataset.lineItemVariantId === lineItemVariantId && currentIndex === index + 1) {
         
         const insuranceId = item.dataset.insuranceVariantId;
-        if (insuranceId) {
-          const insuranceItem = document.querySelector(`.cart-items [data-line-item-variant-id="${insuranceId}"]`)
-          console.log('insuranceItem', insuranceItem)
-          console.log('dataset.index')
+        const insuranceItem = items[index + 1]
+        if (insuranceId && insuranceItem && insuranceItem.dataset.lineItemVariantId === insuranceId) {
+          // const insuranceItem = document.querySelector(`.cart-items [data-line-item-variant-id="${insuranceId}"]`)
+          // console.log('insuranceItem', insuranceItem)
+          // console.log('dataset.index')
 
-          insuranceItem && (itemsQuantityArray[parseInt(insuranceItem.dataset.lineItem) -1] = afterQuantity)
+          itemsQuantityArray[parseInt(insuranceItem.dataset.lineItem) -1] = afterQuantity
         }
 
         itemsQuantityArray[index] = afterQuantity
