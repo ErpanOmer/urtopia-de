@@ -17,6 +17,11 @@ class CartRemoveButton extends HTMLElement {
       if (insuranceId) {
         cartItems.removeInsuranceProducts(lineId, insuranceId);
       } else {
+        // 如果是carbon one 单车
+        if (pruduct_id === '7633738727640') {
+          return cartItems.removeEventComponents(lineId)
+        }
+        
         cartItems.updateQuantity(this.dataset.index, 0,"","remove");//更改
       }
     });
@@ -36,6 +41,24 @@ class CartItems extends HTMLElement {
     }, 300);
 
     this.addEventListener('change', this.debouncedOnChange.bind(this));
+  }
+
+  removeEventComponents (lineItemVariantId) {
+    const items = document.querySelectorAll('.cart-items [data-cart-item]');
+    let itemsQuantityArray = [];
+    const components = ['43745261748440', '43745263255768', '43745264697560']
+
+    items.forEach(item => {
+      if (components.includes(item.dataset.lineItemVariantId) || item.dataset.lineItemVariantId === lineItemVariantId) {
+        itemsQuantityArray.push(0)
+      } else {
+        itemsQuantityArray.push(parseInt(item.dataset.quantity));
+      }
+    });
+
+    const formData = {
+      updates: itemsQuantityArray
+    }
   }
 
   removeInsuranceProducts(lineItemId, insuranceId) {
