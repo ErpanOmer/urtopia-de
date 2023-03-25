@@ -356,7 +356,7 @@ padding-bottom: {{ section.settings.padding_bottom }}px;
                       </button>
                     </quantity-input>
                     {% assign discountTitle = item.discounts.first.title %}
-                    <cart-remove-button id="Remove-{{ item.index | plus: 1 }}" data-index="{{ item.index | plus: 1 }}" class="{% if is_event_components %}is-hidden{% endif %}">
+                    <cart-remove-button id="Remove-{{ item.index | plus: 1 }}" data-index="{{ item.index | plus: 1 }}" style="{% if is_event_components %}opacity: 0;visibility: hidden;pointer-events: none;{% endif %}">
                       <a href="{{ item.url_to_remove }}" class="button button--tertiary" {% if item.product.id!=7633738727640 and
                         discountTitle contains 'CHRISTMAS' %}style='display:none' {% endif %}
                         aria-label="{{ 'sections.cart.remove_title' | t: title: item.title }}">
