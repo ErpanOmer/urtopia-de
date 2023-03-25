@@ -287,10 +287,7 @@ class CartItems extends HTMLElement {
         const errors = document.getElementById('cart-errors') || document.getElementById('CartDrawer-CartErrors');
         errors.textContent = window.cartStrings.error;
         this.disableLoading();
-      }).finally(() => {
-        console.log('refreshProductCode')
-        setTimeout(refreshProductCode, 500)
-      });
+      }).finally(refreshProductCode);
   }
 
   updateLiveRegions(line, itemCount,type) {
