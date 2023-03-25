@@ -57,7 +57,7 @@ class CartItems extends HTMLElement {
     
     console.log('eventsItems', eventsItems);
 
-    this.disableLoading(index);
+    // this.disableLoading(index);
   }
 
   updateCarbonOneWithComponents (lineItemVariantId, quantity = 0) {
