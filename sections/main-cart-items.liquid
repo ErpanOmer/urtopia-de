@@ -345,6 +345,7 @@ padding-bottom: {{ section.settings.padding_bottom }}px;
                     <label class="visually-hidden" for="Quantity-{{ item.index | plus: 1 }}">
                       {{ 'products.product.quantity.label' | t }}
                     </label>
+                    {% assign discountTitle = item.discounts.first.title %}
 
                     {% if item.product.id!=7633738727640 and discountTitle contains 'Easter Promotion' %}
                       <div style="width: 100%;display: flex;align-items: center;justify-content: center;">{{ item.quantity }}</div>
@@ -369,7 +370,6 @@ padding-bottom: {{ section.settings.padding_bottom }}px;
                         </quantity-input>
                     {% endif %}
                     
-                    {% assign discountTitle = item.discounts.first.title %}
                     <cart-remove-button id="Remove-{{ item.index | plus: 1 }}" data-index="{{ item.index | plus: 1 }}">
                       <a href="{{ item.url_to_remove }}" class="button button--tertiary" {% if item.product.id!=7633738727640 and
                         discountTitle contains 'Easter Promotion' %}style='display:none' {% endif %}
