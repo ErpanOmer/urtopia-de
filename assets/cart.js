@@ -51,8 +51,6 @@ class CartItems extends HTMLElement {
     // this.enableLoading(index);
     console.log(lineItemVariantId, quantity);
     const items = document.querySelectorAll('.cart-items [data-cart-item]');
-    // 先过滤活动组件
-    const eventsItems = Array.from(items.filter(item => components.includes(item.dataset.lineItemVariantId)))
 
     let itemsQuantityArray = [];
 
@@ -67,7 +65,7 @@ class CartItems extends HTMLElement {
       }
     });
     
-    console.log('eventsItems', eventsItems);
+    console.log('items', items);
 
     const formData = {
       updates: itemsQuantityArray
