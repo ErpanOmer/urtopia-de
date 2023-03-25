@@ -122,6 +122,10 @@
         document.querySelector(`.product_code .bold`).innerHTML = 'Chord 700'
         document.querySelector(`.product_code .carbon_text > div:nth-child(1) span`).innerHTML = 'Save €700.00!'
         document.querySelector(`.product_code .carbon_text > div:nth-child(2)`).innerHTML = ''
+      } else {
+        if (!has_carbon) {
+           document.querySelector(`.product_code`).innerHTML = ''
+        }
       }
       
     </script>
