@@ -16,7 +16,7 @@ class CartRemoveButton extends HTMLElement {
 
         // 如果是carbon one 单车
       if (pruduct_id === '7633738727640') {
-        return cartItems.removeCarbonOneWithComponents(this.dataset.index, lineId, parseInt(quantity))
+        return cartItems.removeCarbonOneWithComponents(lineId, parseInt(quantity), 0)
       }
 
       // Remove the Product and it's Insurance product
@@ -47,7 +47,7 @@ class CartItems extends HTMLElement {
     this.addEventListener('change', this.debouncedOnChange.bind(this));
   }
 
-  removeCarbonOneWithComponents (index, lineItemVariantId, quantity) {
+  removeCarbonOneWithComponents (lineItemVariantId, beforeQuantity, afterQuantity) {
     // this.enableLoading(index);
     console.log(lineItemVariantId, quantity);
     const items = document.querySelectorAll('.cart-items [data-cart-item]');
@@ -160,8 +160,7 @@ class CartItems extends HTMLElement {
     console.log('afterQuantity', parseInt(event.target.value))
 
     if (pruduct_id === '7633738727640') {
-      return;
-      return this.updateCarbonOneWithComponents(lineId, parseInt(event.target.value))
+      return this.updateCarbonOneWithComponents(lineId, parseInt(quantity), parseInt(event.target.value));
     }
     
     ////购物车逻辑
