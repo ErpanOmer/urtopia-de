@@ -61,7 +61,9 @@ class CartItems extends HTMLElement {
         if (insuranceId) {
           const insuranceItem = document.querySelector(`.cart-items [data-line-item-variant-id="${insuranceId}"]`)
           console.log('insuranceItem', insuranceItem)
-          console.log('dataset.index', parseInt(insuranceItem.dataset.lineItem))
+          console.log('dataset.index')
+
+          itemsQuantityArray(parseInt(insuranceItem.dataset.lineItem) -1, afterQuantity)
         }
 
         
