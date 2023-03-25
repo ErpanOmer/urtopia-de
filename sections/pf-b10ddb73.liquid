@@ -375,7 +375,6 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
     justify-content: space-between;
     align-items: center;
     color: #fff;
-    padding: 0 40px 0 15px;
     font-size: 14px;
     font-weight: 500;
     box-shadow: 10px 10px 10px #6B869A1C;
@@ -387,10 +386,24 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
     font-weight: bold;
 }
 
+      .carbon_code > span:first-child {
+    flex-basis: 68%;
+}
+
+.carbon_code > span:last-child {
+    flex-basis: 32%;
+}
+
+.carbon_code > span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
 
 @media (max-width: 767px) {
     .carbon_code {
-        padding: 0 10% 0 4%;
         font-size: 13px;
     }
 
