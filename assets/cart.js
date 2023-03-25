@@ -13,15 +13,15 @@ class CartRemoveButton extends HTMLElement {
       const pruduct_id = lineItem.dataset.lineItemProductId
       console.log('pruduct_id', pruduct_id)
 
+        // 如果是carbon one 单车
+      if (pruduct_id === '7633738727640') {
+        return cartItems.updateCarbonOneWithComponents(lineId)
+      }
+
       // Remove the Product and it's Insurance product
       if (insuranceId) {
         cartItems.removeInsuranceProducts(lineId, insuranceId);
       } else {
-        // 如果是carbon one 单车
-        if (pruduct_id === '7633738727640') {
-          return cartItems.removeEventComponents(lineId)
-        }
-        
         cartItems.updateQuantity(this.dataset.index, 0,"","remove");//更改
       }
     });
@@ -43,14 +43,14 @@ class CartItems extends HTMLElement {
     this.addEventListener('change', this.debouncedOnChange.bind(this));
   }
 
-  removeEventComponents (lineItemVariantId) {
+  updateCarbonOneWithComponents (lineItemVariantId, quantity = 0) {
     const items = document.querySelectorAll('.cart-items [data-cart-item]');
     let itemsQuantityArray = [];
     const components = ['43745261748440', '43745263255768', '43745264697560']
 
     items.forEach(item => {
       if (components.includes(item.dataset.lineItemVariantId) || item.dataset.lineItemVariantId === lineItemVariantId) {
-        itemsQuantityArray.push(0)
+        itemsQuantityArray.push(quantity)
       } else {
         itemsQuantityArray.push(parseInt(item.dataset.quantity));
       }
