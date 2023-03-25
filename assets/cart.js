@@ -154,6 +154,7 @@ class CartItems extends HTMLElement {
     console.log('pruduct_id', pruduct_id)
 
     if (pruduct_id === '7633738727640') {
+      return;
       return this.updateCarbonOneWithComponents(lineId, parseInt(event.target.value))
     }
     
