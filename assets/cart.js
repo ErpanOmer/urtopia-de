@@ -54,9 +54,15 @@ class CartItems extends HTMLElement {
     const items = document.querySelectorAll('.cart-items [data-cart-item]');
 
     let itemsQuantityArray = [];
+    let flag = false
 
     items.forEach((item, index) => {
       if (item.dataset.lineItemVariantId === lineItemVariantId) {
+
+        if (flag) {
+          return;
+        }
+        
         const insuranceId = item.dataset.insuranceVariantId;
         if (insuranceId) {
           const insuranceItem = document.querySelector(`.cart-items [data-line-item-variant-id="${insuranceId}"]`)
@@ -68,6 +74,7 @@ class CartItems extends HTMLElement {
 
         
         itemsQuantityArray.push(afterQuantity)
+        flag = true
       } else if (components.includes(item.dataset.lineItemVariantId)) {
         const componentQuantity = parseInt(item.dataset.quantity)
         itemsQuantityArray.push(componentQuantity + (afterQuantity - beforeQuantity))
