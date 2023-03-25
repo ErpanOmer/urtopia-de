@@ -16,7 +16,7 @@ class CartRemoveButton extends HTMLElement {
 
         // 如果是carbon one 单车
       if (pruduct_id === '7633738727640') {
-        return cartItems.removeCarbonOneWithComponents(lineId, parseInt(quantity), 0)
+        return cartItems.updateCarbonOneWithComponents(lineId, parseInt(quantity), 0)
       }
 
       // Remove the Product and it's Insurance product
@@ -47,7 +47,7 @@ class CartItems extends HTMLElement {
     this.addEventListener('change', this.debouncedOnChange.bind(this));
   }
 
-  removeCarbonOneWithComponents (lineItemVariantId, beforeQuantity, afterQuantity) {
+  updateCarbonOneWithComponents (lineItemVariantId, beforeQuantity, afterQuantity) {
     console.log('beforeQuantity', beforeQuantity)
     console.log('afterQuantity', afterQuantity)
 
@@ -85,35 +85,6 @@ class CartItems extends HTMLElement {
     });
 
     // this.disableLoading(index);
-  }
-
-  updateCarbonOneWithComponents (lineItemVariantId, quantity = 0) {
-    const items = document.querySelectorAll('.cart-items [data-cart-item]');
-    let itemsQuantityArray = [];
-
-    items.forEach(item => {
-      if (components.includes(item.dataset.lineItemVariantId) || item.dataset.lineItemVariantId === lineItemVariantId) {
-        itemsQuantityArray.push(quantity)
-      } else {
-        itemsQuantityArray.push(parseInt(item.dataset.quantity));
-      }
-    });
-
-    const formData = {
-      updates: itemsQuantityArray
-    }
-
-    let info = fetch('/cart/update.js', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json', 'Accept': `application/json` },
-      body: JSON.stringify(formData)
-    }).then(response => response.json()).then(data => {
-      location.reload(true);
-
-      return data
-    }).catch((error) => {
-      throw new Error(error);
-    });
   }
 
   removeInsuranceProducts(lineItemId, insuranceId) {
@@ -158,7 +129,7 @@ class CartItems extends HTMLElement {
     console.log('pruduct_id', pruduct_id)
 
     if (pruduct_id === '7633738727640') {
-      return this.removeCarbonOneWithComponents(lineId, parseInt(quantity), parseInt(event.target.value));
+      return this.updateCarbonOneWithComponents(lineId, parseInt(quantity), parseInt(event.target.value));
     }
     
     ////购物车逻辑
