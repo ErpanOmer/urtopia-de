@@ -10,6 +10,9 @@ class CartRemoveButton extends HTMLElement {
       const lineId = lineItem.dataset.lineItemVariantId;
       const insuranceId = lineItem.dataset.insuranceVariantId;
 
+      const pruduct_id = lineItem.dataset.lineItemProductId
+      console.log('pruduct_id', pruduct_id)
+
       // Remove the Product and it's Insurance product
       if (insuranceId) {
         cartItems.removeInsuranceProducts(lineId, insuranceId);
