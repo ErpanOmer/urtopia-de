@@ -12,11 +12,12 @@ class CartRemoveButton extends HTMLElement {
 
       const pruduct_id = lineItem.dataset.lineItemProductId
       const quantity = lineItem.dataset.quantity
+      const index = lineItem.dataset.lineItem
       console.log('pruduct_id', pruduct_id)
 
         // 如果是carbon one 单车
       if (pruduct_id === '7633738727640') {
-        return cartItems.updateCarbonOneWithComponents(lineId, parseInt(quantity), 0)
+        return cartItems.updateCarbonOneWithComponents(parseInt(index), lineId, parseInt(quantity), 0)
       }
 
       // Remove the Product and it's Insurance product
