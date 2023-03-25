@@ -350,7 +350,7 @@ padding-bottom: {{ section.settings.padding_bottom }}px;
                     {% if item.product.id!=7633738727640 and discountTitle contains 'Easter Promotion' or is_insurance_product %}
                       <div style="width: 100%;display: flex;align-items: center;">{{ item.quantity }}</div>
                     {% else %}
-                      {% if item.product.product_id == 7952778658008 or is_insurance_product %}
+                      {% if item.product.product_id == 7952778658008 %}
                           <div style="width: 100%;display: flex;align-items: center;">{{ item.quantity }}</div>
                         {% else  %}
                         <quantity-input class="quantity">
