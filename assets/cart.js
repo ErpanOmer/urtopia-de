@@ -287,7 +287,9 @@ class CartItems extends HTMLElement {
         const errors = document.getElementById('cart-errors') || document.getElementById('CartDrawer-CartErrors');
         errors.textContent = window.cartStrings.error;
         this.disableLoading();
-      }).finally(refreshProductCode);
+      }).finally(() => {
+        setTimeout(refreshProductCode, 500)
+      });
   }
 
   updateLiveRegions(line, itemCount,type) {
