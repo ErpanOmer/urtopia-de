@@ -72,7 +72,9 @@ class CartItems extends HTMLElement {
         const componentQuantity = parseInt(item.dataset.quantity)
         itemsQuantityArray.push(componentQuantity + (afterQuantity - beforeQuantity))
       } else {
-        itemsQuantityArray.push(parseInt(item.dataset.quantity));
+        if (!item.dataset.insuranceProductVariantId) {
+            itemsQuantityArray.push(parseInt(item.dataset.quantity));
+        }
       }
     });
     
