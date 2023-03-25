@@ -156,8 +156,8 @@ class CartItems extends HTMLElement {
     const pruduct_id = lineItem.dataset.lineItemProductId
     const quantity = lineItem.dataset.quantity
     console.log('pruduct_id', pruduct_id)
-    console.log('beforeQuantity', quantity)
-    console.log('afterQuantity', event.target.value)
+    console.log('beforeQuantity', parseInt(quantity))
+    console.log('afterQuantity', parseInt(event.target.value))
 
     if (pruduct_id === '7633738727640') {
       return;
