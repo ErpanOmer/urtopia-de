@@ -31,6 +31,9 @@ class CartRemoveButton extends HTMLElement {
 
 customElements.define('cart-remove-button', CartRemoveButton);
 
+// 复活节活动组件
+const components = ['43745261748440', '43745263255768', '43745264697560']
+
 class CartItems extends HTMLElement {
   constructor() {
     super();
@@ -46,13 +49,12 @@ class CartItems extends HTMLElement {
 
   removeCarbonOneWithComponents (lineItemVariantId, quantity) {
     console.log(lineItemVariantId, quantity);
-    console.log(this.querySelectorAll('[data-line-item]'));
+    console.log(this.querySelectorAll('[data-line-item]').filter(item => components.includes(item.dataset.lineItemVariantId)));
   }
 
   updateCarbonOneWithComponents (lineItemVariantId, quantity = 0) {
     const items = document.querySelectorAll('.cart-items [data-cart-item]');
     let itemsQuantityArray = [];
-    const components = ['43745261748440', '43745263255768', '43745264697560']
 
     items.forEach(item => {
       if (components.includes(item.dataset.lineItemVariantId) || item.dataset.lineItemVariantId === lineItemVariantId) {
