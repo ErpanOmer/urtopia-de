@@ -347,9 +347,12 @@ padding-bottom: {{ section.settings.padding_bottom }}px;
                     </label>
                     {% assign discountTitle = item.discounts.first.title %}
 
-                    {% if item.product.id!=7633738727640 and discountTitle contains 'Easter Promotion' or is_insurance_product or item.product.product_id == 7952778658008 %}
+                    {% if item.product.id!=7633738727640 and discountTitle contains 'Easter Promotion' or is_insurance_product %}
                       <div style="width: 100%;display: flex;align-items: center;">{{ item.quantity }}</div>
                     {% else %}
+                      {% if item.product.product_id == 7952778658008 or is_insurance_product %}
+                          <div style="width: 100%;display: flex;align-items: center;">{{ item.quantity }}</div>
+                        {% else  %}
                         <quantity-input class="quantity">
                           <button class="quantity__button no-js-hidden" name="minus" type="button">
                             <span class="visually-hidden">{{ 'products.product.quantity.decrease' | t: product:
@@ -368,6 +371,7 @@ padding-bottom: {{ section.settings.padding_bottom }}px;
                             {% render 'icon-plus' %}
                           </button>
                         </quantity-input>
+                        {% endif %}
                     {% endif %}
                     
                     <cart-remove-button id="Remove-{{ item.index | plus: 1 }}" data-index="{{ item.index | plus: 1 }}">
