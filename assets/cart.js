@@ -96,7 +96,7 @@ class CartItems extends HTMLElement {
       headers: { 'Content-Type': 'application/json', 'Accept': `application/json` },
       body: JSON.stringify(formData)
     }).then(response => response.json()).then(data => {
-      location.reload(true);
+      // location.reload(true);
 
       return data
     }).catch((error) => {
