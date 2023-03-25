@@ -147,7 +147,7 @@ padding-bottom: {{ section.settings.padding_bottom }}px;
                             {%- break -%}
                   {%- endif -%}
 
-                {%- if item.product_id == 7966185259224 -%}
+                {%- if item.product_id == 7633738727640 -%}
                   {%- assign has_carbon_one = true -%}
                   {%- break -%}
                 {%- endif -%}
@@ -344,7 +344,7 @@ padding-bottom: {{ section.settings.padding_bottom }}px;
                       {{ 'products.product.quantity.label' | t }}
                     </label>
 
-                    {% if is_event_components and has_carbon_one %}
+                    {% if is_event_components or has_carbon_one %}
                       <div style="width: 100%;display: flex;align-items: center;justify-content: center;">{{ item.quantity }}</div>
                     {% else %}
                         <quantity-input class="quantity{% if has_insurance_product or is_insurance_product %} is-hidden{% endif %}">
