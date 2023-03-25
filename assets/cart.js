@@ -147,7 +147,7 @@ class CartItems extends HTMLElement {
   }
 
   onChange(event) {
-    console.log('event', event.target.value);
+    console.log('event', event.target);
     const lineItem = event.target.closest('[data-line-item]');
     const lineId = lineItem.dataset.lineItemVariantId;
     const pruduct_id = lineItem.dataset.lineItemProductId
