@@ -350,7 +350,7 @@ padding-bottom: {{ section.settings.padding_bottom }}px;
                     {% if item.product.id!=7633738727640 and discountTitle contains 'Easter Promotion' %}
                       <div style="width: 100%;display: flex;align-items: center;">{{ item.quantity }}</div>
                     {% else %}
-                        <quantity-input class="quantity{% if has_insurance_product or is_insurance_product %} is-hidden{% endif %}">
+                        <quantity-input class="quantity{% if is_insurance_product %} is-hidden{% endif %}">
                           <button class="quantity__button no-js-hidden" name="minus" type="button">
                             <span class="visually-hidden">{{ 'products.product.quantity.decrease' | t: product:
                               item.product.title | escape }}</span>
