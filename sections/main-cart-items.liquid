@@ -124,6 +124,8 @@ padding-bottom: {{ section.settings.padding_bottom }}px;
 
               {% comment %} 活动配件 {% endcomment %}
               {%- assign is_event_components = false %}
+              {% comment %} 是否有carbon one {% endcomment %}
+              {% assign has_carbon_one = false %}
               
               {%- comment -%} Check if the item has an active Insurance product in cart {%- endcomment -%}
               {%- for insurance_item in cart.items -%}
@@ -144,6 +146,11 @@ padding-bottom: {{ section.settings.padding_bottom }}px;
                           {%- assign is_event_components = true -%}
                             {%- break -%}
                   {%- endif -%}
+
+                {%- if item.product_id == 7966185259224 -%}
+                  {%- assign has_carbon_one = true -%}
+                  {%- break -%}
+                {%- endif -%}
                 
               {%- endfor -%}
             
@@ -337,7 +344,7 @@ padding-bottom: {{ section.settings.padding_bottom }}px;
                       {{ 'products.product.quantity.label' | t }}
                     </label>
 
-                    {% if is_event_components %}
+                    {% if is_event_components and has_carbon_one %}
                       <div style="width: 100%;display: flex;align-items: center;justify-content: center;">{{ item.quantity }}</div>
                     {% else %}
                         <quantity-input class="quantity{% if has_insurance_product or is_insurance_product %} is-hidden{% endif %}">
