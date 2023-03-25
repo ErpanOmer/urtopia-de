@@ -11,11 +11,12 @@ class CartRemoveButton extends HTMLElement {
       const insuranceId = lineItem.dataset.insuranceVariantId;
 
       const pruduct_id = lineItem.dataset.lineItemProductId
+      const quantity = lineItem.dataset.quantity
       console.log('pruduct_id', pruduct_id)
 
         // 如果是carbon one 单车
       if (pruduct_id === '7633738727640') {
-        return cartItems.updateCarbonOneWithComponents(lineId)
+        return cartItems.removeCarbonOneWithComponents(lineId, parseInt(quantity))
       }
 
       // Remove the Product and it's Insurance product
@@ -41,6 +42,11 @@ class CartItems extends HTMLElement {
     }, 300);
 
     this.addEventListener('change', this.debouncedOnChange.bind(this));
+  }
+
+  removeCarbonOneWithComponents (lineItemVariantId, quantity) {
+    console.log(lineItemVariantId, quantity);
+    console.log(this);
   }
 
   updateCarbonOneWithComponents (lineItemVariantId, quantity = 0) {
