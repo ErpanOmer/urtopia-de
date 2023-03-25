@@ -107,8 +107,13 @@ class CartItems extends HTMLElement {
   onChange(event) {
     console.log('event', event.target.value);
     const lineItem = event.target.closest('[data-line-item]');
+    const lineId = lineItem.dataset.lineItemVariantId;
     const pruduct_id = lineItem.dataset.lineItemProductId
     console.log('pruduct_id', pruduct_id)
+
+    if (pruduct_id === '7633738727640') {
+      return this.updateCarbonOneWithComponents(lineId, parseInt(event.target.value))
+    }
     
     ////购物车逻辑
    /* var data = event.target.dataset;
