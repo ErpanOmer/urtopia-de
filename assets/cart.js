@@ -68,14 +68,13 @@ class CartItems extends HTMLElement {
           insuranceItem && (itemsQuantityArray[parseInt(insuranceItem.dataset.lineItem) -1] = afterQuantity)
         }
 
-        
-        itemsQuantityArray.push(afterQuantity)
+        itemsQuantityArray[index] = afterQuantity
       } else if (components.includes(item.dataset.lineItemVariantId)) {
         const componentQuantity = parseInt(item.dataset.quantity)
-        itemsQuantityArray.push(componentQuantity + (afterQuantity - beforeQuantity))
+        itemsQuantityArray[index] = componentQuantity + (afterQuantity - beforeQuantity)
       } else {
         if (item.dataset.insuranceProductVariantId !== lineItemVariantId) {
-            itemsQuantityArray.push(parseInt(item.dataset.quantity));
+          itemsQuantityArray[index] = parseInt(item.dataset.quantity)
         }
       }
     });
