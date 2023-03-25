@@ -48,15 +48,15 @@ class CartItems extends HTMLElement {
   }
 
   removeCarbonOneWithComponents (lineItemVariantId, beforeQuantity, afterQuantity) {
-    // this.enableLoading(index);
-    console.log(lineItemVariantId, quantity);
+    console.log('beforeQuantity', beforeQuantity)
+    console.log('afterQuantity', afterQuantity)
+
     const items = document.querySelectorAll('.cart-items [data-cart-item]');
 
     let itemsQuantityArray = [];
 
     items.forEach(item => {
       if (item.dataset.lineItemVariantId === lineItemVariantId) {
-        const carbonOneQuantity = parseInt(item.dataset.quantity)
         itemsQuantityArray.push(afterQuantity)
       } else if (components.includes(item.dataset.lineItemVariantId)) {
         const componentQuantity = parseInt(item.dataset.quantity)
@@ -156,8 +156,6 @@ class CartItems extends HTMLElement {
     const pruduct_id = lineItem.dataset.lineItemProductId
     const quantity = lineItem.dataset.quantity
     console.log('pruduct_id', pruduct_id)
-    console.log('beforeQuantity', parseInt(quantity))
-    console.log('afterQuantity', parseInt(event.target.value))
 
     if (pruduct_id === '7633738727640') {
       return this.removeCarbonOneWithComponents(lineId, parseInt(quantity), parseInt(event.target.value));
