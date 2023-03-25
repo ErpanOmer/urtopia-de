@@ -63,7 +63,7 @@ class CartItems extends HTMLElement {
           console.log('insuranceItem', insuranceItem)
           console.log('dataset.index')
 
-          itemsQuantityArray[parseInt(insuranceItem.dataset.lineItem) -1] = afterQuantity
+          insuranceItem && itemsQuantityArray[parseInt(insuranceItem.dataset.lineItem) -1] = afterQuantity
         }
 
         
