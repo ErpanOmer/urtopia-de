@@ -72,10 +72,12 @@ class CartItems extends HTMLElement {
       } else if (components.includes(item.dataset.lineItemVariantId)) {
         const componentQuantity = parseInt(item.dataset.quantity)
         itemsQuantityArray[index] = componentQuantity + (afterQuantity - beforeQuantity)
+      } else if (itemsQuantityArray[index] === undefined) {
+        itemsQuantityArray[index] = parseInt(item.dataset.quantity)
+      } else if (item.dataset.insuranceProductVariantId !== lineItemVariantId){
+        itemsQuantityArray[index] = parseInt(item.dataset.quantity)
       } else {
-        if ((itemsQuantityArray[index] === undefined) || item.dataset.insuranceProductVariantId !== lineItemVariantId) {
-          itemsQuantityArray[index] = parseInt(item.dataset.quantity)
-        }
+        itemsQuantityArray[index] = parseInt(item.dataset.quantity)
       }
     });
     
