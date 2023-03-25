@@ -47,21 +47,16 @@ class CartItems extends HTMLElement {
     this.addEventListener('change', this.debouncedOnChange.bind(this));
   }
 
-  updateCarbonOneWithComponents (lineItemVariantId, beforeQuantity, afterQuantity) {
+  updateCarbonOneWithComponents (currentIndex, lineItemVariantId, beforeQuantity, afterQuantity) {
     console.log('beforeQuantity', beforeQuantity)
     console.log('afterQuantity', afterQuantity)
 
     const items = document.querySelectorAll('.cart-items [data-cart-item]');
 
     let itemsQuantityArray = [];
-    let flag = false
 
     items.forEach((item, index) => {
-      if (item.dataset.lineItemVariantId === lineItemVariantId) {
-
-        if (flag) {
-          return;
-        }
+      if (item.dataset.lineItemVariantId === lineItemVariantId && currentIndex === index + 1) {
         
         const insuranceId = item.dataset.insuranceVariantId;
         if (insuranceId) {
@@ -74,7 +69,6 @@ class CartItems extends HTMLElement {
 
         
         itemsQuantityArray.push(afterQuantity)
-        flag = true
       } else if (components.includes(item.dataset.lineItemVariantId)) {
         const componentQuantity = parseInt(item.dataset.quantity)
         itemsQuantityArray.push(componentQuantity + (afterQuantity - beforeQuantity))
@@ -138,17 +132,15 @@ class CartItems extends HTMLElement {
   }
 
   onChange(event, ...a) {
-    console.log('target', event.target);
-    console.log('value', event.target.value);
-    console.log(a);
     const lineItem = event.target.closest('[data-line-item]');
     const lineId = lineItem.dataset.lineItemVariantId;
     const pruduct_id = lineItem.dataset.lineItemProductId
     const quantity = lineItem.dataset.quantity
+    const index = lineItem.dataset.lineItem
     console.log('pruduct_id', pruduct_id)
 
     if (pruduct_id === '7633738727640') {
-      return this.updateCarbonOneWithComponents(lineId, parseInt(quantity), parseInt(event.target.value));
+      return this.updateCarbonOneWithComponents(parseInt(index), lineId, parseInt(quantity), parseInt(event.target.value));
     }
     
     ////购物车逻辑
