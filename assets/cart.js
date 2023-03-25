@@ -288,6 +288,7 @@ class CartItems extends HTMLElement {
         errors.textContent = window.cartStrings.error;
         this.disableLoading();
       }).finally(() => {
+        console.log('refreshProductCode')
         setTimeout(refreshProductCode, 500)
       });
   }
