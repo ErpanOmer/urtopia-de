@@ -160,7 +160,7 @@ class CartItems extends HTMLElement {
     console.log('afterQuantity', parseInt(event.target.value))
 
     if (pruduct_id === '7633738727640') {
-      return this.updateCarbonOneWithComponents(lineId, parseInt(quantity), parseInt(event.target.value));
+      return this.removeCarbonOneWithComponents(lineId, parseInt(quantity), parseInt(event.target.value));
     }
     
     ////购物车逻辑
