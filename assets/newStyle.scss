@@ -387,15 +387,15 @@ body .jBox-Modal {
     margin-right: -8px;
   }
 
-  .pcHide {
-    display: none;
+  .mobileHide {
+    display: none !important;
   }
 }
 
 
 @media (min-width: 767px) {
-  .mobileHide {
-    display: none;
+  .pcHide {
+    display: none !important;
   }
 }
 
