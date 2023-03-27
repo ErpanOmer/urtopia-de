@@ -266,7 +266,7 @@
     
     
     setTimeout(() => {
-      $('.tl-options .tl-option').trigger('click')
+      $(findLang).trigger('click')
       {% comment %} const select = document.getElementById('locale_code')
       console.log('select', select)
       select.value = code
