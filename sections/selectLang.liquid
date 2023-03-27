@@ -273,7 +273,7 @@
       console.log(active)
       console.log(findLang)
       findLang.dispatchEvent(new Event('click'))
-      $(findLang).trigger('click')
+      {% comment %} $(findLang).trigger('click') {% endcomment %}
     }, 0)
 
 
