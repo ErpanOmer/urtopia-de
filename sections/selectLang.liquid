@@ -270,7 +270,7 @@
 
   function gotoLocation (code = 'de') {
     let url = '';
-      const pathname = window.location.pathname.replace(/\/fr|\/en/g, '');
+      const pathname = window.location.pathname.replace(/\/fr\/|\/en\//g, '/');
 
       if (code === 'de') {
         url = window.location.origin + pathname;
