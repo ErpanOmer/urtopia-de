@@ -263,6 +263,9 @@
     const active = allOptions.find(tl => Array.from(tl.classList).includes('active'))
     const findLang = allOptions.find(tl => tl.dataset.value = code)
 
+    console.log(active)
+    console.log(findLang)
+
 
     {% comment %} let url = '';
       const pathname = window.location.pathname.replace(/\/fr\/|\/en\//g, '/');
