@@ -155,7 +155,7 @@ const testRides = [
     cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Frankfurt_am_Main.jpg?v=1679406972',
     series: [
       'Urtopia Carbon 1',
-      'Urtopia Carbon 1'
+      // 'Urtopia Carbon 1'
     ],
     stores: [
       {
@@ -166,7 +166,7 @@ const testRides = [
         add: "Am Sonnigen Hang 21 55127 Mainz Germany",
         imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Frankfurt_am_Main.jpg?v=1679406972",
         testrideSpot: "Frankfurt am Main",
-        testRideSize: "M/L<li class='u20Medium'>Carbon One Size M/L</li>",
+        testRideSize: "M/L",
         businessHours: [
           "09:00-12:00,12:00–19:00",
           "09:00-12:00,12:00–19:00",
