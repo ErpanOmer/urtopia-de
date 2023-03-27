@@ -260,22 +260,12 @@
 
   function gotoLocation (code = 'de') {
     const parent = Array.from(document.querySelectorAll('.tl-options')).pop()
-    {% comment %} $('.tl-options').addClass('open'). {% endcomment %}
     const allOptions = Array.from(parent.querySelectorAll('.tl-option'))
     const active = allOptions.find(tl => Array.from(tl.classList).includes('active'))
-    const findLang = allOptions.find(tl => tl.dataset.value === 'fr')
+    const findLang = allOptions.find(tl => tl.dataset.value === code)
 
-    
-    
     setTimeout(() => {
-      const select = document.getElementById('locale_code')
-      {% comment %} console.log('select', select) {% endcomment %}
-      {% comment %} select.value = code {% endcomment %}
-      
-      console.log(active)
-      console.log(findLang)
       findLang.dispatchEvent(new Event('click'))
-      {% comment %} $(findLang).trigger('click') {% endcomment %}
     }, 0)
 
 
