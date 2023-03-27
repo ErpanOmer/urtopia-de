@@ -251,6 +251,7 @@ const testRides = [
     cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Berlin.jpg?v=1679406972',
     series: [
       'Urtopia Carbon 1',
+      'Urtopia Chord'
       // 'Urtopia Carbon 1'
     ],
     stores: [
@@ -262,7 +263,7 @@ const testRides = [
         add: "buero fuer neues denken, Bötzowstr. 18, 10407 Berlin",
         imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Berlin.jpg?v=1679406972",
         testrideSpot: "Berlin",
-        testRideSize: "M",
+        testRideSize: "M, Chord",
         businessHours: [
           "",
           "09:00-12:00,12:00–18:00",
