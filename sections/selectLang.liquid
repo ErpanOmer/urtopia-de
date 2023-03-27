@@ -269,11 +269,11 @@
       const select = document.getElementById('locale_code')
       {% comment %} console.log('select', select) {% endcomment %}
       {% comment %} select.value = code {% endcomment %}
+      
+      console.log(active)
+      console.log(findLang)
       findLang.dispatchEvent(new Event('click'))
     }, 0)
-
-    console.log(active)
-    console.log(findLang)
 
 
     {% comment %} let url = '';
