@@ -267,6 +267,7 @@
     
     setTimeout(() => {
       const select = document.getElementById('locale_code')
+      console.log('select', select)
       select.value = code
       select.dispatchEvent(new Event('change'))
     }, 1000)
