@@ -387,8 +387,12 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
 }
 
       .carbon_code > span:first-child {
-    flex-basis: 68%;
-}
+        flex-basis: 68%;
+        font-size: 14px;
+        padding: 10px;
+        text-align: center;
+        line-height: 16px;
+      }
 
 .carbon_code > span:last-child {
     flex-basis: 32%;
@@ -426,6 +430,9 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
   <i class="fa fa-spinner fa-spin"></i
   ><span data-pf-type="Text" class="addToCartText">Add to Cart</span>
 </button>
+<div class="orderTestRideBtn">
+	<span onclick="testRideTrace()" style="cursor:pointer;">Book a Test Ride</span>
+</div>
 <script>
   var cartList = { items: [] };
   var id = 0;
@@ -544,9 +551,10 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
     display: inline-block !important;
   }
 
-  .addToCartBtn {
+  .addToCartBtn,
+  .orderTestRideBtn {
     width: 100%;
-    height: 57px;
+    height: 50px;
     font: normal normal 600 23px/28px Proxima Nova Lt;
     color: #fff;
     background: #161c1f;
@@ -554,6 +562,7 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
     border-radius: 30px;
     margin-bottom: 12px;
     transition: all 0.3s;
+    font-size: 16px;
   }
 
   .addToCartBtn[disabled] {
@@ -563,8 +572,20 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
     opacity: 0.5;
   }
 
+  .orderTestRideBtn{
+      line-height: 50px;
+      text-align: center;
+      background: #fff;
+      color: #000;
+      border: 2px solid #161c1f;	
+    }
+    .orderTestRideBtn a{
+    color:#fff;
+    }
+
   @media screen and (min-width: 767px) {
-    .addToCartBtn:hover {
+    .addToCartBtn:hover,
+    .orderTestRideBtn:hover {
       opacity: 0.7;
     }
   }
@@ -572,6 +593,10 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
     .addToCartBtn {
       margin-bottom: 10px;
       font: normal normal 600 15px/18px Proxima-Nova;
+    }
+
+    .orderTestRideBtn{
+      font-size:15px;
     }
   }
 </style></div><div data-pf-type="Custom.HTML" class="sc-AjmGg eCTxfx pf-32_"><style>
