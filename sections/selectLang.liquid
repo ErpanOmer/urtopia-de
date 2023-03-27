@@ -259,7 +259,12 @@
   });
 
   function gotoLocation (code = 'de') {
-    let url = '';
+    const allOptions = Array.from(document.querySelectorAll('.tl-options .tl-option'))
+    const active = allOptions.find(tl => Array.from(tl.classList).includes('active'))
+    const findLang = allOptions.find(tl => tl.dataset.value = code)
+
+
+    {% comment %} let url = '';
       const pathname = window.location.pathname.replace(/\/fr\/|\/en\//g, '/');
 
       if (code === 'de') {
@@ -273,7 +278,7 @@
         return;
       }
 
-      window.location.href = url;
+      window.location.href = url; {% endcomment %}
   }
 
   const langmap = {
