@@ -248,22 +248,12 @@
 
 
   const storage = new MyStorage()
+  const options = document.querySelectorAll('.tl-options .tl-option')
 
   // 监听页面语言插件切换
-  document.querySelectorAll('.tl-options .tl-option').forEach((v) => {
+  options.forEach((v) => {
     v.addEventListener('click', () => {
       let val = v.getAttribute('data-value');
-      var d = new Date();
-      d.setTime(d.getTime() + 3 * 24 * 60 * 60 * 1000); // 3天后到期
-      var expires = d.toGMTString();
-
-      {% comment %} delCookie('selectLang');
-
-      setTimeout(() => {
-        document.cookie = `selectLang=${val};expires=${expires};path=/`;
-      }, 300); {% endcomment %}
-
-
       storage.set('selectLang', val)
     });
   });
