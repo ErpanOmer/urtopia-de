@@ -259,7 +259,7 @@
   });
 
   function gotoLocation (code = 'de') {
-    $('.tl-options').addClass('open')
+    {% comment %} $('.tl-options').addClass('open'). {% endcomment %}
     const allOptions = Array.from(document.querySelectorAll('.tl-options .tl-option'))
     const active = allOptions.find(tl => Array.from(tl.classList).includes('active'))
     const findLang = allOptions.find(tl => tl.dataset.value === 'fr')
