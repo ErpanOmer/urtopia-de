@@ -266,11 +266,10 @@
     
     
     setTimeout(() => {
-      console.log($(findLang))
-      {% comment %} const select = document.getElementById('locale_code')
+      const select = document.getElementById('locale_code')
       console.log('select', select)
       select.value = code
-      select.dispatchEvent(new Event('change')) {% endcomment %}
+      findLang.dispatchEvent(new Event('click'))
     }, 0)
 
     console.log(active)
