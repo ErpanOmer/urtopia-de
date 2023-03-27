@@ -266,7 +266,8 @@
     
     
     setTimeout(() => {
-      $('#local_code').val('fr').trigger('change')
+      $('#local_code').val('fr')
+      $('#local_code').trigger('change')
     }, 1000)
 
     console.log(active)
