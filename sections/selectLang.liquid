@@ -267,23 +267,6 @@
     setTimeout(() => {
       findLang.dispatchEvent(new Event('click'))
     }, 0)
-
-
-    {% comment %} let url = '';
-      const pathname = window.location.pathname.replace(/\/fr\/|\/en\//g, '/');
-
-      if (code === 'de') {
-        url = window.location.origin + pathname;
-      } else {
-        url = window.location.origin + '/' + code + pathname;
-      }
-
-      // 避免死循环
-      if (window.location.href === url) {
-        return;
-      }
-
-      window.location.href = url; {% endcomment %}
   }
 
   const langmap = {
