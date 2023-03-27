@@ -248,42 +248,29 @@
 
 
   const storage = new MyStorage()
+  const options = document.querySelectorAll('.tl-options .tl-option')
 
   // 监听页面语言插件切换
-  document.querySelectorAll('.tl-options .tl-option').forEach((v) => {
+  options.forEach((v) => {
     v.addEventListener('click', () => {
       let val = v.getAttribute('data-value');
-      var d = new Date();
-      d.setTime(d.getTime() + 3 * 24 * 60 * 60 * 1000); // 3天后到期
-      var expires = d.toGMTString();
-
-      {% comment %} delCookie('selectLang');
-
-      setTimeout(() => {
-        document.cookie = `selectLang=${val};expires=${expires};path=/`;
-      }, 300); {% endcomment %}
-
-
       storage.set('selectLang', val)
     });
   });
 
   function gotoLocation (code = 'de') {
-    let url = '';
-      const pathname = window.location.pathname.replace(/\/fr\/|\/en\//g, '/');
+    const parent = Array.from(document.querySelectorAll('.tl-options')).pop()
+    const allOptions = Array.from(parent.querySelectorAll('.tl-option'))
+    const active = allOptions.find(tl => Array.from(tl.classList).includes('active'))
+    const findLang = allOptions.find(tl => tl.dataset.value === code)
 
-      if (code === 'de') {
-        url = window.location.origin + pathname;
-      } else {
-        url = window.location.origin + '/' + code + pathname;
-      }
+    if (active.dataset.value === code) {
+      return
+    }
 
-      // 避免死循环
-      if (window.location.href === url) {
-        return;
-      }
-
-      window.location.href = url;
+    setTimeout(() => {
+      findLang.dispatchEvent(new Event('click'))
+    }, 0)
   }
 
   const langmap = {
