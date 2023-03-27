@@ -266,11 +266,10 @@
     
     
     setTimeout(() => {
-      $('#local_code').val('fr')
-      $('#local_code').trigger('change')
-
-      console.log($('#local_code'))
-    }, 1000)
+      const select = document.getElementById('locale_code')
+      select.value = code
+      select.dispatchEvent(new Event('change'))
+    }, 100)
 
     console.log(active)
     console.log(findLang)
