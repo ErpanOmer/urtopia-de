@@ -264,6 +264,10 @@
     const active = allOptions.find(tl => Array.from(tl.classList).includes('active'))
     const findLang = allOptions.find(tl => tl.dataset.value === code)
 
+    if (active.dataset.value === code) {
+      return
+    }
+
     setTimeout(() => {
       findLang.dispatchEvent(new Event('click'))
     }, 0)
