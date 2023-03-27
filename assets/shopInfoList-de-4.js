@@ -155,7 +155,7 @@ const testRides = [
     cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Frankfurt_am_Main.jpg?v=1679406972',
     series: [
       'Urtopia Carbon 1',
-      // 'Urtopia Carbon 1'
+      'Urtopia Carbon 1'
     ],
     stores: [
       {
