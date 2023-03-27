@@ -263,7 +263,11 @@
     const active = allOptions.find(tl => Array.from(tl.classList).includes('active'))
     const findLang = allOptions.find(tl => tl.dataset.value = code)
 
-    findLang.click()
+    
+    
+    setTimeout(() => {
+      $('#local_code').val('de').trigger('change')
+    }, 1000)
 
     console.log(active)
     console.log(findLang)
