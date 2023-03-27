@@ -271,11 +271,10 @@ class Insurance {
 }
 
 const insurance = new Insurance();
-var accessories_global = []
+// var accessories_global = []
 
 
 function addToCartInsurance(parse) {
-  console.log('accessories_global', accessories_global);
   const cartListNew = {items:[]};
   const cart1New =
     document.querySelector("cart-notification") ||
@@ -326,6 +325,7 @@ function addToCartInsurance(parse) {
     }
 
     // 和配件合并
+    console.log('accessories_global', accessories_global);
     cartListNew.items = cartListNew.items.concat(accessories_global.items || []);
     
     fetch("/cart/add.js", {
@@ -337,6 +337,7 @@ function addToCartInsurance(parse) {
     })
     .then((res) => res.json())
     .then((res1) => {
+      console.log(res1);
       res1.key = "";
 	  	let body = {
         trace_name: "de-order-pc"+parse

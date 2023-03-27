@@ -358,63 +358,59 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
 ></klarna-placement>
 <!-- end Placement -->
 
-</div><div data-pf-type="Custom.HTML" class="sc-AjmGg eCTxfx pf-30_"><div class="chrod_code">
-  {% comment %} <img
-    src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_20664.svg?v=1678094921"
-    alt="urtopia"
-  /> {% endcomment %}
-  {% render 'svg-icons', index: '11' %}
-  <div class="text-container">
-    <span class="chrod_des"
-      ><strong>€700</strong> OFF with Early Bird Code</span
-    >
-    <span class="splitBar"></span>
-    <span class="code" style="user-select: all;">Chord700</span>
-  </div>
-</div>
+</div><div data-pf-type="Custom.HTML" class="sc-AjmGg eCTxfx pf-30_">
+      <div class="carbon_code">
+        <span>€700 OFF with Easter Sale Code</span>
+        <span class="bold">Chord700</span>
+    </div>
+
+
 <style>
-  .chrod_code {
-    position: relative;
-  }
-
-  .chrod_code svg {
-    height: 40px;
-    width: 100%;
-  }
-
-  
-  .chrod_code .text-container {
-    position: absolute;
-    top: -3px;
-    left: 0;
-    width: 100%;
-    height: 100%;
+.carbon_code {
+    max-width: 480px;
+    background: url(https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230324-171240.png?v=1679649232) no-repeat;
+    height: 46px;
+    background-size: 100% 46px;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-	color:#fff;
-  }
-  .chrod_code .chrod_des {
-    font: normal normal 500 14px/21px urbane;
-  }
-  .chrod_code .code {
-    font: normal normal 600 14px/21px urbane;
-  }
-  .chrod_code .splitBar {
-    display: inline-block;
-    height: 100%;
-    border: 1.5px dashed #000;
-    width: 0;
-    margin: 0 2%;
-  }
-  @media (max-width: 1025px){
-	.chrod_code .chrod_des {
-	  font: normal normal 500 12px/14px urbane;
-	}
-	.chrod_code .code {
-	  font: normal normal 600 12px/14px urbane;
-	}
-  }
+    color: #fff;
+    font-size: 14px;
+    font-weight: 500;
+    box-shadow: 10px 10px 10px #6B869A1C;
+    margin-top: 20px;
+}
+
+.carbon_code .bold {
+    font-size: 17px;
+    font-weight: bold;
+}
+
+      .carbon_code > span:first-child {
+    flex-basis: 68%;
+}
+
+.carbon_code > span:last-child {
+    flex-basis: 32%;
+}
+
+.carbon_code > span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+@media (max-width: 767px) {
+    .carbon_code {
+        font-size: 13px;
+    }
+
+    .carbon_code .bold {
+        font-size: 16px;
+    }
+}
 </style>
 </div><div data-pf-type="Custom.HTML" class="sc-AjmGg eCTxfx pf-31_"><button
   data-product-id="7952778658008"
@@ -2647,6 +2643,10 @@ new Swiper('#section5', {
   }
 
   location.href = `${location.href.replace(/urtopia-chord-ebike(.*)/g, '')}${handle}`
+}
+
+  var accessories_global = {
+  items: []
 }
   
 

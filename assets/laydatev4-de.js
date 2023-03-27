@@ -2938,23 +2938,23 @@
           class: ELEM_TIME_TEXT,
         }),
         //滚动条定位
-        scroll = function () {
-          lay(ul)
-            .find("ol")
-            .each(function (i) {
-              var ol = this,
-                li = lay(ol).find("li");
-              ol.scrollTop = 30 * (that[startEnd][hms[i]] - 2);
-              if (ol.scrollTop <= 0) {
-                li.each(function (ii, item) {
-                  if (!lay(this).hasClass(DISABLED)) {
-                    ol.scrollTop = 30 * (ii - 2);
-                    return true;
-                  }
-                });
-              }
-            });
-        },
+        // scroll = function () {
+        //   lay(ul)
+        //     .find("ol")
+        //     .each(function (i) {
+        //       var ol = this,
+        //         li = lay(ol).find("li");
+        //       ol.scrollTop = 30 * (that[startEnd][hms[i]] - 2);
+        //       if (ol.scrollTop <= 0) {
+        //         li.each(function (ii, item) {
+        //           if (!lay(this).hasClass(DISABLED)) {
+        //             ol.scrollTop = 30 * (ii - 2);
+        //             return true;
+        //           }
+        //         });
+        //       }
+        //     });
+        // },
         haveSpan = lay(elemHeader[2]).find("." + ELEM_TIME_TEXT);
 
       scroll();

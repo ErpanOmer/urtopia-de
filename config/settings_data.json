@@ -118,11 +118,11 @@
           "announcement-bar-0": {
             "type": "announcement",
             "settings": {
-              "text1": "💥",
-              "impText": "€ 700 off",
-              "text2": "on New Arrival Urtopia Chord",
+              "text1": "Easter Sale -",
+              "impText": "Save 300€",
+              "text2": "on Carbon 1",
               "color_scheme": "accent-1",
-              "link": "shopify:\/\/products\/urtopia-chord-ebike"
+              "link": "shopify:\/\/products\/urtopia-carbon-e-bike"
             }
           }
         },
@@ -207,6 +207,11 @@
       },
       "care": {
         "type": "care",
+        "settings": {
+        }
+      },
+      "selectLang": {
+        "type": "selectLang",
         "settings": {
         }
       }

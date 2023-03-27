@@ -439,7 +439,7 @@ const testRides = [
         phone: '+0174 9610700',
         email: 'wbeurich@muenster.de',
         timezone: "Mainz, Germany (GMT+1)",
-        add: "-",
+        add: "Feldstiege 98c in Münster 48161, North Rhine-Westphalia",
         imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/testride-munster.jpg?v=1671252848",
         testrideSpot: "Münster",
         testRideSize: "L",
