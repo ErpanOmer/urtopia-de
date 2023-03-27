@@ -267,8 +267,8 @@
     
     setTimeout(() => {
       const select = document.getElementById('locale_code')
-      console.log('select', select)
-      select.value = code
+      {% comment %} console.log('select', select) {% endcomment %}
+      {% comment %} select.value = code {% endcomment %}
       findLang.dispatchEvent(new Event('click'))
     }, 0)
 
