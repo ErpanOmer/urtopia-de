@@ -386,14 +386,14 @@ body .jBox-Modal {
     margin-right: -8px;
   }
 
-  .pcHide {
+  .mobileHide {
     display: none !important;
   }
 }
 
 
 @media (min-width: 767px) {
-  .mobileHide {
+  .pcHide {
     display: none !important;
   }
 }
