@@ -259,8 +259,9 @@
   });
 
   function gotoLocation (code = 'de') {
+    const parent = Array.from(document.querySelectorAll('.tl-options')).pop()
     {% comment %} $('.tl-options').addClass('open'). {% endcomment %}
-    const allOptions = Array.from(document.querySelectorAll('.tl-options .tl-option'))
+    const allOptions = Array.from(parent.querySelectorAll('.tl-option'))
     const active = allOptions.find(tl => Array.from(tl.classList).includes('active'))
     const findLang = allOptions.find(tl => tl.dataset.value === 'fr')
 
