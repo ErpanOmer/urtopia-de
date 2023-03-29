@@ -320,8 +320,8 @@
         }
 
 
-        $("form").on("submit", function (event) {
-            $('form  :input').each((index, target) => {
+        $(".forms form").on("submit", function (event) {
+            $('.forms form :input').each((index, target) => {
                 if (ignore.includes(target.type)) {
                     return
                 }
