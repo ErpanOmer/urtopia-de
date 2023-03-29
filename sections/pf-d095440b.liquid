@@ -178,7 +178,7 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
 <script>
 	window.addEventListener('scroll',()=>{
   	  let showTop = document.querySelector("#detail-title").getBoundingClientRect().top;
-	  /*
+	  
 	  let detailTop;
 	  let reviewTop;
 	  let specTop = document.querySelector("#spec-title").getBoundingClientRect().top;
@@ -208,7 +208,7 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
 	    }
 	  }else{
 	  	document.querySelector(".smenu-container").style="--order:1"
-	  }*/
+	  }
 	  if(showTop<=1){
 	    $(".stickyNavigation").addClass("active")
 	    $("#shopify-section-header").addClass("active")
