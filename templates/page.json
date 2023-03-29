@@ -1,0 +1,12 @@
+{
+  "sections": {
+    "jobrad": {
+      "type": "jobrad",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "jobrad"
+  ]
+}
