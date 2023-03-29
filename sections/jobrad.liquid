@@ -320,11 +320,13 @@
         }
 
 
-        $('.forms form :input').on("submit", function (event) {
+        $('.forms form').on("submit", function (event) {
             $('.forms form :input').each((index, target) => {
                 if (ignore.includes(target.type)) {
                     return
                 }
+
+
 
                 forms[target.name] = target.value
             })
