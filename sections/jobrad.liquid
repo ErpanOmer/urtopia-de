@@ -319,6 +319,9 @@
             })
         }
 
+        $('.forms form').on('invalid', function (e) => {
+            console.log('invalid', e)
+        })
 
         $('.forms form').on("submit", function (event) {
             $('.forms form :input').each((index, target) => {
