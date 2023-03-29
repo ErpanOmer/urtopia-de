@@ -212,6 +212,8 @@ a.moreBtn.bannerBtn.buyBtn:hover,
 
 
 
+
+
 body {
   letter-spacing: 0;
   color: #000;
@@ -239,10 +241,16 @@ a:hover {
   color: #263B55;
 }
 
+.centeral-content {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
 /* 全局字体设置start */
 .u17Light {
   font: normal normal 300 17px/19px urbane;
 }
+
 
 .u20Light {
   font: normal normal 300 20px/24px urbane;
@@ -254,6 +262,10 @@ a:hover {
 
 .u36Light {
   font: normal normal 300 36px/42px urbane;
+}
+
+.u17Medium {
+  font: normal normal 500 17px/19px urbane;
 }
 
 .u20Medium {
@@ -390,6 +402,10 @@ body .jBox-Modal {
   .mobileHide {
     display: none !important;
   }
+
+  .centeral-content {
+    padding: 0 8%;
+  }
 }
 
 
@@ -398,6 +414,9 @@ body .jBox-Modal {
     display: none !important;
   }
 }
+
+
+
 
 
 
