@@ -145,6 +145,7 @@
                     cursor: pointer;
                     align-items: center;
                     padding: 2.5vh 9%;
+                    box-sizing: border-box;
 
                     .faq-content-plus:before {
                         content: '\f067';
@@ -238,7 +239,7 @@
                         outline-offset: unset;
                         box-shadow: unset;
                         outline: unset;
-                        border-color: #00000068;
+                        border-color: #000;
                     }
                 }
 
@@ -422,7 +423,7 @@
                             padding: 20px 9%;
 
                             i {
-                                top: 20px;
+                                top: 22px;
                             }
                         }
 
