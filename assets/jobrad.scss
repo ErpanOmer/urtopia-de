@@ -224,6 +224,7 @@
                 input[type="email"],
                 input[type="tel"],
                 select {
+                    border-color: #00000034;
                     border-radius: 10px;
                     opacity: 1;
                     height: 47px;
@@ -234,7 +235,7 @@
                     box-sizing: border-box;
 
                     &:focus {
-                        border: 1px solid #00000034;
+                        // border: 1px solid #00000034;
                     }
                 }
 
