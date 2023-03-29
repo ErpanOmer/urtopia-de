@@ -234,8 +234,11 @@
                     line-height: 20px;
                     box-sizing: border-box;
 
-                    &:focus {
-                        // border: 1px solid #00000034;
+                    &:focus-visible {
+                        outline-offset: unset;
+                        box-shadow: unset;
+                        outline: unset;
+                        border-color: #000;
                     }
                 }
 
@@ -493,9 +496,9 @@
                     }
                 }
 
-               .u17Medium {
-                font-size: 15px;
-               }
+                .u17Medium {
+                    font-size: 15px;
+                }
             }
         }
     }
