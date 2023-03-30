@@ -2108,7 +2108,7 @@ function testRideTrace(){
     #section4 {
         grid-template-columns: 1fr;
         padding: 0;
-        grid-template-rows: calc(100vw - 60px) 90vw calc(100vw - 60px) 80vw calc(100vw - 60px) 80vw;
+        grid-template-rows: calc(100vw - 60px) 90vw;
     }
 
     #section4>div {
@@ -2128,7 +2128,7 @@ function testRideTrace(){
         margin: 10px 0 20px;
     }
 
-    #section4 > div:nth-child(4) {
+    {% comment %} #section4 > div:nth-child(4) {
         order: 1;
     }
 
@@ -2142,7 +2142,7 @@ function testRideTrace(){
 
     #section4 > div:nth-child(6) {
         order: 4;
-    }
+    } {% endcomment %}
 
 }
 </style>
