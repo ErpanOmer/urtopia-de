@@ -190,13 +190,36 @@
     
     #banner .three > div .right .u48DemiBold {
         margin-top: 1vh;
-        margin-bottom: 7vh;
+        margin-bottom: 4vh;
     }
     
     #banner .three > div .right .buttons {
         display: flex;
         justify-content: center;
-        margin-top: 7vh;
+    }
+
+    #banner .countdown {
+      background: #fff;
+    border-radius: 55px;
+    display: flex;
+    padding: 0 30px;
+    overflow: hidden;
+    max-width: 556px;
+    justify-content: space-between;
+    margin: 4vh 0;
+    }
+
+    #banner .countdown > div {
+      color: #3B65EB;
+    display: flex;
+    align-items: center;
+    font: normal normal 600 16px/25px Urbane;
+    }
+
+    #banner .countdown > img {
+      width: 70%;
+      position: relative;
+      top: 11.5px;
     }
     
     
@@ -215,21 +238,40 @@
     
         #banner .three > div {
             text-align: center;
-            padding: 10% 17%;
+            padding: 30px;
             align-items: flex-start;
             justify-content: center;
+        }
+
+        #banner .three > div .right {
+          text-align: center;
         }
     
         #banner .three > div .right .u48DemiBold {
             font-size: 24px;
             line-height: 28px;
             margin-top: 0;
-            margin-bottom: 5vh;
+            margin-bottom: 16px;
             text-align: center;
         }
     
         #banner .three > div .right img {
             max-width: 224px;
+        }
+
+        #banner .countdown {
+          padding: 0 15px;
+          margin-top: 24px;
+        }
+
+        #banner .countdown > div {
+          font-size: 12px;
+          line-height: 15px;
+        }
+
+        #banner .countdown > img {
+          top: 1.7vw;
+          width: 65%;
         }
     
         #banner .two {
@@ -329,7 +371,7 @@
 
 <div id="banner">
   <div class="swiper-wrapper">
-      <div class="swiper-slide two">
+      <!--div class="swiper-slide two">
           <div>
               <div class="left">
                   <h2>HUGE <br>EASTER SALE</h2>
@@ -342,7 +384,24 @@
               <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18455.png?v=1679559152"
                   alt="">
           </div>
-      </div>
+      </div> -->
+      <div class="swiper-slide three">
+        <div>
+            <div class="right">
+                <div class="u20Medium mobileHide">Huge Easter Sale</div>
+                <div class="u48DemiBold">Chord & Chord X</div>
+                <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18489.png?v=1679919950" alt="">
+                <div class="countdown">
+                  <div>700€ coupon <br> expires Apr. 3rd</div>
+                  <img src="http://i.countdownmail.com/2h44nq.gif" border="0" alt="countdownmail.com"/>
+                </div>
+                <div class="buttons">
+                    <a class="my-button" href="/products/urtopia-chord-ebike">Shop Now</a>
+                    <!-- <a class="my-button my-button-black" href="">Test Rides</a> -->
+                </div>
+            </div>
+        </div>
+    </div>
       <div class="swiper-slide one">
           <div>
               <div class="right">
@@ -379,32 +438,19 @@
               </div>
           </div>
       </div>
-      <div class="swiper-slide three">
-          <div>
-              <div class="right">
-                  <div class="u20Medium mobileHide">Huge Easter Sale</div>
-                  <div class="u48DemiBold">Chord & Chord X</div>
-                  <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18489.png?v=1679919950" alt="">
-                  <div class="buttons">
-                      <a class="my-button" href="/products/urtopia-chord-ebike">Shop Now</a>
-                      <!-- <a class="my-button my-button-black" href="">Test Rides</a> -->
-                  </div>
-              </div>
-          </div>
-      </div>
   </div>
   <div class="swiper-pagination"></div>
 </div>
 <script src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/8-swiper-bundle.min.js?v=1663912984"> </script>
 <script>
 new Swiper('#banner', {
-        autoplay: {
-            disableOnInteraction: false,
+        //autoplay: {
+            //disableOnInteraction: false,
             // pauseOnMouseEnter: true,
-            delay: 5000,
-        },
-        loop: true,
-        speed: 1000,
+            //delay: 5000,
+        //},
+        //loop: true,
+        //speed: 1000,
         pagination: {
             el: '.swiper-pagination',
             clickable: true
