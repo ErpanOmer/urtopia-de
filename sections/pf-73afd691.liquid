@@ -795,12 +795,12 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
       return
     }
 
-    const current = document.querySelector('#section1 .logos img[active]')
+    const current = document.querySelector('#section9 .logos img[active]')
 
     current.removeAttribute('active')
     target.setAttribute('active', '')
 
-    const texts = document.querySelector('#section1 .texts')
+    const texts = document.querySelector('#section9 .texts')
     texts.innerHTML = `
                         <div class="toBottom">${temp}</div>
                         <div class="toTop">${text}</div>
