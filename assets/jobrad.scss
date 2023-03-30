@@ -1,0 +1,510 @@
+.jobrad {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+
+    .banner {
+        background: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_20710_e3427a37-7527-41a4-bd8b-b2c4fed0ac72.jpg?v=1679968224') center center/cover no-repeat;
+        overflow-x: hidden;
+        height: 700px;
+        display: flex;
+        align-items: center;
+        color: #fff;
+
+        .centeral-content {
+            display: flex;
+
+            &>div {
+                display: flex;
+                flex: 1;
+                flex-direction: column;
+                justify-content: flex-end;
+
+                img {
+                    width: 293px;
+                }
+
+                .u24Medium {
+                    margin-top: 12px;
+                    margin-bottom: 40px;
+                }
+
+                &:first-child {
+                    align-items: flex-start;
+                }
+
+                &:last-child {
+                    align-items: flex-end;
+                }
+            }
+        }
+    }
+
+
+    .benefits {
+        padding: 120px 0 100px;
+        background-color: #F7F8FA;
+
+        .centeral-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+
+            &>div {
+                display: flex;
+                flex: 1;
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: center;
+                padding-right: 22%;
+
+                &>div {
+                    margin-top: 40px;
+
+                    .u24Medium {
+                        font-weight: 600;
+                        margin-bottom: 12px;
+                    }
+                }
+
+                .my-button {
+                    margin-top: 50px;
+                }
+            }
+
+            &>img {
+                max-width: 582px;
+                object-fit: contain;
+            }
+        }
+    }
+
+
+    .works {
+        padding: 120px 0;
+
+        .centeral-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+
+            &>div {
+                padding: 0 6.6%;
+
+                .u20Medium {
+                    margin: 24px 0;
+                }
+
+                .u17Light {
+                    line-height: 24px;
+                }
+
+                .my-button {
+                    margin-top: 40px;
+                }
+            }
+
+            &>img {
+                max-width: 582px;
+                object-fit: contain;
+            }
+        }
+    }
+
+
+    .calculator {
+        text-align: center;
+        padding-bottom: 120px;
+
+        .u48DemiBold {
+            margin-bottom: 80px;
+        }
+
+        iframe {
+            border: none;
+        }
+    }
+
+    .faqs {
+        padding: 80px 0;
+
+        .faq {
+            .faq-list {
+                .faq-title {
+                    width: 100%;
+                    display: flex;
+                    border-style: solid;
+                    border-width: 0 0 1px;
+                    border-color: #ebebeb;
+                    text-align: left;
+                    font: normal normal 600 24px/28px Urbane;
+                    letter-spacing: 0;
+                    color: #000;
+                    background: #fff;
+                    position: relative;
+                    cursor: pointer;
+                    align-items: center;
+                    padding: 2.5vh 9%;
+                    box-sizing: border-box;
+
+                    .faq-content-plus:before {
+                        content: '\f067';
+                    }
+                }
+
+                .faq-title i {
+                    position: absolute;
+                    /* right: 20px; */
+                    left: 3%;
+                    display: inline-block;
+                    font-size: 17px;
+                    line-height: 1;
+                    font-family: FontAwesome !important;
+                    font-style: normal;
+                    text-rendering: auto;
+                    transition: transform 0.4s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+                }
+
+                .faq-content {
+                    display: none;
+                    padding: 20px 18% 0 9%;
+                    font: normal normal normal 17px/24px Urbane;
+                    color: #000;
+                    opacity: 0.9;
+
+                    a {
+                        text-decoration: underline;
+                    }
+                }
+
+                .faq-content-plus {
+                    transform: rotate(90deg);
+                }
+            }
+
+            .titlee {
+                font: normal normal 600 42px/50px Urbane;
+                color: #000;
+                border-bottom: 1px solid #ebebeb;
+                padding-bottom: 40px;
+            }
+        }
+    }
+
+    .forms {
+        padding: 70px 0;
+        background-color: #F7F8FA;
+
+        .centeral-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+
+            &>.u24Medium {
+                max-width: 583px;
+                padding: 24px 48px 48px;
+            }
+
+            .item {
+                display: flex;
+                max-width: 680px;
+                flex-direction: column;
+                width: 100%;
+
+                &+.item {
+                    margin-top: 24px;
+                }
+
+                .u24Medium {
+                    text-align: left;
+                    margin-bottom: 12px;
+                }
+
+                input[type="text"],
+                input[type="email"],
+                input[type="tel"],
+                select {
+                    border-color: #00000034;
+                    border-radius: 10px;
+                    opacity: 1;
+                    height: 47px;
+                    line-height: 47px;
+                    padding: 0 15px;
+                    font-size: 17px;
+                    line-height: 20px;
+                    box-sizing: border-box;
+
+                    &:focus-visible {
+                        outline-offset: unset;
+                        box-shadow: unset;
+                        outline: unset;
+                        border-color: #000;
+                    }
+                }
+
+                .mini-item {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    grid-column-gap: 40px;
+
+                    &>div {
+                        display: flex;
+                        flex-direction: column;
+                    }
+                }
+
+                .checkbox {
+                    display: flex;
+                    align-items: center;
+
+                    input {
+                        min-width: 20px;
+                        min-height: 20px;
+                        margin-right: 12px;
+                    }
+                }
+
+                i {
+                    color: #FF0000;
+                }
+
+                .my-button {
+                    margin-right: 15px;
+                }
+
+                button {
+                    border: none;
+                }
+            }
+
+            .u17Medium {
+                text-align: left;
+            }
+        }
+    }
+}
+
+
+@media (max-width: 767px) {
+    .jobrad {
+
+        .banner {
+            background: #fff;
+            color: #000;
+            height: auto;
+            padding: 43px 0 60px;
+
+            .centeral-content {
+                flex-direction: column;
+
+                &>div {
+                    .u48DemiBold {
+                        font-size: 30px;
+                        line-height: 34px;
+                    }
+
+                    .u24Medium {
+                        font-size: 17px;
+                        line-height: 24px;
+                        margin: 20px 0;
+                    }
+
+                    img {
+                        max-width: 163px;
+                        margin-bottom: 20px;
+                    }
+                }
+            }
+        }
+
+
+        .benefits {
+            padding: 0;
+
+            .centeral-content {
+                grid-template-columns: 1fr;
+                padding: 0;
+
+                &>div {
+                    padding: 40px 8% 60px;
+
+                    .u48DemiBold {
+                        font-size: 24px;
+                        line-height: 30px;
+                    }
+
+                    &>div {
+                        margin-top: 24px;
+
+                        .u24Medium {
+                            font-size: 17px;
+                            line-height: 20px;
+                        }
+
+                        .u17Light {
+                            font-size: 15px;
+                            line-height: 21px;
+                        }
+                    }
+
+                    .my-button {
+                        margin-top: 24px;
+                    }
+                }
+
+                &>img {
+                    max-width: none;
+                }
+            }
+        }
+
+        .works {
+            padding: 0;
+
+            .centeral-content {
+                grid-template-columns: 1fr;
+                padding: 0;
+
+                &>div {
+                    padding: 40px 8%;
+
+                    .u48DemiBold {
+                        font-size: 24px;
+                        line-height: 30px;
+                    }
+
+                    .u20Medium {
+                        font-size: 17px;
+                        font-weight: 600;
+                    }
+
+                    .u17Light {
+                        font-size: 15px;
+                        line-height: 21px;
+                    }
+
+                    .my-button {
+                        margin-top: 24px;
+                    }
+                }
+
+                img {
+                    max-width: none;
+                }
+            }
+        }
+
+
+        .calculator {
+            text-align: left;
+            padding-bottom: 60px;
+
+
+            .u48DemiBold {
+                font-size: 24px;
+                line-height: 30px;
+                margin-bottom: 40px;
+            }
+        }
+
+
+        .faqs {
+            padding: 60px 0;
+
+            .centeral-content {
+                padding: 0 4%;
+
+                .faq {
+                    .faq-list {
+                        .faq-title {
+                            font-size: 18px;
+                            line-height: 24px;
+                            padding: 20px 9%;
+
+                            i {
+                                top: 22px;
+                            }
+                        }
+
+                        .faq-content {
+                            padding: 10px 9%;
+                            padding-right: 0;
+                            font-size: 15px;
+                            line-height: 21px;
+                        }
+                    }
+
+                    .swiper {
+                        padding-right: 10px;
+                    }
+
+                    .titlee {
+                        font-size: 24px;
+                        line-height: 27px;
+                        padding-bottom: 24px;
+                    }
+                }
+            }
+        }
+
+
+        .forms {
+            padding: 40px 0;
+            background-color: #F7F8FA;
+
+            .centeral-content {
+                text-align: left;
+                align-items: flex-start;
+
+                &>.u48DemiBold {
+                    font-size: 24px;
+                    line-height: 28px;
+                }
+
+                &>.u24Medium {
+                    font-size: 17px;
+                    line-height: 23px;
+                    padding: 24px 0;
+                    font-weight: bold;
+                }
+
+                .item {
+
+                    &+.item {
+                        margin-top: 12px;
+                    }
+
+                    .mini-item {
+                        grid-template-columns: 1fr;
+                        grid-row-gap: 12px;
+                    }
+
+                    .u24Medium {
+                        font-size: 15px;
+                        line-height: 18px;
+                        margin-bottom: 6px;
+                    }
+
+                    input[type="text"],
+                    input[type="email"],
+                    input[type="tel"],
+                    select {
+                        height: 40px;
+                    }
+
+                    .checkbox {
+                        .u17Light {
+                            font-size: 15px;
+                            line-height: 22px;
+                        }
+                    }
+                }
+
+                .u17Medium {
+                    font-size: 15px;
+                }
+            }
+        }
+    }
+}
