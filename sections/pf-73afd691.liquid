@@ -685,6 +685,91 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
 </div>
 </div>
 
+<style>
+  @keyframes toTop {
+      0% {
+        opacity: 0;
+        transform: translateY(0px);
+      }
+  
+      /* 50% {
+        opacity: 0.5;
+        transform: translateY(-20px);
+      } */
+  
+      100% {
+        transform: translateY(-40px);
+        opacity: 1;
+      }
+  }
+  
+  @keyframes toBottom {
+      0% {
+        opacity: 1;
+        transform: translateY(0px);
+      }
+  
+      /* 50% {
+        opacity: 0.5;
+        transform: translateY(20px);
+      } */
+  
+      100% {
+        transform: translateY(40px);
+        opacity: 0;
+      }
+  }
+  
+  #section9 .texts div {
+    animation-duration: 0.5s;
+    animation-timing-function: ease-out;
+  }
+  
+  #section9 .texts .toTop {
+    opacity: 1;
+    animation-name: toTop;
+    transform: translateY(-40px);
+  }
+  
+  #section9 .texts .toBottom {
+    opacity: 0;
+    animation-name: toBottom;
+    transform: translateY(40px);
+  }
+  
+  
+  #section9 {
+    display: flex;
+    height: 340px;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    padding: 75px 0;
+    box-sizing: border-box;
+  }
+  
+  #section9 .texts {
+    flex: 1;
+    font: normal normal bold 30px/40px Urbane;
+    display: flex;
+      align-items: center;
+      flex-direction: column;
+  }
+  
+  #section9 .logos img {
+    height: 60px;
+    width: auto;
+    margin: 0 39px;
+    opacity: 0.5;
+  }
+  
+  #section9 .logos img[active] {
+    opacity: 1;
+  }
+  
+  
+  
+  </style>
 
 <div id="section9">
   <div class="texts">
