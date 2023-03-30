@@ -55,6 +55,82 @@
         <span onclick="hideLayerSide()">×</span>
     </div>
 
+    <style>
+      .message-box {
+          width: 367px;
+          height: auto;
+          position: fixed;
+          right: -367px;
+          transition: all .3s;
+          padding: 0 0 25px 25px;
+          background-color: #EFF1F8;
+          display: grid;
+          grid-template-columns: 1fr 1.5fr;
+          grid-column-gap: 15px;
+          align-items: center;
+          border-radius: 10px;
+          bottom: 18px;
+      }
+      
+      .message-box div {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: flex-start;
+          font-size: 12px;
+          line-height: 16.8px;
+          padding-right: 18px;
+      }
+      
+      .message-box div .u17Medium {
+          font-size: 18px;
+          line-height: 22.5px;
+          font-weight: 600;
+          margin-top: 45px;
+      }
+      
+      .message-box span {
+          position: absolute;
+          right: 5px;
+          top: -5px;
+          font-size: 30px;
+          color: #999;
+          cursor: pointer;
+      }
+      
+      @media (max-width: 767px) {
+          .message-box-mobile {
+              width: 100%;
+              bottom: -180px;
+              right: 0 !important;
+              align-items: flex-end;
+              padding: 25px 30px;
+              grid-template-columns: 2fr 1fr;
+              border-bottom-left-radius: 0;
+              border-bottom-right-radius: 0;
+          }
+      
+          .message-box-mobile div {
+              padding: 0;
+          }
+      
+          .message-box-mobile img {
+              max-width: 80px;
+          }
+      
+          .message-box-mobile div .u17Medium {
+              margin: 0;
+              font-size: 16px;
+          }
+      
+          .message-box-mobile span {
+              top: 5px;
+              right: 15px;
+          }
+      }
+      </style>
+      
+
 <style>
   .selectLangModal {
     position: fixed;
