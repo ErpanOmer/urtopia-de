@@ -69,7 +69,8 @@
           grid-column-gap: 15px;
           align-items: center;
           border-radius: 10px;
-          bottom: 18px;
+          bottom: 14px;
+          z-index: 1000000;
       }
       
       .message-box div {
@@ -436,6 +437,9 @@
         document.querySelector('#selectLangModal').classList.add('open');
       }
     }
+
+
+    showLayerSide()
   };
   const updateLang = (el) => {
     let code = el.getAttribute('data-code');
