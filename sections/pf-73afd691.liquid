@@ -785,6 +785,31 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
   </div>
 </div>
 
+<script>
+  let temp = `“It's incredibly fun to ride”`
+
+  function moveTop (text, target) {
+    const active = target.getAttribute('active')
+
+    if (active !== null) {
+      return
+    }
+
+    const current = document.querySelector('#section1 .logos img[active]')
+
+    current.removeAttribute('active')
+    target.setAttribute('active', '')
+
+    const texts = document.querySelector('#section1 .texts')
+    texts.innerHTML = `
+                        <div class="toBottom">${temp}</div>
+                        <div class="toTop">${text}</div>
+                      `
+
+    temp = text
+  }
+</script>
+
 
 </div>
 </div>
