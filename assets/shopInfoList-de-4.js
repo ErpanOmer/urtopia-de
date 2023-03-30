@@ -226,6 +226,25 @@ const testRides = [
     ],
     stores: [
       {
+        name: 'Thomas Krautter',
+        phone: '+0049 160 841 3595',
+        email: 'urtopia@eitap.de',
+        timezone: "Mainz, Germany (GMT+1)",
+        add: "Rahmer Strasse 22G, 40489 Düsseldorf",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Dusseldorf.jpg?v=1679406972",
+        testrideSpot: "Düsseldorf",
+        testRideSize: "M",
+        businessHours: [
+          "",
+          "09:00–18:00",
+          "09:00–18:00",
+          "09:00–18:00",
+          "09:00–18:00",
+          "09:00–18:00",
+          "",
+        ],
+      },
+      {
         name: 'DownTownBikes',
         phone: '+49211 26194969',
         email: 'david@downtownbikes.de',
@@ -431,7 +450,8 @@ const testRides = [
     city: 'Münster',
     cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/testride-munster.jpg?v=1671252848',
     series: [
-      'Urtopia Carbon 1',
+       'Urtopia Carbon 1',
+      'Urtopia Chord'
       // 'Urtopia Carbon 1'
     ],
     stores: [
@@ -443,7 +463,7 @@ const testRides = [
         add: "Feldstiege 98c in Münster 48161, North Rhine-Westphalia",
         imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/testride-munster.jpg?v=1671252848",
         testrideSpot: "Münster",
-        testRideSize: "L",
+        testRideSize: "L, Chord",
         businessHours: [
           "",
           "",
@@ -452,6 +472,25 @@ const testRides = [
           "16:00–20:00",
           "14:00–18:00",
           "10:00-12:00,12:00–13:00",
+        ],
+      },
+      {
+        name: 'Der Holländer',
+        phone: '+4925729607678',
+        email: 'wolle02@me.com',
+        timezone: "Mainz, Germany (GMT+1)",
+        add: "Machangelstr 1448282 Emsdetten",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/testride-munster.jpg?v=1671252848",
+        testrideSpot: "Münster",
+        testRideSize: "L",
+        businessHours: [
+          "",
+          "9:00 - 12:00, 12:00 - 13:00, 14:30 - 18:00",
+          "9:00 - 12:00, 12:00 - 13:00, 14:30 - 18:00",
+          "9:00 - 12:00, 12:00 - 13:00, 14:30 - 18:00",
+          "9:00 - 12:00, 12:00 - 13:00, 14:30 - 18:00",
+          "10:00 - 12:00, 12:00 - 13:00, 14:30 - 17:00",
+          "10:00–12:00, 12:00 - 13:00",
         ],
       }
     ]
@@ -597,7 +636,7 @@ const testRides = [
         phone: '+49511 22859331',
         email: 'linden@fahrradcafe.de',
         timezone: "Mainz, Germany (GMT+1)",
-        add: "Fröbelstraße 130451 Hannover",
+        add: "Fröbelstraße 30451 Hannover",
         imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Hannover.jpg?v=1679406972",
         testrideSpot: "Hannover",
         testRideSize: "L",
@@ -609,25 +648,6 @@ const testRides = [
           "10:00-12:00,12:00–18:00",
           "10:00-12:00,12:00–18:00",
           "",
-        ],
-      },
-      {
-        name: 'Fahrradcafé GmbH',
-        phone: '+4951145014270',
-        email: 'post@fahrradcafe.de',
-        timezone: "Mainz, Germany (GMT+1)",
-        add: "Asternstraße 230167 Hannover",
-        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Hannover.jpg?v=1679406972",
-        testrideSpot: "Hannover",
-        testRideSize: "L",
-        businessHours: [
-          "",
-          "10:00-12:00,12:00–18:00",
-          "10:00-12:00,12:00–18:00",
-          "10:00-12:00,12:00–18:00",
-          "10:00-12:00,12:00–18:00",
-          "10:00-12:00,12:00–18:00",
-          "10:00-12:00,12:00–14:30",
         ],
       },
     ]
@@ -732,7 +752,7 @@ const testRides = [
         phone: '+491632379785',
         email: 'info@radfahrwerk.de',
         timezone: "Mainz, Germany (GMT+1)",
-        add: "St. Emmerams Ring 493309 Kelheim",
+        add: "St. Emmerams Ring 4, 93309 Kelheim",
         imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Regensburg.jpg?v=1679406972",
         testrideSpot: "Regensburg",
         testRideSize: "M",
@@ -744,6 +764,35 @@ const testRides = [
           "08:00-12:00,12:00–21:00",
           "08:00-12:00,12:00–21:00",
           "09:00-12:00",
+        ],
+      },
+    ]
+  },
+  {
+    city: 'Selbitz, Bavaria',
+    cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230328-164146.jpg?v=1679992972',
+    series: [
+      'Urtopia Carbon 1',
+      // 'Urtopia Carbon 1'
+    ],
+    stores: [
+      {
+        name: 'Ralf Döhler',
+        phone: '+0049 171 7061545',
+        email: 'tests@iqhaus.de',
+        timezone: "Mainz, Germany (GMT+1)",
+        add: "Am Eisenbühl 6, 95152 Selbitz, Germany",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230328-164146.jpg?v=1679992972",
+        testrideSpot: "Selbitz, Bavaria",
+        testRideSize: "L",
+        businessHours: [
+          "09:00–12:00, 12:00 - 18:00",
+          "09:00–12:00, 12:00 - 18:00",
+          "09:00–12:00, 12:00 - 18:00",
+          "09:00–12:00, 12:00 - 18:00",
+          "09:00–12:00, 12:00 - 18:00",
+          "09:00–12:00, 12:00 - 18:00",
+          "09:00–12:00, 12:00 - 18:00",
         ],
       },
     ]
