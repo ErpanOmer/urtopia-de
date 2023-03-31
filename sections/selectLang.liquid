@@ -533,6 +533,7 @@
     v.addEventListener('click', () => {
       let val = v.getAttribute('data-value');
       storage.set('selectLang', val)
+      sessionStorage.setItem('selectLang', val)
     });
   });
 
