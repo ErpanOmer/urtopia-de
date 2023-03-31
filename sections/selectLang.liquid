@@ -534,6 +534,8 @@
     },
   };
   window.onload = () => {
+    showMiniDialog(subscribeHtml)
+
     console.log('加载了');
     let langCode = window.CozyCountryRedirect.country;
     let locale = window.Shopify.locale;
@@ -668,8 +670,6 @@
     // console.log(a === document.querySelector('body .mini-dialog'))
     $('body .mini-dialog').remove()
   }
-
-  showMiniDialog(subscribeHtml)
 
 </script>
 
