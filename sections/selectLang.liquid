@@ -537,7 +537,7 @@
     const findLang = allOptions.find(tl => tl.dataset.value === code)
 
     if (active.dataset.value === code) {
-      return setTimeout(showMiniDialog, 10000, subscribeHtml)
+      return setTimeout(showMiniDialog, 5000, subscribeHtml)
     }
 
     setTimeout(() => {
@@ -585,12 +585,12 @@
       if (!notShowModal && !window.__SHOPIFY_CLI_ENV__) {
         document.querySelector('#selectLangModal').classList.add('open');
       } else {
-        setTimeout(showMiniDialog, 10000, subscribeHtml)
+        setTimeout(showMiniDialog, 5000, subscribeHtml)
       }
     }
 
 
-    setTimeout(showLayerSide, 11000)
+    setTimeout(showLayerSide, 10000)
     {% comment %} showLayerSide() {% endcomment %}
   };
   const updateLang = (el) => {
