@@ -702,15 +702,7 @@
 
       setTimeout(() => {
           $('.subscribe-container form').on("submit", function (event) {
-            {% comment %} $('.forms form :input').each((index, target) => {
-                if (ignore.includes(target.type)) {
-                    return
-                }
-        
-        
-        
-                forms[target.name] = target.value
-            }) {% endcomment %}
+            console.log($('.forms form :input'))
         
             event.preventDefault();
             return false;
