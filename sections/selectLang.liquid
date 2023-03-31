@@ -622,7 +622,6 @@
 
     document.querySelector('#selectLangModal').classList.remove('open');
 
-    setTimeout(showMiniDialog, 5000, subscribeHtml)
     // 如果是单纯的关闭，直接退出去
     if (isClose) {
       return setTimeout(showMiniDialog, 5000, subscribeHtml)
@@ -642,7 +641,7 @@
     
     gotoLocation(currCode)
 
-    setTimeout(showMiniDialog, 10000, subscribeHtml)
+    setTimeout(showMiniDialog, 5000, subscribeHtml)
 
     console.log('currCode', currCode);
   };
