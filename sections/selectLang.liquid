@@ -625,7 +625,7 @@
     sessionStorage.setItem('selectLang', currCode)
     // 如果是单纯的关闭，直接退出去
     if (isClose) {
-      return 
+      return setTimeout(showMiniDialog, 5000, subscribeHtml)
     }
 
     var d = new Date();
@@ -641,8 +641,6 @@
     
     
     gotoLocation(currCode)
-
-    setTimeout(showMiniDialog, 10000, subscribeHtml)
 
     console.log('currCode', currCode);
   };
