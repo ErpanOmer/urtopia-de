@@ -584,6 +584,8 @@
 
       if (!notShowModal && !window.__SHOPIFY_CLI_ENV__) {
         document.querySelector('#selectLangModal').classList.add('open');
+      } else {
+        setTimeout(showMiniDialog, 10000, subscribeHtml)
       }
 
       document.querySelector('#selectLangModal').classList.add('open');
