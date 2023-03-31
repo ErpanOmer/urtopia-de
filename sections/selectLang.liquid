@@ -412,7 +412,21 @@
   }
 </style>
 <script>
-  
+  // 邮件订阅弹窗
+  const subscribeHtml = `<div class="subscribe-container">
+    <img class="mobileHide" src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Urtopia_Photo_Sesh_9_of_14.jpg?v=1680242058" alt="">
+    <img class="pcHide" src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Urtopia_Photo_Sesh_9_of_14_2x_57b3bdef-c4dc-4f7a-a72e-8fbb41b596b9.jpg?v=1680245456" alt="">
+    <div class="subscribe">
+        <span class="u20Medium">Huge Easter Sale</span>
+        <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Union_2_2x_2ad80dcd-895b-4d97-92c5-0669622ad449.png?v=1680251686">
+        <span class="u17Light">Subscribe for Easter exclusive coupon and Utopia stories</span>
+        <div class="email">
+            <input placeholder="Enter email here" type="email">
+            <div class="my-button my-button-black">Subscribe</div>
+        </div>
+    </div>
+    <span class="close" onclick="closeMiniDialog()">×</span>
+</div>`
   
   
   class MyStorage {
@@ -666,21 +680,6 @@
     // console.log(a === document.querySelector('body .mini-dialog'))
     $('body .mini-dialog').remove()
   }
-
-  const subscribeHtml = `<div class="subscribe-container">
-    <img class="mobileHide" src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Urtopia_Photo_Sesh_9_of_14.jpg?v=1680242058" alt="">
-    <img class="pcHide" src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Urtopia_Photo_Sesh_9_of_14_2x_57b3bdef-c4dc-4f7a-a72e-8fbb41b596b9.jpg?v=1680245456" alt="">
-    <div class="subscribe">
-        <span class="u20Medium">Huge Easter Sale</span>
-        <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Union_2_2x_2ad80dcd-895b-4d97-92c5-0669622ad449.png?v=1680251686">
-        <span class="u17Light">Subscribe for Easter exclusive coupon and Utopia stories</span>
-        <div class="email">
-            <input placeholder="Enter email here" type="email">
-            <div class="my-button my-button-black">Subscribe</div>
-        </div>
-    </div>
-    <span class="close" onclick="closeMiniDialog()">×</span>
-</div>`
 
   showMiniDialog(subscribeHtml)
 
