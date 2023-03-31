@@ -11,15 +11,7 @@
     {% render 'code-snippet-optimization' %}
     <!-- 依赖优化结束 -->
 
-    <!-- likebutton -->
-    <!-- a/b Test -->
     <script src="https://www.googleoptimize.com/optimize.js?id=OPT-52Q8D8M"></script>
-    <!-- end of a/b Test -->
-
-    <!--
-      <link href="https://api.mapbox.com/mapbox-gl-js/v2.9.2/mapbox-gl.css" rel="stylesheet">
-      <script src="https://api.mapbox.com/mapbox-gl-js/v2.9.2/mapbox-gl.js"></script>
-    -->
 
     <!-- Google Tag Manager -->
     <script>
@@ -99,42 +91,10 @@
     		});
             }
           });
-      /*
-      if(document.getElementById('addToCart')){
-      document.getElementById('addToCart').addEventListener('click',function(){
-            //bing UET
-          window.uetq = window.uetq || [];window.uetq.push('event', 'add_to_cart', {"event_value":1});
-      })
-      }*/
       
         if (window.location.href.includes('products')){  
           gtag('event', "查看", {'event_category': "产品",});
        };
-
-      /**** happy coupon popup****/
-      /*
-      let params = (new URL(document.location)).searchParams;
-      if(params.get('earlybacker')==1){
-        var tagTime = window.localStorage.getItem("codsan-shown14");
-        if(tagTime){
-        var nowTime = new Date().getTime();
-          if((nowTime - tagTime) < 86400000*3)
-          {
-            return;
-          }
-        }
-        const value = `; ${document.cookie}`;
-        const parts = value.split("; discount_code=");
-          if (parts.length === 2) {
-            let discountCode = decodeURIComponent(parts.pop().split(';').shift());
-            let name = discountCode.replace(/[0-9]/ig,"");
-            if(discountCode){
-              document.querySelector(".coupon-popup").style.display="flex";
-              document.querySelector("#coupon-code").innerText=discountCode;
-              document.querySelector(".coupon-popup>.from-title>span").innerText=name;
-            }
-          }
-      }*/
     });
 
 
