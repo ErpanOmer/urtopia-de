@@ -622,11 +622,10 @@
 
     document.querySelector('#selectLangModal').classList.remove('open');
 
-    sessionStorage.setItem('selectLang', currCode)
     setTimeout(showMiniDialog, 5000, subscribeHtml)
     // 如果是单纯的关闭，直接退出去
     if (isClose) {
-      return 
+      return setTimeout(showMiniDialog, 5000, subscribeHtml)
     }
 
     var d = new Date();
