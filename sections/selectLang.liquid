@@ -537,7 +537,7 @@
     const findLang = allOptions.find(tl => tl.dataset.value === code)
 
     if (active.dataset.value === code) {
-      return
+      return setTimeout(showMiniDialog, 10000, subscribeHtml)
     }
 
     setTimeout(() => {
