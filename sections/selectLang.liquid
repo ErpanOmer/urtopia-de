@@ -544,7 +544,7 @@
     const findLang = allOptions.find(tl => tl.dataset.value === code)
 
     if (active.dataset.value === code) {
-      return setTimeout(showMiniDialog, 0, subscribeHtml)
+      return setTimeout(showMiniDialog, 5000, subscribeHtml)
     }
 
     setTimeout(() => {
@@ -594,7 +594,7 @@
       if (!notShowModal && !window.__SHOPIFY_CLI_ENV__) {
         document.querySelector('#selectLangModal').classList.add('open');
       } else {
-        setTimeout(showMiniDialog, 0, subscribeHtml)
+        setTimeout(showMiniDialog, 5000, subscribeHtml)
       }
     }
 
