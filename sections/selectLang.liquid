@@ -702,7 +702,7 @@
 
       setTimeout(() => {
           $('.subscribe-container form').on("submit", function (event) {
-            const email = $('.subscribe-container form :input')['0']
+            const email = $('.subscribe-container form input[type="email"]').val()
             console.log('email', email)
         
             event.preventDefault();
