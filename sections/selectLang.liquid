@@ -499,6 +499,26 @@
       $(".message-box-mobile").css({ "bottom": "0" }); //在回调函数里面改变css属性来实现transform中的动画变换
     })
   }
+
+
+  function showMiniDialog(html = '') {
+    $('body .mini-dialog').remove()
+    setTimeout(() => {
+      $("body").append(`<div class="mini-dialog" style="display: flex;">${html}</div>`)
+
+      setTimeout(() => {
+        $('body .mini-dialog > div').on('click', e => {
+          e.stopPropagation();
+          return false;
+        })
+      }, 100)
+    })
+  }
+
+  function closeMiniDialog(a) {
+    // console.log(a === document.querySelector('body .mini-dialog'))
+    $('body .mini-dialog').remove()
+  }
 </script>
 
 {% schema %}
