@@ -736,6 +736,9 @@
   function closeMiniDialog(day = 14) {
     // console.log(a === document.querySelector('body .mini-dialog'))
     $('body .mini-dialog').remove()
+
+
+    storage.set('emailDialogHideDay', 'emailDialogHideDay', day)
   }
 
 </script>
