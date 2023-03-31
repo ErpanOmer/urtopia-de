@@ -617,6 +617,9 @@
   const goToPage = isClose => {
     let currCode = document.querySelector('#curentLang').getAttribute('data_code');
 
+
+    sessionStorage.langDialog = 'langDialog'
+
     document.querySelector('#selectLangModal').classList.remove('open');
 
     // 如果是单纯的关闭，直接退出去
