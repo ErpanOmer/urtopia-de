@@ -621,8 +621,6 @@
     let currCode = document.querySelector('#curentLang').getAttribute('data_code');
 
     document.querySelector('#selectLangModal').classList.remove('open');
-
-    sessionStorage.setItem('selectLang', currCode)
     // 如果是单纯的关闭，直接退出去
     if (isClose) {
       return setTimeout(showMiniDialog, 5000, subscribeHtml)
@@ -638,6 +636,7 @@
     }, 300); {% endcomment %}
 
     storage.set('selectLang', currCode)
+    sessionStorage.setItem('selectLang', currCode)
     
     
     gotoLocation(currCode)
