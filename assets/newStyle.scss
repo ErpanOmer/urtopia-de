@@ -241,6 +241,15 @@ a:hover {
   color: #263B55;
 }
 
+input {
+  &:focus-visible {
+    outline-offset: unset;
+    box-shadow: unset;
+    outline: unset;
+    border-color: #000;
+  }
+}
+
 .centeral-content {
   max-width: 1280px;
   margin: 0 auto;
