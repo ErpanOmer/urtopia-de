@@ -692,12 +692,12 @@
     setTimeout(() => {
       $("body").append(`<div class="mini-dialog" style="display: flex;">${html}</div>`)
 
-      setTimeout(() => {
+      {% comment %} setTimeout(() => {
         $('body .mini-dialog > div').on('click', e => {
           e.stopPropagation();
           return false;
         })
-      }, 100)
+      }, 100) {% endcomment %}
     })
   }
 
