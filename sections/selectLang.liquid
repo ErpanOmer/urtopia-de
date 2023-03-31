@@ -688,6 +688,10 @@
 
 
   function showMiniDialog(html = '') {
+    if (storage.get('emailDialogHideDay')) {
+      return
+    }
+ 
     $('body .mini-dialog').remove()
     setTimeout(() => {
       $("body").append(`<div class="mini-dialog" style="display: flex;">${html}</div>`)
