@@ -231,7 +231,7 @@
     align-items: center;
     border-radius: 10px;
     bottom: 70px;
-    z-index: 1000000;
+    z-index: 9999;
   }
 
   .message-box div {
@@ -438,9 +438,12 @@
         <span class="u20Medium">Huge Easter Sale</span>
         <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Union_2_2x_2ad80dcd-895b-4d97-92c5-0669622ad449.png?v=1680251686">
         <span class="u17Light">Subscribe for Easter exclusive coupon and Utopia stories</span>
-        <form class="new-contact" action="" method="post">
+        <form class="new-contact" action="/contact#ContactFooter" target="_blank" method="post" accept-charset="UTF-8">
         <div class="email">
-              <input placeholder="Enter email here" type="email" required>
+              <input type="hidden" name="form_type" value="customer">
+              <input type="hidden" name="utf8" value="✓">
+              <input type="hidden" name="contact[tags]" value="newsletter">
+              <input placeholder="Enter email here" type="email" name="contact[email]" required>
               <button class="my-button my-button-black" type="submit">Subscribe</button>
         </div>
       </form>
@@ -715,50 +718,49 @@
       }, 100) {% endcomment %}
 
 
-      setTimeout(() => {
+       setTimeout(() => {
           $('.subscribe-container form').on("submit", function (event) {
             const email = $('.subscribe-container form input[type="email"]').val()
             console.log('email', email)
-
           const formData = new FormData()
           formData.append('form_type', 'customer')
           formData.append('contact[tags]', 'newsletter')
           formData.append('contact[email]', email)
           formData.append('commit', '')
-
           console.log('formData', formData)
 
-
-
-          let body = {
-            module: "de-shopify-email-popup",
-            trace_name: "subscribe-email",
-            trace_type: "subscribe-email",
-            extras: {
-              email
+            let body = {
+                module: "de-shopify-subscribe-email",
+                trace_name: "subscribe-email",
+                trace_type: "subscribe-email",
+                extras: {
+                  email
+                }
             }
-        }
 
 
-        fetch("https://api.newurtopia.com/third_part/traces", {
-            method: "POST",
-            body: JSON.stringify(body),
-            headers: {
-                "Content-Type": "application/json",
-            },
-        })
+            fetch("https://api.newurtopia.com/third_part/traces", {
+                method: "POST",
+                body: JSON.stringify(body),
+                headers: {
+                    "Content-Type": "application/json",
+                },
+            })
 
-          closeMiniDialog(3)
-
+            
+          closeMiniDialog(14)
         
             event.preventDefault();
             return false;
         })
       }, 1000)
+
+
+ 
     })
   }
 
-  function closeMiniDialog(day = 14) {
+  function closeMiniDialog(day = 3) {
     // console.log(a === document.querySelector('body .mini-dialog'))
     $('body .mini-dialog').remove()
 
