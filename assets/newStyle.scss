@@ -241,6 +241,15 @@ a:hover {
   color: #263B55;
 }
 
+input {
+  &:focus-visible {
+    outline-offset: unset;
+    box-shadow: unset;
+    outline: unset;
+    border-color: #000;
+  }
+}
+
 .centeral-content {
   max-width: 1280px;
   margin: 0 auto;
@@ -306,6 +315,31 @@ a:hover {
 
 .hide {
   height: 0;
+  overflow: hidden;
+}
+
+.mini-dialog {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #000000b3;
+  justify-content: center;
+  align-items: center;
+  z-index: 100000000;
+  overflow: hidden;
+  padding: 0 8vw;
+  display: none;
+  user-select: none;
+}
+
+.mini-dialog > div {
+  position: relative;
+  z-index: 100000001;
+  max-height: 85vh;
   overflow: hidden;
 }
 
