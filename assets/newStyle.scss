@@ -253,6 +253,8 @@ input {
 .centeral-content {
   max-width: 1280px;
   margin: 0 auto;
+  padding: 0 30px;
+  box-sizing: content-box;
 }
 
 /* 全局字体设置start */
