@@ -143,3 +143,100 @@
     </div>
     <div id="urtopia-calendar"></div>
 </div>
+
+<script>
+    const getNowDate = (v = +new Date()) => new Date(+new Date(v) + (8 * 60 * 60 * 1000)).toISOString().split('T').shift()
+    const findOffset = ([nowWeek, vailableWeek]) => {
+                    if (nowWeek === vailableWeek) {
+                      return 0
+                    }
+    
+                    return vailableWeek > nowWeek ? vailableWeek - nowWeek : 7 - (nowWeek - vailableWeek)
+                  }
+    
+    const oneDay = 24 * 60 * 60 * 1000
+    
+    const findStore = name => {
+            for (const city of testRides) {
+                for (const store of city.stores) {
+                  const businessHours = store.businessHours
+                  const disableDate = store.disableDate || []
+                  // 查找可预约到星期几
+                  const findAvailableWeek = d => businessHours[d] ? d : findAvailableWeek(d === 6 ? 0 : ++d)
+                  // 可用日期计算
+                  const findAvalibaleDate = date => {
+                      const str = getNowDate(date)
+                      const timestamp = +new Date(str)
+                      const currentWeek = new Date(str).getDay()
+                      const AvailableWeek = findAvailableWeek(currentWeek)
+    
+                      const findDisable = disableDate.find(i => getNowDate(i) === str)
+    
+                      if (findDisable) {
+                        // console.log(str, timestamp, find, getNowDate(find))
+                        return findAvalibaleDate(timestamp + oneDay)
+                      }
+    
+                      return currentWeek === AvailableWeek ? str : findAvalibaleDate(timestamp + (oneDay * findOffset([currentWeek, AvailableWeek])))
+                  }
+    
+                  store.findAvalibaleDate = () => {
+                    const time = new Date(findAvalibaleDate(new Date())).toString().split(' ')
+    
+                    return `${time[2]}. ${time[1]}`
+                  }
+    
+                    if (store.name.replace(/ /g, '') === name.replace(/ /g, '')) {
+                        return store
+                    }
+                }
+            }
+        }
+    
+      function CalendarOpen(shopPoint, shop, isSpecDay = false, timetp = 0) {
+        console.log(arguments)
+    
+        laydate.render({
+          elem: '#urtopia-calendar',
+          lang: 'en',
+          min: 0,
+          max: 90,
+          showBottom: false,
+          position: "static",
+          showSide: true,
+          showInfoBottom: true,
+          type: 'date',
+          shopList: typeof shop === 'string' ? JSON.parse(shop.replace(/'/g, '"')) : shop,
+          isSpecDay,
+          TimePeriodization: timetp,
+          //  shopInfo: shopInfo
+        });
+        let body = {
+          trace_name: "testride-bookNow",
+          extras: {
+            "test1": shopPoint,
+          }
+        }
+        fetch("https://api.newurtopia.com/third_part/book_ride/traces", {
+          method: "POST",
+          body: JSON.stringify(body),
+          headers: {
+            "Content-Type": "application/json",
+          },
+        })
+      }
+    
+    
+      function booknow (name) {
+        const store = findStore(name)
+    
+        if (!store) {
+          return
+        }
+    
+        
+        console.log(store)
+    
+        CalendarOpen(store.testrideSpot, { [store['phone']]: store })
+      }
+    </script>
