@@ -682,6 +682,10 @@
                             border-color: #000;
                         }
 
+                        &::placeholder {
+                            font-weight: unset;
+                        }
+
                         option {
                             &:first-child {
                                 color: #555;
