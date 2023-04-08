@@ -2,12 +2,12 @@
   "sections": {
     "pf-3b2bc3c4": {
       "type": "pf-3b2bc3c4",
+      "disabled": true,
       "settings": {
       }
     },
     "test-ride": {
       "type": "test-ride",
-      "disabled": true,
       "settings": {
       }
     }
