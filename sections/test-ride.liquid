@@ -146,15 +146,7 @@
 {{ 'shopInfoList-de-4.js' | asset_url | script_tag }}
 {{ 'laydatev4-de.js' | asset_url | script_tag }}
 <script>
-    const getNowDate = (v = +new Date()) => {
-
-    if (typeof v === 'string') {
-        v = v.replace(/-/g, '/')
-    }
-
-        return new Date(v).toISOString().split('T').shift()
-    }
-
+    const getNowDate = (v = +new Date()) => new Date(+new Date(v) + (8 * 60 * 60 * 1000)).toISOString().split('T').shift()
     const findOffset = ([nowWeek, vailableWeek]) => {
                     if (nowWeek === vailableWeek) {
                       return 0
@@ -369,7 +361,7 @@
 
         city ? refresh([city]) : refresh()
 
-        {% comment %} e.target.style.color = city ? '#000' : '#a1a1a1' {% endcomment %}
+        e.target.style.color = city ? '#000' : '#a1a1a1'
     }
 
     function onInput(e) {
@@ -377,8 +369,7 @@
 
         if (select.value) {
             select.value = ''
-            console.log(select.style)
-            
+            select.style.color = '#a1a1a1'
             onSelect({
                 target: {
                     value: ''
