@@ -146,7 +146,15 @@
 {{ 'shopInfoList-de-4.js' | asset_url | script_tag }}
 {{ 'laydatev4-de.js' | asset_url | script_tag }}
 <script>
-    const getNowDate = (v = +new Date()) => new Date(+new Date(v) + (8 * 60 * 60 * 1000)).toISOString().split('T').shift()
+    const getNowDate = (v = +new Date()) => {
+
+    if (typeof v === 'string') {
+        v = v.replace(/-/g, '/')
+    }
+
+        return new Date(v).toISOString().split('T').shift()
+    }
+
     const findOffset = ([nowWeek, vailableWeek]) => {
                     if (nowWeek === vailableWeek) {
                       return 0
@@ -297,8 +305,8 @@
     function reset() {
         // STOREPOINT.set_tags(['DE'])
         STOREPOINT.reset()
-        document.querySelector('input[value="de"]').click()
-        document.querySelector('input[value="test%20ride"]').click()
+        document.querySelector('.storepoint-tag-checkbox[value="de"]').click()
+        document.querySelector('.storepoint-tag-checkbox[value="test%20ride"]').click()
     }
 
     function refresh(tags = []) {
