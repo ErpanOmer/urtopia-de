@@ -166,12 +166,12 @@
                   const findAvailableWeek = d => businessHours[d] ? d : findAvailableWeek(d === 6 ? 0 : ++d)
                   // 可用日期计算
                   const findAvalibaleDate = date => {
-                      const str = getNowDate(date).replace(/-/g, '/')
+                      const str = getNowDate(date)
                       const timestamp = +new Date(str)
                       const currentWeek = new Date(str).getDay()
                       const AvailableWeek = findAvailableWeek(currentWeek)
     
-                      const findDisable = disableDate.find(i => getNowDate(i.replace(/-/g, '/')) === str)
+                      const findDisable = disableDate.find(i => getNowDate(i) === str)
     
                       if (findDisable) {
                         // console.log(str, timestamp, find, getNowDate(find))
