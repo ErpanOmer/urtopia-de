@@ -1020,7 +1020,7 @@
                         .map-popup {
                             grid-template-columns: 1fr;
                             padding: 12px;
-                            img {
+                            & > img {
                                 display: none;
                             }
                         }
