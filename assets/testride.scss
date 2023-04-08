@@ -674,16 +674,13 @@
                         height: 36px;
                         line-height: 36px;
                         width: 100%;
+                        font-weight: 300;
 
                         &:focus-visible {
                             outline-offset: unset;
                             box-shadow: unset;
                             outline: unset;
                             border-color: #000;
-                        }
-
-                        &::placeholder {
-                            font-weight: unset;
                         }
 
                         option {
