@@ -1013,6 +1013,10 @@
                         // position: relative !important;
                         transform: translateY(100px);
 
+                        .mapboxgl-popup {
+                            max-width: 260px !important;
+                        }
+
                         .map-popup {
                             grid-template-columns: 1fr;
                             padding: 12px;
