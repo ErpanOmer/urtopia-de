@@ -146,13 +146,25 @@
 {{ 'shopInfoList-de-4.js' | asset_url | script_tag }}
 {{ 'laydatev4-de.js' | asset_url | script_tag }}
 <script>
-    const getNowDate = (v = +new Date()) => {
 
-    if (typeof v === 'string') {
-        v = v.replace(/-/g, '/')
+    const getData = function (date = new Date()) {
+        if (typeof date !== 'object') {
+            if (typeof date === 'string') {
+                date = date.replace(/-/g, '/')
+            }
+
+            date = new Date(date)
+        }
+
+        date.setHours(0)
+        date.setMinutes(0)
+        date.setSeconds(0)
+
+        return date
     }
 
-        return new Date(v).toISOString().split('T').shift()
+    const getDateString = function (date) {
+        return `${date.getFullYear()}/${date.getMonth() + 1}/${date.getDate()}`
     }
 
     const findOffset = ([nowWeek, vailableWeek]) => {
@@ -174,13 +186,12 @@
                   const findAvailableWeek = d => businessHours[d] ? d : findAvailableWeek(d === 6 ? 0 : ++d)
                   // 可用日期计算
                   const findAvalibaleDate = date => {
-                      const str = getNowDate(date)
-                      const timestamp = +new Date(str)
-                      const currentWeek = new Date(str).getDay()
+                      const str = getDateString(getData(date))
+                      const timestamp = +getData(str)
+                      const currentWeek = getData(str).getDay()
                       const AvailableWeek = findAvailableWeek(currentWeek)
     
-                      const findDisable = disableDate.find(i => getNowDate(i) === str)
-    
+                      const findDisable = disableDate.find(i => getDateString(getData(i)) === str)    
                       if (findDisable) {
                         // console.log(str, timestamp, find, getNowDate(find))
                         return findAvalibaleDate(timestamp + oneDay)
@@ -190,7 +201,9 @@
                   }
     
                   store.findAvalibaleDate = () => {
-                    const time = new Date(findAvalibaleDate(new Date())).toString().split(' ')
+                    const time = getData(findAvalibaleDate(getData())).toString().split(' ')
+
+                    // console.log(time)
     
                     return `${time[2]}. ${time[1]}`
                   }
@@ -379,9 +392,7 @@
             select.value = ''
             select.style.color = '#a1a1a1'
             onSelect({
-                target: {
-                    value: ''
-                }
+                target: select
             })
         }
 
