@@ -131,7 +131,7 @@ const testRides = [
         add: "buero fuer neues denken, Bötzowstr. 18, 10407 Berlin",
         imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Berlin.jpg?v=1679406972",
         testrideSpot: "Berlin",
-        testRideSize: "M",
+        testRideSize: "M, Chord",
         businessHours: [
           "",
           "09:00-12:00,12:00–18:00",
@@ -186,7 +186,7 @@ const testRides = [
         add: "Erich-Weinert-Str. 15010409 Berlin",
         imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/IMG_0827.jpg?v=1680922453",
         testrideSpot: "Berlin",
-        testRideSize: "M, Chord",
+        testRideSize: "M",
         businessHours: [
           "",
           "09:00-12:00,12:00–19:00",
