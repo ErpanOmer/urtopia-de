@@ -1,12 +1,17 @@
 {
   "sections": {
     "pf-3b2bc3c4": {
+      "disabled": true,
       "type": "pf-3b2bc3c4",
       "settings": {
       }
+    },
+    "test-ride": {
+      "type": "test-ride"
     }
   },
   "order": [
-    "pf-3b2bc3c4"
+    "pf-3b2bc3c4",
+    "test-ride"
   ]
 }

@@ -303,11 +303,21 @@
         function submit(extras) {
             console.log('extras', extras)
 
+            const search = {}
+            const url = new URL(location.href)
+
+            for (const [k, v] of url.searchParams.entries()) {
+                search[k] = v
+            }
+
             let body = {
                 module: "de-shopify",
                 trace_name: "jobrad",
                 trace_type: "jobrad",
-                extras
+                extras: {
+                    ...extras,
+                    ...search
+                }
             }
 
 

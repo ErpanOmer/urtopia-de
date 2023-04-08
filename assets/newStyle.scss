@@ -250,14 +250,27 @@ input {
   }
 }
 
+img,
+video {
+  width: 100%;
+  height: auto;
+}
+
+
 .centeral-content {
   max-width: 1280px;
   margin: 0 auto;
+  padding: 0 30px;
+  box-sizing: content-box;
 }
 
 /* 全局字体设置start */
 .u17Light {
   font: normal normal 300 17px/19px urbane;
+}
+
+.u17Light_v2 {
+  font: normal normal 300 17px/1.4em urbane;
 }
 
 
@@ -275,6 +288,10 @@ input {
 
 .u17Medium {
   font: normal normal 500 17px/19px urbane;
+}
+
+.u17Medium_v2 {
+  font: normal normal 500 17px/1.4em urbane;
 }
 
 .u20Medium {
@@ -297,6 +314,10 @@ input {
   font: normal normal 600 20px/24px urbane;
 }
 
+.u20DemiBold_v2 {
+  font: normal normal 600 20px/1.4em urbane;
+}
+
 .u30DemiBold {
   font: normal normal 600 30px/34px urbane;
 }
@@ -305,12 +326,20 @@ input {
   font: normal normal 600 36px/42px urbane;
 }
 
+.u36DemiBold_v2 {
+  font: normal normal 600 36px/1.25em urbane;
+}
+
 .u42DemiBold {
   font: normal normal 600 42px/48px urbane;
 }
 
 .u48DemiBold {
   font: normal normal 600 48px/54px urbane;
+}
+
+.u48DemiBold_v2 {
+  font: normal normal 600 48px/1.4em urbane;
 }
 
 .hide {
@@ -439,6 +468,7 @@ body .jBox-Modal {
 
   .centeral-content {
     padding: 0 8%;
+    box-sizing: border-box;
   }
 }
 

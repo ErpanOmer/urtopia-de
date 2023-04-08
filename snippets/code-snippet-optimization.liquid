@@ -1,18 +1,12 @@
 <script>
-console.log(JSON.stringify({{ shop.locale | json }}))
+console.log(JSON.stringify({{ template | json }}))
 </script>
 
 {% case template | json %}
     {% when 'index' %}
-        {% comment %} Home Page  {% endcomment %}
-
-
-
     {% when 'product.pf-b10ddb73' %}
-        {% comment %} Chord Page  {% endcomment %}
-
-
-
+    {% when 'page.pf-3b2bc3c4' %}
+    {% when 'page.jobrad' %}
     {% else %}
         <script src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/1.14.2-TweenMax.js?v=1663912518"></script>
         <script src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/2.0.3-ScrollMagic.min.js?v=1663912592"></script>
