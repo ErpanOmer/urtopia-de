@@ -2,6 +2,14 @@
 console.log(JSON.stringify({{ template | json }}))
 </script>
 
+{% assign ignorePages = 'index,product.pf-b10ddb73,page.pf-3b2bc3c4,page.jobrad' | split: ',' %}
+
+<script>
+    console.log(JSON.stringify({{ ignorePages | json }}))
+</script>
+    
+
+
 {% case template | json %}
     {% when 'index' %}
         {% comment %} Home Page  {% endcomment %}
