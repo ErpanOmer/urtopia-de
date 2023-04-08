@@ -132,6 +132,10 @@ const testRides = [
         imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Berlin.jpg?v=1679406972",
         testrideSpot: "Berlin",
         testRideSize: "M, Chord",
+        availableSizes: [
+          'Carbon One Size M',
+          'Chord'
+        ],
         businessHours: [
           "",
           "09:00-12:00,12:00–18:00",
