@@ -322,6 +322,8 @@
 
             .u36DemiBold_v2 {
                 margin-bottom: 16px;
+                font-size: 24px;
+                line-height: 28px;
             }
 
             .items {
@@ -1014,7 +1016,7 @@
                         transform: translateY(100px);
 
                         .mapboxgl-popup {
-                            max-width: 260px !important;
+                            max-width: 300px !important;
                         }
 
                         .map-popup {
