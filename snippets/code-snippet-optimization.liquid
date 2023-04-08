@@ -2,20 +2,19 @@
 console.log(JSON.stringify({{ template | json }}))
 </script>
 
-{% assign ignorePages = 'index,product.pf-b10ddb73,page.pf-3b2bc3c4,page.jobr' | split: ',' %}
+{% case template | json %}
+    {% when 'index' %}
+    {% when 'product.pf-b10ddb73' %}
+    {% when 'page.pf-3b2bc3c4' %}
+    {% when 'page.jobrad' %}
+    {% else %}
+        <script src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/1.14.2-TweenMax.js?v=1663912518"></script>
+        <script src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/2.0.3-ScrollMagic.min.js?v=1663912592"></script>
+        <script src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/2.0.3-animation.gsap.js?v=1663912682"></script>
+        <script src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/2.0.3-debug.addIndicators.js?v=1663912891"></script>
+        <script src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/8-swiper-bundle.min.js?v=1663912984"></script>
+{% endcase %}
 
-<script>
-    console.log({{ ignorePages | json }})
-</script>
-
-{% if ignorePages contains template | json %}
-{% else %}
-    <script src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/1.14.2-TweenMax.js?v=1663912518"></script>
-    <script src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/2.0.3-ScrollMagic.min.js?v=1663912592"></script>
-    <script src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/2.0.3-animation.gsap.js?v=1663912682"></script>
-    <script src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/2.0.3-debug.addIndicators.js?v=1663912891"></script>
-    <script src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/8-swiper-bundle.min.js?v=1663912984"></script>
-{% endif %}
 
 <script src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/1.9.1-jquery.min.js?v=1663911504"></script>
 <script>
