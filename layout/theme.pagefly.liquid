@@ -6,60 +6,16 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
 <html class="no-js" lang="{{ request.locale.iso_code }}">
   <head>
     {% render 'pagefly-head' %}
-<!--outbrain tracking -->
-    <script data-obct type = "text/javascript">
-  /** DO NOT MODIFY THIS CODE**/
-  !function(_window, _document) {
-    var OB_ADV_ID = '004724a1910ea66ba6f18eea401c197373';
-    if (_window.obApi) {
-      var toArray = function(object) {
-        return Object.prototype.toString.call(object) === '[object Array]' ? object : [object];
-      };
-      _window.obApi.marketerId = toArray(_window.obApi.marketerId).concat(toArray(OB_ADV_ID));
-      return;
-    }
-    var api = _window.obApi = function() {
-      api.dispatch ? api.dispatch.apply(api, arguments) : api.queue.push(arguments);
-    };
-    api.version = '1.1';
-    api.loaded = true;
-    api.marketerId = OB_ADV_ID;
-    api.queue = [];
-    var tag = _document.createElement('script');
-    tag.async = true;
-    tag.src = '//amplify.outbrain.com/cp/obtp.js';
-    tag.type = 'text/javascript';
-    var script = _document.getElementsByTagName('script')[0];
-    script.parentNode.insertBefore(tag, script);
-  }(window, document);
-
-  obApi('track', 'PAGE_VIEW');
-</script>
-    <!--outbrain tracking -->
-
-    <!-- Cozy Country Redirect Optimization Code Start -->
-    {% comment %} {{ shop.metafields.CCR.shopat_script }} {% endcomment %}
-    <!-- Cozy Country Redirect Optimization Code Start -->
-
-    <!-- Basic page needs ================================================== -->
-    <!--  -->
     <meta charset="utf-8">
-    {%- comment -%}DemoStoreRequirements{%- endcomment -%}
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="google-site-verification" content="4CyyxbiT2JJKwsI1xsr_c7Qf-ihbvBm4WMiPhI0rOeA">
     <meta name="google-site-verification" content="1L3RQDlBxPuNpF21De0Ah8NwPfQRUDie4JA9sbgKwfo">
 
+    <!-- 依赖优化开始 -->
     {% render 'code-snippet-optimization' %}
+    <!-- 依赖优化结束 -->
 
-    <!-- likebutton -->
-    <!-- a/b Test -->
     <script src="https://www.googleoptimize.com/optimize.js?id=OPT-52Q8D8M"></script>
-    <!-- end of a/b Test -->
-
-    <!--
-      <link href="https://api.mapbox.com/mapbox-gl-js/v2.9.2/mapbox-gl.css" rel="stylesheet">
-      <script src="https://api.mapbox.com/mapbox-gl-js/v2.9.2/mapbox-gl.js"></script>
-    -->
 
     <!-- Google Tag Manager -->
     <script>
@@ -68,21 +24,17 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
       j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
       })(window,document,'script','dataLayer','GTM-NRQWQKH');
-    </script>
-    <!-- End Google Tag Manager -->
 
-    <!-- Google tag (gtag.js) ga4 -->
-    
-    <script>
+
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
 
       gtag('config', 'G-2WKKVDX6JH');
-    </script>
 
-    <script>
-       window.addEventListener("load", function(){
+
+
+      window.addEventListener("load", function(){
         document.querySelectorAll("[class='addToCartBtn']").forEach(function(e){
           e.addEventListener('click', function(e){
             gtag('event', 'add_to_cart', {
@@ -91,9 +43,9 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
           });
         });
       });
-    </script>
-    <script>
-       window.addEventListener("load", function(){
+
+
+      window.addEventListener("load", function(){
         document.querySelectorAll("[class='checkout-button']").forEach(function(e){
           e.addEventListener('click', function(e){
             gtag('event', '支付处理中', {
@@ -102,83 +54,45 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
           });
         });
       });
-    </script>
-    <!-- end Google tag (gtag.js) ga4 -->
 
+
+          /*** mircosoft clarity ***/
+    (function(c,l,a,r,i,t,y){
+      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+  })(window, document, "clarity", "script", "brxngkcx7t");
+
+
+  /*** Global site tag (gtag.js) - Google Analytics ***/
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-205871538-3', { 'send_page_view': false });
+  
+  /*** Bing UET ***/
+  (function(w,d,t,r,u){var f,n,i;w[u]=w[u]||[],f=function(){var o={ti:"52014192"};o.q=w[u],w[u]=new UET(o),w[u].push("pageLoad")},n=d.createElement(t),n.src=r,n.async=1,n.onload=n.onreadystatechange=function(){var s=this.readyState;s&&s!=="loaded"&&s!=="complete"||(f(),n.onload=n.onreadystatechange=null)},i=d.getElementsByTagName(t)[0],i.parentNode.insertBefore(n,i)})(window,document,"script","//bat.bing.com/bat.js","uetq");
+
+  /*** Load Event***/
+window.addEventListener("load", function(event) { 
+    /**** Add to cart****/
+    document.querySelectorAll("button span").forEach(function(e){
+    if(e.innerHTML.toLowerCase() == "add to cart" || e.innerHTML.toLowerCase() == "in den einkaufswagen"){
+     e.parentNode.addEventListener('click',function(){
+            //bing UET
+            window.uetq = window.uetq || [];window.uetq.push('event', 'add_to_cart', {"event_value":1});
+      });
+          }
+        });
+    
+      if (window.location.href.includes('products')){  
+        gtag('event', "查看", {'event_category': "产品",});
+     };
+  });
+    </script>
+    <!-- End Google Tag Manager -->
     <!-- GMC -->
     <meta name="google-site-verification" content="tmiMdWLXl8rYjTIe702rF6QSy0WXZFJyUYpQ_TQx91Q">
-    <!-- Track Type Script -->
-    <script type="text/javascript">
-      
-      
-    /*** mircosoft clarity ***/
-    (function(c,l,a,r,i,t,y){
-        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-    })(window, document, "clarity", "script", "brxngkcx7t");
-
-
-    /*** Global site tag (gtag.js) - Google Analytics ***/
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'UA-205871538-3', { 'send_page_view': false });
-    
-    /*** Bing UET ***/
-    (function(w,d,t,r,u){var f,n,i;w[u]=w[u]||[],f=function(){var o={ti:"52014192"};o.q=w[u],w[u]=new UET(o),w[u].push("pageLoad")},n=d.createElement(t),n.src=r,n.async=1,n.onload=n.onreadystatechange=function(){var s=this.readyState;s&&s!=="loaded"&&s!=="complete"||(f(),n.onload=n.onreadystatechange=null)},i=d.getElementsByTagName(t)[0],i.parentNode.insertBefore(n,i)})(window,document,"script","//bat.bing.com/bat.js","uetq");
-
-    /*** Load Event***/
-	window.addEventListener("load", function(event) { 
-      /**** Add to cart****/
-      document.querySelectorAll("button span").forEach(function(e){
-      if(e.innerHTML.toLowerCase() == "add to cart" || e.innerHTML.toLowerCase() == "in den einkaufswagen"){
- 			e.parentNode.addEventListener('click',function(){
-              //bing UET
-              window.uetq = window.uetq || [];window.uetq.push('event', 'add_to_cart', {"event_value":1});
-    		});
-            }
-          });
-      /*
-      if(document.getElementById('addToCart')){
-      document.getElementById('addToCart').addEventListener('click',function(){
-            //bing UET
-          window.uetq = window.uetq || [];window.uetq.push('event', 'add_to_cart', {"event_value":1});
-      })
-      }*/
-      
-        if (window.location.href.includes('products')){  
-          gtag('event', "查看", {'event_category': "产品",});
-       };
-
-      /**** happy coupon popup****/
-      /*
-      let params = (new URL(document.location)).searchParams;
-      if(params.get('earlybacker')==1){
-        var tagTime = window.localStorage.getItem("codsan-shown14");
-        if(tagTime){
-        var nowTime = new Date().getTime();
-          if((nowTime - tagTime) < 86400000*3)
-          {
-            return;
-          }
-        }
-        const value = `; ${document.cookie}`;
-        const parts = value.split("; discount_code=");
-          if (parts.length === 2) {
-            let discountCode = decodeURIComponent(parts.pop().split(';').shift());
-            let name = discountCode.replace(/[0-9]/ig,"");
-            if(discountCode){
-              document.querySelector(".coupon-popup").style.display="flex";
-              document.querySelector("#coupon-code").innerText=discountCode;
-              document.querySelector(".coupon-popup>.from-title>span").innerText=name;
-            }
-          }
-      }*/
-    });
-
-
-    </script>
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -186,12 +100,7 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
     <meta name="theme-color" content="">
     <link rel="canonical" href="{{ canonical_url }}">
     <link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
-    <link
-      rel="preload"
-      href="https://unpkg.com/swiper@8/swiper-bundle.min.css"
-      as="style"
-      onload="this.onload=null;this.rel='stylesheet'"
-    >
+    <link rel="preload" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <link rel="stylesheet" href="https://use.typekit.net/fzb3fxo.css" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css"></noscript>
     <noscript><link rel="stylesheet" href="https://use.typekit.net/fzb3fxo.css"></noscript>
