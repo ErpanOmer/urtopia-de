@@ -317,6 +317,10 @@ const testRides = [
         imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/testride-munster.jpg?v=1671252848",
         testrideSpot: "Münster",
         testRideSize: "L, Chord",
+        availableSizes: [
+          'Carbon One Size L',
+          'Chord'
+        ],
         businessHours: [
           "",
           "",
