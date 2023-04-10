@@ -1823,6 +1823,8 @@ let extra_data = {}
               },
             },
           };
+
+          console.log('extra_data', extra_data)
           fetch("https://api.newurtopia.com/third_part/book_ride/traces", {
             method: "POST",
             body: JSON.stringify(body),
