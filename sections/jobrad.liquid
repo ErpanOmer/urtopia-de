@@ -317,7 +317,13 @@
             console.log('invalid', e)
         })
 
+
+        let is_request = false
         $('.forms form :input').on('input', debounce(e => {
+            if (is_request) {
+                return            
+            }
+
             const data = {}
             $('.forms form :input').each((i, target) => {
                 console.log(e)
