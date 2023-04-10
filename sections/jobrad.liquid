@@ -310,24 +310,7 @@
                 search[k] = v
             }
 
-            let body = {
-                module: "de-shopify",
-                trace_name: "jobrad",
-                trace_type: "jobrad",
-                extras: {
-                    ...extras,
-                    ...search
-                }
-            }
-
-
-            fetch("https://api.newurtopia.com/third_part/traces", {
-                method: "POST",
-                body: JSON.stringify(body),
-                headers: {
-                    "Content-Type": "application/json",
-                },
-            })
+            fetchBuried('jobrad', 'submit', search)
         }
 
         $('.forms form').on('invalid', e => {
