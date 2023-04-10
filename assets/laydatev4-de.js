@@ -1816,10 +1816,10 @@
               },
             },
           };
-          fetch("https://api.newurtopia.com/third_part/book_ride/traces", {
-            method: "POST",
-            body: JSON.stringify(body),
-          });
+          // fetch("https://api.newurtopia.com/third_part/book_ride/traces", {
+          //   method: "POST",
+          //   body: JSON.stringify(body),
+          // });
         }
         var mo = function (e) {
           passive: false;
