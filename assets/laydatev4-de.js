@@ -3891,15 +3891,15 @@ let extra_data = {}
             var loadi = lay.elem("i", {
               class: "fa fa-spinner fa-spin",
             });
-            btn.setAttribute("disabled", "");
-            btn.appendChild(loadi);
+            // btn.setAttribute("disabled", "");
+            // btn.appendChild(loadi);
             var endLoad = function () {
               btn.removeAttribute("disabled");
               btn.removeChild(loadi);
             };
 
             that.next();
-            endLoad();
+            // endLoad();
 
             //that.step = 2;
             // fetch("https://api.newurtopia.com/third_part/book_ride", {
