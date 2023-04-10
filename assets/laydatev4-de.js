@@ -3129,6 +3129,11 @@ let extra_data = {}
       divBookingForm.appendChild(divBookingFormContent);
       divBookingForm.appendChild(divBookingFormSubmit);
       that.elemCalender.appendChild(divBookingForm);
+
+      $('.form-content input').on('input', function (e) {
+        console.log(e.target.value)
+      })
+
       lay(".layui-laydate .submit-btn").on("click", function () {
         var btn = this;
         var name = lay(".form-name input").val(),
