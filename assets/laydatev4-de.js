@@ -3253,8 +3253,8 @@ let extra_data = {}
       // lay(".back-btn").removeClass("hidden-btn");
       // lay(".back-btn-mb").removeClass("hidden-btn");
       // lay(".select-tip").removeClass("hidden-btn");
-      that.checkDate().calendar(null, 0, "init"); //初始校验
     } else if (that.step == 1) {
+      that.checkDate().calendar(null, 0, "init"); //初始校验
       lay(".select-tip").html("Select a Date and Time");
     }
     //预约成功
