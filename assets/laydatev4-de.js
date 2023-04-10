@@ -1800,10 +1800,14 @@ let extra_data = {}
       if ((!e.target.closest(".popup-center") && t) || force) {
         options.elem.html("");
         //关闭检测是否有输入内容
-        var name = lay(".form-name input").val(),
-          phone = lay(".form-phone input").val(),
-          email = lay(".form-email input").val(),
+        // var name = lay(".form-name input").val(),
+          // phone = lay(".form-phone input").val(),
+          // email = lay(".form-email input").val(),
           //time = lay(".booking-time span").html(),
+        
+        const name = that.userInfo.name
+        const phone = that.userInfo.phone
+        const email = that.userInfo.email
           shopInfo = that.config.shopInfo;
         if (name && phone && email && that.submitInfoState == 0) {
           let body = {
