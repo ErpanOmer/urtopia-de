@@ -9,6 +9,9 @@
  * MIT Licensed
  */
 
+
+let extra_data = {}
+
 !(function (win) {
   "use strict";
 
@@ -1816,10 +1819,16 @@
               },
             },
           };
-          fetch("https://api.newurtopia.com/third_part/book_ride/traces", {
-            method: "POST",
-            body: JSON.stringify(body),
-          });
+          // fetch("https://api.newurtopia.com/third_part/book_ride/traces", {
+          //   method: "POST",
+          //   body: JSON.stringify(body),
+          // });
+
+          // fetch("https://api.newurtopia.com/third_part/book_ride", {
+          //     method: "POST",
+          //     body: JSON.stringify(data),
+          // })
+
         }
         var mo = function (e) {
           passive: false;
@@ -3006,7 +3015,7 @@
       options = that.config;
     that.step += 1;
     //预约信息
-    if (that.step == 1) {
+    if (that.step == 2) {
       lay(".shop-select-content").css("display", "none");
       // lay(".booking-shop-content .shop-name").html(options.shopInfo.name);
       lay(".booking-shop-content .shop-name").html('Book a Test Ride');
@@ -3126,6 +3135,23 @@
       divBookingForm.appendChild(divBookingFormContent);
       divBookingForm.appendChild(divBookingFormSubmit);
       that.elemCalender.appendChild(divBookingForm);
+
+      let is_request = false
+      $('.form-content input').on('input', debounce(function (e) {
+
+        if (is_request) {
+          return
+        }
+
+        is_request = true
+
+        $('.form-content input').each((i, e) => {
+          extra_data[e.name] = e.value
+        })
+
+        fetchBuried('testride', 'submitinfo', extra_data)
+      }, 5000))
+
       lay(".layui-laydate .submit-btn").on("click", function () {
         var btn = this;
         var name = lay(".form-name input").val(),
@@ -3195,41 +3221,47 @@
           if (that.config.specific != 0) {
             body.extras.event = "special-event";
           }
-          fetch("https://api.newurtopia.com/third_part/book_ride/traces", {
-            method: "POST",
-            body: JSON.stringify(body),
-          })
-            .then((res) => {
-              that.submitInfoState = 1;
-              if (options.specific >= 1) that.step = 3;
-              that.next();
-              endLoad();
-            })
-            .catch(() => {
-              endLoad();
-              if (!lay(".booking-info-form").find(".form-input-tip").length) {
-                var it = lay.elem("div", { class: "form-input-tip" });
-                it.innerHTML = "Some error occurred and the booking failed!";
-                lay(".booking-info-form").append(it);
-              }
-            });
+
+          endLoad()
+          that.next();
+
+          // that.submitInfoState = 1;
+          //     if (options.specific >= 1) that.step = 3;
+          //     that.next();
+          //     endLoad();
+
+          // fetch("https://api.newurtopia.com/third_part/book_ride/traces", {
+          //   method: "POST",
+          //   body: JSON.stringify(body),
+          // })
+          //   .then((res) => {
+              
+          //   })
+          //   .catch(() => {
+          //     endLoad();
+          //     if (!lay(".booking-info-form").find(".form-input-tip").length) {
+          //       var it = lay.elem("div", { class: "form-input-tip" });
+          //       it.innerHTML = "Some error occurred and the booking failed!";
+          //       lay(".booking-info-form").append(it);
+          //     }
+          //   });
         } else {
           endLoad();
         }
       });
     }
     //预约时间，即初始s
-    else if (that.step == 2) {
-      that.divBookingForm.style.visibility = "hidden";
-      lay(".back-btn").removeClass("hidden-btn");
-      lay(".back-btn-mb").removeClass("hidden-btn");
-      lay(".select-tip").removeClass("hidden-btn");
+    else if (that.step == 5) {
+      // that.divBookingForm.style.visibility = "hidden";
+      // lay(".back-btn").removeClass("hidden-btn");
+      // lay(".back-btn-mb").removeClass("hidden-btn");
+      // lay(".select-tip").removeClass("hidden-btn");
+    } else if (that.step == 1) {
       that.checkDate().calendar(null, 0, "init"); //初始校验
-    } else if (that.step == 3) {
       lay(".select-tip").html("Select a Date and Time");
     }
     //预约成功
-    else if (that.step == 4) {
+    else if (that.step == 3) {
       var divBookingSuccess = lay.elem("div", {
           class: "booking-success",
         }),
@@ -3337,6 +3369,18 @@
         document.body.style.overflow = ""; //出现滚动条
         document.removeEventListener("touchmove", mo, false);
         document.removeEventListener("mousedown", that.closeCheck);
+
+        fetchBuried('testride', 'submit', extra_data)
+
+        fetch("https://api.newurtopia.com/third_part/book_ride", {
+              method: "POST",
+              body: JSON.stringify({
+                ...extra_data,
+                phone: extra_data.phone_number
+              })
+        })
+        
+
       });
     }
   };
@@ -3874,7 +3918,7 @@
             that.bookingTime = this.parentNode.firstChild.innerHTML;
             var time =
               lay("." + ELEM_PREVIEW)[0].innerHTML + " " + that.bookingTime;
-            var data = {
+            extra_data = {
               name: that.userInfo.name,
               phone: that.userInfo.phone,
               email: that.userInfo.email,
@@ -3885,46 +3929,49 @@
             var loadi = lay.elem("i", {
               class: "fa fa-spinner fa-spin",
             });
-            btn.setAttribute("disabled", "");
-            btn.appendChild(loadi);
+            // btn.setAttribute("disabled", "");
+            // btn.appendChild(loadi);
             var endLoad = function () {
               btn.removeAttribute("disabled");
               btn.removeChild(loadi);
             };
-            //that.step = 2;
-            fetch("https://api.newurtopia.com/third_part/book_ride", {
-              method: "POST",
-              body: JSON.stringify(data),
-            })
-              .then((res) => {
-                that.next();
-                endLoad();
-                let body = {
-                  trace_name: "testride-bookNow-success",
-                  extras: {
-                    spot: data.shop_info.testrideSpot,
-                    bookTime: time,
-                  },
-                };
-                fetch(
-                  "https://api.newurtopia.com/third_part/book_ride/traces",
-                  {
-                    method: "POST",
-                    body: JSON.stringify(body),
-                    headers: {
-                      "Content-Type": "application/json",
-                    },
-                  }
-                );
-              })
-              .catch(() => {
-                endLoad();
-                /*if (!lay(".layui-laydate-info-footer").find(".form-input-tip").length) {
-                    var it = lay.elem("div", { class: "form-input-tip" });
-                    it.innerHTML = "Some error occurred and the booking failed!";
-                    lay(".booking-info-form").append(it);
-                  }*/
-              });
+
+            that.next();
+            // endLoad();
+
+            // that.step = 2;
+            // fetch("https://api.newurtopia.com/third_part/book_ride", {
+            //   method: "POST",
+            //   body: JSON.stringify(data),
+            // })
+            //   .then((res) => {
+
+            //     let body = {
+            //       trace_name: "testride-bookNow-success",
+            //       extras: {
+            //         spot: data.shop_info.testrideSpot,
+            //         bookTime: time,
+            //       },
+            //     };
+            //     fetch(
+            //       "https://api.newurtopia.com/third_part/book_ride/traces",
+            //       {
+            //         method: "POST",
+            //         body: JSON.stringify(body),
+            //         headers: {
+            //           "Content-Type": "application/json",
+            //         },
+            //       }
+            //     );
+            //   })
+            //   .catch(() => {
+            //     endLoad();
+            //     /*if (!lay(".layui-laydate-info-footer").find(".form-input-tip").length) {
+            //         var it = lay.elem("div", { class: "form-input-tip" });
+            //         it.innerHTML = "Some error occurred and the booking failed!";
+            //         lay(".booking-info-form").append(it);
+            //       }*/
+            //   });
           });
 
         //改-点击右侧显示
@@ -3940,11 +3987,11 @@
               userInfo: that.userInfo,
             },
           };
-          fetch("https://api.newurtopia.com/third_part/book_ride/traces", {
-            method: "POST",
-            body: JSON.stringify(body),
-          });
-          that.next();
+          // fetch("https://api.newurtopia.com/third_part/book_ride/traces", {
+          //   method: "POST",
+          //   body: JSON.stringify(body),
+          // });
+          // that.next();
         }
       });
     });
