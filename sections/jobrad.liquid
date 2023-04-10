@@ -317,9 +317,9 @@
             console.log('invalid', e)
         })
 
-        $('.forms form :input').on('input', e => {
+        $('.forms form :input').on('input', debounce(e => {
             console.log('e', e)
-        })
+        }, 1000))
 
         $('.forms form').on("submit", function (event) {
             $('.forms form :input').each((index, target) => {
