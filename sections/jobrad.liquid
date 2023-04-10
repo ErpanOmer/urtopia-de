@@ -319,10 +319,12 @@
 
         $('.forms form :input').on('input', debounce(e => {
             const data = {}
-            $('.forms form :input').each((i, e) => {
+            $('.forms form :input').each((i, target) => {
                 console.log(e)
+                data[target.name] = target.value
             })
-            console.log('e', e)
+
+            console.log('data', data)
         }, 1000))
 
         $('.forms form').on("submit", function (event) {
