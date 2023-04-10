@@ -3226,7 +3226,7 @@ let extra_data = {}
     }
     //预约时间，即初始s
     else if (that.step == 2) {
-      that.divBookingForm.style.visibility = "hidden";
+      // that.divBookingForm.style.visibility = "hidden";
       lay(".back-btn").removeClass("hidden-btn");
       lay(".back-btn-mb").removeClass("hidden-btn");
       lay(".select-tip").removeClass("hidden-btn");
