@@ -4,8 +4,8 @@ console.log(JSON.stringify({{ template | json }}))
 
 function fetchBuried (name = '', type = '', data = {}) {
     const body = {
-        module: "website-us",
-        trace_name: `${name}-us`,
+        module: "website-de",
+        trace_name: `${name}-de`,
         trace_type: `${type}-${document.body.clientWidth > 768 ? 'pc' : 'mb'}`,
         extras: data
     }
