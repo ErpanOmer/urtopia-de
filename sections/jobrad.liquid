@@ -365,4 +365,12 @@
             return false;
         })
     }, 1000)
+
+
+    if (!sessionStorage.isPreviewJobrad) {
+        fetchBuried(' jobrad', 'pageview')
+    }
+
+    // 记录来过这个页面
+    sessionStorage.isPreviewJobrad = 'isPreviewJobrad'
 </script>
