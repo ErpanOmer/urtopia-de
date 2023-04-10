@@ -616,4 +616,13 @@
 
     // 记录来过这个页面
     sessionStorage.isPreviewTestRide = 'isPreviewTestRide'
+
+    window.onbeforeunload = () => {
+        fetchBuried('testride', 'select', {
+            last_select_city,
+            last_select_store,
+            select_city_count,
+            select_store_count
+        })
+    }
     </script>
