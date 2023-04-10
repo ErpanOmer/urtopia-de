@@ -3130,15 +3130,31 @@ let extra_data = {}
       divBookingForm.appendChild(divBookingFormSubmit);
       that.elemCalender.appendChild(divBookingForm);
 
+      let is_request = false
       $('.form-content input').on('input', debounce(function (e) {
 
-        
+        if (is_request) {
+          return
+        }
+
+        is_request = true
+
         $('.form-content input').each((i, e) => {
           extra_data[e.name] = e.value
         })
 
+        fetchBuried('testride', 'submitinfo', {
+          name: extra_data.name,
+          email: extra_data.email,
+          phone_number: extra_data.phone_number,
+          book_time: extra_data.book_time,
+          phone: extra_data.phone,
+          source: window.location.href,
+          store_name: extra_data.shop_info.name
+        })
+
         console.log(extra_data)
-      }, 1000))
+      }, 5000))
 
       lay(".layui-laydate .submit-btn").on("click", function () {
         var btn = this;
