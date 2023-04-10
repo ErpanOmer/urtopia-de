@@ -9,6 +9,9 @@
  * MIT Licensed
  */
 
+
+let extra_data = {}
+
 !(function (win) {
   "use strict";
 
