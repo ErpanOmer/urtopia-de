@@ -3133,7 +3133,7 @@ let extra_data = {}
       $('.form-content input').on('input', debounce(function (e) {
         console.log(extra_data)
 
-        $('.form-content input').each(e => {
+        $('.form-content input').each((i, e) => {
           console.log(e)
         })
       }, 5000))
