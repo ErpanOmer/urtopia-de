@@ -3901,7 +3901,7 @@ let extra_data = {}
             that.next();
             // endLoad();
 
-            //that.step = 2;
+            that.step = 3;
             // fetch("https://api.newurtopia.com/third_part/book_ride", {
             //   method: "POST",
             //   body: JSON.stringify(data),
