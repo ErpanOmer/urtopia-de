@@ -238,19 +238,6 @@
           TimePeriodization: timetp,
           //  shopInfo: shopInfo
         });
-        let body = {
-          trace_name: "testride-bookNow",
-          extras: {
-            "test1": shopPoint,
-          }
-        }
-        fetch("https://api.newurtopia.com/third_part/book_ride/traces", {
-          method: "POST",
-          body: JSON.stringify(body),
-          headers: {
-            "Content-Type": "application/json",
-          },
-        })
       }
     
     
