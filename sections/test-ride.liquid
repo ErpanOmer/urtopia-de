@@ -388,6 +388,8 @@
         city ? refresh([city]) : refresh()
 
         e.target.style.color = city ? '#000' : '#a1a1a1'
+
+        city && last_select_city = city
     }
 
     function onInput(e) {
