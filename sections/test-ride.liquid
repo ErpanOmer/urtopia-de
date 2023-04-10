@@ -513,6 +513,8 @@
                 item.setAttribute('active', true)
 
                 document.body.clientWidth < 768 && $('html').scrollTop($('.map').offset().top)
+
+                last_select_store = item.getAttribute('name')
             })
 
             items.appendChild(item)
