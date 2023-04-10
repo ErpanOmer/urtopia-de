@@ -3131,14 +3131,13 @@ let extra_data = {}
       that.elemCalender.appendChild(divBookingForm);
 
       $('.form-content input').on('input', debounce(function (e) {
-        console.log(extra_data)
-        const data = {}
 
+        
         $('.form-content input').each((i, e) => {
-          data[e.name] = e.value
+          extra_data[e.name] = e.value
         })
 
-        console.log(data)
+        console.log(extra_data)
       }, 1000))
 
       lay(".layui-laydate .submit-btn").on("click", function () {
