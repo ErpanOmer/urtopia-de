@@ -260,9 +260,9 @@
         if (!store) {
           return
         }
-    
-        
-        console.log(store)
+
+        fetchBuried('testride', 'booknow', { store_name: name })
+
     
         CalendarOpen(store.testrideSpot, { [store['phone']]: store })
       }
