@@ -593,14 +593,11 @@
             })
     })
 
-    let body = {
-    trace_name: "testride-preview",
-  }
-    fetch("https://api.newurtopia.com/third_part/book_ride/traces", {
-      method: "POST",
-      body: JSON.stringify(body),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    })
+
+    if (!sessionStorage.isPreviewTestRide) {
+        fetchBuried('testride', 'pageview')
+    }
+
+
+    sessionStorage.isPreviewTestRide = 'isPreviewTestRide'
     </script>
