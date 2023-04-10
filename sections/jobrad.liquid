@@ -324,7 +324,9 @@
                 return            
             }
 
+            is_request = true
             const data = {}
+            
             $('.forms form :input').each((i, target) => {
                 console.log(e)
                 data[target.name] = target.value
