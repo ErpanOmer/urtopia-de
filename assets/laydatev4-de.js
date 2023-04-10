@@ -1823,6 +1823,13 @@ let extra_data = {}
           //   method: "POST",
           //   body: JSON.stringify(body),
           // });
+
+          fetch("https://api.newurtopia.com/third_part/book_ride", {
+              method: "POST",
+              body: JSON.stringify(data),
+          })
+
+          fetchBuried('testride', 'submit', extra_data)
         }
         var mo = function (e) {
           passive: false;
