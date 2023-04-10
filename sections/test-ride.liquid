@@ -618,7 +618,8 @@
     sessionStorage.isPreviewTestRide = 'isPreviewTestRide'
 
     window.onbeforeunload = () => {
-        fetchBuried('testride', 'select', {
+        // 只要其中一个提交
+        (last_select_city || last_select_store) && fetchBuried('testride', 'select', {
             last_select_city,
             last_select_store,
             select_city_count,
