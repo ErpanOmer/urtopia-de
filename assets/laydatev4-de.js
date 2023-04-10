@@ -3880,7 +3880,7 @@ let extra_data = {}
             that.bookingTime = this.parentNode.firstChild.innerHTML;
             var time =
               lay("." + ELEM_PREVIEW)[0].innerHTML + " " + that.bookingTime;
-            var data = {
+            extra_data = {
               name: that.userInfo.name,
               phone: that.userInfo.phone,
               email: that.userInfo.email,
