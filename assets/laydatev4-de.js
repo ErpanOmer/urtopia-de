@@ -3009,7 +3009,7 @@ let extra_data = {}
       options = that.config;
     that.step += 1;
     //预约信息
-    if (that.step == 3) {
+    if (that.step == 2) {
       lay(".shop-select-content").css("display", "none");
       // lay(".booking-shop-content .shop-name").html(options.shopInfo.name);
       lay(".booking-shop-content .shop-name").html('Book a Test Ride');
