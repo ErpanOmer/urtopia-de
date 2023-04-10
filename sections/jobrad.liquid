@@ -319,7 +319,7 @@
 
         $('.forms form :input').on('input', debounce(e => {
             const data = {}
-            $('.forms form :input').each(i, e => {
+            $('.forms form :input').each((i, e) => {
                 console.log(e)
             })
             console.log('e', e)
