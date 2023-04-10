@@ -705,58 +705,52 @@
     if (storage.get('emailDialogHideDay')) {
       return
     }
- 
+  
     $('body .mini-dialog').remove()
     setTimeout(() => {
       $("body").append(`<div class="mini-dialog" style="display: flex;">${html}</div>`)
-
+  
       {% comment %} setTimeout(() => {
         $('body .mini-dialog > div').on('click', e => {
           e.stopPropagation();
           return false;
         })
       }, 100) {% endcomment %}
-
-
+  
+  
        setTimeout(() => {
           $('.subscribe-container form').on("submit", function (event) {
             const email = $('.subscribe-container form input[type="email"]').val()
-            console.log('email', email)
-          const formData = new FormData()
-          formData.append('form_type', 'customer')
-          formData.append('contact[tags]', 'newsletter')
-          formData.append('contact[email]', email)
-          formData.append('commit', '')
-          console.log('formData', formData)
-
-            let body = {
-                module: "de-shopify-subscribe-email",
-                trace_name: "subscribe-email",
-                trace_type: "subscribe-email",
-                extras: {
-                  email
-                }
-            }
-
-
-            fetch("https://api.newurtopia.com/third_part/traces", {
-                method: "POST",
-                body: JSON.stringify(body),
-                headers: {
-                    "Content-Type": "application/json",
-                },
-            })
-
-            
-          closeMiniDialog(14)
+            // 埋点
+            fetchBuried('emailpop', 'submit', { email, tag: 'DE,POPUP' })
+            closeMiniDialog(14)
         
             event.preventDefault();
             return false;
         })
+
+
+        let startInput = false
+        $('.subscribe-container input').on('input', debounce(e => {
+            if (startInput) {
+                return
+            }
+
+            startInput = true
+            fetchBuried('emailpop', 'enter', {
+                email: e.target.value,
+                tag: 'DE,POPUP'
+            })
+        }, 2000))
+
+        
+
       }, 1000)
 
 
- 
+      fetchBuried('emailpop', 'popupview', {
+        tag: 'DE,POPUP'
+      })
     })
   }
 
