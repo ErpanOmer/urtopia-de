@@ -3015,7 +3015,7 @@ let extra_data = {}
       options = that.config;
     that.step += 1;
     //预约信息
-    if (that.step == 3) {
+    if (that.step == 2) {
       lay(".shop-select-content").css("display", "none");
       // lay(".booking-shop-content .shop-name").html(options.shopInfo.name);
       lay(".booking-shop-content .shop-name").html('Book a Test Ride');
@@ -3251,7 +3251,7 @@ let extra_data = {}
       });
     }
     //预约时间，即初始s
-    else if (that.step == 2) {
+    else if (that.step == 5) {
       // that.divBookingForm.style.visibility = "hidden";
       // lay(".back-btn").removeClass("hidden-btn");
       // lay(".back-btn-mb").removeClass("hidden-btn");
@@ -3261,7 +3261,7 @@ let extra_data = {}
       lay(".select-tip").html("Select a Date and Time");
     }
     //预约成功
-    else if (that.step == 4) {
+    else if (that.step == 3) {
       var divBookingSuccess = lay.elem("div", {
           class: "booking-success",
         }),
