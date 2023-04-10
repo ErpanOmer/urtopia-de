@@ -3195,24 +3195,27 @@
           if (that.config.specific != 0) {
             body.extras.event = "special-event";
           }
-          fetch("https://api.newurtopia.com/third_part/book_ride/traces", {
-            method: "POST",
-            body: JSON.stringify(body),
-          })
-            .then((res) => {
-              that.submitInfoState = 1;
+
+          that.submitInfoState = 1;
               if (options.specific >= 1) that.step = 3;
               that.next();
               endLoad();
-            })
-            .catch(() => {
-              endLoad();
-              if (!lay(".booking-info-form").find(".form-input-tip").length) {
-                var it = lay.elem("div", { class: "form-input-tip" });
-                it.innerHTML = "Some error occurred and the booking failed!";
-                lay(".booking-info-form").append(it);
-              }
-            });
+
+          // fetch("https://api.newurtopia.com/third_part/book_ride/traces", {
+          //   method: "POST",
+          //   body: JSON.stringify(body),
+          // })
+          //   .then((res) => {
+              
+          //   })
+          //   .catch(() => {
+          //     endLoad();
+          //     if (!lay(".booking-info-form").find(".form-input-tip").length) {
+          //       var it = lay.elem("div", { class: "form-input-tip" });
+          //       it.innerHTML = "Some error occurred and the booking failed!";
+          //       lay(".booking-info-form").append(it);
+          //     }
+          //   });
         } else {
           endLoad();
         }
