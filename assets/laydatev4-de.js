@@ -3132,11 +3132,14 @@ let extra_data = {}
 
       $('.form-content input').on('input', debounce(function (e) {
         console.log(extra_data)
+        const data = {}
 
         $('.form-content input').each((i, e) => {
-          console.log(e)
+          data[e.name] = e.value
         })
-      }, 5000))
+      }, 1000))
+
+      console.log(data)
 
       lay(".layui-laydate .submit-btn").on("click", function () {
         var btn = this;
