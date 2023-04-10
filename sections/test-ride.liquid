@@ -389,7 +389,10 @@
 
         e.target.style.color = city ? '#000' : '#a1a1a1'
 
-        city && last_select_city = city
+        if (city) {
+            last_select_city = city
+            select_city_count += 1
+        }
     }
 
     function onInput(e) {
