@@ -531,7 +531,7 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
     <style>
 .eggs {
     max-width: 450px;
-    margin-bottom: 30px;
+    {% comment %} margin-bottom: 30px; {% endcomment %}
 }
 
 .eggs .background {
@@ -636,6 +636,33 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
             </div>
         </div>
     </div>
+
+	<style>
+		.countdown {
+		margin-top: 20px;
+			font: normal normal 500 16px/22px Urbane;
+			color: #3B65EB;
+		overflow: hidden;
+		}
+	
+	  .countdown img {
+		width: 68%;
+		position: relative;
+		top: 10px;
+	  }
+	
+	  @media (max-width: 767px) {
+		.countdown {
+		  margin-top: 15px;
+		  font-size: 14px;
+		}
+	}
+	</style>
+	
+	<div class="countdown">
+		<div>Easter sale expires Apr. 18</div>
+		<img src="http://i.countdownmail.com/205dop.gif" border="0" alt="countdownmail.com"/>
+	</div>
     
     
     <div data-pf-type="Custom.HTML" class="sc-AjmGg eCTxfx pf-31_ pf-lg-hide pf-md-hide pf-sm-hide pf-hide">
