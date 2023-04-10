@@ -317,6 +317,10 @@
             console.log('invalid', e)
         })
 
+        $('.forms form :input').on('input', e => {
+            console.log('e', e)
+        })
+
         $('.forms form').on("submit", function (event) {
             $('.forms form :input').each((index, target) => {
                 if (ignore.includes(target.type)) {
