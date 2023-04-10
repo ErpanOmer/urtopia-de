@@ -3150,17 +3150,7 @@ let extra_data = {}
           extra_data[e.name] = e.value
         })
 
-        fetchBuried('testride', 'submitinfo', {
-          name: extra_data.name,
-          email: extra_data.email,
-          phone_number: extra_data.phone_number,
-          book_time: extra_data.book_time,
-          phone: extra_data.phone,
-          source: window.location.href,
-          store_name: extra_data.shop_info.name
-        })
-
-        console.log(extra_data)
+        fetchBuried('testride', 'submitinfo', extra_data)
       }, 5000))
 
       lay(".layui-laydate .submit-btn").on("click", function () {
