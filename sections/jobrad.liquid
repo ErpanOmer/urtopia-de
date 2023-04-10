@@ -313,10 +313,6 @@
             fetchBuried('jobrad', 'submit', search)
         }
 
-        $('.forms form').on('invalid', e => {
-            console.log('invalid', e)
-        })
-
 
         let is_request = false
         $('.forms form :input').on('input', debounce(e => {
@@ -326,13 +322,12 @@
 
             is_request = true
             const data = {}
-            
+
             $('.forms form :input').each((i, target) => {
-                console.log(e)
                 data[target.name] = target.value
             })
 
-            console.log('data', data)
+            fetchBuried('jobrad', 'submitinfo', data)
         }, 10000))
 
         $('.forms form').on("submit", function (event) {
