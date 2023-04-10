@@ -1829,7 +1829,6 @@ let extra_data = {}
           //     body: JSON.stringify(data),
           // })
 
-          fetchBuried('testride', 'submit', extra_data)
         }
         var mo = function (e) {
           passive: false;
@@ -3367,6 +3366,8 @@ let extra_data = {}
         document.body.style.overflow = ""; //出现滚动条
         document.removeEventListener("touchmove", mo, false);
         document.removeEventListener("mousedown", that.closeCheck);
+
+        fetchBuried('testride', 'submit', extra_data)
       });
     }
   };
