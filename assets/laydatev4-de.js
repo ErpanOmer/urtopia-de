@@ -3222,6 +3222,7 @@ let extra_data = {}
             body.extras.event = "special-event";
           }
 
+          endLoad()
           that.next();
 
           // that.submitInfoState = 1;
