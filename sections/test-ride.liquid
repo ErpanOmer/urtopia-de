@@ -147,6 +147,11 @@
 {{ 'laydatev4-de.js' | asset_url | script_tag }}
 <script>
 
+    let last_select_city = ''
+    let last_select_store = ''
+    let select_city_count = 0
+    let select_store_count = 0
+
     const getData = function (date = new Date()) {
         if (typeof date !== 'object') {
             if (typeof date === 'string') {
@@ -592,6 +597,9 @@
                 observerElement('#storepoint-map', debounce(observerPopup, 100))
             })
     })
+
+
+    
 
 
     if (!sessionStorage.isPreviewTestRide) {
