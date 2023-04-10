@@ -3222,10 +3222,12 @@ let extra_data = {}
             body.extras.event = "special-event";
           }
 
-          that.submitInfoState = 1;
-              if (options.specific >= 1) that.step = 3;
-              that.next();
-              endLoad();
+          that.next();
+
+          // that.submitInfoState = 1;
+          //     if (options.specific >= 1) that.step = 3;
+          //     that.next();
+          //     endLoad();
 
           // fetch("https://api.newurtopia.com/third_part/book_ride/traces", {
           //   method: "POST",
