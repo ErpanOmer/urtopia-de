@@ -3895,10 +3895,13 @@ function splitTimeFormat(item = '') {
             i += 1;
           }
         } else if (options.TimePeriodization = 2) {
+
           if (timeSnipt != "") {
             timeSnipt.split(",").forEach((item) => {
               timeList.push(item);
             });
+
+            console.log('timeList', timeList)
           }
         } else {
           console.log('timeSnipt', timeSnipt)
