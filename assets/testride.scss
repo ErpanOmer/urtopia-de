@@ -728,6 +728,11 @@
                             & > span {
                                 color: #555;
                             }
+
+                            & > i {
+                                position: absolute;
+                                right: 0;
+                            }
                         }
 
                         .gray {
