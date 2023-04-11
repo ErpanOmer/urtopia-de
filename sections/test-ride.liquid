@@ -514,7 +514,7 @@
 
             
 
-            if (options.find(option => option.city !== info.testrideSpot )) {
+            if (!options.find(option => option.city === info.testrideSpot )) {
                 options.push(option)
                 {% comment %} select.appendChild(option) {% endcomment %}
             }
