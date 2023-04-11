@@ -12,6 +12,24 @@
 
 let extra_data = {}
 
+function splitTimeFormat(item = '') {
+  if (!item) {
+    return ''
+  }
+
+  const times = []
+
+  for (const time of item.split(',')) {
+    const [start, end] = time.split('-')
+
+    for (let index = Number(start.split(':').shift()); index < Number(end.split(':').shift()); index++) {
+      times.push(`${index}:00-${index + 1}:00`)
+    }
+  }
+
+  return times
+}
+
 !(function (win) {
   "use strict";
 
@@ -3225,6 +3243,21 @@ let extra_data = {}
           endLoad()
           that.next();
 
+          extra_data = {
+            ...extra_data,
+            ...body.extras
+          }
+
+          fetchBuried('testride', 'submit', extra_data)
+
+          fetch("https://api.newurtopia.com/third_part/book_ride", {
+                method: "POST",
+                body: JSON.stringify({
+                  ...extra_data,
+                  phone: extra_data.phone_number
+                })
+          })
+
           // that.submitInfoState = 1;
           //     if (options.specific >= 1) that.step = 3;
           //     that.next();
@@ -3369,18 +3402,6 @@ let extra_data = {}
         document.body.style.overflow = ""; //出现滚动条
         document.removeEventListener("touchmove", mo, false);
         document.removeEventListener("mousedown", that.closeCheck);
-
-        fetchBuried('testride', 'submit', extra_data)
-
-        fetch("https://api.newurtopia.com/third_part/book_ride", {
-              method: "POST",
-              body: JSON.stringify({
-                ...extra_data,
-                phone: extra_data.phone_number
-              })
-        })
-        
-
       });
     }
   };
@@ -3841,6 +3862,8 @@ let extra_data = {}
         var dayIndex = this.getAttribute("data-day");
         var timeSnipt = options.shopInfo.businessHours[dayIndex];
 
+        console.log('options.TimePeriodization', options.TimePeriodization)
+
         var timeList = [],
           timeListHtml = [];
         if (options.TimePeriodization == 1) {
@@ -3873,11 +3896,12 @@ let extra_data = {}
           }
         } else if (options.TimePeriodization = 2) {
           if (timeSnipt != "") {
-            timeSnipt.split(",").forEach((item) => {
-              timeList.push(item);
-            });
+            timeList = splitTimeFormat(timeSnipt)
+            console.log('timeList', timeList)
           }
         } else {
+          console.log('timeSnipt', timeSnipt)
+
           if (timeSnipt != "") {
             var time = timeSnipt.split("–");
             if (time[0] > "12:00") {

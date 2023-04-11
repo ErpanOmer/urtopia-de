@@ -720,9 +720,19 @@
                         }
 
                         .name {
+                            position: relative;
                             font-size: 17px;
                             line-height: 20px;
                             font-weight: 600;
+
+                            & > span {
+                                color: #555;
+                            }
+
+                            & > i {
+                                position: absolute;
+                                right: 0;
+                            }
                         }
 
                         .gray {

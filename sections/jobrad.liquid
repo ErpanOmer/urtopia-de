@@ -311,7 +311,11 @@
             }
 
             fetchBuried('jobrad', 'submit', search)
-            fbq('track', 'Jobrad Submit')
+            // fbq('track', 'Jobrad Submit')
+            fbq('track', 'CompleteRegistration', {
+                value: 3596,
+                currency: 'usd',
+            });
         }
 
 
