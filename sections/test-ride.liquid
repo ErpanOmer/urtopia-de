@@ -520,8 +520,8 @@
             }
         }
 
-        console.log(options.sort(i => {
-            console.log(i)
+        console.log(options.sort((a, b) => {
+            return a.getAttribute('city') > b.getAttribute('city')
         }))
 
         storeList.appendChild(items)
