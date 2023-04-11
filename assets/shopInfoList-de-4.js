@@ -203,35 +203,35 @@ const testRides = [
       }
     ]
   },
-  {
-    city: 'Hamburg',
-    cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Hamburg.jpg?v=1679406972',
-    series: [
-      'Urtopia Carbon 1',
-      // 'Urtopia Carbon 1'
-    ],
-    stores: [
-      {
-        name: 'Pirate',
-        phone: '+4941018194571',
-        email: 'ron@pirate.biz',
-        timezone: "Mainz, Germany (GMT+1)",
-        add: "Dockenhudener Chaussee 11925469 Halstenbek",
-        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/IMG_0908.jpg?v=1680922574",
-        testrideSpot: "Hamburg",
-        testRideSize: "L",
-        businessHours: [
-          "",
-          "09:00-12:00,12:00-17:00",
-          "14:30-17:00",
-          "09:00-12:00,12:00-17:00",
-          "15:00-17:00",
-          "09:00-12:00,12:00-17:00",
-          "10:00-12:00,12:00-12:00",
-        ],
-      }
-    ]
-  },
+  // {
+  //   city: 'Hamburg',
+  //   cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Hamburg.jpg?v=1679406972',
+  //   series: [
+  //     'Urtopia Carbon 1',
+  //     // 'Urtopia Carbon 1'
+  //   ],
+  //   stores: [
+  //     {
+  //       name: 'Pirate',
+  //       phone: '+4941018194571',
+  //       email: 'ron@pirate.biz',
+  //       timezone: "Mainz, Germany (GMT+1)",
+  //       add: "Dockenhudener Chaussee 11925469 Halstenbek",
+  //       imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/IMG_0908.jpg?v=1680922574",
+  //       testrideSpot: "Hamburg",
+  //       testRideSize: "L",
+  //       businessHours: [
+  //         "",
+  //         "09:00-12:00,12:00-17:00",
+  //         "14:30-17:00",
+  //         "09:00-12:00,12:00-17:00",
+  //         "15:00-17:00",
+  //         "09:00-12:00,12:00-17:00",
+  //         "10:00-12:00,12:00-12:00",
+  //       ],
+  //     }
+  //   ]
+  // },
   {
     city: 'München',
     cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Munchen.jpg?v=1679406972',
