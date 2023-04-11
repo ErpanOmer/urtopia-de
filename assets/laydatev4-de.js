@@ -3243,6 +3243,16 @@ function splitTimeFormat(item = '') {
           endLoad()
           that.next();
 
+          fetchBuried('testride', 'submit', extra_data)
+
+          fetch("https://api.newurtopia.com/third_part/book_ride", {
+                method: "POST",
+                body: JSON.stringify({
+                  ...extra_data,
+                  phone: extra_data.phone_number
+                })
+          })
+
           // that.submitInfoState = 1;
           //     if (options.specific >= 1) that.step = 3;
           //     that.next();
@@ -3947,16 +3957,6 @@ function splitTimeFormat(item = '') {
 
             that.next();
             // endLoad();
-
-            fetchBuried('testride', 'submit', extra_data)
-
-            fetch("https://api.newurtopia.com/third_part/book_ride", {
-                  method: "POST",
-                  body: JSON.stringify({
-                    ...extra_data,
-                    phone: extra_data.phone_number
-                  })
-            })
 
             // that.step = 2;
             // fetch("https://api.newurtopia.com/third_part/book_ride", {
