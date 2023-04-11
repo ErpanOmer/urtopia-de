@@ -3862,6 +3862,8 @@ function splitTimeFormat(item = '') {
         var dayIndex = this.getAttribute("data-day");
         var timeSnipt = options.shopInfo.businessHours[dayIndex];
 
+        console.log('options.TimePeriodization', options.TimePeriodization)
+
         var timeList = [],
           timeListHtml = [];
         if (options.TimePeriodization == 1) {
