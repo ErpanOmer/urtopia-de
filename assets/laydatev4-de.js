@@ -22,12 +22,9 @@ function splitTimeFormat(item = '') {
   for (const time of item.split(',')) {
     const [start, end] = time.split('-')
 
-    console.log(start, end)
-
     for (let index = Number(start.split(':').shift()); index < Number(end.split(':').shift()); index++) {
       times.push(`${index}:00-${index + 1}:00`)
     }
-
   }
 
   return times
