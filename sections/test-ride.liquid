@@ -520,9 +520,13 @@
             }
         }
 
-        select.appendChild(...options.sort((a, b) => {
+        options.sort((a, b) => {
             return a.getAttribute('city') > b.getAttribute('city')
-        }))
+        })
+
+        for (const option of options) {
+            console.log(option.getAttribute('city'))
+        }
 
         storeList.appendChild(items)
         forms.appendChild(form)
