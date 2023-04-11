@@ -520,7 +520,7 @@
             }
         }
 
-        select.appendChild(options.sort((a, b) => {
+        select.appendChild(...options.sort((a, b) => {
             return a.getAttribute('city') > b.getAttribute('city')
         }))
 
