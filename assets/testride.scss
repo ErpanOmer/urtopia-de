@@ -544,7 +544,9 @@
                 position: relative;
 
                 #storepoint-tag-dropdown,
-                #storepoint-radius-dropdown {
+                #storepoint-radius-dropdown,
+                #stpt-show-more-btn,
+                #storepoint-brand {
                     display: none !important;
                 }
 
@@ -1059,11 +1061,6 @@
                             height: 0;
                             overflow: hidden;
                             padding: 0;
-                        }
-
-                        #stpt-show-more-btn,
-                        #storepoint-brand {
-                            display: none;
                         }
                     }
                 }
