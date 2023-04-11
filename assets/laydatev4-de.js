@@ -3895,12 +3895,8 @@ function splitTimeFormat(item = '') {
             i += 1;
           }
         } else if (options.TimePeriodization = 2) {
-
           if (timeSnipt != "") {
-            timeSnipt.split(",").forEach((item) => {
-              timeList.push(item);
-            });
-
+            timeList = splitTimeFormat(timeSnipt)
             console.log('timeList', timeList)
           }
         } else {
