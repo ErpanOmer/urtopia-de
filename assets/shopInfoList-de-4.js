@@ -25,6 +25,7 @@ const testRides = [
           "09:00-12:00,12:00-19:00",
           "09:00-12:00,12:00-19:00",
         ],
+        Partner: true
       },
       {
         name: 'Service Zentrum',
