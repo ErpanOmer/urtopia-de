@@ -520,12 +520,10 @@
             }
         }
 
-        options.sort((a, b) => {
-            return a.getAttribute('city').localeCompare(b.getAttribute('city'))
-        })
+        options.sort((a, b) => a.getAttribute('city').localeCompare(b.getAttribute('city')))
 
         for (const option of options) {
-            console.log(option.getAttribute('city'))
+            select.appendChild(option)
         }
 
         storeList.appendChild(items)
