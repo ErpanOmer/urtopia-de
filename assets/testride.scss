@@ -578,10 +578,6 @@
                                 font-size: 17px;
                                 line-height: 20px;
                                 font-weight: 600;
-
-                                & > span {
-                                    color: #555;
-                                }
                             }
 
                             .address {
@@ -727,6 +723,10 @@
                             font-size: 17px;
                             line-height: 20px;
                             font-weight: 600;
+
+                            & > span {
+                                color: #555;
+                            }
                         }
 
                         .gray {
