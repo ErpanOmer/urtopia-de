@@ -521,7 +521,7 @@
         }
 
         options.sort((a, b) => {
-            return a.getAttribute('city') > b.getAttribute('city')
+            return a.getAttribute('city') < b.getAttribute('city')
         })
 
         for (const option of options) {
