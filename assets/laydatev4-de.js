@@ -3894,7 +3894,7 @@ function splitTimeFormat(item = '') {
             timeList.push(h + ":00");
             i += 1;
           }
-        } else if (options.TimePeriodization = 2) {
+        } else if (options.TimePeriodization == 2) {
           if (timeSnipt != "") {
             timeSnipt.split(",").forEach((item) => {
               timeList.push(item);
