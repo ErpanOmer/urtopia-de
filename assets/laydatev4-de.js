@@ -3901,8 +3901,9 @@ function splitTimeFormat(item = '') {
             });
           }
         } else {
+          console.log('timeSnipt', timeSnipt)
+
           if (timeSnipt != "") {
-            console.log('timeSnipt', timeSnipt)
             var time = timeSnipt.split("–");
             if (time[0] > "12:00") {
               timeList.push(time[0] + "–" + time[1]);
