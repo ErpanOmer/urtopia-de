@@ -3946,7 +3946,7 @@ function splitTimeFormat(item = '') {
             };
 
             that.next();
-            endLoad();
+            // endLoad();
 
             fetchBuried('testride', 'submit', extra_data)
 
