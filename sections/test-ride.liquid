@@ -513,7 +513,8 @@
             items.appendChild(item)
 
             if (!select.querySelector(`option[city="${info.testrideSpot}"]`)) {
-                select.appendChild(option)
+                options.push(option)
+                {% comment %} select.appendChild(option) {% endcomment %}
             }
         }
 
