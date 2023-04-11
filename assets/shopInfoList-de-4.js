@@ -25,7 +25,7 @@ const testRides = [
           "09:00-12:00,12:00-19:00",
           "09:00-12:00,12:00-19:00",
         ],
-        Partner: true
+        isPartner: true
       },
       {
         name: 'Service Zentrum',
@@ -93,6 +93,7 @@ const testRides = [
           "09:00-18:00",
           "",
         ],
+        isPartner: true
       },
       {
         name: 'DownTownBikes am Hbf.',
@@ -133,6 +134,7 @@ const testRides = [
         imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Berlin.jpg?v=1679406972",
         testrideSpot: "Berlin",
         testRideSize: "M, Chord",
+        isPartner: true,
         availableSizes: [
           'Carbon One Size M',
           'Chord'
@@ -250,6 +252,7 @@ const testRides = [
         imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Munchen.jpg?v=1679406972",
         testrideSpot: "München",
         testRideSize: "M",
+        isPartner: true,
         businessHours: [
           "10:00-12:00,12:00-20:00",
           "8:00-9:30,13:00-14:30,18:00-20:00",
@@ -318,6 +321,7 @@ const testRides = [
         imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/testride-munster.jpg?v=1671252848",
         testrideSpot: "Münster",
         testRideSize: "L, Chord",
+        isPartner: true,
         availableSizes: [
           'Carbon One Size L',
           'Chord'
@@ -370,6 +374,7 @@ const testRides = [
         imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Koln.jpg?v=1679406972",
         testrideSpot: "Köln",
         testRideSize: "L",
+        isPartner: true,
         businessHours: [
           "09:00-18:00",
           "09:00-18:00",
@@ -389,6 +394,7 @@ const testRides = [
         imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Koln.jpg?v=1679406972",
         testrideSpot: "Köln",
         testRideSize: "M",
+        isPartner: true,
         businessHours: [
           "09:00-12:00,12:00-19:00",
           "18:00-20:00",
@@ -705,6 +711,7 @@ const testRides = [
         imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230328-164146.jpg?v=1679992972",
         testrideSpot: "Selbitz",
         testRideSize: "L",
+        isPartner: true,
         businessHours: [
           "09:00-12:00, 12:00-18:00",
           "09:00-12:00, 12:00-18:00",
