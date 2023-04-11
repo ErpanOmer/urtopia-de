@@ -512,9 +512,9 @@
 
             items.appendChild(item)
 
-            console.log(option.city, info.testrideSpot)
+            
 
-            if (!options.find(o => o.city === info.testrideSpot )) {
+            if (!options.find(option => option.getAttribute('city') === info.testrideSpot )) {
                 options.push(option)
                 {% comment %} select.appendChild(option) {% endcomment %}
             }
