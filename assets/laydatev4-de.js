@@ -3243,6 +3243,11 @@ function splitTimeFormat(item = '') {
           endLoad()
           that.next();
 
+          extra_data = {
+            ...extra_data,
+            ...body.extras
+          }
+
           fetchBuried('testride', 'submit', extra_data)
 
           fetch("https://api.newurtopia.com/third_part/book_ride", {
