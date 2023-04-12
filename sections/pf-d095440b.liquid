@@ -553,7 +553,6 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
   <!-- price 隐藏
   <div data-pf-type="ProductPrice2" id="product-price" class="sc-kTqLtj ihdlmX pf-26_ order-price"><div data-product-type="price" data-product-id="{{ product.id }}" data-product-price="true" data-pf-type="ProductPrice2Item" class="sc-haTkiu fcLDTw pf-27_">{{ product.variants[0].price | money }}</div><div data-product-type="compare_at_price" data-product-id="{{ product.id }}" data-pf-type="ProductPrice2Item" class="sc-haTkiu fcLDTw pf-28_ pf-lg-hide pf-md-hide pf-hide">{{ product.variants[0].compare_at_price | money }}</div></div>
    -->
-  
     <style>
 .eggs {
     max-width: 450px;
@@ -791,22 +790,8 @@ letter-spacing: 0px;
   }
 </style>
 <script>
-  /*
- var giveawaySwiper = new Swiper(".Giveaway-swiper", {
-   spaceBetween: 10,
-   slidesPerView: "auto",
-   freeMode: true,
-   navigation: {
-     nextEl: ".swiper-button-next",
-     prevEl: ".swiper-button-prev",
-   },
- });
-  $(".Giveaway-item").on("click",function(index){
-	giveawaySwiper.slideTo($(this).attr("data-index"))
-  })*/
 </script></div>
-  
-  
+
   <div data-display="radio" data-label="true" data-product-id="{{ product.id }}" style="--o-xs:8px;--o-md:16px;--g-xs:4px;--g-md:8px" data-sw-id="{% liquid
     assign min = 10000000000
     assign max = 99999999999
@@ -825,8 +810,6 @@ letter-spacing: 0px;
 						assign types = swatches.pf_types | split: "; "
 					    assign length = keys.size | minus: 1
         %} 
-		
-		
 		{% for option in product.options_with_values %}
 				   {% assign option_name = option.name %}
 				   {% assign formatted_option_name = option.name | replace: '"', '&quot;' %}
@@ -1090,8 +1073,6 @@ letter-spacing: 0px;
         <span>€300 OFF with Easter Sale Code</span>
         <span class="bold">OK300</span>
     </div>
-
-
 <style>
 	.carbon_code {
 		max-width: 480px;
@@ -1190,7 +1171,6 @@ letter-spacing: 0px;
   <div class="chrod_info">
 	<div class="ship_wrapped">
 	  <div class="ship_item">
-		
   <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18.414" height="18.414" viewBox="0 0 18.414 18.414">
   <defs>
   <clipPath id="clip-path">
@@ -1211,13 +1191,9 @@ letter-spacing: 0px;
   </g>
   </g>
   </svg>
-  
-  
-  
 		<div>Free<br>Shipping</div>
 	  </div>
 	  <div class="ship_item">
-		
   <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18.414" height="18.414" viewBox="0 0 18.414 18.414">
   <defs>
   <clipPath id="clip-path">
@@ -1241,12 +1217,9 @@ letter-spacing: 0px;
   </g>
   </g>
   </svg>
-  
-  
 		<div>14-Day<br>Return</div>
 	  </div>
 	  <div class="ship_item">
-		
   <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18.414" height="18.414" viewBox="0 0 18.414 18.414">
   <defs>
   <clipPath id="clip-path">
@@ -1264,24 +1237,18 @@ letter-spacing: 0px;
   </g>
   </g>
   </svg>
-  
-  
 		<div>2-Year<br>Warranty</div>
 	  </div>
 	</div>
 	<ul class="others">
 	  <li id="sizefit-btn">
 		<span>Size &amp; Fit</span>
-		
   <svg xmlns="http://www.w3.org/2000/svg" width="6.52" height="11.625" viewBox="0 0 6.52 11.625">
   <g id="Group_20411" data-name="Group 20411" transform="translate(-1573.959 -610.293)">
   <line id="Line_831" data-name="Line 831" x2="5.105" y2="5.105" transform="translate(1574.666 611)" fill="none" stroke="#000" stroke-linecap="round" stroke-width="1"></line>
   <line id="Line_832" data-name="Line 832" y1="5.105" x2="5.105" transform="translate(1574.666 616.105)" fill="none" stroke="#000" stroke-linecap="round" stroke-width="1"></line>
   </g>
   </svg>
-  
-  
-  
 	  </li>
 	  <li id="tspec-btn">
 		<span>Technical Specifications</span>
@@ -1292,9 +1259,6 @@ letter-spacing: 0px;
   <line id="Line_832" data-name="Line 832" y1="5.105" x2="5.105" transform="translate(1574.666 616.105)" fill="none" stroke="#000" stroke-linecap="round" stroke-width="1"></line>
   </g>
   </svg>
-  
-  
-  
 	  </li>
 	  <li id="ucare-btn">
 		<span>Support &amp; Service</span>
@@ -1305,9 +1269,6 @@ letter-spacing: 0px;
   <line id="Line_832" data-name="Line 832" y1="5.105" x2="5.105" transform="translate(1574.666 616.105)" fill="none" stroke="#000" stroke-linecap="round" stroke-width="1"></line>
   </g>
   </svg>
-  
-  
-  
 	  </li>
 	  <li id="faqs-btn">
 		<span>FAQs</span>
@@ -1318,9 +1279,6 @@ letter-spacing: 0px;
   <line id="Line_832" data-name="Line 832" y1="5.105" x2="5.105" transform="translate(1574.666 616.105)" fill="none" stroke="#000" stroke-linecap="round" stroke-width="1"></line>
   </g>
   </svg>
-  
-  
-  
 	  </li>
 	</ul>
   </div>
@@ -1367,498 +1325,8 @@ letter-spacing: 0px;
 	}
   </style>
 
-  <style>
-	.order-flex-row {
-	  display: flex;
-	  align-items: center;
-	}
-	.order-modal-layer {
-	  position: fixed;
-	  z-index: 999;
-	  top: 0;
-	  left: 0;
-	  height: 100vh;
-	  width: 100%;
-	  background-color: rgba(0, 0, 0, 0.5);
-	  display: flex;
-	  align-items: center;
-	  justify-content: center;
-	  display: none;
-	}
-	.order-modal-layer .order-layer-box {
-	  opacity: 0;
-	  background-color: #fff;
-	  border-radius: 15px;
-	  width: 900px;
-	  box-shadow: 0 0 10px 10px rgb(0, 0, 0, 0.08);
-	}
-	.order-modal-layer .order-layer-header {
-	  padding: 12px 20px;
-	  justify-content: space-between;
-	  border-bottom: 1px solid #eee;
-	}
-	.order-modal-layer .order-layer-header h3 {
-	  font: normal normal 600 16px/19px urbane;
-	  margin: 0;
-	  margin-left: 20px;
-	}
-	.order-modal-layer .order-layer-header span {
-	  font-size: 24px;
-	  background-color: transparent;
-	  outline: none;
-	  border: none;
-	  cursor: pointer;
-	  color: #cfcfcf;
-	}
-	.order-modal-layer .sizefit-switch {
-	  background-color: #eff0f4;
-	  border-radius: 50px;
-	  width: 40%;
-	  margin: 40px auto;
-	  overflow: hidden;
-	}
-	.sizefit-switch .switch-radio {
-	  position: relative;
-	  width: 100%;
-	  overflow: hidden;
-	}
-	.order-modal-layer .sizefit-switch button {
-	  padding: 6px 20px;
-	  margin: 0;
-	  font: normal normal 600 16px/33px urbane;
-	  background-color: transparent;
-	  outline: none;
-	  border: none;
-	  cursor: pointer;
-	  overflow: hidden;
-	  width: 100%;
-	  border-radius: 50px;
-	  transition: all 0.1s;
-	}
-	.order-modal-layer .sizefit-switch input[type="radio"] {
-	  position: absolute;
-	  width: 100%;
-	  height: 100%;
-	  left: 0;
-	  top: 0;
-	  margin: 0;
-	  opacity: 0;
-	}
-	#tab-1:checked ~ .btn,
-	#tab-2:checked ~ .btn {
-	  background: #000000;
-	  color: #fff;
-	}
-	.order-modal-layer .order-layer-body {
-	  padding: 20px 40px;
-	  padding-bottom: 40px;
-	}
-	.sizefit-box {
-	  width: 35%;
-	}
-	.sizefit-item {
-	  justify-content: space-between;
-	}
-	.sizefit-item:not([data-last="yes"]) {
-	  margin-bottom: 25px;
-	}
 
-	.sizefit-item p {
-	  font: normal normal 600 12px/14px urbane;
-	  color: #2b2e34;
-	  margin: 0;
-	}
-	.sizefit-item span {
-	  font: normal normal 300 12px/14px urbane;
-	  color: #2b2e34;
-	}
-	.sizefit-bg {
-	  flex: 1;
-	  height: 340px;
-	  margin-left: 50px;
-	  background-image: url("https://cdn.shopify.com/s/files/1/0583/5810/4213/files/order-sizefit.png?v=1677752308");
-	  background-position: center;
-	  background-size: auto 100%;
-	}
-	.sizefitx-bg {
-	  background-image: url("https://cdn.shopify.com/s/files/1/0583/5810/4213/files/sizefitx.png?v=1677814083");
-	}
-	.dialog-open {
-	  animation-name: anim-open;
-	  animation-duration: 0.3s;
-	  animation-fill-mode: forwards;
-	}
-	.dialog-close {
-	  animation-name: anim-close;
-	  animation-duration: 0.3s;
-	  animation-fill-mode: forwards;
-	}
-
-	.dialog-close-out {
-	  animation-name: anim-close-out;
-	  animation-duration: 0.3s;
-	  animation-fill-mode: forwards;
-	}
-
-	/* modal2 */
-	.tec-spac-t {
-	  font: normal normal 600 20px/24px urbane;
-	  border-bottom: 2px solid #eee;
-	  padding-bottom: 4px;
-	}
-	.tec-spac-b {
-	  display: flex;
-	  flex-wrap: wrap;
-	  align-items: baseline;
-	  justify-content: space-between;
-	}
-	.tec-spac-b .tec-spac-item {
-	  display: flex;
-	  flex-direction: column;
-	  width: 30%;
-	  align-items: baseline;
-	  margin-bottom: 24px;
-	}
-	.tec-spac-item2 {
-	  justify-content: space-between;
-	}
-	.tec-spac-item2 p {
-	  font: normal normal 300 12px/17px urbane;
-	  margin: 0;
-	  margin-top: 12px;
-	  color: #161c1f;
-	  width: 30%;
-	}
-	.tec-spac-item2 img {
-	  width: 66%;
-	}
-	.tec-spac-b .tec-spac-item h4 {
-	  font: normal normal 600 16px/25px urbane;
-	  margin: 0;
-	  color: #4d4d4d;
-	}
-	.tec-spac-b .tec-spac-item p {
-	  font: normal normal 300 12px/17px urbane;
-	  margin: 0;
-	  margin-top: 12px;
-	  color: #161c1f;
-	}
-	@media screen and (max-width: 500px) {
-	  .order-modal-layer .order-layer-box {
-		width: 90vw;
-		min-width: auto;
-	  }
-	  #chord-dom,
-	  #chordx-dom {
-		flex-direction: column-reverse;
-	  }
-	  .order-modal-layer .sizefit-switch {
-		margin: 20px auto;
-	  }
-	  .sizefit-box {
-		width: 100%;
-	  }
-	  .order-modal-layer .sizefit-switch {
-		width: 80%;
-	  }
-	  .sizefit-bg {
-		flex: inherit;
-		height: 200px;
-		width: 100%;
-		margin-left: 0;
-		margin-bottom: 20px;
-	  }
-	  .tec-spac-b {
-		flex-direction: column;
-	  }
-	  .tec-spac-b .tec-spac-item {
-		width: 100%;
-	  }
-
-	  .tec-spac-item2 {
-		flex-direction: column;
-	  }
-	  .tec-spac-item2 p {
-		width: 100%;
-	  }
-	  .tec-spac-item2 img {
-		width: 100%;
-		margin-top: 30px;
-	  }
-	}
-	@keyframes anim-open {
-	  0% {
-		opacity: 0;
-		-webkit-transform: scale3d(1.1, 1.1, 1);
-		transform: scale3d(1.1, 1.1, 1);
-	  }
-	  100% {
-		opacity: 1;
-		-webkit-transform: scale3d(1, 1, 1);
-		transform: scale3d(1, 1, 1);
-	  }
-	}
-@keyframes anim-close-out {
-	  0% {
-		opacity: 1;
-	  }
-
-	  100% {
-		opacity: 0;
-	  }
-	}
-  </style>
-
-<style>
-.order-modal-layer-three .tec-spac-b .tec-spac-item {
-  width: 50%;
-  padding: 15px 175px 15px 0;
-  box-sizing: border-box;
-}
-
-
-.order-modal-layer-three .opacity {
-  opacity: 0.7;
-  margin-top: 15px;
-}
-
-.order-modal-layer-three .opacity p {
-  color: #000;
-}
-
-.order-modal-layer-three .tec-spac-item2 {
-  align-items: flex-start;
-}
-
-.order-modal-layer-three .tec-spac-item2 > div {
-  display: flex;
-  flex-direction: column;
-  padding:0 30px 60px 0;
-}
-
-.order-modal-layer-three .tec-spac-item2 > img {
-  width: 100%;
-  margin-top: 15px;
-}
-
-.order-modal-layer-three .tec-spac-item2 > div p {
-  width: auto;
-}
-
-.order-modal-layer-three .tec-spac-item2 > div p:last-child {
-  margin-top: 30px;
-}
-
-.order-modal-layer-three .opacity p:first-child {
-  font-weight: 600;
-}
-
-.order-modal-layer-three .tec-spac-b .tec-spac-item h4,
-.order-modal-layer-three .tec-spac-t {
-  color: #000;
-}
-
-
-@media screen and (max-width: 500px) {
-  .order-modal-layer-three .tec-spac-item2 {
-	  position: relative;
-	  padding-bottom: 100px;
-  }
-
-  .order-modal-layer-three .tec-spac-item2 a {
-	  position: absolute;
-	  bottom: 40px;
-  }
-
-  .order-modal-layer-three .tec-spac-b .tec-spac-item {
-	  width: auto;
-	  padding-right: 0;
-  }
-
-  .order-modal-layer-three .tec-spac-item2 > div {
-	  padding-right: 0;
-	  padding-bottom: 0;
-  }
-}
-
-</style>
-
-<style>
-.faq-navigation {
-	display: flex;
-	font: normal normal 600 24px / 34px Proxima Nova;
-	letter-spacing: 0;
-	color: #707070;
-	align-items: center;
-	justify-content: center;
-	margin-top: 30px;
-	display: none;
-}
-
-.faq-navigation .swiper-pagination {
-	position: static;
-	width: auto;
-}
-
-.faq-navigation .prev_btn,
-.faq-navigation .next_btn {
-	font-family: fontAwesome;
-	display: inline-block;
-	height: 51px;
-	width: 51px;
-	text-align: center;
-	line-height: 51px;
-	border-radius: 50%;
-	cursor: pointer;
-	font-weight: 650;
-	font-size: 30px;
-	color: #707070;
-	box-shadow: unset;
-}
-
-.faq-navigation .prev_btn:before {
-	content: '\f104';
-}
-
-.faq-navigation .next_btn:before {
-	content: '\f105';
-}
-
-#faq-list .faq-title {
-	width: 100%;
-	height: auto;
-	display: block;
-	border-style: solid;
-	border-width: 0 0 1px;
-	border-color: #ebebeb;
-	text-align: left;
-	font: normal normal 600 16px/28px Urbane;
-	letter-spacing: 0;
-	padding: 19px 0px 12px 100px;
-	color: #000;
-	background: #fff;
-	position: relative;
-}
-
-#faq-list .faq-title i {
-	position: absolute;
-	/* right: 20px; */
-	left: 30px;
-	display: inline-block;
-	font-size: 17px;
-	line-height: 1;
-	font-family: FontAwesome !important;
-	font-style: normal;
-	text-rendering: auto;
-	transition: transform 0.4s cubic-bezier(0.445, 0.05, 0.55, 0.95);
-}
-
-#faq-list .faq-content {
-	display: none;
-	padding: 12px 100px;
-	font: normal normal normal 14px/20px Urbane;
-	color: #000;
-	opacity: 0.7;
-}
-
-#faq-list .faq-content-plus {
-	transform: rotate(90deg);
-}
-
-#faq-list .faq-title .faq-content-plus:before {
-	content: '\f067';
-}
-
-#faq-list .faq-title i:before {
-	content: '\f068';
-}
-
-#faq .titlee {
-	font: normal normal 600 20px/24px Urbane;
-	color: #000;
-	border-bottom: 1px solid #ebebeb;
-	padding-bottom: 20px;
-}
-
-#faq .swiper {
-	max-height: 420px;
-	overflow: auto;
-}
-
-#faq .buttons {
-	padding-top: 20px;
-}
-
-#faq .buttons a + a {
-	margin-left: 10px;
-}
-
-@media screen and (max-width: 750px) {
-	#faq {
-		margin: 0 -25px -25px;
-	}
-
-	#faq .swiper {
-		padding-right: 10px;
-	}
-	
-	#faq .titlee {
-		margin-right: 10px;
-	}
-
-	#faq .swiper {
-		max-height: 50vh;
-		overflow: auto;
-	}
-
-	#faq-list .faq-title {
-		font-size: 14px;
-		line-height: 16px;
-		padding: 19px 0px 12px 35px;
-	}
-
-	#faq-list .faq-title i {
-		left: 10px;
-		top: 20px;
-	}
-
-	#faq-list .faq-content {
-		padding-left: 35px;
-		padding-right: 0;
-	}
-
-	.order-modal-four .order-modal-layer-four .order-layer-header {
-	  padding-left: 0;
-	}
-}</style>
-
-  <script>
-	document.getElementById("sizefit-btn").onclick = function () {
-		const layer = document.querySelector(".order-modal-one");
-		const laybox = document.querySelector(".order-modal-layer-one");
-		layer.style.display = "flex";
-		laybox.className += " dialog-open";
-	  };
-	document.getElementById("tspec-btn").onclick = function () {
-		const layer = document.querySelector(".order-modal-two");
-		const laybox = document.querySelector(".order-modal-layer-two");
-		layer.style.display = "flex";
-		laybox.className += " dialog-open";
-	  };
-	document.getElementById("ucare-btn").onclick = function () {
-		const layer = document.querySelector(".order-modal-three");
-		const laybox = document.querySelector(".order-modal-layer-three");
-		layer.style.display = "flex";
-		laybox.className += " dialog-open";
-	  };
   
-	  document.getElementById("faqs-btn").onclick = function () {
-		const layer = document.querySelector(".order-modal-four");
-		const laybox = document.querySelector(".order-modal-layer-four");
-		layer.style.display = "flex";
-		laybox.className += " dialog-open";
-	  };
-  </script>
 <script>
   
 var id = 0;
@@ -2228,39 +1696,6 @@ function testRideTrace(){
 <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/t/4/assets/img_v2_31cbc388095241abacf3663b12f0047g-1669873936246.png?v=1669873938" srcSet="https://cdn.shopify.com/s/files/1/0633/2068/6808/t/4/assets/img_v2_31cbc388095241abacf3663b12f0047g-1669873936246.png?v=1669873938 1536w, https://cdn.shopify.com/s/files/1/0633/2068/6808/t/4/assets/img_v2_31cbc388095241abacf3663b12f0047g-1669873936246_500x.png?v=1669873938 320w" width="708" height="298" style="aspect-ratio:708 / 298" data-pf-type="Image3" class="sc-nVkyK eXnudJ pf-45_ pf-lg-hide pf-md-hide pf-sm-hide"/>
 -->
 <div data-pf-type="Custom.HTML" class="sc-AjmGg eCTxfx pf-46_"><div id="pay-content-container" class="pf-lg-hide pf-md-hide pf-sm-hide">
-  <!--
-<div id="pay-content-top">
-  <div class="product-detail">
-	<div class="bike-options">
-	  E-Bike:
-	<div class="option size">
-	  <span>Size: </span><span class="content">M</span>
-	</div>
-	<div class="option style">
-	  <span>Style: </span><span class="content">Sirius</span>
-	</div>
-	</div>
-	<div class="Accessories-options">
-	  Accessories:
-	  <div class="Accessories-list">
-		<div class="option">
-		</div>
-	  </div>
-	</div>
-  </div>
-  <div class="detail-show-row">
-	<div class="detail-show-btn">
-	  Product detail
-	  <i></i>
-	</div>
-	<div class="bike-navigation">
-	  <a href="#Product-Title">
-		<div>
-		</div>
-	  </a>
-	</div>
-  </div>
-</div>-->
 <div id="pay-content-mb" >
   <div class="des">
 	<span id="total-price-mb">
@@ -2277,25 +1712,6 @@ function testRideTrace(){
 			Buy
 		</div>
 	  </a>
-	<!--
-  <button
-    type="button"
-    data-checkout="same"
-    data-soldout="Sold out"
-    data-adding="Adding..."
-    data-added="Added to your cart"
-    type="button"
-    data-pf-type="ProductATC"
-    class="addToCartBtn"
-    onclick="addAllToCart()"
-  >
-    <span
-      data-pf-type="Text"
-      class="addToCartText1"
-      style="display: inline-block"
-      >Add to cart</span
-    >
-  </button>-->
   </div>
 </div>
   <div class="pay-content-bottom">
@@ -2953,9 +2369,6 @@ function testRideTrace(){
 						</div>
 					</div>
 				</div>
-			
-			
-			
 			<div data-section-id="pf-88bf" data-pf-type="Section" class="sc-fmciRz bheIgq pf-309_"><div style="--cw:1280px" class="sc-gjNHFA gwWIgj"><div class="sc-ezbkAF A-dmbO pf-310_ pf-r pf-r-eh" style="--s-xs:15px" data-background-image="https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/img_v2_bd61e1d6b0d541e49c8995f053b7803g-1668479102720.png" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-md:12;--c-lg:12"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-311_"><p class="sc-jtXEFf jydWoQ pf-312_" data-pf-type="Paragraph"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-314_">Range Up to</span></p><p class="sc-jtXEFf jydWoQ pf-315_ info-text" data-pf-type="Paragraph"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-317_">100&nbsp;<span style="color: rgb(255, 255, 255);">km</span></span></p><p class="sc-jtXEFf jydWoQ pf-318_" data-pf-type="Paragraph"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-320_">Belt Lifespan</span></p><p class="sc-jtXEFf jydWoQ pf-321_ info-text" data-pf-type="Paragraph"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-323_">30,000 <span style="color: rgb(255, 255, 255);">km</span></span></p><p class="sc-jtXEFf jydWoQ pf-324_" data-pf-type="Paragraph"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-326_">Full Charge</span></p><p class="sc-jtXEFf jydWoQ pf-327_ info-text" data-pf-type="Paragraph"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-329_">2.5 <span style="color: rgb(255, 255, 255);">hrs</span></span></p><a href="/pages/test-ride" target="_self" data-pf-type="Button" class="sc-iqseJM fFuGRG pf-330_ org-btn pf-lg-hide pf-md-hide pf-sm-hide pf-hide"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-332_">Book a test ride</span></a></div></div></div></div></div><div data-section-id="pf-30af" data-pf-type="Section" class="sc-fmciRz bheIgq pf-333_ pf-hide"><div style="--cw:1280px" class="sc-gjNHFA gwWIgj"><div class="sc-ezbkAF A-dmbO pf-334_ pf-r pf-r-eh" style="--s-xs:15px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-md:12;--c-lg:12"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-335_"><div data-pf-type="Custom.HTML" class="sc-AjmGg eCTxfx pf-336_">
 <div class="app-bg">
         <div class="limitation-img-float">
@@ -4075,20 +3488,6 @@ let mediaTimer = setInterval(()=>{
 	}
 },500)
 
-
-///////////
-//
-/*
-    $("#size-guide-title").click(function () {
-	  $("#size-guide-row").slideToggle();
-	  /*
-      $(this).siblings(".faq-content").slideToggle()
-        .parent().siblings().find(".faq-content").slideUp();
-      $(this).children("i").toggleClass("faq-content-plus");
-      $(this).parent().siblings().find(".faq-title").children("i").addClass("faq-content-plus")
-    })
-*/
-
 //accessories -----------------------
 const products = window.__pageflyProducts;
 //console.log("nihao",products)//7633738727640
@@ -4120,56 +3519,8 @@ var i;
 		})
 	  })(i)
 	}
-//giveaway
-/*
-	for(i = 0;i<giveawayList.length;i++){
-	  (function(index){
-  		giveawayList.eq(index).on("click", function(){
-		  giveawayShow(index)
-		})
-	  })(i)
-	}*/
-/*
-let setAccessoriesDetailShow = function(arr){
-  if(Array.prototype.isPrototypeOf(arr) && arr.length != 0){
-	let temp = document.createElement('div')
-	temp.classList="Accessories-list";
-	arr.forEach((item)=>{
-	  let node = document.createElement('div')
-	  node.classList="option"
-	  node.innerHTML=item;
-	  temp.appendChild(node);
-	})
-	document.querySelector(".Accessories-options").replaceChild(temp,document.querySelector(".Accessories-list"))
-	document.querySelector(".Accessories-options").style.display="block"
-  }
-  else{
-	document.querySelector(".Accessories-options").style.display="none"
-  }
-}*/
 
-//giveaway
-
-var giveawayChooseIndex = 1;/*
-let giveawayShow = function(index){
-  if(giveawayList.eq(index).css("opacity")=="0.5")
-	{
-	  giveawayList.eq(index).css("borderColor","#CE2516")
-	  giveawayList.eq(index).css("opacity","1")
-	  	giveawayList.eq(index).siblings().css("borderColor","#E0E0E0")
-	  giveawayList.eq(index).siblings().css("opacity","0.5")
-	giveawayChooseIndex=index;
-	  if(index==1){
-		//accessoriesGiveaway.css("display","none")
-		accessoriesNoGiveaway.css("display","flex")
-	  }else{
-		//accessoriesGiveaway.css("display","flex")
-		accessoriesNoGiveaway.css("display","none")
-	  }
-	  accessoriesSwiper.update();
-	}
-}
-*/
+var giveawayChooseIndex = 1;
 let show = function(index){
   let accessoriesVariant=products[list[index].getAttribute("data-product-id")].variants[0];
   if(list[index].style.borderColor=="rgb(0, 0, 0)")
@@ -4241,10 +3592,6 @@ window.onload=function(){
 	}
   },6000)  
 }
-
-
-
-
 /*变速器逻辑*/</script>
 
 <script>
