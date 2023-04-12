@@ -3557,10 +3557,12 @@ window.onload=function(){
 
 			if (button.disabled) {
 				const text = document.querySelector('.addToCartBtn:not(.js-fake-add-to-cart) .addToCartText').innerText
+				const addToCard = document.querySelector('.addToCartBtn.js-fake-add-to-cart')
+
+				addToCard.disabled = true
 
 
-
-				console.log('text', document.querySelector('.addToCartBtn.js-fake-add-to-cart'))
+				console.log('text', )
 			}
 		}
 
