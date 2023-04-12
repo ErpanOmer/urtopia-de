@@ -3551,9 +3551,18 @@ window.onload=function(){
 	console.log($(''))
 	observerElement('#pay-content').then(r => {
 		console.log('addEventListener', r)
+		const button = document.querySelector('.addToCartBtn:not(.js-fake-add-to-cart)')
+
+		const fn = () => {
+
+			console.log('button', button.disable)
+		}
+
+		fn()
 
 		observerElement('.addToCartBtn:not(.js-fake-add-to-cart) .addToCartText', r => {
 			console.log(r)
+			fn()
 		})
 	})
 </script>
