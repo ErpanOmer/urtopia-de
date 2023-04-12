@@ -159,7 +159,7 @@ class InsuranceProduct extends HTMLElement {
           insuranceProductVariantId.value = variantId;
 
 
-          console.log($('.addToCartBtn.hidden'))
+          console.log($('.addToCartBtn'))
 
         }, 100);
       });
