@@ -3551,11 +3551,14 @@ window.onload=function(){
 	console.log($(''))
 	observerElement('#pay-content').then(r => {
 		console.log('addEventListener', r)
-		const button = document.querySelector('.addToCartBtn:not(.js-fake-add-to-cart)')
-
+	
 		const fn = () => {
-			console.log(button)
-			console.log('button', button.disabled)
+			const button = document.querySelector('.addToCartBtn:not(.js-fake-add-to-cart)')
+
+			if (button.disabled) {
+				const text = document.querySelector('.addToCartBtn:not(.js-fake-add-to-cart) .addToCartText')
+				console.log('text', text)
+			}
 		}
 
 		fn()
