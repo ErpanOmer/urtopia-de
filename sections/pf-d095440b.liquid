@@ -827,7 +827,8 @@ letter-spacing: 0px;
         %} 
 		
 		
-		{% for option in product.options_with_values %} 
+		{% for option in product.options_with_values %}
+				   <div>{{option.name}}</div>
 				   {% assign option_name = option.name %}
 				   {% assign formatted_option_name = option.name | replace: '"', '&quot;' %}
 				<label data-pf-type="OptionLabel" class="pf-variant-label">{{option.name}}</label>  {% if keys contains option_name %}
