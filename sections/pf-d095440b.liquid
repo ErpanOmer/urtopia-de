@@ -3550,9 +3550,12 @@ window.onload=function(){
 	
 	console.log($(''))
 	observerElement('#pay-content', r => {
-		const button = document.querySelector('.addToCartBtn:not(.js-fake-add-to-cart)')
+		
+		observerElement('.addToCartBtn:not(.js-fake-add-to-cart)', r => {
+			console.log(r)
+		})
 
-		console.log('button', button)
+		{% comment %} console.log('button', button) {% endcomment %}
 	}).then(r => {
 	})
 </script>
