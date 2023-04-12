@@ -1192,7 +1192,41 @@ letter-spacing: 0px;
 	</div>
   </div>
 </div>
-
+<style>
+	.ship_wrapped {
+	  display: flex;
+	  justify-content: space-between;
+	}
+	.ship_wrapped .ship_item{
+	  display:flex;
+	  align-items: center;
+	}
+	.ship_wrapped .ship_item > svg {
+	  margin-right:13px;
+	  width: 30px;
+	  height: 30px;
+	}
+	.ship_wrapped .ship_item > div{
+	  font: normal normal 600 12px/14px urbane;
+	}
+	.chrod_info .others{
+	  padding:0;
+	}
+	.chrod_info .others li{
+	  display: flex;
+	  list-style-type: none;
+	  padding: 10px 0px;
+	  border-bottom: 1px solid #E2E2E2;
+	  justify-content: space-between;
+	  align-items: center;
+	  cursor:pointer;
+	  font-weight: 500;
+	}
+	.chrod_info .others li img {
+	  width: 5px;
+	  height: 10px;
+	}
+  </style>
 
 <div class="chrod_info">
 	<div class="ship_wrapped">
