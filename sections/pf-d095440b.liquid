@@ -3552,7 +3552,7 @@ window.onload=function(){
 	observerElement('#pay-content').then(r => {
 		console.log('addEventListener', r)
 	
-		const fn = () => {
+		const changeButton = () => {
 			const button = document.querySelector('.addToCartBtn:not(.js-fake-add-to-cart)')
 			const text = document.querySelector('.addToCartBtn:not(.js-fake-add-to-cart) .addToCartText').innerText
 			const addToCard = document.querySelector('.addToCartBtn.js-fake-add-to-cart')
@@ -3561,12 +3561,8 @@ window.onload=function(){
 			addToCard.querySelector('.addToCartText').innerText = button.disabled ? text : 'Add to Cart'
 		}
 
-		fn()
-
-		observerElement('.addToCartBtn:not(.js-fake-add-to-cart) .addToCartText', r => {
-			console.log(r)
-			fn()
-		})
+		observerElement('.addToCartBtn:not(.js-fake-add-to-cart) .addToCartText', changeButton)
+		changeButton()
 	})
 </script>
 
