@@ -3557,8 +3557,8 @@ window.onload=function(){
 			const text = document.querySelector('.addToCartBtn:not(.js-fake-add-to-cart) .addToCartText').innerText
 			const addToCard = document.querySelector('.addToCartBtn.js-fake-add-to-cart')
 
-			{% comment %} addToCard.disabled = button.disabled {% endcomment %}
-			{% comment %} addToCard.querySelector('.addToCartText').innerText = button.disabled ? text {% endcomment %}
+			addToCard.disabled = button.disabled
+			addToCard.querySelector('.addToCartText').innerText = button.disabled ? text : 'Add to Cart'
 		}
 
 		fn()
