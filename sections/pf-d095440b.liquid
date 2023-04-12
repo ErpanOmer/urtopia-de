@@ -176,8 +176,8 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
   }
 </style>
 <script>
-	/* window.addEventListener('scroll',()=>{
-  	  // let showTop = document.querySelector("#detail-title").getBoundingClientRect().top;
+	window.addEventListener('scroll',()=>{
+  	  let showTop = document.querySelector("#detail-title").getBoundingClientRect().top;
 	  
 	  let detailTop;
 	  let reviewTop;
@@ -217,7 +217,7 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
 	    $("#shopify-section-header").removeClass("active")
 	  }
 	  hideshow();
-	}) */
+	})
   let hideList = [];
   let showList = [];
   function hideshow(){
@@ -3541,7 +3541,7 @@ window.onload=function(){
 }
 
 
-	console.log('$(".addToCartBtn:not(.js-fake-add-to-cart)")', $('.addToCartBtn:not(.js-fake-add-to-cart)'))
+	console.log()
 
   
 }
