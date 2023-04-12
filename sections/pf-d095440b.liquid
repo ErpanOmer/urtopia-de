@@ -3556,7 +3556,8 @@ window.onload=function(){
 			const button = document.querySelector('.addToCartBtn:not(.js-fake-add-to-cart)')
 
 			if (button.disabled) {
-				const text = document.querySelector('.addToCartBtn:not(.js-fake-add-to-cart) .addToCartText')
+				const text = document.querySelector('.addToCartBtn:not(.js-fake-add-to-cart) .addToCartText').innerText
+
 				console.log('text', text)
 			}
 		}
