@@ -8,7 +8,7 @@ const testRides = [
     ],
     stores: [
       {
-        name: 'Test Ride Spot',
+        name: 'Charles xie',
         phone: '+49 1741 767140',
         email: 'yicxie2017@gmail.com',
         timezone: "Mainz, Germany (GMT+1)",
@@ -513,7 +513,6 @@ const testRides = [
         testRideSize: "M",
         availableSizes: [
           'Carbon One Size M/L',
-          'Chord'
         ],
         businessHours: [
           "",
