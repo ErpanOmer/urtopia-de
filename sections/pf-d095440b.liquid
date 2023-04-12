@@ -3550,6 +3550,8 @@ window.onload=function(){
 	
 	console.log($(''))
 	observerElement('#pay-content').then(r => {
+		console/log('r', r)
+
 		observerElement('.addToCartBtn:not(.js-fake-add-to-cart)', r => {
 			console.log(r)
 		})
