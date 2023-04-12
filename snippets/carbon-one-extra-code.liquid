@@ -832,10 +832,6 @@
 	document.getElementById("sizefit-btn").onclick = function () {
 		const layer = document.querySelector(".order-modal-one");
 		const laybox = document.querySelector(".order-modal-layer-one");
-
-		console.log(layer)
-		console.log(laybox)
-
 		layer.style.display = "flex";
 		laybox.className += " dialog-open";
 	  };
@@ -852,10 +848,10 @@
 		laybox.className += " dialog-open";
 	  };
   
-	  document.getElementById("faqs-btn").onclick = function () {
+	  {% comment %} document.getElementById("faqs-btn").onclick = function () {
 		const layer = document.querySelector(".order-modal-four");
 		const laybox = document.querySelector(".order-modal-layer-four");
 		layer.style.display = "flex";
 		laybox.className += " dialog-open";
-	  };
+	  }; {% endcomment %}
   </script>
