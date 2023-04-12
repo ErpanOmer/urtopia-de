@@ -3554,14 +3554,11 @@ window.onload=function(){
 	
 		const fn = () => {
 			const button = document.querySelector('.addToCartBtn:not(.js-fake-add-to-cart)')
+			const text = document.querySelector('.addToCartBtn:not(.js-fake-add-to-cart) .addToCartText').innerText
+			const addToCard = document.querySelector('.addToCartBtn.js-fake-add-to-cart')
 
-			if (button.disabled) {
-				const text = document.querySelector('.addToCartBtn:not(.js-fake-add-to-cart) .addToCartText').innerText
-				const addToCard = document.querySelector('.addToCartBtn.js-fake-add-to-cart')
-
-				addToCard.disabled = true
-				addToCard.querySelector('.addToCartText').innerText = text
-			}
+			{% comment %} addToCard.disabled = button.disabled {% endcomment %}
+			{% comment %} addToCard.querySelector('.addToCartText').innerText = button.disabled ? text {% endcomment %}
 		}
 
 		fn()
