@@ -831,17 +831,6 @@ letter-spacing: 0px;
 				   {% assign option_name = option.name %}
 				   {% assign formatted_option_name = option.name | replace: '"', '&quot;' %}
 				<label data-pf-type="OptionLabel" class="pf-variant-label">{{option.name}}</label>  {% if keys contains option_name %}
-					{% assign key = option_name | replace: '"', '&quot;' %}
-					<div class="pf-option-swatches" data-swatch-type="radio" data-unique-id="{{option.position}}">
-						{% for option_value in option.values %}
-							{% capture option_id %}pf-sw{{swatches_count}}-{{key}}-{{option_value | remove: '"' | replace: ' ', '-' }}{% endcapture %}
-							{% assign optionValue = option_value | replace: '"', '&quot;' %}
-							<div data-option-name="{{key | default: formatted_option_name}}" class="pf-vs-radio">
-								<input {% if option.selected_value == option_value %}checked{% endif %} type="radio" id="{{option_id}}" name="sw{{swatches_count}}-{{key}}" value="{{optionValue}}"/>
-								<label style="overflow:hidden" for="{{option_id}}"><span>{{option_value}}</span></label>
-							</div>
-						{% endfor %}
-					</div>
 					        {% for i in (0..length) %}
 						        {% assign originalKey = keys[i] %}
 						        {% assign key = originalKey | replace: '"', '&quot;' %}
@@ -894,7 +883,17 @@ letter-spacing: 0px;
 							{% endfor %}
 						{% else %} 
 					
-                           
+                            {% assign key = option_name | replace: '"', '&quot;' %}
+                        <div class="pf-option-swatches" data-swatch-type="radio" data-unique-id="{{option.position}}">
+							{% for option_value in option.values %}
+								{% capture option_id %}pf-sw{{swatches_count}}-{{key}}-{{option_value | remove: '"' | replace: ' ', '-' }}{% endcapture %}
+								{% assign optionValue = option_value | replace: '"', '&quot;' %}
+								<div data-option-name="{{key | default: formatted_option_name}}" class="pf-vs-radio">
+									<input {% if option.selected_value == option_value %}checked{% endif %} type="radio" id="{{option_id}}" name="sw{{swatches_count}}-{{key}}" value="{{optionValue}}"/>
+									<label style="overflow:hidden" for="{{option_id}}"><span>{{option_value}}</span></label>
+								</div>
+							{% endfor %}
+						</div>
 					{% endif %}
 					{% endfor %}</div>
 				{% endunless %}
