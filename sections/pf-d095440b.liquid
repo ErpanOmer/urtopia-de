@@ -3558,7 +3558,9 @@ window.onload=function(){
 			if (button.disabled) {
 				const text = document.querySelector('.addToCartBtn:not(.js-fake-add-to-cart) .addToCartText').innerText
 
-				console.log('text', Boolean(text))
+
+
+				console.log('text', document.querySelector('.addToCartBtn.js-fake-add-to-cart'))
 			}
 		}
 
