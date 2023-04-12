@@ -3520,30 +3520,7 @@ window.onload=function(){
 	  clearInterval(mediaTimer);
 	  mediaTimer=null;
 	}
-  },6000)
-
-  const observerElement = (selector, callback) => {
-	// 观察器的配置（需要观察什么变动）
-	const config = { childList: true };
-	const targetNode = document.querySelector(selector)
-	return new Promise(resolve => {
-		// 创建一个观察器实例并传入回调函数
-		(new MutationObserver((mutationsList, observer) => {
-			// 是否回调函数，如果有需要持续监听，如果没有就中断
-			if (callback) {
-				callback(mutationsList)
-			} else {
-				observer.disconnect()
-			}
-			resolve(targetNode)
-		})).observe(targetNode, config);
-	})
-}
-
-
-	
-
-  
+  },6000)  
 }
 
 
@@ -3552,7 +3529,29 @@ window.onload=function(){
 /*变速器逻辑*/</script>
 
 <script>
-	console.log($('#pay-content'))
+	const observerElement = (selector, callback) => {
+		// 观察器的配置（需要观察什么变动）
+		const config = { childList: true };
+		const targetNode = document.querySelector(selector)
+		return new Promise(resolve => {
+			// 创建一个观察器实例并传入回调函数
+			(new MutationObserver((mutationsList, observer) => {
+				// 是否回调函数，如果有需要持续监听，如果没有就中断
+				if (callback) {
+					callback(mutationsList)
+				} else {
+					observer.disconnect()
+				}
+				resolve(targetNode)
+			})).observe(targetNode, config);
+		})
+	}
+
+	
+	console.log($(''))
+	observerElement(document.querySelector('#pay-content').then(r => {
+		console.log(r)
+	}))
 </script>
 
 {% schema %}
