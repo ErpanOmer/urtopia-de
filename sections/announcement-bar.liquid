@@ -52,14 +52,16 @@
     autoplay: {
       disableOnInteraction: false,
       pauseOnMouseEnter: true,
-      delay: 2000,
+      delay: 5000,
     },
     on: {
       init: function (swiper) {
         slide = this.slides.eq(0);
         slide.addClass('ani-slide');
       },
-      transitionStart: function () {
+      transitionStart: function (this) {
+        console.log('this', this)
+
         for (i = 0; i < this.slides.length; i++) {
           slide = this.slides.eq(i);
           slide.removeClass('ani-slide');
