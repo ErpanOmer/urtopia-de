@@ -8,12 +8,7 @@
   .swiper-wrapper {
     transition-delay: 0.3s;
   }
-
-  .swiper-container {
-    width: 500px;
-    height: 300px;
-    margin: 20px auto;
-  }
+  
   .swiper-slide {
     text-align: center;
     font-size: 18px;
@@ -64,9 +59,6 @@
     followFinger: false,
     speed: 800,
     mousewheel: true,
-    pagination: {
-      el: '.swiper-pagination',
-    },
     on: {
       init: function (swiper) {
         slide = this.slides.eq(0);
