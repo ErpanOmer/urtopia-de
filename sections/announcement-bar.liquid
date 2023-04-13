@@ -60,7 +60,7 @@
         slide.addClass('ani-slide');
       },
       transitionStart: function () {
-        console.log('this', this)
+        console.log('this', this.activeIndex)
 
         for (i = 0; i < this.slides.length; i++) {
           const slide = this.slides.eq(i);
@@ -73,6 +73,8 @@
 
       },
       transitionEnd: function () {
+        console.log('this', this.activeIndex)
+
         for (i = 0; i < this.slides.length; i++) {
           const slide = this.slides.eq(i);
           slide.removeClass('swiper-slide-end');
