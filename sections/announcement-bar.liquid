@@ -63,7 +63,7 @@
         console.log('this', this)
 
         for (i = 0; i < this.slides.length; i++) {
-          slide = this.slides.eq(i);
+          const slide = this.slides.eq(i);
           slide.removeClass('swiper-slide-start');
         }
 
@@ -73,8 +73,13 @@
 
       },
       transitionEnd: function () {
-        slide = this.slides.eq(this.activeIndex);
-        slide.addClass('ani-slide');
+        for (i = 0; i < this.slides.length; i++) {
+          const slide = this.slides.eq(i);
+          slide.removeClass('swiper-slide-end');
+        }
+
+        const active = this.slides.eq(this.activeIndex);
+        active.addClass('swiper-slide-end');
       },
     },
   });
