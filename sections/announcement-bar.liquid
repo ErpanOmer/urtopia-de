@@ -64,8 +64,13 @@
 
         for (i = 0; i < this.slides.length; i++) {
           slide = this.slides.eq(i);
-          slide.removeClass('ani-slide');
+          slide.removeClass('swiper-slide-start');
         }
+
+        const active = this.slides.eq(this.activeIndex);
+        active.addClass('swiper-slide-start');
+
+
       },
       transitionEnd: function () {
         slide = this.slides.eq(this.activeIndex);
