@@ -8,12 +8,21 @@
     line-height: 38px;
   }
 
+  @keyframes swiper-opacity {
+    100% {
+      opacity: 0;
+    }
+  }
+
   #announcement-bar .swiper-slide > span {
     font-weight: bold;
     color: #ffda12;
   }
 
   .swiper-slide-start {
+    animation-name: swiper-opacity;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-out;
   }
 
   .swiper-slide-end {
@@ -77,11 +86,11 @@
 
         for (i = 0; i < this.slides.length; i++) {
           const slide = this.slides.eq(i);
-          slide.removeClass('swiper-slide-end');
+          slide.removeClass('swiper-slide-start');
         }
 
         const active = this.slides.eq(this.activeIndex);
-        active.addClass('swiper-slide-end');
+        // active.addClass('swiper-slide-start');
       },
     },
   });
