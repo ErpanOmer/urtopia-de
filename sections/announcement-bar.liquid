@@ -8,12 +8,6 @@
     line-height: 38px;
   }
 
-  @keyframes swiper-opacity {
-    100% {
-      opacity: 0;
-    }
-  }
-
   #announcement-bar .swiper-slide p > span {
     font-weight: bold;
     color: #ffda12;
@@ -24,31 +18,14 @@
 
   <div id="announcement-bar" dir="rtl">
     <div class="swiper-wrapper">
-      <div class="swiper-slide">
-        
-        <p>
-          <svg
-            viewBox="0 0 14 10"
-            fill="none"
-            aria-hidden="true"
-            focusable="false"
-            role="presentation"
-            class="icon icon-arrow"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-              <path fill-rule="evenodd" clip-rule="evenodd" d="M8.537.808a.5.5 0 01.817-.162l4 4a.5.5 0 010 .708l-4 4a.5.5 0 11-.708-.708L11.793 5.5H1a.5.5 0 010-1h10.793L8.646 1.354a.5.5 0 01-.109-.546z" fill="currentColor">
-            </path>
-          </svg>
-        Easter Sale - <span>Save 300€ </span> on Carbon 1
-        <p>
-      </div>
-      <div class="swiper-slide"><p>two</p></div>
+      <div class="swiper-slide">Easter Sale - <span>Save 300€ </span> on Carbon 1</div>
+      <div class="swiper-slide">Save up to <span> 40%! <span> Lease a Urtopia with JobRad. Learn more</div>
       <div class="swiper-slide"><p>three</p></div>
     </div>
   </div>
 
 <script>
-  var swiper = new Swiper('#announcement-bar', {
+  new Swiper('#announcement-bar', {
     direction: 'vertical',
     speed: 600,
     loop: true,
