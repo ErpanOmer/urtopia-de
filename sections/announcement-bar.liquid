@@ -11,7 +11,7 @@
 
   .swiper-slide {
   }
-  
+
   .swiper-slide p {
     transform: translateX(-200px);
     opacity: 0;
@@ -23,8 +23,8 @@
   }
 </style>
 
-<div id="announcement-bar">
-  <div class="swiper-container swiper-container-initialized swiper-container-vertical">
+<div id="">
+  <div class="announcement-bar swiper-container-initialized swiper-container-vertical">
     <div class="swiper-wrapper">
       <div class="swiper-slide">one</div>
       <div class="swiper-slide">two</div>
@@ -34,7 +34,7 @@
 </div>
 
 <script>
-  var swiper = new Swiper('#announcement-bar .swiper-container', {
+  var swiper = new Swiper('#announcement-bar', {
     direction: 'vertical',
     followFinger: false,
     speed: 800,
