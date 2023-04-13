@@ -39,9 +39,13 @@
 <script>
   var swiper = new Swiper('#announcement-bar', {
     direction: 'vertical',
-    followFinger: false,
-    speed: 800,
-    mousewheel: true,
+    speed: 600,
+    loop: true,
+    autoplay: {
+      disableOnInteraction: false,
+      pauseOnMouseEnter: true,
+      delay: 5000,
+    },
     on: {
       init: function (swiper) {
         slide = this.slides.eq(0);
