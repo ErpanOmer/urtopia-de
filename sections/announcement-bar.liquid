@@ -72,35 +72,22 @@
       pauseOnMouseEnter: true,
       delay: 5000,
     },
-    on: {
-      init: function (swiper) {
-        slide = this.slides.eq(0);
-        slide.addClass('ani-slide');
-      },
-      transitionStart: function () {
-        console.log('this', this.activeIndex)
-
-        for (i = 0; i < this.slides.length; i++) {
-          const slide = this.slides.eq(i);
-          slide.removeClass('swiper-slide-start');
-        }
-
-        const active = this.slides.eq(this.activeIndex);
-        active.addClass('swiper-slide-start');
-
-
-      },
-      transitionEnd: function () {
-        console.log('this', this.activeIndex)
-
-        for (i = 0; i < this.slides.length; i++) {
-          const slide = this.slides.eq(i);
-          slide.removeClass('swiper-slide-start');
-        }
-
-        const active = this.slides.eq(this.activeIndex);
-        // active.addClass('swiper-slide-start');
-      },
-    },
+    on:{
+			init:function(swiper){
+		        slide=this.slides.eq(0);
+			    slide.addClass('ani-slide');
+		    },
+			transitionStart: function(){
+			    for(i=0;i<this.slides.length;i++){
+			    	slide=this.slides.eq(i);
+			        slide.removeClass('ani-slide');
+				}
+		    },
+			transitionEnd: function(){
+				slide=this.slides.eq(this.activeIndex);
+			    slide.addClass('ani-slide');
+				
+		    },
+		}
   });
 </script>
