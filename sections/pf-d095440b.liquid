@@ -1197,6 +1197,7 @@ letter-spacing: 0px;
 	Your order quantity has reached our stock limit
   </div>
   <button
+		  data-product-id="{{ product.id }}"
 		  data-checkout="same"
 		  data-soldout="Sold out"
 		  data-adding="Adding..."
@@ -1204,6 +1205,7 @@ letter-spacing: 0px;
 		  type="button"
           data-pf-type="ProductATC"
 		  class="addToCartBtn"
+		  id="addToCart"
 		  onclick="addAllToCart('atc')"
 		  >
 	<i class="fa fa-spinner fa-spin"></i
@@ -2151,7 +2153,9 @@ function testRideTrace(){
   @media screen and (min-width: 750px) {
   }
 </style>
-</div><button data-product-id="{{ product.id }}" data-checkout="same" data-soldout="Sold out" data-adding="Adding..." data-added="Added to your cart" type="button" data-pf-type="ProductATC" id="addToCart" class="sc-fTQvRK kWANex pf-47_ Title pf-lg-hide pf-md-hide pf-sm-hide pf-hide"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-49_">Add to cart</span></button><button data-product-id="{{ product.id }}" data-checkout="checkout" data-soldout="Not available" data-adding="Processing" data-added="Enjoy" type="button" data-pf-type="ProductATC" class="sc-fTQvRK kWANex pf-50_ Title pf-lg-hide pf-md-hide pf-sm-hide pf-hide"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-52_">Buy Now</span></button></div></div></div>{% endform %}{% endif %}{% assign product = defaultProduct %}</div></div></div></div><div class="sc-ezbkAF A-dmbO pf-53_ pf-r pf-c-cb pf-r-eh pf-lg-hide pf-md-hide pf-sm-hide pf-hide" style="--s-xs:15px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-md:12;--c-lg:12"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-54_"><h3 data-pf-type="Heading" class="sc-cTAqQK eHolsa pf-55_ Title"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-57_">Accessories</span></h3><div class="sc-cQMzAB hKafng pf-58_ Title pf-r pf-r-ew pf-sm-hide pf-hide" style="--s-xs:15px;--s-lg:10px;--ew-xs:1;--ew-sm:2;--ew-md:3;--ew-lg:4" data-pf-type="ProductList">{% assign collection_385277100248 = collections["accessories"] %}{% assign defaultProduct = product %}{% paginate collection_385277100248.products by 30 %}{% for product in collection_385277100248.products %}<div class="pf-c"><div data-product-id="{{ product.id }}" data-pf-type="ProductBox" class="sc-bUhFKy jriKsr pf-59_">{% if product != null %}{% form "product", product, data-productid: product.id, class: "pf-product-form" %}<div class="sc-ezbkAF A-dmbO pf-60_ pf-r pf-c-ct" style="--s-xs:5px" data-pf-type="Row"><div class="pf-c" style="--c-xs:6;--c-md:6;--c-lg:5"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-61_"><div data-product-id="{{ product.id }}" data-media-id="{% liquid
+</div>
+
+<!--<button data-product-id="{{ product.id }}" data-checkout="same" data-soldout="Sold out" data-adding="Adding..." data-added="Added to your cart" type="button" data-pf-type="ProductATC" id="addToCart" class="sc-fTQvRK kWANex pf-47_ Title pf-lg-hide pf-md-hide pf-sm-hide pf-hide"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-49_">Add to cart</span></button>!--><button data-product-id="{{ product.id }}" data-checkout="checkout" data-soldout="Not available" data-adding="Processing" data-added="Enjoy" type="button" data-pf-type="ProductATC" class="sc-fTQvRK kWANex pf-50_ Title pf-lg-hide pf-md-hide pf-sm-hide pf-hide"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-52_">Buy Now</span></button></div></div></div>{% endform %}{% endif %}{% assign product = defaultProduct %}</div></div></div></div><div class="sc-ezbkAF A-dmbO pf-53_ pf-r pf-c-cb pf-r-eh pf-lg-hide pf-md-hide pf-sm-hide pf-hide" style="--s-xs:15px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-md:12;--c-lg:12"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-54_"><h3 data-pf-type="Heading" class="sc-cTAqQK eHolsa pf-55_ Title"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-57_">Accessories</span></h3><div class="sc-cQMzAB hKafng pf-58_ Title pf-r pf-r-ew pf-sm-hide pf-hide" style="--s-xs:15px;--s-lg:10px;--ew-xs:1;--ew-sm:2;--ew-md:3;--ew-lg:4" data-pf-type="ProductList">{% assign collection_385277100248 = collections["accessories"] %}{% assign defaultProduct = product %}{% paginate collection_385277100248.products by 30 %}{% for product in collection_385277100248.products %}<div class="pf-c"><div data-product-id="{{ product.id }}" data-pf-type="ProductBox" class="sc-bUhFKy jriKsr pf-59_">{% if product != null %}{% form "product", product, data-productid: product.id, class: "pf-product-form" %}<div class="sc-ezbkAF A-dmbO pf-60_ pf-r pf-c-ct" style="--s-xs:5px" data-pf-type="Row"><div class="pf-c" style="--c-xs:6;--c-md:6;--c-lg:5"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-61_"><div data-product-id="{{ product.id }}" data-media-id="{% liquid
     assign min = 10000000000
     assign max = 99999999999
     assign diff = max | minus: min
