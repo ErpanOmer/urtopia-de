@@ -3802,7 +3802,7 @@ window.onload=function(){
 		})
 	}
 
-	{% comment %} observerElement('#pay-content').then(() => {
+	observerElement('#pay-content').then(() => {
 		const changeButton = () => {
 			const button = document.querySelector('.addToCartBtn:not(.js-fake-add-to-cart)')
 			const text = document.querySelector('.addToCartBtn:not(.js-fake-add-to-cart) .addToCartText').innerText
@@ -3815,7 +3815,7 @@ window.onload=function(){
 		observerElement('.addToCartBtn:not(.js-fake-add-to-cart) .addToCartText', changeButton)
 		// 默认先执行
 		changeButton()
-	}) {% endcomment %}
+	})
 </script>
 {% render 'carbon-one-extra-code' %}
 
