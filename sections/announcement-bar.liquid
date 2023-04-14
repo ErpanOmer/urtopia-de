@@ -50,7 +50,17 @@
   </div>
 
 <script>
-  
+  new Swiper('#announcement-bar', {
+    direction: 'vertical',
+    speed: 600,
+    loop: true,
+    autoplay: {
+      disableOnInteraction: false,
+      pauseOnMouseEnter: true,
+      delay: 5000,
+      // reverseDirection: true
+    },
+  });
 </script>
 
 {%- for block in section.blocks -%}
