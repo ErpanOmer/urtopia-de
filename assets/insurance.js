@@ -20,7 +20,6 @@ class InsuranceProduct extends HTMLElement {
     this.mainVariantSelector = document.querySelector('input[name="id"][data-product-id]');
     this.variantLabels = document.querySelectorAll('[data-option-name] > label');
     this.addToCart = document.querySelector(selectors.addToCart);
-    console.log('this.addToCart', this.addToCart);
     this.variantIdInput = document.querySelector('.js-product-variant-id');
     this.languageCode = document.querySelector('html').getAttribute('lang');
     this.fakeAddToCart = null;
