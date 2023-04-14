@@ -556,25 +556,25 @@ const testRides = [
           "",
         ],
       },
-      // {
-      //   name: 'Fahrradcafé GmbH',
-      //   phone: '+49511 45014270',
-      //   email: 'post@fahrradcafe.de',
-      //   timezone: "Mainz, Germany (GMT+1)",
-      //   add: "Asternstraße 2 30167 Hannover",
-      //   imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/IMG_0883.jpg?v=1680923639",
-      //   testrideSpot: "Hannover",
-      //   testRideSize: "L",
-      //   businessHours: [
-      //     "",
-      //     "10:00-18:00",
-      //     "10:00-18:00",
-      //     "10:00-18:00",
-      //     "10:00-18:00",
-      //     "10:00-18:00",
-      //     "10:00-14:30",
-      //   ],
-      // },
+      //{
+        //name: 'Fahrradcafé GmbH',
+       // phone: '+49511 45014270',
+       // email: 'post@fahrradcafe.de',
+       // timezone: "Mainz, Germany (GMT+1)",
+       // add: "Asternstraße 2 30167 Hannover",
+       // imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/IMG_0883.jpg?v=1680923639",
+      //  testrideSpot: "Hannover",
+      //  testRideSize: "L",
+      //  businessHours: [
+      //    "",
+      //    "10:00-18:00",
+     //     "10:00-18:00",
+      //    "10:00-18:00",
+      //    "10:00-18:00",
+     //     "10:00-18:00",
+     //     "10:00-14:30",
+    //    ],
+    //  },
     ]
   },
   {
@@ -719,6 +719,93 @@ const testRides = [
           "09:00-12:00, 12:00-18:00",
           "09:00-12:00, 12:00-18:00",
           "09:00-12:00, 12:00-18:00",
+        ],
+      },
+    ]
+  },
+   {
+    city: 'Offenburg',
+    cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Offenburg.jpg?v=1681442327',
+    series: [
+      'Urtopia Carbon 1',
+      // 'Urtopia Carbon 1'
+    ],
+    stores: [
+      {
+        name: 'Rad-Shop Dinger',
+        phone: '0049 781 9672189',
+        email: 'info@radshopdinger.de',
+        timezone: "Mainz, Germany (GMT+1)",
+        add: "Am Wiesenrain 2 77652 Offenburg",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Offenburg.jpg?v=1681442327",
+        testrideSpot: "Offenburg",
+        testRideSize: "L",
+        businessHours: [
+          "09:00-18:00",
+          "09:00-18:00",
+          "09:00-18:00",
+          "09:00-18:00",
+          "09:00-18:00",
+          "09:00-18:00",
+          "09:00-18:00",
+        ],
+      },
+    ]
+  },
+{
+    city: 'Löbau',
+    cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230413-203921.jpg?v=1681442327',
+    series: [
+      'Urtopia Carbon 1',
+      // 'Urtopia Carbon 1'
+    ],
+    stores: [
+      {
+        name: 'Autohaus Löbau',
+        phone: '0049 358 5479560',
+        email: 'verkauf@autohaus-loebau.fsoc.de',
+        timezone: "Mainz, Germany (GMT+1)",
+        add: "An d. Hohle 15, 02708 Löbau, Deutschland",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230413-203921.jpg?v=1681442327",
+        testrideSpot: "Löbau",
+        testRideSize: "M",
+        businessHours: [
+          "",
+          "07:00-18:00",
+          "07:00-18:00",
+          "07:00-18:00",
+          "07:00-18:00",
+          "07:00-18:00",
+          "09:00-12:00",
+        ],
+      },
+    ]
+  },
+{
+    city: 'Zittau',
+    cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Zittau.jpg?v=1681442327',
+    series: [
+      'Urtopia Carbon 1',
+      // 'Urtopia Carbon 1'
+    ],
+    stores: [
+      {
+        name: 'Autohaus Zittau',
+        phone: '0049 358 3554840',
+        email: 'verkauf@autohaus-loebau.fsoc.de',
+        timezone: "Mainz, Germany (GMT+1)",
+        add: "Äußere Weberstraße 36, 02763 Zittau, Deutschland",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Zittau.jpg?v=1681442327",
+        testrideSpot: "Zittau",
+        testRideSize: "L",
+        businessHours: [
+          "",
+          "07:00-18:00",
+          "07:00-18:00",
+          "07:00-18:00",
+          "07:00-18:00",
+          "07:00-18:00",
+          "09:00-12:00",
         ],
       },
     ]
