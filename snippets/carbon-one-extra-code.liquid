@@ -789,18 +789,18 @@
 
   <script>
 	const chordTab = document.getElementById("tab-1");
-	  // const chordXTab = document.getElementById("tab-2");
+	  const chordXTab = document.getElementById("tab-2");
 	  const chordDom = document.getElementById("chord-dom");
-	  //const chordXDom = document.getElementById("chordx-dom");
+	  const chordXDom = document.getElementById("chordx-dom");
   
 	  chordTab.addEventListener("click", function () {
 		chordDom.style.display = "flex";
-		//chordXDom.style.display = "none";
+		chordXDom.style.display = "none";
 	  });
-	  //chordXTab.addEventListener("click", function () {
-		//chordDom.style.display = "none";
-		//chordXDom.style.display = "flex";
-	  //});
+	  chordXTab.addEventListener("click", function () {
+		chordDom.style.display = "none";
+		chordXDom.style.display = "flex";
+	  });
 	
 	function onCloseOrderLayer() {
 		let arr = ["order-modal-one", "order-modal-two", "order-modal-three", "order-modal-four"];
