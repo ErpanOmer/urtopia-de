@@ -44,8 +44,8 @@
 	.order-modal-layer .sizefit-switch {
 	  background-color: #eff0f4;
 	  border-radius: 50px;
-	  width: 40%;
-	  margin: 40px auto;
+	  width: 50%;
+	  margin: 20px auto;
 	  overflow: hidden;
 	}
 	.sizefit-switch .switch-radio {
@@ -65,7 +65,14 @@
 	  width: 100%;
 	  border-radius: 50px;
 	  transition: all 0.1s;
+	  line-height: 22px;
 	}
+
+	.order-modal-layer .sizefit-switch button span {
+		font-size: 14px;
+    	font-weight: 300;
+	}
+
 	.order-modal-layer .sizefit-switch input[type="radio"] {
 	  position: absolute;
 	  width: 100%;
@@ -184,15 +191,18 @@
 	  #chordx-dom {
 		flex-direction: column-reverse;
 	  }
-	  .order-modal-layer .sizefit-switch {
-		margin: 20px auto;
-	  }
 	  .sizefit-box {
 		width: 100%;
 	  }
 	  .order-modal-layer .sizefit-switch {
-		width: 80%;
+		width: calc(100% - 40px);
+		margin: 15px auto;
 	  }
+
+	  .order-modal-layer .sizefit-switch button span {
+		font-size: 12px;
+	  }
+
 	  .sizefit-bg {
 		flex: inherit;
 		height: 190px;
@@ -471,16 +481,16 @@
 		<span onclick="onCloseOrderLayer()">✕</span>
 	  </div>
 	  <div style="overflow-y: auto;max-height: 550px;">
-	  <!--<div class="sizefit-switch order-flex-row">
+	  <div class="sizefit-switch order-flex-row">
 		<div class="switch-radio">
 		  <input id="tab-1" name="Chord" type="radio" checked />
-		  <button class="btn">Chord</button>
+		  <button class="btn">Medium<br><span>Fit for 170-185 cm</span></button>
 		</div>
 		<div class="switch-radio">
 		  <input id="tab-2" name="Chord" type="radio" />
-		  <button class="btn">Chord X</button>
+		  <button class="btn">Large<br><span>Fit for 180-195 cm</span></button>
 		</div>
-	  </div>-->
+	  </div>
 	  <div class="order-layer-body order-flex-row" style="min-height: 400px">
 		<!-- 内容 -->
 
@@ -492,23 +502,23 @@
 			</div>
 			<div class="sizefit-item order-flex-row">
 			  <p>B. Adjustable seat range</p>
-			  <span>100 mm</span>
+			  <span>60 mm</span>
 			</div>
 			<div class="sizefit-item order-flex-row">
 			  <p>C. Handlebar grips height</p>
-			  <span>1010-1020 mm</span>
+			  <span>1010 mm</span>
 			</div>
 			<div class="sizefit-item order-flex-row">
 			  <p>D. Seat tube length</p>
-			  <span>500 mm</span>
+			  <span>460 mm</span>
 			</div>
 			<div class="sizefit-item order-flex-row">
 			  <p>E. Wheelbase</p>
-			  <span>1094 mm</span>
+			  <span>1080 mm</span>
 			</div>
 			<div class="sizefit-item order-flex-row">
 			  <p>F. Overall length</p>
-			  <span>1810-1850 mm</span>
+			  <span>1810 mm</span>
 			</div>
 			<div class="sizefit-item order-flex-row">
 			  <p>G. Wheel diameter</p>
@@ -516,15 +526,15 @@
 			</div>
 			<div class="sizefit-item order-flex-row">
 			  <p>H. Top tube length (effective)</p>
-			  <span>620 mm</span>
+			  <span>580 mm</span>
 			</div>
 			<div class="sizefit-item order-flex-row">
 			  <p>I. Head tube length</p>
-			  <span>200 mm</span>
+			  <span>170 mm</span>
 			</div>
 			<div data-last="yes" class="sizefit-item order-flex-row">
 			  <p>J. Headset height</p>
-			  <span>90-120 mm</span>
+			  <span>100 mm</span>
 			</div>
 		  </div>
 		  <div class="sizefit-bg"></div>
@@ -537,47 +547,47 @@
 		>
 		  <div class="sizefit-box">
 			<div class="sizefit-item order-flex-row">
-			  <p>A. Standover height</p>
-			  <span>670 mm</span>
-			</div>
-			<div class="sizefit-item order-flex-row">
-			  <p>B. Adjustable seat range</p>
-			  <span>80 mm</span>
-			</div>
-			<div class="sizefit-item order-flex-row">
-			  <p>C. Handlebar grips height</p>
-			  <span>1100-1130 mm</span>
-			</div>
-			<div class="sizefit-item order-flex-row">
-			  <p>D. Seat tube length</p>
-			  <span>327 mm</span>
-			</div>
-			<div class="sizefit-item order-flex-row">
-			  <p>E. Wheelbase</p>
-			  <span>1094 mm</span>
-			</div>
-			<div class="sizefit-item order-flex-row">
-			  <p>F. Overall length</p>
-			  <span>1800 mm</span>
-			</div>
-			<div class="sizefit-item order-flex-row">
-			  <p>G. Overall length</p>
-			  <span>700 mm</span>
-			</div>
-			<div class="sizefit-item order-flex-row">
-			  <p>H. Top tube length (effective)</p>
-			  <span>620 mm</span>
-			</div>
-			<div class="sizefit-item order-flex-row">
-			  <p>I. Head tube length</p>
-			  <span>200 mm</span>
-			</div>
-			<div data-last="yes" class="sizefit-item order-flex-row">
-			  <p>J. Headset height</p>
-			  <span>90-120 mm</span>
-			</div>
+				<p>A. Standover height</p>
+				<span>840 mm</span>
+			  </div>
+			  <div class="sizefit-item order-flex-row">
+				<p>B. Adjustable seat range</p>
+				<span>60 mm</span>
+			  </div>
+			  <div class="sizefit-item order-flex-row">
+				<p>C. Handlebar grips height</p>
+				<span>1020 mm</span>
+			  </div>
+			  <div class="sizefit-item order-flex-row">
+				<p>D. Seat tube length</p>
+				<span>500 mm</span>
+			  </div>
+			  <div class="sizefit-item order-flex-row">
+				<p>E. Wheelbase</p>
+				<span>1120 mm</span>
+			  </div>
+			  <div class="sizefit-item order-flex-row">
+				<p>F. Overall length</p>
+				<span>1850 mm</span>
+			  </div>
+			  <div class="sizefit-item order-flex-row">
+				<p>G. Wheel diameter</p>
+				<span>690 mm</span>
+			  </div>
+			  <div class="sizefit-item order-flex-row">
+				<p>H. Top tube length (effective)</p>
+				<span>610 mm</span>
+			  </div>
+			  <div class="sizefit-item order-flex-row">
+				<p>I. Head tube length</p>
+				<span>180 mm</span>
+			  </div>
+			  <div data-last="yes" class="sizefit-item order-flex-row">
+				<p>J. Headset height</p>
+				<span>100 mm</span>
+			  </div>
 		  </div>
-		  <div class="sizefit-bg sizefitx-bg"></div>
+		  <div class="sizefit-bg"></div>
 		</div>
 	  </div>
 				  
@@ -782,18 +792,18 @@
 
   <script>
 	const chordTab = document.getElementById("tab-1");
-	  // const chordXTab = document.getElementById("tab-2");
+	  const chordXTab = document.getElementById("tab-2");
 	  const chordDom = document.getElementById("chord-dom");
-	  //const chordXDom = document.getElementById("chordx-dom");
+	  const chordXDom = document.getElementById("chordx-dom");
   
 	  chordTab.addEventListener("click", function () {
 		chordDom.style.display = "flex";
-		//chordXDom.style.display = "none";
+		chordXDom.style.display = "none";
 	  });
-	  //chordXTab.addEventListener("click", function () {
-		//chordDom.style.display = "none";
-		//chordXDom.style.display = "flex";
-	  //});
+	  chordXTab.addEventListener("click", function () {
+		chordDom.style.display = "none";
+		chordXDom.style.display = "flex";
+	  });
 	
 	function onCloseOrderLayer() {
 		let arr = ["order-modal-one", "order-modal-two", "order-modal-three", "order-modal-four"];

@@ -447,11 +447,13 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
 </div>
 
 <div data-pf-type="Custom.HTML" class="sc-AjmGg eCTxfx pf-31_"><button
-  data-product-id="7952778658008"
+  data-product-id="{{ product.id }}"
   data-checkout="same"
   data-soldout="Sold out"
   data-adding="Adding..."
+  data-added="Added to your cart"
   type="button"
+  data-pf-type="ProductATC"
   class="addToCartBtn"
   style="font-size: 16px"
   onclick="addAllToCart('atc')"
@@ -460,8 +462,8 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
   <i class="fa fa-spinner fa-spin"></i
   ><span data-pf-type="Text" class="addToCartText">Add to Cart</span>
 </button>
-<div class="orderTestRideBtn">
-	<span onclick="testRideTrace()" style="cursor:pointer;">Book a Test Ride</span>
+<div onclick="testRideTrace()" class="orderTestRideBtn">
+	<span style="cursor:pointer;">Book a Test Ride</span>
 </div>
 <script>
   var cartList = { items: [] };
@@ -593,6 +595,7 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
     margin-bottom: 12px;
     transition: all 0.3s;
     font-size: 16px;
+    cursor: pointer;
   }
 
   .addToCartBtn[disabled] {
@@ -2700,7 +2703,8 @@ new Swiper('#section5', {
 }
   
 
-</script></div></div></div></div></div></div><div data-section-id="pf-16f2" data-pf-type="Section" class="sc-fmciRz bheIgq pf-56_"><div class="sc-gjNHFA gwWIgj"><div class="sc-ezbkAF A-dmbO pf-57_ pf-r pf-c-cm pf-r-eh" style="--s-xs:0px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-md:12;--c-lg:12"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-58_"><div data-pf-type="Custom.HTML" class="sc-AjmGg eCTxfx pf-59_"><div id="section4">
+</script></div></div></div></div></div></div><div data-section-id="pf-16f2" data-pf-type="Section" class="sc-fmciRz bheIgq pf-56_"><div class="sc-gjNHFA gwWIgj"><div class="sc-ezbkAF A-dmbO pf-57_ pf-r pf-c-cm pf-r-eh" style="--s-xs:0px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-md:12;--c-lg:12"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-58_"><div data-pf-type="Custom.HTML" class="sc-AjmGg eCTxfx pf-59_">
+  <div id="section4">
   <div class="title">Elegance in Motion</div>
   <div class="parent">
 		<img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/DSCF2362.png?v=1677747064"/>
