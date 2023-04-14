@@ -178,23 +178,19 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
   }
 </style>
 <script>
-	window.addEventListener('scroll',()=>{
-  	  let showTop = document.querySelector("#detail-title").getBoundingClientRect().top;
-	  
+	window.addEventListener('scroll',()=>{	  
 	  let detailTop;
 	  let reviewTop;
 	  let specTop = document.querySelector("#spec-title").getBoundingClientRect().top;
   	  let showTop = document.querySelector("#detail-title").getBoundingClientRect().top;
-	  if(isPC)
-	  {
+	  if(isPC){
 		detailTop = document.querySelector("#detail-title").getBoundingClientRect().top;
 		reviewTop = document.querySelector("#review-title").getBoundingClientRect().top;
-	  }
-	  else
-	  {
+	  } else {
   	 	detailTop = document.querySelector("#detail-title-mb").getBoundingClientRect().top;
 	 	reviewTop = document.querySelector("#review-title-mb").getBoundingClientRect().top;
 	  }
+	  
 	  if(detailTop<=5)
 	  {
 	    if(specTop<=5){
