@@ -247,7 +247,7 @@ padding-bottom: {{ section.settings.padding_bottom }}px;
                       <div class="product-option">
                         <dt>{{ option.name }}: </dt>
                         <dd>{{ option.value }}
-                            {% if option.name == 'Size' %}
+                            {% if option.name == 'Size' or option.name == 'Frame' %}
                               (cocococo)
                             {% endif%}
                         </dd>
