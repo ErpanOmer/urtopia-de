@@ -474,14 +474,16 @@ body .jBox-Modal {
     font: normal normal 600 48px/48px urbane;
   }
 
-  body .my-button {
-    padding: 11px 20px;
-    font-size: 14px;
-    line-height: 17px;
-  }
+  body {
+    .my-button {
+      padding: 11px 20px;
+      font-size: 14px;
+      line-height: 17px;
+    }
 
-  .body .my-button-white {
-    padding: 9px 20px;
+    .my-button-white {
+      padding: 9px 20px;
+    }
   }
 
   body .jBox-Modal .jBox-title {
