@@ -399,6 +399,7 @@ body .my-button {
   font: normal normal 500 14px/16px urbane;
   cursor: pointer;
   white-space: nowrap;
+  transition: all .3s;
 }
 
 body .my-button-ghost {
@@ -410,6 +411,10 @@ body .my-button-ghost {
 body .my-button-black {
   background-color: #000;
   color: #fff;
+
+  &:hover {
+    background-color: #2C2C2C;
+  }
 }
 
 body .my-button-white {
