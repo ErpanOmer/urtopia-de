@@ -427,7 +427,11 @@ body .my-button-black {
 
 body .my-button-white {
   background-color: transparent;
-  border: 2px solid #000;
+  border: 1.5px solid #000;
+
+  &:hover {
+    border-width: 2px;
+  }
 }
 
 body .jBox-overlay {
