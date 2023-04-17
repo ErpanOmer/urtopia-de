@@ -415,6 +415,10 @@ body .my-button-ghost {
   border: 2px solid #fff;
   color: #fff;
   padding: 12px 36px;
+
+  &:hover {
+    background-color: transparent;
+  }
 }
 
 body .my-button-black {
