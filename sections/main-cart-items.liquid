@@ -248,7 +248,14 @@ padding-bottom: {{ section.settings.padding_bottom }}px;
                         <dt>{{ option.name }}: </dt>
                         <dd>{{ option.value }}
                             {% if option.name == 'Size' or option.name == 'Frame' %}
-                              ({{ option.value }})
+                              {% case option.value %}
+                                {% when 'M' %}
+                                  (kkkkk)
+                                {% when 'L' %}
+                                {% when 'High-Step' %}
+                                {% when 'Step-Through' %}
+                                {% else %}
+                            {% endcase %}
                             {% endif%}
                         </dd>
                       </div>
