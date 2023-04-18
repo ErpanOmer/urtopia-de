@@ -273,16 +273,9 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
       margin-top: 10px;
     }
 
-    .chord-sticky {
-      position: sticky !important;
-      top: 90px;
-    }
+    
 
     @media (min-width: 768px) {
-      .chord-sticky {
-        position: static;
-      }
-
         .fenders-and-kickstand-mobile {
           display: none;
         }
@@ -415,9 +408,18 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
     justify-content: center;
 }
 
+.chord-sticky {
+  position: sticky;
+  top: 90px;
+}
+
 
 
 @media (max-width: 767px) {
+  .chord-sticky {
+    position: static;
+  }
+
     .carbon_code {
         font-size: 13px;
     }
