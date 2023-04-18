@@ -3807,7 +3807,7 @@ window.onload=function(){
 			const addToCard = document.querySelector('.addToCartBtn.js-fake-add-to-cart')
 
 			addToCard.disabled = button.disabled
-			addToCard.querySelector('.addToCartText').innerText = button.disabled ? text : 'Add to Cart'
+			addToCard.querySelector('.addToCartText').innerText = button.disabled ? 'Sold Out' : 'Add to Cart'
 		}
 
 		observerElement('.addToCartBtn:not(.js-fake-add-to-cart) .addToCartText', changeButton)
