@@ -300,6 +300,10 @@ input {
   font: normal normal 500 24px/27px urbane;
 }
 
+.u24Medium_v2 {
+  font: normal normal 500 24px/1.25em urbane; 
+}
+
 .u30Medium {
   font: normal normal 500 30px/1.4em urbane;
 }
@@ -326,6 +330,10 @@ input {
 
 .u30DemiBold {
   font: normal normal 600 30px/34px urbane;
+}
+
+.u30DemiBold_v2 {
+  font: normal normal 600 30px/1.25em urbane;
 }
 
 .u36DemiBold {
@@ -363,6 +371,10 @@ input {
 .hide {
   height: 0;
   overflow: hidden;
+}
+
+.flex-1 {
+  flex: 1;
 }
 
 .mini-dialog {
