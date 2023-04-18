@@ -126,6 +126,14 @@ window.addEventListener("load", function(event) {
 
     {% render 'meta-tags' %}
 
+<script>
+    if (typeof window.TranslationLabOptions === 'undefined') {
+        window.TranslationLabOptions = {};
+    }
+    window.TranslationLabOptions.nodeProcessingType = 2;
+    window.TranslationLabOptions.includeElements = ['body'];
+</script>
+
     {%- if template.name == 'product' -%}
       <script src="{{ 'insurance.js' | asset_url }}" defer></script>
     {%- endif -%}
