@@ -47,7 +47,7 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
 		images: {{ product.images | json }},
 		quantity: {% assign quantity = '' %}{% for variant in product.variants %}{% assign quantity = quantity | append: variant.id | append: ':' | append: variant.inventory_quantity | append: ',' %}{% endfor %}{% assign quantity = quantity | split: ','%}{{quantity | json }}
 	};{% endunless %}
-	</script><div style="opacity:0" class="sc-bYoBSM hUVNGC __pf __pf_DdtzRleX" id="__pf"><div data-pf-type="Body" class="sc-hjGZqJ fNoOP pf-1_"><div data-pf-type="Layout" class="sc-htJRVC dNJAjO pf-2_"><div data-section-id="pf-acbd" data-pf-type="Section" id="Product-Title" class="sc-fmciRz bheIgq pf-3_"><div style="--cw:1280px" class="sc-gjNHFA gwWIgj"><div class="sc-ezbkAF A-dmbO pf-4_ pf-r pf-c-cm pf-r-eh" style="--s-xs:15px" data-pf-type="Row" id="product-row"><div class="pf-c" style="--c-xs:12;--c-md:12;--c-lg:12"><div data-pf-type="Column" id="main-product-column" class="sc-gUQvok iVVDxu pf-5_"><div data-product-id="7952778658008" data-default-variant="43705718997208" data-pf-type="ProductBox" class="sc-bUhFKy jriKsr pf-6_">{% assign defaultProduct = product %}{% assign product = product_7952778658008 %}{% if product != null %}{% form "product", product, data-productid: product.id, class: "pf-product-form" %}<div class="sc-ezbkAF A-dmbO pf-7_ pf-r pf-c-ct pf-r-eh" style="--s-xs:15px" data-pf-type="Row" id="product-detail-row"><div class="pf-c" style="--c-xs:12;--c-sm:7;--c-md:8;--c-lg:8"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-8_"><div data-product-id="{{ product.id }}" data-media-id="{% liquid
+	</script><div style="opacity:0" class="sc-bYoBSM hUVNGC __pf __pf_DdtzRleX" id="__pf"><div data-pf-type="Body" class="sc-hjGZqJ fNoOP pf-1_"><div data-pf-type="Layout" class="sc-htJRVC dNJAjO pf-2_"><div data-section-id="pf-acbd" data-pf-type="Section" id="Product-Title" class="sc-fmciRz bheIgq pf-3_"><div style="--cw:1280px" class="sc-gjNHFA gwWIgj"><div class="sc-ezbkAF A-dmbO pf-4_ pf-r pf-c-cm pf-r-eh" style="--s-xs:15px" data-pf-type="Row" id="product-row"><div class="pf-c" style="--c-xs:12;--c-md:12;--c-lg:12"><div data-pf-type="Column" id="main-product-column" class="sc-gUQvok iVVDxu pf-5_"><div data-product-id="7952778658008" data-default-variant="43705718997208" data-pf-type="ProductBox" class="sc-bUhFKy jriKsr pf-6_">{% assign defaultProduct = product %}{% assign product = product_7952778658008 %}{% if product != null %}{% form "product", product, data-productid: product.id, class: "pf-product-form" %}<div class="sc-ezbkAF A-dmbO pf-7_ pf-r pf-c-ct pf-r-eh" style="--s-xs:15px" data-pf-type="Row" id="product-detail-row"><div class="pf-c chord-sticky" style="--c-xs:12;--c-sm:7;--c-md:8;--c-lg:8"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-8_"><div data-product-id="{{ product.id }}" data-media-id="{% liquid
     assign min = 10000000000
     assign max = 99999999999
     assign diff = max | minus: min
@@ -190,6 +190,8 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
     margin: 0;
     font: normal normal 600 18px/24px urbane;
   }
+
+
   @media (min-width: 1025px){
 	.chrod .wrapped .spec_item .spec_name {
 	  font: normal normal 200 14px/18px urbane;
@@ -270,6 +272,8 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
 	  font-size: 14px;
       margin-top: 10px;
     }
+
+    
 
     @media (min-width: 768px) {
         .fenders-and-kickstand-mobile {
@@ -404,9 +408,18 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
     justify-content: center;
 }
 
+.chord-sticky {
+  position: sticky;
+  top: 90px;
+}
+
 
 
 @media (max-width: 767px) {
+  .chord-sticky {
+    position: static;
+  }
+
     .carbon_code {
         font-size: 13px;
     }
@@ -1714,7 +1727,7 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
       laybox.className += " dialog-open";
     };
 </script>
-</div><p class="sc-bBHHxi fhourC pf-34_" tabindex="0" spellcheck="false" data-pf-type="Paragraph3">Pre-order items shipped from May 15-30, 2023</p><div data-pf-type="Custom.HTML" class="sc-AjmGg eCTxfx pf-36_ pf-lg-hide pf-md-hide pf-sm-hide"><div
+</div><p class="sc-bBHHxi fhourC pf-34_" style="line-height: 22px;" tabindex="0" spellcheck="false" data-pf-type="Paragraph3">Pre-order items shipped from May 15-30, 2023</p><div data-pf-type="Custom.HTML" class="sc-AjmGg eCTxfx pf-36_ pf-lg-hide pf-md-hide pf-sm-hide"><div
   style="--g-sm: 0px; --l-sm: 4; --gc-xs: 0; --gc-sm: 15.789473684210527%"
   class="sc-iseIHH gbtrtF left-list pf-xs-hide-list chrod"
 >
@@ -2703,7 +2716,10 @@ new Swiper('#section5', {
 }
   
 
-</script></div></div></div></div></div></div><div data-section-id="pf-16f2" data-pf-type="Section" class="sc-fmciRz bheIgq pf-56_"><div class="sc-gjNHFA gwWIgj"><div class="sc-ezbkAF A-dmbO pf-57_ pf-r pf-c-cm pf-r-eh" style="--s-xs:0px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-md:12;--c-lg:12"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-58_"><div data-pf-type="Custom.HTML" class="sc-AjmGg eCTxfx pf-59_">
+</script></div></div></div></div></div></div>
+
+<!-- 需要注释的板块 -->
+<div data-section-id="pf-16f2" data-pf-type="Section" class="sc-fmciRz bheIgq pf-56_"><div class="sc-gjNHFA gwWIgj"><div class="sc-ezbkAF A-dmbO pf-57_ pf-r pf-c-cm pf-r-eh" style="--s-xs:0px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-md:12;--c-lg:12"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-58_"><div data-pf-type="Custom.HTML" class="sc-AjmGg eCTxfx pf-59_">
   <div id="section4">
   <div class="title">Elegance in Motion</div>
   <div class="parent">
@@ -2766,6 +2782,88 @@ new Swiper('#section5', {
   }
 }
 </style></div></div></div></div></div></div>
+<!-- 需要注释的板块 -->
+
+<style>
+  .maksim {
+      display: flex;
+      flex-direction: row;
+      background-color: #F7F8FA;
+      margin: 150px 0;
+  }
+  
+  .maksim > div {
+      flex: 1;
+  }
+  
+  .maksim .left {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      max-width: 640px;
+      margin-left: auto;
+      padding-left: 30px;
+      box-sizing: content-box;
+  }
+  
+  .maksim .left .u17Light_v2 {
+      margin: 15px 0 75px;
+  }
+  
+  .maksim .right {
+      max-width: 50vw;
+      background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230418-140144.jpg?v=1681797714');
+      background-position: center center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      height: 695px;
+  }
+  
+  @media (max-width: 767px) {
+      .maksim {
+          flex-direction: column-reverse;
+          margin: 60px 0;
+      }
+  
+      .maksim .right {
+          max-width: 100vw;
+          height: 80vw;
+          flex: auto;
+      }
+  
+      .maksim .left {
+          margin: 0;
+          padding: 10vw 4%;
+          box-sizing: border-box;
+      }
+  
+      .maksim .left .u42DemiBold_v2 {
+          font-size: 24px;
+      }
+  
+      .maksim .left .u17Light_v2 {
+          margin: 5vw 0 10vw;
+          font-size: 15px;
+      }
+  
+      .maksim .left .my-button {
+          margin: 0 auto;
+      }
+  }
+  </style>
+<!-- 新增的板块
+<div class="maksim">
+  <div class="left">
+      <div class="u42DemiBold_v2">Chord X Maksim</div>
+      <div class="u17Light_v2">A passionate prodigy, and one of the world’s <br class="mobileHide"> fastest pianists. Mr. Mrvica inspired the design <br class="mobileHide"> the
+          philosophy of Chord, a crossover between <br class="mobileHide"> art and tech.</div>
+      <a href="" class="my-button my-button-black">Watch video</a>
+  </div>
+  <div class="right"></div>
+</div>
+-->
+
 
 <div data-section-id="pf-68d8" data-pf-type="Section" class="sc-fmciRz bheIgq pf-60_"><div class="sc-gjNHFA gwWIgj"><div class="sc-ezbkAF A-dmbO pf-61_ pf-r pf-c-cm pf-r-eh" style="--s-xs:0px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-md:12;--c-lg:12"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-62_"><div data-pf-type="Custom.HTML" class="sc-AjmGg eCTxfx pf-63_"><div id="section6">
     <div class="u42DemiBold">Peace of Mind Services</div>
