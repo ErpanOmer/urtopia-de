@@ -622,6 +622,22 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
   <!-- price 隐藏
   <div data-pf-type="ProductPrice2" id="product-price" class="sc-kTqLtj ihdlmX pf-26_ order-price"><div data-product-type="price" data-product-id="{{ product.id }}" data-product-price="true" data-pf-type="ProductPrice2Item" class="sc-haTkiu fcLDTw pf-27_">{{ product.variants[0].price | money }}</div><div data-product-type="compare_at_price" data-product-id="{{ product.id }}" data-pf-type="ProductPrice2Item" class="sc-haTkiu fcLDTw pf-28_ pf-lg-hide pf-md-hide pf-hide">{{ product.variants[0].compare_at_price | money }}</div></div>
    -->
+   <div id="total-price-pc">
+	Total:
+	<span class="price">{{ 0 | money }}</span>
+  </div>
+      <klarna-placement
+        data-key="credit-promotion-badge"
+        data-locale="de-DE"
+        data-purchase-amount=""
+      ></klarna-placement>
+      <div data-pf-type="Custom.HTML" class="sc-AjmGg eCTxfx pf-30_">
+
+    <div class="carbon_code">
+        <span>€300 OFF with Easter Sale Code</span>
+        <span class="bold">OK300</span>
+    </div>
+
     <style>
 .eggs {
     max-width: 450px;
