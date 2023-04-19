@@ -452,7 +452,7 @@
         </div>
       </form>
     </div>
-    <span class="close" onclick="closeMiniDialog()">×</span>
+    <span class="close" onclick="closeEmailDialog()">×</span>
 </div>`
 
 /*
@@ -473,7 +473,7 @@ const subscribeHtml = `<div class="subscribe-container">
       </div>
     </form>
   </div>
-  <span class="close" onclick="closeMiniDialog()">×</span>
+  <span class="close" onclick="closeEmailDialog()">×</span>
 </div>`
 */
   
@@ -748,7 +748,7 @@ const subscribeHtml = `<div class="subscribe-container">
             const email = $('.subscribe-container form input[type="email"]').val()
             // 埋点
             fetchBuried('emailpop', 'submit', { email, tag: 'DE,POPUP' })
-            closeMiniDialog(14)
+            closeEmailDialog(14)
         
             event.preventDefault();
             return false;
@@ -779,12 +779,31 @@ const subscribeHtml = `<div class="subscribe-container">
     })
   }
 
-  function closeMiniDialog(day = 3) {
+  function closeEmailDialog (day = 3) {
+    storage.set('emailDialogHideDay', 'emailDialogHideDay', day)
+    // 关闭弹窗
+    closeMiniDialog()
+  }
+
+
+
+  function showMiniDialog(html = '') {
+    $('body .mini-dialog').remove()
+    setTimeout(() => {
+      $("body").append(`<div class="mini-dialog" style="display: flex;">${html}</div>`)
+  
+      {% comment %} setTimeout(() => {
+        $('body .mini-dialog > div').on('click', e => {
+          e.stopPropagation();
+          return false;
+        })
+      }, 100) {% endcomment %}
+    })
+  }
+  
+  function closeMiniDialog() {
     // console.log(a === document.querySelector('body .mini-dialog'))
     $('body .mini-dialog').remove()
-
-
-    storage.set('emailDialogHideDay', 'emailDialogHideDay', day)
   }
 
 </script>
