@@ -725,64 +725,47 @@ const subscribeHtml = `<div class="subscribe-container">
     })
   }
 
-
-  function showMiniDialog(html = '') {
-    if (storage.get('emailDialogHideDay')) {
-      return
-    }
-  
-    $('body .mini-dialog').remove()
-    setTimeout(() => {
-      $("body").append(`<div class="mini-dialog" style="display: flex;">${html}</div>`)
-  
-      {% comment %} setTimeout(() => {
-        $('body .mini-dialog > div').on('click', e => {
-          e.stopPropagation();
-          return false;
-        })
-      }, 100) {% endcomment %}
-  
-  
-       setTimeout(() => {
-          $('.subscribe-container form').on("submit", function (event) {
-            const email = $('.subscribe-container form input[type="email"]').val()
-            // 埋点
-            fetchBuried('emailpop', 'submit', { email, tag: 'DE,POPUP' })
-            closeEmailDialog(14)
-        
-            event.preventDefault();
-            return false;
-        })
-
-
-        let startInput = false
-        $('.subscribe-container input').on('input', debounce(e => {
-            if (startInput) {
-                return
-            }
-
-            startInput = true
-            fetchBuried('emailpop', 'enter', {
-                email: e.target.value,
-                tag: 'DE,POPUP'
-            })
-        }, 2000))
-
-        
-
-      }, 1000)
-
-
-      //  fetchBuried('emailpop', 'popupview', {
-      //   tag: 'DE,POPUP'
-      //   })
-    })
-  }
-
   function closeEmailDialog (day = 3) {
     storage.set('emailDialogHideDay', 'emailDialogHideDay', day)
     // 关闭弹窗
     closeMiniDialog()
+  }
+
+  function showEmailDialog () {
+    if (storage.get('emailDialogHideDay')) {
+      return
+    }
+    
+    showMiniDialog(subscribeHtml)
+
+    setTimeout(() => {
+        $('.subscribe-container form').on("submit", function (event) {
+          const email = $('.subscribe-container form input[type="email"]').val()
+          // 埋点
+          fetchBuried('emailpop', 'submit', { email, tag: 'DE,POPUP' })
+          closeEmailDialog(14)
+      
+          event.preventDefault();
+          return false;
+      })
+
+
+      let startInput = false
+      $('.subscribe-container input').on('input', debounce(e => {
+          if (startInput) {
+              return
+          }
+
+          startInput = true
+          fetchBuried('emailpop', 'enter', {
+              email: e.target.value,
+              tag: 'DE,POPUP'
+          })
+      }, 2000))
+
+      
+
+    }, 1000)
   }
 
 
