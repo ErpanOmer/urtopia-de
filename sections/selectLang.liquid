@@ -220,6 +220,28 @@
   }
   </style>
 
+  <style>
+    .video-box {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #0009;
+    }
+    .video-box .close {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      cursor: pointer;
+      color: #fff;
+      width: 30px;
+      height: 30px;
+      background: #0c0c0ccc;
+      text-align: center;
+      line-height: 30px;
+      border-radius: 50%;
+    }
+  </style>
+
 <style>
   .message-box {
     width: 367px;
@@ -452,7 +474,7 @@
         </div>
       </form>
     </div>
-    <span class="close" onclick="closeMiniDialog()">×</span>
+    <span class="close" onclick="closeEmailDialog()">×</span>
 </div>`
 
 /*
@@ -473,7 +495,7 @@ const subscribeHtml = `<div class="subscribe-container">
       </div>
     </form>
   </div>
-  <span class="close" onclick="closeMiniDialog()">×</span>
+  <span class="close" onclick="closeEmailDialog()">×</span>
 </div>`
 */
   
@@ -572,7 +594,7 @@ const subscribeHtml = `<div class="subscribe-container">
     const findLang = allOptions.find(tl => tl.dataset.value === code)
 
     if (active.dataset.value === code) {
-      return setTimeout(showMiniDialog, 5000, subscribeHtml)
+      return setTimeout(showEmailDialog, 5000, subscribeHtml)
     }
 
     setTimeout(() => {
@@ -622,7 +644,7 @@ const subscribeHtml = `<div class="subscribe-container">
       if (!notShowModal && !window.__SHOPIFY_CLI_ENV__ && !sessionStorage.getItem('selectLangDialog')) {
         document.querySelector('#selectLangModal').classList.add('open');
       } else {
-        setTimeout(showMiniDialog, 5000, subscribeHtml)
+        setTimeout(showEmailDialog, 5000, subscribeHtml)
       }
     }
 
@@ -652,7 +674,7 @@ const subscribeHtml = `<div class="subscribe-container">
     sessionStorage.setItem('selectLangDialog', 'selectLangDialog')
     // 如果是单纯的关闭，直接退出去
     if (isClose) {
-      return setTimeout(showMiniDialog, 5000, subscribeHtml)
+      return setTimeout(showEmailDialog, 5000, subscribeHtml)
     }
 
     var d = new Date();
@@ -725,12 +747,76 @@ const subscribeHtml = `<div class="subscribe-container">
     })
   }
 
+  function closeEmailDialog (day = 3) {
+    storage.set('emailDialogHideDay', 'emailDialogHideDay', day)
+    // 关闭弹窗
+    closeMiniDialog()
+  }
 
-  function showMiniDialog(html = '') {
+  function showEmailDialog () {
     if (storage.get('emailDialogHideDay')) {
       return
     }
-  
+    
+    showMiniDialog(subscribeHtml)
+
+    setTimeout(() => {
+        $('.subscribe-container form').on("submit", function (event) {
+          const email = $('.subscribe-container form input[type="email"]').val()
+          // 埋点
+          fetchBuried('emailpop', 'submit', { email, tag: 'DE,POPUP' })
+          closeEmailDialog(14)
+      
+          event.preventDefault();
+          return false;
+      })
+
+
+      let startInput = false
+      $('.subscribe-container input').on('input', debounce(e => {
+          if (startInput) {
+              return
+          }
+
+          startInput = true
+          fetchBuried('emailpop', 'enter', {
+              email: e.target.value,
+              tag: 'DE,POPUP'
+          })
+      }, 2000))
+
+      
+
+    }, 1000)
+  }
+
+
+   // 视频播放
+   function showVideoDialog (src = '') {
+    console.log('src', src)
+    if (!src) {
+      return
+    }
+    const template = `<div class="video-box">
+      <div style="position: relative">
+        <iframe
+          width="${document.body.clientWidth > 768 ? 840 : document.body.clientWidth * 0.84 }"
+          height="${document.body.clientWidth > 768 ? 472 : 'auto'}"
+          src="${src}"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+        <span class="close" onclick="closeMiniDialog()">x</span>
+      </div>
+    </div>`
+    showMiniDialog(template)
+  }
+
+
+
+  function showMiniDialog(html = '') {
     $('body .mini-dialog').remove()
     setTimeout(() => {
       $("body").append(`<div class="mini-dialog" style="display: flex;">${html}</div>`)
@@ -741,50 +827,12 @@ const subscribeHtml = `<div class="subscribe-container">
           return false;
         })
       }, 100) {% endcomment %}
-  
-  
-       setTimeout(() => {
-          $('.subscribe-container form').on("submit", function (event) {
-            const email = $('.subscribe-container form input[type="email"]').val()
-            // 埋点
-            fetchBuried('emailpop', 'submit', { email, tag: 'DE,POPUP' })
-            closeMiniDialog(14)
-        
-            event.preventDefault();
-            return false;
-        })
-
-
-        let startInput = false
-        $('.subscribe-container input').on('input', debounce(e => {
-            if (startInput) {
-                return
-            }
-
-            startInput = true
-            fetchBuried('emailpop', 'enter', {
-                email: e.target.value,
-                tag: 'DE,POPUP'
-            })
-        }, 2000))
-
-        
-
-      }, 1000)
-
-
-      //  fetchBuried('emailpop', 'popupview', {
-      //   tag: 'DE,POPUP'
-      //   })
     })
   }
-
-  function closeMiniDialog(day = 3) {
+  
+  function closeMiniDialog() {
     // console.log(a === document.querySelector('body .mini-dialog'))
     $('body .mini-dialog').remove()
-
-
-    storage.set('emailDialogHideDay', 'emailDialogHideDay', day)
   }
 
 </script>

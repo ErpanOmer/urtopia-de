@@ -724,10 +724,17 @@ new Swiper ('#section1-mobile', {
   #bike .swiper-slide .new {
     position: absolute;
     left: 0;
-    top: 0;
+    top: 20px;
     background-color: #263B55;
     padding: 10px 20px;
     font: normal normal 600 14px/14px urbane;
+    border-radius: 0px 20px 20px 0px;
+    background-image: linear-gradient(to bottom, #2E26EE, #2A60F4);
+  }
+
+  #bike .swiper-slide .big-new {
+    border-radius: 0px 50px 50px 0px;
+    line-height: 21px;
   }
 
   #bike .swiper-slide img {
@@ -876,9 +883,10 @@ new Swiper ('#section1-mobile', {
     }
 
     #bike .swiper-slide .new {
-        left: 20px;
-        font-weight: 500;
-    }
+      top: 15px;
+      font-weight: 500;
+      padding: 10px 15px;
+  }
 
     #bike .swiper-slide img {
         margin: 40px 0 15px;
@@ -924,7 +932,7 @@ new Swiper ('#section1-mobile', {
               </div>
               <div class="size">Fit for 170cm - 195cm</div>
               <a class="my-button my-button-white" href="/products/urtopia-chord-ebike?variant=43705718997208">Order now</a>
-              <div class="my-button my-button-black new">New</div>
+              <div class="my-button my-button-black new">300€ OFF</div>
           </div>
           <div class="swiper-slide">
             <div class="name">Chord X</div>
@@ -936,7 +944,7 @@ new Swiper ('#section1-mobile', {
               </div>
               <div class="size">Fit for 160cm - 185cm</div>
               <a class="my-button my-button-white" href="/products/urtopia-chord-ebike?variant=43705719062744">Order now</a>
-              <div class="my-button my-button-black new">New</div>
+              <div class="my-button my-button-black new">300€ OFF</div>
             </div>
           <!-- <div class="swiper-slide">
             <div class="name">Carbon 1</div>
@@ -963,6 +971,7 @@ new Swiper ('#section1-mobile', {
               </div>
               <div class="size">Fit for 170cm - 195cm</div>
               <a href="/products/urtopia-carbon-e-bike?variant=42615025172696" class="my-button my-button-white">Order now</a>
+              <div class="my-button my-button-black new big-new">300€ OFF +<br>3 Freebies</div>
             </div>
       </div>
       <div class="swiper-button-prev"></div><!--左箭头。如果放置在swiper外面，需要自定义样式。-->
@@ -1006,7 +1015,96 @@ new Swiper ('#bike', {
     const a = parent.parentNode.querySelector('a')
     a.href = gotoUrl
   }
-</script></div></div></div></div></div></div><div data-section-id="pf-5f7c" data-pf-type="Section" class="sc-fmciRz bheIgq pf-19_"><div class="sc-gjNHFA gwWIgj"><div class="sc-ezbkAF A-dmbO pf-20_ pf-r pf-c-cm pf-r-eh" style="--s-xs:0px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-md:12;--c-lg:12"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-21_"><div data-pf-type="Custom.HTML" class="sc-AjmGg eCTxfx pf-22_"><style>
+</script></div></div></div></div></div></div>
+
+
+<style>
+  .maksim {
+      margin-bottom: 120px;
+  }
+  
+  .maksim .centeral-content {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .maksim .centeral-content > div {
+      width: 100%;
+      background-color: #F7F8FA;
+  }
+  
+  .maksim .left {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      padding-left: 64px;
+  }
+  
+  .maksim .left .u17Light_v2 {
+      margin: 15px 0 75px;
+  }
+  
+  .maksim .right {
+      background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/123.jpg?v=1681887510');
+      background-position: center center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      height: 695px;
+  }
+  
+  @media (max-width: 767px) {
+      .maksim {
+        margin-bottom: 60px;
+      }
+  
+      .maksim .centeral-content {
+          padding: 0;
+          grid-template-columns: 1fr;
+      }
+  
+      .maksim .right {
+          max-width: 100vw;
+          height: 80vw;
+          flex: auto;
+      }
+  
+      .maksim .left {
+          margin: 0;
+          padding: 10% 4%;
+          box-sizing: border-box;
+          order: 1;
+      }
+  
+      .maksim .left .u42DemiBold_v2 {
+          font-size: 24px;
+      }
+  
+      .maksim .left .u17Light_v2 {
+          margin: 5vw 0 10vw;
+          font-size: 15px;
+      }
+  
+      .maksim .left .my-button {
+          margin: 0 auto;
+      }
+  }
+  </style>
+
+  <div class="maksim">
+    <div class="centeral-content">
+        <div class="left">
+            <div class="u42DemiBold_v2">Chord X Maksim</div>
+            <div class="u17Light_v2">A passionate prodigy, and one of the world’s <br> fastest pianists. Mr. Mrvica
+                inspired the design <br> the
+                philosophy of Chord, a crossover between <br> art and tech.</div>
+            <a onclick="showVideoDialog('https://www.youtube.com/embed/gjYMDVGv_C4?autoplay=1&cc_load_policy=1')" class="my-button my-button-black">Watch video</a>
+        </div>
+        <div class="right"></div>
+    </div>
+</div>
+
+<div data-section-id="pf-5f7c" data-pf-type="Section" class="sc-fmciRz bheIgq pf-19_"><div class="sc-gjNHFA gwWIgj"><div class="sc-ezbkAF A-dmbO pf-20_ pf-r pf-c-cm pf-r-eh" style="--s-xs:0px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-md:12;--c-lg:12"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-21_"><div data-pf-type="Custom.HTML" class="sc-AjmGg eCTxfx pf-22_"><style>
   #section2 {
 	height: 800px;
 	background: url("https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20230217-untitled-7317_2x_f9e6e7ad-635a-44c8-a608-87a568febfd0.png?v=1677566487") center center/cover no-repeat;

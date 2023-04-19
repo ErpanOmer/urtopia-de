@@ -201,7 +201,126 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
   	}
   }
 </style>
-</div></div></div><div class="pf-c" style="--c-xs:12;--c-sm:5;--c-md:4;--c-lg:4"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-14_"><h1 data-product-type="title" data-product-id="{{ product.id }}" style="font-weight: 600;" data-pf-type="ProductTitle" class="sc-hgKiOD dlknTu pf-15_">{{ product.title }}</h1><div data-pf-type="JudgeMe" class="sc-eZhRLC gtfCKx pf-16_ order-djs"><div class="pf-judme">{% render "judgeme_widgets", widget_type: "judgeme_preview_badge", jm_style: "", concierge_install: false, product: product %}</div></div><div data-pf-type="Custom.HTML" class="sc-AjmGg eCTxfx pf-17_"><div class="chrod_text">
+</div></div></div><div class="pf-c" style="--c-xs:12;--c-sm:5;--c-md:4;--c-lg:4"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-14_"><h1 data-product-type="title" data-product-id="{{ product.id }}" style="font-weight: 600;" data-pf-type="ProductTitle" class="sc-hgKiOD dlknTu pf-15_">{{ product.title }}</h1>
+<div data-pf-type="JudgeMe" style="margin-bottom: 12px;" class="sc-eZhRLC gtfCKx pf-16_ order-djs"><div class="pf-judme">{% render "judgeme_widgets", widget_type: "judgeme_preview_badge", jm_style: "", concierge_install: false, product: product %}</div></div>
+
+<div data-pf-type="ProductPrice2" class="sc-kTqLtj ihdlmX pf-26_"><div data-product-type="price" data-product-id="{{ product.id }}" data-product-price="true" data-pf-type="ProductPrice2Item" class="sc-haTkiu fcLDTw pf-27_">{{ product.variants[0].price | money }}</div></div>
+
+<style>
+  #credit-promotion-badge *::part(osm-container) {
+    padding: 0;
+    border: none;
+    line-height: 12px;
+  }
+</style>
+
+<div data-pf-type="Custom.HTML" style="max-height: 30px;" class="sc-AjmGg eCTxfx pf-29_">  <!-- Placement v2 -->
+<klarna-placement
+  id="credit-promotion-badge"
+  data-key="credit-promotion-badge"
+  data-locale="de-DE"
+  data-purchase-amount=""
+></klarna-placement>
+<!-- end Placement -->
+
+</div><div data-pf-type="Custom.HTML" class="sc-AjmGg eCTxfx pf-30_">
+      <div class="carbon_code">
+        <span>€300 OFF with Easter Sale Code</span>
+        <span class="bold">OK300</span>
+    </div>
+
+
+<style>
+.carbon_code {
+    max-width: 480px;
+    background: url(https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230324-171240.png?v=1679649232) no-repeat;
+    height: 46px;
+    background-size: 100% 46px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 500;
+    box-shadow: 10px 10px 10px #6B869A1C;
+}
+
+.carbon_code .bold {
+    font-size: 17px;
+    font-weight: bold;
+}
+
+      .carbon_code > span:first-child {
+        flex-basis: 68%;
+        font-size: 14px;
+        padding: 10px;
+        text-align: center;
+        line-height: 16px;
+      }
+
+.carbon_code > span:last-child {
+    flex-basis: 32%;
+}
+
+.carbon_code > span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.chord-sticky {
+  position: sticky;
+  top: 90px;
+}
+
+
+
+@media (max-width: 767px) {
+  .chord-sticky {
+    position: static;
+  }
+
+    .carbon_code {
+        font-size: 13px;
+    }
+
+    .carbon_code .bold {
+        font-size: 16px;
+    }
+}
+</style>
+</div>
+
+
+<style>
+	.countdown {
+    margin-top: 20px;
+		font: normal normal 500 16px/22px Urbane;
+		color: #3B65EB;
+    overflow: hidden;
+	}
+
+  .countdown img {
+    width: 68%;
+    position: relative;
+    top: 10px;
+  }
+
+  @media (max-width: 767px) {
+    .countdown {
+      margin-top: 15px;
+      font-size: 14px;
+    }
+}
+</style>
+
+<div class="countdown">
+	<div>Easter sale expires Apr. 25</div>
+	<img src="http://i.countdownmail.com/2hsf4t.gif" border="0" alt="countdownmail.com"/>
+</div>
+
+<!--
+<div data-pf-type="Custom.HTML" class="sc-AjmGg eCTxfx pf-17_"><div class="chrod_text">
  Meet the new lightweight city ebike 2023 - the perfect smart electric town bike for urban adventurers. With a range of up to 120km, this ebike is ideal for commuting or leisurely rides around town. With the extra safety and convenience that comes with smart features like anti-theft GPS, onboard navigation and automatic synchronization of ride data, the Chord Ebike is your first step into a new era of cycling.
   <a href="#section1"> Read more</a>
 </div>
@@ -229,7 +348,12 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
     text-decoration: underline;
   }
 </style>
-</div><div data-pf-type="Custom.HTML" class="sc-AjmGg eCTxfx pf-18_">
+
+
+</div>
+-->
+
+<div data-pf-type="Custom.HTML" class="sc-AjmGg eCTxfx pf-18_">
   <div class="fenders-and-kickstand-mobile">
     <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20230307-201732.jpg?v=1678191479">
     <div style="margin-left: 25px;">
@@ -247,6 +371,7 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
       align-items: center;
 	  padding: 10px;
 	  border-radius: 10px;
+    margin: 12px 0;
     }
 
     .fenders-and-kickstand-mobile .right {
@@ -354,110 +479,8 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
 						{% else %} 
 					
                             {% assign key = option_name | replace: '"', '&quot;' %}
-                        <div class="pf-option-swatches" data-swatch-type="radio" data-unique-id="{{option.position}}">{% for option_value in option.values %}{% capture option_id %}pf-sw{{swatches_count}}-{{key}}-{{option_value | remove: '"' | replace: ' ', '-' }}{% endcapture %}{% assign optionValue = option_value | replace: '"', '&quot;' %}<div data-option-name="{{key | default: formatted_option_name}}" class="pf-vs-radio"><input {% if option.selected_value == option_value %}checked{% endif %} type="radio" id="{{option_id}}" name="sw{{swatches_count}}-{{key}}" value="{{optionValue}}"/><label style="overflow:hidden" for="{{option_id}}"><span>{{option_value}}</span></label></div>{% endfor %}</div>{% endif %} {% endfor %}</div>{% endunless %}</div><div data-pf-type="ProductPrice2" class="sc-kTqLtj ihdlmX pf-26_"><div data-product-type="price" data-product-id="{{ product.id }}" data-product-price="true" data-pf-type="ProductPrice2Item" class="sc-haTkiu fcLDTw pf-27_">{{ product.variants[0].price | money }}</div></div><div data-pf-type="Custom.HTML" class="sc-AjmGg eCTxfx pf-29_">  <!-- Placement v2 -->
-<klarna-placement
-  data-key="credit-promotion-badge"
-  data-locale="de-DE"
-  data-purchase-amount=""
-></klarna-placement>
-<!-- end Placement -->
-
-</div><div data-pf-type="Custom.HTML" class="sc-AjmGg eCTxfx pf-30_">
-      <div class="carbon_code">
-        <span>€300 OFF with Easter Sale Code</span>
-        <span class="bold">OK300</span>
-    </div>
-
-
-<style>
-.carbon_code {
-    max-width: 480px;
-    background: url(https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230324-171240.png?v=1679649232) no-repeat;
-    height: 46px;
-    background-size: 100% 46px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    color: #fff;
-    font-size: 14px;
-    font-weight: 500;
-    box-shadow: 10px 10px 10px #6B869A1C;
-    margin-top: 20px;
-}
-
-.carbon_code .bold {
-    font-size: 17px;
-    font-weight: bold;
-}
-
-      .carbon_code > span:first-child {
-        flex-basis: 68%;
-        font-size: 14px;
-        padding: 10px;
-        text-align: center;
-        line-height: 16px;
-      }
-
-.carbon_code > span:last-child {
-    flex-basis: 32%;
-}
-
-.carbon_code > span {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.chord-sticky {
-  position: sticky;
-  top: 90px;
-}
-
-
-
-@media (max-width: 767px) {
-  .chord-sticky {
-    position: static;
-  }
-
-    .carbon_code {
-        font-size: 13px;
-    }
-
-    .carbon_code .bold {
-        font-size: 16px;
-    }
-}
-</style>
-</div>
-
-
-<style>
-	.countdown {
-    margin-top: 20px;
-		font: normal normal 500 16px/22px Urbane;
-		color: #3B65EB;
-    overflow: hidden;
-	}
-
-  .countdown img {
-    width: 68%;
-    position: relative;
-    top: 10px;
-  }
-
-  @media (max-width: 767px) {
-    .countdown {
-      margin-top: 15px;
-      font-size: 14px;
-    }
-}
-</style>
-
-<div class="countdown">
-	<div>Easter sale expires Apr. 25</div>
-	<img src="http://i.countdownmail.com/2hsf4t.gif" border="0" alt="countdownmail.com"/>
-</div>
+                        <div class="pf-option-swatches" data-swatch-type="radio" data-unique-id="{{option.position}}">{% for option_value in option.values %}{% capture option_id %}pf-sw{{swatches_count}}-{{key}}-{{option_value | remove: '"' | replace: ' ', '-' }}{% endcapture %}{% assign optionValue = option_value | replace: '"', '&quot;' %}<div data-option-name="{{key | default: formatted_option_name}}" class="pf-vs-radio"><input {% if option.selected_value == option_value %}checked{% endif %} type="radio" id="{{option_id}}" name="sw{{swatches_count}}-{{key}}" value="{{optionValue}}"/><label style="overflow:hidden" for="{{option_id}}"><span>{{option_value}}</span></label></div>{% endfor %}</div>{% endif %} {% endfor %}</div>{% endunless %}</div>
+                        
 
 <div data-pf-type="Custom.HTML" class="sc-AjmGg eCTxfx pf-31_"><button
   data-product-id="{{ product.id }}"
@@ -2718,7 +2741,7 @@ new Swiper('#section5', {
 
 </script></div></div></div></div></div></div>
 
-<!-- 需要注释的板块 -->
+<!--
 <div data-section-id="pf-16f2" data-pf-type="Section" class="sc-fmciRz bheIgq pf-56_"><div class="sc-gjNHFA gwWIgj"><div class="sc-ezbkAF A-dmbO pf-57_ pf-r pf-c-cm pf-r-eh" style="--s-xs:0px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-md:12;--c-lg:12"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-58_"><div data-pf-type="Custom.HTML" class="sc-AjmGg eCTxfx pf-59_">
   <div id="section4">
   <div class="title">Elegance in Motion</div>
@@ -2782,18 +2805,21 @@ new Swiper('#section5', {
   }
 }
 </style></div></div></div></div></div></div>
-<!-- 需要注释的板块 -->
+ -->
 
-<style>
+ <style>
   .maksim {
-      display: flex;
-      flex-direction: row;
-      background-color: #F7F8FA;
-      margin: 150px 0;
+      margin: 120px 0;
   }
   
-  .maksim > div {
-      flex: 1;
+  .maksim .centeral-content {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .maksim .centeral-content > div {
+      width: 100%;
+      background-color: #F7F8FA;
   }
   
   .maksim .left {
@@ -2801,10 +2827,7 @@ new Swiper('#section5', {
       flex-direction: column;
       justify-content: center;
       align-items: flex-start;
-      max-width: 640px;
-      margin-left: auto;
-      padding-left: 30px;
-      box-sizing: content-box;
+      padding-left: 64px;
   }
   
   .maksim .left .u17Light_v2 {
@@ -2812,8 +2835,7 @@ new Swiper('#section5', {
   }
   
   .maksim .right {
-      max-width: 50vw;
-      background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230418-140144.jpg?v=1681797714');
+      background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/123.jpg?v=1681887510');
       background-position: center center;
       background-size: cover;
       background-repeat: no-repeat;
@@ -2822,8 +2844,12 @@ new Swiper('#section5', {
   
   @media (max-width: 767px) {
       .maksim {
-          flex-direction: column-reverse;
-          margin: 60px 0;
+        margin: 60px 0;
+      }
+  
+      .maksim .centeral-content {
+          padding: 0;
+          grid-template-columns: 1fr;
       }
   
       .maksim .right {
@@ -2834,8 +2860,9 @@ new Swiper('#section5', {
   
       .maksim .left {
           margin: 0;
-          padding: 10vw 4%;
+          padding: 10% 4%;
           box-sizing: border-box;
+          order: 1;
       }
   
       .maksim .left .u42DemiBold_v2 {
@@ -2852,17 +2879,19 @@ new Swiper('#section5', {
       }
   }
   </style>
-<!-- 新增的板块
-<div class="maksim">
-  <div class="left">
-      <div class="u42DemiBold_v2">Chord X Maksim</div>
-      <div class="u17Light_v2">A passionate prodigy, and one of the world’s <br class="mobileHide"> fastest pianists. Mr. Mrvica inspired the design <br class="mobileHide"> the
-          philosophy of Chord, a crossover between <br class="mobileHide"> art and tech.</div>
-      <a href="" class="my-button my-button-black">Watch video</a>
-  </div>
-  <div class="right"></div>
+
+  <div class="maksim">
+    <div class="centeral-content">
+        <div class="left">
+            <div class="u42DemiBold_v2">Chord X Maksim</div>
+            <div class="u17Light_v2">A passionate prodigy, and one of the world’s <br> fastest pianists. Mr. Mrvica
+                inspired the design <br> the
+                philosophy of Chord, a crossover between <br> art and tech.</div>
+            <a onclick="showVideoDialog('https://www.youtube.com/embed/gjYMDVGv_C4?autoplay=1&cc_load_policy=1')" class="my-button my-button-black">Watch video</a>
+        </div>
+        <div class="right"></div>
+    </div>
 </div>
--->
 
 
 <div data-section-id="pf-68d8" data-pf-type="Section" class="sc-fmciRz bheIgq pf-60_"><div class="sc-gjNHFA gwWIgj"><div class="sc-ezbkAF A-dmbO pf-61_ pf-r pf-c-cm pf-r-eh" style="--s-xs:0px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-md:12;--c-lg:12"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-62_"><div data-pf-type="Custom.HTML" class="sc-AjmGg eCTxfx pf-63_"><div id="section6">

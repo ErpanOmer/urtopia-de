@@ -585,11 +585,11 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
 
   .__pf_lUQL6LKn  .urtopiacarbon1 {
 	font-weight: 600;
-	margin-bottom: 22px;
+	margin-bottom: 12px;
   }
 
   .__pf_lUQL6LKn  .order-djs {
-	margin-bottom: 12px;
+	margin-bottom: 0px;
   }
 
   .__pf_lUQL6LKn .u17Light_v2 {
@@ -616,11 +616,34 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
     <div data-pf-type="JudgeMe" class="sc-eZhRLC gtfCKx pf-25_ order-djs">
         <div class="pf-judme">{% render "judgeme_widgets", widget_type: "judgeme_preview_badge", jm_style: "", concierge_install: false, product: product %}</div>
   </div>
+  <!--
   <div class="u17Light_v2">Carbon 1: Our bold, city-chic e-bike made with luxury carbon fiber and completely owned design.</div>
-  
+  -->
   <!-- price 隐藏
   <div data-pf-type="ProductPrice2" id="product-price" class="sc-kTqLtj ihdlmX pf-26_ order-price"><div data-product-type="price" data-product-id="{{ product.id }}" data-product-price="true" data-pf-type="ProductPrice2Item" class="sc-haTkiu fcLDTw pf-27_">{{ product.variants[0].price | money }}</div><div data-product-type="compare_at_price" data-product-id="{{ product.id }}" data-pf-type="ProductPrice2Item" class="sc-haTkiu fcLDTw pf-28_ pf-lg-hide pf-md-hide pf-hide">{{ product.variants[0].compare_at_price | money }}</div></div>
    -->
+   <style>
+	#credit-promotion-badge *::part(osm-container) {
+	  padding: 0;
+	  border: none;
+	  line-height: 12px;
+	}
+  </style>
+
+   <div id="total-price-pc"><span class="price">{{ 0 | money }}</span></div>
+      <klarna-placement
+		id="credit-promotion-badge"
+        data-key="credit-promotion-badge"
+        data-locale="de-DE"
+        data-purchase-amount=""
+      ></klarna-placement>
+      <div data-pf-type="Custom.HTML" class="sc-AjmGg eCTxfx pf-30_">
+
+    <div class="carbon_code">
+        <span>€300 OFF + 3 Freebies with Easter Sale Code</span>
+        <span class="bold">OK300</span>
+    </div>
+
     <style>
 .eggs {
     max-width: 450px;
@@ -641,7 +664,7 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
 .eggs .components {
     background-color: #fff;
     padding: 14px;
-    border-radius: 10px;
+    border-radius: 0 0 10px 10px;
     display: flex;
     flex: 1;
     box-shadow: 0px 3px 20px #00000015;
@@ -709,7 +732,7 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
 }
 </style>
   <div class="eggs">
-        <div class="background">Easter Sale | €300 OFF + 3 Freebies</div>
+        <!--<div class="background">Easter Sale | €300 OFF + 3 Freebies</div>-->
         <div class="components">
             <div class="item">
                 <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18445_2x_3206cd11-6e17-4cb3-be10-ad6201624cfd.jpg?v=1679919748" alt="">
@@ -891,7 +914,7 @@ letter-spacing: 0px;
 						        {% capture option_name_count_id %}pf_option_name_{{i}}{% endcapture %}
                                 {% if compareKey == compareOptionName %}
 			                        {% case type %}
-	                {% when "label" %}<div class="pf-option-swatches" data-swatch-type="label" data-unique-id="{{option.position}}">{% for option_value in option.values %}{% capture option_id %}pf-sw{{swatches_count}}-{{key}}-{{option_value | remove: '"' | replace: ' ', '-' }}{% endcapture %}{% assign optionValue = option_value | replace: '"', '&quot;' %}<div data-option-name="{{key | default: formatted_option_name}}" class="pf-vs-color pf-vs-square"><div data-option-name="{{key}}" class="pf-vs-label"><input {% if option.selected_value == option_value %}checked{% endif %} type="radio" id="{{option_id}}" name="sw{{swatches_count}}-{{key}}" value="{{optionValue}}"/><label style="overflow:hidden" for="{{option_id}}"><span>{{option_value}}</span></label></div></div>{% endfor %}</div>{% when "dropdown" %}<div class="pf-option-swatches" data-swatch-type="dropdown" data-unique-id="{{option.position}}"><select data-option-name="{{key | default: formatted_option_name}}" class="pf-variant-select">{% for option_value in option.values %}<option {% if option.selected_value == option_value %}selected{% endif %} value="{{ option_value | replace: '"', '&quot;' }}">{{option_value}}</option>{% endfor %}</select></div>{% when "radio" %}<div class="pf-option-swatches" data-swatch-type="radio" data-unique-id="{{option.position}}">{% for option_value in option.values %}{% capture option_id %}pf-sw{{swatches_count}}-{{key}}-{{option_value | remove: '"' | replace: ' ', '-' }}{% endcapture %}{% assign optionValue = option_value | replace: '"', '&quot;' %}<div data-option-name="{{key | default: formatted_option_name}}" class="pf-vs-radio"><input {% if option.selected_value == option_value %}checked{% endif %} type="radio" id="{{option_id}}" name="sw{{swatches_count}}-{{key}}" value="{{optionValue}}"/><label style="overflow:hidden" for="{{option_id}}"><span>{{option_value}}</span></label></div>{% endfor %}</div>{% when "color" %}<div class="pf-option-swatches" data-swatch-type="color" data-unique-id="{{option.position}}">{% assign defined_values = swatches[option_name_count_id] | split: "; " %}{% for option_value in option.values %}{% capture option_id %}pf-sw{{swatches_count}}-{{key}}-{{option_value | remove: '"' | replace: ' ', '-' }}{% endcapture %}
+	                {% when "label" %}<div class="pf-option-swatches" data-swatch-type="label"  data-unique-id="{{option.position}}">{% for option_value in option.values %}{% capture option_id %}pf-sw{{swatches_count}}-{{key}}-{{option_value | remove: '"' | replace: ' ', '-' }}{% endcapture %}{% assign optionValue = option_value | replace: '"', '&quot;' %}<div data-option-name="{{key | default: formatted_option_name}}" class="pf-vs-color pf-vs-square"><div data-option-name="{{key}}" class="pf-vs-label"><input {% if option.selected_value == option_value %}checked{% endif %} type="radio" id="{{option_id}}" name="sw{{swatches_count}}-{{key}}" value="{{optionValue}}"/><label style="overflow:hidden" for="{{option_id}}"><span>{{option_value}}</span></label></div></div>{% endfor %}</div>{% when "dropdown" %}<div class="pf-option-swatches" data-swatch-type="dropdown" data-unique-id="{{option.position}}"><select data-option-name="{{key | default: formatted_option_name}}" class="pf-variant-select">{% for option_value in option.values %}<option {% if option.selected_value == option_value %}selected{% endif %} value="{{ option_value | replace: '"', '&quot;' }}">{{option_value}}</option>{% endfor %}</select></div>{% when "radio" %}<div class="pf-option-swatches" data-swatch-type="radio" data-unique-id="{{option.position}}">{% for option_value in option.values %}{% capture option_id %}pf-sw{{swatches_count}}-{{key}}-{{option_value | remove: '"' | replace: ' ', '-' }}{% endcapture %}{% assign optionValue = option_value | replace: '"', '&quot;' %}<div data-option-name="{{key | default: formatted_option_name}}" class="pf-vs-radio"><input {% if option.selected_value == option_value %}checked{% endif %} type="radio" id="{{option_id}}" name="sw{{swatches_count}}-{{key}}" value="{{optionValue}}"/><label style="overflow:hidden" for="{{option_id}}"><span>{{option_value}}</span></label></div>{% endfor %}</div>{% when "color" %}<div class="pf-option-swatches" data-swatch-type="color" data-unique-id="{{option.position}}">{% assign defined_values = swatches[option_name_count_id] | split: "; " %}{% for option_value in option.values %}{% capture option_id %}pf-sw{{swatches_count}}-{{key}}-{{option_value | remove: '"' | replace: ' ', '-' }}{% endcapture %}
 					        {%liquid
 						    assign pick_value = "#78859B"
 						    assign optionValue = option_value | replace: '"', '&quot;'
@@ -1126,25 +1149,10 @@ letter-spacing: 0px;
 <!-- 配件结束 -->
   
     <div data-pf-type="Custom.HTML" class="sc-AjmGg eCTxfx pf-42_"><div id="pay-content">
-  <div id="total-price-pc">
-	Total:
-	<span class="price">{{ 0 | money }}</span>
-  </div>
-      <klarna-placement
-        data-key="credit-promotion-badge"
-        data-locale="de-DE"
-        data-purchase-amount=""
-      ></klarna-placement>
-      <div data-pf-type="Custom.HTML" class="sc-AjmGg eCTxfx pf-30_">
-
-    <div class="carbon_code">
-        <span>€300 OFF with Easter Sale Code</span>
-        <span class="bold">OK300</span>
-    </div>
 <style>
 	.carbon_code {
 		max-width: 480px;
-		background: url(https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230324-171240.png?v=1679649232) no-repeat;
+		background: url(https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230324-171240.png?v=1679649232) linear-gradient(90deg, #2E26EE 0%, #2A8FF4 100%) no-repeat;
 		height: 46px;
 		background-size: 100% 46px;
 		display: flex;
@@ -1154,7 +1162,10 @@ letter-spacing: 0px;
 		font-size: 14px;
 		font-weight: 500;
 		box-shadow: 10px 10px 10px #6B869A1C;
-		margin-top: 20px;
+		margin-top: 10px;
+		background: transparent linear-gradient(90deg, #2E26EE 0%, #2A8FF4 100%) 0% 0% no-repeat padding-box;
+		border-radius: 10px 10px 0 0;
+		
 	}
 	
 	.carbon_code .bold {
@@ -1168,6 +1179,7 @@ letter-spacing: 0px;
 			padding: 10px;
 			text-align: center;
 			line-height: 16px;
+			border-right: 2px dashed #fff;
 		  }
 	
 	.carbon_code > span:last-child {
@@ -1584,6 +1596,10 @@ function testRideTrace(){
 }
 </script>
 <style>
+	#pay-content {
+		margin-top: -35px;
+	}
+
   #pay-content>.list-payment {
 	display: flex;
 	flex-wrap: wrap;
@@ -1609,7 +1625,7 @@ function testRideTrace(){
 
   #total-price-pc {
 	font-size: 30px;
-	line-height: 30px;
+	line-height: 60px;
 	font-weight: 600;
 	font-family:Urbane;
 
@@ -1697,6 +1713,10 @@ function testRideTrace(){
   }
   }
   @media screen and (max-width: 767px){
+	#pay-content {
+		margin-top: -20px;
+	}
+
 	.buyNowBtn {
 	  font: normal normal 600 15px/18px Proxima-Nova;
 	}
