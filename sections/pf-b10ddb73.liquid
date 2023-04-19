@@ -231,30 +231,110 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
   }
 </style>
 
-<div data-pf-type="JudgeMe" class="sc-eZhRLC gtfCKx pf-16_ order-djs"><div class="pf-judme">
+<div data-pf-type="ProductPrice2" class="sc-kTqLtj ihdlmX pf-26_"><div data-product-type="price" data-product-id="{{ product.id }}" data-product-price="true" data-pf-type="ProductPrice2Item" class="sc-haTkiu fcLDTw pf-27_">{{ product.variants[0].price | money }}</div></div><div data-pf-type="Custom.HTML" class="sc-AjmGg eCTxfx pf-29_">  <!-- Placement v2 -->
+<klarna-placement
+  data-key="credit-promotion-badge"
+  data-locale="de-DE"
+  data-purchase-amount=""
+></klarna-placement>
+<!-- end Placement -->
+
+</div><div data-pf-type="Custom.HTML" class="sc-AjmGg eCTxfx pf-30_">
+      <div class="carbon_code">
+        <span>€300 OFF with Easter Sale Code</span>
+        <span class="bold">OK300</span>
+    </div>
+
+
+<style>
+.carbon_code {
+    max-width: 480px;
+    background: url(https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230324-171240.png?v=1679649232) no-repeat;
+    height: 46px;
+    background-size: 100% 46px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 500;
+    box-shadow: 10px 10px 10px #6B869A1C;
+    margin-top: 20px;
+}
+
+.carbon_code .bold {
+    font-size: 17px;
+    font-weight: bold;
+}
+
+      .carbon_code > span:first-child {
+        flex-basis: 68%;
+        font-size: 14px;
+        padding: 10px;
+        text-align: center;
+        line-height: 16px;
+      }
+
+.carbon_code > span:last-child {
+    flex-basis: 32%;
+}
+
+.carbon_code > span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.chord-sticky {
+  position: sticky;
+  top: 90px;
+}
 
 
 
+@media (max-width: 767px) {
+  .chord-sticky {
+    position: static;
+  }
+
+    .carbon_code {
+        font-size: 13px;
+    }
+
+    .carbon_code .bold {
+        font-size: 16px;
+    }
+}
+</style>
+</div>
 
 
+<style>
+	.countdown {
+    margin-top: 20px;
+		font: normal normal 500 16px/22px Urbane;
+		color: #3B65EB;
+    overflow: hidden;
+	}
 
+  .countdown img {
+    width: 68%;
+    position: relative;
+    top: 10px;
+  }
 
+  @media (max-width: 767px) {
+    .countdown {
+      margin-top: 15px;
+      font-size: 14px;
+    }
+}
+</style>
 
-
-
-
-
-
-
-
-  <div style="" class="jdgm-widget jdgm-preview-badge jdgm-preview-badge--with-link jdgm--done-setup" data-id="7952778658008" data-template="manual-installation" data-auto-install="false">
-    <div style="display:none" class="jdgm-prev-badge" data-average-rating="4.74" data-number-of-reviews="153" data-number-of-questions="0"> <span class="jdgm-prev-badge__stars" data-score="4.74" tabindex="0" aria-label="4.74 stars" role="button"> <span class="jdgm-star jdgm--on"></span><span class="jdgm-star jdgm--on"></span><span class="jdgm-star jdgm--on"></span><span class="jdgm-star jdgm--on"></span><span class="jdgm-star jdgm--half"></span> </span> <span class="jdgm-prev-badge__text">153 reviews</span> </div>
-  </div>
-  
-  
-  
-  
-  </div></div>
+<div class="countdown">
+	<div>Easter sale expires Apr. 25</div>
+	<img src="http://i.countdownmail.com/2hsf4t.gif" border="0" alt="countdownmail.com"/>
+</div>
 
 </div><div data-pf-type="Custom.HTML" class="sc-AjmGg eCTxfx pf-18_">
   <div class="fenders-and-kickstand-mobile">
@@ -383,110 +463,7 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
                             {% assign key = option_name | replace: '"', '&quot;' %}
                         <div class="pf-option-swatches" data-swatch-type="radio" data-unique-id="{{option.position}}">{% for option_value in option.values %}{% capture option_id %}pf-sw{{swatches_count}}-{{key}}-{{option_value | remove: '"' | replace: ' ', '-' }}{% endcapture %}{% assign optionValue = option_value | replace: '"', '&quot;' %}<div data-option-name="{{key | default: formatted_option_name}}" class="pf-vs-radio"><input {% if option.selected_value == option_value %}checked{% endif %} type="radio" id="{{option_id}}" name="sw{{swatches_count}}-{{key}}" value="{{optionValue}}"/><label style="overflow:hidden" for="{{option_id}}"><span>{{option_value}}</span></label></div>{% endfor %}</div>{% endif %} {% endfor %}</div>{% endunless %}</div>
                         
-<div data-pf-type="ProductPrice2" class="sc-kTqLtj ihdlmX pf-26_"><div data-product-type="price" data-product-id="{{ product.id }}" data-product-price="true" data-pf-type="ProductPrice2Item" class="sc-haTkiu fcLDTw pf-27_">{{ product.variants[0].price | money }}</div></div><div data-pf-type="Custom.HTML" class="sc-AjmGg eCTxfx pf-29_">  <!-- Placement v2 -->
-<klarna-placement
-  data-key="credit-promotion-badge"
-  data-locale="de-DE"
-  data-purchase-amount=""
-></klarna-placement>
-<!-- end Placement -->
 
-</div><div data-pf-type="Custom.HTML" class="sc-AjmGg eCTxfx pf-30_">
-      <div class="carbon_code">
-        <span>€300 OFF with Easter Sale Code</span>
-        <span class="bold">OK300</span>
-    </div>
-
-
-<style>
-.carbon_code {
-    max-width: 480px;
-    background: url(https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230324-171240.png?v=1679649232) no-repeat;
-    height: 46px;
-    background-size: 100% 46px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    color: #fff;
-    font-size: 14px;
-    font-weight: 500;
-    box-shadow: 10px 10px 10px #6B869A1C;
-    margin-top: 20px;
-}
-
-.carbon_code .bold {
-    font-size: 17px;
-    font-weight: bold;
-}
-
-      .carbon_code > span:first-child {
-        flex-basis: 68%;
-        font-size: 14px;
-        padding: 10px;
-        text-align: center;
-        line-height: 16px;
-      }
-
-.carbon_code > span:last-child {
-    flex-basis: 32%;
-}
-
-.carbon_code > span {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.chord-sticky {
-  position: sticky;
-  top: 90px;
-}
-
-
-
-@media (max-width: 767px) {
-  .chord-sticky {
-    position: static;
-  }
-
-    .carbon_code {
-        font-size: 13px;
-    }
-
-    .carbon_code .bold {
-        font-size: 16px;
-    }
-}
-</style>
-</div>
-
-
-<style>
-	.countdown {
-    margin-top: 20px;
-		font: normal normal 500 16px/22px Urbane;
-		color: #3B65EB;
-    overflow: hidden;
-	}
-
-  .countdown img {
-    width: 68%;
-    position: relative;
-    top: 10px;
-  }
-
-  @media (max-width: 767px) {
-    .countdown {
-      margin-top: 15px;
-      font-size: 14px;
-    }
-}
-</style>
-
-<div class="countdown">
-	<div>Easter sale expires Apr. 25</div>
-	<img src="http://i.countdownmail.com/2hsf4t.gif" border="0" alt="countdownmail.com"/>
-</div>
 
 <div data-pf-type="Custom.HTML" class="sc-AjmGg eCTxfx pf-31_"><button
   data-product-id="{{ product.id }}"
