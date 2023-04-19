@@ -914,7 +914,7 @@ letter-spacing: 0px;
 						        {% capture option_name_count_id %}pf_option_name_{{i}}{% endcapture %}
                                 {% if compareKey == compareOptionName %}
 			                        {% case type %}
-	                {% when "label" %}<div class="pf-option-swatches" data-swatch-type="label" data-unique-id="{{option.position}}">{% for option_value in option.values %}{% capture option_id %}pf-sw{{swatches_count}}-{{key}}-{{option_value | remove: '"' | replace: ' ', '-' }}{% endcapture %}{% assign optionValue = option_value | replace: '"', '&quot;' %}<div data-option-name="{{key | default: formatted_option_name}}" class="pf-vs-color pf-vs-square"><div data-option-name="{{key}}" class="pf-vs-label"><input {% if option.selected_value == option_value %}checked{% endif %} type="radio" id="{{option_id}}" name="sw{{swatches_count}}-{{key}}" value="{{optionValue}}"/><label style="overflow:hidden" for="{{option_id}}"><span>{{option_value}}</span></label></div></div>{% endfor %}</div>{% when "dropdown" %}<div class="pf-option-swatches" data-swatch-type="dropdown" data-unique-id="{{option.position}}"><select data-option-name="{{key | default: formatted_option_name}}" class="pf-variant-select">{% for option_value in option.values %}<option {% if option.selected_value == option_value %}selected{% endif %} value="{{ option_value | replace: '"', '&quot;' }}">{{option_value}}</option>{% endfor %}</select></div>{% when "radio" %}<div class="pf-option-swatches" data-swatch-type="radio" data-unique-id="{{option.position}}">{% for option_value in option.values %}{% capture option_id %}pf-sw{{swatches_count}}-{{key}}-{{option_value | remove: '"' | replace: ' ', '-' }}{% endcapture %}{% assign optionValue = option_value | replace: '"', '&quot;' %}<div data-option-name="{{key | default: formatted_option_name}}" class="pf-vs-radio"><input {% if option.selected_value == option_value %}checked{% endif %} type="radio" id="{{option_id}}" name="sw{{swatches_count}}-{{key}}" value="{{optionValue}}"/><label style="overflow:hidden" for="{{option_id}}"><span>{{option_value}}</span></label></div>{% endfor %}</div>{% when "color" %}<div class="pf-option-swatches" data-swatch-type="color" data-unique-id="{{option.position}}">{% assign defined_values = swatches[option_name_count_id] | split: "; " %}{% for option_value in option.values %}{% capture option_id %}pf-sw{{swatches_count}}-{{key}}-{{option_value | remove: '"' | replace: ' ', '-' }}{% endcapture %}
+	                {% when "label" %}<div class="pf-option-swatches" data-swatch-type="label"  data-unique-id="{{option.position}}">{% for option_value in option.values %}{% capture option_id %}pf-sw{{swatches_count}}-{{key}}-{{option_value | remove: '"' | replace: ' ', '-' }}{% endcapture %}{% assign optionValue = option_value | replace: '"', '&quot;' %}<div data-option-name="{{key | default: formatted_option_name}}" class="pf-vs-color pf-vs-square"><div data-option-name="{{key}}" class="pf-vs-label"><input {% if option.selected_value == option_value %}checked{% endif %} type="radio" id="{{option_id}}" name="sw{{swatches_count}}-{{key}}" value="{{optionValue}}"/><label style="overflow:hidden" for="{{option_id}}"><span>{{option_value}}</span></label></div></div>{% endfor %}</div>{% when "dropdown" %}<div class="pf-option-swatches" data-swatch-type="dropdown" data-unique-id="{{option.position}}"><select data-option-name="{{key | default: formatted_option_name}}" class="pf-variant-select">{% for option_value in option.values %}<option {% if option.selected_value == option_value %}selected{% endif %} value="{{ option_value | replace: '"', '&quot;' }}">{{option_value}}</option>{% endfor %}</select></div>{% when "radio" %}<div class="pf-option-swatches" data-swatch-type="radio" data-unique-id="{{option.position}}">{% for option_value in option.values %}{% capture option_id %}pf-sw{{swatches_count}}-{{key}}-{{option_value | remove: '"' | replace: ' ', '-' }}{% endcapture %}{% assign optionValue = option_value | replace: '"', '&quot;' %}<div data-option-name="{{key | default: formatted_option_name}}" class="pf-vs-radio"><input {% if option.selected_value == option_value %}checked{% endif %} type="radio" id="{{option_id}}" name="sw{{swatches_count}}-{{key}}" value="{{optionValue}}"/><label style="overflow:hidden" for="{{option_id}}"><span>{{option_value}}</span></label></div>{% endfor %}</div>{% when "color" %}<div class="pf-option-swatches" data-swatch-type="color" data-unique-id="{{option.position}}">{% assign defined_values = swatches[option_name_count_id] | split: "; " %}{% for option_value in option.values %}{% capture option_id %}pf-sw{{swatches_count}}-{{key}}-{{option_value | remove: '"' | replace: ' ', '-' }}{% endcapture %}
 					        {%liquid
 						    assign pick_value = "#78859B"
 						    assign optionValue = option_value | replace: '"', '&quot;'
@@ -1596,6 +1596,10 @@ function testRideTrace(){
 }
 </script>
 <style>
+	#pay-content {
+		margin-top: -35px;
+	}
+
   #pay-content>.list-payment {
 	display: flex;
 	flex-wrap: wrap;
@@ -1709,6 +1713,10 @@ function testRideTrace(){
   }
   }
   @media screen and (max-width: 767px){
+	#pay-content {
+		margin-top: -20px;
+	}
+
 	.buyNowBtn {
 	  font: normal normal 600 15px/18px Proxima-Nova;
 	}
