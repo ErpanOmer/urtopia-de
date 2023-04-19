@@ -204,7 +204,16 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
 </div></div></div><div class="pf-c" style="--c-xs:12;--c-sm:5;--c-md:4;--c-lg:4"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-14_"><h1 data-product-type="title" data-product-id="{{ product.id }}" style="font-weight: 600;" data-pf-type="ProductTitle" class="sc-hgKiOD dlknTu pf-15_">{{ product.title }}</h1>
 <div data-pf-type="JudgeMe" style="margin-bottom: 12px;" class="sc-eZhRLC gtfCKx pf-16_ order-djs"><div class="pf-judme">{% render "judgeme_widgets", widget_type: "judgeme_preview_badge", jm_style: "", concierge_install: false, product: product %}</div></div>
 
-<div data-pf-type="ProductPrice2" class="sc-kTqLtj ihdlmX pf-26_"><div data-product-type="price" data-product-id="{{ product.id }}" data-product-price="true" data-pf-type="ProductPrice2Item" class="sc-haTkiu fcLDTw pf-27_">{{ product.variants[0].price | money }}</div></div><div data-pf-type="Custom.HTML" class="sc-AjmGg eCTxfx pf-29_">  <!-- Placement v2 -->
+<div data-pf-type="ProductPrice2" class="sc-kTqLtj ihdlmX pf-26_"><div data-product-type="price" data-product-id="{{ product.id }}" data-product-price="true" data-pf-type="ProductPrice2Item" class="sc-haTkiu fcLDTw pf-27_">{{ product.variants[0].price | money }}</div></div>
+
+<style>
+  .container {
+    padding: 0;
+    border: none;
+  }
+</style>
+
+<div data-pf-type="Custom.HTML" class="sc-AjmGg eCTxfx pf-29_">  <!-- Placement v2 -->
 <klarna-placement
   data-key="credit-promotion-badge"
   data-locale="de-DE"
