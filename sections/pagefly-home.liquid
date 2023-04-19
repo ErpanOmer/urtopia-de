@@ -724,10 +724,17 @@ new Swiper ('#section1-mobile', {
   #bike .swiper-slide .new {
     position: absolute;
     left: 0;
-    top: 0;
+    top: 20px;
     background-color: #263B55;
     padding: 10px 20px;
     font: normal normal 600 14px/14px urbane;
+    border-radius: 0px 20px 20px 0px;
+    background-image: linear-gradient(to bottom, #2E26EE, #2A60F4);
+  }
+
+  #bike .swiper-slide .big-new {
+    border-radius: 0px 50px 50px 0px;
+    line-height: 21px;
   }
 
   #bike .swiper-slide img {
@@ -876,9 +883,10 @@ new Swiper ('#section1-mobile', {
     }
 
     #bike .swiper-slide .new {
-        left: 20px;
-        font-weight: 500;
-    }
+      top: 15px;
+      font-weight: 500;
+      padding: 10px 15px;
+  }
 
     #bike .swiper-slide img {
         margin: 40px 0 15px;
