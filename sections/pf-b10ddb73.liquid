@@ -2784,16 +2784,19 @@ new Swiper('#section5', {
 </style></div></div></div></div></div></div>
  -->
 
-<style>
+ <style>
   .maksim {
-      display: flex;
-      flex-direction: row;
-      background-color: #F7F8FA;
-      margin: 150px 0;
+      margin: 120px 0;
   }
   
-  .maksim > div {
-      flex: 1;
+  .maksim .centeral-content {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .maksim .centeral-content > div {
+      width: 100%;
+      background-color: #F7F8FA;
   }
   
   .maksim .left {
@@ -2801,10 +2804,7 @@ new Swiper('#section5', {
       flex-direction: column;
       justify-content: center;
       align-items: flex-start;
-      max-width: 640px;
-      margin-left: auto;
-      padding-left: 30px;
-      box-sizing: content-box;
+      padding-left: 64px;
   }
   
   .maksim .left .u17Light_v2 {
@@ -2812,8 +2812,7 @@ new Swiper('#section5', {
   }
   
   .maksim .right {
-      max-width: 50vw;
-      background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230418-140144.jpg?v=1681797714');
+      background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/123.jpg?v=1681887510');
       background-position: center center;
       background-size: cover;
       background-repeat: no-repeat;
@@ -2822,8 +2821,12 @@ new Swiper('#section5', {
   
   @media (max-width: 767px) {
       .maksim {
-          flex-direction: column-reverse;
-          margin: 60px 0;
+        margin: 60px 0 20px;
+      }
+  
+      .maksim .centeral-content {
+          padding: 0;
+          grid-template-columns: 1fr;
       }
   
       .maksim .right {
@@ -2834,8 +2837,9 @@ new Swiper('#section5', {
   
       .maksim .left {
           margin: 0;
-          padding: 10vw 4%;
+          padding: 10% 4%;
           box-sizing: border-box;
+          order: 1;
       }
   
       .maksim .left .u42DemiBold_v2 {
@@ -2852,17 +2856,19 @@ new Swiper('#section5', {
       }
   }
   </style>
-<!-- 新增的板块
-<div class="maksim">
-  <div class="left">
-      <div class="u42DemiBold_v2">Chord X Maksim</div>
-      <div class="u17Light_v2">A passionate prodigy, and one of the world’s <br class="mobileHide"> fastest pianists. Mr. Mrvica inspired the design <br class="mobileHide"> the
-          philosophy of Chord, a crossover between <br class="mobileHide"> art and tech.</div>
-      <a href="" class="my-button my-button-black">Watch video</a>
-  </div>
-  <div class="right"></div>
+
+  <div class="maksim">
+    <div class="centeral-content">
+        <div class="left">
+            <div class="u42DemiBold_v2">Chord X Maksim</div>
+            <div class="u17Light_v2">A passionate prodigy, and one of the world’s <br> fastest pianists. Mr. Mrvica
+                inspired the design <br> the
+                philosophy of Chord, a crossover between <br> art and tech.</div>
+            <a onclick="playVideo('https://www.youtube.com/embed/gjYMDVGv_C4?autoplay=1&cc_load_policy=1')" class="my-button my-button-black">Watch video</a>
+        </div>
+        <div class="right"></div>
+    </div>
 </div>
--->
 
 
 <div data-section-id="pf-68d8" data-pf-type="Section" class="sc-fmciRz bheIgq pf-60_"><div class="sc-gjNHFA gwWIgj"><div class="sc-ezbkAF A-dmbO pf-61_ pf-r pf-c-cm pf-r-eh" style="--s-xs:0px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-md:12;--c-lg:12"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-62_"><div data-pf-type="Custom.HTML" class="sc-AjmGg eCTxfx pf-63_"><div id="section6">
