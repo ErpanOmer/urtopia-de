@@ -572,7 +572,7 @@ const subscribeHtml = `<div class="subscribe-container">
     const findLang = allOptions.find(tl => tl.dataset.value === code)
 
     if (active.dataset.value === code) {
-      return setTimeout(showMiniDialog, 5000, subscribeHtml)
+      return setTimeout(showEmailDialog, 5000, subscribeHtml)
     }
 
     setTimeout(() => {
@@ -622,7 +622,7 @@ const subscribeHtml = `<div class="subscribe-container">
       if (!notShowModal && !window.__SHOPIFY_CLI_ENV__ && !sessionStorage.getItem('selectLangDialog')) {
         document.querySelector('#selectLangModal').classList.add('open');
       } else {
-        setTimeout(showMiniDialog, 5000, subscribeHtml)
+        setTimeout(showEmailDialog, 5000, subscribeHtml)
       }
     }
 
@@ -652,7 +652,7 @@ const subscribeHtml = `<div class="subscribe-container">
     sessionStorage.setItem('selectLangDialog', 'selectLangDialog')
     // 如果是单纯的关闭，直接退出去
     if (isClose) {
-      return setTimeout(showMiniDialog, 5000, subscribeHtml)
+      return setTimeout(showEmailDialog, 5000, subscribeHtml)
     }
 
     var d = new Date();
