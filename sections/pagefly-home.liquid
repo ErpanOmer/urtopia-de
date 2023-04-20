@@ -742,10 +742,16 @@ new Swiper ('#section1-mobile', {
     margin: 40px 0 30px;
   }
 
+  #bike .swiper-slide .dots-and-price-and-size {
+    display: flex;
+    flex-direction: column;
+  }
+
 
   #bike .swiper-slide .dots-and-price {
     display: flex;
-    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
   }
 
   #bike .swiper-slide .dots {
@@ -932,8 +938,8 @@ new Swiper ('#section1-mobile', {
               <div class="name">Chord</div>
               <div class="info"> </div>
               <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/1_1_2x_c29f513e-3efa-4fb3-a74d-f83107bdd824.png?v=1677639590" alt="">
-              <div class="dots-and-price">
-                <div>
+              <div class="dots-and-price-and-size">
+                <div class="">
                   <div class="dots">
                     <div onclick="changeBike('/products/urtopia-chord-ebike?variant=43705718997208', 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/1_1_2x_c29f513e-3efa-4fb3-a74d-f83107bdd824.png?v=1677639590', this)" white class="active"></div>
                     <div onclick="changeBike('/products/urtopia-chord-ebike?variant=43705719029976', 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18397_2x_1f9c1e43-b341-430d-aa9d-bdc5432ac4d4.png?v=1677639396', this)" black></div>
