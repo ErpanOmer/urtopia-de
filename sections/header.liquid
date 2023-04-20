@@ -77,7 +77,7 @@
   .orderBtn{
     box-sizing:border-box;
     border: 1px solid #FD4B17;
-    border-radius: 15px;
+    border-radius: 20px;
     padding: 0.7rem 1.5rem;
     color:#FD4B17;
     margin: 0.25rem auto;
@@ -454,7 +454,7 @@
                     </details>
                   </header-menu>
                 {%- else -%}
-                  <a href="{{ link.url }}" class="header__menu-item header__menu-item list-menu__item link {% if link.url == "/products/urtopia-carbon-e-bike" or link.url == "/en/products/urtopia-carbon-e-bike" %}orderBtn{% endif %} {% if link.url == "/pages/test-ride" or link.url == "/en/pages/test-ride" %}testRideBtn{% endif %} link--text focus-inset"{% if link.current %} aria-current="page"{% endif %}>
+                  <a href="{{ link.url }}" class="header__menu-item header__menu-item list-menu__item link {% if link.url == "/collections/e-bikes" %}orderBtn{% endif %} {% if link.url == "/pages/test-ride" or link.url == "/en/pages/test-ride" %}testRideBtn{% endif %} link--text focus-inset"{% if link.current %} aria-current="page"{% endif %}>
                      <span {%- if link.current %} class="header__active-menu-item"{% endif %}>{{ link.title | escape }}</span>
                   </a>
                 {%- endif -%}
@@ -514,7 +514,7 @@
                     </details>
                   </header-menu>
                 {%- else -%}
-                  <a href="{{ link.url }}" class="header__menu-item header__menu-item list-menu__item  link link--text focus-inset"{% if link.current %} aria-current="page"{% endif %}>
+                  <a href="{{ link.url }}" class="header__menu-item header__menu-item list-menu__item {% if link.url == "/collections/e-bikes" %}orderBtn{% endif %} link link--text focus-inset"{% if link.current %} aria-current="page"{% endif %}>
                     <span {%- if link.current %} class="header__active-menu-item"{% endif %}>{{ link.title | escape }}</span>
                   </a>
                 {%- endif -%}
@@ -646,10 +646,10 @@
 
   <script>
     
-    if(window.location.href.indexOf("urtopia-carbon-e-bike")>0 && document.querySelector("#shopify-section-header > sticky-header > header > nav > ul  a.orderBtn")){
-    	document.querySelector("#shopify-section-header > sticky-header > header > nav > ul  a.orderBtn").style.backgroundColor="#FD4B17"
-        document.querySelector("#shopify-section-header > sticky-header > header > nav > ul  a.orderBtn .header__active-menu-item").style.color="#fff"
-    }
+    //if(window.location.href.indexOf("urtopia-carbon-e-bike")>0 && document.querySelector("#shopify-section-header > sticky-header > header > nav > ul  a.orderBtn")){
+    	//document.querySelector("#shopify-section-header > sticky-header > header > nav > ul  a.orderBtn").style.backgroundColor="#FD4B17"
+       // document.querySelector("#shopify-section-header > sticky-header > header > nav > ul  a.orderBtn .header__active-menu-item").style.color="#fff"
+   // }
   </script>  
 
 {% javascript %}

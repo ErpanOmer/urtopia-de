@@ -602,6 +602,17 @@ new Swiper('#banner', {
 
       temp = text
     }
+
+    document.body.clientWidth > 1024 && setInterval(() => {
+      const active = document.querySelector('#section1 .logos img[active]')
+      const next = active.nextElementSibling || document.querySelector('#section1 .logos img')
+
+      next.click()
+    }, 5000)
+
+
+
+
   </script></div></div></div></div></div></div><div data-section-id="pf-7952" data-pf-type="Section" class="sc-fmciRz bheIgq pf-11_ pf-lg-hide pf-md-hide"><div class="sc-gjNHFA gwWIgj"><div class="sc-ezbkAF A-dmbO pf-12_ pf-r pf-c-cm pf-r-eh" style="--s-xs:0px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-md:12;--c-lg:12"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-13_"><div data-pf-type="Custom.HTML" class="sc-AjmGg eCTxfx pf-14_"><style>
 
 #section1-mobile {
@@ -679,15 +690,19 @@ new Swiper('#banner', {
 
 <script setup>
 new Swiper ('#section1-mobile', {    
-        // slidesPerView: 1,
-        // spaceBetween: 30,
+        autoplay: {
+            disableOnInteraction: false,
+            pauseOnMouseEnter: false,
+            delay: 5000,
+        },
+        loop: true,
         effect: 'fade',
         fadeEffect:{
             crossFade: true
         },
         pagination: {el:'.swiper-pagination'},
-        speed: 300,
-  }) 
+        speed: 300
+      }) 
 
 </script></div></div></div></div></div></div><div data-section-id="pf-2881" data-pf-type="Section" class="sc-fmciRz bheIgq pf-15_"><div class="sc-gjNHFA gwWIgj"><div class="sc-ezbkAF A-dmbO pf-16_ pf-r pf-c-cm pf-r-eh" style="--s-xs:0px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-md:12;--c-lg:12"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-17_"><div data-pf-type="Custom.HTML" class="sc-AjmGg eCTxfx pf-18_"><style>
   #bike {
@@ -724,7 +739,7 @@ new Swiper ('#section1-mobile', {
   #bike .swiper-slide .new {
     position: absolute;
     left: 0;
-    top: 20px;
+    top: 0;
     background-color: #263B55;
     padding: 10px 20px;
     font: normal normal 600 14px/14px urbane;
@@ -740,6 +755,19 @@ new Swiper ('#section1-mobile', {
   #bike .swiper-slide img {
     width: 100%;
     margin: 40px 0 30px;
+    cursor: pointer;
+  }
+
+  #bike .swiper-slide .dots-and-price-and-size {
+    display: flex;
+    flex-direction: column;
+  }
+
+
+  #bike .swiper-slide .dots-and-price {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
 
   #bike .swiper-slide .dots {
@@ -751,7 +779,7 @@ new Swiper ('#section1-mobile', {
   #bike .swiper-slide .dots > div {
     width: 20px;
     height: 20px;
-    margin: 10px;
+    margin: 10px 15px 10px 0;
     border-radius: 50%;
     cursor: pointer;
 	 box-sizing: content-box;
@@ -879,11 +907,10 @@ new Swiper ('#section1-mobile', {
     }
 
     #bike .swiper-slide {
-        padding:0 20px;
+      padding: 5px 20px 0;
     }
 
     #bike .swiper-slide .new {
-      top: 15px;
       font-weight: 500;
       padding: 10px 15px;
   }
@@ -918,19 +945,43 @@ new Swiper ('#section1-mobile', {
 <link rel="preload" href="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18138_2x_de02f431-3e7d-48c0-b887-85eda46c2421.png?v=1677640174" as="image">
 <link rel="preload" href="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18150_2x_63ea456b-69c1-4d96-988f-efa931148bc1.png?v=1677640442" as="image">
 <link rel="preload" href="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18139_2x_ee2cf1ae-8693-42a3-ab99-d53ea78e2802.png?v=1677640511" as="image">
-<link rel="preload" href="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230306-115135.png?v=1678074731" as="image">
+<link rel="preload" href="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230420-182731.jpg?v=1681986478" as="image">
 
 <div id="bike">
         <div class="swiper-wrapper">
           <div class="swiper-slide">
+            <div class="name">Carbon 1</div>
+            <div class="info">Carbon Belt</div>
+              <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18298_2x_c9d66b5e-a0bb-4339-92db-e30b51859060.png?v=1677640298" alt="">
+              <div class="dots-and-price-and-size">
+                <div class="dots-and-price">
+                  <div class="dots">
+                    <div onclick="changeBike('/products/urtopia-carbon-e-bike?variant=42615025172696', 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18298_2x_c9d66b5e-a0bb-4339-92db-e30b51859060.png?v=1677640298', this)" orange class="active"></div>
+                    <div onclick="changeBike('/products/urtopia-carbon-e-bike?variant=42615025303768', 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18150_2x_63ea456b-69c1-4d96-988f-efa931148bc1.png?v=1677640442', this)" yellow></div>
+                    <div onclick="changeBike('/products/urtopia-carbon-e-bike?variant=42615025238232', 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18139_2x_ee2cf1ae-8693-42a3-ab99-d53ea78e2802.png?v=1677640511', this)" gray></div>
+                    <div onclick="changeBike('/products/urtopia-carbon-e-bike?variant=43608364417240', 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230420-182731.jpg?v=1681986478', this)" peach></div>
+                  </div>
+                  <div class="u24DemiBold_v2">{{ all_products['urtopia-carbon-e-bike'].price | money | slice: 0, 6 | replace: '.', '' }}</div>
+                </div>
+                <div class="size">Fit for 170cm - 195cm</div>
+              </div>
+              <a href="/products/urtopia-carbon-e-bike?variant=42615025172696" class="my-button my-button-white">Order now</a>
+              <div class="my-button my-button-black new big-new">300€ OFF +<br>3 Freebies</div>
+            </div>
+          <div class="swiper-slide">
               <div class="name">Chord</div>
               <div class="info"> </div>
               <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/1_1_2x_c29f513e-3efa-4fb3-a74d-f83107bdd824.png?v=1677639590" alt="">
-              <div class="dots">
-                <div onclick="changeBike('/products/urtopia-chord-ebike?variant=43705718997208', 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/1_1_2x_c29f513e-3efa-4fb3-a74d-f83107bdd824.png?v=1677639590', this)" white class="active"></div>
-                <div onclick="changeBike('/products/urtopia-chord-ebike?variant=43705719029976', 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18397_2x_1f9c1e43-b341-430d-aa9d-bdc5432ac4d4.png?v=1677639396', this)" black></div>
+              <div class="dots-and-price-and-size">
+                <div class="dots-and-price">
+                  <div class="dots">
+                    <div onclick="changeBike('/products/urtopia-chord-ebike?variant=43705718997208', 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/1_1_2x_c29f513e-3efa-4fb3-a74d-f83107bdd824.png?v=1677639590', this)" white class="active"></div>
+                    <div onclick="changeBike('/products/urtopia-chord-ebike?variant=43705719029976', 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18397_2x_1f9c1e43-b341-430d-aa9d-bdc5432ac4d4.png?v=1677639396', this)" black></div>
+                  </div>
+                  <div class="u24DemiBold_v2">{{ all_products['urtopia-chord-ebike'].price | money | slice: 0, 6 | replace: '.', '' }}</div>
+                </div>
+                <div class="size">Fit for 170cm - 195cm</div>
               </div>
-              <div class="size">Fit for 170cm - 195cm</div>
               <a class="my-button my-button-white" href="/products/urtopia-chord-ebike?variant=43705718997208">Order now</a>
               <div class="my-button my-button-black new">300€ OFF</div>
           </div>
@@ -938,11 +989,16 @@ new Swiper ('#section1-mobile', {
             <div class="name">Chord X</div>
             <div class="info"> </div>
               <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18400_2x_6789324f-33d2-4342-9519-0ee3bc943699.png?v=1677639718" alt="">
-              <div class="dots">
-                <div onclick="changeBike('/products/urtopia-chord-ebike?variant=43705719062744', 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18400_2x_6789324f-33d2-4342-9519-0ee3bc943699.png?v=1677639718', this)" white class="active"></div>
-                <div onclick="changeBike('/products/urtopia-chord-ebike?variant=43705719095512', 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/2.88_2x_4ebddfe8-c42e-4196-80e2-2f844bdec3dc.png?v=1677639816', this)" black></div>
+              <div class="dots-and-price-and-size">
+                <div class="dots-and-price">
+                  <div class="dots">
+                    <div onclick="changeBike('/products/urtopia-chord-ebike?variant=43705719062744', 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18400_2x_6789324f-33d2-4342-9519-0ee3bc943699.png?v=1677639718', this)" white class="active"></div>
+                    <div onclick="changeBike('/products/urtopia-chord-ebike?variant=43705719095512', 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/2.88_2x_4ebddfe8-c42e-4196-80e2-2f844bdec3dc.png?v=1677639816', this)" black></div>
+                  </div>
+                  <div class="u24DemiBold_v2">{{ all_products['urtopia-chord-ebike'].price | money | slice: 0, 6 | replace: '.', '' }}</div>
+                </div>
+                <div class="size">Fit for 160cm - 185cm</div>
               </div>
-              <div class="size">Fit for 160cm - 185cm</div>
               <a class="my-button my-button-white" href="/products/urtopia-chord-ebike?variant=43705719062744">Order now</a>
               <div class="my-button my-button-black new">300€ OFF</div>
             </div>
@@ -959,20 +1015,7 @@ new Swiper ('#section1-mobile', {
               <div class="size">Fit for 160cm - 195cm</div>
               <div class="my-button my-button-white">Order now</div>
           </div> -->
-          <div class="swiper-slide">
-            <div class="name">Carbon 1</div>
-            <div class="info">Carbon Belt</div>
-              <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18298_2x_c9d66b5e-a0bb-4339-92db-e30b51859060.png?v=1677640298" alt="">
-              <div class="dots">
-                <div onclick="changeBike('/products/urtopia-carbon-e-bike?variant=42615025172696', 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18298_2x_c9d66b5e-a0bb-4339-92db-e30b51859060.png?v=1677640298', this)" orange class="active"></div>
-                <div onclick="changeBike('/products/urtopia-carbon-e-bike?variant=42615025303768', 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18150_2x_63ea456b-69c1-4d96-988f-efa931148bc1.png?v=1677640442', this)" yellow></div>
-                <div onclick="changeBike('/products/urtopia-carbon-e-bike?variant=42615025238232', 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18139_2x_ee2cf1ae-8693-42a3-ab99-d53ea78e2802.png?v=1677640511', this)" gray></div>
-						<div onclick="changeBike('/products/urtopia-carbon-e-bike?variant=43608364417240', 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230306-115135.png?v=1678074731', this)" peach></div>
-              </div>
-              <div class="size">Fit for 170cm - 195cm</div>
-              <a href="/products/urtopia-carbon-e-bike?variant=42615025172696" class="my-button my-button-white">Order now</a>
-              <div class="my-button my-button-black new big-new">300€ OFF +<br>3 Freebies</div>
-            </div>
+          
       </div>
       <div class="swiper-button-prev"></div><!--左箭头。如果放置在swiper外面，需要自定义样式。-->
       <div class="swiper-button-next"></div><!--右箭头。如果放置在swiper外面，需要自定义样式。-->
@@ -986,7 +1029,7 @@ const isMobile = document.body.clientWidth < 768
 new Swiper ('#bike', {
         // direction: 'vertical',  
         slidesPerView: isMobile ? 1 : 3,
-        // spaceBetween: 30,
+        spaceBetween: isMobile ? 0 : 20,
         navigation: {
           nextEl: '.swiper-button-next',
           prevEl: '.swiper-button-prev',
@@ -1008,13 +1051,20 @@ new Swiper ('#bike', {
     active.className = ''
     target.className = 'active'
 
-    const img = parent.parentNode.querySelector('img')
+    const img = parent.parentNode.parentNode.parentNode.querySelector('img')
     img.src = imgUrl
 
     // 新增的代码
-    const a = parent.parentNode.querySelector('a')
+    const a = parent.parentNode.parentNode.parentNode.querySelector('a')
     a.href = gotoUrl
   }
+
+
+  $('#bike .swiper-slide > img').on('click', e => {
+    e.target.parentNode.querySelector('a').click()
+  })
+
+
 </script></div></div></div></div></div></div>
 
 
@@ -1104,6 +1154,66 @@ new Swiper ('#bike', {
     </div>
 </div>
 
+
+<div data-section-id="pf-8805" data-pf-type="Section" class="sc-fmciRz bheIgq pf-23_"><div class="sc-gjNHFA gwWIgj"><div class="sc-ezbkAF A-dmbO pf-24_ pf-r pf-c-cm pf-r-eh" style="--s-xs:0px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-md:12;--c-lg:12"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-25_"><div data-pf-type="Custom.HTML" class="sc-AjmGg eCTxfx pf-26_"><style>
+  #section3 {
+	height: 800px;
+	background: url("https://cdn.shopify.com/s/files/1/0583/5810/4213/files/img_v2_e35c9305-6b5b-4545-98c7-cb826aa79c4g_2x_c6e5837f-d3db-412c-90cb-80e5c97dc4c7.png?v=1677566638") center center/cover no-repeat;
+	color: #fff;
+	  display: flex;
+    color: #fff;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 15vw;
+  }
+  
+  #section3 h1 {
+	color: #fff;
+	margin: 0;
+  }
+  
+  #section3 .u20Light {
+	margin: 12px 0 30px;
+  max-width: 375px;
+  line-height: 1.4em;
+  }
+</style>
+
+<style>
+@media (max-width: 767px) {
+  #section3 {
+	height: 600px;
+	background: url("https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18371_2x_650a7a22-6c8e-4295-b1d2-a44c5759079a.png?v=1677662189") center center/cover no-repeat;
+	padding-left: 0;
+	align-items: center;
+	justify-content: unset;
+	padding-top: 5%;
+  }
+  
+  #section3 .u20Light {
+	  font-size: 14px;
+	  margin: -5px 0 15px;
+    text-align: center;
+    padding: 0 15px;
+	}
+	
+	#section3 h1 {
+	  font-size: 24px;
+	}
+ }
+  
+  	
+</style>
+
+<div id="section3">
+  <h1>Carbon 1</h1>
+  <div class="u20Light">Achieve your fitness goals while enjoying a fast and sporty ride in style </div>
+  <div>
+	<a class="my-button" href="/pages/e-bike">Learn more</a>
+  </div>
+</div>
+</div></div></div></div></div></div>
+
 <div data-section-id="pf-5f7c" data-pf-type="Section" class="sc-fmciRz bheIgq pf-19_"><div class="sc-gjNHFA gwWIgj"><div class="sc-ezbkAF A-dmbO pf-20_ pf-r pf-c-cm pf-r-eh" style="--s-xs:0px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-md:12;--c-lg:12"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-21_"><div data-pf-type="Custom.HTML" class="sc-AjmGg eCTxfx pf-22_"><style>
   #section2 {
 	height: 800px;
@@ -1123,6 +1233,8 @@ new Swiper ('#bike', {
   
   #section2 .u20Light {
 	margin: 12px 0 30px;
+  max-width: 375px;
+  line-height: 1.4em;
   }
 </style>
 
@@ -1141,6 +1253,8 @@ new Swiper ('#bike', {
   #section2 .u20Light {
 	  font-size: 14px;
 	  margin: -5px 0 15px;
+    text-align: center;
+    padding: 0 15px;
 	}
 	
 	#section2 h1 {
@@ -1151,67 +1265,16 @@ new Swiper ('#bike', {
 
 <div id="section2">
   <h1>Chord</h1>
-  <div class="u20Light">In Tune with Your Ride</div>
+  <div class="u20Light">Power up your commute and extend your leisurely daily ride</div>
   <div>
 	 <a class="my-button" href="/pages/lightweight-commuter-ebike-urtopia-chord">Learn more</a>
   </div>
 </div>
 
 
-</div></div></div></div></div></div><div data-section-id="pf-8805" data-pf-type="Section" class="sc-fmciRz bheIgq pf-23_"><div class="sc-gjNHFA gwWIgj"><div class="sc-ezbkAF A-dmbO pf-24_ pf-r pf-c-cm pf-r-eh" style="--s-xs:0px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-md:12;--c-lg:12"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-25_"><div data-pf-type="Custom.HTML" class="sc-AjmGg eCTxfx pf-26_"><style>
-  #section3 {
-	height: 800px;
-	background: url("https://cdn.shopify.com/s/files/1/0583/5810/4213/files/img_v2_e35c9305-6b5b-4545-98c7-cb826aa79c4g_2x_c6e5837f-d3db-412c-90cb-80e5c97dc4c7.png?v=1677566638") center center/cover no-repeat;
-	color: #fff;
-	  display: flex;
-    color: #fff;
-    flex-direction: column;
-    justify-content: center;
-    padding-left: 15vw;
-  }
-  
-  #section3 h1 {
-	color: #fff;
-	margin: 0;
-  }
-  
-  #section3 .u20Light {
-	margin: 12px 0 30px;
-  }
-</style>
+</div></div></div></div></div></div>
 
-<style>
-@media (max-width: 767px) {
-  #section3 {
-	height: 600px;
-	background: url("https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18371_2x_650a7a22-6c8e-4295-b1d2-a44c5759079a.png?v=1677662189") center center/cover no-repeat;
-	padding-left: 0;
-	align-items: center;
-	justify-content: unset;
-	padding-top: 5%;
-  }
-  
-  #section3 .u20Light {
-	  font-size: 14px;
-	  margin: -5px 0 15px;
-	}
-	
-	#section3 h1 {
-	  font-size: 24px;
-	}
- }
-  
-  	
-</style>
-
-<div id="section3">
-  <h1>Carbon 1</h1>
-  <div class="u20Light">Sporty and Futuristic</div>
-  <div>
-	<a class="my-button" href="/pages/e-bike">Learn more</a>
-  </div>
-</div>
-</div></div></div></div></div></div><div data-section-id="pf-e926" data-pf-type="Section" class="sc-fmciRz bheIgq pf-27_"><div class="sc-gjNHFA gwWIgj"><div class="sc-ezbkAF A-dmbO pf-28_ pf-r pf-c-cm pf-r-eh" style="--s-xs:0px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-md:12;--c-lg:12"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-29_"><div data-pf-type="Custom.HTML" class="sc-AjmGg eCTxfx pf-30_"><style>
+<div data-section-id="pf-e926" data-pf-type="Section" class="sc-fmciRz bheIgq pf-27_"><div class="sc-gjNHFA gwWIgj"><div class="sc-ezbkAF A-dmbO pf-28_ pf-r pf-c-cm pf-r-eh" style="--s-xs:0px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-md:12;--c-lg:12"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-29_"><div data-pf-type="Custom.HTML" class="sc-AjmGg eCTxfx pf-30_"><style>
 
   #section4 {
     max-width: 1280px;
@@ -1349,8 +1412,8 @@ new Swiper ('#bike', {
 </div></div></div></div></div></div><div data-section-id="pf-d154" data-pf-type="Section" class="sc-fmciRz bheIgq pf-31_"><div class="sc-gjNHFA gwWIgj"><div class="sc-ezbkAF A-dmbO pf-32_ pf-r pf-c-cm pf-r-eh" style="--s-xs:0px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-md:12;--c-lg:12"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-33_"><div data-pf-type="Custom.HTML" class="sc-AjmGg eCTxfx pf-34_"><div id="section5">
   <div class="info">
 	  <h1>Test Ride</h1>
-	  <div class="u20Light">wait no longer, come and enjoy a fun ride!</div>
-	  <a class="my-button" href="https://newurtopia.de/pages/test-ride">Test ride</a>
+	  <div class="u20Light">Experience the perfect ride – try it and you'll know!</div>
+	  <a class="my-button" href="https://newurtopia.de/pages/test-ride">Book Now</a>
   </div>
 </div>
 
