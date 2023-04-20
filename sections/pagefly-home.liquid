@@ -602,8 +602,8 @@ new Swiper('#banner', {
 
       temp = text
     }
-    
-    setInterval(() => {
+
+    document.body.clientWidth > 1024 && setInterval(() => {
       const active = document.querySelector('#section1 .logos img[active]')
       const next = active.nextElementSibling || document.querySelector('#section1 .logos img')
 
