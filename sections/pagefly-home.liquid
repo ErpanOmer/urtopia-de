@@ -602,18 +602,12 @@ new Swiper('#banner', {
 
       temp = text
     }
-
-    const images = document.querySelectorAll('#section1 .logos img')
+    
     setInterval(() => {
       const active = document.querySelector('#section1 .logos img[active]')
-      const next = active.nextElementSibling
+      const next = active.nextElementSibling || document.querySelector('#section1 .logos img')
 
-      if (next) {
-        next.click()
-      } else {
-        document.querySelector('#section1 .logos img').click()
-      }
-
+      next.click()
     }, 5000)
 
 
