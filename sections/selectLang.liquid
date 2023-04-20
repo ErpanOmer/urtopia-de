@@ -641,7 +641,7 @@ const subscribeHtml = `<div class="subscribe-container">
       document.querySelector('#curentLang').setAttribute('data_code', recommendCode);
       document.querySelector('#curentLang').innerText = recommendVal;
 
-      if (!notShowModal && !window.__SHOPIFY_CLI_ENV__ && !sessionStorage.getItem('selectLangDialog')) {
+      if (true) {
         document.querySelector('#selectLangModal').classList.add('open');
       } else {
         setTimeout(showEmailDialog, 5000, subscribeHtml)
