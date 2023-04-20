@@ -332,7 +332,7 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
                   <div onclick="changeBike('/products/urtopia-carbon-e-bike?variant=42615025238232', 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18139_2x_ee2cf1ae-8693-42a3-ab99-d53ea78e2802.png?v=1677640511', this)" gray></div>
                   <div onclick="changeBike('/products/urtopia-carbon-e-bike?variant=43608364417240', 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230420-182731.jpg?v=1681986478', this)" peach></div>
                 </div>
-                <div class="u24DemiBold_v2">€3299</div>
+                <div class="u24DemiBold_v2">{{ all_products['urtopia-carbon-e-bike'].price | money | slice: 0, 6 | replace: '.', '' }}</div>
               </div>
               <div class="size">Fit for 170cm - 195cm</div>
             </div>
