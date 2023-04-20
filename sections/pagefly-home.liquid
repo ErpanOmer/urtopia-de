@@ -480,7 +480,6 @@ new Swiper('#banner', {
 </script>
 </div></div></div></div></div></div><div data-section-id="pf-636d" data-pf-type="Section" class="sc-fmciRz bheIgq pf-7_ pf-sm-hide pf-hide"><div class="sc-gjNHFA gwWIgj"><div class="sc-ezbkAF A-dmbO pf-8_ pf-r pf-c-cm pf-r-eh" style="--s-xs:0px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-md:12;--c-lg:12"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-9_"><div data-pf-type="Custom.HTML" class="sc-AjmGg eCTxfx pf-10_">
   <div id="section1">
-    {{ all_products['urtopia-carbon-e-bike'].price | money }}
     <div class="texts">
       <div>“It's incredibly fun to ride”</div>
       <div></div>
@@ -962,7 +961,7 @@ new Swiper ('#section1-mobile', {
                     <div onclick="changeBike('/products/urtopia-carbon-e-bike?variant=42615025238232', 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18139_2x_ee2cf1ae-8693-42a3-ab99-d53ea78e2802.png?v=1677640511', this)" gray></div>
                     <div onclick="changeBike('/products/urtopia-carbon-e-bike?variant=43608364417240', 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230420-182731.jpg?v=1681986478', this)" peach></div>
                   </div>
-                  <div class="u24DemiBold_v2">€3299</div>
+                  <div class="u24DemiBold_v2">{{ all_products['urtopia-carbon-e-bike'].price | money }}</div>
                 </div>
                 <div class="size">Fit for 170cm - 195cm</div>
               </div>
