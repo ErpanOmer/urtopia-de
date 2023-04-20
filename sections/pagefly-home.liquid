@@ -608,6 +608,10 @@ new Swiper('#banner', {
       const active = document.querySelector('#section1 .logos img[active]')
       const next = active.nextElementSibling
 
+      if (next) {
+        next.click()
+      }
+
     }, 5000)
 
 
