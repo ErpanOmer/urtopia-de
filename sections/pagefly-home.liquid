@@ -1025,7 +1025,7 @@ new Swiper ('#bike', {
     active.className = ''
     target.className = 'active'
 
-    const img = parent.parentNode.querySelector('img')
+    const img = parent.parentNode.parentNode.parentNode.querySelector('img')
     img.src = imgUrl
 
     // 新增的代码
