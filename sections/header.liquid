@@ -454,7 +454,7 @@
                     </details>
                   </header-menu>
                 {%- else -%}
-                  <a href="{{ link.url }}" class="header__menu-item header__menu-item list-menu__item link {% if link.url == "/products/urtopia-carbon-e-bike" or link.url == "/en/products/urtopia-carbon-e-bike" %}orderBtn{% endif %} {% if link.url == "/pages/test-ride" or link.url == "/en/pages/test-ride" %}testRideBtn{% endif %} link--text focus-inset"{% if link.current %} aria-current="page"{% endif %}>
+                  <a href="{{ link.url }}" class="header__menu-item header__menu-item list-menu__item link {% if link.title == "ORDER NOW" %}orderBtn{% endif %} {% if link.url == "/pages/test-ride" or link.url == "/en/pages/test-ride" %}testRideBtn{% endif %} link--text focus-inset"{% if link.current %} aria-current="page"{% endif %}>
                      <span {%- if link.current %} class="header__active-menu-item"{% endif %}>{{ link.title | escape }}</span>
                   </a>
                 {%- endif -%}
