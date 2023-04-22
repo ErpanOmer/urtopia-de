@@ -392,5 +392,10 @@
         $(`select[name="bike_size"]`).val(urlSearch.bike_size)
     }
 
+    // 如果有 accessories 存在
+    if (urlSearch.accessories) {
+        $(`select[name="accessories"]`).val(urlSearch.accessories)
+    }
+
     console.log('urlSearch', urlSearch)
 </script>
