@@ -1925,7 +1925,10 @@ function testRideTrace(){
 	} */
 
 	console.log('productQuantity', productQuantity)
-	console.log('formData', formData)
+
+	// 当前variant_id
+	const variant_id = document.querySelector('input[name="id"]').value
+	console.log('variant_id', variant_id)
 	
 	// 2023-3-10 更改
 	// $(".tip-b").html("Free delivery <span>within 4 days</span><br><br>Contact us for bicycle Leasing services <a href='/pages/contactus'>surpport@newurtopia.com</a>");
