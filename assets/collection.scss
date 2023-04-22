@@ -57,7 +57,7 @@
                                 border: none;
 
                                 &::after {
-                                    content: unset;
+                                    box-shadow: unset;
                                 }
 
                                 &:focus-visible {
