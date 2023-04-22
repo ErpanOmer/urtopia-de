@@ -394,6 +394,7 @@
       const bike_size = options[1].innerText.match(/\((.+)\)/g)[0].slice(1, -1)
       console.log('bike_style', bike_style)
       console.log('bike_size', bike_size)
+      window.location.href= `/pages/jobrad?bike_style=${bike_style}&bike_size=${bike_size}&accessories=${accessories.join()}#forms`
   })
 
   
