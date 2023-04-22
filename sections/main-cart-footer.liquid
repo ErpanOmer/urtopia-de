@@ -379,9 +379,13 @@
 
         // 排除掉 chord
         if (!title.includes('Chord') && title !== 'Urtopia Carbon 1') {
-          console.log(title)
+          return title.split('-').shift()
         }
-      })
+
+        return null
+      }).filter(Boolean)
+
+      console.log(accessories)
 
       const bike_style = options[0].innerText.slice(7)
       const bike_size = options[1].innerText.match(/\((.+)\)/g)[0].slice(1, -1)
