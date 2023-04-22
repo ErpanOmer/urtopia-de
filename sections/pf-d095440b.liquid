@@ -1937,7 +1937,7 @@ function testRideTrace(){
 
 	if (Number(productQuantity[variant_id]) <= 0) {
 	  $(".addToCartBtn")[0].disabled = true;
-	  $(".addToCartBtn span").html("Nicht auf Lager");
+	  $(".addToCartBtn span").html("Sold Out");
 	  $(".buyNowBtn").addClass("soldout");
 
 	  
@@ -3824,46 +3824,6 @@ window.onload=function(){
   },6000)  
 }
 /*变速器逻辑*/</script>
-
-<script>
-	const observerElement = (selector, callback) => {
-		// 观察器的配置（需要观察什么变动）
-		const config = { childList: true };
-		const targetNode = document.querySelector(selector)
-		return new Promise(resolve => {
-			// 创建一个观察器实例并传入回调函数
-			(new MutationObserver((mutationsList, observer) => {
-				// 是否回调函数，如果有需要持续监听，如果没有就中断
-				if (callback) {
-					callback(mutationsList)
-				} else {
-					observer.disconnect()
-				}
-				resolve(targetNode)
-			})).observe(targetNode, config);
-		})
-	}
-
-	observerElement('.pf-19_', console.log).then(() => {
-		console.log('ssssss')
-
-		const changeButton = () => {
-			const button = document.querySelector('.addToCartBtn:not(.js-fake-add-to-cart)')
-			const text = document.querySelector('.addToCartBtn:not(.js-fake-add-to-cart) .addToCartText').innerText
-			const addToCard = document.querySelector('.addToCartBtn.js-fake-add-to-cart')
-
-
-			console.log('button', button)
-
-			addToCard.disabled = button.disabled
-			addToCard.querySelector('.addToCartText').innerText = button.disabled ? 'Sold Out' : 'Add to Cart'
-		}
-
-		observerElement('.addToCartBtn:not(.js-fake-add-to-cart) .addToCartText', changeButton)
-		// 默认先执行
-		changeButton()
-	})
-</script>
 {% render 'carbon-one-extra-code' %}
 
 {% schema %}
