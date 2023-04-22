@@ -1933,7 +1933,7 @@ function testRideTrace(){
 	// 2023-3-10 更改
 	// $(".tip-b").html("Free delivery <span>within 4 days</span><br><br>Contact us for bicycle Leasing services <a href='/pages/contactus'>surpport@newurtopia.com</a>");
 
-	if (productQuantity[formData.get("id")] <= 0) {
+	if (Number(productQuantity[formData.get("id")]) <= 0) {
 	  $(".addToCartBtn")[0].disabled = true;
 	  $(".addToCartBtn span").html("Nicht auf Lager");
 	  $(".buyNowBtn").addClass("soldout");
