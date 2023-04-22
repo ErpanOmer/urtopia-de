@@ -382,5 +382,15 @@
         urlSearch[k] = v
     }
 
+    // 如果bike_style 存在
+    if (urlSearch.bike_style) {
+
+    }
+
+    // 如果bike_size 存在
+    if (urlSearch.bike_size) {
+        $(`select[name="bike_size"]`).val(urlSearch.bike_size)
+    }
+
     console.log('urlSearch', urlSearch)
 </script>
