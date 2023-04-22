@@ -1890,7 +1890,7 @@ function testRideTrace(){
   });
   $("#urtopiaEbike input").change(function () {
 
-	console.log('productQuantity', 11111111)
+	console.log('productQuantity',333 )
 
 	setTimeout(() => {
 	  chekoutInventory();
@@ -1923,6 +1923,8 @@ function testRideTrace(){
 		"Ships within <span>3 business days</span> from local warehouse."
 	  );
 	} */
+
+	console.log('productQuantity', productQuantity)
 	
 	// 2023-3-10 更改
 	// $(".tip-b").html("Free delivery <span>within 4 days</span><br><br>Contact us for bicycle Leasing services <a href='/pages/contactus'>surpport@newurtopia.com</a>");
@@ -1932,7 +1934,7 @@ function testRideTrace(){
 	  $(".addToCartBtn span").html("Nicht auf Lager");
 	  $(".buyNowBtn").addClass("soldout");
 
-	  console.log('productQuantity', productQuantity)
+	  
 
 	} else {
 	  $(".addToCartBtn")[0].disabled = false;
