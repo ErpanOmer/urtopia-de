@@ -372,4 +372,15 @@
 
     // 记录来过这个页面
     sessionStorage.isPreviewJobrad = 'isPreviewJobrad'
+
+
+    // url 处理
+    const urlSearch = {}
+    const url = new URL(location.href)
+
+    for (const [k, v] of url.searchParams.entries()) {
+        urlSearch[k] = v
+    }
+
+    console.log('urlSearch', urlSearch)
 </script>
