@@ -389,6 +389,12 @@
 
     // 如果bike_size 存在
     if (urlSearch.bike_size) {
+        if (urlSearch.bike_size.includes('170-185')) {
+            urlSearch.bike_size = 'M - ' + urlSearch.bike_size
+        } else {
+            urlSearch.bike_size = 'L - ' + urlSearch.bike_size
+        }
+
         $(`select[name="bike_size"]`).val(urlSearch.bike_size)
     }
 
