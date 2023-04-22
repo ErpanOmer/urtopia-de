@@ -1577,6 +1577,14 @@ function addAllToCart(parse) {
 }
   
 function testRideTrace(){
+	const search = ''
+
+	const bike_style = $('.size-text')[0].innerText.slice(2)
+	const bike_size = $('.size-text')[1].innerText.slice(2)
+
+	window.location.href= `/pages/jobrad?bike_style=${bike_style}&bike_size=${bike_size}#forms`
+
+
 	/*
 	let body = {
 	trace_name: "de-testride-pc"
