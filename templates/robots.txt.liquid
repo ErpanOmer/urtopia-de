@@ -1,0 +1,10 @@
+{% for group in robots.default_groups %}
+  {{- group.user_agent -}}
+
+  {% for rule in group.rules %}
+    {{- rule -}}
+  {% endfor %}
+{{'Sitemap: https://newurtopia.de/sitemap.xml'}}
+{% endfor %} 
+
+

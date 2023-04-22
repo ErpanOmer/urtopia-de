@@ -1225,7 +1225,7 @@ letter-spacing: 0px;
   </button>
   <!--<button  data-checkout="same" data-soldout="Not available" data-adding="Processing" data-added="Enjoy" type="button" data-pf-type="ProductCK" class="buyNowBtn"  onclick="addAllToCart('buynow')"><i class="fa fa-spinner fa-spin"></i><span data-pf-type="Text"  >Buy Now</span></button>-->
   <div onclick="testRideTrace()" class="orderTestRideBtn">
-	<span style="cursor:pointer;">Book a Test Ride</span>
+	<span style="cursor:pointer;">Lease with Jobrad</span>
   </div>
 
     <div class="tip" id="shippment">
@@ -1577,7 +1577,16 @@ function addAllToCart(parse) {
 }
   
 function testRideTrace(){
-  let body = {
+	const search = ''
+
+	const bike_style = $('.size-text')[0].innerText.slice(2)
+	const bike_size = $('.size-text')[1].innerText.slice(2)
+
+	window.location.href= `/pages/jobrad?bike_style=${bike_style}&bike_size=${bike_size}&utm_source=order_page#forms`
+
+
+	/*
+	let body = {
 	trace_name: "de-testride-pc"
   }	
   if(window.innerWidth <=768){
@@ -1593,6 +1602,7 @@ function testRideTrace(){
 	.then(res=>{
 	 window.location.href="/pages/test-ride"
   })
+  */
 }
 </script>
 <style>
@@ -1910,13 +1920,16 @@ function testRideTrace(){
 		"Ships within <span>3 business days</span> from local warehouse."
 	  );
 	} */
+
+	// 当前variant_id
+	const variant_id = document.querySelector('input[name="id"]').value
 	
 	// 2023-3-10 更改
 	// $(".tip-b").html("Free delivery <span>within 4 days</span><br><br>Contact us for bicycle Leasing services <a href='/pages/contactus'>surpport@newurtopia.com</a>");
 
-	if (productQuantity[formData.get("id")] <= 0) {
+	if (Number(productQuantity[variant_id]) <= 0) {
 	  $(".addToCartBtn")[0].disabled = true;
-	  $(".addToCartBtn span").html("Nicht auf Lager");
+	  $(".addToCartBtn span").html("Sold Out");
 	  $(".buyNowBtn").addClass("soldout");
 	} else {
 	  $(".addToCartBtn")[0].disabled = false;
@@ -3800,41 +3813,6 @@ window.onload=function(){
   },6000)  
 }
 /*变速器逻辑*/</script>
-
-<script>
-	const observerElement = (selector, callback) => {
-		// 观察器的配置（需要观察什么变动）
-		const config = { childList: true };
-		const targetNode = document.querySelector(selector)
-		return new Promise(resolve => {
-			// 创建一个观察器实例并传入回调函数
-			(new MutationObserver((mutationsList, observer) => {
-				// 是否回调函数，如果有需要持续监听，如果没有就中断
-				if (callback) {
-					callback(mutationsList)
-				} else {
-					observer.disconnect()
-				}
-				resolve(targetNode)
-			})).observe(targetNode, config);
-		})
-	}
-
-	observerElement('#pay-content').then(() => {
-		const changeButton = () => {
-			const button = document.querySelector('.addToCartBtn:not(.js-fake-add-to-cart)')
-			const text = document.querySelector('.addToCartBtn:not(.js-fake-add-to-cart) .addToCartText').innerText
-			const addToCard = document.querySelector('.addToCartBtn.js-fake-add-to-cart')
-
-			addToCard.disabled = button.disabled
-			addToCard.querySelector('.addToCartText').innerText = button.disabled ? 'Sold Out' : 'Add to Cart'
-		}
-
-		observerElement('.addToCartBtn:not(.js-fake-add-to-cart) .addToCartText', changeButton)
-		// 默认先执行
-		changeButton()
-	})
-</script>
 {% render 'carbon-one-extra-code' %}
 
 {% schema %}

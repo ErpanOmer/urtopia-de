@@ -7,8 +7,8 @@
                     <img class="pcHide"
                         src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/jr-color_2x_d6424f5f-f299-46a2-8f78-ffd7816f157e.jpg?v=1679970881"
                         alt="">
-                    <span class="u48DemiBold">JobRad – <br> lease company e-bikes <br class="mobileHide">from Urtopia</span>
-                    <span class="u24Medium">Orders via JobRad also benefit from our Easter promotion: 300 euros and free
+                    <span class="u48DemiBold_v2">JobRad – <br> lease company e-bikes <br class="mobileHide">from Urtopia</span>
+                    <span class="u24Medium_v2">Orders via JobRad also benefit from our Easter promotion: 300 euros and free
                         accessories. The
                         discount
                         will be deducted at checkout. You will receive the accessories separately. Act quickly! <br>(Ends on 25th of April)</span>
@@ -372,4 +372,36 @@
 
     // 记录来过这个页面
     sessionStorage.isPreviewJobrad = 'isPreviewJobrad'
+
+
+    // url 处理
+    const urlSearch = {}
+    const urlInstance = new URL(location.href)
+
+    for (const [k, v] of urlInstance.searchParams.entries()) {
+        urlSearch[k] = v
+    }
+
+    // 如果bike_style 存在
+    if (urlSearch.bike_style) {
+        $(`select[name="bike_style"]`).val(urlSearch.bike_style)
+    }
+
+    // 如果bike_size 存在
+    if (urlSearch.bike_size) {
+        if (urlSearch.bike_size.includes('170-185')) {
+            urlSearch.bike_size = 'M - ' + urlSearch.bike_size
+        } else {
+            urlSearch.bike_size = 'L - ' + urlSearch.bike_size
+        }
+
+        $(`select[name="bike_size"]`).val(urlSearch.bike_size)
+    }
+
+    // 如果有 accessories 存在
+    if (urlSearch.accessories) {
+        $(`input[name="accessories"]`).val(urlSearch.accessories)
+    }
+
+    console.log('urlSearch', urlSearch)
 </script>

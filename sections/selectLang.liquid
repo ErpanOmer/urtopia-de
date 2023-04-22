@@ -798,7 +798,6 @@ const subscribeHtml = `<div class="subscribe-container">
       return
     }
     const template = `<div class="video-box">
-      <div style="position: relative">
         <iframe
           width="${document.body.clientWidth > 768 ? 840 : document.body.clientWidth * 0.84 }"
           height="${document.body.clientWidth > 768 ? 472 : 'auto'}"
@@ -809,7 +808,6 @@ const subscribeHtml = `<div class="subscribe-container">
           allowfullscreen
         ></iframe>
         <span class="close" onclick="closeMiniDialog()">x</span>
-      </div>
     </div>`
     showMiniDialog(template)
   }
