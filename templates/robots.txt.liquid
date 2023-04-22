@@ -1,4 +1,7 @@
-{% comment %} {% for group in robots.default_groups %}
+{% comment %} 
+# defult robots.txt
+
+{% for group in robots.default_groups %}
   {{- group.user_agent -}}
 
   {% for rule in group.rules %}
@@ -8,5 +11,7 @@
   {%- if group.sitemap != blank -%}
     {{ group.sitemap }}
   {%- endif -%}
-{% endfor %} {% endcomment %}
+{% endfor %} 
+
+{% endcomment %}
 
