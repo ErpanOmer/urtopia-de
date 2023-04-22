@@ -1,4 +1,4 @@
-{% for group in robots.default_groups %}
+{% comment %} {% for group in robots.default_groups %}
   {{- group.user_agent -}}
 
   {% for rule in group.rules %}
@@ -8,4 +8,4 @@
   {%- if group.sitemap != blank -%}
     {{ group.sitemap }}
   {%- endif -%}
-{% endfor %}
+{% endfor %} {% endcomment %}
