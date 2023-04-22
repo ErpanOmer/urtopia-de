@@ -71,8 +71,9 @@
                                 }
                             }
 
-                            &:after {
-                                box-shadow: unset;
+                            &::after,
+                            &::before {
+                                content: unset;
                             }
 
                             &:focus-within {
