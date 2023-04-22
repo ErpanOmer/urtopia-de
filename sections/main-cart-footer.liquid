@@ -379,7 +379,7 @@
 
         // 排除掉 chord
         if (!title.includes('Chord') && title !== 'Urtopia Carbon 1') {
-          return title.split('-').shift()
+          return title.split('-').shift().trim()
         }
 
         return null
