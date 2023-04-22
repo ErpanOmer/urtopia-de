@@ -373,7 +373,7 @@
   $('.cart__footer .my-button-black').on('click', e => {
       const carbon = document.querySelector('.cart-items [data-line-item-product-id="7633738727640"]')
       const options = carbon.querySelectorAll('.cart-item__details > dl .product-option')
-      const accessories = Array.from(document.querySelectorAll('.cart-items .cart-item__details > a')).map(a => {
+      let accessories = Array.from(document.querySelectorAll('.cart-items .cart-item__details > a')).map(a => {
 
         const title = a.innerText
 
@@ -384,6 +384,9 @@
 
         return null
       }).filter(Boolean)
+
+      // 去重
+      accessories = Array.from(new Set(accessories))
 
       console.log(accessories)
 
