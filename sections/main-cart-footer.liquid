@@ -374,8 +374,8 @@
       const carbon = document.querySelector('.cart-items [data-line-item-product-id="7633738727640"]')
       const options = carbon.querySelectorAll('.cart-item__details > dl .product-option')
 
-      const bike_style = options[0].innerText
-      const bike_size = options[1].innerText
+      const bike_style = options[0].innerText.slice(7)
+      const bike_size = options[1].innerText.match(/\(([^)]*)\)/)[0]
       console.log('bike_style', bike_style)
       console.log('bike_size', bike_size)
   })
