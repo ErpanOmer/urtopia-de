@@ -4,10 +4,7 @@
   {% for rule in group.rules %}
     {{- rule -}}
   {% endfor %}
-
-  {%- if group.sitemap != blank -%}
-    {{ 'Sitemap: https://newurtopia.de/sitemap.xml' }}
-  {%- endif -%}
+  {{ 'Sitemap: https://newurtopia.de/sitemap.xml' }}
 {% endfor %} 
 
 
