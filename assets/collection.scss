@@ -56,6 +56,10 @@
                                 font: normal normal 600 20px/1.4em urbane;
                                 border: none;
 
+                                &::before {
+                                    content: unset;
+                                }
+
                                 &:focus-visible {
                                     outline-offset: unset;
                                     box-shadow: unset;
