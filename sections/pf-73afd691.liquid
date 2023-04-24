@@ -400,7 +400,11 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
                 <div class="size">Fit for 160cm - 185cm</div>
               </div>
               <a href="https://newurtopia.de/products/urtopia-chord-ebike?variant=43705719062744" class="my-button my-button-black">Order now</a>
-              <div class="my-button my-button-black new">300€ OFF</div>
+              {% if settings.enabled_labour_day %}
+                <div class="my-button my-button-black new yellow">300 OFF</div>
+              {% else %}
+                  <div class="my-button my-button-black new">300€ OFF</div>
+              {% endif %}
             </div>
         </div>
         <div class="swiper-wrapper">
