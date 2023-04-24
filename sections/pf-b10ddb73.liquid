@@ -252,6 +252,10 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
     font-size: 14px;
     font-weight: 500;
     box-shadow: 10px 10px 10px #6B869A1C;
+
+    {% if settings.enabled_labour_day %}
+      background-image: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_20942_2x_39b30be1-d65e-46ab-9055-410e1984561e.png?v=1682329235')
+    {% endif %}
 }
 
 .carbon_code .bold {
