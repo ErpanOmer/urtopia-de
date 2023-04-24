@@ -110,11 +110,24 @@
   .subscribe-container .subscribe img {
       margin: 30px 0;
       max-width: 265px;
+
+      {% if settings.enabled_labour_day %}
+        box-shadow: 0px 3px 20px #00000015;
+        max-width: unset;
+        border-radius: 10px;
+        margin: 28px 0 22px;
+      {% endif %}
   }
   
   .subscribe-container .subscribe .u17Light {
       line-height: 24px;
       margin-bottom: 86px;
+
+      {% if settings.enabled_labour_day %}
+        font-size: 15px;
+        line-height: 1.4em;
+        margin-bottom: 32px;
+      {% endif %}
   }
   
   .subscribe-container .subscribe .email {
@@ -195,12 +208,23 @@
       .subscribe-container .subscribe img {
           margin: 15px 0;
           max-width: 205px;
+
+          {% if settings.enabled_labour_day %}
+            max-width: unset;
+            border-radius: 10px;
+          {% endif %}
       }
   
       .subscribe-container .subscribe .u17Light {
           font-size: 15px;
           line-height: 21px;
           margin-bottom: 40px;
+
+          {% if settings.enabled_labour_day %}
+            font-size: 12px;
+            line-height: 1.4em;
+            margin-bottom: 15px;
+          {% endif %}
       }
   
       .subscribe-container .subscribe .email {
@@ -457,25 +481,52 @@
 <link rel="prefetch" href="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Urtopia_Photo_Sesh_9_of_14_2x_dc648c2b-067f-4357-bda8-d917f51fd883.jpg?v=1680259100" as="image">
 <script>
   // 邮件订阅弹窗
-  const subscribeHtml = `<div class="subscribe-container">
-    <img class="mobileHide" src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Urtopia_Photo_Sesh_14_of_14_2x_9ec4000c-c609-4829-b4a2-430a5b7aae63.jpg?v=1680259217" alt="">
-    <img class="pcHide" src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Urtopia_Photo_Sesh_9_of_14_2x_dc648c2b-067f-4357-bda8-d917f51fd883.jpg?v=1680259100" alt="">
-    <div class="subscribe">
-        <span class="u20Medium">Easter sale expires Apr. 25</span>
-        <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Union_12_2x_f3408316-66ce-44c8-ad74-6ee638a54650.jpg?v=1681095007">
-        <span class="u17Light">Subscribe for Easter exclusive coupon and Utopia stories</span>
-        <form class="new-contact" action="/contact#ContactFooter" target="_blank" method="post" accept-charset="UTF-8">
-        <div class="email">
-              <input type="hidden" name="form_type" value="customer">
-              <input type="hidden" name="utf8" value="✓">
-              <input type="hidden" name="contact[tags]" value="newsletter">
-              <input placeholder="Enter email here" type="email" name="contact[email]" required>
-              <button class="my-button my-button-black" type="submit">Subscribe</button>
-        </div>
-      </form>
-    </div>
-    <span class="close" onclick="closeEmailDialog()">×</span>
-</div>`
+
+  {% if settings.enabled_labour_day %}
+    const subscribeHtml = `<div class="subscribe-container">
+      <img class="mobileHide" src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Urtopia_Photo_Sesh_14_of_14_2x_201c949d-f6dc-41de-b292-3fc6f0732073.jpg?v=1682332745" alt="">
+      <img class="pcHide" src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Urtopia_Photo_Sesh_9_of_14_2x_dc648c2b-067f-4357-bda8-d917f51fd883.jpg?v=1680259100" alt="">
+      <div class="subscribe">
+          <span class="u20Medium">Labour day sales Expires May.8</span>
+          <img class="mobileHide" src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_20951_2x_845a0dfd-66e6-417c-bda3-ce075cafa6bb.png?v=1682332200">
+          <img class="pcHide" src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_20950_2x_fa09a7f7-b8bd-4ae6-8360-434563fc6631.png?v=1682332921">
+          <span class="u17Light">Subscribe to Urtopia for exclusive coupons, engaging stories, and the latest product news.</span>
+          <form class="new-contact" action="/contact#ContactFooter" target="_blank" method="post" accept-charset="UTF-8">
+          <div class="email">
+                <input type="hidden" name="form_type" value="customer">
+                <input type="hidden" name="utf8" value="✓">
+                <input type="hidden" name="contact[tags]" value="newsletter">
+                <input placeholder="Enter email here" type="email" name="contact[email]" required>
+                <button class="my-button my-button-black" type="submit">Subscribe</button>
+          </div>
+        </form>
+      </div>
+      <span class="close" onclick="closeEmailDialog()">×</span>
+  </div>`
+	  {% else %}
+        
+    const subscribeHtml = `<div class="subscribe-container">
+      <img class="mobileHide" src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Urtopia_Photo_Sesh_14_of_14_2x_9ec4000c-c609-4829-b4a2-430a5b7aae63.jpg?v=1680259217" alt="">
+      <img class="pcHide" src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Urtopia_Photo_Sesh_9_of_14_2x_dc648c2b-067f-4357-bda8-d917f51fd883.jpg?v=1680259100" alt="">
+      <div class="subscribe">
+          <span class="u20Medium">Easter sale expires Apr. 25</span>
+          <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Union_12_2x_f3408316-66ce-44c8-ad74-6ee638a54650.jpg?v=1681095007">
+          <span class="u17Light">Subscribe for Easter exclusive coupon and Utopia stories</span>
+          <form class="new-contact" action="/contact#ContactFooter" target="_blank" method="post" accept-charset="UTF-8">
+          <div class="email">
+                <input type="hidden" name="form_type" value="customer">
+                <input type="hidden" name="utf8" value="✓">
+                <input type="hidden" name="contact[tags]" value="newsletter">
+                <input placeholder="Enter email here" type="email" name="contact[email]" required>
+                <button class="my-button my-button-black" type="submit">Subscribe</button>
+          </div>
+        </form>
+      </div>
+      <span class="close" onclick="closeEmailDialog()">×</span>
+  </div>`
+	  {% endif %}
+
+  
 
 /*
 const subscribeHtml = `<div class="subscribe-container">

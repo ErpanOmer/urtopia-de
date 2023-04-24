@@ -224,10 +224,19 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
 <!-- end Placement -->
 
 </div><div data-pf-type="Custom.HTML" class="sc-AjmGg eCTxfx pf-30_">
+
+  {% if settings.enabled_labour_day %}
+    <div class="carbon_code" style="color:#000;">
+        <span style="flex-basis: 85%; padding-left: 15px;">€300 OFF with Labour Day Sale Code</span>
+        <span style="flex-basis: 25%;" class="bold">MAI</span>
+    </div>
+	  {% else %}
+        
       <div class="carbon_code">
         <span>€300 OFF with Easter Sale Code</span>
         <span class="bold">OK300</span>
-    </div>
+      </div>
+	  {% endif %}
 
 
 <style>
@@ -243,6 +252,11 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
     font-size: 14px;
     font-weight: 500;
     box-shadow: 10px 10px 10px #6B869A1C;
+
+    {% if settings.enabled_labour_day %}
+      background-image: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_20942_2x_39b30be1-d65e-46ab-9055-410e1984561e.png?v=1682329235');
+      box-shadow: unset;
+    {% endif %}
 }
 
 .carbon_code .bold {
@@ -314,10 +328,14 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
 }
 </style>
 
-<div class="countdown">
-	<div>Easter sale expires Apr. 25</div>
-	<img src="http://i.countdownmail.com/2hsf4t.gif" border="0" alt="countdownmail.com"/>
-</div>
+
+{% if settings.enabled_labour_day %}
+  {% else %}
+    <div class="countdown">
+      <div>Easter sale expires Apr. 25</div>
+      <img src="http://i.countdownmail.com/2hsf4t.gif" border="0" alt="countdownmail.com"/>
+    </div>
+  {% endif %}
 
 <!--
 <div data-pf-type="Custom.HTML" class="sc-AjmGg eCTxfx pf-17_"><div class="chrod_text">

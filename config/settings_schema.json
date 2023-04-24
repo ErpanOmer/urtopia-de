@@ -1,5 +1,22 @@
 [
   {
+    "name": "global_variable",
+    "settings": [
+      {
+        "type": "text",
+        "id": "enabled_labour_day",
+        "label": "global variable",
+        "default": false
+      },
+      {
+        "type": "text",
+        "id": "enabled_labour_day_countdown",
+        "label": "global variable",
+        "default": false
+      }
+    ]
+  },
+  {
     "name": "theme_info",
     "theme_name": "Refresh",
     "theme_version": "1.0.0",
