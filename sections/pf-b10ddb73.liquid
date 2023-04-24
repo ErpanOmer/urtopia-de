@@ -328,10 +328,14 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
 }
 </style>
 
-<div class="countdown">
-	<div>Easter sale expires Apr. 25</div>
-	<img src="http://i.countdownmail.com/2hsf4t.gif" border="0" alt="countdownmail.com"/>
-</div>
+
+{% if settings.enabled_labour_day %}
+  {% else %}
+    <div class="countdown">
+      <div>Easter sale expires Apr. 25</div>
+      <img src="http://i.countdownmail.com/2hsf4t.gif" border="0" alt="countdownmail.com"/>
+    </div>
+  {% endif %}
 
 <!--
 <div data-pf-type="Custom.HTML" class="sc-AjmGg eCTxfx pf-17_"><div class="chrod_text">
