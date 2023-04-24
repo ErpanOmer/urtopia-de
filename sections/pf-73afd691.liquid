@@ -19,6 +19,9 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
     #section1 .u17Light {
         line-height: 24px;
         max-width: 600px;
+        {% if settings.enabled_labour_day %}
+          max-width: unset;
+        {% endif %}
     }
 
 
