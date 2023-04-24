@@ -298,15 +298,17 @@
         const forms = {}
         const ignore = ['submit', 'checkbox']
 
-        function submit(extras) {
+        function submit(extras = {}) {
             console.log('extras', extras)
 
-            const search = { ...extras }
+            let search = {}
             const url = new URL(location.href)
 
             for (const [k, v] of url.searchParams.entries()) {
                 search[k] = v
             }
+
+            search = Object.assign(search, extras)
 
             fetchBuried('jobrad', 'submit', search)
             // fbq('track', 'Jobrad Submit')
