@@ -3,10 +3,10 @@
     "name": "global_variable",
     "settings": [
       {
-        "type": "text",
+        "type": "checkbox",
         "id": "enabled_labour_day",
         "label": "global variable",
-        "default": "Variable value"
+        "default": true
       }
     ]
   },
