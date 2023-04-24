@@ -226,7 +226,7 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
 </div><div data-pf-type="Custom.HTML" class="sc-AjmGg eCTxfx pf-30_">
 
   {% if settings.enabled_labour_day %}
-    <div class="carbon_code" >
+    <div class="carbon_code">
         <span>€300 OFF with Labour Day Sale Code</span>
         <span class="bold">MAI</span>
     </div>
@@ -239,60 +239,65 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
 	  {% endif %}
 
 
-    <style>
-      .carbon_code {
-        max-width: 480px;
-        height: 46px;
-        background-size: 100% 46px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        color: #fff;
+<style>
+.carbon_code {
+    max-width: 480px;
+    background: url(https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230324-171240.png?v=1679649232) no-repeat;
+    height: 46px;
+    background-size: 100% 46px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 500;
+    box-shadow: 10px 10px 10px #6B869A1C;
+}
+
+.carbon_code .bold {
+    font-size: 17px;
+    font-weight: bold;
+}
+
+      .carbon_code > span:first-child {
+        flex-basis: 68%;
         font-size: 14px;
-        font-weight: 500;
-        box-shadow: 10px 10px 10px #6B869A1C;
-        margin-top: 10px;
-        background: transparent linear-gradient(90deg, #2E26EE 0%, #2A8FF4 100%) 0% 0% no-repeat padding-box;
-        border-radius: 10px 10px;
-        
+        padding: 10px;
+        text-align: center;
+        line-height: 16px;
       }
-      
-      .carbon_code .bold {
-        font-size: 17px;
-        font-weight: bold;
-      }
-      
-          .carbon_code > span:first-child {
-          flex-basis: 68%;
-          font-size: 14px;
-          padding: 10px;
-          text-align: center;
-          line-height: 16px;
-          border-right: 2px dashed #fff;
-          }
-      
-      .carbon_code > span:last-child {
-        flex-basis: 32%;
-      }
-      
-      .carbon_code > span {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-      
-      
-      
-      @media (max-width: 767px) {
-        .carbon_code {
-          font-size: 13px;
-        }
-      
-        .carbon_code .bold {
-          font-size: 16px;
-        }
-      }
-    </style>
+
+.carbon_code > span:last-child {
+    flex-basis: 32%;
+}
+
+.carbon_code > span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.chord-sticky {
+  position: sticky;
+  top: 90px;
+}
+
+
+
+@media (max-width: 767px) {
+  .chord-sticky {
+    position: static;
+  }
+
+    .carbon_code {
+        font-size: 13px;
+    }
+
+    .carbon_code .bold {
+        font-size: 16px;
+    }
+}
+</style>
 </div>
 
 
