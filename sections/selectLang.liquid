@@ -208,6 +208,11 @@
       .subscribe-container .subscribe img {
           margin: 15px 0;
           max-width: 205px;
+
+          {% if settings.enabled_labour_day %}
+            max-width: unset;
+            border-radius: 10px;
+          {% endif %}
       }
   
       .subscribe-container .subscribe .u17Light {
