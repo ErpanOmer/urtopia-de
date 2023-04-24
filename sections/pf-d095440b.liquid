@@ -699,6 +699,11 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
     display: flex;
     height: 100%;
     align-items: flex-end;
+
+	{% if settings.enabled_labour_day %}
+		font-size: 12px;
+		align-items: center;
+	{% endif %}
 }
 
 .eggs .components .item .price {
