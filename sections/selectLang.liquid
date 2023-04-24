@@ -219,6 +219,12 @@
           font-size: 15px;
           line-height: 21px;
           margin-bottom: 40px;
+
+          {% if settings.enabled_labour_day %}
+            font-size: 12px;
+            line-height: 1.4em;
+            margin-bottom: 15px;
+          {% endif %}
       }
   
       .subscribe-container .subscribe .email {
