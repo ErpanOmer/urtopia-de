@@ -110,6 +110,11 @@
   .subscribe-container .subscribe img {
       margin: 30px 0;
       max-width: 265px;
+
+      {% if settings.enabled_labour_day %}
+        box-shadow: 0px 3px 20px #00000015;
+        max-width: unset;
+      {% endif %}
   }
   
   .subscribe-container .subscribe .u17Light {
