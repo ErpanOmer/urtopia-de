@@ -412,6 +412,11 @@
 
     $('.works .your').on('click', e => {
         console.log('e', e)
+        setTimeout(() => {
+            $('html').animate({
+                scrollTop: $('.faqs').offset().top - (document.documentElement.clientHeight / 2) + ($('.faqs').height() / 2)
+            }, 300)
+        })
 
 
         e.preventDefault();
