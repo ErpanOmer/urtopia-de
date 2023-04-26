@@ -59,9 +59,13 @@
 
 .carbon_text>div {
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     font-weight: 500;
     line-height: 20px;
+}
+
+.carbon_text>div img {
+  width: 24px;
 }
 
 .carbon_text>div+div {
@@ -88,12 +92,23 @@
 <div class="page-width{% if cart == empty %} is-empty{% endif %}" id="main-cart-footer" data-id="{{ section.id }}">
   <div>
     <div class="product_code">
-            <div class="carbon_code">
-                <span>Check out with <br> Easter Sale Code to Enjoy:</span>
+            {% if settings.enabled_labour_day %}
+              <div class="carbon_code" style="color: #000;background-image: url(https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230425-181550.png?v=1682417764);">
+                <span style="flex-basis: 75%;justify-content: flex-start;
+                  padding-left: 24px;">Check out with <br> Labour Day Sale Code to Enjoy:</span>
+                <span class="bold" style="flex-basis: 25%;">MAI</span>
+              </div>
+            {% else %}
+              <div class="carbon_code">
+                <span>Check out with <br> Early Bird Sale Code to Enjoy:</span>
                 <span class="bold">OK300</span>
-            </div>
-            <div class="carbon_text">
+              </div>
+            {% endif %}
+            <div class="carbon_text" {% if settings.enabled_labour_day %}style="color: #000;opacity:unset;background-image: linear-gradient(90deg,#FFE996,#F4D554);"{% endif %}>
                 <div>
+                    {% if settings.enabled_labour_day %}
+                    <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/payment.svg?v=1682416663" />
+                    {% else %}
                     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24"
                         height="23" viewBox="0 0 24 23">
                         <defs>
@@ -105,9 +120,13 @@
                         </defs>
                         <rect id="payment" width="24" height="23" fill="url(#pattern)" />
                     </svg>
+                  {% endif %}
                     <span>Save €300.00!</span>
                 </div>
                 <div>
+                    {% if settings.enabled_labour_day %}
+                      <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/payment.svg?v=1682416663" />
+                    {% else %}
                     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24"
                         height="23" viewBox="0 0 24 23">
                         <defs>
@@ -119,6 +138,7 @@
                         </defs>
                         <rect id="payment" width="24" height="23" fill="url(#pattern)" />
                     </svg>
+                    {% endif %}
                     <span>Free Accessories</span>
                 </div>
             </div>
@@ -139,20 +159,30 @@
           }
     
           if (carbon_quantly > 0 && chord_quantly > 0) {
-            document.querySelector(`.product_code .bold`).innerHTML = 'OK300'
-            document.querySelector(`.product_code .carbon_text > div:nth-child(1) span`).innerHTML = `Save €${carbon_quantly * 300 + chord_quantly * 300}.00!`
-            document.querySelector(`.product_code .carbon_text > div:nth-child(2) span`).innerHTML = 'Free Accessories'
+            //document.querySelector(`.product_code .bold`).innerHTML = 'OK300'
+            document.querySelector(`.product_code .carbon_text > div:nth-child(1) span`).innerHTML = `Save €${carbon_quantly * 0 + chord_quantly * 300}.00!`
+
+            {% if settings.enabled_labour_day %}
+                document.querySelector(`.product_code .carbon_text > div:nth-child(2) span`).innerHTML = 'Free Accessories'
+            {% else %}
+                document.querySelector(`.product_code .carbon_text > div:nth-child(2)`).innerHTML = ''
+            {% endif %}
+
+
           } else if (chord_quantly > 0) { 
-            document.querySelector(`.product_code .bold`).innerHTML = 'OK300'
+            //document.querySelector(`.product_code .bold`).innerHTML = 'OK300'
             document.querySelector(`.product_code .carbon_text > div:nth-child(1) span`).innerHTML = `Save €${chord_quantly * 300}.00!`
             document.querySelector(`.product_code .carbon_text > div:nth-child(2)`).innerHTML = ''
           } else {
             if (carbon_quantly === 0) {
-               document.querySelector(`.product_code`).innerHTML = ''
+              document.querySelector(`.product_code`).innerHTML = ''
             } else {
-              document.querySelector(`.product_code .bold`).innerHTML = 'OK300'
-              document.querySelector(`.product_code .carbon_text > div:nth-child(1) span`).innerHTML = `Save €${carbon_quantly * 300}.00!`
-              document.querySelector(`.product_code .carbon_text > div:nth-child(2) span`).innerHTML = 'Free Accessories'
+              {% if settings.enabled_labour_day %}
+                document.querySelector(`.product_code .carbon_text > div:nth-child(1)`).innerHTML = ``
+                document.querySelector(`.product_code .carbon_text > div:nth-child(2) span`).innerHTML = 'Free Accessories'
+              {% else %}
+                document.querySelector(`.product_code`).innerHTML = ''
+              {% endif %}
             }
           }
       }

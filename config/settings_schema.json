@@ -3,15 +3,15 @@
     "name": "global_variable",
     "settings": [
       {
-        "type": "text",
+        "type": "checkbox",
         "id": "enabled_labour_day",
-        "label": "global variable",
+        "label": "4.28劳动节活动开关",
         "default": false
       },
       {
-        "type": "text",
+        "type": "checkbox",
         "id": "enabled_labour_day_countdown",
-        "label": "global variable",
+        "label": "5.5劳动节活动倒计时开关",
         "default": false
       }
     ]

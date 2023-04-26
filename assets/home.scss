@@ -1,0 +1,330 @@
+.banner {
+    height: calc(100vh - 111px);
+    position: relative;
+    color: #fff;
+    overflow-x: hidden;
+
+    .centeral-content {
+        display: flex;
+        height: 100%;
+        align-items: center;
+        justify-content: space-between;
+
+        &>div {
+            &:first-child {
+                flex: 1;
+                display: flex;
+                flex-direction: column;
+            }
+
+            &:last-child {
+                display: flex;
+                flex-direction: column;
+            }
+        }
+
+        .buttons {
+            a {
+                margin: 0 12px 12px 0;
+            }
+
+            & > a + a {
+                margin: 0;
+            }
+        }
+    }
+
+    .swiper-wrapper {
+        .swiper-slide {
+            background: center center/cover no-repeat;
+        }
+
+
+        // 常规banner
+        .common {
+            background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230418-105138.jpg?v=1681786322');
+
+            .centeral-content {
+                &>div {
+                    &:last-child {
+                        max-width: 500px;
+                        text-align: left;
+                    }
+                }
+            }
+
+            .right {
+                .u60DemiBold_v2 {
+                    margin: 10px 0 110px;
+                }
+            }
+        }
+
+
+        // maksim banner
+        .maksim {
+            background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230418-110500.jpg?v=1681787114');
+
+            .centeral-content {
+                &>div {
+                    &:last-child {
+                        max-width: 550px;
+                    }
+                }
+            }
+
+            .right {
+                .u48DemiBold_v2 {
+                    margin: 16px 0 136px;
+                }
+            }
+        }
+
+        // 美国倒计时banner
+        .us-downcount {
+            background-image: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20230418-170254.jpg?v=1681808592');
+
+            .centeral-content {
+                height: 50%;
+                overflow: hidden;
+            }
+
+            .left {
+                max-width: 390px;
+
+                .u30DemiBold_v2 {
+                    margin-bottom: 50px;
+                }
+            }
+
+            .right {
+                transform: translateX(40%);
+                max-width: 700px;
+                width: 700px;
+            }
+        }
+
+
+        // 德国劳动节 banner 
+        .labor-day {
+            background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_20929_2x_ebafca41-bb24-4e17-9311-a95dd8081354.jpg?v=1682392111');
+
+            .centeral-content {
+                height: 75%;
+            }
+
+            .left {
+
+                .labor-logo {
+                    max-width: 180px;
+                }
+
+                .acc {
+                    max-width: 470px;
+                }
+
+
+                .u30DemiBold_v2 {
+                    margin: 16px 0 22px;
+                    text-shadow: 0px 3px 10px #00000054;
+                }
+
+                .buttons {
+                    margin-top: 50px;
+                }
+            }
+        }
+
+        // 德国劳动节 banner chord
+        .labor-day-chord {
+            background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_20939_2x_b959e8e1-8b4c-474c-8ff6-2b96bd412f71.jpg?v=1682395277');
+
+            .centeral-content {
+                height: 50%;
+            }
+
+            .centeral-content-75 {
+                height: 75%;
+            }
+
+            .left {
+                max-width: unset;
+
+                .u30DemiBold_v2  {
+                    margin-bottom: 0;
+                }
+            }
+        }
+
+
+
+        .count-down {
+            height: 180px;
+            transform: translateX(-25px);
+            overflow: hidden;
+            margin-bottom: -30px;
+        }
+    }
+
+
+    .swiper-pagination-bullet {
+        height: 6px;
+        width: 6px;
+        background-color: #d5d5d5;
+        opacity: 0.5;
+    }
+
+    .swiper-pagination-bullet-active {
+        width: 30px;
+        height: 6px;
+        border-radius: 5px;
+        transition: all .3s;
+        opacity: 1;
+    }
+}
+
+
+@media (max-width: 767px) {
+    .banner {
+        height: calc(100vh - 107px);
+
+        .centeral-content {
+            &>div {
+                &:last-child {
+                    height: 100%;
+                }
+            }
+
+            // .buttons {
+            //     a {
+            //         margin: 0 12px 12px 0;
+            //     }
+    
+            //     & > a + a {
+            //         margin: 0;
+            //     }
+            // }
+        }
+
+
+        .swiper-wrapper {
+            .swiper-slide {
+                background-position-y: top;
+            }
+
+            // 常规banner
+            .common {
+                background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230418-102832.png?v=1681784932');
+
+                .right {
+                    padding: 20vw 0;
+                    color: #000;
+
+                    .u24Medium_v2 {
+                        font-size: 17px;
+                    }
+
+                    .u60DemiBold_v2 {
+                        font-size: 30px;
+                        margin-bottom: 0;
+                        // margin: 10px 0 110px;
+                    }
+                }
+            }
+
+
+            .maksim {
+                background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_20869_2x_095b2a64-3bee-4b82-a920-f596bd11b508.jpg?v=1681788172');
+
+                .right {
+                    padding: 10vw 0 20vw;
+
+                    .u48DemiBold_v2 {
+                        font-size: 36px;
+                        margin: 0;
+                    }
+                }
+            }
+
+            // 美国倒计时banner
+            .us-downcount {
+                background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230418-173912.jpg?v=1681810772');
+
+                .centeral-content {
+                    flex-direction: column-reverse;
+                    height: 100%;
+                    padding-top: 6vw;
+                    padding-bottom: 20vw;
+                    align-items: flex-start;
+
+                    .right {
+                        transform: unset;
+                        height: unset;
+                        width: 100%;
+                        margin-left: -22px;
+                        overflow: hidden;
+                    }
+
+                    .left {
+                        display: flex;
+                        flex-direction: column;
+                        height: 100%;
+
+                        .u30DemiBold_v2 {
+                            font-size: 20px;
+                            margin: 0;
+                        }
+                    }
+                }
+            }
+
+
+            // 德国劳动节 banner 
+            .labor-day {
+                background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18534_2x_a3851f94-3795-4d94-a5ed-e6721c9ac8aa.jpg?v=1682393237');
+                background-position-y: center;
+
+                .centeral-content {
+                    height: 100%;
+                }
+
+                .left {
+                    padding: 20vw 0;
+
+                    .labor-logo {
+                        max-width: 144px;
+                    }
+
+                    .u30DemiBold_v2 {
+                        margin: 6px 0 12px;
+                        font-size: 20px;
+                    }
+
+                    .u30DemiBold_v2_labor {
+                        font-size: 15px;
+                    }
+
+                    .acc {
+                        max-width: 202px;
+                    }
+                }
+            }
+
+
+            // 德国劳动节 chord
+            .labor-day-chord {
+                background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18536_2x_36b18200-7946-41b4-9351-9d143864350a.jpg?v=1682401357');
+            }
+
+
+
+            .count-down {
+                height: 115px;
+                width: 180px;
+                transform: translateX(-30px);
+                margin-bottom: unset;
+            }
+
+        }
+    }
+}

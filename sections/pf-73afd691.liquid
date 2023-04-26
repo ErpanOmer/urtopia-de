@@ -60,15 +60,25 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
     }
 </style>
 
-<div id="section1">
+
   {% if settings.enabled_labour_day %}
-    <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_20924_2x_f1b737b5-e0b6-4fc5-b803-549264df5816.png?v=1682323154" alt="">    
+    <div id="section1">
+        <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_20924_2x_f1b737b5-e0b6-4fc5-b803-549264df5816.png?v=1682323154" alt="">
+        <div class="u17Light">Who said you can’t have a little fun on two wheels? Electric bikes are the hottest trend on the streets, and Urtopia ebike is ready to show you the ride of your life! From the Chord to the Carbon 1s, we’ve got the perfect model to suit your style. Let’s take ‘em for a spin!<div><a class="my-button my-button-black" href="#compared">Find Your Match</a></div></div>
+    </div>
   {% else %}
-    <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230330-144859.png?v=1680159014" alt="">    
+      <div id="section1" style="display: flex;justify-content: center;">
+      <!--<img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230330-144859.png?v=1680159014" alt="">-->   
+          <div class="u17Light" style="display: flex;
+            flex-direction: column;
+            text-align: center;
+            align-items: center;">Who said you can’t have a little fun on two wheels? Electric bikes are the hottest trend on the streets, and Urtopia ebike is ready to show you the ride of your life! From the Chord to the Carbon 1s, we’ve got the perfect model to suit your style. Let’s take ‘em for a spin!<div><a class="my-button my-button-black" href="#compared">Find Your Match</a></div></div>
+      </div>
   {% endif %}
 
-  <div class="u17Light">Who said you can’t have a little fun on two wheels? Electric bikes are the hottest trend on the streets, and Urtopia ebike is ready to show you the ride of your life! From the Chord to the Carbon 1s, we’ve got the perfect model to suit your style. Let’s take ‘em for a spin!<div><a class="my-button my-button-black" href="#compared">Find Your Match</a></div></div>
-</div>
+
+
+
 </div></div></div></div></div></div><div data-section-id="pf-3f0d" data-pf-type="Section" class="sc-fmciRz bheIgq pf-7_"><div class="sc-gjNHFA gwWIgj"><div class="sc-ezbkAF A-dmbO pf-8_ pf-r pf-c-cm pf-r-eh" style="--s-xs:0px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-md:12;--c-lg:12"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-9_"><div data-pf-type="Custom.HTML" class="sc-AjmGg eCTxfx pf-10_"><style>
   #bike {
     max-width: 1280px;
@@ -374,7 +384,7 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
             {% if settings.enabled_labour_day %}
               <div class="my-button my-button-black new yellow">4 Freebies</div>
             {% else %}
-              <div class="my-button my-button-black new big-new">300€ OFF +<br>3 Freebies</div>
+              <!--<div class="my-button my-button-black new">300€ OFF</div>-->
             {% endif %}
             
           </div>
