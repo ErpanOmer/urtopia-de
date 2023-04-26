@@ -34,6 +34,7 @@ customElements.define('cart-remove-button', CartRemoveButton);
 
 // 活动送配件
 {% if settings.enabled_labour_day %}
+  const components = []
 {% else %}
   const components = []
 {% endif %}
