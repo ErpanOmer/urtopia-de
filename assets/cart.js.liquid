@@ -41,7 +41,7 @@ let components = []
 {% endif %}
 
 
-console.log('components', components)
+console.log('components', {{ settings.enabled_labour_day }})
 
 class CartItems extends HTMLElement {
   constructor() {
