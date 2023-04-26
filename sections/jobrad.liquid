@@ -55,7 +55,7 @@
                     alt="">
                 <div>
                     <div class="u48DemiBold">How it works</div>
-                    <div class="u20Medium">Please ensure that your employer has signed up with JobRad.</div>
+                    <div class="u20Medium">Please ensure that your employer has signed up with JobRad.  <a class="your" style="text-decoration: underline;" href="">Your employer doesn't offer JobRad yet?</a></div>
                     <div class="u17Light">1. Click on the button or filling the form below to start your application with a
                         new form.
                         (Currently only Carbon 1 is available for JobRad) <br><br>2. We will then place an offer for you on
@@ -218,6 +218,11 @@
     )
 
     const faqs = [
+        {
+            title: "Your employer doesn't offer JobRad yet?",
+            content: `No problem. They can use the contact form to get in touch with JobRad quickly and easily and even request contract documents directly. Here you can find the advantages and further information for employers.
+            <br><br>In order for you to lease a JobRad from us, your employer must offer JobRad. The leasing contract runs through your employer. If your employer does not offer JobRad, it does not matter. She/he can simply sign up. The leasing concept not only offers advantages to you, but also to your employer. Click here for more information for employers. If you are self-employed, you can also find useful information about tax benefits, requirements and the leasing request form on the JobRad website.`
+        },
         {
             title: 'Am I qualified for JobRad?',
             content: 'You are an employee: If your company already works with JobRad, you can order your Urtopia today. If not, you can introduce your employer <a target="_blank" href="https://www.jobrad.org/kontakt.html">here<a/> at JobRad. <br><br> You are self-employed: You can certainly lease one or more Urtopias for your company via JobRad. You can find more practical information <a target="_blank" href="https://www.jobrad.org/kontakt.html">here<a/> .'
@@ -402,5 +407,28 @@
         $(`input[name="accessories"]`).val(urlSearch.accessories)
     }
 
-    console.log('urlSearch', urlSearch)
+    
+
+
+    $('.works .your').on('click', e => {
+        const item = document.querySelector('.faqs .faq-item')
+        const title = item.querySelector('.faq-title')
+        const content = item.querySelector('.faq-content')
+
+        // 如果是隐藏状态才展开
+        if (window.getComputedStyle(content).display === 'none') {
+            title.click()
+        }
+        
+        console.log('e', e)
+        setTimeout(() => {
+            $('html').animate({
+                scrollTop: $('.faqs').offset().top - 100
+            }, 300)
+        })
+
+
+        e.preventDefault();
+        return false;
+    })
 </script>
