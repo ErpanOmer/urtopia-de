@@ -6,7 +6,7 @@
         "type": "checkbox",
         "id": "enabled_labour_day",
         "label": "4.28劳动节活动开关",
-        "default": true
+        "default": false
       },
       {
         "type": "checkbox",
