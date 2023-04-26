@@ -411,7 +411,14 @@
 
 
     $('.works .your').on('click', e => {
-        document.querySelector('.faqs .faq-title').click()
+        const item = document.querySelector('.faqs .faq-item')
+        const title = item.querySelector('.faq-title')
+        const content = item.querySelector('.faq-content')
+
+        // 如果是隐藏状态才展开
+        if (window.getComputedStyle(content).display === 'none') {
+            title.click()
+        }
         
         console.log('e', e)
         setTimeout(() => {
