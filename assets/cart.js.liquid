@@ -147,9 +147,12 @@ class CartItems extends HTMLElement {
     const index = lineItem.dataset.lineItem
     console.log('pruduct_id', pruduct_id)
 
-    //if (pruduct_id === '7633738727640') {
-      //return this.updateCarbonOneWithComponents(parseInt(index), lineId, parseInt(quantity), parseInt(event.target.value));
-    //}
+
+    {% if settings.enabled_labour_day %}
+        if (pruduct_id === '7633738727640') {
+          return this.updateCarbonOneWithComponents(parseInt(index), lineId, parseInt(quantity), parseInt(event.target.value));
+        }
+    {% endif %}
     
     ////购物车逻辑
    /* var data = event.target.dataset;
