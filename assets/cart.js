@@ -34,7 +34,7 @@ customElements.define('cart-remove-button', CartRemoveButton);
 
 // 活动送配件
 {% if settings.enabled_labour_day %}
-  const components = []
+  const components = ['43745261748440', '43788921241816', '43745264697560', '43788921274584']
 {% else %}
   const components = []
 {% endif %}
