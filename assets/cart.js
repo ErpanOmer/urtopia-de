@@ -32,11 +32,12 @@ class CartRemoveButton extends HTMLElement {
 
 customElements.define('cart-remove-button', CartRemoveButton);
 
+
+let components = []
+
 // 活动送配件
 {% if settings.enabled_labour_day %}
-  const components = ['43745261748440', '43788921241816', '43745264697560', '43788921274584']
-{% else %}
-  const components = []
+  components = ['43745261748440', '43788921241816', '43745264697560', '43788921274584']
 {% endif %}
 
 class CartItems extends HTMLElement {
