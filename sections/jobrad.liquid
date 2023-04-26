@@ -411,6 +411,8 @@
 
 
     $('.works .your').on('click', e => {
+        document.querySelector('.faqs .faq-title').click()
+        
         console.log('e', e)
         setTimeout(() => {
             $('html').animate({
