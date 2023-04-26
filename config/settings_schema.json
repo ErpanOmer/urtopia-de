@@ -12,7 +12,7 @@
         "type": "checkbox",
         "id": "enabled_labour_day_countdown",
         "label": "5.5劳动节活动倒计时开关",
-        "default": false
+        "default": true
       }
     ]
   },
