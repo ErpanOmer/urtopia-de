@@ -421,7 +421,7 @@
       console.log(accessories)
 
       const bike_style = options[0].innerText.slice(7)
-      const bike_size = options[1].innerText.match(/\((.+)\)/g)[0].slice(1, -1)
+      const bike_size = options[1].innerText.slice(7)
 
       // go to
       window.location.href= `/pages/jobrad?bike_style=${bike_style}&bike_size=${bike_size}&accessories=${accessories.join()}&utm_source=cart_page#forms`
