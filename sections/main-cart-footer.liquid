@@ -151,6 +151,11 @@
             } else {
               {% if settings.enabled_labour_day %}
                 document.querySelector(`.product_code .carbon_code span:first-child`).innerHTML = 'Check out with Labour Day Sale'
+                document.querySelector(`.product_code .carbon_code span:first-child`).style.flexBasis = '1000000%'
+                document.querySelector(`.product_code .carbon_code span:first-child`).style.height = '100%'
+                document.querySelector(`.product_code .carbon_code span:first-child`).style.flexBasis = '1000000%'
+                document.querySelector(`.product_code .carbon_code span:first-child`).style.backgroundImage = 'linear-gradient(-90deg, #EFC305, #FFDF67);'
+
                 document.querySelector(`.product_code .carbon_code span:last-child`).innerHTML = ''
                 document.querySelector(`.product_code .carbon_text > div:nth-child(1) span`).innerHTML = `Save €${carbon_quantly * 173}.00!`
                 document.querySelector(`.product_code .carbon_text > div:nth-child(2) span`).innerHTML = 'Free Accessories'
