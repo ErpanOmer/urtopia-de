@@ -174,23 +174,27 @@ $('.faq-title').click(function () {
 $('.partners .boxs a').each((index, elem) => {
     $(elem).on('click', e => {
         e.preventDefault();
+        let href = ''
 
 
         if (index === 0) {
-            location.href = location.href.replace('/ebike-leasing', '/leasing-jobrad') + '#forms'
+            href = location.href.replace('/ebike-leasing', '/leasing-jobrad') + '#forms'
         }
 
         if (index === 1) {
-            location.href = location.href.replace('/ebike-leasing', '/leasing-jobrad')
+            href = location.href.replace('/ebike-leasing', '/leasing-jobrad')
         }
 
         if (index === 2) {
-            location.href = location.href.replace('/ebike-leasing', '/leasing-mein-dienstrad') + '#forms'
+            href = location.href.replace('/ebike-leasing', '/leasing-mein-dienstrad') + '#forms'
         }
 
         if (index === 3) {
-            location.href = location.href.replace('/ebike-leasing', '/leasing-mein-dienstrad')
+            href = location.href.replace('/ebike-leasing', '/leasing-mein-dienstrad')
         }
+
+
+        location.href = href.replace('#partners', '')
        
         return false;
     })
