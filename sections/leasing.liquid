@@ -170,11 +170,13 @@ $('.faq-title').click(function () {
 });
 }, 300)
 
-$('.partners .boxs a').on('click', (e, ...r) => {
-    console.log(e)
-
-    e.preventDefault();
-    return false;
+$('.partners .boxs a').each((index, elem) => {
+    elem.on('click', e => {
+        console.log(e)
+    
+        e.preventDefault();
+        return false;
+    })
 })
 
   </script>
