@@ -170,8 +170,8 @@ $('.faq-title').click(function () {
 });
 }, 300)
 
-$('.partners .boxs a').on('click', e => {
-
+$('.partners .boxs a').on('click', (e, ...r) => {
+    console.log(r)
 
     e.preventDefault();
     return false;
