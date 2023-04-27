@@ -22,25 +22,6 @@
       })(window,document,'script','dataLayer','GTM-NRQWQKH');
 
 
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'G-2WKKVDX6JH');
-
-
-
-      window.addEventListener("load", function(){
-        document.querySelectorAll("[class='addToCartBtn']").forEach(function(e){
-          e.addEventListener('click', function(e){
-            gtag('event', 'add_to_cart', {
-        'method': 'Google'
-      });
-          });
-        });
-      });
-
-
       window.addEventListener("load", function(){
         document.querySelectorAll("[class='checkout-button']").forEach(function(e){
           e.addEventListener('click', function(e){
