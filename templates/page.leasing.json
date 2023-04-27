@@ -1,0 +1,12 @@
+{
+  "sections": {
+    "leasing": {
+      "type": "leasing",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "leasing"
+  ]
+}

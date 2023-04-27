@@ -1,0 +1,12 @@
+{
+  "sections": {
+    "mein-dienstrad": {
+      "type": "mein-dienstrad",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "mein-dienstrad"
+  ]
+}
