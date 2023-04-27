@@ -171,15 +171,12 @@ $('.faq-title').click(function () {
 }, 300)
 
 $('.partners .boxs a').each((index, elem) => {
-
-
-    console.log(index, elem)
     $(elem).on('click', e => {
         e.preventDefault();
 
 
         if (index === 0) {
-            location.href = location.href.replace('leasing', 'jobrad') + '#froms'
+            location.href = location.href.replace('leasing', 'jobrad') + '#forms'
         }
 
         if (index === 1) {
@@ -187,7 +184,7 @@ $('.partners .boxs a').each((index, elem) => {
         }
 
         if (index === 2) {
-            location.href = location.href.replace('leasing', 'mein-dienstrad') + '#froms'
+            location.href = location.href.replace('leasing', 'mein-dienstrad') + '#forms'
         }
 
         if (index === 3) {
