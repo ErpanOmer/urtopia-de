@@ -277,7 +277,7 @@
 
             search = Object.assign(search, extras)
 
-            fetchBuried('jobrad', 'submit', search)
+            fetchBuried('mein-dienstrad', 'submit', search)
             // fbq('track', 'Jobrad Submit')
             fbq('track', 'CompleteRegistration', {
                 value: 3596,
@@ -299,7 +299,7 @@
                 data[target.name] = target.value
             })
 
-            fetchBuried('jobrad', 'submitinfo', data)
+            fetchBuried('mein-dienstrad', 'submitinfo', data)
         }, 5000))
 
         $('.forms form').on("submit", function (event) {
@@ -336,7 +336,7 @@
 
 
     if (!sessionStorage.isPreviewJobrad) {
-        fetchBuried('jobrad', 'pageview')
+        fetchBuried('mein-dienstrad', 'pageview')
     }
 
     // 记录来过这个页面
