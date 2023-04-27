@@ -137,8 +137,8 @@
                                 <div class="u24Medium">Bike Size<i>*</i></div>
                                 <select name="bike_size" required>
                                     <option value="">---</option>
-                                    <option>M - Fit for 170-185 cm</option>                  
-                                    <option>L - Fit for 180-195 cm</option>
+                                    <option value="M">M - Fit for 170-185 cm</option>                  
+                                    <option value="L">L - Fit for 180-195 cm</option>
                                 </select>
                             </div>
                             <div>
@@ -311,6 +311,9 @@
 
             search = Object.assign(search, extras)
 
+            // 重写bike_size
+            search.bike_size = search.bike_size === 'M' ? 'M - Fit for 170-185 cm' : 'L - Fit for 180-195 cm'
+
             fetchBuried('jobrad', 'submit', search)
             // fbq('track', 'Jobrad Submit')
             fbq('track', 'CompleteRegistration', {
@@ -392,12 +395,6 @@
 
     // 如果bike_size 存在
     if (urlSearch.bike_size) {
-        if (urlSearch.bike_size.includes('170-185')) {
-            urlSearch.bike_size = 'M - ' + urlSearch.bike_size
-        } else {
-            urlSearch.bike_size = 'L - ' + urlSearch.bike_size
-        }
-
         $(`select[name="bike_size"]`).val(urlSearch.bike_size)
     }
 

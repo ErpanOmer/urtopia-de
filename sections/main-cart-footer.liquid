@@ -296,7 +296,7 @@
             {{ 'sections.cart.checkout' | t }}
           </button>
         </div>
-        <div style="width: 100%;" class="my-button my-button-black">Lease with Jobrad</div>
+        <div style="width: 100%;" class="my-button my-button-black">Leasing</div>
         {% comment %}
         {%- if additional_checkout_buttons -%}
         <div class="cart__dynamic-checkout-buttons additional-checkout-buttons">
@@ -421,10 +421,10 @@
       console.log(accessories)
 
       const bike_style = options[0].innerText.slice(7)
-      const bike_size = options[1].innerText.match(/\((.+)\)/g)[0].slice(1, -1)
+      const bike_size = options[1].innerText.slice(6, 7)
 
       // go to
-      window.location.href= `/pages/jobrad?bike_style=${bike_style}&bike_size=${bike_size}&accessories=${accessories.join()}&utm_source=cart_page#forms`
+      window.location.href= `/pages/leasing?bike_style=${bike_style}&bike_size=${bike_size}&accessories=${accessories.join()}&utm_source=cart_page`
   })
 
   

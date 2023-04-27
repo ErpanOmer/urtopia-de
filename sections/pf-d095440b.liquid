@@ -1270,7 +1270,7 @@ letter-spacing: 0px;
   </button>
   <!--<button  data-checkout="same" data-soldout="Not available" data-adding="Processing" data-added="Enjoy" type="button" data-pf-type="ProductCK" class="buyNowBtn"  onclick="addAllToCart('buynow')"><i class="fa fa-spinner fa-spin"></i><span data-pf-type="Text"  >Buy Now</span></button>-->
   <div onclick="testRideTrace()" class="orderTestRideBtn">
-	<span style="cursor:pointer;">Lease with Jobrad</span>
+	<span style="cursor:pointer;">Leasing</span>
   </div>
 
     <div class="tip" id="shippment">
@@ -1298,7 +1298,7 @@ letter-spacing: 0px;
 		text-decoration: underline;
 	}
   </style>
-  <a href="/pages/jobrad"><div class="jobrad">
+  <a href="/pages/leasing"><div class="jobrad">
 	<div>Save up to 40% with leasing<br> <span>click here to request an offer</span></div>
 	<img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/jr-color_2x_d6424f5f-f299-46a2-8f78-ffd7816f157e.jpg?v=1679970881">
   </div></a>
@@ -1624,10 +1624,10 @@ function addAllToCart(parse) {
 function testRideTrace(){
 	const search = ''
 
-	const bike_style = $('.size-text')[0].innerText.slice(2)
-	const bike_size = $('.size-text')[1].innerText.slice(2)
+	const bike_style = Array.from(document.querySelectorAll('div[data-swatch-type="image"] input')).find(e => e.checked).value
+	const bike_size = Array.from(document.querySelectorAll('div[data-swatch-type="label"] input')).find(e => e.checked).value
 
-	window.location.href= `/pages/jobrad?bike_style=${bike_style}&bike_size=${bike_size}&utm_source=order_page#forms`
+	window.location.href= `/pages/leasing?bike_style=${bike_style}&bike_size=${bike_size}&utm_source=order_page`
 
 
 	/*
@@ -2517,11 +2517,11 @@ function testRideTrace(){
 <div id="section4">
 	<div></div>
 	<div>
-		<img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/jobradorg_2x_9fa9518f-0618-4ba0-8973-8f5a381f940d.png?v=1680154687" alt="">
+		<!--<img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/jobradorg_2x_9fa9518f-0618-4ba0-8973-8f5a381f940d.png?v=1680154687" alt="">-->
 		<h1>Lease an Urtopia</h1>
-		<div class="u20Medium">Lease with JobRad for a tax-deductible purchase and save up to 40%</div>
+		<div class="u20Medium">Lease with the best leasing providers for a tax-deductible purchase and save up to 40%</div>
 		<div>
-			<a class="my-button my-button-black" href="/pages/jobrad">Learn more</a>
+			<a class="my-button my-button-black" href="/pages/leasing">Learn more</a>
 		</div>
 	</div>
   </div>

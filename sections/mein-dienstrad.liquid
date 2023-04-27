@@ -31,7 +31,7 @@
                     </div>
                     <div>
                         <div class="u24Medium">Additional monthly savings</div>
-                        <div class="u17Light">If you lease with JobRad, your purchase is tax deductible. You can save up to
+                        <div class="u17Light">If you lease with Mein-dienstrad, your purchase is tax deductible. You can save up to
                             40% compared to buying a bike with a traditional payment method.</div>
                     </div>
                     <div>
@@ -56,7 +56,7 @@
                     alt="">
                 <div>
                     <div class="u48DemiBold">How it works</div>
-                    <div class="u20Medium">Please ensure that your employer has signed up with Mein Dienstrad.  <a class="your" style="text-decoration: underline;" href="">Your employer doesn't offer JobRad yet?</a></div>
+                    <div class="u20Medium">Please ensure that your employer has signed up with Mein Dienstrad.  <!--<a class="your" style="text-decoration: underline;" href="">Your employer doesn't offer JobRad yet?</a>--></div>
                     <div class="u17Light">
                         1. Click on the button or filling the form below to start your application with a new form. (Currently only Carbon 1 is available for Mein Dienstrad)<br><br>
                         2. We will then place an offer for you on the Mein Dienstrad portal: www.mein-dienstrad.de, where you can view the status of your order, save and manage important documents.<br><br>
@@ -135,8 +135,8 @@
                                 <div class="u24Medium">Bike Size<i>*</i></div>
                                 <select name="bike_size" required>
                                     <option value="">---</option>
-                                    <option>M - Fit for 170-185 cm</option>                  
-                                    <option>L - Fit for 180-195 cm</option>
+                                    <option value="M">M - Fit for 170-185 cm</option>                  
+                                    <option value="L">L - Fit for 180-195 cm</option>
                                 </select>
                             </div>
                             <div>
@@ -177,7 +177,7 @@
         <div class="faqs">
             <div class="centeral-content">
                 <div class="faq">
-                    <div class="titlee">Frequently asked <br class="pcHide">questions about JobRad</div>
+                    <div class="titlee">Frequently asked <br class="pcHide">questions about Mein-dienstrad</div>
                     <div class="swiper swiper-no-swiping faq-list">
                         <div class="swiper-wrapper">
                             <div class="swiper-slide">
@@ -190,6 +190,7 @@
     </div>
 
 <script>
+    /*
   window.addEventListener(
         'message',
         (function () {
@@ -214,24 +215,69 @@
         })(),
         false
     )
+    */
 
     const faqs = [
         {
             title: "Am I qualified for Mein Dienstrad?",
-            content: `You are an employee: If your company already works with Mein Dienstrad, you can order your Urtopia today. If not, you can introduce your employer to Mein Dienstrad. You are self-employed: You can certainly lease one or more Urtopias for your company via Mein Dienstrad. You can find more practical information here .`
+            content: `You are an employee: If your company already works with Mein 
+            Dienstrad, you can order your Urtopia today. If not, you can introduce 
+            your employer to Mein Dienstrad.<br><br>
+  
+            You are self-employed: You can certainly lease one or more Urtopias 
+            for your company via Mein Dienstrad.`
         },
         {
-            title: 'What is the benefit of leasing a Urtopia through Mein Dienstrad?',
-            content: 'With a leasing contract for company bikes, you save up to 40% of the original purchase price with full damage protection. In the case of an employer subsidy, you benefit even more! You conveniently pay the usage rates with your payslip and enjoy substantial net savings. Our all-round carefree package already includes fully comprehensive insurance, as well as the assumption of costs for all wearing parts, repairs and inspections. 100% digital - and still 100% personal! Your ordering process runs completely online via our portal www.mein-dienstrad.de. Here you can view the status of your order, save and manage important documents. You also have access to your data at any time - GDPR-compliant, of course.'
+            title: "What is the benefit of leasing a Urtopia through Mein Dienstrad?",
+            content: `With a leasing contract for company bikes, you save up to 40% of the original purchase price with full damage protection. In the case of an employer subsidy, you benefit even more! You conveniently pay the usage rates with your payslip and enjoy substantial net savings. Our all-round carefree package already includes fully comprehensive insurance, as well as the assumption of costs for all wearing parts, repairs and inspections.
+             <br><br>100% digital - and still 100% personal! Your ordering process runs completely online via our portal www.mein-dienstrad.de. Here you can view the status of your order, save and manage important documents. You also have access to your data at any time - GDPR-compliant, of course.`
         },
         {
-            title: 'How would the eSIM service working on leasing e-bike?',
-            content: 'The first year is free. To avoid not being able to use some advanced features after one year, it is recommended to add 2 years of eSIM service on Jobrad. Outdoor 4G connectivity requires an active eSIM service to ensure constant connectivity and security on the go. It is required for many advanced smart features such as activity tracking, AI voice control, motion alerts, and OTA updates.'
+            title: "How does the eSIM service apply to leasing?",
+            content: `No, it is not possible to add the eSIM service to the offer.<br><br>
+  
+            The first year is free.
+            After that you can purchase it from Urtopia's official website.<br><br>
+  
+            Outdoor 4G connectivity requires an active eSIM service to ensure constant connectivity and security on the go. It is required for many advanced smart features such as activity tracking, AI voice control, motion alerts, and OTA updates.`
         },
         {
-            title: 'How do I order a Urtopia via Mein Dienstrad?',
-            content: "Please fill out this form with your contact details to request a quote. We will then post an offer for you on the Mein Dienstrad portal: www.mein-dienstrad.de,. You can view the offer and view the status of your order, save and manage important documents. After confirmation, the offer is converted into an order. Your employer and Mein Dienstrad must approve the order. You will receive a confirmation email once your order has been reviewed and approved. Soon you’ll be riding your Urtopia bike!"
-        }
+            title: "How do I order a Urtopia via Mein Dienstrad?",
+            content: `Please fill out this form with your contact details to request a quote. We will then post an offer for you on the Mein Dienstrad portal: www.mein-dienstrad.de,. You can view the offer and view the status of your order, save and manage important documents.<br><br>
+  
+            After confirmation, the offer is converted into an order. Your employer and Mein Dienstrad must approve the order.<br><br>
+  
+            You will receive a confirmation email once your order has been reviewed and approved. Soon you’ll be riding your Urtopia bike!`
+        },
+        {
+            title: "How long is the lease period?",
+            content: `The leasing period is 36 months. The installments will be deducted from your gross salary monthly until the end of this period.`
+        },
+        {
+            title: "What happens if I leave my employer?",
+            content: `Depending on the situation, there are different options. It is best to discuss the possibilities with your employer.`
+        },
+        {
+            title: "Can I add Urtopia Theft Insurance to my Mein Dienstrad order?",
+            content: `No, it is not possible to add our theft insurance to the offer. Mein Dienstrad has its own insurance against theft, accidents and damage, which is included in the leasing package.`
+        },
+        {
+            title: "Can I add accessories to my Mein Dienstrad order?",
+            content: `Yes, you can add both the bike and the accessories to your order.
+            The availability is depends on our local stock, our specialist will contact you about your order.`
+        },
+        {
+          title: "I have already bought a bike from you. Can I use this order for leasing via Mein Dienstrad?",
+          content: `Unfortunately, no. The only option here would be to cancel your order and place a new order through Mein Dienstrad.`
+      },
+      {
+          title: "What happens if I want to return my Urtopia?",
+          content: `Generally this is not possible. When you receive your bike, it is very important that you carefully inspect it for any imperfections or defects. If your bike was delivered damaged, please contact our customer service. An exchange for the same bike is possible in certain cases.`
+      },
+      {
+          title: "Can I return my Mein Dienstrad order within the 14 day period?",
+          content: `No. Unfortunately, this is not possible, as you have agreed on a leasing contract with the duration of 36 months with Mein Dienstrad. If you have questions about the terms of your contract, please contact Mein Dienstrad.`
+      },
     ]
 
     $('.faqs .swiper-slide').html(faqs.map(faq => `
@@ -277,7 +323,10 @@
 
             search = Object.assign(search, extras)
 
-            fetchBuried('jobrad', 'submit', search)
+            // 重写bike_size
+            search.bike_size = search.bike_size === 'M' ? 'M - Fit for 170-185 cm' : 'L - Fit for 180-195 cm'
+
+            fetchBuried('mein-dienstrad', 'submit', search)
             // fbq('track', 'Jobrad Submit')
             fbq('track', 'CompleteRegistration', {
                 value: 3596,
@@ -299,7 +348,7 @@
                 data[target.name] = target.value
             })
 
-            fetchBuried('jobrad', 'submitinfo', data)
+            fetchBuried('mein-dienstrad', 'submitinfo', data)
         }, 5000))
 
         $('.forms form').on("submit", function (event) {
@@ -336,7 +385,7 @@
 
 
     if (!sessionStorage.isPreviewJobrad) {
-        fetchBuried('jobrad', 'pageview')
+        fetchBuried('mein-dienstrad', 'pageview')
     }
 
     // 记录来过这个页面
@@ -358,12 +407,6 @@
 
     // 如果bike_size 存在
     if (urlSearch.bike_size) {
-        if (urlSearch.bike_size.includes('170-185')) {
-            urlSearch.bike_size = 'M - ' + urlSearch.bike_size
-        } else {
-            urlSearch.bike_size = 'L - ' + urlSearch.bike_size
-        }
-
         $(`select[name="bike_size"]`).val(urlSearch.bike_size)
     }
 
@@ -374,7 +417,7 @@
 
     
 
-
+    /*
     $('.works .your').on('click', e => {
         const item = document.querySelector('.faqs .faq-item')
         const title = item.querySelector('.faq-title')
@@ -396,4 +439,5 @@
         e.preventDefault();
         return false;
     })
+    */
 </script>
