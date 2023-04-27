@@ -175,6 +175,9 @@ $('.partners .boxs a').each((index, elem) => {
 
     console.log(index, elem)
     $(elem).on('click', e => {
+        e.preventDefault();
+
+
         if (index === 0) {
             location.href = location.href.replace('leasing', 'jobrad') + '#froms'
         }
@@ -190,9 +193,7 @@ $('.partners .boxs a').each((index, elem) => {
         if (index === 3) {
             location.href = location.href.replace('leasing', 'mein-dienstrad')
         }
-        console.log(e)
-    
-        e.preventDefault();
+       
         return false;
     })
 })
