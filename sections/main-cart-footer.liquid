@@ -150,6 +150,7 @@
               document.querySelector(`.product_code`).innerHTML = ''
             } else {
               {% if settings.enabled_labour_day %}
+                document.querySelector(`.product_code .carbon_code`).innerHTML = 'Check out with Easter Sale'
                 document.querySelector(`.product_code .carbon_text > div:nth-child(1) span`).innerHTML = `Save €${carbon_quantly * 173}.00!`
                 document.querySelector(`.product_code .carbon_text > div:nth-child(2) span`).innerHTML = 'Free Accessories'
               {% else %}
