@@ -630,7 +630,25 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
 	  border: none;
 	  line-height: 12px;
 	}
+
+
+
+	.fuck {
+		height: 50px;
+		background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_20957_2x_7ab9c810-2adc-43e6-a0c6-f3a6e36749b1.jpg?v=1682597938');
+		color: #000;
+		background-size: 100% 100%;
+		background-repeat: no-repeat;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		justify-content: center;
+		padding-left: 15px;
+	}
   </style>
+
+
+  
 
    <div id="total-price-pc"><span class="price">{{ 0 | money }}</span></div>
       <klarna-placement
@@ -642,9 +660,9 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
       <div data-pf-type="Custom.HTML" class="sc-AjmGg eCTxfx pf-30_">
 
 	{% if settings.enabled_labour_day %}
-		<div class="carbon_code" style="color: #000;background-image: linear-gradient(90deg, #EFC305, #FFDF67);">
-			<span style="flex-basis: 75%;">4 Freebies with Labour Day Sale Code</span>
-			<span style="flex-basis: 25%;" class="bold">MAI</span>
+		<div class="fuck">
+			<div class="u17DemiBold_v2">3 Freebies with Labour Day Sale</div>
+			<div class="u11Light_v2">(Apply in your cart automatically)</div>
 		</div>
 	{% else %}
 		<!--<div class="carbon_code" style="border-radius: unset;background-image: url(https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230324-171240.png?v=1679649232);background-size: 100% 46px;">
@@ -776,12 +794,12 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
                 <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Image_140_2x_7115e41a-ce25-4dea-b7d7-761dc37e6114.jpg?v=1679919807" alt="">
                 <span>Kickstand</span>
             </div>
-				<div class="item">
+				<!--<div class="item">
 					<img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/2x.png?v=1682327215" alt="">
 					<span>Rear Rack</span>
-				</div>
+				</div>-->
 				<div class="item" style="max-width: 87px;">
-					<div class="yellow">FREE<br><span style="text-decoration: line-through;font-size: unset;">€272</span></div>
+					<div class="yellow">FREE<br><span style="text-decoration: line-through;font-size: unset;">€173</span></div>
 				</div>
 				<!--<div class="item" style="max-width: 87px;">
 					<div>FREE</div>
@@ -3922,8 +3940,7 @@ var accessories_global = {
 	{% if settings.enabled_labour_day %}
 		{"id": '43745261748440','quantity': 1},
 		{"id": '43788921241816','quantity': 1},
-		{"id": '43745264697560','quantity': 1},
-		{"id": '43788921274584','quantity': 1}
+		{"id": '43745264697560','quantity': 1}
 	{% endif %}
 ]
 }
