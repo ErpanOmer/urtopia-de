@@ -320,6 +320,8 @@
                 value: 3596,
                 currency: 'usd',
             });
+
+            gtag_report_conversion()
         }
 
 
@@ -427,4 +429,18 @@
         e.preventDefault();
         return false;
     })
+
+
+    function gtag_report_conversion(url) {
+        var callback = function () {
+          if (typeof(url) != 'undefined') {
+            window.location = url;
+          }
+        };
+        gtag('event', 'conversion', {
+            'send_to': 'AW-10876491006/sCHgCIiX55oYEP6pqMIo',
+            'event_callback': callback
+        });
+        return false;
+      }
 </script>

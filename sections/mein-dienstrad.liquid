@@ -333,6 +333,9 @@
                 value: 3596,
                 currency: 'usd',
             });
+
+
+            gtag_report_conversion()
         }
 
 
@@ -385,12 +388,12 @@
     }, 1000)
 
 
-    if (!sessionStorage.isPreviewJobrad) {
+    if (!sessionStorage.isPreviewMeinDienstrad) {
         fetchBuried('mein-dienstrad', 'pageview')
     }
 
     // 记录来过这个页面
-    sessionStorage.isPreviewJobrad = 'isPreviewJobrad'
+    sessionStorage.isPreviewMeinDienstrad = 'isPreviewMeinDienstrad'
 
 
     // url 处理
@@ -441,4 +444,18 @@
         return false;
     })
     */
+
+
+    function gtag_report_conversion(url) {
+        var callback = function () {
+          if (typeof(url) != 'undefined') {
+            window.location = url;
+          }
+        };
+        gtag('event', 'conversion', {
+            'send_to': 'AW-10876491006/sCHgCIiX55oYEP6pqMIo',
+            'event_callback': callback
+        });
+        return false;
+      }
 </script>
