@@ -753,7 +753,7 @@ const testRides = [
     stores: [
       {
         name: 'Autohaus Löbau',
-        phone: '0049 358 5479560',
+        phone: '0049 3585 47950',
         email: 'verkauf@autohaus-loebau.fsoc.de',
         timezone: "Mainz, Germany (GMT+1)",
         add: "An d. Hohle 15, 02708 Löbau, Deutschland",
@@ -783,7 +783,7 @@ const testRides = [
       {
         name: 'Autohaus Zittau',
         phone: '0049 358 3554840',
-        email: 'verkauf@autohaus-loebau.fsoc.de',
+        email: 'autohaus.loebau.zittau@t-online.de',
         timezone: "Mainz, Germany (GMT+1)",
         add: "Äußere Weberstraße 36, 02763 Zittau, Deutschland",
         imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Zittau.jpg?v=1681442327",
