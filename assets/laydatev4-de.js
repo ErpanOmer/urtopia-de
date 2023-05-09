@@ -3291,7 +3291,12 @@ function splitTimeFormat(item = '') {
       const carbonL = ``
       const chord = ``
 
-      const sizes = that.config.shopInfo.availableSizes || that.config.shopInfo.testRideSize
+      let sizes = that.config.shopInfo.availableSizes || that.config.shopInfo.testRideSize
+
+      // 如果是数组
+      if (Array.isArray(sizes)) {
+        const 
+      }
 
       console.log(' that.config',  )
 
