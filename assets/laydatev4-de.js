@@ -3419,7 +3419,7 @@ function splitTimeFormat(item = '') {
         "Thank you for your booking!<br>Check your email for confirmation."
       );
       
-      lay(divBookingSusscessContent).html('<div class="shop-detail"></div>').html($('.shop-detail').html())
+      lay(divBookingSusscessContent).append($('.shop-detail').html())
 
       lay(divBookingSusscessButton).html(
         (function () {
