@@ -3287,6 +3287,7 @@ function splitTimeFormat(item = '') {
 
     else if (that.step == 0) {
       const carbonM = {
+        id: 1,
         name: 'Carbon 1',
         fit: 'Fit for 170 - 185cm',
         size: 'M',
@@ -3294,6 +3295,7 @@ function splitTimeFormat(item = '') {
       }
 
       const carbonL = {
+        id: 2,
         name: 'Carbon 1',
         fit: 'Fit for 180 - 195cm',
         size: 'L',
@@ -3301,6 +3303,7 @@ function splitTimeFormat(item = '') {
       }
 
       const chordX = {
+        id: 3,
         name: 'Chord',
         fit: 'Fit for 170 - 195cm',
         size: '',
@@ -3350,7 +3353,7 @@ function splitTimeFormat(item = '') {
       $('.layui-laydate-info-footer').hide()
       $('#layui-laydate1').append(`
         <div class="choose">${choose.map(i => `
-          <div class="item">
+          <div class="item" id="${i.id}">
             <div>
               <div class="u20DemiBold_v2">${i.name}</div>
               <div class="flex-1"></div>
@@ -3365,6 +3368,7 @@ function splitTimeFormat(item = '') {
 
       setTimeout(() => {
         $('.choose .item').on('click', e => {
+          const target = e.currentTarget
           console.log(e)
         })
       }, 300)
