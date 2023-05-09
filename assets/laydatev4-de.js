@@ -3371,6 +3371,13 @@ function splitTimeFormat(item = '') {
           const find = e.currentTarget.id === '1' ? carbonM : e.currentTarget.id === '2' ? carbonL : chordX
 
           console.log(find)
+          $('.shop-detail').append(`
+          <div class="item">
+              <label class="u20DemiBold">Test ride model::</label>
+              <span class="u20Medium">${find.size ? `Carbon One, size ${find.size}` : ''}</span>
+              <span class="u20Medium">${find.fit}</span>
+          </div>
+          `)
         })
       }, 300)
       // that.divBookingForm.style.visibility = "hidden";
