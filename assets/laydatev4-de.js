@@ -3380,6 +3380,7 @@ function splitTimeFormat(item = '') {
 
 
           $('.calendar-content').show()
+          $('.choose').hide()
           that.next();
         })
       }, 300)
