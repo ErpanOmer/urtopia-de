@@ -3341,7 +3341,16 @@ function splitTimeFormat(item = '') {
       $('.calendar-content').hide()
       $('.layui-laydate-info-footer').hide()
       $('#layui-laydate1').append(`
-        <div class="choose">
+        <div class="choose">${choose.map(i => `
+          <div class="item">
+            <div>
+              <div>${i.name}</div>
+              <div>${i.size}</div>
+              <div>${i.fit}</div>
+            </div>
+            <img src="${i.img}"/>
+          </div>
+        `)}
         </div>
       `)
       // that.divBookingForm.style.visibility = "hidden";
