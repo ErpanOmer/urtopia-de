@@ -3291,7 +3291,9 @@ function splitTimeFormat(item = '') {
       const carbonL = ``
       const chord = ``
 
-      console.log(' that.config',  that.config)
+      const sizes = that.config.shopInfo.availableSizes || that.config.shopInfo.testRideSize
+
+      console.log(' that.config',  )
 
       lay(".select-tip").html("Choose test ride model");
       $('.calendar-content').hide()
