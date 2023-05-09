@@ -3374,7 +3374,7 @@ function splitTimeFormat(item = '') {
           $('.shop-detail').append(`
           <div class="item">
               <label class="u20DemiBold">Test ride model::</label>
-              <span class="u20Medium">${find.size ? `Carbon One, size ${find.size}` : ''}</span>
+              <span class="u20Medium">${find.size ? `Carbon One, size ${find.size}` : ''}</span></br>
               <span class="u20Medium">${find.fit}</span>
           </div>
           `)
