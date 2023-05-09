@@ -3333,6 +3333,15 @@ function splitTimeFormat(item = '') {
           choose.push(chord)
         }
 
+      } else {
+          const size = sizes
+          if (size === 'M/L') {
+            choose.push(carbonM, carbonL)
+          } else if (size === 'M') {
+            choose.push(carbonM)
+          } else {
+            choose.push(carbonL)
+          }
       }
 
       console.log('choose', choose)
