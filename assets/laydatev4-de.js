@@ -3301,7 +3301,7 @@ function splitTimeFormat(item = '') {
         img: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18409_2x_87c499be-99e5-457b-869b-963e270f0ea1.jpg?v=1683614780'
       }
 
-      const chord = {
+      const chordX = {
         name: 'Chord',
         fit: 'Fit for 170 - 195cm',
         size: '',
@@ -3330,7 +3330,7 @@ function splitTimeFormat(item = '') {
 
         // 如果chord存在
         if (chord) {
-          choose.push(chord)
+          choose.push(chordX)
         }
 
       } else {
