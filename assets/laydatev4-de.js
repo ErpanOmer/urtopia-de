@@ -3419,7 +3419,7 @@ function splitTimeFormat(item = '') {
         "Thank you for your booking!<br>Check your email for confirmation."
       );
       
-      lay(divBookingSusscessContent).append(`<div class="shop-detail">${$('.shop-detail').html()}</div>`)
+      lay(divBookingSusscessContent).append(`<div class="shop-detail">${$('.shop-detail').html()}</div><img src="${that.config.shopInfo.imgUrl}"/>`)
 
       lay(divBookingSusscessButton).html(
         (function () {
