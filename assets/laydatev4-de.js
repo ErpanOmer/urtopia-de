@@ -3374,7 +3374,7 @@ function splitTimeFormat(item = '') {
           $('.shop-detail').append(`
           <div class="item" style="justify-content: space-between;border-top: 1px solid #ddd;padding-top: 12px;">
               <label class="u20DemiBold">Test ride model:</label>
-              <span class="u20Medium">${find.size ? `Carbon One, size ${find.size}` : ''}</br>${find.fit}</span>
+              <span class="u20Medium">${find.size ? `Carbon One, size ${find.size}` : 'Chord'}</br>${find.fit}</span>
           </div>
           `)
 
@@ -3382,6 +3382,9 @@ function splitTimeFormat(item = '') {
           $('.calendar-content').show()
           $('.choose').hide()
           that.next();
+
+
+          extra_data.test_ride_model = `${find.size ? `Carbon One, size ${find.size}` : 'Chord'}</br>${find.fit}`
         })
       }, 300)
 
