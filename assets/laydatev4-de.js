@@ -3335,7 +3335,7 @@ function splitTimeFormat(item = '') {
 
       }
 
-      console.log(' that.config',  )
+      console.log('choose', choose)
 
       lay(".select-tip").html("Choose test ride model");
       $('.calendar-content').hide()
