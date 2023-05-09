@@ -266,6 +266,17 @@
         line-height: 20px;
     }
 
+    .booking-success .success-content {
+        flex-direction: column;
+    }
+
+    .booking-success .success-content > img {
+        max-width: unset;
+        margin-left: unset;
+        object-fit: unset;
+        border-radius: 10px;
+    }
+
 }
 
 
