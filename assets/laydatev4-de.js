@@ -3355,7 +3355,7 @@ function splitTimeFormat(item = '') {
             <div>
               <div class="u20DemiBold_v2">${i.name}</div>
               <div class="flex-1"></div>
-              ${i.size ? `<div class="">Size: ${i.size}</div>` : ''}
+              ${i.size ? `<div class="">Size: ${i.size}</div>` : ' '}
               <div class="">${i.fit}</div>
             </div>
             <img src="${i.img}"/>
