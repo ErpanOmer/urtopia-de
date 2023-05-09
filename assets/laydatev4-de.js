@@ -3287,8 +3287,20 @@ function splitTimeFormat(item = '') {
     //预约时间，即初始s
 
     else if (that.step == 0) {
-      const carbonM = ``
-      const carbonL = ``
+      const carbonM = {
+        name: 'Chord',
+        fit: 'Fit for 170 - 195cm',
+        size: '',
+        img: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/1_1_2x_c0a40bb0-8853-4818-aa56-0b6cdad81548.jpg?v=1683612101'
+      }
+
+      const carbonL = {
+        name: 'Chord',
+        fit: 'Fit for 170 - 195cm',
+        size: '',
+        img: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/1_1_2x_c0a40bb0-8853-4818-aa56-0b6cdad81548.jpg?v=1683612101'
+      }
+      
       const chord = {
         name: 'Chord',
         fit: 'Fit for 170 - 195cm',
