@@ -3345,6 +3345,7 @@ function splitTimeFormat(item = '') {
           <div class="item">
             <div>
               <div>${i.name}</div>
+              <div class="flex-1"></div>
               <div>Size: ${i.size}</div>
               <div>${i.fit}</div>
             </div>
