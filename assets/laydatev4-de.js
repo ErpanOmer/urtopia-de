@@ -3287,6 +3287,12 @@ function splitTimeFormat(item = '') {
     //预约时间，即初始s
 
     else if (that.step == 0) {
+      const carbonM = ``
+      const carbonL = ``
+      const chord = ``
+
+      console.log(' that.config',  that.config)
+
       lay(".select-tip").html("Choose test ride model");
       $('.calendar-content').hide()
       $('.layui-laydate-info-footer').hide()
