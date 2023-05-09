@@ -3299,6 +3299,11 @@ function splitTimeFormat(item = '') {
         const carbon = sizes.find(s => s.includes('Carbon'))
         const chord = sizes.includes('Chord')
 
+        // 如果carbon 存在
+        if (carbon) {
+          console.log(carbon)
+        }
+
         // 如果chord存在
         if (chord) {
           choose.push({
