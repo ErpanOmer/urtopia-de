@@ -2209,7 +2209,7 @@ function splitTimeFormat(item = '') {
       }
     }
     if (Object.keys(options.shopList).length == 1 || options.specific >= 1) {
-      that.next();
+      //that.next();
     }
   };
 
