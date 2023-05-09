@@ -2209,7 +2209,7 @@ function splitTimeFormat(item = '') {
       }
     }
     if (Object.keys(options.shopList).length == 1 || options.specific >= 1) {
-      //that.next();
+      that.next();
     }
   };
 
@@ -3284,6 +3284,7 @@ function splitTimeFormat(item = '') {
       });
     }
     //预约时间，即初始s
+    console.log('that.step', that.step)
     else if (that.step == 0) {
       lay(".select-tip").html("Choose test ride model");
       // that.divBookingForm.style.visibility = "hidden";
