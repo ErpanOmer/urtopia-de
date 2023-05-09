@@ -252,32 +252,7 @@
 }
 
 
-@media (max-width: 767px) {
 
-    .shop-detail .u30DemiBold {
-        font-size: 24px;
-        line-height: 30px;
-        margin-bottom: 12px;
-    }
-
-    .shop-detail .u20DemiBold,
-    .shop-detail .u20Medium {
-        font-size: 16px;
-        line-height: 20px;
-    }
-
-    .booking-success .success-content {
-        flex-direction: column;
-    }
-
-    .booking-success .success-content > img {
-        max-width: unset;
-        margin-left: unset;
-        object-fit: unset;
-        border-radius: 10px;
-    }
-
-}
 
 
 .booking-popup .choose {
@@ -323,6 +298,34 @@
     margin-left: 5%;
     object-fit: cover;
     border-radius: 10px;
+}
+
+
+@media (max-width: 767px) {
+
+    .shop-detail .u30DemiBold {
+        font-size: 24px;
+        line-height: 30px;
+        margin-bottom: 12px;
+    }
+
+    .shop-detail .u20DemiBold,
+    .shop-detail .u20Medium {
+        font-size: 16px;
+        line-height: 20px;
+    }
+
+    .booking-success .success-content {
+        flex-direction: column;
+    }
+
+    .booking-success .success-content > img {
+        max-width: unset;
+        margin-left: unset;
+        object-fit: unset;
+        border-radius: 10px;
+    }
+
 }
 
 .testride {
