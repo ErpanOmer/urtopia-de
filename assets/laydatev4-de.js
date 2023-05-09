@@ -3368,8 +3368,9 @@ function splitTimeFormat(item = '') {
 
       setTimeout(() => {
         $('.choose .item').on('click', e => {
-          const id = document.getElementById(e.currentTarget.id)
-          console.log(id)
+          const find = e.currentTarget.id === '1' ? carbonM : e.currentTarget.id === '2' ? carbonL : chordX
+
+          console.log(find)
         })
       }, 300)
       // that.divBookingForm.style.visibility = "hidden";
