@@ -3363,6 +3363,12 @@ function splitTimeFormat(item = '') {
         `).join('')}
         </div>
       `)
+
+      setTimeout(() => {
+        $('.choose .item').on('click', e => {
+          console.log(e)
+        })
+      }, 300)
       // that.divBookingForm.style.visibility = "hidden";
       // lay(".back-btn").removeClass("hidden-btn");
       // lay(".back-btn-mb").removeClass("hidden-btn");
