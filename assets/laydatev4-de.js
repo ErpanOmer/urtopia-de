@@ -3288,9 +3288,9 @@ function splitTimeFormat(item = '') {
 
     else if (that.step == 0) {
       const carbonM = {
-        name: 'Chord',
-        fit: 'Fit for 170 - 195cm',
-        size: '',
+        name: 'Carbon 1',
+        fit: 'Fit for 170 - 185cm',
+        size: 'M',
         img: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/1_1_2x_c0a40bb0-8853-4818-aa56-0b6cdad81548.jpg?v=1683612101'
       }
 
@@ -3300,7 +3300,7 @@ function splitTimeFormat(item = '') {
         size: '',
         img: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/1_1_2x_c0a40bb0-8853-4818-aa56-0b6cdad81548.jpg?v=1683612101'
       }
-      
+
       const chord = {
         name: 'Chord',
         fit: 'Fit for 170 - 195cm',
