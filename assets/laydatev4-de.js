@@ -3289,7 +3289,12 @@ function splitTimeFormat(item = '') {
     else if (that.step == 0) {
       const carbonM = ``
       const carbonL = ``
-      const chord = ``
+      const chord = {
+        name: 'Chord',
+        fit: 'Fit for 170 - 195cm',
+        size: '',
+        img: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/1_1_2x_c0a40bb0-8853-4818-aa56-0b6cdad81548.jpg?v=1683612101'
+      }
 
       let sizes = that.config.shopInfo.availableSizes || that.config.shopInfo.testRideSize
       const choose = []
@@ -3299,19 +3304,16 @@ function splitTimeFormat(item = '') {
         const carbon = sizes.find(s => s.includes('Carbon'))
         const chord = sizes.includes('Chord')
 
+        
+
         // 如果carbon 存在
         if (carbon) {
-          console.log(carbon)
+          const size = carbon.split(' ').pop()
         }
 
         // 如果chord存在
         if (chord) {
-          choose.push({
-            name: 'Chord',
-            fit: 'Fit for 170 - 195cm',
-            size: '',
-            img: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/1_1_2x_c0a40bb0-8853-4818-aa56-0b6cdad81548.jpg?v=1683612101'
-          })
+          choose.push(chord)
         }
 
       }
