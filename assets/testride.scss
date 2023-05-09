@@ -268,6 +268,21 @@
 
 }
 
+
+.booking-popup .choose {
+    display: flex;
+    flex-direction: column;
+}
+
+.booking-popup .choose .item {
+    box-shadow: 0px 0px 10px #00000019;
+    border-radius: 10px;
+}
+
+.booking-popup .choose .item img {
+    max-width: 215px;
+}
+
 .testride {
     .banner {
         background: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_20828_2x_ef5d2894-9c53-47e4-ab11-69b44cf922d3.jpg?v=1680576439') center center/cover no-repeat;
