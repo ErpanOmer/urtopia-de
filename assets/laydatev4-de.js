@@ -3344,8 +3344,7 @@ function splitTimeFormat(item = '') {
         <div class="choose">${choose.map(i => `
           <div class="item">
             <div>
-              <div>${i.name}</div>
-              <div class="flex-1"></div>
+              <div class="u20DemiBold_v2">${i.name}</div>
               <div>Size: ${i.size}</div>
               <div>${i.fit}</div>
             </div>
