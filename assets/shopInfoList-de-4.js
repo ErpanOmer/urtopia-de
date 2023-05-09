@@ -684,7 +684,7 @@ const testRides = [
       },
     ]
   },
-  {
+  /*{
     city: 'Selbitz',
     cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230328-164146.jpg?v=1679992972',
     series: [
@@ -713,7 +713,7 @@ const testRides = [
         ],
       },
     ]
-  },
+  },*/
    {
     city: 'Offenburg',
     cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Offenburg.jpg?v=1681442327',
