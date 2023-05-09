@@ -3288,8 +3288,8 @@ function splitTimeFormat(item = '') {
 
     else if (that.step == 0) {
       lay(".select-tip").html("Choose test ride model");
-      $('.calendar-content').html('')
-      $('.layui-laydate-info-footer').html('')
+      $('.calendar-content').hide()
+      $('.layui-laydate-info-footer').hide()
       that.next();
       // that.divBookingForm.style.visibility = "hidden";
       // lay(".back-btn").removeClass("hidden-btn");
