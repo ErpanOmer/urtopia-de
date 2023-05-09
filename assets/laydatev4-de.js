@@ -3377,11 +3377,11 @@ function splitTimeFormat(item = '') {
               <span class="u20Medium">${find.size ? `Carbon One, size ${find.size}` : ''}</br>${find.fit}</span>
           </div>
           `)
+
+
+          $('.calendar-content').show()
+          that.next();
         })
-
-
-        $('.calendar-content').show()
-        that.next();
       }, 300)
 
 
