@@ -4064,6 +4064,15 @@ function splitTimeFormat(item = '') {
             };
 
             that.next();
+
+            setTimeout(() => {
+              $('.shop-detail').append(`
+              <div class="item" style="justify-content: space-between;border-top: 1px solid #ddd;padding-top: 12px;}">
+                  <label class="u20DemiBold">Test ride Time:</label>
+                  <span class="u20Medium">${time}</span>
+              </div>
+              `)
+            }, 300)
             // endLoad();
 
             // that.step = 2;
