@@ -3033,7 +3033,7 @@ function splitTimeFormat(item = '') {
       options = that.config;
     that.step += 1;
     //预约信息
-    if (that.step == 2) {
+    if (that.step == 3) {
       lay(".shop-select-content").css("display", "none");
       // lay(".booking-shop-content .shop-name").html(options.shopInfo.name);
       lay(".booking-shop-content .shop-name").html('Book a Test Ride');
@@ -3284,18 +3284,18 @@ function splitTimeFormat(item = '') {
       });
     }
     //预约时间，即初始s
-    else if (that.step == 0) {
-      //lay(".select-tip").html("Choose test ride model");
+    else if (that.step == 1) {
+      lay(".select-tip").html("Choose test ride model");
       // that.divBookingForm.style.visibility = "hidden";
       // lay(".back-btn").removeClass("hidden-btn");
       // lay(".back-btn-mb").removeClass("hidden-btn");
       // lay(".select-tip").removeClass("hidden-btn");
-    } else if (that.step == 1) {
+    } else if (that.step == 2) {
       that.checkDate().calendar(null, 0, "init"); //初始校验
       lay(".select-tip").html("Select a Date and Time");
     }
     //预约成功
-    else if (that.step == 3) {
+    else if (that.step == 4) {
       var divBookingSuccess = lay.elem("div", {
           class: "booking-success",
         }),
