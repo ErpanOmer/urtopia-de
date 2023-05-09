@@ -3291,14 +3291,14 @@ function splitTimeFormat(item = '') {
         name: 'Carbon 1',
         fit: 'Fit for 170 - 185cm',
         size: 'M',
-        img: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/1_1_2x_c0a40bb0-8853-4818-aa56-0b6cdad81548.jpg?v=1683612101'
+        img: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18409_2x_87c499be-99e5-457b-869b-963e270f0ea1.jpg?v=1683614780'
       }
 
       const carbonL = {
         name: 'Carbon 1',
         fit: 'Fit for 180 - 195cm',
         size: 'L',
-        img: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/1_1_2x_c0a40bb0-8853-4818-aa56-0b6cdad81548.jpg?v=1683612101'
+        img: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18409_2x_87c499be-99e5-457b-869b-963e270f0ea1.jpg?v=1683614780'
       }
 
       const chord = {
