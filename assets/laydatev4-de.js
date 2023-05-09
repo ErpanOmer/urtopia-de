@@ -3413,7 +3413,13 @@ function splitTimeFormat(item = '') {
         divBookingSusscessButton = lay.elem("div", {
           class: "success-button",
         });
-      lay(divBookingSusscessContent).html($('.shop-detail').html());
+
+
+      lay(divBookingSusscessTitle).html(
+        "Thank you for your booking!<br>Check your email for confirmation."
+      );
+      
+      lay(divBookingSusscessContent).html()
 
       lay(divBookingSusscessButton).html(
         (function () {
