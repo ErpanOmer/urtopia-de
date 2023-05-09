@@ -1867,7 +1867,7 @@ function splitTimeFormat(item = '') {
 
     elemShop[0] = lay.elem("div", {
       class: "booking-shop-content",
-      style: "width:370px",
+      style: "width:400px",
     });
     //改-插入左侧商店区域
     lay.each(elemShop, function (i, main) {
