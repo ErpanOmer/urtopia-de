@@ -3413,80 +3413,8 @@ function splitTimeFormat(item = '') {
         divBookingSusscessButton = lay.elem("div", {
           class: "success-button",
         });
-      lay(divBookingSusscessContent).html(
-        (function () {
-          var html = [];
-          html.push('<div class="info-title1">Booking Detail</div>');
-          html.push(
-            '<div class="info-content"><img class="content-img" src="' +
-              options.shopInfo.imgUrl +
-              '"/>'
-          );
-          if (options.specific >= 1) {
-            //改-bike-attack
-            lay(divBookingSusscessTitle).html(
-              "Thank you for Joining the event!<br>We are here waiting for you."
-            );
-            if (options.specific == 1) {
-              html.push(
-                '<div class="content-detail"> <div class="info-shopname">Testride the Future</div>'
-              );
-              html.push(
-                '<div class="info-title">Event time: <span>2022-12-17 11:00-15:00</span></div>'
-              );
-            } else if (options.specific == 2) {
-              html.push(
-                '<div class="content-detail"> <div class="info-shopname">Ride Into the Future</div>'
-              );
-              html.push(
-                '<div class="info-title">Event time: <span>2022-12-17 09:00-17:00</span></div>'
-              );
-            }
-          } else {
-            lay(divBookingSusscessTitle).html(
-              "Thank you for your booking!<br>Check your email for confirmation."
-            );
-            html.push(
-              '<div class="content-detail"> <div class="info-shopname">' +
-                options.shopInfo.name +
-                "</div>"
-            );
-            html.push(
-              '<div class="info-title2">Test ride bike - Carbon E-Bike Size ' +
-                options.shopInfo.testRideSize +
-                "</div>"
-            );
-            html.push(
-              '<div class="info-title">Booked time: <span>' +
-                lay("." + ELEM_PREVIEW)[0].innerHTML +
-                " " +
-                that.bookingTime +
-                "</span></div>"
-            );
-          }
-          // html.push(
-          //   '<div class="info-title">timezone: <span>' +
-          //     options.shopInfo.timezone +
-          //     "</span></div>"
-          // );
-          html.push(
-            '<div class="info-title">ADD: <span>' +
-              options.shopInfo.add +
-              "</span></div>"
-          );
-          html.push(
-            '<div class="info-title">Email: <span>' +
-              options.shopInfo.email +
-              "</span></div>"
-          );
-          html.push(
-            '<div class="info-title">Phone: <span>' +
-              options.shopInfo.phone +
-              "</span></div></div></div>"
-          );
-          return html.join("");
-        })()
-      );
+      lay(divBookingSusscessContent).html($('.shop-detail').html());
+
       lay(divBookingSusscessButton).html(
         (function () {
           var html = [];
