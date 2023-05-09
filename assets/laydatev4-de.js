@@ -3378,10 +3378,13 @@ function splitTimeFormat(item = '') {
           </div>
           `)
         })
+
+
+        $('.calendar-content').show()
+        that.next();
       }, 300)
 
-      $('.calendar-content').show()
-      that.next();
+
       // $('.layui-laydate-info-footer').show()
 
       // that.divBookingForm.style.visibility = "hidden";
