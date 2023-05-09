@@ -3285,6 +3285,7 @@ function splitTimeFormat(item = '') {
     }
     //预约时间，即初始s
     else if (that.step == 5) {
+      lay(".select-tip").html("Choose test ride model");
       // that.divBookingForm.style.visibility = "hidden";
       // lay(".back-btn").removeClass("hidden-btn");
       // lay(".back-btn-mb").removeClass("hidden-btn");
