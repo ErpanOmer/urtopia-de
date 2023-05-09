@@ -297,7 +297,21 @@
 }
 
 .booking-popup .choose .item img {
+    max-width: 40%;
+}
+
+.booking-success .success-content {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+}
+
+
+.booking-success .success-content > img {
     max-width: 50%;
+    margin-left: 5%;
+    object-fit: cover;
+    border-radius: 10px;
 }
 
 .testride {
