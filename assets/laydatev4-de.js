@@ -3319,6 +3319,13 @@ function splitTimeFormat(item = '') {
         // 如果carbon 存在
         if (carbon) {
           const size = carbon.split(' ').pop()
+          if (size === 'M/L') {
+            choose.push(carbonM, carbonL)
+          } else if (size === 'M') {
+            choose.push(carbonM)
+          } else {
+            choose.push(carbonL)
+          }
         }
 
         // 如果chord存在
