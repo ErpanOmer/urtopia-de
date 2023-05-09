@@ -3368,7 +3368,7 @@ function splitTimeFormat(item = '') {
 
       setTimeout(() => {
         $('.choose .item').on('click', e => {
-          const id = querySelector('.choose').getElementById(e.currentTarget.id)
+          const id = document.querySelector('.choose').getElementById(e.currentTarget.id)
           console.log(id)
         })
       }, 300)
