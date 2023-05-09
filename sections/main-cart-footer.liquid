@@ -144,10 +144,11 @@
             {% endif %}
 
 
-          } else if (chord_quantly > 0) { 
-            document.querySelector(`.product_code .bold`).innerHTML = 'OK300'
-            document.querySelector(`.product_code .carbon_text > div:nth-child(1) span`).innerHTML = `Save €${chord_quantly * 300}.00!`
-            document.querySelector(`.product_code .carbon_text > div:nth-child(2)`).innerHTML = ''
+          } else if (chord_quantly > 0) {
+            document.querySelector(`.product_code`).innerHTML = '' 
+            //document.querySelector(`.product_code .bold`).innerHTML = 'OK300'
+            //document.querySelector(`.product_code .carbon_text > div:nth-child(1) span`).innerHTML = `Save €${chord_quantly * 300}.00!`
+            //document.querySelector(`.product_code .carbon_text > div:nth-child(2)`).innerHTML = ''
           } else {
             if (carbon_quantly === 0) {
               document.querySelector(`.product_code`).innerHTML = ''
