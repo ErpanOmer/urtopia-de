@@ -3419,8 +3419,7 @@ function splitTimeFormat(item = '') {
         "Thank you for your booking!<br>Check your email for confirmation."
       );
       
-      lay(divBookingSusscessContent).html(document.querySelector('.shop-detail'))
-      // lay(divBookingSusscessContent).append($('.booking-shop-content').html())
+      lay(divBookingSusscessContent).append(`<div class="shop-detail">${$('.shop-detail').html()}</div>`)
 
       lay(divBookingSusscessButton).html(
         (function () {
