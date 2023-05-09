@@ -3032,6 +3032,7 @@ function splitTimeFormat(item = '') {
     var that = this,
       options = that.config;
     that.step += 1;
+    console.log('that.step', that.step)
     //预约信息
     if (that.step == 2) {
       lay(".shop-select-content").css("display", "none");
@@ -3284,7 +3285,7 @@ function splitTimeFormat(item = '') {
       });
     }
     //预约时间，即初始s
-    console.log('that.step', that.step)
+
     else if (that.step == 0) {
       lay(".select-tip").html("Choose test ride model");
       // that.divBookingForm.style.visibility = "hidden";
