@@ -323,6 +323,7 @@
 
     .booking-success .success-content {
         flex-direction: column-reverse;
+        width: unset;
     }
 
     .booking-success .success-content > img {
@@ -333,7 +334,7 @@
     }
 
     .test-ride label {
-        min-width: 100px;
+        // min-width: 100px;
     }
     
 
