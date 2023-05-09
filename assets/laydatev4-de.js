@@ -3292,10 +3292,22 @@ function splitTimeFormat(item = '') {
       const chord = ``
 
       let sizes = that.config.shopInfo.availableSizes || that.config.shopInfo.testRideSize
+      const choose = []
 
       // 如果是数组
       if (Array.isArray(sizes)) {
-        const 
+        const chord = sizes.includes('Chord')
+
+        // 如果chord存在
+        if (chord) {
+          choose.push({
+            name: 'Chord',
+            fit: 'Fit for 170 - 195cm',
+            size: '',
+            img: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/1_1_2x_c0a40bb0-8853-4818-aa56-0b6cdad81548.jpg?v=1683612101'
+          })
+        }
+
       }
 
       console.log(' that.config',  )
