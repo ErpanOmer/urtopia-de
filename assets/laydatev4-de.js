@@ -3379,6 +3379,11 @@ function splitTimeFormat(item = '') {
           `)
         })
       }, 300)
+
+      $('.calendar-content').show()
+      that.next();
+      // $('.layui-laydate-info-footer').show()
+
       // that.divBookingForm.style.visibility = "hidden";
       // lay(".back-btn").removeClass("hidden-btn");
       // lay(".back-btn-mb").removeClass("hidden-btn");
