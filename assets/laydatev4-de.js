@@ -3296,6 +3296,7 @@ function splitTimeFormat(item = '') {
 
       // 如果是数组
       if (Array.isArray(sizes)) {
+        const carbon = sizes.find(s => s.includes('Carbon'))
         const chord = sizes.includes('Chord')
 
         // 如果chord存在
