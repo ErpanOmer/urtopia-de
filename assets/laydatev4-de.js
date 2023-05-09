@@ -3350,7 +3350,7 @@ function splitTimeFormat(item = '') {
             </div>
             <img src="${i.img}"/>
           </div>
-        `)}
+        `).join('')}
         </div>
       `)
       // that.divBookingForm.style.visibility = "hidden";
