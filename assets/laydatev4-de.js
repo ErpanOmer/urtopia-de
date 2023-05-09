@@ -2015,12 +2015,11 @@ function splitTimeFormat(item = '') {
     //     return html.join("");
     //   })()
     // );
-
+    //<div class="u20DemiBold">Available Model:</div>
+    //<ul>
+      //  ${options.shopInfo.availableSizes ? options.shopInfo.availableSizes.map(i => `<li class="u20Medium">${i}</li>`).join('') : `<li class="u20Medium">Carbon One Size ${options.shopInfo.testRideSize}</li>`}
+    //</ul>
     const template = `<div class="u30DemiBold">${options.shopInfo.name}</div>
-    <div class="u20DemiBold">Available Model:</div>
-    <ul>
-        ${options.shopInfo.availableSizes ? options.shopInfo.availableSizes.map(i => `<li class="u20Medium">${i}</li>`).join('') : `<li class="u20Medium">Carbon One Size ${options.shopInfo.testRideSize}</li>`}
-    </ul>
     <div class="item">
         <label class="u20DemiBold">ADD:</label>
         <span class="u20Medium">${options.shopInfo.add}</span>
