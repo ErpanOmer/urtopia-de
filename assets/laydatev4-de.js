@@ -4074,6 +4074,9 @@ function splitTimeFormat(item = '') {
                   <span class="u20Medium">${time}</span>
               </div>
             `)
+
+
+            extra_data.test_ride_time = time
             // endLoad();
 
             // that.step = 2;
