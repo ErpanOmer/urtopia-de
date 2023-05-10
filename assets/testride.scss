@@ -227,6 +227,7 @@
     margin-bottom: 6px;
     font-size: 17px;
     color: #555;
+    word-break: break-word;
 }
 
 .shop-detail ul {
@@ -252,6 +253,60 @@
 }
 
 
+.test-ride label {
+    min-width: 160px;
+}
+
+
+
+
+
+.booking-popup .choose {
+    display: flex;
+    flex-direction: column;
+    margin-top: 25px;
+    color: #000;
+}
+
+.booking-popup .choose .item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 24px;
+    box-shadow: 0px 0px 10px #00000019;
+    border-radius: 10px;
+    margin-bottom: 12px;
+    cursor: pointer;
+}
+
+.booking-popup .choose .item > div {
+    padding: 12px 0;
+    font-weight: 300;
+}
+
+.booking-popup .choose .item .u20DemiBold_v2 {
+    margin-bottom: 18px;
+}
+
+.booking-popup .choose .item img {
+    max-width: 50%;
+}
+
+.booking-success .success-content {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+}
+
+
+.booking-success .success-content > img {
+    max-width: 50%;
+    margin-left: 5%;
+    object-fit: contain;
+    border-radius: 10px;
+}
+
+
 @media (max-width: 767px) {
 
     .shop-detail .u30DemiBold {
@@ -265,6 +320,23 @@
         font-size: 16px;
         line-height: 20px;
     }
+
+    .booking-success .success-content {
+        flex-direction: column-reverse;
+        width: unset;
+    }
+
+    .booking-success .success-content > img {
+        max-width: unset;
+        margin-left: unset;
+        object-fit: unset;
+        border-radius: 10px;
+    }
+
+    .test-ride label {
+        // min-width: 100px;
+    }
+    
 
 }
 

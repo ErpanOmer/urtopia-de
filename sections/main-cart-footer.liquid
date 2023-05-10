@@ -102,19 +102,12 @@
 <div class="page-width{% if cart == empty %} is-empty{% endif %}" id="main-cart-footer" data-id="{{ section.id }}">
   <div>
     <div class="product_code">
-            {% if settings.enabled_labour_day %}
-              <div class="carbon_code" style="color: #000;background-image: url(https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230425-181550.png?v=1682417764);">
-                <span style="flex-basis: 75%;justify-content: flex-start;
-                  padding-left: 24px;">Check out with <br> Labour Day Sale Code to Enjoy:</span>
-                <span class="bold" style="flex-basis: 22%;">OK300</span>
-              </div>
-            {% else %}
-              <div class="carbon_code">
-                <span>Check out with <br> Early Bird Sale Code to Enjoy:</span>
-                <span class="bold">OK300</span>
-              </div>
-            {% endif %}
-            <div class="carbon_text" {% if settings.enabled_labour_day %}style="color: #000;opacity:unset;background-image: linear-gradient(90deg,#FFE996,#F4D554);"{% endif %}>
+            <div class="carbon_code" style="color: #000;background-image: url(https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230425-181550.png?v=1682417764);">
+              <span style="flex-basis: 75%;justify-content: flex-start;
+                padding-left: 24px;">Check out with <br> Father’s Day Sale Code to Enjoy:</span>
+              <span class="bold" style="flex-basis: 22%;">OK300</span>
+            </div>
+            <div class="carbon_text" style="color: #000;opacity:unset;background-image: linear-gradient(90deg,#FFE996,#F4D554);">
                 <div>
                     <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/payment.svg?v=1682416663" />
                     <span>Save €300.00!</span>
@@ -141,34 +134,29 @@
           }
     
           if (carbon_quantly > 0 && chord_quantly > 0) {
-            document.querySelector(`.product_code .bold`).innerHTML = 'OK300'
-            document.querySelector(`.product_code .carbon_text > div:nth-child(1) span`).innerHTML = `Save €${carbon_quantly * 173 + chord_quantly * 300}.00!`
+              document.querySelector(`.product_code .carbon_code span:first-child`).innerHTML = 'Check out with Father’s Day Sale'
+              document.querySelector(`.product_code .carbon_code span:first-child`).classList.add('important')
 
-            {% if settings.enabled_labour_day %}
-                document.querySelector(`.product_code .carbon_text > div:nth-child(2) span`).innerHTML = 'Free Accessories'
-            {% else %}
-                document.querySelector(`.product_code .carbon_text > div:nth-child(2)`).innerHTML = ''
-            {% endif %}
+              document.querySelector(`.product_code .carbon_code span:last-child`).innerHTML = ''
+              document.querySelector(`.product_code .carbon_text > div:nth-child(1) span`).innerHTML = `Save €${carbon_quantly * 173}.00!`
+              document.querySelector(`.product_code .carbon_text > div:nth-child(2) span`).innerHTML = 'Free Accessories'
 
 
-          } else if (chord_quantly > 0) { 
-            document.querySelector(`.product_code .bold`).innerHTML = 'OK300'
-            document.querySelector(`.product_code .carbon_text > div:nth-child(1) span`).innerHTML = `Save €${chord_quantly * 300}.00!`
-            document.querySelector(`.product_code .carbon_text > div:nth-child(2)`).innerHTML = ''
+          } else if (chord_quantly > 0) {
+            document.querySelector(`.product_code`).innerHTML = '' 
+            //document.querySelector(`.product_code .bold`).innerHTML = 'OK300'
+            //document.querySelector(`.product_code .carbon_text > div:nth-child(1) span`).innerHTML = `Save €${chord_quantly * 300}.00!`
+            //document.querySelector(`.product_code .carbon_text > div:nth-child(2)`).innerHTML = ''
           } else {
             if (carbon_quantly === 0) {
               document.querySelector(`.product_code`).innerHTML = ''
             } else {
-              {% if settings.enabled_labour_day %}
-                document.querySelector(`.product_code .carbon_code span:first-child`).innerHTML = 'Check out with Labour Day Sale'
-                document.querySelector(`.product_code .carbon_code span:first-child`).classList.add('important')
+              document.querySelector(`.product_code .carbon_code span:first-child`).innerHTML = 'Check out with Father’s Day Sale'
+              document.querySelector(`.product_code .carbon_code span:first-child`).classList.add('important')
 
-                document.querySelector(`.product_code .carbon_code span:last-child`).innerHTML = ''
-                document.querySelector(`.product_code .carbon_text > div:nth-child(1) span`).innerHTML = `Save €${carbon_quantly * 173}.00!`
-                document.querySelector(`.product_code .carbon_text > div:nth-child(2) span`).innerHTML = 'Free Accessories'
-              {% else %}
-                document.querySelector(`.product_code`).innerHTML = ''
-              {% endif %}
+              document.querySelector(`.product_code .carbon_code span:last-child`).innerHTML = ''
+              document.querySelector(`.product_code .carbon_text > div:nth-child(1) span`).innerHTML = `Save €${carbon_quantly * 173}.00!`
+              document.querySelector(`.product_code .carbon_text > div:nth-child(2) span`).innerHTML = 'Free Accessories'
             }
           }
       }

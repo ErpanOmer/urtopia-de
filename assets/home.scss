@@ -157,6 +157,26 @@
         }
 
 
+        .fathers-day {
+            background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_20933_2x_d3d21265-1ecd-4b1b-a705-73dfc509c271.jpg?v=1683537202');
+
+            .acc {
+                max-width: 346px;
+                margin: 30px 0 40px;
+            }
+
+
+            .fa {
+                max-width: 270px;
+                margin-bottom: 30px;
+            }
+
+            .centeral-content {
+                height: 85%;
+            }
+        }
+
+
 
         .count-down {
             height: 180px;
@@ -314,6 +334,36 @@
             // 德国劳动节 chord
             .labor-day-chord {
                 background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18536_2x_36b18200-7946-41b4-9351-9d143864350a.jpg?v=1682401357');
+            }
+
+
+            // 德國父親節
+            .fathers-day {
+                background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18553_2x_ed4fdf2a-638d-4617-b832-d7877d2a759f.jpg?v=1683539052');
+    
+                .acc {
+                    max-width: 150px;
+                    margin-top: 15px;
+                }
+    
+    
+                .fa {
+                    max-width: 150px;
+                    margin-bottom: 15px;
+                }
+    
+                .centeral-content {
+                    height: 100%;
+
+                    & > div {
+                        padding: 20vw 0;
+                    }
+                }
+
+
+                .u30DemiBold_v2 {
+                    font-size: 15px;
+                }
             }
 
 

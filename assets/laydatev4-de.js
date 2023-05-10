@@ -1311,7 +1311,7 @@ function splitTimeFormat(item = '') {
       var that = this;
       that.index = ++laydate.index;
       that.config = lay.extend({}, that.config, laydate.config, options);
-      that.step = 0; //改-初始化阶段
+      that.step = -1; //改-初始化阶段
       that.userInfo = {}; //改-记录用户信息
       that.bookingTime = ""; //改-选定预约时间
       that.bookingDate = { year: "", month: "", date: "" }; //改-选定预约日期
@@ -1867,7 +1867,7 @@ function splitTimeFormat(item = '') {
 
     elemShop[0] = lay.elem("div", {
       class: "booking-shop-content",
-      style: "width:370px",
+      style: "width:400px",
     });
     //改-插入左侧商店区域
     lay.each(elemShop, function (i, main) {
@@ -2015,12 +2015,11 @@ function splitTimeFormat(item = '') {
     //     return html.join("");
     //   })()
     // );
-
+    //<div class="u20DemiBold">Available Model:</div>
+    //<ul>
+      //  ${options.shopInfo.availableSizes ? options.shopInfo.availableSizes.map(i => `<li class="u20Medium">${i}</li>`).join('') : `<li class="u20Medium">Carbon One Size ${options.shopInfo.testRideSize}</li>`}
+    //</ul>
     const template = `<div class="u30DemiBold">${options.shopInfo.name}</div>
-    <div class="u20DemiBold">Available Model:</div>
-    <ul>
-        ${options.shopInfo.availableSizes ? options.shopInfo.availableSizes.map(i => `<li class="u20Medium">${i}</li>`).join('') : `<li class="u20Medium">Carbon One Size ${options.shopInfo.testRideSize}</li>`}
-    </ul>
     <div class="item">
         <label class="u20DemiBold">ADD:</label>
         <span class="u20Medium">${options.shopInfo.add}</span>
@@ -3032,6 +3031,7 @@ function splitTimeFormat(item = '') {
     var that = this,
       options = that.config;
     that.step += 1;
+    console.log('that.step', that.step)
     //预约信息
     if (that.step == 2) {
       lay(".shop-select-content").css("display", "none");
@@ -3284,7 +3284,113 @@ function splitTimeFormat(item = '') {
       });
     }
     //预约时间，即初始s
-    else if (that.step == 5) {
+
+    else if (that.step == 0) {
+      const carbonM = {
+        id: 1,
+        name: 'Carbon 1',
+        fit: 'Fit for 170 - 185cm',
+        size: 'M',
+        img: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18409_2x_87c499be-99e5-457b-869b-963e270f0ea1.jpg?v=1683614780'
+      }
+
+      const carbonL = {
+        id: 2,
+        name: 'Carbon 1',
+        fit: 'Fit for 180 - 195cm',
+        size: 'L',
+        img: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18409_2x_87c499be-99e5-457b-869b-963e270f0ea1.jpg?v=1683614780'
+      }
+
+      const chordX = {
+        id: 3,
+        name: 'Chord',
+        fit: 'Fit for 170 - 195cm',
+        size: '',
+        img: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/1_1_2x_c0a40bb0-8853-4818-aa56-0b6cdad81548.jpg?v=1683612101'
+      }
+
+      let sizes = that.config.shopInfo.availableSizes || that.config.shopInfo.testRideSize
+      const choose = []
+
+      // 如果是数组
+      if (Array.isArray(sizes)) {
+        const carbon = sizes.find(s => s.includes('Carbon'))
+        const chord = sizes.includes('Chord')
+
+        // 如果carbon 存在
+        if (carbon) {
+          const size = carbon.split(' ').pop()
+          if (size === 'M/L') {
+            choose.push(carbonM, carbonL)
+          } else if (size === 'M') {
+            choose.push(carbonM)
+          } else {
+            choose.push(carbonL)
+          }
+        }
+
+        // 如果chord存在
+        if (chord) {
+          choose.push(chordX)
+        }
+
+      } else {
+          const size = sizes
+          if (size === 'M/L') {
+            choose.push(carbonM, carbonL)
+          } else if (size === 'M') {
+            choose.push(carbonM)
+          } else {
+            choose.push(carbonL)
+          }
+      }
+
+      console.log('choose', choose)
+
+      lay(".select-tip").html("Choose test ride model");
+      $('.calendar-content').hide()
+      $('.layui-laydate-info-footer').hide()
+      $('#layui-laydate1').append(`
+        <div class="choose">${choose.map(i => `
+          <div class="item" id="${i.id}">
+            <div>
+              <div class="u20DemiBold_v2">${i.name}</div>
+              <div class="flex-1"></div>
+              ${i.size ? `<div class="">Size: ${i.size}</div>` : '<div>  </div>'}
+              <div class="">${i.fit}</div>
+            </div>
+            <img src="${i.img}"/>
+          </div>
+        `).join('')}
+        </div>
+      `)
+
+      setTimeout(() => {
+        $('.choose .item').on('click', e => {
+          const find = e.currentTarget.id === '1' ? carbonM : e.currentTarget.id === '2' ? carbonL : chordX
+
+          console.log(find)
+          $('.shop-detail').append(`
+          <div class="item test-ride" style="border-top: 1px solid #ddd;padding-top: 12px;">
+              <label class="u20DemiBold">Test ride model:</label>
+              <span class="u20Medium">${find.size ? `Carbon One, size ${find.size}` : 'Chord'}</br>${find.fit}</span>
+          </div>
+          `)
+
+
+          $('.calendar-content').show()
+          $('.choose').hide()
+          that.next();
+
+
+          extra_data.test_ride_model = `${find.size ? `Carbon One, size ${find.size}` : 'Chord'}</br>${find.fit}`
+        })
+      }, 300)
+
+
+      // $('.layui-laydate-info-footer').show()
+
       // that.divBookingForm.style.visibility = "hidden";
       // lay(".back-btn").removeClass("hidden-btn");
       // lay(".back-btn-mb").removeClass("hidden-btn");
@@ -3307,80 +3413,14 @@ function splitTimeFormat(item = '') {
         divBookingSusscessButton = lay.elem("div", {
           class: "success-button",
         });
-      lay(divBookingSusscessContent).html(
-        (function () {
-          var html = [];
-          html.push('<div class="info-title1">Booking Detail</div>');
-          html.push(
-            '<div class="info-content"><img class="content-img" src="' +
-              options.shopInfo.imgUrl +
-              '"/>'
-          );
-          if (options.specific >= 1) {
-            //改-bike-attack
-            lay(divBookingSusscessTitle).html(
-              "Thank you for Joining the event!<br>We are here waiting for you."
-            );
-            if (options.specific == 1) {
-              html.push(
-                '<div class="content-detail"> <div class="info-shopname">Testride the Future</div>'
-              );
-              html.push(
-                '<div class="info-title">Event time: <span>2022-12-17 11:00-15:00</span></div>'
-              );
-            } else if (options.specific == 2) {
-              html.push(
-                '<div class="content-detail"> <div class="info-shopname">Ride Into the Future</div>'
-              );
-              html.push(
-                '<div class="info-title">Event time: <span>2022-12-17 09:00-17:00</span></div>'
-              );
-            }
-          } else {
-            lay(divBookingSusscessTitle).html(
-              "Thank you for your booking!<br>Check your email for confirmation."
-            );
-            html.push(
-              '<div class="content-detail"> <div class="info-shopname">' +
-                options.shopInfo.name +
-                "</div>"
-            );
-            html.push(
-              '<div class="info-title2">Test ride bike - Carbon E-Bike Size ' +
-                options.shopInfo.testRideSize +
-                "</div>"
-            );
-            html.push(
-              '<div class="info-title">Booked time: <span>' +
-                lay("." + ELEM_PREVIEW)[0].innerHTML +
-                " " +
-                that.bookingTime +
-                "</span></div>"
-            );
-          }
-          // html.push(
-          //   '<div class="info-title">timezone: <span>' +
-          //     options.shopInfo.timezone +
-          //     "</span></div>"
-          // );
-          html.push(
-            '<div class="info-title">ADD: <span>' +
-              options.shopInfo.add +
-              "</span></div>"
-          );
-          html.push(
-            '<div class="info-title">Email: <span>' +
-              options.shopInfo.email +
-              "</span></div>"
-          );
-          html.push(
-            '<div class="info-title">Phone: <span>' +
-              options.shopInfo.phone +
-              "</span></div></div></div>"
-          );
-          return html.join("");
-        })()
+
+
+      lay(divBookingSusscessTitle).html(
+        "Thank you for your booking!<br>Check your email for confirmation."
       );
+      
+      lay(divBookingSusscessContent).append(`<div class="shop-detail">${$('.shop-detail').html()}</div><img src="${that.config.shopInfo.imgUrl}"/>`)
+
       lay(divBookingSusscessButton).html(
         (function () {
           var html = [];
@@ -3943,6 +3983,7 @@ function splitTimeFormat(item = '') {
             var time =
               lay("." + ELEM_PREVIEW)[0].innerHTML + " " + that.bookingTime;
             extra_data = {
+              ...extra_data,
               name: that.userInfo.name,
               phone: that.userInfo.phone,
               email: that.userInfo.email,
@@ -3961,6 +4002,16 @@ function splitTimeFormat(item = '') {
             };
 
             that.next();
+
+            $('.shop-detail').append(`
+              <div class="item test-ride">
+                  <label class="u20DemiBold">Test ride Time:</label>
+                  <span class="u20Medium">${time}</span>
+              </div>
+            `)
+
+
+            extra_data.test_ride_time = time
             // endLoad();
 
             // that.step = 2;
