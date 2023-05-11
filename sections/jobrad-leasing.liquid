@@ -84,7 +84,7 @@
               </div>
               <div class="buttons">
                   <a href="#forms" class="my-button my-button-black">Request leasing offer(40% off)</a>
-                  <a href="" class="my-button my-button-white">Shop Online(€3299)</a>
+                  <a href="" class="my-button my-button-white">Shop Online({{ all_products['urtopia-carbon-e-bike'].price | money | slice: 0, 6 | replace: '.', '' }})</a>
               </div>
           </div>
       </div>
