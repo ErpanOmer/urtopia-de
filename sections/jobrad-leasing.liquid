@@ -1,4 +1,5 @@
 {{ 'leasing-add.scss.css' | asset_url | stylesheet_tag }}
+{{ 'sumoselect.min.css' | asset_url | stylesheet_tag }}
 
 <div class="leasing-add">
   <div class="banner">
@@ -341,7 +342,7 @@
   </div>
 </div>
 
-
+{{ 'sumoselect.js' | asset_url | script_tag }}
 <script>
   window.addEventListener(
     'message',
