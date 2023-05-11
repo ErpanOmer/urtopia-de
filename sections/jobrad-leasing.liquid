@@ -560,24 +560,23 @@ setTimeout(() => {
                     return
                 }
 
+
+                // 配件特殊处理
                 if (target.name === 'accessories') {
-                    console.log($(target).find('option:selected'))
+                    const accessories = []
+
+                    $(target).find('option:selected').each((i, target) => {
+                        console.log(target.value)
+                        accessories.push(target.value)
+                    })
+                    forms.accessories = accessories.join()
                 }
 
 
 
                 forms[target.name] = target.value
             })
-
-            // 配件特殊处理
-            const accessories = []
-            console.log($('select[name="accessories"] option:selected'))
-            $('select[name="accessories"] option:selected').each((i, target) => {
-                console.log(target.value)
-                accessories.push(target.value)
-            })
-            forms.accessories = accessories.join()
-
+            
             console.log(forms)
 
             // 隐藏form
