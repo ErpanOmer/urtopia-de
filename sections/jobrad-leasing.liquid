@@ -565,6 +565,17 @@ setTimeout(() => {
                 forms[target.name] = target.value
             })
 
+            // 配件特殊处理
+            const accessories = []
+            console.log($('select[name="accessories"] option:selected'))
+            $('select[name="accessories"] option:selected').each((i, target) => {
+                console.log(target.value)
+                accessories.push(target.value)
+            })
+            forms.accessories = accessories.join()
+
+            console.log(forms)
+
             // 隐藏form
             $('.forms form').hide()
             $('.forms .centeral-content').html(`
@@ -577,17 +588,6 @@ setTimeout(() => {
                 $('html').animate({
                     scrollTop: $('.forms').offset().top - (document.documentElement.clientHeight / 2) + ($('.forms').height() / 2)
                 }, 300)
-
-                // 配件特殊处理
-                const accessories = []
-                console.log($('select[name="accessories"] option:selected'))
-                $('select[name="accessories"] option:selected').each((i, target) => {
-                    console.log(target.value)
-                    accessories.push(target.value)
-                })
-                forms.accessories = accessories.join()
-
-                console.log(forms)
 
                 // submit(forms)
             })
