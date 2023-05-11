@@ -307,10 +307,10 @@ jQuery.getJSON(window.Shopify.routes.root + 'collection.json', function(product)
                           <div class="u24Medium">Bike Style<i>*</i></div>
                           <select name="bike_style" required>
                               <option value="">---</option>
-                              <option>Sirius</option>
-                              <option>Lyra</option>
-                              <option>Midnight in Paris</option>
-                              <option>Vanilla</option>
+                              <option value="Sirius">Sirius</option>
+                              <option value="Lyra">Lyra</option>
+                              <option value="Midnight in Paris">Midnight in Paris</option>
+                              <option value="Vanilla">Vanilla</option>
                           </select>
                       </div>
                   </div>
@@ -593,7 +593,7 @@ setTimeout(() => {
                     scrollTop: $('.forms').offset().top - (document.documentElement.clientHeight / 2) + ($('.forms').height() / 2)
                 }, 300)
 
-                // submit(forms)
+                submit(forms)
             })
 
             event.preventDefault();
@@ -607,4 +607,27 @@ setTimeout(() => {
             floatWidth: 768,
         })
 }, 300)
+
+
+
+    if (!sessionStorage.isPreviewJobrad) {
+        fetchBuried('jobrad', 'pageview')
+    }
+
+    // 记录来过这个页面
+    sessionStorage.isPreviewJobrad = 'isPreviewJobrad'
+
+
+    function gtag_report_conversion(url) {
+        var callback = function () {
+          if (typeof(url) != 'undefined') {
+            window.location = url;
+          }
+        };
+        gtag('event', 'conversion', {
+            'send_to': 'AW-10876491006/sCHgCIiX55oYEP6pqMIo',
+            'event_callback': callback
+        });
+        return false;
+      }
 </script>
