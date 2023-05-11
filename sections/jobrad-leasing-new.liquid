@@ -1,7 +1,7 @@
 {{ 'leasing-add.scss.css' | asset_url | stylesheet_tag }}
 {{ 'sumoselect.min.css' | asset_url | stylesheet_tag }}
 
-{% comment %} <script>
+<script>
 console.log(JSON.parse(JSON.stringify({{ collections | json }})))
 jQuery.getJSON(window.Shopify.routes.root + 'products.json', function(product) {
     console.log(product)
@@ -14,7 +14,7 @@ jQuery.getJSON(window.Shopify.routes.root + 'products.json', function(product) {
         {% endfor %}
     {% endif %}
   {% endfor %}
-</script> {% endcomment %}
+</script>
 
 
 
