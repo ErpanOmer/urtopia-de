@@ -580,6 +580,7 @@ setTimeout(() => {
 
                 // 配件特殊处理
                 const accessories = []
+                console.log($('select[name="accessories"] option:selected'))
                 $('select[name="accessories"] option:selected').each((i, target) => {
                     console.log(target.value)
                     accessories.push(target.value)
