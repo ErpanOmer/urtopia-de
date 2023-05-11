@@ -509,6 +509,82 @@ setTimeout(() => {
             .addClass('faq-content-plus');
     });
 
+        const forms = {}
+        const ignore = ['submit', 'checkbox']
+
+        function submit(extras = {}) {
+            console.log('extras', extras)
+
+            let search = {}
+            const url = new URL(location.href)
+
+            for (const [k, v] of url.searchParams.entries()) {
+                search[k] = v
+            }
+
+            search = Object.assign(search, extras)
+
+            // 重写bike_size
+            search.bike_size = search.bike_size === 'M' ? 'M - Fit for 170-185 cm' : 'L - Fit for 180-195 cm'
+
+            fetchBuried('jobrad', 'submit', search)
+            // fbq('track', 'Jobrad Submit')
+            fbq('track', 'CompleteRegistration', {
+                value: 3596,
+                currency: 'usd',
+            });
+
+            gtag_report_conversion()
+        }
+
+        let is_request = false
+        $('.forms form :input').on('input', debounce(e => {
+            if (is_request) {
+                return            
+            }
+
+            is_request = true
+            const data = {}
+
+            $('.forms form :input').each((i, target) => {
+                data[target.name] = target.value
+            })
+
+            fetchBuried('jobrad', 'submitinfo', data)
+        }, 5000))
+
+
+        $('.forms form').on("submit", function (event) {
+            $('.forms form :input').each((index, target) => {
+                if (ignore.includes(target.type)) {
+                    return
+                }
+
+
+
+                forms[target.name] = target.value
+            })
+
+            // 隐藏form
+            $('.forms form').hide()
+            $('.forms .centeral-content').html(`
+                <div class="u48DemiBold_v2">Thank you!</div>
+                <div class="u24Medium_v2">You have successfully submit the form. Our expert will contact you soon. Feel free to contact us if you have any questions.</div>
+                <a class="my-button my-button-white" href="/pages/contactus">Contact us</a>
+            `)
+
+            setTimeout(() => {
+                $('html').animate({
+                    scrollTop: $('.forms').offset().top - (document.documentElement.clientHeight / 2) + ($('.forms').height() / 2)
+                }, 300)
+
+                submit(forms)
+            })
+
+            event.preventDefault();
+            return false;
+        })
+
 
     $(document).ready(function () {
         $('select[name="accessories"]').SumoSelect({
