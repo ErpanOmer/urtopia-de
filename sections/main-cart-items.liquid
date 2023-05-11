@@ -193,7 +193,7 @@ padding-bottom: {{ section.settings.padding_bottom }}px;
                     </p>
                   {%- else -%}
                     {%- comment -%} Regular title {%- endcomment -%}
-                    <a href="{{ item.url }}" class="cart-item__name h4 break">{{ item.product.title | escape }}</a>
+                    <a href="{{ item.url }}" title="{{ item.product.title | escape }}" id="{{ item.product.id }}" class="cart-item__name h4 break">{{ item.product.title | escape }}</a>
                   {%- endif -%}
 
                   {% comment %} {%- if item.variant.inventory_quantity <= 0 -%}
