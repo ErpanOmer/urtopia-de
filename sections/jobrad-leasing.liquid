@@ -561,19 +561,17 @@ setTimeout(() => {
                 }
 
 
+                const accessories = []
                 // 配件特殊处理
                 if (target.name === 'accessories') {
-                    const accessories = []
-
                     $(target).find('option:selected').each((i, target) => {
                         console.log(target.value)
                         accessories.push(target.value)
                     })
-                    forms.accessories = accessories.join()
                 }
 
 
-
+                forms.accessories = accessories.join()
                 forms[target.name] = target.value
             })
             
