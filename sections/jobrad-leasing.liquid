@@ -6,7 +6,14 @@ console.log(JSON.stringify({{ all_products | json }}))
 jQuery.getJSON(window.Shopify.routes.root + 'collection.json', function(product) {
     console.log(product)
   } );
+
+  {% for collection in collections %}
+    console.log({{- collection.title | link_to: collection.url }})
+{% endfor %}
 </script>
+
+
+
 
 <div class="leasing-add">
   <div class="banner">
