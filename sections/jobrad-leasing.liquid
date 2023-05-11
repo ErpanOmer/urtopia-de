@@ -581,6 +581,7 @@ setTimeout(() => {
                 // 配件特殊处理
                 const accessories = []
                 $('select[name="accessories"] option:selected').each((i, target) => {
+                    console.log(target.value)
                     accessories.push(target.value)
                 })
                 forms.accessories = accessories.join()
