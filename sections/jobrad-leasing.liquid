@@ -526,6 +526,7 @@ setTimeout(() => {
 
             // 重写bike_size
             search.bike_size = search.bike_size === 'M' ? 'M - Fit for 170-185 cm' : 'L - Fit for 180-195 cm'
+            search.page_type = 'ad-page'
 
             fetchBuried('jobrad', 'submit', search)
             // fbq('track', 'Jobrad Submit')
@@ -550,6 +551,7 @@ setTimeout(() => {
                 data[target.name] = target.value
             })
 
+            data.page_type = 'ad-page'
             fetchBuried('jobrad', 'submitinfo', data)
         }, 5000))
 
