@@ -555,13 +555,16 @@ setTimeout(() => {
 
 
         $('.forms form').on("submit", function (event) {
+            const accessories = []
+
+
             $('.forms form :input').each((index, target) => {
                 if (ignore.includes(target.type)) {
                     return
                 }
 
 
-                const accessories = []
+                
                 // 配件特殊处理
                 if (target.name === 'accessories') {
                     $(target).find('option:selected').each((i, target) => {
@@ -570,11 +573,10 @@ setTimeout(() => {
                     })
                 }
 
-
-                forms.accessories = accessories.join()
                 forms[target.name] = target.value
             })
-            
+
+            forms.accessories = accessories.join()
             console.log(forms)
 
             // 隐藏form
