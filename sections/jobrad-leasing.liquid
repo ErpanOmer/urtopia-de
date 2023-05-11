@@ -578,6 +578,13 @@ setTimeout(() => {
                     scrollTop: $('.forms').offset().top - (document.documentElement.clientHeight / 2) + ($('.forms').height() / 2)
                 }, 300)
 
+                // 配件特殊处理
+                const accessories = []
+                $('select[name="accessories"] option:selected').each((i, target) => {
+                    accessories.push(target.value)
+                })
+                forms.accessories = accessories.join()
+
                 console.log(forms)
 
                 // submit(forms)
