@@ -3,6 +3,9 @@
 
 <script>
 console.log(JSON.stringify({{ all_products | json }}))
+jQuery.getJSON(window.Shopify.routes.root + 'products/urtopia-carbon-e-bike.js', function(product) {
+    console.log(product)
+  } );
 </script>
 
 <div class="leasing-add">
