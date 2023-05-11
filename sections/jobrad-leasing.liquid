@@ -560,6 +560,10 @@ setTimeout(() => {
                     return
                 }
 
+                if (target.name === 'accessories') {
+                    console.log($(target).find('option:selected'))
+                }
+
 
 
                 forms[target.name] = target.value
