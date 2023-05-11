@@ -9,7 +9,9 @@ jQuery.getJSON(window.Shopify.routes.root + 'collection.json', function(product)
 
   {% for collection in collections %}
     {% if collection.title == 'Carbon 1 leasing acc' %}
-        console.log(JSON.parse(JSON.stringify({{- collection | json }})))
+        {% for product in collection.products %}
+            console.log(JSON.parse(JSON.stringify({{- product | json }})))
+        {% endfor %}
     {% endif %}
   {% endfor %}
 </script>
