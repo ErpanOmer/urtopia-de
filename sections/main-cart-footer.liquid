@@ -379,11 +379,12 @@
       const options = carbon.querySelectorAll('.cart-item__details > dl .product-option')
       let accessories = Array.from(document.querySelectorAll('.cart-items .cart-item__details > a')).map(a => {
 
-        const title = a.innerText
+        const title = a.getAttribute('title')
+        const id = a.getAttribute('id')
 
         // 排除掉 chord
         if (!title.includes('Chord') && title !== 'Urtopia Carbon 1') {
-          return title.split('-').shift().trim()
+          return id
         }
 
         return null
