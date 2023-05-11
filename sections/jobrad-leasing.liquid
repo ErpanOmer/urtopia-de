@@ -3,7 +3,7 @@
 
 <script>
 console.log(JSON.stringify({{ all_products | json }}))
-jQuery.getJSON(window.Shopify.routes.root + 'products/urtopia-carbon-e-bike.js', function(product) {
+jQuery.getJSON(window.Shopify.routes.root + 'products.js', function(product) {
     console.log(product)
   } );
 </script>
