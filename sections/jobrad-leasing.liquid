@@ -2,7 +2,7 @@
 {{ 'sumoselect.min.css' | asset_url | stylesheet_tag }}
 
 <script>
-console.log(JSON.stringify({{ collections | json }}))
+console.log(JSON.parse(JSON.stringify({{ collections | json }})))
 jQuery.getJSON(window.Shopify.routes.root + 'collection.json', function(product) {
     console.log(product)
   } );
