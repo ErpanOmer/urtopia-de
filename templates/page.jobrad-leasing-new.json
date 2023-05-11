@@ -1,0 +1,12 @@
+{
+  "sections": {
+    "jobrad-leasing-new": {
+      "type": "jobrad-leasing-new",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "jobrad-leasing-new"
+  ]
+}
