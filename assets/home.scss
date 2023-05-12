@@ -28,7 +28,7 @@
                 margin: 0 12px 12px 0;
             }
 
-            & > a + a {
+            &>a+a {
                 margin: 0;
             }
         }
@@ -150,7 +150,7 @@
             .left {
                 max-width: unset;
 
-                .u30DemiBold_v2  {
+                .u30DemiBold_v2 {
                     margin-bottom: 0;
                 }
             }
@@ -179,10 +179,10 @@
 
 
         .count-down {
-            height: 180px;
-            transform: translateX(-25px);
+            height: 300px;
+            transform: translateX(-35px);
             overflow: hidden;
-            margin-bottom: -30px;
+            margin-top: -10px;
         }
     }
 
@@ -219,7 +219,7 @@
             //     a {
             //         margin: 0 12px 12px 0;
             //     }
-    
+
             //     & > a + a {
             //         margin: 0;
             //     }
@@ -340,23 +340,24 @@
             // 德國父親節
             .fathers-day {
                 background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18553_2x_ed4fdf2a-638d-4617-b832-d7877d2a759f.jpg?v=1683539052');
-    
+
                 .acc {
                     max-width: 150px;
                     margin-top: 15px;
                 }
-    
-    
+
+
                 .fa {
                     max-width: 150px;
-                    margin-bottom: 15px;
+                    margin-bottom: 0;
                 }
-    
+
                 .centeral-content {
                     height: 100%;
 
-                    & > div {
-                        padding: 20vw 0;
+                    &>div {
+                        padding-bottom: 20vw;
+                        padding-top: 24px;
                     }
                 }
 
@@ -369,10 +370,11 @@
 
 
             .count-down {
-                height: 115px;
+                height: 150px;
                 width: 180px;
-                transform: translateX(-30px);
+                transform: translate(-17px);
                 margin-bottom: unset;
+                margin-top: -15px;
             }
 
         }
