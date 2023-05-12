@@ -465,6 +465,27 @@ const faqs = [
     },
 ]
 
+if (!sessionStorage.isPreviewJobrad) {
+    fetchBuried('jobrad', 'pageview')
+}
+
+// 记录来过这个页面
+sessionStorage.isPreviewJobrad = 'isPreviewJobrad'
+
+
+function gtag_report_conversion(url) {
+    var callback = function () {
+      if (typeof(url) != 'undefined') {
+        window.location = url;
+      }
+    };
+    gtag('event', 'conversion', {
+        'send_to': 'AW-10876491006/sCHgCIiX55oYEP6pqMIo',
+        'event_callback': callback
+    });
+    return false;
+  }
+
 
 function submit(extras = {}) {
     console.log('extras', extras)
@@ -519,12 +540,7 @@ setTimeout(() => {
             .find('.faq-title')
             .children('i')
             .addClass('faq-content-plus');
-    });
-
-        const forms = {}
-        const ignore = ['submit', 'checkbox']
-
-        
+    });        
 
         let is_request = false
         $('.forms form :input').on('input', debounce(e => {
@@ -543,90 +559,16 @@ setTimeout(() => {
             fetchBuried('jobrad', 'submitinfo', data)
         }, 5000))
 
-
-        $('.forms form').on("submit", function (event) {
-            const accessories = []
-            const accessories_id = []
-
-            $('.forms form :input').each((index, target) => {
-                if (ignore.includes(target.type)) {
-                    return
-                }
-
-
-                
-                // 配件特殊处理
-                if (target.name === 'accessories') {
-                    $(target).find('option:selected').each((i, target) => {
-                        accessories.push(target.value)
-                        accessories_id.push(target.id)
-                    })
-
-                    return
-                }
-
-                forms[target.name] = target.value
-            })
-
-            forms.accessories = accessories.join()
-            forms.accessories_id = accessories_id.join()
-
-            // 隐藏form
-            $('.forms form').hide()
-            $('.forms .centeral-content').html(`
-                <div class="u48DemiBold_v2">Thank you!</div>
-                <div class="u24Medium_v2">You have successfully submit the form. Our expert will contact you soon. Feel free to contact us if you have any questions.</div>
-                <a class="my-button my-button-white" href="/pages/contactus">Contact us</a>
-            `)
-
-            setTimeout(() => {
-                $('html').animate({
-                    scrollTop: $('.forms').offset().top - (document.documentElement.clientHeight / 2) + ($('.forms').height() / 2)
-                }, 300)
-
-                submit(forms)
-            })
-
-            event.preventDefault();
-            return false;
-        })
-
-
-        $('select[name="accessories"]').SumoSelect({
-            placeholder: 'Example: Extra-Comfort Saddle, Battery',
-            csvDispCount: 0,
-            floatWidth: 768,
-        })
 }, 300)
-
-
-
-    if (!sessionStorage.isPreviewJobrad) {
-        fetchBuried('jobrad', 'pageview')
-    }
-
-    // 记录来过这个页面
-    sessionStorage.isPreviewJobrad = 'isPreviewJobrad'
-
-
-    function gtag_report_conversion(url) {
-        var callback = function () {
-          if (typeof(url) != 'undefined') {
-            window.location = url;
-          }
-        };
-        gtag('event', 'conversion', {
-            'send_to': 'AW-10876491006/sCHgCIiX55oYEP6pqMIo',
-            'event_callback': callback
-        });
-        return false;
-      }
 
 
       const size_map = {
         M: 'Fit for 170-185 cm',
         L: 'Fit for 180-195 cm'
       }
+
+      const forms = {}
+      const ignore = ['submit', 'checkbox']
 
       jQuery.getJSON(window.Shopify.routes.root + 'products.json', res => {
         const carbon = res.products.find(p => p.id === 7633738727640)
@@ -660,6 +602,61 @@ setTimeout(() => {
                     $('select[name="bike_style"]').html('<option value="">---</option>')
                 }
                 
+            })
+
+
+            $('.forms form').on("submit", function (event) {
+                const accessories = []
+                const accessories_id = []
+    
+                $('.forms form :input').each((index, target) => {
+                    if (ignore.includes(target.type)) {
+                        return
+                    }
+    
+    
+                    
+                    // 配件特殊处理
+                    if (target.name === 'accessories') {
+                        $(target).find('option:selected').each((i, target) => {
+                            accessories.push(target.value)
+                            accessories_id.push(target.id)
+                        })
+    
+                        return
+                    }
+    
+                    forms[target.name] = target.value
+                })
+    
+                forms.accessories = accessories.join()
+                forms.accessories_id = accessories_id.join()
+    
+                // 隐藏form
+                $('.forms form').hide()
+                $('.forms .centeral-content').html(`
+                    <div class="u48DemiBold_v2">Thank you!</div>
+                    <div class="u24Medium_v2">You have successfully submit the form. Our expert will contact you soon. Feel free to contact us if you have any questions.</div>
+                    <a class="my-button my-button-white" href="/pages/contactus">Contact us</a>
+                `)
+    
+                setTimeout(() => {
+                    $('html').animate({
+                        scrollTop: $('.forms').offset().top - (document.documentElement.clientHeight / 2) + ($('.forms').height() / 2)
+                    }, 300)
+    
+                    submit(forms)
+                })
+    
+                event.preventDefault();
+                return false;
+            })
+    
+    
+            $('select[name="accessories"]').SumoSelect({
+                placeholder: 'Example: Extra-Comfort Saddle, Battery',
+                csvDispCount: 0,
+                floatWidth: 768,
             })
         }, 100)
       });
