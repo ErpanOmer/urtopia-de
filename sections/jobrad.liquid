@@ -319,7 +319,7 @@
         search = Object.assign(search, extras)
 
         // 重写bike_size
-        search.bike_size = search.bike_size === 'M' ? 'M - Fit for 170-185 cm' : 'L - Fit for 180-195 cm'
+        search.bike_size = search.bike_size + ' - ' + size_map[search.bike_size]
 
         fetchBuried('jobrad', 'submit', search)
         // fbq('track', 'Jobrad Submit')
