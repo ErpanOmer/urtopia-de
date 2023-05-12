@@ -638,7 +638,7 @@ setTimeout(() => {
                     forms[target.name] = target.value
                 })
 
-                forms.variant_id = carbon.variants.find(c => `${forms.bike_style} / ${forms.bike_size}`).id
+                forms.variant_id = carbon.variants.find(c => c.title === `${forms.bike_style} / ${forms.bike_size}`).id
     
                 // 隐藏form
                 $('.forms form').hide()
