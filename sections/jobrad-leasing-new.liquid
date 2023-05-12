@@ -630,16 +630,11 @@ setTimeout(() => {
                         return
                     }
 
-
-                    // bike_style 特殊处理
-                    if (target.name === 'accessories') {
-                        forms.variant_id = $(target).val()
-
-                        return
-                    }
-    
+                    
                     forms[target.name] = target.value
                 })
+
+                forms.variant_id = carbon.variants.find(c => `${forms.bike_style} / ${forms.bike_size}`).id
     
                 // 隐藏form
                 $('.forms form').hide()
