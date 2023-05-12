@@ -1,24 +1,6 @@
 {{ 'leasing-add.scss.css' | asset_url | stylesheet_tag }}
 {{ 'sumoselect.min.css' | asset_url | stylesheet_tag }}
 
-<script>
-console.log(JSON.parse(JSON.stringify({{ collections | json }})))
-jQuery.getJSON(window.Shopify.routes.root + 'products.json', function(product) {
-    console.log(product)
-  } );
-
-  {% for collection in collections %}
-    {% if collection.title == 'Carbon 1 leasing acc' %}
-        {% for product in collection.products %}
-            console.log(JSON.parse(JSON.stringify({{- product | json }})))
-        {% endfor %}
-    {% endif %}
-  {% endfor %}
-</script>
-
-
-
-
 <div class="leasing-add">
   <div class="banner">
       <div class="centeral-content">
@@ -390,6 +372,7 @@ jQuery.getJSON(window.Shopify.routes.root + 'products.json', function(product) {
 )
 
 
+
 $('form .multiple-checkbox :input').on('change', e => {
     if (e.currentTarget.id === 'yes') {
         $(`form .multiple-checkbox label[for="yes"]`).css("border-color", "black")
@@ -633,4 +616,10 @@ setTimeout(() => {
         });
         return false;
       }
+
+
+
+      jQuery.getJSON(window.Shopify.routes.root + 'products.json', res => {
+        console.log(res.products)
+      });
 </script>
