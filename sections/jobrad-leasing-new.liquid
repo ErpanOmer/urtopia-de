@@ -618,6 +618,10 @@ setTimeout(() => {
       }
 
 
+      const size_map = {
+        M: 'Fit for 170-185 cm',
+        L: 'Fit for 180-195 cm'
+      }
 
       jQuery.getJSON(window.Shopify.routes.root + 'products.json', res => {
         const carbon = res.products.find(p => p.id === 7633738727640)
