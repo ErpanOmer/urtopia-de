@@ -94,8 +94,8 @@ const testRides = [
           "",
         ],
         isPartner: true
-      },
-      {
+      }
+      /*{
         name: 'DownTownBikes am Hbf.',
         phone: '+49211 26194969',
         email: 'david@downtownbikes.de',
@@ -113,7 +113,7 @@ const testRides = [
           "13:00-17:00",
           "",
         ],
-      }
+      }*/
     ]
   },
   {
@@ -197,35 +197,62 @@ const testRides = [
       }
     ]
   },
-  // {
-  //   city: 'Hamburg',
-  //   cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Hamburg.jpg?v=1679406972',
-  //   series: [
-  //     'Urtopia Carbon 1',
-  //     // 'Urtopia Carbon 1'
-  //   ],
-  //   stores: [
-  //     {
-  //       name: 'Pirate',
-  //       phone: '+4941018194571',
-  //       email: 'ron@pirate.biz',
-  //       timezone: "Mainz, Germany (GMT+1)",
-  //       add: "Dockenhudener Chaussee 11925469 Halstenbek",
-  //       imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/IMG_0908.jpg?v=1680922574",
-  //       testrideSpot: "Hamburg",
-  //       testRideSize: "L",
-  //       businessHours: [
-  //         "",
-  //         "09:00-12:00,12:00-17:00",
-  //         "14:30-17:00",
-  //         "09:00-12:00,12:00-17:00",
-  //         "15:00-17:00",
-  //         "09:00-12:00,12:00-17:00",
-  //         "10:00-12:00,12:00-12:00",
-  //       ],
-  //     }
-  //   ]
-  // },
+   {
+     city: 'Hamburg',
+     cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Hamburg_19874cca-b8ea-4f39-824a-d987e3410a01.jpg?v=1683867163',
+     series: [
+       'Urtopia Carbon 1',
+       // 'Urtopia Carbon 1'
+     ],
+     stores: [
+       {
+         name: 'Matthias Kaltenbach',
+         phone: '+4915772388217',
+         email: 'kaltenbach.matthias@gmail.com',
+         timezone: "Mainz, Germany (GMT+1)",
+         add: "Eimsbüttel, 20255 Hamburg",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Hamburg_19874cca-b8ea-4f39-824a-d987e3410a01.jpg?v=1683867163",
+         testrideSpot: "Hamburg",
+         testRideSize: "M",
+         isPartner: true,
+         availableSizes: [
+          'Carbon One Size M',
+        ],
+         businessHours: [
+           "",
+           "12:00-17:00",
+           "12:00-17:00",
+           "12:00-17:00",
+           "12:00-17:00",
+           "12:00-17:00",
+           "12:00-17:00",
+         ],
+       },
+       {
+         name: 'Anneke Gabriel',
+         phone: '+491799955692',
+         email: 'yannick.vannoy@thecycleverse.com',
+         timezone: "Mainz, Germany (GMT+1)",
+         add: "Schwübb, 22529 Hamburg, Germany",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Hamburg_19874cca-b8ea-4f39-824a-d987e3410a01.jpg?v=1683867163",
+         testrideSpot: "Hamburg",
+         testRideSize: "M",
+         isPartner: true,
+         availableSizes: [
+          'Carbon One Size M',
+        ],
+         businessHours: [
+            "",
+           "12:00-17:00",
+           "12:00-17:00",
+           "12:00-17:00",
+           "12:00-17:00",
+           "12:00-17:00",
+           "12:00-17:00",
+         ],
+       }
+     ]
+   },
   {
     city: 'München',
     cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Munchen.jpg?v=1679406972',
