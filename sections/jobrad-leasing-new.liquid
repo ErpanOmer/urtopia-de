@@ -636,5 +636,11 @@ setTimeout(() => {
         $('select[name="bike_size"]').html('<option value="">---</option>' + size.values.map(v => {
             return `<option value="${v}">${v} - ${size_map[v]}</option>`
         }))
+
+        setTimeout(() => {
+            $('select[name="bike_size"]').on('change', e => {
+                console.log(e)
+            })
+        }, 100)
       });
 </script>
