@@ -488,10 +488,39 @@
             return `<option value="${v}">${v} - ${size_map[v]}</option>`
         }))
 
+        const fn = () => {
+            $('select[name="bike_style"]').html('<option value="">---</option>' + style.values.map(v => {
+
+                let disabled = false
+                const find = carbon.variants.find(c => `${v} / ${value}`)
+
+                // 如果不可用，按钮禁用掉
+                if (find) {
+                    disabled = !find.available
+                }
+
+                return `<option value="${v}" ${disabled ? 'disabled' : ''}>${v}</option>`
+            }))
+        }
+
 
         setTimeout(() => {
+            $('select[name="bike_size"]').on('change', e => {
+                const value = e.target.value
+
+                if (value) {
+                    fn()
+                } else {
+                    $('select[name="bike_style"]').html('<option value="">---</option>')
+                }
+                
+            })
+
+
             if (urlSearch.bike_style) {
                 $(`select[name="bike_size"]`).val(urlSearch.bike_size)
+                
+                fn()
             }
         }, 100)
     })
