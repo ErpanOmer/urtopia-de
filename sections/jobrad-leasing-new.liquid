@@ -639,7 +639,7 @@ setTimeout(() => {
 
         setTimeout(() => {
             $('select[name="bike_size"]').on('change', e => {
-                console.log(e)
+                console.log(e.target.value)
             })
         }, 100)
       });
