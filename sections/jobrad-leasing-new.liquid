@@ -307,7 +307,7 @@
                     {% for collection in collections %}
                         {% if collection.title == 'Carbon 1 leasing acc' %}
                             {% for product in collection.products %}
-                                <option id="{{product.id}}" value="{{product.title}}">{{product.title}}</option>
+                                <option title="{{product.title}}" value="{{product.id}}">{{product.title}}</option>
                             {% endfor %}
                         {% endif %}
                       {% endfor %}
