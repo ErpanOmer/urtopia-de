@@ -488,7 +488,7 @@
             return `<option value="${v}">${v} - ${size_map[v]}</option>`
         }))
 
-        const fn = () => {
+        const fn = value => {
             $('select[name="bike_style"]').html('<option value="">---</option>' + style.values.map(v => {
 
                 let disabled = false
@@ -509,7 +509,7 @@
                 const value = e.target.value
 
                 if (value) {
-                    fn()
+                    fn(value)
                 } else {
                     $('select[name="bike_style"]').html('<option value="">---</option>')
                 }
@@ -519,8 +519,8 @@
 
             if (urlSearch.bike_style) {
                 $(`select[name="bike_size"]`).val(urlSearch.bike_size)
-                
-                fn()
+
+                fn(urlSearch.bike_size)
             }
         }, 100)
     })
