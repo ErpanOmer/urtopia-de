@@ -137,32 +137,41 @@
                                 <div class="u24Medium">Bike Size<i>*</i></div>
                                 <select name="bike_size" required>
                                     <option value="">---</option>
-                                    <option value="M">M - Fit for 170-185 cm</option>                  
-                                    <option value="L">L - Fit for 180-195 cm</option>
+                                    <!--<option value="M">M - Fit for 170-185 cm</option>                  
+                                    <option value="L">L - Fit for 180-195 cm</option>-->
                                 </select>
                             </div>
                             <div>
                                 <div class="u24Medium">Bike Style<i>*</i></div>
                                 <select name="bike_style" required>
                                     <option value="">---</option>
-                                    <option>Sirius</option>
+                                    <!--<option>Sirius</option>
                                     <option>Lyra</option>
                                     <option>Midnight in Paris</option>
-                                    <!--<option>Vanilla</option>-->
+                                    <option>Vanilla</option>-->
                                 </select>
                             </div>
                         </div>
                     </div>
                     <div class="item">
                         <div class="u24Medium">Accessories you would like
-                        <br><span style="font-size: 12px;color: #666;line-height: 16px;display: inline-block;">Father’s Day gifts: kickstand, Fender, water bottle cage will sent to you automatically, will not show in your mein-dienstrad.de offer (Ends on 18th of May)</span>
+                            <!--<br><span style="font-size: 12px;color: #666;line-height: 16px;display: inline-block;">Father’s Day gifts: kickstand, Fender, water bottle cage will sent to you automatically, will not show in your jobrad offer (Ends on 18th of May)</span>-->
                         </div>
-                        <input type="text" name="accessories" placeholder="Example: Extra-Comfort Saddle, Battery" >
+                        <select name="accessories" multiple>
+                          {% for collection in collections %}
+                              {% if collection.title == 'Carbon 1 leasing acc' %}
+                                  {% for product in collection.products %}
+                                      <option title="{{product.title}}" value="{{product.id}}">{{product.title}}</option>
+                                  {% endfor %}
+                              {% endif %}
+                            {% endfor %}
+                        </select>
+                        <!-- <input type="text" name="accessories" placeholder="Example: Extra-Comfort Saddle, Battery" > -->
                     </div>
                     <div class="item">
                         <div class="checkbox">
                             <input type="checkbox" id="subscribe" name="subscribe" value="subscribe" required />
-                            <label class="u17Light" for="subscribe">I agree to allow Urtopia to store and process my
+                            <label class="u17Light" for="subscribe" style="text-align: left;">I agree to allow Urtopia to store and process my
                                 personal data, including receiving emails, text messages and SMS.<i>*</i></label>
                         </div>
                     </div>
