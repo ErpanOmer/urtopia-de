@@ -653,9 +653,7 @@ setTimeout(() => {
                             disabled = !find.available
                         }
 
-                        console.log(`${v} / ${value}`)
-
-                        return `<option value="${v}">${v}</option>`
+                        return `<option value="${v}" disabled=${disabled}>${v}</option>`
                     }))
                 } else {
                     $('select[name="bike_style"]').html('<option value="">---</option>')
