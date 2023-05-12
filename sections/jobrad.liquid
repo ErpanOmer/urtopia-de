@@ -475,4 +475,17 @@
             selectPlugin.sumo.selectItem(s)
         }
     }
+
+
+    jQuery.getJSON(window.Shopify.routes.root + 'products.json', res => {
+        const carbon = res.products.find(p => p.id === 7633738727640)
+        const size = carbon.options.find(o => o.name === 'Size')
+        const style = carbon.options.find(o => o.name === 'Style')
+
+        console.log(carbon)
+
+        $('select[name="bike_size"]').html('<option value="">---</option>' + size.values.map(v => {
+            return `<option value="${v}">${v} - ${size_map[v]}</option>`
+        }))
+    })
 </script>
