@@ -465,8 +465,7 @@
           // 如果有 accessories 存在
     if (urlSearch.accessories) {
         for (const s of urlSearch.accessories.split(',')) {
-            console.log(selectPlugin.sumo)
-            //selectPlugin.selectItem(s)
+            selectPlugin.sumo.selectItem(s)
         }
 
         // $(`input[name="accessories"]`).val(urlSearch.accessories)
