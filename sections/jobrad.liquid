@@ -487,5 +487,12 @@
         $('select[name="bike_size"]').html('<option value="">---</option>' + size.values.map(v => {
             return `<option value="${v}">${v} - ${size_map[v]}</option>`
         }))
+
+
+        setTimeout(() => {
+            if (urlSearch.bike_style) {
+                $(`select[name="bike_style"]`).val(urlSearch.bike_style)
+            }
+        }, 100)
     })
 </script>
