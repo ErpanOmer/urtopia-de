@@ -604,11 +604,7 @@ setTimeout(() => {
             })
 
 
-            $('.forms form').on("submit", function (event) {
-                const accessories = []
-                const accessories_id = []
-                let variant_id = 0
-    
+            $('.forms form').on("submit", function (event) {    
                 $('.forms form :input').each((index, target) => {
                     if (ignore.includes(target.type)) {
                         return
@@ -618,19 +614,32 @@ setTimeout(() => {
                     
                     // 配件特殊处理
                     if (target.name === 'accessories') {
+                        const accessories = []
+                        const accessories_id = []
+                        
+                        // selected
                         $(target).find('option:selected').each((i, target) => {
                             accessories.push(target.title)
                             accessories_id.push(target.value)
                         })
+
+                            
+                        forms.accessories = accessories.join()
+                        forms.accessories_id = accessories_id.join()
     
+                        return
+                    }
+
+
+                    // bike_style 特殊处理
+                    if (target.name === 'accessories') {
+                        forms.variant_id = $(target).val()
+
                         return
                     }
     
                     forms[target.name] = target.value
                 })
-    
-                forms.accessories = accessories.join()
-                forms.accessories_id = accessories_id.join()
     
                 // 隐藏form
                 $('.forms form').hide()
