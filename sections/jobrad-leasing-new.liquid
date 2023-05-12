@@ -390,6 +390,14 @@ $('form .multiple-checkbox :input').on('change', e => {
 
 })
 
+const size_map = {
+    M: 'Fit for 170-185 cm',
+    L: 'Fit for 180-195 cm'
+  }
+
+  const forms = {}
+  const ignore = ['submit', 'checkbox']
+
 const faqs = [
     {
         title: "For whom is a service bike or service e-bike via salary conversion worthwhile?",
@@ -560,15 +568,6 @@ setTimeout(() => {
         }, 5000))
 
 }, 300)
-
-
-      const size_map = {
-        M: 'Fit for 170-185 cm',
-        L: 'Fit for 180-195 cm'
-      }
-
-      const forms = {}
-      const ignore = ['submit', 'checkbox']
 
       jQuery.getJSON(window.Shopify.routes.root + 'products.json', res => {
         const carbon = res.products.find(p => p.id === 7633738727640)
