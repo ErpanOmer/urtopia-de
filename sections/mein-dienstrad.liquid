@@ -199,34 +199,8 @@
             </div>
         </div>
     </div>
-
+{{ 'sumoselect.js' | asset_url | script_tag }}
 <script>
-    /*
-  window.addEventListener(
-        'message',
-        (function () {
-            // NOTE: This is how we can support multiple instances in same page.
-            var id = 'jobrad-fachhandel-werbematerial-werkzeugkasten-iframe-main'
-
-            console.log('message');
-
-            return function (event) {
-                if (
-                    id === 'jobrad-fachhandel-werbematerial-werkzeugkasten-iframe-main' &&
-                    event.origin === 'https://bike-leasing-calculator.jobrad.org' &&
-                    typeof event.data === 'object' &&
-                    'genericState' in event.data &&
-                    event.data.genericState.body.outerHeightInPixel > 0
-                )
-                    window.document.querySelector(
-                        '.jobrad-bike-leasing-calculator#jobrad-fachhandel-werbematerial-werkzeugkasten-iframe-main iframe'
-                    ).style.height =
-                        event.data.genericState.body.outerHeightInPixel + 'px'
-            }
-        })(),
-        false
-    )
-    */
 
     const faqs = [
         {
@@ -289,6 +263,14 @@
           content: `No. Unfortunately, this is not possible, as you have agreed on a leasing contract with the duration of 36 months with mein-dienstrad.de. If you have questions about the terms of your contract, please contact mein-dienstrad.de.`
       },
     ]
+
+    const size_map = {
+        M: 'Fit for 170-185 cm',
+        L: 'Fit for 180-195 cm'
+      }
+    
+    const forms = {}
+    const ignore = ['submit', 'checkbox']
 
     $('.faqs .swiper-slide').html(faqs.map(faq => `
       <div class="faq-item">
