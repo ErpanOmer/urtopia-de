@@ -462,7 +462,9 @@
 
           // 如果有 accessories 存在
     if (urlSearch.accessories) {
-        console.log(urlSearch.accessories)
+        for (const s of urlSearch.accessories.split(',')) {
+            console.log(s)
+        }
 
         // $(`input[name="accessories"]`).val(urlSearch.accessories)
     }
