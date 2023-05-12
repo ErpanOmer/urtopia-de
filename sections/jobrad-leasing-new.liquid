@@ -607,6 +607,7 @@ setTimeout(() => {
             $('.forms form').on("submit", function (event) {
                 const accessories = []
                 const accessories_id = []
+                let variant_id = 0
     
                 $('.forms form :input').each((index, target) => {
                     if (ignore.includes(target.type)) {
@@ -618,8 +619,8 @@ setTimeout(() => {
                     // 配件特殊处理
                     if (target.name === 'accessories') {
                         $(target).find('option:selected').each((i, target) => {
-                            accessories.push(target.value)
-                            accessories_id.push(target.id)
+                            accessories.push(target.title)
+                            accessories_id.push(target.value)
                         })
     
                         return
