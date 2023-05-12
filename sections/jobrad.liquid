@@ -526,6 +526,7 @@
                     forms[target.name] = target.value
                 })
 
+                console.log('carbon.variants.find(c => `${forms.bike_style} / ${forms.bike_size}`)', carbon.variants.find(c => `${forms.bike_style} / ${forms.bike_size}`))
                 forms.variant_id = carbon.variants.find(c => `${forms.bike_style} / ${forms.bike_size}`).id
     
                 // 隐藏form
