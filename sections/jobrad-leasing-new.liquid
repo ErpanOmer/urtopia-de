@@ -631,5 +631,10 @@ setTimeout(() => {
 
         console.log(carbon)
         console.log(size)
+
+
+        $('select[name="bike_size"]').html(size.values.map(v => {
+            return `<option value="${v}">${v} - ${size_map[v]}</option>`
+        }))
       });
 </script>
