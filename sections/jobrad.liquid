@@ -414,14 +414,6 @@
         $(`select[name="bike_size"]`).val(urlSearch.bike_size)
     }
 
-    // 如果有 accessories 存在
-    if (urlSearch.accessories) {
-        $(`input[name="accessories"]`).val(urlSearch.accessories)
-    }
-
-    
-
-
     $('.works .your').on('click', e => {
         const item = document.querySelector('.faqs .faq-item')
         const title = item.querySelector('.faq-title')
@@ -461,9 +453,19 @@
 
 
       // SELECT 插件
-      $('select[name="accessories"]').SumoSelect({
+      const selectPlugin = $('select[name="accessories"]').SumoSelect({
         placeholder: 'Example: Extra-Comfort Saddle, Battery',
         csvDispCount: 0,
         floatWidth: 768,
       })
+
+
+          // 如果有 accessories 存在
+    if (urlSearch.accessories) {
+        console.log(urlSearch.accessories)
+
+        // $(`input[name="accessories"]`).val(urlSearch.accessories)
+    }
+
+      selectPlugin[0].sumo.selectItem(2)
 </script>
