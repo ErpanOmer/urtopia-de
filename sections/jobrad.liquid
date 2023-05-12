@@ -375,37 +375,6 @@
                 .children('i')
                 .addClass('faq-content-plus');
         });
-
-        $('.forms form').on("submit", function (event) {
-            $('.forms form :input').each((index, target) => {
-                if (ignore.includes(target.type)) {
-                    return
-                }
-
-
-
-                forms[target.name] = target.value
-            })
-
-            // 隐藏form
-            $('.forms form').hide()
-            $('.forms .centeral-content').html(`
-                <div class="u48DemiBold">Thank you!</div>
-                <div class="u24Medium">You have successfully submit the form. Our expert will contact you soon. Feel free to contact us if you have any questions.</div>
-                <a class="my-button my-button-white" href="/pages/contactus">Contact us</a>
-            `)
-
-            setTimeout(() => {
-                $('html').animate({
-                    scrollTop: $('.forms').offset().top - (document.documentElement.clientHeight / 2) + ($('.forms').height() / 2)
-                }, 300)
-
-                submit(forms)
-            })
-
-            event.preventDefault();
-            return false;
-        })
     }, 1000)
 
 
@@ -526,6 +495,58 @@
                     $(`select[name="bike_style"]`).val(urlSearch.bike_style)
                 })
             }
+
+            $('.forms form').on("submit", function (event) {
+                $('.forms form :input').each((index, target) => {
+                    if (ignore.includes(target.type)) {
+                        return
+                    }
+
+                    // 配件特殊处理
+                    if (target.name === 'accessories') {
+                        const accessories = []
+                        const accessories_id = []
+                        
+                        // selected
+                        $(target).find('option:selected').each((i, target) => {
+                            accessories.push(target.title)
+                            accessories_id.push(target.value)
+                        })
+
+                            
+                        forms.accessories = accessories.join()
+                        forms.accessories_id = accessories_id.join()
+    
+                        return
+                    }
+
+    
+    
+    
+                    forms[target.name] = target.value
+                })
+
+                forms.variant_id = carbon.variants.find(c => `${forms.bike_style} / ${forms.bike_size}`).id
+    
+                // 隐藏form
+                $('.forms form').hide()
+                $('.forms .centeral-content').html(`
+                    <div class="u48DemiBold">Thank you!</div>
+                    <div class="u24Medium">You have successfully submit the form. Our expert will contact you soon. Feel free to contact us if you have any questions.</div>
+                    <a class="my-button my-button-white" href="/pages/contactus">Contact us</a>
+                `)
+    
+                setTimeout(() => {
+                    $('html').animate({
+                        scrollTop: $('.forms').offset().top - (document.documentElement.clientHeight / 2) + ($('.forms').height() / 2)
+                    }, 300)
+    
+                    submit(forms)
+                })
+    
+                event.preventDefault();
+                return false;
+            })
         }, 100)
     })
 </script>
