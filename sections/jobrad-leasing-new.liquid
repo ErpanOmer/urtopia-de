@@ -645,13 +645,13 @@ setTimeout(() => {
                 if (value) {
                     $('select[name="bike_style"]').html('<option value="">---</option>' + style.values.map(v => {
 
-                        let disabled = true
+                        let disabled = false
                         const find = carbon.variants.find(c => `${v} / ${value}`)
 
                         // 如果不可用，按钮禁用掉
-                        {% comment %} if (find) {
+                        if (find) {
                             disabled = !find.available
-                        } {% endcomment %}
+                        }
 
                         return `<option value="${v}" ${disabled ? 'disabled' : ''}>${v}</option>`
                     }))
