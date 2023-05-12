@@ -621,6 +621,9 @@ setTimeout(() => {
 
       jQuery.getJSON(window.Shopify.routes.root + 'products.json', res => {
         const carbon = res.products.find(p => p.id === 7633738727640)
+        const size = carbon.options.find(o => o.name === 'Size')
+
         console.log(carbon)
+        console.log(size)
       });
 </script>
