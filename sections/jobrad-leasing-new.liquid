@@ -649,9 +649,9 @@ setTimeout(() => {
                         const find = carbon.variants.find(c => `${v} / ${value}`)
 
                         // 如果不可用，按钮禁用掉
-                        if (find) {
+                        {% comment %} if (find) {
                             disabled = !find.available
-                        }
+                        } {% endcomment %}
 
                         return `<option value="${v}" ${disabled ? 'disabled' : ''}>${v}</option>`
                     }))
