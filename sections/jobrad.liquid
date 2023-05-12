@@ -1,4 +1,6 @@
+{{ 'sumoselect.min.css' | asset_url | stylesheet_tag }}
 {{ 'jobrad.scss.css' | asset_url | stylesheet_tag }}
+
 
 <div class="jobrad">
         <div class="banner">
@@ -192,6 +194,8 @@
         </div>
     </div>
 
+
+{{ 'sumoselect.js' | asset_url | script_tag }}
 <script>
   window.addEventListener(
         'message',
