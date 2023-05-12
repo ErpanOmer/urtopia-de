@@ -1,24 +1,6 @@
 {{ 'leasing-add.scss.css' | asset_url | stylesheet_tag }}
 {{ 'sumoselect.min.css' | asset_url | stylesheet_tag }}
 
-{% comment %} <script>
-console.log(JSON.parse(JSON.stringify({{ collections | json }})))
-jQuery.getJSON(window.Shopify.routes.root + 'products.json', function(product) {
-    console.log(product)
-  } );
-
-  {% for collection in collections %}
-    {% if collection.title == 'Carbon 1 leasing acc' %}
-        {% for product in collection.products %}
-            console.log(JSON.parse(JSON.stringify({{- product | json }})))
-        {% endfor %}
-    {% endif %}
-  {% endfor %}
-</script> {% endcomment %}
-
-
-
-
 <div class="leasing-add">
   <div class="banner">
       <div class="centeral-content">
@@ -299,18 +281,20 @@ jQuery.getJSON(window.Shopify.routes.root + 'products.json', function(product) {
                           <div class="u24Medium">Bike Size<i>*</i></div>
                           <select name="bike_size" required>
                               <option value="">---</option>
-                              <option value="M">M - Fit for 170-185 cm</option>
+                              <!--<option value="M">M - Fit for 170-185 cm</option>
                               <option value="L">L - Fit for 180-195 cm</option>
+                              -->
                           </select>
                       </div>
                       <div>
                           <div class="u24Medium">Bike Style<i>*</i></div>
                           <select name="bike_style" required>
                               <option value="">---</option>
-                              <option value="Sirius">Sirius</option>
+                              <!--<option value="Sirius">Sirius</option>
                               <option value="Lyra">Lyra</option>
                               <option value="Midnight in Paris">Midnight in Paris</option>
                               <option value="Vanilla">Vanilla</option>
+                              -->
                           </select>
                       </div>
                   </div>
@@ -323,7 +307,7 @@ jQuery.getJSON(window.Shopify.routes.root + 'products.json', function(product) {
                     {% for collection in collections %}
                         {% if collection.title == 'Carbon 1 leasing acc' %}
                             {% for product in collection.products %}
-                                <option id="{{product.id}}" value="{{product.title}}">{{product.title}}</option>
+                                <option title="{{product.title}}" value="{{product.id}}">{{product.title}}</option>
                             {% endfor %}
                         {% endif %}
                       {% endfor %}
@@ -331,9 +315,13 @@ jQuery.getJSON(window.Shopify.routes.root + 'products.json', function(product) {
                   <!-- <input type="text" name="accessories" placeholder="Example: Extra-Comfort Saddle, Battery" > -->
               </div>
               <div class="item">
+                <div class="u24Medium">Note</div>
+                <input type="text" name="note">
+              </div>
+              <div class="item">
                   <div class="checkbox">
                       <input type="checkbox" id="subscribe" name="subscribe" value="subscribe" required />
-                      <label class="u17Light" for="subscribe">I agree to allow Urtopia to store and process my
+                      <label class="u17Light" for="subscribe" style="text-align: left;">I agree to allow Urtopia to store and process my
                           personal data, including receiving emails, text messages and SMS.<i>*</i></label>
                   </div>
               </div>
@@ -390,6 +378,7 @@ jQuery.getJSON(window.Shopify.routes.root + 'products.json', function(product) {
 )
 
 
+
 $('form .multiple-checkbox :input').on('change', e => {
     if (e.currentTarget.id === 'yes') {
         $(`form .multiple-checkbox label[for="yes"]`).css("border-color", "black")
@@ -404,6 +393,14 @@ $('form .multiple-checkbox :input').on('change', e => {
     }
 
 })
+
+const size_map = {
+    M: 'Fit for 170-185 cm',
+    L: 'Fit for 180-195 cm'
+  }
+
+  const forms = {}
+  const ignore = ['submit', 'checkbox']
 
 const faqs = [
     {
@@ -480,6 +477,54 @@ const faqs = [
     },
 ]
 
+if (!sessionStorage.isPreviewJobrad) {
+    fetchBuried('jobrad', 'pageview')
+}
+
+// 记录来过这个页面
+sessionStorage.isPreviewJobrad = 'isPreviewJobrad'
+
+
+function gtag_report_conversion(url) {
+    var callback = function () {
+      if (typeof(url) != 'undefined') {
+        window.location = url;
+      }
+    };
+    gtag('event', 'conversion', {
+        'send_to': 'AW-10876491006/sCHgCIiX55oYEP6pqMIo',
+        'event_callback': callback
+    });
+    return false;
+  }
+
+
+function submit(extras = {}) {
+    console.log('extras', extras)
+
+    let search = {}
+    const url = new URL(location.href)
+
+    for (const [k, v] of url.searchParams.entries()) {
+        search[k] = v
+    }
+
+    search = Object.assign(search, extras)
+
+    // 重写bike_size
+    search.bike_size = search.bike_size + ' - ' + size_map[search.bike_size]
+    search.page_type = 'ad-page'
+
+    fetchBuried('jobrad', 'submit', search)
+    // fbq('track', 'Jobrad Submit')
+    fbq('track', 'CompleteRegistration', {
+        value: 3596,
+        currency: 'usd',
+    });
+
+    gtag_report_conversion()
+}
+
 
 $('.faqs .swiper-slide').html(faqs.map(faq => `
   <div class="faq-item">
@@ -507,36 +552,7 @@ setTimeout(() => {
             .find('.faq-title')
             .children('i')
             .addClass('faq-content-plus');
-    });
-
-        const forms = {}
-        const ignore = ['submit', 'checkbox']
-
-        function submit(extras = {}) {
-            console.log('extras', extras)
-
-            let search = {}
-            const url = new URL(location.href)
-
-            for (const [k, v] of url.searchParams.entries()) {
-                search[k] = v
-            }
-
-            search = Object.assign(search, extras)
-
-            // 重写bike_size
-            search.bike_size = search.bike_size === 'M' ? 'M - Fit for 170-185 cm' : 'L - Fit for 180-195 cm'
-            search.page_type = 'ad-page'
-
-            fetchBuried('jobrad', 'submit', search)
-            // fbq('track', 'Jobrad Submit')
-            fbq('track', 'CompleteRegistration', {
-                value: 3596,
-                currency: 'usd',
-            });
-
-            gtag_report_conversion()
-        }
+    });        
 
         let is_request = false
         $('.forms form :input').on('input', debounce(e => {
@@ -555,82 +571,105 @@ setTimeout(() => {
             fetchBuried('jobrad', 'submitinfo', data)
         }, 5000))
 
-
-        $('.forms form').on("submit", function (event) {
-            const accessories = []
-            const accessories_id = []
-
-            $('.forms form :input').each((index, target) => {
-                if (ignore.includes(target.type)) {
-                    return
-                }
-
-
-                
-                // 配件特殊处理
-                if (target.name === 'accessories') {
-                    $(target).find('option:selected').each((i, target) => {
-                        accessories.push(target.value)
-                        accessories_id.push(target.id)
-                    })
-
-                    return
-                }
-
-                forms[target.name] = target.value
-            })
-
-            forms.accessories = accessories.join()
-            forms.accessories_id = accessories_id.join()
-
-            // 隐藏form
-            $('.forms form').hide()
-            $('.forms .centeral-content').html(`
-                <div class="u48DemiBold_v2">Thank you!</div>
-                <div class="u24Medium_v2">You have successfully submit the form. Our expert will contact you soon. Feel free to contact us if you have any questions.</div>
-                <a class="my-button my-button-white" href="/pages/contactus">Contact us</a>
-            `)
-
-            setTimeout(() => {
-                $('html').animate({
-                    scrollTop: $('.forms').offset().top - (document.documentElement.clientHeight / 2) + ($('.forms').height() / 2)
-                }, 300)
-
-                submit(forms)
-            })
-
-            event.preventDefault();
-            return false;
-        })
-
-
-        $('select[name="accessories"]').SumoSelect({
-            placeholder: 'Example: Extra-Comfort Saddle, Battery',
-            csvDispCount: 0,
-            floatWidth: 768,
-        })
 }, 300)
 
+      jQuery.getJSON(window.Shopify.routes.root + 'products.json', res => {
+        const carbon = res.products.find(p => p.id === 7633738727640)
+        const size = carbon.options.find(o => o.name === 'Size')
+        const style = carbon.options.find(o => o.name === 'Style')
+
+        console.log(carbon)
+
+        $('select[name="bike_size"]').html('<option value="">---</option>' + size.values.map(v => {
+            return `<option value="${v}">${v} - ${size_map[v]}</option>`
+        }))
+
+        setTimeout(() => {
+            $('select[name="bike_size"]').on('change', e => {
+                const value = e.target.value
+
+                if (value) {
+                    $('select[name="bike_style"]').html('<option value="">---</option>' + style.values.map(v => {
+
+                        let disabled = false
+                        const find = carbon.variants.find(c => `${v} / ${value}`)
+
+                        // 如果不可用，按钮禁用掉
+                        if (find) {
+                            disabled = !find.available
+                        }
+
+                        return `<option value="${v}" ${disabled ? 'disabled' : ''}>${v}</option>`
+                    }))
+                } else {
+                    $('select[name="bike_style"]').html('<option value="">---</option>')
+                }
+                
+            })
 
 
-    if (!sessionStorage.isPreviewJobrad) {
-        fetchBuried('jobrad', 'pageview')
-    }
+            $('.forms form').on("submit", function (event) {    
+                $('.forms form :input').each((index, target) => {
+                    if (ignore.includes(target.type)) {
+                        return
+                    }
+    
+    
+                    
+                    // 配件特殊处理
+                    if (target.name === 'accessories') {
+                        const accessories = []
+                        const accessories_id = []
+                        
+                        // selected
+                        $(target).find('option:selected').each((i, target) => {
+                            accessories.push(target.title)
+                            accessories_id.push(target.value)
+                        })
 
-    // 记录来过这个页面
-    sessionStorage.isPreviewJobrad = 'isPreviewJobrad'
+                            
+                        forms.accessories = accessories.join()
+                        forms.accessories_id = accessories_id.join()
+    
+                        return
+                    }
 
 
-    function gtag_report_conversion(url) {
-        var callback = function () {
-          if (typeof(url) != 'undefined') {
-            window.location = url;
-          }
-        };
-        gtag('event', 'conversion', {
-            'send_to': 'AW-10876491006/sCHgCIiX55oYEP6pqMIo',
-            'event_callback': callback
-        });
-        return false;
-      }
+                    forms[target.name] = target.value
+                })
+
+                forms.variant_id = carbon.variants.find(c => c.title === `${forms.bike_style} / ${forms.bike_size}`).id
+    
+                // 隐藏form
+                $('.forms form').hide()
+                $('.forms .centeral-content').html(`
+                    <div class="u48DemiBold_v2">Thank you!</div>
+                    <div class="u24Medium_v2">You have successfully submit the form. Our expert will contact you soon. Feel free to contact us if you have any questions.</div>
+                    <a class="my-button my-button-white" href="/pages/contactus">Contact us</a>
+                `)
+    
+                setTimeout(() => {
+                    $('html').animate({
+                        scrollTop: $('.forms').offset().top - (document.documentElement.clientHeight / 2) + ($('.forms').height() / 2)
+                    }, 300)
+    
+                    submit(forms)
+                })
+    
+                event.preventDefault();
+                return false;
+            })
+
+            
+
+
+        }, 100)
+      });
+
+      // SELECT 插件
+      $('select[name="accessories"]').SumoSelect({
+        placeholder: 'Example: Extra-Comfort Saddle, Battery',
+        csvDispCount: 0,
+        floatWidth: 768,
+      })
 </script>

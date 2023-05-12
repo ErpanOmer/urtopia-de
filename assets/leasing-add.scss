@@ -379,6 +379,7 @@
                         margin-right: 15px;
                         transition: all .3s;
                         background-color: #fff;
+                        position: relative;
 
                         img {
                             max-width: 20px;
@@ -389,6 +390,9 @@
 
                         input {
                             opacity: 0;
+                            margin: 0;
+                            padding: 0;
+                            position: absolute;
                         }
                     }
                 }
