@@ -644,9 +644,10 @@ setTimeout(() => {
 
                 if (value) {
                     $('select[name="bike_style"]').html('<option value="">---</option>' + style.values.map(v => {
+                        
                         const find = carbon.variants.find(c => `${v} / ${value}`)
 
-                        console.log(find)
+                        console.log(`${v} / ${value}`)
 
                         return `<option value="${v}">${v}</option>`
                     }))
