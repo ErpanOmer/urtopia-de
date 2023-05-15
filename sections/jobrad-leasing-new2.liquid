@@ -628,16 +628,24 @@ $('.forms2 .multiple-checkbox :input').on('change', e => {
     if (e.currentTarget.id === 'yes') {
         $(`form .multiple-checkbox label[for="yes"]`).css("border-color", "black")
         $(`form .multiple-checkbox label[for="yes"] img`).css('display', 'unset')
-        $(`form .multiple-checkbox label[for="no"]`).css("border-color", "#00000034")
+        $(`form .multiple-checkbox label[for="no"]`).css("border-color", "rgba(0,0,0,.3)")
         $(`form .multiple-checkbox label[for="no"] img`).css('display', 'none')
     } else {
         $(`form .multiple-checkbox label[for="no"]`).css("border-color", "black")
         $(`form .multiple-checkbox label[for="no"] img`).css('display', 'unset')
-        $(`form .multiple-checkbox label[for="yes"]`).css("border-color", "#00000034")
+        $(`form .multiple-checkbox label[for="yes"]`).css("border-color", "rgba(0,0,0,.3)")
         $(`form .multiple-checkbox label[for="yes"] img`).css('display', 'none')
     }
 
 })
+
+
+ // SELECT 插件
+ const SumoSelect = $('select[name="accessories"]').SumoSelect({
+    placeholder: 'Example: Extra-Comfort Saddle, Battery',
+    csvDispCount: 0,
+    floatWidth: 768,
+  })
 
 const size_map = {
     M: 'Fit for 170-185 cm',
@@ -752,8 +760,9 @@ function gtag_report_conversion(url) {
         $('form').each((i, t) => t.reset())
         $('.forms2 .steps input[name="country"]').val('Deutschland')
         $('.forms2 .steps input[name="bike_model"]').val('Carbon 1')
-        $(`form .multiple-checkbox label`).css("border-color", 'border: 2px solid rgba(0,0,0,.3)')
-        $(`form .multiple-checkbox label img`).css('display', 'none')
+        $(`.forms2 .multiple-checkbox label`).css("border-color", 'rgba(0,0,0,.3)')
+        $(`.forms2 .multiple-checkbox label img`).css('display', 'none')
+        sumoselect.sumo.unSelectAll()
         // 重置
         updateProgress(currentStep)
     }
@@ -1008,13 +1017,6 @@ setTimeout(() => {
         updateProgress(index)
     })
 })
-
-      // SELECT 插件
-      $('select[name="accessories"]').SumoSelect({
-        placeholder: 'Example: Extra-Comfort Saddle, Battery',
-        csvDispCount: 0,
-        floatWidth: 768,
-      })
 
       // 默认执行step:1
     updateProgress(1)
