@@ -142,7 +142,7 @@
                                 <div>
                                     <div class="u24Medium">Bike Size<i>*</i></div>
                                     <select name="bike_size" required>
-                                        <option value="---">---</option>
+                                        <option value="">---</option>
                                         <!--<option value="M">M - Fit for 170-185 cm</option>
                           <option value="L">L - Fit for 180-195 cm</option>
                           -->
@@ -151,7 +151,7 @@
                                 <div>
                                     <div class="u24Medium">Bike Style<i>*</i></div>
                                     <select name="bike_style" required>
-                                        <option value="---">---</option>
+                                        <option value="">---</option>
                                         <!--<option value="Sirius">Sirius</option>
                           <option value="Lyra">Lyra</option>
                           <option value="Midnight in Paris">Midnight in Paris</option>
@@ -647,6 +647,7 @@ const size_map = {
   const forms = {}
   const ignore = ['submit', 'checkbox']
   let currentStep = 1
+  let carbon = {}
 
 const faqs = [
     {
@@ -922,7 +923,7 @@ setTimeout(() => {
 }, 300)
 
       jQuery.getJSON(window.Shopify.routes.root + 'products.json', res => {
-        const carbon = res.products.find(p => p.id === 7633738727640)
+        carbon = res.products.find(p => p.id === 7633738727640)
         const size = carbon.options.find(o => o.name === 'Size')
         const style = carbon.options.find(o => o.name === 'Style')
 
