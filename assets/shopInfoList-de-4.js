@@ -847,5 +847,35 @@ const testRides = [
         ],
       },
     ]
-  }
+  },
+  {
+    city: 'Riegelsberg',
+    cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Riegelsberg__view_from_the_panorama_point.jpg?v=1683900380',
+    series: [
+      'Urtopia Carbon 1',
+      // 'Urtopia Carbon 1'
+    ],
+    stores: [
+      {
+        name: 'Timo Altmeyer',
+        phone: '+49 156 78572530',
+        email: '',
+        timezone: "Mainz, Germany (GMT+1)",
+        add: "Ober-Ramstadt, 66292 Riegelsberg",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Riegelsberg__view_from_the_panorama_point.jpg?v=1683900380",
+        testrideSpot: "Riegelsberg",
+        testRideSize: "L",
+        businessHours: [
+          "",
+          "",
+          "",
+          "09:00-17:00",
+          "09:00-17:00",
+          "",
+          "",
+        ],
+        isPartner: true
+      },
+    ]
+  },
 ]
