@@ -985,7 +985,7 @@ setTimeout(() => {
 
 
       $('html').animate({
-        scrollTop: $('.forms2').offset().top - 150
+        scrollTop: $('.forms2').offset().top - (isMobile ? 0 : 150)
     }, 300)
 
       return false;
@@ -999,7 +999,7 @@ setTimeout(() => {
     $(`.items .buttons .pervious`).each((i, target) => {
         $(target).on('click', () => {
             $('html').animate({
-                scrollTop: $('.forms2').offset().top - isMobile ? 0 : 150
+                scrollTop: $('.forms2').offset().top - (isMobile ? 0 : 150)
             }, 300)
     
             updateProgress(i + 1)
