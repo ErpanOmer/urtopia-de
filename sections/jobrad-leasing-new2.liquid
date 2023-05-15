@@ -769,7 +769,7 @@ function gtag_report_conversion(url) {
         updateProgress(currentStep)
 
         $('html').animate({
-            scrollTop: isMobile ? $('.forms2 .texts .img').offset().top + 50 : $('.forms2').offset().top - 150
+            scrollTop: isMobile ? $('.forms2 .texts img').offset().top + 50 : $('.forms2').offset().top - 150
         }, 300)
     }
 
@@ -989,7 +989,7 @@ setTimeout(() => {
 
 
       $('html').animate({
-        scrollTop: isMobile ? $('.forms2 .texts .img').offset().top + 50 : $('.forms2').offset().top - 150
+        scrollTop: isMobile ? $('.forms2 .texts img').offset().top + 50 : $('.forms2').offset().top - 150
     }, 300)
 
       return false;
@@ -1003,7 +1003,7 @@ setTimeout(() => {
     $(`.items .buttons .pervious`).each((i, target) => {
         $(target).on('click', () => {
             $('html').animate({
-                scrollTop: isMobile ? $('.forms2 .texts .img').offset().top + 50 : $('.forms2').offset().top - 150
+                scrollTop: isMobile ? $('.forms2 .texts img').offset().top + 50 : $('.forms2').offset().top - 150
             }, 300)
     
             updateProgress(i + 1)
