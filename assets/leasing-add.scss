@@ -468,7 +468,7 @@
         }
     }
 
-    .forms {
+    .forms2 {
         .centeral-content {
             &>div {
                 display: flex;
@@ -1244,6 +1244,193 @@
                         font-size: 24px;
                         line-height: 27px;
                         padding-bottom: 24px;
+                    }
+                }
+            }
+        }
+
+
+        .forms {
+            .centeral-content {
+                background-color: #F7F8FA;
+                padding: 0;
+    
+                &>div {
+                    flex-direction: column;
+                    box-shadow: unset;
+                    border-radius: unset;
+    
+                    .texts {
+                        padding: 15vw 8vw 10vw;
+    
+                        .u36DemiBold_v2 {
+                            font-size: 24px;
+                            padding-top: 24px;
+                        }
+    
+                        .u17DemiBold_v2 {
+                            font-size: 16px;
+                        }
+    
+                        .u17Light_v2 {
+                            font-size: 15px;
+                        }
+                    }
+    
+                    .steps {
+                        padding: 6vw 8vw 15vw;
+                        background-color: #fff;
+    
+                        .progress {
+                            .item {
+                                margin-right: 6px;
+    
+                                .u17DemiBold_v2 {
+                                    font-size: 11px;
+                                    font-weight: 400;
+                                    border-width: 1px;
+                                    padding-bottom: 2px;
+                                }
+    
+                                .u24DemiBold_v2 {
+                                    width: unset;
+                                    min-width: unset;
+                                    border: none;
+                                    font-size: 14px;
+                                }
+                            }
+    
+                            .success {
+                                margin: 0;
+                                width: unset;
+                                height: unset;
+                                border: none;
+                                border-radius: unset;
+    
+                                img {
+                                    width: 22px;
+                                }
+                            }
+                        }
+    
+                        .items {
+                            .item {
+                                max-width: 84vw;
+    
+                                &+.item {
+                                    margin-top: 12px;
+                                }
+    
+                                .mini-item {
+                                    grid-template-columns: 1fr;
+                                    grid-row-gap: 12px;
+                                }
+    
+                                .u24Medium {
+                                    font-size: 15px;
+                                    line-height: 18px;
+                                    margin-bottom: 6px;
+                                }
+    
+                                input[type="text"],
+                                input[type="email"],
+                                input[type="tel"],
+                                select {
+                                    height: 40px;
+                                }
+    
+                                .checkbox {
+                                    .u17Light {
+                                        font-size: 15px;
+                                        line-height: 22px;
+                                    }
+                                }
+    
+    
+                                .multiple-checkbox {
+    
+                                    &>label {
+                                        height: 40px;
+                                    }
+                                }
+    
+                                .SumoSelect {
+    
+                                    // width: 84%;
+                                    .CaptionCont {
+                                        height: 40px;
+    
+                                        .placeholder {
+                                            font-size: 14px;
+                                        }
+                                    }
+                                }
+    
+    
+                                .SumoSelect.open>.optWrapper {
+                                    top: 0;
+                                    padding: 8vw;
+                                    display: flex;
+                                    flex-direction: column;
+                                    align-items: center;
+                                    justify-content: center;
+                                    width: unset;
+                                    max-width: unset;
+                                    height: unset;
+                                    max-height: unset;
+                                    background-color: #00000090;
+                                    border-radius: 0;
+    
+                                    .MultiControls {
+                                        position: static;
+                                        margin: 0;
+                                        border-radius: 0;
+                                    }
+                                }
+    
+    
+                                .SumoSelect>.optWrapper.isFloating {
+                                    .options {
+                                        box-shadow: unset;
+                                        width: 100%;
+                                        background-color: #fff;
+                                        border-radius: 0;
+                                    }
+    
+                                    // bottom: unset;
+                                    // top: 50%;
+                                    // transform: translateY(-50%);
+                                }
+                            }
+    
+    
+                            img {
+                                max-width: unset;
+                            }
+    
+                            .infos {
+                                .info {
+    
+                                    .u17DemiBold_v2,
+                                    .u17Light_v2 {
+                                        font-size: 15px;
+                                    }
+    
+                                    span {
+                                        flex: 1.15;
+                                    }
+    
+                                    &[name="bike"] {
+                                        flex-direction: column;
+    
+                                        .u17Light_v2 {
+                                            align-items: center;
+                                        }
+                                    }
+    
+                                }
+                            }
+                        }
                     }
                 }
             }
