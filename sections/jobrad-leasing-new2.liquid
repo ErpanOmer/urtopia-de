@@ -752,7 +752,8 @@ function gtag_report_conversion(url) {
         $('form').each((i, t) => t.reset())
         $('.forms2 .steps input[name="country"]').val('Deutschland')
         $('.forms2 .steps input[name="bike_model"]').val('Carbon 1')
-        $('.forms2 .steps input[name="offers"]').val('')
+        $(`form .multiple-checkbox label`).css("border-color", 'border: 2px solid rgba(0,0,0,.3)')
+        $(`form .multiple-checkbox label img`).css('display', 'none')
         // 重置
         updateProgress(currentStep)
     }
