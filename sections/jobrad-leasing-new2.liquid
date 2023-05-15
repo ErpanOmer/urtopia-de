@@ -767,6 +767,10 @@ function gtag_report_conversion(url) {
         $('.SumoSelect>.optWrapper>.options li').removeClass('selected')
         // 重置
         updateProgress(currentStep)
+
+        $('html').animate({
+            scrollTop: isMobile ? $('.forms2 .texts .u36DemiBold_v2').offset().top + 50 : $('.forms2').offset().top - 150
+        }, 300)
     }
 
 
