@@ -632,10 +632,6 @@
                                 margin-right: 15px;
                             }
     
-                            button {
-                                border: none;
-                            }
-    
     
                             .multiple-checkbox {
                                 display: flex;
@@ -738,6 +734,10 @@
     
                         .buttons {
                             margin-top: 5%;
+
+                            button {
+                                border: none;
+                            }
     
                             .my-button {
                                 margin-right: 12px;
