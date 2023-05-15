@@ -870,7 +870,13 @@ function updateProgress(step = 1) {
 
 
   setTimeout(() => {
-      $(`.step-${step} .buttons .pervious`).on('click', () => updateProgress(step - 1))
+      $(`.step-${step} .buttons .pervious`).on('click', () => {
+        $('html').animate({
+            scrollTop: $('.forms2').offset().top - (document.documentElement.clientHeight / 2) + ($('.forms2').height() / 2)
+        }, 300)
+
+        updateProgress(step - 1)
+      })
   }, 300)
 
   // 当前步骤存起来
