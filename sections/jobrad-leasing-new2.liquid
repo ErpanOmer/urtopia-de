@@ -828,8 +828,6 @@ function updateProgress(step = 1) {
       $('.forms2 .texts .u17DemiBold_v2').text('You have successfully submit the form.')
       $('.forms2 .texts .u17Light_v2').html('We appreciate your cooperation in providing this information. Please check your information on the right. <br><br>If you have any questions or require further assistance, please don’t hesitate to reach out to our dedicated leasing support team at leasing@newurtopia.com. <br><br>Next out expert will contact and guide you through the process and make your leasing experience with Urtopia as seamless as possible.')
 
-      // 重新提交
-      $(`.step-4 .buttons .again`).on('click', reset)
 
       $('.forms2 form :input').each((index, target) => {
           if (ignore.includes(target.type)) {
@@ -867,17 +865,6 @@ function updateProgress(step = 1) {
       // submit
       submit(forms)
   }
-
-
-  setTimeout(() => {
-      $(`.step-${step} .buttons .pervious`).on('click', () => {
-        $('html').animate({
-            scrollTop: $('.forms2').offset().top - 150
-        }, 300)
-
-        updateProgress(step - 1)
-      })
-  }, 300)
 
   // 当前步骤存起来
   currentStep = Math.max(step, currentStep)
@@ -985,6 +972,21 @@ setTimeout(() => {
 
       return false;
   })
+
+
+    // 重新提交
+    $(`.step-4 .buttons .again`).on('click', reset)
+
+
+    $(`.items .buttons .pervious`).each((i, target) => {
+        $(target).on('click', () => {
+            $('html').animate({
+                scrollTop: $('.forms2').offset().top - 150
+            }, 300)
+    
+            updateProgress(i + 1)
+        })
+    })
 
 
   $('.forms2 .steps .progress .item').each((i, item) => {
