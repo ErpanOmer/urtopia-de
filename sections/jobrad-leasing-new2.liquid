@@ -971,6 +971,11 @@ setTimeout(() => {
       // step: 3
       parent.classList.contains('step-3') && updateProgress(4)
 
+
+      $('html').animate({
+        scrollTop: $('.forms2').offset().top - 150
+    }, 300)
+
       return false;
   })
 
