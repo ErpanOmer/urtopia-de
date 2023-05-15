@@ -752,6 +752,7 @@ function gtag_report_conversion(url) {
         $('form').each((i, t) => t.reset())
         $('.forms2 .steps input[name="country"]').val('Deutschland')
         $('.forms2 .steps input[name="bike_model"]').val('Carbon 1')
+        $('.forms2 .steps input[name="offers"]').val('')
         // 重置
         updateProgress(currentStep)
     }
@@ -859,7 +860,7 @@ function updateProgress(step = 1) {
       })
 
 
-      $('.bike_size_style').text(`${forms.bike_model},${forms.bike_style},${forms.bike_size}(${size_map[forms.bike_size]})`)
+      $('.bike_size_style').text(`${forms.bike_model}, ${forms.bike_style}, ${forms.bike_size}(${size_map[forms.bike_size]})`)
       forms.variant_id = carbon.variants.find(c => c.title === `${forms.bike_style} / ${forms.bike_size}`).id
 
       // submit
