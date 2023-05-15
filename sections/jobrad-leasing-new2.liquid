@@ -872,7 +872,7 @@ function updateProgress(step = 1) {
   setTimeout(() => {
       $(`.step-${step} .buttons .pervious`).on('click', () => {
         $('html').animate({
-            scrollTop: $('.forms2').offset().top
+            scrollTop: $('.forms2').offset().top + 200
         }, 300)
 
         updateProgress(step - 1)
