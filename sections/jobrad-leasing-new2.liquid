@@ -763,6 +763,7 @@ function gtag_report_conversion(url) {
         $(`.forms2 .multiple-checkbox label`).css("border-color", 'rgba(0,0,0,.3)')
         $(`.forms2 .multiple-checkbox label img`).css('display', 'none')
         SumoSelect.sumo.unSelectAll()
+        $('.SumoSelect>.optWrapper>.options li').removeClass('selected')
         // 重置
         updateProgress(currentStep)
     }
