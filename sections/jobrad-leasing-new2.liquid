@@ -20,7 +20,7 @@
           </div>
       </div>
   </div>
-  <div class="forms" id="forms">
+  <div class="forms2" id="forms">
     <div class="centeral-content">
         <div>
             <div class="texts">
@@ -800,7 +800,7 @@ setTimeout(() => {
     });        
 
         let is_request = false
-        $('.forms form :input').on('input', debounce(e => {
+        $('.forms2 form :input').on('input', debounce(e => {
             if (is_request) {
                 return            
             }
@@ -808,7 +808,7 @@ setTimeout(() => {
             is_request = true
             const data = {}
 
-            $('.forms form :input').each((i, target) => {
+            $('.forms2 form :input').each((i, target) => {
                 data[target.name] = target.value
             })
 
@@ -853,8 +853,8 @@ setTimeout(() => {
             })
 
 
-            $('.forms form').on("submit", function (event) {    
-                $('.forms form :input').each((index, target) => {
+            $('.forms2 form').on("submit", function (event) {    
+                $('.forms2 form :input').each((index, target) => {
                     if (ignore.includes(target.type)) {
                         return
                     }
@@ -886,8 +886,8 @@ setTimeout(() => {
                 forms.variant_id = carbon.variants.find(c => c.title === `${forms.bike_style} / ${forms.bike_size}`).id
     
                 // 隐藏form
-                $('.forms form').hide()
-                $('.forms .centeral-content').html(`
+                $('.forms2 form').hide()
+                $('.forms2 .centeral-content').html(`
                     <div class="u48DemiBold_v2">Thank you!</div>
                     <div class="u24Medium_v2">You have successfully submit the form. Our expert will contact you soon. Feel free to contact us if you have any questions.</div>
                     <a class="my-button my-button-white" href="/pages/contactus">Contact us</a>
@@ -895,7 +895,7 @@ setTimeout(() => {
     
                 setTimeout(() => {
                     $('html').animate({
-                        scrollTop: $('.forms').offset().top - (document.documentElement.clientHeight / 2) + ($('.forms').height() / 2)
+                        scrollTop: $('.forms2').offset().top - (document.documentElement.clientHeight / 2) + ($('.forms2').height() / 2)
                     }, 300)
     
                     submit(forms)
