@@ -985,7 +985,7 @@ setTimeout(() => {
 
 
       $('html').animate({
-        scrollTop: $('.forms2').offset().top - (isMobile ? 0 : 150)
+        scrollTop: isMobile ? $('.forms2 .texts .u36DemiBold_v2').offset().top + 50 : $('.forms2').offset().top - 150
     }, 300)
 
       return false;
