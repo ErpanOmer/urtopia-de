@@ -468,6 +468,328 @@
         }
     }
 
+    .forms {
+        .centeral-content {
+            &>div {
+                display: flex;
+                box-shadow: 0px 3px 6px #00000029;
+                border-radius: 10px;
+    
+                .texts {
+                    flex: 1;
+                    background-color: #F7F8FA;
+                    padding: 3%;
+    
+                    img {
+                        max-width: 158px;
+                    }
+    
+                    .u36DemiBold_v2 {
+                        padding: 15% 0 6%;
+                        border-bottom: 1px solid #ddd;
+                        margin-bottom: 6%;
+                    }
+    
+                    .u17DemiBold_v2 {
+                        margin: 12px 0;
+                    }
+                }
+    
+                .steps {
+                    flex: 2;
+                    display: flex;
+                    flex-direction: column;
+                    padding: 3% 5% 3% 3%;
+    
+                    .progress {
+                        display: flex;
+                        user-select: none;
+    
+                        .item {
+                            display: flex;
+                            align-items: center;
+                            margin-right: 12px;
+                            flex: 1;
+                            opacity: 0.3;
+                            cursor: pointer;
+                            position: relative;
+    
+                            .u24DemiBold_v2 {
+                                width: 48px;
+                                min-width: 48px;
+                                height: 48px;
+                                border: 2px dashed #000;
+                                border-radius: 50%;
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                margin-right: 6px;
+                            }
+    
+                            .u17DemiBold_v2 {
+                                border-bottom: 2px solid #000;
+                                width: 100%;
+                            }
+    
+                        }
+    
+                        .success {
+                            width: 48px;
+                            height: 48px;
+                            opacity: 0.3;
+                            border: 2px dashed #000;
+                            border-radius: 50%;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            margin-left: 12px;
+    
+                            img {
+                                width: 50%;
+                            }
+                        }
+    
+                        .active {
+                            opacity: 1;
+                            border-style: solid;
+    
+                            .u24DemiBold_v2 {
+                                border-style: solid;
+                            }
+                        }
+                    }
+    
+                    .items {
+                        // flex: 1;
+                        display: flex;
+                        flex-direction: column;
+                        margin-top: 8%;
+    
+                        .item {
+                            display: flex;
+                            flex-direction: column;
+    
+                            &+.item {
+                                margin-top: 24px;
+                            }
+    
+                            .u24Medium {
+                                text-align: left;
+                                margin-bottom: 12px;
+                            }
+    
+                            input[type="text"],
+                            input[type="email"],
+                            input[type="tel"],
+                            select {
+                                border-radius: 10px;
+                                opacity: 1;
+                                height: 47px;
+                                line-height: 47px;
+                                padding: 0 15px;
+                                font-size: 17px;
+                                line-height: 20px;
+                                box-sizing: border-box;
+                                border: 2px solid rgba(0, 0, 0, 0.3);
+                                transition: all .3s;
+    
+                                &:focus-visible {
+                                    outline-offset: unset;
+                                    box-shadow: unset;
+                                    outline: unset;
+                                    border-color: #000;
+                                }
+                            }
+    
+                            .mini-item {
+                                display: grid;
+                                grid-template-columns: 1fr 1fr;
+                                grid-column-gap: 40px;
+    
+                                &>div {
+                                    display: flex;
+                                    flex-direction: column;
+                                }
+                            }
+    
+                            .checkbox {
+                                display: flex;
+                                align-items: center;
+    
+                                input {
+                                    min-width: 20px;
+                                    min-height: 20px;
+                                    margin-right: 12px;
+                                }
+                            }
+    
+                            i {
+                                color: #FF0000;
+                            }
+    
+                            .my-button {
+                                margin-right: 15px;
+                            }
+    
+                            button {
+                                border: none;
+                            }
+    
+    
+                            .multiple-checkbox {
+                                display: flex;
+    
+                                &>label {
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: center;
+                                    width: 150px;
+                                    border-radius: 10px;
+                                    height: 47px;
+                                    cursor: pointer;
+                                    margin-right: 15px;
+                                    transition: all .3s;
+                                    background-color: #fff;
+                                    position: relative;
+                                    border: 2px solid rgba(0, 0, 0, 0.3);
+    
+                                    img {
+                                        max-width: 20px;
+                                        margin-right: 6px;
+                                        display: none;
+                                    }
+    
+    
+                                    input {
+                                        opacity: 0;
+                                        margin: 0;
+                                        padding: 0;
+                                        position: absolute;
+                                    }
+                                }
+                            }
+    
+                            .SumoSelect {
+                                width: 100%;
+                                text-align: left;
+    
+                                &>select {
+                                    transform: translatex(-3300%);
+                                }
+    
+                                &:focus-visible,
+                                &:focus {
+                                    .CaptionCont {
+                                        border-color: #000;
+                                    }
+                                }
+    
+                                .CaptionCont {
+                                    border: 2px solid #00000034;
+                                    border-radius: 10px;
+                                    height: 47px;
+                                    box-sizing: border-box;
+                                    display: flex;
+                                    align-items: center;
+                                    padding: 5px 13px;
+                                    box-shadow: none;
+    
+    
+    
+                                    .placeholder {
+                                        font-style: unset;
+                                        font-size: 17px;
+                                        font-weight: 300;
+                                        background-color: #fff;
+                                    }
+                                }
+                            }
+    
+                            .SumoSelect.open>.optWrapper {
+                                top: 50px;
+                                border-radius: 10px;
+    
+                                .options {
+                                    .selected {
+                                        span {
+    
+                                            i {
+                                                background-color: rgb(0, 115, 255);
+                                            }
+                                        }
+    
+    
+                                    }
+    
+                                    .opt {
+                                        span {
+                                            margin-left: -27px;
+                                        }
+    
+                                        label {
+                                            padding-left: 8px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+    
+    
+                        .buttons {
+                            margin-top: 5%;
+    
+                            .my-button {
+                                margin-right: 12px;
+                            }
+                        }
+    
+                        .infos {
+                            display: flex;
+                            flex-direction: column;
+                            margin-top: 24px;
+    
+                            .info {
+                                display: flex;
+                                margin-bottom: 6px;
+    
+                                label {
+                                    flex: 1;
+                                }
+    
+                                span {
+                                    flex: 3;
+                                    color: #555;
+                                }
+    
+                                &[name="bike"] {
+                                    .u17Light_v2 {
+                                        display: flex;
+                                        flex-direction: column;
+                                    }
+                                }
+                            }
+    
+                            .u14Light_v2 {
+                                margin: 18px 0 12px;
+                            }
+                        }
+    
+    
+                        img {
+                            max-width: 50%;
+                        }
+                    }
+    
+                    .step-4 {
+                        .buttons {
+                            margin: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
     .faqs {
         padding: 80px 0;
 
