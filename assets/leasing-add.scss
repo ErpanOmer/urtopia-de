@@ -760,6 +760,7 @@
                                 span {
                                     flex: 3;
                                     color: #555;
+                                    word-break: break-all;
                                 }
     
                                 &[name="bike"] {
