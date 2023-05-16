@@ -72,7 +72,7 @@ const testRides = [
     cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Dusseldorf.jpg?v=1679406972',
     series: [
       'Urtopia Carbon 1',
-      // 'Urtopia Carbon 1'
+       'Urtopia Chord'
     ],
     stores: [
       {
@@ -83,7 +83,12 @@ const testRides = [
         add: "Rahmer Strasse 22G, 40489 Düsseldorf",
         imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Dusseldorf.jpg?v=1679406972",
         testrideSpot: "Düsseldorf",
-        testRideSize: "M",
+        testRideSize: "M, Chord",
+        isPartner: true,
+        availableSizes: [
+          'Carbon One Size M',
+          'Chord'
+        ],
         businessHours: [
           "",
           "09:00-18:00",
@@ -93,7 +98,7 @@ const testRides = [
           "09:00-18:00",
           "",
         ],
-        isPartner: true
+        
       }
       /*{
         name: 'DownTownBikes am Hbf.',
