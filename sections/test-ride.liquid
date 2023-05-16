@@ -610,9 +610,9 @@
 
 
     let search = {}
-    const url = new URL(location.href)
+    const u = new URL(location.href)
 
-    for (const [k, v] of url.searchParams.entries()) {
+    for (const [k, v] of u.searchParams.entries()) {
         search[k] = v
     }
 
