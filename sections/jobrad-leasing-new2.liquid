@@ -803,7 +803,7 @@ function submit(extras = {}) {
     // 重写bike_size
     search.bike_size = search.bike_size + ' - ' + size_map[search.bike_size]
     search.page_type = 'ad-page2'
-    search.is_submit_again = submitAgain
+    search.is_submit_again = String(submitAgain)
 
     fetchBuried('jobrad', 'submit', search)
     // fbq('track', 'Jobrad Submit')
@@ -1086,7 +1086,7 @@ setTimeout(() => {
         data.leave_stage = leave_stage_map[currentStep]
         data.bike_size = data.bike_size + ' - ' + (size_map[data.bike_size] || '')
         data.page_type = 'ad-page2'
-        data.is_submit_again = submitAgain
+        data.is_submit_again = String(submitAgain)
 
         fetchBuried('jobrad', 'submitinfo', data)
       });
