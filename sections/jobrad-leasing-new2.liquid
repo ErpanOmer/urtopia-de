@@ -1011,6 +1011,11 @@ setTimeout(() => {
     })
 
 
+ $('.forms input[name="bike_style"]').on('change', e => {
+    console.log(e)
+ })
+
+
   $('.forms2 .steps .progress .item').each((i, item) => {
     const index = i + 1
     $(item).on('click', e => {
