@@ -1057,8 +1057,8 @@ setTimeout(() => {
     window.addEventListener('beforeunload', (event) => {
         console.log(event)
         // Cancel the event as stated by the standard.
-        event.preventDefault();
+        {% comment %} event.preventDefault(); {% endcomment %}
         // Chrome requires returnValue to be set.
-        event.returnValue = '';
+        {% comment %} event.returnValue = ''; {% endcomment %}
       });
 </script>
