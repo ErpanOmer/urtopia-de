@@ -11,7 +11,7 @@ function fetchBuried (name = '', type = '', data = {}, isSendBeacon = false) {
         extras: data
     }
 
-    return isSendBeacon ? navigator.sendBeacon('https://api.newurtopia.com/third_part/traces', body) : fetch("https://api.newurtopia.com/third_part/traces", {
+    return isSendBeacon ? navigator.sendBeacon('https://api.newurtopia.com/third_part/traces', JSON.stringify(body)) : fetch("https://api.newurtopia.com/third_part/traces", {
         method: "POST",
         body: JSON.stringify(body),
         headers: {
