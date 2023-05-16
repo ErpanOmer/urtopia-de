@@ -1028,6 +1028,7 @@ setTimeout(() => {
     const style = e.target.value
 
     if (!size || !style) {
+        $('.forms2 .items .bike_image').attr('src', '')
         $('.forms2 .items .bike_you_choose').hide()
         return
     }
