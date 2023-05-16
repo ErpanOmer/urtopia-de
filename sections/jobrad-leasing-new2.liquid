@@ -131,7 +131,7 @@
                 <div class="items step-3">
                     <form action="" method="post">
                         <div class="u17DemiBold_v2">Bike you choose:</div>
-                        <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18562_2x_d5c1f716-cf97-484c-89bd-b9165c330c11.jpg?v=1684139146"
+                        <img class="bike_image" src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18562_2x_d5c1f716-cf97-484c-89bd-b9165c330c11.jpg?v=1684139146"
                             alt="">
                         <div class="item">
                             <div class="u24Medium">Bike Model<i>*</i></div>
@@ -239,7 +239,7 @@
                         <div class="info" name="bike">
                             <label class="u17DemiBold_v2">Bike Detail:</label>
                             <span class="u17Light_v2">
-                                <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18562_2x_d5c1f716-cf97-484c-89bd-b9165c330c11.jpg?v=1684139146"
+                                <img class="bike_image" src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18562_2x_d5c1f716-cf97-484c-89bd-b9165c330c11.jpg?v=1684139146"
                                     alt="">
                                 <span class="bike_size_style">Carbon 1, sirus, Large(fit for 180-195 cm)</span>
                             </span>
@@ -1020,6 +1020,12 @@ setTimeout(() => {
     }
 
     const find = carbon.variants.find(c => c.title === `${style} / ${size}`)
+
+    if (!find) {
+        return
+    }
+
+
     
 
     console.log(find)
