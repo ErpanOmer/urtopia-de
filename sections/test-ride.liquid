@@ -606,4 +606,15 @@
             select_store_count
         })
     }
+
+
+
+    let search = {}
+    const u = new URL(location.href)
+
+    for (const [k, v] of u.searchParams.entries()) {
+        search[k] = v
+    }
+
+    search.name && booknow(search.name)
     </script>
