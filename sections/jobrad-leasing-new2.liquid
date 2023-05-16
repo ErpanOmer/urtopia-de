@@ -976,6 +976,7 @@ setTimeout(() => {
                     }))
                 } else {
                     $('select[name="bike_style"]').html('<option value="">---</option>')
+                    $('.forms2 .items .bike_you_choose').hide()
                 }
                 
             })
@@ -1027,6 +1028,7 @@ setTimeout(() => {
     const style = e.target.value
 
     if (!size || !style) {
+        $('.forms2 .items .bike_you_choose').hide()
         return
     }
 
