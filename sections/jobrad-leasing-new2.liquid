@@ -922,24 +922,6 @@ setTimeout(() => {
             .children('i')
             .addClass('faq-content-plus');
     });        
-
-        let is_request = false
-        $('.forms2 form :input').on('input', debounce(e => {
-            if (is_request) {
-                return            
-            }
-
-            is_request = true
-            const data = {}
-
-            $('.forms2 form :input').each((i, target) => {
-                data[target.name] = target.value
-            })
-
-            data.page_type = 'ad-page2'
-            fetchBuried('jobrad', 'submitinfo', data)
-        }, 5000))
-
 }, 300)
 
       jQuery.getJSON(window.Shopify.routes.root + 'products.json', res => {
@@ -1055,10 +1037,17 @@ setTimeout(() => {
 
 
     window.addEventListener('beforeunload', (event) => {
-        console.log(event)
-        // Cancel the event as stated by the standard.
-        {% comment %} event.preventDefault(); {% endcomment %}
-        // Chrome requires returnValue to be set.
-        {% comment %} event.returnValue = ''; {% endcomment %}
+        const data = {}
+
+        $('.forms2 form :input').each((i, target) => {
+            if (ignore.includes(target.type)) {
+                return
+            }
+            
+            data[target.name] = target.value
+        })
+
+        data.page_type = 'ad-page2'
+        fetchBuried('jobrad', 'submitinfo', data)
       });
 </script>
