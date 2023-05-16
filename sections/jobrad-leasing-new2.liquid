@@ -661,6 +661,7 @@ const size_map = {
   let currentStep = 1
   let carbon = {}
   const isMobile = document.body.clientWidth < 768
+  let submitAgain = false
 
 const faqs = [
     {
@@ -760,17 +761,18 @@ function gtag_report_conversion(url) {
 
 
   function reset() {
-        currentStep = 1
+        currentStep = 3
+        submitAgain = true
         // 重置全部表单
-        $('form').each((i, t) => t.reset())
-        $('.forms2 .steps input[name="country"]').val('Deutschland')
-        $('.forms2 .steps input[name="bike_model"]').val('Carbon 1')
-        $(`.forms2 .multiple-checkbox label`).css("border-color", 'rgba(0,0,0,.3)')
-        $(`.forms2 .multiple-checkbox label img`).css('display', 'none')
-        SumoSelect.sumo.unSelectAll()
-        $('.SumoSelect>.optWrapper>.options li').removeClass('selected')
+        //$('form').each((i, t) => t.reset())
+        //$('.forms2 .steps input[name="country"]').val('Deutschland')
+        //$('.forms2 .steps input[name="bike_model"]').val('Carbon 1')
+        //$(`.forms2 .multiple-checkbox label`).css("border-color", 'rgba(0,0,0,.3)')
+        //$(`.forms2 .multiple-checkbox label img`).css('display', 'none')
+        //SumoSelect.sumo.unSelectAll()
+        //$('.SumoSelect>.optWrapper>.options li').removeClass('selected')
         // 重置
-        updateProgress(currentStep)
+        updateProgress(1)
 
         $('html').animate({
             scrollTop: isMobile ? $('.forms2 .texts .u20DemiBold_v2').offset().top - 85 : $('.forms2').offset().top - 150
