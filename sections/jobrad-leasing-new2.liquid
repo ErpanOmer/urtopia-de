@@ -632,13 +632,19 @@ $('.forms2 .multiple-checkbox :input').on('change', e => {
     if (e.currentTarget.id === 'yes') {
         $(`form .multiple-checkbox label[for="yes"]`).css("border-color", "black")
         $(`form .multiple-checkbox label[for="yes"] img`).css('display', 'unset')
+        $(`form .multiple-checkbox label[for="yes"]`).addClass('active')
+
         $(`form .multiple-checkbox label[for="no"]`).css("border-color", "rgba(0,0,0,.3)")
         $(`form .multiple-checkbox label[for="no"] img`).css('display', 'none')
+        $(`form .multiple-checkbox label[for="no"]`).removeClass('active')
     } else {
         $(`form .multiple-checkbox label[for="no"]`).css("border-color", "black")
         $(`form .multiple-checkbox label[for="no"] img`).css('display', 'unset')
+        $(`form .multiple-checkbox label[for="no"]`).addClass('active')
+
         $(`form .multiple-checkbox label[for="yes"]`).css("border-color", "rgba(0,0,0,.3)")
         $(`form .multiple-checkbox label[for="yes"] img`).css('display', 'none')
+        $(`form .multiple-checkbox label[for="yes"]`).removeClass('active')
     }
 
 })
@@ -883,6 +889,13 @@ function updateProgress(step = 1) {
               $(`.forms2 .infos .info[name="${target.name}"] span`).text(accessories.join())
 
               return
+          }
+
+
+          if (target.name === 'offers') {
+
+
+            return
           }
 
 
