@@ -656,12 +656,19 @@ const size_map = {
     L: 'Fit for 180-195 cm'
   }
 
+  const leave_stage_map = {
+    1: 'Contact Info',
+    2: 'Shipping Info',
+    3: 'Bike Selection'
+  }
+
   const forms = {}
   const ignore = ['submit', 'checkbox']
   let currentStep = 1
   let carbon = {}
   const isMobile = document.body.clientWidth < 768
   let submitAgain = false
+  let isSubmited = false
 
 const faqs = [
     {
@@ -782,6 +789,7 @@ function gtag_report_conversion(url) {
 
 function submit(extras = {}) {
     console.log('extras', extras)
+    isSubmited = true
 
     let search = {}
     const url = new URL(location.href)
@@ -1037,17 +1045,25 @@ setTimeout(() => {
 
 
     window.addEventListener('beforeunload', (event) => {
+
+        // 如果已经submit, 就不用再submitinfo
+        if (isSubmited) {
+            return
+        }
+
         const data = {}
 
         $('.forms2 form :input').each((i, target) => {
             if (ignore.includes(target.type)) {
                 return
             }
-            
+
             data[target.name] = target.value
         })
 
         data.page_type = 'ad-page2'
+        data.leave_stage = ''
+
         fetchBuried('jobrad', 'submitinfo', data)
       });
 </script>
