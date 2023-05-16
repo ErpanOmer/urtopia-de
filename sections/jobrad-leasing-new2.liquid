@@ -1064,6 +1064,7 @@ setTimeout(() => {
 
 
     window.addEventListener('beforeunload', (event) => {
+        event.preventDefault()
 
         // 如果已经submit, 就不用再submitinfo
         if (isSubmited) {
