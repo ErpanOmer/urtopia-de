@@ -795,6 +795,7 @@ function submit(extras = {}) {
     // 重写bike_size
     search.bike_size = search.bike_size + ' - ' + size_map[search.bike_size]
     search.page_type = 'ad-page'
+    search.is_submit_again = submitAgain
 
     fetchBuried('jobrad', 'submit', search)
     // fbq('track', 'Jobrad Submit')
