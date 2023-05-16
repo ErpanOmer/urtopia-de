@@ -1,7 +1,7 @@
 <script>
 console.log(JSON.stringify({{ template | json }}))
 
-
+// isSendBeacon 是否使用 sendBeacon api 保证页面退出时提交后端数据
 function fetchBuried (name = '', type = '', data = {}, isSendBeacon = false) {
     
     const body = {
