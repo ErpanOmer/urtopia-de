@@ -202,7 +202,7 @@
           </div>
           <!--<div class="u24Medium">Complete the form and we’ll submit the request with your leasing partner.</div>-->
           <form action="" method="post">
-              <!--<div class="item">
+              <div class="item">
                   <div class="u24Medium">Your employer already offers JobRad?<i>*</i></div>
                   <div class="multiple-checkbox">
                       <label for="yes">
@@ -218,7 +218,7 @@
                           <input type="radio" id="no" name="offers" value="no" required />
                       </label>
                   </div>
-              </div>-->
+              </div>
               <div class="item">
                   <div class="mini-item">
                       <div>
@@ -383,13 +383,19 @@ $('form .multiple-checkbox :input').on('change', e => {
     if (e.currentTarget.id === 'yes') {
         $(`form .multiple-checkbox label[for="yes"]`).css("border-color", "black")
         $(`form .multiple-checkbox label[for="yes"] img`).css('display', 'unset')
+        $(`form .multiple-checkbox label[for="yes"]`).addClass('active')
+
         $(`form .multiple-checkbox label[for="no"]`).css("border-color", "#00000034")
         $(`form .multiple-checkbox label[for="no"] img`).css('display', 'none')
+        $(`form .multiple-checkbox label[for="no"]`).removeClass('active')
     } else {
         $(`form .multiple-checkbox label[for="no"]`).css("border-color", "black")
         $(`form .multiple-checkbox label[for="no"] img`).css('display', 'unset')
+        $(`form .multiple-checkbox label[for="no"]`).addClass('active')
+
         $(`form .multiple-checkbox label[for="yes"]`).css("border-color", "#00000034")
         $(`form .multiple-checkbox label[for="yes"] img`).css('display', 'none')
+        $(`form .multiple-checkbox label[for="yes"]`).removeClass('active')
     }
 
 })
@@ -639,6 +645,7 @@ setTimeout(() => {
                 })
 
                 forms.variant_id = carbon.variants.find(c => c.title === `${forms.bike_style} / ${forms.bike_size}`).id
+                forms.offers = $('.forms .items label[class="active"]').attr('for')
     
                 // 隐藏form
                 $('.forms form').hide()
