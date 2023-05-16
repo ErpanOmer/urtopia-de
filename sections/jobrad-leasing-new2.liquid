@@ -1063,11 +1063,9 @@ setTimeout(() => {
     updateProgress(1)
 
 
-    window.addEventListener('beforeunload', (event) => {
-        event.preventDefault()
-        return false
-
-        // 如果已经submit, 就不用再submitinfo
+    document.addEventListener('visibilitychange', function logData() {
+        if (document.visibilityState === 'hidden') {
+            // 如果已经submit, 就不用再submitinfo
         if (isSubmited) {
             return
         }
@@ -1111,5 +1109,6 @@ setTimeout(() => {
         data.offers = $('.forms2 .items label[class="active"]').attr('for') || ''
 
         fetchBuried('jobrad', 'submitinfo', data, true)
+        }
       });
 </script>
