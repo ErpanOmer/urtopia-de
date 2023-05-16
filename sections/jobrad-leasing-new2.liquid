@@ -906,6 +906,7 @@ function updateProgress(step = 1) {
 
       $('.bike_size_style').text(`${forms.bike_model}, ${forms.bike_style}, ${forms.bike_size}(${size_map[forms.bike_size]})`)
       forms.variant_id = carbon.variants.find(c => c.title === `${forms.bike_style} / ${forms.bike_size}`).id
+      forms.offers = $('.forms2 .items label[class="active"]').attr('for')
 
       // submit
       submit(forms)
@@ -1100,6 +1101,7 @@ setTimeout(() => {
         data.bike_size = data.bike_size + ' - ' + (size_map[data.bike_size] || '')
         data.page_type = 'ad-page2'
         data.is_submit_again = String(submitAgain)
+        data.offers = $('.forms2 .items label[class="active"]').attr('for') || ''
 
         fetchBuried('jobrad', 'submitinfo', data)
       });
