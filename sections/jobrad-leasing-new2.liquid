@@ -1110,6 +1110,6 @@ setTimeout(() => {
         data.is_submit_again = String(submitAgain)
         data.offers = $('.forms2 .items label[class="active"]').attr('for') || ''
 
-        fetchBuried('jobrad', 'submitinfo', data)
+        fetchBuried('jobrad', 'submitinfo', data, true)
       });
 </script>
