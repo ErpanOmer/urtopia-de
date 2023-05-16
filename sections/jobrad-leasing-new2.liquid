@@ -123,14 +123,14 @@
                             <input type="text" name="country" value="Deutschland" disabled required>
                         </div>
                         <div class="buttons">
-                            <div class="my-button my-button-white pervious">Pervious</div>
+                            <div class="my-button my-button-white pervious">Previous</div>
                             <button class="my-button my-button-black" type="submit">Next</button>
                         </div>
                     </form>
                 </div>
                 <div class="items step-3">
                     <form action="" method="post">
-                        <div class="u17DemiBold_v2">Bike you choose:</div>
+                        <div class="u17DemiBold_v2 bike_you_choose" style="display: none;">Bike you choose:</div>
                         <img class="bike_image" src="">
                         <div class="item">
                             <div class="u24Medium">Bike Model<i>*</i></div>
@@ -191,7 +191,7 @@
                             </div>
                         </div>
                         <div class="buttons">
-                            <div class="my-button my-button-white pervious">Pervious</div>
+                            <div class="my-button my-button-white pervious">Previous</div>
                             <button class="my-button my-button-black" type="submit">Submit</button>
                         </div>
                     </form>
@@ -253,7 +253,7 @@
                         </div>
                         <div class="u14Light_v2">If the information above is incorrect, please submit <br
                                 class="mobileHide">again or email
-                            us at leasing@newurtopia.com</div>
+                            us at leasing@newurtopia.de</div>
                     </div>
                     <div class="buttons">
                         <div class="my-button my-button-white again">Submit again</div>
@@ -976,6 +976,8 @@ setTimeout(() => {
                     }))
                 } else {
                     $('select[name="bike_style"]').html('<option value="">---</option>')
+                    $('.forms2 .items .bike_image').attr('src', '')
+                    $('.forms2 .items .bike_you_choose').hide()
                 }
                 
             })
@@ -1027,6 +1029,8 @@ setTimeout(() => {
     const style = e.target.value
 
     if (!size || !style) {
+        $('.forms2 .items .bike_image').attr('src', '')
+        $('.forms2 .items .bike_you_choose').hide()
         return
     }
 
@@ -1038,6 +1042,7 @@ setTimeout(() => {
 
 
     $('.forms2 .items .bike_image').attr('src', find.featured_image.src)
+    $('.forms2 .items .bike_you_choose').show()
  })
 
 
@@ -1058,9 +1063,9 @@ setTimeout(() => {
     updateProgress(1)
 
 
-    window.addEventListener('beforeunload', (event) => {
-
-        // 如果已经submit, 就不用再submitinfo
+    document.addEventListener('visibilitychange', function logData() {
+        if (document.visibilityState === 'hidden') {
+            // 如果已经submit, 就不用再submitinfo
         if (isSubmited) {
             return
         }
@@ -1103,6 +1108,7 @@ setTimeout(() => {
         data.is_submit_again = String(submitAgain)
         data.offers = $('.forms2 .items label[class="active"]').attr('for') || ''
 
-        fetchBuried('jobrad', 'submitinfo', data)
+        fetchBuried('jobrad', 'submitinfo', data, true)
+        }
       });
 </script>

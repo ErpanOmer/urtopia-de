@@ -1,8 +1,9 @@
 <script>
 console.log(JSON.stringify({{ template | json }}))
 
-
-function fetchBuried (name = '', type = '', data = {}) {
+// isSendBeacon 是否使用 sendBeacon api 保证页面退出时提交后端数据
+function fetchBuried (name = '', type = '', data = {}, isSendBeacon = false) {
+    
     const body = {
         module: "website-de",
         trace_name: `${name}-de`,
@@ -10,7 +11,7 @@ function fetchBuried (name = '', type = '', data = {}) {
         extras: data
     }
 
-    return fetch("https://api.newurtopia.com/third_part/traces", {
+    return isSendBeacon ? navigator.sendBeacon('https://api.newurtopia.com/third_part/traces', JSON.stringify(body)) : fetch("https://api.newurtopia.com/third_part/traces", {
         method: "POST",
         body: JSON.stringify(body),
         headers: {
