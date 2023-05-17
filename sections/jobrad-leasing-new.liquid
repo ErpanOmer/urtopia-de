@@ -598,7 +598,7 @@ setTimeout(() => {
                     $('select[name="bike_style"]').html('<option value="">---</option>' + style.values.map(v => {
 
                         let disabled = false
-                        const find = carbon.variants.find(c => `${v} / ${value}`)
+                        const find = carbon.variants.find(c => c.title === `${v} / ${value}`)
 
                         // 如果不可用，按钮禁用掉
                         if (find) {
