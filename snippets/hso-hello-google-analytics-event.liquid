@@ -1,10 +1,6 @@
 <!-- HGA app content start -->
 {% assign hello_ga_template_name = template | split: '.' | first %}
 
-<script>
-	window.gtag = window.gtag || function () { };
-</script>
-
 {%- comment -%}
 Collection Page Data Layer
 {%- endcomment -%}
@@ -84,13 +80,6 @@ Collection Page Data Layer
 		delete e.handle;
 		return e;
 	})
-
-
-	gtag('event', 'view_item_list', {
-		item_list_id: "{{collection.id}}",
-		item_list_name: "{{collection.title}}",
-		"items": dataLayerItemsFilterDataHGA
-	});
 </script>
 
 {% endif %}
@@ -135,21 +124,6 @@ Product Page Data Layer
 		}
 
 		itemCategories = itemCategories.join("/");
-
-
-		gtag('event', 'view_item', {
-			"items": [
-				{
-					item_id: "{{product.id}}",
-					item_name: "{{product.title}}",
-					currency: Shopify.currency.active || ShopifyAnalytics.meta.currency,
-					item_brand: "{{product.vendor}}",
-					item_category: itemCategories,
-					item_variant: variantTitle,
-					price: {{ product.price | divided_by: 100.00}}
-				}
-			  ]
-			});
 		
 		
 		}) ()
@@ -229,10 +203,6 @@ Add to cart or remove to cart
 					price: singleCartData.price / 100
 				}
 			});
-
-			gtag('event', 'add_to_cart', {
-				"items": dataLayerItems
-			});
 		};
 
 		const removeFromCartFire = (cartData) => {
@@ -247,10 +217,6 @@ Add to cart or remove to cart
 					price: singleCartData.price / 100
 				}
 
-			});
-
-			gtag('event', 'remove_from_cart', {
-				"items": dataLayerItems
 			});
 		};
 		/*
@@ -285,20 +251,6 @@ Begin checkout Checkout Event
 	window.addEventListener("load", (event) => {
 		(function () {
 			function fireInitiateCheckout(catData) {
-				gtag("event", "begin_checkout", {
-					currency: catData.currency,
-					value: catData.total_price / 100,
-					items: catData.items.map((item, index) => ({
-						item_id: item.variant_id,
-						item_name: item.title,
-						currency: catData.currency,
-						index: index,
-						item_variant: item.variant_title,
-						price: item.price / 100,
-						quantity: item.quantity,
-						item_brand: item.vendor,
-					})),
-				});
 			}
 
 			function checkoutButtonClickHandler() {
