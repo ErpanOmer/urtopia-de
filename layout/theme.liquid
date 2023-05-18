@@ -34,8 +34,6 @@
     <link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
     <link rel="preload" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <link rel="stylesheet" href="https://use.typekit.net/fzb3fxo.css" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css"></noscript>
-    <noscript><link rel="stylesheet" href="https://use.typekit.net/fzb3fxo.css"></noscript>
 
     {%- if settings.favicon != blank -%}
       <link rel="icon" type="image/png" href="{{ settings.favicon | image_url: width: 32, height: 32 }}">
@@ -263,11 +261,6 @@
         document.documentElement.classList.add('shopify-design-mode');
       }
     </script>
-
-    {% render 'gsf-conversion-pixels' %}
-    {% if content_for_header contains 'hga.helloshopowner.com' %}
-      {% render 'hso-hello-google-analytics' %}
-    {% endif %}
   </head>
 
   {%- if template.name == 'product' and product.variants[0].metafields.insurance.variant_name -%}
@@ -344,9 +337,6 @@
     {%- if settings.predictive_search_enabled -%}
       <script src="{{ 'predictive-search.js' | asset_url }}" defer="defer"></script>
     {%- endif -%}
-    {% if content_for_header contains 'hga.helloshopowner.com' -%}
-      {%- render 'hso-hello-google-analytics-event' -%}
-    {%- endif %}
     {{ '//cdn.shopify.com/s/files/1/0194/1736/6592/t/1/assets/booster-page-speed-optimizer.js?23' | script_tag }}
 
     <script>
