@@ -7,26 +7,26 @@ const testRides = [
       // 'Urtopia Carbon 1'
     ],
     stores: [
-      {
-        name: 'Charles xie',
-        phone: '+49 1741 767140',
-        email: 'yicxie2017@gmail.com',
-        timezone: "Mainz, Germany (GMT+1)",
-        add: "Am Sonnigen Hang 21 55127 Mainz Germany",
-        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Frankfurt_am_Main_dcfbb429-041a-46e8-809c-988adaf41dfd.jpg?v=1680920985",
-        testrideSpot: "Frankfurt am Main",
-        testRideSize: "M/L",
-        businessHours: [
-          "09:00-12:00,12:00-19:00",
-          "09:00-12:00,12:00-19:00",
-          "09:00-12:00,12:00-19:00",
-          "09:00-12:00,12:00-19:00",
-          "",
-          "09:00-12:00,12:00-19:00",
-          "09:00-12:00,12:00-19:00",
-        ],
-        isPartner: true
-      },
+      // {
+      //   name: 'Charles xie',
+      //   phone: '+49 1741 767140',
+      //   email: 'yicxie2017@gmail.com',
+      //   timezone: "Mainz, Germany (GMT+1)",
+      //   add: "Am Sonnigen Hang 21 55127 Mainz Germany",
+      //   imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Frankfurt_am_Main_dcfbb429-041a-46e8-809c-988adaf41dfd.jpg?v=1680920985",
+      //   testrideSpot: "Frankfurt am Main",
+      //   testRideSize: "M/L",
+      //   businessHours: [
+      //     "09:00-12:00,12:00-19:00",
+      //     "09:00-12:00,12:00-19:00",
+      //     "09:00-12:00,12:00-19:00",
+      //     "09:00-12:00,12:00-19:00",
+      //     "",
+      //     "09:00-12:00,12:00-19:00",
+      //     "09:00-12:00,12:00-19:00",
+      //   ],
+      //   isPartner: true
+      // },
       {
         name: 'Service Zentrum',
         phone: '+4961032076414',
