@@ -125,13 +125,13 @@
 
           let carbon_quantly = 0
           let chord_quantly = 0
-          for (const iterator of [...has_carbon]) {
-              carbon_quantly += parseInt(iterator.dataset.quantity)
-          }
+          //for (const iterator of [...has_carbon]) {
+              //carbon_quantly += parseInt(iterator.dataset.quantity)
+          //}
 
-         for (const iterator of [...has_chord]) {
-              chord_quantly += parseInt(iterator.dataset.quantity)
-          }
+         //for (const iterator of [...has_chord]) {
+              //chord_quantly += parseInt(iterator.dataset.quantity)
+          //}
     
           if (carbon_quantly > 0 && chord_quantly > 0) {
               document.querySelector(`.product_code .carbon_code span:first-child`).innerHTML = 'Check out with Father’s Day Sale'
