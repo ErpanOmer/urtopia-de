@@ -679,11 +679,11 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
       <div data-pf-type="Custom.HTML" class="sc-AjmGg eCTxfx pf-30_">
 
 	{% if settings.enabled_labour_day %}
-		<div class="fuck">
+		<!--<div class="fuck">
 			<div class="u17DemiBold_v2" style="font-size: 14px;">3 Freebies with Father’s Day Sale</div>
 			<div class="u11Light_v2">(Apply in your cart automatically)</div>
 			<img class="mobileHide" src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/tu_2x_71c9088d-067f-4e33-8b8a-49bf90ee66b4.png?v=1683630920">
-		</div>
+		</div>-->
 	{% else %}
 		<!--<div class="carbon_code" style="border-radius: unset;background-image: url(https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230324-171240.png?v=1679649232);background-size: 100% 46px;">
 			<span style="border: none;">€300 OFF with Early Bird Sale Code</span>
@@ -799,8 +799,7 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
 }
 </style>
 {% if settings.enabled_labour_day %}
-  <div class="eggs">
-        <!--<div class="background">Easter Sale | €300 OFF + 3 Freebies</div>-->
+  <!--<div class="eggs">
         <div class="components">
             <div class="item">
                 <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18445_2x_3206cd11-6e17-4cb3-be10-ad6201624cfd.jpg?v=1679919748" alt="">
@@ -814,20 +813,12 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
                 <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Image_140_2x_7115e41a-ce25-4dea-b7d7-761dc37e6114.jpg?v=1679919807" alt="">
                 <span>Kickstand</span>
             </div>
-				<!--<div class="item">
-					<img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/2x.png?v=1682327215" alt="">
-					<span>Rear Rack</span>
-				</div>-->
 				<div class="item" style="max-width: 87px;">
 					<div class="yellow">FREE<br><span style="text-decoration: line-through;font-size: unset;">€173</span></div>
 				</div>
-				<!--<div class="item" style="max-width: 87px;">
-					<div>FREE</div>
-					<span class="price">€173</span>
-				</div>-->
 			  
         </div>
-    </div>
+    </div>-->
 {% endif %}
 
 	<style>
@@ -852,10 +843,10 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
 	}
 	</style>
 
-	<div class="countdown" style="color: #EFC306;">
+	<!--<div class="countdown" style="color: #EFC306;">
 		<div>Father’s Day sales expires May.18</div>
 		<img src="http://i.countdownmail.com/2jz7k3.gif" border="0" alt="countdownmail.com"/>
-	</div>
+	</div>-->
 	
 	
     
@@ -3949,13 +3940,7 @@ let show = function(index){
 }
 
 var accessories_global = {
-  items: [
-	{% if settings.enabled_labour_day %}
-		{"id": '43745261748440','quantity': 1},
-		{"id": '43788921241816','quantity': 1},
-		{"id": '43745264697560','quantity': 1}
-	{% endif %}
-]
+  items: []
 }
 console.log('accessories_global', accessories_global)
 

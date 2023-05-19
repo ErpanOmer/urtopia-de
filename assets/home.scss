@@ -1,5 +1,5 @@
 .banner {
-    height: calc(100vh - 111px);
+    height: calc(100vh - 106px);
     position: relative;
     color: #fff;
     overflow-x: hidden;
@@ -206,7 +206,7 @@
 
 @media (max-width: 767px) {
     .banner {
-        height: calc(100vh - 107px);
+        height: calc(100vh - 101px);
 
         .centeral-content {
             &>div {

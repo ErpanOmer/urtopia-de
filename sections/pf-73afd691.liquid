@@ -11,9 +11,6 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
         max-width: 1280px;
         align-items: center;
         margin: 0 auto;
-        {% if settings.enabled_labour_day %}
-          padding: 20px 0 40px;
-        {% endif %}
     }
     
     #section1 .u17Light {
@@ -29,9 +26,6 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
     
     #section1 img {
         max-width: 536px;
-        {% if settings.enabled_labour_day %}
-          max-width: 475px;
-        {% endif %}
     }
     
     @media (max-width: 767px) {
@@ -51,28 +45,13 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
         #section1 .u17Light > div {
           justify-content: center;
         }
-
-        {% if settings.enabled_labour_day %}
-          #section1 img {
-            margin-bottom: 16px;
-          }
-        {% endif %}
     }
 </style>
 
-
-  {% if settings.enabled_labour_day %}
-    <div id="section1">
-        <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_20964_2x_79f83f0f-acf2-47e6-9091-0dacff29aff0.png?v=1683598675" alt="">
-        <div class="u17Light">Who said you can’t have a little fun on two wheels? Electric bikes are the hottest trend on the streets, and Urtopia ebike is ready to show you the ride of your life! From the Chord to the Carbon 1s, we’ve got the perfect model to suit your style. Let’s take ‘em for a spin!<div><a class="my-button my-button-black" href="#compared">Find Your Match</a></div></div>
-    </div>
-  {% else %}
-      <div id="section1" style="display: flex;justify-content: center;">
+<div id="section1" style="display: flex;justify-content: center;">
       <!--<img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230330-144859.png?v=1680159014" alt="">-->   
           <div class="u17Light" style="display: flex;flex-direction: column;text-align: center;align-items: center;"><div class="u42DemiBold" style="margin: 0 0 40px;">The E-Bike of<br> Art-Tech Fusion</div>Who said you can’t have a little fun on two wheels? Electric bikes are the hottest trend on the streets, and Urtopia ebike is ready to show you the ride of your life! From the Chord to the Carbon 1s, we’ve got the perfect model to suit your style. Let’s take ‘em for a spin!<div><a class="my-button my-button-black" href="#compared">Find Your Match</a></div></div>
       </div>
-  {% endif %}
-
 
 
 
@@ -379,7 +358,7 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
               <div class="size">Fit for 170cm - 195cm</div>
             </div>
             <a href="/products/urtopia-carbon-e-bike?variant=42615025172696" class="my-button my-button-black">Order now</a>
-            <div class="my-button my-button-black new yellow">3 Freebies</div>
+            <!--<div class="my-button my-button-black new yellow">3 Freebies</div>-->
           </div>
             <div class="swiper-slide">
               <div class="name">Chord</div>

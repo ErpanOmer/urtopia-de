@@ -1,0 +1,96 @@
+<!-- FEEDARMY START Global site tag (gtag.js) - Google Ads V1.5 -->
+{% assign fa_send_to = 'AW-10876491006/l2uyCM756K4DEP6pqMIo' %}
+{% assign fa_include_tax_and_shipping = 'no' %}
+{% comment %}DO NOT EDIT BELOW{% endcomment %}
+{% if fa_google_coding %}{% assign fa_google_coding = true %}{%- else -%}{% assign fa_google_coding = false %}{%- endif -%}
+{% if fa_include_tax_and_shipping == 'yes' %}
+{% assign fa_checkout_price = checkout.total_price | divided_by: 100.0   %}
+{%- else -%}
+{% assign fa_checkout_price = checkout.subtotal_price | divided_by: 100.0  %}
+{%- endif -%}
+{% assign fa_google_ids = fa_send_to | split: "/"  %}
+{% if fa_google_coding == false %}
+<script async src="https://www.googletagmanager.com/gtag/js?id={{fa_google_ids[0]}}"></script>
+{%- endif -%}
+
+
+<!-- Bing UET-->
+<script>(function(w,d,t,r,u){var f,n,i;w[u]=w[u]||[],f=function(){var o={ti:"52014192"};o.q=w[u],w[u]=new UET(o),w[u].push("pageLoad")},n=d.createElement(t),n.src=r,n.async=1,n.onload=n.onreadystatechange=function(){var s=this.readyState;s&&s!=="loaded"&&s!=="complete"||(f(),n.onload=n.onreadystatechange=null)},i=d.getElementsByTagName(t)[0],i.parentNode.insertBefore(n,i)})(window,document,"script","//bat.bing.com/bat.js","uetq");</script>
+
+<script>window.uetq = window.uetq || [];window.uetq.push('event', 'purchase', {"event_value":'{{fa_checkout_price}}',"revenue_value":'{{fa_checkout_price}}',"currency":"EUR"});</script>
+
+<!-- End of Bing UET-->
+
+
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', '{{fa_google_ids[0]}}', {'allow_enhanced_conversions':true});
+</script>
+{% if first_time_accessed %}
+<script>
+  gtag('event', 'conversion', {
+      'send_to': '{{ fa_send_to }}',
+      'value': {{ fa_checkout_price }},
+      'currency': '{{ currency }}',
+      'transaction_id': '{{ order_number }}'
+  });
+  var enhanced_conversion_data = {
+  "email": "{{ customer.email }}",
+  "phone_number": "{{billing_address.phone}}",
+  "first_name": "{{ billing_address.first_name }}",
+  "last_name": "{{billing_address.last_name}}",
+  "home_address": {
+  "street": "{{billing_address.street}}",
+  "city":"{{billing_address.city}}",
+  "region": "{{billing_address.province}}",
+  "postal_code": "{{billing_address.zip}}",
+  "country": "{{billing_address.country}}"
+  }
+  };
+</script>
+{% endif %}
+
+
+
+ <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-205871538-3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-205871538-3', { 'send_page_view': false });
+</script>
+
+ {% if first_time_accessed %}
+  <!-- Event snippet for Test conversion page -->
+  <script>
+    gtag('event', '完成', {
+      'event_category': "购买",
+      'value': {{ checkout.subtotal_price | divided_by: 100.0 }}
+    });
+  </script>
+{% endif %}
+
+
+
+<!-- FEEDARMY END Global site tag (gtag.js) - Google Ads V1.5 -->
+
+
+
+
+<!--   mircosoft cliarty -->
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "brxngkcx7t");
+</script>
+
+<!-- outbrain tracking -->
+<script>
+        obApi('track', 'Purchase23');
+      </script>
