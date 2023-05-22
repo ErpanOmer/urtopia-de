@@ -16,9 +16,9 @@ class CartRemoveButton extends HTMLElement {
       console.log('pruduct_id', pruduct_id)
 
         // 如果是carbon one 单车
-      //if (pruduct_id === '7633738727640') {
-        //return cartItems.updateCarbonOneWithComponents(parseInt(index), lineId, parseInt(quantity), 0)
-      //}
+      if (pruduct_id === '7633738727640') {
+        return cartItems.updateCarbonOneWithComponents(parseInt(index), lineId, parseInt(quantity), 0)
+      }
 
       // Remove the Product and it's Insurance product
       if (insuranceId) {
@@ -139,9 +139,9 @@ class CartItems extends HTMLElement {
     console.log('pruduct_id', pruduct_id)
 
 
-        //if (pruduct_id === '7633738727640') {
-          //return this.updateCarbonOneWithComponents(parseInt(index), lineId, parseInt(quantity), parseInt(event.target.value));
-        //}
+    if (pruduct_id === '7633738727640') {
+        return this.updateCarbonOneWithComponents(parseInt(index), lineId, parseInt(quantity), parseInt(event.target.value));
+    }
     
     ////购物车逻辑
    /* var data = event.target.dataset;
