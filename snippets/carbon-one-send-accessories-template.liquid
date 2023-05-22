@@ -137,7 +137,8 @@
     <script>
         const total_price = 0
 
-        $('.eggs .components .item').each((index, item) => {
+        $('.eggs .components .item[price]').each((index, item) => {
+            
             console.log($(item).attr('price'))
         })
 
