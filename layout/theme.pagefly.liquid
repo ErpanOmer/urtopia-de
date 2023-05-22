@@ -11,67 +11,26 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
     <meta name="google-site-verification" content="4CyyxbiT2JJKwsI1xsr_c7Qf-ihbvBm4WMiPhI0rOeA">
     <meta name="google-site-verification" content="1L3RQDlBxPuNpF21De0Ah8NwPfQRUDie4JA9sbgKwfo">
 
+    {% render 'google-tag-manager' %}
+
     <!-- 依赖优化开始 -->
     {% render 'code-snippet-optimization' %}
     <!-- 依赖优化结束 -->
 
-    <script src="https://www.googleoptimize.com/optimize.js?id=OPT-52Q8D8M"></script>
+    <!--<script src="https://www.googleoptimize.com/optimize.js?id=OPT-52Q8D8M"></script>-->
 
-    <!-- Google Tag Manager -->
+    
     <script>
-      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-      })(window,document,'script','dataLayer','GTM-NRQWQKH');
-
-
-      window.addEventListener("load", function(){
-        document.querySelectorAll("[class='checkout-button']").forEach(function(e){
-          e.addEventListener('click', function(e){
-            gtag('event', '支付处理中', {
-        'method': 'Google'
-      });
-          });
-        });
-      });
-
-
-          /*** mircosoft clarity ***/
+    /*** mircosoft clarity ***/
     (function(c,l,a,r,i,t,y){
       c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
       t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
       y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
   })(window, document, "clarity", "script", "brxngkcx7t");
-
-
-  /*** Global site tag (gtag.js) - Google Analytics ***/
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'UA-205871538-3', { 'send_page_view': false });
   
   /*** Bing UET ***/
   (function(w,d,t,r,u){var f,n,i;w[u]=w[u]||[],f=function(){var o={ti:"52014192"};o.q=w[u],w[u]=new UET(o),w[u].push("pageLoad")},n=d.createElement(t),n.src=r,n.async=1,n.onload=n.onreadystatechange=function(){var s=this.readyState;s&&s!=="loaded"&&s!=="complete"||(f(),n.onload=n.onreadystatechange=null)},i=d.getElementsByTagName(t)[0],i.parentNode.insertBefore(n,i)})(window,document,"script","//bat.bing.com/bat.js","uetq");
-
-  /*** Load Event***/
-window.addEventListener("load", function(event) { 
-    /**** Add to cart****/
-    document.querySelectorAll("button span").forEach(function(e){
-    if(e.innerHTML.toLowerCase() == "add to cart" || e.innerHTML.toLowerCase() == "in den einkaufswagen"){
-     e.parentNode.addEventListener('click',function(){
-            //bing UET
-            window.uetq = window.uetq || [];window.uetq.push('event', 'add_to_cart', {"event_value":1});
-      });
-          }
-        });
-    
-      if (window.location.href.includes('products')){  
-        gtag('event', "查看", {'event_category': "产品",});
-     };
-  });
     </script>
-    <!-- End Google Tag Manager -->
     <!-- GMC -->
     <meta name="google-site-verification" content="tmiMdWLXl8rYjTIe702rF6QSy0WXZFJyUYpQ_TQx91Q">
 
@@ -83,8 +42,6 @@ window.addEventListener("load", function(event) {
     <link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
     <link rel="preload" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <link rel="stylesheet" href="https://use.typekit.net/fzb3fxo.css" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css"></noscript>
-    <noscript><link rel="stylesheet" href="https://use.typekit.net/fzb3fxo.css"></noscript>
 
     {%- if settings.favicon != blank -%}
       <link rel="icon" type="image/png" href="{{ settings.favicon | image_url: width: 32, height: 32 }}">
@@ -313,11 +270,8 @@ window.addEventListener("load", function(event) {
       }
     </script>
 
-    {% render 'gsf-conversion-pixels' %}
-    {% if content_for_header contains 'hga.helloshopowner.com' %}
-      {% render 'hso-hello-google-analytics' %}
-    {% endif %}
-  </head>
+    {% include 'dataLayer-allPages' %}
+    </head>
 
   {%- if template.name == 'product' and product.variants[0].metafields.insurance.variant_name -%}
     {%- assign is_insurance_product = true -%}
