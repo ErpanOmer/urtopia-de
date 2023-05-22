@@ -270,11 +270,12 @@ class Insurance {
 }
 
 const insurance = new Insurance();
-// var accessories_global = []
-
 
 function addToCartInsurance(parse) {
-  const cartListNew = {items:[]};
+  const cartListNew = {
+    // 如果是carbon 页面，自动把配件加进去
+    items: location.href.includes('/products/urtopia-carbon-e-bike') ? event_accessories.map(id => ({ id, quantity: 1 })) || []
+  };
   const cart1New =
     document.querySelector("cart-notification") ||
     document.querySelector("cart-drawer");
@@ -322,10 +323,6 @@ function addToCartInsurance(parse) {
       const sections = cart1New.getSectionsToRender().map((section) => section.id);
     	cartListNew.sections = sections.join(",");
     }
-
-    // 和配件合并
-    console.log('accessories_global', accessories_global);
-    cartListNew.items = cartListNew.items.concat(accessories_global.items || []);
     
     fetch("/cart/add.js", {
       method: "POST",
