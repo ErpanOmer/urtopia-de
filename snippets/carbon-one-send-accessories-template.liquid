@@ -129,7 +129,7 @@
                 {% endfor %}
                 <div class="item" style="max-width: 87px;">
                     <div class="yellow">FREE</div>
-                    <span style="align-items: flex-start;font-size: 16px;text-decoration: line-through;">€169</span>
+                    <span style="align-items: flex-start;font-size: 16px;text-decoration: line-through;"></span>
                 </div>
         </div>
     </div>
@@ -140,8 +140,7 @@
             total_price += Number($(item).attr('price'))
         })
 
-
-        console.log(total_price)
+        $('.eggs .components .item:not([price]) span') = `€${total_price}`
 
     </script>
 
