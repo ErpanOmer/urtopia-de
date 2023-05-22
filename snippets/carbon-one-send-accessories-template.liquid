@@ -116,10 +116,6 @@
     {% assign send_accessories_list = "kickstand,customized-mudguards,esim-card" | split: ',' %}
     {% assign total = 0 %}
 
-
-    {{ send_accessories_list | json }}
-
-
     <div class="eggs">
         <div class="background">
             <div class="u17DemiBold_v2" style="font-size: 14px;">3 Free Accessories with your bike</div>
@@ -130,7 +126,7 @@
                     <div class="item">
                         {{ all_products[item].featured_image | image_url: width: 200 | image_tag }}
                         <span>{{ all_products[item].title }}</span>
-                        {{ total | plus: all_products[item].selected_or_first_available_variant.price }}
+                        {% increment total | plus: all_products[item].selected_or_first_available_variant.price %}
                     </div>
                 {% endfor %}
                 <div class="item" style="max-width: 87px;">
