@@ -16,9 +16,9 @@ class CartRemoveButton extends HTMLElement {
       console.log('pruduct_id', pruduct_id)
 
         // 如果是carbon one 单车
-      //if (pruduct_id === '7633738727640') {
-        //return cartItems.updateCarbonOneWithComponents(parseInt(index), lineId, parseInt(quantity), 0)
-      //}
+      if (pruduct_id === event_bike_product_id) {
+        return cartItems.updateCarbonOneWithComponents(parseInt(index), lineId, parseInt(quantity), 0)
+      }
 
       // Remove the Product and it's Insurance product
       if (insuranceId) {
@@ -31,13 +31,6 @@ class CartRemoveButton extends HTMLElement {
 }
 
 customElements.define('cart-remove-button', CartRemoveButton);
-
-
-let components = []
-
-// 活动送配件
-
-//components = ['43745261748440', '43788921241816', '43745264697560']
 
 
 class CartItems extends HTMLElement {
@@ -75,7 +68,7 @@ class CartItems extends HTMLElement {
         }
 
         itemsQuantityArray[index] = afterQuantity
-      } else if (components.includes(item.dataset.lineItemVariantId)) {
+      } else if (event_accessories_variant_ids.includes(item.dataset.lineItemVariantId)) {
         const componentQuantity = parseInt(item.dataset.quantity)
         itemsQuantityArray[index] = componentQuantity + (afterQuantity - beforeQuantity)
       } else {
@@ -146,9 +139,9 @@ class CartItems extends HTMLElement {
     console.log('pruduct_id', pruduct_id)
 
 
-        //if (pruduct_id === '7633738727640') {
-          //return this.updateCarbonOneWithComponents(parseInt(index), lineId, parseInt(quantity), parseInt(event.target.value));
-        //}
+    if (pruduct_id === event_bike_product_id) {
+        return this.updateCarbonOneWithComponents(parseInt(index), lineId, parseInt(quantity), parseInt(event.target.value));
+    }
     
     ////购物车逻辑
    /* var data = event.target.dataset;
