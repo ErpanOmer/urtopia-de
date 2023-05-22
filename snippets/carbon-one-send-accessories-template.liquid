@@ -124,7 +124,11 @@
                 {% for item in send_accessories_list %}
                     <div class="item" price="{{ all_products[item].selected_or_first_available_variant.price | divided_by: 100 }}">
                         {{ all_products[item].featured_image | image_url: width: 200 | image_tag }}
-                        <span>{{ all_products[item].title }}</span>
+                        {% if item == "customized-mudguards" %}
+                            <span>{{ all_products[item].title | truncatewords: 3, "" }}</span>
+                        {% else %}
+                            <span>{{ all_products[item].title }}</span>
+                        {% endif %}
                     </div>
                 {% endfor %}
                 <div class="item" style="max-width: 87px;">
