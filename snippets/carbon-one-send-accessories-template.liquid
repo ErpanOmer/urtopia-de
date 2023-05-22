@@ -135,12 +135,13 @@
     </div>
 
     <script>
-        const total_price = 0
-
+        let total_price = 0
         $('.eggs .components .item[price]').each((index, item) => {
-            
-            console.log($(item).attr('price'))
+            total_price += Number($(item).attr('price'))
         })
+
+
+        console.log(total_price)
 
     </script>
 
