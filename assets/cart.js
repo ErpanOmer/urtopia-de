@@ -33,13 +33,6 @@ class CartRemoveButton extends HTMLElement {
 customElements.define('cart-remove-button', CartRemoveButton);
 
 
-let components = []
-
-// 活动送配件
-
-//components = ['43745261748440', '43788921241816', '43745264697560']
-
-
 class CartItems extends HTMLElement {
   constructor() {
     super();
@@ -75,7 +68,7 @@ class CartItems extends HTMLElement {
         }
 
         itemsQuantityArray[index] = afterQuantity
-      } else if (components.includes(item.dataset.lineItemVariantId)) {
+      } else if (event_accessories.includes(item.dataset.lineItemVariantId)) {
         const componentQuantity = parseInt(item.dataset.quantity)
         itemsQuantityArray[index] = componentQuantity + (afterQuantity - beforeQuantity)
       } else {
