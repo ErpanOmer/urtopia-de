@@ -123,7 +123,7 @@
         </div>
         <div class="components">
                 {% for item in send_accessories_list %}
-                    <div class="item" price="{{ all_products[item].selected_or_first_available_variant.price / 100 }}">
+                    <div class="item" price="{{ all_products[item].selected_or_first_available_variant.price }}">
                         {{ all_products[item].featured_image | image_url: width: 200 | image_tag }}
                         <span>{{ all_products[item].title }}</span>
                     </div>
