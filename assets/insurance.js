@@ -277,7 +277,7 @@ function addToCartInsurance(parse) {
     items: location.href.includes('/products/urtopia-carbon-e-bike') ? event_accessories.map(id => ({ id, quantity: 1 })) || []
   };
 
-  console.log('cartListNew', cartListNew)
+  console.log('cartListNew', event_accessories)
 
 
   const cart1New =
