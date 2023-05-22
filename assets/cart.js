@@ -16,7 +16,7 @@ class CartRemoveButton extends HTMLElement {
       console.log('pruduct_id', pruduct_id)
 
         // 如果是carbon one 单车
-      if (pruduct_id === '7633738727640') {
+      if (pruduct_id === event_bike_product_id) {
         return cartItems.updateCarbonOneWithComponents(parseInt(index), lineId, parseInt(quantity), 0)
       }
 
@@ -139,7 +139,7 @@ class CartItems extends HTMLElement {
     console.log('pruduct_id', pruduct_id)
 
 
-    if (pruduct_id === '7633738727640') {
+    if (pruduct_id === event_bike_product_id) {
         return this.updateCarbonOneWithComponents(parseInt(index), lineId, parseInt(quantity), parseInt(event.target.value));
     }
     
