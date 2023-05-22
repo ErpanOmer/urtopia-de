@@ -276,6 +276,10 @@ function addToCartInsurance(parse) {
     // 如果是carbon 页面，自动把配件加进去
     items: location.href.includes('/products/urtopia-carbon-e-bike') ? event_accessories.map(id => ({ id, quantity: 1 })) || []
   };
+
+  console.log('cartListNew', cartListNew)
+
+
   const cart1New =
     document.querySelector("cart-notification") ||
     document.querySelector("cart-drawer");
