@@ -128,7 +128,7 @@
                 {% for item in send_accessories_list %}
                     <div class="item">
                         <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18445_2x_3206cd11-6e17-4cb3-be10-ad6201624cfd.jpg?v=1679919748" alt="">
-                        <span>{{ all_products[item] }}</span>
+                        <span>{{ all_products[item] | json }}</span>
                     </div>
                 {% endfor %}
                 <div class="item" style="max-width: 87px;">
