@@ -2,9 +2,11 @@
 console.log(JSON.stringify({{ template | json }}))
 
 
-// 活动配件 variant_id start
-const event_accessories = ['43817744793816', '43745263255768', '43745261748440']
-// 活动配件 variant_id end
+// 活动配置 start
+// 车
+const event_bike_product_id = '7633738727640'
+const event_accessories_variant_ids = ['43817744793816', '43745263255768', '43745261748440']
+// 活动配件 end
 
 // isSendBeacon 是否使用 sendBeacon api 保证页面退出时提交后端数据
 function fetchBuried (name = '', type = '', data = {}, isSendBeacon = false) {
