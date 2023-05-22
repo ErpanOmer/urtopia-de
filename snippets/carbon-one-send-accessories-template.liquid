@@ -125,7 +125,7 @@
                     <div class="item" price="{{ all_products[item].selected_or_first_available_variant.price | divided_by: 100 }}">
                         {{ all_products[item].featured_image | image_url: width: 200 | image_tag }}
                         {% if item == "customized-mudguards" %}
-                            <span>{{ all_products[item].title | truncatewords: 3, "" }}</span>
+                            <span>{{ all_products[item].title | truncatewords: 3, "" | replace: "-", "" }}</span>
                         {% else %}
                             <span>{{ all_products[item].title }}</span>
                         {% endif %}
