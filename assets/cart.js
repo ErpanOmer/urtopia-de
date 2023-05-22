@@ -68,7 +68,7 @@ class CartItems extends HTMLElement {
         }
 
         itemsQuantityArray[index] = afterQuantity
-      } else if (event_accessories.includes(item.dataset.lineItemVariantId)) {
+      } else if (event_accessories_variant_ids.includes(item.dataset.lineItemVariantId)) {
         const componentQuantity = parseInt(item.dataset.quantity)
         itemsQuantityArray[index] = componentQuantity + (afterQuantity - beforeQuantity)
       } else {
