@@ -123,11 +123,9 @@
         </div>
         <div class="components">
                 {% for item in send_accessories_list %}
-                    <div class="item">
+                    <div class="item" price="{{ all_products[item].selected_or_first_available_variant.price / 100 }}">
                         {{ all_products[item].featured_image | image_url: width: 200 | image_tag }}
                         <span>{{ all_products[item].title }}</span>
-                        {% capture my_variable %}{{ all_products[item].selected_or_first_available_variant.price }}{% endcapture %}
-                        {{ my_variable | plus : my_variable }}
                     </div>
                 {% endfor %}
                 <div class="item" style="max-width: 87px;">
