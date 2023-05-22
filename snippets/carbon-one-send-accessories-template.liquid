@@ -113,7 +113,7 @@
     }
     </style>
 
-    {% assign send_accessories_list = "7633738531032,7633738531032,7633738662104" | split: ',' %}
+    {% assign send_accessories_list = "water-bottle-cage,esim-card,customized-mudguards" | split: ',' %}
 
 
     {{ send_accessories_list | json }}
@@ -129,7 +129,7 @@
                     <div class="item">
                         <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18445_2x_3206cd11-6e17-4cb3-be10-ad6201624cfd.jpg?v=1679919748" alt="">
                         {{ item }}
-                        <span>{{ all_products | json }}</span>
+                        <span>{{ all_products[item] }}</span>
                     </div>
                 {% endfor %}
                 <div class="item" style="max-width: 87px;">
