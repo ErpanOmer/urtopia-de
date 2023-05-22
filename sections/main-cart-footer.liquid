@@ -125,9 +125,9 @@
 
           let carbon_quantly = 0
           let chord_quantly = 0
-          //for (const iterator of [...has_carbon]) {
-              //carbon_quantly += parseInt(iterator.dataset.quantity)
-          //}
+          for (const iterator of [...has_carbon]) {
+              carbon_quantly += parseInt(iterator.dataset.quantity)
+          }
 
          //for (const iterator of [...has_chord]) {
               //chord_quantly += parseInt(iterator.dataset.quantity)
@@ -155,7 +155,7 @@
               document.querySelector(`.product_code .carbon_code span:first-child`).classList.add('important')
 
               document.querySelector(`.product_code .carbon_code span:last-child`).innerHTML = ''
-              document.querySelector(`.product_code .carbon_text > div:nth-child(1) span`).innerHTML = `Save €${carbon_quantly * 173}.00!`
+              document.querySelector(`.product_code .carbon_text > div:nth-child(1) span`).innerHTML = `Save €${carbon_quantly * 169}.00!`
               document.querySelector(`.product_code .carbon_text > div:nth-child(2) span`).innerHTML = 'Free Accessories'
             }
           }
