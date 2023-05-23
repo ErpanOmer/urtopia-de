@@ -154,8 +154,6 @@ const ignore = ['submit', 'checkbox']
 // carbon 产品信息
 const carbon = JSON.parse(JSON.stringify({{ all_products['urtopia-carbon-e-bike'] | json }}))
 
-console.log(carbon.variants.map(i => i.option2))
-
 // 尺寸信息
 const size = Array.from(new Set(carbon.variants.map(i => i.option2)))
 const style = carbon.options.find(o => o.name === 'Style')
@@ -228,7 +226,7 @@ function submit (fomrs) {
 console.log('carbon', carbon)
 
 // 动态渲染Size
-$('select[name="bike_size"]').html('<option value="">---</option>' + size.values.map(v => {
+$('select[name="bike_size"]').html('<option value="">---</option>' + size.map(v => {
     return `<option value="${v}">${v} - ${size_map[v]}</option>`
 }))
 
