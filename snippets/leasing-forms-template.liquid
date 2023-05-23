@@ -239,6 +239,22 @@ function submit (forms) {
     // 表单数据覆盖url 参数，合并
     forms = Object.assign(getSearchValues(), forms)
     console.log('forms', forms)
+
+    // 重写bike_size
+    forms.bike_size = forms.bike_size + ' - ' + size_map[forms.bike_size]
+    forms.page_type = 'ad-page'
+
+    fetchBuried(page_infos.page_name, 'submit', forms)
+
+
+    // fbq
+    fbq('track', 'CompleteRegistration', {
+        value: 3596,
+        currency: 'usd',
+    });
+
+    // gtag
+    gtag_report_conversion()
 }
 
 console.log('carbon', carbon)
