@@ -356,15 +356,12 @@ setTimeout(() => {
 
     // url 参数的初始化
     if (urlSearch.bike_style) {
+        // 填充size
         $(`select[name="bike_size"]`).val(urlSearch.bike_size)
-
+        // 渲染style options
         renderHtml(urlSearch.bike_size)
-
-        $(`select[name="bike_style"]`).val(urlSearch.bike_style)
-
-        setTimeout(() => {
-            
-        }, 100)
+        // 填充style
+        setTimeout(() => $(`select[name="bike_style"]`).val(urlSearch.bike_style))
     }
     
 }, 100)
