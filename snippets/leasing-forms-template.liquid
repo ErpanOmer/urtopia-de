@@ -325,8 +325,6 @@ const clearBikeImage = () => {
 const changeBikeImage = e => {
     const size = $('select[name="bike_size"]').val()
     const style = $('select[name="bike_style"]').val()
-    // 先重置 disabled 为 false
-    $(`select[name="bike_style"] option`).attr('disabled', false)
 
     if (!size || !style) {
         return clearBikeImage()
@@ -334,6 +332,7 @@ const changeBikeImage = e => {
 
     const find = carbon.variants.find(c => c.title === `${style} / ${size}`)
 
+    // 通过遍历 判断option 是否可用
     $(`select[name="bike_style"] option`).each((i, item) => {
         const v = item.value
 
