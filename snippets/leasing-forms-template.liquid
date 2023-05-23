@@ -175,11 +175,13 @@ const page_infos = {% case template | json %}
     {% comment %} jobrad 广告页面 {% endcomment %}
     {% when 'page.jobrad-leasing-new' %}
         {
-            page_name: 'jobrad'
+            page_name: 'jobrad',
+            form_offers_label: 'Your employer already offers JobRad?<i>*</i>'
         }
     {% when 'page.mein-dienstrad' %}
         {
-            page_name: 'mein-dienstrad'
+            page_name: 'mein-dienstrad',
+            form_offers_label: 'Your employer already offers mein-dienstrad?<i>*</i>'
         }
     {% else %}
         {}
