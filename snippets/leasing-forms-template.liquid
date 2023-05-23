@@ -435,28 +435,26 @@ setTimeout(() => {
                 scrollTop: $('.forms').offset().top - (document.documentElement.clientHeight / 2) + ($('.forms').height() / 2)
             }, 300)
 
-            {% if template | json == 'page.jobrad-leasing-new' %}
-                $('.forms .centeral-content .forms-link').on('click', e => {
-                    const item = document.querySelector(`.faqs .faq-item[index="7"]`)
-                    const title = item.querySelector('.faq-title')
-                    const content = item.querySelector('.faq-content')
-            
-                    // 如果是隐藏状态才展开
-                    if (window.getComputedStyle(content).display === 'none') {
-                        title.click()
-                    }
-                    
-                    setTimeout(() => {
-                        $('html').animate({
-                            scrollTop: $(item).offset().top - 85
-                        }, 300)
-                    })
-            
-            
-                    e.preventDefault();
-                    return false;
+            page_infos.page_name === 'jobrad' && $('.forms .centeral-content .forms-link').on('click', e => {
+                const item = document.querySelector(`.faqs .faq-item[index="7"]`)
+                const title = item.querySelector('.faq-title')
+                const content = item.querySelector('.faq-content')
+        
+                // 如果是隐藏状态才展开
+                if (window.getComputedStyle(content).display === 'none') {
+                    title.click()
+                }
+                
+                setTimeout(() => {
+                    $('html').animate({
+                        scrollTop: $(item).offset().top - 85
+                    }, 300)
                 })
-            {% endif %}
+        
+        
+                e.preventDefault();
+                return false;
+            })
         })
 
         event.preventDefault();
