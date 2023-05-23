@@ -345,9 +345,8 @@ setTimeout(() => {
             return
         }
 
-
-        $('.forms2 .items .bike_image').attr('src', find.featured_image.src)
-        $('.forms2 .items .bike_you_choose').show()
+        $('.forms form .item input[name="bike_image"]').attr('src', find.featured_image.src)
+        $('.forms form .item[name="bike_image"]').show()
     })
 
 
