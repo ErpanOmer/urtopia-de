@@ -156,7 +156,7 @@ const carbon = JSON.parse(JSON.stringify({{ all_products['urtopia-carbon-e-bike'
 
 // 尺寸信息
 const size = Array.from(new Set(carbon.variants.map(i => i.option2)))
-const style = carbon.options.find(o => o.name === 'Style')
+const style = Array.from(new Set(carbon.variants.map(i => i.option1)))
 
 
 
@@ -259,7 +259,7 @@ setTimeout(() => {
         const value = e.target.value
 
         if (value) {
-            $('select[name="bike_style"]').html('<option value="">---</option>' + style.values.map(v => {
+            $('select[name="bike_style"]').html('<option value="">---</option>' + style.map(v => {
 
                 let disabled = false
                 const find = carbon.variants.find(c => c.title === `${v} / ${value}`)
