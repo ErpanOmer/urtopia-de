@@ -60,7 +60,7 @@
             <div class="item change_offers" style="display:none;">
                 <div class="item">
                     <div class="u24Medium">Employer address<i>*</i></div>
-                    <input type="text" name="employer_address" required>
+                    <input type="hidden" name="employer_address" required>
                 </div> 
                 <div class="item">
                     <div class="u24Medium">Contact person name<i>*</i></div>
@@ -172,10 +172,17 @@
 
 // 页面信息
 const page_infos = {% case template | json %}
-    {% comment %} jobrad 广告页面 {% endcomment %}
     {% when 'page.jobrad-leasing-new' %}
         {
-            page_name: 'jobrad'
+            page_name: 'jobrad',
+            form_offers_label: 'Your employer already offers JobRad?<i>*</i>',
+            form_thankyou_content: '<div class="u24Medium_v2">You have successfully submit the form. Our expert will contact you soon. Feel free to contact us if you have any questions.<br><br>Because your employer is not working with Jobrad , please contact your employer to inform your requirement with leasing, and ask your employer to make a connection with Jobrad to make the process faster. <br><span class="forms-link">Click here for more information</span></div>'
+        }
+    {% when 'page.mein-dienstrad' %}
+        {
+            page_name: 'mein-dienstrad',
+            form_offers_label: 'Your employer already offers mein-dienstrad?<i>*</i>',
+            form_thankyou_content: '<div class="u24Medium_v2">You have successfully submit the form. Our expert will contact you soon. Feel free to contact us if you have any questions.<br><br>Because your employer is not working with mein-dienstrad , please contact your employer to inform your requirement with leasing, and ask your employer to make a connection with mein-dienstrad to make the process faster.</div>'
         }
     {% else %}
         {}
@@ -252,7 +259,8 @@ function getFormValues (elem = '') {
         temp[target.name] = target.value
     })
 
-    temp.variant_id = carbon.variants.find(c => c.title === `${temp.bike_style} / ${temp.bike_size}`).id
+    temp.variant_id = carbon.variants.find(c => c.title === `${temp.bike_style} / ${temp.bike_size}`)
+    temp.variant_id = temp.variant_id ? temp.variant_id.id : ''
     temp.offers = $('.forms label[class="active"]').attr('for')
 
 
@@ -296,25 +304,6 @@ function submit (forms = {}) {
 
     // gtag
     gtag_report_conversion()
-}
-
-
-const renderHtml = value => {
-    const style_value = $('select[name="bike_style"]').val() || ''
-
-
-    $('select[name="bike_style"]').html('<option value="">---</option>' + style.map(v => {
-
-        let disabled = false
-        const find = carbon.variants.find(c => c.title === `${v} / ${value}`)
-
-        // 如果不可用，按钮禁用掉
-        if (find) {
-            disabled = !find.available
-        }
-
-        return `<option value="${v}" ${disabled ? 'disabled' : ''}>${v}</option>`
-    }))
 }
 
 const clearBikeImage = () => {
@@ -380,6 +369,9 @@ $('select[name="bike_style"]').html('<option value="">---</option>' + style.map(
 
 // 延迟执行一些DOM
 setTimeout(() => {
+    // 更改 offers label
+    $('input[name="offers"]').closest('.item').find('.u24Medium').html(page_infos.form_offers_label)
+
     // yes or no change
     $('form .multiple-checkbox :input').on('change', e => {
         if (e.currentTarget.id === 'yes') {
@@ -431,9 +423,7 @@ setTimeout(() => {
          `
 
         const nooffers = `
-            <div class="u48DemiBold_v2">Thank you!</div>
-            <div class="u24Medium_v2">You have successfully submit the form. Our expert will contact you soon. Feel free to contact us if you have any questions.<br><br>Because your employer is not working with Jobrad , please contact your employer to inform your requirement with leasing, and ask your employer to make a connection with Jobrad to make the process faster. <br><span class="forms-link">Click here for more information</span></div>
-            <a class="my-button my-button-white" href="/pages/contactus">Contact us</a>
+            <div class="u48DemiBold_v2">Thank you!</div>${page_infos.form_thankyou_content}<a class="my-button my-button-white" href="/pages/contactus">Contact us</a>
         `
 
 
@@ -446,7 +436,7 @@ setTimeout(() => {
                 scrollTop: $('.forms').offset().top - (document.documentElement.clientHeight / 2) + ($('.forms').height() / 2)
             }, 300)
 
-            $('.forms .centeral-content .forms-link').on('click', e => {
+            page_infos.page_name === 'jobrad' && $('.forms .centeral-content .forms-link').on('click', e => {
                 const item = document.querySelector(`.faqs .faq-item[index="7"]`)
                 const title = item.querySelector('.faq-title')
                 const content = item.querySelector('.faq-content')

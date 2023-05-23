@@ -1,7 +1,7 @@
-{{ 'sumoselect.min.css' | asset_url | stylesheet_tag }}
 {{ 'jobrad.scss.css' | asset_url | stylesheet_tag }}
+{{ 'leasing-add.scss.css' | asset_url | stylesheet_tag }}
 
-<div class="jobrad">
+<div class="jobrad leasing-add">
         <div class="banner">
             <div class="centeral-content">
                 <div>
@@ -70,125 +70,7 @@
                 </div>
             </div>
         </div>
-        <!--<div class="calculator">
-            <div class="centeral-content jobrad-bike-leasing-calculator"
-                id="jobrad-fachhandel-werbematerial-werkzeugkasten-iframe-main">
-                <div class="u48DemiBold">JobRad Calculator</div>
-                <iframe scrolling="no" width="100%" src="https://bike-leasing-calculator.jobrad.org?genericObserve=true"></iframe>
-            </div>
-        </div>-->
-        <div class="forms" id="forms">
-            <div class="centeral-content">
-                <div class="u48DemiBold">Join the Ride Today</div>
-               <div class="u24Medium" style="font: 300 17px/19px urbane;">Complete the form and we’ll submit the request with your leasing partner. <!--<br>Orders through mein-dienstrad.de also benefit from our Father’s Day promotion: 3 free accessories(bike stand, fenders, water bottle holder).  <br><span class="u20Medium">(Ends on 18th of May)</span>--></div>
-                <!--<div class="u24Medium">Complete the form and we’ll submit the request with your leasing partner.</div>-->
-                <form action="" method="post">
-                    <div class="item">
-                        <div class="mini-item">
-                            <div>
-                                <div class="u24Medium">First name<i>*</i></div>
-                                <input type="text" name="first_name" required>
-                            </div>
-                            <div>
-                                <div class="u24Medium">Last name<i>*</i></div>
-                                <input type="text" name="last_name" required>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="u24Medium">Email<i>*</i></div>
-                        <input type="email" name="email" required>
-                    </div>
-                    <div class="item">
-                        <div class="u24Medium">Phone number<i>*</i></div>
-                        <input type="tel" name="phone" required>
-                    </div>
-                    <div class="item">
-                        <div class="u24Medium">Employer<i>*</i></div>
-                        <input type="text" name="employer" required>
-                    </div>
-                    <div class="item">
-                        <div class="u24Medium">Delivery address<i>*</i></div>
-                        <input type="text" name="address" required>
-                    </div>
-                    <div class="item">
-                        <div class="mini-item">
-                            <div>
-                                <div class="u24Medium">Postal code<i>*</i></div>
-                                <input type="text" name="postal_code" required>
-                            </div>
-                            <div>
-                                <div class="u24Medium">City<i>*</i></div>
-                                <input type="text" name="city" required>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="u24Medium">Country<i>*</i></div>
-                        <input type="text" name="country" value="Deutschland" disabled required>
-                    </div>
-                    <div class="item">
-                        <div class="u24Medium">Bike Model<i>*</i></div>
-                        <input type="text" name="bike_model" value="Carbon 1" disabled required>
-                    </div>
-                    <div class="item">
-                        <div class="mini-item">
-                            <div>
-                                <div class="u24Medium">Bike Size<i>*</i></div>
-                                <select name="bike_size" required>
-                                    <option value="">---</option>
-                                    <!--<option value="M">M - Fit for 170-185 cm</option>                  
-                                    <option value="L">L - Fit for 180-195 cm</option>-->
-                                </select>
-                            </div>
-                            <div>
-                                <div class="u24Medium">Bike Style<i>*</i></div>
-                                <select name="bike_style" required>
-                                    <option value="">---</option>
-                                    <!--<option>Sirius</option>
-                                    <option>Lyra</option>
-                                    <option>Midnight in Paris</option>
-                                    <option>Vanilla</option>-->
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="u24Medium">Accessories you would like
-                            <!--<br><span style="font-size: 12px;color: #666;line-height: 16px;display: inline-block;">Father’s Day gifts: kickstand, Fender, water bottle cage will sent to you automatically, will not show in your jobrad offer (Ends on 18th of May)</span>-->
-                        </div>
-                        <select name="accessories" multiple>
-                          {% for collection in collections %}
-                              {% if collection.title == 'Carbon 1 leasing acc' %}
-                                  {% for product in collection.products %}
-                                      <option title="{{product.title}}" value="{{product.id}}">{{product.title}}</option>
-                                  {% endfor %}
-                              {% endif %}
-                            {% endfor %}
-                        </select>
-                        <!-- <input type="text" name="accessories" placeholder="" > -->
-                    </div>
-                     <div class="item">
-                      <div class="u24Medium">Note</div>
-                      <input type="text" name="note">
-                    </div>
-                    <div class="item">
-                        <div class="checkbox">
-                            <input type="checkbox" id="subscribe" name="subscribe" value="subscribe" required />
-                            <label class="u17Light" for="subscribe" style="text-align: left;">I agree to allow Urtopia to store and process my
-                                personal data, including receiving emails, text messages and SMS.<i>*</i></label>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div style="display: flex;">
-                            <button class="my-button my-button-black" type="submit">Submit</button>
-                            <a class="my-button my-button-white" href="/pages/contactus">Contact us</a>
-                        </div>
-                    </div>
-                    <!-- <div class="item u17Medium">Thank you for submitting the form. <br>Our expert will contact you soon.</div> -->
-                </form>
-            </div>
-        </div>
+        {% render 'leasing-forms-template' %}
         <div class="faqs">
             <div class="centeral-content">
                 <div class="faq">
@@ -203,7 +85,8 @@
             </div>
         </div>
     </div>
-{{ 'sumoselect.js' | asset_url | script_tag }}
+
+
 <script>
 
     const faqs = [
@@ -268,52 +151,6 @@
       },
     ]
 
-    const size_map = {
-        M: 'Fit for 170-185 cm',
-        L: 'Fit for 180-195 cm'
-      }
-    
-    const forms = {}
-    const ignore = ['submit', 'checkbox']
-
-    function gtag_report_conversion(url) {
-        var callback = function () {
-          if (typeof(url) != 'undefined') {
-            window.location = url;
-          }
-        };
-        gtag('event', 'conversion', {
-            'send_to': 'AW-10876491006/sCHgCIiX55oYEP6pqMIo',
-            'event_callback': callback
-        });
-        return false;
-      }
-
-      function submit(extras = {}) {
-        console.log('extras', extras)
-
-        let search = {}
-        const url = new URL(location.href)
-
-        for (const [k, v] of url.searchParams.entries()) {
-            search[k] = v
-        }
-
-        search = Object.assign(search, extras)
-
-        // 重写bike_size
-        search.bike_size = search.bike_size + ' - ' + size_map[search.bike_size]
-
-        fetchBuried('mein-dienstrad', 'submit', search)
-        // fbq('track', 'Jobrad Submit')
-        fbq('track', 'CompleteRegistration', {
-            value: 3596,
-            currency: 'usd',
-        });
-
-
-        gtag_report_conversion()
-    }
 
     $('.faqs .swiper-slide').html(faqs.map(faq => `
       <div class="faq-item">
@@ -342,178 +179,5 @@
                 .children('i')
                 .addClass('faq-content-plus');
         });
-
-
-        let is_request = false
-        $('.forms form :input').on('input', debounce(e => {
-            if (is_request) {
-                return            
-            }
-
-            is_request = true
-            const data = {}
-
-            $('.forms form :input').each((i, target) => {
-                data[target.name] = target.value
-            })
-
-            fetchBuried('mein-dienstrad', 'submitinfo', data)
-        }, 5000))
     }, 1000)
-
-
-    if (!sessionStorage.isPreviewMeinDienstrad) {
-        fetchBuried('mein-dienstrad', 'pageview')
-    }
-
-    // 记录来过这个页面
-    sessionStorage.isPreviewMeinDienstrad = 'isPreviewMeinDienstrad'
-
-
-    // url 处理
-    const urlSearch = {}
-    const urlInstance = new URL(location.href)
-
-    for (const [k, v] of urlInstance.searchParams.entries()) {
-        urlSearch[k] = v
-    }
-
-    /* 如果bike_style 存在
-    if (urlSearch.bike_style) {
-        $(`select[name="bike_style"]`).val(urlSearch.bike_style)
-    }
-
-    // 如果bike_size 存在
-    if (urlSearch.bike_size) {
-        $(`select[name="bike_size"]`).val(urlSearch.bike_size)
-    }
-
-    // 如果有 accessories 存在
-    if (urlSearch.accessories) {
-        $(`input[name="accessories"]`).val(urlSearch.accessories)
-    }
-
-    */
-
-    // SELECT 插件
-    const selectPlugin = $('select[name="accessories"]').SumoSelect({
-        placeholder: '',
-        csvDispCount: 0,
-        floatWidth: 768,
-      })
-
-      console.log('selectPlugin', selectPlugin)
-
-
-          // 如果有 accessories 存在
-    if (urlSearch.accessories) {
-        for (const s of urlSearch.accessories.split(',')) {
-            selectPlugin.sumo.selectItem(s)
-        }
-    }
-
-
-    jQuery.getJSON(window.Shopify.routes.root + 'products.json', res => {
-        const carbon = res.products.find(p => p.id === 7633738727640)
-        const size = carbon.options.find(o => o.name === 'Size')
-        const style = carbon.options.find(o => o.name === 'Style')
-
-        console.log(carbon)
-
-        $('select[name="bike_size"]').html('<option value="">---</option>' + size.values.map(v => {
-            return `<option value="${v}">${v} - ${size_map[v]}</option>`
-        }))
-
-        const fn = value => {
-            $('select[name="bike_style"]').html('<option value="">---</option>' + style.values.map(v => {
-
-                let disabled = false
-                const find = carbon.variants.find(c => c.title === `${v} / ${value}`)
-
-                // 如果不可用，按钮禁用掉
-                if (find) {
-                    disabled = !find.available
-                }
-
-                return `<option value="${v}" ${disabled ? 'disabled' : ''}>${v}</option>`
-            }))
-        }
-
-
-        setTimeout(() => {
-            $('select[name="bike_size"]').on('change', e => {
-                const value = e.target.value
-
-                if (value) {
-                    fn(value)
-                } else {
-                    $('select[name="bike_style"]').html('<option value="">---</option>')
-                }
-                
-            })
-
-
-            if (urlSearch.bike_style) {
-                $(`select[name="bike_size"]`).val(urlSearch.bike_size)
-
-                fn(urlSearch.bike_size)
-
-                setTimeout(() => {
-                    $(`select[name="bike_style"]`).val(urlSearch.bike_style)
-                })
-            }
-
-            $('.forms form').on("submit", function (event) {
-                $('.forms form :input').each((index, target) => {
-                    if (ignore.includes(target.type)) {
-                        return
-                    }
-
-                    // 配件特殊处理
-                    if (target.name === 'accessories') {
-                        const accessories = []
-                        const accessories_id = []
-                        
-                        // selected
-                        $(target).find('option:selected').each((i, target) => {
-                            accessories.push(target.title)
-                            accessories_id.push(target.value)
-                        })
-
-                            
-                        forms.accessories = accessories.join()
-                        forms.accessories_id = accessories_id.join()
-    
-                        return
-                    }
-
-    
-    
-    
-                    forms[target.name] = target.value
-                })
-
-                forms.variant_id = carbon.variants.find(c => c.title === `${forms.bike_style} / ${forms.bike_size}`).id
-    
-                // 隐藏form
-                $('.forms form').hide()
-                $('.forms .centeral-content').html(`
-                    <div class="u48DemiBold">Thank you!</div>
-                    <div class="u24Medium">You have successfully submit the form. Our expert will contact you soon. Feel free to contact us if you have any questions.</div>
-                    <a class="my-button my-button-white" href="/pages/contactus">Contact us</a>
-                `)
-    
-                setTimeout(() => {
-                    $('html').animate({
-                        scrollTop: $('.forms').offset().top - (document.documentElement.clientHeight / 2) + ($('.forms').height() / 2)
-                    }, 300)
-    
-                    submit(forms)
-                })
-    
-                event.preventDefault();
-                return false;
-            })
-        }, 100)
-    })
 </script>
