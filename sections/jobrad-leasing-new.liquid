@@ -315,36 +315,6 @@ const faqs = [
 ]
 
 
-
-
-
-{% comment %} function submit(extras = {}) {
-    console.log('extras', extras)
-
-    let search = {}
-    const url = new URL(location.href)
-
-    for (const [k, v] of url.searchParams.entries()) {
-        search[k] = v
-    }
-
-    search = Object.assign(search, extras)
-
-    // 重写bike_size
-    search.bike_size = search.bike_size + ' - ' + size_map[search.bike_size]
-    search.page_type = 'ad-page'
-
-    fetchBuried('jobrad', 'submit', search)
-    // fbq('track', 'Jobrad Submit')
-    fbq('track', 'CompleteRegistration', {
-        value: 3596,
-        currency: 'usd',
-    });
-
-    gtag_report_conversion()
-} {% endcomment %}
-
-
 $('.faqs .swiper-slide').html(faqs.map(faq => `
   <div class="faq-item">
      <div class="faq-title">
