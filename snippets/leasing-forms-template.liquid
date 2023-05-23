@@ -181,18 +181,18 @@ function getFormValues () {
             })
 
                 
-            forms.accessories = accessories.join()
-            forms.accessories_id = accessories_id.join()
+            temp.accessories = accessories.join()
+            temp.accessories_id = accessories_id.join()
 
             return
         }
 
 
-        forms[target.name] = target.value
+        temp[target.name] = target.value
     })
 
-    forms.variant_id = carbon.variants.find(c => c.title === `${forms.bike_style} / ${forms.bike_size}`).id
-    forms.offers = $('.forms label[class="active"]').attr('for')
+    temp.variant_id = carbon.variants.find(c => c.title === `${temp.bike_style} / ${temp.bike_size}`).id
+    temp.offers = $('.forms label[class="active"]').attr('for')
 
 
 
