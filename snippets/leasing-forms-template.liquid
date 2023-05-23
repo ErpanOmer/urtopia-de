@@ -304,25 +304,6 @@ function submit (forms = {}) {
     gtag_report_conversion()
 }
 
-
-const renderHtml = value => {
-    const style_value = $('select[name="bike_style"]').val() || ''
-
-
-    $('select[name="bike_style"]').html('<option value="">---</option>' + style.map(v => {
-
-        let disabled = false
-        const find = carbon.variants.find(c => c.title === `${v} / ${value}`)
-
-        // 如果不可用，按钮禁用掉
-        if (find) {
-            disabled = !find.available
-        }
-
-        return `<option value="${v}" ${disabled ? 'disabled' : ''}>${v}</option>`
-    }))
-}
-
 const clearBikeImage = () => {
     $('.forms form .item input[name="bike_image"]').attr('src', '')
     $('.forms form .item[name="bike_image"]').hide()
@@ -386,6 +367,9 @@ $('select[name="bike_style"]').html('<option value="">---</option>' + style.map(
 
 // 延迟执行一些DOM
 setTimeout(() => {
+    // 更改 offers label
+    $('input[name="offers"]').closest('.item').find('.u24Medium').text(page_infos.form_offers_label)
+
     // yes or no change
     $('form .multiple-checkbox :input').on('change', e => {
         if (e.currentTarget.id === 'yes') {
