@@ -343,7 +343,7 @@ setTimeout(() => {
 
     
     // SELECT 插件
-    $('select[name="accessories"]').SumoSelect({
+    const selectPlugin = $('select[name="accessories"]').SumoSelect({
         placeholder: '',
         csvDispCount: 0,
         floatWidth: 768,
@@ -354,7 +354,7 @@ setTimeout(() => {
 
     console.log('urlSearch', urlSearch)
 
-    // url 参数的初始化
+    // 如果存在车型参数
     if (urlSearch.bike_style) {
         // 填充size
         $(`select[name="bike_size"]`).val(urlSearch.bike_size)
@@ -362,6 +362,13 @@ setTimeout(() => {
         renderHtml(urlSearch.bike_size)
         // 填充style
         setTimeout(() => $(`select[name="bike_style"]`).val(urlSearch.bike_style))
+    }
+
+    // 如果有 accessories 存在
+    if (urlSearch.accessories) {
+        for (const acc of urlSearch.accessories.split(',')) {
+            selectPlugin.sumo.selectItem(acc)
+        }
     }
     
 }, 100)
