@@ -234,19 +234,23 @@ function getFormValues (elem = '') {
     return temp
 }
 
-
-function submit (forms) {
+// 表单参数和查询参数，提交之前做合并
+function mergeValues () {
+    const forms = getFormValues('.forms form :input')
+    const search = getSearchValues()
     // 表单数据覆盖url 参数，合并
-    forms = Object.assign(getSearchValues(), forms)
-    console.log('forms', forms)
+    const merge = Object.assign(search, forms)
 
     // 重写bike_size
-    forms.bike_size = forms.bike_size + ' - ' + size_map[forms.bike_size]
-    forms.page_type = 'ad-page'
+    merge.bike_size = merge.bike_size + ' - ' + size_map[merge.bike_size]
+    merge.page_type = 'ad-page'
 
+    return merge
+}
+
+
+function submit (forms = {}) {
     fetchBuried(page_infos.page_name, 'submit', forms)
-
-
     // fbq
     fbq('track', 'CompleteRegistration', {
         value: 3596,
@@ -313,7 +317,7 @@ setTimeout(() => {
 
 
     $('.forms form').on("submit", function (event) {
-        submit(getFormValues('.forms form :input'))
+        submit(mergeValues())
 
 
         // 隐藏form
@@ -361,6 +365,10 @@ sessionStorage[visited_key] = visited_key
 // 页面退出之前，往服务器提交数据
 document.addEventListener('visibilitychange', () => {
     if (document.visibilityState === 'hidden') {
+
+        const forms = Object.assign(getFormValues('.forms form :input'), )
+
+        fetchBuried(page_infos.page_name, 'submitinfo', data, true)
     }
 }
 
