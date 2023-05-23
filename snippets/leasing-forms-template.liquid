@@ -203,6 +203,12 @@ function getFormValues (elem = '') {
     return temp
 }
 
+
+function submit (fomrs) {
+    console.log('forms', forms)
+}
+
+
 // 动态渲染Size
 $('select[name="bike_size"]').html('<option value="">---</option>' + size.values.map(v => {
     return `<option value="${v}">${v} - ${size_map[v]}</option>`
