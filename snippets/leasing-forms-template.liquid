@@ -1,4 +1,5 @@
 {{ 'sumoselect.min.css' | asset_url | stylesheet_tag }}
+{% assign template_name = template | json %}
 
 <div class="forms" id="forms">
     <div class="centeral-content">
@@ -144,10 +145,12 @@
 
 {{ 'sumoselect.js' | asset_url | script_tag }}
 <script>
+
+
 const path_map = {
 }
 
-console.log({{ "page.jobrad-leasing-new" == template | json }})
+console.log({{ template_name }})
 
 
 // size 映射
