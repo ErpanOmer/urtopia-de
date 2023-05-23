@@ -348,6 +348,7 @@ const changeBikeImage = e => {
     // 如果当前variant 库存不足
     if (!find.available) {
         $('select[name="bike_style"]').val('')
+        
         return clearBikeImage()
     }
 
