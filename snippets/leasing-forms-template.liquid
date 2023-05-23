@@ -1,0 +1,532 @@
+{{ 'sumoselect.min.css' | asset_url | stylesheet_tag }}
+
+<div class="forms" id="forms">
+    <div class="centeral-content">
+        <div class="u48DemiBold_v2">Request a quote for Urtopia E-bike leasing now</div>
+        <div class="u24Medium_v2">When you complete this form, we will provide a quote for you and you authorize us to use the information you submit and contact you via email, text message or phone to move the business process forward.
+        </div>
+        <!--<div class="u24Medium">Complete the form and we’ll submit the request with your leasing partner.</div>-->
+        <form action="" method="post">
+            <div class="item">
+                <div class="mini-item">
+                    <div>
+                        <div class="u24Medium">First name<i>*</i></div>
+                        <input type="text" name="first_name" required>
+                    </div>
+                    <div>
+                        <div class="u24Medium">Last name<i>*</i></div>
+                        <input type="text" name="last_name" required>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="u24Medium">Email<i>*</i></div>
+                <input type="email" name="email" required>
+            </div>
+            <div class="item">
+                <div class="u24Medium">Phone number<i>*</i></div>
+                <input type="tel" name="phone" required>
+            </div>
+            <!--<div class="item">
+                <div class="u24Medium">Job Position<i>*</i></div>
+                <input type="text" name="job_position" required>
+            </div>-->
+            <!--<div class="item">
+                <div class="u24Medium">Company<i>*</i></div>
+                <input type="text" name="company" required>
+            </div>-->
+            <div class="item">
+                <div class="u24Medium">Employer<i>*</i></div>
+                <input type="text" name="employer" required>
+            </div>
+            <div class="item">
+                <div class="u24Medium">Your employer already offers JobRad?<i>*</i></div>
+                <div class="multiple-checkbox">
+                    <label for="yes">
+                        <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_20956_2x_28b3e62b-ae48-4b7c-a025-4db2d0cdbf2d.png?v=1683713191"
+                            alt="">
+                        <span class="u17Medium_v2">Yes</span>
+                        <input type="radio" id="yes" name="offers" value="yes" required />
+                    </label>
+                    <label for="no">
+                        <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_20956_2x_28b3e62b-ae48-4b7c-a025-4db2d0cdbf2d.png?v=1683713191"
+                            alt="">
+                        <span class="u17Medium_v2">Not sure</span>
+                        <input type="radio" id="no" name="offers" value="no" required />
+                    </label>
+                </div>
+            </div>
+             
+            <div class="item change_offers" style="display:none;">
+                <div class="item">
+                    <div class="u24Medium">Employer address<i>*</i></div>
+                    <input type="text" name="employer_address" required>
+                </div> 
+                <div class="item">
+                    <div class="u24Medium">Contact person name<i>*</i></div>
+                    <input type="hidden" name="contact_person_name" required>
+                </div>
+                <div class="item">
+                    <div class="u24Medium">Contact email<i>*</i></div>
+                    <input type="hidden" name="contact_email" required>
+                </div>
+                <div class="item">
+                    <div class="u24Medium">Contact person phone number<i>*</i></div>
+                    <input type="hidden" name="contact_person_phone_number" required>
+                </div>
+            </div>
+
+            <div class="item">
+                <div class="u24Medium">Delivery address<i>*</i></div>
+                <input type="text" name="address" required>
+            </div>
+            <div class="item">
+                <div class="mini-item">
+                    <div>
+                        <div class="u24Medium">Postal code<i>*</i></div>
+                        <input type="text" name="postal_code" required>
+                    </div>
+                    <div>
+                        <div class="u24Medium">City<i>*</i></div>
+                        <input type="text" name="city" required>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="u24Medium">Country<i>*</i></div>
+                <input type="text" name="country" value="Deutschland" disabled required>
+            </div>
+            <div class="item" name="bike_image" style="display:none;">
+                <div class="u24Medium">Bike you choose:</div>
+                <input type="image" name="bike_image" src="">
+            </div>
+            <div class="item">
+                <div class="u24Medium">Bike Model<i>*</i></div>
+                <input type="text" name="bike_model" value="Carbon 1" disabled required>
+            </div>
+            <div class="item">
+                <div class="mini-item">
+                    <div>
+                        <div class="u24Medium">Bike Size<i>*</i></div>
+                        <select name="bike_size" required>
+                            <option value="">---</option>
+                            <!--<option value="M">M - Fit for 170-185 cm</option>
+                            <option value="L">L - Fit for 180-195 cm</option>
+                            -->
+                        </select>
+                    </div>
+                    <div>
+                        <div class="u24Medium">Bike Style<i>*</i></div>
+                        <select name="bike_style" required>
+                            <option value="">---</option>
+                            <!--<option value="Sirius">Sirius</option>
+                            <option value="Lyra">Lyra</option>
+                            <option value="Midnight in Paris">Midnight in Paris</option>
+                            <option value="Vanilla">Vanilla</option>
+                            -->
+                        </select>
+                    </div>
+                </div>
+                <span class="error"></span>
+            </div>
+            <div class="item">
+                <div class="u24Medium">Accessories you would like
+                    <!--<br><span style="font-size: 12px;color: #666;line-height: 16px;display: inline-block;">Father’s Day gifts: kickstand, Fender, water bottle cage will sent to you automatically, will not show in your jobrad offer (Ends on 18th of May)</span>-->
+                </div>
+                <select name="accessories" multiple>
+                  {% for collection in collections %}
+                      {% if collection.title == 'Carbon 1 leasing acc' %}
+                          {% for product in collection.products %}
+                              <option title="{{product.title}}" value="{{product.id}}">{{product.title}}</option>
+                          {% endfor %}
+                      {% endif %}
+                    {% endfor %}
+                </select>
+                <!-- <input type="text" name="accessories" placeholder="" > -->
+            </div>
+            <div class="item">
+              <div class="u24Medium">Note</div>
+              <input type="text" name="note">
+            </div>
+            <div class="item">
+                <div class="checkbox">
+                    <input type="checkbox" id="subscribe" name="subscribe" value="subscribe" required />
+                    <label class="u17Light" for="subscribe" style="text-align: left;">I agree to allow Urtopia to store and process my
+                        personal data, including receiving emails, text messages and SMS.<i>*</i></label>
+                </div>
+            </div>
+            <div class="item">
+                <div style="display: flex;">
+                    <button class="my-button my-button-black" type="submit">Submit</button>
+                    <a class="my-button my-button-white" href="/pages/contactus">Contact us</a>
+                </div>
+            </div>
+            <!-- <div class="item u17Medium">Thank you for submitting the form. <br>Our expert will contact you soon.</div> -->
+        </form>
+    </div>
+</div>
+
+
+{{ 'sumoselect.js' | asset_url | script_tag }}
+<script>
+
+// 页面信息
+const page_infos = {% case template | json %}
+    {% comment %} jobrad 广告页面 {% endcomment %}
+    {% when 'page.jobrad-leasing-new' %}
+        {
+            page_name: 'jobrad'
+        }
+    {% else %}
+        {}
+{% endcase %}
+
+
+// size 映射
+const size_map = {
+    M: 'Fit for 170-185 cm',
+    L: 'Fit for 180-195 cm'
+}
+// 表单忽略项
+const ignore = ['submit', 'checkbox', 'image', 'hidden']
+// carbon 产品信息
+const carbon = JSON.parse(JSON.stringify({{ all_products['urtopia-carbon-e-bike'] | json }}))
+
+// 尺寸信息
+const size = Array.from(new Set(carbon.variants.map(i => i.option2)))
+const style = Array.from(new Set(carbon.variants.map(i => i.option1)))
+
+// 是否已提交
+let is_submited = false
+
+console.log('page_infos', page_infos)
+console.log('carbon', carbon)
+
+function gtag_report_conversion(url) {
+    var callback = function () {
+      if (typeof(url) != 'undefined') {
+        window.location = url;
+      }
+    };
+    gtag('event', 'conversion', {
+        'send_to': 'AW-10876491006/sCHgCIiX55oYEP6pqMIo',
+        'event_callback': callback
+    });
+    return false;
+}
+
+
+function getFormValues (elem = '') {
+    const temp = {}
+
+    if (!elem) {
+        return temp
+    }
+
+    $(elem).each((index, target) => {
+        if (ignore.includes(target.type)) {
+            return
+        }
+
+
+        
+        // 配件特殊处理
+        if (target.name === 'accessories') {
+            const accessories = []
+            const accessories_id = []
+            
+            // selected
+            $(target).find('option:selected').each((i, target) => {
+                accessories.push(target.title)
+                accessories_id.push(target.value)
+            })
+
+                
+            temp.accessories = accessories.join()
+            temp.accessories_id = accessories_id.join()
+
+            return
+        }
+
+
+        temp[target.name] = target.value
+    })
+
+    temp.variant_id = carbon.variants.find(c => c.title === `${temp.bike_style} / ${temp.bike_size}`).id
+    temp.offers = $('.forms label[class="active"]').attr('for')
+
+
+
+    return temp
+}
+
+// 表单参数和查询参数，提交之前做合并
+function mergeValues () {
+    const forms = getFormValues('.forms form :input')
+    const search = getSearchValues()
+    // 表单数据覆盖url 参数，合并
+    const merge = Object.assign(search, forms)
+
+    // 重写bike_size
+    merge.bike_size = merge.bike_size + ' - ' + size_map[merge.bike_size]
+    merge.page_type = 'ad-page'
+
+    return merge
+}
+
+
+function submit (forms = {}) {
+    
+    // 状态变为已提交
+    is_submited = true
+
+    // 如果 offers 选择no
+    if (forms.offers === 'no') {
+        return fetchBuried(page_infos.page_name, 'submit-nooffer', forms)
+    }
+
+
+
+    fetchBuried(page_infos.page_name, 'submit', forms)
+    // fbq
+    fbq('track', 'CompleteRegistration', {
+        value: 3596,
+        currency: 'usd',
+    });
+
+    // gtag
+    gtag_report_conversion()
+}
+
+
+const renderHtml = value => {
+    const style_value = $('select[name="bike_style"]').val() || ''
+
+
+    $('select[name="bike_style"]').html('<option value="">---</option>' + style.map(v => {
+
+        let disabled = false
+        const find = carbon.variants.find(c => c.title === `${v} / ${value}`)
+
+        // 如果不可用，按钮禁用掉
+        if (find) {
+            disabled = !find.available
+        }
+
+        return `<option value="${v}" ${disabled ? 'disabled' : ''}>${v}</option>`
+    }))
+}
+
+const clearBikeImage = () => {
+    $('.forms form .item input[name="bike_image"]').attr('src', '')
+    $('.forms form .item[name="bike_image"]').hide()
+}
+
+
+const changeBikeImage = e => {
+    const size = $('select[name="bike_size"]').val()
+    const style = $('select[name="bike_style"]').val()
+    
+    $('.forms form .item .error').text('')
+
+    // 通过遍历 判断option 是否可用
+    $(`select[name="bike_style"] option`).each((i, item) => {
+        const v = item.value
+
+        if (!v) {
+            return
+        }
+
+        const vari = carbon.variants.find(c => c.title === `${v} / ${size}`)
+
+        if (!vari) {
+            return item.disabled = false
+        }
+
+
+        // 配置disabled
+        item.disabled = !!!vari.available
+    })
+
+    if (!size || !style) {
+        return clearBikeImage()
+    }
+
+    const find = carbon.variants.find(c => c.title === `${style} / ${size}`)
+
+    // 如果当前variant 库存不足
+    if (!find.available) {
+        $('select[name="bike_style"]').val('')
+        $('.forms form .item .error').text(`Your selection is currently reached our stock limit - size: ${size}, style: ${style}`)
+        
+        return clearBikeImage()
+    }
+
+    $('.forms form .item input[name="bike_image"]').attr('src', find.featured_image.src)
+    $('.forms form .item[name="bike_image"]').show()
+}
+
+// 动态渲染Size
+$('select[name="bike_size"]').html('<option value="">---</option>' + size.map(v => {
+    return `<option value="${v}">${v} - ${size_map[v]}</option>`
+}))
+
+// 动态渲染Style
+$('select[name="bike_style"]').html('<option value="">---</option>' + style.map(v => {
+    return `<option value="${v}">${v}</option>`
+}))
+
+
+
+// 延迟执行一些DOM
+setTimeout(() => {
+    // yes or no change
+    $('form .multiple-checkbox :input').on('change', e => {
+        if (e.currentTarget.id === 'yes') {
+            $(`form .multiple-checkbox label[for="yes"]`).css("border-color", "black")
+            $(`form .multiple-checkbox label[for="yes"] img`).css('display', 'unset')
+            $(`form .multiple-checkbox label[for="yes"]`).addClass('active')
+    
+            $(`form .multiple-checkbox label[for="no"]`).css("border-color", "#00000034")
+            $(`form .multiple-checkbox label[for="no"] img`).css('display', 'none')
+            $(`form .multiple-checkbox label[for="no"]`).removeClass('active')
+
+            
+            $(`form .change_offers :input`).attr('type', 'hidden')
+            $(`form .change_offers`).hide()
+        } else {
+            $(`form .multiple-checkbox label[for="no"]`).css("border-color", "black")
+            $(`form .multiple-checkbox label[for="no"] img`).css('display', 'unset')
+            $(`form .multiple-checkbox label[for="no"]`).addClass('active')
+    
+            $(`form .multiple-checkbox label[for="yes"]`).css("border-color", "#00000034")
+            $(`form .multiple-checkbox label[for="yes"] img`).css('display', 'none')
+            $(`form .multiple-checkbox label[for="yes"]`).removeClass('active')
+
+            $(`form .change_offers :input`).attr('type', 'text')
+            $(`form .change_offers`).show()
+        }
+    
+    })
+
+
+    // size change
+    $('select[name="bike_size"]').on('change', e => {
+        changeBikeImage()
+    })
+
+    // style change
+    $('select[name="bike_style"]').on('change', changeBikeImage)
+
+
+    $('.forms form').on("submit", function (event) {
+        const values = mergeValues()
+
+        submit(values)
+
+        const offers = `
+            <div class="u48DemiBold_v2">Thank you!</div>
+            <div class="u24Medium_v2">You have successfully submit the form. Our expert will contact you soon. Feel free to contact us if you have any questions.</div>
+            <a class="my-button my-button-white" href="/pages/contactus">Contact us</a>
+         `
+
+        const nooffers = `
+            <div class="u48DemiBold_v2">Thank you!</div>
+            <div class="u24Medium_v2">You have successfully submit the form. Our expert will contact you soon. Feel free to contact us if you have any questions.<br><br>Because your employer is not working with Jobrad , please contact your employer to inform your requirement with leasing, and ask your employer to make a connection with Jobrad to make the process faster. <br><span class="forms-link">Click here for more information</span></div>
+            <a class="my-button my-button-white" href="/pages/contactus">Contact us</a>
+        `
+
+
+        // 隐藏form
+        $('.forms form').hide()
+        $('.forms .centeral-content').html(values.offers === 'yes' ? offers : nooffers)
+
+        setTimeout(() => {
+            $('html').animate({
+                scrollTop: $('.forms').offset().top - (document.documentElement.clientHeight / 2) + ($('.forms').height() / 2)
+            }, 300)
+
+            $('.forms .centeral-content .forms-link').on('click', e => {
+                const item = document.querySelector(`.faqs .faq-item[index="7"]`)
+                const title = item.querySelector('.faq-title')
+                const content = item.querySelector('.faq-content')
+        
+                // 如果是隐藏状态才展开
+                if (window.getComputedStyle(content).display === 'none') {
+                    title.click()
+                }
+                
+                setTimeout(() => {
+                    $('html').animate({
+                        scrollTop: $(item).offset().top - 85
+                    }, 300)
+                })
+        
+        
+                e.preventDefault();
+                return false;
+            })
+        })
+
+        event.preventDefault();
+        return false;
+    })
+
+
+    
+    // SELECT 插件
+    const selectPlugin = $('select[name="accessories"]').SumoSelect({
+        placeholder: '',
+        csvDispCount: 0,
+        floatWidth: 768,
+    })
+
+
+    // url 参数
+    const urlSearch = getSearchValues()
+
+    // 如果存在车型参数
+    if (urlSearch.bike_style) {
+        // 填充size
+        $(`select[name="bike_size"]`).val(urlSearch.bike_size)
+        // 填充style
+        $(`select[name="bike_style"]`).val(urlSearch.bike_style)
+
+        // change bike image
+        setTimeout(changeBikeImage)
+    }
+
+    // 如果有 accessories 存在
+    if (urlSearch.accessories) {
+        for (const acc of urlSearch.accessories.split(',')) {
+            selectPlugin.sumo.selectItem(acc)
+        }
+    }
+    
+}, 100)
+
+
+// 页面访问key
+const visited_key = `${page_infos.page_name}_page_is_visited`
+// 页面访问
+if (!!!sessionStorage[visited_key]) {
+    fetchBuried(page_infos.page_name, 'pageview')
+}
+
+// 记录来过这个页面
+sessionStorage[visited_key] = visited_key
+
+
+// 页面退出之前，往服务器提交数据
+document.addEventListener('visibilitychange', () => {
+    // 如果已提交过，不用再次提交
+    if (is_submited) {
+        return
+    }
+
+    if (document.visibilityState === 'hidden') {
+        fetchBuried(page_infos.page_name, 'submitinfo', mergeValues(), true)
+    }
+})
+
+</script>

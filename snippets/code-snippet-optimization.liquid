@@ -30,6 +30,20 @@ function fetchBuried (name = '', type = '', data = {}, isSendBeacon = false) {
     })
 }
 
+// 查询url 参数
+function getSearchValues () {
+    const search = {}
+
+    // 页面url
+    const url = new URL(location.href)
+
+    for (const [k, v] of url.searchParams.entries()) {
+        search[k] = v
+    }
+
+    return search
+}
+
 
 function debounce(fn, wait) {
     // 自由变量，debounce执行完成被释放，time也不会被释放
