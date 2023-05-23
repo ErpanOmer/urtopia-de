@@ -238,8 +238,6 @@
     false
 )
 
-  const forms = {}
-
 
 const faqs = [
     {
@@ -324,21 +322,9 @@ if (!sessionStorage.isPreviewJobrad) {
 sessionStorage.isPreviewJobrad = 'isPreviewJobrad'
 
 
-function gtag_report_conversion(url) {
-    var callback = function () {
-      if (typeof(url) != 'undefined') {
-        window.location = url;
-      }
-    };
-    gtag('event', 'conversion', {
-        'send_to': 'AW-10876491006/sCHgCIiX55oYEP6pqMIo',
-        'event_callback': callback
-    });
-    return false;
-  }
 
 
-function submit(extras = {}) {
+{% comment %} function submit(extras = {}) {
     console.log('extras', extras)
 
     let search = {}
@@ -362,7 +348,7 @@ function submit(extras = {}) {
     });
 
     gtag_report_conversion()
-}
+} {% endcomment %}
 
 
 $('.faqs .swiper-slide').html(faqs.map(faq => `
