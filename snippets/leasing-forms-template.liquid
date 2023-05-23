@@ -342,7 +342,7 @@ const changeBikeImage = e => {
         }
 
         const vari = carbon.variants.find(c => c.title === `${v} / ${size}`)
-
+        // 配置disabled
         item.disabled = !!!vari.available
     })
 
