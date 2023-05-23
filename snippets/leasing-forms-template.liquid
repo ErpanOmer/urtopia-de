@@ -431,11 +431,7 @@ setTimeout(() => {
         $(`select[name="bike_style"]`).val(urlSearch.bike_style)
 
         // change bike image
-        setTimeout(() => changeBikeImage({
-            target: {
-                value: urlSearch.bike_style
-            }
-        }))
+        setTimeout(changeBikeImage)
     }
 
     // 如果有 accessories 存在
