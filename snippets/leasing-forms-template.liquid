@@ -144,7 +144,7 @@
 
 {{ 'sumoselect.js' | asset_url | script_tag }}
 <script>
-// carbon车
+// carbon 产品信息
 const carbon = JSON.parse(JSON.stringify({{ all_products['urtopia-carbon-e-bike'] | json }}))
 
 console.log('carbon', carbon)
