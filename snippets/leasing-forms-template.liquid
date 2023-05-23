@@ -144,7 +144,11 @@
 
 {{ 'sumoselect.js' | asset_url | script_tag }}
 <script>
-
+// size 映射
+const size_map = {
+    M: 'Fit for 170-185 cm',
+    L: 'Fit for 180-195 cm'
+}
 // 表单忽略项
 const ignore = ['submit', 'checkbox']
 // carbon 产品信息
