@@ -329,7 +329,13 @@ const changeBikeImage = e => {
 
     const find = carbon.variants.find(c => c.title === `${style} / ${size}`)
 
-    if (!find) {
+    // 如果当前variant 库存不足
+    if (!find.available) {
+
+
+        $('select[name="bike_style"]').val('')
+        $(`select[name="bike_style"] option[value=${style}]`).attr('disabled', true)
+
         return
     }
 
@@ -382,7 +388,12 @@ setTimeout(() => {
 
 
     // size change
-    $('select[name="bike_size"]').on('change', changeBikeImage)
+    $('select[name="bike_size"]').on('change', e => {
+        if ()
+
+
+        changeBikeImage()
+    })
 
     // style change
     $('select[name="bike_style"]').on('change', changeBikeImage)
