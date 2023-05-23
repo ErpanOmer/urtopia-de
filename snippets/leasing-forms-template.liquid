@@ -396,6 +396,12 @@ setTimeout(() => {
         renderHtml(urlSearch.bike_size)
         // 填充style
         setTimeout(() => $(`select[name="bike_style"]`).val(urlSearch.bike_style))
+
+        changeBikeImage({
+            target: {
+                value: urlSearch.bike_style
+            }
+        })
     }
 
     // 如果有 accessories 存在
