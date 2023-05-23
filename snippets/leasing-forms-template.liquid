@@ -144,6 +144,12 @@
 
 {{ 'sumoselect.js' | asset_url | script_tag }}
 <script>
+const path_map = {
+}
+
+console.log({{ template | json }})
+
+
 // size 映射
 const size_map = {
     M: 'Fit for 170-185 cm',
