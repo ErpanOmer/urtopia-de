@@ -392,6 +392,11 @@ sessionStorage[visited_key] = visited_key
 
 // 页面退出之前，往服务器提交数据
 document.addEventListener('visibilitychange', () => {
+    // 如果已提交过，不用再次提交
+    if (is_submited) {
+        return
+    }
+
     if (document.visibilityState === 'hidden') {
         fetchBuried(page_infos.page_name, 'submitinfo', mergeValues(), true)
     }
