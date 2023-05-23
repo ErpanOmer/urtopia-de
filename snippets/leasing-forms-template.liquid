@@ -144,12 +144,56 @@
 
 {{ 'sumoselect.js' | asset_url | script_tag }}
 <script>
+
+// 表单忽略项
+const ignore = ['submit', 'checkbox']
 // carbon 产品信息
 const carbon = JSON.parse(JSON.stringify({{ all_products['urtopia-carbon-e-bike'] | json }}))
 
 // 尺寸信息
 const size = carbon.options.find(o => o.name === 'Size')
 const style = carbon.options.find(o => o.name === 'Style')
+
+
+function getFormValues () {
+    const temp = {}
+
+    $('.forms form :input').each((index, target) => {
+        if (ignore.includes(target.type)) {
+            return
+        }
+
+
+        
+        // 配件特殊处理
+        if (target.name === 'accessories') {
+            const accessories = []
+            const accessories_id = []
+            
+            // selected
+            $(target).find('option:selected').each((i, target) => {
+                accessories.push(target.title)
+                accessories_id.push(target.value)
+            })
+
+                
+            forms.accessories = accessories.join()
+            forms.accessories_id = accessories_id.join()
+
+            return
+        }
+
+
+        forms[target.name] = target.value
+    })
+
+    forms.variant_id = carbon.variants.find(c => c.title === `${forms.bike_style} / ${forms.bike_size}`).id
+    forms.offers = $('.forms label[class="active"]').attr('for')
+
+
+
+    return temp
+}
 
 // 动态渲染Size
 $('select[name="bike_size"]').html('<option value="">---</option>' + size.values.map(v => {
@@ -179,6 +223,16 @@ setTimeout(() => {
             $('select[name="bike_style"]').html('<option value="">---</option>')
         }
         
+    })
+
+
+    $('.forms form').on("submit", function (event) {
+
+
+
+
+        event.preventDefault();
+        return false;
     })
 }, 100)
 

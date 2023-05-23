@@ -261,13 +261,8 @@ $('form .multiple-checkbox :input').on('change', e => {
 
 })
 
-const size_map = {
-    M: 'Fit for 170-185 cm',
-    L: 'Fit for 180-195 cm'
-  }
-
   const forms = {}
-  const ignore = ['submit', 'checkbox']
+
 
 const faqs = [
     {
@@ -449,61 +444,11 @@ setTimeout(() => {
         
 
         setTimeout(() => {
-            $('select[name="bike_size"]').on('change', e => {
-                const value = e.target.value
-
-                if (value) {
-                    $('select[name="bike_style"]').html('<option value="">---</option>' + style.values.map(v => {
-
-                        let disabled = false
-                        const find = carbon.variants.find(c => c.title === `${v} / ${value}`)
-
-                        // 如果不可用，按钮禁用掉
-                        if (find) {
-                            disabled = !find.available
-                        }
-
-                        return `<option value="${v}" ${disabled ? 'disabled' : ''}>${v}</option>`
-                    }))
-                } else {
-                    $('select[name="bike_style"]').html('<option value="">---</option>')
-                }
-                
-            })
+            
 
 
             $('.forms form').on("submit", function (event) {    
-                $('.forms form :input').each((index, target) => {
-                    if (ignore.includes(target.type)) {
-                        return
-                    }
-    
-    
-                    
-                    // 配件特殊处理
-                    if (target.name === 'accessories') {
-                        const accessories = []
-                        const accessories_id = []
-                        
-                        // selected
-                        $(target).find('option:selected').each((i, target) => {
-                            accessories.push(target.title)
-                            accessories_id.push(target.value)
-                        })
-
-                            
-                        forms.accessories = accessories.join()
-                        forms.accessories_id = accessories_id.join()
-    
-                        return
-                    }
-
-
-                    forms[target.name] = target.value
-                })
-
-                forms.variant_id = carbon.variants.find(c => c.title === `${forms.bike_style} / ${forms.bike_size}`).id
-                forms.offers = $('.forms label[class="active"]').attr('for')
+                
     
                 // 隐藏form
                 $('.forms form').hide()
