@@ -348,6 +348,18 @@ setTimeout(() => {
         csvDispCount: 0,
         floatWidth: 768,
     })
+
+
+    // url 参数的初始化
+    if (urlSearch.bike_style) {
+        $(`select[name="bike_size"]`).val(urlSearch.bike_size)
+
+        fn(urlSearch.bike_size)
+
+        setTimeout(() => {
+            $(`select[name="bike_style"]`).val(urlSearch.bike_style)
+        })
+    }
     
 }, 100)
 
