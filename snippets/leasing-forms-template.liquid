@@ -320,6 +320,8 @@ const renderHtml = value => {
 const changeBikeImage = e => {
     const size = $('select[name="bike_size"]').val()
     const style = $('select[name="bike_style"]').val()
+    // 先重置 disabled 为 false
+    $(`select[name="bike_style"] option[value=${style}]`).attr('disabled', false)
 
     if (!size || !style) {
         $('.forms form .item input[name="bike_image"]').attr('src', '')
