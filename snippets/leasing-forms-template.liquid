@@ -157,10 +157,6 @@ const page_infos = {% case template | json %}
 {% endcase %}
 
 
-
-console.log('page_infos', page_infos)
-
-
 // size 映射
 const size_map = {
     M: 'Fit for 170-185 cm',
@@ -175,7 +171,8 @@ const carbon = JSON.parse(JSON.stringify({{ all_products['urtopia-carbon-e-bike'
 const size = Array.from(new Set(carbon.variants.map(i => i.option2)))
 const style = Array.from(new Set(carbon.variants.map(i => i.option1)))
 
-
+console.log('page_infos', page_infos)
+console.log('carbon', carbon)
 
 function gtag_report_conversion(url) {
     var callback = function () {
@@ -261,8 +258,6 @@ function submit (forms = {}) {
     // gtag
     gtag_report_conversion()
 }
-
-console.log('carbon', carbon)
 
 // 动态渲染Size
 $('select[name="bike_size"]').html('<option value="">---</option>' + size.map(v => {
