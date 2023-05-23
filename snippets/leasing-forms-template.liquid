@@ -445,13 +445,13 @@ setTimeout(() => {
         $(`select[name="bike_size"]`).val(urlSearch.bike_size)
         // 填充style
         $(`select[name="bike_style"]`).val(urlSearch.bike_style)
+
+        // change bike image
         setTimeout(() => changeBikeImage({
             target: {
                 value: urlSearch.bike_style
             }
         }))
-
-        
     }
 
     // 如果有 accessories 存在
