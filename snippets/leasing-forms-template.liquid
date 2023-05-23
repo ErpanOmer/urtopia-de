@@ -329,24 +329,26 @@ const changeBikeImage = e => {
     
     $('.forms form .item .error').text('')
 
+    if (size) {
+        // 通过遍历 判断option 是否可用
+        $(`select[name="bike_style"] option`).each((i, item) => {
+            const v = item.value
+
+            if (!v) {
+                return
+            }
+
+            const vari = carbon.variants.find(c => c.title === `${v} / ${size}`)
+            // 配置disabled
+            item.disabled = !!!vari.available
+        })
+    }
+
     if (!size || !style) {
         return clearBikeImage()
     }
 
     const find = carbon.variants.find(c => c.title === `${style} / ${size}`)
-
-    // 通过遍历 判断option 是否可用
-    $(`select[name="bike_style"] option`).each((i, item) => {
-        const v = item.value
-
-        if (!v) {
-            return
-        }
-
-        const vari = carbon.variants.find(c => c.title === `${v} / ${size}`)
-        // 配置disabled
-        item.disabled = !!!vari.available
-    })
 
     // 如果当前variant 库存不足
     if (!find.available) {
