@@ -322,7 +322,7 @@ const changeBikeImage = e => {
     const style = $('select[name="bike_style"]').val()
 
     if (!size || !style) {
-        //$('.forms form .item input[name="bike_image"]').attr('src', '')
+        $('.forms form .item input[name="bike_image"]').attr('src', '')
         $('.forms form .item[name="bike_image"]').hide()
         return
     }
@@ -381,24 +381,8 @@ setTimeout(() => {
     })
 
 
-    // 动态渲染 style
-    $('select[name="bike_size"]').on('change', e => {
-        const value = e.target.value
-
-        {% comment %} if (value) {
-            renderHtml(value)
-        } else {
-            $('select[name="bike_style"]').html('<option value="">---</option>')
-
-            // 重置产品图
-            changeBikeImage({
-                target: {
-                    value: ''
-                }
-            })
-        } {% endcomment %}
-    })
-
+    // size change
+    $('select[name="bike_size"]').on('change', changeBikeImage)
 
     // style change
     $('select[name="bike_style"]').on('change', changeBikeImage)
