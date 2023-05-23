@@ -236,6 +236,8 @@ function getFormValues (elem = '') {
 
 
 function submit (forms) {
+    // 表单数据覆盖url 参数，合并
+    forms = Object.assign(getSearchValues(), forms)
     console.log('forms', forms)
 }
 
