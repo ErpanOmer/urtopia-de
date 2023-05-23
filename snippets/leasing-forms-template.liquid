@@ -223,13 +223,13 @@ function submit (fomrs) {
     console.log('forms', forms)
 }
 
+console.log('carbon', carbon)
 
 // 动态渲染Size
 $('select[name="bike_size"]').html('<option value="">---</option>' + size.values.map(v => {
     return `<option value="${v}">${v} - ${size_map[v]}</option>`
 }))
 
-console.log('carbon', carbon)
 setTimeout(() => {
     // yes or no change
     $('form .multiple-checkbox :input').on('change', e => {
