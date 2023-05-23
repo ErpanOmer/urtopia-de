@@ -259,6 +259,22 @@ function submit (forms = {}) {
     gtag_report_conversion()
 }
 
+
+const renderHtml = value => {
+    $('select[name="bike_style"]').html('<option value="">---</option>' + style.values.map(v => {
+
+        let disabled = false
+        const find = carbon.variants.find(c => c.title === `${v} / ${value}`)
+
+        // 如果不可用，按钮禁用掉
+        if (find) {
+            disabled = !find.available
+        }
+
+        return `<option value="${v}" ${disabled ? 'disabled' : ''}>${v}</option>`
+    }))
+}
+
 // 动态渲染Size
 $('select[name="bike_size"]').html('<option value="">---</option>' + size.map(v => {
     return `<option value="${v}">${v} - ${size_map[v]}</option>`
@@ -295,22 +311,10 @@ setTimeout(() => {
         const value = e.target.value
 
         if (value) {
-            $('select[name="bike_style"]').html('<option value="">---</option>' + style.map(v => {
-
-                let disabled = false
-                const find = carbon.variants.find(c => c.title === `${v} / ${value}`)
-
-                // 如果不可用，按钮禁用掉
-                if (find) {
-                    disabled = !find.available
-                }
-
-                return `<option value="${v}" ${disabled ? 'disabled' : ''}>${v}</option>`
-            }))
+            renderHtml(value)
         } else {
             $('select[name="bike_style"]').html('<option value="">---</option>')
         }
-        
     })
 
 
