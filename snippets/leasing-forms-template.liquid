@@ -345,6 +345,13 @@ setTimeout(() => {
             renderHtml(value)
         } else {
             $('select[name="bike_style"]').html('<option value="">---</option>')
+
+            // 重置产品图
+            changeBikeImage({
+                target: {
+                    value: ''
+                }
+            })
         }
     })
 
