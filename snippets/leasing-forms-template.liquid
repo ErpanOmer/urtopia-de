@@ -335,7 +335,8 @@ const changeBikeImage = e => {
     const find = carbon.variants.find(c => c.title === `${style} / ${size}`)
 
     $(`select[name="bike_style"] option`).each((i, item) => {
-        console.log(item.value)
+        const find = carbon.variants.find(c => c.title === `${item.value} / ${size}`)
+        console.log(find)
     })
 
     // 如果当前variant 库存不足
