@@ -316,6 +316,11 @@ const renderHtml = value => {
     }))
 }
 
+const clearBikeImage = () => {
+    $('.forms form .item input[name="bike_image"]').attr('src', '')
+    $('.forms form .item[name="bike_image"]').hide()
+}
+
 
 const changeBikeImage = e => {
     const size = $('select[name="bike_size"]').val()
@@ -324,21 +329,17 @@ const changeBikeImage = e => {
     $(`select[name="bike_style"] option[value=${style}]`).attr('disabled', false)
 
     if (!size || !style) {
-        $('.forms form .item input[name="bike_image"]').attr('src', '')
-        $('.forms form .item[name="bike_image"]').hide()
-        return
+        return clearBikeImage()
     }
 
     const find = carbon.variants.find(c => c.title === `${style} / ${size}`)
 
     // 如果当前variant 库存不足
     if (!find.available) {
-
-
         $('select[name="bike_style"]').val('')
         $(`select[name="bike_style"] option[value=${style}]`).attr('disabled', true)
 
-        return
+        return clearBikeImage()
     }
 
     $('.forms form .item input[name="bike_image"]').attr('src', find.featured_image.src)
