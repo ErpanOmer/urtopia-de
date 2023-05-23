@@ -285,6 +285,27 @@ const renderHtml = value => {
     }))
 }
 
+
+const changeBikeImage = e => {
+    const size = $('select[name="bike_size"]').val()
+    const style = e.target.value
+
+    if (!size || !style) {
+        $('.forms form .item input[name="bike_image"]').attr('src', '')
+        $('.forms form .item[name="bike_image"]').hide()
+        return
+    }
+
+    const find = carbon.variants.find(c => c.title === `${style} / ${size}`)
+
+    if (!find) {
+        return
+    }
+
+    $('.forms form .item input[name="bike_image"]').attr('src', find.featured_image.src)
+    $('.forms form .item[name="bike_image"]').show()
+}
+
 // 动态渲染Size
 $('select[name="bike_size"]').html('<option value="">---</option>' + size.map(v => {
     return `<option value="${v}">${v} - ${size_map[v]}</option>`
@@ -329,25 +350,7 @@ setTimeout(() => {
 
 
     // style change
-    $('select[name="bike_style"]').on('change', e => {
-        const size = $('select[name="bike_size"]').val()
-        const style = e.target.value
-
-        if (!size || !style) {
-            $('.forms form .item input[name="bike_image"]').attr('src', '')
-            $('.forms form .item[name="bike_image"]').hide()
-            return
-        }
-
-        const find = carbon.variants.find(c => c.title === `${style} / ${size}`)
-
-        if (!find) {
-            return
-        }
-
-        $('.forms form .item input[name="bike_image"]').attr('src', find.featured_image.src)
-        $('.forms form .item[name="bike_image"]').show()
-    })
+    $('select[name="bike_style"]').on('change', changeBikeImage)
 
 
     $('.forms form').on("submit", function (event) {
