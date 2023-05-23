@@ -319,7 +319,7 @@ const renderHtml = value => {
 
 const changeBikeImage = e => {
     const size = $('select[name="bike_size"]').val()
-    const style = e.target.value
+    const style = $('select[name="bike_style"]').val()
 
     if (!size || !style) {
         //$('.forms form .item input[name="bike_image"]').attr('src', '')
