@@ -144,7 +144,7 @@
 
 {{ 'sumoselect.js' | asset_url | script_tag }}
 <script>
-const carbon = JSON.parse(JSON.stringify({{ all_products['urtopia-carbon-e-bike'] }}))
+const carbon = JSON.parse(JSON.stringify({{ all_products['urtopia-carbon-e-bike'] | json }}))
 
 console.log('carbon', carbon)
 
