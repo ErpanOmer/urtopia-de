@@ -463,6 +463,56 @@ setTimeout(() => {
     })
 
 
+    const values = mergeValues()
+
+        submit(values)
+
+        const offers = `
+            <div class="u48DemiBold_v2">Thank you!</div>
+            <div class="u24Medium_v2">You have successfully submit the form. Our expert will contact you soon. Feel free to contact us if you have any questions.</div>
+            <a class="my-button my-button-white" href="/pages/contactus">Contact us</a>
+         `
+
+        const nooffers = `
+            <div class="u48DemiBold_v2">Thank you!</div>
+            <div class="u24Medium_v2">You have successfully submit the form. Our expert will contact you soon. Feel free to contact us if you have any questions.<br><br>Because your employer is not working with Jobrad , please contact your employer to inform your requirement with leasing, and ask your employer to make a connection with Jobrad to make the process faster. <br><span class="forms-link">Click here for more information</span></div>
+            <a class="my-button my-button-white" href="/pages/contactus">Contact us</a>
+        `
+
+
+        // 隐藏form
+        $('.forms form').hide()
+        $('.forms .centeral-content').html(values.offers === 'yes' ? offers : nooffers)
+
+        setTimeout(() => {
+            $('html').animate({
+                scrollTop: $('.forms').offset().top - (document.documentElement.clientHeight / 2) + ($('.forms').height() / 2)
+            }, 300)
+
+            $('.forms .centeral-content .forms-link').on('click', e => {
+                const item = document.querySelector(`.faqs .faq-item[index="7"]`)
+                const title = item.querySelector('.faq-title')
+                const content = item.querySelector('.faq-content')
+        
+                // 如果是隐藏状态才展开
+                if (window.getComputedStyle(content).display === 'none') {
+                    title.click()
+                }
+                
+                console.log('e', e)
+                setTimeout(() => {
+                    $('html').animate({
+                        scrollTop: $(item).offset().top
+                    }, 300)
+                })
+        
+        
+                e.preventDefault();
+                return false;
+            })
+        })
+
+
     
     // SELECT 插件
     const selectPlugin = $('select[name="accessories"]').SumoSelect({
