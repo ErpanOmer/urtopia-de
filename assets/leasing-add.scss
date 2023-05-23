@@ -292,6 +292,18 @@
                 margin: 24px 0 48px;
             }
 
+
+            .forms-link {
+                text-decoration: underline;
+                color: #3B65EB;
+
+                &:hover {
+                    opacity: 0.8;
+                }
+            }
+
+
+
             .item {
                 display: flex;
                 max-width: 680px;
@@ -429,7 +441,7 @@
                         padding: 5px 13px;
                         box-shadow: none;
 
-                        
+
 
                         .placeholder {
                             font-style: unset;
@@ -453,7 +465,7 @@
                                 }
                             }
 
-                            
+
                         }
 
                         .opt {
@@ -477,42 +489,43 @@
 
     .forms2 {
         margin: 80px 0;
+
         .centeral-content {
             &>div {
                 display: flex;
                 box-shadow: 0px 3px 6px #00000029;
                 border-radius: 10px;
-    
+
                 .texts {
                     flex: 1;
                     background-color: #F7F8FA;
                     padding: 3%;
-    
+
                     img {
                         max-width: 158px;
                     }
-    
+
                     .u36DemiBold_v2 {
                         padding: 15% 0 6%;
                         border-bottom: 1px solid #ddd;
                         margin-bottom: 6%;
                     }
-    
+
                     .u17DemiBold_v2 {
                         margin: 12px 0;
                     }
                 }
-    
+
                 .steps {
                     flex: 2;
                     display: flex;
                     flex-direction: column;
                     padding: 3% 5% 3% 3%;
-    
+
                     .progress {
                         display: flex;
                         user-select: none;
-    
+
                         .item {
                             display: flex;
                             align-items: center;
@@ -521,7 +534,7 @@
                             opacity: 0.3;
                             cursor: pointer;
                             position: relative;
-    
+
                             .u24DemiBold_v2 {
                                 width: 48px;
                                 min-width: 48px;
@@ -533,14 +546,14 @@
                                 justify-content: center;
                                 margin-right: 6px;
                             }
-    
+
                             .u17DemiBold_v2 {
                                 border-bottom: 2px solid #000;
                                 width: 100%;
                             }
-    
+
                         }
-    
+
                         .success {
                             width: 48px;
                             height: 48px;
@@ -551,41 +564,41 @@
                             align-items: center;
                             justify-content: center;
                             margin-left: 12px;
-    
+
                             img {
                                 width: 50%;
                             }
                         }
-    
+
                         .active {
                             opacity: 1;
                             border-style: solid;
-    
+
                             .u24DemiBold_v2 {
                                 border-style: solid;
                             }
                         }
                     }
-    
+
                     .items {
                         // flex: 1;
                         display: flex;
                         flex-direction: column;
                         margin-top: 8%;
-    
+
                         .item {
                             display: flex;
                             flex-direction: column;
-    
+
                             &+.item {
                                 margin-top: 24px;
                             }
-    
+
                             .u24Medium {
                                 text-align: left;
                                 margin-bottom: 12px;
                             }
-    
+
                             input[type="text"],
                             input[type="email"],
                             input[type="tel"],
@@ -600,7 +613,7 @@
                                 box-sizing: border-box;
                                 border: 2px solid rgba(0, 0, 0, 0.3);
                                 transition: all .3s;
-    
+
                                 &:focus-visible {
                                     outline-offset: unset;
                                     box-shadow: unset;
@@ -608,41 +621,41 @@
                                     border-color: #000;
                                 }
                             }
-    
+
                             .mini-item {
                                 display: grid;
                                 grid-template-columns: 1fr 1fr;
                                 grid-column-gap: 40px;
-    
+
                                 &>div {
                                     display: flex;
                                     flex-direction: column;
                                 }
                             }
-    
+
                             .checkbox {
                                 display: flex;
                                 align-items: center;
-    
+
                                 input {
                                     min-width: 20px;
                                     min-height: 20px;
                                     margin-right: 12px;
                                 }
                             }
-    
+
                             i {
                                 color: #FF0000;
                             }
-    
+
                             .my-button {
                                 margin-right: 15px;
                             }
-    
-    
+
+
                             .multiple-checkbox {
                                 display: flex;
-    
+
                                 &>label {
                                     display: flex;
                                     align-items: center;
@@ -656,14 +669,14 @@
                                     background-color: #fff;
                                     position: relative;
                                     border: 2px solid rgba(0, 0, 0, 0.3);
-    
+
                                     img {
                                         max-width: 20px;
                                         margin-right: 6px;
                                         display: none;
                                     }
-    
-    
+
+
                                     input {
                                         opacity: 0;
                                         margin: 0;
@@ -672,22 +685,22 @@
                                     }
                                 }
                             }
-    
+
                             .SumoSelect {
                                 width: 100%;
                                 text-align: left;
-    
+
                                 &>select {
                                     transform: translatex(-3300%);
                                 }
-    
+
                                 &:focus-visible,
                                 &:focus {
                                     .CaptionCont {
                                         border-color: #000;
                                     }
                                 }
-    
+
                                 .CaptionCont {
                                     border: 2px solid #00000034;
                                     border-radius: 10px;
@@ -697,9 +710,9 @@
                                     align-items: center;
                                     padding: 5px 13px;
                                     box-shadow: none;
-    
-    
-    
+
+
+
                                     .placeholder {
                                         font-style: unset;
                                         font-size: 17px;
@@ -708,28 +721,28 @@
                                     }
                                 }
                             }
-    
+
                             .SumoSelect.open>.optWrapper {
                                 top: 50px;
                                 border-radius: 10px;
-    
+
                                 .options {
                                     .selected {
                                         span {
-    
+
                                             i {
                                                 background-color: rgb(0, 115, 255);
                                             }
                                         }
-    
-    
+
+
                                     }
-    
+
                                     .opt {
                                         span {
                                             margin-left: -27px;
                                         }
-    
+
                                         label {
                                             padding-left: 8px;
                                         }
@@ -737,39 +750,39 @@
                                 }
                             }
                         }
-    
-    
+
+
                         .buttons {
                             margin-top: 5%;
 
                             button {
                                 border: none;
                             }
-    
+
                             .my-button {
                                 margin-right: 12px;
                             }
                         }
-    
+
                         .infos {
                             display: flex;
                             flex-direction: column;
                             margin-top: 24px;
-    
+
                             .info {
                                 display: flex;
                                 margin-bottom: 6px;
-    
+
                                 label {
                                     flex: 1;
                                 }
-    
+
                                 span {
                                     flex: 3;
                                     color: #555;
                                     word-break: break-all;
                                 }
-    
+
                                 &[name="bike"] {
                                     .u17Light_v2 {
                                         display: flex;
@@ -777,16 +790,16 @@
                                     }
                                 }
                             }
-    
+
                             .u14Light_v2 {
                                 margin: 18px 0 12px;
                             }
                         }
-    
-    
+
+
                         img {
                             max-width: 50%;
-                            
+
                         }
 
 
@@ -794,7 +807,7 @@
                             transform: translateY(-30px);
                         }
                     }
-    
+
                     .step-4 {
                         .buttons {
                             margin: 0;
@@ -1122,7 +1135,7 @@
                 text-align: left;
                 align-items: flex-start;
 
-                & > .u48DemiBold_v2 {
+                &>.u48DemiBold_v2 {
                     font-size: 24px;
                 }
 
@@ -1130,12 +1143,6 @@
                     font-size: 17px;
                     margin: 24px 0 40px;
                 }
-
-
-                .forms-link {
-                    font-size: 24px;
-                    color: #3B65EB;
-                 }
 
                 .item {
                     max-width: 84vw;
@@ -1176,7 +1183,7 @@
 
 
                     .multiple-checkbox {
-    
+
                         &>label {
                             height: 40px;
                         }
@@ -1187,6 +1194,7 @@
                     }
 
                     .SumoSelect {
+
                         // width: 84%;
                         .CaptionCont {
                             height: 40px;
@@ -1198,7 +1206,7 @@
                     }
 
 
-                    .SumoSelect.open > .optWrapper {
+                    .SumoSelect.open>.optWrapper {
                         top: 0;
                         padding: 8vw;
                         display: flex;
@@ -1227,6 +1235,7 @@
                             background-color: #fff;
                             border-radius: 0;
                         }
+
                         // bottom: unset;
                         // top: 50%;
                         // transform: translateY(-50%);
@@ -1282,47 +1291,48 @@
 
         .forms2 {
             margin: 0;
+
             .centeral-content {
                 background-color: #F7F8FA;
                 padding: 0;
-    
+
                 &>div {
                     flex-direction: column;
                     box-shadow: unset;
                     border-radius: unset;
-    
+
                     .texts {
                         padding: 15vw 8vw 10vw;
-    
+
                         .u36DemiBold_v2 {
                             font-size: 24px;
                             padding-top: 24px;
                         }
-    
+
                         .u17DemiBold_v2 {
                             font-size: 16px;
                         }
-    
+
                         .u17Light_v2 {
                             font-size: 15px;
                         }
                     }
-    
+
                     .steps {
                         padding: 6vw 8vw 15vw;
                         background-color: #fff;
-    
+
                         .progress {
                             .item {
                                 margin-right: 6px;
-    
+
                                 .u17DemiBold_v2 {
                                     font-size: 11px;
                                     font-weight: 400;
                                     border-width: 1px;
                                     padding-bottom: 2px;
                                 }
-    
+
                                 .u24DemiBold_v2 {
                                     width: unset;
                                     min-width: unset;
@@ -1330,74 +1340,74 @@
                                     font-size: 14px;
                                 }
                             }
-    
+
                             .success {
                                 margin: 0;
                                 width: unset;
                                 height: unset;
                                 border: none;
                                 border-radius: unset;
-    
+
                                 img {
                                     width: 22px;
                                 }
                             }
                         }
-    
+
                         .items {
                             .item {
                                 max-width: 84vw;
-    
+
                                 &+.item {
                                     margin-top: 12px;
                                 }
-    
+
                                 .mini-item {
                                     grid-template-columns: 1fr;
                                     grid-row-gap: 12px;
                                 }
-    
+
                                 .u24Medium {
                                     font-size: 15px;
                                     line-height: 18px;
                                     margin-bottom: 6px;
                                 }
-    
+
                                 input[type="text"],
                                 input[type="email"],
                                 input[type="tel"],
                                 select {
                                     height: 40px;
                                 }
-    
+
                                 .checkbox {
                                     .u17Light {
                                         font-size: 15px;
                                         line-height: 22px;
                                     }
                                 }
-    
-    
+
+
                                 .multiple-checkbox {
-    
+
                                     &>label {
                                         height: 40px;
                                     }
                                 }
-    
+
                                 .SumoSelect {
-    
+
                                     // width: 84%;
                                     .CaptionCont {
                                         height: 40px;
-    
+
                                         .placeholder {
                                             font-size: 14px;
                                         }
                                     }
                                 }
-    
-    
+
+
                                 .SumoSelect.open>.optWrapper {
                                     top: 0;
                                     padding: 8vw;
@@ -1411,15 +1421,15 @@
                                     max-height: unset;
                                     background-color: #00000090;
                                     border-radius: 0;
-    
+
                                     .MultiControls {
                                         position: static;
                                         margin: 0;
                                         border-radius: 0;
                                     }
                                 }
-    
-    
+
+
                                 .SumoSelect>.optWrapper.isFloating {
                                     .options {
                                         box-shadow: unset;
@@ -1427,39 +1437,39 @@
                                         background-color: #fff;
                                         border-radius: 0;
                                     }
-    
+
                                     // bottom: unset;
                                     // top: 50%;
                                     // transform: translateY(-50%);
                                 }
                             }
-    
-    
+
+
                             img {
                                 max-width: unset;
                             }
-    
+
                             .infos {
                                 .info {
-    
+
                                     .u17DemiBold_v2,
                                     .u17Light_v2 {
                                         font-size: 15px;
                                     }
-    
+
                                     span {
                                         flex: 1.15;
                                     }
-    
+
                                     &[name="bike"] {
                                         flex-direction: column;
-    
+
                                         .u17Light_v2 {
                                             align-items: center;
                                             text-align: center;
                                         }
                                     }
-    
+
                                 }
                             }
                         }
