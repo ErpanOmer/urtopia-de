@@ -56,7 +56,7 @@
                     </label>
                 </div>
             </div>
-            
+             
             <div class="item change_offers" style="display:none;">
                 <div class="item">
                     <div class="u24Medium">Employer address<i>*</i></div>
@@ -299,6 +299,9 @@ function submit (forms = {}) {
 
 
 const renderHtml = value => {
+    const style_value = $('select[name="bike_style"]').val() || ''
+
+
     $('select[name="bike_style"]').html('<option value="">---</option>' + style.map(v => {
 
         let disabled = false
@@ -339,6 +342,12 @@ $('select[name="bike_size"]').html('<option value="">---</option>' + size.map(v 
     return `<option value="${v}">${v} - ${size_map[v]}</option>`
 }))
 
+// 动态渲染Style
+$('select[name="bike_style"]').html('<option value="">---</option>' + style.map(v => {
+    return `<option value="${v}">${v}</option>`
+}))
+
+
 
 // 延迟执行一些DOM
 setTimeout(() => {
@@ -376,18 +385,18 @@ setTimeout(() => {
     $('select[name="bike_size"]').on('change', e => {
         const value = e.target.value
 
-        if (value) {
+        {% comment %} if (value) {
             renderHtml(value)
         } else {
             $('select[name="bike_style"]').html('<option value="">---</option>')
-        }
 
-        // 重置产品图
-        changeBikeImage({
-            target: {
-                value: ''
-            }
-        })
+            // 重置产品图
+            changeBikeImage({
+                target: {
+                    value: ''
+                }
+            })
+        } {% endcomment %}
     })
 
 
@@ -434,8 +443,6 @@ setTimeout(() => {
     if (urlSearch.bike_style) {
         // 填充size
         $(`select[name="bike_size"]`).val(urlSearch.bike_size)
-        // 渲染style options
-        renderHtml(urlSearch.bike_size)
         // 填充style
         setTimeout(() => $(`select[name="bike_style"]`).val(urlSearch.bike_style))
 
