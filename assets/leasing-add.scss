@@ -312,6 +312,7 @@
                 max-width: 680px;
                 flex-direction: column;
                 width: 100%;
+                position: relative;
 
                 &+.item {
                     margin-top: 24px;
@@ -321,6 +322,17 @@
                     text-align: left;
                     margin-bottom: 12px;
                 }
+
+               .error {
+                    color: red;
+                    text-align: right;
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    transform: translateY(100%);
+                    font-size: 12px;
+               }
 
                 input[type="text"],
                 input[type="email"],
