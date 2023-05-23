@@ -151,6 +151,49 @@ const carbon = JSON.parse(JSON.stringify({{ all_products['urtopia-carbon-e-bike'
 const size = carbon.options.find(o => o.name === 'Size')
 const style = carbon.options.find(o => o.name === 'Style')
 
+// 动态渲染Size
+$('select[name="bike_size"]').html('<option value="">---</option>' + size.values.map(v => {
+    return `<option value="${v}">${v} - ${size_map[v]}</option>`
+}))
+
 console.log('carbon', carbon)
+setTimeout(() => {
+    // 动态渲染 style
+    $('select[name="bike_size"]').on('change', e => {
+        const value = e.target.value
+
+        if (value) {
+            $('select[name="bike_style"]').html('<option value="">---</option>' + style.values.map(v => {
+
+                let disabled = false
+                const find = carbon.variants.find(c => c.title === `${v} / ${value}`)
+
+                // 如果不可用，按钮禁用掉
+                if (find) {
+                    disabled = !find.available
+                }
+
+                return `<option value="${v}" ${disabled ? 'disabled' : ''}>${v}</option>`
+            }))
+        } else {
+            $('select[name="bike_style"]').html('<option value="">---</option>')
+        }
+        
+    })
+}, 100)
+
+
+
+
+
+
+
+
+// SELECT 插件
+$('select[name="accessories"]').SumoSelect({
+    placeholder: '',
+    csvDispCount: 0,
+    floatWidth: 768,
+})
 
 </script>
