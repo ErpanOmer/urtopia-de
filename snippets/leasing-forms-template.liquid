@@ -436,7 +436,7 @@ setTimeout(() => {
             }, 300)
 
             $('.forms .centeral-content .forms-link').on('click', e => {
-                const item = document.querySelector('.faqs .faq-item[index=7]')
+                const item = document.querySelector(`.faqs .faq-item[index="7"]`)
                 const title = item.querySelector('.faq-title')
                 const content = item.querySelector('.faq-content')
         
@@ -448,7 +448,7 @@ setTimeout(() => {
                 console.log('e', e)
                 setTimeout(() => {
                     $('html').animate({
-                        scrollTop: $('.faqs').offset().top - 100
+                        scrollTop: $(item).offset().top
                     }, 300)
                 })
         
