@@ -76,7 +76,7 @@
                 <div class="u24Medium">Country<i>*</i></div>
                 <input type="text" name="country" value="Deutschland" disabled required>
             </div>
-            <div class="item">
+            <div class="item" name="bike_image">
                 <div class="u24Medium">Bike you choose:</div>
                 <input type="image" name="bike_image" src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/3_2x_212df522-b272-4a54-99fa-ec6829dff114.png?v=1683709949">
             </div>
@@ -325,6 +325,29 @@ setTimeout(() => {
         } else {
             $('select[name="bike_style"]').html('<option value="">---</option>')
         }
+    })
+
+
+    // style change
+    $('select[name="bike_style"]').on('change', e => {
+        const size = $('select[name="bike_size"]').val()
+        const style = e.target.value
+
+        if (!size || !style) {
+            $('.forms form .item input[name="bike_image"]').attr('src', '')
+            $('.forms form .item').hide()
+            return
+        }
+
+        const find = carbon.variants.find(c => c.title === `${style} / ${size}`)
+
+        if (!find) {
+            return
+        }
+
+
+        $('.forms2 .items .bike_image').attr('src', find.featured_image.src)
+        $('.forms2 .items .bike_you_choose').show()
     })
 
 
