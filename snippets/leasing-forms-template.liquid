@@ -328,12 +328,15 @@ $('select[name="accessories"]').SumoSelect({
 })
 
 
+
+// 页面访问key
+const visited_key = `${page_infos.page_name}_page_is_visited`
 // 页面访问
-if (!sessionStorage.isPreviewJobrad) {
-    fetchBuried('jobrad', 'pageview')
+if (!!!sessionStorage[visited_key]) {
+    fetchBuried(page_infos.page_name, 'pageview')
 }
 
 // 记录来过这个页面
-sessionStorage.isPreviewJobrad = 'isPreviewJobrad'
+sessionStorage[visited_key] = visited_key
 
 </script>
