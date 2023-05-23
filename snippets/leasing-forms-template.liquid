@@ -271,6 +271,17 @@ function mergeValues () {
 
 
 function submit (forms = {}) {
+    
+    // 状态变为已提交
+    is_submited = true
+
+    // 如果 offers 选择no
+    if (forms.offers === 'no') {
+        return fetchBuried(page_infos.page_name, 'submit-nooffer', forms)
+    }
+
+
+
     fetchBuried(page_infos.page_name, 'submit', forms)
     // fbq
     fbq('track', 'CompleteRegistration', {
@@ -280,9 +291,6 @@ function submit (forms = {}) {
 
     // gtag
     gtag_report_conversion()
-
-    // 状态变为已提交
-    is_submited = true
 }
 
 
