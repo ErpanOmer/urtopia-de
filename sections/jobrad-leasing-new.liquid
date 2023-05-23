@@ -342,23 +342,5 @@ setTimeout(() => {
             .children('i')
             .addClass('faq-content-plus');
     });        
-
-        {% comment %} let is_request = false
-        $('.forms form :input').on('input', debounce(e => {
-            if (is_request) {
-                return            
-            }
-
-            is_request = true
-            const data = {}
-
-            $('.forms form :input').each((i, target) => {
-                data[target.name] = target.value
-            })
-
-            data.page_type = 'ad-page'
-            fetchBuried('jobrad', 'submitinfo', data)
-        }, 5000)) {% endcomment %}
-
 }, 300)      
 </script>
