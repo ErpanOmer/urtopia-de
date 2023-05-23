@@ -329,6 +329,12 @@
                     }
                 }
 
+                input[type="image"] {
+                    max-width: 50%;
+                    transform: translateY(-10%);
+                    pointer-events: none;
+                }
+
                 .mini-item {
                     display: grid;
                     grid-template-columns: 1fr 1fr;
