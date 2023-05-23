@@ -149,12 +149,13 @@
 const page_infos = {% case template | json %}
     {% when 'page.jobrad-leasing-new' %}
         {
-            page_name: 'jobrad',
-            isPreviewJobrad: !!sessionStorage.isPreviewJobrad
+            page_name: 'jobrad'
         }
     {% else %}
         {}
 {% endcase %}
+
+
 
 console.log('page_infos', page_infos)
 
