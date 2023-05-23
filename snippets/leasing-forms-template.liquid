@@ -357,4 +357,11 @@ if (!!!sessionStorage[visited_key]) {
 // 记录来过这个页面
 sessionStorage[visited_key] = visited_key
 
+
+// 页面退出之前，往服务器提交数据
+document.addEventListener('visibilitychange', () => {
+    if (document.visibilityState === 'hidden') {
+    }
+}
+
 </script>
