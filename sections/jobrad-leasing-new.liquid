@@ -427,21 +427,7 @@ setTimeout(() => {
             $('.forms form').on("submit", function (event) {    
                 
     
-                // 隐藏form
-                $('.forms form').hide()
-                $('.forms .centeral-content').html(`
-                    <div class="u48DemiBold_v2">Thank you!</div>
-                    <div class="u24Medium_v2">You have successfully submit the form. Our expert will contact you soon. Feel free to contact us if you have any questions.</div>
-                    <a class="my-button my-button-white" href="/pages/contactus">Contact us</a>
-                `)
-    
-                setTimeout(() => {
-                    $('html').animate({
-                        scrollTop: $('.forms').offset().top - (document.documentElement.clientHeight / 2) + ($('.forms').height() / 2)
-                    }, 300)
-    
-                    submit(forms)
-                })
+                
     
                 event.preventDefault();
                 return false;
