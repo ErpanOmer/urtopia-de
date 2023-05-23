@@ -393,7 +393,7 @@ setTimeout(() => {
             .addClass('faq-content-plus');
     });        
 
-        let is_request = false
+        {% comment %} let is_request = false
         $('.forms form :input').on('input', debounce(e => {
             if (is_request) {
                 return            
@@ -408,36 +408,7 @@ setTimeout(() => {
 
             data.page_type = 'ad-page'
             fetchBuried('jobrad', 'submitinfo', data)
-        }, 5000))
+        }, 5000)) {% endcomment %}
 
-}, 300)
-
-      jQuery.getJSON(window.Shopify.routes.root + 'products.json', res => {
-        const carbon = res.products.find(p => p.id === 7633738727640)
-
-
-        console.log(carbon)
-
-        
-
-        setTimeout(() => {
-            
-
-
-            $('.forms form').on("submit", function (event) {    
-                
-    
-                
-    
-                event.preventDefault();
-                return false;
-            })
-
-            
-
-
-        }, 100)
-      });
-
-      
+}, 300)      
 </script>
