@@ -350,6 +350,10 @@ setTimeout(() => {
     })
 
 
+    const urlSearch = getSearchValues()
+
+    console.log('urlSearch', urlSearch)
+
     // url 参数的初始化
     if (urlSearch.bike_style) {
         $(`select[name="bike_size"]`).val(urlSearch.bike_size)
