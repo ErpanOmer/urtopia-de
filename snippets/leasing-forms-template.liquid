@@ -360,8 +360,10 @@ setTimeout(() => {
 
         renderHtml(urlSearch.bike_size)
 
+        $(`select[name="bike_style"]`).val(urlSearch.bike_style)
+
         setTimeout(() => {
-            $(`select[name="bike_style"]`).val(urlSearch.bike_style)
+            
         }, 100)
     }
     
