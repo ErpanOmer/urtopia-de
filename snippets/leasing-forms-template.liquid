@@ -326,6 +326,8 @@ const clearBikeImage = () => {
 const changeBikeImage = e => {
     const size = $('select[name="bike_size"]').val()
     const style = $('select[name="bike_style"]').val()
+    
+    $('.forms form .item .error').text('')
 
     if (!size || !style) {
         return clearBikeImage()
