@@ -206,6 +206,7 @@ $('select[name="bike_size"]').html('<option value="">---</option>' + size.values
 
 console.log('carbon', carbon)
 setTimeout(() => {
+    // yes or no change
     $('form .multiple-checkbox :input').on('change', e => {
         if (e.currentTarget.id === 'yes') {
             $(`form .multiple-checkbox label[for="yes"]`).css("border-color", "black")
