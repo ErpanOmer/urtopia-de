@@ -268,6 +268,8 @@ $('select[name="bike_size"]').html('<option value="">---</option>' + size.map(v 
     return `<option value="${v}">${v} - ${size_map[v]}</option>`
 }))
 
+
+// 延迟执行一些DOM
 setTimeout(() => {
     // yes or no change
     $('form .multiple-checkbox :input').on('change', e => {
@@ -337,18 +339,17 @@ setTimeout(() => {
         event.preventDefault();
         return false;
     })
+
+
+    
+    // SELECT 插件
+    $('select[name="accessories"]').SumoSelect({
+        placeholder: '',
+        csvDispCount: 0,
+        floatWidth: 768,
+    })
     
 }, 100)
-
-
-
-// SELECT 插件
-$('select[name="accessories"]').SumoSelect({
-    placeholder: '',
-    csvDispCount: 0,
-    floatWidth: 768,
-})
-
 
 
 // 页面访问key
