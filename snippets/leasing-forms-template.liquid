@@ -341,6 +341,7 @@ setTimeout(() => {
             $(`form .multiple-checkbox label[for="no"] img`).css('display', 'none')
             $(`form .multiple-checkbox label[for="no"]`).removeClass('active')
 
+            $(`form .change_offers :input`).attr('type', 'text')
             $(`form .change_offers`).show()
         } else {
             $(`form .multiple-checkbox label[for="no"]`).css("border-color", "black")
@@ -351,6 +352,7 @@ setTimeout(() => {
             $(`form .multiple-checkbox label[for="yes"] img`).css('display', 'none')
             $(`form .multiple-checkbox label[for="yes"]`).removeClass('active')
 
+            $(`form .change_offers :input`).attr('type', 'hidden')
             $(`form .change_offers`).hide()
         }
     
