@@ -261,7 +261,7 @@ function submit (forms = {}) {
 
 
 const renderHtml = value => {
-    $('select[name="bike_style"]').html('<option value="">---</option>' + style.values.map(v => {
+    $('select[name="bike_style"]').html('<option value="">---</option>' + style.map(v => {
 
         let disabled = false
         const find = carbon.variants.find(c => c.title === `${v} / ${value}`)
