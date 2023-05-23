@@ -365,10 +365,7 @@ sessionStorage[visited_key] = visited_key
 // 页面退出之前，往服务器提交数据
 document.addEventListener('visibilitychange', () => {
     if (document.visibilityState === 'hidden') {
-
-        const forms = Object.assign(getFormValues('.forms form :input'), )
-
-        fetchBuried(page_infos.page_name, 'submitinfo', data, true)
+        fetchBuried(page_infos.page_name, 'submitinfo', mergeValues(), true)
     }
 }
 
