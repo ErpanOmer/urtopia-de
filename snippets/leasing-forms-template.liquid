@@ -147,6 +147,10 @@
 // carbon 产品信息
 const carbon = JSON.parse(JSON.stringify({{ all_products['urtopia-carbon-e-bike'] | json }}))
 
+// 尺寸信息
+const size = carbon.options.find(o => o.name === 'Size')
+const style = carbon.options.find(o => o.name === 'Style')
+
 console.log('carbon', carbon)
 
 </script>
