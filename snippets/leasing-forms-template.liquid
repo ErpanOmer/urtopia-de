@@ -64,15 +64,15 @@
             <div class="item change_offers" style="display:none;">
                 <div class="item">
                     <div class="u24Medium">Contact person name<i>*</i></div>
-                    <input type="text" name="contact_person_name" required>
+                    <input type="hidden" name="contact_person_name" required>
                 </div>
                 <div class="item">
                     <div class="u24Medium">Contact email<i>*</i></div>
-                    <input type="text" name="contact_email" required>
+                    <input type="hidden" name="contact_email" required>
                 </div>
                 <div class="item">
                     <div class="u24Medium">Contact person phone number<i>*</i></div>
-                    <input type="text" name="contact_person_phone_number" required>
+                    <input type="hidden" name="contact_person_phone_number" required>
                 </div>
             </div>
 
@@ -183,7 +183,7 @@ const size_map = {
     L: 'Fit for 180-195 cm'
 }
 // 表单忽略项
-const ignore = ['submit', 'checkbox', 'image']
+const ignore = ['submit', 'checkbox', 'image', 'hidden']
 // carbon 产品信息
 const carbon = JSON.parse(JSON.stringify({{ all_products['urtopia-carbon-e-bike'] | json }}))
 
