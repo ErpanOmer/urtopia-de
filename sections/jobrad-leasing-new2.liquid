@@ -816,6 +816,11 @@ function submit(extras = {}) {
 
     fetchBuried('jobrad', 'submit', search)
     // fbq('track', 'Jobrad Submit')
+
+    if (search.offers === 'no') {
+      return
+    }
+  
     fbq('track', 'CompleteRegistration', {
         value: 3596,
         currency: 'usd',
