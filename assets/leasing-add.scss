@@ -1465,9 +1465,15 @@
                             }
 
                             .infos {
+                                margin-top: 10px;
+
+                                .u20DemiBold_v2 {
+                                    font-size: 16px;
+                                }
+
                                 .info {
 
-                                    .u17DemiBold_v2,
+                                    .u17Medium_v2,
                                     .u17Light_v2 {
                                         font-size: 15px;
                                     }
@@ -1476,7 +1482,7 @@
                                         flex: 1.15;
                                     }
 
-                                    &[name="bike"] {
+                                    &[name="bike_image"] {
                                         flex-direction: column;
 
                                         .u17Light_v2 {
@@ -1486,6 +1492,10 @@
                                     }
 
                                 }
+                            }
+
+                            .u30DemiBold_v2 {
+                                font-size: 24px;
                             }
                         }
                     }
