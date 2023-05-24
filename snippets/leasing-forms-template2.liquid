@@ -442,8 +442,6 @@ function submit (forms = {}) {
 const changeBikeImage = e => {
     const size = $('select[name="bike_size"]').val()
     const style = $('select[name="bike_style"]').val()
-
-    console.log(size, style)
     
     $('.forms2 form .item .error').text('')
 
@@ -451,25 +449,12 @@ const changeBikeImage = e => {
     $(`select[name="bike_style"] option`).each((i, item) => {
         const v = item.value
 
-        console.log('v', v)
-
         if (i === 0) {
             return
         }
 
         const vari = carbon.variants.find(c => c.title === `${v} / ${size}`)
-
-        console.log('vari', vari)
-
-        if (!vari) {
-            item.disabled = false
-        } else {
-                // 配置disabled
-                item.disabled = !!!vari.available
-        }
-
-
-
+        item.disabled = !vari ? false : !!!vari.available
     })
 
     if (!size || !style) {
