@@ -623,7 +623,7 @@
 
                             input[type="image"] {
                                 max-width: 50%;
-                                transform: translateY(-15%);
+                                transform: translateY(-20%);
                                 pointer-events: none;
                                 user-select: none;
                             }
@@ -764,6 +764,10 @@
                                 line-height: 1.25em;
                                 color: red;
                                 text-align: left;
+                            }
+
+                            &[name="bike_image"] {
+                                margin-bottom: -30px;
                             }
                         }
 
