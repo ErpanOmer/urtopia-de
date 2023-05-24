@@ -462,12 +462,14 @@ const changeBikeImage = e => {
         console.log('vari', vari)
 
         if (!vari) {
-            return item.disabled = false
+            item.disabled = false
+        } else {
+                // 配置disabled
+                item.disabled = !!!vari.available
         }
 
 
-        // 配置disabled
-        item.disabled = !!!vari.available
+
     })
 
     if (!size || !style) {
