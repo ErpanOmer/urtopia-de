@@ -743,6 +743,16 @@
                                     }
                                 }
                             }
+
+
+                            .error {
+                                transform: translateY(6px);
+                                font-size: 12px;
+                                transition: all .3s;
+                                line-height: 1.25em;
+                                color: red;
+                                text-align: left;
+                            }
                         }
 
 
