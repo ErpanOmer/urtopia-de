@@ -560,12 +560,12 @@ const clearBikeImage = () => {
 // 动态渲染Size
 $('select[name="bike_size"]').html('<option value="">---</option>' + size.map(v => {
     return `<option value="${v}">${v} - ${size_map[v]}</option>`
-}))
+}).join(''))
 
 // 动态渲染Style
 $('select[name="bike_style"]').html('<option value="">---</option>' + style.map(v => {
     return `<option value="${v}">${v}</option>`
-}))
+}).join(''))
 
 
 
