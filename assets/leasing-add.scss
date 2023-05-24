@@ -1489,6 +1489,10 @@
                                         .u17Light_v2 {
                                             align-items: center;
                                             text-align: center;
+
+                                            img {
+                                                max-width: unset;
+                                            }
                                         }
                                     }
 
