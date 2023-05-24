@@ -524,8 +524,10 @@ function extraProcessing () {
 
     const parent = $(`.forms2 .steps .step-5`)
     const employer = parent.find('.block').first().find('.info[name="employer"]')
+    const employerInfo = $(`.forms2 .steps .step-5`).find('.block:eq(1)')
 
     offers === 'yes' ? employer.show() : employer.hide()
+    offers === 'yes' ? employerInfo.hide() : employer.show()
     
 }
 
