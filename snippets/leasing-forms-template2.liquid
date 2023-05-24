@@ -347,8 +347,8 @@ const leave_stage_map = {
     5: 'Submit'
 }
 
-// 当前step
-let currentStep = 1
+// 最大提交过的 step
+let maxStep = 1
 // 当前 offers
 let offers = 'yes'
 // 是否重新提交
@@ -434,7 +434,7 @@ function mergeValues () {
 
 
 function reset() {
-    currentStep = 4
+    maxStep = 4
     submitAgain = true
     // 重置全部表单
     //$('form').each((i, t) => t.reset())
@@ -628,7 +628,7 @@ function updateProgress(step = 1) {
     step === 5 && extraProcessing()
   
     // 当前步骤存起来
-    currentStep = Math.max(step, currentStep)
+    maxStep = Math.max(step, maxStep)
   }
 
 
@@ -746,9 +746,9 @@ setTimeout(() => {
   {% comment %} $('.forms2 .steps .progress .item').each((i, item) => {
         const index = i + 1
         $(item).on('click', e => {
-            console.log('currentStep', currentStep)
+            console.log('maxStep', maxStep)
 
-            if (index > currentStep || currentStep === 4) {
+            if (index > maxStep || maxStep === 4) {
                 return
             }
 
