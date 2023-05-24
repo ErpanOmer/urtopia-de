@@ -527,6 +527,18 @@
                     .u17DemiBold_v2 {
                         margin: 12px 0;
                     }
+
+
+                    .forms-link {
+                        text-decoration: underline;
+                        color: #3B65EB;
+                        display: inline-block;
+                        cursor: pointer;
+        
+                        &:hover {
+                            opacity: 0.8;
+                        }
+                    }
                 }
 
                 .steps {
@@ -537,59 +549,34 @@
 
                     .progress {
                         display: flex;
+                        align-items: center;
                         user-select: none;
+                        margin-bottom: 12%;
 
                         .item {
-                            display: flex;
-                            align-items: center;
-                            margin-right: 12px;
-                            flex: 1;
-                            opacity: 0.3;
-                            cursor: pointer;
-                            position: relative;
-
-                            .u24DemiBold_v2 {
-                                width: 48px;
-                                min-width: 48px;
-                                height: 48px;
-                                border: 2px dashed #000;
-                                border-radius: 50%;
-                                display: flex;
-                                align-items: center;
-                                justify-content: center;
-                                margin-right: 6px;
-                            }
-
-                            .u17DemiBold_v2 {
-                                border-bottom: 2px solid #000;
-                                width: 100%;
-                            }
-
-                        }
-
-                        .success {
-                            width: 48px;
-                            height: 48px;
-                            opacity: 0.3;
-                            border: 2px dashed #000;
+                            width: 15px;
+                            height: 15px;
+                            border: 2px solid #000;
                             border-radius: 50%;
-                            display: flex;
-                            align-items: center;
-                            justify-content: center;
-                            margin-left: 12px;
+                            opacity: 0.3;
 
                             img {
-                                width: 50%;
+                                width: 20px;
                             }
+                        }
+
+                        .flex-1 {
+                            border-bottom: 2px dashed #000;
+                            opacity: 0.3;
                         }
 
                         .active {
                             opacity: 1;
-                            border-style: solid;
+                            border-bottom-style: solid;
+                        }
 
-                            .u24DemiBold_v2 {
-                                border-style: solid;
-                            }
+                        .employer {
+                            display: none;
                         }
                     }
 
@@ -597,7 +584,6 @@
                         // flex: 1;
                         display: flex;
                         flex-direction: column;
-                        margin-top: 8%;
 
                         .item {
                             display: flex;
@@ -633,6 +619,13 @@
                                     outline: unset;
                                     border-color: #000;
                                 }
+                            }
+
+                            input[type="image"] {
+                                max-width: 50%;
+                                transform: translateY(-20%);
+                                pointer-events: none;
+                                user-select: none;
                             }
 
                             .mini-item {
@@ -762,6 +755,20 @@
                                     }
                                 }
                             }
+
+
+                            .error {
+                                transform: translateY(6px);
+                                font-size: 12px;
+                                transition: all .3s;
+                                line-height: 1.25em;
+                                color: red;
+                                text-align: left;
+                            }
+
+                            &[name="bike_image"] {
+                                margin-bottom: -30px;
+                            }
                         }
 
 
@@ -780,11 +787,16 @@
                         .infos {
                             display: flex;
                             flex-direction: column;
-                            margin-top: 24px;
+                            margin-top: 20px;
+
+                            .block {
+                                padding: 15px 0;
+                                border-top: 1px solid #ddd;
+                            }
 
                             .info {
                                 display: flex;
-                                margin-bottom: 6px;
+                                margin-top: 6px;
 
                                 label {
                                     flex: 1;
@@ -796,16 +808,22 @@
                                     word-break: break-all;
                                 }
 
-                                &[name="bike"] {
+                                &[name="bike_image"] {
                                     .u17Light_v2 {
                                         display: flex;
                                         flex-direction: column;
+                                        margin-bottom: -30px;
+                                        transform: translateY(-30px);
+
+                                        img {
+                                            transform: translateY(-5%);
+                                        }
                                     }
                                 }
                             }
 
                             .u14Light_v2 {
-                                margin: 18px 0 12px;
+                                margin-bottom: 12px;
                             }
                         }
 
@@ -814,14 +832,9 @@
                             max-width: 50%;
 
                         }
-
-
-                        .bike_image {
-                            transform: translateY(-30px);
-                        }
                     }
 
-                    .step-4 {
+                    .step-5 {
                         .buttons {
                             margin: 0;
                         }
@@ -1336,34 +1349,22 @@
                         background-color: #fff;
 
                         .progress {
-                            .item {
-                                margin-right: 6px;
+                            margin-bottom: 15vw;
 
-                                .u17DemiBold_v2 {
-                                    font-size: 11px;
-                                    font-weight: 400;
-                                    border-width: 1px;
-                                    padding-bottom: 2px;
-                                }
+                            .u17DemiBold_v2 {
+                                font-size: 11px;
+                                font-weight: 300;
+                                width: 8px;
+                                height: 8px;
+                                border-width: 1px;
 
-                                .u24DemiBold_v2 {
-                                    width: unset;
-                                    min-width: unset;
-                                    border: none;
-                                    font-size: 14px;
+                                img {
+                                    transform: translateX(-20%);
                                 }
                             }
 
-                            .success {
-                                margin: 0;
-                                width: unset;
-                                height: unset;
-                                border: none;
-                                border-radius: unset;
-
-                                img {
-                                    width: 22px;
-                                }
+                            .flex-1 {
+                                border-width: 1px;
                             }
                         }
 
@@ -1384,6 +1385,12 @@
                                     font-size: 15px;
                                     line-height: 18px;
                                     margin-bottom: 6px;
+                                }
+
+                                .multiple-checkbox {
+                                    .u17Medium_v2 {
+                                        font-size: 15px;
+                                    }
                                 }
 
                                 input[type="text"],
@@ -1455,17 +1462,27 @@
                                     // top: 50%;
                                     // transform: translateY(-50%);
                                 }
-                            }
 
+                                &[name="bike_image"] {
+                                    margin-bottom: -8vw;
 
-                            img {
-                                max-width: unset;
+                                    input {
+                                        max-width: unset;
+                                        transform: translateY(-14vw);
+                                    }
+                                }
                             }
 
                             .infos {
+                                margin-top: 10px;
+
+                                .u20DemiBold_v2 {
+                                    font-size: 16px;
+                                }
+
                                 .info {
 
-                                    .u17DemiBold_v2,
+                                    .u17Medium_v2,
                                     .u17Light_v2 {
                                         font-size: 15px;
                                     }
@@ -1474,16 +1491,24 @@
                                         flex: 1.15;
                                     }
 
-                                    &[name="bike"] {
+                                    &[name="bike_image"] {
                                         flex-direction: column;
 
                                         .u17Light_v2 {
                                             align-items: center;
                                             text-align: center;
+
+                                            img {
+                                                max-width: unset;
+                                            }
                                         }
                                     }
 
                                 }
+                            }
+
+                            .u30DemiBold_v2 {
+                                font-size: 24px;
                             }
                         }
                     }
