@@ -344,13 +344,13 @@ const leave_stage_map = {
     2: 'Employer Info',
     3: 'Shipping Info',
     4: 'Bike Selection',
-    5: 'submit'
+    5: 'Submit'
 }
 
 // 当前step
 let currentStep = 1
 // 当前 offers
-let offers = 'no'
+let offers = 'yes'
 // 是否重新提交
 let submitAgain = false
 // 是否是手机
@@ -768,7 +768,7 @@ setTimeout(() => {
     })
 
       // 默认执行step:1
-    updateProgress(5)
+    updateProgress(1)
     
 }, 100)
 
