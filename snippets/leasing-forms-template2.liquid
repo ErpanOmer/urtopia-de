@@ -693,9 +693,11 @@ setTimeout(() => {
         updateProgress(step + 1)
   
   
-        $('html').animate({
-          scrollTop: isMobile ? $('.forms2 .texts .u20DemiBold_v2').offset().top - 85 : $('.forms2').offset().top - 150
-      }, 300)
+        setTimeout(() => {
+            $('html').animate({
+                scrollTop: isMobile ? $('.forms2 .texts .u20DemiBold_v2').offset().top - 85 : $('.forms2').offset().top - 150
+              }, 300)
+        })
   
         return false;
     })
