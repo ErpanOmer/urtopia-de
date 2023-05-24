@@ -527,6 +527,19 @@
                     .u17DemiBold_v2 {
                         margin: 12px 0;
                     }
+
+
+                    .forms-link {
+                        text-decoration: underline;
+                        color: #3B65EB;
+                        margin-top: 6px;
+                        display: inline-block;
+                        cursor: pointer;
+        
+                        &:hover {
+                            opacity: 0.8;
+                        }
+                    }
                 }
 
                 .steps {
