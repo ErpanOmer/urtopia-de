@@ -308,6 +308,8 @@ const leave_stage_map = {
 
 // 当前step
 let currentStep = 1
+// 当前 offers
+let offers = 'yes'
 // 是否重新提交
 let submitAgain = false
 // 是否是手机
@@ -482,6 +484,10 @@ function updateProgress(step = 1) {
     $('.forms2 .steps .progress .item').removeClass('active')
     $('.forms2 .steps .items').hide()
     $(`.forms2 .steps .step-${step}`).show()
+    
+    // 如果选择了yes 隐藏掉，否则显示
+    offers === 'yes' ? $('.forms2 .steps .progress .employer').hide() : $('.forms2 .steps .progress .employer').show()
+    $(`.forms2 .steps .step-2 form :input`).attr('type', offers === 'yes' ? 'hidden' : 'text')
   
     // 批量active
     for (let index = 0; index < step; index++) {
@@ -497,7 +503,9 @@ function updateProgress(step = 1) {
     }
 
     if (step === 2) {
-        $(`.forms2 .steps .step-${step} form :input`).attr('type', 'text')
+        
+
+
 
         // 左侧信息变更
         $('.forms2 .texts .u36DemiBold_v2').html('Urtopia leasing <br>request form')
@@ -558,7 +566,9 @@ $('select[name="bike_style"]').html('<option value="">---</option>' + style.map(
 
 setTimeout(() => {
     $('.forms2 .multiple-checkbox :input').on('change', e => {
-        if (e.currentTarget.id === 'yes') {
+        offers = e.currentTarget.id
+
+        if (offers === 'yes') {
             $(`form .multiple-checkbox label[for="yes"]`).css("border-color", "black")
             $(`form .multiple-checkbox label[for="yes"] img`).css('display', 'unset')
             $(`form .multiple-checkbox label[for="yes"]`).addClass('active')
@@ -588,13 +598,8 @@ setTimeout(() => {
 
         // step: 1
         if (step === 1) {
-            const offers = getFormValues($(parent).find('form :input')).offers === 'yes'
-
-            // 如果选择yes 隐藏employer, 否则显示
-            offers ? $('.forms2 .steps .progress .employer').hide() : $('.forms2 .steps .progress .employer').show()
-
             // 如果 yes 直接跳到3, 否则 2
-            return updateProgress(offers ? 3 : 2)
+            return updateProgress(offers === 'yes' ? 3 : 2)
         }
 
         // other step
