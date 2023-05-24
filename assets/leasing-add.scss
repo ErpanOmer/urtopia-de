@@ -808,6 +808,12 @@
                                     .u17Light_v2 {
                                         display: flex;
                                         flex-direction: column;
+                                        margin-bottom: -30px;
+                                        transform: translateY(-30px);
+
+                                        img {
+                                            transform: translateY(-5%);
+                                        }
                                     }
                                 }
                             }
@@ -821,11 +827,6 @@
                         img {
                             max-width: 50%;
 
-                        }
-
-
-                        .bike_image {
-                            transform: translateY(-5%);
                         }
                     }
 
