@@ -493,7 +493,7 @@ function updateProgress(step = 1) {
     }
 
     if (step === 2) {
-
+        $(`.forms2 .steps .step-${step} form :input`).attr('type', 'text')
 
         // 左侧信息变更
         $('.forms2 .texts .u36DemiBold_v2').html('Urtopia leasing <br>request form')
