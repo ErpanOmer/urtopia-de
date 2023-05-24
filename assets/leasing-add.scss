@@ -1345,34 +1345,9 @@
                         background-color: #fff;
 
                         .progress {
-                            .item {
-                                margin-right: 6px;
-
-                                .u17DemiBold_v2 {
-                                    font-size: 11px;
-                                    font-weight: 400;
-                                    border-width: 1px;
-                                    padding-bottom: 2px;
-                                }
-
-                                .u24DemiBold_v2 {
-                                    width: unset;
-                                    min-width: unset;
-                                    border: none;
-                                    font-size: 14px;
-                                }
-                            }
-
-                            .success {
-                                margin: 0;
-                                width: unset;
-                                height: unset;
-                                border: none;
-                                border-radius: unset;
-
-                                img {
-                                    width: 22px;
-                                }
+                            .u17DemiBold_v2 {
+                                font-size: 11px;
+                                font-weight: 300;
                             }
                         }
 
