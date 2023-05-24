@@ -521,6 +521,12 @@ function extraProcessing () {
     $('.forms2 .texts .u20DemiBold_v2').text('')
     $('.forms2 .texts .u17DemiBold_v2').text('You have successfully submit the form.')
     $('.forms2 .texts .u17Light_v2').html(h)
+
+    const parent = $(`.forms2 .steps .step-5`)
+    const employer = parent.find('.block').first().find('.info[name="employer"]')
+
+    offers === 'yes' ? employer.show() : employer.hide()
+    
 }
 
 
