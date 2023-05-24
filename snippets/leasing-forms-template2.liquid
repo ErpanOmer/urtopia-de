@@ -442,6 +442,8 @@ function submit (forms = {}) {
 const changeBikeImage = e => {
     const size = $('select[name="bike_size"]').val()
     const style = $('select[name="bike_style"]').val()
+
+    console.log(size, style)
     
     $('.forms2 form .item .error').text('')
 
@@ -454,6 +456,8 @@ const changeBikeImage = e => {
         }
 
         const vari = carbon.variants.find(c => c.title === `${v} / ${size}`)
+
+        console.log('vari', vari)
 
         if (!vari) {
             return item.disabled = false
