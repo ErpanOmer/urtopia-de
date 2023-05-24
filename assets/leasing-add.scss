@@ -557,13 +557,13 @@
                                 
                             }
 
-                        }
 
-                        .success {
-
-                            img {
-                                width: 50%;
+                            &:first-child {
+                                .flex-1: {
+                                    display: none;
+                                }
                             }
+
                         }
                     }
 
