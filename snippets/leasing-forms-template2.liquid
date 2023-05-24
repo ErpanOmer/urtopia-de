@@ -350,7 +350,7 @@ function getFormValues (elem = '') {
 
 // 表单参数和查询参数，提交之前做合并
 function mergeValues () {
-    const forms = getFormValues('.forms form :input')
+    const forms = getFormValues('.forms2 form :input')
     const search = getSearchValues()
     // 表单数据覆盖url 参数，合并
     const merge = Object.assign(search, forms)
@@ -550,16 +550,20 @@ setTimeout(() => {
         const parent = e.target.parentNode
   
         // step: 1
-        parent.classList.contains('step-1') && updateProgress(2)
+        if (parent.classList.contains('step-1')) {
+            const values = getFormValues($(parent).find('form :input'))
+            
+            console.log(values)
+
+            return
+            updateProgress(2)
+        } 
   
         // step: 2
         parent.classList.contains('step-2') && updateProgress(3)
   
         // step: 3
         parent.classList.contains('step-3') && updateProgress(4)
-
-        // step: 99
-        parent.classList.contains('step-99') && updateProgress(99)
   
   
         $('html').animate({
