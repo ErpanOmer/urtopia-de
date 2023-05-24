@@ -313,8 +313,8 @@ const faqs = [
 ]
 
 
-$('.faqs .swiper-slide').html(faqs.map(faq => `
-  <div class="faq-item">
+$('.faqs .swiper-slide').html(faqs.map((faq, index) => `
+  <div class="faq-item" index="${index}">
      <div class="faq-title">
        <span>${faq.title}</span>
        <i class="faq-content-plus"></i>
