@@ -534,6 +534,12 @@ function extraProcessing () {
     // 批量赋值
     parent.find('.info').each((index, item) => {
         const attr = $(item).attr('name')
+
+        if (attr === 'bike_image') {
+            
+            return
+        }
+
         // 复制value
         $(item).find('.u17Light_v2').text(values[attr] || '')
 
