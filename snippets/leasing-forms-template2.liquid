@@ -536,7 +536,8 @@ function extraProcessing () {
         const attr = $(item).attr('name')
 
         if (attr === 'bike_image') {
-            parent.find('.bike_size_style').text(`${values.bike_model}, ${values.bike_style}, (${values.bike_size})`)
+            $(item).find('.bike_size_style').text(`${values.bike_model}, ${values.bike_style}, (${values.bike_size})`)
+            $(item).find('img').attr('src', $('.forms2 form input[name="bike_image"]').attr('src'))
 
             return
         }
