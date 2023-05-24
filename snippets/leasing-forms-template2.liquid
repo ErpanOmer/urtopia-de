@@ -492,6 +492,7 @@ function updateProgress(step = 1) {
     // 批量active
     for (let index = 0; index < step; index++) {
         $($('.forms2 .steps .progress .item')[index]).addClass('active')
+        $($('.forms2 .steps .progress .item')[index]).prev().addClass('active')
     }
   
     if (step === 1) {
