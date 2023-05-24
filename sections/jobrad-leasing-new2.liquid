@@ -657,7 +657,7 @@ setTimeout(() => {
     updateProgress(1)
 
 
-    document.addEventListener('visibilitychange', function logData() {
+    {% comment %} document.addEventListener('visibilitychange', function logData() {
         if (document.visibilityState === 'hidden') {
             // 如果已经submit, 就不用再submitinfo
         if (isSubmited) {
@@ -704,5 +704,5 @@ setTimeout(() => {
 
         fetchBuried('jobrad', 'submitinfo', data, true)
         }
-      });
+      }); {% endcomment %}
 </script>
