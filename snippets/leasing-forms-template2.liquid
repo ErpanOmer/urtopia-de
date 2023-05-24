@@ -683,6 +683,12 @@ setTimeout(() => {
         const parent = e.target.parentNode
         const step = Number(parent.classList.value.split('-').pop())
 
+        setTimeout(() => {
+            $('html').animate({
+                scrollTop: isMobile ? $('.forms2 .texts .u20DemiBold_v2').offset().top - 85 : $('.forms2').offset().top - 150
+              }, 300)
+        }, 50)
+
         // step: 1
         if (step === 1) {
             // 如果 yes 直接跳到3, 否则 2
@@ -691,13 +697,6 @@ setTimeout(() => {
 
         // other step
         updateProgress(step + 1)
-  
-  
-        setTimeout(() => {
-            $('html').animate({
-                scrollTop: isMobile ? $('.forms2 .texts .u20DemiBold_v2').offset().top - 85 : $('.forms2').offset().top - 150
-              }, 300)
-        })
   
         return false;
     })
