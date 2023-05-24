@@ -251,3 +251,17 @@
 <link rel="prefetch" href="https://cdn.shopifycdn.net/s/files/1/0633/2068/6808/products/MaskGroup18137_1.webp?v=1678963826" as="image">
 
 {{ 'sumoselect.js' | asset_url | script_tag }}
+
+<script>
+    // 页面信息
+const page_infos = {% case template | json %}
+    {% when 'page.jobrad-leasing-new2' %}
+        {
+            page_name: 'jobrad'
+        }
+    {% else %}
+        {}
+{% endcase %}
+
+
+</script>
