@@ -493,11 +493,13 @@ function updateProgress(step = 1) {
     }
 
     if (step === 2) {
+
+
         // 左侧信息变更
         $('.forms2 .texts .u36DemiBold_v2').html('Urtopia leasing <br>request form')
         $('.forms2 .texts .u20DemiBold_v2').text('Step 2:')
-        $('.forms2 .texts .u17DemiBold_v2').text('Fill in your shipping info')
-        $('.forms2 .texts .u17Light_v2').text('We need your shipping address to deliver the leased e-bike to your preferred location. Please provide the complete address. This ensures accurate and timely delivery of your chosen product.')
+        $('.forms2 .texts .u17DemiBold_v2').text('Fill in Additional information for employers')
+        $('.forms2 .texts .u17Light_v2').text('In order for you to use this leasing service, your employer must contact the leasing company. You can find the procedure here. The leasing company also provides some assistance to employers who are making contact for the first time. We would also like to help your employer establish a partnership with the leasing company and will need the following information:')
     }
   
     if (step === 3) {
@@ -582,10 +584,13 @@ setTimeout(() => {
 
         // step: 1
         if (step === 1) {
-            const values = getFormValues($(parent).find('form :input'))
+            const offers = getFormValues($(parent).find('form :input')).offers === 'yes'
+
+            // 如果选择yes 隐藏employer
+            offers ? $('.forms2 .steps .progress .employer').hide() : $('.forms2 .steps .progress .employer').show()
 
             // 如果 yes 直接跳到3, 否则 2
-            return updateProgress(values.offers === 'yes' ? 3 : 2)
+            return updateProgress(offers ? 3 : 2)
         }
 
         // other step
