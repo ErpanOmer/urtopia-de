@@ -586,7 +586,7 @@ setTimeout(() => {
         if (step === 1) {
             const offers = getFormValues($(parent).find('form :input')).offers === 'yes'
 
-            // 如果选择yes 隐藏employer
+            // 如果选择yes 隐藏employer, 否则显示
             offers ? $('.forms2 .steps .progress .employer').hide() : $('.forms2 .steps .progress .employer').show()
 
             // 如果 yes 直接跳到3, 否则 2
