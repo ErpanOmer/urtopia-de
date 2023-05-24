@@ -313,6 +313,52 @@ function gtag_report_conversion(url) {
 }
 
 
+function getFormValues (elem = '') {
+    const temp = {}
+
+    if (!elem) {
+        return temp
+    }
+
+    $(elem).each((index, target) => {
+        if (ignore.includes(target.type)) {
+            return
+        }
+
+
+        
+        // 配件特殊处理
+        if (target.name === 'accessories') {
+            const accessories = []
+            const accessories_id = []
+            
+            // selected
+            $(target).find('option:selected').each((i, target) => {
+                accessories.push(target.title)
+                accessories_id.push(target.value)
+            })
+
+                
+            temp.accessories = accessories.join()
+            temp.accessories_id = accessories_id.join()
+
+            return
+        }
+
+
+        temp[target.name] = target.value
+    })
+
+    temp.variant_id = carbon.variants.find(c => c.title === `${temp.bike_style} / ${temp.bike_size}`)
+    temp.variant_id = temp.variant_id ? temp.variant_id.id : ''
+    temp.offers = $('.forms label[class="active"]').attr('for')
+
+
+
+    return temp
+}
+
+
 
 
 // 页面访问key
