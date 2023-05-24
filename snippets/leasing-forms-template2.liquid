@@ -451,7 +451,7 @@ const changeBikeImage = e => {
     $(`select[name="bike_style"] option`).each((i, item) => {
         const v = item.value
 
-        if (!v) {
+        if (i === 0) {
             return
         }
 
