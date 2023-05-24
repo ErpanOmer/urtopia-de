@@ -272,8 +272,6 @@ $('.forms2 .multiple-checkbox :input').on('change', e => {
   const forms = {}
 
 
-  console.log(JSON.parse(JSON.stringify({{ all_products['urtopia-carbon-e-bike'] | json }})))
-
 const faqs = [
     {
         title: "For whom is a service bike or service e-bike via salary conversion worthwhile?",
@@ -348,13 +346,6 @@ const faqs = [
         content: `No. Unfortunately, this is not possible, as you have agreed on a leasing contract with the duration of 36 months with JobRad. If you have questions about the terms of your contract, please contact JobRad.`
     },
 ]
-
-if (!sessionStorage.isPreviewJobrad) {
-    fetchBuried('jobrad', 'pageview')
-}
-
-// 记录来过这个页面
-sessionStorage.isPreviewJobrad = 'isPreviewJobrad'
 
 
 function gtag_report_conversion(url) {
