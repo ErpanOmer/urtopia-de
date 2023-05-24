@@ -528,6 +528,15 @@ function extraProcessing () {
 
     offers === 'yes' ? employer.show() : employer.hide()
     offers === 'yes' ? employerInfo.hide() : employer.show()
+
+    const values = mergeValues()
+
+    // 批量赋值
+    parent.find('.info').each((index, item) => {
+        const attr = $(item).attr('name')
+
+        console.log('attr', attr)
+    })
     
 }
 
