@@ -546,6 +546,29 @@ function extraProcessing () {
         $(item).find('.u17Light_v2').text(values[attr] || '')
 
     })
+
+
+    // 点击link , 跳转到faq
+    $('.forms2 .centeral-content .forms-link').on('click', e => {
+        const item = document.querySelector(`.faqs .faq-item[index="7"]`)
+        const title = item.querySelector('.faq-title')
+        const content = item.querySelector('.faq-content')
+
+        // 如果是隐藏状态才展开
+        if (window.getComputedStyle(content).display === 'none') {
+            title.click()
+        }
+        
+        setTimeout(() => {
+            $('html').animate({
+                scrollTop: $(item).offset().top - 85
+            }, 300)
+        })
+
+
+        e.preventDefault();
+        return false;
+    })
     
 }
 
