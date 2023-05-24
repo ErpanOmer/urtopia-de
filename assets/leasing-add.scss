@@ -551,14 +551,11 @@
                                 border-radius: 50%;
                                 
                             }
+                        }
 
-
-                            &:first-child {
-                                .flex-1 {
-                                    //display: none;
-                                }
-                            }
-
+                        .flex-1 {
+                            height: 2px;
+                            background-color: #000;
                         }
                     }
 
