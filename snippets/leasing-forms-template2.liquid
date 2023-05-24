@@ -578,7 +578,7 @@ setTimeout(() => {
         e.preventDefault();
   
         const parent = e.target.parentNode
-        const step = Number(classList.value.split('-').pop())
+        const step = Number(parent.classList.value.split('-').pop())
 
         // step: 1
         if (step === 1) {
