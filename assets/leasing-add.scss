@@ -1453,11 +1453,15 @@
                                     // top: 50%;
                                     // transform: translateY(-50%);
                                 }
-                            }
 
+                                &[name="bike_image"] {
+                                    margin-bottom: -8vw;
 
-                            img {
-                                max-width: unset;
+                                    input {
+                                        max-width: unset;
+                                        transform: translateY(-14vw);
+                                    }
+                                }
                             }
 
                             .infos {
