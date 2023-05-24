@@ -541,14 +541,13 @@
                         user-select: none;
 
                         .item {
-                            display: flex;
-                            align-items: center;
+                            width: 15px;
+                            height: 15px;
+                            border: 2px solid #000;
+                            border-radius: 50%;
 
                             .u17DemiBold_v2 {
-                                width: 15px;
-                                height: 15px;
-                                border: 2px solid #000;
-                                border-radius: 50%;
+                                
                                 
                             }
                         }
