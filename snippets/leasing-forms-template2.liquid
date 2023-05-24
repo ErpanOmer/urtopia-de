@@ -583,8 +583,8 @@ setTimeout(() => {
         if (parent.classList.contains('step-1')) {
             const values = getFormValues($(parent).find('form :input'))
 
-            // 如果 yes 跳转step-2, 否则 99
-            return updateProgress(values.offers === 'yes' ? 2 : 99)
+            // 如果 yes 直接跳到3, 否则 2
+            return updateProgress(values.offers === 'yes' ? 3 : 2)
         }
   
         // step: 2
