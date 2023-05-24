@@ -623,6 +623,11 @@ setTimeout(() => {
             $('html').animate({
                 scrollTop: isMobile ? $('.forms2 .texts .u20DemiBold_v2').offset().top - 85 : $('.forms2').offset().top - 150
             }, 300)
+
+            // 如果step: 3 往后退， 如果offers yes 直接跳转到 step:1 否则 step: 2
+            if (i === 1) {
+                return offers === 'yes' ? updateProgress(1) : updateProgress(2)
+            }
     
             updateProgress(i + 1)
         })
