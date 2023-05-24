@@ -797,7 +797,10 @@ document.addEventListener('visibilitychange', () => {
     }
 
     if (document.visibilityState === 'hidden') {
-        // fetchBuried(page_infos.page_name, 'submitinfo', mergeValues(), true)
+        const values = mergeValues()
+        values.leave_stage = leave_stage_map[maxStep]
+
+        fetchBuried(page_infos.page_name, 'submitinfo', values, true)
     }
 })
 </script>
