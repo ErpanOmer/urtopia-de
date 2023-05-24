@@ -515,7 +515,7 @@ const changeBikeImage = e => {
 
 
 function extraProcessing () {
-    const h = offers === 'yes' ? 'We appreciate your cooperation in providing this information. Please check your information on the right. <br><br>If you have any questions or require further assistance, please don’t hesitate to reach out to our dedicated leasing support team at leasing@newurtopia.com. <br><br>Next out expert will contact and guide you through the process and make your leasing experience with Urtopia as seamless as possible.' : 'Next out expert will contact and guide you through the process and make your leasing experience with Urtopia as seamless as possible.<br><br> Because your employer is not working with Jobrad, please contact your employer to inform your requirement with leasing, and ask your employer to make a connection with Jobrad to make the process faster. <br><span class="forms-link">Click here for more information</span>'
+    const h = offers === 'yes' ? 'We appreciate your cooperation in providing this information. Please check your information on the right. <br><br>If you have any questions or require further assistance, please don’t hesitate to reach out to our dedicated leasing support team at leasing@newurtopia.com. <br><br>Next out expert will contact and guide you through the process and make your leasing experience with Urtopia as seamless as possible.' : 'Next out expert will contact and guide you through the process and make your leasing experience with Urtopia as seamless as possible.<br><br> Because your employer is not working with Jobrad, please contact your employer to inform your requirement with leasing, and ask your employer to make a connection with Jobrad to make the process faster. <br><span class="forms-link go-to-faq">Click here for more information</span>'
         
     $('.forms2 .texts .u36DemiBold_v2').text('Thank you!')
     $('.forms2 .texts .u20DemiBold_v2').text('')
@@ -549,7 +549,7 @@ function extraProcessing () {
 
 
     // 点击link , 跳转到faq
-    $('.forms2 .centeral-content .forms-link').on('click', e => {
+    $('.forms2 .centeral-content .go-to-faq').on('click', e => {
         const item = document.querySelector(`.faqs .faq-item[index="7"]`)
         const title = item.querySelector('.faq-title')
         const content = item.querySelector('.faq-content')
@@ -602,7 +602,7 @@ function updateProgress(step = 1) {
         $('.forms2 .texts .u36DemiBold_v2').html('Urtopia leasing <br>request form')
         $('.forms2 .texts .u20DemiBold_v2').text('Step 2:')
         $('.forms2 .texts .u17DemiBold_v2').text('Fill in Additional information for employers')
-        $('.forms2 .texts .u17Light_v2').text('In order for you to use this leasing service, your employer must contact the leasing company. You can find the procedure <span class="forms-link">here.</span>  The leasing company also provides some assistance to employers who are making contact for the first time. We would also like to help your employer establish a partnership with the leasing company and will need the following information:')
+        $('.forms2 .texts .u17Light_v2').text('In order for you to use this leasing service, your employer must contact the leasing company. You can find the procedure <a href="https://www.jobrad.org/kontakt-mittler.html" class="forms-link">here.</a>  The leasing company also provides some assistance to employers who are making contact for the first time. We would also like to help your employer establish a partnership with the leasing company and will need the following information:')
     }
   
     if (step === 3) {
