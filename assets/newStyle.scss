@@ -608,7 +608,7 @@ body .jBox-Modal {
           border-left: 15px solid transparent;
           border-bottom: 15px solid #f4492a;
           border-top: 15px solid #f4492a;
-
+          padding: 0;
         }
 
         &:last-child {
@@ -616,6 +616,7 @@ body .jBox-Modal {
           border-right: 15px solid #ee6426;
           border-bottom: 15px solid transparent;
           rotate: 180deg;
+          padding: 0;
         }
       }
     }
