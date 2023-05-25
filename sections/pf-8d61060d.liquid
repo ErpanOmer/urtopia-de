@@ -882,7 +882,7 @@ function addAllToCart(parse) {
 	  $(".buyNowBtn").addClass("soldout");
 	} else {
 	  
-	  $(".tip-b").html(global_config[formData.get("id")] || '')
+	  $(".tip-b").html(global_config.ebike_delivery_time[formData.get("id")] || '')
 
 	  $(".addToCartBtn")[0].style.display = "block";
 
