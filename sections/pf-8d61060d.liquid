@@ -873,29 +873,18 @@ function addAllToCart(parse) {
 	  //bStyleDom.classList.add("optionHide");
 	}
 
+
+	const current_id = $('form input[name="id"]').val()
+
 	// 按钮消失隐藏逻辑end
-	if (productQuantity[formData.get("id")] <= 0) {
+	if (Number(productQuantity[current_id]) <= 0) {
 	  $(".tip-b").html("");
 	  $(".addToCartBtn")[0].style.display = "none";
 	  $(".buyNowBtn")[0].disabled = "true";
 	  $(".buyNowBtn span").html("Out of stock");
 	  $(".buyNowBtn").addClass("soldout");
 	} else {
-	  if (formData.get(modelname) == "Carbon 1s · 350W · Shimano 7-Speed") {
-		if (formData.get(sizename) !== "S") {
-		  $(".tip-b").html(
-			"This is a back-ordered item to be shipped on <span>Apr 10-15, 2023</span>."
-		  );
-		} else {
-		  $(".tip-b").html(
-			"This is a back-ordered item to be shipped on <span>Apr 15-31, 2023</span>."
-		  );
-		}
-	  } else {
-		$(".tip-b").html(
-		  "Ships within <span>3 business days</span> from L.A. warehouse."
-		);
-	  }
+	  $(".tip-b").html(global_config.ebike_delivery_time[current_id] || '')
 
 	  $(".addToCartBtn")[0].style.display = "block";
 
