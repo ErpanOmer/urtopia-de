@@ -551,7 +551,9 @@ function extraProcessing () {
 
 
     // 点击link , 跳转到faq
-    $('.forms2 .centeral-content .go-to-faq').on('click', e => {
+    setTimeout(() => {
+
+      $('.forms2 .centeral-content .go-to-faq').on('click', e => {
         const item = document.querySelector(`.faqs .faq-item[index="7"]`)
         const title = item.querySelector('.faq-title')
         const content = item.querySelector('.faq-content')
@@ -568,9 +570,9 @@ function extraProcessing () {
         })
 
 
-        e.preventDefault();
-        return false;
+
     })
+    }, 100)
     
 }
 
