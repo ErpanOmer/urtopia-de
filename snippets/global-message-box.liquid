@@ -1,6 +1,8 @@
 <script>
+   const message_box_name = 'message_box'
+
   function hideLayerSide() {
-    sessionStorage.setItem('jobradMessage', 'jobradMessage');
+    sessionStorage.setItem(message_box_name, message_box_name);
 
     $('.message-box').animate({}, 300, function () {
       //第一个花括号里面是动画内容，可以为空，但不能省去中括号
@@ -15,7 +17,7 @@
 
   function showLayerSide() {
 
-    if (sessionStorage.getItem('jobradMessage')) {
+    if (sessionStorage.getItem(message_box_name)) {
       return;
     }
 
