@@ -25,6 +25,11 @@
   }
 
   function showMessageBox() {
+    {% if template | json == "product.pf-8d61060d" %}
+        return
+    {% endif %}
+
+
     if (sessionStorage.getItem(message_box_name)) {
       return;
     }
