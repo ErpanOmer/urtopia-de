@@ -650,9 +650,6 @@
         setTimeout(showEmailDialog, 30000, subscribeHtml)
       }
     }
-
-
-    setTimeout(showLayerSide, 10000)
   };
   const updateLang = (el) => {
     let code = el.getAttribute('data-code');
@@ -715,40 +712,6 @@
     if (cval != null) {
       document.cookie = name + '=' + cval + ';expires=Thu, 01 Jan 1970 00:00:00 UTC;path=/;';
     }
-  }
-
-
-  function hideLayerSide() {
-    sessionStorage.setItem('jobradMessage', 'jobradMessage')
-
-    $(".message-box").animate({}, 300, function () {
-      //第一个花括号里面是动画内容，可以为空，但不能省去中括号
-      $(".message-box").css({ "right": "-440px" }); //在回调函数里面改变css属性来实现transform中的动画变换
-    })
-
-    $(".message-box-mobile").animate({}, 300, function () {
-      //第一个花括号里面是动画内容，可以为空，但不能省去中括号
-      $(".message-box-mobile").css({ "bottom": "-180px" }); //在回调函数里面改变css属性来实现transform中的动画变换
-    })
-  }
-  //展示div
-  function showLayerSide() {
-    return false
-
-    if (sessionStorage.getItem('jobradMessage')) {
-      return
-    }
-
-
-    $(".message-box").animate({}, 300, function () {
-      //第一个花括号里面是动画内容，可以为空，但不能省去中括号
-      $(".message-box").css({ "right": "18px" }); //在回调函数里面改变css属性来实现transform中的动画变换
-    })
-
-    $(".message-box-mobile").animate({}, 300, function () {
-      //第一个花括号里面是动画内容，可以为空，但不能省去中括号
-      $(".message-box-mobile").css({ "bottom": "0" }); //在回调函数里面改变css属性来实现transform中的动画变换
-    })
   }
 
   function closeEmailDialog (day = 3) {
