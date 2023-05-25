@@ -1,0 +1,55 @@
+<div class="banner">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide common">
+            <div class="centeral-content">
+                <div></div>
+                <div class="right">
+                    <div class="u24Medium_v2">Carbon 1</div>
+                    <div class="u60DemiBold_v2">Your Smart and Lightweight Pal</div>
+                    <div class="flex-1 pcHide"></div>
+                    <div class="buttons">
+                        <a class="my-button" href="/products/urtopia-carbon-e-bike">Order now</a>
+                        <a class="my-button my-button-ghost mobileHide" href="/pages/ebike-leasing">Leasing</a>
+                        <a class="my-button pcHide" href="/pages/ebike-leasing">Leasing</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 
+        <div class="swiper-slide maksim">
+            <div class="centeral-content">
+                <div></div>
+                <div class="right">
+                    <div class="u17Medium_v2 mobileHide">Tune your ride with Chord.</div>
+                    <div class="u48DemiBold_v2">"Elegant, powerful and reliable"</div>
+                    <div class="flex-1 pcHide"></div>
+                    <div class="buttons">
+                        <a class="my-button" href="">Meet Chord</a>
+                        <a class="my-button my-button-ghost mobileHide" href="">Watch video</a>
+                        <a class="my-button pcHide" href="">Watch video</a>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+    </div>
+    <div class="swiper-pagination"></div>
+</div>
+
+<script>
+ // 是否有多个banner, 如果有 开启swiper
+ const isMultipartBanner = document.querySelectorAll('.banner .swiper-slide')
+  
+ isMultipartBanner.length > 1 && new Swiper('.banner', {
+     autoplay: {
+         disableOnInteraction: false,
+         pauseOnMouseEnter: false,
+         delay: 5000,
+     },
+     loop: true,
+     speed: 1000,
+     pagination: {
+         el: '.swiper-pagination',
+         clickable: true
+     }
+ })
+</script>
