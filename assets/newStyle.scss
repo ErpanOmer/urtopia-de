@@ -601,13 +601,14 @@ body .jBox-Modal {
 
       & > div {
         background-image: linear-gradient(-90deg,#ee6426,#f4492a);
+        padding: 4px 10px;
+        max-height: 30px;
 
         &:first-child {
           border-left: 15px solid transparent;
           border-bottom: 15px solid #f4492a;
           border-top: 15px solid #f4492a;
-          padding: 4px 10px;
-          max-height: 30px;
+
         }
 
         &:last-child {
