@@ -873,10 +873,11 @@ function addAllToCart(parse) {
 	  //bStyleDom.classList.add("optionHide");
 	}
 
-	console.log('formData.get("id")]', formData.get("id"))
+
+	const current_id = $('form input[name="id"]').val()
 
 	// 按钮消失隐藏逻辑end
-	if (productQuantity[formData.get("id")] <= 0) {
+	if (Number(productQuantity[current_id]) <= 0) {
 	  $(".tip-b").html("");
 	  $(".addToCartBtn")[0].style.display = "none";
 	  $(".buyNowBtn")[0].disabled = "true";
@@ -886,7 +887,7 @@ function addAllToCart(parse) {
 
 	  
 	  
-	  $(".tip-b").html(global_config.ebike_delivery_time[formData.get("id")] || '')
+	  $(".tip-b").html(global_config.ebike_delivery_time[current_id] || '')
 
 	  $(".addToCartBtn")[0].style.display = "block";
 
