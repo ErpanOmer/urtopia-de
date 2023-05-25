@@ -1,5 +1,3 @@
-console.log(document.body)
-
 const global_config = {
     // 是否是手机
     is_mobile: document.documentElement.clientWidth < 768,
