@@ -13,6 +13,7 @@
 </div>
 
 <script>
+    {% assign template_name = template | json %}
   const message_box_name = 'message_box';
 
   function hideMessageBox() {
@@ -25,7 +26,8 @@
   }
 
   function showMessageBox() {
-    {% if template | json == "product.pf-8d61060d" %}
+
+    {% if template_name == "product.pf-8d61060d" %}
         return
     {% endif %}
 
