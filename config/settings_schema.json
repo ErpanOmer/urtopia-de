@@ -4,14 +4,14 @@
     "settings": [
       {
         "type": "checkbox",
-        "id": "enabled_labour_day",
-        "label": "4.28劳动节活动开关",
+        "id": "enabled_sale",
+        "label": "活动开启开关",
         "default": true
       },
       {
         "type": "checkbox",
-        "id": "enabled_labour_day_countdown",
-        "label": "5.5劳动节活动倒计时开关",
+        "id": "enabled_sale_countdown",
+        "label": "活动开启倒计时",
         "default": true
       }
     ]
