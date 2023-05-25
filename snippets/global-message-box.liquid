@@ -1,4 +1,4 @@
-<div class="message-box" {{ template == 'product.pf-8d61060d' }}>
+<div class="message-box" {{  }}>
   <div class="u17DemiBold_v2">
     <span>Factory</span>
     <div>
@@ -25,6 +25,12 @@
   }
 
   function showMessageBox() {
+    {% if template == 'product.pf-8d61060d' %}
+
+        return
+
+    {% endif%}
+
     if (location.href.includes('/products/outlet-carbon-1-1s')) {
         return
     }
