@@ -268,18 +268,21 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
 		  height: 50px;
 	  }
 	}
+
+
+	#credit-promotion-badge *::part(osm-container) {
+		padding: 0;
+		border: none;
+		line-height: 12px;
+	  }
   </style></div></div></div><div class="pf-c" style="--c-xs:12;--c-sm:5;--c-md:5;--c-lg:4"><div data-pf-type="Column" class="sc-kjOQFR ctEqvM pf-15_"><h1 data-product-type="title" data-product-id="{{ product.id }}" data-pf-type="ProductTitle" class="sc-cdJjGe emVAcd pf-16_">{{ product.title }}</h1><div data-pf-type="JudgeMe" class="sc-kkIjYy bXsprk pf-17_ pf-lg-hide pf-md-hide pf-sm-hide pf-hide"><div class="pf-judme">{% render "judgeme_widgets", widget_type: "judgeme_preview_badge", jm_style: "", concierge_install: false, product: product %}</div></div><div data-pf-type="ProductPrice2" id="product-price" class="sc-cnHmbd gfqJIR pf-18_"><div data-product-type="price" data-product-id="{{ product.id }}" data-product-price="true" data-pf-type="ProductPrice2Item" class="sc-bXRjm cYhPQx pf-19_">{{ product.variants[0].price | money }}</div><div data-product-type="compare_at_price" data-product-id="{{ product.id }}" data-pf-type="ProductPrice2Item" class="sc-bXRjm cYhPQx pf-20_">{{ product.variants[0].compare_at_price | money }}</div></div><div data-pf-type="Custom.HTML" class="sc-clIzBv iQyrr pf-671_"><!-- Placement v2 -->
-<klarna-placement
-  data-key="credit-promotion-badge"
-  data-locale="de-DE"
-  data-purchase-amount=""
-></klarna-placement>
+  <klarna-placement
+	id="credit-promotion-badge"
+	data-key="credit-promotion-badge"
+	data-locale="de-DE"
+	data-purchase-amount=""
+  ></klarna-placement>
 <!-- end Placement --></div><div data-pf-type="Custom.HTML" class="sc-clIzBv iQyrr pf-21_ pf-lg-hide pf-md-hide pf-sm-hide pf-hide"><!-- Placement v2 -->
-<klarna-placement
-  data-key="credit-promotion-badge"
-  data-locale="en-US"
-  data-purchase-amount=""
-></klarna-placement>
 <!-- end Placement --></div><p class="sc-eZhRLC kPmrGB pf-22_" data-pf-type="Paragraph"><span data-pf-type="Text" class="sc-hKumaY imecqU pf-24_"><span style="color: rgb(253, 75, 23);"></span><span style="color: rgb(253, 75, 23);"></span><span style="color: rgb(253, 75, 23);">●</span>&nbsp;Showroom Bike<br><span style="color: rgb(253, 75, 23);">●</span>&nbsp;Small to none damage<br><span style="color: rgb(253, 75, 23);"></span><span style="color: rgb(253, 75, 23);">● </span>2 year Warranty<br><span style="color: rgb(253, 75, 23);">●</span> Not avaliable for leasing<br><span style="color: rgb(253, 75, 23);"></span><span style="color: rgb(253, 75, 23);">●</span> Style is not chooseable (*see FAQ)</span></p><div data-display="radio" data-label="true" data-product-id="{{ product.id }}" style="--o-xs:8px;--o-md:16px;--g-xs:4px;--g-md:8px" data-sw-id="{% liquid
     assign min = 10000000000
     assign max = 99999999999
