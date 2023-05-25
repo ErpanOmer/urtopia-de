@@ -881,6 +881,8 @@ function addAllToCart(parse) {
 	  $(".buyNowBtn span").html("Out of stock");
 	  $(".buyNowBtn").addClass("soldout");
 	} else {
+
+	  console.log('formData.get("id")]', formData.get("id"))
 	  
 	  $(".tip-b").html(global_config.ebike_delivery_time[formData.get("id")] || '')
 
