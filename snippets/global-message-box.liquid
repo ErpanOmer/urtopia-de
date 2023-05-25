@@ -14,7 +14,6 @@
   }
 
   function showLayerSide() {
-    return false;
 
     if (sessionStorage.getItem('jobradMessage')) {
       return;
@@ -31,5 +30,7 @@
     });
   }
 
-  document.addEventListener('load', () => {});
+  document.addEventListener('load', () => {
+    setTimeout(showLayerSide, 10000)
+  });
 </script>
