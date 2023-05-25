@@ -577,9 +577,8 @@ body .jBox-Modal {
 .message-box {
   width: 360px;
   position: fixed;
-  //right: -360px;
-  // bottom: 70px;
-  top: 50%;
+  right: -360px;
+  bottom: 70px;
   background-color: #eff1f8;
   border-radius: 10px;
   transition: all 0.3s;
