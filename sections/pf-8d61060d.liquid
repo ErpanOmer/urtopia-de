@@ -838,9 +838,9 @@ function addAllToCart(parse) {
 	let gStyleDom = document.querySelector(
 	  "#urtopiaEbike > div > div:nth-child(6) > div:nth-child(4)"
 	); //grey
-	let bStyleDom = document.querySelector(
-	  "#urtopiaEbike > div > div:nth-child(6) > div:nth-child(5)"
-	); //black
+	//let bStyleDom = document.querySelector(
+	//  "#urtopiaEbike > div > div:nth-child(6) > div:nth-child(5)"
+	//); //black
 
 	// 按钮消失隐藏逻辑开始
 
@@ -858,16 +858,16 @@ function addAllToCart(parse) {
 	  if (formData.get(sizename) === "S") {
 		sStyleDom.classList.add("optionHide");
 		gStyleDom.classList.add("optionHide");
-		bStyleDom.classList.add("optionHide");
+		//bStyleDom.classList.add("optionHide");
 	  } else {
-		bStyleDom.classList.add("optionHide");
+		//bStyleDom.classList.add("optionHide");
 	  }
 	} else {
 	  // s_size_dom.classList.add("notcheck");
 	  // s_size_box_dom.classList.add("notclick");
 	  ones.querySelector("label").classList.add("earlyBadge_default");
 	  //wStyleDom.classList.add("optionHide");
-	  bStyleDom.classList.add("optionHide");
+	  //bStyleDom.classList.add("optionHide");
 	}
 
 	// 按钮消失隐藏逻辑end
