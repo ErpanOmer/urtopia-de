@@ -1,5 +1,40 @@
+<div class="message-box mobileHide">
+  <img
+    src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/jobradorg_2x_9fa9518f-0618-4ba0-8973-8f5a381f940d.png?v=1680154687"
+    alt=""
+  >
+  <div>
+    <div class="u17Medium">Your employer already offers JobRad? Perfect!</div>
+    <div style="margin: 6px 0 24px;">Save with bike leasing from employers</div>
+    <a
+      class="my-button my-button-black"
+      onclick="hideMessageBox()"
+      href="/pages/urtopia-jobrad-leasing-city-electric-bike?utm_source=jobrad_popup"
+      >Lease now</a
+    >
+  </div>
+  <span onclick="hideMessageBox()">×</span>
+</div>
+<div class="message-box message-box-mobile pcHide">
+  <div>
+    <div class="u17Medium">Your employer already offers JobRad? Perfect!</div>
+    <div style="margin: 6px 0 12px;">Save with bike leasing from employers</div>
+    <a
+      class="my-button my-button-black"
+      onclick="hideMessageBox()"
+      href="/pages/urtopia-jobrad-leasing-city-electric-bike?utm_source=jobrad_popup"
+      >Learn more</a
+    >
+  </div>
+  <img
+    src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/jobradorg_2x_9fa9518f-0618-4ba0-8973-8f5a381f940d.png?v=1680154687"
+    alt=""
+  >
+  <span onclick="hideMessageBox()">×</span>
+</div>
+
 <script>
-   const message_box_name = 'message_box'
+  const message_box_name = 'message_box';
 
   function hideMessageBox() {
     sessionStorage.setItem(message_box_name, message_box_name);
@@ -16,7 +51,6 @@
   }
 
   function showMessageBox() {
-
     if (sessionStorage.getItem(message_box_name)) {
       return;
     }
