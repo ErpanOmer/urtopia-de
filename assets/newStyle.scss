@@ -572,6 +572,66 @@ body .jBox-Modal {
   transform: translate(-50%, -50%) !important;
 }
 
+
+
+.message-box {
+  width: 360px;
+  position: fixed;
+  right: -360px;
+  bottom: 70px;
+  background-color: #eff1f8;
+  border-radius: 10px;
+  transition: all 0.3s;
+  z-index: 9999;
+  padding: 28px 40px;
+
+  .u11Light_v2 {
+    margin: 16px 0 24px;
+  }
+
+  .u17DemiBold_v2 {
+    display: flex;
+    align-items: center;
+
+    & > div {
+      display: flex;
+      align-items: center;
+      color: #fff;
+
+      & > div {
+        background-image: linear-gradient(-90deg,#ee6426,#f4492a);
+        padding: 4px 10px;
+        max-height: 30px;
+
+        &:first-child {
+          border-left: 15px solid transparent;
+          border-bottom: 15px solid #f4492a;
+          border-top: 15px solid #f4492a;
+          padding: 0;
+        }
+
+        &:last-child {
+          border-top: 15px solid transparent;
+          border-right: 15px solid #ee6426;
+          border-bottom: 15px solid transparent;
+          rotate: 180deg;
+          padding: 0;
+        }
+      }
+    }
+  }
+
+  .close {
+    position: absolute;
+    right: 15px;
+    top: -5px;
+    font-size: 30px;
+    color: #999;
+    cursor: pointer;
+  }
+}
+
+
 @media (max-width: 767px) {
   h2 {
     font: normal normal 600 48px/48px urbane;
@@ -613,6 +673,23 @@ body .jBox-Modal {
   .centeral-content {
     padding: 0 8%;
     box-sizing: border-box;
+  }
+
+
+
+  .message-box {
+    width: 100vw;
+    right: 0;
+    bottom: 0;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    z-index: 999999;
+    transform: translateY(100%);
+    padding: 12px 30px;
+
+    .u11Light_v2 {
+      margin: 8px 0 12px;
+    }
   }
 }
 
