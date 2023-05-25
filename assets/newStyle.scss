@@ -595,8 +595,25 @@ body .jBox-Modal {
     align-items: center;
 
     & > div {
-      color: #fff;
-      background-image: linear-gradient(-90deg, #EE6426, #F4492A);
+      display: flex;
+      align-items: center;
+
+      & > div {
+        background-image: linear-gradient(-90deg,#ee6426,#f4492a);
+        
+        &:first-child {
+              border-left: 22px solid transparent;
+              border-bottom: 22px solid #ee6426;
+              border-top: 22px solid #ee6426;
+        }
+
+        &:last-child {
+          border-top: 22px solid transparent;
+          border-right: 22px solid #ee6426;
+          border-bottom: 22px solid transparent;
+          rotate: 180deg;
+        }
+      }
     }
   }
 
