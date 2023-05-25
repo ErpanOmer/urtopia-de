@@ -578,7 +578,8 @@ body .jBox-Modal {
   width: 360px;
   position: fixed;
   //right: -360px;
-  bottom: 70px;
+  // bottom: 70px;
+  top: 0;
   background-color: #eff1f8;
   border-radius: 10px;
   transition: all 0.3s;
