@@ -25,6 +25,7 @@
   }
 
   function showMessageBox() {
+    // 如果是outlet 页面直接退出来
     {% if template == 'product.pf-8d61060d' %} return {% endif%}
 
     if (sessionStorage.getItem(message_box_name)) {
