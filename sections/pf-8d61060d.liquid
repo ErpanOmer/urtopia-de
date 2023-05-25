@@ -818,9 +818,9 @@ function addAllToCart(parse) {
 
 	// size dom
 
-	let s_size_box_dom = document.querySelector(
-	  "#urtopiaEbike > div > div:nth-child(4) > div:nth-child(1)"
-	);
+	//let s_size_box_dom = document.querySelector(
+	//  "#urtopiaEbike > div > div:nth-child(4) > div:nth-child(1)"
+	//);
 	// let s_size_dom = document.querySelector(
 	//  "#urtopiaEbike > div > div:nth-child(4) > div:nth-child(1) > div > label"
 	//);
@@ -851,7 +851,7 @@ function addAllToCart(parse) {
 	ones.querySelector("label").classList.add("earlyBadge_default");
 	ones.querySelector("label").classList.remove("earlyBadge");
 	// s_size_dom.classList.remove("notcheck");
-	s_size_box_dom.classList.remove("notclick");
+	//s_size_box_dom.classList.remove("notclick");
 
 	if (formData.get(modelname) == "Carbon 1s · 350W · Shimano 7-Speed") {
 	  ones.querySelector("label").classList.add("earlyBadge");
@@ -864,7 +864,7 @@ function addAllToCart(parse) {
 	  }
 	} else {
 	  // s_size_dom.classList.add("notcheck");
-	  s_size_box_dom.classList.add("notclick");
+	  // s_size_box_dom.classList.add("notclick");
 	  ones.querySelector("label").classList.add("earlyBadge_default");
 	  wStyleDom.classList.add("optionHide");
 	  bStyleDom.classList.add("optionHide");
