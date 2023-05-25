@@ -35,5 +35,5 @@
     });
   }
 
-  window.addEventListener('load', showMessageBox);
+  window.addEventListener('load', () => setTimeout(showMessageBox, global_config.message_box_show_delay_time));
 </script>
