@@ -1,4 +1,7 @@
 const global_config = {
+    // 是否是手机
+    is_mobile: document.body.clientWidth < 768,
+
     // 邮件弹窗 延迟弹出时间，单位:s
     subscribe_email_show_delay_time: 30,
 
