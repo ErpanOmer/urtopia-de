@@ -1,4 +1,4 @@
-console.log(document)
+console.log(document.body)
 
 const global_config = {
     // 是否是手机
