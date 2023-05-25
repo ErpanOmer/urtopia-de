@@ -590,6 +590,14 @@ body .jBox-Modal {
     margin: 16px 0 24px;
   }
 
+  .u17DemiBold_v2 {
+    display: flex;
+
+    & > div {
+      height: 20px;
+    }
+  }
+
   .close {
     position: absolute;
     right: 15px;
