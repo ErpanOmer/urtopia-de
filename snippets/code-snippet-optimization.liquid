@@ -1,11 +1,6 @@
 <script>
 console.log(JSON.stringify({{ template | json }}))
 
-// 送配件的 variant_id
-const global_config.event_accessories_variant_ids = ['43817744793816', '43745263255768', '43745261748440']
-
-// 活动配件 end
-
 // isSendBeacon 是否使用 sendBeacon api 保证页面退出时提交后端数据
 function fetchBuried (name = '', type = '', data = {}, isSendBeacon = false) {
     
