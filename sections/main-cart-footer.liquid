@@ -102,7 +102,7 @@
     <div class="product_code">
       <div class="sale_coupon" style="margin-left:auto;border-radius: 5px 5px 0 0;">
         <div class="l" style="text-align: left;">
-          Check out with free <br> accessories
+          Check out with {{ settings.sale_name }}
         </div>
         <div class="r"></div>
       </div>
@@ -169,7 +169,7 @@
 
               //document.querySelector(`.product_code .carbon_code span:last-child`).innerHTML = ''
               document.querySelector(`.product_code .carbon_text > div:nth-child(1) span`).innerHTML = `Save €${carbon_quantly * 169}.00!`
-              document.querySelector(`.product_code .carbon_text > div:nth-child(2)`).innerHTML = ''
+              document.querySelector(`.product_code .carbon_text > div:nth-child(2) span`).innerHTML = 'Free accessories applied'
             }
           }
       }

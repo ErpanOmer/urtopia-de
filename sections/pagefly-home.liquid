@@ -2,63 +2,7 @@
 <link rel="stylesheet" href="{{ 'pagefly.102c91e3.css' | asset_url }}">
 <link rel="stylesheet" href="{{ 'home.scss.css' | asset_url }}">
  <div style="opacity:0" class="sc-bYoBSM hUVNGC __pf __pf_GlWfNY-b" id="__pf"><div data-pf-type="Body" class="sc-hjGZqJ fNoOP pf-1_"><div data-pf-type="Layout" class="sc-htJRVC dNJAjO pf-2_"><div data-section-id="pf-3e0a" data-pf-type="Section" class="sc-fmciRz bheIgq pf-3_"><div class="sc-gjNHFA gwWIgj"><div class="sc-ezbkAF A-dmbO pf-4_ pf-r pf-c-cm pf-r-eh" style="--s-xs:0px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-md:12;--c-lg:12"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-5_"><div data-pf-type="Custom.HTML" class="sc-AjmGg eCTxfx pf-6_">
-
-  <div class="banner">
-    <div class="swiper-wrapper">
-        <div class="swiper-slide common">
-            <div class="centeral-content">
-                <div></div>
-                <div class="right">
-                    <div class="u24Medium_v2">Carbon 1</div>
-                    <div class="u60DemiBold_v2">Your Smart and Lightweight Pal</div>
-                    <div class="flex-1 pcHide"></div>
-                    <div class="buttons">
-                        <a class="my-button" href="/products/urtopia-carbon-e-bike">Order now</a>
-                        <a class="my-button my-button-ghost mobileHide" href="/pages/ebike-leasing">Leasing</a>
-                        <a class="my-button pcHide" href="/pages/ebike-leasing">Leasing</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- 
-        <div class="swiper-slide maksim">
-            <div class="centeral-content">
-                <div></div>
-                <div class="right">
-                    <div class="u17Medium_v2 mobileHide">Tune your ride with Chord.</div>
-                    <div class="u48DemiBold_v2">"Elegant, powerful and reliable"</div>
-                    <div class="flex-1 pcHide"></div>
-                    <div class="buttons">
-                        <a class="my-button" href="">Meet Chord</a>
-                        <a class="my-button my-button-ghost mobileHide" href="">Watch video</a>
-                        <a class="my-button pcHide" href="">Watch video</a>
-                    </div>
-                </div>
-            </div>
-        </div> -->
-    </div>
-    <div class="swiper-pagination"></div>
-</div>
-
-<script setup>
- // 是否有多个banner, 如果有 开启swiper
- const isMultipartBanner = document.querySelectorAll('.banner .swiper-slide')
-  
- isMultipartBanner.length > 1 && new Swiper('.banner', {
-     autoplay: {
-         disableOnInteraction: false,
-         pauseOnMouseEnter: false,
-         delay: 5000,
-     },
-     loop: true,
-     speed: 1000,
-     pagination: {
-         el: '.swiper-pagination',
-         clickable: true
-     }
- })
-</script>
-
+{% render 'home-page-banner' %}
 </div></div></div></div></div></div><div data-section-id="pf-636d" data-pf-type="Section" class="sc-fmciRz bheIgq pf-7_ pf-sm-hide pf-hide"><div class="sc-gjNHFA gwWIgj"><div class="sc-ezbkAF A-dmbO pf-8_ pf-r pf-c-cm pf-r-eh" style="--s-xs:0px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-md:12;--c-lg:12"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-9_"><div data-pf-type="Custom.HTML" class="sc-AjmGg eCTxfx pf-10_">
   <div id="section1">
     <div class="texts">
@@ -553,7 +497,7 @@ new Swiper ('#section1-mobile', {
                 <div class="size">Fit for 170cm - 195cm</div>
               </div>
               <a href="/products/urtopia-carbon-e-bike?variant=42615025172696" class="my-button my-button-white">Order now</a>
-              <!--<div class="my-button my-button-black new yellow">3 Freebies</div>-->
+              <div class="my-button my-button-black new yellow" style="background-image: linear-gradient(180deg, #EE6426, #F4492A);">3 Freebies</div>
             </div>
           <div class="swiper-slide">
               <div class="name">Chord</div>
