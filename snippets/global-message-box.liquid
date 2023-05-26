@@ -27,6 +27,10 @@
   }
 
   function showMessageBox() {
+    if (global_config.message_box_is_hide) {
+      return
+    }
+    
     if (ignore_page_ids.includes(current_page_id)) {
       return
     }

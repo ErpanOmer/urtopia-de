@@ -7,9 +7,14 @@ const global_config = {
     // 是否是手机
     is_mobile: document.documentElement.clientWidth < 768,
 
+    // 是否隐藏 message 弹窗
+    message_box_is_hide: true,
     // 右下角message弹窗 延迟弹出时间，单位:s
     message_box_show_delay_time: 10,
 
+
+    // 是否隐藏 邮件弹窗
+    subscribe_email_is_hide: false,
     // 邮件弹窗 延迟弹出时间，单位:s
     subscribe_email_show_delay_time: 30,
 
