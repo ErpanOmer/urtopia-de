@@ -14,8 +14,8 @@
 
 <script>
   const message_box_name = 'message_box'
-  // 这些弹出屏蔽
-  const ignore_page_id = ['product.pf-8d61060d', 'product.pf-d095440b']
+  // 这些页面弹出屏蔽
+  const ignore_page_ids = ['product.pf-8d61060d', 'product.pf-d095440b']
 
   function hideMessageBox() {
     sessionStorage.setItem(message_box_name, message_box_name);
@@ -27,8 +27,9 @@
   }
 
   function showMessageBox() {
-    // 如果是outlet 页面直接退出来
-    {% if template == 'product.pf-8d61060d' %} return {% endif%}
+    if (ignore_page_ids.includes(current_page_id)) {
+      return
+    }
 
     if (sessionStorage.getItem(message_box_name)) {
       return;
