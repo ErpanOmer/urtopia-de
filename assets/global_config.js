@@ -13,9 +13,7 @@ const global_config = {
     // 邮件弹窗 延迟弹出时间，单位:s
     subscribe_email_show_delay_time: 30,
 
-    // 发货时间映射表
-    // key:    vairant_id
-    // value:  发货时间文案
+    // 发货时间映射表  key: vairant_id  -> value: 发货时间文案
     ebike_delivery_time: {
         // outlet carbon 1
         43820311281880: 'Ships within <span>7 business days</span> from local warehouse.',
