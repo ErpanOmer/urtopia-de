@@ -16,7 +16,7 @@ class CartRemoveButton extends HTMLElement {
       console.log('pruduct_id', pruduct_id)
 
         // 如果是carbon one 单车
-      if (pruduct_id === event_bike_product_id) {
+      if (pruduct_id === global_config.event_bike_product_id) {
         return cartItems.updateCarbonOneWithComponents(parseInt(index), lineId, parseInt(quantity), 0)
       }
 
@@ -68,7 +68,7 @@ class CartItems extends HTMLElement {
         }
 
         itemsQuantityArray[index] = afterQuantity
-      } else if (event_accessories_variant_ids.includes(item.dataset.lineItemVariantId)) {
+      } else if (global_config.event_accessories_variant_ids.includes(item.dataset.lineItemVariantId)) {
         const componentQuantity = parseInt(item.dataset.quantity)
         itemsQuantityArray[index] = componentQuantity + (afterQuantity - beforeQuantity)
       } else {
@@ -139,7 +139,7 @@ class CartItems extends HTMLElement {
     console.log('pruduct_id', pruduct_id)
 
 
-    if (pruduct_id === event_bike_product_id) {
+    if (pruduct_id === global_config.event_bike_product_id) {
         return this.updateCarbonOneWithComponents(parseInt(index), lineId, parseInt(quantity), parseInt(event.target.value));
     }
     
