@@ -86,7 +86,9 @@
             .centeral-content {
                 height: 80%;
                 &>div {
-                    max-width: 350px;
+                    img {
+                      max-width: 350px;
+                    }
 
                     .u24DemiBold_v2 {
                         margin: 30px 0 -20px;
