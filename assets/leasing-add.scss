@@ -309,22 +309,23 @@
                 .sooner {
                     background-color: #fff;
                     border-radius: 10px;
-                    padding: 40px 0 28px;
+                    padding: 40px 30px 28px;
                     margin-top: 60px;
                     width: 100%;
                     display: flex;
                     flex-direction: column;
                     align-items: center;
+                    box-sizing: border-box;
 
                     .u24Medium_v2 {
                         padding: 28px 0 15px;
+                        max-width: 750px;
                     }
 
                     .choice {
                         display: grid;
                         border-top: 1px solid #eee;
                         grid-template-columns: repeat(2, minmax(300px, 1fr));
-                        margin: 0 3%;
                         align-items: center;
                         text-align: left;
 
