@@ -519,7 +519,7 @@ setTimeout(() => {
                  body: JSON.stringify(body)
                })
                .then(response => {
-                 return response.json();
+                    location.href = `discount/onetimespecial?redirect=%2Fcheckout`
                })
                .catch((error) => {
                  console.error('Error:', error);
