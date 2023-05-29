@@ -6,7 +6,7 @@
             <div class="u48DemiBold_v2">Thank you!</div>
             <div class="u24Medium_v2">You have successfully submit the form. Our expert will contact you soon. Feel free to contact us if you have any questions.</div>
             <a class="my-button my-button-white" href="/pages/contactus">Contact us</a>
-            <div class="sooner">
+            <div class="sooner" style="display:none;">
                 <div class="u48DemiBold_v2">For you to get on riding sooner !!!</div>
                 <div class="u24Medium_v2">we are now offering a one time €600 off and 3 free accessories, limited time only.</div>
                 <div class="choice">
@@ -476,17 +476,11 @@ setTimeout(() => {
 
         submit(values)
 
-        const offers = `
-           
-         `
-
-        const nooffers = `
-            <div class="u48DemiBold_v2">Thank you!</div>${page_infos.form_thankyou_content}<a class="my-button my-button-white" href="/pages/contactus">Contact us</a>
-        `
-
 
         // 隐藏form
-        //$('.forms form').hide()
+        $('.forms form').hide()
+        $('.forms .thankyou').show()
+        values.offers !== 'yes' &&  $('.forms .thankyou').show()
         // $('.forms .centeral-content').html(values.offers === 'yes' ? offers : nooffers)
 
         setTimeout(() => {
