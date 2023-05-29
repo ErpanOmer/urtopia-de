@@ -253,7 +253,7 @@ const testRides = [
           '2023-5-24',
         ]
        },
-       {
+       /*{
          name: 'Anneke Gabriel',
          phone: '+491799955692',
          email: 'yannick.vannoy@thecycleverse.com',
@@ -275,7 +275,7 @@ const testRides = [
            "9:00-18:00",
            "9:00-18:00",
          ],
-       }
+       }*/
      ]
    },
   {
