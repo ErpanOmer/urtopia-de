@@ -361,12 +361,19 @@
                             }
                         }
 
+                        .bynow {
+                            i {
+                                display: none;
+                            }
+                        }
+
                         .loading {
                             cursor: no-drop;
                             opacity: 0.5;
                             pointer-events: none;
 
                             i {
+                                display: block;
                                 margin-right: 6px;
                             }
                         }
