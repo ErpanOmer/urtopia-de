@@ -489,8 +489,8 @@ setTimeout(() => {
         } else {
             $('.forms .thankyou .sooner').show()
             $('.forms .thankyou .sooner .u24DemiBold_v2').text(values.bike_model)
-            $($('.forms .thankyou .sooner .u17Light_v2')[0]).text(values.bike_style)
-            $($('.forms .thankyou .sooner .u17Light_v2')[1]).text(values.bike_size)
+            $('.forms .thankyou .sooner .u17Light_v2')[0].innerText = values.bike_style
+            $('.forms .thankyou .sooner .u17Light_v2')[1].innerText = values.bike_size
             $('.forms .thankyou .sooner .u24DemiBold_v2').text(values.bike_model)
             $('.forms .thankyou .sooner .choice > img').attr('src', $('input[type="image"]').attr('src'))
         }
