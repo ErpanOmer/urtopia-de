@@ -503,8 +503,6 @@ setTimeout(() => {
               'Content-Type': 'application/json'
             },
           }).then(r => {
-            console.log(r)
-
                const body = { items: [{ id: 42615025172696, quantity: 1 }] }
                body.items = body.items.concat(global_config.event_accessories_variant_ids.map(id => ({ id, quantity: 1 })))
 
@@ -520,6 +518,7 @@ setTimeout(() => {
                  body: JSON.stringify(body)
                })
                .then(response => {
+                fetchBuried('websiteclick', `${page_infos.page_name}-leasing`, { button: 'aftersubmit_buyn' }, true)
                     // location.href = `/discount/onetimespecial?redirect=%2Fcheckout`
                })
                .catch((error) => {
