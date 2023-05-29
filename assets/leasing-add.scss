@@ -428,6 +428,10 @@
                             position: absolute;
                         }
                     }
+
+                    .active {
+                        border-color: #000;
+                    }
                 }
 
                 .SumoSelect {
@@ -691,10 +695,6 @@
                                         padding: 0;
                                         position: absolute;
                                     }
-                                }
-
-                                .active {
-                                    border-color: #000;
                                 }
                             }
 
