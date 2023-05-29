@@ -451,6 +451,13 @@ setTimeout(() => {
                 scrollTop: $('.forms').offset().top - (document.documentElement.clientHeight / 2) + ($('.forms').height() / 2)
             }, 300)
 
+
+            $('.bynow').on('click', e => {
+                jQuery.post(window.Shopify.routes.root + 'cart/clear.js').then(r => {
+                    console.log(r)
+                });
+            })
+
             {% comment %} page_infos.page_name === 'jobrad' && $('.forms .centeral-content .forms-link').on('click', e => {
                 const item = document.querySelector(`.faqs .faq-item[index="7"]`)
                 const title = item.querySelector('.faq-title')
