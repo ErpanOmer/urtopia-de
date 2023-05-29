@@ -488,7 +488,12 @@ setTimeout(() => {
 
 
     $('.bynow').on('click', e => {
-        jQuery.post(window.Shopify.routes.root + 'cart/clear.js').then(r => {
+        fetch(window.Shopify.routes.root + 'cart/clear.js', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+          }).then(r => {
             console.log(r)
 
                const body = {
