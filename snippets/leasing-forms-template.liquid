@@ -482,7 +482,7 @@ setTimeout(() => {
         $('.forms .nothankyou').hide()
         $('.forms .thankyou').show()
         // 如果选择了 不是no 的选项
-        values.offers !== 'yes' &&  $('.forms .thankyou .sooner').show()
+        values.offers === 'yes' ?  $('.forms .thankyou .sooner').hide() : $('.forms .thankyou .sooner').show()
 
         setTimeout(() => {
             $('html').animate({
