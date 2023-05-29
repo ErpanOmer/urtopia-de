@@ -494,7 +494,7 @@ setTimeout(() => {
             return
         }
 
-
+        $('.bynow').addClass('loading')
         clicked = true
 
         fetch(window.Shopify.routes.root + 'cart/clear.js', {

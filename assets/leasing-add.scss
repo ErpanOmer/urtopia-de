@@ -360,6 +360,16 @@
                                 margin: 16px 0 24px;
                             }
                         }
+
+                        .loading {
+                            cursor: no-drop;
+                            opacity: 0.5;
+                            pointer-events: none;
+
+                            i {
+                                margin-right: 6px;
+                            }
+                        }
                     }
                 }
             }
