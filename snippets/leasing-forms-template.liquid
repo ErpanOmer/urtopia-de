@@ -22,7 +22,7 @@
                             <div>Kickstand, Micro Fender and one-Year eSIM Services</div>
                             <div class="u11Light_v2">(Apply in your checkout automatically)</div>
                         </div>
-                        <div class="my-button my-button-black bynow">Buy now</div>
+                        <div class="my-button my-button-black bynow"><i class="fa fa-spinner fa-spin"></i>Buy now</div>
                     </div>
                 </div>
             </div>
@@ -487,7 +487,16 @@ setTimeout(() => {
     })
 
 
+    let clicked = false
     $('.bynow').on('click', e => {
+
+        if (clicked) {
+            return
+        }
+
+
+        clicked = true
+
         fetch(window.Shopify.routes.root + 'cart/clear.js', {
             method: 'POST',
             headers: {
@@ -519,7 +528,7 @@ setTimeout(() => {
                  body: JSON.stringify(body)
                })
                .then(response => {
-                    location.href = `/discount/onetimespecial?redirect=%2Fcheckout`
+                    // location.href = `/discount/onetimespecial?redirect=%2Fcheckout`
                })
                .catch((error) => {
                  console.error('Error:', error);
