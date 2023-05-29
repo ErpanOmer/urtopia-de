@@ -519,7 +519,7 @@ setTimeout(() => {
                })
                .then(response => {
                 fetchBuried('websiteclick', `${page_infos.page_name}-leasing`, { button: 'aftersubmit_buyn' }, true)
-                    // location.href = `/discount/onetimespecial?redirect=%2Fcheckout`
+                location.href = `/discount/onetimespecial?redirect=%2Fcheckout`
                })
                .catch((error) => {
                 $('.bynow').removeClass('loading')
