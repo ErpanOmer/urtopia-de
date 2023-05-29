@@ -315,12 +315,12 @@
 
                     .u24Medium_v2 {
                         padding: 28px 0 15px;
-                        border-bottom: 1px solid #eee;
                     }
 
                     .choice {
                         display: grid;
-                        grid-template-columns: repeat(2, minmax(1fr, 500px));
+                        border-top: 1px solid #eee;
+                        grid-template-columns: repeat(2,minmax(300px, 1fr));
                     }
                 }
             }
