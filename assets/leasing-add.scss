@@ -288,10 +288,11 @@
             text-align: center;
             max-width: 750px;
 
-            &>.u24Medium_v2 {
-                margin: 24px 0 48px;
+            & > div {
+                &>.u24Medium_v2 {
+                    margin: 24px 0 48px;
+                }
             }
-
 
             .forms-link {
                 text-decoration: underline;
