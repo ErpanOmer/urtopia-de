@@ -288,7 +288,7 @@
             text-align: center;
             // max-width: 750px;
 
-            & > div {
+            &>div {
                 &>.u24Medium_v2 {
                     margin: 24px 0 48px;
                 }
@@ -301,7 +301,7 @@
                 text-align: center;
                 width: 100%;
 
-                & > .u24Medium_v2 {
+                &>.u24Medium_v2 {
                     margin: 24px 0;
                     max-width: 750px;
                 }
@@ -325,7 +325,7 @@
                         align-items: center;
                         text-align: left;
 
-                        & > div {
+                        &>div {
                             display: flex;
                             flex-direction: column;
                             align-items: flex-start;
@@ -336,6 +336,18 @@
 
                             .u17Light_v2 {
                                 color: #555;
+                            }
+
+                            img {
+                                max-width: 150px;
+                            }
+
+                            .u14DemiBold_v2 {
+                                background-image: linear-gradient(90deg, #EE6426, #F4492A);
+                                color: #fff;
+                                padding: 12px;
+                                border-radius: 10px;
+                                margin: 16px 0 24px;
                             }
                         }
                     }
@@ -588,7 +600,7 @@
                         color: #3B65EB;
                         display: inline-block;
                         cursor: pointer;
-        
+
                         &:hover {
                             opacity: 0.8;
                         }
@@ -1216,11 +1228,11 @@
                 text-align: left;
                 align-items: flex-start;
 
-                & > div {
+                &>div {
                     &>.u48DemiBold_v2 {
                         font-size: 24px;
                     }
-    
+
                     &>.u24Medium_v2 {
                         font-size: 17px;
                         margin: 24px 0 40px;
