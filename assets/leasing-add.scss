@@ -309,12 +309,13 @@
                 .sooner {
                     background-color: #fff;
                     border-radius: 10px;
-                    padding: 40px 0 28px;
+                    padding: 40px 30px 28px;
                     margin-top: 60px;
                     width: 100%;
 
                     .u24Medium_v2 {
-                        padding: 28px 15px;
+                        padding: 28px 0 15px;
+                        border-bottom: 1px solid #eee;
                     }
                 }
             }
