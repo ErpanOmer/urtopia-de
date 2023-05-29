@@ -380,33 +380,15 @@ setTimeout(() => {
 
     // yes or no change
     $('form .multiple-checkbox :input').on('change', e => {
+        // 全部重置为默认状态
+        $(`form .multiple-checkbox label`).removeClass('active')
+        $(`form .multiple-checkbox label img`).hide()
 
+        $(`form .multiple-checkbox label[for="${e.currentTarget.id}"]`).addClass('active')
+        $(`form .multiple-checkbox label[for="${e.currentTarget.id}"] img`).show()
 
-        if (e.currentTarget.id === 'yes') {
-            $(`form .multiple-checkbox label[for="yes"]`).css("border-color", "black")
-            $(`form .multiple-checkbox label[for="yes"] img`).css('display', 'unset')
-            $(`form .multiple-checkbox label[for="yes"]`).addClass('active')
-    
-            $(`form .multiple-checkbox label[for="no"]`).css("border-color", "#00000034")
-            $(`form .multiple-checkbox label[for="no"] img`).css('display', 'none')
-            $(`form .multiple-checkbox label[for="no"]`).removeClass('active')
-
-            
-            $(`form .change_offers :input`).attr('type', 'hidden')
-            $(`form .change_offers`).hide()
-        } else {
-            $(`form .multiple-checkbox label[for="no"]`).css("border-color", "black")
-            $(`form .multiple-checkbox label[for="no"] img`).css('display', 'unset')
-            $(`form .multiple-checkbox label[for="no"]`).addClass('active')
-    
-            $(`form .multiple-checkbox label[for="yes"]`).css("border-color", "#00000034")
-            $(`form .multiple-checkbox label[for="yes"] img`).css('display', 'none')
-            $(`form .multiple-checkbox label[for="yes"]`).removeClass('active')
-
-            $(`form .change_offers :input`).attr('type', 'text')
-            $(`form .change_offers`).show()
-        }
-    
+        // $(`form .change_offers :input`).attr('type', 'hidden')
+        // $(`form .change_offers`).hide()
     })
 
 
