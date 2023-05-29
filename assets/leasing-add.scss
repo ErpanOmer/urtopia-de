@@ -325,6 +325,11 @@
                         align-items: center;
                         text-align: left;
 
+
+                        & > img {
+                            transform: translateY(-12.5%);
+                        }
+
                         &>div {
                             display: flex;
                             flex-direction: column;
