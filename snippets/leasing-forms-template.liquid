@@ -490,6 +490,32 @@ setTimeout(() => {
     $('.bynow').on('click', e => {
         jQuery.post(window.Shopify.routes.root + 'cart/clear.js').then(r => {
             console.log(r)
+
+               const body = {
+                 items: [
+                    {
+                        id: 42615025172696,
+                        quantity: 1
+                    }
+                 ]
+               }
+
+               body.items = body.items.concat(global_config.event_accessories_variant_ids.map(id => ({ id, quantity: 1 })))
+
+
+               fetch(window.Shopify.routes.root + 'cart/add.js', {
+                 method: 'POST',
+                 headers: {
+                   'Content-Type': 'application/json'
+                 },
+                 body: JSON.stringify(body)
+               })
+               .then(response => {
+                 return response.json();
+               })
+               .catch((error) => {
+                 console.error('Error:', error);
+               });
         });
     })
 
