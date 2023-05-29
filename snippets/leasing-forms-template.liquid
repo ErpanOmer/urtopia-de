@@ -3,6 +3,9 @@
 <div class="forms" id="forms">
     <div class="centeral-content">
         <div class="yes">
+            <div class="u48DemiBold_v2">Thank you!</div>
+            <div class="u24Medium_v2">You have successfully submit the form. Our expert will contact you soon. Feel free to contact us if you have any questions.</div>
+            <a class="my-button my-button-white" href="/pages/contactus">Contact us</a>
         </div>
         <div class="no">
             <div class="u48DemiBold_v2">Request a quote for Urtopia E-bike leasing now</div>
@@ -411,9 +414,7 @@ setTimeout(() => {
         submit(values)
 
         const offers = `
-            <div class="u48DemiBold_v2">Thank you!</div>
-            <div class="u24Medium_v2">You have successfully submit the form. Our expert will contact you soon. Feel free to contact us if you have any questions.</div>
-            <a class="my-button my-button-white" href="/pages/contactus">Contact us</a>
+           
          `
 
         const nooffers = `
@@ -422,15 +423,15 @@ setTimeout(() => {
 
 
         // 隐藏form
-        $('.forms form').hide()
-        $('.forms .centeral-content').html(values.offers === 'yes' ? offers : nooffers)
+        //$('.forms form').hide()
+        // $('.forms .centeral-content').html(values.offers === 'yes' ? offers : nooffers)
 
         setTimeout(() => {
             $('html').animate({
                 scrollTop: $('.forms').offset().top - (document.documentElement.clientHeight / 2) + ($('.forms').height() / 2)
             }, 300)
 
-            page_infos.page_name === 'jobrad' && $('.forms .centeral-content .forms-link').on('click', e => {
+            {% comment %} page_infos.page_name === 'jobrad' && $('.forms .centeral-content .forms-link').on('click', e => {
                 const item = document.querySelector(`.faqs .faq-item[index="7"]`)
                 const title = item.querySelector('.faq-title')
                 const content = item.querySelector('.faq-content')
@@ -449,7 +450,7 @@ setTimeout(() => {
         
                 e.preventDefault();
                 return false;
-            })
+            }) {% endcomment %}
         })
 
         event.preventDefault();
