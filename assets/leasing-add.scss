@@ -1168,13 +1168,15 @@
                 text-align: left;
                 align-items: flex-start;
 
-                &>.u48DemiBold_v2 {
-                    font-size: 24px;
-                }
-
-                &>.u24Medium_v2 {
-                    font-size: 17px;
-                    margin: 24px 0 40px;
+                & > div {
+                    &>.u48DemiBold_v2 {
+                        font-size: 24px;
+                    }
+    
+                    &>.u24Medium_v2 {
+                        font-size: 17px;
+                        margin: 24px 0 40px;
+                    }
                 }
 
                 .item {
