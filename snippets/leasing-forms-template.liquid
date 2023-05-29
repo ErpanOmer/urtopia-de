@@ -478,7 +478,8 @@ setTimeout(() => {
 
 
         // 隐藏form
-        $('.forms form').hide()
+        $('.forms .centeral-content').css('max-width', '1290px;')
+        $('.forms > div:not(.thankyou)').hide()
         $('.forms .thankyou').show()
         // 如果选择了 不是no 的选项
         values.offers !== 'yes' &&  $('.forms .thankyou .sooner').show()
