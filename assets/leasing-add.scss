@@ -309,14 +309,18 @@
                 .sooner {
                     background-color: #fff;
                     border-radius: 10px;
-                    padding: 40px 30px 28px;
+                    padding: 40px 0 28px;
                     margin-top: 60px;
                     width: 100%;
 
                     .u24Medium_v2 {
                         padding: 28px 0 15px;
                         border-bottom: 1px solid #eee;
-                        margin: 0 30px;
+                    }
+
+                    .choice {
+                        display: grid;
+                        grid-template-columns: 1fr 1fr;
                     }
                 }
             }
