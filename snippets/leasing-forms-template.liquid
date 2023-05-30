@@ -4,7 +4,7 @@
     <div class="centeral-content">
         <div class="thankyou">
             <div class="u48DemiBold_v2">Thank you!</div>
-            <div class="u24Medium_v2">Thank you for your request. You will receive a quote from info@jobrad.org via email within one business day. Please check your inbox. <br><br>If you have any questions, please do not hesitate to contact us: Email: leasing@newurtopia.de</div>
+            <div class="u24Medium_v2"></div>
             <a class="my-button my-button-white" href="/pages/contactus">Contact us</a>
             <div class="sooner">
                 <div class="u48DemiBold_v2">For you to get on riding sooner !!!</div>
@@ -215,7 +215,8 @@ const page_infos = {% case template | json %}
         {
             page_name: 'jobrad',
             form_offers_label: 'Your employer already offers JobRad?<i>*</i>',
-            form_thankyou_content: '<div class="u24Medium_v2">You have successfully submit the form. Our expert will contact you soon. Feel free to contact us if you have any questions.<br><br>Because your employer is not working with Jobrad , please contact your employer to inform your requirement with leasing, and ask your employer to make a connection with Jobrad to make the process faster. <br><span class="forms-link">Click here for more information</span></div>'
+            form_thankyou_content: 'Thank you for your request. You will receive a quote from info@jobrad.org via email within one business day. Please check your inbox. <br><br>If you have any questions, please do not hesitate to contact us: Email: leasing@newurtopia.de',
+            form_thankyou_content2: `Thank you for your request. You will receive a quote from info@jobrad.org via email within one business day. Please check your inbox. <br><br>Since your company has not yet partnered with JobRad, we would like to offer you an exclusive discount for direct purchases as an expression of our gratitude and support.`
         }
     {% when 'page.mein-dienstrad' %}
         {
@@ -485,7 +486,9 @@ setTimeout(() => {
         // 如果选择了 不是no 的选项
         if (values.offers === 'yes') {
             $('.forms .thankyou .sooner').hide()
+            $('.forms .thankyou > .u24Medium_v2').html(page_infos.form_thankyou_content)
         } else {
+            $('.forms .thankyou > .u24Medium_v2').html(page_infos.form_thankyou_content2)
             $('.forms .thankyou .sooner').show()
             $('.forms .thankyou .sooner .u24DemiBold_v2').text(values.bike_model)
             $('.forms .thankyou .sooner .u17Light_v2')[0].innerText = values.bike_style
