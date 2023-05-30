@@ -591,6 +591,13 @@ document.addEventListener('visibilitychange', () => {
 $('.bynow').on('click', e => {
     console.log('e', e)
     const t = $(e.target)
+
+    if (t.hasClass('loading')) {
+        return
+    }
+
+    
+
     t.addClass('loading')
 })
 
