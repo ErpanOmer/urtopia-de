@@ -360,19 +360,12 @@ const changeBikeImage = e => {
     $(`select[name="bike_style"] option`).each((i, item) => {
         const v = item.value
 
-        if (!v) {
+        if (i === 0) {
             return
         }
 
         const vari = carbon.variants.find(c => c.title === `${v} / ${size}`)
-
-        if (!vari) {
-            return item.disabled = false
-        }
-
-
-        // 配置disabled
-        item.disabled = !!!vari.available
+        item.disabled = !vari ? false : !!!vari.available
     })
 
     if (!size || !style) {
