@@ -1560,6 +1560,9 @@ function testRideTrace(type = '', target){
 		}).then(response => {
 			location.href = `/checkout`
 		}).catch((error) => {
+			t.removeClass('loading')
+			t.find('span').html(text)
+		
 			console.error('Error:', error);
 		})
 	}
