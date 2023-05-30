@@ -50,6 +50,10 @@
 
 
   function showEmailDialog() {
+    if (global_config.subscribe_email_is_hide) {
+        return
+    }
+
     if (storage.get(email_dialog_session_key)) {
       return;
     }
