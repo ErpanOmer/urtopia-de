@@ -489,7 +489,7 @@ setTimeout(() => {
             $('.forms .thankyou .sooner').hide()
             $('.forms .thankyou > .u24Medium_v2').html(page_infos.form_thankyou_content)
         } else {
-            $('.forms .thankyou > .u24Medium_v2').html(page_infos.form_thankyou_content2)
+            $('.forms .thankyou > .u24Medium_v2').html(page_infos.page_name === 'jobrad' ? page_infos.form_thankyou_content2 : page_infos.form_thankyou_content)
             $('.forms .thankyou .sooner').show()
             $('.forms .thankyou .sooner .u24DemiBold_v2').text(values.bike_model)
             $('.forms .thankyou .sooner .u17Light_v2')[0].innerText = values.bike_style
