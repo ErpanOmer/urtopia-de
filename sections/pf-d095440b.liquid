@@ -1514,6 +1514,8 @@ function addAllToCart(parse) {
 function testRideTrace(type = '', target){
 	console.log('type', $(target).addClass('loading'))
 
+	$(target).find('span').html('Processing...<i class="fa fa-spinner fa-spin"></i>')
+
 
 
 	return
