@@ -1265,6 +1265,36 @@
                     }
                 }
 
+                .thankyou {
+                    .sooner {
+                        .u48DemiBold_v2 {
+                            font-size: 24px;
+                        }
+
+                        .u24Medium_v2 {
+                            font-size: 17px;
+                        }
+
+                        .choice {
+                            grid-template-columns: 1fr;
+
+                            & > div {
+                                .u30DemiBold_v2 {
+                                    font-size: 24px;
+                                }
+
+                                .u24DemiBold_v2 {
+                                    font-size: 17px;
+                                }
+
+                                .u14DemiBold_v2 {
+                                    margin: 12px 0;
+                                }
+                            }
+                        }
+                    }
+                }
+
                 .item {
                     max-width: 84vw;
 
