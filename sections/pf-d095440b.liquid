@@ -1512,17 +1512,23 @@ function addAllToCart(parse) {
 }
   
 function testRideTrace(type = '', target){
-	console.log('type', $(target).addClass('loading'))
+	const t = $(target)
 
-	$(target).find('span').html('<i class="fa fa-spinner fa-spin"></i>Processing...')
-
-
-
-	return
-
-	if (!type) {
+	if (!type || t.hasClass('loading')) {
 		return
 	}
+
+	t.addClass('loading')
+	// 原本的html 存起来
+	const text = t.find('span').html()
+	const loading = '<i class="fa fa-spinner fa-spin"></i>Processing...'
+
+	// loading
+	t.find('span').html(loading)
+	
+	return
+
+	
 
 	fetchBuried('websiteclick', `carbon-order-page`, { button: type }, true)
 
