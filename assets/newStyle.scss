@@ -834,6 +834,52 @@ body .jBox-Modal {
       margin: 8px 0 12px;
     }
   }
+
+
+  .subscribe-container {
+    grid-template-columns: 1fr;
+
+    .subscribe {
+      padding: 8%;
+
+      .u20Medium {
+        font-size: 18px;
+        line-height: 21px;
+      }
+
+      .u30DemiBold_v2 {
+        font-size: 20px;
+      }
+
+      .u20DemiBold_v2 {
+        font-size: 18px;
+      }
+
+      img {
+        margin: 15px 0;
+      }
+
+      .u17Light_v2 {
+        font-size: 12px;
+        margin-bottom: 17px;
+      }
+
+      .email {
+        height: 40px;
+
+        input {
+          font-size: 12px;
+          padding: 0 15px;
+        }
+      }
+    }
+
+    .close {
+      color: #fff;
+      top: 0.5%;
+      right: 1%;
+    }
+  }
 }
 
 
