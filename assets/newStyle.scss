@@ -534,6 +534,23 @@ body {
   }
 }
 
+
+.my-link {
+  text-decoration: underline;
+  color: #3B65EB;
+  display: inline-block;
+  cursor: pointer;
+
+  &:hover {
+      opacity: 0.8;
+  }
+}
+
+
+.emphasize {
+  color: #fd4b17;
+}
+
 body .jBox-overlay {
   background-color: rgba(0, 0, 0, 0.6);
 }

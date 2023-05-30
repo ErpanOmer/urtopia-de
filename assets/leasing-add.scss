@@ -319,7 +319,7 @@
 
                     .u24Medium_v2 {
                         padding: 28px 0 15px;
-                        max-width: 750px;
+                        // max-width: 750px;
                     }
 
                     .choice {
@@ -328,16 +328,19 @@
                         grid-template-columns: repeat(2, minmax(300px, 1fr));
                         align-items: center;
                         text-align: left;
+                        justify-items: flex-end;
 
 
                         & > img {
-                            transform: translateY(-12.5%);
+                            transform: translateY(-15%);
+                            width: 90%;
                         }
 
                         &>div {
                             display: flex;
                             flex-direction: column;
                             align-items: flex-start;
+                            width: 100%;
 
                             .u24DemiBold_v2 {
                                 margin: 16px 0 8px;
@@ -370,18 +373,11 @@
                             }
                         }
 
-                        .bynow {
-                            i {
-                                display: none;
-                            }
-                        }
-
                         .loading {
                             cursor: not-allowed;
-                            opacity: 0.5;
+                            opacity: 0.7;
 
                             i {
-                                display: inline-block;
                                 margin-right: 6px;
                             }
                         }
@@ -1285,6 +1281,11 @@
 
                         .choice {
                             grid-template-columns: 1fr;
+                            justify-items: center;
+
+                            & > img {
+                                width: 100%;
+                            }
 
                             & > div {
                                 .u30DemiBold_v2 {

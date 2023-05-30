@@ -1150,15 +1150,15 @@ letter-spacing: 0px;
 	  ><span data-pf-type="Text" class="addToCartText">Add to Cart</span>
   </button>
   <!--<button  data-checkout="same" data-soldout="Not available" data-adding="Processing" data-added="Enjoy" type="button" data-pf-type="ProductCK" class="buyNowBtn"  onclick="addAllToCart('buynow')"><i class="fa fa-spinner fa-spin"></i><span data-pf-type="Text"  >Buy Now</span></button>-->
-  <div onclick="testRideTrace('lease_on_jobrad')" class="orderTestRideBtn">
+  <div onclick="testRideTrace('lease_on_jobrad', this)" class="orderTestRideBtn">
 	<img class="oneeee" src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/jobradorg_2x_423443a0-1c79-4785-97a0-2be8ae66ceb6.png?v=1685414275"/>
 	<span>Leasing with JobRad</span>
   </div>
-  <!--<div onclick="testRideTrace('klarna_check_out')" class="orderTestRideBtn">
+  <!--<div onclick="testRideTrace('klarna_check_out', this)" class="orderTestRideBtn">
 	<img class="twoooo"src="https://cdn.shopifycdn.net/s/files/1/0633/2068/6808/files/20230530-121400.png?v=1685420054"/>
 	<span><span>Financing with Klarna</span><span style="font-size: 12px;font-weight: 300;">As low as €112/month, 0 APR.</span></span>
   </div> 
-  <div onclick="testRideTrace('shop_on_mediamarkt')" class="orderTestRideBtn">
+  <div onclick="testRideTrace('shop_on_mediamarkt', this)" class="orderTestRideBtn">
 	<img class="threeee" src="https://cdn.shopifycdn.net/s/files/1/0633/2068/6808/files/20230530-110825.png?v=1685416121"/>
 	<span>Shop on Media Markt</span>
   </div>-->
@@ -1511,12 +1511,22 @@ function addAllToCart(parse) {
   }
 }
   
-function testRideTrace(type = ''){
-	console.log('type', type)
+function testRideTrace(type = '', target){
 
-	if (!type) {
+	// 如果已经有按钮 loading ,直接退出来
+	if (!type || $('.orderTestRideBtn').hasClass('loading')) {
 		return
 	}
+
+	const t = $(target)
+
+	t.addClass('loading')
+	// 原本的html 存起来
+	const text = t.find('span').html()
+	const loading = '<i class="fa fa-spinner fa-spin"></i>Processing...'
+
+	// loading
+	t.find('span').html(loading)
 
 	fetchBuried('websiteclick', `carbon-order-page`, { button: type }, true)
 
@@ -1546,33 +1556,16 @@ function testRideTrace(type = ''){
 		}).then(response => {
 			location.href = `/checkout`
 		}).catch((error) => {
+			t.removeClass('loading')
+			t.find('span').html(text)
+		
 			console.error('Error:', error);
 		})
 	}
 
 	if (type === 'shop_on_mediamarkt') {
-		return window.open('https://www.mediamarkt.de/de/search.html?query=urtopia&t=1684304888213')
+		return window.open('https://www.mediamarkt.de/de/search.html?query=urtopia&filter=carType%3ACitybike')
 	}
-
-
-	/*
-	let body = {
-	trace_name: "de-testride-pc"
-  }	
-  if(window.innerWidth <=768){
-	body.trace_name = "de-testride-mb";
-  }
-  fetch("https://api.newurtopia.com/third_part/book_ride/traces", {
-	method: "POST",
-	body: JSON.stringify(body),
-	headers: {
-	  "Content-Type": "application/json",
-	},
-  }).then((res) => res.json())
-	.then(res=>{
-	 window.location.href="/pages/test-ride"
-  })
-  */
 }
 </script>
 <style>
@@ -1682,6 +1675,20 @@ function testRideTrace(type = ''){
 
   .orderTestRideBtn .threeee {
 	width: 125px;
+  }
+
+  .loading {
+	opacity: 0.7;
+    cursor: not-allowed;
+  }
+
+  .loading > span {
+	flex-direction: row;
+    align-items: center;
+  }
+
+  .loading > span i {
+	margin-right: 6px;
   }
 
   .orderTestRideBtn a{
