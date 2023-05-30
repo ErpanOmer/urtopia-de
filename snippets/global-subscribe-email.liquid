@@ -1,4 +1,50 @@
 <script>
+      // 邮件订阅弹窗
+  const subscribeHtml = `<div class="subscribe-container">
+    <img class="mobileHide" src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230530-204105.jpg?v=1685450479" alt="">
+    <img class="pcHide" src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230530-204056.jpg?v=1685450476" alt="">
+    <div class="subscribe">
+        <span class="u20DemiBold_v2">{{ settings.sale_name }} <br class="pcHide">{{ settings.sale_end_time }}</span>
+        <img class="mobileHide" src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230530-204354.png?v=1685450657">
+        <img class="pcHide" src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230530-204404.png?v=1685450657">
+        <span class="u17Light_v2">Subscribe to Urtopia for exclusive coupons, engaging stories, and the latest product news.</span>
+        <form class="new-contact" action="/contact#ContactFooter" target="_blank" method="post" accept-charset="UTF-8">
+        <div class="email">
+              <input type="hidden" name="form_type" value="customer">
+              <input type="hidden" name="utf8" value="✓">
+              <input type="hidden" name="contact[tags]" value="newsletter">
+              <input placeholder="Enter email here" type="email" name="contact[email]" required>
+              <button class="my-button my-button-black" type="submit">Subscribe</button>
+        </div>
+      </form>
+    </div>
+    <span class="close" onclick="closeEmailDialog()">×</span>
+</div>`
+    
+
+    /*
+    const subscribeHtml = `<div class="subscribe-container">
+      <img class="mobileHide" src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_20879_2x_9eb77960-cc47-4d48-b823-835a9ef7314b.jpg?v=1681804735" alt="">
+      <img class="pcHide" src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230418-160913.jpg?v=1681805365" alt="">
+      <div class="subscribe">
+          <span class="u30DemiBold_v2">Join Urtopia and Get Exclusive Coupon</span>
+          <img style="height:0;" src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Union_12_2x_f3408316-66ce-44c8-ad74-6ee638a54650.jpg?v=1681095007">
+          <span class="u17Light">Subscribe to Urtopia for exclusive coupons, engaging stories, and the latest product news.</span>
+          <form class="new-contact" action="/contact#ContactFooter" target="_blank" method="post" accept-charset="UTF-8">
+          <div class="email">
+                <input type="hidden" name="form_type" value="customer">
+                <input type="hidden" name="utf8" value="✓">
+                <input type="hidden" name="contact[tags]" value="newsletter">
+                <input placeholder="Enter email here" type="email" name="contact[email]" required>
+                <button class="my-button my-button-black" type="submit">Subscribe</button>
+          </div>
+        </form>
+      </div>
+      <span class="close" onclick="closeEmailDialog()">×</span>
+    </div>`
+*/
+
+
   function showEmailDialog() {
     if (storage.get('emailDialogHideDay')) {
       return;
