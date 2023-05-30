@@ -328,6 +328,7 @@
                         grid-template-columns: repeat(2, minmax(300px, 1fr));
                         align-items: center;
                         text-align: left;
+                        justify-items: flex-end;
 
 
                         & > img {
@@ -1280,6 +1281,11 @@
 
                         .choice {
                             grid-template-columns: 1fr;
+                            justify-items: center;
+
+                            & > img {
+                                width: 100%;
+                            }
 
                             & > div {
                                 .u30DemiBold_v2 {
