@@ -708,6 +708,67 @@ body .jBox-Modal {
       box-shadow: 0px 20px 20px #00000015;
       border-radius: 10px;
     }
+
+
+    .u17Light_v2 {
+      margin-bottom: 30px;
+    }
+
+    .email {
+      box-sizing: border-box;
+      display: flex;
+      height: 47px;
+      position: relative;
+      input {
+        height: 100%;
+        width: 100%;
+        border-color: #0000004d;
+        border-radius: 30px;
+        color: #000;
+        padding: 0 25px;
+        font-size: 14px;
+        position: relative;
+        z-index: 1;
+        overflow: hidden;
+        box-sizing: border-box;
+
+        &:focus-visible {
+          border-color: #000;
+        }
+
+        &::placeholder {
+          color: #aaa;
+        }
+      }
+
+      button {
+        border: none;
+      }
+
+      .my-button {
+        position: absolute;
+        right: 0;
+        z-index: 2;
+        height: 100%;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+    }
+    }
+  }
+
+  .close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 40px;
+    color: #999;
+    cursor: pointer;
+    font-weight: 100;
+    display: block;
+    height: 40px;
+    line-height: 40px;
+    width: 40px;
+    text-align: center;
   }
 }
 
