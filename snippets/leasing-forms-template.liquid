@@ -501,7 +501,7 @@ setTimeout(() => {
             console.log('top', top)
 
             $('html').animate({
-                scrollTop: $('.forms').offset().top - top
+                scrollTop: $('.forms').offset().top - (values.offers === 'yes' ? (document.documentElement.clientHeight / 2) + ($('.forms').height() / 2) : 40)
             }, 300)
 
             // offers 不等于yes ,才去监听buy now
