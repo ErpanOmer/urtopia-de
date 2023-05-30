@@ -218,10 +218,11 @@ const testRides = [
          add: "Eimsbüttel, 20255 Hamburg",
         imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Hamburg_19874cca-b8ea-4f39-824a-d987e3410a01.jpg?v=1683867163",
          testrideSpot: "Hamburg",
-         testRideSize: "L",
+         testRideSize: "L,Chord",
          isPartner: true,
          availableSizes: [
           'Carbon One Size L',
+           'Chord'
         ],
          businessHours: [
            "",
@@ -416,8 +417,12 @@ const testRides = [
         add: "Nippes, 50737 Köln (in der Nähe der Straßenbahn und Bus Haltestelle: Wilhelm Sollmann Straße)",
         imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Koln.jpg?v=1679406972",
         testrideSpot: "Köln",
-        testRideSize: "L",
+        testRideSize: "L,Chord",
         isPartner: true,
+        availableSizes: [
+          'Carbon One Size L',
+          'Chord'
+        ],
         businessHours: [
           "09:00-18:00",
           "09:00-18:00",
