@@ -55,6 +55,47 @@ function debounce(fn, wait) {
     }
 };
 
+
+ // 视频播放
+ function showVideoDialog (src = '') {
+    console.log('src', src)
+    if (!src) {
+      return
+    }
+    const template = `<div class="video-box">
+        <iframe
+          width="${document.body.clientWidth > 768 ? 840 : document.body.clientWidth * 0.84 }"
+          height="${document.body.clientWidth > 768 ? 472 : 'auto'}"
+          src="${src}"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+        <span class="close" onclick="closeMiniDialog()">x</span>
+    </div>`
+    showMiniDialog(template)
+  }
+    
+    function showMiniDialog(html = '') {
+        $('body .mini-dialog').remove()
+        setTimeout(() => {
+          $("body").append(`<div class="mini-dialog" style="display: flex;">${html}</div>`)
+      
+          {% comment %} setTimeout(() => {
+            $('body .mini-dialog > div').on('click', e => {
+              e.stopPropagation();
+              return false;
+            })
+          }, 100) {% endcomment %}
+        })
+      }
+      
+      function closeMiniDialog() {
+        // console.log(a === document.querySelector('body .mini-dialog'))
+        $('body .mini-dialog').remove()
+      }  
+
 class MyStorage {
     constructor(props) {
       this.props = props || {};
