@@ -1514,7 +1514,7 @@ function addAllToCart(parse) {
 function testRideTrace(type = '', target){
 	console.log('type', $(target).addClass('loading'))
 
-	$(target).find('span').html('Processing...<i class="fa fa-spinner fa-spin"></i>')
+	$(target).find('span').html('<i class="fa fa-spinner fa-spin"></i>Processing...')
 
 
 
@@ -1668,6 +1668,12 @@ function testRideTrace(type = '', target){
 
   .orderTestRideBtn .threeee {
 	width: 125px;
+  }
+
+  .loading span i {
+	flex-direction: row;
+    align-items: center;
+	margin-right: 6px;
   }
 
   .orderTestRideBtn a{
