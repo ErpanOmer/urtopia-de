@@ -1151,15 +1151,15 @@ letter-spacing: 0px;
   </button>
   <!--<button  data-checkout="same" data-soldout="Not available" data-adding="Processing" data-added="Enjoy" type="button" data-pf-type="ProductCK" class="buyNowBtn"  onclick="addAllToCart('buynow')"><i class="fa fa-spinner fa-spin"></i><span data-pf-type="Text"  >Buy Now</span></button>-->
   <div onclick="testRideTrace()" class="orderTestRideBtn">
-	<img style="width:100px;" src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/jobradorg_2x_423443a0-1c79-4785-97a0-2be8ae66ceb6.png?v=1685414275"/>
+	<img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/jobradorg_2x_423443a0-1c79-4785-97a0-2be8ae66ceb6.png?v=1685414275"/>
 	<span>Leasing with JobRad</span>
   </div>
   <div onclick="testRideTrace()" class="orderTestRideBtn">
-	<img style="width:105px;" src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Klarna-Logo.wine_2x_c79794b8-5154-4bda-8e67-0ea0dc620c5a.png?v=1685414939"/>
+	<img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Klarna-Logo.wine_2x_c79794b8-5154-4bda-8e67-0ea0dc620c5a.png?v=1685414939"/>
 	<span><span>Financing with Klarna</span><span style="font-size: 12px;font-weight: 300;">As low as €112/month, 0 APR.</span></span>
   </div>
   <div onclick="testRideTrace()" class="orderTestRideBtn">
-	<img style="width:125px;" src="https://cdn.shopifycdn.net/s/files/1/0633/2068/6808/files/20230530-110825.png?v=1685416121"/>
+	<img src="https://cdn.shopifycdn.net/s/files/1/0633/2068/6808/files/20230530-110825.png?v=1685416121"/>
 	<span>Shop on Media Markt</span>
   </div>
 
@@ -1623,7 +1623,7 @@ function testRideTrace(){
 	color: #000;
 	border: 2px solid #161c1f;
 	display: grid;
-    grid-template-columns: 0.75fr 1fr;
+    grid-template-columns: 0.7fr 1fr;
     grid-column-gap: 12px;
 	align-items: center;
     justify-items: right;
@@ -1635,6 +1635,18 @@ function testRideTrace(){
 	flex-direction: column;
     align-items: flex-start;
 	line-height: 16px;
+  }
+
+  .orderTestRideBtn > img:nth-child(1) {
+	width: 90px;
+  }
+
+  .orderTestRideBtn > img:nth-child(2) {
+	width: 95px;
+  }
+
+  .orderTestRideBtn > img:nth-child(3) {
+	width: 125px;
   }
 
   .orderTestRideBtn a{
