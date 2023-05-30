@@ -590,6 +590,8 @@ document.addEventListener('visibilitychange', () => {
 
 $('.bynow').on('click', e => {
     console.log('e', e)
+    const t = $(e.target)
+    t.addClass('loading')
 })
 
 </script>
