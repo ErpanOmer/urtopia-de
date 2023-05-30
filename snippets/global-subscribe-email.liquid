@@ -1,6 +1,8 @@
 <link rel="prefetch" href="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230530-204105.jpg?v=1685450479" as="image">
 <link rel="prefetch" href="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230530-204056.jpg?v=1685450476" as="image">
 <script>
+  const email_dialog_session_key = 'emailDialogHideDay'
+
       // 邮件订阅弹窗
   const subscribeHtml = `<div class="subscribe-container">
     <img class="mobileHide" src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230530-204105.jpg?v=1685450479" alt="">
@@ -48,7 +50,7 @@
 
 
   function showEmailDialog() {
-    if (storage.get('emailDialogHideDay')) {
+    if (storage.get(email_dialog_session_key)) {
       return;
     }
 
@@ -86,7 +88,7 @@
 
 
   function closeEmailDialog (day = 3) {
-    storage.set('emailDialogHideDay', 'emailDialogHideDay', day)
+    storage.set(email_dialog_session_key, email_dialog_session_key, day)
     // 关闭弹窗
     closeMiniDialog()
   }
