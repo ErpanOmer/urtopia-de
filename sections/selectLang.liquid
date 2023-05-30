@@ -448,7 +448,7 @@
     const findLang = allOptions.find(tl => tl.dataset.value === code)
 
     if (active.dataset.value === code) {
-      return setTimeout(showEmailDialog, global_config.subscribe_email_show_delay_time* 1000, subscribeHtml)
+      return setTimeout(showEmailDialog, global_config.subscribe_email_show_delay_time* 1000)
     }
 
     setTimeout(() => {
@@ -498,7 +498,7 @@
       if (!notShowModal && !window.__SHOPIFY_CLI_ENV__ && !sessionStorage.getItem('selectLangDialog')) {
         document.querySelector('#selectLangModal').classList.add('open');
       } else {
-        setTimeout(showEmailDialog, global_config.subscribe_email_show_delay_time* 1000, subscribeHtml)
+        setTimeout(showEmailDialog, global_config.subscribe_email_show_delay_time* 1000)
       }
     }
   };
@@ -525,7 +525,7 @@
     sessionStorage.setItem('selectLangDialog', 'selectLangDialog')
     // 如果是单纯的关闭，直接退出去
     if (isClose) {
-      return setTimeout(showEmailDialog, global_config.subscribe_email_show_delay_time* 1000, subscribeHtml)
+      return setTimeout(showEmailDialog, global_config.subscribe_email_show_delay_time* 1000)
     }
 
     var d = new Date();
