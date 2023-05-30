@@ -619,42 +619,7 @@
     closeMiniDialog()
   }
 
-  function showEmailDialog () {
-    if (storage.get('emailDialogHideDay')) {
-      return
-    }
-    
-    showMiniDialog(subscribeHtml)
-
-    setTimeout(() => {
-        $('.subscribe-container form').on("submit", function (event) {
-          const email = $('.subscribe-container form input[type="email"]').val()
-          // 埋点
-          fetchBuried('emailpop', 'submit', { email, tag: 'DE,POPUP' })
-          closeEmailDialog(14)
-      
-          event.preventDefault();
-          return false;
-      })
-
-
-      let startInput = false
-      $('.subscribe-container input').on('input', debounce(e => {
-          if (startInput) {
-              return
-          }
-
-          startInput = true
-          fetchBuried('emailpop', 'enter', {
-              email: e.target.value,
-              tag: 'DE,POPUP'
-          })
-      }, 2000))
-
-      
-
-    }, 1000)
-  }
+  
 
 
    // 视频播放
