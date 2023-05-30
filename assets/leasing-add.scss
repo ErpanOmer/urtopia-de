@@ -331,13 +331,15 @@
 
 
                         & > img {
-                            transform: translateY(-12.5%);
+                            transform: translateY(-15%);
+                            width: 90%;
                         }
 
                         &>div {
                             display: flex;
                             flex-direction: column;
                             align-items: flex-start;
+                            width: 100%;
 
                             .u24DemiBold_v2 {
                                 margin: 16px 0 8px;
