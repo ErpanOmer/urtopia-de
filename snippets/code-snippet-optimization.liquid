@@ -1,5 +1,20 @@
+{% case template | json %}
+    {% when 'index' %}
+    {% when 'product.pf-b10ddb73' %}
+    {% when 'page.pf-3b2bc3c4' %}
+    {% when 'page.jobrad' %}
+    {% else %}
+        <script src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/1.14.2-TweenMax.js?v=1663912518"></script>
+        <script src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/2.0.3-ScrollMagic.min.js?v=1663912592"></script>
+        <script src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/2.0.3-animation.gsap.js?v=1663912682"></script>
+        <script src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/2.0.3-debug.addIndicators.js?v=1663912891"></script>
+{% endcase %}
+
+
+<script src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/1.9.1-jquery.min.js?v=1663911504"></script>
+<script src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/8-swiper-bundle.min.js?v=1663912984"></script>
 <script>
-// 当前页面id
+    // 当前页面id
 const current_page_id = '{{ template }}'
 
 // isSendBeacon 是否使用 sendBeacon api 保证页面退出时提交后端数据
@@ -170,24 +185,6 @@ class MyStorage {
       return value;
      }
   }
-</script>
-
-{% case template | json %}
-    {% when 'index' %}
-    {% when 'product.pf-b10ddb73' %}
-    {% when 'page.pf-3b2bc3c4' %}
-    {% when 'page.jobrad' %}
-    {% else %}
-        <script src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/1.14.2-TweenMax.js?v=1663912518"></script>
-        <script src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/2.0.3-ScrollMagic.min.js?v=1663912592"></script>
-        <script src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/2.0.3-animation.gsap.js?v=1663912682"></script>
-        <script src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/2.0.3-debug.addIndicators.js?v=1663912891"></script>
-{% endcase %}
-
-
-<script src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/1.9.1-jquery.min.js?v=1663911504"></script>
-<script src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/8-swiper-bundle.min.js?v=1663912984"></script>
-<script>
 /*! lozad.js - v1.0.8 - 2017-10-13
 * https://github.com/ApoorvSaxena/lozad.js
 * Copyright (c) 2017 Apoorv Saxena; Licensed MIT */
