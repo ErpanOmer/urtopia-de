@@ -18,7 +18,7 @@
         "type": "text",
         "id": "sale_name",
         "label": "活动名称",
-        "default": "Green Travel"
+        "default": "Green Travel Sale"
       },
       {
         "type": "text",
