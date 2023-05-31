@@ -67,6 +67,10 @@
     window.TranslationLabOptions.includeElements = ['body'];
 </script>
 
+    {%- if template.name == 'product' -%}
+      <script src="{{ 'insurance.js' | asset_url }}" defer></script>
+    {%- endif -%}
+
     <script src="{{ 'global.js' | asset_url }}" defer="defer"></script>
     {{ content_for_header }}
 
@@ -266,9 +270,11 @@
     {{ 'global_config.js' | asset_url | script_tag }}
     </head>
 
-  
+  {%- if template.name == 'product' and product.variants[0].metafields.insurance.variant_name -%}
+    {%- assign is_insurance_product = true -%}
+  {%- endif -%}
 
-  <body >
+  <body class="gradient{% if is_insurance_product %} is-insurance-product{% endif %}">
     <a class="skip-to-content-link button visually-hidden" href="#MainContent">
       {{ 'accessibility.skip_to_text' | t }}
     </a>
@@ -359,6 +365,9 @@
       });
     </script>
 
+    {%- if template.name == 'product' -%}
+      {%- render 'insurance-templates' -%}
+    {%- endif -%}
   <!-- CRITEO START -->
 {% render 'criteo-tracking' %}
 <!-- CRITEO END -->
