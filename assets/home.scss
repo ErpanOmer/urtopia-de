@@ -81,17 +81,23 @@
         }
 
         .spring-sale {
-            background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_20911_2x_6a099d8c-fd85-4f60-814e-e7e71feac0ab.jpg?v=1685003855');
+            background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_21007_2x_4099c9d2-a74d-4c85-89e4-aa79f6d7d14f.jpg?v=1685441578');
+            background-color: rgb(30, 160, 110);
 
             .centeral-content {
-                height: 80%;
                 &>div {
-                    img {
-                      max-width: 350px;
+
+                    .u56DemiBold_v2 {
+                        text-transform: uppercase;
                     }
 
-                    .u24DemiBold_v2 {
-                        margin: 30px 0 -20px;
+                    .u56DemiBold_v2,
+                    .u48Medium_v2 {
+                        color: #E2F8B6;
+                    }
+
+                    .u36DemiBold_v2 {
+                        margin: 50px 0;
                     }
                 }
             }
@@ -127,7 +133,7 @@
 
 @media (max-width: 767px) {
     .banner {
-        height: calc(100vh - 101px);
+        height: calc(100vh - 98px);
 
         .centeral-content {
             &>div {
@@ -188,21 +194,25 @@
             }
 
             .spring-sale {
-                background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18530_2x_8815e451-5c4d-412d-808f-46f98b1b9cf3.png?v=1685007818');
+                background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_20985_2x_22a2ef82-4ea1-4835-aefa-502bab4a119b.jpg?v=1685448396');
                 .centeral-content {
                     height: 100%;
                     align-items: unset;
 
                     &>div {
-                        padding: 6vw 0 18vw;
+                        padding: 12vw 0 18vw;
 
-                        img {
-                            max-width: 180px;
+                        .u56DemiBold_v2 {
+                            font-size: 26px;
                         }
-    
-                        .u24DemiBold_v2 {
-                            font-size: 17px;
-                            margin: 15px 0 -5px;
+
+                        .u48Medium_v2,
+                        .u36DemiBold_v2 {
+                            font-size: 20px;
+                        }
+
+                        .u36DemiBold_v2 {
+                            margin: 20px 0 0;
                         }
                     }
                 }
@@ -215,7 +225,7 @@
                 width: 180px;
                 transform: translate(-17px);
                 margin-bottom: unset;
-                margin-top: -15px;
+                // margin-top: -15px;
             }
 
         }
