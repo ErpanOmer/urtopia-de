@@ -368,8 +368,8 @@
     
             .centeral-content {
                 & > div {
-                    display: grid;
                     grid-template-columns: 1fr;
+                    margin: 0;
 
                     .u48DemiBold_v2 {
                         font-size: 24px;
