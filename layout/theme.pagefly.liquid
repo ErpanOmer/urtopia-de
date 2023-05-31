@@ -271,6 +271,7 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
     </script>
 
     {% include 'dataLayer-allPages' %}
+    {{ 'global_config.js' | asset_url | script_tag }}
     </head>
 
   {%- if template.name == 'product' and product.variants[0].metafields.insurance.variant_name -%}
@@ -278,4 +279,5 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
   {%- endif -%}
 
   <body class="gradient{% if is_insurance_product %} is-insurance-product{% endif %}"><div class="pagefly-container">{{ content_for_layout }}</div></body>
+{% render 'global-message-box' %}
 </html>
