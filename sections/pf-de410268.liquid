@@ -111,7 +111,7 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
     }
 
 
-    console.log(JSON.parse('{{ product | json }}'))
+    console.log(JSON.parse(JSON.stringify({{ product | json }})))
 </script>
 <style>
     .addToCartBtn {
