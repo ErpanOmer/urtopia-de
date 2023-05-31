@@ -1157,11 +1157,11 @@ letter-spacing: 0px;
   <!--<div onclick="testRideTrace('klarna_check_out', this)" class="orderTestRideBtn">
 	<img class="twoooo"src="https://cdn.shopifycdn.net/s/files/1/0633/2068/6808/files/20230530-121400.png?v=1685420054"/>
 	<span><span>Financing with Klarna</span><span style="font-size: 12px;font-weight: 300;">As low as €112/month, 0 APR.</span></span>
-  </div> 
+  </div>-->
   <div onclick="testRideTrace('shop_on_mediamarkt', this)" class="orderTestRideBtn">
 	<img class="threeee" src="https://cdn.shopifycdn.net/s/files/1/0633/2068/6808/files/20230530-110825.png?v=1685416121"/>
 	<span>Shop on Media Markt</span>
-  </div>-->
+  </div>
 
     <div class="tip" id="shippment" style="margin:12px 0;">
 		<div class="tip-b">
@@ -1534,8 +1534,6 @@ function testRideTrace(type = '', target){
 		const bike_style = Array.from(document.querySelectorAll('div[data-swatch-type="image"] input')).find(e => e.checked).value
 		const bike_size = Array.from(document.querySelectorAll('div[data-swatch-type="label"] input')).find(e => e.checked).value
 
-		
-	
 		return window.location.href= `/pages/urtopia-jobrad-leasing-city-electric-bike?bike_style=${bike_style}&bike_size=${bike_size}&utm_source=order_page#forms`	
 	}
 
@@ -1564,7 +1562,10 @@ function testRideTrace(type = '', target){
 	}
 
 	if (type === 'shop_on_mediamarkt') {
+        t.removeClass('loading')
+	    t.find('span').html(text)
 		return window.open('https://www.mediamarkt.de/de/search.html?query=urtopia&filter=carType%3ACitybike')
+      
 	}
 }
 </script>
