@@ -370,6 +370,10 @@
                 & > div {
                     display: grid;
                     grid-template-columns: 1fr;
+
+                    .u48DemiBold_v2 {
+                        font-size: 24px;
+                    }
                 }
             }
         }
