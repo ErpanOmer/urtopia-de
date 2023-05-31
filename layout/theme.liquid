@@ -67,7 +67,7 @@
     window.TranslationLabOptions.includeElements = ['body'];
 </script>
 
-    {%- if template == 'product' -%}
+    {%- if template.name == 'product' -%}
       <script src="{{ 'insurance.js' | asset_url }}" defer></script>
     {%- endif -%}
 
