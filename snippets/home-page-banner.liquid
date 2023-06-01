@@ -93,7 +93,7 @@
     const t = $(e.target)
     const slide = t.closest('.swiper-slide')
 
-    fetchBuried('websiteclick', 'homepage-branner', {
+    fetchBuried('websiteclick', 'homepage-banner', {
         button: slide.hasClass('bluetti') ? (t.hasClass('my-button-ghost') ? 'goto_bluetti' : 'order_now_buletti') : (t.hasClass('my-button-ghost') ? 'order_now' : 'meet_carbon')
     }, true)
  })
