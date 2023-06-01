@@ -10,11 +10,18 @@
 	}
 
 	.sale_coupon>div:first-child {
-		font-size: 16px;
+		font-size: 14px;
 		font-weight: 600;
 		text-align: left;
         padding: 0 0 0 4%;
+        flex-basis: 75%;
 	}
+
+  .sale_coupon>div:last-child {
+    padding: 0;
+        flex-basis: 30%;
+    font-size: 14px;
+  }
 
     .eggs {
         max-width: 450px;
@@ -102,7 +109,7 @@
     
       @media (max-width: 767px) {
         .sale_coupon>div:first-child {
-			font-size: 14px;
+			font-size: 12px;
 		}
 
        .eggs .background {
@@ -142,7 +149,7 @@
 
     <div class="eggs">
         <div class="background">
-            <div class="u17DemiBold_v2" style="font-size: 13px;">{{ send_accessories_list | size }} Free Accessories with {{ settings.sale_name }}</div>
+            <div class="u17DemiBold_v2" style="font-size: 12px;">{{ send_accessories_list | size }} Free Accessories with {{ settings.sale_name }}</div>
 			<div class="u11Light_v2">(Apply in your cart automatically)</div>
         </div>
         <div class="components">
