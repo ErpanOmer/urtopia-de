@@ -1,5 +1,21 @@
-
 <style>
+    .sale_coupon {
+		background-image: linear-gradient(-90deg, #0091B4, #003C68);
+		border-radius: 10px;
+	}	
+
+	.sale_coupon:before,
+	.sale_coupon:after {
+		width: 0;
+	}
+
+	.sale_coupon>div:first-child {
+		font-size: 16px;
+		font-weight: 600;
+		text-align: left;
+        padding: 0 0 0 4%;
+	}
+
     .eggs {
         max-width: 450px;
         margin: 10px 0 20px;
@@ -85,6 +101,10 @@
     }
     
       @media (max-width: 767px) {
+        .sale_coupon>div:first-child {
+			font-size: 14px;
+		}
+
        .eggs .background {
             font-size: 14px;
         }
@@ -114,6 +134,11 @@
     </style>
 
     {% assign send_accessories_list = "kickstand,customized-mudguards,esim-card" | split: ',' %}
+
+    <div class="sale_coupon">
+		<div>€600 OFF code on Carbon 1</div>
+		<div>SPEED600</div>
+	</div>
 
     <div class="eggs">
         <div class="background">

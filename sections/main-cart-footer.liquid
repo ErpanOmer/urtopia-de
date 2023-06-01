@@ -110,9 +110,9 @@
     <div class="product_code">
       <div class="sale_coupon">
         <div class="l" style="text-align: left;">
-          Check out with <br>{{ settings.sale_name }}
+          Check out with <br>{{ settings.sale_name }} code:
         </div>
-        <div class="r"></div>
+        <div class="r">SPEED600</div>
       </div>
       <div class="carbon_text">
           <div>
@@ -175,8 +175,8 @@
               //document.querySelector(`.product_code .carbon_code span:first-child`).innerHTML = 'Check out with Father’s Day Sale'
               //document.querySelector(`.product_code .carbon_code span:first-child`).classList.add('important')
 
-              //document.querySelector(`.product_code .carbon_code span:last-child`).innerHTML = ''
-              document.querySelector(`.product_code .carbon_text > div:nth-child(1) span`).innerHTML = `Save €${carbon_quantly * 169}.00!`
+              document.querySelector(`.product_code .sale_coupon > div:last-child`).innerHTML = 'SPEED600'
+              document.querySelector(`.product_code .carbon_text > div:nth-child(1) span`).innerHTML = `Save €${carbon_quantly * (169 + 600)}.00!`
               document.querySelector(`.product_code .carbon_text > div:nth-child(2) span`).innerHTML = 'Free accessories applied'
             }
           }
