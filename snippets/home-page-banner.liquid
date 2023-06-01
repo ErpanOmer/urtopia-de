@@ -87,4 +87,12 @@
          clickable: true
      }
  })
+
+
+ $('.banner a').on('click', e => {
+    const t = $(e.target)
+    const slide = t.closest('.swiper-slide')
+
+    console.log('e', slide)
+ })
 </script>
