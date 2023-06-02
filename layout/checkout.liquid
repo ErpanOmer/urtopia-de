@@ -45,7 +45,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <script>
       window.uetq = window.uetq || []; window.uetq.push('event', 'begin_checkout', { "revenue_value": '{{ checkout.total_price | divided_by:100.0}}', "currency": "EUR" });
     </script>
-    <link rel="preload" as="font" href="{{ 'urbane' | font_url }}" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="https://use.typekit.net/fzb3fxo.css" onload="this.onload=null;this.rel='stylesheet'">
     {{ 'checkout.scss.css' | asset_url | stylesheet_tag }}
     <!-- End of Bing UET checkout -->
     <!-- 依赖优化开始 -->
