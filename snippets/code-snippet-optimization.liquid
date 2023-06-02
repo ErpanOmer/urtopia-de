@@ -15,7 +15,7 @@
 <script src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/8-swiper-bundle.min.js?v=1663912984"></script>
 <script>
     // 当前页面id
-const current_page_id = '{{ template }}'
+const current_page_id = '{{ template | json }}'
 console.log('current_page_id:', current_page_id)
 
 // isSendBeacon 是否使用 sendBeacon api 保证页面退出时提交后端数据
