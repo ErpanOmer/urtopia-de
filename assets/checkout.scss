@@ -1,0 +1,206 @@
+.klarna-dialog {
+    background-color: #F7F8FA;
+    border-radius: 10px;
+    padding: 24px 40px;
+    width: 600px;
+
+    &>.u24DemiBold_v2 {
+        display: flex;
+        align-items: center;
+        margin-bottom: 24px;
+
+        img {
+            max-width: 67px;
+            margin-right: 24px;
+        }
+    }
+
+    .pay {
+        border-radius: 10px;
+        background-color: #fff;
+        padding: 24px;
+
+        &>.u17Medium_v2 {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 0;
+            border-bottom: 1px solid #eee;
+
+            &>div {
+                background-color: #FFB3C7;
+                border-radius: 16px;
+                padding: 5px 30px;
+            }
+        }
+
+        .total {
+            .u17Medium_v2 {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                margin-top: 12px;
+            }
+
+            .u11Medium_v2 {
+                margin-top: 6px;
+                text-align: right;
+                color: #8E8E8E;
+            }
+        }
+    }
+
+    .how {
+        margin: 24px 0 12px;
+    }
+
+    .my-button {
+        width: 100%;
+        margin-top: 24px;
+    }
+
+    .scroll {
+        max-height: calc(85vh - 180px);
+        overflow-y: auto;
+        border-radius: 10px;
+
+        &>.u17Medium_v2 {
+            margin-bottom: 24px;
+        }
+
+        &::-webkit-scrollbar {
+            width: 12px;
+        }
+
+        &::-webkit-scrollbar-track {
+            background: transparent;
+            border-radius: 10px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background: #bfbfbf;
+            border-radius: 10px;
+        }
+
+        &::-webkit-scrollbar-corner {
+            background: #179a16;
+        }
+
+    }
+
+    .works {
+        padding: 24px;
+        background-color: #fff;
+        border-radius: 10px;
+
+        .u17Medium_v2 {
+            padding-left: 18px;
+            padding-bottom: 40px;
+            border-left: 2px solid #FFB3C7;
+            position: relative;
+
+            span {
+                display: block;
+                position: absolute;
+                width: 13px;
+                height: 13px;
+                background-color: #FFB3C7;
+                left: 0;
+                top: 0;
+                transform: translateX(-7.5px);
+                border-radius: 50%;
+            }
+
+            &:last-child {
+                border-color: transparent;
+            }
+        }
+    }
+
+    .close {
+        position: absolute;
+        right: 40px;
+        top: 24px;
+        color: #999;
+        font-size: 30px;
+        font-weight: 100;
+        cursor: pointer;
+    }
+}
+
+
+@media (max-width: 767px) {
+    .klarna-dialog {
+        padding: 24px 12px 12px;
+
+        &>.u24DemiBold_v2 {
+            font-size: 18px;
+            margin-bottom: 12px;
+
+            img {
+                max-width: 55px;
+                margin-right: 12px;
+            }
+        }
+
+        .scroll {
+            max-height: calc(85vh - 132px);
+
+            &>.u17Medium_v2 {
+                font-size: 15px;
+                margin-bottom: 12px;
+            }
+
+            .pay {
+                padding: 12px 6px;
+
+                &>.u20DemiBold_v2,
+                &>.u17Medium_v2 {
+                    font-size: 15px;
+                    padding: 6px 0;
+                    margin-bottom: 6px;
+
+                    &>div {
+                        padding: 2px 12px;
+                    }
+                }
+
+
+                .total {
+                    .u17Medium_v2 {
+                        margin: 6px 0 0;
+                        font-size: 12px;
+                    }
+                }
+            }
+
+            .how {
+                font-size: 20px;
+                margin: 12px 0 6px;
+            }
+
+            .works {
+                padding: 12px;
+
+                .u17Medium_v2 {
+                    font-size: 14px;
+                    padding-bottom: 24px;
+                }
+            }
+
+
+            &::-webkit-scrollbar {
+                width: 6px;
+            }
+        }
+
+        .my-button {
+            margin-top: 12px;
+        }
+
+        .close {
+            right: 12px;
+            top: 0;
+        }
+    }
+}
