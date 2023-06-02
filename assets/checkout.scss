@@ -1,3 +1,61 @@
+
+.mini-dialog {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #000000b3;
+    justify-content: center;
+    align-items: center;
+    z-index: 100000000;
+    overflow: hidden;
+    padding: 0 8vw;
+    display: none;
+    user-select: none;
+  }
+  
+  .mini-dialog>div {
+    position: relative;
+    z-index: 100000001;
+    max-height: 85vh;
+    overflow: hidden;
+  }
+
+
+  .my-button {
+    display: inline-block;
+    padding: 14px 36px;
+    background-color: #fff;
+    color: #000;
+    border-radius: 30px;
+    font: normal normal 500 16px/19px urbane;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all .3s;
+    text-align: center;
+
+    &:hover {
+      background-color: #F5F6F8;
+    }
+
+    &:active {
+      opacity: 0.95;
+    }
+  }
+
+  .my-button-black {
+    background-color: #000;
+    color: #fff;
+
+    &:hover {
+      background-color: #2C2C2C;
+    }
+  }
+
+
 .klarna-dialog {
     background-color: #F7F8FA;
     border-radius: 10px;
@@ -203,32 +261,12 @@
             top: 0;
         }
     }
+
+
+    .my-button {
+        padding: 11px 20px;
+        font-size: 14px;
+        line-height: 17px;
+      }
 }
-
-
-
-.mini-dialog {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    width: 100vw;
-    height: 100vh;
-    background-color: #000000b3;
-    justify-content: center;
-    align-items: center;
-    z-index: 100000000;
-    overflow: hidden;
-    padding: 0 8vw;
-    display: none;
-    user-select: none;
-  }
-  
-  .mini-dialog>div {
-    position: relative;
-    z-index: 100000001;
-    max-height: 85vh;
-    overflow: hidden;
-  }
   
