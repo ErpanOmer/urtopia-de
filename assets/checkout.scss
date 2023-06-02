@@ -61,6 +61,8 @@
     border-radius: 10px;
     padding: 24px 40px;
     width: 600px;
+    display: flex;
+    flex-direction: column;
 
     &>.u24DemiBold_v2 {
         display: flex;
@@ -113,7 +115,7 @@
     }
 
     .my-button {
-        width: 100%;
+        // width: 100%;
         margin-top: 24px;
     }
 
