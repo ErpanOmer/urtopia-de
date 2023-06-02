@@ -25,8 +25,10 @@
     overflow: hidden;
   }
 
-  .pcHide {
-    display: none !important;
+  @media (min-width: 767px) {
+    .pcHide {
+      display: none !important;
+    }
   }
 
   .u11Medium_v2 {
