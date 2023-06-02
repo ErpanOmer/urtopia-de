@@ -1554,7 +1554,7 @@ function testRideTrace(type = '', target){
 			},
 			body: JSON.stringify(body)
 		}).then(response => {
-			location.href = `/checkout`
+			location.href = `/checkout?show_klarna_dialog=show_klarna_dialog`
 		}).catch((error) => {
 			t.removeClass('loading')
 			t.find('span').html(text)
