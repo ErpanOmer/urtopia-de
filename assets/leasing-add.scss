@@ -294,6 +294,13 @@
                 }
             }
 
+            .nothankyou {
+                & >.u17Light_v2 {
+                    margin: 24px 0;
+                    max-width: 750px;
+                }
+            }
+
             .thankyou {
                 display: flex;
                 flex-direction: column;
@@ -1013,6 +1020,20 @@
             }
         }
     }
+
+
+    .companies {
+        margin: 140px 0 60px;
+
+        .centeral-content {
+            & > div {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                margin-bottom: 80px;
+                grid-column-gap: 85px;
+            }
+        }
+    }
 }
 
 
@@ -1265,6 +1286,12 @@
                     &>.u24Medium_v2 {
                         font-size: 17px;
                         margin: 24px 0 40px;
+                    }
+                }
+
+                .nothankyou {
+                    & >.u17Light_v2 {
+                        font-size: 15px;
                     }
                 }
 
@@ -1665,6 +1692,29 @@
                                 font-size: 24px;
                             }
                         }
+                    }
+                }
+            }
+        }
+
+        .companies {
+            margin: 60px 0 0;
+    
+            .centeral-content {
+                padding: 0;
+
+                & > div {
+                    grid-template-columns: 1fr;
+                    margin: 0;
+                    padding: 0 8%;
+
+                    .u48DemiBold_v2 {
+                        font-size: 24px;
+                    }
+
+                    .u17Light_v2 {
+                        font-size: 15px;
+                        margin: 24px 0 36px;
                     }
                 }
             }
