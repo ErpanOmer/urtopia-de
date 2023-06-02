@@ -172,7 +172,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     {{ tracking_code }}
   </body>
   <script>
-    showMiniDialog(`<div class="klarna-dialog">
+
+
+    getSearchValues().show_klarna_dialog && showMiniDialog(`<div class="klarna-dialog">
       <div class="u24DemiBold_v2"><img
               src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Image_167_2x_a31405e4-22c9-4546-8404-ec68e30f98ad.png?v=1685686187"
               alt=""> About Klarna financing</div>
