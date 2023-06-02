@@ -1683,5 +1683,28 @@
                 }
             }
         }
+
+        .companies {
+            margin: 60px 0 0;
+    
+            .centeral-content {
+                padding: 0;
+
+                & > div {
+                    grid-template-columns: 1fr;
+                    margin: 0;
+                    padding: 0 8%;
+
+                    .u48DemiBold_v2 {
+                        font-size: 24px;
+                    }
+
+                    .u17Light_v2 {
+                        font-size: 15px;
+                        margin: 24px 0 36px;
+                    }
+                }
+            }
+        }
     }
 }
