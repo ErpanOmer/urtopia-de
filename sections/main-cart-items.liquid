@@ -49,7 +49,7 @@ padding-bottom: {{ section.settings.padding_bottom }}px;
     {%- endif -%}
   </div>
 
-  <form action="/checkout?aaa=bbb" class="cart__contents critical-hidden" method="post" id="cart">
+  <form action="/checkout" class="cart__contents critical-hidden" method="post" id="cart">
     <div class="cart__items" id="main-cart-items" data-id="{{ section.id }}">
       <div class="js-contents">
         {%- if cart != empty -%}
