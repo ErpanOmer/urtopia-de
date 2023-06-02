@@ -294,6 +294,13 @@
                 }
             }
 
+            .nothankyou {
+                & >.u17Light_v2 {
+                    margin: 24px 0;
+                    max-width: 750px;
+                }
+            }
+
             .thankyou {
                 display: flex;
                 flex-direction: column;
@@ -301,8 +308,7 @@
                 text-align: center;
                 width: 100%;
 
-                &>.u24Medium_v2,
-                &>.u17Light_v2 {
+                &>.u24Medium_v2 {
                     margin: 24px 0;
                     max-width: 750px;
                 }
