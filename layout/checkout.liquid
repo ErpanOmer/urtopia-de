@@ -46,6 +46,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       window.uetq = window.uetq || []; window.uetq.push('event', 'begin_checkout', { "revenue_value": '{{ checkout.total_price | divided_by:100.0}}', "currency": "EUR" });
     </script>
     <!-- End of Bing UET checkout -->
+
+    <!-- 依赖优化开始 -->
+    {% render 'code-snippet-optimization' %}
+    <!-- 依赖优化结束 -->
   </head>
 
   <body>
