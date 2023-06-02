@@ -1289,6 +1289,12 @@
                     }
                 }
 
+                .nothankyou {
+                    & >.u17Light_v2 {
+                        font-size: 15px;
+                    }
+                }
+
                 .thankyou {
                     .sooner {
                         padding: 24px;
