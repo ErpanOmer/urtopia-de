@@ -1013,6 +1013,20 @@
             }
         }
     }
+
+
+    .companies {
+        margin: 140px 0 60px;
+
+        .centeral-content {
+            & > div {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                margin-bottom: 80px;
+                grid-column-gap: 85px;
+            }
+        }
+    }
 }
 
 
