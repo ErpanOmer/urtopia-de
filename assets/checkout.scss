@@ -76,7 +76,7 @@
 .klarna-dialog {
     background-color: #F7F8FA;
     border-radius: 10px;
-    padding: 24px 0 24px 40px;
+    padding: 24px 40px;
     width: 600px;
     display: flex;
     flex-direction: column;
@@ -146,6 +146,23 @@
             margin-bottom: 24px;
         }
 
+        // &::-webkit-scrollbar {
+        //     width: 12px;
+        // }
+
+        // &::-webkit-scrollbar-track {
+        //     background: transparent;
+        //     border-radius: 10px;
+        // }
+
+        // &::-webkit-scrollbar-thumb {
+        //     background: #bfbfbf;
+        //     border-radius: 10px;
+        // }
+
+        // &::-webkit-scrollbar-corner {
+        //     background: #179a16;
+        // }
 
     }
 
