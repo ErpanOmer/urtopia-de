@@ -229,6 +229,11 @@
                     &>div {
                         padding: 12vw 0 18vw;
 
+                        img {
+                            max-width: 260px;
+                            transform: translate(-15%);
+                        }
+
                         .u56DemiBold_v2 {
                             font-size: 26px;
                         }
