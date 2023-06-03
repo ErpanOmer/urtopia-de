@@ -666,10 +666,6 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
 	}
   </style>
 
-
-  <h1>{{ 100000 | money }}</h1>
-  
-
    <div id="total-price-pc"><span class="price">{{ product.variants[0].price | money }}</span></div>
       <klarna-placement
 		id="credit-promotion-badge"
@@ -3831,12 +3827,12 @@ var totalPrice = products["7633738727640"].variants[0].price;
 setTotalPriceContent();
 function setTotalPriceContent(){
   let currencyCode = Shopify.currency.active;
-  let showTotalPrice = Intl.NumberFormat('de-DE', {style: 'currency', currency: currencyCode})
+  let showTotalPrice = Intl.NumberFormat('-FR', {style: 'currency', currency: currencyCode})
 .format(totalPrice/100.00);
   let showComparePrice = Intl.NumberFormat('de-DE', {style: 'currency', currency: currencyCode})
 .format((totalPrice + 60000)/100.00);
-  $("#total-price-pc>span").html(showTotalPrice);
-  $("#total-price-mb>span").html('<span class="price">'+showTotalPrice+'<span style="display:none;" class="compare-price">'+showComparePrice+'</span></span>');
+  //$("#total-price-pc>span").html(showTotalPrice);
+  //$("#total-price-mb>span").html('<span class="price">'+showTotalPrice+'<span style="display:none;" class="compare-price">'+showComparePrice+'</span></span>');
 }
 //choose a
 var list = document.querySelectorAll(".Accessories-item")
