@@ -1,4 +1,24 @@
 {
+  "checkout_klarna": {
+    "title": "Über Klarna-Finanzierung",
+    "title1": "Wählen Sie Klarna als Zahlungsoption.",
+    "title2": "Holen Sie sich, was Sie lieben, und entscheiden Sie, wie Sie bezahlen.",
+    "pay_in": "Zahlen Sie in 24 Monaten, 0% Sollzinssatz für Carbon 1",
+    "month": "137,46 €\/Monat",
+    "payments": "24 Raten",
+    "fixed": "0 % p.a. (festen)",
+    "total": "Gesamt",
+    "limited": "*Aktionspreis, nur für begrenzte Zeit",
+    "works": "Wie es funktioniert",
+    "work1": "Sie sind jetzt mit Ihrem ausgewählten Carbon 1 an der Kasse",
+    "work2": "Geben Sie Ihre Kontaktinformationen und Lieferadresse ein und klicken Sie auf Weiter zum Versand.",
+    "work3": "Bestätigen Sie Ihre Kontakt- und Lieferinformationen und klicken Sie auf Weiter zur Zahlung.",
+    "work4": "Jetzt finden Sie Klarna als Zahlungsoption im Zahlungsbereich als Bild unter",
+    "work5": "Wählen Sie Klarna aus, bestätigen Sie Ihre Rechnungsadresse und klicken Sie auf Kaufen.",
+    "work6": "Nun werden Sie zum Klarna-Zahlungsportal weitergeleitet. Wähle monatliche Raten als Option, die am besten für dich passen.",
+    "work7": "Genieße deinen Einkauf und lasse automatische Zahlungen den Rest erledigen",
+    "button": "Weiter Auschecken"
+  },
   "general": {
     "password_page": {
       "login_form_heading": "Shop mit Passwort betreten:",
