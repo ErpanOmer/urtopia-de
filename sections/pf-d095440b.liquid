@@ -3824,7 +3824,7 @@ const products = window.__pageflyProducts;
 //console.log("nihao",products)//7633738727640
 
 var totalPrice = products["7633738727640"].variants[0].price;
-setTotalPriceContent();
+//setTotalPriceContent();
 function setTotalPriceContent(){
   let currencyCode = Shopify.currency.active;
   let showTotalPrice = Intl.NumberFormat('-FR', {style: 'currency', currency: currencyCode})
@@ -3886,7 +3886,7 @@ let show = function(index){
 	accessoriesSwiper.slideTo(index);
   }
   //setAccessoriesDetailShow(accNameList);
-  setTotalPriceContent();
+  //setTotalPriceContent();
 }
 
 window.onload=function(){
