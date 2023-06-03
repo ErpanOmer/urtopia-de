@@ -669,7 +669,7 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
 
   
 
-   <div id="total-price-pc"><span class="price">{{ 0 | money }}</span></div>
+   <div id="total-price-pc"><span class="price">{{ product.variants[0].price | money }}</span></div>
       <klarna-placement
 		id="credit-promotion-badge"
         data-key="credit-promotion-badge"
