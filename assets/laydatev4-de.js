@@ -3254,7 +3254,8 @@ function splitTimeFormat(item = '') {
                 method: "POST",
                 body: JSON.stringify({
                   ...extra_data,
-                  ...body.extras.userInfo
+                  ...body.extras.userInfo,
+                  test_ride_model: extra_data.test_ride_model
                 })
           })
 
