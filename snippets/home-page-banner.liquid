@@ -31,7 +31,7 @@
                         <div class="flex-1 pcHide"></div>
                         <div class="buttons">
                             <a class="my-button" href="/products/urtopia-carbon-e-bike">Order now</a>
-                            <a target="_blank" class="my-button my-button-ghost" href="https://bit.ly/3N44FzP">Visit Bluetti</a>
+                            <a target="_blank" class="my-button my-button-ghost" href="/blogs/blog/blue-sky-rider-urtopia-and-bluetti">Learn more</a>
                         </div>
                     </div>
                 </div>
@@ -95,7 +95,7 @@
     const slide = t.closest('.swiper-slide')
 
     fetchBuried('websiteclick', 'homepage-banner', {
-        button: slide.hasClass('bluetti') ? (t.hasClass('my-button-ghost') ? 'goto_bluetti' : 'order_now_buletti') : (t.hasClass('my-button-ghost') ? 'meet_carbon' : 'order_now')
+        button: slide.hasClass('bluetti') ? (t.hasClass('my-button-ghost') ? 'learn_more' : 'order_now_buletti') : (t.hasClass('my-button-ghost') ? 'meet_carbon' : 'order_now')
     }, true)
  })
 </script>
