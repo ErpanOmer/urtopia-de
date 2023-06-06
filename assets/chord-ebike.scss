@@ -246,13 +246,11 @@
                 margin: 15px 0 50px;
             }
 
-            &>div {
-                &:first-child {
-                    transform: translateY(15%);
-                }
+            & > div:first-child {
+                transform: translateY(15%);
             }
 
-            &> div:last-child {
+            & > div:last-child {
                 img {
                     width: 50%;
 
