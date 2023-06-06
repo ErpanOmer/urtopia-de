@@ -1,9 +1,6 @@
 .chord-ebike {
     background-color: #F7F8FA;
 
-    --navBar: 60px;
-    --height: calc(100vh - var(--navBar));
-
     .topbar {
         position: sticky;
         top: 0;
@@ -877,8 +874,8 @@
 
     .animate_fullContanier {
         width: 100%;
-        height: var(--height);
-        margin-top: var(--navBar);
+        height: calc(100vh - 60px);
+        margin-top: 60px;
         position: relative;
         box-sizing: border-box;
     }
