@@ -250,21 +250,21 @@
                 &:first-child {
                     transform: translateY(15%);
                 }
+            }
 
-                &:last-child {
-                    img {
-                        width: 50%;
+            &> div:last-child {
+                img {
+                    width: 50%;
 
-                        &:first-child {
-                            margin-bottom: 20%;
-                        }
-
-                        &:last-child {
-                            margin-top: 20%;
-                        }
-
-                        // position: absolute;
+                    &:first-child {
+                        margin-bottom: 20%;
                     }
+
+                    &:last-child {
+                        margin-top: 20%;
+                    }
+
+                    // position: absolute;
                 }
             }
         }
