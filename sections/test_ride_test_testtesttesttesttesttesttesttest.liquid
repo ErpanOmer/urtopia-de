@@ -1,677 +1,523 @@
 {{ 'leasing-add.scss.css' | asset_url | stylesheet_tag }}
 {{ 'sumoselect.min.css' | asset_url | stylesheet_tag }}
 
-<div class="leasing-add">
-  <!--<div class="banner">
-      <div class="centeral-content">
-          <div>
-              <div class="u36DemiBold_v2">From €49,89/month</div>
-              <div class="u72DemiBold_v2">Urtopia E-Bikes <br> lease with JobRad</div>
-              <div class="u20Light_v2">No matter if you are an employer, employee or self-employed: With jobrad.org
-                  you will receive an offer for your tailored offer for your service bike project.</div>
-              <div class="buttons">
-                  <a href="#forms" class="my-button">Request leasing offer</a>
-                  <a href="/products/urtopia-carbon-e-bike" class="my-button my-button-ghost">Shop Online</a>
-              </div>
-          </div>
-          <div>
-              <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_20952_2x_60b1c0bc-7b0c-4dad-9487-1e4451197cb5.png?v=1683700382"
-                  alt="">
-          </div>
-      </div>
-  </div>
-  <div class="parameters">
-      <div class="centeral-content">
-          <div></div>
-          <div>
-              <div class="boxs">
-                  <div>
-                      <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18449_2x_8fc05a36-e73b-4c68-8462-5cdfa6cea6b3.png?v=1683702610"
-                          alt="">
-                      <div>
-                          <div class="u11Light_v2">Carbon Fiber</div>
-                          <div class="u17DemiBold_v2">15 kg</div>
-                      </div>
-                  </div>
-                  <div>
-                      <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18448_2x_d3fbd8a8-d1e2-4a84-b4eb-ce513f342438.png?v=1683705373"
-                          alt="">
-                      <div>
-                          <div class="u11Light_v2">No maintaining Up to</div>
-                          <div class="u17DemiBold_v2">30,000 km</div>
-                      </div>
-                  </div>
-                  <div>
-                      <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18447_2x_532d80bf-4f0d-48a9-b2c6-81212b652ad7.png?v=1683705337"
-                          alt="">
-                      <div>
-                          <div class="u11Light_v2">Range</div>
-                          <div class="u17DemiBold_v2">100 km</div>
-                      </div>
-                  </div>
-                  <div>
-                      <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18446_2x_e64c38e1-535a-401d-a722-cbe2b3b4e450.png?v=1683705358"
-                          alt="">
-                      <div>
-                          <div class="u11Light_v2">Anti-theft</div>
-                          <div class="u17DemiBold_v2">GPS Tracking</div>
-                      </div>
-                  </div>
-                  <div>
-                      <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18450_2x_3726a023-532f-459e-826b-ecc6a1d3502c.png?v=1683705347"
-                          alt="">
-                      <div>
-                          <div class="u11Light_v2">Smart App</div>
-                          <div class="u17DemiBold_v2">iOS, Android</div>
-                      </div>
-                  </div>
-                  <div>
-                      <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18445_2x_8378bdff-585c-4ae2-a3f9-f557107230d8.png?v=1683705353"
-                          alt="">
-                      <div>
-                          <div class="u11Light_v2">Adaptive</div>
-                          <div class="u17DemiBold_v2">Torque Sensor</div>
-                      </div>
-                  </div>
-              </div>
-              <div class="boxs2">
-                  <div class="u17DemiBold_v2">Brushless 250 w Quiet Motor</div>
-                  <div class="u17DemiBold_v2">Portable Samsung Battery</div>
-                  <div class="u17DemiBold_v2">TEKTRO Hydraulic Disc Brakes</div>
-                  <div class="u17DemiBold_v2">Big Anti-Glare LED Display</div>
-                  <div class="u17DemiBold_v2">On-bike Navigation</div>
-                  <div class="u17DemiBold_v2">Integrierte Beleuchtungssystem</div>
-              </div>
-              <div class="buttons">
-                  <a href="#forms" class="my-button my-button-black">Request leasing offer(40% off)</a>
-                  <a href="/products/urtopia-carbon-e-bike" class="my-button my-button-white">Shop Online({{ all_products['urtopia-carbon-e-bike'].price | money | slice: 0, 6 | replace: '.', '' }})</a>
-              </div>
-          </div>
-      </div>
-  </div>
-  <div class="why">
-      <div class="centeral-content">
-          <div>
-              <div class="u48DemiBold_v2">Why is JobRad cheaper than direct purchase?</div>
-              <div class="u17Light_v2">Everyone is talking about job bikes, company bikes, e-bike leasing and the 1%
-                  or 0.25% regulation for bikes and e-bikes. As an employee, this is easily done via your employer,
-                  who leases the e-bike or bicycle from us and then transfers it to you via deferred compensation. The
-                  monetary benefit of the unlimited private use is taxed at a flat rate via the 1% or the new 0.25%
-                  rule. If your employer covers all the costs, the private use is even completely tax-free. Either
-                  way, you usually save 30-40% compared to private purchase.</div>
-              <a href="#forms" class="my-button my-button-black">Request leasing offer</a>
-          </div>
-          <img class="mobileHide"
-              src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20221010-untitled-7468_2x_2e9db42e-3c57-41ce-842c-43a31a37326a.jpg?v=1683708173"
-              alt="">
-          <img class="pcHide"
-              src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20221010-untitled-7468_2x_84a2a10e-6e2d-45c5-be8a-3412ca764f72.jpg?v=1683708831"
-              alt="">
-      </div>
-  </div>
-  <div class="what">
+<div class="chord-ebike">
+    <div class="topbar">
+        <div class="centeral-content">
+            <span class="u17DemiBold_v2">Chord</span>
+            <span class="flex-1"></span>
+            <span class="pcHide">
+                <svg color="#000" width="20" height="20" viewBox="64 64 896 896" focusable="false" data-icon="down"
+                    fill="currentColor" aria-hidden="true">
+                    <path
+                        d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z">
+                    </path>
+                </svg>
+            </span>
+            <a class="u11Medium_v2 mobileHide" href="/pages/lightweight-commuter-ebike-urtopia-chord">Overview</a>
+            <a class="u11Medium_v2 mobileHide" href="/pages/chord-specs">Spec & Size Guide</a>
+            <a href="/products/urtopia-chord-ebike" class="my-button my-button-black">Order now</a>
+        </div>
+        <div class="dropdown pcHide" style="display: none;">
+            <a class="u11Medium_v2" href="/pages/lightweight-commuter-ebike-urtopia-chord">Overview</a>
+            <a class="u11Medium_v2" href="/pages/chord-specs">Spec & Size Guide</a>
+        </div>
+    </div>
+    <div class="banner">
+        <div class="centeral-content">
+            <div class="u72DemiBold_v2">Urtopia Chord</div>
+            <div class="u24Light_v2">Experience elegance and efficiency in one ride</div>
+            <div class="flex-1 pcHide"></div>
+            <div class="buttons">
+                <a href="/pages/test-ride" class="my-button">Test Rides</a>
+                <div class="my-button my-button-ghost">Watch video</div>
+            </div>
+        </div>
+        <video muted playsinline autoplay loop
+            poster="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18289.jpg?v=1678183108">
+            <source
+                src="https://player.vimeo.com/progressive_redirect/playback/804813270/rendition/1080p/file.mp4?loc=external&amp;signature=b4ef0be9fe17055f9e9af17495e1c3950e3237013d10121b24c64d9a7b84abae"
+                type="video/mp4">
+        </video>
+    </div>
+    <div class="artist">
+        <div class="centeral-content">
+            <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/chord_45_2x_1c73c363-8587-4a20-b2b4-ba734ae628df.png?v=1685951852"
+                alt="">
+            <div>
+                <div class="u42DemiBold_v2">Be Artist, Be Innovator</div>
+                <div class="u20Medium_v2">Seamless fusion of art and tech</div>
+                <div class="boxs">
+                    <div>
+                        <div class="u48DemiBold_v2">120 <span class="u24Medium_v2">KM</span>
+                            <div class="u20Light_v2">Range</div>
+                        </div>
+                        <div class="u48DemiBold_v2">4 x 8 <div class="u20Light_v2">Modes X Gears</div>
+                        </div>
+                        <div class="u48DemiBold_v2">0<span class="u24Medium_v2"> S delay</span>
+                            <div class="u20Light_v2">Torque Sensor</div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="u20DemiBold_v2">Liquid<br>Forging</div>
+                        <div class="u20DemiBold_v2">Hydraulic<br>Disc Brake</div>
+                        <div class="u20DemiBold_v2">Removable<br>Battery</div>
+                    </div>
+                    <div>
+                        <div class="u20DemiBold_v2">Built-in<br>Navigation</div>
+                        <div class="u20DemiBold_v2">GPS<br>Anti-theft</div>
+                        <div class="u20DemiBold_v2">Real-Time<br>Tracking</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bikes">
+        <div class="centeral-content">
+            <!-- <span></span> -->
+            <div>
+                <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/1_1_2x_c29f513e-3efa-4fb3-a74d-f83107bdd824.png?v=1677639590"
+                    alt="">
+                <div class="dots">
+                    <div variant-id="43705718997208"
+                        img-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/1_1_2x_c29f513e-3efa-4fb3-a74d-f83107bdd824.png?v=1677639590"
+                        class="active" white></div>
+                    <div variant-id="43705719029976"
+                        img-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18397_2x_1f9c1e43-b341-430d-aa9d-bdc5432ac4d4.png?v=1677639396"
+                        black></div>
+                </div>
+                <div class="infos">
+                    <div>
+                        <div class="u36DemiBold_v2">Chord</div>
+                        <div class="u20Light_v2">Fit for 170cm - 195cm</div>
+                    </div>
+                    <a class="my-button my-button-black"
+                        href="/products/urtopia-chord-ebike?variant=43705718997208">Order now</a>
+                </div>
+            </div>
+            <div>
+                <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18400_2x_6789324f-33d2-4342-9519-0ee3bc943699.png?v=1677639718"
+                    alt="">
+                <div class="dots">
+                    <div variant-id="43705719062744"
+                        img-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18400_2x_6789324f-33d2-4342-9519-0ee3bc943699.png?v=1677639718"
+                        white class="active"></div>
+                    <div variant-id="43705719095512"
+                        img-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/2.88_2x_4ebddfe8-c42e-4196-80e2-2f844bdec3dc.png?v=1677639816"
+                        black></div>
+                </div>
+                <div class="infos">
+                    <div>
+                        <div class="u36DemiBold_v2">Chord X</div>
+                        <div class="u20Light_v2">Fit for 170cm - 195cm</div>
+                    </div>
+                    <a class="my-button my-button-black"
+                        href="/products/urtopia-chord-ebike?variant=43705719062744">Order now</a>
+                </div>
+            </div>
+            <!-- <span></span> -->
+        </div>
+    </div>
+    <div class="smart">
+        <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18288_1.webp" alt="">
+        <div class="centeral-content">
+            <div>
+                <div class="u36Medium_v2">Smart</div>
+                <div class="u72DemiBold_v2">Elevate<br>Your Ride</div>
+                <div class="u17Light_v2">Explore with a customized smart <br>partner: talk, navigate, and never lose
+                    <br>track of You.
+                </div>
+            </div>
+            <div>
+                <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/app1.png" alt="">
+                <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/app1.png" alt="">
+            </div>
+        </div>
+        <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Rectangle_21490_1.webp" alt="">
+    </div>
+    <div class="maksim">
+        <div class="centeral-content">
+            <div>
+                <div class="u24Medium_v2">Maksim Mrvica</div>
+                <div class="u17Light_v2">Classical Crossover Pianist</div>
+            </div>
+            <div>
+                <div class="u30Medium_v2">Design</div>
+                <div class="u60DemiBold_v2">Inspired from<br>The Piano</div>
+                <div class="u17Light_v2">A passionate prodigy, and one of the world's fastest pianists, Mr. Mrvica
+                    Iinspired the design the philosophy of Chord, a crossover between art and tech.</div>
+            </div>
+        </div>
+    </div>
+    <div class="forging">
+        <div class="centeral-content">
+            <div>
+                <div>
+                    <div class="u36Medium_v2">Liquid Forging</div>
+                    <div class="u48DemiBold_v2">The Technology Of Aerospace</div>
+                </div>
+                <div class="u17Light_v2">
+                    It offers four main advantages: seamless connected shapes, endless possibilities for design, high
+                    product density, and superior strength with cast-like accuracy.
+                </div>
+            </div>
+            <img class="mobileHide"
+                src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18442_2x_bb8e55a9-fc57-4eb2-bd89-bc1e3812552a.jpg?v=1685759941"
+                alt="" />
+            <img class="pcHide"
+                src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/ph_liquid_forging_PosterImage.jpg?v=1685760685"
+                alt="" />
+        </div>
+    </div>
+    <div class="forging">
+        <div class="centeral-content">
+            <div style="margin: 0;">
+                <div>
+                    <div class="u48DemiBold_v2">Your Own Canvas</div>
+                </div>
+                <div class="u17Light_v2">Customize your e-bike’s battery case with stickers or create your own
+                    design, giving it a personal touch. Unleash your inner artist and make it unique.</div>
+            </div>
+            <img class="mobileHide"
+                src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20230212-181048_2x_fcd37803-2e7e-4848-911a-fcc7983eafc9.png?v=1685761101"
+                alt="" />
+            <img class="pcHide" style="margin-top: 40px;"
+                src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18307_2x_8b081b1e-ea75-4c57-9a54-ebb4e6388f54.png?v=1685761330"
+                alt="" />
+            <img class="ooo"
+                src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Component_327_1_2x_17fca773-ba8f-4c4d-9d45-14bb11e17e9c.png?v=1685762131"
+                alt="">
+        </div>
+    </div>
+    <div class="motion">
+        <div class="centeral-content u72DemiBold_v2">Elegance <br class="pcHide">in Motion</div>
+    </div>
+    <div class="range">
+        <div class="centeral-content">
+            <div class="u48DemiBold_v2">
+                120<span class="u20Medium_v2"> KM</span>
+                <div class="u20Light_v2">Range</div>
+            </div>
+            <div class="u48DemiBold_v2">
+                360<span class="u20Medium_v2"> W</span>
+                <div class="u20Light_v2">Battery</div>
+            </div>
+            <div class="u48DemiBold_v2">
+                250<span class="u20Medium_v2"> W</span>
+                <div class="u20Light_v2">Customized motor</div>
+            </div>
+            <div class="u48DemiBold_v2">
+                20<span class="u20Medium_v2"> MPH</span>
+                <div class="u20Light_v2">Top assist Speed</div>
+            </div>
+            <!-- <div></div> -->
+            <div class="u48DemiBold_v2">
+                45<span class="u20Medium_v2"> NM</span>
+                <div class="u20Light_v2">Torque</div>
+            </div>
+        </div>
+    </div>
+    <div class="ride">
+        <div class="centeral-content">
+            <div class="u72DemiBold_v2">Uphill Ride,<br>Downhill Feel</div>
+        </div>
+    </div>
+    <div class="gears">
+        <div class="centeral-content">
+            <div class="u72DemiBold_v2">
+                4 x 8 <span class="u24Medium_v2">levels</span>
+                <div class="u24Light_v2">E-Assists X Gears</div>
+            </div>
+            <div class="u17Light_v2">The smooth shifting from speed to speed all but melts away sensory boundaries -
+                allowing for a thrilling but smooth ride.</div>
+        </div>
+    </div>
+    <div class="boxs">
+        <div class="centeral-content">
+            <div>
+                <div class="u42DemiBold_v2">Pure Comfort</div>
+                <div class="u17Light_v2">With its ergonomic design, you can enjoy your ride for longer periods without
+                    any discomfort or strain.</div>
+            </div>
+            <div></div>
+            <div></div>
+            <div>
+                <div class="u42DemiBold_v2">Effortless to Carry</div>
+                <div class="u17Light_v2">This e-bike is a breeze to carry, weighing only 21 kg. Take it with you
+                    wherever you go, hassle-free.</div>
+            </div>
+            <div>
+                <div class="u42DemiBold_v2">Power Up with Ease and Waterproof</div>
+                <div class="u17Light_v2">Battery is easy to remove and re-install, and its location below the top tube
+                    keeps it waterproof. Enjoy peace of mind while riding, rain or shine.</div>
+            </div>
+            <div></div>
+        </div>
+    </div>
+    <div class="dark">
+        <div class="centeral-content">
+            <div>
+                <div></div>
+                <div>
+                    <div class="u42DemiBold_v2">Guardian in the Dark</div>
+                    <div class="u17Light_v2">The integrated headlight lights your way for a safer ride.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="animate_fullSection section11">
+        <div class="centerBox" style="width: 100%">
+            <div class="u72DemiBold_v2">Elegance is Never End</div>
+        </div>
+        <div class="centerBox sandBox" style="width: 100%">
+            <div class="u72DemiBold_v2">Smart is the New Sexy</div>
+        </div>
+    </div>
+    <div class="section12 blackBg animate_fullSection mobileHide">
+        <div class="centerBox flexCol animate_fullContanier section12Container">
+            <div class="imgContainer">
+                <div class="imgItem bike4">
+                    <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/speak_animate.gif" alt="urtopia"
+                        class="ebike" />
+                </div>
+                <div class="imgItem bike3">
+                    <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/speak.jpg" alt="urtopia"
+                        class="ebike" />
+                </div>
+                <div class="imgItem bike2">
+                    <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/nav_animate.gif" alt="urtopia"
+                        class="ebike" />
 
-      <div class="top">
-          <div class="centeral-content">
-              <div></div>
-              <div class="u48DemiBold_v2">What can I benefit from as an employee?</div>
-          </div>
-      </div>
-      <div class="bottom">
-          <div class="centeral-content">
-              <div><img
-                      src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/3_2x_212df522-b272-4a54-99fa-ec6829dff114.png?v=1683709949"
-                      alt=""></div>
-              <div>
-                  <div class="u17Light_v2">As an employee, you can convince your employer to lease you a company bike
-                      and provide it to you via deferred compensation. You get a tax-reduced e-bike that can also be
-                      used privately without restriction: for work, everyday life, vacations or sports.</div>
-                  <div class="u20DemiBold_v2">NEWS: from 01.01.2020 to 31.12.2030, employees pay only 0.25% imputed
-                      income and thus save up to 40% compared to private purchases.</div>
-                  <a href="#forms" class="my-button my-button-black">Request leasing offer</a>
-              </div>
-          </div>
-      </div>
-  </div>
-  <div class="glance">
-      <div class="centeral-content">
-          <div class="u48DemiBold_v2">Your advantages at a glance</div>
-          <div class="u20DemiBold_v2">
-              <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_20956_2x_28b3e62b-ae48-4b7c-a025-4db2d0cdbf2d.png?v=1683713191"
-                  alt="">
-              <span>Save up to 40% compared to direct purchase</span>
-          </div>
-          <div class="u20DemiBold_v2">
-              <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_20956_2x_28b3e62b-ae48-4b7c-a025-4db2d0cdbf2d.png?v=1683713191"
-                  alt="">
-              <span>The monthly installments are automatically deducted from your salary</span>
-          </div>
-          <div class="u20DemiBold_v2">
-              <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_20956_2x_28b3e62b-ae48-4b7c-a025-4db2d0cdbf2d.png?v=1683713191"
-                  alt="">
-              <span>Lean and digital processes via the Jobrad portal</span>
-          </div>
-          <div class="u20DemiBold_v2">
-              <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_20956_2x_28b3e62b-ae48-4b7c-a025-4db2d0cdbf2d.png?v=1683713191"
-                  alt="">
-              <span>Open to all companies - big companies, small companies or self-employed people</span>
-          </div>
-      </div>
-  </div>
-  <div class="calculate">
-      <div class="centeral-content">
-          <div class="u48DemiBold_v2">Calculate your personal e-bike flat rate, which will be deducted from your
-              salary!</div>
-          <div class="videos">
-              <div>
-                  <div class="u17Light_v2">Can you save up to 40% on your job bike via a gross salary conversion
-                      compared to a private
-                      purchase. Then calculate now how little a great Urtopia e-bike costs you in net salary per
-                      month. The calculator is fiscally up to date and includes the favorable 0.25% regulation.</div>
-                  <br>
-                  <div class="u20DemiBold_v2">Example:</div>
-                  <div class="u17Light_v2 l">An employer provides a JobRad with a list price of 3,900 euros to an
-                      employee who earns 3,000
-                      euros gross. The usage rate is 113.39 euros, and the taxable monetary benefit (0.25 percent) is
-                      9 euros.</div>
-                  <a href="#forms" class="my-button my-button-black mobileHide">Request leasing offer</a>
-              </div>
-              <div>
-                  <div class="u20DemiBold_v2">How to use the JobRad Calculator</div>
-                  <div onclick="showVideoDialog('https://www.youtube.com/embed/FJP3ocrRa-g?autoplay=1&cc_load_policy=1')"><img
-                          src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_18815_2x_672be8f9-42cb-4a87-81b4-9686c4938986.png?v=1683715614"
-                          alt=""></div>
+                </div>
+                <div class="imgItem bike1">
+                    <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/nav_cover.jpg" alt="urtopia"
+                        class="ebike" />
+                </div>
+                <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Rectangle_21274.webp"
+                    class="shadowBg" />
+                <div class="animate_text-wrap imgText">
+                    <div class="textItem">
+                        <div class="u36DemiBold">Fingerprint Unlock</div>
+                        <div class="u17Light">
+                            Provides an efficient and intuitive option for riding without
+                            the hassle of carrying a key.
+                        </div>
+                    </div>
+                    <div class="textItem">
+                        <div class="u36DemiBold">Built-in Navigation</div>
+                        <div class="u17Light">
+                            Goodbye phone, no more struggling to navigate with a tiny
+                            screen.
+                        </div>
+                    </div>
+                    <div class="textItem">
+                        <div class="u36DemiBold">Voice Control</div>
+                        <div class="u17Light">
+                            It offers customizable voice commands and horn beeps for fun
+                            interaction.
+                        </div>
+                    </div>
+                    <div class="textItem">
+                        <div class="u36DemiBold">Bluetooth Music</div>
+                        <div class="u17Light">
+                            It’s like having a personal DJ accompanying you everywhere you
+                            ride.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section12-mb animate_fullSection blackBg pcHide">
+        <div class="centerBox flexCol animate_fullContanier">
+            <div class="text_wrapped">
+                <h2></h2>
+                <h2></h2>
+            </div>
 
-              </div>
-          </div>
-          <a href="#forms" class="my-button my-button-black pcHide">Request leasing offer</a>
-      </div>
-  </div>
-  <div class="calculator">
-      <div class="centeral-content jobrad-bike-leasing-calculator"
-          id="jobrad-fachhandel-werbematerial-werkzeugkasten-iframe-main">
-          <div class="u48DemiBold_v2">JobRad Calculator</div>
-          <iframe scrolling="no" width="100%"
-              src="https://bike-leasing-calculator.jobrad.org?genericObserve=true"></iframe>
-      </div>
-  </div>-->
-  <div class="forms" id="forms">
-      <div class="centeral-content">
-          <div class="u48DemiBold_v2">Request a quote for Urtopia E-bike leasing now</div>
-          <div class="u24Medium_v2">We only need a few details to be able to create a JobRad leasing offer package.
-          </div>
-          <!--<div class="u24Medium">Complete the form and we’ll submit the request with your leasing partner.</div>-->
-          <form action="" method="post">
-              <div class="item">
-                  <div class="u24Medium">Your employer already offers JobRad?<i>*</i></div>
-                  <div class="multiple-checkbox">
-                      <label for="yes">
-                          <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_20956_2x_28b3e62b-ae48-4b7c-a025-4db2d0cdbf2d.png?v=1683713191"
-                              alt="">
-                          <span class="u17Medium_v2">Yes</span>
-                          <input type="radio" id="yes" name="offers" value="yes" required />
-                      </label>
-                      <label for="no">
-                          <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_20956_2x_28b3e62b-ae48-4b7c-a025-4db2d0cdbf2d.png?v=1683713191"
-                              alt="">
-                          <span class="u17Medium_v2">I don't know</span>
-                          <input type="radio" id="no" name="offers" value="no" required />
-                      </label>
-                  </div>
-              </div>
-              <div class="item">
-                  <div class="mini-item">
-                      <div>
-                          <div class="u24Medium">First name<i>*</i></div>
-                          <input type="text" name="first_name" required>
-                      </div>
-                      <div>
-                          <div class="u24Medium">Last name<i>*</i></div>
-                          <input type="text" name="last_name" required>
-                      </div>
-                  </div>
-              </div>
-              <div class="item">
-                  <div class="u24Medium">Email<i>*</i></div>
-                  <input type="email" name="email" required>
-              </div>
-              <div class="item">
-                  <div class="u24Medium">Phone number<i>*</i></div>
-                  <input type="tel" name="phone" required>
-              </div>
-              <div class="item">
-                  <div class="u24Medium">Job Position<i>*</i></div>
-                  <input type="text" name="job_position" required>
-              </div>
-              <div class="item">
-                  <div class="u24Medium">Company<i>*</i></div>
-                  <input type="text" name="company" required>
-              </div>
-              <div class="item">
-                  <div class="u24Medium">Employer<i>*</i></div>
-                  <input type="text" name="employer" required>
-              </div>
-              <div class="item">
-                  <div class="u24Medium">Delivery address<i>*</i></div>
-                  <input type="text" name="address" required>
-              </div>
-              <div class="item">
-                  <div class="mini-item">
-                      <div>
-                          <div class="u24Medium">Postal code<i>*</i></div>
-                          <input type="text" name="postal_code" required>
-                      </div>
-                      <div>
-                          <div class="u24Medium">City<i>*</i></div>
-                          <input type="text" name="city" required>
-                      </div>
-                  </div>
-              </div>
-              <div class="item">
-                  <div class="u24Medium">Country<i>*</i></div>
-                  <input type="text" name="country" value="Deutschland" disabled required>
-              </div>
-              <div class="item">
-                  <div class="u24Medium">Bike Model<i>*</i></div>
-                  <input type="text" name="bike_model" value="Carbon 1" disabled required>
-              </div>
-              <div class="item">
-                  <div class="mini-item">
-                      <div>
-                          <div class="u24Medium">Bike Size<i>*</i></div>
-                          <select name="bike_size" required>
-                              <option value="">---</option>
-                              <!--<option value="M">M - Fit for 170-185 cm</option>
-                              <option value="L">L - Fit for 180-195 cm</option>
-                              -->
-                          </select>
-                      </div>
-                      <div>
-                          <div class="u24Medium">Bike Style<i>*</i></div>
-                          <select name="bike_style" required>
-                              <option value="">---</option>
-                              <!--<option value="Sirius">Sirius</option>
-                              <option value="Lyra">Lyra</option>
-                              <option value="Midnight in Paris">Midnight in Paris</option>
-                              <option value="Vanilla">Vanilla</option>
-                              -->
-                          </select>
-                      </div>
-                  </div>
-              </div>
-              <div class="item">
-                  <div class="u24Medium">Accessories you would like
-                      <!--<br><span style="font-size: 12px;color: #666;line-height: 16px;display: inline-block;">Father’s Day gifts: kickstand, Fender, water bottle cage will sent to you automatically, will not show in your jobrad offer (Ends on 18th of May)</span>-->
-                  </div>
-                  <select name="accessories" multiple>
-                    {% for collection in collections %}
-                        {% if collection.title == 'Carbon 1 leasing acc' %}
-                            {% for product in collection.products %}
-                                <option title="{{product.title}}" value="{{product.id}}">{{product.title}}</option>
-                            {% endfor %}
-                        {% endif %}
-                      {% endfor %}
-                  </select>
-                  <!-- <input type="text" name="accessories" placeholder="" > -->
-              </div>
-              <div class="item">
-                <div class="u24Medium">Note</div>
-                <input type="text" name="note">
-              </div>
-              <div class="item">
-                  <div class="checkbox">
-                      <input type="checkbox" id="subscribe" name="subscribe" value="subscribe" required />
-                      <label class="u17Light" for="subscribe" style="text-align: left;">I agree to allow Urtopia to store and process my
-                          personal data, including receiving emails, text messages and SMS.<i>*</i></label>
-                  </div>
-              </div>
-              <div class="item">
-                  <div style="display: flex;">
-                      <button class="my-button my-button-black" type="submit">Submit</button>
-                      <a class="my-button my-button-white" href="/pages/contactus">Contact us</a>
-                  </div>
-              </div>
-              <!-- <div class="item u17Medium">Thank you for submitting the form. <br>Our expert will contact you soon.</div> -->
-          </form>
-      </div>
-  </div>
-  <!--<div class="faqs">
-      <div class="centeral-content">
-          <div class="faq">
-              <div class="titlee">Frequently asked questions about Leasing</div>
-              <div class="swiper swiper-no-swiping faq-list">
-                  <div class="swiper-wrapper">
-                      <div class="swiper-slide">
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </div>
-  </div>-->
+            <div class="imgContainer">
+                <div class="videoItem bike4" style="position: static">
+                    <video muted="muted" playsinline="" prop="false" loop autoplay
+                        poster="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/ph0.jpg">
+                        <source src="https://cdn.shopify.com/videos/c/o/v/d5474ef0eaa541fe9e389c65726cc5af.mp4"
+                            type="video/mp4" />
+                    </video>
+                </div>
+                <div class="imgItem bike3">
+                    <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/ph0.jpg" alt="urtopia"
+                        class="ebike" />
+                </div>
+                <div class="videoItem bike2">
+                    <video muted="muted" playsinline="" prop="false" loop autoplay
+                        poster="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/ph010.jpg">
+                        <source src="https://cdn.shopify.com/videos/c/o/v/5abb455824de4f0a845b9965283f356e.mp4"
+                            type="video/mp4" />
+                    </video>
+                </div>
+                <div class="imgItem bike1">
+                    <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/ph010.jpg" alt="urtopia"
+                        class="ebike" />
+                </div>
+                <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Rectangle_21274.webp"
+                    class="shadowBg" />
+                <div class="animate_text-wrap imgText">
+                    <div class="textItem">
+                        <div class="u36DemiBold">Fingerprint Unlock</div>
+                        <div class="u17Light">
+                            Provides an efficient and intuitive option for riding without
+                            the hassle of carrying a key.
+                        </div>
+                    </div>
+                    <div class="textItem">
+                        <div class="u36DemiBold">Built-in Navigation</div>
+                        <div class="u17Light">
+                            Goodbye phone, no more struggling to navigate with a tiny
+                            screen.
+                        </div>
+                    </div>
+                    <div class="textItem">
+                        <div class="u36DemiBold">Voice Control</div>
+                        <div class="u17Light">
+                            It offers customizable voice commands and horn beeps for fun
+                            interaction.
+                        </div>
+                    </div>
+                    <div class="textItem">
+                        <div class="u36DemiBold">Bluetooth Music</div>
+                        <div class="u17Light">
+                            It’s like having a personal DJ accompanying you everywhere you
+                            ride.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section13 fullSection blackBg">
+        <div class="maxWidth flex_center_between section13_container" style="height: 100%">
+            <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_20546_ee37f948-9fe5-4b75-8aca-1fb2a07309e1.png"
+                alt="urtopia" />
+            <div style="color: #fff" class="textFlex">
+                <div class="u24Medium">GPS Tracking</div>
+                <h3>A Bike You'll<br />Never Lose</h3>
+                <div class="u17Light">
+                    GPS for security and navigation. No more phone distractions and find your bike easily.
+                </div>
+            </div>
+            <div class="mb-bottom">
+                <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20230228-154102.png" />
+            </div>
+        </div>
+    </div>
+    <div class="section14 animate_fullSection blackBg">
+        <div class="wrapped beforeContent">
+            <div class="animate_fullContanier section14_content maxWidth">
+                <div class="leftContent">
+                    <div class="text-aside centerBox">
+                        <div>
+                            <div class="u24Medium">Track Your Route</div>
+                            <h3>
+                                Journey Captured,<br />
+                                Memories Made.
+                            </h3>
+                            <div class="u170Light">
+                                Routes, speed, calories burned…all captured.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="rightContent">
+                    <img class="appImg" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/appp3.png"
+                        alt="urtopia" />
+                    <img class="appImg" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/appp2.png"
+                        alt="urtopia" />
+                    <img class="appImg" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/appp1.png"
+                        alt="urtopia" />
+                </div>
+            </div>
+        </div>
+        <div class="wrapped afterContent">
+            <div class="animate_fullContanier section14_content maxWidth">
+                <div class="leftContent">
+                    <div class="text-aside centerBox">
+                        <div>
+                            <div class="u24Medium">Share You Story</div>
+                            <h3>
+                                Meet New Friends. <br />
+                                Like Their Rides
+                            </h3>
+                            <div class="u170Light">
+                                Share rides, photos, stories with Urtopia community in app.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="rightContent">
+                    <img class="appImg" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/appp4.png"
+                        alt="urtopia" />
+                    <img class="appImg" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/appp6.png"
+                        alt="urtopia" />
+                    <img class="appImg" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/appp5.png"
+                        alt="urtopia" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section15 blackBg">
+        <div class="maxWidth centerBox section15-mb-container">
+            <div class="item flexBox">
+                <div class="u24Medium">OTA Update</div>
+                <div class="u42DemiBold">Latest Tech<br />Best Ride.</div>
+                <div class="u17Light">
+                    It provide hassle-free access to the latest bike features and
+                    performance enhancements.
+                </div>
+                <div class="flex1">
+                    <img
+                        src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18244.webp?v=1677118847" />
+                </div>
+
+            </div>
+            <div class="item">
+                <div class="u24Medium">CAN Bus</div>
+                <div class="u42DemiBold">Better network, <br />better life</div>
+                <div class="u17Light">
+                    Experience smoother, stronger networks with CAN implementation,
+                    withstanding stress and fewer disruptions.
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="worldwide">
+        <div class="centeral-content">
+            <div class="u42DemiBold_v2">Worldwide<br class="mobileHide">Service</div>
+            <div class="u17Light_v2">Urtopia is dedicated to deploying authorised service providers throughout the world
+                for satisfactory service and maintenance.</div>
+        </div>
+    </div>
+    <div class="accessories">
+        <div class="centeral-content">
+            <div class="u42DemiBold_v2">Customized Accessories</div>
+            <div class="boxs">
+                <div>
+                    <div class="back"></div>
+                    <div class="u30DemiBold_v2">Rear Rack</div>
+                    <div class="u17Light_v2">Resembling tree branches, it fluently extends the bike frame and carries up
+                        to 26 lbs.</div>
+                </div>
+                <div>
+                    <div class="back"></div>
+                    <div class="u30DemiBold_v2">ARES Lights</div>
+                    <div class="u17Light_v2">ARES (Advanced Rear Early-indication System) ensures rider security with a
+                        blinking red light at braking and two projection lights that show turns.</div>
+                </div>
+                <div>
+                    <div class="back"></div>
+                    <div class="u30DemiBold_v2">Front Rack</div>
+                    <div class="u17Light_v2">Now enough space to carry your daily essentials. A briefcase, a backpack,
+                        or a 6-pack beer? You get them all.</div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
-
-{{ 'sumoselect.js' | asset_url | script_tag }}
-<script>
-  window.addEventListener(
-    'message',
-    (function () {
-        // NOTE: This is how we can support multiple instances in same page.
-        var id = 'jobrad-fachhandel-werbematerial-werkzeugkasten-iframe-main'
-
-        console.log('message');
-
-        return function (event) {
-            if (
-                id === 'jobrad-fachhandel-werbematerial-werkzeugkasten-iframe-main' &&
-                event.origin === 'https://bike-leasing-calculator.jobrad.org' &&
-                typeof event.data === 'object' &&
-                'genericState' in event.data &&
-                event.data.genericState.body.outerHeightInPixel > 0
-            )
-                window.document.querySelector(
-                    '.jobrad-bike-leasing-calculator#jobrad-fachhandel-werbematerial-werkzeugkasten-iframe-main iframe'
-                ).style.height =
-                    event.data.genericState.body.outerHeightInPixel + 'px'
-        }
-    })(),
-    false
-)
-
-
-
-$('form .multiple-checkbox :input').on('change', e => {
-    if (e.currentTarget.id === 'yes') {
-        $(`form .multiple-checkbox label[for="yes"]`).css("border-color", "black")
-        $(`form .multiple-checkbox label[for="yes"] img`).css('display', 'unset')
-        $(`form .multiple-checkbox label[for="no"]`).css("border-color", "#00000034")
-        $(`form .multiple-checkbox label[for="no"] img`).css('display', 'none')
-    } else {
-        $(`form .multiple-checkbox label[for="no"]`).css("border-color", "black")
-        $(`form .multiple-checkbox label[for="no"] img`).css('display', 'unset')
-        $(`form .multiple-checkbox label[for="yes"]`).css("border-color", "#00000034")
-        $(`form .multiple-checkbox label[for="yes"] img`).css('display', 'none')
-    }
-
-})
-
-const size_map = {
-    M: 'Fit for 170-185 cm',
-    L: 'Fit for 180-195 cm'
-  }
-
-  const forms = {}
-  const ignore = ['submit', 'checkbox']
-
-const faqs = [
-    {
-        title: "For whom is a service bike or service e-bike via salary conversion worthwhile?",
-        content: `The good news: Company bike leasing with JobRad is always worthwhile for employees thanks to salary conversion and tax incentives (0.25% rule). You save up to 40 percent with bike leasing compared to conventional purchase.`
-    },
-    {
-        title: 'What is salary conversion/deferred compensation for bike leasing or e-bike leasing?',
-        content: 'In the case of <b>salary conversion</b> (also known as deferred compensation or cash salary conversion), the employee decides to receive a portion of the contractually agreed salary not in cash, but as a payment in kind for the period during which the leased asset, for example a JobCycle, is leased. This means that the employer withholds a portion of the monthly salary in the amount of the leasing rate. This cash salary is in turn converted into so-called non-cash compensation, which in the case of <b>JobRad is the transfer of a bicycle or an e-bike.</b><br><br> The conversion results in a <b>tax advantage.</b>'
-    },
-    {
-        title: 'What happens on the employee’s pay stub when salary is converted?',
-        content: 'The gross salary is reduced by the usage rate for the duration of the use of the company bike or company e-bike. The significantly lower <a target="_blank" href="https://www.jobrad.org/aktuelles/dienstrad-versteuerung.html">non-cash benefit<a/> for the JobRad, which is taxable, is added. <br><br><b>Example: </b><br>An employer provides an employee who earns 3,000 euros gross with a JobRad with a list price of 3,900 euros. The usage rate is 113.39 euros, and the taxable non-cash benefit (0.25 percent) is 9 euros.'
-    },
-    {
-        title: 'What is the conversion rate for bike leasing or e-bike leasing with JobRad?',
-        content: 'The conversion rate is the rate that is deducted from the employee’s gross salary on the basis of salary conversion. It is made up of several components:<br><br> 1. from the monthly usage rate. This is the accrued rate for the use of the JobRad or Jobbike. <br>2. monthly rate for JobRad comprehensive <a target="_blank" href="https://www.jobrad.org/arbeitnehmer/service.html">insurance and JobRad mobility guarantee</a> plus optional <a target="_blank" href="https://www.jobrad.org/arbeitnehmer/service.html">JobRad inspection or JobRad FullService</a> if these additional services are not covered by the employer.'
-    },
-    {
-        title: 'Is there a tax advantage to deferred compensation for bicycle leasing?',
-        content: 'Yes, if an employer provides an employee with a company bike, tax benefits arise in <a target="_blank" href="https://www.jobrad.org/aktuelles/dienstrad-versteuerung.html">all cases.</a> <br><br>a) JobRad as salary extra, the tax-free service bike variant (since 2019):<br><br> If an employer provides an employee with a company bike (bicycles or e-bikes) in addition to the salary owed anyway (Section 3 No. 37 EstG), there is no taxation of the non-cash benefit since 2019. In this variant, there is no salary conversion, because the employee receives the bicycle or e-bike on top. For more information, <a target="_blank" href="https://www.jobrad.org/arbeitgeber/gehaltsextra.html">see JobRad as a salary extra.</a><br><br> b) JobRad by salary conversion, the variant with the 0.25% rule (since 2020):<br><br> If an employee receives the JobRad as a salary conversion, he or she receives a small portion of the contractually agreed salary not in cash, but as a benefit in kind. This is for the period during which the company bike is provided (36 months). During the transfer, the employer retains a portion of the monthly salary in the amount of the lease payments. <br>Since 2020, the employee has only had to pay tax on the non-cash benefit for the private use of the JobRad at 0.25 percent of the recommended retail price. As a result, the employee saves up to 40 percent compared to a traditional purchase.'
-    },
-    {
-        title: "For which employment relationships is JobRad not eligible?",
-        content: `The individual leasing contract for a JobRad always has a term of 36 months. Therefore, our company bike leasing is not suitable for all employees - for example, because it is foreseeable that one will not be able to fulfill the contract term. <br><br>JobRad is not recommended for, among others: <br>- Trainees <br>- Employees in probationary period <br>- temporary workers <br>- mini- and midi-jobbers <br>- Employees who receive minimum wage <br>- Employees who plan to retire (early) in less than three years, take extended parental leave, or take a sabbatical.`
-    },
-    {
-        title: "Your employer doesn’t offer JobRad yet?",
-        content: `No problem. They can use the <a target="_blank" href="https://www.jobrad.org/kontakt-mittler.html">contact form</a> to get in touch with JobRad quickly and easily and even request contract documents directly. Here you can find the advantages and <a target="_blank" href="https://www.jobrad.org/arbeitgeber.html">further information for employers.</a><br><br> In order for you to lease a JobRad from us, your employer must offer JobRad. The leasing contract runs through your employer. If your employer does not offer JobRad, it does not matter. She/he can simply sign up. The leasing concept not only offers advantages to you, but also to your employer. <a target="_blank" href="https://www.jobrad.org/arbeitgeber.html">Click here for more information for employers. </a>If you are self-employed, you can also <a target="_blank" href="https://selbststaendige.jobrad.org/">find useful information about tax benefits, requirements and the leasing request form on the JobRad website.</a>`
-    },
-    {
-        title: "Am I qualified for JobRad?",
-        content: `You are an employee: If your company already works with JobRad, you can order your Urtopia today. If not, you can introduce your employer <a target="_blank" href="https://www.jobrad.org/kontakt.html">here</a> at JobRad.<br><br> You are self-employed: You can certainly lease one or more Urtopias for your company via JobRad. You can find more practical information <a target="_blank" href="https://www.jobrad.org/kontakt.html">here</a> .`
-    },
-    {
-        title: "What is the benefit of leasing a Urtopia through JobRad?",
-        content: `You can save up to 40% compared to a conventional purchase. The monthly installments are simply deducted from your gross salary and the additional tax benefit saves you money.`
-    },
-    {
-        title: "How does the eSIM service apply to leasing?",
-        content: `No, it is not possible to add the eSIM service to the offer. <br><br>The first year is free. <br>After that you can purchase it from Urtopia’s official website.<br><br> Outdoor 4G connectivity requires an active eSIM service to ensure constant connectivity and security on the go. It is required for many advanced smart features such as activity tracking, AI voice control, motion alerts, and OTA updates.`
-    },
-    {
-        title: "How do I order a Urtopia via JobRad?",
-        content: `Please fill out this form with your contact details to request a quote. We will then post an offer for you on the JobRad portal. You can view the offer and confirm what you will see in your portal. <br><br>After confirmation, the offer is converted into an order.<br><br> Your employer and JobRad must approve the order. You will receive a confirmation email once your order has been reviewed and approved. Soon you’ll be riding your Urtopia bike!`
-    },
-    {
-        title: "How long is the lease period?",
-        content: `The leasing period is 36 months. The installments will be deducted from your gross salary monthly until the end of this period.`
-    },
-    {
-        title: "What happens if I leave my employer?",
-        content: `Depending on the situation, there are different options. It is best to discuss the possibilities with your employer. You can find more information <a target="_blank" href="https://www.jobrad.org/arbeitgeber/ausfallmanagement.html">here .</a>`
-    },
-    {
-        title: "Can I add Urtopia Theft Insurance to my JobRad order?",
-        content: `No, it is not possible to add our theft insurance to the offer. JobRad has its own insurance against theft, accidents and damage, which is included in the leasing package.`
-    },
-    {
-        title: "Can I add accessories to my JobRad order?",
-        content: `Yes, you can add both the bike and the accessories to your order. The availability is depends on our local stock, our specialist will contact you about your order.`
-    },
-    {
-        title: "I have already bought a bike from you. Can I use this order for leasing via JobRad?",
-        content: `Unfortunately, no. The only option here would be to cancel your order and place a new order through JobRad.`
-    },
-    {
-        title: "What happens if I want to return my Urtopia?",
-        content: `Generally this is not possible. When you receive your bike, it is very important that you carefully inspect it for any imperfections or defects. If your bike was delivered damaged, please contact our customer service. An exchange for the same bike is possible in certain cases.`
-    },
-    {
-        title: "Can I return my JobRad order within the 14 day period?",
-        content: `No. Unfortunately, this is not possible, as you have agreed on a leasing contract with the duration of 36 months with JobRad. If you have questions about the terms of your contract, please contact JobRad.`
-    },
-]
-
-if (!sessionStorage.isPreviewJobrad) {
-    fetchBuried('jobrad', 'pageview')
-}
-
-// 记录来过这个页面
-sessionStorage.isPreviewJobrad = 'isPreviewJobrad'
-
-
-function gtag_report_conversion(url) {
-    var callback = function () {
-      if (typeof(url) != 'undefined') {
-        window.location = url;
-      }
-    };
-    gtag('event', 'conversion', {
-        'send_to': 'AW-10876491006/sCHgCIiX55oYEP6pqMIo',
-        'event_callback': callback
-    });
-    return false;
-  }
-
-
-function submit(extras = {}) {
-    console.log('extras', extras)
-
-    let search = {}
-    const url = new URL(location.href)
-
-    for (const [k, v] of url.searchParams.entries()) {
-        search[k] = v
-    }
-
-    search = Object.assign(search, extras)
-
-    // 重写bike_size
-    search.bike_size = search.bike_size + ' - ' + size_map[search.bike_size]
-    search.page_type = 'test-page'
-
-    fetchBuried('jobrad', 'submit', search)
-    // fbq('track', 'Jobrad Submit')
-    /*
-    fbq('track', 'CompleteRegistration', {
-        value: 3596,
-        currency: 'usd',
-    });
-
-    gtag_report_conversion()
-    */
-}
-
-
-$('.faqs .swiper-slide').html(faqs.map(faq => `
-  <div class="faq-item">
-     <div class="faq-title">
-       <span>${faq.title}</span>
-       <i class="faq-content-plus"></i>
-     </div>
-     <div class="faq-content">${faq.content}</div>
-  </div>`).join(''))
-
-
-setTimeout(() => {
-    $('.faq-title').click(function () {
-        $(this)
-            .siblings('.faq-content')
-            .slideToggle()
-            .parent()
-            .siblings()
-            .find('.faq-content')
-            .slideUp();
-        $(this).children('i').toggleClass('faq-content-plus');
-        $(this)
-            .parent()
-            .siblings()
-            .find('.faq-title')
-            .children('i')
-            .addClass('faq-content-plus');
-    });        
-
-        let is_request = false
-        $('.forms form :input').on('input', debounce(e => {
-            if (is_request) {
-                return            
-            }
-
-            is_request = true
-            const data = {}
-
-            $('.forms form :input').each((i, target) => {
-                data[target.name] = target.value
-            })
-
-            data.page_type = 'test-page'
-            fetchBuried('jobrad', 'submitinfo', data)
-        }, 5000))
-
-}, 300)
-
-      jQuery.getJSON(window.Shopify.routes.root + 'products.json', res => {
-        const carbon = res.products.find(p => p.id === 7633738727640)
-        const size = carbon.options.find(o => o.name === 'Size')
-        const style = carbon.options.find(o => o.name === 'Style')
-
-        console.log(carbon)
-
-        $('select[name="bike_size"]').html('<option value="">---</option>' + size.values.map(v => {
-            return `<option value="${v}">${v} - ${size_map[v]}</option>`
-        }))
-
-        setTimeout(() => {
-            $('select[name="bike_size"]').on('change', e => {
-                const value = e.target.value
-
-                if (value) {
-                    $('select[name="bike_style"]').html('<option value="">---</option>' + style.values.map(v => {
-
-                        let disabled = false
-                        const find = carbon.variants.find(c => `${v} / ${value}`)
-
-                        // 如果不可用，按钮禁用掉
-                        if (find) {
-                            disabled = !find.available
-                        }
-
-                        return `<option value="${v}" ${disabled ? 'disabled' : ''}>${v}</option>`
-                    }))
-                } else {
-                    $('select[name="bike_style"]').html('<option value="">---</option>')
-                }
-                
-            })
-
-
-            $('.forms form').on("submit", function (event) {    
-                $('.forms form :input').each((index, target) => {
-                    if (ignore.includes(target.type)) {
-                        return
-                    }
-    
-    
-                    
-                    // 配件特殊处理
-                    if (target.name === 'accessories') {
-                        const accessories = []
-                        const accessories_id = []
-                        
-                        // selected
-                        $(target).find('option:selected').each((i, target) => {
-                            accessories.push(target.title)
-                            accessories_id.push(target.value)
-                        })
-
-                            
-                        forms.accessories = accessories.join()
-                        forms.accessories_id = accessories_id.join()
-    
-                        return
-                    }
-
-
-                    forms[target.name] = target.value
-                })
-
-                forms.variant_id = carbon.variants.find(c => c.title === `${forms.bike_style} / ${forms.bike_size}`).id
-    
-                // 隐藏form
-                $('.forms form').hide()
-                $('.forms .centeral-content').html(`
-                    <div class="u48DemiBold_v2">Thank you!</div>
-                    <div class="u24Medium_v2">You have successfully submit the form. Our expert will contact you soon. Feel free to contact us if you have any questions.</div>
-                    <a class="my-button my-button-white" href="/pages/contactus">Contact us</a>
-                `)
-    
-                setTimeout(() => {
-                    $('html').animate({
-                        scrollTop: $('.forms').offset().top - (document.documentElement.clientHeight / 2) + ($('.forms').height() / 2)
-                    }, 300)
-    
-                    submit(forms)
-                })
-    
-                event.preventDefault();
-                return false;
-            })
-
-            
-
-
-        }, 100)
-      });
-
-      // SELECT 插件
-      $('select[name="accessories"]').SumoSelect({
-        placeholder: '',
-        csvDispCount: 0,
-        floatWidth: 768,
-      })
-</script>
