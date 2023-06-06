@@ -246,23 +246,25 @@
                 margin: 15px 0 50px;
             }
 
-            & > div:first-child {
-                transform: translateY(15%);
-            }
+            &>div {
+                &:first-child {
+                    transform: translateY(15%);
+                }
 
-            & > div:last-child {
-                img {
-                    width: 50%;
+                &:last-child {
+                    img {
+                        width: 50%;
 
-                    &:first-child {
-                        margin-bottom: 20%;
+                        &:first-child {
+                            margin-bottom: 20%;
+                        }
+
+                        &:last-child {
+                            margin-top: 20%;
+                        }
+
+                        // position: absolute;
                     }
-
-                    &:last-child {
-                        margin-top: 20%;
-                    }
-
-                    // position: absolute;
                 }
             }
         }
