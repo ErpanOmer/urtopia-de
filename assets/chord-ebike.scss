@@ -1,6 +1,10 @@
 .chord-ebike {
     background-color: #F7F8FA;
 
+    div {
+        box-sizing: border-box !important;
+    }
+
     .topbar {
         position: sticky;
         top: 0;
