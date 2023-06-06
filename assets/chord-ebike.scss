@@ -968,6 +968,8 @@
         }
 
         .banner {
+            height: calc(100vh - 148px);
+
             .centeral-content {
                 height: 100%;
                 text-align: center;
