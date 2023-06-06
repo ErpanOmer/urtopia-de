@@ -525,3 +525,305 @@
 <script src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/1.14.2-TweenMax.js?v=1663912518"></script>
 <script src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/2.0.3-ScrollMagic.min.js?v=1663912592"></script>
 <script src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/2.0.3-animation.gsap.js?v=1663912682"></script>
+<script>
+    $('.bikes .dots > div').on('click', e => {
+        const t = $(e.target)
+        const parent = $(e.target.parentNode.parentNode)
+
+        const img_src = t.attr('img-src')
+        const variant_id = t.attr('variant-id')
+
+        // 重置active
+        parent.find('.dots > div').removeClass('active')
+        $('.bikes .dots > div')
+        // 再设置active
+        t.addClass('active')
+
+        parent.find('img').attr('src', img_src)
+        parent.find('a').attr('href', `/products/urtopia-chord-ebike?variant=${variant_id}`)
+    })
+
+    const controller = new ScrollMagic.Controller();
+
+    const section11_tween = new TimelineMax()
+        .add([
+            TweenMax.to(".section11 .sandBox", 0.5, {
+                height: "100%",
+                ease: "back.out(1.7)",
+            }),
+        ])
+        .add([
+            TweenMax.to(
+                ".section11 .sandBox .u72DemiBold_v2",
+                0.5,
+                {
+                    opacity: 1,
+                    y: 0,
+                    ease: "power3.out",
+                },
+                1
+            ),
+        ]);
+    new ScrollMagic.Scene({
+        triggerElement: ".chord-ebike .section11",
+        triggerHook: "onLeave",
+        duration: "100%",
+    })
+        .setPin(".chord-ebike .section11")
+        .addTo(controller);
+
+    new ScrollMagic.Scene({
+        triggerElement: ".chord-ebike .section11",
+        triggerHook: "onLeave",
+        duration: "70%",
+        offset: 80,
+    })
+        .setTween(section11_tween)
+        .addTo(controller);
+
+
+    // section12 动画
+    var section12_tween_1 = new TimelineMax().add([
+        TweenMax.to(".section12 .textItem:nth-child(1)", 0.5, {
+            x: "-130%",
+            opacity: 1,
+            ease: "back.out(1.7)",
+        }),
+        TweenMax.to(".section12 .bike1", 0.5, {
+            css: {
+                display: "none",
+            },
+            onComplete: function () {
+                console.log("wanccheng");
+            },
+        }),
+        TweenMax.to(".section12 .textItem:nth-child(2)", 0.5, {
+            x: "150%",
+            opacity: 1,
+            ease: "back.out(1.7)",
+        }),
+    ]);
+
+    var section12_tween_2 = new TimelineMax().add([
+        TweenMax.to(".section12 .textItem:nth-child(1)", 0.3, {
+            x: "-50%",
+            opacity: 0,
+            ease: "back.out(1.7)",
+        }),
+        TweenMax.to(".section12 .textItem:nth-child(2)", 0.3, {
+            x: "50%",
+            opacity: 0,
+            ease: "back.out(1.7)",
+        }),
+        TweenMax.to(".section12 .textItem:nth-child(3)", 0.5, {
+            x: "-130%",
+            opacity: 1,
+            ease: "back.out(1.7)",
+        }),
+        TweenMax.to(".section12 .textItem:nth-child(4)", 0.5, {
+            x: "150%",
+            opacity: 1,
+            ease: "back.out(1.7)",
+        }),
+        TweenMax.to(".section12 .bike2", 0.5, {
+            css: {
+                display: "none",
+            },
+            onComplete: function () {
+            },
+        }),
+    ]);
+
+    var section12_tween_3 = new TimelineMax().add([
+        TweenMax.to(".section12 .bike3", 0.5, {
+            css: {
+                display: "none",
+            },
+            onComplete: function () {
+            },
+        }),
+    ]);
+
+    new ScrollMagic.Scene({
+        triggerElement: ".chord-ebike .section12",
+        triggerHook: "onLeave",
+        duration: 4000,
+    })
+        .setPin(".chord-ebike .section12")
+        .addTo(controller);
+
+    new ScrollMagic.Scene({
+        triggerElement: ".chord-ebike .section12",
+        triggerHook: "onLeave",
+        offset: 80,
+        duration: 1000,
+    })
+        .setTween(section12_tween_1)
+        .addTo(controller);
+
+    new ScrollMagic.Scene({
+        triggerElement: ".chord-ebike .section12",
+        triggerHook: "onLeave",
+        offset: 1800,
+        duration: 800,
+    })
+        .setTween(section12_tween_2)
+        .addTo(controller);
+
+    new ScrollMagic.Scene({
+        triggerElement: ".chord-ebike .section12",
+        triggerHook: "onLeave",
+        offset: 3000,
+        duration: 500,
+    })
+        .setTween(section12_tween_3)
+        .addTo(controller);
+
+
+
+    // section12 动画 -手机
+    var section12_tween_mb_1 = new TimelineMax().add([
+        TweenMax.to(".section12-mb .textItem:nth-child(1)", 0.5, {
+            x: 0,
+            opacity: 1,
+            ease: "back.out(1.7)",
+        }),
+        TweenMax.to(".section12-mb .bike1", 0.5, {
+            css: {
+                display: "none",
+            },
+        }),
+        TweenMax.to(".section12-mb .textItem:nth-child(2)", 0.5, {
+            x: 0,
+            opacity: 1,
+            ease: "back.out(1.7)",
+        }),
+    ]);
+
+    var section12_tween_mb_2 = new TimelineMax().add([
+        TweenMax.to(".section12-mb .textItem:nth-child(1)", 0.3, {
+            x: -100,
+            opacity: 0,
+            ease: "back.out(1.7)",
+        }),
+        TweenMax.to(".section12-mb .textItem:nth-child(2)", 0.3, {
+            x: 100,
+            opacity: 0,
+            ease: "back.out(1.7)",
+        }),
+        TweenMax.to(".section12-mb .textItem:nth-child(3)", 0.5, {
+            x: 0,
+            opacity: 1,
+            ease: "back.out(1.7)",
+        }),
+        TweenMax.to(".section12-mb .textItem:nth-child(4)", 0.5, {
+            x: 0,
+            opacity: 1,
+            ease: "back.out(1.7)",
+        }),
+        TweenMax.to(".section12-mb .bike2", 0.5, {
+            css: {
+                display: "none",
+            },
+            onComplete: function () {
+                console.log("wanccheng");
+            },
+        }),
+    ]);
+
+    var section12_tween_mb_3 = new TimelineMax().add([
+        TweenMax.to(".section12-mb .bike3", 0.5, {
+            css: {
+                display: "none",
+            },
+            onComplete: function () {
+                console.log("wanccheng");
+            },
+        }),
+    ]);
+
+    new ScrollMagic.Scene({
+        triggerElement: ".chord-ebike .section12-mb",
+        triggerHook: "onLeave",
+        duration: 3000,
+    })
+        .setPin(".chord-ebike .section12-mb")
+        .addTo(controller);
+
+    new ScrollMagic.Scene({
+        triggerElement: ".chord-ebike .section12-mb",
+        triggerHook: "onLeave",
+        offset: 100,
+        duration: 1000,
+    })
+        .setTween(section12_tween_mb_1)
+        .addTo(controller);
+
+    new ScrollMagic.Scene({
+        triggerElement: ".chord-ebike .section12-mb",
+        triggerHook: "onLeave",
+        offset: 1800,
+        duration: 800,
+    })
+        .setTween(section12_tween_mb_2)
+        .addTo(controller);
+
+    new ScrollMagic.Scene({
+        triggerElement: ".chord-ebike .section12-mb",
+        triggerHook: "onLeave",
+        offset: 3000,
+        duration: 500,
+    })
+        .setTween(section12_tween_mb_3)
+        .addTo(controller);
+
+
+
+    // section14 动画
+    var section14_tween = new TimelineMax();
+    section14_tween.to(".section14 .beforeContent", 2, {
+        opacity: 0,
+    });
+
+    section14_tween.to(
+        ".section14 .afterContent",
+        2,
+        {
+            y: 0,
+            opacity: 1,
+        },
+        "-=2"
+    );
+
+
+    new ScrollMagic.Scene({
+        triggerElement: ".chord-ebike .section14",
+        triggerHook: "onLeave",
+        duration: "200%",
+    })
+        .setPin(".chord-ebike .section14")
+        .addTo(controller);
+
+    new ScrollMagic.Scene({
+        triggerElement: ".chord-ebike .section14",
+        triggerHook: "onLeave",
+        duration: "100%",
+        offset: 100,
+    })
+        .setTween(section14_tween)
+        .addTo(controller);
+
+
+
+    $(".topbar .centeral-content .pcHide").click(function (e) {
+        const t = $('.topbar .dropdown')
+        const isShow = t.is(':visible')
+
+
+        $(".topbar .centeral-content .pcHide").css('rotate', isShow ? '0deg' : '180deg')
+
+        console.log(isShow);
+
+        t.slideToggle()
+    })
+</script>
