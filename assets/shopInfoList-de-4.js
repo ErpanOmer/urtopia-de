@@ -14,7 +14,7 @@ function createdisableDates(limit = 0, ignore_date = []) {
         continue
     }
 
-    limit.push(str)
+    temp.push(str)
   }
 
   return temp
