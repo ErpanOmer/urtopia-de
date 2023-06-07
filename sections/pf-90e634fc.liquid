@@ -122,7 +122,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     const t = []
 
 
-    for (let i = from; i < to, i ++) {
+    for (let i = from; i < to; i ++) {
       t.push(`${i}:00–${i + 1}:00`)
     }
   
@@ -134,12 +134,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   current_store.businessHours = [
     "",
-    "09:00–18:00",
-    "09:00–18:00",
-    "09:00–18:00",
-    "09:00–18:00",
-    "09:00–18:00",
-    "09:00–14:00",
+    noName(9, 18).join(),
+    noName(9, 18).join(),
+    noName(9, 18).join(),
+    noName(9, 18).join(),
+    noName(9, 18).join()
+    noName(9, 14).join()
   ]
 
   console.log('current_store', current_store)
