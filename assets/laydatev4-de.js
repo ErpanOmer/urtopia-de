@@ -3400,10 +3400,8 @@ function splitTimeFormat(item = '') {
       that.checkDate().calendar(null, 0, "init"); //初始校验
       lay(".select-tip").html("Select a Date and Time");
 
+      console.log('that.config', that.config)
       $('.calendar-content tr > td').not('.disabled-day, .laydate-disabled').trigger('click')
-      setTimeout(() => {
-        
-      }, 50)
     }
     //预约成功
     else if (that.step == 3) {
