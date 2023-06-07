@@ -638,10 +638,18 @@
 
     const disableDates = []
     const one_day = 60 * 60 * 24 * 1000
+    const ignore_date = ['2023-6-18']
 
     for (let index = 0; index < 365; index++) {
         const time = new Date(+new Date() + (one_day * index))
-        disableDates.push(`2023-${time.getMonth() + 1}-${time.getDate()}`)
+        const str = `${t.getFullYear()}-${time.getMonth() + 1}-${time.getDate()}`
+
+        // 如果是18号，就跳过
+        if (ignore_date.includes(str)) {
+            continue
+        }
+
+        disableDates.push(str)
     }
 
 
