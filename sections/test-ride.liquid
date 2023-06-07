@@ -640,8 +640,8 @@
     const one_day = 60 * 60 * 24 * 1000
 
     for (let index = 0; index < 365; index++) {
-        const t = new Date(+new Date() + (one_day * index))
-        disableDate.push(`2023-${t.getMonth() + 1}-${t.getDate()}`)
+        const time = new Date(+new Date() + (one_day * index))
+        disableDate.push(`2023-${time.getMonth() + 1}-${time.getDate()}`)
     }
 
 
