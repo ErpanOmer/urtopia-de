@@ -241,7 +241,7 @@ a.moreBtn.bannerBtn.buyBtn:hover,
 
 
 
-
+// 样式隔离
 
 
 
@@ -349,7 +349,7 @@ input {
   max-width: 1280px;
   margin: 0 auto;
   padding: 0 30px;
-  box-sizing: content-box;
+  box-sizing: content-box !important;
 }
 
 /* 全局字体设置start */
@@ -382,8 +382,16 @@ input {
   font: normal normal 300 24px/27px urbane;
 }
 
+.u24Light_v2 {
+  font: normal normal 300 24px/1.25em urbane;
+}
+
 .u36Light {
   font: normal normal 300 36px/42px urbane;
+}
+
+.u11Medium_v2 {
+  font: normal normal 500 11px/1.25em urbane;
 }
 
 .u17Medium {
@@ -416,6 +424,10 @@ input {
 
 .u30Medium_v2 {
   font: normal normal 500 30px/1.25em urbane;
+}
+
+.u36Medium_v2 {
+  font: normal normal 500 36px/1.25em urbane;
 }
 
 .u48Medium_v2 {
@@ -483,7 +495,7 @@ input {
 }
 
 .u60DemiBold_v2 {
-  font: normal normal 600 60px/1.4em urbane;
+  font: normal normal 600 60px/1.25em urbane;
 }
 
 .u72DemiBold_v2 {
@@ -837,7 +849,7 @@ body .jBox-Modal {
 
   .centeral-content {
     padding: 0 8%;
-    box-sizing: border-box;
+    box-sizing: border-box !important;
   }
 
 
