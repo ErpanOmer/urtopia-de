@@ -3399,6 +3399,10 @@ function splitTimeFormat(item = '') {
     } else if (that.step == 1) {
       that.checkDate().calendar(null, 0, "init"); //初始校验
       lay(".select-tip").html("Select a Date and Time");
+
+      setTimeout(() => {
+        $('.calendar-content tr > td').not('.disabled-day, .laydate-disabled').trigger('click')
+      }, 50)
     }
     //预约成功
     else if (that.step == 3) {
