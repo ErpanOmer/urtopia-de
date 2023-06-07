@@ -361,8 +361,8 @@
             }
 
             .u20Medium_v2 {
-                margin: 35px 0;
-                & > div {
+                margin: 40px 0;
+                & > div + div {
                     margin-top: 6px;
                 }
             }
