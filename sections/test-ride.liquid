@@ -635,6 +635,16 @@
     search.name && booknow(search.name)
 
 
+
+    const disableDate = []
+    const one_day = 60 * 60 * 24 * 1000
+
+    for (let index = 0; index < 365; index++) {
+        const t = new Date(+new Date() + (one_day * index))
+        disableDate.push(`2023-${t.getMonth() + 1}-${t.getDate()}`)
+    }
+
+
     const sale_store = {
         name: 'Golf & Bike',
         phone: '+4917632496651',
@@ -658,14 +668,7 @@
           "",
           "",
         ],
-        disableDate: [
-          '2023-4-25',
-          '2023-4-26',
-          '2023-4-27',
-          '2023-4-28',
-          '2023-4-29',
-          '2023-4-30',
-        ]
+        disableDate,
       },
 
     // banner 按钮
