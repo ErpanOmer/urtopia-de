@@ -121,7 +121,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   console.log('current_store', current_store)
 
-		var shopList = shopInfoList["Berlin"]
+		var shopList = { [current_store.phone]: current_store }
         var spec = 0;
         laydate.render({
             elem: '#urtopia-calendar'
