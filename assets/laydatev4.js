@@ -3926,14 +3926,16 @@ function splitTimeFormat(item = '') {
             }
           }
           else {
+            console.log('timeSnipt', timeSnipt)
+
             if (timeSnipt != "") {
-              var time = timeSnipt.split("–");
-              if (time[0] > "12:00") {
-                timeList.push(time[0] + time[1]);
-              } else {
+                var time = timeSnipt.split("–");
+                if (time[0] > "12:00") {
+                timeList.push(time[0] + "–" + time[1]);
+                } else {
                 timeList.push(time[0] + "-12:00");
                 timeList.push("12:00-" + time[1]);
-              }
+                }
             }
           }
           /*
