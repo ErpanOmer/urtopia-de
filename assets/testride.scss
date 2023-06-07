@@ -1198,6 +1198,12 @@
                     & > div {
                         &:first-child {
                             order: 1;
+                            padding: 10vw 8vw;
+                        }
+
+                        &:last-child {
+                            margin: 0;
+                            height: 80vw;
                         }
                     }
                 }
