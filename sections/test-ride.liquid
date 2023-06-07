@@ -642,7 +642,7 @@
 
     for (let index = 0; index < 365; index++) {
         const time = new Date(+new Date() + (one_day * index))
-        const str = `${t.getFullYear()}-${time.getMonth() + 1}-${time.getDate()}`
+        const str = `${time.getFullYear()}-${time.getMonth() + 1}-${time.getDate()}`
 
         // 如果是18号，就跳过
         if (ignore_date.includes(str)) {
