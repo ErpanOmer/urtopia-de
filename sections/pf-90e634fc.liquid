@@ -109,6 +109,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   }
 </style>
 <script>
+  let current_store = null
+
+  for (const city of testRides) {
+    for (const store of city.stores) {
+      if (store.name.replace(/ /g, '') === 'Stefan Gehrke'.replace(/ /g, '')) {
+         current_store = store
+      }
+    }
+  }
+
+  console.log('current_store', current_store)
+
 		var shopList = shopInfoList["Berlin"]
         var spec = 0;
         laydate.render({
