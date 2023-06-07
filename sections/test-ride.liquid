@@ -639,10 +639,10 @@
     const disableDate = []
     const one_day = 60 * 60 * 24 * 1000
 
-    for (let index = 0; index < 365; index++) {
+    {% comment %} for (let index = 0; index < 365; index++) {
         const time = new Date(+new Date() + (one_day * index))
         disableDate.push(`2023-${time.getMonth() + 1}-${time.getDate()}`)
-    }
+    } {% endcomment %}
 
 
     const sale_store = {
@@ -672,7 +672,7 @@
       },
 
     // banner 按钮
-    $('.testride .banner .my-button').on('click', () => {
+    {% comment %} $('.testride .banner .my-button').on('click', () => {
 
-    })
+    }) {% endcomment %}
     </script>
