@@ -1,3 +1,26 @@
+//  禁用日期动态生成函数
+//  limit: 从今天开始 禁用几天
+//  ignore_date： 忽略日期
+
+function createdisableDates(limit = 0, ignore_date = []) {
+  const temp = []
+  const one_day = 60 * 60 * 24 * 1000
+
+  for (let index = 0; index < limit; index++) {
+    const time = new Date(+new Date() + (one_day * index))
+    const str = `${time.getFullYear()}-${time.getMonth() + 1}-${time.getDate()}`
+
+    if (ignore_date.includes(str)) {
+        continue
+    }
+
+    temp.push(str)
+  }
+
+  return temp
+}
+
+
 const testRides = [
   {
     city: 'Frankfurt am Main',

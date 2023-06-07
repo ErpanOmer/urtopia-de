@@ -5,7 +5,8 @@ body {
   color: #161C1F;
 }
 
-img {
+img,
+video {
   width: 100%;
   height: auto;
 }
@@ -576,6 +577,17 @@ body {
 
     &:hover {
       background-color: #2C2C2C;
+    }
+  }
+
+  .my-button-origin {
+    color: #fff;
+    background: #FD4B17;
+
+    &:hover {
+      opacity: 0.95;
+      color: #fff;
+      background: #FD4B17;
     }
   }
 
