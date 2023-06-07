@@ -433,6 +433,12 @@
             .u36DemiBold_v2 {
                 margin: 40px 0;
             }
+
+
+            .content {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+            }
         }
     }
 
