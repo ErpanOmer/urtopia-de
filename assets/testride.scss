@@ -1200,6 +1200,15 @@
                         &:first-child {
                             order: 1;
                             padding: 10vw 8vw;
+
+                            .u20DemiBold_v2 {
+                                font-size: 20px;
+                            }
+
+                            .u17Light_v2 {
+                                font-size: 15px;
+                                padding: 6vw 3vw;
+                            }
                         }
 
                         &:last-child {
