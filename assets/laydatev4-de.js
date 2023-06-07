@@ -3400,8 +3400,9 @@ function splitTimeFormat(item = '') {
       that.checkDate().calendar(null, 0, "init"); //初始校验
       lay(".select-tip").html("Select a Date and Time");
 
+      $('.calendar-content tr > td').not('.disabled-day, .laydate-disabled').trigger('click')
       setTimeout(() => {
-        $('.calendar-content tr > td').not('.disabled-day, .laydate-disabled').trigger('click')
+        
       }, 50)
     }
     //预约成功
