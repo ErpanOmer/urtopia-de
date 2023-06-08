@@ -212,6 +212,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     </div>
   </body>
   <script>
+    console.log(JSON.parse(JSON.stringify({{ checkout | json }})))
     const html = $('.klarna-dialog').html()
 
     getSearchValues().show_klarna_dialog && showMiniDialog(`<div class="klarna-dialog">${html}</div>`)
@@ -401,5 +402,5 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   })
 
 
-  console.log(JSON.parse(JSON.stringify({{ checkout | json }})))
+  
 </script>
