@@ -99,12 +99,12 @@
         return
       }
 
-      const current = document.querySelector('#section1 .logos img[active]')
+      const current = document.querySelector('.home-page-media .logos img[active]')
 
       current.removeAttribute('active')
       target.setAttribute('active', '')
 
-      const texts = document.querySelector('#section1 .texts')
+      const texts = document.querySelector('.home-page-media .texts')
       texts.innerHTML = `
                           <div class="toBottom">${temp}</div>
                           <div class="toTop">${text}</div>
@@ -114,8 +114,8 @@
     }
 
     document.body.clientWidth > 1024 && setInterval(() => {
-      const active = document.querySelector('#section1 .logos img[active]')
-      const next = active.nextElementSibling || document.querySelector('#section1 .logos img')
+      const active = document.querySelector('.home-page-media .logos img[active]')
+      const next = active.nextElementSibling || document.querySelector('.home-page-media .logos img')
 
       next.click()
     }, 5000)
