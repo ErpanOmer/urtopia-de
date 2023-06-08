@@ -47,7 +47,7 @@
                 </div>
                 <div class="u17Light_v2">Ambassadors are Urtopia representatives who are passionate about our e-bikes.
                     While an ambassador may not have every model on hand they are there to meet you to show you the ins
-                    and outs of our bikes. They offer real insight into the benefits of being a daily e-bike user.</div>
+                    and outs of our bikes. They offer real insight into the benefits of being a daily e-bike user.<br><a class="my-link" href="#stories">Read the story</a></div>
             </div>
         </div>
     </div>
@@ -78,7 +78,7 @@
             </div>
         </div>
     </div>
-    <div class="stories">
+    <div class="stories" id="stories">
         <div class="centeral-content">
             <div class="u36DemiBold_v2">Ambassadors‘ Stories</div>
             <div class="content">
@@ -579,6 +579,7 @@
                 <img src="${store.imgUrl}"/>
                 <div class="infos">
                     <div class="name">${store.name}</div>
+                    ${store.stories? `<a href="${store.stories.blogUrl}" class="address gray my-link">${store.stories.urlText}</a><div class="available" style="margin-bottom: -6px;">Add:</div>` : ''}
                     <div class="address gray">${store.add}</div>
                     <div class="available">Available Model:</div>
                     <ul>
