@@ -450,7 +450,10 @@ const testRides = [
           'Carbon One Size L',
           'Chord'
         ],
-        hasStories: true,
+        stories: {
+          urlText: 'Read Henky’s Story',
+          blogUrl: '/blogs/blog/henky-s-story'
+        },
         businessHours: [
           "09:00-18:00",
           "09:00-18:00",
