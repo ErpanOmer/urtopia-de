@@ -450,6 +450,7 @@ const testRides = [
           'Carbon One Size L',
           'Chord'
         ],
+        hasStories: true,
         businessHours: [
           "09:00-18:00",
           "09:00-18:00",
