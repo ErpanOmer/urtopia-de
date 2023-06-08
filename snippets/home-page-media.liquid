@@ -1,53 +1,3 @@
-<style>
-    #section1-mobile {
-        padding-top: 65px;
-        padding-bottom: 65px;
-        background-color: #f7f8fa;
-        overflow: hidden;
-        --swiper-theme-color: #000;
-        --swiper-pagination-color: #000;/* 两种都可以 */
-    }
-    
-    #section1-mobile .swiper-slide {
-        box-sizing: border-box;
-        padding: 0 10%;
-          display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-    }
-    
-    #section1-mobile .swiper-slide img {
-        height: 60px;
-      width: auto;
-    }
-    
-    
-    #section1-mobile .swiper-slide .u20Medium {
-        font-weight: 600;
-        margin: 20px 0 40px;
-        font-size: 22px;
-        line-height: 26px;
-    }
-    
-    #section1-mobile .swiper-pagination {
-        position: static;
-    }
-    
-    #section1-mobile .swiper-pagination-bullet {
-        height: 6px;
-        width: 6px;
-    }
-    
-    #section1-mobile .swiper-pagination-bullet-active {
-        width: 30px;
-        height: 6px;
-        border-radius: 5px;
-        transition: all .3s;
-    }
-    </style>
-
 <div class="home-page-media mobileHide">
     <div class="texts">
       <div>“It's incredibly fun to ride”</div>
@@ -62,7 +12,7 @@
     </div>
   </div>
 
-  <div id="section1-mobile" class="pcHide">
+  <div class="home-page-media-mb pcHide">
     <div class="swiper-wrapper swiper-container-horizontal swiper-container-fade">
       <div class="swiper-slide">
         <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20230228-165148.png?v=1677574346"/>
@@ -121,7 +71,7 @@
     }, 5000)
 
 
-    new Swiper ('#section1-mobile', {    
+    new Swiper ('home-page-media-mb', {    
         autoplay: {
             disableOnInteraction: false,
             pauseOnMouseEnter: false,
