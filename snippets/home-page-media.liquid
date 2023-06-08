@@ -199,4 +199,20 @@
 
       next.click()
     }, 5000)
+
+
+    new Swiper ('#section1-mobile', {    
+        autoplay: {
+            disableOnInteraction: false,
+            pauseOnMouseEnter: false,
+            delay: 5000,
+        },
+        loop: true,
+        effect: 'fade',
+        fadeEffect:{
+            crossFade: true
+        },
+        pagination: {el:'.swiper-pagination'},
+        speed: 300
+      }) 
   </script>
