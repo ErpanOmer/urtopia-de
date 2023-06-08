@@ -512,6 +512,10 @@
 
       return window.open(`/pages/urtopia-jobrad-leasing-city-electric-bike?bike_style=${bike_style}&bike_size=${bike_size}&accessories=${accessories.join()}&utm_source=cart_page`)
     }
+
+    if (type === 'klarna_check_out') {
+      location.href = `/checkout?show_klarna_dialog=show_klarna_dialog`
+    }
   }
 
   
