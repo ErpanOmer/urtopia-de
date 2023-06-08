@@ -1,4 +1,11 @@
 .leasing-add {
+    .banner_origin {
+        background-image: linear-gradient(90deg, #EE6426, #F4492A);
+        border-radius: 10px;
+        display: inline-block;
+        padding: 8px 16px;
+    }
+
     .banner {
         background: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_20710_2x_ff56b746-8006-4ec2-8100-7f7a661c4df1.jpg?v=1683699884') center center/cover no-repeat;
         height: 700px;
