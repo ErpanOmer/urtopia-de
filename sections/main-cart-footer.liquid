@@ -515,6 +515,8 @@
 
 
   function testRideTrace(type = '', target) {
+    fetchBuried('websiteclick', `carbon-order-page`, { button: type }, true)
+
     if (type === 'lease_on_jobrad') {
       const carbon = document.querySelector('.cart-items [data-line-item-product-id="7633738727640"]')
       const options = carbon.querySelectorAll('.cart-item__details > dl .product-option')
