@@ -1,87 +1,4 @@
 <style>
-    @keyframes toTop {
-        0% {
-          opacity: 0;
-          transform: translateY(0px);
-        }
-    
-        /* 50% {
-          opacity: 0.5;
-          transform: translateY(-20px);
-        } */
-    
-        100% {
-          transform: translateY(-40px);
-          opacity: 1;
-        }
-    }
-    
-    @keyframes toBottom {
-        0% {
-          opacity: 1;
-          transform: translateY(0px);
-        }
-    
-        /* 50% {
-          opacity: 0.5;
-          transform: translateY(20px);
-        } */
-    
-        100% {
-          transform: translateY(40px);
-          opacity: 0;
-        }
-    }
-    
-    #section1 .texts div {
-      animation-duration: 0.5s;
-      animation-timing-function: ease-out;
-    }
-    
-    #section1 .texts .toTop {
-      opacity: 1;
-      animation-name: toTop;
-      transform: translateY(-40px);
-    }
-    
-    #section1 .texts .toBottom {
-      opacity: 0;
-      animation-name: toBottom;
-      transform: translateY(40px);
-    }
-    
-    
-    #section1 {
-      display: flex;
-      height: 340px;
-      width: 100%;
-      flex-direction: column;
-      align-items: center;
-      padding: 75px 0;
-      box-sizing: border-box;
-      background-color: #f7f8fa;
-    }
-    
-    #section1 .texts {
-      flex: 1;
-      font: normal normal bold 30px/40px Urbane;
-      display: flex;
-        align-items: center;
-        flex-direction: column;
-    }
-    
-    #section1 .logos img {
-      height: 60px;
-      width: auto;
-      margin: 0 39px;
-      opacity: 0.5;
-    }
-    
-    #section1 .logos img[active] {
-      opacity: 1;
-    }
-
-
     #section1-mobile {
         padding-top: 65px;
         padding-bottom: 65px;
@@ -131,7 +48,7 @@
     }
     </style>
 
-<div id="section1" class="mobileHide">
+<div class="home-page-media mobileHide">
     <div class="texts">
       <div>“It's incredibly fun to ride”</div>
       <div></div>
