@@ -1,4 +1,7 @@
 const global_config = {
+    // carbon 车 A/B TEST ,出现50% 的概率
+    carbon_one_a_b_test_flag: Math.round(Math.random()) === 1 ? 'A' : 'B',
+
     // 活动产品id
     event_bike_product_id: '7633738727640',
     // 活动送配件 variant_id
