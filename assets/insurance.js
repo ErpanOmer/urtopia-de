@@ -271,7 +271,9 @@ class Insurance {
 
 const insurance = new Insurance();
 
-function addToCartInsurance(parse) {
+function addToCartInsurance(parse, show = false) {
+  window.show_notification_checkout_button = show
+
   const cartListNew = {
     // 如果是carbon 页面，自动把配件加进去
     items: location.href.includes('/products/urtopia-carbon-e-bike') ? global_config.event_accessories_variant_ids.map(id => ({ id, quantity: 1 })) : []

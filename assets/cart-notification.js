@@ -28,6 +28,17 @@ class CartNotification extends HTMLElement {
     );
 
     document.body.addEventListener("click", this.onBodyClick);
+    setTimeout(() => {
+      const show = window.show_notification_checkout_button
+
+      if (show) {
+        $('.cart-notification__links #cart-notification-form').hide()
+        $('.cart-notification__links .orderTestRideBtn').show()
+      } else {
+        $('.cart-notification__links #cart-notification-form').show()
+        $('.cart-notification__links .orderTestRideBtn').hide()
+      }
+    })
   }
 
   close() {

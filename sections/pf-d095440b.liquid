@@ -1537,6 +1537,14 @@ function testRideTrace(type = '', target){
 	}
 
 	if (type === 'klarna_check_out') {
+		if (sessionStorage.carbon_one_a_b_test_flag === 'B') {
+			t.removeClass('loading')
+			t.find('span').html(text)
+			// 如果 B test 需要显示 klarna checkout
+			window.show_notification_checkout_button = true
+			return addToCartInsurance("atc", true)
+		}
+
 		const body = { items: [{ id: document.querySelector('input[name="id"]').value, quantity: 1 }] }
 		body.items = body.items.concat(global_config.event_accessories_variant_ids.map(id => ({ id, quantity: 1 })))
 
