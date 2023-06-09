@@ -388,6 +388,8 @@ __DL__jQueryinterval = setInterval(function(){
                     'discount'		  : {{discount.code | json}}
                     },{% endfor %}],
                 };
+
+                console.log('ecommerce', ecommerce)
             if(Shopify.Checkout.step){ 
                 if(Shopify.Checkout.step.length > 0){
                     if (Shopify.Checkout.step === 'contact_information'){
