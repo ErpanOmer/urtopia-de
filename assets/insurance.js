@@ -271,8 +271,8 @@ class Insurance {
 
 const insurance = new Insurance();
 
-function addToCartInsurance(parse) {
-  window.show_notification_checkout_button = false
+function addToCartInsurance(parse, show = false) {
+  window.show_notification_checkout_button = show
 
   const cartListNew = {
     // 如果是carbon 页面，自动把配件加进去
