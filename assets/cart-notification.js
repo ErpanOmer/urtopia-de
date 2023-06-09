@@ -28,6 +28,9 @@ class CartNotification extends HTMLElement {
     );
 
     document.body.addEventListener("click", this.onBodyClick);
+    setTimeout(() => {
+      
+    })
   }
 
   close() {
