@@ -406,9 +406,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     'transaction_id': '{{checkout.order_number  | json}}',
     'affiliation': {{shop.name | json}},
     'value': parseInt((Number({{checkout.total_price | json }})) / 100),
-    'tax': {{checkout.tax_price | money_without_currency | replace: ',','.' | json}},
-    'shipping': {{checkout.shipping_price | money_without_currency | replace: ',','.' | json}},
-    'subtotal': {{checkout.subtotal_price | money_without_currency| replace: ',','.' | json}},
+    'tax': parseInt((Number({{checkout.tax_price | json }})) / 100),
+    'shipping': parseInt((Number({{checkout.shipping_price | json }})) / 100),
+    'subtotal': parseInt((Number({{checkout.subtotal_price | json }})) / 100),
     'currency': {{checkout.currency | json}},
     {% for discount in checkout.discounts %}
     'coupon': {{discount.code | json}},
