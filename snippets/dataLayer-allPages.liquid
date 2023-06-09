@@ -366,7 +366,7 @@ __DL__jQueryinterval = setInterval(function(){
             var ecommerce = {
                 'transaction_id': '{{checkout.order_number  | json}}',
                 'affiliation': {{shop.name | json}},
-                'value': parseInt({{checkout.total_price}} / 100),
+                'value': parseInt((Number({{checkout.total_price | json }}) | 0) / 100),
                 'tax': {{checkout.tax_price | money_without_currency | replace: ',','.' | json}},
                 'shipping': {{checkout.shipping_price | money_without_currency | replace: ',','.' | json}},
                 'subtotal': {{checkout.subtotal_price | money_without_currency| replace: ',','.' | json}},
