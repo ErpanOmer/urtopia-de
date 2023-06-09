@@ -403,7 +403,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 <script>
   var ecommerce = {
-    'transaction_id': '{{checkout.order_number  | json}}',
+    'transaction_id': '{{checkout.order_number | json}}',
     'affiliation': {{shop.name | json}},
     'value': parseInt((Number({{checkout.total_price | json }})) / 100),
     'tax': parseInt((Number({{checkout.tax_price | json }})) / 100),
@@ -417,14 +417,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     'email': {{checkout.email | json}},
     'items':[{% for line_item in checkout.line_items %}{
         'item_id'        : {{line_item.product.id | json}},                  
-        'item_variant'    : {{product.selected_or_first_available_variant.id | json}},             
+        'item_variant'    : {{line_item.product.selected_or_first_available_variant.id | json}},             
         'item_name'      : {{line_item.product.title | json}},
-        'price'           : {{line_item.product.price | money_without_currency | replace: ',', '.' | json}},
+        'price'           : parseInt((Number({{line_item.product.price | json }})) / 100),
         'item_brand'      : {{line_item.product.vendor | json}},
         'item_category'   : {{line_item.product.type | json}},
         'item_list_name'  : {{line_item.collection.title | json}},
         'quantity'        : {{line_item.quantity | json}},
-        'discount'		  : {{discount.code | json}}
+        'discount'		  : {{line_item.discount.code | json}}
         },{% endfor %}],
     };
 
