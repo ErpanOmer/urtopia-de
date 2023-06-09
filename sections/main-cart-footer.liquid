@@ -4,6 +4,65 @@
 {{ 'component-discounts.css' | asset_url | stylesheet_tag }}
 
 <style>
+  .orderTestRideBtn{
+    width: 100%;
+	height: 50px;
+	font: normal normal 600 23px/28px Urbane;
+	color: #fff;
+	background: #FD4B17;
+	border: 2px solid #FD4B17;
+	border-radius: 30px;
+	margin-bottom: 6px;
+	transition:all 0.3s;
+	line-height: 50px;
+    text-align: center;
+	background: #161c1f;
+	border: 2px solid #161c1f;
+	font-size: 15px;
+	cursor: pointer;
+    line-height: unset;
+      text-align: center;
+    background: #fff;
+    color: #000;
+    border: 2px solid #161c1f;
+    display: grid;
+      grid-template-columns: 0.5fr 1fr;
+      grid-column-gap: 12px;
+    align-items: center;
+      justify-items: right;
+    }
+
+    .orderTestRideBtn:hover {
+      opacity: 0.7;
+    }
+  
+    .orderTestRideBtn > span {
+    display: flex;
+      width: 100%;
+    flex-direction: column;
+      align-items: flex-start;
+    line-height: 16px;
+    font-size: 16px;
+      font-weight: 500;
+    }
+  
+    .orderTestRideBtn > span .u17DemiBold_v2 {
+    font-weight: 700;
+    }
+  
+    .orderTestRideBtn .oneeee {
+    width: 90px;
+    }
+  
+    .orderTestRideBtn .twoooo {
+    width: 95px;
+    }
+  
+    .orderTestRideBtn .threeee {
+    width: 125px;
+    }
+
+
   .product_code {
       /* display: flex; */
         margin-bottom: 20px;
@@ -47,7 +106,7 @@
       max-width: 410px;
       color: #fff;
       padding: 10px 0;
-      background: transparent linear-gradient(90deg, #159066 0%, #159267 0%, #1BBF87 100%) 0% 0% no-repeat padding-box;
+      background: transparent linear-gradient(90deg, #0091B4, #003C68);
       box-shadow: 10px 10px 10px #6B869A1C;
       opacity: 0.88;
       border-radius: 0 0 5px 5px;
@@ -78,13 +137,34 @@
   .sale_coupon {
     margin-left: auto;
     border-radius: 5px 5px 0 0;
-    background-image: linear-gradient(90deg, #159066, #45D0A0);
+    background-image: linear-gradient(90deg, #0091B4, #003C68);
     box-shadow: 10px 10px 10px #0000001C;
   }
   
   
   
   @media (max-width: 767px) {
+    .orderTestRideBtn{
+      font-size:14px;
+    }
+  
+    .orderTestRideBtn > span {
+      grid-template-columns: 0.7fr 1fr;
+    }
+  
+    .orderTestRideBtn .oneeee {
+      width: 80px;
+      }
+    
+      .orderTestRideBtn .twoooo {
+      width: 85px;
+      }
+    
+      .orderTestRideBtn .threeee {
+      width: 110px;
+      }
+
+
       .carbon_code {
           font-size: 13px;
       }
@@ -103,6 +183,9 @@
         font-size: 15px;
       }
   }
+
+
+
   </style>
 
 <div class="page-width{% if cart == empty %} is-empty{% endif %}" id="main-cart-footer" data-id="{{ section.id }}">
@@ -291,7 +374,14 @@
             {{ 'sections.cart.checkout' | t }}
           </button>
         </div>
-        <div style="width: 100%;" class="my-button my-button-black">Leasing</div>
+        <div onclick="testRideTrace('lease_on_jobrad', this)" class="orderTestRideBtn">
+          <img class="oneeee" src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/jobradorg_2x_423443a0-1c79-4785-97a0-2be8ae66ceb6.png?v=1685414275"/>
+          <span><span class="u17DemiBold_v2">TAX FREE</span><span>36 months, €48/month</span></span>
+          </div>
+          <div onclick="testRideTrace('klarna_check_out', this)" class="orderTestRideBtn">
+          <img class="twoooo"src="https://cdn.shopifycdn.net/s/files/1/0633/2068/6808/files/20230530-121400.png?v=1685420054"/>
+          <span><span class="u17DemiBold_v2">0 APR</span><span>24 months, €112/month</span></span>
+          </div>
         {% comment %}
         {%- if additional_checkout_buttons -%}
         <div class="cart__dynamic-checkout-buttons additional-checkout-buttons">
@@ -391,11 +481,14 @@
 
   // 如果carbon车 不存在
   if (!document.querySelector('.cart-items [data-line-item-product-id="7633738727640"]')) {
-    $('.cart__footer .my-button-black').hide()
+    $('.cart__footer .orderTestRideBtn').hide()
   }
 
 
-  $('.cart__footer .my-button-black').on('click', e => {
+  function testRideTrace(type = '', target) {
+    fetchBuried('websiteclick', `carbon-order-page`, { button: type }, true)
+
+    if (type === 'lease_on_jobrad') {
       const carbon = document.querySelector('.cart-items [data-line-item-product-id="7633738727640"]')
       const options = carbon.querySelectorAll('.cart-item__details > dl .product-option')
       let accessories = Array.from(document.querySelectorAll('.cart-items .cart-item__details > a')).map(a => {
@@ -414,14 +507,16 @@
       // 去重
       accessories = Array.from(new Set(accessories))
 
-      console.log(accessories)
-
       const bike_style = options[0].innerText.slice(7)
       const bike_size = options[1].innerText.slice(6, 7)
 
-      // go to
-      window.location.href= `/pages/urtopia-jobrad-leasing-city-electric-bike?bike_style=${bike_style}&bike_size=${bike_size}&accessories=${accessories.join()}&utm_source=cart_page`
-  })
+      return window.open(`/pages/urtopia-jobrad-leasing-city-electric-bike?bike_style=${bike_style}&bike_size=${bike_size}&accessories=${accessories.join()}&utm_source=cart_page`)
+    }
+
+    if (type === 'klarna_check_out') {
+      location.href = `/checkout?show_klarna_dialog=show_klarna_dialog`
+    }
+  }
 
   
 </script>

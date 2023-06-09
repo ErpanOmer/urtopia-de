@@ -1,6 +1,6 @@
 <style>
     .sale_coupon {
-		background-image: linear-gradient(-90deg, #0091B4, #003C68);
+		background-image: linear-gradient(90deg, #1657A3, #2C75CB);
 		border-radius: 10px;
 	}	
 
@@ -26,6 +26,9 @@
     .eggs {
         max-width: 450px;
         margin: 10px 0 20px;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0px 3px 20px #00000015;
     }
     
     .eggs .background {
@@ -38,7 +41,7 @@
 		position: relative;
         color: #fff;
         padding-left: 4%;
-        background-image: linear-gradient(90deg, #159066, #45D0A0);
+        background-image: linear-gradient(90deg, #0091B4, #003C68);
         background-size: 100% 100%;
     }
 
@@ -50,12 +53,9 @@
     }
     
     .eggs .components {
-        background-color: #fff;
         padding: 14px;
-        border-radius: 0 0 10px 10px;
         display: flex;
         flex: 1;
-        box-shadow: 0px 3px 20px #00000015;
     }
     
     .eggs .components .item {
@@ -86,7 +86,7 @@
      }
     
     .eggs .components .item>div {
-        background-image: linear-gradient(to bottom, #2E26EE, #2A60F4);
+        background-image: linear-gradient(180deg, #0091B4, #003C68);
         border-radius: 20px;
         color: #fff;
         padding: 8px 20px;
@@ -98,7 +98,7 @@
     .eggs .components .item .yellow {
         line-height: 11px;
         padding: 14px 0;
-        background-image: linear-gradient(180deg, #159066, #1BBF87);
+        background-image: linear-gradient(180deg, #0091B4, #003C68);
         color: #fff;
         border-radius: 20px;
         font-size: 16px;
@@ -106,14 +106,25 @@
         width: 100%;
         margin-bottom: 16px;
     }
+
+    .eggs > .u11Light_v2 {
+        padding: 0 20px 14px;
+        margin-top: -7px;
+    }
     
       @media (max-width: 767px) {
+        
         .sale_coupon>div:first-child {
 			font-size: 12px;
 		}
 
        .eggs .background {
             font-size: 14px;
+        }
+
+        .eggs > .u11Light_v2 {
+            padding: 0 10px 14px;
+            margin-top: 0
         }
       
         .eggs .components {
@@ -150,7 +161,7 @@
     <div class="eggs">
         <div class="background">
             <div class="u17DemiBold_v2" style="font-size: 12px;">{{ send_accessories_list | size }} Free Accessories with {{ settings.sale_name }}</div>
-			<div class="u11Light_v2">(Apply in your cart automatically)</div>
+			<div class="u11Light_v2">(Not available with leasing)</div>
         </div>
         <div class="components">
                 {% for item in send_accessories_list %}
@@ -168,6 +179,7 @@
                     <span style="align-items: flex-start;font-size: 16px;text-decoration: line-through;"></span>
                 </div>
         </div>
+        <div class="u11Light_v2">*Apply in your cart automatically</div>
     </div>
 
     <script>

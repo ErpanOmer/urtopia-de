@@ -1,3 +1,37 @@
+@keyframes toTop {
+    0% {
+        opacity: 0;
+        transform: translateY(0px);
+    }
+
+    /* 50% {
+      opacity: 0.5;
+      transform: translateY(-20px);
+    } */
+
+    100% {
+        transform: translateY(-40px);
+        opacity: 1;
+    }
+}
+
+@keyframes toBottom {
+    0% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+
+    /* 50% {
+      opacity: 0.5;
+      transform: translateY(20px);
+    } */
+
+    100% {
+        transform: translateY(40px);
+        opacity: 0;
+    }
+}
+
 .banner {
     height: calc(100vh - 106px);
     position: relative;
@@ -81,7 +115,7 @@
         }
 
         .spring-sale {
-            background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_21007_2x_4099c9d2-a74d-4c85-89e4-aa79f6d7d14f.jpg?v=1685441578');
+            background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18564_2x_24cd2f7b-31b3-4e0f-99f0-2bcadac2ad2c.jpg?v=1686192336');
             background-color: rgb(30, 160, 110);
 
             .centeral-content {
@@ -98,7 +132,7 @@
 
                     .u56DemiBold_v2,
                     .u48Medium_v2 {
-                        color: #E2F8B6;
+                        // color: #E2F8B6;
                     }
 
                     .u36DemiBold_v2 {
@@ -115,7 +149,7 @@
                 align-items: flex-start;
                 text-align: center;
 
-                & > div {
+                &>div {
                     align-items: center;
 
                     .u36DemiBold_v2 {
@@ -154,6 +188,102 @@
         border-radius: 5px;
         transition: all .3s;
         opacity: 1;
+    }
+}
+
+
+.home-page-media {
+    display: flex;
+    height: 340px;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    padding: 75px 0;
+    box-sizing: border-box;
+    background-color: #f7f8fa;
+
+    .texts {
+        flex: 1;
+        font: normal normal bold 30px/40px Urbane;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+
+        div {
+            animation-duration: 0.5s;
+            animation-timing-function: ease-out;
+        }
+
+        .toTop {
+            opacity: 1;
+            animation-name: toTop;
+            transform: translateY(-40px);
+        }
+
+        .toBottom {
+            opacity: 0;
+            animation-name: toBottom;
+            transform: translateY(40px);
+        }
+    }
+
+    .logos {
+        img {
+            height: 48px;
+            width: auto;
+            margin: 0 39px;
+            opacity: 0.5;
+
+            &[active] {
+                opacity: 1;
+            }
+        }
+    }
+}
+
+
+.home-page-media-mb {
+    padding-top: 65px;
+    padding-bottom: 65px;
+    background-color: #f7f8fa;
+    overflow: hidden;
+
+    .swiper-slide {
+        box-sizing: border-box;
+        padding: 0 10%;
+          display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+
+        img {
+            height: 48px;
+          width: auto;
+        }
+
+        .u20Medium {
+            font-weight: 600;
+            margin: 20px 0 40px;
+            font-size: 22px;
+            line-height: 26px;
+        }
+    }
+
+    .swiper-pagination {
+        position: static;
+    }
+
+    .swiper-pagination-bullet {
+        height: 6px;
+        width: 6px;
+    }
+
+    .swiper-pagination-bullet-active {
+        width: 30px;
+        height: 6px;
+        border-radius: 5px;
+        transition: all .3s;
     }
 }
 
@@ -222,6 +352,7 @@
 
             .spring-sale {
                 background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_20985_2x_22a2ef82-4ea1-4835-aefa-502bab4a119b.jpg?v=1685448396');
+
                 .centeral-content {
                     height: 100%;
                     align-items: unset;
@@ -254,11 +385,11 @@
             .bluetti {
                 background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18562_2x_0e6bea7e-9e64-48ce-b6ae-aafcce7796a3.png?v=1685620282');
                 background-position-y: center;
-                
+
                 .centeral-content {
                     padding: 6vw 0 18vw;
-                    
-                    & > div {
+
+                    &>div {
                         img {
                             max-width: 240px;
                         }
