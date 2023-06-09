@@ -1556,7 +1556,7 @@ function testRideTrace(type = '', target){
 				return location.href = `/checkout?show_klarna_dialog=show_klarna_dialog`
 			}
 
-
+			window.show_notification_checkout_button = true
 			
 		}).catch((error) => {
 			t.removeClass('loading')
