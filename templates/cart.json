@@ -17,6 +17,7 @@
         },
         "86f58b86-bd6f-4c87-878f-a14bae0f2e38": {
           "type": "shopify:\/\/apps\/klarna-on-site-messaging\/blocks\/app-block\/b95936a9-74b6-4a95-8103-6a1b6459c25e",
+          "disabled": true,
           "settings": {
             "data_key": "credit-promotion-badge",
             "locale_option": "manual",
