@@ -1551,7 +1551,13 @@ function testRideTrace(type = '', target){
 			},
 			body: JSON.stringify(body)
 		}).then(response => {
-			location.href = `/checkout?show_klarna_dialog=show_klarna_dialog`
+			// 如果是 A TEST 直接跳checkout
+			if (sessionStorage.carbon_one_a_b_test_flag === 'A') {
+				return location.href = `/checkout?show_klarna_dialog=show_klarna_dialog`
+			}
+
+
+			
 		}).catch((error) => {
 			t.removeClass('loading')
 			t.find('span').html(text)
