@@ -21,7 +21,7 @@
 <script>
     // 当前页面id
 const current_page_id = '{{ template }}'
-console.log('current_page_id:', current_page_id)
+console.log('current_page_id:', current_page_id);
 
 // 立即执行
 (w => {
@@ -33,7 +33,7 @@ console.log('current_page_id:', current_page_id)
 
     // carbon 车 A/B TEST ,出现50% 的概率
     w.sessionStorage.carbon_one_a_b_test_flag = Math.round(Math.random()) === 1 ? 'A' : 'B'
-})(window)
+})(window);
 
 // isSendBeacon 是否使用 sendBeacon api 保证页面退出时提交后端数据
 function fetchBuried (name = '', type = '', data = {}, isSendBeacon = false) {
