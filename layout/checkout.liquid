@@ -51,7 +51,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <!-- 依赖优化开始 -->
     {% render 'code-snippet-optimization' %}
     <!-- 依赖优化结束 -->
-    {% include 'dataLayer-allPages' %}
   </head>
 
   <body>
@@ -400,4 +399,67 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       }, 2000)
     })
   })
+</script>
+
+<script>
+  var ecommerce = {
+    'transaction_id': '{{checkout.order_number  | json}}',
+    'affiliation': {{shop.name | json}},
+    'value': parseInt((Number({{checkout.total_price | json }})) / 100),
+    'tax': {{checkout.tax_price | money_without_currency | replace: ',','.' | json}},
+    'shipping': {{checkout.shipping_price | money_without_currency | replace: ',','.' | json}},
+    'subtotal': {{checkout.subtotal_price | money_without_currency| replace: ',','.' | json}},
+    'currency': {{checkout.currency | json}},
+    {% for discount in checkout.discounts %}
+    'coupon': {{discount.code | json}},
+    'discount'  : {{discount.amount | money_without_currency | json}},
+    {% endfor %}
+    'email': {{checkout.email | json}},
+    'items':[{% for line_item in checkout.line_items %}{
+        'item_id'        : {{line_item.product.id | json}},                  
+        'item_variant'    : {{product.selected_or_first_available_variant.id | json}},             
+        'item_name'      : {{line_item.product.title | json}},
+        'price'           : {{line_item.product.price | money_without_currency | replace: ',', '.' | json}},
+        'item_brand'      : {{line_item.product.vendor | json}},
+        'item_category'   : {{line_item.product.type | json}},
+        'item_list_name'  : {{line_item.collection.title | json}},
+        'quantity'        : {{line_item.quantity | json}},
+        'discount'		  : {{discount.code | json}}
+        },{% endfor %}],
+    };
+
+    console.log('ecommerce', ecommerce)
+if(Shopify.Checkout.step){ 
+    if(Shopify.Checkout.step.length > 0){
+        if (Shopify.Checkout.step === 'contact_information'){
+            dataLayer.push({
+                'event'    :'begin_checkout',
+                'pageType' :'Customer Information',
+                'step': 1,
+              ecommerce
+            });
+        }else if (Shopify.Checkout.step === 'shipping_method'){
+            dataLayer.push({
+                'event'    :'add_shipping_info',
+                'pageType' :'Shipping Information',
+                ecommerce
+            });
+        }else if( Shopify.Checkout.step === "payment_method" ){
+            dataLayer.push({
+                'event'    :'add_payment_info',
+                'pageType' :'Add Payment Info',
+              ecommerce
+            });
+        }
+    }
+                
+    /** DATALAYER: Transaction */
+    if(Shopify.Checkout.page == "thank_you"){
+        dataLayer.push({
+        'pageType' :'Transaction',
+        'event'    :'purchase',
+        ecommerce
+        });
+    }               
+}
 </script>
