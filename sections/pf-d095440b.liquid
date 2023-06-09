@@ -1556,9 +1556,12 @@ function testRideTrace(type = '', target){
 				return location.href = `/checkout?show_klarna_dialog=show_klarna_dialog`
 			}
 
+
+			t.removeClass('loading')
+			t.find('span').html(text)
 			// 如果 B test 需要显示 klarna checkout
 			window.show_notification_checkout_button = true
-			
+			addToCartInsurance("atc")
 		}).catch((error) => {
 			t.removeClass('loading')
 			t.find('span').html(text)
