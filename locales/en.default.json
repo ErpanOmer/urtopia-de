@@ -17,7 +17,9 @@
     "work5": "Select Klarna and confirm your billing address, click Pay Now",
     "work6": "Now you will be redirected to Klarna payment portal, choose monthly installments as the option that works best for you",
     "work7": "Enjoy your shopping and let automatic payments do the rest",
-    "button": "Continue Check out"
+    "button": "Continue Check out",
+    "Klarna_for": "0 APR, 24 months, €112/month for Carbon 1 ",
+    "Klarna_learn": "Learn how to use"
   },
   "general": {
     "password_page": {

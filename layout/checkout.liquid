@@ -69,6 +69,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           <header class="main__header" role="banner">
             {{ content_for_logo }}
             {{ breadcrumb }}
+            <div class="klarna">
+              <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Klarna-Logo.wine_2x_4831cc33-3ad3-4cb7-8d01-bc04c379811a.png?v=1686369579">
+              <div class="u14Medium_v2">{{ 'checkout_klarna.Klarna_for' | t }}<span class="learn">{{ 'checkout_klarna.Klarna_learn' | t }}</span></div>
+            </div>
             {{ alternative_payment_methods }}
           </header>
           <main class="main__content" role="main">
@@ -207,8 +211,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                   <div class="u17Medium_v2">{{ 'checkout_klarna.work7' | t }}<span></span></div>
           </div>
       </div>
-      <div class="my-button my-button-black">{{ 'checkout_klarna.button' | t }}</div>
-      <span class="close">×</span>
+      <div onclick="closeMiniDialog()" class="my-button my-button-black">{{ 'checkout_klarna.button' | t }}</div>
+      <span onclick="closeMiniDialog()" class="close">×</span>
     </div>
   </body>
   <script>
@@ -217,8 +221,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     getSearchValues().show_klarna_dialog && showMiniDialog(`<div class="klarna-dialog">${html}</div>`)
   
     setTimeout(() => {
-      jQuery('.klarna-dialog .close').on('click', closeMiniDialog)
-      jQuery('.klarna-dialog .my-button').on('click', closeMiniDialog)
+      //jQuery('.klarna-dialog .close').on('click', closeMiniDialog)
+      //jQuery('.klarna-dialog .my-button').on('click', closeMiniDialog)
+
+      jQuery('.klarna').on('click', () => showMiniDialog(`<div class="klarna-dialog">${html}</div>`))
     }, 100)
   </script>
 </html>
@@ -462,4 +468,17 @@ if(Shopify.Checkout.step){
         });
     }               
 }
+
+
+// 页面退出之前，往服务器提交数据
+document.addEventListener('visibilitychange', () => {
+  if (document.visibilityState === 'hidden') {
+      fetchBuried('a-b-test', 'order-page-klarna', {
+        action_type: window.sessionStorage.carbon_one_a_b_test_flag,
+        payment_step: Shopify.Checkout.step,
+        value: Shopify.Checkout.totalPrice,
+        check_id: ecommerce.transaction_id
+      }, true)
+  }
+})
 </script>
