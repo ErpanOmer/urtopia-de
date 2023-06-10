@@ -67,6 +67,9 @@ display: none;
 <script>
   $('.cart-notification__links .orderTestRideBtn').on('click', e => {
     console.log(111)
-    // href="/checkout?show_klarna_dialog=show_klarna_dialog"
+
+    fetchBuried('websiteclick', `carbon-order-page`, { button: 'klarna_check_out' }, true)
+
+    location.href = `/checkout?show_klarna_dialog=show_klarna_dialog`
   })
 </script>
