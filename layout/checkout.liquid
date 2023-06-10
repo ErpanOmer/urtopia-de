@@ -211,8 +211,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                   <div class="u17Medium_v2">{{ 'checkout_klarna.work7' | t }}<span></span></div>
           </div>
       </div>
-      <div class="my-button my-button-black">{{ 'checkout_klarna.button' | t }}</div>
-      <span class="close">×</span>
+      <div onclick="closeMiniDialog()" class="my-button my-button-black">{{ 'checkout_klarna.button' | t }}</div>
+      <span onclick="closeMiniDialog()" class="close">×</span>
     </div>
   </body>
   <script>
@@ -221,8 +221,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     getSearchValues().show_klarna_dialog && showMiniDialog(`<div class="klarna-dialog">${html}</div>`)
   
     setTimeout(() => {
-      jQuery('.klarna-dialog .close').on('click', closeMiniDialog)
-      jQuery('.klarna-dialog .my-button').on('click', closeMiniDialog)
+      //jQuery('.klarna-dialog .close').on('click', closeMiniDialog)
+      //jQuery('.klarna-dialog .my-button').on('click', closeMiniDialog)
 
       jQuery('.klarna').on('click', () => showMiniDialog(`<div class="klarna-dialog">${html}</div>`))
     }, 100)
