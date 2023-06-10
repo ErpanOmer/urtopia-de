@@ -47,6 +47,16 @@
     font: normal normal 600 20px/1.25em urbane;
   }
 
+  .klarna {
+    background-color: #FFB3C7;
+    border-radius: 10px;
+
+    img {
+        max-width: 100px;
+        margin-right: 12px;
+    }
+  }
+
 
   .my-button {
     display: inline-block;
