@@ -279,6 +279,11 @@ function addToCartInsurance(parse, show = false) {
     items: location.href.includes('/products/urtopia-carbon-e-bike') ? global_config.event_accessories_variant_ids.map(id => ({ id, quantity: 1 })) : []
   }
 
+  // 加埋点
+  if (location.href.includes('/products/urtopia-carbon-e-bike')) {
+    fetchBuried('websiteclick', `carbon-order-page`, { button: 'ATC' })
+  }
+
 
   const cart1New =
     document.querySelector("cart-notification") ||
