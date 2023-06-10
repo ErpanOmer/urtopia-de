@@ -223,9 +223,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     setTimeout(() => {
       jQuery('.klarna-dialog .close').on('click', closeMiniDialog)
       jQuery('.klarna-dialog .my-button').on('click', closeMiniDialog)
-    }, 100)
 
-    $('.klarna').on('click', () => showMiniDialog(`<div class="klarna-dialog">${html}</div>`))
+      jQuery('.klarna').on('click', () => showMiniDialog(`<div class="klarna-dialog">${html}</div>`))
+    }, 100)
   </script>
 </html>
 
