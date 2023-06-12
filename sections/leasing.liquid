@@ -406,7 +406,8 @@ setTimeout(() => {
 
 
     $('.partners .swiper-wrapper .swiper-slide').on('click', e => {
-        console.log('ee', e.target)
+        const name = $(e.target).attr('name')
+        console.log('ee', name)
     })
 }, 300)
 </script>
