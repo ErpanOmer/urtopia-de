@@ -61,6 +61,10 @@
         }
 
         .swiper-slide {
+            box-shadow: 3px 3px 30px #00000010;
+            border-radius: 15px;
+            overflow: hidden;
+            
             img {
                 height: 35px;
                 width: auto;
