@@ -362,6 +362,34 @@ const faqs = [
     },
 ]
 
+const swiperItems = [
+    {
+        name: 'jobrad'
+        img: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/JR-Logo_-RGB-schwarz-large-4x_2x_de75d7be-f614-4b9c-b23f-bfc210ae792b.png?v=1686554527',
+        text: 'If your employer is registered with JobRad, you can order your Urtopia bike by filling out this form. We will then place an offer for you on the JobRad portal, which you can review and confirm.'
+    },
+    {
+        name: 'jobrad'
+        img: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/JR-Logo_-RGB-schwarz-large-4x_2x_de75d7be-f614-4b9c-b23f-bfc210ae792b.png?v=1686554527',
+        text: 'If your employer is registered with JobRad, you can order your Urtopia bike by filling out this form. We will then place an offer for you on the JobRad portal, which you can review and confirm.'
+    },
+    {
+        name: 'jobrad'
+        img: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/JR-Logo_-RGB-schwarz-large-4x_2x_de75d7be-f614-4b9c-b23f-bfc210ae792b.png?v=1686554527',
+        text: 'If your employer is registered with JobRad, you can order your Urtopia bike by filling out this form. We will then place an offer for you on the JobRad portal, which you can review and confirm.'
+    },
+    {
+        name: 'jobrad'
+        img: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/JR-Logo_-RGB-schwarz-large-4x_2x_de75d7be-f614-4b9c-b23f-bfc210ae792b.png?v=1686554527',
+        text: 'If your employer is registered with JobRad, you can order your Urtopia bike by filling out this form. We will then place an offer for you on the JobRad portal, which you can review and confirm.'
+    },
+    {
+        name: 'jobrad'
+        img: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/JR-Logo_-RGB-schwarz-large-4x_2x_de75d7be-f614-4b9c-b23f-bfc210ae792b.png?v=1686554527',
+        text: 'If your employer is registered with JobRad, you can order your Urtopia bike by filling out this form. We will then place an offer for you on the JobRad portal, which you can review and confirm.'
+    }
+]
+
 
 $('.faqs .swiper-slide').html(faqs.map((faq, index) => `
   <div class="faq-item" index=${index + 1}>
@@ -372,13 +400,16 @@ $('.faqs .swiper-slide').html(faqs.map((faq, index) => `
      <div class="faq-content">${faq.content}</div>
   </div>`).join(''))
 
-const swiperItems = [
-    {
-        name: 'jobrad'
-        img: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/JR-Logo_-RGB-schwarz-large-4x_2x_de75d7be-f614-4b9c-b23f-bfc210ae792b.png?v=1686554527',
-        text: 'If your employer is registered with JobRad, you can order your Urtopia bike by filling out this form. We will then place an offer for you on the JobRad portal, which you can review and confirm.'
-    }
-]
+$('.partners .swiper-wrapper').html(swiperItems.map(item => `
+    <div class="swiper-slide">
+        <img src="${item.img}" />
+        <div class="u24Medium_v2">Germany</div>
+        <div class="u17Light_v2">${item.text}</div>
+        <div class="u17DemiBold_v2">Learn More ></div>
+        <div class="flex-1"></div>
+        <a href="" name="${item.name}" class="my-button my-button-black">Request a quote</a>
+    </div>
+`).join(''))
 
 
 setTimeout(() => {
