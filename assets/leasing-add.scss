@@ -1803,6 +1803,8 @@
             }
 
             .swiper-wrapper {
+                flex-direction: column;
+
                 .swiper-slide {
                     box-sizing: border-box;
                 }
