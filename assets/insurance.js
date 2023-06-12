@@ -344,21 +344,6 @@ function addToCartInsurance(parse, show = false) {
     .then((res1) => {
       console.log(res1);
       res1.key = "";
-	  	let body = {
-        trace_name: "de-order-pc"+parse
-      }	
-
-      if(window.innerWidth <=768){
-        body.trace_name = "de-order-mb"+parse;
-      }
-
-      fetch("https://api.newurtopia.com/third_part/book_ride/traces", {
-        method: "POST",
-        body: JSON.stringify(body),
-        headers: {
-          "Content-Type": "application/json",
-        },
-      })
 
       if (parse=="buynow") {
         window.location.href="/checkout"
