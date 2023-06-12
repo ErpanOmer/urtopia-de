@@ -281,7 +281,7 @@ function addToCartInsurance(parse, show = false) {
 
   // 加埋点
   if (location.href.includes('/products/urtopia-carbon-e-bike')) {
-    fetchBuried('websiteclick', `carbon-order-page`, { button: 'ATC' })
+    !show && fetchBuried('websiteclick', `carbon-order-page`, { button: 'ATC' })
   }
 
 
@@ -291,7 +291,7 @@ function addToCartInsurance(parse, show = false) {
   let addingNew = false;
   
   if (addingNew == false) {
-    changeAddToCartText(parse,1);
+    !show && changeAddToCartText(parse,1);
     addingNew = true;
 
     const form = document.querySelector(selectors.form);
@@ -373,7 +373,7 @@ function addToCartInsurance(parse, show = false) {
         }
         
         cart1New.renderContents(res1);
-        changeAddToCartText(parse, 0);
+        !show && changeAddToCartText(parse, 0);
       }
     })
     .catch((err) => {
