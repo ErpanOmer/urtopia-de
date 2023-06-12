@@ -48,7 +48,11 @@
     }
 
     .partners {
-        
+        .swiper-slide {
+            img {
+                height: 35px;
+            }
+        }
     }
 
 
