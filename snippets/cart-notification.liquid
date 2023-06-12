@@ -59,10 +59,12 @@ display: none;
 
 <script>
   $('.cart-notification__links .button--primary').on('click', e => {
-    
+    const show = window.show_notification_checkout_button
 
-    fetchBuried('websiteclick', `carbon-order-page-popup`, { button: 'klarna_check_out', action_type: sessionStorage.carbon_one_a_b_test_flag }, true)
+    if (show) {
+      fetchBuried('websiteclick', `carbon-order-page-popup`, { button: 'klarna_check_out', action_type: sessionStorage.carbon_one_a_b_test_flag }, true)
+    }
 
-    location.href = `/checkout?show_klarna_dialog=show_klarna_dialog`
+    location.href = show ? `/checkout?show_klarna_dialog=show_klarna_dialog` : '/checkout'
   })
 </script>
