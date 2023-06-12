@@ -1809,6 +1809,10 @@
                     box-sizing: border-box;
                     padding: 24px;
                 }
+
+                .swiper-slide + .swiper-slide {
+                    margin-top: 20px;
+                }
             }
         }
     }
