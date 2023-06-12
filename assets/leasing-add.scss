@@ -1810,9 +1810,14 @@
                 .swiper-slide {
                     box-sizing: border-box;
                     padding: 24px;
+                    height: unset;
 
                     .u17Light_v2 {
                         font-size: 15px;
+                    }
+
+                    .my-button {
+                        margin-top: 40px;
                     }
                 }
 
