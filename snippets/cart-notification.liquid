@@ -66,7 +66,7 @@ display: none;
 
 <script>
   $('.cart-notification__links .orderTestRideBtn').on('click', e => {
-    fetchBuried('websiteclick', `carbon-order-page`, { button: 'klarna_check_out', action_type: sessionStorage.carbon_one_a_b_test_flag }, true)
+    fetchBuried('websiteclick', `carbon-order-page-popup`, { button: 'klarna_check_out', action_type: sessionStorage.carbon_one_a_b_test_flag }, true)
 
     location.href = `/checkout?show_klarna_dialog=show_klarna_dialog`
   })
