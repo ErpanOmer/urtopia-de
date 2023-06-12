@@ -1525,7 +1525,7 @@ function testRideTrace(type = '', target){
 	// loading
 	t.find('span').html(loading)
 
-	fetchBuried('websiteclick', `carbon-order-page`, { button: type }, true)
+	fetchBuried('websiteclick', `carbon-order-page`, { button: type, action_type: sessionStorage.carbon_one_a_b_test_flag }, true)
 
 	if (type === 'lease_on_jobrad') {
 		const bike_style = Array.from(document.querySelectorAll('div[data-swatch-type="image"] input')).find(e => e.checked).value

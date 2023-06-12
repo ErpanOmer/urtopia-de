@@ -18,7 +18,11 @@
     "work6": "Now you will be redirected to Klarna payment portal, choose monthly installments as the option that works best for you",
     "work7": "Enjoy your shopping and let automatic payments do the rest",
     "button": "Continue Check out",
+<<<<<<< HEAD
     "Klarna_for": "0 APR, 24 months, €112/month for Carbon 1 ",
+=======
+    "Klarna_for": "0 APR, 24 months, €112\/month for Carbon 1 ",
+>>>>>>> 1270b8c765af2bef266f2a80b134baf5a37e2504
     "Klarna_learn": "Learn how to use"
   },
   "general": {
