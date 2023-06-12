@@ -1525,9 +1525,11 @@ function testRideTrace(type = '', target){
 	// loading
 	t.find('span').html(loading)
 
-	fetchBuried('websiteclick', `carbon-order-page`, { button: type, action_type: sessionStorage.carbon_one_a_b_test_flag }, true)
+	
 
 	if (type === 'lease_on_jobrad') {
+		fetchBuried('websiteclick', `carbon-order-page`, { button: type }, true)
+
 		const bike_style = Array.from(document.querySelectorAll('div[data-swatch-type="image"] input')).find(e => e.checked).value
 		const bike_size = Array.from(document.querySelectorAll('div[data-swatch-type="label"] input')).find(e => e.checked).value
 
@@ -1537,6 +1539,8 @@ function testRideTrace(type = '', target){
 	}
 
 	if (type === 'klarna_check_out') {
+		fetchBuried('websiteclick', `carbon-order-page`, { button: type, action_type: sessionStorage.carbon_one_a_b_test_flag }, true)
+
 		if (sessionStorage.carbon_one_a_b_test_flag === 'B') {
 			setTimeout(() => {
 				t.removeClass('loading')
