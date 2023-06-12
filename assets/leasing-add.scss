@@ -1802,8 +1802,10 @@
                 margin-bottom: 24px;
             }
 
-            .swiper-slide {
-                box-sizing: border-box;
+            .swiper-wrapper {
+                .swiper-slide {
+                    box-sizing: border-box;
+                }
             }
         }
     }
