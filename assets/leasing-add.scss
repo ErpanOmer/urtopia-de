@@ -48,6 +48,18 @@
     }
 
     .partners {
+        /* 设置按钮大小 */
+        overflow-x: hidden;
+        cursor: auto;
+        color: #000;
+        padding: 80px 0;
+
+        & > .u48DemiBold_v2 {
+            text-align: left;
+            max-width: 1280px;
+            margin: 0 auto 60px;
+        }
+
         .swiper-slide {
             img {
                 height: 35px;
@@ -311,7 +323,7 @@
             }
 
             .nothankyou {
-                & >.u17Light_v2 {
+                &>.u17Light_v2 {
                     margin: 24px 0;
                     max-width: 750px;
                 }
@@ -354,7 +366,7 @@
                         justify-items: flex-end;
 
 
-                        & > img {
+                        &>img {
                             transform: translateY(-15%);
                             width: 90%;
                         }
@@ -1042,7 +1054,7 @@
         margin: 140px 0 60px;
 
         .centeral-content {
-            & > div {
+            &>div {
                 display: grid;
                 grid-template-columns: 1fr 1fr;
                 margin-bottom: 80px;
@@ -1306,7 +1318,7 @@
                 }
 
                 .nothankyou {
-                    & >.u17Light_v2 {
+                    &>.u17Light_v2 {
                         font-size: 15px;
                     }
                 }
@@ -1314,6 +1326,7 @@
                 .thankyou {
                     .sooner {
                         padding: 24px;
+
                         .u48DemiBold_v2 {
                             font-size: 24px;
                         }
@@ -1326,11 +1339,11 @@
                             grid-template-columns: 1fr;
                             justify-items: center;
 
-                            & > img {
+                            &>img {
                                 width: 100%;
                             }
 
-                            & > div {
+                            &>div {
                                 .u30DemiBold_v2 {
                                     font-size: 24px;
                                 }
@@ -1715,11 +1728,11 @@
 
         .companies {
             margin: 60px 0 0;
-    
+
             .centeral-content {
                 padding: 0;
 
-                & > div {
+                &>div {
                     grid-template-columns: 1fr;
                     margin: 0;
                     padding: 0 8%;
