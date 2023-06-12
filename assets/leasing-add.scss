@@ -84,6 +84,30 @@
                 margin-top: 50px;
             }
         }
+
+        .buttons {
+            max-width: 1280px;
+            margin: auto;
+            display: flex;
+            justify-content: end;
+
+            .swiper-button-prev,
+            .swiper-button-next {
+                margin-left: 20px;
+                margin-top: 20px;
+                position: static;
+                background-color: #666;
+                border-radius: 50%;
+                padding: 20px;
+                box-sizing: border-box;
+                opacity: .5;
+                z-index: 2;
+            }
+
+            .swiper-button-disabled {
+                opacity: .25;
+            }
+        }
     }
 
 
