@@ -197,6 +197,7 @@
                 border: 2px solid #fff;
                 transition: all .3s;
                 overflow: hidden;
+                box-sizing: border-box;
 
                 select {
                     width: 100%;
