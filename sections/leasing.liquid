@@ -443,7 +443,11 @@ setTimeout(() => {
         csvDispCount: 0,
         floatWidth: 768,
         renderLi: (li, originalOption) => {
+            const name = li.find('label').text()
+            const find = swiperItems.find(i => i.name === name)
+
             console.log(li)
+            li.append(`<img src="${find.img}"/>`)
 
             return li
         }
