@@ -454,7 +454,7 @@ setTimeout(() => {
         partnerSelect.sumo.add(item.name, item.name)
     }
 
-    $('.partners select[name="partner"]').on('change', e => {
+    $('select[name="partner"]').on('change', e => {
         console.log('e.target.value', e.target.value)
 
         $('input[name="offers"]').closest('.item').find('.u24Medium span').html(e.target.value)
