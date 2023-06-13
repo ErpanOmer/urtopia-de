@@ -456,6 +456,8 @@ setTimeout(() => {
 
     $('.partners select[name="partner"]').on('change', e => {
         $('input[name="offers"]').closest('.item').find('.u24Medium span').html(e.target.value)
+
+        page_infos.form_thankyou_content2 = page_infos.form_thankyou_content2.replace(/<span>([^<]*?)<\/span>/gi, `<span>${e.target.value}</span>`)
     })
 
     $('.partners .swiper-wrapper .swiper-slide .my-button').on('click', e => {
