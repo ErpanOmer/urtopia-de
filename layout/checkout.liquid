@@ -472,7 +472,7 @@ if(Shopify.Checkout.step){
 
 // 页面退出之前，往服务器提交数据
 document.addEventListener('visibilitychange', () => {
-  if (document.visibilityState === 'hidden') {
+  if (document.visibilityState === 'hidden' && window.sessionStorage.clicked_klarna_checkout_button) {
       fetchBuried('a-b-test', 'order-page-klarna', {
         action_type: window.sessionStorage.carbon_one_a_b_test_flag,
         payment_step: Shopify.Checkout.step,
