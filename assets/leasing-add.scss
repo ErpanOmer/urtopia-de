@@ -1605,46 +1605,46 @@
                         }
                     }
 
-
-                    .SumoSelect.open>.optWrapper {
-                        top: 0;
-                        padding: 8vw;
-                        display: flex;
-                        flex-direction: column;
-                        align-items: center;
-                        justify-content: center;
-                        width: unset;
-                        max-width: unset;
-                        height: unset;
-                        max-height: unset;
-                        background-color: #00000090;
-                        border-radius: 0;
-
-                        .MultiControls {
-                            position: static;
-                            margin: 0;
-                            border-radius: 0;
-                        }
-                    }
-
-
-                    .SumoSelect>.optWrapper.isFloating {
-                        .options {
-                            box-shadow: unset;
-                            width: 100%;
-                            background-color: #fff;
-                            border-radius: 0;
-                        }
-
-                        // bottom: unset;
-                        // top: 50%;
-                        // transform: translateY(-50%);
-                    }
                 }
 
                 .u17Medium {
                     font-size: 15px;
                 }
+            }
+
+            .SumoSelect.open>.optWrapper {
+                top: 0;
+                padding: 8vw;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                width: unset;
+                max-width: unset;
+                height: unset;
+                max-height: unset;
+                background-color: #00000090;
+                border-radius: 0;
+
+                .MultiControls {
+                    position: static;
+                    margin: 0;
+                    border-radius: 0;
+                }
+            }
+
+
+            .SumoSelect>.optWrapper.isFloating {
+                .options {
+                    box-shadow: unset;
+                    width: 100%;
+                    background-color: #fff;
+                    border-radius: 0;
+                }
+
+                // bottom: unset;
+                // top: 50%;
+                // transform: translateY(-50%);
             }
         }
 
