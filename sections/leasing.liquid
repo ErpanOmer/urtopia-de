@@ -462,8 +462,15 @@ setTimeout(() => {
         partnerSelect.sumo.add(item.name, item.name)
     }
 
-    $('select[name="partner"]').on('change', e => {
+    $('.partners select[name="partner"]').on('change', e => {
         $('input[name="offers"]').closest('.item').find('.u24Medium span').html(e.target.value)
+    })
+
+    $('.partners .swiper-wrapper .swiper-slide .my-button').on('click', e => {
+        const name = $(e.target).attr('name')
+
+        $('input[name="offers"]').closest('.item').find('.u24Medium span').html(name)
+        partnerSelect.sumo.selectItem(name)
     })
 }, 300)
 </script>
