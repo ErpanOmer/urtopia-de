@@ -461,5 +461,9 @@ setTimeout(() => {
     for (const item of swiperItems) {
         partnerSelect.sumo.add(item.name, item.name)
     }
+
+    $('select[name="partner"]').on('change', e => {
+        console.log('e', e)
+    })
 }, 300)
 </script>
