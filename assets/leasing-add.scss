@@ -33,6 +33,16 @@
         grid-column-gap: 35px;
         padding: 2% 4% 0 6%;
 
+        & > div {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .u20DemiBold_v2 {
+            margin-bottom: 20px;
+        }
+
         .u17DemiBold_v2 {
             margin-top: 24px;
         }
