@@ -20,6 +20,11 @@
             font-size: 30px;
             font-weight: 100;
             cursor: pointer;
+            max-height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            
         }
     }
 
@@ -1892,6 +1897,10 @@
     .partners-dialog {
         .head {
             padding: 4vw;
+
+            img {
+                max-height: 30px;
+            }
         }
     }
 }
