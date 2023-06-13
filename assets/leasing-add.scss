@@ -1270,6 +1270,17 @@
                 }
             }
 
+            .top-contenr {
+                .select {
+                    height: 45px;
+                    padding: 0 15px;
+                    
+                    select {
+                        font-size: 12px;
+                    }
+                }
+            }
+
             .bottom-content {
                 display: grid;
                 grid-template-columns: 1fr;
