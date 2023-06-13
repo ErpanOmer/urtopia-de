@@ -430,17 +430,6 @@ setTimeout(() => {
     })
 
 
-    $('.partners .swiper-wrapper .swiper-slide .my-link').on('click', e => {
-        const name = $(e.target).attr('name')
-        const find = swiperItems.find(i => i.name === name)
-
-        showMiniDialog(find.dialog)
-        setTimeout(() => {
-            $('.partners-dialog .my-button')
-        }, 500)
-    })
-
-
     const partnerSelect = $('select[name="partner"]').SumoSelect({
         placeholder: '',
         csvDispCount: 0,
@@ -474,6 +463,22 @@ setTimeout(() => {
 
         $('input[name="offers"]').closest('.item').find('.u24Medium span').html(name)
         partnerSelect.sumo.selectItem(name)
+    })
+
+    $('.partners .swiper-wrapper .swiper-slide .my-link').on('click', e => {
+        const name = $(e.target).attr('name')
+        const find = swiperItems.find(i => i.name === name)
+
+        showMiniDialog(find.dialog)
+        setTimeout(() => {
+            $('.partners-dialog .my-button').on('click', e => {
+                const name = $(e.target).attr('name')
+                closeMiniDialog()
+
+                $('input[name="offers"]').closest('.item').find('.u24Medium span').html(name)
+                partnerSelect.sumo.selectItem(name)
+            })
+        }, 500)
     })
 }, 300)
 </script>
