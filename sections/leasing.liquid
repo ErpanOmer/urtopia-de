@@ -463,7 +463,7 @@ setTimeout(() => {
     }
 
     $('select[name="partner"]').on('change', e => {
-        console.log('e', e.target.value)
+        $('input[name="offers"]').closest('.item').find('.u24Medium span').html(e.target.value)
     })
 }, 300)
 </script>
