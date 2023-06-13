@@ -330,7 +330,7 @@ function mergeValues () {
     const merge = Object.assign(search, forms)
 
     // 重写bike_size
-    merge.bike_size = merge.bike_size + ' - ' + size_map[merge.bike_size]
+    merge.bike_size = merge.bike_size + ' - ' + (size_map[merge.bike_size] || '')
     merge.page_type = 'ad-page'
 
     return merge
