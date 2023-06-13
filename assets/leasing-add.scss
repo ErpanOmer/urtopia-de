@@ -1227,6 +1227,49 @@
         .parameters {
             padding: 30px 0;
 
+            .top-contenr {
+                .select {
+                    background-color: #fff;
+                    border-radius: 30px;
+                    padding: 0 40px;
+                    margin-top: 30px;
+                    height: 60px;
+                    border: 2px solid #fff;
+                    transition: all .3s;
+                    overflow: hidden;
+
+                    select {
+                        width: 100%;
+                        height: 100%;
+                        font: normal normal 600 20px/1.4em urbane;
+                        border: none;
+
+                        
+
+                        &:focus-visible {
+                            outline-offset: unset;
+                            box-shadow: unset;
+                            outline: unset;
+                            border-color: #000;
+                        }
+
+                        option[disabled] {
+                            cursor: not-allowed;
+                            color: #ccc;
+                        }
+                    }
+
+                    &::after,
+                    &::before {
+                        content: unset;
+                    }
+
+                    &:focus-within {
+                        border: 2px solid #000;
+                    }
+                }
+            }
+
             .bottom-content {
                 display: grid;
                 grid-template-columns: 1fr;
