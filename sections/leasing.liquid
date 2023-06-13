@@ -442,6 +442,10 @@ setTimeout(() => {
         placeholder: '',
         csvDispCount: 0,
         floatWidth: 768,
+        renderLi: (li, originalOption) => {
+
+            return li
+        }
     })
 
     for (const item of swiperItems) {
