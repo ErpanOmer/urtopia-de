@@ -428,12 +428,9 @@ setTimeout(() => {
 
     $('.partners .swiper-wrapper .swiper-slide .my-link').on('click', e => {
         const name = $(e.target).attr('name')
-        console.log('ee', name)
+        const find = swiperItems.find(i => i.name === name)
+
+        showMiniDialog(find.dialog)
     })
-
-    showMiniDialog(swiperItems[0].dialog)
-
-
-
 }, 300)
 </script>
