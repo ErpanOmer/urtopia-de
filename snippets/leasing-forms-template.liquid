@@ -331,7 +331,7 @@ function mergeValues () {
 
     // 重写bike_size
     merge.bike_size = merge.bike_size + ' - ' + (size_map[merge.bike_size] || '')
-    merge.page_type = 'ad-page'
+    merge.page_type = page_infos.page_name
 
     return merge
 }
