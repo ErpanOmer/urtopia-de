@@ -30,6 +30,7 @@
     .content {
         display: grid;
         grid-template-columns: 1fr 1fr;
+        grid-column-gap: 35px;
         padding: 2% 4% 0 6%;
     }
 }
