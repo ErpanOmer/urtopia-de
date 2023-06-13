@@ -433,11 +433,11 @@
                 .centeral-content {
                     & > div {
                         &:last-child {
-                            padding: 18vw 0;
+                            padding: 36vw 18vw 0;
                             flex: unset;
 
                             .imgaes {
-                                grid-template-columns: 1fr;
+                                // grid-template-columns: 1fr;
                                 grid-gap: 24px;
                                 margin-top: 12vw;
                                 margin-bottom: 0;
@@ -461,7 +461,7 @@
                 .centeral-content {
                     & > div {
                         &:last-child {
-                            padding: 18vw 0;
+                            padding: 36vw 18vw 0;
                             flex: unset;
     
                             .u56DemiBold_v2 {
