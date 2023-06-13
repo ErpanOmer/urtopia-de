@@ -1902,5 +1902,9 @@
                 max-height: 30px;
             }
         }
+
+        .content {
+            grid-template-columns: 1fr;
+        }
     }
 }
