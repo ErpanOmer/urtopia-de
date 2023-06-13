@@ -441,5 +441,16 @@ setTimeout(() => {
 
         showMiniDialog(find.dialog)
     })
+
+
+    const partnerSelect = $('select[name="partner"]').SumoSelect({
+        placeholder: '',
+        csvDispCount: 0,
+        floatWidth: 768,
+    })
+
+    for (const item of swiperItems) {
+        partnerSelect.sumo.selectItem(item.name)
+    }
 }, 300)
 </script>
