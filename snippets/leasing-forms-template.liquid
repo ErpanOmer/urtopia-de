@@ -157,6 +157,12 @@
                   <div class="u24Medium">Note</div>
                   <input type="text" name="note">
                 </div>
+                {% if condition %}
+                    <div class="item">
+                        <div class="u24Medium">Your Leasing partner*</div>
+                        <input type="text" name="note">
+                      </div>
+                {% endif %}
                 <div class="item">
                     <div class="u24Medium">Your employer already offers JobRad?<i>*</i></div>
                     <div class="multiple-checkbox">
@@ -227,6 +233,7 @@ const page_infos = {% case template | json %}
         }
     {% else %}
         {
+            page_name: 'leasing',
             form_offers_label: 'Your employer already offers <span>leasing<span>?<i>*</i>',
         }
 {% endcase %}
