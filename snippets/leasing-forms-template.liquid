@@ -226,7 +226,9 @@ const page_infos = {% case template | json %}
             form_thankyou_content2: `Thank you for your request. You will receive a quote from info@mein-dienstrad.org via email within one business day. Please check your inbox. <br><br>Since your company has not yet partnered with mein-dienstrad, we would like to offer you an exclusive discount for direct purchases as an expression of our gratitude and support.`
         }
     {% else %}
-        {}
+        {
+            form_offers_label: 'Your employer already offers <span>leasing<span>?<i>*</i>',
+        }
 {% endcase %}
 
 
