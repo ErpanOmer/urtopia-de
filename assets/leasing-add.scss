@@ -8,11 +8,17 @@
         align-items: center;
         justify-content: space-between;
         border-bottom: 1px solid #e5e5e5;
-        padding: 20px;
+        padding: 2% 3% 2% 6%;
 
         img {
             max-height: 50px;
             width: auto;
+        }
+
+        span {
+            color: #555;
+            font-size: 30px;
+            font-weight: 100;
         }
     }
 }
