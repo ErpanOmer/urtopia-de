@@ -445,10 +445,10 @@ setTimeout(() => {
         renderLi: (li, originalOption) => {
             const name = li.find('label').text()
             const find = swiperItems.find(i => i.name === name)
-            
+
             li.css({
                 'display': 'flex',
-                'align-items': 'center'
+                'align-items': 'center',
                 'justify-content': 'space-between'
             })
 
