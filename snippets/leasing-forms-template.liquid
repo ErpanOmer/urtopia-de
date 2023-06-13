@@ -333,6 +333,10 @@ function mergeValues () {
     merge.bike_size = merge.bike_size + ' - ' + (size_map[merge.bike_size] || '')
     merge.page_type = page_infos.page_name
 
+    {% unless template == "page.leasing" %}
+        merge.partner = page_infos.page_name === 'jobrad' ? 'Jobrad' : 'Mein-dienstrad.de'
+    {% endunless %}
+
     return merge
 }
 
