@@ -376,7 +376,7 @@ $('.partners .swiper-wrapper').html(swiperItems.map(item => `
         <div class="u17Light_v2">${item.text}</div>
         <div class="my-link u17DemiBold_v2" name="${item.name}">Learn More ></div>
         <div class="flex-1"></div>
-        <a href="" name="${item.name}" class="my-button my-button-black">Request a quote</a>
+        <a href="#forms" name="${item.name}" class="my-button my-button-black">Request a quote</a>
     </div>
 `).join(''))
 
@@ -419,5 +419,8 @@ setTimeout(() => {
         const name = $(e.target).attr('name')
         console.log('ee', name)
     })
+
+
+
 }, 300)
 </script>
