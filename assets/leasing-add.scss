@@ -26,6 +26,11 @@
     .foot {
         padding: 2% 2% 2% 6%;
     }
+
+    .content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
 }
 
 
