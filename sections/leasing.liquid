@@ -353,7 +353,7 @@ const swiperItems = [
                     </div>
                     <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20221010-untitled-7468_2x_5cab2645-5d81-4b3f-8963-9a6ad866ff09.png?v=1686635073"/>
                 </div>
-                <div class="foot"><span class="my-button my-button-black">Request a quote</span></div>
+                <div class="foot"><a href="#forms" class="my-button my-button-black">Request a quote</a></div>
             </div>
         `
     },
@@ -435,6 +435,9 @@ setTimeout(() => {
         const find = swiperItems.find(i => i.name === name)
 
         showMiniDialog(find.dialog)
+        setTimeout(() => {
+            $('.partners-dialog ')
+        }, 500)
     })
 
 
