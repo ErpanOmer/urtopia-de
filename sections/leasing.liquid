@@ -445,9 +445,14 @@ setTimeout(() => {
         renderLi: (li, originalOption) => {
             const name = li.find('label').text()
             const find = swiperItems.find(i => i.name === name)
+            
+            li.css({
+                'display': 'flex',
+                'align-items': 'center'
+                'justify-content': 'space-between'
+            })
 
-            console.log(li)
-            li.append(`<img src="${find.img}"/>`)
+            li.append(`<img style="max-height: 20px;width: auto;" src="${find.img}"/>`)
 
             return li
         }
