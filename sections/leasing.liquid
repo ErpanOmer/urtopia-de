@@ -27,7 +27,16 @@
     </div>
   </div>
   <div class="parameters">
-      <div class="centeral-content">
+    <!--<div class="centeral-content top-content">
+        <div class="u48DemiBold_v2">Available Urtopia<br>E-Bikes</div>
+        <div class="select">
+            <select disabled>
+                <option value="carbon">Urtopia Carbon 1</option>
+                <option value="chord">Urtopia Chord</option>
+            </select>
+        </div>
+    </div>-->
+      <div class="centeral-content bottom-content">
           <div></div>
           <div>
               <div class="boxs">
@@ -323,40 +332,46 @@ const faqs = [
 
 const swiperItems = [
     {
-        name: 'jobrad',
+        name: 'Jobrad',
         img: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/JR-Logo_-RGB-schwarz-large-4x_2x_de75d7be-f614-4b9c-b23f-bfc210ae792b.png?v=1686554527',
         text: 'If your employer is registered with JobRad, you can order your Urtopia bike by filling out this form. We will then place an offer for you on the JobRad portal, which you can review and confirm.',
         dialog: `
             <div class="partners-dialog">
-                <div class="header">
+                <div class="head">
                     <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/JR-Logo_-RGB-schwarz-large-4x_2x_de75d7be-f614-4b9c-b23f-bfc210ae792b.png?v=1686554527"/>
-                    <span>×</span>
+                    <span onclick="closeMiniDialog()">×</span>
                 </div>
-                <div class="content"></div>
-                <div class="footer"><span class="my-button my-button-black">Request a quote</span></div>
+                <div class="content">
+                    <div>
+                        <div class="u20DemiBold_v2">Your benefits <br> through JobRad</div>
+                        <div class="u17DemiBold_v2">Deducted from your salary</div>
+                        <div class="u14Light_v2">Monthly contributions towards your lease of a Urtopia will be deducted from your gross salary. A 36 month leasing plan let you split the cost and enjoy the product.</div>
+                        <div class="u17DemiBold_v2">Additional monthly savings</div>
+                        <div class="u14Light_v2">If you lease with JobRad, your purchase is tax deductible. You can save up to 40% compared to buying a bike with a traditional payment method.</div>
+                        <div class="u17DemiBold_v2">Enjoy it from now, even outside of work</div>
+                        <div class="u14Light_v2">Ride away from stress and towards happiness! Request your bike today to take advantage of an enjoyable biking experience both during work hours as well as after.</div>
+                    </div>
+                    <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20221010-untitled-7468_2x_5cab2645-5d81-4b3f-8963-9a6ad866ff09.png?v=1686635073"/>
+                </div>
+                <div class="foot"><a name="Jobrad" href="#forms" class="my-button my-button-black">Request a quote</a></div>
             </div>
         `
     },
     {
-        name: 'mein-dienstrad',
-        img: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/JR-Logo_-RGB-schwarz-large-4x_2x_de75d7be-f614-4b9c-b23f-bfc210ae792b.png?v=1686554527',
-        text: 'If your employer is registered with Mein Dienstrad, you can order by filling out this form. We’ll share this information with Mein Dienstrad, who will process your order. Mein Dienstrad will confirm the order with your employer.'
+        name: 'Business Bike',
+        img: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230613-152534.png?v=1686641146',
+        text: 'If your employer is registered with BusinessBike, you can order by filling out this form. We’ll share this information with BusinessBike, who will process your order. BusinessBike will confirm the order with your employer.'
     },
     {
-        name: 'jobrad',
-        img: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Logo_Bikeleasing-Service-1-1024x172_2x_56e3443c-4ad3-4cc5-8c49-f61cec1a01fd.png?v=1686559012',
-        text: 'If your employer is registered with Mein Dienstrad, you can order by filling out this form. We’ll share this information with Mein Dienstrad, who will process your order. Mein Dienstrad will confirm the order with your employer.'
+        name: 'Bike Leasing',
+        img: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230613-153443.png?v=1686641693',
+        text: 'If your employer is registered with bikeleasing.de, you can order by filling out this form. We’ll share this information with bikeleasing.de, who will process your order. Mein Dienstrad will confirm the order with your employer.'
     },
     {
-        name: 'jobrad',
-        img: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/BusinessBike_pos_BLUE_RED_BLUE_rgb-1-640x164_2x_3b6fa193-1d68-405d-8485-d754e4444d63.png?v=1686559265',
+        name: 'Mein-dienstrad.de',
+        img: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230613-153746.png?v=1686641878',
         text: 'If your employer is registered with Mein Dienstrad, you can order by filling out this form. We’ll share this information with Mein Dienstrad, who will process your order. Mein Dienstrad will confirm the order with your employer.'
     },
-    {
-        name: 'jobrad',
-        img: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/JR-Logo_-RGB-schwarz-large-4x_2x_de75d7be-f614-4b9c-b23f-bfc210ae792b.png?v=1686554527',
-        text: 'If your employer is registered with JobRad, you can order your Urtopia bike by filling out this form. We will then place an offer for you on the JobRad portal, which you can review and confirm.'
-    }
 ]
 
 
@@ -374,9 +389,9 @@ $('.partners .swiper-wrapper').html(swiperItems.map(item => `
         <img src="${item.img}" />
         <div class="u24Medium_v2">Germany</div>
         <div class="u17Light_v2">${item.text}</div>
-        <div class="my-link u17DemiBold_v2" name="${item.name}">Learn More ></div>
+        ${item.dialog ? `<div class="my-link u17DemiBold_v2" name="${item.name}">Learn More ></div>` : ''}
         <div class="flex-1"></div>
-        <a href="" name="${item.name}" class="my-button my-button-black">Request a quote</a>
+        <a href="#forms" name="${item.name}" class="my-button my-button-black">Request a quote</a>
     </div>
 `).join(''))
 
@@ -415,9 +430,59 @@ setTimeout(() => {
     })
 
 
-    $('.partners .swiper-wrapper .swiper-slide').on('click', e => {
+    const partnerSelect = $('select[name="partner"]').SumoSelect({
+        placeholder: '',
+        csvDispCount: 0,
+        floatWidth: 768,
+        renderLi: (li, originalOption) => {
+            const name = li.find('label').text()
+            const find = swiperItems.find(i => i.name === name)
+
+            li.css({
+                'display': 'flex',
+                'align-items': 'center',
+                'justify-content': 'space-between'
+            })
+
+            li.append(`<img style="max-height: 20px;width: auto;" src="${find.img}"/>`)
+
+            return li
+        }
+    })
+
+    for (const item of swiperItems) {
+        partnerSelect.sumo.add(item.name, item.name)
+    }
+
+    $('select[name="partner"]').on('change', e => {
+        console.log('e.target.value', e.target.value)
+
+        $('input[name="offers"]').closest('.item').find('.u24Medium span').html(e.target.value)
+
+        page_infos.form_thankyou_content2 = page_infos.form_thankyou_content2.replace(/<span>([^<]*?)<\/span>/gi, `<span>${e.target.value}</span>`)
+    })
+
+    $('.partners .swiper-wrapper .swiper-slide .my-button').on('click', e => {
         const name = $(e.target).attr('name')
-        console.log('ee', name)
+
+        $('input[name="offers"]').closest('.item').find('.u24Medium span').html(name)
+        partnerSelect.sumo.selectItem(name)
+    })
+
+    $('.partners .swiper-wrapper .swiper-slide .my-link').on('click', e => {
+        const name = $(e.target).attr('name')
+        const find = swiperItems.find(i => i.name === name)
+
+        showMiniDialog(find.dialog)
+        setTimeout(() => {
+            $('.partners-dialog .my-button').on('click', e => {
+                const name = $(e.target).attr('name')
+                closeMiniDialog()
+
+                $('input[name="offers"]').closest('.item').find('.u24Medium span').html(name)
+                partnerSelect.sumo.selectItem(name)
+            })
+        }, 500)
     })
 }, 300)
 </script>

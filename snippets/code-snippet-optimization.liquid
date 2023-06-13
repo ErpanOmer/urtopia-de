@@ -39,7 +39,7 @@ function fetchBuried (name = '', type = '', data = {}, isSendBeacon = false) {
     const body = {
         module: "website-de",
         trace_name: `${name}-de`,
-        trace_type: `${type}-${document.body.clientWidth > 768 ? 'pc' : 'mb'}`,
+        trace_type: `${type}-${document.body.clientWidth > 768 ? 'pc' : 'mb'}` + (window.__SHOPIFY_CLI_ENV__ ? ':test' : ''),
         extras: data
     }
 
