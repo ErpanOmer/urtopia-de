@@ -456,7 +456,9 @@
 <script>
   //Bing UET
   document.querySelector('#checkout').addEventListener('click', function () {
-    window.uetq = window.uetq || []; window.uetq.push('event', 'begin_checkout', { "revenue_value": 1, "currency": "USD" });
+    window.uetq = window.uetq || []; window.uetq.push('event', 'begin_checkout', { "revenue_value": 1, "currency": "EUR" });
+
+    fetchBuried('websiteclick', `cart-page`, { button: 'checkout' }, true)
   })
   //
   document.addEventListener('DOMContentLoaded', function () {
