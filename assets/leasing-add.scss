@@ -719,74 +719,74 @@
                         border-color: #000;
                     }
                 }
-
-                .SumoSelect {
-                    width: 100%;
-                    text-align: left;
-
-                    &>select {
-                        transform: translatex(-3300%);
-                    }
-
-                    &:focus-visible,
-                    &:focus {
-                        .CaptionCont {
-                            border-color: #000;
-                        }
-                    }
-
-                    .CaptionCont {
-                        border: 2px solid #00000034;
-                        border-radius: 10px;
-                        height: 47px;
-                        box-sizing: border-box;
-                        display: flex;
-                        align-items: center;
-                        padding: 5px 13px;
-                        box-shadow: none;
-
-
-
-                        .placeholder {
-                            font-style: unset;
-                            font-size: 17px;
-                            font-weight: 300;
-                            background-color: #fff;
-                        }
-                    }
-                }
-
-                .SumoSelect.open>.optWrapper {
-                    top: 50px;
-                    border-radius: 10px;
-
-                    .options {
-                        .selected {
-                            span {
-
-                                i {
-                                    background-color: rgb(0, 115, 255);
-                                }
-                            }
-
-
-                        }
-
-                        .opt {
-                            span {
-                                margin-left: -27px;
-                            }
-
-                            label {
-                                padding-left: 8px;
-                            }
-                        }
-                    }
-                }
             }
 
             .u17Medium {
                 text-align: left;
+            }
+        }
+
+        .SumoSelect {
+            width: 100%;
+            text-align: left;
+
+            &>select {
+                transform: translatex(-3300%);
+            }
+
+            &:focus-visible,
+            &:focus {
+                .CaptionCont {
+                    border-color: #000;
+                }
+            }
+
+            .CaptionCont {
+                border: 2px solid #00000034;
+                border-radius: 10px;
+                height: 47px;
+                box-sizing: border-box;
+                display: flex;
+                align-items: center;
+                padding: 5px 13px;
+                box-shadow: none;
+
+
+
+                .placeholder {
+                    font-style: unset;
+                    font-size: 17px;
+                    font-weight: 300;
+                    background-color: #fff;
+                }
+            }
+        }
+
+        .SumoSelect.open>.optWrapper {
+            top: 50px;
+            border-radius: 10px;
+
+            .options {
+                .selected {
+                    span {
+
+                        i {
+                            background-color: rgb(0, 115, 255);
+                        }
+                    }
+
+
+                }
+
+                .opt {
+                    span {
+                        margin-left: -27px;
+                    }
+
+                    label {
+                        padding-left: 8px;
+                    }
+                }
             }
         }
     }
