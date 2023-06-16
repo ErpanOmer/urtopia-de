@@ -44,6 +44,10 @@
                 .accs {
                     display: grid;
                     grid-template-columns: repeat(3, 1fr);
+
+                    .u14Light_v2 {
+                        background-image: linear-gradient(180deg, #EE6426, #F4492A);
+                    }
                 }
             }
         }
