@@ -26,7 +26,7 @@
     {% assign accessories = settings.sale_accessories_ids | split: ',' %}
     {% assign accessories_map = "7633738596568,7633738662104,7633738531032" | split: ',' %}
 
-    {% for acc in accessories %}
+    {% for acc in accessories_map %}
         console.log({{ acc }})
     {% endfor %}
 
