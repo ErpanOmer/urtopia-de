@@ -28,7 +28,7 @@
 
     {% for acc in accessories_map %}
         {% for prod in collections["accessories"].products %}
-            console.log({{ acc}}, {{ prod.id }})
+            console.log({{ acc }} == {{ prod.id }})
 
             {% if acc == prod.id %}
                 console.log({{ prod | json }})
