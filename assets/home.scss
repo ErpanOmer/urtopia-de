@@ -221,6 +221,7 @@
 
         .count-down-gif {
             max-width: 370px;
+            overflow: hidden;
 
             img {
                 transform: translateY(15%);
