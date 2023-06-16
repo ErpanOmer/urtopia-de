@@ -18,7 +18,11 @@
                             {% if acc contains prod.id %}
                                 <div class="acc">
                                     {{ prod.featured_image | image_url: width: 400 | image_tag }}
-                                    <span class="u11Medium_v2">{{ prod.title }}</span>
+                                    {% if acc == "7633738662104" %}
+                                        <span>{{ prod.title | truncatewords: 3, "" | replace: "-", "" }}</span>
+                                    {% else %}
+                                        <span class="u11Medium_v2">{{ prod.title }}</span>
+                                    {% endif %}
                                 </div>
                             {% endif %}
                         {% endfor %}
