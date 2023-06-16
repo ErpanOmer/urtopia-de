@@ -58,7 +58,7 @@
 
     console.log('styles', styles)
 
-    for (const style of styles) {
+    for (const style of Object.keys(styles)) {
         $('.product .product-panel .Style').append(`<div class="${style}"></div>`)
     }
     
