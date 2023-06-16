@@ -34,7 +34,11 @@
                 <div class="u17Medium_v2">€600 off + 3 Free Accessories Ends in：</div>
             </div>
             <div class="options">
-                
+                {% for option in product.options %}
+                    <div class="option">
+                        <div class="u17DemiBold_v2">{{ option }}</div>
+                    </div>
+                {% endfor %}
             </div>
         </div>
     </div>
