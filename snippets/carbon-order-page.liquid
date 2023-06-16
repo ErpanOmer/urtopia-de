@@ -33,16 +33,4 @@
             {% endif %}
         {% endfor %}
     {% endfor %}
-
-    {% for collection in collections %}
-
-        {% if collection.handle == "accessories" %}
-            {% for item in collection.products %}
-                console.log({{ item.title | json }}, {{ item.id | json }}, {{ item | json }})
-                {% if accessories_map contains item.id %}
-                    console.log({{ item | json }})
-                {% endif %}
-            {% endfor %}
-        {% endif %}
-    {% endfor %}
 </script>
