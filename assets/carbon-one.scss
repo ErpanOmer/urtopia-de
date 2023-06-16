@@ -12,6 +12,7 @@
         .product-panel {
             display: flex;
             flex-direction: column;
+            min-width: 400px;
 
             .sale {
                 background-image: linear-gradient(180deg, #EE6426, #F4492A);
