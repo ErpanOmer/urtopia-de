@@ -25,6 +25,26 @@
         "id": "sale_end_time",
         "label": "活动结束文案",
         "default": "Ends on June 16"
+      },
+      {
+        "type": "select",
+        "id": "sale_accessories_ids",
+        "options": [
+          {
+            "value": "43817744793816",
+            "label": ""
+          },
+          {
+            "value": "43745263255768",
+            "label": ""
+          },
+          {
+            "value": "43745261748440",
+            "label": ""
+          }
+        ],
+        "default": "43817744793816",
+        "label": "活动送配件 variant_id"
       }
     ]
   },
