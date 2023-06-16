@@ -83,31 +83,29 @@
 
             .options {
                 .Style {
-                    & > div {
-                        &>div {
-                            width: 20px;
-                            height: 20px;
-                            margin: 7.5px;
-                            border-radius: 50%;
-                            cursor: pointer;
-                            box-sizing: content-box;
-    
-                            &::after {
-                                content: "";
-                                display: inline-block;
-                                height: 16px;
-                                margin: 2px;
-                                width: 16px;
-                                border-radius: 100%;
-                            }
-    
-                            &[white] {
-                                background-color: #ddd;
-                            }
-    
-                            &[black] {
-                                background-color: #000;
-                            }
+                    &>div {
+                        width: 20px;
+                        height: 20px;
+                        margin: 7.5px;
+                        border-radius: 50%;
+                        cursor: pointer;
+                        box-sizing: content-box;
+
+                        &::after {
+                            content: "";
+                            display: inline-block;
+                            height: 16px;
+                            margin: 2px;
+                            width: 16px;
+                            border-radius: 100%;
+                        }
+
+                        &[white] {
+                            background-color: #ddd;
+                        }
+
+                        &[black] {
+                            background-color: #000;
                         }
                     }
                 }
