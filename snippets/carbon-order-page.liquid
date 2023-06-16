@@ -25,5 +25,5 @@
 <script>
     {%- assign r = settings.sale_accessories_ids | split: ',' -%}
 
-    console.log({{ r }})
+    console.log({{ r | json }})
 </script>
