@@ -119,6 +119,8 @@
                         }
 
                         &[attribute="Midnight in Paris"]::before {
+                            content: "";
+                            display: inline-block;
                             background-color: #FF6C00;
                             height: 10px;
                             width: 10px;
