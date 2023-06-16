@@ -34,7 +34,7 @@
 
         {% if collection.handle == "accessories" %}
             {% for item in collection.products %}
-                console.log({{ item.title | json }}, {{ item.id | json }}, {{ item | json }})
+                {% comment %} console.log({{ item.title | json }}, {{ item.id | json }}, {{ item | json }}) {% endcomment %}
                 {% if accessories_map contains item.id %}
                     console.log({{ item | json }})
                 {% endif %}
