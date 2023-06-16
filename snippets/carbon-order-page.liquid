@@ -23,7 +23,8 @@
 </div>
 
 <script>
-    {%- assign r = settings.sale_accessories_ids | split: ',' | json -%}
-
-    console.log({{ r }})
+    {%- assign accessories = settings.sale_accessories_ids | split: ',' -%}
+    {% for acc in accessories %}
+        console.log({{ acc }})
+    {% endfor %}
 </script>
