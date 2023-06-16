@@ -28,7 +28,12 @@
         console.log({{ acc }})
     {% endfor %}
 
-    {% for c in collections %}
-        console.log({{ c | json }})
+    {% for collection in collections %}
+
+        {% if collection.handle == "accessories" %}
+            {% for item in collection.products %}
+                console.log({{ item | json }})
+            {% endfor %}
+        {% endif %}
     {% endfor %}
 </script>
