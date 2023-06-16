@@ -37,7 +37,7 @@
                 {% for option in product.options %}
                     <div class="option" option={{option}}>
                         <div class="u17DemiBold_v2">{{ option }} - <span class="u17Light_v2"></span></div>
-                        <div attribute="{{option}}" class="{{option}}"></div>
+                        <div class="{{option}}"></div>
                     </div>
                 {% endfor %}
             </div>
@@ -57,11 +57,11 @@
     console.log('styles', styles)
 
     for (const style of Object.keys(styles)) {
-        $('.product .product-panel .Style').append(`<div class="${style}"></div>`)
+        $('.product .product-panel .Style').append(`<div attribute="{{size}}" class="${style}"></div>`)
     }
 
     for (const size of Object.keys(sizes)) {
-        $('.product .product-panel .Size').append(`<div class="${size}"></div>`)
+        $('.product .product-panel .Size').append(`<div attribute="{{size}}" class="${size}"></div>`)
     }
     
 </script>
