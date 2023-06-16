@@ -221,6 +221,10 @@
 
         .count-down-gif {
             max-width: 370px;
+
+            img {
+                transform: translateY(15%);
+            }
         }
     }
 
