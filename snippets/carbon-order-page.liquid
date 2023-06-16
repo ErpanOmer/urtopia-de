@@ -30,7 +30,7 @@
         {% for prod in collections["accessories"].products %}
             console.log({{ acc }} == {{ prod.id }})
 
-            {% if acc == prod.id %}
+            {% if acc contains prod.id %}
                 console.log({{ prod | json }})
             {% endif %}
         {% endfor %}
