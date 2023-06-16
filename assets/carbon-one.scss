@@ -1,5 +1,10 @@
 .product {
     margin: 80px 0;
+
+    .mb16 {
+        margin-bottom: 16px;
+    }
+
     .centeral-content {
         display: grid;
         grid-template-columns: 1.77fr 1fr;
