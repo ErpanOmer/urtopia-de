@@ -27,8 +27,8 @@
     {% for acc in accessories %}
         console.log({{ acc }})
     {% endfor %}
-
-    JSON.parse(JSON.stringify({{ all_products['urtopia-carbon-e-bike'] | json }}))
+    
+    console.log(JSON.parse(JSON.stringify({{ all_products['urtopia-carbon-e-bike'] | json }})))
 
     {% for p in all_products %}
         console.log({{ p | json }})
