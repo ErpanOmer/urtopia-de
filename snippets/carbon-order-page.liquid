@@ -17,7 +17,7 @@
                         {% for prod in collections["accessories"].products %}
                             {% if acc contains prod.id %}
                                 <div class="acc">
-                                    <img src="{{ prod.featured_image | image_url: width: 400 | image_tag }}"/>
+                                    {{ prod.featured_image | image_url: width: 400 | image_tag }}
                                     <span class="u11Medium_v2">{{ prod.title }}</span>
                                 </div>
                             {% endif %}
