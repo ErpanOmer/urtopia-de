@@ -127,15 +127,15 @@
                             background-color: #FA812B;
                         }
 
-                        &[attribute="Lyra"] {
+                        &[attribute="Lyra"]::after {
                             background-color: #747474;
                         }
 
-                        &[attribute="vanilla"] {
+                        &[attribute="vanilla"]::after {
                             background-color: #FAF5E7;
                         }
 
-                        &[attribute="Midnight in Paris"] {
+                        &[attribute="Midnight in Paris"]::after {
                             background-color: #FAF5E7;
                         }
                     }
