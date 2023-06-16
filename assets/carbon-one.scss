@@ -55,12 +55,14 @@
                 .accs {
                     display: grid;
                     grid-template-columns: repeat(3, 1fr);
+                    grid-column-gap: 20px;
 
                     .acc {
                         display: flex;
                         align-items: center;
                         justify-content: center;
                         flex-direction: column;
+                        text-align: center;
                     }
                 }
             }
