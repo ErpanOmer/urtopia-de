@@ -48,9 +48,10 @@
 <script>
     const styles = {}
     const sizes = {}
+    
     {% for variant in product.variants %}
         styles[{{ variant.option1 | json }}] = 1
-        sizes[{{ variant.option1 | json }}] = 1
+        sizes[{{ variant.option2 | json }}] = 1
     {% endfor %}
 
     console.log(styles, sizes)
