@@ -46,11 +46,11 @@
 </div>
 
 <script>
-    const styles = []
-    const sizes = []
+    const styles = {}
+    const sizes = {}
     {% for variant in product.variants %}
-        styles.push({{ variant.option1 | json }})
-        sizes.push({{ variant.option2 | json }})
+        styles[{{ variant.option1 | json }}] = 1
+        sizes[{{ variant.option1 | json }}] = 1
     {% endfor %}
 
     console.log(styles, sizes)
