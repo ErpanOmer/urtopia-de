@@ -168,11 +168,13 @@
                         padding: 3px 26px;
                         box-sizing: border-box;
                         cursor: pointer;
+                        max-height: 32px;
                     }
 
                     .active {
                         border-width: 2px;
                         font-weight: 600;
+                        border-color: #000;
                     }
                 }
             }
