@@ -168,6 +168,11 @@
                         padding: 3px 26px;
                         box-sizing: border-box;
                     }
+
+                    .active {
+                        border-width: 2px;
+                        font-weight: 600;
+                    }
                 }
             }
         }
