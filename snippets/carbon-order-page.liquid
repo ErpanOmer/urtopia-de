@@ -32,7 +32,9 @@
 
         {% if collection.handle == "accessories" %}
             {% for item in collection.products %}
-                console.log({{ item | json }})
+                {% if accessories contains item.id %}
+                    console.log({{ item | json }})
+                {% endif %}
             {% endfor %}
         {% endif %}
     {% endfor %}
