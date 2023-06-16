@@ -37,7 +37,7 @@
                 {% for option in product.options %}
                     <div class="option">
                         <div class="u17DemiBold_v2" option={{option}}>{{ option }} - <span class="u17Light_v2"></span></div>
-
+                        <div class="{{option}}"></div>
                     </div>
                 {% endfor %}
             </div>
@@ -48,7 +48,7 @@
 <script>
     const styles = {}
     const sizes = {}
-    
+
     {% for variant in product.variants %}
         styles[{{ variant.option1 | json }}] = 1
         sizes[{{ variant.option2 | json }}] = 1
