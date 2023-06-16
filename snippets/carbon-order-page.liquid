@@ -57,11 +57,11 @@
     console.log('styles', styles)
 
     for (const style of Object.keys(styles)) {
-        $('.product .product-panel .Style').append(`<div attribute="{{style}}" class="${style}"></div>`)
+        $('.product .product-panel .Style').append(`<div attribute="${style}" class="${style}"></div>`)
     }
 
     for (const size of Object.keys(sizes)) {
-        $('.product .product-panel .Size').append(`<div attribute="{{size}}" class="${size}"></div>`)
+        $('.product .product-panel .Size').append(`<div attribute="${size}" class="${size}"></div>`)
     }
     
 </script>
