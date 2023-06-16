@@ -27,4 +27,8 @@
     {% for acc in accessories %}
         console.log({{ acc }})
     {% endfor %}
+
+    {% for product in all_products %}
+        console.log({{ product | json }})
+    {% endfor %}
 </script>
