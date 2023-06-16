@@ -48,7 +48,7 @@
 <script>
     const styles = []
     const sizes = []
-    {% for variant in variants %}
+    {% for variant in product.variants %}
         styles.push({{ variant.option1 }})
         sizes.push({{ variant.option2 }})
     {% endfor %}
