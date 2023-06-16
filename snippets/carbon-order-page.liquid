@@ -56,6 +56,8 @@
         sizes[{{ variant.option2 | json }}] = 1
     {% endfor %}
 
+    console.log('styles', styles)
+
     for (const style of styles) {
         $('.product .product-panel .Style').append(`<div class="${style}"></div>`)
     }
