@@ -10,11 +10,19 @@
             </div>
             <div class="sale_acc mb16">
                 <div class="u14Light_v2">And get €169 Accessories for <span class="u20DemiBold_v2">Free</span></div>
+                {% assign accessories = settings.sale_accessories_ids | split: ',' %}
+                {% assign accessories_map = "7633738596568,7633738662104,7633738531032" | split: ',' %}
                 <div class="accs">
-                    <div class="acc">
-                        <img src=""/>
-                        <span class="u11Medium_v2"></span>
-                    </div>
+                    {% for acc in accessories_map %}
+                        {% for prod in collections["accessories"].products %}
+                            {% if acc contains prod.id %}
+                                <div class="acc">
+                                    <img src="{{ prod.featured_image }}"/>
+                                    <span class="u11Medium_v2">{{ prod.title }}</span>
+                                </div>
+                            {% endif %}
+                        {% endfor %}
+                    {% endfor %}
                 </div>
                 <div class="u11Light_v2">*Not available with leasing</div>
             </div>
@@ -23,14 +31,5 @@
 </div>
 
 <script>
-    {% assign accessories = settings.sale_accessories_ids | split: ',' %}
-    {% assign accessories_map = "7633738596568,7633738662104,7633738531032" | split: ',' %}
-
-    {% for acc in accessories_map %}
-        {% for prod in collections["accessories"].products %}
-            {% if acc contains prod.id %}
-                console.log({{ prod | json }})
-            {% endif %}
-        {% endfor %}
-    {% endfor %}
+    
 </script>
