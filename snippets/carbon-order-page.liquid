@@ -23,7 +23,7 @@
 </div>
 
 <script>
-    {%- assign r = settings.sale_accessories_ids | split: ',' -%}
+    {%- assign r = settings.sale_accessories_ids | split: ',' | json -%}
 
-    console.log({{ r | json }})
+    console.log({{ r }})
 </script>
