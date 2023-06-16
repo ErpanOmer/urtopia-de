@@ -28,7 +28,7 @@
         console.log({{ acc }})
     {% endfor %}
 
-    {% for p in collections.all_products %}
-        console.log({{ p | json }})
+    {% for c in collections %}
+        console.log({{ c | json }})
     {% endfor %}
 </script>
