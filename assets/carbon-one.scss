@@ -102,12 +102,8 @@
                             border-radius: 100%;
                         }
 
-                        &[white] {
-                            background-color: #ddd;
-                        }
-
-                        &[black] {
-                            background-color: #000;
+                        &[attribute="Sirius"] {
+                            background-color: #FA812B;
                         }
                     }
                 }
