@@ -28,7 +28,7 @@
         console.log({{ acc }})
     {% endfor %}
     
-    console.log(JSON.parse(JSON.stringify({{ all_products | json }})))
+    console.log(JSON.parse(JSON.stringify({{ products | json }})))
 
     {% for p in all_products %}
         console.log({{ p | json }})
