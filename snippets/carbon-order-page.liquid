@@ -27,7 +27,11 @@
     {% assign accessories_map = "7633738596568,7633738662104,7633738531032" | split: ',' %}
 
     {% for acc in accessories_map %}
-        console.log({{ acc }})
+        {% for prod in collections["accessories"].products %}
+            {% if acc == prod.id %}
+                console.log({{ prod | json }})
+            {% endif %}
+        {% endfor %}
     {% endfor %}
 
     {% for collection in collections %}
