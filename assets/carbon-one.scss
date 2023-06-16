@@ -118,6 +118,20 @@
                             background-color: #FAF5E7;
                         }
                     }
+
+                    .active {
+                            background-color: transparent;
+                            border: 2px solid #666;
+                        }
+
+                        &[attribute="Sirius"]::after {
+                            background-color: #ddd;
+                        }
+
+                        &[black]::after {
+                            background-color: #000;
+                        }
+                    }
                 }
             }
         }
