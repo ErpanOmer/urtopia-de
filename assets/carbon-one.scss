@@ -40,9 +40,12 @@
                 border-radius: 10px;
                 box-shadow: 0px 3px 20px #00000015;
                 padding: 14px 10px;
+                position: relative;
 
                 .u14Light_v2 {
                     background-image: linear-gradient(180deg, #EE6426, #F4492A);
+                    color: #fff;
+                    position: absolute;
                 }
 
                 .accs {
