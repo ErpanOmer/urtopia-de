@@ -207,10 +207,9 @@
                         border-radius: 10px;
                         border: 1px solid #E0E0E0;
                         margin-right: 6px;
-                        padding-right: 8px;
+                        padding: 1px 8px 1px 1px;
                         align-items: center;
                         cursor: pointer;
-                        padding: 1px;
 
                         & > div {
                             display: flex;
@@ -249,7 +248,7 @@
                         border-color: rgb(0, 0, 0);
                         background: rgb(240, 240, 240);
                         border-width: 2px;
-                        padding: 0;
+                        padding: 0 7px 0 0;
                     }
                 }
 
