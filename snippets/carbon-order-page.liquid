@@ -158,9 +158,7 @@
     })
 
     $('.accessories .items .item').on('click', e => {
-        const item = $(e.target)
-
-        console.log(item.closest('.item'))
+        const item = $(e.target).closest('.item')
 
         item.hasClass('active') ? item.removeClass('active') : item.addClass('active')
     })
