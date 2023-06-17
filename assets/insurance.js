@@ -224,7 +224,7 @@ class Insurance {
   init() {
     this.generateFakeAddToCart();
 
-    if (!location.href.includes('/products/urtopia-carbon-e-bike')) {
+    if (location.href.includes('/products/urtopia-carbon-e-bike')) {
       this.moveInsuranceMetafieldsInPlace();
       this.moveInsuranceProductInPlace();
     }
