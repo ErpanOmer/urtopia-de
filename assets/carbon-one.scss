@@ -193,6 +193,8 @@
                 .items {
                     display: flex;
                     flex-direction: row;
+                    overflow-x: hidden;
+                    max-width: 100%;
 
                     .item {
                         display: grid;
@@ -202,7 +204,6 @@
                         border-radius: 10px;
                         border: 1px solid #E0E0E0;
                         margin-right: 6px;
-                        overflow-x: hidden;
 
                         & > div {
                             display: flex;
