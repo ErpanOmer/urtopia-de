@@ -160,6 +160,8 @@
     $('.accessories .items .item').on('click', e => {
         const item = $(e.target)
 
+        console.log(item)
+
         item.hasClass('active') ? item.removeClass('active') : item.addClass('active')
     })
     
