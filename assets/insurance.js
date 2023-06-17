@@ -223,8 +223,11 @@ class Insurance {
   
   init() {
     this.generateFakeAddToCart();
-    this.moveInsuranceMetafieldsInPlace();
-    this.moveInsuranceProductInPlace();
+
+    if (!location.href.includes('/products/urtopia-carbon-e-bike')) {
+      this.moveInsuranceMetafieldsInPlace();
+      this.moveInsuranceProductInPlace();
+    }
   }
 
   moveInsuranceMetafieldsInPlace() {
