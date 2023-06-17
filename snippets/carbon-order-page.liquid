@@ -87,6 +87,9 @@
         if (style && size) {
             current_variant = findVariantOptions(style, size)
             current_variant_id = current_variant.id
+
+
+            history.replaceState(null, '', `${location.pathname}?variant=${current_variant_id}`);
         }
 
         console.log(current_variant)
