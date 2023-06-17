@@ -46,7 +46,9 @@
                 <div class="items">
                     {% for acc in accessories_map %}
                         {% for prod in collections['on-page'].products %}
-                            <div class="item"></div>
+                            <div class="item">
+                                {{ prod.title }}
+                            </div>
                         {% endfor %}
                     {% endfor %}
                 </div>
