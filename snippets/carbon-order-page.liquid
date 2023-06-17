@@ -49,7 +49,7 @@
                 </div>
                 <div class="items mb16">
                     {% for prod in collections['on-page'].products %}
-                        <div class="item">
+                        <div class="item" variant-id="{{ prod.variants | first }}">
                             {{ prod.featured_image | image_url: width: 400 | image_tag }}
                             <div>
                                 <span class=u11Light_v2>+</span>
