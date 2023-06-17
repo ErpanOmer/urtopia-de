@@ -96,8 +96,12 @@
 
     $('.product-panel .options .option >div:not(.u17DemiBold_v2) > div').on('click',e => {
         const t = $(e.target)
-        $(e.target).parent().find('.active').removeClass('active')
-        $(e.target).addClass('active')
+
+        if ($(e.target).parent().hasClass('Style')) {
+            changeAvive(t.attr('attribute'), current_variant.option2)
+        } else {
+            changeAvive(current_variant.option1, t.attr('attribute'))
+        }
     })
 
 
