@@ -512,6 +512,32 @@
                 }
             }
 
+            .eurobike {
+                background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18586_2x_23fac6b2-2c29-4b65-b26d-c006c196cbaf.jpg?v=1686989368');
+    
+                .centeral-content {
+                    & > div {
+                        &:last-child {
+                            padding: 36vw 0 18vw;
+                            flex: unset;
+    
+                            .u56DemiBold_v2 {
+                                font-size: 30px;
+                            }
+
+                            .u24DemiBold_v2,
+                            .u20Medium_v2 {
+                                font-size: 14px;
+                            }
+
+                            .u24DemiBold_v2 {
+                                margin: 8vw 0;
+                            }
+                        }
+                    }
+                }
+            }
+
 
             .bluetti {
                 background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18562_2x_0e6bea7e-9e64-48ce-b6ae-aafcce7796a3.png?v=1685620282');
