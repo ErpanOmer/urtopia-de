@@ -1,7 +1,7 @@
 <div class="product">
     <div class="centeral-content">
         <div></div>
-        <div class="product-panel">
+        <div class="product-panel" data-pf-type="ProductBox">
             <div class="u36DemiBold_v2 mb16">{{ product.title }}</div>
             <div class="u30DemiBold_v2 mb16">{{ product.price | money }}</div>
             <div class="sale mb16">
@@ -61,7 +61,7 @@
                     {% endfor %}
                 </div>
             </div>
-            <div class="buttons" data-pf-type="ProductBox">
+            <div class="buttons .pf-product-form">
                 <button
                     data-product-id="{{ product.id }}"
                     data-checkout="same"
