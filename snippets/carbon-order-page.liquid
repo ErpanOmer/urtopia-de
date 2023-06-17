@@ -150,13 +150,9 @@
 
 
     $('.accessories .navigate > div').on('click', e => {
-        const items = $('.accessories .items')
-        
         items.animate({
             scrollLeft: $('.accessories .items').scrollLeft() + ($(e.target).hasClass('next') ? 180 : -180)
         }, 300)
-
-        console.log(e)
     })
     
 </script>
