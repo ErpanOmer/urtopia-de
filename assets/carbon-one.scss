@@ -153,6 +153,14 @@
                         &[attribute="Midnight in Paris"]::after {
                             background-color: #FFEC0B;
                         }
+
+                        &[attribute="Midnight in Paris"]::before {
+                            left: 2px;
+                            top: 2px;
+                            right: 2px;
+                            height: 14px;
+                            width: 26px;
+                        }
                     }
                 }
 
