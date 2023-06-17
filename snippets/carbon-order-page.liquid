@@ -57,7 +57,7 @@
         sizes[{{ variant.option2 | json }}] = 1
     {% endfor %}
 
-    console.log('styles', styles)
+    console.log('variants', variants)
 
     for (const style of Object.keys(styles)) {
         $('.product .product-panel .Style').append(`<div attribute="${style}" class="${style}"></div>`)
