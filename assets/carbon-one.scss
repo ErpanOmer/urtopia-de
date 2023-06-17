@@ -260,6 +260,14 @@
                         border-top: 2px solid #aaa;
                         cursor: pointer;
                     }
+
+                    .prev {
+                        transform: rotate(-45deg) translate(-100%, -100%);
+                    }
+
+                    .next {
+                        transform: rotate(135deg) translate(-50%, -50%);
+                    }
                 }
             }
         }
