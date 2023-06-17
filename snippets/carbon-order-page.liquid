@@ -44,6 +44,7 @@
             <div class="accessories">
                 <div class="u17DemiBold_v2 mb16">Gears you need</div>
                 <div class="items mb16">
+                    <div class="navigate"></div>
                     {% for prod in collections['on-page'].products %}
                         <div class="item">
                             {{ prod.featured_image | image_url: width: 400 | image_tag }}
@@ -53,6 +54,7 @@
                                 <span class="u11Medium_v2">{{ prod.title }}</span>
                             </div>
                         </div>
+                        <div class="navigate"></div>
                     {% endfor %}
                 </div>
             </div>
