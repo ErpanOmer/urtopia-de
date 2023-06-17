@@ -52,6 +52,10 @@
     const styles = {}
     const sizes = {}
 
+    function findVariant (style, size) {
+        return variants.find(v => `${style} / ${size}` === v.title)
+    }
+
     {% for variant in product.variants %}
         styles[{{ variant.option1 | json }}] = 1
         sizes[{{ variant.option2 | json }}] = 1
