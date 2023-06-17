@@ -56,6 +56,18 @@
         return variants.find(v => `${style} / ${size}` === v.title)
     }
 
+    function findAvailableVariant () {
+        return variants.find(v => v.available)
+    }
+
+    function changeAvive (style, size) {
+        if (style) {
+            $(`.product .product-panel .Style > div[attribute="${style}"]`).addClass('active')
+            $(`.product .product-panel .Style > .active"]`).removeClass('active')
+        }
+        
+    }
+
     {% for variant in product.variants %}
         styles[{{ variant.option1 | json }}] = 1
         sizes[{{ variant.option2 | json }}] = 1
@@ -77,5 +89,8 @@
         $(e.target).parent().find('.active').removeClass('active')
         $(e.target).addClass('active')
     })
+
+
+    changeAvive(findAvailableVariant().option1, findAvailableVariant().option2)
     
 </script>
