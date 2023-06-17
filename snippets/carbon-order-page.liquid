@@ -65,6 +65,11 @@
             $(`.product .product-panel .Style > div[attribute="${style}"]`).addClass('active')
             $(`.product .product-panel .Style > .active"]`).removeClass('active')
         }
+
+        if (size) {
+            $(`.product .product-panel .Size > div[attribute="${size}"]`).addClass('active')
+            $(`.product .product-panel .Size > .active"]`).removeClass('active')
+        }
         
     }
 
