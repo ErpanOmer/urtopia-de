@@ -197,6 +197,13 @@
                     .item {
                         display: grid;
                         grid-template-columns: 1fr 1fr;
+                        min-width: 180px;
+                        max-width: 180px;
+
+                        & > div {
+                            display: flex;
+                            flex-direction: column;
+                        }
                     }
                 }
             }
