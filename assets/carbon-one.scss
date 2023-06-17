@@ -245,6 +245,8 @@
 
                 .navigate {
                     position: relative;
+                    display: flex;
+                    justify-content: space-between;
 
                     & > div {
                         width: 12px;
