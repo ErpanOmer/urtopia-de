@@ -277,6 +277,15 @@
                     }
                 }
             }
+
+            .buttons {
+                .addToCartBtn {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    background-color: #EB5A2D;
+                }
+            }
         }
     }
 }
