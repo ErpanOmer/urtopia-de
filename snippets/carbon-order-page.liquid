@@ -187,7 +187,8 @@
     
 
     window.addEventListener('load', e => {
-        $('.buttons').before($('.js-insurance-product-template').html())
+        $('.product .product-panel .buttons').before($('.js-insurance-product-template').html())
+        $('.product .product-panel').before($('.js-insurance-metafields-template').html())
     })
     
 </script>
