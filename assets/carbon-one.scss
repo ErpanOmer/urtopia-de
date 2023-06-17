@@ -282,6 +282,11 @@
                 .addToCartBtn {
                     border: none;
                     width: 100%;
+
+                    &[disabled] {
+                        cursor: not-allowed;
+                        opacity: .5;
+                    }
                 }
             }
         }
