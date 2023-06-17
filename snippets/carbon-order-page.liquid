@@ -151,9 +151,7 @@
 
     $('.accessories .navigate > div').on('click', e => {
         if ($(e.target).hasClass('next')) {
-            $('.accessories .items')
-
-            $('html').animate({
+            $('.accessories .items').animate({
                 scrollLeft: $('.accessories .items').scrollLeft() + 180
             }, 300)
         }
