@@ -188,6 +188,18 @@
                     }
                 }
             }
+
+            .accessories {
+                .items {
+                    display: flex;
+                    flex-direction: row;
+
+                    .item {
+                        display: grid;
+                        grid-template-columns: 1fr 1fr;
+                    }
+                }
+            }
         }
     }
 }
