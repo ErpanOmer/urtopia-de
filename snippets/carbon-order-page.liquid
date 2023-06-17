@@ -156,5 +156,11 @@
             scrollLeft: $('.accessories .items').scrollLeft() + ($(e.target).hasClass('next') ? 180 : -180)
         }, 300)
     })
+
+    $('.accessories .items .item').on('click', e => {
+        const item = $(e.target)
+
+        item.hasClass('active') ? item.removeClass('active') : item.addClass('active')
+    })
     
 </script>
