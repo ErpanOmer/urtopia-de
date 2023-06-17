@@ -57,11 +57,11 @@
     console.log('styles', styles)
 
     for (const style of Object.keys(styles)) {
-        $('.product .product-panel .option >div:not(.u17DemiBold_v2)').append(`<div attribute="${style}" class="${style}"></div>`)
+        $('.product .product-panel .option[option="Style"] > div:not(.u17DemiBold_v2)').append(`<div attribute="${style}" class="${style}"></div>`)
     }
 
     for (const size of Object.keys(sizes)) {
-        $('.product .product-panel .option >div:not(.u17DemiBold_v2)').append(`<div attribute="${size}" class="${size} u17Light_v2">${size}</div>`)
+        $('.product .product-panel .option[option="Size"] > div:not(.u17DemiBold_v2)').append(`<div attribute="${size}" class="${size} u17Light_v2">${size}</div>`)
     }
 
 
