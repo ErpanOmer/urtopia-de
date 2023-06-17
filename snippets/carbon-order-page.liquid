@@ -37,7 +37,7 @@
                 {% for option in product.options %}
                     <div class="option" option={{option}}>
                         <div class="u17DemiBold_v2 mb16">{{ option }} - <span class="u17Light_v2"></span></div>
-                        <div class="{{option}} mb16"></div>
+                        <div class="mb16"></div>
                     </div>
                 {% endfor %}
             </div>
@@ -63,5 +63,10 @@
     for (const size of Object.keys(sizes)) {
         $('.product .product-panel .Size').append(`<div attribute="${size}" class="${size} u17Light_v2">${size}</div>`)
     }
+
+
+    $('.product-panel .options .option >div:not(.u17DemiBold_v2) > div').click(e => {
+        console.log('e', e)
+    })
     
 </script>
