@@ -238,6 +238,17 @@
                             max-width: 80px;
                         }
                     }
+
+                    .navigate {
+                        width: 12px;
+                        height: 12px;
+                        position: absolute;
+                        top: 50%;
+                        border-left: 2px solid #aaa;
+                        border-top: 2px solid #aaa;
+                        transform: translate(-100%, -50%) rotate(-45deg);
+                    }
+                    }
                 }
             }
         }
