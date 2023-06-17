@@ -47,8 +47,8 @@
 
 <script>
     const variants = JSON.parse(JSON.stringify({{ product.variants | json }}))
-    const current_variant_id = null
-    const current_variant = null
+    let current_variant_id = null
+    let current_variant = null
     const styles = {}
     const sizes = {}
 
@@ -70,7 +70,12 @@
             $(`.product .product-panel .Size > div[attribute="${size}"]`).addClass('active')
             $(`.product .product-panel .Size > .active"]`).removeClass('active')
         }
-        
+
+
+        if (style && size) {
+            current_variant = findVariant(style, size)
+            current_variant_id = current_variant.id
+        }
     }
 
     {% for variant in product.variants %}
