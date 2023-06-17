@@ -48,6 +48,11 @@
 <script>
     const search = getSearchValues()
     const variants = JSON.parse(JSON.stringify({{ product.variants | json }}))
+    const size_map = {
+        M: 'Fit for 170-185 cm',
+        L: 'Fit for 180-195 cm'
+    }
+
     let current_variant_id = null
     let current_variant = null
     const styles = {}
@@ -75,7 +80,7 @@
         if (size) {
             $(`.product .product-panel .Size .active`).removeClass('active')
             $(`.product .product-panel .Size > div[attribute="${size}"]`).addClass('active')
-            $(`.product .product-panel .options > div[option="Size"] .u17DemiBold_v2 .u17Light_v2`).text(size)
+            $(`.product .product-panel .options > div[option="Size"] .u17DemiBold_v2 .u17Light_v2`).text(size_map[size])
         }
 
 
