@@ -297,12 +297,17 @@ function addToCartInsurance(parse, show = false) {
     !show && changeAddToCartText(parse,1);
     addingNew = true;
 
-    const form = document.querySelector(selectors.form);
-    const formData = new FormData(form);
-    
     const item0 = { 
-      id: formData.get('items[0]id'),
       quantity: 1
+    }
+    
+
+    if (!location.href.includes('/products/urtopia-carbon-e-bike')) {
+      const form = document.querySelector(selectors.form);
+      const formData = new FormData(form);
+      item0.id = formData.get('items[0]id')
+    } else {
+      item0.id = current_variant_id
     }
     
     if (formData.get('items[0]properties[_insurance_variant_id]')) {
