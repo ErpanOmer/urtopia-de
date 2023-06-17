@@ -191,7 +191,7 @@
 
             .accessories {
                 position: relative;
-                
+
                 .items {
                     display: flex;
                     flex-direction: row;
@@ -246,7 +246,9 @@
                 }
 
                 .navigate {
-                    position: relative;
+                    position: absolute;
+                    width: 100%;
+                    top: 50%;
                     display: flex;
                     justify-content: space-between;
 
