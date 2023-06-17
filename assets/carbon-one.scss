@@ -280,14 +280,8 @@
 
             .buttons {
                 .addToCartBtn {
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    text-align: center;
-                    border-radius: 30px;
-                    background-color: #EB5A2D;
                     border: none;
-                    transition: all .3s;
+                    width: 100%;
                 }
             }
         }
