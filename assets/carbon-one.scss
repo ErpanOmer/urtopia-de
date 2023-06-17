@@ -190,6 +190,8 @@
             }
 
             .accessories {
+                position: relative;
+                
                 .items {
                     display: flex;
                     flex-direction: row;
