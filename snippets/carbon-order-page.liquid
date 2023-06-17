@@ -67,7 +67,7 @@
 
     $('.product-panel .options .option >div:not(.u17DemiBold_v2) > div').on('click',e => {
         const t = $(e.target)
-        $(e.target).parent().find('div').removeClass('active')
+        $(e.target).parent().find('.active').removeClass('active')
         $(e.target).addClass('active')
     })
     
