@@ -204,10 +204,12 @@
                         border-radius: 10px;
                         border: 1px solid #E0E0E0;
                         margin-right: 6px;
+                        padding: 8px;
 
                         & > div {
                             display: flex;
                             flex-direction: column;
+                            text-align: right;
                         }
                     }
                 }
