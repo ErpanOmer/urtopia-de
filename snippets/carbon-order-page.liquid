@@ -69,11 +69,13 @@
         if (style) {
             $(`.product .product-panel .Style .active`).removeClass('active')
             $(`.product .product-panel .Style > div[attribute="${style}"]`).addClass('active')
+            $(`.product .product-panel .options > div[option="Style"] .u17DemiBold_v2 .u17Light_v2`).text(style)
         }
 
         if (size) {
             $(`.product .product-panel .Size .active`).removeClass('active')
             $(`.product .product-panel .Size > div[attribute="${size}"]`).addClass('active')
+            $(`.product .product-panel .options > div[option="Size"] .u17DemiBold_v2 .u17Light_v2`).text(size)
         }
 
 
