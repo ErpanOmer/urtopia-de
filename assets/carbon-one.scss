@@ -291,6 +291,11 @@
                     &:hover {
                         opacity: 0.9;
                     }
+
+                    & > i {
+                        display: none;
+                        margin-right: 10px;
+                    }
                 }
             }
         }
