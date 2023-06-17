@@ -46,14 +46,19 @@
 </div>
 
 <script>
+    const search = getSearchValues()
     const variants = JSON.parse(JSON.stringify({{ product.variants | json }}))
     let current_variant_id = null
     let current_variant = null
     const styles = {}
     const sizes = {}
 
-    function findVariant (style, size) {
+    function findVariantOptions (style, size) {
         return variants.find(v => `${style} / ${size}` === v.title)
+    }
+
+    function findVariantFromId (id) {
+        return variants.find(v => String(v.id) === String(id))
     }
 
     function findAvailableVariant () {
@@ -73,7 +78,7 @@
 
 
         if (style && size) {
-            current_variant = findVariant(style, size)
+            current_variant = findVariantOptions(style, size)
             current_variant_id = current_variant.id
         }
 
@@ -106,7 +111,11 @@
         }
     })
 
-
-    changeAvive(findAvailableVariant().option1, findAvailableVariant().option2)
+    // 如果有查询参数
+    if (search.variant) {
+        changeAvive(findVariantFromId(search.variant).option1, findVariantFromId(search.variant).option2) 
+    } else {
+        changeAvive(findAvailableVariant().option1, findAvailableVariant().option2)
+    }
     
 </script>
