@@ -243,6 +243,12 @@
                             max-width: 80px;
                         }
                     }
+
+                    .active {
+                        border-color: rgb(0, 0, 0);
+                        background: rgb(240, 240, 240);
+                        border-width: 2px;
+                    }
                 }
 
                 .navigate {
