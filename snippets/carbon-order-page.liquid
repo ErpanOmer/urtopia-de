@@ -47,7 +47,11 @@
                     {% for prod in collections['on-page'].products %}
                         <div class="item">
                             {{ prod.featured_image | image_url: width: 400 | image_tag }}
-                            {{ prod.title }}
+                            <div>
+                                <span>+<span>
+                                <span>{{ prod.price | money }}</span>
+                                <span>{{ prod.title }}</span>
+                            </div>
                         </div>
                     {% endfor %}
                 </div>
