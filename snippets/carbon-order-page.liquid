@@ -133,6 +133,11 @@
         console.log(current_variant)
     }
 
+
+    function changeAddToCartText () {
+        
+    }
+
     {% for variant in product.variants %}
         styles[{{ variant.option1 | json }}] = 1
         sizes[{{ variant.option2 | json }}] = 1
