@@ -456,6 +456,9 @@
 
                     .swiper-slide {
                         cursor: pointer;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
                     }
 
                     .swiper-slide-thumb-active {
