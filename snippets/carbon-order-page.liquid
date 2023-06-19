@@ -368,7 +368,6 @@
     
     const LeftSwiper = new Swiper(".product .left-swiper", {
         direction: 'vertical',
-        height: 64,
         {% comment %} spaceBetween: 15, {% endcomment %}
         slidesPerView: 8,
         freeMode: true,
@@ -376,6 +375,7 @@
       })
 
       const rightSwiper = new Swiper(".product .right-swiper", {
+        autoHeight: true,
         navigation: {
           nextEl: ".product .right-swiper .swiper-button-next",
           prevEl: ".product .right-swiper .swiper-button-prev",
