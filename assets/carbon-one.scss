@@ -708,6 +708,12 @@
                     }
                 }
             }
+
+            .featured_image {
+                grid-template-columns: 1fr;
+                height: unset;
+                grid-template-rows: unset;
+            }
         }
     }
 }
