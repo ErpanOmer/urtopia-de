@@ -381,7 +381,7 @@
                 display: grid;
                 grid-template-columns: repeat(3, 1fr);
 
-                & > div {
+                &>div {
                     display: flex;
                     align-items: center;
                     justify-content: flex-start;
@@ -550,6 +550,7 @@
 
     .product {
         margin: 0;
+
         .centeral-content {
             padding: 0 4vw;
 
@@ -558,7 +559,7 @@
                 width: 92vw;
                 max-width: 92vw;
 
-                & > .u36DemiBold_v2 {
+                &>.u36DemiBold_v2 {
                     font-size: 24px;
                 }
 
@@ -599,6 +600,29 @@
                 .dialogs {
                     .u17Medium_v2 {
                         font-size: 14px;
+                    }
+                }
+
+                .buttons {
+                    .addToCartBtn {
+                        font-size: 14px;
+                    }
+
+                    .orderTestRideBtn {
+                        font-size: 14px;
+
+                        span {
+                            grid-template-columns: 0.7fr 1fr;
+                        }
+
+                        .oneeee {
+                            width: 80px;
+                        }
+
+                        .twoooo {
+                            width: 85px;
+                        }
+
                     }
                 }
             }
