@@ -432,7 +432,6 @@
                             justify-content: center;
                             transform: translateY(100%);
                             opacity: 0;
-                            transition: all .3s;
                             
                             .u20DemiBold_v2 {
                                 font-style: italic;
@@ -449,6 +448,7 @@
                         & > div {
                             transform: translateY(0);
                             opacity: 1;
+                            transition: all .3s;
                         }
                     }
                 }
