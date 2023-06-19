@@ -322,6 +322,9 @@
 
     $('.product .dialogs > div').on('click', (e, i) => {
         console.log('e', e.target, i)
+
+        e.stopPropagation()
+        return false
     })
 
     
