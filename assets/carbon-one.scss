@@ -423,17 +423,9 @@
 
             .right-swiper {
                 .swiper-wrapper {
-                    height: 100%;
-                    .swiper-slide {
-                        height: 100%;
-                        display: flex;
-                        align-items: center;
-                        
-                        img {
-                            // transform: translateY(-20%);
-                        }
-                    }
+
                 }
+                
 
                 .swiper-button-prev,
                 .swiper-button-next {
