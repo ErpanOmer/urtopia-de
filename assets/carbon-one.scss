@@ -547,4 +547,16 @@
             }
         }
     }
+
+    .product {
+        .centeral-content {
+            padding: 0 4vw;
+
+            .product-panel {
+                min-width: unset;
+                width: 92vw;
+                max-width: 92vw;
+            }
+        }
+    }
 }
