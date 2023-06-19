@@ -125,7 +125,7 @@
         return variants.find(v => v.available)
     }
 
-    function changeAvive (style, size) {
+    function changeVariant (style, size) {
         if (style) {
             $(`.product .product-panel .Style .active`).removeClass('active')
             $(`.product .product-panel .Style > div[attribute="${style}"]`).addClass('active')
@@ -147,6 +147,10 @@
             history.replaceState(null, '', `${location.pathname}?variant=${current_variant_id}`);
             $('.product .product-panel input[name="id"]').val(current_variant_id)
             $('.product .delivery_time').text(global_config.ebike_delivery_time[current_variant_id])
+
+            if (!current_variant.available) {
+                
+            }
         }
 
         console.log(current_variant)
@@ -257,17 +261,17 @@
         const t = $(e.target)
 
         if ($(e.target).parent().hasClass('Style')) {
-            changeAvive(t.attr('attribute'), current_variant.option2)
+            changeVariant(t.attr('attribute'), current_variant.option2)
         } else {
-            changeAvive(current_variant.option1, t.attr('attribute'))
+            changeVariant(current_variant.option1, t.attr('attribute'))
         }
     })
 
     // 如果有查询参数
     if (search.variant) {
-        changeAvive(findVariantFromId(search.variant).option1, findVariantFromId(search.variant).option2) 
+        changeVariant(findVariantFromId(search.variant).option1, findVariantFromId(search.variant).option2) 
     } else {
-        changeAvive(findAvailableVariant().option1, findAvailableVariant().option2)
+        changeVariant(findAvailableVariant().option1, findAvailableVariant().option2)
     }
 
 
