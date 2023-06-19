@@ -422,9 +422,12 @@
             }
 
             .right-swiper {
-                .swiper-slide {
-                    img {
-                        // transform: translateY(-20%);
+                .swiper-wrapper {
+                    .swiper-slide {
+                        height: 100%;
+                        img {
+                            // transform: translateY(-20%);
+                        }
                     }
                 }
 
