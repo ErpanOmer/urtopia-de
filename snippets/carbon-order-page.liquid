@@ -194,6 +194,9 @@
         ],
         Lyra: [
             'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18525_2x_f631983d-4ffb-4d7c-8bd3-780e1febcbd7.png?v=1687182802'
+        ],
+        "Midnight in Paris": [
+            "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18526_2x_31185c82-c43d-4880-93f6-21812c9ab738.png?v=1687182989"
         ]
     }
     
@@ -239,10 +242,7 @@
             $(`.product .product-panel .options > div[option="Style"] .u17DemiBold_v2 .u17Light_v2`).text(style)
 
             let swiper_arr = []
-
-            console.log('style', style)
-
-            swiper_arr = swiper_arr.concat(swiper_series[style], commonSwiper)
+            swiper_arr = swiper_arr.concat(swiper_series[style], vanilla ? [] : commonSwiper)
 
             $('.product .right-swiper .swiper-wrapper').html(swiper_arr.map(s => `<div class="swiper-slide"><img src="${s}"></div>`).join(''))
             $('.product .left-swiper .swiper-wrapper').html(swiper_arr.map(s => `<div class="swiper-slide"><img src="${s}"></div>`).join(''))
