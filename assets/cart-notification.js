@@ -122,6 +122,8 @@ class CartNotification extends HTMLElement {
     } else if (this.cartItems) {
       var resHtml = "";
       this.cartItems.forEach((item) => {
+        console.log('item', item)
+
         resHtml +=
           "<div style='display:flex;'>" +
           new DOMParser()
