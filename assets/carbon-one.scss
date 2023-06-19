@@ -379,6 +379,10 @@
             .support {
                 display: grid;
                 grid-template-columns: repeat(3, 1fr);
+
+                img {
+                    max-width: 30px;
+                }
             }
         }
     }
