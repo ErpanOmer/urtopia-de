@@ -1,7 +1,15 @@
 <div class="product" data-pf-type="ProductBox">
     <div class="centeral-content">
         <div class="featured_image">
-            <div class="right-swiper"></div>
+            <div class="right-swiper">
+                <div class="swiper-wrapper">
+                    {% for image in product.images %}
+                        <div class="swiper-slide">
+                            {{ image | image_url: width: 200 | image_tag }}
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
             <div>
                 <div class="swiper right-swiper">
                     <div class="swiper-wrapper">
