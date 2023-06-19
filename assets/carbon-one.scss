@@ -399,6 +399,10 @@
 
                 .u17Medium_v2 {
                     display: flex;
+                    padding: 16px 0;
+                    border-bottom: 1px solid #eee;
+                    justify-content: space-between;
+                    cursor: pointer;
                 }
             }
         }
