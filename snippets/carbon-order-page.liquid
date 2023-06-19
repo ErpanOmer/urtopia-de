@@ -320,8 +320,8 @@
         return false;
     })
 
-    $('.product .dialogs > div').on('click', e => {
-        console.log('e', e)
+    $('.product .dialogs > div').on('click', (e, i) => {
+        console.log('e', e.target, i)
     })
 
     
