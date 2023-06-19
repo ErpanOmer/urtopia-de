@@ -323,6 +323,9 @@
     $('.product .dialogs > div').on('click', e => {
 
         $('.product .dialogs > div').each((t, i) => {
+            console.log($(e.target).closest('.u17Medium_v2'))
+            console.log(t)
+
             if ($(e.target).closest('.u17Medium_v2')[0] === t) {
                 console.log(i)
             }
