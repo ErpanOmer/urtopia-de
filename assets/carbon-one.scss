@@ -411,6 +411,7 @@
             display: grid;
             grid-template-columns: 64px calc(100% - 84px);
             grid-column-gap: 20px;
+            height: 600px;
 
             .swiper {
                 // max-width: 100%;
