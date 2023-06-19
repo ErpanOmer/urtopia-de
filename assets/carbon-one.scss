@@ -469,6 +469,11 @@
                     max-width: 40px;
                     margin-right: 6px;
                 }
+
+                & > span {
+                    display: flex;
+                    flex-direction: column;
+                }
             }
         }
     }
