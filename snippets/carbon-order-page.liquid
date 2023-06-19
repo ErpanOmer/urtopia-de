@@ -424,7 +424,7 @@
         },
       });
 
-      $('.product .right-swiper .swiper-wrapper').html(commonSwiper.map(s => `<div class="swiper-slide">${s}</div>`).join(''))
+      $('.product .right-swiper .swiper-wrapper').html(commonSwiper.map(s => `<div class="swiper-slide"><img src="${s}"></div>`).join(''))
       setTimeout(() => rightSwiper.updateSlides(), 100)
     
 
