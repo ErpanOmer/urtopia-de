@@ -636,6 +636,7 @@
 
         .centeral-content {
             padding: 0 4vw;
+            grid-template-columns: 1fr;
 
             .product-panel {
                 min-width: unset;
