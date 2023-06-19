@@ -10,18 +10,16 @@
                     {% endfor %}
                 </div>
             </div>
-            <div>
-                <div class="swiper right-swiper">
-                    <div class="swiper-wrapper">
-                        {% for image in product.images %}
-                            <div class="swiper-slide">
-                                {{ image | image_url: width: 1000 | image_tag }}
-                            </div>
-                        {% endfor %}
-                    </div>
-                    <div class="swiper-button-prev"></div><!--左箭头。如果放置在swiper外面，需要自定义样式。-->
-                    <div class="swiper-button-next"></div><!--右箭头。如果放置在swiper外面，需要自定义样式。-->
+            <div class="swiper right-swiper">
+                <div class="swiper-wrapper">
+                    {% for image in product.images %}
+                        <div class="swiper-slide">
+                            {{ image | image_url: width: 1000 | image_tag }}
+                        </div>
+                    {% endfor %}
                 </div>
+                <div class="swiper-button-prev"></div><!--左箭头。如果放置在swiper外面，需要自定义样式。-->
+                <div class="swiper-button-next"></div><!--右箭头。如果放置在swiper外面，需要自定义样式。-->
             </div>
         </div>
         <form method="post" accept-charset="UTF-8" action="/cart/add" class="product-panel pf-product-form" data-productid={{ product.id }} id="product_form_{{ product.id }}" enctype="multipart/form-data">
