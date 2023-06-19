@@ -321,10 +321,21 @@
     })
 
     $('.product .dialogs > div').on('click', e => {
+        const m = {
+            0: 'one',
+            1: 'two',
+            2: 'three',
+            3: 'four'
+        }
 
         $('.product .dialogs > div').each((i, t) => {
             if ($(e.target).closest('.u17Medium_v2')[0] === t) {
                 console.log(i)
+
+                const layer = document.querySelector(`.order-modal-${m[i]}`);
+                const laybox = document.querySelector(`.order-modal-layer-${m[i]}`);
+                layer.style.display = "flex";
+                laybox.className += " dialog-open";
             }
         })
     })
