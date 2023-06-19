@@ -430,6 +430,8 @@
                             flex-direction: column;
                             align-items: center;
                             justify-content: center;
+                            transform: translateY(100%);
+                            transition: all .3s;
                             
                             .u20DemiBold_v2 {
                                 font-style: italic;
@@ -439,6 +441,12 @@
                                 height: 60px;
                                 width: auto;
                             }
+                        }
+                    }
+
+                    .swiper-slide-active {
+                        & > div {
+                            transform: translateY(0);
                         }
                     }
                 }
