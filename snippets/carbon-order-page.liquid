@@ -5,16 +5,16 @@
             <input type="hidden" name="id" data-product-id="{{product.id}}" value="{{ product.selected_or_first_available_variant.id }}"/>
             <input type="hidden" name="form_type" value="product">
             <input type="hidden" name="utf8" value="✓">
-            <div class="u36DemiBold_v2 mb16">{{ product.title }}</div>
-            <div data-pf-type="JudgeMe" class="sc-eZhRLC gtfCKx pf-25_ order-djs mb16">
+            <div class="u36DemiBold_v2 mb12">{{ product.title }}</div>
+            <div data-pf-type="JudgeMe" class="sc-eZhRLC gtfCKx pf-25_ order-djs mb12">
                 <div class="pf-judme">{% render "judgeme_widgets", widget_type: "judgeme_preview_badge", jm_style: "", concierge_install: false, product: product %}</div>
             </div>
-            <div class="u30DemiBold_v2 mb16">{{ product.price | money }}</div>
-            <div class="sale mb16">
+            <div class="u30DemiBold_v2 mb12">{{ product.price | money }}</div>
+            <div class="sale mb12">
                 <div class="u20DemiBold_v2">€2.699,00 NOW</div>
                 <div class="u17DemiBold_v2">with Green travel sale</div>
             </div>
-            <div class="sale_acc mb16">
+            <div class="sale_acc mb12">
                 <div class="u14Light_v2">And get €169 Accessories for <span class="u20DemiBold_v2">Free</span></div>
                 {% assign accessories_map = "7633738596568,7633738662104,7633738531032" | split: ',' %}
                 <div class="accs">
@@ -35,24 +35,24 @@
                 </div>
                 <div class="u11Light_v2">*Not available with leasing</div>
             </div>
-            <div class="count-down mb16">
+            <div class="count-down mb12">
                 <div class="u17Medium_v2">€600 off + 3 Free Accessories Ends in：</div>
             </div>
             <div class="options">
                 {% for option in product.options %}
                     <div class="option" option={{option}}>
-                        <div class="u17DemiBold_v2 mb16">{{ option }} - <span class="u17Light_v2"></span></div>
-                        <div class="{{ option }} mb16"></div>
+                        <div class="u17DemiBold_v2 mb12">{{ option }} - <span class="u17Light_v2"></span></div>
+                        <div class="{{ option }} mb12"></div>
                     </div>
                 {% endfor %}
             </div>
             <div class="accessories">
-                <div class="u17DemiBold_v2 mb16">Gears you need</div>
+                <div class="u17DemiBold_v2 mb12">Gears you need</div>
                 <div class="navigate">
                     <div class="prev"></div>
                     <div class="next"></div>
                 </div>
-                <div class="items mb16">
+                <div class="items mb12">
                     {% for prod in collections['on-page'].products %}
                         {% assign variant = prod.variants | first %}
                         <div class="item" variant-id="{{ variant.id }}">
@@ -84,8 +84,8 @@
                     <span><span class="u17DemiBold_v2">0% APR Financing</span><span>24 months, €112/month</span></span>
                 </div>
             </div>
-            <div class="delivery_time mb16">Free shipping <span>within 5 days</span></div>
-            <div class="support mb16">
+            <div class="delivery_time mb12">Free shipping <span>within 5 days</span></div>
+            <div class="support mb12">
                 <div>
                     <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_17960_2x_4a54d2f0-0a38-45e6-8cc0-6c040b1f5d6c.png?v=1687161120"/>
                     <span class="u11Medium_v2">Free<br>Shipping</span>
