@@ -171,12 +171,9 @@
         if (type === 'lease_on_jobrad') {
             fetchBuried('websiteclick', `carbon-order-page`, { button: type }, true)
     
-            const bike_style = Array.from(document.querySelectorAll('div[data-swatch-type="image"] input')).find(e => e.checked).value
-            const bike_size = Array.from(document.querySelectorAll('div[data-swatch-type="label"] input')).find(e => e.checked).value
-    
             t.removeClass('loading')
             t.find('span').html(text)
-            return window.open(`/pages/ebike-leasing?bike_style=${bike_style}&bike_size=${bike_size}&utm_source=order_page#forms`)
+            return window.open(`/pages/ebike-leasing?bike_style=${current_variant.option1}&bike_size=${current_variant.option2}&utm_source=order_page#forms`)
         }
     
         if (type === 'klarna_check_out') {
