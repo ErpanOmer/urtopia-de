@@ -455,6 +455,19 @@
                     }
                 }
             }
+
+            .parameters {
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+
+                & > div {
+                    display: flex;
+
+                    img {
+                        max-width: 40px;
+                    }
+                }
+            }
         }
     }
 }
