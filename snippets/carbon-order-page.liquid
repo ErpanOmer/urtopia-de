@@ -256,11 +256,11 @@
             
             // update
             setTimeout(() => {
-                rightSwiper.update()
                 rightSwiper.slideTo(0, 0)
-
-                leftSwiper.update()
+                rightSwiper.update()
+                
                 leftSwiper.slideTo(0, 0)
+                leftSwiper.update()
             }, 0)
         }
 
