@@ -186,6 +186,13 @@
         item.hasClass('active') ? item.removeClass('active') : item.addClass('active')
     })
 
+    $('.product .product-panel').on("submit", function (event) {
+
+        // 阻止默认行为
+        event.preventDefault();
+        return false;
+    })
+
     
 
     

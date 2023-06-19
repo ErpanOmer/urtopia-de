@@ -365,6 +365,7 @@ function addToCartInsurance(parse, show = false) {
       }
     })
     .catch((err) => {
+      console.log('err', err)
       throw new Error(err);
     });
   }
