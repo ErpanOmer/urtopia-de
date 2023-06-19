@@ -463,9 +463,11 @@
 
             & > div {
                 display: flex;
+                align-items: center;
 
                 img {
                     max-width: 40px;
+                    margin-right: 6px;
                 }
             }
         }
