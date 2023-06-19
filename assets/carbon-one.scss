@@ -411,8 +411,9 @@
         .featured_image {
             display: grid;
             grid-template-columns: 64px 1fr;
+            grid-template-rows: 500px 300px;
             // grid-column-gap: 20px;
-            height: 800px;
+            height: 500px;
 
             .swiper {
                 max-width: 100%;
