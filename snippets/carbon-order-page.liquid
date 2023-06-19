@@ -190,7 +190,7 @@
                 return addToCartInsurance("atc", true)
             }
     
-            const body = { items: [{ id: document.querySelector('input[name="id"]').value, quantity: 1 }] }
+            const body = { items: [{ id: current_variant_id, quantity: 1 }] }
             body.items = body.items.concat(global_config.event_accessories_variant_ids.map(id => ({ id, quantity: 1 })))
     
     
