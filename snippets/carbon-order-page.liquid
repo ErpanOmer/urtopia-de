@@ -6,6 +6,9 @@
             <input type="hidden" name="form_type" value="product">
             <input type="hidden" name="utf8" value="✓">
             <div class="u36DemiBold_v2 mb16">{{ product.title }}</div>
+            <div data-pf-type="JudgeMe" class="sc-eZhRLC gtfCKx pf-25_ order-djs">
+                <div class="pf-judme">{% render "judgeme_widgets", widget_type: "judgeme_preview_badge", jm_style: "", concierge_install: false, product: product %}</div>
+            </div>
             <div class="u30DemiBold_v2 mb16">{{ product.price | money }}</div>
             <div class="sale mb16">
                 <div class="u20DemiBold_v2">€2.699,00 NOW</div>
