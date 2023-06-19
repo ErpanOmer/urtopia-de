@@ -149,7 +149,7 @@
             $('.product .delivery_time').text(global_config.ebike_delivery_time[current_variant_id])
 
             const btn =  $('.product .buttons .addToCartBtn')
-            if (!current_variant.available) {
+            if (current_variant.available) {
                 btn.find('span').text('Add to Cart')
                 btn.removeClass('disabled')
             } else {
