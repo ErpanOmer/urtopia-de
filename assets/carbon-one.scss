@@ -300,6 +300,10 @@
                         display: none;
                         margin-right: 10px;
                     }
+
+                    & > .showi {
+                        display:inline-block!important;
+                    }
                 }
             }
         }
