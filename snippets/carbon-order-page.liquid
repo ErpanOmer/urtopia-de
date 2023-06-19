@@ -182,6 +182,46 @@
     const styles = {}
     const sizes = {}
 
+    const commonSwiper = [
+        'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18645_2x_43f4d7ad-7903-459e-aeb0-91ae96d4b7f6.png?v=1687180003',
+        'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18644_2x_e0aa20ff-1158-4513-bc46-707c4927815b.png?v=1687180008',
+        'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18643_2x_2b1badee-eb84-4768-887b-ce81125a4662.png?v=1687180017',
+        'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18642_2x_a05a328d-d8bc-44fc-a033-9c8c7d714090.png?v=1687180019',
+        'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18641_2x_52b34b6c-484b-4e87-840c-8b9e4df0f717.png?v=1687180025',
+        'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18640_2x_e7fbb634-148d-42e6-bd3d-5ed96ac54a5d.png?v=1687180032'
+    ]
+
+    const swiper_series = {
+        Sirius: [
+            "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18515_2x_7f099482-44b8-4fa9-80cc-ec874426129a.png?v=1687182170",
+            "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18527_2x_50db6568-1cec-4122-bea9-f2865377e03d.png?v=1687182155",
+            "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18528_2x_86d3fd70-1b9f-4249-8538-95851658c7f1.png?v=1687182142"
+        ]
+    }
+    
+    const LeftSwiper = new Swiper(".product .left-swiper", {
+        direction: 'vertical',
+        {% comment %} spaceBetween: 15, {% endcomment %}
+        slidesPerView: 8,
+        freeMode: true,
+        watchSlidesProgress: true,
+      })
+
+      const rightSwiper = new Swiper(".product .right-swiper", {
+        autoHeight: true,
+        navigation: {
+          nextEl: ".product .right-swiper .swiper-button-next",
+          prevEl: ".product .right-swiper .swiper-button-prev",
+        },
+        effect: 'fade',
+        fadeEffect:{
+            crossFade: true
+        },
+        thumbs: {
+          swiper: LeftSwiper,
+        },
+      });
+
     function findVariantOptions (style, size) {
         return variants.find(v => `${style} / ${size}` === v.title)
     }
@@ -199,6 +239,15 @@
             $(`.product .product-panel .Style .active`).removeClass('active')
             $(`.product .product-panel .Style > div[attribute="${style}"]`).addClass('active')
             $(`.product .product-panel .options > div[option="Style"] .u17DemiBold_v2 .u17Light_v2`).text(style)
+
+            const swiper_arr = []
+
+            if (style === 'Sirius') {
+
+            }
+
+            $('.product .right-swiper .swiper-wrapper').html(commonSwiper.map(s => `<div class="swiper-slide"><img src="${s}"></div>`).join(''))
+            setTimeout(() => rightSwiper.updateSlides(), 100)
         }
 
         if (size) {
@@ -391,49 +440,6 @@
         })
     })
 
-
-    const commonSwiper = [
-        'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18645_2x_43f4d7ad-7903-459e-aeb0-91ae96d4b7f6.png?v=1687180003',
-        'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18644_2x_e0aa20ff-1158-4513-bc46-707c4927815b.png?v=1687180008',
-        'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18643_2x_2b1badee-eb84-4768-887b-ce81125a4662.png?v=1687180017',
-        'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18642_2x_a05a328d-d8bc-44fc-a033-9c8c7d714090.png?v=1687180019',
-        'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18641_2x_52b34b6c-484b-4e87-840c-8b9e4df0f717.png?v=1687180025',
-        'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18640_2x_e7fbb634-148d-42e6-bd3d-5ed96ac54a5d.png?v=1687180032'
-    ]
-
-    const series = {
-        Sirius: [
-            "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18515_2x_7f099482-44b8-4fa9-80cc-ec874426129a.png?v=1687182170",
-            "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18527_2x_50db6568-1cec-4122-bea9-f2865377e03d.png?v=1687182155",
-            "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18528_2x_86d3fd70-1b9f-4249-8538-95851658c7f1.png?v=1687182142"
-        ]
-    }
-    
-    const LeftSwiper = new Swiper(".product .left-swiper", {
-        direction: 'vertical',
-        {% comment %} spaceBetween: 15, {% endcomment %}
-        slidesPerView: 8,
-        freeMode: true,
-        watchSlidesProgress: true,
-      })
-
-      const rightSwiper = new Swiper(".product .right-swiper", {
-        autoHeight: true,
-        navigation: {
-          nextEl: ".product .right-swiper .swiper-button-next",
-          prevEl: ".product .right-swiper .swiper-button-prev",
-        },
-        effect: 'fade',
-        fadeEffect:{
-            crossFade: true
-        },
-        thumbs: {
-          swiper: LeftSwiper,
-        },
-      });
-
-      $('.product .right-swiper .swiper-wrapper').html(commonSwiper.map(s => `<div class="swiper-slide"><img src="${s}"></div>`).join(''))
-      setTimeout(() => rightSwiper.updateSlides(), 100)
     
 
     
