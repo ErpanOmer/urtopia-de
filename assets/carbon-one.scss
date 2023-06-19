@@ -444,6 +444,10 @@
             .left-swiper {
                 .swiper-wrapper {
 
+                    .swiper-slide {
+                        cursor: pointer;
+                    }
+
                     .swiper-slide-active {
                         background-color: #F4F8FD;
                         border-radius: 10px;
