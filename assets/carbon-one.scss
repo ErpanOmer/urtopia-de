@@ -439,15 +439,17 @@
                     }
                 }
             }
-            // .left-swiper {
-            //     .swiper-wrapper {
-            //         flex-direction: column;
 
-            //         .swiper-slide {
-            //             height: auto;
-            //         }
-            //     }
-            // }
+
+            .left-swiper {
+                .swiper-wrapper {
+
+                    .swiper-slide-active {
+                        background-color: #F4F8FD;
+                        border-radius: 10px;
+                    }
+                }
+            }
         }
     }
 }
