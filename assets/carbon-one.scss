@@ -587,6 +587,10 @@
                 }
 
                 .accessories {
+                    .navigate {
+                        display: none;
+                    }
+
                     .items {
                         overflow-x: auto;
                     }
