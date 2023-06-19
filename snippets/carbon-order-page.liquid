@@ -148,8 +148,13 @@
             $('.product .product-panel input[name="id"]').val(current_variant_id)
             $('.product .delivery_time').text(global_config.ebike_delivery_time[current_variant_id])
 
-            if (!current_variant.available) {
-                
+            const btn =  $('.product .buttons .addToCartBtn')
+            if (current_variant.available) {
+                btn.find('span').text('Add to Cart')
+                btn.removeClass('disabled')
+            } else {
+                btn.find('span').text('Sold out')
+                btn.addClass('disabled')
             }
         }
 
