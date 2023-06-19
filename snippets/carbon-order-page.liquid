@@ -257,13 +257,11 @@
             // update
             setTimeout(() => {
                 rightSwiper.update()
+                rightSwiper.slideTo(0, 0)
+                
                 leftSwiper.update()
-
-                setTimeout(() => {
-                    rightSwiper.slideTo(0, 0)
-                    leftSwiper.slideTo(0, 0)
-                }, 300)
-            }, 100)
+                leftSwiper.slideTo(0, 0)
+            }, 0)
         }
 
         if (size) {
