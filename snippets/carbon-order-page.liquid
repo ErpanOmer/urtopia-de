@@ -368,7 +368,7 @@
 
 
     
-    const LeftSwiper = new Swiper("product .left-swiper", {
+    const LeftSwiper = new Swiper(".product .left-swiper", {
         direction: 'vertical',
         spaceBetween: 15,
         slidesPerView: 8,
@@ -381,9 +381,9 @@
           nextEl: ".product .right-swiper .swiper-button-next",
           prevEl: ".product .right-swiper .swiper-button-prev",
         },
-        {% comment %} thumbs: {
+        thumbs: {
           swiper: LeftSwiper,
-        }, {% endcomment %}
+        },
       });
     
 
