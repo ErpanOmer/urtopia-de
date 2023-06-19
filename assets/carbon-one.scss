@@ -392,6 +392,15 @@
                     }
                 }
             }
+
+            .dialogs {
+                display: flex;
+                flex-direction: column;
+
+                .u11Medium_v2 {
+                    display: flex;
+                }
+            }
         }
     }
 }
