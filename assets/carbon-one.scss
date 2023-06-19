@@ -756,6 +756,24 @@
                     border-radius: 5px;
                     transition: all .3s;
                 }
+
+                .right-swiper {
+                    .swiper-wrapper {
+                        .swiper-slide {
+                            & > div {
+                                margin: 20px 0;
+
+                                .u20DemiBold_v2 {
+                                    font-size: 14px;
+                                }
+
+                                img {
+                                    height: 40px;
+                                }
+                            }
+                        }
+                    }
+                }
             }
         }
     }
