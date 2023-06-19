@@ -425,6 +425,14 @@
                         transform: translateY(-20%);
                     }
                 }
+
+                .swiper-button-prev,
+                .swiper-button-next {
+                    height: 40px;
+                    width: 40px;
+                    background-color: #000;
+                    border-radius: 50%;
+                }
             }
             // .left-swiper {
             //     .swiper-wrapper {
