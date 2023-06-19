@@ -320,11 +320,12 @@
         return false;
     })
 
-    $('.product .dialogs > div').on('click', (e, i) => {
-        console.log('e', e.target, i)
+    $('.product .dialogs > div').on('click', e => {
 
-        e.stopPropagation()
-        return false
+        $('.product .dialogs > div').each((t, i) => )
+        if ($(e.target).closest('.u17Medium_v2')[0] === t) {
+            console.log(i)
+        }
     })
 
     
