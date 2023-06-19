@@ -412,7 +412,7 @@
             display: grid;
             grid-template-columns: 64px 1fr;
             grid-template-rows: 500px;
-            // grid-column-gap: 20px;
+            grid-column-gap: 20px;
             height: 500px;
 
             .swiper {
@@ -424,7 +424,7 @@
             .right-swiper {
                 .swiper-slide {
                     img {
-                        transform: translateY(-20%);
+                        // transform: translateY(-20%);
                     }
                 }
 
