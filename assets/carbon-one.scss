@@ -423,6 +423,8 @@
 
             .right-swiper {
                 .swiper-wrapper {
+                    height: 100%;
+                    
                     .swiper-slide {
                         & > div {
                             margin: 40px 0;
