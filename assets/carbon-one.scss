@@ -412,6 +412,11 @@
             grid-template-columns: 64px calc(100% - 84px);
             grid-column-gap: 20px;
 
+            .swiper {
+                max-width: 100%;
+                width: 100%;
+            }
+
             // .left-swiper {
             //     .swiper-wrapper {
             //         flex-direction: column;
