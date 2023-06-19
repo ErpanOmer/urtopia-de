@@ -413,7 +413,6 @@
             grid-template-columns: 64px 1fr;
             grid-template-rows: 550px;
             grid-column-gap: 40px;
-            height: 550px;
 
             .swiper {
                 max-width: 100%;
@@ -728,7 +727,6 @@
 
             .featured_image {
                 grid-template-columns: 1fr;
-                height: 70vw;
                 grid-template-rows: 70vw;
 
                 .swiper-pagination {
