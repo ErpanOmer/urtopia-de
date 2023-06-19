@@ -87,11 +87,13 @@ class CartNotification extends HTMLElement {
       this.cartItems = parsedState.items;
     }
     this.getSectionsToRender().forEach((section) => {
-      document.getElementById(section.id).innerHTML = this.getSectionInnerHTML(
-        parsedState.sections[section.id],
-        section.selector,
-        parsedState
-      );
+      setTimeout(() => {
+        document.getElementById(section.id).innerHTML = this.getSectionInnerHTML(
+          parsedState.sections[section.id],
+          section.selector,
+          parsedState
+        );
+      }, 100)
     });
 
     if (this.header) this.header.reveal();
