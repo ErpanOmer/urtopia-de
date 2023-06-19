@@ -199,7 +199,7 @@
         ]
     }
     
-    const LeftSwiper = new Swiper(".product .left-swiper", {
+    const leftSwiper = new Swiper(".product .left-swiper", {
         direction: 'vertical',
         {% comment %} spaceBetween: 15, {% endcomment %}
         slidesPerView: 8,
@@ -218,7 +218,7 @@
             crossFade: true
         },
         thumbs: {
-          swiper: LeftSwiper,
+          swiper: leftSwiper,
         },
       });
 
