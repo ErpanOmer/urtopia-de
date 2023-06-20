@@ -136,7 +136,7 @@ $sale_text_color: #3CB1B1;
                 position: relative;
 
                 .u14Light_v2 {
-                    background-image: linear-gradient(180deg, #EE6426, #F4492A);
+                    background-image: $sale_background_image;
                     color: #fff;
                     position: absolute;
                     border-radius: 10px;
