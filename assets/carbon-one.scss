@@ -32,6 +32,13 @@
     align-items: center;
     justify-content: space-between;
     padding: 4vw;
+    z-index: 9999900;
+
+    & > div {
+        display: flex;
+        flex-direction: column;
+        text-align: right;
+    }
 }
 
 .product {
