@@ -803,6 +803,12 @@
                 }
             }
 
+            &:nth-child(3) {
+                .u17Light_v2 {
+                    margin: 5% 0;
+                }
+            }
+
             .logos {
                 display: grid;
                 grid-template-columns: 1fr 1fr;
