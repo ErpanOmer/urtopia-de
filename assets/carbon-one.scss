@@ -24,7 +24,8 @@
     bottom: 55px !important;
 }
 
-.bottom-fixed {
+.bottom-fixed,
+.top-fixed {
     position: fixed;
     bottom: 0;
     right: 0;
