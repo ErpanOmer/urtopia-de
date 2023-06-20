@@ -785,6 +785,12 @@
             .u17Light_v2 {
                 margin: 10% 0;
 
+                div {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                }
+
                 div + div {
                     margin-top: 4%;
                 }
