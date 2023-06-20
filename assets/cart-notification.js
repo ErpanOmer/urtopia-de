@@ -87,13 +87,11 @@ class CartNotification extends HTMLElement {
       this.cartItems = parsedState.items;
     }
     this.getSectionsToRender().forEach((section) => {
-      setTimeout(() => {
-        document.getElementById(section.id).innerHTML = this.getSectionInnerHTML(
-          parsedState.sections[section.id],
-          section.selector,
-          parsedState
-        );
-      }, 100)
+      document.getElementById(section.id).innerHTML = this.getSectionInnerHTML(
+        parsedState.sections[section.id],
+        section.selector,
+        parsedState
+      );
     });
 
     if (this.header) this.header.reveal();
@@ -124,8 +122,6 @@ class CartNotification extends HTMLElement {
     } else if (this.cartItems) {
       var resHtml = "";
       this.cartItems.forEach((item) => {
-        console.log('item', item)
-
         resHtml +=
           "<div style='display:flex;'>" +
           new DOMParser()
