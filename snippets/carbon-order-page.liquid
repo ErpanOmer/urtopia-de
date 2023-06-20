@@ -515,8 +515,8 @@
 
 
     $('.bottom-fixed').hide()
-    
-    $(document).on('scroll', debounce(e => {
+
+    $(document).on('scroll', throttle(e => {
         const top1 = $('#freedom').offset().top
         const top2 = $(e.target).scrollTop()
 
@@ -529,7 +529,7 @@
         }
 
         console.log('e', top1, top2)
-    }, 300))
+    }, 300, 100))
 
     
 
