@@ -30,13 +30,15 @@
     right: 0;
     left: 0;
     height: 60px;
-    background: #FFFFFF;
-    box-shadow: 0px -2px 0px #00000029;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 4vw;
     z-index: 999998;
+    background-color: rgba(255, 255, 255, 0.65);
+    backdrop-filter: saturate(180%) blur(20px);
+    box-shadow: 0px 3px 6px #00000014;
+    border-top: 1px solid rgba(0, 0, 0, 0.16);
 
     & > div {
         display: flex;
