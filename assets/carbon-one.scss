@@ -479,7 +479,7 @@ $sale_text_color: #F24FA5;
                 display: grid;
                 grid-template-columns: repeat(3, 1fr);
 
-                &>div {
+                & > a {
                     display: flex;
                     align-items: center;
                     justify-content: flex-start;
