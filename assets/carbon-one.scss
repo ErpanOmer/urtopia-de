@@ -772,6 +772,8 @@
 .boxs3 {
     .centeral-content {
         & > div {
+            align-items: flex-start;
+            
             &:nth-child(1) {
                 background: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/IMG_0305_2x_50da775b-04f1-4130-ae17-56de65a34399.jpg?v=1687259019') center center/cover no-repeat;
                 padding-bottom: 100%;
