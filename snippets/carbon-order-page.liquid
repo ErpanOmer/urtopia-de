@@ -516,6 +516,15 @@
     $(document).on('scroll', debounce(e => {
         const top1 = $('#freedom').offset().top
         const top2 = $(e.target).scrollTop()
+
+        if (global_config.is_mobile) {
+            if (top2 > top1) {
+                $('.bottom-fixed').show()
+            } else {
+                $('.bottom-fixed').hide()
+            }
+        }
+
         console.log('e', top1, top2)
     }, 300))
 
