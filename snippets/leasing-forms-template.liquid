@@ -249,7 +249,7 @@ const size_map = {
 // 表单忽略项
 const ignore = ['submit', 'checkbox', 'image', 'hidden']
 // carbon 产品信息
-const carbon = JSON.parse(JSON.stringify({{ all_products['urtopia-carbon-e-bike'] | json }}))
+const carbon = JSON.parse(JSON.stringify({{ all_products['copy-of-urtopia-carbon-2'] | json }}))
 
 // 尺寸信息
 const size = Array.from(new Set(carbon.variants.map(i => i.option2)))

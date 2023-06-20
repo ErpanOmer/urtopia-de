@@ -52,199 +52,101 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
 	</script>{% if collection_385277100248 == null %}{%- assign collection_385277100248 = collections["accessories"] -%}{% endif %}<script>
 	window.__pageflyCollections = window.__pageflyCollections || {};
 	window.__pageflyCollections["385277100248"] = {{collection_385277100248 | json }};
-	</script><div style="opacity:0" class="sc-bYoBSM hUVNGC __pf __pf_lUQL6LKn" id="__pf"><div data-pf-type="Body" class="sc-hjGZqJ fNoOP pf-1_"><div data-pf-type="Layout" class="sc-htJRVC dNJAjO pf-2_"><div data-pf-type="ProductPreview" class="sc-cvlWTT btfkZr pf-3_"> </div><div data-section-id="pf-cdc4" data-pf-type="Section" class="sc-fmciRz bheIgq pf-4_"><div style="--cw:1170px" class="sc-gjNHFA gwWIgj"><div class="sc-ezbkAF A-dmbO pf-5_ pf-r pf-r-eh" style="--s-xs:15px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-md:12;--c-lg:12"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-6_"><div data-pf-type="Custom.HTML" class="sc-AjmGg eCTxfx pf-7_">
-		
-		<nav class="stickyNavigation mobileHide">
-			<div class="smenu-container">
-				<div class="menu-title">
-					Carbon One
-				</div>
-				<div class="row">
-				<div class="column">
-					<a href="#freedom">
-					Detail</a>
-				</div>
-				<!--<div class="column">
-					<a href="#spec-title">
-					Specs</a>
-				</div>-->
-				<div class="column">
-					<a class="a-pc" href="#customer-review">
-					Reviews</a>
-					<a class="a-mb" href="#review-title-mb">
-					Reviews</a>
-				</div>
-				<div class="column a-pc">
-					<a href="#">
-					Order Now</a>
-				</div>
-				</div>
-			</div>
-		</nav>
-<style>
-	[data-scrolldir="down"] .stickyNavigation.active{
-      transform: translateY(0);
-	  top:0;
-	}
-	[data-scrolldir="down"] #shopify-section-header.active{
-	  transform: translateY(-100%);
-	  transition: top .4s,transform .4s,box-shadow .4s;
-	}
-	[style*="--detail"]>.row>.column:nth-child(1) a{
-	  color:#F75B0B;
-	  font-weight:bold;
-	}
- 	[style*="--spec"]>.row>.column:nth-child(2) a{
-	  color:#F75B0B;
-	  font-weight:bold;
-  }
-  	[style*="--review"]>.row>.column:nth-child(3) a{
-	  color:#F75B0B;
-	  font-weight:bold;
-  } 
-  	[style*="--order"]>.row>.column:nth-child(4) a{
-	  color:#F75B0B;
-	  font-weight:bold;
-  }
-  .stickyNavigation{
-	position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1;
-    width: 100%;
-	background-color: rgba(255, 255, 255, 0.85);
-    backdrop-filter: blur(10px);
-	-webkit-backdrop-filter: blur(10px);
-    -webkit-transform: translateY(-100%);
-    transform: translateY(-100%);
-    opacity: 1;
-    -webkit-transition: top .4s ease,-webkit-transform .4s ease,-webkit-box-shadow .4s ease;
-    transition: top .4s ease,-webkit-transform .4s ease,-webkit-box-shadow .4s ease;
-    transition: top .4s ease,transform .4s ease,box-shadow .4s ease;
-    transition: top .4s ease,transform .4s ease,box-shadow .4s ease,-webkit-transform .4s ease,-webkit-box-shadow .4s ease;
-  }
-  .stickyNavigation .smenu-container .row{
-	height:60px;
-	display:flex;
-    align-items: center;
-    justify-content: flex-end;
-  }
-  .menu-title{
-	font: normal normal bold 18px/24px Urbane;
-	letter-spacing: 0px;
-	color: #161C1F;
-  }
-  	.column{
-	  margin:0;
-	  margin-left:15px;
-  	}
-  	.column:first-child{
-	  margin: 0;
-  	}
-  .column a{
-	color: rgba(22,29,31,0.65);
-	font:normal normal normal 17px/21px Urbane;
-  }
-  .smenu-container{
-    display: flex;
-    justify-content: space-between;
-	align-items: center;
-	max-width: 1300px;
-	margin:0 auto;
-	padding: 0 20px;
-  }
-  .a-mb{
-	display:none;
-  }
-  /*  border-bottom: 2px solid #F75B0B;*/
-  @media screen and (max-width:1024px){
-	.a-pc{
-	  display:none;
-	}
-	.a-mb{
-	  display:inline;
-	}
-	.column a{
-	  font-size:14px; 
-	}
-	
-  .menu-title{
-	font-size:16px;
-  }
-  }
-  @media screen and (max-width:750px){
-	.menu-title{
-	  margin-left:0px;
-	}
-	
-  }
-</style>
-<script>
-	window.addEventListener('scroll',debounce(()=>{	  
-	let showTop = document.querySelector("#star-swiper").getBoundingClientRect().top;
 
-	  if(showTop<=1){
-	    $(".stickyNavigation").addClass("active")
-	    $("#shopify-section-header").addClass("active")
-	  }else{
-	    $(".stickyNavigation").removeClass("active")
-	    $("#shopify-section-header").removeClass("active")
-	  }
-	  // hideshow();
-	}, 150))
-  let hideList = [];
-  let showList = [];
-  function hideshow(){
-    hideList.forEach((item, index) => {
-	  
-      if (item) {
-        let { top, bottom } = item.getBoundingClientRect();
-        let s = window.innerHeight - top;
+  console.log(JSON.parse(JSON.stringify({{ collections["accessories"].products | json }})))
 
-        let itemClass = item.getAttribute('class');
-        if (s > 100) {
-          if (itemClass.indexOf("firstdown1") != -1) {
-            item.style.transform = 'translateY(0)'
-          }
-          item.style.opacity = '1'
-          if (!showList.includes(item)) {
-            hideList[index] = "";
-          }
-        }
-        if (showList.includes(item) && (s < 100) ) {
-          if (itemClass.indexOf("firstdown1") != -1) {
-            item.style.transform = 'translateY(40px)'
-          }
-            item.style.opacity = '0'
-        }
-      }
-    })
-  }
-  setTimeout(()=>{
-	hideList.push(document.querySelector('.hide1'));
-	hideList.push(document.querySelector('.hide2'));
-	hideList.push(document.querySelector('.hide3'));
-	hideList.push(document.querySelector('.hide4'));
-	hideList.push(document.querySelector('.hide5'));
-	hideList.push(document.querySelector('.hide6'));
-	hideList.push(document.querySelector('.hide7'));
-	hideList.push(document.querySelector('.hide8'));
-	hideList.push(document.querySelector('.hide9'));
-	showList.push(document.querySelector('.hide1'));
-	showList.push(document.querySelector('.hide2'));
-	showList.push(document.querySelector('.hide3'));
-	showList.push(document.querySelector('.hide4'));
-	showList.push(document.querySelector('.hide5'));
-	showList.push(document.querySelector('.hide6'));
-	showList.push(document.querySelector('.hide7'));
-	showList.push(document.querySelector('.hide8'));
-	showList.push(document.querySelector('.hide9'));
-	hideshow();
-  },1000)
-</script></div></div></div></div></div></div>
+	</script><div style="opacity:0" class="sc-bYoBSM hUVNGC __pf __pf_lUQL6LKn" id="__pf"><div data-pf-type="Body" class="sc-hjGZqJ fNoOP pf-1_"><div data-pf-type="Layout" class="sc-htJRVC dNJAjO pf-2_">
 
+{% render 'carbon-order-page' %}
 
-<div id="freedom" data-section-id="pf-ac3f" data-category="Sales Boost" data-name="Luna" data-pf-type="Section" class="sc-fmciRz bheIgq pf-118_"><div style="--cw:1280px" class="sc-gjNHFA gwWIgj"><div class="sc-ezbkAF A-dmbO pf-119_ pf-r" style="--s-xs:0px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-md:12;--c-lg:12"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-120_"><h3 data-pf-type="Heading" class="sc-cTAqQK eHolsa pf-121_"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-123_">Feel the New Shape of Freedom</span></h3></div></div></div><div class="sc-ezbkAF A-dmbO pf-124_ pf-r pf-c-cm pf-r-eh" style="--s-xs:0px;--s-sm:15px;--s-md:0px" data-pf-type="Row"><div class="pf-c" style="--c-xs:6;--c-md:3;--c-lg:3"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-125_"><p class="sc-jtXEFf bTWrMn pf-126_ dropcap--none" data-pf-type="Paragraph"><span data-pf-type="Dropcap" class="sc-eldieg iFEjjj pf-127_">15</span><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-128_">kg</span></p><h3 data-pf-type="Heading" class="sc-cTAqQK eHolsa pf-129_"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-131_">Net Weight</span></h3></div></div><div class="pf-c" style="--c-xs:6;--c-md:3;--c-lg:3"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-132_"><p class="sc-jtXEFf bTWrMn pf-133_ dropcap--none" data-pf-type="Paragraph"><span data-pf-type="Dropcap" class="sc-eldieg iFEjjj pf-134_">100+</span><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-135_">km</span></p><h3 data-pf-type="Heading" class="sc-cTAqQK eHolsa pf-136_"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-138_">per charge</span></h3></div></div><div class="pf-c" style="--c-xs:6;--c-md:3;--c-lg:3"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-139_"><p class="sc-jtXEFf bTWrMn pf-140_ dropcap--none" data-pf-type="Paragraph"><span data-pf-type="Dropcap" class="sc-eldieg iFEjjj pf-141_">4</span><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-142_">levels</span></p><h3 data-pf-type="Heading" class="sc-cTAqQK eHolsa pf-143_"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-145_">pedal assist</span></h3></div></div><div class="pf-c" style="--c-xs:6;--c-md:3;--c-lg:3"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-146_"><p class="sc-jtXEFf bTWrMn pf-147_ dropcap--none" data-pf-type="Paragraph"><span data-pf-type="Dropcap" class="sc-eldieg iFEjjj pf-148_">2.5</span><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-149_">hrs</span></p><h3 data-pf-type="Heading" class="sc-cTAqQK eHolsa pf-150_"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-152_">Full Charge</span></h3></div></div></div><div class="sc-ezbkAF A-dmbO pf-153_ pf-r pf-c-cm pf-r-eh" style="--s-xs:0px;--s-sm:15px;--s-md:0px" data-pf-type="Row"><div class="pf-c" style="--c-xs:6;--c-md:4;--c-lg:4"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-154_"><h3 data-pf-type="Heading" class="sc-cTAqQK eHolsa pf-155_"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-157_">Full <br>Carbon Fiber</span></h3></div></div><div class="pf-c" style="--c-xs:6;--c-md:4;--c-lg:4"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-158_"><h3 data-pf-type="Heading" class="sc-cTAqQK eHolsa pf-159_"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-161_">Magnetic<br>Torque Sensor</span></h3></div></div><div class="pf-c" style="--c-xs:6;--c-md:4;--c-lg:4"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-162_"><h3 data-pf-type="Heading" class="sc-cTAqQK eHolsa pf-163_"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-165_">Portable <br>Samsung Battery</span></h3></div></div><div class="pf-c" style="--c-xs:6;--c-md:4;--c-lg:4"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-166_"><h3 data-pf-type="Heading" class="sc-cTAqQK eHolsa pf-167_"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-169_">TEKTRO Hydraulic<br>Disc Brakes</span></h3></div></div><div class="pf-c" style="--c-xs:6;--c-md:4;--c-lg:4"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-170_"><h3 data-pf-type="Heading" class="sc-cTAqQK eHolsa pf-171_"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-173_">Brushless <br>Hub Motor</span></h3></div></div><div class="pf-c" style="--c-xs:6;--c-md:4;--c-lg:4"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-174_"><h3 data-pf-type="Heading" class="sc-cTAqQK eHolsa pf-175_"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-177_">Integrated <br>lighting system</span></h3></div></div></div></div></div><div data-section-id="pf-25e7" data-category="Product Information" data-name="Flip" data-pf-type="Section" class="sc-fmciRz bheIgq pf-178_"><div style="--cw:1170px" class="sc-gjNHFA gwWIgj"><div class="sc-ezbkAF A-dmbO pf-179_ pf-r pf-c-cm" style="--s-xs:0px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-sm:6;--c-md:6;--c-lg:6"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-180_"><img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/20221230untitled2931-1674195298153.jpg?v=1674195300" srcSet="https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/20221230untitled2931-1674195298153.jpg?v=1674195300 1536w, https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/20221230untitled2931-1674195298153_500x.jpg?v=1674195300 320w" width="1220" height="852" style="aspect-ratio:1220 / 852" data-pf-type="Image3" class="sc-nVkyK eXnudJ pf-181_"/></div></div><div class="pf-c" style="--c-xs:12;--c-sm:6;--c-md:6;--c-lg:6"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-182_"><h3 data-pf-type="Heading" class="sc-cTAqQK eHolsa pf-183_"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-185_">Carbon 1</span></h3><h3 data-pf-type="Heading" class="sc-cTAqQK eHolsa pf-186_"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-188_">Urban thrills obtained with elegance</span></h3><p class="sc-jtXEFf jydWoQ pf-189_" data-pf-type="Paragraph"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-191_"><span style="color: rgb(253, 75, 23);">●</span><span style="color: rgb(0, 0, 0);">Gates carbon belt drive</span><br><span style="color: rgb(253, 75, 23);">●</span>Cleaner, quieter and smoother<br><span style="color: rgb(253, 75, 23);">● </span><span style="color: rgb(0, 0, 0);">Relative maintenance free</span><br><span style="background-color: rgb(255, 255, 255); color: rgb(253, 75, 23);">●</span>&nbsp;Last forever (rated 30.000 km )</span></p><p class="sc-jtXEFf jydWoQ pf-192_" data-pf-type="Paragraph"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-194_">Carbon1 is great for commuters because you’ll never get a grease mark on your nice slacks. If you enjoy quiet rides in the morning while enjoying nature and the birds’ singing, you may want to opt for a belt drive.</span></p></div></div></div></div></div><div data-section-id="pf-03a0" data-pf-type="GlobalSection" id="3a54e43f-bdd0-48c4-a389-12d1be7e4773" class="sc-fpYaaq boGbAB pf-195_">{% capture content %}{% include 'pf-3a54e43f' %}{% endcapture %}
+<div id="freedom" class="freedom">
+  <div class="centeral-content">
+    <div class="u42DemiBold_v2">Smartest and Lightest E-Bike</div>
+    <div class="values">
+      <div>
+        <span class="u36DemiBold_v2">15 <span class="u17Light_v2">kg</span></span>
+        <span class="u17Light_v2">Net Weight</span>
+      </div>
+      <div>
+        <span class="u36DemiBold_v2">100 <span class="u17Light_v2">km</span></span>
+        <span class="u17Light_v2">per charge</span>
+      </div>
+      <div>
+        <span class="u36DemiBold_v2">4 <span class="u17Light_v2">levels</span></span>
+        <span class="u17Light_v2">pedal assist</span>
+      </div>
+      <div>
+        <span class="u36DemiBold_v2">360 <span class="u17Light_v2">Wh</span></span>
+        <span class="u17Light_v2">Battery</span>
+      </div>
+    </div>
+    <div class="values2">
+      <div>
+        <span class="u17Medium_v2">100%</span>
+        <span class="u17Medium_v2">Carbon Fiber</span>
+      </div>
+      <div>
+        <span class="u17Medium_v2">90%</span>
+        <span class="u17Medium_v2">Assembled</span>
+      </div>
+      <div>
+        <span class="u17Medium_v2">Anti-theft</span>
+        <span class="u17Medium_v2">GPS Tracking</span>
+      </div>
+      <div>
+        <span class="u17Medium_v2">Magnetic</span>
+        <span class="u17Medium_v2">Torque Sensor</span>
+      </div>
+      <div>
+        <span class="u17Medium_v2">Removable</span>
+        <span class="u17Medium_v2">Samsung Battery</span>
+      </div>
+      <div>
+        <span class="u17Medium_v2">hydraulic</span>
+        <span class="u17Medium_v2">Disc Brakes</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="boxs">
+  <div class="centeral-content">
+    <div></div>
+    <div>
+      <div class="u36DemiBold_v2">Carbon 1</div>
+      <div class="u20Light_v2">Perfect for urban commuters</div>
+      <div class="u17DemiBold_v2">
+        <div><span class="emphasize">●</span> Gates carbon belt drive</div>
+        <div><span class="emphasize">●</span> Cleaner, quieter and smoother</div>
+        <div><span class="emphasize">●</span> 30,000 km Maintenance free</div>
+      </div>
+      <div class="u17Light_v2">Carbon 1 is great for commuters because you’ll never get a grease mark on your nice slacks. If you enjoy quiet rides in the morning while enjoying nature and the birds’ singing, you may want to opt for a belt drive.</div>
+    </div>
+    <div>
+      <div class="u36DemiBold_v2">Effortless to Carry</div>
+      <div class="u20Light_v2" style="margin-bottom:15px;">Full Carbon (Only 15kg)</div>
+      <div class="u17Light_v2">Literally, an e-bike single-handedly manageable. Just a fraction of the weight compared to peer e-bikes, thanks to a full carbon body of frame, handlebar, seat post, and forks.</div>
+    </div>
+    <div></div>
+  </div>
+</div>
+
+<div class="boxs boxs2">
+  <div class="centeral-content">
+    <div></div>
+    <div>
+      <div class="u36DemiBold_v2">A bike you never lose</div>
+      <div class="u17Light_v2"><br>Aided by a constant 4G connection, GPS tracking keeps you informed of the e-bike’s position, even in the worst scenario of theft, for as long as 30 days. <br><br>We have helped users all over the world to retreat their beloved bike.</div>
+    </div>
+    <div>
+      <div class="u36DemiBold_v2">Navigation without Cellphone</div>
+      <div class="u17Light_v2"><br>Bright screen shows navigation clearly under daylight, no more ugly phone holder. <br><br>Let you explore the unknown safe and free.</div>
+    </div>
+    <div></div>
+  </div>
+</div>
+
+<div data-section-id="pf-03a0" data-pf-type="GlobalSection" id="3a54e43f-bdd0-48c4-a389-12d1be7e4773" class="sc-fpYaaq boGbAB pf-195_">{% capture content %}{% include 'pf-3a54e43f' %}{% endcapture %}
             {% if content contains "Liquid error" %}
             {% else %}
             {% render 'pf-3a54e43f' %}
@@ -252,43 +154,37 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
 			
 			<!--<div data-section-id="pf-fb32" data-pf-type="Section" id="review-title" class="sc-fmciRz bheIgq pf-196_ pf-hide"><div style="--cw:1280px" class="sc-gjNHFA gwWIgj"><div class="sc-ezbkAF A-dmbO pf-197_ pf-r pf-r-eh" style="--s-xs:15px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-md:12;--c-lg:12"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-198_"><h3 data-pf-type="Heading" class="sc-cTAqQK eHolsa pf-199_"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-201_">Media Buzz</span></h3></div></div></div><div class="sc-ezbkAF A-dmbO pf-202_ pf-r pf-r-eh" style="--s-xs:15px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-md:12;--c-lg:12"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-203_"><div class="sc-ezbkAF A-dmbO pf-204_ pf-r pf-c-cm pf-r-eh" style="--s-xs:15px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-sm:4;--c-md:4;--c-lg:4"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-205_"><div data-pf-type="Image" class="sc-jgrJph bzUUvT pf-206_"><img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/cyclingnews-1650260229568.jpg?v=1650260230" srcSet="https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/cyclingnews-1650260229568.jpg?v=1650260230 1536w" width="400" height="200"/></div></div></div><div class="pf-c" style="--c-xs:12;--c-sm:4;--c-md:4;--c-lg:4"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-207_"><div data-pf-type="Image" class="sc-jgrJph bzUUvT pf-208_"><img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/techc-1650260229581.jpg?v=1650260244" srcSet="https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/techc-1650260229581.jpg?v=1650260244 1536w" width="400" height="200"/></div></div></div><div class="pf-c" style="--c-xs:12;--c-sm:4;--c-md:4;--c-lg:4"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-209_"><div data-pf-type="Image" class="sc-jgrJph bzUUvT pf-210_"><img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/engadget-1650260229578.jpg?v=1650260237" srcSet="https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/engadget-1650260229578.jpg?v=1650260237 1536w" width="400" height="200"/></div></div></div></div><div class="sc-ezbkAF A-dmbO pf-211_ pf-r pf-c-cm pf-r-eh" style="--s-xs:15px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-sm:4;--c-md:4;--c-lg:4"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-212_"><div data-pf-type="Image" class="sc-jgrJph bzUUvT pf-213_"><img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/tnw-1650260229581.jpg?v=1650260247" srcSet="https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/tnw-1650260229581.jpg?v=1650260247 1536w" width="400" height="200"/></div></div></div><div class="pf-c" style="--c-xs:12;--c-sm:4;--c-md:4;--c-lg:4"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-214_"><div data-pf-type="Image" class="sc-jgrJph bzUUvT pf-215_ img"><img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/ntv-1650260229580.jpg?v=1650260241" srcSet="https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/ntv-1650260229580.jpg?v=1650260241 1536w" width="400" height="200"/></div></div></div><div class="pf-c" style="--c-xs:12;--c-sm:4;--c-md:4;--c-lg:4"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-216_"><div data-pf-type="Image" class="sc-jgrJph bzUUvT pf-217_"><img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/efahrer-1650260229576.jpg?v=1650260234" srcSet="https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/efahrer-1650260229576.jpg?v=1650260234 1536w" width="400" height="200"/></div></div></div></div></div></div></div></div></div>-->
 			
-			<div class="carbon-one">
+			<div class="carbon-one mobileHide">
 				<div class="mediaaaaa gray-background-color"  style="--swiper-theme-color: #000;--swiper-pagination-color: #000;">
 					<div class="centeral-content swiper-wrapper">
 						<div class="swiper-slide">
 							<div class="u17DemiBold_v2">“Urtopia is an over the top e-bike”</div>
 							<div class="flex-1"></div>
-							<img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_20921_2x_361face6-eba5-4a46-b1b6-0f038089d90d.png?v=1682577775" alt="">
 							<img src="https://cdn.shopifycdn.net/s/files/1/0633/2068/6808/files/Mask_Group_18604_2x_0a53e289-f2f5-4d7b-8024-17cb83aa826d.png?v=1686216700" alt="">
 						</div>
 						<div class="swiper-slide">
 							<div class="u17DemiBold_v2">“Eye-catching styled carbon frame”</div>
 							<div class="flex-1"></div>
-							<img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_20921_2x_361face6-eba5-4a46-b1b6-0f038089d90d.png?v=1682577775" alt="">
 							<img src="https://cdn.shopifycdn.net/s/files/1/0633/2068/6808/files/Mask_Group_18605_2x_f4a10f13-0834-4e4e-8ba4-117f9bb47368.png?v=1686216858" alt="">
 						</div>
 						<div class="swiper-slide">
 							<div class="u17DemiBold_v2">“The carbon pedelec from Urtopia is also stylish, light and electric.”</div>
 							<div class="flex-1"></div>
-							<img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_20921_2x_361face6-eba5-4a46-b1b6-0f038089d90d.png?v=1682577775" alt="">
 							<img src="https://cdn.shopifycdn.net/s/files/1/0633/2068/6808/files/Mask_Group_18537_2x_513fd62f-3460-43e2-ac3d-8f16fb18545c.png?v=1686216918" alt="">
 						</div>
 						<div class="swiper-slide">
 							<div class="u17DemiBold_v2">“Lightweight, networked and highly secure”</div>
 							<div class="flex-1"></div>
-							<img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_20921_2x_361face6-eba5-4a46-b1b6-0f038089d90d.png?v=1682577775" alt="">
 							<img src="https://cdn.shopifycdn.net/s/files/1/0633/2068/6808/files/Mask_Group_18603_2x_9560f2ca-aafd-482e-b764-98ed676cd195.png?v=1686217006" alt="">
 						</div>
 						<div class="swiper-slide">
 							<div class="u17DemiBold_v2">“Best Electric Bike for 2022”</div>
 							<div class="flex-1"></div>
-							<img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_20921_2x_361face6-eba5-4a46-b1b6-0f038089d90d.png?v=1682577775" alt="">
 							<img src="https://cdn.shopifycdn.net/s/files/1/0633/2068/6808/files/Image_136_2x_6bcd871d-9e96-48ae-91a5-b6dda074b4c1.png?v=1686217058" alt="">
 						</div>
 						<div class="swiper-slide">
 							<div class="u17DemiBold_v2">“Lightweight carbon fiber road e-bike with affordably-price”</div>
 							<div class="flex-1"></div>
-							<img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_20921_2x_361face6-eba5-4a46-b1b6-0f038089d90d.png?v=1682577775" alt="">
 							<img src="https://cdn.shopifycdn.net/s/files/1/0633/2068/6808/files/Mask_Group_18602_2x_12b3eebc-888a-4bd6-bf4c-90881502f123.png?v=1686217108" alt="">
 						</div>
 					</div>
@@ -316,781 +212,64 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
 			<!--<div data-section-id="pf-ca01" data-pf-type="Section" id="review-title-mb" class="sc-fmciRz bheIgq pf-218_ pf-lg-hide pf-md-hide pf-sm-hide"><div style="--cw:1170px" class="sc-gjNHFA gwWIgj"><div class="sc-ezbkAF A-dmbO pf-219_ pf-r pf-r-eh" style="--s-xs:15px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-md:12;--c-lg:12"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-220_"><h3 data-pf-type="Heading" class="sc-cTAqQK eHolsa pf-221_ Title"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-223_">Media Buzz</span></h3><div data-slider="{'slidesToShow':{'all':1,'laptop':1,'tablet':1,'mobile':1},'slidesToScroll':{'all':1,'laptop':1,'tablet':1,'mobile':1},'loop':false,'autoPlay':false,'autoPlayDelay':3000,'pauseOnHover':false,'maxHeight':false,'id':'3ca27b90-9a74-4aca-81a7-14053c2c3c20'}" class="sc-kfPuZi sc-fKVqWL jQUrBQ kHNXmE pf-224_ glider-n-1  pf-lg-hide pf-md-hide pf-sm-hide" style="visibility:hidden;height:168.5px;opacity:0" data-pf-type="Slider2"><div class="glider" style="--g-xs:0px"><div class="glide-wrapper"><div style="height:100%" class="sc-bBHxTw sc-iwjdpV fWMPub lkcydY pf-225_" data-pf-type="Slide2"><div class="glide-container"><div class="sc-ezbkAF A-dmbO pf-226_ pf-r pf-r-eh" style="--s-xs:15px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-md:12;--c-lg:12"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-227_"><div data-pf-type="Image" class="sc-jgrJph bzUUvT pf-228_"><img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/techc-1650260229581.jpg?v=1650260244" srcSet="https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/techc-1650260229581.jpg?v=1650260244 1536w" width="400" height="200"/></div></div></div></div></div></div></div><div class="glide-wrapper"><div style="height:100%" class="sc-bBHxTw sc-iwjdpV fWMPub lkcydY pf-229_" data-pf-type="Slide2"><div class="glide-container"><div class="sc-ezbkAF A-dmbO pf-230_ pf-r pf-r-eh" style="--s-xs:15px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-md:12;--c-lg:12"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-231_"><div data-pf-type="Image" class="sc-jgrJph bzUUvT pf-232_"><img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/welt-1650260229584.jpg?v=1650260251" srcSet="https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/welt-1650260229584.jpg?v=1650260251 1536w" width="400" height="200"/></div></div></div></div></div></div></div><div class="glide-wrapper"><div style="height:100%" class="sc-bBHxTw sc-iwjdpV fWMPub lkcydY pf-233_" data-pf-type="Slide2"><div class="glide-container"><div class="sc-ezbkAF A-dmbO pf-234_ pf-r pf-r-eh" style="--s-xs:15px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-md:12;--c-lg:12"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-235_"><div data-pf-type="Image" class="sc-jgrJph bzUUvT pf-236_"><img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/efahrer-1650260229576.jpg?v=1650260234" srcSet="https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/efahrer-1650260229576.jpg?v=1650260234 1536w" width="400" height="200"/></div></div></div></div></div></div></div><div class="glide-wrapper"><div style="height:100%" class="sc-bBHxTw sc-iwjdpV fWMPub lkcydY pf-237_" data-pf-type="Slide2"><div class="glide-container"><div class="sc-ezbkAF A-dmbO pf-238_ pf-r pf-r-eh" style="--s-xs:15px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-md:12;--c-lg:12"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-239_"><div data-pf-type="Image" class="sc-jgrJph bzUUvT pf-240_"><img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/engadget-1650260229578.jpg?v=1650260237" srcSet="https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/engadget-1650260229578.jpg?v=1650260237 1536w" width="400" height="200"/></div></div></div></div></div></div></div><div class="glide-wrapper"><div style="height:100%" class="sc-bBHxTw sc-iwjdpV fWMPub lkcydY pf-241_" data-pf-type="Slide2"><div class="glide-container"><div class="sc-ezbkAF A-dmbO pf-242_ pf-r pf-r-eh" style="--s-xs:15px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-md:12;--c-lg:12"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-243_"><div data-pf-type="Image" class="sc-jgrJph bzUUvT pf-244_"><img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/tnw-1650260229581.jpg?v=1650260247" srcSet="https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/tnw-1650260229581.jpg?v=1650260247 1536w" width="400" height="200"/></div></div></div></div></div></div></div><div class="glide-wrapper"><div style="height:100%" class="sc-bBHxTw sc-iwjdpV fWMPub lkcydY pf-245_" data-pf-type="Slide2"><div class="glide-container"><div class="sc-ezbkAF A-dmbO pf-246_ pf-r pf-r-eh" style="--s-xs:15px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-md:12;--c-lg:12"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-247_"><div data-pf-type="Image" class="sc-jgrJph bzUUvT pf-248_"><img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/cyclingnews-1650260229568.jpg?v=1650260230" srcSet="https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/cyclingnews-1650260229568.jpg?v=1650260230 1536w" width="400" height="200"/></div></div></div></div></div></div></div><div class="glide-wrapper"><div style="height:100%" class="sc-bBHxTw sc-iwjdpV fWMPub lkcydY pf-249_" data-pf-type="Slide2"><div class="glide-container"><div class="sc-ezbkAF A-dmbO pf-250_ pf-r pf-r-eh" style="--s-xs:15px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-md:12;--c-lg:12"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-251_"><div data-pf-type="Image" class="sc-jgrJph bzUUvT pf-252_"><img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/ntv-1650260229580.jpg?v=1650260241" srcSet="https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/ntv-1650260229580.jpg?v=1650260241 1536w" width="400" height="200"/></div></div></div></div></div></div></div></div><button type="button" aria-label="Previous" class="glider-prev glider-nav glider-nav-1"></button><button type="button" aria-label="Next" class="glider-next glider-nav glider-nav-1"></button><div class="glider-dots glider-d-1"></div></div></div></div></div></div></div>-->
 			
 			
-			
-			
-			<div data-section-id="pf-72ab" data-pf-type="Section" class="sc-fmciRz bheIgq pf-253_"><div style="--cw:1300px" class="sc-gjNHFA gwWIgj"><div class="sc-ezbkAF A-dmbO pf-254_ pf-r pf-r-eh" style="--s-xs:0px;--s-sm:15px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-md:12;--c-lg:12"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-255_"><h3 data-pf-type="Heading" class="sc-cTAqQK eHolsa pf-256_ Title"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-258_">Your Satisfaction, Our Priority</span></h3><div class="sc-ezbkAF A-dmbO pf-259_ pf-r pf-c-cm pf-r-eh" style="--s-xs:5px;--s-sm:10px;--s-md:5px" data-pf-type="Row"><div class="pf-c" style="--c-xs:6;--c-md:3;--c-lg:3"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-260_"><img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/888888-1675747910542.png?v=1675747911" srcSet="https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/888888-1675747910542.png?v=1675747911 1536w" width="512" height="512" style="aspect-ratio:512 / 512" data-pf-type="Image3" class="sc-nVkyK eXnudJ pf-261_"/><p class="sc-jtXEFf jydWoQ pf-262_ Title" data-pf-type="Paragraph"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-264_">Buy Direct, Pay Less</span></p><p class="sc-jtXEFf jydWoQ pf-265_ Body" data-pf-type="Paragraph"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-267_">Direct from Manufacturer, Lower Prices</span></p></div></div><div class="pf-c" style="--c-xs:6;--c-md:3;--c-lg:3"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-268_"><img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/payday-1675747444519.png?v=1675747458" srcSet="https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/payday-1675747444519.png?v=1675747458 1536w" width="512" height="512" style="aspect-ratio:512 / 512" data-pf-type="Image3" class="sc-nVkyK eXnudJ pf-269_"/><p class="sc-jtXEFf jydWoQ pf-270_ Title" data-pf-type="Paragraph"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-272_">Ride Now, Pay later</span></p><p class="sc-jtXEFf jydWoQ pf-273_ Body" data-pf-type="Paragraph"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-275_">Stress-Free Monthly Billing with Klarna</span></p></div></div><div class="pf-c" style="--c-xs:6;--c-md:3;--c-lg:3"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-276_"><img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/chat-1675747444514.png?v=1675747451" srcSet="https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/chat-1675747444514.png?v=1675747451 1536w" width="512" height="512" style="aspect-ratio:512 / 512" data-pf-type="Image3" class="sc-nVkyK eXnudJ pf-277_"/><p class="sc-jtXEFf jydWoQ pf-278_ Title" data-pf-type="Paragraph"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-280_">Instant Chat Help</span></p><p class="sc-jtXEFf jydWoQ pf-281_ Body" data-pf-type="Paragraph"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-283_">Get Expert Insights on eBike Purchasing and Flawless Experience</span></p></div></div><div class="pf-c" style="--c-xs:6;--c-md:3;--c-lg:3"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-284_"><img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/bike-1675747444513.png?v=1675747445" srcSet="https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/bike-1675747444513.png?v=1675747445 1536w" width="512" height="512" style="aspect-ratio:512 / 512" data-pf-type="Image3" class="sc-nVkyK eXnudJ pf-285_"/><p class="sc-jtXEFf jydWoQ pf-286_ Title" data-pf-type="Paragraph"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-288_">Test Rides Available</span></p><p class="sc-jtXEFf jydWoQ pf-289_ Body" data-pf-type="Paragraph"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-291_">Make an Informed Decision with a Test Ride</span></p></div></div></div></div></div></div></div></div>
-
-
-			{% render 'carbon-one-extra-code2' %}
-			
-			<style>
-				.hidee {
-					transition: all 1s;
-				}
-			
-  #section4 {
-    max-width: 1280px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 600px;
-    justify-content: center;
-	margin: 0 auto 80px;
-	background-color: #f7f8fa;
-}
-
-#section4>div {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 0 14% 0 19%;
-}
-
-#section4 > div:nth-child(2) img {
-    max-width: 135px;
-    margin-bottom: 25px;
-}
-
-#section4>div:first-child {
-    background: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/6T1A8524_2x_aaecef7e-48c0-4776-8947-fa295f1c24b5.jpg?v=1680163598') center center/cover no-repeat;
-    /* background-color: #161A22;
-    background-size: 75%; */
-}
-
-{% comment %} #section4>div:nth-child(5) {
-    background: url(https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18294_2x_849210ff-f5fe-4be8-a248-3afbe6674080.png?v=1677557363) bottom center/cover no-repeat;
-    background-color: #161A22;
-    background-size: 75%;
-}
-
-#section4>div:nth-child(4) {
-    background: url(https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230306-114106.jpg?v=1678074104) bottom center/cover no-repeat;
-    background-color: #161A22;
-}
-
-#section4>div:last-child .images {
-    display: flex;
-}
-
-#section4>div:last-child .images a {
-    display: block;
-    /* max-width: 150px; */
-    margin-right: 16px;
-    cursor: pointer;
-} {% endcomment %}
-
-#section4 h1 {
-    margin: 0;
-}
-
-#section4 .u20Medium {
-    margin: 20px 0 40px;
-    font-weight: 300;
-    font-size: 17px;
-}
-
-@media (max-width: 767px) {
-    #section4 {
-        grid-template-columns: 1fr;
-        padding: 0 15px;
-        grid-template-rows: calc(100vw - 60px) 90vw;
-		margin: 0 auto;
-		background-clip: content-box;
-    }
-
-    #section4>div {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        padding: 0 15px;
-    }
-
-    #section4 h1 {
-        font-size: 24px;
-        font-weight: bold;
-    }
-
-    #section4 .u20Medium {
-        font-size: 15px;
-        margin: 10px 0 20px;
-    }
-
-    {% comment %} #section4 > div:nth-child(4) {
-        order: 1;
-    }
-
-    #section4 > div:nth-child(3) {
-        order: 2;
-    }
-
-    #section4 > div:nth-child(5) {
-        order: 3;
-    }
-
-    #section4 > div:nth-child(6) {
-        order: 4;
-    } {% endcomment %}
-
-}
-</style>
-
-<div id="section4">
-	<div></div>
-	<div>
-		<!--<img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/jobradorg_2x_9fa9518f-0618-4ba0-8973-8f5a381f940d.png?v=1680154687" alt="">-->
-		<h1>Lease an Urtopia</h1>
-		<div class="u20Medium">We offer you the opportunity to get your dream bike at low monthly leasing rates through various leasing providers, such as Jobrad and mein-dienstrad.</div>
-		<div>
-			<a class="my-button my-button-black" href="/pages/ebike-leasing">Learn more</a>
-		</div>
-	</div>
-  </div>
-
-			<div data-section-id="pf-6686" data-pf-type="Section" class="sc-fmciRz bheIgq pf-292_">
-				<div style="--cw:1280px" class="sc-gjNHFA gwWIgj">
-					<div class="sc-ezbkAF A-dmbO pf-293_ without-padding pf-r pf-r-eh" style="--s-xs:15px" data-pf-type="Row">
-						<div class="pf-c" style="--c-xs:12;--c-sm:6;--c-md:6;--c-lg:6">
-							<div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-294_">
-								<div class="sc-ezbkAF A-dmbO pf-295_ pf-r pf-r-eh pf-lg-hide pf-md-hide pf-sm-hide" style="--s-xs:0px;--s-sm:15px" data-pf-type="Row">
-									<div class="pf-c" style="--c-xs:12;--c-md:12;--c-lg:12">
-										<div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-296_">
-											<img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/t/4/assets/mask-group-18055-1673981160718.png?v=1673981162" srcSet="https://cdn.shopify.com/s/files/1/0633/2068/6808/t/4/assets/mask-group-18055-1673981160718.png?v=1673981162 1536w, https://cdn.shopify.com/s/files/1/0633/2068/6808/t/4/assets/mask-group-18055-1673981160718_1000x.png?v=1673981162 768w, https://cdn.shopify.com/s/files/1/0633/2068/6808/t/4/assets/mask-group-18055-1673981160718_500x.png?v=1673981162 320w" width="1412" height="1234" style="aspect-ratio:1412 / 1234" data-pf-type="Image3" class="sc-nVkyK eXnudJ pf-297_"/>
-										</div>
-									</div>
-								</div>
-								<h3 data-pf-type="Heading" class="sc-cTAqQK eHolsa pf-298_">
-									<span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-300_">Effortless to Carry</span>
-								</h3>
-								<p class="sc-jtXEFf jydWoQ pf-301_" data-pf-type="Paragraph">
-									<span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-303_">Full Carbon (Only 33 lbs)</span>
-								</p>
-								<p class="sc-jtXEFf jydWoQ pf-304_" data-pf-type="Paragraph">
-									<span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-306_">Literally, an e-bike single-handedly manageable. Just a fraction of the weight compared to peer e-bikes, thanks to a full carbon body of frame, handlebar, seat post, and forks.</span>
-								</p></div>
-							</div>
-							<div class="pf-c pf-hide" style="--c-xs:12;--c-sm:6;--c-md:6;--c-lg:6">
-								<div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-307_ pf-hide">
-									<img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/t/4/assets/mask-group-18055-1673981160718.png?v=1673981162" srcSet="https://cdn.shopify.com/s/files/1/0633/2068/6808/t/4/assets/mask-group-18055-1673981160718.png?v=1673981162 1536w, https://cdn.shopify.com/s/files/1/0633/2068/6808/t/4/assets/mask-group-18055-1673981160718_500x.png?v=1673981162 320w" width="1412" height="1234" style="aspect-ratio:1412 / 1234" data-pf-type="Image3" class="sc-nVkyK eXnudJ pf-308_"/>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			<div data-section-id="pf-88bf" data-pf-type="Section" class="sc-fmciRz bheIgq pf-309_"><div style="--cw:1280px" class="sc-gjNHFA gwWIgj"><div class="sc-ezbkAF A-dmbO pf-310_ pf-r pf-r-eh" style="--s-xs:15px" data-background-image="https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/img_v2_bd61e1d6b0d541e49c8995f053b7803g-1668479102720.png" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-md:12;--c-lg:12"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-311_"><p class="sc-jtXEFf jydWoQ pf-312_" data-pf-type="Paragraph"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-314_">Range Up to</span></p><p class="sc-jtXEFf jydWoQ pf-315_ info-text" data-pf-type="Paragraph"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-317_">100&nbsp;<span style="color: rgb(255, 255, 255);">km</span></span></p><p class="sc-jtXEFf jydWoQ pf-318_" data-pf-type="Paragraph"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-320_">Belt Lifespan</span></p><p class="sc-jtXEFf jydWoQ pf-321_ info-text" data-pf-type="Paragraph"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-323_">30,000 <span style="color: rgb(255, 255, 255);">km</span></span></p><p class="sc-jtXEFf jydWoQ pf-324_" data-pf-type="Paragraph"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-326_">Full Charge</span></p><p class="sc-jtXEFf jydWoQ pf-327_ info-text" data-pf-type="Paragraph"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-329_">2.5 <span style="color: rgb(255, 255, 255);">hrs</span></span></p><a href="/pages/test-ride" target="_self" data-pf-type="Button" class="sc-iqseJM fFuGRG pf-330_ org-btn pf-lg-hide pf-md-hide pf-sm-hide pf-hide"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-332_">Book a test ride</span></a></div></div></div></div></div><div data-section-id="pf-30af" data-pf-type="Section" class="sc-fmciRz bheIgq pf-333_ pf-hide"><div style="--cw:1280px" class="sc-gjNHFA gwWIgj"><div class="sc-ezbkAF A-dmbO pf-334_ pf-r pf-r-eh" style="--s-xs:15px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-md:12;--c-lg:12"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-335_"><div data-pf-type="Custom.HTML" class="sc-AjmGg eCTxfx pf-336_">
-<div class="app-bg">
-        <div class="limitation-img-float">
-          <!-- <div class="limitation-img-float-content"> -->
-          <div class="limitation-img-left">
-            <div class="img-float-box">
-              <img
-                src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20221018-140024.png?v=1666073280"
-                alt=""
-              />
-              <img
-                src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20221018-140004.png?v=1666073283"
-                alt=""
-              />
-            </div>
-            <div class="img-float-box">
-              <img
-                src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20221018-140020.png?v=1666073316"
-                alt=""
-              />
-              <img
-                src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20221018-140000.png?v=1666073297"
-                alt=""
-              />
-            </div>
-            <div class="img-float-box">
-              <img
-                src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20221018-140016.png?v=1666073290"
-                alt=""
-              />
-              <img
-                src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20221018-135957.png?v=1666073313"
-                alt=""
-              />
-            </div>
-          </div>
-          <!-- </div> -->
-          <div class="limitation-img-right">
-            <div class="img-float-box">
-              <img
-                src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20221018-140013.png?v=1666073313"
-                alt=""
-              /><img
-                src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20221018-135953.png?v=1666073316"
-                alt=""
-              />
-            </div>
-            <div class="img-float-box">
-              <img
-                src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20221018-140009.png?v=1666073311"
-                alt=""
-              />
-              <img
-                src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20221018-135940.png?v=1666073290"
-                alt=""
-              />
-            </div>
-          </div>
-        </div>
-  <div class="content">
-	<div class="title">
-	  Smart & Fun
-	</div>
-	<div class="description">
-	  Called by many and arguably the Tesla of E-Bikes, Urtopia Carbon One demonstrates how far smartness can go. Thumbprint wakeup, voice control, real-time location, and Bluetooth speaker, are only among many features awaiting exploration.
-	</div>
-	<div style="margin-top: 36px;text-shadow: none;" onclick="showVideoDialog('https://www.youtube.com/embed?v=7q-5PuNG3KM&list=PLEmHoqEXpfm8rfKg6pZhPtgT2ycj_UAVN&index=17&autoplay=1&cc_load_policy=1')" class="my-button">Watch video</div>
+		
+<div class="test-ride">
+  <div class="centeral-content">
+    <div>
+      <div>
+        <div class="u36DemiBold_v2">Test ride spots near you</div>
+        <div class="u20DemiBold_v2">Experience the bike in real</div>
+        <a class="my-button my-button-origin" href="/pages/test-ride" target="_blank">Book a Free Test Ride</a>
+      </div>
+    </div>
+    <div>
+      <div style="padding: 0;">
+        <div id="storepoint-container" data-tags="de" data-map-id="162f21804990ff"></div>
+      </div>
+    </div>
   </div>
 </div>
-<style>
-  .app-bg{
-	display:flex;
-	justify-content:center;
-	align-items:center;
-	height:640px;
-	color:#fff;
-  }
-  .app-bg .content{
-	position: absolute;
-    top:unset;
-    text-align: center;
-	width:50%;
-	text-shadow: 0px 0px 20px #000;
-  }
-  .app-bg .content .title{
-	margin-top: 0;
-	font: normal normal 600 48px/72px Urbane;
-	color:#fff;
-  }
-  .app-bg .content .description{
-	font: normal normal 300 16px/24px Urbane;
-  }
-  
-.app-bg .limitation-img-float {
-  opacity:0.5;
-	width: 100%;
-	height: 100%;
-	display: flex;
-}
-.app-bg .limitation-img-float .limitation-img-left, .limitation-img-float .limitation-img-right {
-	display: flex;
-	align-items: center;
-}
-.app-bg .limitation-img-float .limitation-img-left {
-	flex: 0 0 60%;
-}
-.app-bg .limitation-img-float .limitation-img-right {
-	flex: 0 0 40%;
-}
-.app-bg .limitation-img-float .img-float-box {
-	padding: 0 20px;
-	transform: translateY(50%);
-}
-.app-bg .limitation-img-float .limitation-img-left .img-float-box {
-	flex: 0 0 33.33%;
-}
-.app-bg .limitation-img-float .limitation-img-right .img-float-box {
-	flex: 0 0 50%;
-}
-.app-bg .limitation-img-float .limitation-img-left > .img-float-box:nth-child(1) {
-	transform: translateY(35%)
-}
-.app-bg .limitation-img-float .limitation-img-left > .img-float-box:nth-child(2) {
-	transform: translateY(15%)
-}
-.app-bg .limitation-img-float .limitation-img-left > .img-float-box:nth-child(3) {
-	transform: translateY(25%)
-}
-.app-bg .limitation-img-float .limitation-img-right > .img-float-box:nth-child(1) {
-	transform: translateY(10%)
-}
-.app-bg .limitation-img-float .limitation-img-right > .img-float-box:nth-child(2) {
-	transform: translateY(35%)
-}
-.app-bg .limitation-img-float .img-float-box img {
-	width: 100%;
-	margin-top: 20px;
-}
-</style>
+
 <script>
-var controller = new ScrollMagic.Controller();
-var limitation_state = new TimelineMax().add([
-  TweenMax.to(".app-bg .limitation-text", 0.5, {
-    y: 0,
-    ease: Expo,
-  }),
-  TweenMax.staggerTo(
-    [
-      ".app-bg .limitation-img-float .limitation-img-left > .img-float-box:nth-child(1)",
-    ],
-    1,
-    {
-		scaleX:1.2,
-		scaleY:1.2,
-      y: "-30%",
-	  x:"-20%",
-      ease: Expo,
-    }
-  ),
-  TweenMax.staggerTo(
-    [
-      ".app-bg .limitation-img-float .limitation-img-left > .img-float-box:nth-child(3)",
-    ],
-    1,
-    {
-		scaleX:1.2,
-		scaleY:1.2,
-      y: "-15%",
-      ease: Expo,
-    }
-  ),
-  TweenMax.staggerTo(
-    [
-      ".app-bg .limitation-img-float .limitation-img-left > .img-float-box:nth-child(2)",
-    ],
-    1,
-    {
-		scaleX:1.2,
-		scaleY:1.2,
-      y: 0,
-	  x:"-10%",
-      ease: Expo,
-    }
-  ),
-  TweenMax.staggerTo(
-    [
-      ".app-bg .limitation-img-float .limitation-img-right > .img-float-box:nth-child(1)",
-    ],
-    1,
-    {
-		scaleX:1.2,
-		scaleY:1.2,
-      y: "-10%",
-	  x:"10%",
-      ease: Expo,
-    }
-  ),TweenMax.staggerTo(
-    [
-      ".app-bg .limitation-img-float .limitation-img-right > .img-float-box:nth-child(2)",
-    ],
-    1,
-    {
-		scaleX:1.2,
-		scaleY:1.2,
-      y: "-10%",
-	  x:"20%",
-      ease: Expo,
-    }
-  ),
-]);
-  
-new ScrollMagic.Scene({
-  triggerElement: ".app-bg",
-  duration: 0,
-})
-  .setTween(limitation_state)
-  .addTo(controller);
-</script></div></div></div></div></div></div><div data-section-id="pf-9c9f" data-pf-type="Section" class="sc-fmciRz bheIgq pf-337_ pf-lg-hide pf-md-hide pf-sm-hide"><div class="sc-gjNHFA gwWIgj"><div class="sc-ezbkAF A-dmbO pf-338_ pf-r pf-r-eh" style="--s-xs:0px;--s-sm:15px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-md:12;--c-lg:12"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-339_"><div data-pf-type="Custom.HTML" class="sc-AjmGg eCTxfx pf-340_"><script src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/1.14.2-TweenMax.js?v=1663912518"></script>
-<script src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/2.0.3-ScrollMagic.min.js?v=1663912592"></script>
-<script src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/2.0.3-animation.gsap.js?v=1663912682"></script>
-<script src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/2.0.3-debug.addIndicators.js?v=1663912891"></script>
-<div class="app-bg-mb">
-        <div class="limitation-img-float">
-          <!-- <div class="limitation-img-float-content"> -->
-          <div class="limitation-img-left">
-            <div class="img-float-box">
-              <img
-                src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20221018-140024.png?v=1666073280"
-                alt=""
-              />
-              <img
-                src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20221018-140004.png?v=1666073283"
-                alt=""
-              />
-            </div>
-            <div class="img-float-box">
-              <img
-                src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20221018-140020.png?v=1666073316"
-                alt=""
-              />
-              <img
-                src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20221018-140000.png?v=1666073297"
-                alt=""
-              />
-            </div>
-            <div class="img-float-box">
-              <img
-                src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20221018-140016.png?v=1666073290"
-                alt=""
-              />
-              <img
-                src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20221018-135957.png?v=1666073313"
-                alt=""
-              />
-            </div>
-          </div>
-          <!-- </div> -->
-          <div class="limitation-img-right">
-            <div class="img-float-box">
-              <img
-                src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20221018-140013.png?v=1666073313"
-                alt=""
-              /><img
-                src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20221018-135953.png?v=1666073316"
-                alt=""
-              />
-            </div>
-            <div class="img-float-box">
-              <img
-                src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20221018-140009.png?v=1666073311"
-                alt=""
-              />
-              <img
-                src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20221018-135940.png?v=1666073290"
-                alt=""
-              />
-            </div>
-          </div>
-        </div>
-  <div class="content">
-	<div class="title">
-	  Smart Connection
-	</div>
-	<div class="description">
-	  Called by many and arguably the Tesla of E-Bikes, Urtopia Carbon One demonstrates how far smartness can go. Thumbprint wakeup, voice control, real-time location, and Bluetooth speaker, are only among many features awaiting exploration.
-	</div>
-	<div style="margin-top: 36px;text-shadow: none;" onclick="showVideoDialog('https://www.youtube.com/embed?v=7q-5PuNG3KM&list=PLEmHoqEXpfm8rfKg6pZhPtgT2ycj_UAVN&index=17&autoplay=1&cc_load_policy=1')" class="my-button">Watch video</div>
-  </div>
-</div>
-<style>
-  .app-bg-mb{
-	display:flex;
-	justify-content:center;
-	align-items:center;
-	height:438px;
-	color:#fff;
-  }
-  .app-bg-mb .content{
-	position: absolute;
-    top:unset;
-    width: 100%;
-    text-align: center;
-	width:50%;
-	padding: 0 15px;
-	text-shadow: 0px 0px 20px #000;
-  }
-  .app-bg-mb .content .title{
-	margin-top: 0;
-	font: normal normal 600 48px/72px Urbane;
-	color:#fff;
-  }
-  .app-bg-mb .content .description{
-	font: normal normal 300 16px/24px Urbane;
-  }
-  
- .app-bg-mb .limitation-img-float {
-  opacity:0.5;
-    width: 240%;
-    position: absolute;
-	height: 100%;
-	display: flex;
-}
- .app-bg-mb .limitation-img-float .limitation-img-left, .limitation-img-float .limitation-img-right {
-	display: flex;
-	align-items: center;
-}
- .app-bg-mb .limitation-img-float .limitation-img-left {
-	flex: 0 0 60%;
-}
- .app-bg-mb .limitation-img-float .limitation-img-right {
-	flex: 0 0 40%;
-}
- .app-bg-mb .limitation-img-float .img-float-box {
-	padding: 0 10px;
-	transform: translateY(50%);
-}
- .app-bg-mb .limitation-img-float .limitation-img-left .img-float-box {
-	flex: 0 0 33.33%;
-}
- .app-bg-mb .limitation-img-float .limitation-img-right .img-float-box {
-	flex: 0 0 50%;
-}
- .app-bg-mb .limitation-img-float .limitation-img-left > .img-float-box:nth-child(1) {
-	transform: translateY(35%)
-}
- .app-bg-mb .limitation-img-float .limitation-img-left > .img-float-box:nth-child(2) {
-	transform: translateY(15%)
-}
- .app-bg-mb .limitation-img-float .limitation-img-left > .img-float-box:nth-child(3) {
-	transform: translateY(25%)
-}
- .app-bg-mb .limitation-img-float .limitation-img-right > .img-float-box:nth-child(1) {
-	transform: translateY(10%)
-}
- .app-bg-mb .limitation-img-float .limitation-img-right > .img-float-box:nth-child(2) {
-	transform: translateY(35%)
-}
- .app-bg-mb .limitation-img-float .img-float-box img {
-	width: 100%;
-	margin-top: 20px;
-}
-  @media screen and (max-width:768px){
-	  .app-bg-mb .content{
-		width:100%;
-		flex-direction: column;
-	}
-	.app-bg-mb .content .title{
-		font: normal normal bold 36px/48px Urbane;
-	  margin-bottom:30px;
-	}
-   .app-bg-mb .content .description{
-		font: normal normal 300 14px/18px Urbane;
-	}
-  }
-</style>
-<script>
-var controllerMb = new ScrollMagic.Controller();
-var limitation_stateMb = new TimelineMax().add([
-  TweenMax.to(" .app-bg-mb .limitation-text", 0.5, {
-    y: 0,
-    ease: Expo,
-  }),
-  TweenMax.staggerTo(
-    [
-      " .app-bg-mb .limitation-img-float .limitation-img-left > .img-float-box:nth-child(1)",
-    ],
-    1,
-    {
-		scaleX:1.2,
-		scaleY:1.2,
-      y: "-30%",
-	  x:"-20%",
-      ease: Expo,
-    }
-  ),
-  TweenMax.staggerTo(
-    [
-      " .app-bg-mb .limitation-img-float .limitation-img-left > .img-float-box:nth-child(3)",
-    ],
-    1,
-    {
-		scaleX:1.2,
-		scaleY:1.2,
-      y: "-15%",
-      ease: Expo,
-    }
-  ),
-  TweenMax.staggerTo(
-    [
-      " .app-bg-mb .limitation-img-float .limitation-img-left > .img-float-box:nth-child(2)",
-    ],
-    1,
-    {
-		scaleX:1.2,
-		scaleY:1.2,
-      y: 0,
-	  x:"-10%",
-      ease: Expo,
-    }
-  ),
-  TweenMax.staggerTo(
-    [
-      " .app-bg-mb .limitation-img-float .limitation-img-right > .img-float-box:nth-child(1)",
-    ],
-    1,
-    {
-		scaleX:1.2,
-		scaleY:1.2,
-      y: "-10%",
-	  x:"10%",
-      ease: Expo,
-    }
-  ),
-  TweenMax.staggerTo(
-    [
-      " .app-bg-mb .limitation-img-float .limitation-img-right > .img-float-box:nth-child(2)",
-    ],
-    1,
-    {
-		scaleX:1.2,
-		scaleY:1.2,
-      y: "-10%",
-	  x:"20%",
-      ease: Expo,
-    }
-  ),
-]);
-  
-new ScrollMagic.Scene({
-  triggerElement: " .app-bg-mb",
-  duration: 0,
-})
-  .setTween(limitation_stateMb)
-  .addTo(controllerMb);
-</script></div></div></div></div></div></div><div data-section-id="pf-20bf" data-pf-type="Section" class="sc-fmciRz bheIgq pf-341_"><div style="--cw:1280px" class="sc-gjNHFA gwWIgj"><div class="sc-ezbkAF A-dmbO pf-342_ pf-r pf-r-eh" style="--s-xs:15px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-sm:4;--c-md:4;--c-lg:4"><div data-background-image="https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/section3frontimg1-1666927399817.jpg" data-pf-type="Column" class="sc-gUQvok iVVDxu pf-343_ lozad"><p class="sc-jtXEFf jydWoQ pf-344_" data-pf-type="Paragraph"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-346_">Music All the Way
-</span></p><p class="sc-jtXEFf jydWoQ pf-347_" data-pf-type="Paragraph"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-349_">Bluetooth&nbsp;<br>Speaker</span></p></div></div><div class="pf-c" style="--c-xs:12;--c-sm:4;--c-md:4;--c-lg:4"><div data-background-image="https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/section3frontimg2mb-1667355674330.jpg" data-pf-type="Column" class="sc-gUQvok iVVDxu pf-350_ lozad"><p class="sc-jtXEFf jydWoQ pf-351_" data-pf-type="Paragraph"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-353_">Treasure Hunt
-</span></p><p class="sc-jtXEFf jydWoQ pf-354_" data-pf-type="Paragraph"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-356_">Turn by Turn<br>Navigation</span></p></div></div><div class="pf-c" style="--c-xs:12;--c-sm:4;--c-md:4;--c-lg:4"><div data-background-image="https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/img_v2_98184868c89a465e99a2b108eee5a20g-1668434087483.png" data-pf-type="Column" class="sc-gUQvok iVVDxu pf-357_ lozad"><p class="sc-jtXEFf jydWoQ pf-358_" data-pf-type="Paragraph"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-360_">Ride for Pride
-</span></p><p class="sc-jtXEFf jydWoQ pf-361_" data-pf-type="Paragraph"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-363_">Keep All Stats<br>to Share
-</span></p></div></div></div></div></div><div data-section-id="pf-e358" data-pf-type="Section" class="sc-fmciRz bheIgq pf-364_"><div style="--cw:1170px" class="sc-gjNHFA gwWIgj"><div class="sc-ezbkAF A-dmbO pf-365_ pf-r pf-r-eh" style="--s-xs:15px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-md:12;--c-lg:12"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-366_"><div data-pf-type="Custom.HTML" class="sc-AjmGg eCTxfx pf-367_"><div class="world-title">
-  Users Like You, Worldwide
-</div>
-<div id="world-swiper" class="swiper">
-  <div class="swiper-wrapper swiper-no-swiping">
-	<div class="swiper-slide slide">
-	  <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/img_77662x-1672048952210.jpg"/>
-		<div class="description">
-		  <span>Karina Schwirtlich</span>
-		  “it is much easier to use :) Going uphill is so much easier, I could even read a book while doing this.”
-		</div>
-	</div>
-	<div class="swiper-slide slide">
-	  <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/screen-shot-20221018-at-72910-pm-1666785985034.jpg"/>
-		<div class="description">
-		  <span>Rex Peters</span>
-		  “I got 4 other brands and I still learning the Urtopia but so far my favorite e-bike . Look how far technology has come so fast . Happy and safe riding.”
-		</div>
-	</div>
-	<div class="swiper-slide slide">
-	  <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/072a06992x-1672048952203.jpg"/>
-		<div class="description">
-		  <span>v.wrightfitness</span>
-		  “The smoothest riding e-bike I have tried! Thank you.”
-		</div>
-	</div>
-	<div class="swiper-slide slide">
-	  <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/5590a91dd1b546e99f5f381a1c1aa0c4-1666785985022.jpg"/>
-		<div class="description">
-		  <span>Chris</span>
-		  “Outstanding performance. I love this bike.”
-		</div>
-	</div>
-	<div class="swiper-slide slide">
-	  <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/85831919d8ee4553808b75fb1ffc469e-1666785985025.jpg"/>
-		<div class="description">
-		  <span>Rino Folisi</span>
-		  “Finally Endlich vereint.”
-		</div>
-	</div>
-  </div>
-</div>
-<style>
-  .world-title{
-	color:#fff;
-	text-align:center;
-	font: normal normal 600 48px/58px Urbane;
-	margin-bottom:55px;
-  }#world-swiper{
-	z-index:0;
-  }
-  
-  #world-swiper .slide{
-	width:30%!important;
-  }
-  #world-swiper img{
-	width:80%;
-	height:auto;
-	margin-bottom:28px;
-  }
-  #world-swiper .description{
-	color:#fff;
-	font: italic normal 300 16px/19px Urbane;
-	width:80%;
-  }
-  
-  #world-swiper .description span{
-	font-weight:bold;
-  }
-   #world-swiper .swiper-pagination {
-	position: static;
-    width: auto;
-    display: flex;
-    align-items: flex-end;
-    font-size: 30px;
-    font-weight: 550;
-    color: #161c1f;
-    line-height: 42px;
-  }
-  #world-swiper .btnWraped {
-	display: flex;
-	width: 900px;
-	margin: 0 auto;
-	transform: translateY(-100%);
-	position:relative;
-	z-index:2;
-  }
-      .swiper .swiper-wrapper {
-        -webkit-transition-timing-function: linear !important; /*之前是ease-out*/
-        -moz-transition-timing-function: linear !important;
-        -ms-transition-timing-function: linear !important;
-        -o-transition-timing-function: linear !important;
-        transition-timing-function: linear !important;
-      }
-  @media screen and (max-width:768px){
-	#world-swiper .slide{
-	  width:80%!important;
-	}
-	.world-title{
-	  font: normal normal 600 36px/44px Urbane;
-	}
-  }
-</style>
-<script>
-  let slideNo = 0;
-  var swiperSectionWorld = new Swiper("#world-swiper", {
-		autoplay: {
-          delay: 0,
-          disableOnInteraction: false
-        },
-		noSwiping:true,
-		freeMode:true,
-        loop: true,
-        speed: 6000,
-        slidesPerView: "auto", 
-  });
-  let nextTransForm = "";
-      // 轮播图从暂停位置移动到原本应到的位置所用的时间
-      let nextTime = 0;
-	let slideWidth = 165;
-  $("#world-swiper").hover(()=>{
-    	slideWidth = document.querySelector("#world-swiper .swiper-slide.slide").offsetWidth;
-        nextTransForm = document.querySelector("#world-swiper .swiper-wrapper").style.transform;
-        // 轮播图原本应移动到的位置
-        let nextTransPosition =
-          -1 *
-          parseInt(
-            document.querySelector("#world-swiper .swiper-wrapper")
-              .style.transform.split("translate3d(")[1]
-              .split("px")[0]
-          );
+  (function(){
+    var a=document.createElement("script");
+    a.type="text/javascript";
+    a.src="https://cdn.storepoint.co/api/v1/js/162f21804990ff.js";
+    var b=document.getElementsByTagName("script")[0];
+    b.parentNode.insertBefore(a,b);}());
 
-        // 鼠标悬浮时时轮播图位置
-        let nowTransPosition =
-          -1 *
-          parseInt(
-            window
-              .getComputedStyle(
-                document.querySelector("#world-swiper .swiper-wrapper"),
-                false
-              )
-              ["transform"].split("1, ")[2]
-              .split(",")[0]
-          );
-        let nowTransForm = window.getComputedStyle(
-            document.querySelector("#world-swiper .swiper-wrapper"),
-          false
-        )["transform"];
-        nextTime = 6000 * ((nextTransPosition - nowTransPosition) / slideWidth);
-        document.querySelector("#world-swiper .swiper-wrapper").style.transform = nowTransForm;
-        document.querySelector("#world-swiper .swiper-wrapper").style.transitionDuration = "0ms";
-    swiperSectionWorld.autoplay.stop();
-  },()=>{
-        document.querySelector("#world-swiper .swiper-wrapper").style.transform = nextTransForm;
-        document.querySelector("#world-swiper .swiper-wrapper").style.transitionDuration = nextTime+"ms";
-	swiperSectionWorld.autoplay.start();
-  })
-</script></div></div></div></div></div></div><div data-section-id="pf-c716" data-pf-type="Section" class="sc-fmciRz bheIgq pf-368_"><div style="--cw:1170px" class="sc-gjNHFA gwWIgj"><div class="sc-ezbkAF A-dmbO pf-369_ pf-r pf-r-eh" style="--s-xs:15px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-md:12;--c-lg:12"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-370_"><h3 data-pf-type="Heading" class="sc-cTAqQK eHolsa pf-371_"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-373_">Get inspired by more Urtopia riders' stories</span></h3><a href="https://www.facebook.com/UrtopiaEbike/" target="_blank" data-pf-type="Button" class="sc-iqseJM fFuGRG pf-374_"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-376_">Join our community</span></a></div></div></div></div></div><div data-section-id="pf-4046" data-pf-type="Section" class="sc-fmciRz bheIgq pf-377_"><div style="--cw:1280px" class="sc-gjNHFA gwWIgj"><div class="sc-ezbkAF A-dmbO pf-378_ pf-r pf-r-eh" style="--s-xs:15px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-md:12;--c-lg:12"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-379_"><h3 data-pf-type="Heading" class="sc-cTAqQK eHolsa pf-380_"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-382_">Smartest E-Bike Ever</span></h3></div></div></div><div class="sc-ezbkAF A-dmbO pf-383_ pf-r pf-r-eh" style="--s-xs:15px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-sm:4;--c-md:4;--c-lg:4"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-384_"><div data-pf-type="Custom.HTML" class="sc-AjmGg eCTxfx pf-385_"><div class="component" onclick="openComponent(0)">
+    // 
+</script>
+
+<div class="boxs boxs3">
+  <div class="centeral-content">
+    <div></div>
+    <div>
+      <div class="u30DemiBold_v2">Local care all the time</div>
+      <div class="u17Light_v2">
+        <div><img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/shopping-mall_2x_44d99fcd-f0f4-443b-927e-b68e48af010f.png?v=1687259496"/>1 service center, 30+ service partners</div>
+        <div><img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/24-hours_2x_d6a8eeb2-4564-4351-8cb9-096dbb778479.png?v=1687259501"/>24hrs service response, App build-in portal</div>
+        <div><img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/box_2x_2b3b7c15-f5ae-4305-956f-7543b63b2dda.png?v=1687259506"/><span>Spare parts available locally, ships in 3 days.1 service center, 30+ service partners</span></div>
+        <div><img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/customer-satisfaction_2x_c7081e3a-1864-43b6-8ed2-f77895eafa6a.png?v=1687259512"/>10+ technical experts, 99% satisfaction rate.</div>
+      </div>
+      <a class="my-button my-button-black" href="/pages/care" target="_blank">Learn more</a>
+    </div>
+    <div>
+      <div class="u30DemiBold_v2">Leasing Partners at Your Choice</div>
+      <div class="u17Light_v2">We offer you the opportunity to get your dream bike at low monthly leasing rates through various leasing providers.</div>
+      <div class="logos">
+        <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/JR-Logo_-RGB-schwarz-large-4x_2x_90eff7ba-f64b-45ef-8e7e-65490e740385.png?v=1687260470"/>
+        <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18616_2x_d0fb1804-0a96-4524-9463-6cd30673cf6d.png?v=1687260793"/>
+        <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18617_2x_6706fd9c-d8f3-434b-b77f-6e35eb007eb3.png?v=1687260762"/>
+        <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/logo_meinstdienstrad_2021_2x_d5a1936d-fc18-418a-bb45-b9bb73e6c96a.png?v=1687260731"/>
+      </div>
+      <a class="my-button my-button-black" href="/pages/ebike-leasing" target="_blank">Lease Now</a>
+    </div>
+    <div></div>
+  </div>
+</div>
+
+<div data-section-id="pf-4046" data-pf-type="Section" class="sc-fmciRz bheIgq pf-377_"><div style="--cw:1280px" class="sc-gjNHFA gwWIgj"><div class="sc-ezbkAF A-dmbO pf-378_ pf-r pf-r-eh" style="--s-xs:15px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-md:12;--c-lg:12"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-379_"><h3 data-pf-type="Heading" class="sc-cTAqQK eHolsa pf-380_"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-382_">Smartest E-Bike Ever</span></h3></div></div></div><div class="sc-ezbkAF A-dmbO pf-383_ pf-r pf-r-eh" style="--s-xs:15px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-sm:4;--c-md:4;--c-lg:4"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-384_"><div data-pf-type="Custom.HTML" class="sc-AjmGg eCTxfx pf-385_"><div class="component" onclick="openComponent(0)">
   <div class="img-container">
 	<img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/finger_print-1.jpg?v=1675741851" srcset="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/finger_print-1.jpg?v=1675741851 768w" width="737" height="432" sizes="(min-width: 1536px) 1536px, (min-width: 1024px) 1280px, (min-width: 640px) 768px, 320px" loading="lazy" data-pf-type="Image3" class="hover-bigger pf-hide">
 	<img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/finger_print-1.jpg?v=1675741851"  loading="lazy" data-pf-type="Image3" class="pf-lg-hide pf-md-hide pf-sm-hide hover-bigger">
@@ -1403,84 +582,7 @@ new ScrollMagic.Scene({
   </div>
 </div></div></div></div></div></div></div>
 
-<!--<div data-section-id="pf-c3cc" data-pf-type="Section" id="spec-title" class="sc-fmciRz bheIgq pf-404_">
-	<div style="--cw:1280px" class="sc-gjNHFA gwWIgj">
-		<div class="sc-ezbkAF A-dmbO pf-405_ pf-r pf-r-eh" style="--s-xs:15px" data-pf-type="Row">
-			<div class="pf-c" style="--c-xs:12;--c-md:12;--c-lg:12">
-				<div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-406_">
-					<h3 data-pf-type="Heading" class="sc-cTAqQK eHolsa pf-407_">
-						<span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-409_">Specification</span>
-					</h3>
-				</div>
-			</div>
-		</div>
-		<div class="sc-ezbkAF A-dmbO pf-410_ pf-r pf-c-ct pf-r-eh" style="--s-xs:15px" data-pf-type="Row">
-			<div class="pf-c" style="--c-xs:12;--c-md:12;--c-lg:12">
-				<div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-411_">
-					<h2 data-pf-type="Heading" id="size-guide-title" class="sc-cTAqQK eHolsa pf-412_">
-						<span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-414_">Size Guide</span>
-					</h2>
-					<div class="sc-ezbkAF A-dmbO pf-415_ pf-r pf-c-cm pf-r-eh pf-sm-hide pf-hide" style="--s-xs:15px" data-pf-type="Row" id="size-guide-row">
-						<div class="pf-c" style="--c-xs:12;--c-sm:6;--c-md:6;--c-lg:6">
-							<div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-416_">
-								<div data-pf-type="Block" class="sc-cbTzjv cciAhs pf-417_">
-									<div class="sc-furwcr pchuW pf-418_ pf-icon-right" data-scrolling="false" data-multiple="false" data-pf-type="Accordion">
-										<div data-pf-type="Accordion.Content.Wrapper" class="sc-pVTFL cZzoXH pf-419_">
-											<button type="button" class="sc-gKclnd gSDTKq pf-420_ Title pf-anchor" data-header-id="32574847-d53d-4382-a4eb-46c05be24aac" data-active="true" data-pf-type="Accordion.Header">
-												<i class="pfa pfa-minus pfa-arrow"></i>
-												<span>Basic Measurements</span>
-											</button>
-											<div data-pf-expandable="true" data-id="32574847-d53d-4382-a4eb-46c05be24aac" style="display:block" data-pf-type="Accordion.Content" class="sc-iCfMLu ewKYhD pf-422_">
-												<div class="sc-kmQMED dqczWb pf-423_ Body pf-table-hover" data-pf-type="Table">
-													<table>
-														<tbody>
-															<tr>
-																<th class="A1">
-																	<span>Table header 0</span>
-																</th>
-																<th class="B1">
-																	<span>Medium(cm)</span>
-																</th>
-																<th class="C1">
-																	<span>Large(cm)</span>
-																</th>
-															</tr>
-															<tr>
-																<td class="A2">
-																	<span>Recomm. rider height</span>
-																</td>
-																<td class="B2">
-																	<span>170~185<br>(5’7’’~6’1’’)</span>
-																</td>
-																<td class="C2">
-																	<span>180~195<br>(5’11’’~6’5’’)</span>
-																</td>
-															</tr>
-															<tr>
-																<td class="A3">
-																	<span>A. Standover height</span>
-																</td>
-																<td class="B3">
-																	<span>80</span>
-																</td>
-																<td class="C3">
-																	<span>84</span>
-																</td>
-															</tr>
-															<tr>
-																<td class="A4">
-																	<span>B. Seat height (to ground)</span>
-																</td>
-																<td class="B4">
-																	<span>92~98</span>
-																</td>
-																<td class="C4">
-																	<span>96~102</span></td></tr><tr><td class="A5"><span>C. Handlebar grips height</span></td><td class="B5"><span>101</span></td><td class="C5"><span>102</span></td></tr><tr><td class="A6"><span>D. Handlebar width</span></td><td class="B6"><span>69</span></td><td class="C6"><span>69</span></td></tr><tr><td class="A7"><span>E. Crank length</span></td><td class="B7"><span>17</span></td><td class="C7"><span>17</span></td></tr><tr><td class="A8"><span>F. Overall length</span></td><td class="B8"><span>181</span></td><td class="C8"><span>185</span></td></tr><tr><td class="A9"><span>G. Wheel diameter</span></td><td class="B9"><span>69</span></td><td class="C9"><span>69</span></td></tr><tr><td class="A10"><span>H. Seat height (to seat tube)</span></td><td class="B10"><span>19~25</span></td><td class="C10"><span>19~25</span></td></tr><tr><td class="A11"><span>I. Handlebar diameter (outer)</span></td><td class="B11"><span>2.22</span></td><td class="C11"><span>2.22</span></td></tr></tbody></table></div></div></div><div data-pf-type="Accordion.Content.Wrapper" class="sc-pVTFL cZzoXH pf-424_"><button type="button" class="sc-gKclnd gSDTKq pf-425_ Title pf-anchor" data-header-id="3dc382a4-eb46-405b-a24a-ac7b69d271ba" data-active="false" data-pf-type="Accordion.Header"><i class="pfa pfa-plus pfa-arrow"></i><span>Detailed Measurements</span></button><div data-pf-expandable="true" data-id="3dc382a4-eb46-405b-a24a-ac7b69d271ba" style="display:none" data-pf-type="Accordion.Content" class="sc-iCfMLu ewKYhD pf-427_"><div class="sc-kmQMED dqczWb pf-428_ Body pf-table-hover" data-pf-type="Table"><table><tbody><tr><th class="A1"><span>Table header 0</span></th><th class="B1"><span>Medium(cm)</span></th><th class="C1"><span>Large(cm)</span></th></tr><tr><td class="A2"><span>1. Seat tube length</span></td><td class="B2"><span>46</span></td><td class="C2"><span>50</span></td></tr><tr><td class="A3"><span>2. Seat angle</span></td><td class="B3"><span>73°</span></td><td class="C3"><span>73°</span></td></tr><tr><td class="A4"><span>3. Head tube length</span></td><td class="B4"><span>17</span></td><td class="C4"><span>18</span></td></tr><tr><td class="A5"><span>4. Head angle</span></td><td class="B5"><span>69.5°</span></td><td class="C5"><span>70°</span></td></tr><tr><td class="A6"><span>5. Wheelbase</span></td><td class="B6"><span>108</span></td><td class="C6"><span>112</span></td></tr><tr><td class="A7"><span>6. Top tube length (effective)</span></td><td class="B7"><span>58</span></td><td class="C7"><span>61</span></td></tr><tr><td class="A8"><span>7. Chain stay length (rear-center)</span></td><td class="B8"><span>45</span></td><td class="C8"><span>45</span></td></tr><tr><td class="A9"><span>8. Bottom bracket drop</span></td><td class="B9"><span>6</span></td><td class="C9"><span>6</span></td></tr><tr><td class="A10"><span>9. Fork length (axle to crown)</span></td><td class="B10"><span>40</span></td><td class="C10"><span>40</span></td></tr><tr><td class="A11"><span>10. Fork offset/rake</span></td><td class="B11"><span>4.5</span></td><td class="C11"><span>4.5</span></td></tr><tr><td class="A12"><span>11. Stack</span></td><td class="B12"><span>58</span></td><td class="C12"><span>59</span></td></tr><tr><td class="A13"><span>12. Reach</span></td><td class="B13"><span>40</span></td><td class="C13"><span>43</span></td></tr><tr><td class="A14"><span>13. Front-center</span></td><td class="B14"><span>64.5</span></td><td class="C14"><span>67</span></td></tr><tr><td class="A15"><span>14. Headset height</span></td><td class="B15"><span>10</span></td><td class="C15"><span>10</span></td></tr><tr><td class="A16"><span>15. Handlebar stem length</span></td><td class="B16"><span>8</span></td><td class="C16"><span>8</span></td></tr></tbody></table></div></div></div></div></div></div></div><div class="pf-c" style="--c-xs:12;--c-sm:6;--c-md:6;--c-lg:6"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-429_"><div data-pf-type="Block" class="sc-cbTzjv cciAhs pf-430_"><div data-pf-type="Image" class="sc-jgrJph bzUUvT pf-431_"><img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/20220906142258-1662445744138.png?v=1662445747" srcSet="https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/20220906142258-1662445744138.png?v=1662445747 1536w" width="1033" height="973"/></div></div></div></div></div><div data-pf-type="Image" class="sc-jgrJph bzUUvT pf-432_ pf-lg-hide pf-md-hide"><img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/20220906142258-1662445744138.png?v=1662445747" srcSet="https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/20220906142258-1662445744138.png?v=1662445747 1536w" width="1033" height="973"/></div><div class="sc-ezbkAF A-dmbO pf-433_ pf-r pf-c-ct pf-r-eh pf-lg-hide pf-md-hide" style="--s-xs:15px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-md:12;--c-lg:12"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-434_"><div data-pf-type="Block" class="sc-cbTzjv cciAhs pf-435_"><div class="sc-furwcr pchuW pf-436_ pf-icon-right" data-scrolling="false" data-multiple="false" data-pf-type="Accordion"><div data-pf-type="Accordion.Content.Wrapper" class="sc-pVTFL cZzoXH pf-437_"><button type="button" class="sc-gKclnd gSDTKq pf-438_ Title pf-anchor" data-header-id="d271ba28-df0c-46c2-8e1a-5a359c0ef7a6" data-active="false" data-pf-type="Accordion.Header"><i class="pfa pfa-plus pfa-arrow"></i><span>Basic Measurements</span></button><div data-pf-expandable="true" data-id="d271ba28-df0c-46c2-8e1a-5a359c0ef7a6" style="display:none" data-pf-type="Accordion.Content" class="sc-iCfMLu ewKYhD pf-440_"><div class="sc-kmQMED dqczWb pf-441_ Body pf-table-striped" data-pf-type="Table"><table><tbody><tr><th class="A1"><span>Table header 0</span></th><th class="B1"><span>Medium (cm)</span></th><th class="C1"><span>Large <br>(cm)</span></th></tr><tr><td class="A2"><span>Recomm. rider height</span></td><td class="B2"><span>170~185<br>(5’7’’~6’1’’)</span></td><td class="C2"><span>180~195<br>(5’11’’~6’5’’)</span></td></tr><tr><td class="A3"><span>A. Standover height</span></td><td class="B3"><span>80</span></td><td class="C3"><span>84</span></td></tr><tr><td class="A4"><span>B. Seat height (to ground)</span></td><td class="B4"><span>92~98</span></td><td class="C4"><span>96~102</span></td></tr><tr><td class="A5"><span>C. Handlebar grips height</span></td><td class="B5"><span>101</span></td><td class="C5"><span>102</span></td></tr><tr><td class="A6"><span>D. Handlebar width</span></td><td class="B6"><span>69</span></td><td class="C6"><span>69</span></td></tr><tr><td class="A7"><span>E. Crank length</span></td><td class="B7"><span>17</span></td><td class="C7"><span>17</span></td></tr><tr><td class="A8"><span>F. Overall length</span></td><td class="B8"><span>181</span></td><td class="C8"><span>185</span></td></tr><tr><td class="A9"><span>G. Wheel diameter</span></td><td class="B9"><span>69</span></td><td class="C9"><span>69</span></td></tr><tr><td class="A10"><span>H. Seat height (to seat tube)</span></td><td class="B10"><span>19~25</span></td><td class="C10"><span>19~25</span></td></tr><tr><td class="A11"><span>I. Handlebar diameter (outer)</span></td><td class="B11"><span>2.22</span></td><td class="C11"><span>2.22</span></td></tr></tbody></table></div></div></div><div data-pf-type="Accordion.Content.Wrapper" class="sc-pVTFL cZzoXH pf-442_"><button type="button" class="sc-gKclnd gSDTKq pf-443_ Title pf-anchor" data-header-id="0cd6c24e-1a5a-459c-8ef7-a6e5f59cc3cc" data-active="false" data-pf-type="Accordion.Header"><i class="pfa pfa-plus pfa-arrow"></i><span>Detailed Measurements</span></button><div data-pf-expandable="true" data-id="0cd6c24e-1a5a-459c-8ef7-a6e5f59cc3cc" style="display:none" data-pf-type="Accordion.Content" class="sc-iCfMLu ewKYhD pf-445_"><div class="sc-kmQMED dqczWb pf-446_ Body pf-table-striped" data-pf-type="Table"><table><tbody><tr><th class="A1"><span>Table header 0</span></th><th class="B1"><span>Medium<br>(cm)</span></th><th class="C1"><span>Large<br>(cm)</span></th></tr><tr><td class="A2"><span>1. Seat tube length</span></td><td class="B2"><span>46</span></td><td class="C2"><span>50</span></td></tr><tr><td class="A3"><span>2. Seat angle</span></td><td class="B3"><span>73°</span></td><td class="C3"><span>73°</span></td></tr><tr><td class="A4"><span>3. Head tube length</span></td><td class="B4"><span>17</span></td><td class="C4"><span>18</span></td></tr><tr><td class="A5"><span>4. Head angle</span></td><td class="B5"><span>69.5°</span></td><td class="C5"><span>70°</span></td></tr><tr><td class="A6"><span>5. Wheelbase</span></td><td class="B6"><span>108</span></td><td class="C6"><span>112</span></td></tr><tr><td class="A7"><span>6. Top tube length (effective)</span></td><td class="B7"><span>58</span></td><td class="C7"><span>61</span></td></tr><tr><td class="A8"><span>7. Chain stay length (rear-center)</span></td><td class="B8"><span>45</span></td><td class="C8"><span>45</span></td></tr><tr><td class="A9"><span>8. Bottom bracket drop</span></td><td class="B9"><span>6</span></td><td class="C9"><span>6</span></td></tr><tr><td class="A10"><span>9. Fork length (axle to crown)</span></td><td class="B10"><span>40</span></td><td class="C10"><span>40</span></td></tr><tr><td class="A11"><span>10. Fork offset/rake</span></td><td class="B11"><span>4.5</span></td><td class="C11"><span>4.5</span></td></tr><tr><td class="A12"><span>11. Stack</span></td><td class="B12"><span>58</span></td><td class="C12"><span>59</span></td></tr><tr><td class="A13"><span>12. Reach</span></td><td class="B13"><span>40</span></td><td class="C13"><span>43</span></td></tr><tr><td class="A14"><span>13. Front-center</span></td><td class="B14"><span>64.5</span></td><td class="C14"><span>67</span></td></tr><tr><td class="A15"><span>14. Headset height</span></td><td class="B15"><span>10</span></td><td class="C15"><span>10</span></td></tr><tr><td class="A16"><span>15. Handlebar stem length</span></td><td class="B16"><span>8</span></td><td class="C16"><span>8</span></td></tr></tbody></table></div></div></div></div></div></div></div></div></div></div></div></div></div><div data-section-id="pf-94df" data-pf-type="Section" class="sc-fmciRz bheIgq pf-447_ pf-hide"><div style="--cw:1280px" class="sc-gjNHFA gwWIgj"><div class="sc-ezbkAF A-dmbO pf-448_ pf-r pf-c-cm pf-r-eh" style="--s-xs:15px" data-pf-type="Row"><div class="pf-c" style="--c-xs:3;--c-md:2;--c-lg:2"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-449_"><h3 data-pf-type="Heading" class="sc-cTAqQK eHolsa pf-450_"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-452_">Specs</span></h3></div></div><div class="pf-c" style="--c-xs:3;--c-md:1;--c-lg:1"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-453_"><div data-pf-type="Image" class="sc-jgrJph bzUUvT pf-454_"><img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/icon2-1649931441565.png?v=1649931443" srcSet="https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/icon2-1649931441565.png?v=1649931443 1536w" width="2560" height="1829"/></div></div></div><div class="pf-c" style="--c-xs:3;--c-md:1;--c-lg:1"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-455_"><div data-pf-type="Image" class="sc-jgrJph bzUUvT pf-456_"><img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/cpsc_logo-1662445677565.svg?v=1662445680" width="40" height="44"/></div></div></div><div class="pf-c" style="--c-xs:3;--c-md:8;--c-lg:8"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-457_"><div data-pf-type="Image" class="sc-jgrJph bzUUvT pf-458_"><img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/icon1png-1649931441566.png?v=1649931446" srcSet="https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/icon1png-1649931441566.png?v=1649931446 1536w" width="540" height="546"/></div></div></div></div><div class="sc-ezbkAF A-dmbO pf-459_ pf-r pf-r-eh" style="--s-xs:15px;--s-lg:5px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-md:12;--c-lg:12"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-460_"><h3 data-pf-type="Heading" class="sc-cTAqQK eHolsa pf-461_"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-463_">Smart</span></h3></div></div></div><div class="sc-ezbkAF A-dmbO pf-464_ pf-r pf-r-eh" style="--s-xs:15px;--s-lg:5px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-sm:4;--c-md:4;--c-lg:4"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-465_"><h3 data-pf-type="Heading" class="sc-cTAqQK eHolsa pf-466_"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-468_">Smartbar features</span></h3><p class="sc-jtXEFf jydWoQ pf-469_" data-pf-type="Paragraph"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-471_">Voice control, fingerprint unlock, LED dot-matrix display</span></p></div></div><div class="pf-c" style="--c-xs:12;--c-sm:4;--c-md:4;--c-lg:4"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-472_"><h3 data-pf-type="Heading" class="sc-cTAqQK eHolsa pf-473_"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-475_">Connectivity</span></h3><p class="sc-jtXEFf jydWoQ pf-476_" data-pf-type="Paragraph"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-478_">eSIM with 4G, Bluetooth &amp; WiFi</span></p></div></div><div class="pf-c" style="--c-xs:12;--c-sm:4;--c-md:4;--c-lg:4"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-479_"><h3 data-pf-type="Heading" class="sc-cTAqQK eHolsa pf-480_"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-482_">IoT sensors</span></h3><p class="sc-jtXEFf jydWoQ pf-483_" data-pf-type="Paragraph"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-485_">Accelerometer, gyroscope, torque</span></p></div></div></div><div class="sc-ezbkAF A-dmbO pf-486_ pf-r pf-r-eh" style="--s-xs:15px;--s-lg:5px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-sm:4;--c-md:4;--c-lg:4"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-487_"><h3 data-pf-type="Heading" class="sc-cTAqQK eHolsa pf-488_"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-490_">App</span></h3><p class="sc-jtXEFf jydWoQ pf-491_" data-pf-type="Paragraph"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-493_">iOS &amp; Android</span></p></div></div><div class="pf-c" style="--c-xs:12;--c-sm:4;--c-md:4;--c-lg:4"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-494_"></div></div><div class="pf-c" style="--c-xs:12;--c-sm:4;--c-md:4;--c-lg:4"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-495_"></div></div></div><div class="sc-ezbkAF A-dmbO pf-496_ pf-r pf-r-eh" style="--s-xs:15px;--s-lg:5px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-md:12;--c-lg:12"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-497_"><h3 data-pf-type="Heading" class="sc-cTAqQK eHolsa pf-498_"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-500_">Power</span></h3></div></div></div><div class="sc-ezbkAF A-dmbO pf-501_ pf-r pf-r-eh" style="--s-xs:15px;--s-lg:5px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-sm:4;--c-md:4;--c-lg:4"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-502_"><h3 data-pf-type="Heading" class="sc-cTAqQK eHolsa pf-503_"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-505_">Motor</span></h3><p class="sc-jtXEFf jydWoQ pf-506_" data-pf-type="Paragraph"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-508_">Customized rear hub, 36 V 250 W (rated), 35 N⋅m</span></p></div></div><div class="pf-c" style="--c-xs:12;--c-sm:4;--c-md:4;--c-lg:4"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-509_"><h3 data-pf-type="Heading" class="sc-cTAqQK eHolsa pf-510_"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-512_">Speed modes</span></h3><p class="sc-jtXEFf jydWoQ pf-513_" data-pf-type="Paragraph"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-515_">Pedal, Eco, Comfort, Sport, Turbo&nbsp;</span></p></div></div><div class="pf-c" style="--c-xs:12;--c-sm:4;--c-md:4;--c-lg:4"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-516_"><h3 data-pf-type="Heading" class="sc-cTAqQK eHolsa pf-517_"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-519_">Top speed (assisted)</span></h3><p class="sc-jtXEFf jydWoQ pf-520_" data-pf-type="Paragraph"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-522_">16 mph (25 km/h)</span></p></div></div></div><div class="sc-ezbkAF A-dmbO pf-523_ pf-r pf-r-eh" style="--s-xs:15px;--s-lg:5px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-sm:4;--c-md:4;--c-lg:4"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-524_"><h3 data-pf-type="Heading" class="sc-cTAqQK eHolsa pf-525_"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-527_">Range</span></h3><p class="sc-jtXEFf jydWoQ pf-528_" data-pf-type="Paragraph"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-530_">25~60 miles (40~100 km)&nbsp;</span></p></div></div><div class="pf-c" style="--c-xs:12;--c-sm:4;--c-md:4;--c-lg:4"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-531_"><h3 data-pf-type="Heading" class="sc-cTAqQK eHolsa pf-532_"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-534_">Removable battery</span></h3><p class="sc-jtXEFf jydWoQ pf-535_" data-pf-type="Paragraph"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-537_">9.8 Ah 352.8 Wh Samsung Li-ion, 2.5-hr quick charge</span></p></div></div><div class="pf-c" style="--c-xs:12;--c-sm:4;--c-md:4;--c-lg:4"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-538_"></div></div></div><div class="sc-ezbkAF A-dmbO pf-539_ pf-r pf-r-eh" style="--s-xs:15px;--s-lg:5px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-md:12;--c-lg:12"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-540_"><h3 data-pf-type="Heading" class="sc-cTAqQK eHolsa pf-541_"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-543_">General</span></h3></div></div></div><div class="sc-ezbkAF A-dmbO pf-544_ pf-r pf-r-eh" style="--s-xs:15px;--s-lg:5px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-sm:4;--c-md:4;--c-lg:4"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-545_"><h3 data-pf-type="Heading" class="sc-cTAqQK eHolsa pf-546_"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-548_">Weight</span></h3><p class="sc-jtXEFf jydWoQ pf-549_" data-pf-type="Paragraph"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-551_">15 kg (15 kg) minimum</span></p></div></div><div class="pf-c" style="--c-xs:12;--c-sm:4;--c-md:4;--c-lg:4"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-552_"><h3 data-pf-type="Heading" class="sc-cTAqQK eHolsa pf-553_"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-555_">Payload Capacity</span></h3><p class="sc-jtXEFf jydWoQ pf-556_" data-pf-type="Paragraph"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-558_">Max. 240 lbs. (110 kg)</span></p></div></div><div class="pf-c" style="--c-xs:12;--c-sm:4;--c-md:4;--c-lg:4"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-559_"><h3 data-pf-type="Heading" class="sc-cTAqQK eHolsa pf-560_"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-562_">Sizes&nbsp;</span></h3><p class="sc-jtXEFf jydWoQ pf-563_" data-pf-type="Paragraph"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-565_">Medium, Large (see Size Guide)</span></p></div></div></div><div class="sc-ezbkAF A-dmbO pf-566_ pf-r pf-r-eh" style="--s-xs:15px;--s-lg:5px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-sm:4;--c-md:4;--c-lg:4"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-567_"><h3 data-pf-type="Heading" class="sc-cTAqQK eHolsa pf-568_"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-570_">Body material</span></h3><p class="sc-jtXEFf jydWoQ pf-571_" data-pf-type="Paragraph"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-573_">Carbon fiber (frame, fork, handlebar, seatpost)</span></p></div></div><div class="pf-c" style="--c-xs:12;--c-sm:4;--c-md:4;--c-lg:4"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-574_"><h3 data-pf-type="Heading" class="sc-cTAqQK eHolsa pf-575_"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-577_">Brakes</span></h3><p class="sc-jtXEFf jydWoQ pf-578_" data-pf-type="Paragraph"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-580_">Front &amp; rear dual-piston hydraulic disc</span></p></div></div><div class="pf-c" style="--c-xs:12;--c-sm:4;--c-md:4;--c-lg:4"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-581_"><h3 data-pf-type="Heading" class="sc-cTAqQK eHolsa pf-582_"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-584_">Transmission</span></h3><p class="sc-jtXEFf jydWoQ pf-585_ Body" data-pf-type="Paragraph"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-587_">Gates Carbon Drive™ CDN™ belt (up to 30,000 km)</span></p></div></div></div><div class="sc-ezbkAF A-dmbO pf-588_ pf-r pf-r-eh" style="--s-xs:15px;--s-lg:5px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-sm:4;--c-md:4;--c-lg:4"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-589_"><h3 data-pf-type="Heading" class="sc-cTAqQK eHolsa pf-590_"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-592_">Integrated lights</span></h3><p class="sc-jtXEFf jydWoQ pf-593_" data-pf-type="Paragraph"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-595_">StVZO headlight; Advanced Rear Early-indication System (ARES)</span></p></div></div><div class="pf-c" style="--c-xs:12;--c-sm:4;--c-md:4;--c-lg:4"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-596_"><h3 data-pf-type="Heading" class="sc-cTAqQK eHolsa pf-597_"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-599_">Wheels</span></h3><p class="sc-jtXEFf jydWoQ pf-600_" data-pf-type="Paragraph"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-602_">700C (ISO 622 mm BSD), inner rim 19 mm</span></p></div></div><div class="pf-c" style="--c-xs:12;--c-sm:4;--c-md:4;--c-lg:4"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-603_"><h3 data-pf-type="Heading" class="sc-cTAqQK eHolsa pf-604_"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-606_">Tires</span></h3><p class="sc-jtXEFf jydWoQ pf-607_" data-pf-type="Paragraph"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-609_">Kenda Kwest 700x35C (35 mm / 1.4”) (30~45 mm compatible)</span></p></div></div></div><div class="sc-ezbkAF A-dmbO pf-610_ pf-r pf-r-eh" style="--s-xs:15px;--s-lg:5px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-md:12;--c-lg:12"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-611_"><h3 data-pf-type="Heading" class="sc-cTAqQK eHolsa pf-612_"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-614_">What’s in the Box</span></h3></div></div></div><div class="sc-ezbkAF A-dmbO pf-615_ pf-r pf-r-eh" style="--s-xs:15px;--s-lg:5px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-sm:4;--c-md:4;--c-lg:4"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-616_"><h3 data-pf-type="Heading" class="sc-cTAqQK eHolsa pf-617_"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-619_">Urtopia Carbon one</span></h3><p class="sc-jtXEFf jydWoQ pf-620_" data-pf-type="Paragraph"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-622_">Front Wheel, Frame, Seatpost, saddle, Pedals</span></p></div></div><div class="pf-c" style="--c-xs:12;--c-sm:4;--c-md:4;--c-lg:4"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-623_"><h3 data-pf-type="Heading" class="sc-cTAqQK eHolsa pf-624_"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-626_">Removable battery</span></h3><p class="sc-jtXEFf jydWoQ pf-627_" data-pf-type="Paragraph"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-629_">Battery, Charger, Battery key</span></p></div></div><div class="pf-c" style="--c-xs:12;--c-sm:4;--c-md:4;--c-lg:4"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-630_"><h3 data-pf-type="Heading" class="sc-cTAqQK eHolsa pf-631_"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-633_">Frame (accessory) bag
-</span></h3><p class="sc-jtXEFf jydWoQ pf-634_" data-pf-type="Paragraph"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-636_">4mm Allen wrench, 15mm combination wrench, front-wheel quick-release device</span></p></div></div></div></div>
-</div>-->
-
-
-<div data-section-id="pf-f457" data-pf-type="Section" class="sc-fmciRz bheIgq pf-637_ pf-lg-hide pf-md-hide pf-sm-hide">	
+<div data-section-id="pf-f457" data-pf-type="Section" class="sc-fmciRz bheIgq pf-637_">	
 <div style="--cw:1170px" class="sc-gjNHFA gwWIgj"><div class="sc-ezbkAF A-dmbO pf-638_ pf-r pf-r-eh" style="--s-xs:0px;--s-sm:15px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-md:12;--c-lg:12"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-639_"><h3 data-pf-type="Heading" class="sc-cTAqQK eHolsa pf-640_ Title"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-642_">Specs</span></h3></div></div></div><div class="sc-ezbkAF A-dmbO pf-643_ pf-r pf-c-cm pf-r-eh" style="--s-xs:15px" data-pf-type="Row"><div class="pf-c" style="--c-xs:2;--c-sm:4;--c-md:4;--c-lg:4"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-644_"><div data-pf-type="Image" class="sc-jgrJph bzUUvT pf-645_"><img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/icon2-1649931441565.png?v=1649931443" srcSet="https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/icon2-1649931441565.png?v=1649931443 1536w" width="2560" height="1829"/></div></div></div><div class="pf-c" style="--c-xs:2;--c-sm:4;--c-md:4;--c-lg:4"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-646_"><div data-pf-type="Image" class="sc-jgrJph bzUUvT pf-647_"><img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/cpsc_logo-1662445677565.svg?v=1662445680" width="40" height="44"/></div></div></div><div class="pf-c" style="--c-xs:8;--c-sm:4;--c-md:4;--c-lg:4"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-648_"><div data-pf-type="Image" class="sc-jgrJph bzUUvT pf-649_"><img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/icon1png-1649931441566.png?v=1649931446" srcSet="https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/icon1png-1649931441566.png?v=1649931446 1536w" width="540" height="546"/></div></div></div></div><div class="sc-ezbkAF A-dmbO pf-650_ pf-r pf-r-eh" style="--s-xs:15px;--s-lg:5px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-md:12;--c-lg:12"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-651_"><h3 data-pf-type="Heading" class="sc-cTAqQK eHolsa pf-652_"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-654_">Smart</span></h3></div></div></div><div class="sc-ezbkAF A-dmbO pf-655_ without-padding-bt pf-r pf-r-eh" style="--s-xs:15px;--s-lg:5px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-sm:4;--c-md:4;--c-lg:4"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-656_"><h3 data-pf-type="Heading" class="sc-cTAqQK eHolsa pf-657_"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-659_">Smartbar features</span></h3><p class="sc-jtXEFf jydWoQ pf-660_" data-pf-type="Paragraph"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-662_">Voice control, fingerprint unlock, LED dot-matrix display</span></p></div></div><div class="pf-c" style="--c-xs:12;--c-sm:4;--c-md:4;--c-lg:4"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-663_"><h3 data-pf-type="Heading" class="sc-cTAqQK eHolsa pf-664_"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-666_">Connectivity</span></h3><p class="sc-jtXEFf jydWoQ pf-667_" data-pf-type="Paragraph"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-669_">eSIM with 4G, Bluetooth &amp; WiFi</span></p></div></div><div class="pf-c" style="--c-xs:12;--c-sm:4;--c-md:4;--c-lg:4"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-670_"><h3 data-pf-type="Heading" class="sc-cTAqQK eHolsa pf-671_"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-673_">IoT sensors</span></h3><p class="sc-jtXEFf jydWoQ pf-674_" data-pf-type="Paragraph"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-676_">accelerometer, gyroscope &amp; torque</span></p></div></div></div><div class="sc-ezbkAF A-dmbO pf-677_ without-padding-bt pf-r pf-r-eh" style="--s-xs:15px;--s-lg:5px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-md:12;--c-lg:12"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-678_"><h3 data-pf-type="Heading" class="sc-cTAqQK eHolsa pf-679_"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-681_">App</span></h3><p class="sc-jtXEFf jydWoQ pf-682_" data-pf-type="Paragraph"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-684_">iOS &amp; Android</span></p></div></div></div><div class="sc-ezbkAF A-dmbO pf-685_ pf-r pf-r-eh" style="--s-xs:15px;--s-lg:5px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-md:12;--c-lg:12"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-686_"><h3 data-pf-type="Heading" class="sc-cTAqQK eHolsa pf-687_"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-689_">Power</span></h3></div></div></div><div class="sc-ezbkAF A-dmbO pf-690_ without-padding-bt pf-r pf-r-eh" style="--s-xs:15px;--s-lg:5px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-sm:4;--c-md:4;--c-lg:4"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-691_"><h3 data-pf-type="Heading" class="sc-cTAqQK eHolsa pf-692_"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-694_">Motor</span></h3><p class="sc-jtXEFf jydWoQ pf-695_" data-pf-type="Paragraph"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-697_">Customized rear hub, 36 V 250 W (rated), 35 N⋅m</span></p></div></div><div class="pf-c" style="--c-xs:12;--c-sm:4;--c-md:4;--c-lg:4"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-698_"><h3 data-pf-type="Heading" class="sc-cTAqQK eHolsa pf-699_"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-701_">Speed modes</span></h3><p class="sc-jtXEFf jydWoQ pf-702_" data-pf-type="Paragraph"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-704_">Pedal, Eco, Comfort, Sport, Turbo&nbsp;</span></p></div></div><div class="pf-c" style="--c-xs:12;--c-sm:4;--c-md:4;--c-lg:4"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-705_"><h3 data-pf-type="Heading" class="sc-cTAqQK eHolsa pf-706_"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-708_">Top speed (assisted)</span></h3><p class="sc-jtXEFf jydWoQ pf-709_" data-pf-type="Paragraph"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-711_">20 mph</span></p></div></div></div><div class="sc-ezbkAF A-dmbO pf-712_ without-padding-bt pf-r pf-r-eh" style="--s-xs:15px;--s-lg:5px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-sm:6;--c-md:6;--c-lg:6"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-713_"><h3 data-pf-type="Heading" class="sc-cTAqQK eHolsa pf-714_"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-716_">Range</span></h3><p class="sc-jtXEFf jydWoQ pf-717_" data-pf-type="Paragraph"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-719_">25～60 miles</span></p></div></div><div class="pf-c" style="--c-xs:12;--c-sm:6;--c-md:6;--c-lg:6"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-720_"><h3 data-pf-type="Heading" class="sc-cTAqQK eHolsa pf-721_"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-723_">Removable battery</span></h3><p class="sc-jtXEFf jydWoQ pf-724_" data-pf-type="Paragraph"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-726_">9.8 Ah 352.8 Wh Samsung Li-ion, 2.5-hr quick charge</span></p></div></div></div><div class="sc-ezbkAF A-dmbO pf-727_ pf-r pf-r-eh" style="--s-xs:15px;--s-lg:5px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-md:12;--c-lg:12"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-728_"><h3 data-pf-type="Heading" class="sc-cTAqQK eHolsa pf-729_"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-731_">General</span></h3></div></div></div><div class="sc-ezbkAF A-dmbO pf-732_ without-padding-bt pf-r pf-r-eh" style="--s-xs:15px;--s-lg:5px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-sm:4;--c-md:4;--c-lg:4"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-733_"><h3 data-pf-type="Heading" class="sc-cTAqQK eHolsa pf-734_"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-736_">Weight</span></h3><p class="sc-jtXEFf jydWoQ pf-737_" data-pf-type="Paragraph"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-739_">15 kg minimum</span></p></div></div><div class="pf-c" style="--c-xs:12;--c-sm:4;--c-md:4;--c-lg:4"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-740_"><h3 data-pf-type="Heading" class="sc-cTAqQK eHolsa pf-741_"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-743_">Load-bearing capacity</span></h3><p class="sc-jtXEFf jydWoQ pf-744_" data-pf-type="Paragraph"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-746_">Max. 240 lbs.</span></p></div></div><div class="pf-c" style="--c-xs:12;--c-sm:4;--c-md:4;--c-lg:4"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-747_"><h3 data-pf-type="Heading" class="sc-cTAqQK eHolsa pf-748_"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-750_">Sizes&nbsp;</span></h3><p class="sc-jtXEFf jydWoQ pf-751_" data-pf-type="Paragraph"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-753_">Medium, Large (see Size Guide)</span></p></div></div></div><div class="sc-ezbkAF A-dmbO pf-754_ without-padding-bt pf-r pf-r-eh" style="--s-xs:15px;--s-lg:5px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-sm:4;--c-md:4;--c-lg:4"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-755_"><h3 data-pf-type="Heading" class="sc-cTAqQK eHolsa pf-756_"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-758_">Body material</span></h3><p class="sc-jtXEFf jydWoQ pf-759_" data-pf-type="Paragraph"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-761_">Carbon fiber (frame, fork, handlebar, seatpost)</span></p></div></div><div class="pf-c" style="--c-xs:12;--c-sm:4;--c-md:4;--c-lg:4"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-762_"><h3 data-pf-type="Heading" class="sc-cTAqQK eHolsa pf-763_"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-765_">Brakes</span></h3><p class="sc-jtXEFf jydWoQ pf-766_" data-pf-type="Paragraph"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-768_">Front &amp; rear dual-piston hydraulic disc</span></p></div></div><div class="pf-c" style="--c-xs:12;--c-sm:4;--c-md:4;--c-lg:4"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-769_"><h3 data-pf-type="Heading" class="sc-cTAqQK eHolsa pf-770_"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-772_">Transmission</span></h3><p class="sc-jtXEFf jydWoQ pf-773_" data-pf-type="Paragraph"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-775_">Gates Carbon Drive™ CDN™ belt (up to 19,000 miles)</span></p></div></div></div><div class="sc-ezbkAF A-dmbO pf-776_ without-padding-bt pf-r pf-r-eh" style="--s-xs:15px;--s-lg:5px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-sm:4;--c-md:4;--c-lg:4"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-777_"><h3 data-pf-type="Heading" class="sc-cTAqQK eHolsa pf-778_"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-780_">Integrated lights</span></h3><p class="sc-jtXEFf jydWoQ pf-781_" data-pf-type="Paragraph"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-783_">StVZO headlight; Advanced Rear Early-indication System (ARES)</span></p></div></div><div class="pf-c" style="--c-xs:12;--c-sm:4;--c-md:4;--c-lg:4"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-784_"><h3 data-pf-type="Heading" class="sc-cTAqQK eHolsa pf-785_"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-787_">Wheels</span></h3><p class="sc-jtXEFf jydWoQ pf-788_" data-pf-type="Paragraph"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-790_">700C (ISO 622 mm BSD), inner rim 19 mm</span></p></div></div><div class="pf-c" style="--c-xs:12;--c-sm:4;--c-md:4;--c-lg:4"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-791_"><h3 data-pf-type="Heading" class="sc-cTAqQK eHolsa pf-792_"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-794_">Tires</span></h3><p class="sc-jtXEFf jydWoQ pf-795_" data-pf-type="Paragraph"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-797_">Kenda Kwest 700x35C (35 mm / 1.4”) (30~45 mm compatible)</span></p></div></div></div><div class="sc-ezbkAF A-dmbO pf-798_ pf-r pf-r-eh pf-hide" style="--s-xs:15px;--s-lg:5px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-md:12;--c-lg:12"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-799_"><h3 data-pf-type="Heading" class="sc-cTAqQK eHolsa pf-800_"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-802_">What’s in the Box</span></h3></div></div></div><div class="sc-ezbkAF A-dmbO pf-803_ without-padding-bt pf-r pf-r-eh pf-hide" style="--s-xs:15px;--s-lg:5px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-sm:4;--c-md:4;--c-lg:4"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-804_"><h3 data-pf-type="Heading" class="sc-cTAqQK eHolsa pf-805_"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-807_">Urtopia Carbon one</span></h3><p class="sc-jtXEFf jydWoQ pf-808_" data-pf-type="Paragraph"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-810_">Front Wheel, Frame, Seatpost, saddle, Pedals</span></p></div></div><div class="pf-c" style="--c-xs:12;--c-sm:4;--c-md:4;--c-lg:4"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-811_"><h3 data-pf-type="Heading" class="sc-cTAqQK eHolsa pf-812_"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-814_">Removable battery</span></h3><p class="sc-jtXEFf jydWoQ pf-815_" data-pf-type="Paragraph"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-817_">Battery, Charger, Battery key</span></p></div></div><div class="pf-c" style="--c-xs:12;--c-sm:4;--c-md:4;--c-lg:4"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-818_"><h3 data-pf-type="Heading" class="sc-cTAqQK eHolsa pf-819_"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-821_">Frame (accessory) bag
 </span></h3><p class="sc-jtXEFf jydWoQ pf-822_" data-pf-type="Paragraph"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-824_">4mm Allen wrench, 15mm combination wrench, front-wheel quick-release device
 </span></p></div></div></div></div></div>
@@ -1498,6 +600,166 @@ new ScrollMagic.Scene({
 		</div>
 	</div>
 </div>
+
+<div data-section-id="pf-e358" data-pf-type="Section" class="sc-fmciRz bheIgq pf-364_"><div style="--cw:1170px" class="sc-gjNHFA gwWIgj"><div class="sc-ezbkAF A-dmbO pf-365_ pf-r pf-r-eh" style="--s-xs:15px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-md:12;--c-lg:12"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-366_"><div data-pf-type="Custom.HTML" class="sc-AjmGg eCTxfx pf-367_"><div class="world-title">
+  Users Like You, Worldwide
+</div>
+<div id="world-swiper" class="swiper">
+  <div class="swiper-wrapper swiper-no-swiping">
+	<div class="swiper-slide slide">
+	  <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/img_77662x-1672048952210.jpg"/>
+		<div class="description">
+		  <span>Karina Schwirtlich</span>
+		  “it is much easier to use :) Going uphill is so much easier, I could even read a book while doing this.”
+		</div>
+	</div>
+	<div class="swiper-slide slide">
+	  <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/screen-shot-20221018-at-72910-pm-1666785985034.jpg"/>
+		<div class="description">
+		  <span>Rex Peters</span>
+		  “I got 4 other brands and I still learning the Urtopia but so far my favorite e-bike . Look how far technology has come so fast . Happy and safe riding.”
+		</div>
+	</div>
+	<div class="swiper-slide slide">
+	  <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/072a06992x-1672048952203.jpg"/>
+		<div class="description">
+		  <span>v.wrightfitness</span>
+		  “The smoothest riding e-bike I have tried! Thank you.”
+		</div>
+	</div>
+	<div class="swiper-slide slide">
+	  <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/5590a91dd1b546e99f5f381a1c1aa0c4-1666785985022.jpg"/>
+		<div class="description">
+		  <span>Chris</span>
+		  “Outstanding performance. I love this bike.”
+		</div>
+	</div>
+	<div class="swiper-slide slide">
+	  <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/85831919d8ee4553808b75fb1ffc469e-1666785985025.jpg"/>
+		<div class="description">
+		  <span>Rino Folisi</span>
+		  “Finally Endlich vereint.”
+		</div>
+	</div>
+  </div>
+</div>
+<style>
+  .world-title{
+	color:#fff;
+	text-align:center;
+	font: normal normal 600 48px/58px Urbane;
+	margin-bottom:55px;
+  }#world-swiper{
+	z-index:0;
+  }
+  
+  #world-swiper .slide{
+	width:30%!important;
+  }
+  #world-swiper img{
+	width:80%;
+	height:auto;
+	margin-bottom:28px;
+  }
+  #world-swiper .description{
+	color:#fff;
+	font: italic normal 300 16px/19px Urbane;
+	width:80%;
+  }
+  
+  #world-swiper .description span{
+	font-weight:bold;
+  }
+   #world-swiper .swiper-pagination {
+	position: static;
+    width: auto;
+    display: flex;
+    align-items: flex-end;
+    font-size: 30px;
+    font-weight: 550;
+    color: #161c1f;
+    line-height: 42px;
+  }
+  #world-swiper .btnWraped {
+	display: flex;
+	width: 900px;
+	margin: 0 auto;
+	transform: translateY(-100%);
+	position:relative;
+	z-index:2;
+  }
+      .swiper .swiper-wrapper {
+        -webkit-transition-timing-function: linear !important; /*之前是ease-out*/
+        -moz-transition-timing-function: linear !important;
+        -ms-transition-timing-function: linear !important;
+        -o-transition-timing-function: linear !important;
+        transition-timing-function: linear !important;
+      }
+  @media screen and (max-width:768px){
+	#world-swiper .slide{
+	  width:80%!important;
+	}
+	.world-title{
+	  font: normal normal 600 36px/44px Urbane;
+	}
+  }
+</style>
+<script>
+  let slideNo = 0;
+  var swiperSectionWorld = new Swiper("#world-swiper", {
+		autoplay: {
+          delay: 0,
+          disableOnInteraction: false
+        },
+		noSwiping:true,
+		freeMode:true,
+        loop: true,
+        speed: 6000,
+        slidesPerView: "auto", 
+  });
+  let nextTransForm = "";
+      // 轮播图从暂停位置移动到原本应到的位置所用的时间
+      let nextTime = 0;
+	let slideWidth = 165;
+  $("#world-swiper").hover(()=>{
+    	slideWidth = document.querySelector("#world-swiper .swiper-slide.slide").offsetWidth;
+        nextTransForm = document.querySelector("#world-swiper .swiper-wrapper").style.transform;
+        // 轮播图原本应移动到的位置
+        let nextTransPosition =
+          -1 *
+          parseInt(
+            document.querySelector("#world-swiper .swiper-wrapper")
+              .style.transform.split("translate3d(")[1]
+              .split("px")[0]
+          );
+
+        // 鼠标悬浮时时轮播图位置
+        let nowTransPosition =
+          -1 *
+          parseInt(
+            window
+              .getComputedStyle(
+                document.querySelector("#world-swiper .swiper-wrapper"),
+                false
+              )
+              ["transform"].split("1, ")[2]
+              .split(",")[0]
+          );
+        let nowTransForm = window.getComputedStyle(
+            document.querySelector("#world-swiper .swiper-wrapper"),
+          false
+        )["transform"];
+        nextTime = 6000 * ((nextTransPosition - nowTransPosition) / slideWidth);
+        document.querySelector("#world-swiper .swiper-wrapper").style.transform = nowTransForm;
+        document.querySelector("#world-swiper .swiper-wrapper").style.transitionDuration = "0ms";
+    swiperSectionWorld.autoplay.stop();
+  },()=>{
+        document.querySelector("#world-swiper .swiper-wrapper").style.transform = nextTransForm;
+        document.querySelector("#world-swiper .swiper-wrapper").style.transitionDuration = nextTime+"ms";
+	swiperSectionWorld.autoplay.start();
+  })
+</script></div></div></div></div></div></div><div data-section-id="pf-c716" data-pf-type="Section" class="sc-fmciRz bheIgq pf-368_"><div style="--cw:1170px" class="sc-gjNHFA gwWIgj"><div class="sc-ezbkAF A-dmbO pf-369_ pf-r pf-r-eh" style="--s-xs:15px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-md:12;--c-lg:12"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-370_"><h3 data-pf-type="Heading" class="sc-cTAqQK eHolsa pf-371_"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-373_">Get inspired by more Urtopia riders' stories</span></h3><a href="https://www.facebook.com/UrtopiaEbike/" target="_blank" data-pf-type="Button" class="sc-iqseJM fFuGRG pf-374_"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-376_">Join our community</span></a></div></div></div></div></div>
+
 
 
 

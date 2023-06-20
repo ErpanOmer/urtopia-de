@@ -342,7 +342,7 @@
 
 .testride {
     .banner {
-        background: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_20829_2x_7e51bf70-7eca-40fc-bb68-f9448999522d.jpg?v=1686104619') center center/cover no-repeat;
+        background: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18374_2x_899e4440-4115-4c3c-82d4-689afbd90022.jpg?v=1686989100') center center/cover no-repeat;
         height: 620px;
         color: #fff;
         display: flex;
@@ -354,6 +354,7 @@
             align-items: flex-start;
             width: 100%;
             height: 100%;
+            padding-left: 55%;
 
             .u17Medium_v2 {
                 max-width: 620px;
@@ -899,12 +900,12 @@
 @media (max-width: 767px) {
     .testride {
         .banner {
-            background: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_21258_2x_1bf83e12-7913-4fda-9465-00d60326e993.jpg?v=1686105933') center center/cover no-repeat;
+            background: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18586_2x_23fac6b2-2c29-4b65-b26d-c006c196cbaf.jpg?v=1686989368') center center/cover no-repeat;
             height: unset;
 
             .centeral-content {
                 justify-content: flex-end;
-                padding: 15vw 4%;
+                padding: 15vw 4% 30vw;
 
                 .u48DemiBold_v2 {
                     font-size: 24px;

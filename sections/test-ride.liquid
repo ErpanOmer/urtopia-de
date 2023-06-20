@@ -5,15 +5,15 @@
 <div class="testride">
     <div class="banner">
         <div class="centeral-content">
-            <div class="u48DemiBold_v2">Golf & Bike</div>
-            <div class="u17Medium_v2">The sporting challenge, the love of nature, enthusiasm for perfection and design - there are many things that connect golf and the design e-bikes from Urtopia. That’s why we have organized a very special test ride opportunity for you:</div>
+            <div class="u48DemiBold_v2">Urtopia at Eurobike</div>
+            <div class="u17Medium_v2"></div>
             <div class="u20Medium_v2">
-                <div>Date: 18 June, 2023</div>
-                <div>Time: 9 a.m. to 4p.m.</div>
-                <div>Venue: Golfclub Hösel</div>
-                <div>Address: Höseler Str. 147, 42579 Heiligenhaus, Germany</div>
+                <div>Date: 21 - 25 Jun, 2023</div>
+                <div>Time: 9 a.m. to 6 p.m.</div>
+                <div>Venue: Messe Frankfurt, Frankfurt, Germany</div>
+                <div>Hall NO.: Hall 8 Indoor Booth NO.:F26</div>
             </div>
-            <div class="my-button my-button-origin">Test-Ride Now</div>
+            <!--<div class="my-button my-button-origin">Learn more</div>-->
         </div>
     </div>
     <div class="map" id="map">
@@ -666,7 +666,9 @@
 
     // banner 按钮
     $('.testride .banner .my-button').on('click', () => {
-        booknow(sale_store)
+        // booknow(sale_store)
+
+        location.href = '/blogs/blog/urtopia-is-gear-up-for-eurobike-2023'
     })
 
     search.from_home_page && booknow(sale_store)

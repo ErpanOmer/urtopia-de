@@ -893,7 +893,7 @@ const testRides = [
       {
         name: 'Timo Altmeyer',
         phone: '+49 156 78572530',
-        email: '',
+        email: 'timo@techreviewer.de',
         timezone: "Mainz, Germany (GMT+1)",
         add: "Ober-Ramstadt, 66292 Riegelsberg",
         imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Riegelsberg__view_from_the_panorama_point.jpg?v=1683900380",

@@ -115,8 +115,8 @@
         }
 
         .spring-sale {
-            background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_21007_2x_d1322bcb-7328-456e-a3b6-78650374f1a3.jpg?v=1686576435');
-            background-color: #3CB1B1;
+            background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_21006_2x_c3888617-b783-4017-a8c9-2a71107f1e12.jpg?v=1686965009');
+            background-color: #159066;
 
             .centeral-content {
                 &>div {
@@ -160,6 +160,27 @@
                             img {
                                 width: auto;
                                 max-height: 60px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+      .eurobike {
+            background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18374_2x_899e4440-4115-4c3c-82d4-689afbd90022.jpg?v=1686989100');
+
+            .centeral-content {
+                & > div {
+                    &:last-child {
+                        flex: 1;
+
+                        .u24DemiBold_v2 {
+                            margin-top: 32px;
+                            margin-bottom: 62px;
+
+                            & > div + div {
+                                margin-top: 16px;
                             }
                         }
                     }
@@ -407,7 +428,7 @@
             }
 
             .spring-sale {
-                background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_20985_2x_a482df29-72c1-4b26-8273-3babc3cf6771.jpg?v=1686576642');
+                background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_20985_2x_6a8f7f3f-fdb7-4847-961d-4ccdc6758c18.jpg?v=1686965073');
 
                 .centeral-content {
                     height: 100%;
@@ -472,6 +493,32 @@
                     & > div {
                         &:last-child {
                             padding: 36vw 0 18vw;
+                            flex: unset;
+    
+                            .u56DemiBold_v2 {
+                                font-size: 30px;
+                            }
+
+                            .u24DemiBold_v2,
+                            .u20Medium_v2 {
+                                font-size: 14px;
+                            }
+
+                            .u24DemiBold_v2 {
+                                margin: 8vw 0;
+                            }
+                        }
+                    }
+                }
+            }
+
+          .eurobike {
+                background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18586_2x_23fac6b2-2c29-4b65-b26d-c006c196cbaf.jpg?v=1686989368');
+    
+                .centeral-content {
+                    & > div {
+                        &:last-child {
+                            padding: 18vw 0;
                             flex: unset;
     
                             .u56DemiBold_v2 {
