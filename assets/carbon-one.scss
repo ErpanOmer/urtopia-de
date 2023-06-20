@@ -160,6 +160,11 @@
 
             .count-down {
                 color: #EB5A2D;
+
+                img {
+                    max-width: 70%;
+                    transform: translateY(15%);
+                }
             }
 
             .options {
