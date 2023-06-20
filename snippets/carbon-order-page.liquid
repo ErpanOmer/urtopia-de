@@ -547,9 +547,13 @@
         }, 300)
     })
 
+
+    let currnetScroolTop = 0
     $(document).on('scroll', throttle(e => {
         const top1 = $('#freedom').offset().top
+
         const top3 = $('.product .addToCartBtn').offset().top
+
         const top2 = $(e.target).scrollTop()
 
         if (global_config.is_mobile) {
@@ -559,6 +563,12 @@
                 $('.bottom-fixed').hide()
             }
         } else {
+            if (currnetScroolTop > top2) {
+                currnetScroolTop = top2
+
+                return $('.top-fixed').hide()
+            }
+
             if (top2 > top1) {
                 $('.top-fixed').show()
             } else {
