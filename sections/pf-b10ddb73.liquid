@@ -3163,7 +3163,13 @@ document.querySelectorAll('[data-option-name="Style"]').forEach((v) => {
       StilTextDom.innerText = "";
     }
   };
-});</script>
+});
+
+$('input[type="radio"]').on('change', () => {
+  $('.sc-bBHHxi').text(ebike_delivery_time[$('input[name="id"]')])
+})
+
+</script>
 {% schema %}
 {
   "name": "PageFly Page b10ddb73",
