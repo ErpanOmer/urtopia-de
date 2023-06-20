@@ -490,8 +490,17 @@
 
     $('.accessories .items .item').on('click', e => {
         const item = $(e.target).closest('.item')
+        const icon = item.find('.u11Light_v2 i')
 
-        item.hasClass('active') ? item.removeClass('active') : item.addClass('active')
+        if (item.hasClass('active')) {
+            item.removeClass('active')
+            icon.removeClass('fa-plus')
+            icon.addClass('fa-check')
+        } else {
+            icon.addClass('fa-plus')
+            icon.removeClass('fa-check')
+            item.addClass('active')
+        }
     })
 
     $('.product .product-panel').on("submit", function (event) {
