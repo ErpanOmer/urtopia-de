@@ -79,6 +79,7 @@
 }
 
 $sale_background_image: linear-gradient(-90deg, #3CB1B1, #2A8E8C);
+$sale_text_color: #3CB1B1;
 
 .product {
     margin: 80px 0;
@@ -114,7 +115,7 @@ $sale_background_image: linear-gradient(-90deg, #3CB1B1, #2A8E8C);
                 }
 
                 .u20DemiBold_v2 {
-                    color: #EB5A2D;
+                    color: $sale_text_color;
                     background-color: #fff;
                     border-radius: 20px;
                     padding: 3px 10px;
