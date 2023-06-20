@@ -824,6 +824,12 @@
 
 
 @media (max-width: 767px) {
+    .test-ride {
+        .centeral-content {
+            grid-template-columns: 1fr;
+        }
+    }
+
     .freedom {
         margin-top: 20px;
 
