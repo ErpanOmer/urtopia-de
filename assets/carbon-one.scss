@@ -349,11 +349,11 @@
                     }
 
                     .prev {
-                        transform: rotate(-45deg) translate(-100%, -100%);
+                        transform: rotate(-45deg) translate(-50%, -100%);
                     }
 
                     .next {
-                        transform: rotate(135deg) translate(-50%, -50%);
+                        transform: rotate(135deg) translate(-100%,-50%)
                     }
                 }
             }
