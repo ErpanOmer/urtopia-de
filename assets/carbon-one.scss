@@ -20,6 +20,14 @@
     }
 }
 
+.bottom-fixed {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    height: 60px;
+}
+
 .product {
     margin: 80px 0;
 
