@@ -42,7 +42,7 @@
   
 </style>
 
-  <div id="announcement-bar" dir="rtl">
+  <div id="announcement-bar" class="announcement-bar-common" dir="rtl">
     <div class="swiper-wrapper">
       <div class="swiper-slide"><p><span>Free</span> mirco fender, kickstand & 1 year eSIM service with Carbon 1. <a href="/products/urtopia-carbon-e-bike">Get yours Now</a></p></div>
       <div class="swiper-slide"><p>Financing with 24 months, <span>0 APR.</span><a href="/products/urtopia-carbon-e-bike">Get yours Now</a></p><img style="width:45px;margin-right:10px;" src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Image_154_2x_a6f60481-bf07-4fd4-93c7-8b9964570bbd.png?v=1685605445"/></div>
@@ -69,6 +69,12 @@
   <div id="announcement-bar" dir="rtl" style="height: 65px;">
 
   </div>
+
+  <script>
+    if (global_config.is_mobile) {
+      $('.announcement-bar-common').hide()
+    }
+  </script>
 {% endif %}
 
 {%- for block in section.blocks -%}
