@@ -563,14 +563,17 @@
                 $('.bottom-fixed').hide()
             }
         } else {
-
-
-            currnetScroolTop = top2
             if (top2 > top1) {
                 $('.top-fixed').show()
             } else {
                 $('.top-fixed').hide()
             }
+
+            if (currnetScroolTop > top2) {
+                $('.top-fixed').hide()
+            }
+
+            currnetScroolTop = top2
         }
     }, 300, 100))
 
