@@ -501,6 +501,11 @@
             }
 
             .right-swiper {
+                max-height: 500px;
+                overflow: hidden;
+            }
+
+            .right-swiper {
                 display: flex;
                 flex-direction: column;
                 justify-content: space-between;
