@@ -169,7 +169,7 @@ $sale_text_color: #3CB1B1;
             }
 
             .count-down {
-                color: #EB5A2D;
+                color: $sale_text_color;
                 overflow: hidden;
 
                 img {
