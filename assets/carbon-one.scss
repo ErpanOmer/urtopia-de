@@ -1190,6 +1190,15 @@
 
     .boxs3 {
         .centeral-content {
+
+            & > div {
+                .u17Light_v2 {
+                    img {
+                        margin-right: 6vw;
+                    }
+                }
+            }
+
             .u30DemiBold_v2 {
                 font-size: 24px;
             }
