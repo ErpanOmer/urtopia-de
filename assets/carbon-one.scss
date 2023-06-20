@@ -1,3 +1,7 @@
+$sale_background_image: linear-gradient(-90deg, #F24FA5, #F03397);
+$sale_text_color: #F24FA5;
+
+
 .toTop {
     position: fixed;
     right: 20px;
@@ -36,8 +40,7 @@
     justify-content: space-between;
     padding: 0 4vw;
     z-index: 999998;
-    background-color: rgba(255, 255, 255, 0.65);
-    backdrop-filter: saturate(180%) blur(200px);
+    background-color: #fff;
     box-shadow: 0px 3px 6px #00000014;
     border-top: 1px solid rgba(0, 0, 0, 0.16);
     transition: top .4s ease, transform .4s ease, box-shadow .4s ease, -webkit-transform .4s ease, -webkit-box-shadow .4s ease;
@@ -55,8 +58,7 @@
     right: 0;
     left: 0;
     z-index: 999998;
-    background-color: rgba(255, 255, 255, 0.65);
-    backdrop-filter: saturate(180%) blur(200px);
+    background-color: #fff;
     box-shadow: 0px 3px 6px #00000014;
     border-bottom: 1px solid rgba(0, 0, 0, 0.16);
     transition: top .4s ease, transform .4s ease, box-shadow .4s ease, -webkit-transform .4s ease, -webkit-box-shadow .4s ease;
@@ -77,9 +79,6 @@
         }
     }
 }
-
-$sale_background_image: linear-gradient(-90deg, #3CB1B1, #2A8E8C);
-$sale_text_color: #3CB1B1;
 
 .product {
     margin: 80px 0;
@@ -478,10 +477,11 @@ $sale_text_color: #3CB1B1;
                 display: grid;
                 grid-template-columns: repeat(3, 1fr);
 
-                &>div {
+                & > a {
                     display: flex;
                     align-items: center;
                     justify-content: flex-start;
+                    cursor: pointer;
 
                     img {
                         max-width: 30px;

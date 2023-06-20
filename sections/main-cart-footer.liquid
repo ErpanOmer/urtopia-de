@@ -4,6 +4,12 @@
 {{ 'component-discounts.css' | asset_url | stylesheet_tag }}
 
 <style>
+  :root {
+    --sale_background_image: linear-gradient(-90deg, #F24FA5, #F03397);
+    --sale_background_image-anti: linear-gradient(90deg, #F03397, #F24FA5);
+    --sale_text_color: #F24FA5;
+  }
+
   .orderTestRideBtn{
     width: 100%;
 	height: 50px;
@@ -106,7 +112,7 @@
       max-width: 410px;
       color: #fff;
       padding: 10px 0;
-      background: transparent linear-gradient(90deg, #3CB1B1, #2A8E8C);
+      background: var(--sale_background_image);
       box-shadow: 10px 10px 10px #6B869A1C;
       opacity: 0.88;
       border-radius: 0 0 5px 5px;
@@ -137,7 +143,7 @@
   .sale_coupon {
     margin-left: auto;
     border-radius: 5px 5px 0 0;
-    background-image: linear-gradient(90deg, #3CB1B1, #3CB1B1);
+    background-image: var(--sale_background_image-anti);
     box-shadow: 10px 10px 10px #0000001C;
   }
   

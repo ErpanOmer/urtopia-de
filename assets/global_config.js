@@ -22,10 +22,14 @@ const global_config = {
     ebike_delivery_time: {
         // outlet carbon 1
         43820311281880: 'Ships within <span>7 business days</span> from local warehouse.',
-        43820311314648: 'Ships within <span>7 business days</span> from local warehouse.'
+        43820311314648: 'Ships within <span>7 business days</span> from local warehouse.',
 
         // carbon 1
         // chord
+        43705718997208: 'Pre-order items shipped from July 1 - 15, 2023',
+        43705719029976: 'Pre-order items shipped from July 1 - 15, 2023',
         // chord x
+        43705719062744: 'Pre-order items shipped from July 1 - 15, 2023',
+        43705719095512: 'Pre-order items shipped from July 1 - 15, 2023',
     }
 }
