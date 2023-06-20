@@ -3,8 +3,7 @@
     right: 20px;
     bottom: 120px;
     color: #717171;
-    padding: 7px 10px;
-    border: 1px solid #707070;
+    padding: 1px;
     border-radius: 24px;
     background-color: #fff;
     z-index: 999998;
@@ -15,7 +14,8 @@
     text-align: center;
     height: 48px;
     width: 48px;
-    
+    box-shadow: 0 3px 6px #00000014;
+
 
     img {
         max-width: 22px;
