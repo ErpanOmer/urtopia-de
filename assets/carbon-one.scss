@@ -803,6 +803,12 @@
                     margin: 24px 0 48px;
                 }
             }
+
+            #storepoint-tag-dropdown,
+            #storepoint-search,
+            #storepoint-panel {
+               display:none!important;
+            }
         }
     }
 }
