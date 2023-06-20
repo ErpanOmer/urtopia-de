@@ -494,10 +494,11 @@
 
         if (item.hasClass('active')) {
             item.removeClass('active')
-            icon.html('<i class="fa-solid fa-check"></i>')
-        } else {
             icon.html('<i class="fa-solid fa-plus"></i>')
+            
+        } else {
             item.addClass('active')
+            icon.html('<i class="fa-solid fa-check"></i>')
         }
     })
 
