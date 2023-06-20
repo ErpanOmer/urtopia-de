@@ -4,8 +4,10 @@
 {{ 'component-discounts.css' | asset_url | stylesheet_tag }}
 
 <style>
-  --sale_background_image: linear-gradient(-90deg, #F24FA5, #F03397);
-  --sale_text_color: #F24FA5;
+  :root {
+    --sale_background_image: linear-gradient(-90deg, #F24FA5, #F03397);
+    --sale_text_color: #F24FA5;
+  }
 
   .orderTestRideBtn{
     width: 100%;
