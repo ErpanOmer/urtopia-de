@@ -833,6 +833,10 @@
             & > div {
                 &:first-child {
                     order: 1;
+
+                    .u36DemiBold_v2 {
+                        font-size: 24px;
+                    }
                 }
             }
         }
