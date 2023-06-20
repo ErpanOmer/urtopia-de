@@ -639,7 +639,8 @@
             grid-column-gap: 12px;
 
             & > div {
-                
+                display: flex;
+                flex-direction: column;
             }
         }
     }
