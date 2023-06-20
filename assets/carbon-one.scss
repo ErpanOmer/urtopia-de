@@ -735,7 +735,7 @@
 
             .values {
                 grid-template-columns: 1fr 1fr;
-                grid-column-gap: 0;
+                grid-gap: 0 12px;
                 width: 100%;
                 text-align: center;
                 margin: 40px 0 24px;
