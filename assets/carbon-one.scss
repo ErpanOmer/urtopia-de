@@ -39,6 +39,7 @@
     backdrop-filter: saturate(180%) blur(20px);
     box-shadow: 0px 3px 6px #00000014;
     border-top: 1px solid rgba(0, 0, 0, 0.16);
+    transition: top .4s ease,transform .4s ease,box-shadow .4s ease,-webkit-transform .4s ease,-webkit-box-shadow .4s ease;
 
     & > div {
         display: flex;
