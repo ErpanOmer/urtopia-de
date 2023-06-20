@@ -505,11 +505,11 @@
         }, 300)
     })
 
-    $(document).on('scroll', e => {
+    $(document).on('scroll', debounce(e => {
         const top1 = $('#freedom').offset().top
         const top2 = $(e.target).scrollTop()
         console.log('e', top1, top2)
-    })
+    }, 300))
 
     
 
