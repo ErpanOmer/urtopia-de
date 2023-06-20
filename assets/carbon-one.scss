@@ -37,7 +37,7 @@
     padding: 0 4vw;
     z-index: 999998;
     background-color: rgba(255, 255, 255, 0.65);
-    backdrop-filter: saturate(180%) blur(20px);
+    backdrop-filter: saturate(180%) blur(200px);
     box-shadow: 0px 3px 6px #00000014;
     border-top: 1px solid rgba(0, 0, 0, 0.16);
     transition: top .4s ease, transform .4s ease, box-shadow .4s ease, -webkit-transform .4s ease, -webkit-box-shadow .4s ease;
@@ -56,7 +56,7 @@
     left: 0;
     z-index: 999998;
     background-color: rgba(255, 255, 255, 0.65);
-    backdrop-filter: saturate(180%) blur(20px);
+    backdrop-filter: saturate(180%) blur(200px);
     box-shadow: 0px 3px 6px #00000014;
     border-bottom: 1px solid rgba(0, 0, 0, 0.16);
     transition: top .4s ease, transform .4s ease, box-shadow .4s ease, -webkit-transform .4s ease, -webkit-box-shadow .4s ease;
@@ -78,6 +78,9 @@
     }
 }
 
+$sale_background_image: linear-gradient(-90deg, #3CB1B1, #2A8E8C);
+$sale_text_color: #3CB1B1;
+
 .product {
     margin: 80px 0;
 
@@ -97,7 +100,7 @@
 
         .commonComponent {
             .sale {
-                background-image: linear-gradient(180deg, #EE6426, #F4492A);
+                background-image: $sale_background_image;
                 border-radius: 25px;
                 display: flex;
                 justify-content: space-between;
@@ -112,7 +115,7 @@
                 }
 
                 .u20DemiBold_v2 {
-                    color: #EB5A2D;
+                    color: $sale_text_color;
                     background-color: #fff;
                     border-radius: 20px;
                     padding: 3px 10px;
@@ -133,7 +136,7 @@
                 position: relative;
 
                 .u14Light_v2 {
-                    background-image: linear-gradient(180deg, #EE6426, #F4492A);
+                    background-image: $sale_background_image;
                     color: #fff;
                     position: absolute;
                     border-radius: 10px;
@@ -166,7 +169,7 @@
             }
 
             .count-down {
-                color: #EB5A2D;
+                color: $sale_text_color;
                 overflow: hidden;
 
                 img {

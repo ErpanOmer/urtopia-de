@@ -72,7 +72,7 @@
                 </div>
             </div>
             <div class="sale_acc mb12" id="sale_acc">
-                <div class="u14Light_v2">And get €169 Accessories for <span class="u20DemiBold_v2">Free</span></div>
+                <div class="u14Light_v2">And get <span style="font-weight: 600;">€169</span> Accessories for <span class="u20DemiBold_v2">Free</span></div>
                 {% assign accessories_map = "7633738596568,7633738662104,7633738531032" | split: ',' %}
                 <div class="accs">
                     {% for acc in accessories_map %}
@@ -105,7 +105,7 @@
                 {% endfor %}
             </div>
             <div class="accessories">
-                <div class="u17DemiBold_v2 mb12">Gears you need</div>
+                <div class="u17DemiBold_v2 mb12">Accessories</div>
                 <div class="navigate">
                     <div class="prev"></div>
                     <div class="next"></div>
@@ -149,8 +149,8 @@
             <div class="delivery_time mb12">Free shipping <span>within 5 days</span></div>
             <div class="support mb12">
                 <div>
-                    <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_17960_2x_4a54d2f0-0a38-45e6-8cc0-6c040b1f5d6c.png?v=1687161120"/>
-                    <span class="u11Medium_v2">Free<br>Shipping</span>
+                    <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230621-005713.png?v=1687280264"/>
+                    <span class="u11Medium_v2">30+ Spots<br>of Service</span>
                 </div>
                 <div>
                     <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_17959_2x_cff00041-4dce-479b-b87d-55b1cb89cd7a.png?v=1687161086"/>
@@ -171,7 +171,7 @@
                     <span>&gt;</span>
                 </div>
                 <div class="u17Medium_v2">
-                    <span>Peace of Mind Service</span>
+                    <span>Support & Service</span>
                     <span>&gt;</span>
                 </div>
                 <div class="u17Medium_v2">
@@ -551,10 +551,10 @@
     let currnetScroolTop = 0
     $(document).on('scroll', throttle(e => {
         const top1 = $('#freedom').offset().top
-
         const top3 = $('.product .addToCartBtn').offset().top
-
         const top2 = $(e.target).scrollTop()
+
+        const h = window.screen.height
 
         if (global_config.is_mobile) {
             if (top2 > top3) {
@@ -575,11 +575,15 @@
 
             currnetScroolTop = top2
         }
+
+        top2 > (h * 2) ? $('.toTop').show() : $('.toTop').hide()
+
     }, 300, 100))
 
     // 默认隐藏
     $('.bottom-fixed').hide()
     $('.top-fixed').hide()
+    $('.toTop').hide()
 
     
 
