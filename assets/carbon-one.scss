@@ -769,6 +769,17 @@
     }
 }
 
+.boxs3 {
+    .centeral-content {
+        & > div {
+            &:nth-child(1) {
+                background: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_18806_2x_eb037dc7-5420-435a-8ac9-4f2875c22b64.jpg?v=1687252985') center center/cover no-repeat;
+                padding-bottom: 100%;
+            }
+        }
+    }
+}
+
 .test-ride {
     margin: 100px 0;
 
