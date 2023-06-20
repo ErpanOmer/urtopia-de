@@ -766,6 +766,12 @@
     }
 }
 
+.test-ride {
+    .centeral-content {
+        display: flex;
+    }
+}
+
 
 @media (max-width: 767px) {
     .freedom {
