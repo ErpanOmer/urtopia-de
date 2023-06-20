@@ -768,10 +768,11 @@
 
 .test-ride {
     margin: 100px 0;
-    
+
     .centeral-content {
         display: grid;
         grid-template-columns: 1fr 1fr;
+        background-color: #F7F8FA;
 
         & > div {
             padding-bottom: 100%;
