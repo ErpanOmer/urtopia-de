@@ -632,6 +632,16 @@
                 flex-direction: column;
             }
         }
+
+        .values2 {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            grid-column-gap: 12px;
+
+            & > div {
+                
+            }
+        }
     }
 }
 
