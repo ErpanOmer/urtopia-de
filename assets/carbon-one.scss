@@ -772,7 +772,6 @@
     .centeral-content {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        background-color: #F7F8FA;
 
         & > div {
             padding-bottom: 100%;
@@ -786,6 +785,7 @@
                 left: 0;
                 height: 100%;
                 width: 100%;
+                background-color: #F7F8FA;
             }
         }
     }
