@@ -734,11 +734,12 @@
                 grid-template-columns: 1fr 1fr;
                 grid-column-gap: 0;
                 width: 100%;
+                text-align: center;
             }
 
             .values2 {
                 grid-template-columns: 1fr 1fr;
-                grid-column-gap: 0;
+                grid-gap: 6px;
                 width: 100%;
             }
         }
