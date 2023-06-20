@@ -1032,11 +1032,7 @@
             padding: 0 4vw;
             grid-template-columns: 1fr;
 
-            .product-panel {
-                min-width: unset;
-                width: 92vw;
-                max-width: 92vw;
-
+            .commonComponent {
                 &>.u36DemiBold_v2 {
                     font-size: 24px;
                 }
@@ -1050,6 +1046,14 @@
                         font-size: 12px;
                     }
                 }
+            }
+
+            .product-panel {
+                min-width: unset;
+                width: 92vw;
+                max-width: 92vw;
+
+                
 
                 .sale_acc {
                     .u14Light_v2 {
