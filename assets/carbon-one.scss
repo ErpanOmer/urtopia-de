@@ -39,9 +39,9 @@
     backdrop-filter: saturate(180%) blur(20px);
     box-shadow: 0px 3px 6px #00000014;
     border-top: 1px solid rgba(0, 0, 0, 0.16);
-    transition: top .4s ease,transform .4s ease,box-shadow .4s ease,-webkit-transform .4s ease,-webkit-box-shadow .4s ease;
+    transition: top .4s ease, transform .4s ease, box-shadow .4s ease, -webkit-transform .4s ease, -webkit-box-shadow .4s ease;
 
-    & > div {
+    &>div {
         display: flex;
         flex-direction: column;
         text-align: right;
@@ -58,7 +58,7 @@
     backdrop-filter: saturate(180%) blur(20px);
     box-shadow: 0px 3px 6px #00000014;
     border-bottom: 1px solid rgba(0, 0, 0, 0.16);
-    transition: top .4s ease,transform .4s ease,box-shadow .4s ease,-webkit-transform .4s ease,-webkit-box-shadow .4s ease;
+    transition: top .4s ease, transform .4s ease, box-shadow .4s ease, -webkit-transform .4s ease, -webkit-box-shadow .4s ease;
 
     .centeral-content {
         height: 70px;
@@ -66,7 +66,7 @@
         align-items: center;
         justify-content: space-between;
 
-        & > div {
+        &>div {
             display: flex;
             flex-direction: column;
         }
@@ -515,7 +515,7 @@
 
                 .swiper-wrapper {
                     .swiper-slide {
-                        & > div {
+                        &>div {
                             margin: 40px 0;
                             display: flex;
                             flex-direction: column;
@@ -524,7 +524,7 @@
                             text-align: center;
                             transform: translateY(50%);
                             opacity: 0;
-                            
+
                             .u20DemiBold_v2 {
                                 font-style: italic;
                             }
@@ -537,14 +537,14 @@
                     }
 
                     .swiper-slide-active {
-                        & > div {
+                        &>div {
                             transform: translateY(0);
                             opacity: 1;
                             transition: all .3s;
                         }
                     }
                 }
-                
+
 
                 .swiper-button-prev,
                 .swiper-button-next {
@@ -593,7 +593,7 @@
             grid-template-columns: 1fr 1fr 1fr;
             grid-row-gap: 40px;
 
-            & > div {
+            &>div {
                 display: flex;
                 align-items: center;
 
@@ -602,7 +602,7 @@
                     margin-right: 6px;
                 }
 
-                & > span {
+                &>span {
                     display: flex;
                     flex-direction: column;
                 }
@@ -614,6 +614,7 @@
 
 .freedom {
     background: url(https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/20221230untitled2931-1674191353759.jpg?v=1674191356) center center/cover no-repeat;
+
     .centeral-content {
         display: flex;
         flex-direction: column;
@@ -627,7 +628,7 @@
             grid-template-columns: repeat(4, 1fr);
             grid-column-gap: 50px;
 
-            & > div {
+            &>div {
                 display: flex;
                 flex-direction: column;
             }
@@ -638,7 +639,7 @@
             grid-template-columns: repeat(6, 1fr);
             grid-column-gap: 12px;
 
-            & > div {
+            &>div {
                 display: flex;
                 flex-direction: column;
                 text-align: center;
@@ -723,11 +724,12 @@
 
 .boxs {
     margin: 100px 0;
+
     .centeral-content {
         display: grid;
         grid-template-columns: 1fr 1fr;
 
-        & > div {
+        &>div {
             background-color: #F5F5F5;
             display: flex;
             flex-direction: column;
@@ -753,12 +755,13 @@
 
 .boxs2 {
     margin-bottom: 80px;
+
     .centeral-content {
-        & > div {
+        &>div {
             &:nth-child(1) {
                 background: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_18806_2x_eb037dc7-5420-435a-8ac9-4f2875c22b64.jpg?v=1687252985') center center/cover no-repeat;
             }
-    
+
             &:nth-child(4) {
                 background: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_21043_2x_45da7cac-1f09-442d-b718-3b6a8371d176.jpg?v=1687253628') center center/cover no-repeat;
             }
@@ -773,11 +776,11 @@
         display: grid;
         grid-template-columns: 1fr 1fr;
 
-        & > div {
+        &>div {
             padding-bottom: 100%;
             position: relative;
 
-            & > div {
+            &>div {
                 position: absolute;
                 top: 0;
                 right: 0;
@@ -786,15 +789,25 @@
                 height: 100%;
                 width: 100%;
                 background-color: #F7F8FA;
+
+                &:first-child {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: flex-start;
+                    padding: 0 10%;
+                }
             }
         }
     }
+}
 }
 
 
 @media (max-width: 767px) {
     .freedom {
         margin-top: 20px;
+
         .centeral-content {
             padding: 15vw 8vw;
             height: unset;
@@ -817,7 +830,7 @@
                 grid-gap: 6px;
                 width: 100%;
 
-                & > div {
+                &>div {
                     padding: 3vw 0;
 
                     .u17Medium_v2 {
@@ -981,12 +994,12 @@
                 .swiper-pagination {
                     // position: static;
                 }
-            
+
                 .swiper-pagination-bullet {
                     height: 6px;
                     width: 6px;
                 }
-            
+
                 .swiper-pagination-bullet-active {
                     width: 30px;
                     height: 6px;
@@ -997,7 +1010,7 @@
                 .right-swiper {
                     .swiper-wrapper {
                         .swiper-slide {
-                            & > div {
+                            &>div {
                                 margin: 20px 0;
 
                                 .u20DemiBold_v2 {
@@ -1036,7 +1049,7 @@
             padding: 0 4vw;
             grid-template-columns: 1fr;
 
-            & > div {
+            &>div {
                 padding: 8vw 4vw;
 
                 &:nth-child(1),
