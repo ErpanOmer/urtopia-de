@@ -831,6 +831,13 @@
             grid-template-columns: 1fr;
 
             & > div {
+
+                & > div {
+                    &:first-child {
+                        padding: 8vw 4vw;
+                    }
+                }
+
                 &:first-child {
                     order: 1;
 
