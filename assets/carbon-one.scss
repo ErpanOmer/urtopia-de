@@ -621,6 +621,16 @@
         align-items: center;
         justify-content: center;
         color: #fff;
+
+        .values {
+            display: grid;
+            grid-template-columns: repeat(8, 1fr);
+
+            & > div {
+                display: flex;
+                flex-direction: column;
+            }
+        }
     }
 }
 
