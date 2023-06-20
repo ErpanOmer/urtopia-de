@@ -549,10 +549,11 @@
 
     $(document).on('scroll', throttle(e => {
         const top1 = $('#freedom').offset().top
+        const top3 = $('.product .addToCartBtn').offset().top
         const top2 = $(e.target).scrollTop()
 
         if (global_config.is_mobile) {
-            if (top2 > top1) {
+            if (top2 > top3) {
                 $('.bottom-fixed').show()
             } else {
                 $('.bottom-fixed').hide()
