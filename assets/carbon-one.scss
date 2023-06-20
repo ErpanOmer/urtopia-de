@@ -828,6 +828,12 @@
         .centeral-content {
             padding: 0 4vw;
             grid-template-columns: 1fr;
+
+            & > div {
+                &:last-child {
+                    order: 1;
+                }
+            }
         }
     }
 
