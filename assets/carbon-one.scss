@@ -812,7 +812,8 @@
             .logos {
                 display: grid;
                 grid-template-columns: 1fr 1fr;
-                grid-column-gap: 10%;
+                grid-template-rows: 25px 25px;
+                grid-gap: 10%;
             }
         }
     }
