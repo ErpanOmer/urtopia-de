@@ -1,5 +1,23 @@
 <div class="banner">
     <div class="swiper-wrapper">
+        <div class="swiper-slide eurobike">
+            <div class="centeral-content">
+                <div class="mobileHide"></div>
+                <div>
+                    <div class="u56DemiBold_v2">Urtopia at Eurobike</div>
+                    <div class="u24DemiBold_v2">
+                        <div>Date: <span class="u20Medium_v2">Date: 21 - 25 Jun, 2023</span> </div>
+                        <div>Time: <span class="u20Medium_v2">9 a.m. to 6 p.m.</span></div>
+                        <div>Venue: <span class="u20Medium_v2">Messe Frankfurt, Frankfurt, Germany</span></div>
+                        <div>Hall NO.: <span class="u20Medium_v2">Hall 8 Indoor Booth NO.:F26</span></div>
+                    </div>
+                    <div class="flex-1 pcHide"></div>
+                    <div class="buttons">
+                        <a href="/pages/test-ride?from_home_page=from_home_page" class="my-button">Learn more</a>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="swiper-slide spring-sale">
             <div class="centeral-content">
                 <div>
@@ -136,7 +154,7 @@
  // 是否有多个banner, 如果有 开启swiper
  const isMultipartBanner = document.querySelectorAll('.banner .swiper-slide')
   
- isMultipartBanner.length > 1 && new Swiper('.banner', {
+ isMultipartBanner.length > 10 && new Swiper('.banner', {
      autoplay: {
          disableOnInteraction: false,
          pauseOnMouseEnter: false,
