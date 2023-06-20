@@ -513,6 +513,9 @@
         }, 300)
     })
 
+
+    $('.bottom-fixed').hide()
+    
     $(document).on('scroll', debounce(e => {
         const top1 = $('#freedom').offset().top
         const top2 = $(e.target).scrollTop()
