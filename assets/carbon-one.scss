@@ -830,7 +830,7 @@
             grid-template-columns: 1fr;
 
             & > div {
-                &:last-child {
+                &:first-child {
                     order: 1;
                 }
             }
