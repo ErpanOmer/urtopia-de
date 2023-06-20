@@ -503,6 +503,7 @@
             .right-swiper {
                 display: flex;
                 flex-direction: column;
+                justify-content: space-between;
 
                 .swiper-wrapper {
                     .swiper-slide {
