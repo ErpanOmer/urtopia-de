@@ -751,6 +751,18 @@
     }
 }
 
+.boxs2 {
+    .centeral-content {
+        &:nth-child(1) {
+            background: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20220620-untitled-2712_2x_e34e4b79-bbd9-41ca-b852-96ef5e046260.jpg?v=1687251980') center center/cover no-repeat;
+        }
+
+        &:nth-child(4) {
+            background: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18626_2x_08a86f25-5a57-4e25-aa18-daab10e67c7d.jpg?v=1687252624') center center/cover no-repeat;
+        }
+    }
+}
+
 
 @media (max-width: 767px) {
     .freedom {
