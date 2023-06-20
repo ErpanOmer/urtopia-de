@@ -490,17 +490,13 @@
 
     $('.accessories .items .item').on('click', e => {
         const item = $(e.target).closest('.item')
-        const icon = item.find('.u11Light_v2 i')
+        const icon = item.find('.u11Light_v2')
 
         if (item.hasClass('active')) {
             item.removeClass('active')
-            
-            icon.removeClass('fa-plus')
-            icon.addClass('fa-check')
+            icon.html('<i class="fa-solid fa-check"></i>')
         } else {
-            icon.addClass('fa-plus')
-            icon.removeClass('fa-check')
-
+            icon.html('<i class="fa-solid fa-plus"></i>')
             item.addClass('active')
         }
     })
