@@ -624,7 +624,8 @@
 
         .values {
             display: grid;
-            grid-template-columns: repeat(8, 1fr);
+            grid-template-columns: repeat(4, 1fr);
+            grid-column-gap: 50px;
 
             & > div {
                 display: flex;
