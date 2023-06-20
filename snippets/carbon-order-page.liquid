@@ -521,10 +521,6 @@
         }, 300)
     })
 
-
-    $('.bottom-fixed').hide()
-    $('.top-fixed').hide()
-
     $(document).on('scroll', throttle(e => {
         const top1 = $('#freedom').offset().top
         const top2 = $(e.target).scrollTop()
@@ -543,6 +539,10 @@
             }
         }
     }, 300, 100))
+
+    // 默认隐藏
+    $('.bottom-fixed').hide()
+    $('.top-fixed').hide()
 
     
 
