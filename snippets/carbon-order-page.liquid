@@ -551,10 +551,10 @@
     let currnetScroolTop = 0
     $(document).on('scroll', throttle(e => {
         const top1 = $('#freedom').offset().top
-
         const top3 = $('.product .addToCartBtn').offset().top
-
         const top2 = $(e.target).scrollTop()
+
+        const h = window.screen.height
 
         if (global_config.is_mobile) {
             if (top2 > top3) {
