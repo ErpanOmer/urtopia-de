@@ -3166,6 +3166,7 @@ document.querySelectorAll('[data-option-name="Style"]').forEach((v) => {
 });
 
 $('input[type="radio"]').on('change', () => {
+  console.log(global_config.ebike_delivery_time[$('input[name="id"]')])
   $('.sc-bBHHxi').text(global_config.ebike_delivery_time[$('input[name="id"]')])
 })
 
