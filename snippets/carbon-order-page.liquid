@@ -346,6 +346,14 @@
             $(`.product .commonComponent .sale .u17DemiBold_v2`).text(`with ${model === 'Carbon Belt' ? '{{ settings.sale_name }}' : 'Pre-order Sale'}`)
 
             $(`.product .count-down .u17Medium_v2`).text(`with ${model === 'Carbon Belt' ? '€600 off + 3 Free Accessories Ends in:' : '€300 off + 2 Free Accessories Ends in:'}`)
+
+            if (model === 'Carbon Belt') {
+                $('.product .belt').show()
+                $('.product .gear').hide()
+            } else {
+                $('.product .belt').hide()
+                $('.product .gear').show()
+            }
         }
 
         if (style) {
