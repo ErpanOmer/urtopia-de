@@ -177,6 +177,7 @@ $sale_text_color: #F24FA5;
                     display: grid;
                     grid-template-columns: repeat(2, 1fr);
                     grid-column-gap: 5%;
+                    margin: 2.5% 0;
 
                     & > div {
                         display: flex;
@@ -191,6 +192,14 @@ $sale_text_color: #F24FA5;
 
                 .u11Light_v2 {
                     margin-top: 2.5%;
+                }
+            }
+
+            .gear {
+                .u14Light_v2 {
+                    right: 0;
+                    border-bottom-left-radius: 0;
+                    border-bottom-right-radius: 0;
                 }
             }
 
