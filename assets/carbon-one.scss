@@ -173,6 +173,12 @@ $sale_text_color: #F24FA5;
                     }
                 }
 
+                .accs_1s {
+                    display: grid;
+                    grid-template-columns: repeat(2, 1fr);
+                    grid-column-gap: 5%;
+                }
+
                 .u11Light_v2 {
                     margin-top: 2.5%;
                 }
