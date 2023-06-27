@@ -315,6 +315,11 @@ $sale_text_color: #F24FA5;
                     & > div + div {
                         margin-left: 12px;
                     }
+
+                    .active {
+                        border-color: #000;
+                        opacity: 1;
+                    }
                 }
             }
 
