@@ -325,11 +325,11 @@ $sale_text_color: #F24FA5;
                         }
                     }
 
-                    div[attribute="Carbon Belt"] {
+                    div[attribute="Carbon Belt"]::after {
                         content: "Sale";
                     }
 
-                    div[attribute="Shimano Gear"] {
+                    div[attribute="Shimano Gear"]::after {
                         content: "New";
                     }
 
