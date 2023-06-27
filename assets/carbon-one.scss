@@ -1411,10 +1411,11 @@ $sale_text_color: #F24FA5;
             width: 92vw;
             padding: 0;
             border-bottom: 92vw solid #032709;
+            box-sizing: content-box !important;
     
             & > div {
                 padding: 0;
-                    
+
                 .u14Light_v2 {
                     max-width: 480px;
                     margin-top: 16px;
