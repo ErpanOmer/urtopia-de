@@ -316,7 +316,7 @@
         return variants.find(v => v.available)
     }
 
-    function changeVariant (style, size) {
+    function changeVariant (model, size, style) {
         if (style) {
             $(`.product .product-panel .Style .active`).removeClass('active')
             $(`.product .product-panel .Style > div[attribute="${style}"]`).addClass('active')
@@ -484,10 +484,12 @@
     $('.product-panel .options .option >div:not(.u17DemiBold_v2) > div').on('click',e => {
         const t = $(e.target)
 
-        if ($(e.target).parent().hasClass('Style')) {
-            changeVariant(t.attr('attribute'), current_variant.option2)
+        if ($(e.target).parent().hasClass('Model')) {
+            changeVariant(t.attr('attribute'), current_variant.option2, current_variant.option3)
+        } else if ($(e.target).parent().hasClass('Style')) {
+            changeVariant(current_variant.option1, t.attr('attribute'), current_variant.option3)
         } else {
-            changeVariant(current_variant.option1, t.attr('attribute'))
+            changeVariant(current_variant.option1, current_variant.option2, t.attr('attribute'))
         }
     })
 
