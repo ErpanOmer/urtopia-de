@@ -318,7 +318,7 @@ $sale_text_color: #F24FA5;
                     }
 
                     .active {
-                        border-color: #000;
+                        border-color: $sale_text_color;
                         opacity: 1;
                     }
                 }
