@@ -309,7 +309,8 @@ $sale_text_color: #F24FA5;
                         line-height: 14px;
                         display: flex;
                         align-items: center;
-                        justify-content: center;
+                        width: 40%;
+                        justify-content: space-between;
                         cursor: pointer;
 
                         &::after {
@@ -317,7 +318,8 @@ $sale_text_color: #F24FA5;
                             content: "Sale";
                             background-color:  $sale_text_color;
                             color: #fff;
-                            padding: 2px;
+                            border-radius: 10px;
+                            padding: 2px 6px;
                             font-size: 12px;
                         }
                     }
