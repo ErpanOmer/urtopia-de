@@ -145,6 +145,8 @@ $sale_text_color: #F24FA5;
                 padding: 8% 2% 2.5%;
                 position: relative;
                 overflow: hidden;
+                display: flex;
+                align-items: center;
 
                 .u14Light_v2 {
                     background-image: $sale_background_image;
