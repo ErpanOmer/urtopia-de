@@ -96,7 +96,9 @@ $sale_text_color: #F24FA5;
         vertical-align: middle;
     }
 
-    * {
+    *,
+    ::after,
+    ::before {
         box-sizing: border-box;
     }
 
