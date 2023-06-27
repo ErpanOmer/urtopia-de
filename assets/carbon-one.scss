@@ -311,6 +311,11 @@ $sale_text_color: #F24FA5;
                         align-items: center;
                         justify-content: center;
                         cursor: pointer;
+
+                        &::after {
+                            display: flex;
+                            content: "Sale";
+                        }
                     }
 
                     & > div + div {
