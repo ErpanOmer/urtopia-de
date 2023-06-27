@@ -98,8 +98,22 @@
             </div>
             <div class="count-down mb12 mobileHide">
                 <div class="u17Medium_v2">€600 off + 3 Free Accessories Ends in：</div>
+                {% assign accessories_map_1s = "7633738596568,7633738531032" | split: ',' %}
                 <div class="accs_1s">
-                    <div></div>
+                    {% for acc in accessories_map %}
+                        {% for prod in collections["accessories"].products %}
+                            {% if acc contains prod.id %}
+                                <div class="acc">
+                                    {{ prod.featured_image | image_url: width: 400 | image_tag }}
+                                    {% if acc == "7633738662104" %}
+                                        <span class="u11Medium_v2">{{ prod.title | truncatewords: 3, "" | replace: "-", "" }}</span>
+                                    {% else %}
+                                        <span class="u11Medium_v2">{{ prod.title }}</span>
+                                    {% endif %}
+                                </div>
+                            {% endif %}
+                        {% endfor %}
+                    {% endfor %}
                 </div>
                 <img src="http://i.countdownmail.com/2mmaed.gif">
             </div>
