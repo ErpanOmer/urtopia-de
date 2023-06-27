@@ -304,8 +304,8 @@
         },
       });
 
-    function findVariantOptions (style, size) {
-        return variants.find(v => `${style} / ${size}` === v.title)
+    function findVariantOptions (model, style, size) {
+        return variants.find(v => `${model} / ${style} / ${size}` === v.title)
     }
 
     function findVariantFromId (id) {
