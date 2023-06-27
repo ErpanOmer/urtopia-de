@@ -149,9 +149,9 @@ $sale_text_color: #F24FA5;
                     background-image: $sale_background_image;
                     color: #fff;
                     position: absolute;
-                    border-radius: 10px;
                     left: 0;
                     top: 0;
+                    right: 0;
                     padding: 1% 2%;
                 }
 
@@ -192,14 +192,6 @@ $sale_text_color: #F24FA5;
 
                 .u11Light_v2 {
                     margin-top: 2.5%;
-                }
-            }
-
-            .gear {
-                .u14Light_v2 {
-                    right: 0;
-                    border-bottom-left-radius: 0;
-                    border-bottom-right-radius: 0;
                 }
             }
 
