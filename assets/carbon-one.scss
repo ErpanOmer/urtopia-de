@@ -91,6 +91,11 @@ $sale_text_color: #F24FA5;
         margin-bottom: 6px;
     }
 
+    img,
+    video {
+        vertical-align: middle;
+    }
+
     .centeral-content {
         display: grid;
         grid-template-columns: 1.77fr 1fr;
