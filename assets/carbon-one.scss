@@ -315,6 +315,9 @@ $sale_text_color: #F24FA5;
                         &::after {
                             display: flex;
                             content: "Sale";
+                            background-color:  $sale_text_color;
+                            color: #fff;
+                            padding: 2px;
                         }
                     }
 
