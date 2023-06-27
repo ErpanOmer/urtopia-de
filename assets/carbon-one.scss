@@ -895,9 +895,15 @@ $sale_text_color: #F24FA5;
     margin-bottom: 80px;
 
     .centeral-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+
         &>div {
-            padding: 0 10% !important;
-            background-image: none !important;
+            background-color: #F5F5F5;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 0 10%;
 
             &:nth-child(1) {
                 background: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_18806_2x_eb037dc7-5420-435a-8ac9-4f2875c22b64.jpg?v=1687252985') center center/cover no-repeat;
