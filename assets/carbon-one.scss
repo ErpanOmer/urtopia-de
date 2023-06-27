@@ -1412,7 +1412,9 @@ $sale_text_color: #F24FA5;
             padding: 0;
             border-bottom: 92vw solid #032709;
     
-            & > div {    
+            & > div {
+                padding: 0;
+                    
                 .u14Light_v2 {
                     max-width: 480px;
                     margin-top: 16px;
