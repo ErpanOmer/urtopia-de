@@ -221,6 +221,7 @@
     let current_variant = null
     const styles = {}
     const sizes = {}
+    const model = {}
 
     const commonSwiper = [
         'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230620-232407.png?v=1687274659',
@@ -464,7 +465,8 @@
     }
 
     {% for variant in product.variants %}
-        styles[{{ variant.option1 | json }}] = 1
+        model[{{ variant.option1 | json }}] = 1
+        styles[{{ variant.option3 | json }}] = 1
         sizes[{{ variant.option2 | json }}] = 1
     {% endfor %}
 
