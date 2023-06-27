@@ -1,0 +1,12 @@
+{
+  "sections": {
+    "carbon-order-page-test": {
+      "type": "carbon-order-page-test",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "carbon-order-page-test"
+  ]
+}
