@@ -311,6 +311,10 @@ $sale_text_color: #F24FA5;
                         align-items: center;
                         justify-content: center;
                     }
+
+                    & > div + div {
+                        margin-left: 12px;
+                    }
                 }
             }
 
