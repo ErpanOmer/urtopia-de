@@ -96,6 +96,10 @@ $sale_text_color: #F24FA5;
         vertical-align: middle;
     }
 
+    * {
+        box-sizing: border-box;
+    }
+
     .centeral-content {
         display: grid;
         grid-template-columns: 1.77fr 1fr;
