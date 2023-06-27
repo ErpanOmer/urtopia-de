@@ -495,9 +495,11 @@
 
     // 如果有查询参数
     if (search.variant) {
-        changeVariant(findVariantFromId(search.variant).option1, findVariantFromId(search.variant).option2) 
+        const find = findVariantFromId(search.variant)
+        changeVariant(find.option1, find.option2, find.option3) 
     } else {
-        changeVariant(findAvailableVariant().option1, findAvailableVariant().option2)
+        const find = findAvailableVariant()
+        changeVariant(find.option1, find.option2, find.option3) 
     }
 
 
