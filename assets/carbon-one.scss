@@ -294,6 +294,12 @@ $sale_text_color: #F24FA5;
                         border-color: #000;
                     }
                 }
+
+                .Model {
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-start;
+                }
             }
 
             .accessories {
