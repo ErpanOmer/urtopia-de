@@ -974,8 +974,8 @@
 		  .addClass('faq-content-plus');
 	  });
   </script>
-
-  <script>
+  {% if template == "product.pf-b10ddb73" %}
+	  <script>
 	document.getElementById("sizefit-btn").onclick = function () {
 		const layer = document.querySelector(".order-modal-one");
 		const laybox = document.querySelector(".order-modal-layer-one");
@@ -1002,3 +1002,4 @@
 		laybox.className += " dialog-open";
 	  };
   </script>
+  {% endif %}

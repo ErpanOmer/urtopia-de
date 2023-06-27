@@ -92,7 +92,7 @@
                 </div>
                 <div class="u11Light_v2">*Not available with leasing</div>
             </div>
-            <div class="count-down mb12">
+            <div class="count-down mb12 mobileHide">
                 <div class="u17Medium_v2">€600 off + 3 Free Accessories Ends in：</div>
                 <img src="http://i.countdownmail.com/2mmaed.gif">
             </div>
@@ -127,19 +127,23 @@
                         {% endif %}
                     {% endfor %}
                 </div>
-            </div>
+            </div>       
             <div class="buttons">
+                <div class="count-down mb12 pcHide">
+                    <div class="u17Medium_v2">€600 off + 3 Free Accessories Ends in：</div>
+                    <img src="http://i.countdownmail.com/2mmaed.gif">
+                </div>
                 <div
                     data-product-id="{{ product.id }}"
                     class="my-button my-button-origin addToCartBtn"
                     onclick="addAllToCart('atc')"
                     id="addToCart"
                     >
-                    <i class="fa fa-spinner fa-spin"></i><span data-pf-type="Text" class="addToCartText">Add to Cart</span>
+                    <i class="fa fa-spinner fa-spin"></i><span data-pf-type="Text" class="addToCartText u17DemiBold_v2">Add to Cart</span>
                 </div>
                 <div onclick="testRideTrace('lease_on_jobrad', this)" class="orderTestRideBtn">
                     <img class="oneeee" src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/jobradorg_2x_423443a0-1c79-4785-97a0-2be8ae66ceb6.png?v=1685414275"/>
-                    <span><span class="u17DemiBold_v2">Leasing</span><!--<span>36 months, €48/month</span>--></span>
+                    <span><span class="u17DemiBold_v2">Lease Now</span><!--<span>36 months, €48/month</span>--></span>
                   </div>
                   <div onclick="testRideTrace('klarna_check_out', this)" class="orderTestRideBtn">
                     <img class="twoooo"src="https://cdn.shopifycdn.net/s/files/1/0633/2068/6808/files/20230530-121400.png?v=1685420054"/>
@@ -363,9 +367,11 @@
             if (current_variant.available) {
                 btn.find('span').text('Add to Cart')
                 btn.removeClass('disabled')
+                $('.product .buttons .orderTestRideBtn').show()
             } else {
                 btn.find('span').text('Sold out')
                 btn.addClass('disabled')
+                $('.product .buttons .orderTestRideBtn').hide()
             }
         }
 

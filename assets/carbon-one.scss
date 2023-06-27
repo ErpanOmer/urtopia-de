@@ -332,7 +332,12 @@ $sale_text_color: #F24FA5;
                             .u17DemiBold_v2,
                             .u11Medium_v2 {
                                 color: #484848;
+                                word-break: break-all;
                             }
+
+                          .u11Medium_v2 {
+                                margin-bottom: 5px;
+                          }
                         }
 
                         &>img {
@@ -385,6 +390,7 @@ $sale_text_color: #F24FA5;
                     border: none;
                     width: 100%;
                     margin-bottom: 6px;
+                    padding: 14px 36px;
 
                     &:hover {
                         opacity: 0.9;
@@ -486,6 +492,10 @@ $sale_text_color: #F24FA5;
                     img {
                         max-width: 30px;
                         margin-right: 6px;
+                    }
+
+                    .u11Medium_v2 {
+                      word-break: break-all;
                     }
                 }
             }

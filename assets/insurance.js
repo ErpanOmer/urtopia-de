@@ -311,7 +311,7 @@ function addToCartInsurance(parse, show = false) {
     const formData = new FormData(form);
     
     const item0 = { 
-      id: formData.get('items[0]id'),
+      id: $('input[name="id"]').val(),
       quantity: 1
     }
     
