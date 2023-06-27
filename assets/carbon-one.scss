@@ -1340,6 +1340,10 @@ $sale_text_color: #F24FA5;
         background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_21480_2x_2ec8220f-7ca4-429a-8ddf-7425b2fedc44.jpg?v=1687857193');
         height: 80vh;
         padding: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        padding-bottom: 15vw;
     
         .centeral-content {
 
