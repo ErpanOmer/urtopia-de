@@ -320,7 +320,7 @@
         if (model) {
             $(`.product .product-panel .Model .active`).removeClass('active')
             $(`.product .product-panel .Model > div[attribute="${model}"]`).addClass('active')
-            $(`.product .product-panel .options > div[option="Model"] .u17DemiBold_v2 .u17Light_v2`).text(size_map[size])
+            $(`.product .product-panel .options > div[option="Model"] .u17DemiBold_v2 .u17Light_v2`).text(`{{ product.title}} ${model === 'Carbon Belt' ? '1' : '1s'}`)
         }
 
         if (style) {
