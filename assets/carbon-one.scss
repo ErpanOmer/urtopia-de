@@ -1401,4 +1401,21 @@ $sale_text_color: #F24FA5;
             }
         }
     }
+
+    .carry {
+        .centeral-content {
+            background: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18694_2x_cfbf1732-1957-4242-beaf-0ddd5507db26.jpg?v=1687861733') center center/cover no-repeat;
+            color: #fff;
+            background-clip: content-box;
+    
+            & > div {
+                padding: 200px 80px;
+    
+                .u14Light_v2 {
+                    max-width: 480px;
+                    margin-top: 16px;
+                }
+            }
+        }
+    }
 }
