@@ -1418,9 +1418,17 @@ $sale_text_color: #F24FA5;
                 transform: translateY(92vw);
                 padding: 8vw 4vw;
 
+                .u30DemiBold_v2 {
+                    font-size: 24px;
+                }
+
+                .u20Light_v2 {
+                    font-size: 16px;
+                }
+
                 .u14Light_v2 {
                     max-width: 480px;
-                    margin-top: 16px;
+                    margin-top: 24px;
                 }
             }
         }
