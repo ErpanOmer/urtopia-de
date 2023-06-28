@@ -892,8 +892,13 @@ $sale_text_color: #F24FA5;
     .centeral-content {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        
+
         & > div {
+            background-color: #F5F5F5;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 0 10%;
             align-items: flex-start;
 
             &:nth-child(1) {
