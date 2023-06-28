@@ -53,7 +53,7 @@ class CartItems extends HTMLElement {
     // 
     const bike = $(`.cart-items .cart-item[data-line-item-variant-id="${lineItemVariantId}"]`)
     const sale_name = bike.attr('data-line-item-sale-name')
-    const components = $(`.cart-items .cart-item[data-line-item-sale-name="${sale_name}"]`)
+    const components = $(`.cart-items .cart-item[data-line-item-sale-name="${sale_name}"]:not([data-line-item-variant-id="${lineItemVariantId}"])`)
     console.log('sale_name', sale_name, components.length)
 
     const items = document.querySelectorAll('.cart-items [data-cart-item]');
