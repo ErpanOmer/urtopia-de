@@ -1600,6 +1600,7 @@
                 if (Object.hasOwnProperty.call(styles, style) && style !== "vanilla") {
                   const f = findVariantOptions(model, size, style)
 
+                  // 查找可用的variant
                   if (f) {
                     changeVariant(f.option1, f.option2, f.option3)
                     break
