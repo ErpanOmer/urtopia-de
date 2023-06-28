@@ -48,7 +48,7 @@
 .insurance-checkbox--primary label:before {
   content: '';
   position: absolute;
-  top: 18px;
+  top: 15px;
   left: 15px;
   width: 13px;
   height: 13px;
@@ -60,7 +60,7 @@
 .insurance-checkbox--primary label:after {
   content: '';
   position: absolute;
-  top: 19px;
+  top: 16px;
   left: 19px;
   transform: rotate(45deg) skew(5deg);
   width: 5px;
