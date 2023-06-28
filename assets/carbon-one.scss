@@ -890,6 +890,9 @@ $sale_text_color: #F24FA5;
 
 .boxs3 {
     .centeral-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        
         & > div {
             align-items: flex-start;
 
