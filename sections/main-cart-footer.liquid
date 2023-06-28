@@ -239,17 +239,19 @@
 
           carbon.each((i, t) => {
             const target = $(t)
+            const quantly = parseInt(target.attr('data-quantity'))
 
-            carbon_quantly += parseInt(target.attr('data-quantity'))
+            carbon_quantly += quantly
+           
 
             const sale_name = target.attr('data-line-item-sale-name')
 
             console.log(sale_names[sale_name], sale_name, carbon_quantly)
 
             if (sale_names[sale_name]) {
-              sale_names[sale_name] = sale_names[sale_name] + (1 * carbon_quantly)
+              sale_names[sale_name] = sale_names[sale_name] + (1 * quantly)
             } else {
-              sale_names[sale_name] = 1 * carbon_quantly
+              sale_names[sale_name] = 1 * quantly
             }
 
           })
