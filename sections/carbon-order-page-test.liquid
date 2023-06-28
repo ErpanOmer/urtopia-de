@@ -1499,8 +1499,8 @@
         },
       });
 
-    function findVariantOptions (model, style, size) {
-        return variants.find(v => `${model} / ${style} / ${size}` === v.title)
+    function findVariantOptions (model, size, style) {
+        return variants.find(v => `${model} / ${size} / ${style}` === v.title)
     }
 
     function findVariantFromId (id) {
@@ -1591,6 +1591,20 @@
                 btn.find('span').text('Sold out')
                 btn.addClass('disabled')
                 $('.product .buttons .orderTestRideBtn').hide()
+            }
+
+
+            if (model === "Shimano Gear" && style === "vanilla") {
+
+              for (const style in styles) {
+                if (Object.hasOwnProperty.call(styles, style) && style !== "vanilla") {
+                  const f = findVariantOptions(model, size, styles[style])
+
+                  console.log('f', f)
+                  
+                }
+              }
+              
             }
         }
 
