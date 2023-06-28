@@ -114,6 +114,7 @@ $sale_text_color: #F24FA5;
     margin: 100px 0;
 }
 
+
 .product {
     margin: 80px 0;
 
@@ -1515,6 +1516,14 @@ $sale_text_color: #F24FA5;
     }
 
     .stars {
+        .centeral-content {
+            padding: 0 4vw;
+        }
+    }
+
+    .ever {
+        margin: 60px 0;
+
         .centeral-content {
             padding: 0 4vw;
         }
