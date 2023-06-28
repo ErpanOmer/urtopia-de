@@ -235,9 +235,21 @@
 
           let carbon_quantly = 0
           let chord_quantly = 0
+          const sale_names = {}
 
           has_carbon.each((i, t) => {
-            carbon_quantly += parseInt($(t).attr('quantity'))
+            const target = $(t)
+
+            carbon_quantly += parseInt(target.attr('data-quantity'))
+
+            const sale_name = target.attr('data-line-item-sale-name')
+
+            if (sale_names[sale_name]) {
+              sale_names[sale_name] = sale_names[sale_name] + 1
+            } else {
+              sale_names[sale_name] = 1
+            }
+
           })
 
          //for (const iterator of [...has_chord]) {
@@ -264,7 +276,7 @@
             } else {
 
 
-              console.log('has_carbon', has_carbon)
+              console.log('has_carbon', sale_names)
 
               document.querySelector(`.product_code .sale_coupon > div:last-child`).innerHTML = ''
               document.querySelector(`.product_code .carbon_text > div:nth-child(1) span`).innerHTML = `Save €${carbon_quantly * (169 + 600)}.00!`
