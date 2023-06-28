@@ -51,37 +51,36 @@ $sale_text_color: #F24FA5;
             .bike-item {
                 flex: 0 0 50%;
             }
+
+            .bike-title {
+                margin-bottom: 6px;
+                font: normal normal 600 18px/21px urbane;
+            }
+
+            p {
+                font: normal normal 300 14px/20px urbane;
+            }
         }
     }
-}
 
+    .close {
+        display: flex;
+        width: 26px;
+        height: 26px;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        background: #F7F7F7;
+        border-radius: 50%;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        opacity: 0.8;
 
-.componentBox .bike-box .bike-title {
-    margin-bottom: 6px;
-    font: normal normal 600 18px/21px urbane;
-}
-
-.componentBox .bike-box p {
-    font: normal normal 300 14px/20px urbane;
-}
-
-.componentBox .close {
-    display: flex;
-    width: 26px;
-    height: 26px;
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    background: #F7F7F7;
-    border-radius: 50%;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    opacity: 0.8;
-}
-
-.componentBox .close:hover {
-    opacity: 1;
+        &:hover {
+            opacity: 1;
+        }
+    }
 }
 
 /**/
