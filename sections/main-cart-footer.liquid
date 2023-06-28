@@ -278,7 +278,7 @@
             if (carbon_quantly === 0) {
               document.querySelector(`.product_code`).innerHTML = ''
             } else {
-              const sum = 0
+              let sum = 0
 
               if (sale_names['{{ settings.sale_name }}']) {
                 sum += sale_names[{{ settings.sale_name }}] * 769
