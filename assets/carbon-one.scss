@@ -1374,6 +1374,24 @@ $sale_text_color: #F24FA5;
 
             & > div {
                 padding: 0;
+
+                &:nth-child(1) {
+                    order: 1;
+                }
+
+                &:nth-child(2) {
+                    padding: 8vw 4vw;
+                    order: 2;
+                }
+
+                &:nth-child(3) {
+                    padding: 8vw 4vw;
+                    order: 4;
+                }
+
+                &:nth-child(4) {
+                    order: 3;
+                }
             }
         }
     }
