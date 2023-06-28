@@ -1370,13 +1370,10 @@ $sale_text_color: #F24FA5;
 
         .centeral-content {
             grid-template-columns: 1fr;
+            padding: 0 4vw;
 
             & > div {
-                height: 90vw;
-
-                &:nth-child(1) {
-                    height: 90vw;
-                }
+                padding: 0;
             }
         }
     }
@@ -1415,7 +1412,7 @@ $sale_text_color: #F24FA5;
 
                 .logos {
                     grid-gap: 15vw 8vw;
-                    
+
                     img {
                       height: auto;
                       width: 100%;  
