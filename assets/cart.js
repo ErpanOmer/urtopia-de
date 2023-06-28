@@ -50,16 +50,20 @@ class CartItems extends HTMLElement {
     console.log('beforeQuantity', beforeQuantity)
     console.log('afterQuantity', afterQuantity)
 
+    const updates = {}
     // 
     const bike = $(`.cart-items .cart-item[data-line-item-variant-id="${lineItemVariantId}"]`)
     const sale_name = bike.attr('data-line-item-sale-name')
     const components = $(`.cart-items .cart-item[data-line-item-sale-name="${sale_name}"]:not([data-line-item-variant-id="${lineItemVariantId}"])`)
-    console.log('sale_name', sale_name, components.length)
 
-    const items = document.querySelectorAll('.cart-items [data-cart-item]');
+    // 查找保险产品
+    const insurance = $(`.cart-items .cart-item[data-insurance-product-variant-id="${lineItemVariantId}"]`)
+    // 如果存在 跟车绑定的保险产品
+    if (insurance.length) {
+      updates[insurance.attr('data-line-item-variant-id')] = afterQuantity
+    }
 
-    const updates = {}
-
+    // 活动配件
     components.each((i, item) => {
       updates[$(item).attr('data-line-item-variant-id')] = afterQuantity
     })
