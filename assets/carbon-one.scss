@@ -1357,6 +1357,10 @@ $sale_text_color: #F24FA5;
 
     .boxs2 {
         margin-bottom: 30px;
+
+        .centeral-content {
+            grid-template-columns: 1fr;
+        }
     }
 
     .boxs3 {
