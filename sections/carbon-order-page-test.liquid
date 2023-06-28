@@ -1598,10 +1598,12 @@
 
               for (const style in styles) {
                 if (Object.hasOwnProperty.call(styles, style) && style !== "vanilla") {
-                  const f = findVariantOptions(model, size, styles[style])
+                  const f = findVariantOptions(model, size, style)
 
-                  console.log('f', f)
-                  
+                  if (f) {
+                    changeVariant(f.option1, f.option2, option3)
+                    break
+                  }                  
                 }
               }
               
