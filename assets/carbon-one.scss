@@ -916,39 +916,32 @@ $sale_text_color: #F24FA5;
     }
 }
 
+.assembly {
+    margin: 120px 0;
 
-.carbon-one {
+    .centeral-content {
+        display: grid;
+        grid-template-columns: 1fr 1.8fr;
 
+        &>div {
+            &:first-child {
+                padding: 14vh 3.5vw;
 
-
-
-    .assembly {
-        margin: 120px 0;
-
-        .centeral-content {
-            display: grid;
-            grid-template-columns: 1fr 1.8fr;
-
-            &>div {
-                &:first-child {
-                    padding: 14vh 3.5vw;
-
-                    .u36DemiBold_v2 {
-                        margin-bottom: 40px;
-                    }
+                .u36DemiBold_v2 {
+                    margin-bottom: 40px;
                 }
+            }
 
-                &:last-child {
-                    background: center center/cover no-repeat;
-                    background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_20940_2x_f524b1be-7a39-4892-b6d0-279d260cbbd2.jpg?v=1682581556');
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
+            &:last-child {
+                background: center center/cover no-repeat;
+                background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_20940_2x_f524b1be-7a39-4892-b6d0-279d260cbbd2.jpg?v=1682581556');
+                display: flex;
+                align-items: center;
+                justify-content: center;
 
-                    img {
-                        width: 76px;
-                        cursor: pointer;
-                    }
+                img {
+                    width: 76px;
+                    cursor: pointer;
                 }
             }
         }
