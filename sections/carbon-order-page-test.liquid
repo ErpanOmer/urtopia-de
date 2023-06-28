@@ -1580,7 +1580,7 @@
 
             history.replaceState(null, '', `${location.pathname}?variant=${current_variant_id}`);
             $('.product .product-panel input[name="id"]').val(current_variant_id)
-            $('.product .delivery_time').html(global_config.ebike_delivery_time[current_variant_id] || '')
+            $('.product .delivery_time').html(global_config.ebike_delivery_time[current_variant_id])
 
             console.log($('.product .delivery_time'), global_config.ebike_delivery_time[current_variant_id])
 
