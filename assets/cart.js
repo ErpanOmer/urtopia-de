@@ -58,8 +58,15 @@ class CartItems extends HTMLElement {
 
     const items = document.querySelectorAll('.cart-items [data-cart-item]');
 
-    let itemsQuantityArray = [];
+    const updates = {}
 
+    components.each((i, item) => {
+      updates[$(item).attr('data-line-item-variant-id')] = afterQuantity
+    })
+
+    updates[lineItemVariantId] = afterQuantity
+
+    /** 
     items.forEach((item, index) => {
       if (item.dataset.lineItemVariantId === lineItemVariantId && currentIndex === index + 1) {
         
@@ -83,17 +90,13 @@ class CartItems extends HTMLElement {
         }
       }
     });
-    
-    console.log('items', items);
 
-    const formData = {
-      updates: itemsQuantityArray
-    }
+    **/
 
-    let info = fetch('/cart/update.js', {
+    fetch('/cart/update.js', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', 'Accept': `application/json` },
-      body: JSON.stringify(formData)
+      body: JSON.stringify({ updates })
     }).then(response => response.json()).then(data => {
       location.reload(true);
 
