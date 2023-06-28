@@ -368,7 +368,7 @@ padding-bottom: {{ section.settings.padding_bottom }}px;
                     </label>
                     {% assign discountTitle = item.discounts.first.title %}
 
-                    {% if item.product.id!=sale_product_id and discountTitle %}
+                    {% if item.product.id!=sale_product_id and discountTitle or is_insurance_product %}
                       <div style="width: 100%;display: flex;align-items: center;">{{ item.quantity }}</div>
                     {% else %}
                       {% if item.product.id == 7952778658008 and has_insurance_product %}
