@@ -50,6 +50,9 @@ class CartItems extends HTMLElement {
     console.log('beforeQuantity', beforeQuantity)
     console.log('afterQuantity', afterQuantity)
 
+    const sale_name = $(`.cart-items .cart-item[data-line-item-variant-id="${lineItemVariantId}"]`)
+    console.log('sale_name', sale_name)
+
     const items = document.querySelectorAll('.cart-items [data-cart-item]');
 
     let itemsQuantityArray = [];
