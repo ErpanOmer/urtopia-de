@@ -1360,6 +1360,14 @@ $sale_text_color: #F24FA5;
 
         .centeral-content {
             grid-template-columns: 1fr;
+
+            & > div {
+                height: 90vw;
+
+                &:nth-child(1) {
+                    height: 90vw;
+                }
+            }
         }
     }
 
