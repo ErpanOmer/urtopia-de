@@ -278,12 +278,18 @@
             if (carbon_quantly === 0) {
               document.querySelector(`.product_code`).innerHTML = ''
             } else {
+              const sum = 0
 
+              if (sale_names[{{ settings.sale_name }}]) {
+                sum += sale_names[{{ settings.sale_name }}] * 769
+              }
 
-              console.log('has_carbon', sale_names)
+              if (sale_names['xyz 1s']) {
+                sum += sale_names['xyz 1s'] * 370
+              }
 
               document.querySelector(`.product_code .sale_coupon > div:last-child`).innerHTML = ''
-              document.querySelector(`.product_code .carbon_text > div:nth-child(1) span`).innerHTML = `Save €${carbon_quantly * (169 + 600)}.00!`
+              document.querySelector(`.product_code .carbon_text > div:nth-child(1) span`).innerHTML = `Save €${sum}.00!`
               document.querySelector(`.product_code .carbon_text > div:nth-child(2) span`).innerHTML = 'Free accessories applied'
             }
           }
