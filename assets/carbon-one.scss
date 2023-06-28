@@ -1414,6 +1414,8 @@ $sale_text_color: #F24FA5;
                 }
 
                 .logos {
+                    grid-gap: 15vw 8vw;
+                    
                     img {
                       height: auto;
                       width: 100%;  
