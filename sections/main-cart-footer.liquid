@@ -230,21 +230,21 @@
 </div>
     <script>
       function refreshProductCode () {
-          const has_carbon = $(`.cart-items [data-line-item-product-id="${global_config.event_bike_product_id}"]`)
+          const carbon = $(`.cart-items [data-line-item-product-id="${global_config.event_bike_product_id}"]`)
           const has_chord = document.querySelectorAll(`.cart-items [data-line-item-product-id="7952778658008"]`)
 
           let carbon_quantly = 0
           let chord_quantly = 0
           const sale_names = {}
 
-          has_carbon.each((i, t) => {
+          carbon.each((i, t) => {
             const target = $(t)
 
             carbon_quantly += parseInt(target.attr('data-quantity'))
 
             const sale_name = target.attr('data-line-item-sale-name')
 
-            console.log(sale_names[sale_name], sale_name)
+            console.log(sale_names[sale_name], sale_name, carbon_quantly)
 
             if (sale_names[sale_name]) {
               sale_names[sale_name] = sale_names[sale_name] + (1 * carbon_quantly)
