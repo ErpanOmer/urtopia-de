@@ -1387,13 +1387,13 @@ $sale_text_color: #F24FA5;
             padding: 0 4vw;
 
             & > div {
-                padding: 8vw 4vw;
 
                 &:nth-child(1) {
                     order: 1;
                 }
 
                 &:nth-child(2) {
+                    padding: 8vw 4vw;
                     order: 2;
                 }
 
@@ -1402,6 +1402,7 @@ $sale_text_color: #F24FA5;
                 }
 
                 &:nth-child(4) {
+                    padding: 8vw 4vw;
                     order: 3;
                 }
 
