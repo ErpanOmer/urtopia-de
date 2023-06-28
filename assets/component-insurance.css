@@ -36,10 +36,10 @@
   position: relative;
   display: block;
   min-height: 50px;
-  padding: 10px 15px 10px 40px;
-  border-radius: 5px;
+  padding: 8px 15px 8px 40px;
+  border-radius: 10px;
   margin-left: 0;
-  background: #f4f8fd;
+  background: #F7F8FA;
   font-size: 16px;
   color: #020a0a;
   font-weight: bold;
