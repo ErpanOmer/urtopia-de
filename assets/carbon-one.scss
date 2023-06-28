@@ -1383,6 +1383,8 @@ $sale_text_color: #F24FA5;
 
     .boxs3 {
         .centeral-content {
+            grid-template-columns: 1fr;
+            padding: 0 4vw;
 
             & > div {
                 .u17Light_v2 {
