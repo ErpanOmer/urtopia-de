@@ -63,7 +63,24 @@ $sale_text_color: #F24FA5;
         }
     }
 
-    
+    .close {
+        display: flex;
+        width: 26px;
+        height: 26px;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        background: #F7F7F7;
+        border-radius: 50%;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        opacity: 0.8;
+
+        &:hover {
+            opacity: 1;
+        }
+    }
 }
 
 /**/
