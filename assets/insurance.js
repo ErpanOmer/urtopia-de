@@ -293,7 +293,7 @@ function addToCartInsurance(parse, show = false) {
   }
 
   // 加埋点
-  if (location.href.includes('/products/urtopia-carbon-e-bike')) {
+  if (location.href.includes('urtopia-carbon')) {
     !show && fetchBuried('websiteclick', `carbon-order-page`, { button: 'ATC' })
   }
 
