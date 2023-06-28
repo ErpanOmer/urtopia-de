@@ -496,7 +496,7 @@
 
                     console.log('item', item.getAttribute('name'), $(iterator).find('.storepoint-name').text())
 
-                    if (item.getAttribute('name') === iterator.querySelector('.storepoint-name').innerText) {
+                    if (item.getAttribute('name') === $(iterator).find('.storepoint-name').text()) {
                         iterator.classList.add('selected')
 
                         console.log('iterator', iterator)
