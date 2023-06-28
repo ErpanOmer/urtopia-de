@@ -230,13 +230,18 @@
 </div>
     <script>
       function refreshProductCode () {
-          const has_carbon = document.querySelectorAll(`.cart-items [data-line-item-product-id="${global_config.event_bike_product_id}"]`)
+          const has_carbon = $(`.cart-items [data-line-item-product-id="${global_config.event_bike_product_id}"]`)
           const has_chord = document.querySelectorAll(`.cart-items [data-line-item-product-id="7952778658008"]`)
 
           let carbon_quantly = 0
           let chord_quantly = 0
+
+          has_carbon.each((i, t) => {
+            carbon_quantly += parseInt($(t).attr('quantity'))
+          })
+
           for (const iterator of [...has_carbon]) {
-              carbon_quantly += parseInt(iterator.dataset.quantity)
+              
           }
 
          //for (const iterator of [...has_chord]) {
@@ -261,6 +266,8 @@
             if (carbon_quantly === 0) {
               document.querySelector(`.product_code`).innerHTML = ''
             } else {
+
+
               console.log('has_carbon', has_carbon)
 
               document.querySelector(`.product_code .sale_coupon > div:last-child`).innerHTML = ''
