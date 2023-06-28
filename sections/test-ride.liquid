@@ -494,7 +494,7 @@
                 for (const iterator of locations) {
                     iterator.classList.remove('selected')
 
-                    console.log('item', item.getAttribute('name'), iterator.querySelector('.storepoint-name').innerText)
+                    console.log('item', item.getAttribute('name'), $(iterator).find('.storepoint-name').text())
 
                     if (item.getAttribute('name') === iterator.querySelector('.storepoint-name').innerText) {
                         iterator.classList.add('selected')
