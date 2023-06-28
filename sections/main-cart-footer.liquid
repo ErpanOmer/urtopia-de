@@ -261,8 +261,7 @@
             if (carbon_quantly === 0) {
               document.querySelector(`.product_code`).innerHTML = ''
             } else {
-              //document.querySelector(`.product_code .carbon_code span:first-child`).innerHTML = 'Check out with Father’s Day Sale'
-              //document.querySelector(`.product_code .carbon_code span:first-child`).classList.add('important')
+              console.log('has_carbon', has_carbon)
 
               document.querySelector(`.product_code .sale_coupon > div:last-child`).innerHTML = ''
               document.querySelector(`.product_code .carbon_text > div:nth-child(1) span`).innerHTML = `Save €${carbon_quantly * (169 + 600)}.00!`
