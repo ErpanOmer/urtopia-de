@@ -52,6 +52,11 @@ $sale_text_color: #F24FA5;
                     margin-bottom: 12px;
                 }
             }
+
+            .gearing {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+            }
         }
 
         .bike-box {
