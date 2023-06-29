@@ -987,6 +987,11 @@
                     margin-top: 6px;
                     font-size: 17px;
                 }
+
+                .buttons {
+                    display: flex;
+                    flex-direction: column;
+                }
             }
         }
 
