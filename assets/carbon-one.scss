@@ -583,25 +583,22 @@ $sale_text_color: #F24FA5;
                     position: relative;
 
                     .item {
-                        display: grid;
-                        grid-template-columns: 1fr 1fr;
+                        display: flex;
                         min-width: 180px;
                         max-width: 180px;
+                        flex-direction: column;
                         border-radius: 10px;
                         border: 1px solid #E0E0E0;
                         margin-right: 6px;
                         padding: 1px 8px 1px 1px;
-                        align-items: center;
                         cursor: pointer;
 
                         &>div {
-                            display: flex;
-                            flex-direction: column;
-                            text-align: right;
-                            align-items: flex-end;
-                            position: relative;
-                            height: 100%;
-                            justify-content: flex-start;
+                            text-align: left;
+
+                            &:last-child {
+                                display: flex;
+                            }
 
                             .u11Light_v2 {
                                 width: 20px;
