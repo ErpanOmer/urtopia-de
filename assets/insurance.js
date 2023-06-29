@@ -251,19 +251,17 @@ class Insurance {
     const htmlString = this.templateInsuranceProduct.innerHTML;
     const html = this.createElementFromHTML(htmlString);
 
-    this.insertBefore(html, this.fakeButton);
+    if (location.href.includes('urtopia-carbon')) {
+
+    } else {
+      this.insertBefore(html, this.fakeButton);
+    }
   }
   
   insertBefore(element, selector) {
     const parent = selector.parentNode;
 
-    console.log('selector', $(selector).attr('id'))
-
-    if (location.href.includes('urtopia-carbon') && !!!$(selector).attr('id')) {
-      parent.insertBefore(element, document.querySelector('.buttons .count-down'));
-    } else {
-      parent.insertBefore(element, selector); 
-    }
+    parent.insertBefore(element, selector); 
   }
   
   createElementFromHTML(htmlString) {
