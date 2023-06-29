@@ -1730,6 +1730,19 @@ $sale_text_color: #F24FA5;
                     grid-template-columns: 1fr;
                     transform: translateY(-10px);
                     max-height: unset;
+
+                    & > div {
+                        padding: 0 4vw;
+
+                        .u24DemiBold_v2 {
+                            margin: 10px 0;
+                            font-size: 18px;
+
+                            .u17Light_v2 {
+                                font-size: 14px;
+                            }
+                        }
+                    }
                 }
             }
         }
