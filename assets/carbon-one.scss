@@ -593,6 +593,12 @@ $sale_text_color: #F24FA5;
                         padding: 8px 0 8px 8px;
                         cursor: pointer;
 
+                        .u11Medium_v2,
+                        .u17DemiBold_v2 {
+                            color: #484848;
+                        }
+                        
+
                         &>div {
                             text-align: left;
 
@@ -617,15 +623,6 @@ $sale_text_color: #F24FA5;
                                 font-size: 16px;
                                 color: #999;
                                 margin: 5px 0;
-                            }
-
-                            .u17DemiBold_v2,
-                            .u11Medium_v2 {
-                                color: #484848;
-                            }
-
-                            .u11Medium_v2 {
-                                margin-bottom: 5px;
                             }
                         }
 
