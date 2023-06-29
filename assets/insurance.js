@@ -256,6 +256,7 @@ class Insurance {
   
   insertBefore(element, selector) {
     const parent = selector.parentNode;
+    console.log('parent', parent)
     
     parent.insertBefore(element, selector); 
   }
