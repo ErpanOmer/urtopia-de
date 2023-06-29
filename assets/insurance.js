@@ -258,7 +258,7 @@ class Insurance {
     const parent = selector.parentNode;
 
     if (location.href.includes('urtopia-carbon')) {
-      setTimeout(() => $(parent).prepend($(element)), 300)
+      parent.insertBefore(element, selector);
     } else {
       parent.insertBefore(element, selector); 
     }
