@@ -42,6 +42,12 @@ $sale_text_color: #F24FA5;
 
         .description {
             font: normal normal 300 14px/20px Urbane;
+
+            .quiet-motor {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                margin-top: 20%;
+            }
         }
 
         .bike-box {
