@@ -7,7 +7,13 @@
     <div class="commonComponent pcHide">
       <div class="u36DemiBold_v2">{{ product.title }}</div>
       <div data-pf-type="JudgeMe" class="sc-eZhRLC gtfCKx pf-25_ order-djs mb6">
-        <div class="pf-judme">{% render "judgeme_widgets", widget_type: "judgeme_preview_badge", jm_style: "", concierge_install: false, product: product %}</div>
+        <div class="pf-judme">
+          {% render 'judgeme_widgets'
+           , widget_type: 'judgeme_preview_badge',
+           jm_style: '',
+           concierge_install: false,
+           product: product %}
+        </div>
       </div>
       <div class="u30DemiBold_v2 mb6">{{ product.price | money }}</div>
       <div class="sale mb6">
@@ -20,56 +26,58 @@
         <div class="swiper-wrapper"></div>
       </div>
       <div class="swiper right-swiper" style="--swiper-navigation-color: #fff;--swiper-theme-color: #000;--swiper-pagination-color: #000;">
-        <div class="swiper-wrapper">{% comment %} {% for image in product.images %}
+        <div class="swiper-wrapper">{% comment %}
+          {% for image in product.images %}
           <div class="swiper-slide">
           {{ image | image_url: width: 1000 | image_tag }}
           </div>
-          {% endfor %} {% endcomment %}
+          {% endfor %}
+          {% endcomment %}
         </div>
         <div class="swiper-button-prev mobileHide"></div>
-        <!--左箭头。如果放置在swiper外面，需要自定义样式。-->
+        <!-- 左箭头。如果放置在swiper外面，需要自定义样式。 -->
         <div class="swiper-button-next mobileHide"></div>
-        <!--右箭头。如果放置在swiper外面，需要自定义样式。-->
+        <!-- 右箭头。如果放置在swiper外面，需要自定义样式。 -->
         <div class="swiper-pagination pcHide"></div>
         <div class="flex-1 mobileHide"></div>
         <div class="parameters mobileHide">
           <div>
-            <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18448_2x_833c8995-fa19-4297-af29-678ac4064d0c.png?v=1687176385" />
+            <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18448_2x_833c8995-fa19-4297-af29-678ac4064d0c.png?v=1687176385">
             <span>
               <span class="u14Light_v2">Carbon Fiber</span>
               <span class="u17DemiBold_v2">15 kg.</span>
             </span>
           </div>
           <div>
-            <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18449_2x_e118ab7b-18ca-4612-afb3-20758874d9c7.png?v=1687177181" />
+            <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18449_2x_e118ab7b-18ca-4612-afb3-20758874d9c7.png?v=1687177181">
             <span>
               <span class="u14Light_v2">Fast & Easy</span>
               <span class="u17DemiBold_v2">90% Assembled</span>
             </span>
           </div>
           <div>
-            <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18445_2x_2e6c6230-7ed1-4c3d-99ad-54ba48fa57b4.png?v=1687177370" />
+            <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18445_2x_2e6c6230-7ed1-4c3d-99ad-54ba48fa57b4.png?v=1687177370">
             <span>
               <span class="u14Light_v2">Adaptive</span>
               <span class="u17DemiBold_v2">Torque Sensor</span>
             </span>
           </div>
           <div>
-            <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18447_2x_c102facd-9087-4028-8f97-34a7af31b1f6.png?v=1687177414" />
+            <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18447_2x_c102facd-9087-4028-8f97-34a7af31b1f6.png?v=1687177414">
             <span>
               <span class="u14Light_v2">Range</span>
               <span class="u17DemiBold_v2">100 Km</span>
             </span>
           </div>
           <div>
-            <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18450_2x_50383af6-61df-4632-9cbc-531630580f61.png?v=1687177242" />
+            <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18450_2x_50383af6-61df-4632-9cbc-531630580f61.png?v=1687177242">
             <span>
               <span class="u14Light_v2">Phone App</span>
               <span class="u17DemiBold_v2">iOS, Android</span>
             </span>
           </div>
           <div>
-            <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18446_2x_791e060a-ed39-42c5-9cf0-965d7e5110bb.png?v=1687177232" />
+            <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18446_2x_791e060a-ed39-42c5-9cf0-965d7e5110bb.png?v=1687177232">
             <span>
               <span class="u14Light_v2">Anti-theft</span>
               <span class="u17DemiBold_v2">GPS Tracking</span>
@@ -83,14 +91,14 @@
       accept-charset="UTF-8"
       action="/cart/add"
       class="product-panel pf-product-form"
-      data-productid={{ product.id }}
+      data-productid="{{ product.id }}"
       id="product_form_{{ product.id }}"
       enctype="multipart/form-data">
       <input
         type="hidden"
         name="id"
         data-product-id="{{product.id}}"
-        value="{{ product.selected_or_first_available_variant.id }}" />
+        value="{{ product.selected_or_first_available_variant.id }}">
       <input
         type="hidden"
         name="form_type"
@@ -102,7 +110,13 @@
       <div class="commonComponent mobileHide">
         <div class="u36DemiBold_v2 mb12">{{ product.title }}</div>
         <div data-pf-type="JudgeMe" class="sc-eZhRLC gtfCKx pf-25_ order-djs mb12">
-          <div class="pf-judme">{% render "judgeme_widgets", widget_type: "judgeme_preview_badge", jm_style: "", concierge_install: false, product: product %}</div>
+          <div class="pf-judme">
+            {% render 'judgeme_widgets'
+             , widget_type: 'judgeme_preview_badge',
+             jm_style: '',
+             concierge_install: false,
+             product: product %}
+          </div>
         </div>
         <div class="u30DemiBold_v2 mb12">{{ product.price | money }}</div>
         <div class="sale mb12">
@@ -111,7 +125,8 @@
         </div>
       </div>
       <div class="sale_acc mb12 belt" id="sale_acc">
-        <div class="u14Light_v2">And get
+        <div class="u14Light_v2">
+          And get
           <span style="font-weight: 600;">
             €169
           </span>
@@ -119,15 +134,15 @@
           <span class="u20DemiBold_v2">
             Free</span>
         </div>
-        {% assign accessories_map = "7633738596568,7633738662104,7633738531032" | split: ',' %}
+        {% assign accessories_map = '7633738596568,7633738662104,7633738531032' | split: ',' %}
         <div class="accs">
           {% for acc in accessories_map %}
-            {% for prod in collections["accessories"].products %}
+            {% for prod in collections.accessories.products %}
               {% if acc contains prod.id %}
                 <div class="acc">
                   {{ prod.featured_image | image_url: width: 400 | image_tag }}
-                  {% if acc == "7633738662104" %}
-                    <span class="u11Medium_v2">{{ prod.title | truncatewords: 3, "" | replace: "-", "" }}</span>
+                  {% if acc == '7633738662104' %}
+                    <span class="u11Medium_v2">{{ prod.title | truncatewords: 3, '' | replace: '-', '' }}</span>
                   {% else %}
                     <span class="u11Medium_v2">{{ prod.title }}</span>
                   {% endif %}
@@ -139,13 +154,14 @@
         <div class="u11Light_v2">*Not available with leasing</div>
       </div>
       <div class="sale_acc mb12 gear">
-        <div class="u14Light_v2">Get Accessories for
+        <div class="u14Light_v2">
+          Get Accessories for
           <span class="u20DemiBold_v2">Free</span>
         </div>
-        {% assign accessories_map_1s = "7633738596568,7633738531032" | split: ',' %}
+        {% assign accessories_map_1s = '7633738596568,7633738531032' | split: ',' %}
         <div class="accs_1s">
           {% for acc in accessories_map_1s %}
-            {% for prod in collections["accessories"].products %}
+            {% for prod in collections.accessories.products %}
               {% if acc contains prod.id %}
                 <div>
                   {{ prod.featured_image | image_url: width: 400 | image_tag }}
@@ -166,8 +182,9 @@
       </div>
       <div class="options">
         {% for option in product.options %}
-          <div class="option" option={{option}}>
-            <div class="u17DemiBold_v2 mb12">{{ option }} -
+          <div class="option" option="{{option}}">
+            <div class="u17DemiBold_v2 mb12">
+              {{ option }} -
               <span class="u17Light_v2"></span>
             </div>
             <div class="{{ option }} mb12"></div>
@@ -187,7 +204,7 @@
               <div class="item" variant-id="{{ variant.id }}">
                 {{ prod.featured_image | image_url: width: 400 | image_tag }}
                 <div>
-                  <span class=u11Light_v2>
+                  <span class="u11Light_v2">
                     <i class="fa-solid fa-plus"></i>
                   </span>
                   <span class="u17DemiBold_v2">{{ prod.price | money }}</span>
@@ -212,33 +229,39 @@
           <span data-pf-type="Text" class="addToCartText u17DemiBold_v2">Add to Cart</span>
         </div>
         <div onclick="testRideTrace('lease_on_jobrad', this)" class="orderTestRideBtn">
-          <img class="oneeee" src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/jobradorg_2x_423443a0-1c79-4785-97a0-2be8ae66ceb6.png?v=1685414275" />
+          <img class="oneeee" src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/jobradorg_2x_423443a0-1c79-4785-97a0-2be8ae66ceb6.png?v=1685414275">
           <span>
-            <span class="u17DemiBold_v2">Lease Now</span><!--<span>36 months, €48/month</span>--></span>
+            <span class="u17DemiBold_v2">Lease Now</span>
+            <!-- <span>36 months, €48/month</span> -->
+          </span>
         </div>
         <div onclick="testRideTrace('klarna_check_out', this)" class="orderTestRideBtn">
-          <img class="twoooo" src="https://cdn.shopifycdn.net/s/files/1/0633/2068/6808/files/20230530-121400.png?v=1685420054" />
+          <img class="twoooo" src="https://cdn.shopifycdn.net/s/files/1/0633/2068/6808/files/20230530-121400.png?v=1685420054">
           <span>
             <span class="u17DemiBold_v2">0% APR Financing</span>
             <span>24 months, €112/month</span>
           </span>
         </div>
       </div>
-      <div class="delivery_time mb12">Free shipping
+      <div class="delivery_time mb12">
+        Free shipping
         <span>within 5 days</span>
       </div>
       <div class="support mb12">
         <a href="#boxs3">
-          <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230621-005713.png?v=1687280264" />
-          <span class="u11Medium_v2">30+ Spots<br>of Service</span>
+          <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230621-005713.png?v=1687280264">
+          <span class="u11Medium_v2">30+ Spots<br>
+            of Service</span>
         </a>
         <a href="/pages/shipping-and-return" target="_blank">
-          <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_17959_2x_cff00041-4dce-479b-b87d-55b1cb89cd7a.png?v=1687161086" />
-          <span class="u11Medium_v2">14-Day<br>Returns</span>
+          <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_17959_2x_cff00041-4dce-479b-b87d-55b1cb89cd7a.png?v=1687161086">
+          <span class="u11Medium_v2">14-Day<br>
+            Returns</span>
         </a>
         <a href="/pages/warranty" target="_blank">
-          <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_17958_2x_1e776f09-0686-4672-a22f-b29d2df3898d.png?v=1687161098" />
-          <span class="u11Medium_v2">2-Year<br>Warranty</span>
+          <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_17958_2x_1e776f09-0686-4672-a22f-b29d2df3898d.png?v=1687161098">
+          <span class="u11Medium_v2">2-Year<br>
+            Warranty</span>
         </a>
       </div>
       <div class="dialogs">
@@ -353,7 +376,10 @@
   <div class="centeral-content">
     <div class="u36DemiBold_v2">New Arrival</div>
     <div class="u72DemiBold_v2">Carbon 1s</div>
-    <div class="u17Light_v2">Uphill riding, downhill thrill. Unleash your sporty riding style. Conquer uphill challenges and experience thrilling speeds, pushing the boundaries of performance and excitement.</div>
+    <div class="u17Light_v2">
+      Uphill riding, downhill thrill. Unleash your sporty riding style. Conquer uphill challenges and experience
+      thrilling speeds, pushing the boundaries of performance and excitement.
+    </div>
     <div class="u36DemiBold_v2">4 X 7</div>
     <div class="u17Light_v2" style="margin:0;">Modes X Gears</div>
   </div>
@@ -367,18 +393,25 @@
       <div class="u17DemiBold_v2">
         <div>
           <span class="emphasize">●</span>
-          250W 45Nm motor</div>
+          250W 45Nm motor
+        </div>
         <div>
           <span class="emphasize">●</span>
-          Assist levels x Gears: 4 x 7</div>
+          Assist levels x Gears: 4 x 7
+        </div>
         <div>
           <span class="emphasize">●</span>
-          Increased ride range</div>
+          Increased ride range
+        </div>
         <div>
           <span class="emphasize">●</span>
-          Wider terrain capabilities</div>
+          Wider terrain capabilities
+        </div>
       </div>
-      <div class="u17Light_v2">Carbon 1s offers the options of pushing a harder gear to get more workout or speed; or riding an easy gear with less stress on the legs. The 45Nm motor with gears makes your ride speedier and easier to travel up the hills.</div>
+      <div class="u17Light_v2">
+        Carbon 1s offers the options of pushing a harder gear to get more workout or speed; or riding an easy gear with
+        less stress on the legs. The 45Nm motor with gears makes your ride speedier and easier to travel up the hills.
+      </div>
     </div>
     <div></div>
     <div></div>
@@ -388,15 +421,21 @@
       <div class="u17DemiBold_v2">
         <div>
           <span class="emphasize">●</span>
-          Gates carbon belt drive</div>
+          Gates carbon belt drive
+        </div>
         <div>
           <span class="emphasize">●</span>
-          Cleaner, quieter and smoother</div>
+          Cleaner, quieter and smoother
+        </div>
         <div>
           <span class="emphasize">●</span>
-          30,000 km Maintenance free</div>
+          30,000 km Maintenance free
+        </div>
       </div>
-      <div class="u17Light_v2">Carbon 1 is great for commuters because you’ll never get a grease mark on your nice slacks. If you enjoy quiet rides in the morning while enjoying nature and the birds’ singing, you may want to opt for a belt drive.</div>
+      <div class="u17Light_v2">
+        Carbon 1 is great for commuters because you’ll never get a grease mark on your nice slacks. If you enjoy quiet
+        rides in the morning while enjoying nature and the birds’ singing, you may want to opt for a belt drive.
+      </div>
     </div>
   </div>
 </div>
@@ -406,7 +445,10 @@
     <div>
       <div class="u30DemiBold_v2">Effortless to Carry</div>
       <div class="u20Light_v2">Full Carbon (Only 15kg)</div>
-      <div class="u14Light_v2">Literally, an e-bike single-handedly manageable. Just a fraction of the weight compared to peer e-bikes, thanks to a full carbon body of frame, handlebar, seat post, and forks.</div>
+      <div class="u14Light_v2">
+        Literally, an e-bike single-handedly manageable. Just a fraction of the weight compared to peer e-bikes, thanks
+        to a full carbon body of frame, handlebar, seat post, and forks.
+      </div>
     </div>
   </div>
 </div>
@@ -416,11 +458,22 @@
     <div></div>
     <div>
       <div class="u36DemiBold_v2">A bike you never lose</div>
-      <div class="u17Light_v2"><br>Aided by a constant 4G connection, GPS tracking keeps you informed of the e-bike’s position, even in the worst scenario of theft, for as long as 30 days. <br><br>We have helped users all over the world to retreat their beloved bike.</div>
+      <div class="u17Light_v2">
+        <br>
+        Aided by a constant 4G connection, GPS tracking keeps you informed of the e-bike’s position, even in the worst
+        scenario of theft, for as long as 30 days. <br>
+        <br>
+        We have helped users all over the world to retreat their beloved bike.
+      </div>
     </div>
     <div>
       <div class="u36DemiBold_v2">Navigation without Cellphone</div>
-      <div class="u17Light_v2"><br>Bright screen shows navigation clearly under daylight, no more ugly phone holder. <br><br>Let you explore the unknown safe and free.</div>
+      <div class="u17Light_v2">
+        <br>
+        Bright screen shows navigation clearly under daylight, no more ugly phone holder. <br>
+        <br>
+        Let you explore the unknown safe and free.
+      </div>
     </div>
     <div></div>
   </div>
@@ -435,7 +488,7 @@
       class="sc-fpYaaq boGbAB pf-195_">
       {% capture content %}
         {% include 'pf-3a54e43f' %}{% endcapture %}
-      {% if content contains "Liquid error" %}
+      {% if content contains 'Liquid error' %}
         {% else %}
           {% render 'pf-3a54e43f' %}
       {% endif %}
@@ -508,11 +561,18 @@
     <div>
       <div class="u30DemiBold_v2">Local care all the time</div>
       <div class="u17Light_v2">
-        <div><img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/shopping-mall_2x_44d99fcd-f0f4-443b-927e-b68e48af010f.png?v=1687259496" />1 service center, 30+ service partners</div>
-        <div><img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/24-hours_2x_d6a8eeb2-4564-4351-8cb9-096dbb778479.png?v=1687259501" />24hrs service response, App build-in portal</div>
-        <div><img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/box_2x_2b3b7c15-f5ae-4305-956f-7543b63b2dda.png?v=1687259506" /><span>Spare parts available locally, ships in 3 days.1 service center, 30+ service partners</span>
+        <div>
+          <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/shopping-mall_2x_44d99fcd-f0f4-443b-927e-b68e48af010f.png?v=1687259496">1 service center, 30+ service partners
         </div>
-        <div><img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/customer-satisfaction_2x_c7081e3a-1864-43b6-8ed2-f77895eafa6a.png?v=1687259512" />10+ technical experts, 99% satisfaction rate.</div>
+        <div>
+          <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/24-hours_2x_d6a8eeb2-4564-4351-8cb9-096dbb778479.png?v=1687259501">24hrs service response, App build-in portal
+        </div>
+        <div>
+          <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/box_2x_2b3b7c15-f5ae-4305-956f-7543b63b2dda.png?v=1687259506"><span>Spare parts available locally, ships in 3 days.1 service center, 30+ service partners</span>
+        </div>
+        <div>
+          <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/customer-satisfaction_2x_c7081e3a-1864-43b6-8ed2-f77895eafa6a.png?v=1687259512">10+ technical experts, 99% satisfaction rate.
+        </div>
       </div>
       <a
         class="my-button my-button-black"
@@ -521,12 +581,15 @@
     </div>
     <div>
       <div class="u30DemiBold_v2">Leasing Partners at Your Choice</div>
-      <div class="u17Light_v2">We offer you the opportunity to get your dream bike at low monthly leasing rates through various leasing providers.</div>
+      <div class="u17Light_v2">
+        We offer you the opportunity to get your dream bike at low monthly leasing rates through various leasing
+        providers.
+      </div>
       <div class="logos">
-        <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/JR-Logo_-RGB-schwarz-large-4x_2x_90eff7ba-f64b-45ef-8e7e-65490e740385.png?v=1687260470" />
-        <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18616_2x_d0fb1804-0a96-4524-9463-6cd30673cf6d.png?v=1687260793" />
-        <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18617_2x_6706fd9c-d8f3-434b-b77f-6e35eb007eb3.png?v=1687260762" />
-        <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/logo_meinstdienstrad_2021_2x_d5a1936d-fc18-418a-bb45-b9bb73e6c96a.png?v=1687260731" />
+        <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/JR-Logo_-RGB-schwarz-large-4x_2x_90eff7ba-f64b-45ef-8e7e-65490e740385.png?v=1687260470">
+        <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18616_2x_d0fb1804-0a96-4524-9463-6cd30673cf6d.png?v=1687260793">
+        <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18617_2x_6706fd9c-d8f3-434b-b77f-6e35eb007eb3.png?v=1687260762">
+        <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/logo_meinstdienstrad_2021_2x_d5a1936d-fc18-418a-bb45-b9bb73e6c96a.png?v=1687260731">
       </div>
       <a
         class="my-button my-button-black"
@@ -591,7 +654,6 @@
           <div class="pf-c" style="--c-xs:12;--c-sm:4;--c-md:4;--c-lg:4">
             <div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-386_">
               <div data-pf-type="Custom.HTML" class="sc-AjmGg eCTxfx pf-387_">
-
                 <div class="component" onclick="openComponent(1)">
                   <div class="img-container">
                     <img
@@ -622,7 +684,6 @@
               <div data-pf-type="Custom.HTML" class="sc-AjmGg eCTxfx pf-389_">
                 <div class="component" onclick="openComponent(2)">
                   <div class="img-container">
-
                     <img
                       src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/E-Bike119.jpg?v=1678931505"
                       srcset="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/E-Bike119.jpg?v=1678931505"
@@ -732,7 +793,6 @@
                     <i class="fa fa-solid fa-chevron-right"></i>
                   </div>
                 </div>
-
               </div>
             </div>
           </div>
@@ -746,7 +806,6 @@
               <div data-pf-type="Custom.HTML" class="sc-AjmGg eCTxfx pf-399_">
                 <div class="component" onclick="openComponent(6)">
                   <div class="img-container">
-
                     <img
                       src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/55555657.jpg?v=1675741851"
                       srcset="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/55555657.jpg?v=1675741851 1536w"
@@ -857,28 +916,34 @@
           data-pf-type="Row">
           <div class="pf-c" style="--c-xs:2;--c-sm:4;--c-md:4;--c-lg:4">
             <div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-644_">
-              <div data-pf-type="Image" class="sc-jgrJph bzUUvT pf-645_"><img
+              <div data-pf-type="Image" class="sc-jgrJph bzUUvT pf-645_">
+                <img
                   src="https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/icon2-1649931441565.png?v=1649931443"
                   srcSet="https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/icon2-1649931441565.png?v=1649931443 1536w"
                   width="2560"
-                  height="1829" /></div>
+                  height="1829">
+              </div>
             </div>
           </div>
           <div class="pf-c" style="--c-xs:2;--c-sm:4;--c-md:4;--c-lg:4">
             <div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-646_">
-              <div data-pf-type="Image" class="sc-jgrJph bzUUvT pf-647_"><img
+              <div data-pf-type="Image" class="sc-jgrJph bzUUvT pf-647_">
+                <img
                   src="https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/cpsc_logo-1662445677565.svg?v=1662445680"
                   width="40"
-                  height="44" /></div>
+                  height="44">
+              </div>
             </div>
           </div>
           <div class="pf-c" style="--c-xs:8;--c-sm:4;--c-md:4;--c-lg:4">
             <div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-648_">
-              <div data-pf-type="Image" class="sc-jgrJph bzUUvT pf-649_"><img
+              <div data-pf-type="Image" class="sc-jgrJph bzUUvT pf-649_">
+                <img
                   src="https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/icon1png-1649931441566.png?v=1649931446"
                   srcSet="https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/icon1png-1649931441566.png?v=1649931446 1536w"
                   width="540"
-                  height="546" /></div>
+                  height="546">
+              </div>
             </div>
           </div>
         </div>
@@ -1038,7 +1103,9 @@
                 <span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-736_">Weight</span>
               </h3>
               <p class="sc-jtXEFf jydWoQ pf-737_" data-pf-type="Paragraph">
-                <span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-739_">Carbon 1: 33lbs.  15kg<br>Carbon 1s: 35lbs.  15.8kg</span>
+                <span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-739_">Carbon 1: 33lbs.
+                  <span style="font-weight: 600;">15kg</span><br>
+                  Carbon 1s: 35lbs. 15.8kg</span>
               </p>
             </div>
           </div>
@@ -1191,7 +1258,9 @@
   <div class="centeral-content">
     <div class="gray-background-color">
       <div class="u36DemiBold_v2">90% assembly</div>
-      <div class="u17DemiLight_v2">Delight in the convenience of our 90% pre-assembled e-bike package, making assembly a breeze!</div>
+      <div class="u17DemiLight_v2">
+        Delight in the convenience of our 90% pre-assembled e-bike package, making assembly a breeze!
+      </div>
     </div>
     <div>
       <img
@@ -1215,41 +1284,41 @@
         <div class="pf-c" style="--c-xs:12;--c-md:12;--c-lg:12">
           <div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-366_">
             <div data-pf-type="Custom.HTML" class="sc-AjmGg eCTxfx pf-367_">
-              <div class="world-title">
-                Users Like You, Worldwide
-              </div>
+              <div class="world-title">Users Like You, Worldwide</div>
               <div id="world-swiper" class="swiper">
                 <div class="swiper-wrapper swiper-no-swiping">
                   <div class="swiper-slide slide">
-                    <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/img_77662x-1672048952210.jpg" />
+                    <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/img_77662x-1672048952210.jpg">
                     <div class="description">
                       <span>Karina Schwirtlich</span>
-                      “it is much easier to use :) Going uphill is so much easier, I could even read a book while doing this.”
+                      “it is much easier to use :) Going uphill is so much easier, I could even read a book while doing
+                      this.”
                     </div>
                   </div>
                   <div class="swiper-slide slide">
-                    <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/screen-shot-20221018-at-72910-pm-1666785985034.jpg" />
+                    <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/screen-shot-20221018-at-72910-pm-1666785985034.jpg">
                     <div class="description">
                       <span>Rex Peters</span>
-                      “I got 4 other brands and I still learning the Urtopia but so far my favorite e-bike . Look how far technology has come so fast . Happy and safe riding.”
+                      “I got 4 other brands and I still learning the Urtopia but so far my favorite e-bike . Look how
+                      far technology has come so fast . Happy and safe riding.”
                     </div>
                   </div>
                   <div class="swiper-slide slide">
-                    <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/072a06992x-1672048952203.jpg" />
+                    <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/072a06992x-1672048952203.jpg">
                     <div class="description">
                       <span>v.wrightfitness</span>
                       “The smoothest riding e-bike I have tried! Thank you.”
                     </div>
                   </div>
                   <div class="swiper-slide slide">
-                    <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/5590a91dd1b546e99f5f381a1c1aa0c4-1666785985022.jpg" />
+                    <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/5590a91dd1b546e99f5f381a1c1aa0c4-1666785985022.jpg">
                     <div class="description">
                       <span>Chris</span>
                       “Outstanding performance. I love this bike.”
                     </div>
                   </div>
                   <div class="swiper-slide slide">
-                    <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/85831919d8ee4553808b75fb1ffc469e-1666785985025.jpg" />
+                    <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/85831919d8ee4553808b75fb1ffc469e-1666785985025.jpg">
                     <div class="description">
                       <span>Rino Folisi</span>
                       “Finally Endlich vereint.”
@@ -1310,7 +1379,7 @@
                   -o-transition-timing-function: linear !important;
                   transition-timing-function: linear !important;
                 }
-                @media screen and (max-width:768px) {
+                @media screen and (max-width: 768px) {
                   #world-swiper .slide {
                     width: 80% !important;
                   }
@@ -1370,7 +1439,9 @@
         <div class="pf-c" style="--c-xs:12;--c-md:12;--c-lg:12">
           <div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-827_">
             <div data-pf-type="JudgeMe" class="sc-eZhRLC gtfCKx pf-828_">
-              <div class="pf-judme">{% include "judgeme_widgets", widget_type: "judgeme_review_widget", concierge_install: false %}</div>
+              <div class="pf-judme">
+                {% include 'judgeme_widgets', widget_type: 'judgeme_review_widget', concierge_install: false %}
+              </div>
             </div>
           </div>
         </div>
@@ -1402,7 +1473,7 @@
                     src="https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/undraw_designer_girl_re_h54c-1642130420787.png?v=1642130429"
                     srcSet="https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/undraw_designer_girl_re_h54c-1642130420787.png?v=1642130429 1536w"
                     width="803"
-                    height="669" />
+                    height="669">
                 </div>
               </div>
               <div data-pf-type="Block" class="sc-cbTzjv cciAhs pf-834_">
@@ -1424,7 +1495,7 @@
                     src="https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/undraw_biking_kc4f-1642130420783.png?v=1642130425"
                     srcSet="https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/undraw_biking_kc4f-1642130420783.png?v=1642130425 1536w"
                     width="803"
-                    height="669" />
+                    height="669">
                 </div>
               </div>
               <div data-pf-type="Block" class="sc-cbTzjv cciAhs pf-841_">
@@ -1446,7 +1517,7 @@
                     src="https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/undraw_team_spirit_re_yl1v-1642130420780.png?v=1642130422"
                     srcSet="https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/undraw_team_spirit_re_yl1v-1642130420780.png?v=1642130422 1536w"
                     width="803"
-                    height="669" />
+                    height="669">
                 </div>
               </div>
               <div data-pf-type="Block" class="sc-cbTzjv cciAhs pf-848_">
@@ -1463,6 +1534,7 @@
 </div>
 
 <script>
+
   const search = getSearchValues()
   const variants = JSON.parse(JSON.stringify({{ product.variants | json }}))
   const size_map = {
@@ -1814,222 +1886,132 @@ if (type === 'shop_on_mediamarkt') {
 
 }}{% for variant in product.variants %}models[{{ variant.option1 | json }}] = 1
 styles[{{ variant.option3 | json }}] = 1
-sizes[{{ variant.option2 | json }}] = 1{% endfor %}console
-  .log('variants', variants)for (const model of Object.keys(models)) {
-    $('.product .product-panel .Model').append(`<div attribute="${model}" class="${model}">${model}</div>`)}for (const style of Object.keys(styles)) {
-    $('.product .product-panel .Style').append(`<div attribute="${style}" class="${style}"></div>`)}for (const size of Object.keys(sizes)) {
-    $('.product .product-panel .Size').append(`<div attribute="${size}" class="${size} u17Light_v2">${size}</div>`)}$('.product-panel .options .option >div:not(.u17DemiBold_v2) > div')
-  .on('click', e => {
-    const t = $(e.target)
+sizes[{{ variant.option2 | json }}] = 1{% endfor %}console.log('variants', variants)for (const model of Object.keys(models)) {
+$('.product .product-panel .Model').append(`<div attribute="${model}" class="${model}">${model}</div>`)}for (const style of Object.keys(styles)) {
+$('.product .product-panel .Style').append(`<div attribute="${style}" class="${style}"></div>`)}for (const size of Object.keys(sizes)) {
+$('.product .product-panel .Size').append(`<div attribute="${size}" class="${size} u17Light_v2">${size}</div>`)}$('.product-panel .options .option >div:not(.u17DemiBold_v2) > div').on('click', e => {
+const t = $(e.target)
 
-    if ($(e.target).parent().hasClass('Model')) {
-      changeVariant(t.attr('attribute'), current_variant.option2, current_variant.option3)
-    } else if ($(e.target).parent().hasClass('Size')) {
-      changeVariant(current_variant.option1, t.attr('attribute'), current_variant.option3)
-    } else {
-      changeVariant(current_variant.option1, current_variant.option2, t.attr('attribute'))
-    }})
+if ($(e.target).parent().hasClass('Model')) {
+  changeVariant(t.attr('attribute'), current_variant.option2, current_variant.option3)
+} else if ($(e.target).parent().hasClass('Size')) {
+  changeVariant(current_variant.option1, t.attr('attribute'), current_variant.option3)
+} else {
+  changeVariant(current_variant.option1, current_variant.option2, t.attr('attribute'))
+}})
 
-    // 如果有查询参数if (search.variant) {
-    const find = findVariantFromId(search.variant)
-    changeVariant(find.option1, find.option2, find.option3)} else {
-    const find = findAvailableVariant()
-    changeVariant(find.option1, find.option2, find.option3)}$('.accessories .navigate > div')
-  .on('click', e => {
-    const items = $('.accessories .items')
+// 如果有查询参数if (search.variant) {const find = findVariantFromId(search.variant)changeVariant(find.option1, find.option2, find.option3)} else {const find = findAvailableVariant()changeVariant(find.option1, find.option2, find.option3)}$('.accessories .navigate > div').on('click', e => {const items = $('.accessories .items')items.animate({scrollLeft : $('.accessories .items').scrollLeft() + (
+$(e.target).hasClass('next')
+  ? 180
+  : -180)},300)})$('.accessories .items .item').on('click', e => {const item = $(e.target).closest('.item')const icon = item.find('.u11Light_v2')if (item.hasClass('active')) {item.removeClass('active')icon.html('<i class="fa-solid fa-plus"></i>')} else {item.addClass('active')icon.html('<i class="fa-solid fa-check"></i>')}})$('.product .product-panel').on("submit", function(event) {
 
-    items.animate({
-      scrollLeft: $('.accessories .items').scrollLeft() + (
-        $(e.target).hasClass('next')
-          ? 180
-          : -180
-      )
-    }, 300)})$('.accessories .items .item')
-  .on('click', e => {
-    const item = $(e.target).closest('.item')
-    const icon = item.find('.u11Light_v2')
+// 阻止默认行为event.preventDefault();return false;})$('.product .dialogs > div').on('click', e => {const m = {0: 'one',1: 'two',2: 'three',3: 'four'}$('.product .dialogs > div').each((i, t) => {if ($(e.target).closest('.u17Medium_v2')[0] === t) {
+console.log(i)
 
-    if (item.hasClass('active')) {
-      item.removeClass('active')
-      icon.html('<i class="fa-solid fa-plus"></i>')
+const layer = document.querySelector(`.order-modal-${
+  m[i]
+}`);
+const laybox = document.querySelector(`.order-modal-layer-${
+  m[i]
+}`);
+layer.style.display = "flex";
+laybox.className += " dialog-open";}})})$('.toTop').on('click', e => {$('html').animate({scrollTop: 0}, 300)})let currnetScroolTop = 0$(document).on('scroll', throttle(e => {const top1 = $('#freedom').offset().topconst top3 = $('.product .addToCartBtn').offset().topconst top2 = $(e.target).scrollTop()const h = window.screen.heightif (global_config.is_mobile) {if (top2 > top3) {
+  $('.bottom-fixed').show()} else {
+  $('.bottom-fixed').hide()}} else {if (top2 > top1) {
+  $('.top-fixed').show()} else {
+  $('.top-fixed').hide()}if (currnetScroolTop > top2) {
+  $('.top-fixed').hide()}currnetScroolTop = top2} top2 > (h * 2)? $('.toTop').show(): $('.toTop').hide()}, 300, 100))
 
-    } else {
-      item.addClass('active')
-      icon.html('<i class="fa-solid fa-check"></i>')
-    }
-  })
-
-  $('.product .product-panel')
-  .on("submit", function(event) {
-
-// 阻止默认行为
-    event.preventDefault();
-    return false;
-  })
-
-$('.product .dialogs > div')
-.on('click', e => {
-  const m = {
-    0: 'one',
-    1: 'two',
-    2: 'three',
-    3: 'four'
-  }
-
-  $('.product .dialogs > div').each((i, t) => {
-    if ($(e.target).closest('.u17Medium_v2')[0] === t) {
-      console.log(i)
-
-      const layer = document.querySelector(`.order-modal-${
-        m[i]
-      }`);
-      const laybox = document.querySelector(`.order-modal-layer-${
-        m[i]
-      }`);
-      layer.style.display = "flex";
-      laybox.className += " dialog-open";
-    }
-  })
-})
-
-$('.toTop')
-.on('click', e => {
-  $('html').animate({
-    scrollTop: 0
-  }, 300)
-})
-
-
-let currnetScroolTop = 0
-$(document)
-  .on('scroll', throttle(e => {
-    const top1 = $('#freedom').offset().top
-    const top3 = $('.product .addToCartBtn').offset().top
-    const top2 = $(e.target).scrollTop()
-
-    const h = window.screen.height
-
-    if (global_config.is_mobile) {
-      if (top2 > top3) {
-        $('.bottom-fixed').show()
-      } else {
-        $('.bottom-fixed').hide()
-      }
-    } else {
-      if (top2 > top1) {
-        $('.top-fixed').show()
-      } else {
-        $('.top-fixed').hide()
-      }
-
-      if (currnetScroolTop > top2) {
-        $('.top-fixed').hide()
-      }
-
-      currnetScroolTop = top2
-    } top2 > (h * 2)
-      ? $('.toTop').show()
-      : $('.toTop').hide()
-
-  }, 300, 100))
-
-  // 默认隐藏
-  $('.bottom-fixed')
-  .hide()
-  $('.top-fixed')
-  .hide()
-  $('.toTop')
-  .hide()
+  // 默认隐藏$('.bottom-fixed').hide()$('.top-fixed').hide()$('.toTop').hide()
 </script>
-
 
 <script>
   (function() {
-    var a = document.createElement("script");
-    a.type = "text/javascript";
-    a.src = "https://cdn.storepoint.co/api/v1/js/162f21804990ff.js";
-    var b = document.getElementsByTagName("script")[0];
+    var a = document.createElement('script');
+    a.type = 'text/javascript';
+    a.src = 'https://cdn.storepoint.co/api/v1/js/162f21804990ff.js';
+    var b = document.getElementsByTagName('script')[0];
     b.parentNode.insertBefore(a, b);
-  }());
+  })();
 
 //
 </script>
 
 <script>
   var closeCheck2 = function(e, force) {
-    let t = document.querySelector(".componentBox");
-    if (force || t && ! e.target.closest(".componentBox")) {
+    let t = document.querySelector('.componentBox');
+    if (force || (t && ! e.target.closest('.componentBox'))) {
       var mo = function(e) {
         passive : false;
       };
-      document.body.style.overflow = "";
-      document.removeEventListener("touchmove", mo, false);
-      document.removeEventListener("mousedown", closeCheck2);
-      $('.overlay').remove()
+      document.body.style.overflow = '';
+      document.removeEventListener('touchmove', mo, false);
+      document.removeEventListener('mousedown', closeCheck2);
+      $('.overlay').remove();
     }
   };
   var openComponent = function(index) {
-    var componentImg = "https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/sectioncustomizedim1-1666927938072_397x.jpg?v=1666927940"
-    var componentTit = "Anti-glare LED Display"
-    var componentDes = "The dot matrix screen is the Brian of the whole bike works like a removeable computer. You can check your route, speed, and weather information in real time with a quick glance on it at any light. And the ally tuned will react to your every order, change speed or control the light. So you do not need to focus on the screen while riding, throw away your phone with nothing to lose."
-    var componentHtml = ""
-    var imgStyle = ""
+    var componentImg = 'https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/sectioncustomizedim1-1666927938072_397x.jpg?v=1666927940';
+    var componentTit = 'Anti-glare LED Display';
+    var componentDes = 'The dot matrix screen is the Brian of the whole bike works like a removeable computer. You can check your route, speed, and weather information in real time with a quick glance on it at any light. And the ally tuned will react to your every order, change speed or control the light. So you do not need to focus on the screen while riding, throw away your phone with nothing to lose.';
+    var componentHtml = '';
+    var imgStyle = '';
     switch (index) {
-      case 0: componentImg = "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/finger_print.jpg?v=1675741851"
-        componentTit = "Anti-glare LED Display";
-        componentDes = "The brain of all the smartness, with a face of big dot-matrix display and ears ready for your oral commands. Now, a simple glance captures all essential stats, and mere words control the bike. Who needs a smart phone for a Urtopia ride, anyways?";
+      case 0: componentImg = 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/finger_print.jpg?v=1675741851';
+        componentTit = 'Anti-glare LED Display';
+        componentDes = 'The brain of all the smartness, with a face of big dot-matrix display and ears ready for your oral commands. Now, a simple glance captures all essential stats, and mere words control the bike. Who needs a smart phone for a Urtopia ride, anyways?';
         break;
-      case 1: componentImg = "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_20478_1429f804-69cb-43af-9003-e07120a5020e.jpg?v=1678932876"
-        componentTit = "Gamepad Controls";
-        componentDes = "Inspired by a gamepad, the handlebar control is reduced to only two buttons with intuitive key functions. Riding a bike? Yes! Playing a game? Almost!";
+      case 1: componentImg = 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_20478_1429f804-69cb-43af-9003-e07120a5020e.jpg?v=1678932876';
+        componentTit = 'Gamepad Controls';
+        componentDes = 'Inspired by a gamepad, the handlebar control is reduced to only two buttons with intuitive key functions. Riding a bike? Yes! Playing a game? Almost!';
         break;
-        imgStyle = "padding:10px";
+        imgStyle = 'padding:10px';
         break;
-      case 2: componentImg = "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_20476.jpg?v=1678931893"
-        componentTit = "Quiet Motor";
+      case 2: componentImg = 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_20476.jpg?v=1678931893';
+        componentTit = 'Quiet Motor';
         componentDes = "Light and compact yet powerful enough, the rear-hub motor is quiet and responsive, offering enough slope-climbing capacity for most urban roads.<div class='quiet-motor'><div><div class='u17DemiBold_v2'>Carbon 1</div><div class='u14Light_v2'>36 V 250 W (rated)</div><div class='u14Light_v2'>35 N⋅m</div></div><div><div class='u17DemiBold_v2'>Carbon 1s</div><div class='u14Light_v2'>36 V 250 W (rated)</div><div class='u14Light_v2'>45 N⋅m</div></div></div>";
         break;
-        imgStyle = "padding:10px";
+        imgStyle = 'padding:10px';
         break;
-      case 3: componentImg = "https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/group-190132x-1668421098616.jpg"
-        componentTit = "Smart App";
-        componentDes = "Believing that software brings out true potentials of the hardware, Urtopia pays equal attention to the app that fully connects and controls the e-bike. Real-time locating, route tracking, anti-theft alert, navigation, speaker, community share etc., are all waiting for you to explore.";
+      case 3: componentImg = 'https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/group-190132x-1668421098616.jpg';
+        componentTit = 'Smart App';
+        componentDes = 'Believing that software brings out true potentials of the hardware, Urtopia pays equal attention to the app that fully connects and controls the e-bike. Real-time locating, route tracking, anti-theft alert, navigation, speaker, community share etc., are all waiting for you to explore.';
         break;
-      case 4: componentImg = "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/ssss.jpg?v=1675741851"
-        componentTit = "Removable Battery";
-        componentDes = "A 360Wh lithium-ion removable battery provides ample energy so a rider can travel up to 100km (40km min.) after a mere 2.5-hr charge.";
+      case 4: componentImg = 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/ssss.jpg?v=1675741851';
+        componentTit = 'Removable Battery';
+        componentDes = 'A 360Wh lithium-ion removable battery provides ample energy so a rider can travel up to 100km (40km min.) after a mere 2.5-hr charge.';
         break;
-      case 5: componentImg = "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20230117-untitled-4204.jpg?v=1675741851"
-        componentTit = "Modular Rear Light";
-        componentDes = "Main red light is ambient-sensing to keep you focused on the joy of riding, while turn-indicators are one touch away to warn vehicles approaching from behind. Oh, don’t forget the blinker when braking!";
+      case 5: componentImg = 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20230117-untitled-4204.jpg?v=1675741851';
+        componentTit = 'Modular Rear Light';
+        componentDes = 'Main red light is ambient-sensing to keep you focused on the joy of riding, while turn-indicators are one touch away to warn vehicles approaching from behind. Oh, don’t forget the blinker when braking!';
         break;
-      case 6: componentImg = "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/8952.jpg?v=1675741851"
-        componentTit = "20 Lux Headlight";
-        componentDes = "Streamlined shape and integrated design, the German road regulation-compliant light is dazzling to look at but never blinding to anyone coming towards you. A well-balanced combination of beauty and safety.";
+      case 6: componentImg = 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/8952.jpg?v=1675741851';
+        componentTit = '20 Lux Headlight';
+        componentDes = 'Streamlined shape and integrated design, the German road regulation-compliant light is dazzling to look at but never blinding to anyone coming towards you. A well-balanced combination of beauty and safety.';
         break;
-      case 7: componentImg = "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_20063.jpg?v=1678931893"
-        componentTit = "";
+      case 7: componentImg = 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_20063.jpg?v=1678931893';
+        componentTit = '';
         componentDes = `<div class="gearing"><img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_19573_2x_6bb60c1e-7e72-475a-8564-01c764012b0c.jpg?v=1688005390"/><div><div class="u24DemiBold_v2">Carbon 1 <span class="u17Light_v2">- Carbon Belt</span></div><div class="u14Light_v2">An innovative but highly reliable means of power transmission, the Gates carbon belt drive is clean and literally maintenance free. Got dirty? Just rinse with water!</div><div class="u24DemiBold_v2">Carbon 1s <span class="u17Light_v2">- Carbon Belt</span></div><div class="u14Light_v2">Gears? Check!While our default carbon belt drive offers maximum peace of mind in cleanness and maintenance, now there is also the option of 7-speed Shimano gears to take on steep hills and flat roads alike, but with higher speed and better efficiency.</div></div>`;
-        imgStyle = "display:none;"
+        imgStyle = 'display:none;';
         break;
-      case 8: componentImg = "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/E-Bike208_2a0d6cab-96fa-452d-89b2-fec43afb20fe.jpg?v=1678931893"
-        componentTit = "Torque Sensor";
-        componentDes = "Unlike jerky cadence sensing, proprietary torque sensor enables super-fast speedadaption.";
+      case 8: componentImg = 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/E-Bike208_2a0d6cab-96fa-452d-89b2-fec43afb20fe.jpg?v=1678931893';
+        componentTit = 'Torque Sensor';
+        componentDes = 'Unlike jerky cadence sensing, proprietary torque sensor enables super-fast speedadaption.';
         break;
     }
-    $("body").append('<div class="overlay"><div class="componentBox" id="componentBox"><div class="close" onclick="closeCheck2(this,true)"><i class="fa fa-solid fa-xmark"></i></div><div class="left-container" style="' + imgStyle + '"><img src="' + componentImg + '"/></div><div class="right-container">' + componentHtml + '<div class="title1">' + componentTit + '</div><div class="description">' + componentDes + '</div><div/></div></div>')
-    document.addEventListener("mousedown", closeCheck2);
+    $('body').append('<div class="overlay"><div class="componentBox" id="componentBox"><div class="close" onclick="closeCheck2(this,true)"><i class="fa fa-solid fa-xmark"></i></div><div class="left-container" style="' + imgStyle + '"><img src="' + componentImg + '"/></div><div class="right-container">' + componentHtml + '<div class="title1">' + componentTit + '</div><div class="description">' + componentDes + '</div><div/></div></div>');
+    document.addEventListener('mousedown', closeCheck2);
     var mo = function(e) {
       passive : false;
     };
-    document.body.style.overflow = "hidden";
-    document.addEventListener("touchmove", mo, false);
-  }
+    document.body.style.overflow = 'hidden';
+    document.addEventListener('touchmove', mo, false);
+  };
 </script>
 
 <script>
   let slideNo = 0;
-  var swiperSectionWorld = new Swiper("#world-swiper", {
+  var swiperSectionWorld = new Swiper('#world-swiper', {
     autoplay: {
       delay: 0,
       disableOnInteraction: false
@@ -2038,39 +2020,37 @@ $(document)
     freeMode: true,
     loop: true,
     speed: 6000,
-    slidesPerView: "auto"
+    slidesPerView: 'auto'
   });
-  let nextTransForm = "";
+  let nextTransForm = '';
 
 // 轮播图从暂停位置移动到原本应到的位置所用的时间
   let nextTime = 0;
   let slideWidth = 165;
-  $("#world-swiper").hover(() => {
-    slideWidth = document.querySelector("#world-swiper .swiper-slide.slide").offsetWidth;
-    nextTransForm = document.querySelector("#world-swiper .swiper-wrapper").style.transform;
+  $('#world-swiper').hover(() => {
+    slideWidth = document.querySelector('#world-swiper .swiper-slide.slide').offsetWidth;
+    nextTransForm = document.querySelector('#world-swiper .swiper-wrapper').style.transform;
 
 // 轮播图原本应移动到的位置
     let nextTransPosition = -1 * parseInt(document
-      .querySelector("#world-swiper .swiper-wrapper")
+      .querySelector('#world-swiper .swiper-wrapper')
       .style
       .transform
-      .split("translate3d(")[1]
-      .split("px")[0]);
+      .split('translate3d(')[1]
+      .split('px')[0]);
 
 // 鼠标悬浮时时轮播图位置
-    let nowTransPosition = -1 * parseInt(window.getComputedStyle(document.querySelector("#world-swiper .swiper-wrapper"), false)["transform"].split("1, ")[2].split(",")[0]);
-    let nowTransForm = window.getComputedStyle(document.querySelector("#world-swiper .swiper-wrapper"), false)["transform"];
+    let nowTransPosition = -1 * parseInt(window.getComputedStyle(document.querySelector('#world-swiper .swiper-wrapper'), false)['transform'].split('1, ')[2].split(',')[0]);
+    let nowTransForm = window.getComputedStyle(document.querySelector('#world-swiper .swiper-wrapper'), false)['transform'];
     nextTime = 6000 * ((nextTransPosition - nowTransPosition) / slideWidth);
-    document.querySelector("#world-swiper .swiper-wrapper").style.transform = nowTransForm;
-    document.querySelector("#world-swiper .swiper-wrapper").style.transitionDuration = "0ms";
+    document.querySelector('#world-swiper .swiper-wrapper').style.transform = nowTransForm;
+    document.querySelector('#world-swiper .swiper-wrapper').style.transitionDuration = '0ms';
     swiperSectionWorld.autoplay.stop();
   }, () => {
-    document.querySelector("#world-swiper .swiper-wrapper").style.transform = nextTransForm;
-    document.querySelector("#world-swiper .swiper-wrapper").style.transitionDuration = nextTime + "ms";
+    document.querySelector('#world-swiper .swiper-wrapper').style.transform = nextTransForm;
+    document.querySelector('#world-swiper .swiper-wrapper').style.transitionDuration = nextTime + 'ms';
     swiperSectionWorld.autoplay.start();
-  })
+  });
 </script>
-
-
 
 {% render 'carbon-one-extra-code' %}
