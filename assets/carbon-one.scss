@@ -610,6 +610,14 @@ $sale_text_color: #F24FA5;
                                 img {
                                     max-width: 80px;
                                 }
+
+                                div {
+                                    display: flex;
+                                    flex-direction: column;
+                                    justify-content: space-between;
+                                    height: 100%;
+                                    padding: 8px 0;
+                                }
                             }
 
                             .u11Light_v2 {
