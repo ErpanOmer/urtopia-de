@@ -69,14 +69,14 @@ $sale_text_color: #F24FA5;
                 }
 
                 & > div {
-                    padding: 0 10%;
+                    padding: 0 15% 0 10%;
                     max-height: 100%;
                     display: flex;
                     flex-direction: column;
                     overflow-y: auto;
 
                     .u24DemiBold_v2 {
-                        margin: 20px 0;
+                        margin: 40px 0 20px;
                     }
                 }
             }
