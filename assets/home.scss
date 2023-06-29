@@ -395,21 +395,12 @@
                         flex-direction: column;
                         align-items: center;
 
-                        & > img {
-                            max-width: 170px;
-                        }
-
-                        .u56DemiBold_v2 {
-                            font-size: 26px;
-                        }
-
-                        .u48Medium_v2,
                         .u36DemiBold_v2 {
                             font-size: 20px;
                         }
 
-                        .u36DemiBold_v2 {
-                            margin: 20px 0 0;
+                        .u72DemiBold_v2 {
+                            font-size: 36px;
                         }
                     }
                 }
@@ -438,84 +429,6 @@
                             .u36DemiBold_v2 {
                                 font-size: 24px;
                             }
-                        }
-                    }
-                }
-            }
-
-            .golf {
-                background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18378_2x_3d2cfe18-617b-4188-b363-6c355347d497.jpg?v=1686663663');
-    
-                .centeral-content {
-                    & > div {
-                        &:last-child {
-                            padding: 36vw 0 18vw;
-                            flex: unset;
-    
-                            .u56DemiBold_v2 {
-                                font-size: 30px;
-                            }
-
-                            .u24DemiBold_v2,
-                            .u20Medium_v2 {
-                                font-size: 14px;
-                            }
-
-                            .u24DemiBold_v2 {
-                                margin: 8vw 0;
-                            }
-                        }
-                    }
-                }
-            }
-
-          .eurobike {
-                background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18586_2x_23fac6b2-2c29-4b65-b26d-c006c196cbaf.jpg?v=1686989368');
-    
-                .centeral-content {
-                    & > div {
-                        &:last-child {
-                            padding: 18vw 0;
-                            flex: unset;
-    
-                            .u56DemiBold_v2 {
-                                font-size: 30px;
-                            }
-
-                            .u24DemiBold_v2,
-                            .u20Medium_v2 {
-                                font-size: 14px;
-                            }
-
-                            .u24DemiBold_v2 {
-                                margin: 8vw 0;
-                            }
-                        }
-                    }
-                }
-            }
-
-
-            .bluetti {
-                background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18562_2x_0e6bea7e-9e64-48ce-b6ae-aafcce7796a3.png?v=1685620282');
-                background-position-y: center;
-
-                .centeral-content {
-                    padding: 6vw 0 18vw;
-
-                    &>div {
-                        img {
-                            max-width: 240px;
-                        }
-
-
-                        .u56DemiBold_v2 {
-                            font-size: 36px;
-                            margin: 4vw 0 0;
-                        }
-
-                        .u36DemiBold_v2 {
-                            font-size: 20px;
                         }
                     }
                 }
