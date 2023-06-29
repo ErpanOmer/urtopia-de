@@ -142,6 +142,35 @@
             }
         }
 
+      .summer-sale {
+            background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_21394_2x_a8c523d7-cc56-477e-acbd-15983046fdc8.jpg?v=1687285417');
+            background-color: #50C1E3;
+
+            .centeral-content {
+                height: 85%;
+                
+                &>div {
+
+                    & > img {
+                        max-width: 370px;
+                    }
+
+                    .u56DemiBold_v2 {
+                        text-transform: uppercase;
+                    }
+
+                    .u56DemiBold_v2,
+                    .u48Medium_v2 {
+                        // color: #E2F8B6;
+                    }
+
+                    .u36DemiBold_v2 {
+                        margin: 40px 0;
+                    }
+                }
+            }
+        }
+
         .leasing {
             background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_20984_2x_94ab1de8-17d3-48cd-b2f3-1ec58ed8098e.jpg?v=1686661143');
 
@@ -440,6 +469,39 @@
                         img {
                             max-width: 250px;
                             // transform: translate(-15%);
+                        }
+
+                        .u56DemiBold_v2 {
+                            font-size: 26px;
+                        }
+
+                        .u48Medium_v2,
+                        .u36DemiBold_v2 {
+                            font-size: 20px;
+                        }
+
+                        .u36DemiBold_v2 {
+                            margin: 20px 0 0;
+                        }
+                    }
+                }
+            }
+
+          .summer-sale {
+                background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_21395_2x_5d82f32e-2f02-4b0c-bc61-205ccdaf526f.jpg?v=1687285677');
+
+                .centeral-content {
+                    height: 100%;
+                    align-items: unset;
+
+                    &>div {
+                        padding: 12vw 0 18vw;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+
+                        & > img {
+                            max-width: 170px;
                         }
 
                         .u56DemiBold_v2 {
