@@ -56,6 +56,15 @@ $sale_text_color: #F24FA5;
             .gearing {
                 display: grid;
                 grid-template-columns: 1fr 1fr;
+                margin: -8%;
+                overflow: auto;
+                transform: translateY(-20px);
+
+                img {
+                    height: 100%;
+                    width: auto;
+                    max-width: 100%;
+                }
             }
         }
 
