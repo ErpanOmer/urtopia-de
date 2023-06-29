@@ -259,7 +259,7 @@ class Insurance {
 
     console.log('selector', $(selector).attr('id'))
 
-    if (location.href.includes('urtopia-carbon')) {
+    if (location.href.includes('urtopia-carbon') && $(selector).attr('id')) {
       parent.insertBefore(element, document.querySelector('.buttons .count-down'));
     } else {
       parent.insertBefore(element, selector); 
