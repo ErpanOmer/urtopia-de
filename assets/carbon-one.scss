@@ -598,6 +598,12 @@ $sale_text_color: #F24FA5;
 
                             &:last-child {
                                 display: flex;
+                                align-items: center;
+                                justify-content: space-between;
+
+                                img {
+                                    max-width: 80px;
+                                }
                             }
 
                             .u11Light_v2 {
