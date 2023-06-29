@@ -258,7 +258,7 @@ class Insurance {
     const parent = selector.parentNode;
 
     if (location.href.includes('urtopia-carbon')) {
-      parent.insertBefore(element, selector);
+      parent.insertBefore(element, document.querySelector('.buttons .count-down'));
     } else {
       parent.insertBefore(element, selector); 
     }
