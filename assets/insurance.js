@@ -257,7 +257,7 @@ class Insurance {
   insertBefore(element, selector) {
     const parent = selector.parentNode;
 
-    console.log('selector', selector)
+    console.log('selector', $(selector).hasClass('hidden'))
 
     if (location.href.includes('urtopia-carbon')) {
       parent.insertBefore(element, document.querySelector('.buttons .count-down'));
