@@ -1727,6 +1727,7 @@ $sale_text_color: #F24FA5;
                 }
 
                 .gearing {
+                    grid-template-columns: 1fr;
                     transform: translateY(-10px);
                     max-height: unset;
                 }
