@@ -98,36 +98,40 @@ $sale_text_color: #F24FA5;
     overflow: hidden;
     cursor: pointer;
     box-shadow: 0px 0px 30px #00000019;
-}
 
-.component .img-container {
-    overflow: hidden;
-}
+    .img-container {
+        overflow: hidden;
 
-.component .img-container img {
-    width: 100%;
-    transition: transform 0.3s;
-}
+        img {
+            width: 100%;
+            transition: transform 0.3s;
+        }
+    }
 
-.component:hover .img-container img {
-    transform: scale(1.1);
-}
+    &:hover {
+        .img-container {
+            img {
+                transform: scale(1.1);
+            }
+        }
+    }
 
-.component .des-container {
-    font: normal normal 600 24px/32px Urbane;
-    letter-spacing: 0px;
-    color: #000000;
-    background: #fff;
-    display: flex;
-    height: 84px;
-    padding: 0 26px;
-    align-items: center;
-    justify-content: space-between;
-}
+    .des-container {
+        font: normal normal 600 24px/32px Urbane;
+        letter-spacing: 0px;
+        color: #000000;
+        background: #fff;
+        display: flex;
+        height: 84px;
+        padding: 0 26px;
+        align-items: center;
+        justify-content: space-between;
 
-.component .des-container i {
-    font-size: 18px;
-    color: #8e8e8e;
+        i {
+            font-size: 18px;
+            color: #8e8e8e;
+        }
+    }
 }
 
 .toTop {
