@@ -590,7 +590,7 @@ $sale_text_color: #F24FA5;
                         border-radius: 10px;
                         border: 1px solid #E0E0E0;
                         margin-right: 6px;
-                        padding: 1px 8px 1px 1px;
+                        padding: 8px 0 8px 8px;
                         cursor: pointer;
 
                         &>div {
@@ -622,7 +622,6 @@ $sale_text_color: #F24FA5;
                             .u17DemiBold_v2,
                             .u11Medium_v2 {
                                 color: #484848;
-                                word-break: break-all;
                             }
 
                             .u11Medium_v2 {
