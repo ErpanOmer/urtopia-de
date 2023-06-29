@@ -1716,6 +1716,7 @@ $sale_text_color: #F24FA5;
             .description {
                 font: normal normal 300 14px/16px Urbane;
                 width: 100%;
+                height: auto;
 
                 .quiet-motor {
                     margin-top: 10%;
@@ -1723,6 +1724,11 @@ $sale_text_color: #F24FA5;
                     .u17DemiBold_v2 {
                         margin-bottom: 6px;
                     }
+                }
+
+                .gearing {
+                    transform: translateY(-10px);
+                    max-height: unset;
                 }
             }
         }
