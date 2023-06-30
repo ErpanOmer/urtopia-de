@@ -320,6 +320,22 @@
         .centeral-content {
             grid-template-columns: 1fr;
             height: 420px;
+
+            & > div {
+                justify-content: unset;
+
+                .u36DemiBold_v2 {
+                    font-size: 20px;
+                }
+
+                .u72DemiBold_v2 {
+                    font-size: 36px;
+                }
+
+                .u17Light_v2 {
+                    font-size: 14px;
+                }
+            }
         }
     }
 
