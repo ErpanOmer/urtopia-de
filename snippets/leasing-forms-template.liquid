@@ -480,12 +480,10 @@ setTimeout(() => {
         // $(`form .change_offers`).hide()
     })
 
-
+    // model change
+    $('select[name="bike_model"]').on('change', changeBikeImage)
     // size change
-    $('select[name="bike_size"]').on('change', e => {
-        changeBikeImage()
-    })
-
+    $('select[name="bike_size"]').on('change', changeBikeImage)
     // style change
     $('select[name="bike_style"]').on('change', changeBikeImage)
 
