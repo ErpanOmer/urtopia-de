@@ -60,8 +60,8 @@ class CartItems extends HTMLElement {
 
     
 
-    const components = other.find(`:not([data-line-item-product-id="${bike.attr('data-line-item-product-id')}"])`)
-    const other_bikes = other.find(`[data-line-item-product-id="${bike.attr('data-line-item-product-id')}"]`)
+    const components = other.find(`.cart-items .cart-item:not([data-line-item-product-id="${bike.attr('data-line-item-product-id')}"])`)
+    const other_bikes = other.find(`.cart-items .cart-item[data-line-item-product-id="${bike.attr('data-line-item-product-id')}"]`)
 
     console.log('other', components)
     console.log('other', other_bikes)
