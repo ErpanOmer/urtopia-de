@@ -317,7 +317,7 @@ function getFormValues (elem = '') {
         temp[target.name] = target.value
     })
 
-    temp.variant_id = carbon.variants.find(c => c.title === `${temp.bike_style} / ${temp.bike_size}`)
+    temp.variant_id = carbon.variants.find(c => c.title === `${temp.bike_model} / ${temp.bike_size} / ${temp.bike_style}`)
     temp.variant_id = temp.variant_id ? temp.variant_id.id : ''
     temp.offers = $('.forms label[class="active"]').attr('for')
 
