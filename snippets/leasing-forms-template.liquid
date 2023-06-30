@@ -391,7 +391,7 @@ const changeBikeImage = e => {
             return
         }
 
-        const vari = carbon.variants.find(c => c.title === `${v} / ${size}`)
+        const vari = carbon.variants.find(c => c.title === `${model} / ${v} / ${size}`)
         item.disabled = !vari ? false : !!!vari.available
     })
 
@@ -399,7 +399,7 @@ const changeBikeImage = e => {
         return clearBikeImage()
     }
 
-    const find = carbon.variants.find(c => c.title === `${style} / ${size}`)
+    const find = carbon.variants.find(c => c.title === `${model} / ${style} / ${size}`)
 
     // 如果当前variant 库存不足
     if (!find.available) {
