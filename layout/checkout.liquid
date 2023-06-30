@@ -51,6 +51,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <!-- 依赖优化开始 -->
     {% render 'code-snippet-optimization' %}
     <!-- 依赖优化结束 -->
+    {{ 'global_config.js' | asset_url | script_tag }}
   </head>
 
   <body>
