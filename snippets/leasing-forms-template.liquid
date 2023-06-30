@@ -482,6 +482,7 @@ $('select[name="bike_style"]').html('<option value="">---</option>' + style.map(
 
 // 延迟执行一些DOM
 setTimeout(() => {
+    $('.forms form .item .tips').hide()
     // 更改 offers label
     $('input[name="offers"]').closest('.item').find('.u24Medium').html(page_infos.form_offers_label)
 
