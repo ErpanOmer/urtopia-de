@@ -522,7 +522,7 @@
 
 
   // 如果carbon车 不存在
-  if (!document.querySelector('.cart-items [data-line-item-product-id="7633738727640"]')) {
+  if (!document.querySelector(`.cart-items [data-line-item-product-id="${global_config.event_bike_product_id}"]`)) {
     $('.cart__footer .orderTestRideBtn').hide()
   }
 
@@ -532,7 +532,7 @@
     if (type === 'lease_on_jobrad') {
       fetchBuried('websiteclick', `cart-page`, { button: type }, true)
 
-      const carbon = document.querySelector('.cart-items [data-line-item-product-id="7633738727640"]')
+      const carbon = document.querySelector(`.cart-items [data-line-item-product-id="${global_config.event_bike_product_id}"]`)
       const options = carbon.querySelectorAll('.cart-item__details > dl .product-option')
       let accessories = Array.from(document.querySelectorAll('.cart-items .cart-item__details > a')).map(a => {
 
