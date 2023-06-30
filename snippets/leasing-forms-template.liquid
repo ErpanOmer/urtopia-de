@@ -255,8 +255,9 @@ const ignore = ['submit', 'checkbox', 'image', 'hidden']
 const carbon = JSON.parse(JSON.stringify({{ all_products['copy-of-urtopia-carbon-1'] | json }}))
 
 // 尺寸信息
+const model = Array.from(new Set(carbon.variants.map(i => i.option1)))
 const size = Array.from(new Set(carbon.variants.map(i => i.option2)))
-const style = Array.from(new Set(carbon.variants.map(i => i.option1)))
+const style = Array.from(new Set(carbon.variants.map(i => i.option3)))
 
 // 是否已提交
 let is_submited = false
