@@ -75,6 +75,8 @@ class CartItems extends HTMLElement {
 
     console.log('updates', updates)
 
+    return
+
     fetch('/cart/update.js', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', 'Accept': `application/json` },
