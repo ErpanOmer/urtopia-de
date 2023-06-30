@@ -316,11 +316,11 @@
 @media (max-width: 767px) {
     .collection-banner {
         background: none;
-        height: unset;
 
         .centeral-content {
             grid-template-columns: 1fr;
             padding: 0;
+            height: unset;
 
             & > div {
                 justify-content: unset;
