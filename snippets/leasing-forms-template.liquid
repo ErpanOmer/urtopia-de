@@ -333,7 +333,8 @@ function mergeValues () {
     // 表单数据覆盖url 参数，合并
     const merge = Object.assign(search, forms)
 
-    // 重写bike_size
+    // 重写bike 参数
+    merge.bike_model = merge.bike_model === "Shimano Gear" ? "Carbon 1s" : "Carbon 1"
     merge.bike_size = merge.bike_size + ' - ' + (size_map[merge.bike_size] || '')
     merge.page_type = page_infos.page_name
 
@@ -574,7 +575,7 @@ setTimeout(() => {
 
     // 如果存在车型参数
     if (urlSearch.bike_style) {
-        //$(`select[name="bike_model"]`).val(urlSearch.bike_model)
+        $(`select[name="bike_model"]`).val(urlSearch.bike_model)
         // 填充size
         $(`select[name="bike_size"]`).val(urlSearch.bike_size)
         // 填充style
