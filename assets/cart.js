@@ -59,7 +59,7 @@ class CartItems extends HTMLElement {
     const components = $(`.cart-items .cart-item[data-line-item-sale-name="${sale_name}"]:not([data-line-item-variant-id="${lineItemVariantId}"]):not([data-line-item-product-id="${bike.attr('data-line-item-product-id')}"])`)
 
     
-    const other_bikes = $(`.cart-items .cart-item[data-line-item-sale-name="${sale_name}"]:not([data-line-item-variant-id="${lineItemVariantId}"])`).find(`[data-line-item-product-id="${bike.attr('data-line-item-product-id')}"]`)
+    const other_bikes = $(`.cart-items .cart-item[data-line-item-sale-name="${sale_name}"][data-line-item-product-id="${bike.attr('data-line-item-product-id')}"]:not([data-line-item-variant-id="${lineItemVariantId}"])`)
 
     console.log('other', components)
     console.log('other', other_bikes)
