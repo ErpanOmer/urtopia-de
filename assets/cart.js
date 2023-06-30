@@ -66,9 +66,15 @@ class CartItems extends HTMLElement {
       updates[insurance.attr('data-line-item-variant-id')] = afterQuantity
     }
 
+
+    let other_bikes_quantity = 0
+    other_bikes.each((i, item) => {
+      other_bikes_quantity += Number($(item).attr('data-quantity'))
+    })
+
     // 活动配件
     components.each((i, item) => {
-      updates[$(item).attr('data-line-item-variant-id')] = afterQuantity + other_bikes.length
+      updates[$(item).attr('data-line-item-variant-id')] = afterQuantity + other_bikes_quantity
     })
 
     updates[lineItemVariantId] = afterQuantity
