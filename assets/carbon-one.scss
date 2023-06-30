@@ -1742,8 +1742,9 @@ $sale_text_color: #F24FA5;
 
                 .gearing {
                     grid-template-columns: 1fr;
-                    transform: translateY(-10px);
+                    transform: unset;
                     max-height: unset;
+                    margin: -32px -20px 0;
 
                     & > div {
                         padding: 0 4vw;
