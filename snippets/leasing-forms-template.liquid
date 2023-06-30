@@ -401,6 +401,8 @@ const changeBikeImage = e => {
 
     const find = carbon.variants.find(c => c.title === `${model} / ${size} / ${style}`)
 
+    console.log('find', find)
+
     // 如果当前variant 库存不足
     if (!find.available) {
         $('select[name="bike_style"]').val('')
