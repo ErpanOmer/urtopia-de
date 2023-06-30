@@ -406,6 +406,12 @@ const changeBikeImage = e => {
         return clearBikeImage()
     }
 
+    if (model === "Shimano Gear") {
+        $('.forms form .item .tips').show()
+    } else {
+        $('.forms form .item .tips').hide()
+    }
+
     const find = carbon.variants.find(c => c.title === `${model} / ${size} / ${style}`)
 
     console.log('find', find)
