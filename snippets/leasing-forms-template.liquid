@@ -402,14 +402,14 @@ const changeBikeImage = e => {
         item.disabled = !vari ? false : !!!vari.available
     })
 
-    if (!size || !style) {
-        return clearBikeImage()
-    }
-
     if (model === "Shimano Gear") {
         $('.forms form .item .tips').show()
     } else {
         $('.forms form .item .tips').hide()
+    }
+
+    if (!size || !style) {
+        return clearBikeImage()
     }
 
     const find = carbon.variants.find(c => c.title === `${model} / ${size} / ${style}`)
