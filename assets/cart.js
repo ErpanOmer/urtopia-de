@@ -58,6 +58,8 @@ class CartItems extends HTMLElement {
 
     const other = $(`.cart-items .cart-item[data-line-item-sale-name="${sale_name}"]:not([data-line-item-variant-id="${lineItemVariantId}"])`)
 
+    console.log('other', other)
+
     const components = other.find(`:not([data-line-item-product-id="${bike.attr('data-line-item-product-id')}"])`)
     const other_bikes = other.find(`[data-line-item-product-id="${bike.attr('data-line-item-product-id')}"]`)
 
