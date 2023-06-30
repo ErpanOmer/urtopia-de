@@ -54,7 +54,7 @@ class CartItems extends HTMLElement {
     // 
     const bike = $(`.cart-items .cart-item[data-line-item-variant-id="${lineItemVariantId}"]`)
     const sale_name = bike.attr('data-line-item-sale-name')
-    const components = $(`.cart-items .cart-item[data-line-item-sale-name="${sale_name}"]:not([data-line-item-variant-id="${lineItemVariantId}"])`)
+    const components = $(`.cart-items .cart-item[data-line-item-sale-name="${sale_name}"]:not([data-line-item-variant-id="${lineItemVariantId}"]):not([data-line-item-product-id="${bike.attr('data-line-item-product-id')}"])`)
 
     // 查找保险产品
     const insurance = $(`.cart-items .cart-item[data-insurance-product-variant-id="${lineItemVariantId}"]`)
