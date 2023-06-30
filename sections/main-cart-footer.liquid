@@ -284,6 +284,9 @@
                 sum += sale_names['xyz 1s'] * 370
               }
 
+
+              $('.buttons .orderTestRideBtn .stages').text('112')
+
               document.querySelector(`.product_code .sale_coupon > div:last-child`).innerHTML = ''
               document.querySelector(`.product_code .carbon_text > div:nth-child(1) span`).innerHTML = `Save €${sum}.00!`
               document.querySelector(`.product_code .carbon_text > div:nth-child(2) span`).innerHTML = 'Free accessories applied'
@@ -402,11 +405,11 @@
         </div>
         <div onclick="testRideTrace('lease_on_jobrad', this)" class="orderTestRideBtn">
           <img class="oneeee" src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/jobradorg_2x_423443a0-1c79-4785-97a0-2be8ae66ceb6.png?v=1685414275"/>
-          <span><span class="u17DemiBold_v2">TAX FREE</span><span>36 months, €48/month</span></span>
+          <span><span class="u17DemiBold_v2">Lease Now</span><span>36 months, €48/month</span></span>
           </div>
           <div onclick="testRideTrace('klarna_check_out', this)" class="orderTestRideBtn">
           <img class="twoooo"src="https://cdn.shopifycdn.net/s/files/1/0633/2068/6808/files/20230530-121400.png?v=1685420054"/>
-          <span><span class="u17DemiBold_v2">0 APR</span><span class="stages">24 months, €112/month</span></span>
+          <span><span class="u17DemiBold_v2">0% APR Financing</span><span class="stages">24 months, €112/month</span></span>
           </div>
         {% comment %}
         {%- if additional_checkout_buttons -%}
