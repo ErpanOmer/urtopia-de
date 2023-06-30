@@ -315,11 +315,10 @@
 
 @media (max-width: 767px) {
     .collection-banner {
-        background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230630-094707.jpg?v=1688090223');
+        background: none;
 
         .centeral-content {
             grid-template-columns: 1fr;
-            height: 420px;
 
             & > div {
                 justify-content: unset;
