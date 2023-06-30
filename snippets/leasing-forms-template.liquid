@@ -395,7 +395,7 @@ const changeBikeImage = e => {
 
         const vari = carbon.variants.find(c => c.title === `${model} / ${size} / ${v}`)
 
-        if (vari.option1 === "Shimano Gear" && vari.option3 === "vanilla") {
+        if (vari && vari.option1 === "Shimano Gear" && vari.option3 === "vanilla") {
             return item.disabled = true
         }
 
