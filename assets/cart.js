@@ -77,6 +77,8 @@ class CartItems extends HTMLElement {
 
     updates[lineItemVariantId] = afterQuantity
 
+    return
+
     fetch('/cart/update.js', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', 'Accept': `application/json` },
