@@ -44,7 +44,11 @@
         & > div {
             display: flex;
             flex-direction: column;
-            
+            justify-content: center;
+
+            .u72DemiBold_v2 {
+                margin: 10px 0 40px;
+            }
         }
     }
 }
