@@ -455,11 +455,21 @@ setTimeout(() => {
     }
 
     $('select[name="partner"]').on('change', e => {
-        console.log('e.target.value', e.target.value)
+        const v = e.target.value
+        console.log('e.target.value', )
 
-        $('input[name="offers"]').closest('.item').find('.u24Medium span').html(e.target.value)
+        $('input[name="offers"]').closest('.item').find('.u24Medium span').html(v)
 
-        page_infos.form_thankyou_content2 = page_infos.form_thankyou_content2.replace(/<span>([^<]*?)<\/span>/gi, `<span>${e.target.value}</span>`)
+        page_infos.form_thankyou_content2 = page_infos.form_thankyou_content2.replace(/<span>([^<]*?)<\/span>/gi, `<span>${v}</span>`)
+
+        const offers = $('input[name="offers"]')
+        if (v === "Jobrad") {
+            offers.attr('type', 'hidden')
+            offers.closest('.item').hide()
+        } else {
+            offers.attr('type', 'radio')
+            offers.closest('.item').show()
+        }
     })
 
     $('.partners .swiper-wrapper .swiper-slide .my-button').on('click', e => {
