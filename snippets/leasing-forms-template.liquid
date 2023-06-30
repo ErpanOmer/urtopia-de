@@ -513,7 +513,7 @@ setTimeout(() => {
         
         
         // 如果选择了 不是no 的选项
-        if (values.offers === 'yes') {
+        if (values.offers === 'yes' || values.bike_model === "Carbon 1s") {
             $('.forms .thankyou .sooner').hide()
             $('.forms .thankyou > .u24Medium_v2').html(page_infos.form_thankyou_content)
         } else {
