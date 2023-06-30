@@ -320,6 +320,7 @@
 
         .centeral-content {
             grid-template-columns: 1fr;
+            padding: 0;
 
             & > div {
                 justify-content: unset;
