@@ -111,7 +111,11 @@
                 </div>
                 <div class="item">
                     <div class="u24Medium">Bike Model<i>*</i></div>
-                    <input type="text" name="bike_model" value="Carbon 1" disabled required>
+                    <select name="bike_model" value="Carbon 1" required>
+                        <option value="Carbon Belt">Carbon 1</option>
+                        <option value="Shimano Gear">Carbon 1s</option>
+                    </select>
+                    <span style="text-align: left;line-height: 2em;" class="tips u14Light_v2">Pre-order items ships from July 31, 2023</span>
                 </div>
                 <div class="item">
                     <div class="mini-item">
@@ -164,6 +168,10 @@
                       </div>
                 {% endif %}
                 <div class="item">
+                    <div class="u24Medium">Employer ID:</div>
+                    <input type="text" name="employer_id" required>
+                </div> 
+                <div class="item">
                     <div class="u24Medium">Your employer already offers JobRad?<i>*</i></div>
                     <div class="multiple-checkbox">
                         <label for="yes">
@@ -193,6 +201,7 @@
                             personal data, including receiving emails, text messages and SMS.<i>*</i></label>
                     </div>
                 </div>
+                
                 <div class="item">
                     <div style="display: flex;">
                         <button class="my-button my-button-black" type="submit">Submit</button>
@@ -249,11 +258,12 @@ const size_map = {
 // 表单忽略项
 const ignore = ['submit', 'checkbox', 'image', 'hidden']
 // carbon 产品信息
-const carbon = JSON.parse(JSON.stringify({{ all_products['copy-of-urtopia-carbon-2'] | json }}))
+const carbon = JSON.parse(JSON.stringify({{ all_products['leasing-urtopia-carbon-1s'] | json }}))
 
 // 尺寸信息
+const model = Array.from(new Set(carbon.variants.map(i => i.option1)))
 const size = Array.from(new Set(carbon.variants.map(i => i.option2)))
-const style = Array.from(new Set(carbon.variants.map(i => i.option1)))
+const style = Array.from(new Set(carbon.variants.map(i => i.option3)))
 
 // 是否已提交
 let is_submited = false
@@ -313,7 +323,7 @@ function getFormValues (elem = '') {
         temp[target.name] = target.value
     })
 
-    temp.variant_id = carbon.variants.find(c => c.title === `${temp.bike_style} / ${temp.bike_size}`)
+    temp.variant_id = carbon.variants.find(c => c.title === `${temp.bike_model} / ${temp.bike_size} / ${temp.bike_style}`)
     temp.variant_id = temp.variant_id ? temp.variant_id.id : ''
     temp.offers = $('.forms label[class="active"]').attr('for')
 
@@ -329,7 +339,8 @@ function mergeValues () {
     // 表单数据覆盖url 参数，合并
     const merge = Object.assign(search, forms)
 
-    // 重写bike_size
+    // 重写bike 参数
+    merge.bike_model = merge.bike_model === "Shimano Gear" ? "Carbon 1s" : "Carbon 1"
     merge.bike_size = merge.bike_size + ' - ' + (size_map[merge.bike_size] || '')
     merge.page_type = page_infos.page_name
 
@@ -371,8 +382,11 @@ const clearBikeImage = () => {
 
 
 const changeBikeImage = e => {
+    const model = $('select[name="bike_model"]').val()
     const size = $('select[name="bike_size"]').val()
     const style = $('select[name="bike_style"]').val()
+
+    console.log(model, size, style)
     
     $('.forms form .item .error').text('')
 
@@ -384,15 +398,28 @@ const changeBikeImage = e => {
             return
         }
 
-        const vari = carbon.variants.find(c => c.title === `${v} / ${size}`)
+        const vari = carbon.variants.find(c => c.title === `${model} / ${size} / ${v}`)
+
+        if (vari && vari.option1 === "Shimano Gear" && vari.option3 === "vanilla") {
+            return item.disabled = true
+        }
+
         item.disabled = !vari ? false : !!!vari.available
     })
+
+    if (model === "Shimano Gear") {
+        $('.forms form .item .tips').show()
+    } else {
+        $('.forms form .item .tips').hide()
+    }
 
     if (!size || !style) {
         return clearBikeImage()
     }
 
-    const find = carbon.variants.find(c => c.title === `${style} / ${size}`)
+    const find = carbon.variants.find(c => c.title === `${model} / ${size} / ${style}`)
+
+    console.log('find', find)
 
     // 如果当前variant 库存不足
     if (!find.available) {
@@ -460,6 +487,7 @@ $('select[name="bike_style"]').html('<option value="">---</option>' + style.map(
 
 // 延迟执行一些DOM
 setTimeout(() => {
+    $('.forms form .item .tips').hide()
     // 更改 offers label
     $('input[name="offers"]').closest('.item').find('.u24Medium').html(page_infos.form_offers_label)
 
@@ -476,12 +504,10 @@ setTimeout(() => {
         // $(`form .change_offers`).hide()
     })
 
-
+    // model change
+    $('select[name="bike_model"]').on('change', changeBikeImage)
     // size change
-    $('select[name="bike_size"]').on('change', e => {
-        changeBikeImage()
-    })
-
+    $('select[name="bike_size"]').on('change', changeBikeImage)
     // style change
     $('select[name="bike_style"]').on('change', changeBikeImage)
 
@@ -499,7 +525,7 @@ setTimeout(() => {
         
         
         // 如果选择了 不是no 的选项
-        if (values.offers === 'yes') {
+        if (values.offers === 'yes' || values.bike_model === "Carbon 1s") {
             $('.forms .thankyou .sooner').hide()
             $('.forms .thankyou > .u24Medium_v2').html(page_infos.form_thankyou_content)
         } else {
@@ -562,6 +588,7 @@ setTimeout(() => {
 
     // 如果存在车型参数
     if (urlSearch.bike_style) {
+        $(`select[name="bike_model"]`).val(urlSearch.bike_model)
         // 填充size
         $(`select[name="bike_size"]`).val(urlSearch.bike_size)
         // 填充style

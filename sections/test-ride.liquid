@@ -479,11 +479,13 @@
                 </ul>
                 <div class="time gray"><img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/calendar_2x_af8d9192-1ff9-43f0-aba6-3547b1129854.jpg?v=1680938382"/> Earliest available time: <div>&nbsp;${info.findAvalibaleDate()}</div></div>
             `
-
+            
             // 点击item 代理到真实的store
             item.addEventListener('click', e => {
                 const active = document.querySelector('#storepoint-panel .items .item[active="true"]')
                 const locations = Array.from(document.querySelectorAll('#storepoint-results-container .storepoint-location'))
+
+                
 
                 if (active) {
                     active.setAttribute('active', false)
@@ -492,8 +494,13 @@
                 for (const iterator of locations) {
                     iterator.classList.remove('selected')
 
-                    if (item.getAttribute('name') === iterator.querySelector('.storepoint-name').innerText) {
+                    console.log('item', item.getAttribute('name'), $(iterator).find('.storepoint-name').text())
+
+                    if (item.getAttribute('name') === $(iterator).find('.storepoint-name').text()) {
                         iterator.classList.add('selected')
+
+                        console.log('iterator', iterator)
+
                         iterator.click()
 
                         break

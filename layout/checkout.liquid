@@ -51,6 +51,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <!-- 依赖优化开始 -->
     {% render 'code-snippet-optimization' %}
     <!-- 依赖优化结束 -->
+    {{ 'global_config.js' | asset_url | script_tag }}
   </head>
 
   <body>
@@ -430,7 +431,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         'item_category'   : {{line_item.product.type | json}},
         'item_list_name'  : {{line_item.collection.title | json}},
         'quantity'        : {{line_item.quantity | json}},
-        'discount'		  : {{line_item.discount.code | json}}
+        'discount'		  : {{line_item.discount.code | json}},
+        'title'		  : {{line_item.title | json}}
         },{% endfor %}],
     };
 

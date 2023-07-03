@@ -1,6 +1,171 @@
 $sale_background_image: linear-gradient(-90deg, #F24FA5, #F03397);
 $sale_text_color: #F24FA5;
 
+.componentBox {
+    display: flex;
+    width: 60%;
+    min-width: 700px;
+    max-width: 900px;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border-radius: 10px;
+    height: auto;
+    aspect-ratio: 8/4.5;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translateY(-50%) translateX(-50%);
+    overflow: hidden;
+
+    .left-container {
+        width: 45%;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .right-container {
+        flex: 1;
+        justify-content: center;
+        padding: 7% 8% 5%;
+        
+        .title1 {
+            font: normal normal bold 24px/28px Urbane;
+            margin-bottom: 34px;
+        }
+
+        .smtips {
+            font: normal normal 300 16px/19px Urbane;
+        }
+
+        .description {
+            font: normal normal 300 14px/20px Urbane;
+            height: 100%;
+
+            .quiet-motor {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                margin-top: 20%;
+
+                .u17DemiBold_v2 {
+                    margin-bottom: 12px;
+                }
+            }
+
+            .gearing {
+                display: grid;
+                grid-template-columns: 0.65fr 1fr;
+                margin: -8%;
+                transform: translateY(-20px);
+                max-height: 116%;
+                overflow-y: auto;
+
+                img {
+                    height: 100%;
+                    width: auto;
+                    max-width: 100%;
+                }
+
+                & > div {
+                    padding: 0 15% 0 10%;
+                    max-height: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    overflow-y: auto;
+
+                    .u24DemiBold_v2 {
+                        margin: 40px 0 20px;
+                    }
+                }
+            }
+        }
+
+        .bike-box {
+            display: flex;
+            margin-top: 60px;
+
+            .bike-item {
+                flex: 0 0 50%;
+            }
+
+            .bike-title {
+                margin-bottom: 6px;
+                font: normal normal 600 18px/21px urbane;
+            }
+
+            p {
+                font: normal normal 300 14px/20px urbane;
+            }
+        }
+    }
+
+    .close {
+        display: flex;
+        width: 26px;
+        height: 26px;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        background: #F7F7F7;
+        border-radius: 50%;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        opacity: 0.8;
+        z-index: 10;
+
+        &:hover {
+            opacity: 1;
+        }
+    }
+}
+
+/**/
+.component {
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    //box-shadow: rgb(0 0 0 / 10%) 0px 0px 30px;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 0px 0px 30px #00000019;
+
+    .img-container {
+        overflow: hidden;
+
+        img {
+            width: 100%;
+            transition: transform 0.3s;
+        }
+    }
+
+    &:hover {
+        .img-container {
+            img {
+                transform: scale(1.1);
+            }
+        }
+    }
+
+    .des-container {
+        font: normal normal 600 24px/32px Urbane;
+        letter-spacing: 0px;
+        color: #000000;
+        background: #fff;
+        display: flex;
+        height: 84px;
+        padding: 0 26px;
+        align-items: center;
+        justify-content: space-between;
+
+        i {
+            font-size: 18px;
+            color: #8e8e8e;
+        }
+    }
+}
 
 .toTop {
     position: fixed;
@@ -99,7 +264,7 @@ $sale_text_color: #F24FA5;
         color: #fff;
         background-clip: content-box;
 
-        & > div {
+        &>div {
             padding: 200px 80px;
 
             .u14Light_v2 {
@@ -109,6 +274,17 @@ $sale_text_color: #F24FA5;
         }
     }
 }
+
+.ever {
+    margin: 100px 0;
+
+    .centeral-content {
+        .pf-637_ {
+            padding: 0;
+        }
+    }
+}
+
 
 .product {
     margin: 80px 0;
@@ -175,7 +351,7 @@ $sale_text_color: #F24FA5;
                 padding: 8% 2% 2.5%;
                 position: relative;
                 overflow: hidden;
-                
+
 
                 .u14Light_v2 {
                     background-image: $sale_background_image;
@@ -211,7 +387,7 @@ $sale_text_color: #F24FA5;
                     grid-column-gap: 5%;
                     margin: 2.5% 0;
 
-                    & > div {
+                    &>div {
                         display: flex;
                         align-items: center;
                         line-height: 1.25em;
@@ -352,7 +528,7 @@ $sale_text_color: #F24FA5;
                     // align-items: center;
                     justify-content: flex-start;
 
-                    & > div {
+                    &>div {
                         border-radius: 10px;
                         border: 2px solid #0000004D;
                         opacity: .5;
@@ -367,7 +543,7 @@ $sale_text_color: #F24FA5;
 
                         &::after {
                             display: flex;
-                            background-color:  $sale_text_color;
+                            background-color: $sale_text_color;
                             color: #fff;
                             border-radius: 10px;
                             padding: 2px 6px;
@@ -385,7 +561,7 @@ $sale_text_color: #F24FA5;
                         content: "New";
                     }
 
-                    & > div + div {
+                    &>div+div {
                         margin-left: 12px;
                     }
 
@@ -407,25 +583,42 @@ $sale_text_color: #F24FA5;
                     position: relative;
 
                     .item {
-                        display: grid;
-                        grid-template-columns: 1fr 1fr;
+                        display: flex;
                         min-width: 180px;
                         max-width: 180px;
+                        flex-direction: column;
                         border-radius: 10px;
                         border: 1px solid #E0E0E0;
                         margin-right: 6px;
-                        padding: 1px 8px 1px 1px;
-                        align-items: center;
+                        padding: 8px 1px 1px 8px;
                         cursor: pointer;
 
+                        .u11Medium_v2,
+                        .u17DemiBold_v2 {
+                            color: #484848;
+                        }
+                        
+
                         &>div {
-                            display: flex;
-                            flex-direction: column;
-                            text-align: right;
-                            align-items: flex-end;
-                            position: relative;
-                            height: 100%;
-                            justify-content: flex-start;
+                            text-align: left;
+
+                            &:last-child {
+                                display: flex;
+                                align-items: center;
+                                justify-content: space-between;
+
+                                img {
+                                    max-width: 70px;
+                                }
+
+                                div {
+                                    display: flex;
+                                    flex-direction: column;
+                                    justify-content: space-between;
+                                    height: 100%;
+                                    padding: 4px 0;
+                                }
+                            }
 
                             .u11Light_v2 {
                                 width: 20px;
@@ -439,16 +632,6 @@ $sale_text_color: #F24FA5;
                                 color: #999;
                                 margin: 5px 0;
                             }
-
-                            .u17DemiBold_v2,
-                            .u11Medium_v2 {
-                                color: #484848;
-                                word-break: break-all;
-                            }
-
-                          .u11Medium_v2 {
-                                margin-bottom: 5px;
-                          }
                         }
 
                         &>img {
@@ -460,7 +643,8 @@ $sale_text_color: #F24FA5;
                         border-color: rgb(0, 0, 0);
                         background: rgb(240, 240, 240);
                         border-width: 2px;
-                        padding: 0 7px 0 0;
+                        padding: 7px 0 0 7px;
+                        // padding: 0 7px 0 0;
                     }
                 }
 
@@ -485,7 +669,7 @@ $sale_text_color: #F24FA5;
                     }
 
                     .next {
-                        transform: rotate(135deg) translate(-100%,-50%)
+                        transform: rotate(135deg) translate(-100%, -50%)
                     }
                 }
             }
@@ -594,7 +778,7 @@ $sale_text_color: #F24FA5;
                 display: grid;
                 grid-template-columns: repeat(3, 1fr);
 
-                & > a {
+                &>a {
                     display: flex;
                     align-items: center;
                     justify-content: flex-start;
@@ -606,7 +790,7 @@ $sale_text_color: #F24FA5;
                     }
 
                     .u11Medium_v2 {
-                      word-break: break-all;
+                        word-break: break-all;
                     }
                 }
             }
@@ -790,69 +974,32 @@ $sale_text_color: #F24FA5;
     }
 }
 
+.assembly {
+    margin: 120px 0;
 
-.carbon-one {
-    .mediaaaaa {
-        padding: 80px 0;
+    .centeral-content {
+        display: grid;
+        grid-template-columns: 1fr 1.8fr;
 
-        .centeral-content {
-            display: grid;
-            grid-template-columns: repeat(3, 300px);
-            grid-row-gap: 10vh;
-            justify-content: space-between;
+        &>div {
+            &:first-child {
+                padding: 14vh 3.5vw;
 
-
-            &>div {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-                text-align: center;
-
-                img {
-                    &:nth-child(3) {
-                        max-width: 100px;
-                        margin: 15px 0;
-                    }
-
-                    &:nth-child(4) {
-                        height: 60px;
-                        width: auto;
-                    }
+                .u36DemiBold_v2 {
+                    margin-bottom: 40px;
                 }
             }
-        }
-    }
 
+            &:last-child {
+                background: center center/cover no-repeat;
+                background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_20940_2x_f524b1be-7a39-4892-b6d0-279d260cbbd2.jpg?v=1682581556');
+                display: flex;
+                align-items: center;
+                justify-content: center;
 
-
-    .assembly {
-        margin: 120px 0;
-
-        .centeral-content {
-            display: grid;
-            grid-template-columns: 1fr 1.8fr;
-
-            &>div {
-                &:first-child {
-                    padding: 14vh 3.5vw;
-
-                    .u36DemiBold_v2 {
-                        margin-bottom: 40px;
-                    }
-                }
-
-                &:last-child {
-                    background: center center/cover no-repeat;
-                    background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_20940_2x_f524b1be-7a39-4892-b6d0-279d260cbbd2.jpg?v=1682581556');
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-
-                    img {
-                        width: 76px;
-                        cursor: pointer;
-                    }
+                img {
+                    width: 76px;
+                    cursor: pointer;
                 }
             }
         }
@@ -920,7 +1067,15 @@ $sale_text_color: #F24FA5;
 
 .boxs3 {
     .centeral-content {
-        & > div {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+
+        &>div {
+            background-color: #F5F5F5;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 0 10%;
             align-items: flex-start;
 
             &:nth-child(1) {
@@ -942,11 +1097,11 @@ $sale_text_color: #F24FA5;
                     align-items: center;
                 }
 
-                div + div {
+                div+div {
                     margin-top: 4%;
                 }
 
-                 img {
+                img {
                     max-width: 40px;
                     margin-right: 8%;
                 }
@@ -1001,7 +1156,7 @@ $sale_text_color: #F24FA5;
                     justify-content: center;
                     align-items: flex-start;
                     padding: 0 10%;
-                    
+
                 }
 
                 .u20DemiBold_v2 {
@@ -1012,7 +1167,7 @@ $sale_text_color: #F24FA5;
             #storepoint-tag-dropdown,
             #storepoint-search,
             #storepoint-panel {
-               display:none!important;
+                display: none !important;
             }
 
             #storepoint-map,
@@ -1027,17 +1182,50 @@ $sale_text_color: #F24FA5;
     }
 }
 
+.mediaaaaa {
+    padding: 80px 0;
+
+    .centeral-content {
+        display: grid;
+        grid-template-columns: repeat(3, 300px);
+        grid-row-gap: 10vh;
+        justify-content: space-between;
+
+
+        &>div {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+
+            img {
+                &:nth-child(3) {
+                    max-width: 100px;
+                    margin: 15px 0;
+                }
+
+                &:nth-child(4) {
+                    height: 60px;
+                    width: auto;
+                }
+            }
+        }
+    }
+}
+
 
 @media (max-width: 767px) {
     .test-ride {
         margin: 60px 0;
+
         .centeral-content {
             padding: 0 4vw;
             grid-template-columns: 1fr;
 
-            & > div {
+            &>div {
 
-                & > div {
+                &>div {
                     &:first-child {
                         padding: 8vw 4vw;
                     }
@@ -1131,33 +1319,32 @@ $sale_text_color: #F24FA5;
 
 
         }
+    }
+
+    .assembly {
+        margin: 60px 0;
+
+        .centeral-content {
+            grid-template-columns: 1fr;
+
+            &>div {
+                &:last-child {
+                    height: calc(84vw - 60px);
+                }
+
+                &:first-child {
+                    order: 1;
+                    padding: 40px 15px;
 
 
-        .assembly {
-            margin: 60px 0;
-
-            .centeral-content {
-                grid-template-columns: 1fr;
-
-                &>div {
-                    &:last-child {
-                        height: calc(84vw - 60px);
+                    .u36DemiBold_v2 {
+                        font-size: 24px;
+                        margin-bottom: 20px;
                     }
 
-                    &:first-child {
-                        order: 1;
-                        padding: 40px 15px;
 
-
-                        .u36DemiBold_v2 {
-                            font-size: 24px;
-                            margin-bottom: 20px;
-                        }
-
-
-                        .u17DemiLight_v2 {
-                            font-size: 15px;
-                        }
+                    .u17DemiLight_v2 {
+                        font-size: 15px;
                     }
                 }
             }
@@ -1193,7 +1380,7 @@ $sale_text_color: #F24FA5;
                 width: 92vw;
                 max-width: 92vw;
 
-                
+
 
                 .sale_acc {
                     .u14Light_v2 {
@@ -1356,16 +1543,39 @@ $sale_text_color: #F24FA5;
     }
 
     .boxs2 {
-        margin-bottom: 30px;
+        margin: 60px 0;
 
         .centeral-content {
             grid-template-columns: 1fr;
+            padding: 0 4vw;
 
-            & > div {
-                height: 90vw;
+            &>div {
+                padding: 0;
 
                 &:nth-child(1) {
-                    height: 90vw;
+                    order: 1;
+                }
+
+                &:nth-child(2) {
+                    padding: 8vw 4vw;
+                    order: 2;
+                }
+
+                &:nth-child(3) {
+                    padding: 8vw 4vw;
+                    order: 4;
+                }
+
+                &:nth-child(4) {
+                    order: 3;
+                }
+
+                .u36DemiBold_v2 {
+                    font-size: 24px;
+                }
+
+                .u17Light_v2 {
+                    font-size: 14px;
                 }
             }
         }
@@ -1373,11 +1583,42 @@ $sale_text_color: #F24FA5;
 
     .boxs3 {
         .centeral-content {
+            grid-template-columns: 1fr;
+            padding: 0 4vw;
 
-            & > div {
+            &>div {
+                padding: 0;
+
+                &:nth-child(1) {
+                    order: 1;
+                }
+
+                &:nth-child(2) {
+                    padding: 8vw 4vw;
+                    order: 2;
+                }
+
+                &:nth-child(3) {
+                    padding: 8vw 4vw;
+                    order: 4;
+                }
+
+                &:nth-child(4) {
+                    order: 3;
+                }
+
                 .u17Light_v2 {
                     img {
                         margin-right: 6vw;
+                    }
+                }
+
+                .logos {
+                    grid-gap: 15vw 8vw;
+
+                    img {
+                        height: auto;
+                        width: 100%;
                     }
                 }
             }
@@ -1396,7 +1637,7 @@ $sale_text_color: #F24FA5;
         flex-direction: column;
         justify-content: flex-end;
         padding-bottom: 15vw;
-    
+
         .centeral-content {
 
             .u36DemiBold_v2 {
@@ -1424,8 +1665,8 @@ $sale_text_color: #F24FA5;
             padding: 0;
             border-bottom: 65vw solid #032709;
             box-sizing: content-box !important;
-    
-            & > div {
+
+            &>div {
                 padding: 0;
                 transform: translateY(92vw);
                 padding: 8vw 4vw;
@@ -1442,6 +1683,99 @@ $sale_text_color: #F24FA5;
                     max-width: 480px;
                     margin-top: 24px;
                 }
+            }
+        }
+    }
+
+    .stars {
+        .centeral-content {
+            padding: 0 4vw;
+        }
+    }
+
+    .ever {
+        margin: 60px 0;
+
+        .centeral-content {
+            padding: 0 4vw;
+        }
+    }
+
+    .overlay {
+        z-index: 1000000;
+    }
+
+    .componentBox {
+        width: 80%;
+        min-width: unset;
+        max-width: unset;
+        aspect-ratio: 1/1.6;
+        flex-direction: column;
+
+        .left-container {
+            height: 55%;
+            width: 100%;
+        }
+
+        .right-container {
+            padding: 20px;
+            overflow-y: auto;
+            justify-content: flex-start;
+
+            .title1 {
+                margin-bottom: 12px;
+                font: normal normal bold 20px/24px Urbane;
+            }
+
+            .description {
+                font: normal normal 300 14px/16px Urbane;
+                width: 100%;
+                height: auto;
+
+                .quiet-motor {
+                    margin-top: 10%;
+
+                    .u17DemiBold_v2 {
+                        margin-bottom: 6px;
+                    }
+                }
+
+                .gearing {
+                    grid-template-columns: 1fr;
+                    transform: unset;
+                    max-height: unset;
+                    margin: -32px -20px 32px -20px;
+
+                    & > div {
+                        padding: 0 4vw;
+
+                        .u24DemiBold_v2 {
+                            margin: 10px 0;
+                            font-size: 18px;
+
+                            .u17Light_v2 {
+                                font-size: 14px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .component {
+        .des-container {
+            font: normal normal 600 18px/24px Urbane;
+            padding: 12px 26px;
+            height: auto;
+        }
+
+        .img-container {
+            img {
+
+                width: 100%;
+                height: 134px;
+                object-fit: cover;
             }
         }
     }

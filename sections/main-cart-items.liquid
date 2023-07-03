@@ -7,6 +7,7 @@
 
 
 {% assign event_name = settings.sale_name %}
+{% assign sale_product_id = 7633738727640 %}
 
 {%- style -%}
 .section-{{ section.id }}-padding {
@@ -166,6 +167,7 @@ padding-bottom: {{ section.settings.padding_bottom }}px;
                 data-quantity="{{- item.quantity -}}"
                 data-line-item-product-id="{{- item.product_id -}}"
                 data-line-item-variant-id="{{- item.variant_id -}}"
+                data-line-item-sale-name="{{- item.discounts.first.title -}}"
                 {% if item.properties['_insurance_variant_id'] %} data-insurance-variant-id="{{- item.properties['_insurance_variant_id'] -}}"{% endif %}
                 {% if item.properties['_product_variant_id'] %} data-insurance-product-variant-id="{{- item.properties['_product_variant_id'] -}}"{% endif %}>
                 <td class="cart-item__media">
@@ -366,7 +368,7 @@ padding-bottom: {{ section.settings.padding_bottom }}px;
                     </label>
                     {% assign discountTitle = item.discounts.first.title %}
 
-                    {% if item.product.id!=7633738727640 and discountTitle contains event_name or is_insurance_product %}
+                    {% if item.product.id!=sale_product_id and discountTitle or is_insurance_product %}
                       <div style="width: 100%;display: flex;align-items: center;">{{ item.quantity }}</div>
                     {% else %}
                       {% if item.product.id == 7952778658008 and has_insurance_product %}
@@ -394,7 +396,7 @@ padding-bottom: {{ section.settings.padding_bottom }}px;
                     {% endif %}
                     
                     <cart-remove-button id="Remove-{{ item.index | plus: 1 }}" data-index="{{ item.index | plus: 1 }}">
-                      <a href="{{ item.url_to_remove }}" class="button button--tertiary" {% if item.product.id!=7633738727640 and discountTitle contains event_name %}style='display:none' {% endif %}
+                      <a href="{{ item.url_to_remove }}" class="button button--tertiary" {% if item.product.id!=sale_product_id and discountTitle %}style='display:none' {% endif %}
                         aria-label="{{ 'sections.cart.remove_title' | t: title: item.title }}">
                         {% render 'icon-remove' %}
                       </a>

@@ -198,10 +198,10 @@
   <div>
     <div class="product_code">
       <div class="sale_coupon">
-        <div class="l" style="text-align: left;">
-          Check out with <br>{{ settings.sale_name }}
+        <div class="l" style="text-align: left;flex-basis: 100%;">
+          Enjoy the limited time only price!!!
         </div>
-        <div class="r"></div>
+        <div class="r" style="flex-basis: 0;border: none;"></div>
       </div>
       <div class="carbon_text">
           <div>
@@ -230,14 +230,27 @@
 </div>
     <script>
       function refreshProductCode () {
-          const has_carbon = document.querySelectorAll(`.cart-items [data-line-item-product-id="7633738727640"]`)
+          const carbon = $(`.cart-items [data-line-item-product-id="${global_config.event_bike_product_id}"]`)
           const has_chord = document.querySelectorAll(`.cart-items [data-line-item-product-id="7952778658008"]`)
 
           let carbon_quantly = 0
           let chord_quantly = 0
-          for (const iterator of [...has_carbon]) {
-              carbon_quantly += parseInt(iterator.dataset.quantity)
-          }
+          const sale_names = {}
+
+          carbon.each((i, t) => {
+            const target = $(t)
+            const quantly = parseInt(target.attr('data-quantity'))
+
+            carbon_quantly += quantly
+            const sale_name = target.attr('data-line-item-sale-name')
+
+            if (sale_names[sale_name]) {
+              sale_names[sale_name] = sale_names[sale_name] + quantly
+            } else {
+              sale_names[sale_name] = quantly
+            }
+
+          })
 
          //for (const iterator of [...has_chord]) {
               //chord_quantly += parseInt(iterator.dataset.quantity)
@@ -261,11 +274,21 @@
             if (carbon_quantly === 0) {
               document.querySelector(`.product_code`).innerHTML = ''
             } else {
-              //document.querySelector(`.product_code .carbon_code span:first-child`).innerHTML = 'Check out with Father’s Day Sale'
-              //document.querySelector(`.product_code .carbon_code span:first-child`).classList.add('important')
+              let sum = 0
+
+              if (sale_names['{{ settings.sale_name }}']) {
+                sum += sale_names['{{ settings.sale_name }}'] * 769
+              }
+
+              if (sale_names['Pre-order Sale']) {
+                sum += sale_names['Pre-order Sale'] * 370
+              }
+
+
+              $('.buttons .orderTestRideBtn .stages').text('112')
 
               document.querySelector(`.product_code .sale_coupon > div:last-child`).innerHTML = ''
-              document.querySelector(`.product_code .carbon_text > div:nth-child(1) span`).innerHTML = `Save €${carbon_quantly * (169 + 600)}.00!`
+              document.querySelector(`.product_code .carbon_text > div:nth-child(1) span`).innerHTML = `Save €${sum}.00!`
               document.querySelector(`.product_code .carbon_text > div:nth-child(2) span`).innerHTML = 'Free accessories applied'
             }
           }
@@ -382,11 +405,11 @@
         </div>
         <div onclick="testRideTrace('lease_on_jobrad', this)" class="orderTestRideBtn">
           <img class="oneeee" src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/jobradorg_2x_423443a0-1c79-4785-97a0-2be8ae66ceb6.png?v=1685414275"/>
-          <span><span class="u17DemiBold_v2">TAX FREE</span><span>36 months, €48/month</span></span>
+          <span><span class="u17DemiBold_v2">Lease Now</span><span></span></span>
           </div>
           <div onclick="testRideTrace('klarna_check_out', this)" class="orderTestRideBtn">
           <img class="twoooo"src="https://cdn.shopifycdn.net/s/files/1/0633/2068/6808/files/20230530-121400.png?v=1685420054"/>
-          <span><span class="u17DemiBold_v2">0 APR</span><span>24 months, €112/month</span></span>
+          <span><span class="u17DemiBold_v2">0% APR Financing</span><span class="stages">24 months, €112/month</span></span>
           </div>
         {% comment %}
         {%- if additional_checkout_buttons -%}
@@ -502,7 +525,7 @@
 
 
   // 如果carbon车 不存在
-  if (!document.querySelector('.cart-items [data-line-item-product-id="7633738727640"]')) {
+  if (!document.querySelector(`.cart-items [data-line-item-product-id="${global_config.event_bike_product_id}"]`)) {
     $('.cart__footer .orderTestRideBtn').hide()
   }
 
@@ -512,7 +535,7 @@
     if (type === 'lease_on_jobrad') {
       fetchBuried('websiteclick', `cart-page`, { button: type }, true)
 
-      const carbon = document.querySelector('.cart-items [data-line-item-product-id="7633738727640"]')
+      const carbon = document.querySelector(`.cart-items [data-line-item-product-id="${global_config.event_bike_product_id}"]`)
       const options = carbon.querySelectorAll('.cart-item__details > dl .product-option')
       let accessories = Array.from(document.querySelectorAll('.cart-items .cart-item__details > a')).map(a => {
 

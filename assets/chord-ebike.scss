@@ -114,7 +114,7 @@
                         }
 
                         &:not(:first-child) {
-                            padding-left: 20%;
+                            padding-left: 12%;
                         }
 
                         .u48DemiBold_v2+.u48DemiBold_v2 {
@@ -355,7 +355,7 @@
     .ride {
         .centeral-content {
             .u72DemiBold_v2 {
-                background: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18389_2x_bb463cfe-d88b-45a8-8353-50114d46dab8.jpg?v=1685780171') center center/cover no-repeat;
+                background: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230629-182046.jpg?v=1688034072') center center/cover no-repeat;
                 height: 60vh;
                 color: #fff;
                 display: flex;
@@ -987,6 +987,11 @@
                     margin-top: 6px;
                     font-size: 17px;
                 }
+
+                .buttons {
+                    display: flex;
+                    flex-direction: column;
+                }
             }
         }
 
@@ -1041,6 +1046,7 @@
                     padding: 6vw 5px 8vw;
 
                     .infos {
+                        padding: 0 4vw;
                         .u36DemiBold_v2 {
                             font-size: 24px;
                         }

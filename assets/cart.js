@@ -50,44 +50,41 @@ class CartItems extends HTMLElement {
     console.log('beforeQuantity', beforeQuantity)
     console.log('afterQuantity', afterQuantity)
 
-    const items = document.querySelectorAll('.cart-items [data-cart-item]');
-
-    let itemsQuantityArray = [];
-
-    items.forEach((item, index) => {
-      if (item.dataset.lineItemVariantId === lineItemVariantId && currentIndex === index + 1) {
-        
-        const insuranceId = item.dataset.insuranceVariantId;
-        const insuranceItem = items[index + 1]
-        if (insuranceId && insuranceItem && insuranceItem.dataset.lineItemVariantId === insuranceId) {
-          // const insuranceItem = document.querySelector(`.cart-items [data-line-item-variant-id="${insuranceId}"]`)
-          // console.log('insuranceItem', insuranceItem)
-          // console.log('dataset.index')
-
-          itemsQuantityArray[parseInt(insuranceItem.dataset.lineItem) -1] = afterQuantity
-        }
-
-        itemsQuantityArray[index] = afterQuantity
-      } else if (global_config.event_accessories_variant_ids.includes(item.dataset.lineItemVariantId)) {
-        const componentQuantity = parseInt(item.dataset.quantity)
-        itemsQuantityArray[index] = componentQuantity + (afterQuantity - beforeQuantity)
-      } else {
-        if ((itemsQuantityArray[index] === undefined) || item.dataset.insuranceProductVariantId !== lineItemVariantId) {
-          itemsQuantityArray[index] = parseInt(item.dataset.quantity)
-        }
-      }
-    });
+    const updates = {}
+    // 
+    const bike = $(`.cart-items .cart-item[data-line-item-variant-id="${lineItemVariantId}"]`)
+    const sale_name = bike.attr('data-line-item-sale-name')
     
-    console.log('items', items);
 
-    const formData = {
-      updates: itemsQuantityArray
+    const components = $(`.cart-items .cart-item[data-line-item-sale-name="${sale_name}"]:not([data-line-item-variant-id="${lineItemVariantId}"]):not([data-line-item-product-id="${bike.attr('data-line-item-product-id')}"])`)
+    const other_bikes = $(`.cart-items .cart-item[data-line-item-sale-name="${sale_name}"][data-line-item-product-id="${bike.attr('data-line-item-product-id')}"]:not([data-line-item-variant-id="${lineItemVariantId}"])`)
+
+    // 查找保险产品
+    const insurance = $(`.cart-items .cart-item[data-insurance-product-variant-id="${lineItemVariantId}"]`)
+    // 如果存在 跟车绑定的保险产品
+    if (insurance.length) {
+      updates[insurance.attr('data-line-item-variant-id')] = afterQuantity
     }
 
-    let info = fetch('/cart/update.js', {
+
+    let other_bikes_quantity = 0
+    other_bikes.each((i, item) => {
+      other_bikes_quantity += Number($(item).attr('data-quantity'))
+    })
+
+    // 活动配件
+    components.each((i, item) => {
+      updates[$(item).attr('data-line-item-variant-id')] = afterQuantity + other_bikes_quantity
+    })
+
+    updates[lineItemVariantId] = afterQuantity
+
+    console.log('updates', updates)
+
+    fetch('/cart/update.js', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', 'Accept': `application/json` },
-      body: JSON.stringify(formData)
+      body: JSON.stringify({ updates })
     }).then(response => response.json()).then(data => {
       location.reload(true);
 

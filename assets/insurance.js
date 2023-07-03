@@ -251,12 +251,18 @@ class Insurance {
     const htmlString = this.templateInsuranceProduct.innerHTML;
     const html = this.createElementFromHTML(htmlString);
 
-    this.insertBefore(html, this.fakeButton);
+    if (location.href.includes('urtopia-carbon')) {
+      const s = document.querySelector('.product .buttons .count-down') 
+      const parent = s.parentNode
+      parent.insertBefore(html, s) 
+    } else {
+      this.insertBefore(html, this.fakeButton);
+    }
   }
   
   insertBefore(element, selector) {
     const parent = selector.parentNode;
-    
+
     parent.insertBefore(element, selector); 
   }
   
@@ -276,7 +282,7 @@ function addToCartInsurance(parse, show = false) {
 
   const cartListNew = {
     // 如果是carbon 页面，自动把配件加进去
-    items: location.href.includes('/products/urtopia-carbon-e-bike') ? (function () {
+    items: location.href.includes('urtopia-carbon') ? (function () {
       const ids = global_config.event_accessories_variant_ids.map(id => ({ id, quantity: 1 }))
 
       // 额外买的配件
@@ -293,7 +299,7 @@ function addToCartInsurance(parse, show = false) {
   }
 
   // 加埋点
-  if (location.href.includes('/products/urtopia-carbon-e-bike')) {
+  if (location.href.includes('urtopia-carbon')) {
     !show && fetchBuried('websiteclick', `carbon-order-page`, { button: 'ATC' })
   }
 
