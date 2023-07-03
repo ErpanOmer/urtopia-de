@@ -4,7 +4,7 @@
     "title1": "Wählen Sie Klarna als Zahlungsoption.",
     "title2": "Holen Sie sich, was Sie lieben, und entscheiden Sie, wie Sie bezahlen.",
     "pay_in": "Zahlen Sie in 24 Monaten, 0% Sollzinssatz für Carbon 1",
-    "month": "112.45 €\/Monat",
+    "month": "€\/Monat",
     "payments": "24 Raten",
     "fixed": "0 % p.a. (festen)",
     "total": "Gesamt",
@@ -19,6 +19,7 @@
     "work7": "Genieße deinen Einkauf und lasse automatische Zahlungen den Rest erledigen",
     "button": "Weiter Auschecken",
     "Klarna_for": "0 APR, 24 Monate, 112 €\/Monat für Carbon 1",
+    "Klarna_for2": "0 APR, 24 Monate, 124 €\/Monat für Carbon 1s",
     "Klarna_learn": "lernen, wie man"
   },
   "general": {

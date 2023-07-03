@@ -4,7 +4,7 @@
     "title1": "Choose Klarna as yourpayment option. ",
     "title2": "Get what you love, choose how you pay.",
     "pay_in": "Pay in 24 months, 0 APR on Carbon 1",
-    "month": "112.45 €\/ month",
+    "month": "€\/ month",
     "payments": "24 payments",
     "fixed": "0% p.a. (fixed)",
     "total": "Total",
@@ -19,6 +19,7 @@
     "work7": "Enjoy your shopping and let automatic payments do the rest",
     "button": "Continue Check out",
     "Klarna_for": "0 APR, 24 months, €112\/month for Carbon 1 ",
+    "Klarna_for2": "0 APR, 24 months, €124\/month for Carbon 1s ",
     "Klarna_learn": "Learn how to use"
   },
   "general": {
