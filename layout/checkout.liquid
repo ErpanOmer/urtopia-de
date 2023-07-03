@@ -267,6 +267,10 @@ if (ecommerce.items.find(item => item.title.includes('Carbon Belt'))) {
 }
 
 
+// <div class="u14Medium_v2">/div>
+$('.klarna .u14Medium_v2').html(price === '112.45' ? `{{ 'checkout_klarna.Klarna_for' | t }}<span class="learn">{{ 'checkout_klarna.Klarna_learn' | t }}</span>` : `{{ 'checkout_klarna.Klarna_for2' | t }}<span class="learn">{{ 'checkout_klarna.Klarna_learn' | t }}</span>`)
+
+
     const html = `<div class="klarna-dialog">
       <div class="u24DemiBold_v2"><img
               src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Image_167_2x_a31405e4-22c9-4546-8404-ec68e30f98ad.png?v=1685686187"
