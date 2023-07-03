@@ -71,8 +71,8 @@
                     <div class="u17DemiBold_v2">with {{ settings.sale_name }}</div>
                 </div>
             </div>
-            <div class="sale_acc mb12 belt" id="sale_acc">
-                <div class="u14Light_v2">And get <span style="font-weight: 600;"> €169 </span> Accessories for <span class="u20DemiBold_v2"> Free</span></div>
+            <div class="sale_acc mb12" id="sale_acc">
+                <div class="u14Light_v2">And get <span style="font-weight: 600;">€169</span> Accessories for <span class="u20DemiBold_v2">Free</span></div>
                 {% assign accessories_map = "7633738596568,7633738662104,7633738531032" | split: ',' %}
                 <div class="accs">
                     {% for acc in accessories_map %}
@@ -85,26 +85,6 @@
                                     {% else %}
                                         <span class="u11Medium_v2">{{ prod.title }}</span>
                                     {% endif %}
-                                </div>
-                            {% endif %}
-                        {% endfor %}
-                    {% endfor %}
-                </div>
-                <div class="u11Light_v2">*Not available with leasing</div>
-            </div>
-            <div class="sale_acc mb12 gear">
-                <div class="u14Light_v2">Get Accessories for <span class="u20DemiBold_v2">Free</span></div>
-                {% assign accessories_map_1s = "7633738596568,7633738531032" | split: ',' %}
-                <div class="accs_1s">
-                    {% for acc in accessories_map_1s %}
-                        {% for prod in collections["accessories"].products %}
-                            {% if acc contains prod.id %}
-                                <div>
-                                    {{ prod.featured_image | image_url: width: 400 | image_tag }}
-                                    <div>
-                                        <span class="u14Medium_v2">{{ prod.title }}</span><br>
-                                        <span class="u17DemiBold_v2">{{ prod.price | money }}</span>
-                                    </div>
                                 </div>
                             {% endif %}
                         {% endfor %}
@@ -241,7 +221,6 @@
     let current_variant = null
     const styles = {}
     const sizes = {}
-    const models = {}
 
     const commonSwiper = [
         'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230620-232407.png?v=1687274659',
@@ -324,8 +303,8 @@
         },
       });
 
-    function findVariantOptions (model, style, size) {
-        return variants.find(v => `${model} / ${style} / ${size}` === v.title)
+    function findVariantOptions (style, size) {
+        return variants.find(v => `${style} / ${size}` === v.title)
     }
 
     function findVariantFromId (id) {
@@ -336,26 +315,7 @@
         return variants.find(v => v.available)
     }
 
-    function changeVariant (model, size, style) {
-        if (model) {
-            $(`.product .product-panel .Model .active`).removeClass('active')
-            $(`.product .product-panel .Model > div[attribute="${model}"]`).addClass('active')
-            $(`.product .product-panel .options > div[option="Model"] .u17DemiBold_v2 .u17Light_v2`).text(`{{ product.title}} ${model === 'Carbon Belt' ? '1' : '1s'}`)
-
-            $(`.product .commonComponent .sale .u20DemiBold_v2`).text(`${model === 'Carbon Belt' ? '{{ 269900 | money }}' : '{{ 299000 | money }}'} NOW`)
-            $(`.product .commonComponent .sale .u17DemiBold_v2`).text(`with ${model === 'Carbon Belt' ? '{{ settings.sale_name }}' : 'Pre-order Sale'}`)
-
-            $(`.product .count-down .u17Medium_v2`).text(`with ${model === 'Carbon Belt' ? '€600 off + 3 Free Accessories Ends in:' : '€300 off + 2 Free Accessories Ends in:'}`)
-
-            if (model === 'Carbon Belt') {
-                $('.product .belt').show()
-                $('.product .gear').hide()
-            } else {
-                $('.product .belt').hide()
-                $('.product .gear').show()
-            }
-        }
-
+    function changeVariant (style, size) {
         if (style) {
             $(`.product .product-panel .Style .active`).removeClass('active')
             $(`.product .product-panel .Style > div[attribute="${style}"]`).addClass('active')
@@ -394,8 +354,8 @@
         }
 
 
-        if (model && style && size) {
-            current_variant = findVariantOptions(model, size, style)
+        if (style && size) {
+            current_variant = findVariantOptions(style, size)
             current_variant_id = current_variant.id
 
 
@@ -504,16 +464,11 @@
     }
 
     {% for variant in product.variants %}
-        models[{{ variant.option1 | json }}] = 1
-        styles[{{ variant.option3 | json }}] = 1
+        styles[{{ variant.option1 | json }}] = 1
         sizes[{{ variant.option2 | json }}] = 1
     {% endfor %}
 
     console.log('variants', variants)
-
-    for (const model of Object.keys(models)) {
-        $('.product .product-panel .Model').append(`<div attribute="${model}" class="${model}">${model}</div>`)
-    }
 
     for (const style of Object.keys(styles)) {
         $('.product .product-panel .Style').append(`<div attribute="${style}" class="${style}"></div>`)
@@ -527,22 +482,18 @@
     $('.product-panel .options .option >div:not(.u17DemiBold_v2) > div').on('click',e => {
         const t = $(e.target)
 
-        if ($(e.target).parent().hasClass('Model')) {
-            changeVariant(t.attr('attribute'), current_variant.option2, current_variant.option3)
-        } else if ($(e.target).parent().hasClass('Size')) {
-            changeVariant(current_variant.option1, t.attr('attribute'), current_variant.option3)
+        if ($(e.target).parent().hasClass('Style')) {
+            changeVariant(t.attr('attribute'), current_variant.option2)
         } else {
-            changeVariant(current_variant.option1, current_variant.option2, t.attr('attribute'))
+            changeVariant(current_variant.option1, t.attr('attribute'))
         }
     })
 
     // 如果有查询参数
     if (search.variant) {
-        const find = findVariantFromId(search.variant)
-        changeVariant(find.option1, find.option2, find.option3) 
+        changeVariant(findVariantFromId(search.variant).option1, findVariantFromId(search.variant).option2) 
     } else {
-        const find = findAvailableVariant()
-        changeVariant(find.option1, find.option2, find.option3) 
+        changeVariant(findAvailableVariant().option1, findAvailableVariant().option2)
     }
 
 

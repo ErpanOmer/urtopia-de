@@ -69,7 +69,7 @@ const testRides = [
           "",
         ],
       },
-      {
+      /*{
         name: 'mein-fahrradhaendler',
         phone: '+496101 9951561',
         email: '',
@@ -87,7 +87,7 @@ const testRides = [
           "10:00-12:00,12:00-18:00",
           "10:00-12:00,12:00-15:00",
         ],
-      }
+      }*/
     ]
   },
   {
@@ -121,7 +121,29 @@ const testRides = [
           "09:00-18:00",
           "",
         ],
-        
+        disableDate: [
+          '2023-7-17',
+          '2023-7-18',
+          '2023-7-19',
+          '2023-7-20',
+          '2023-7-21',
+          '2023-7-22',
+          '2023-7-23',
+          '2023-7-24',
+          '2023-7-25',
+          '2023-7-26',
+          '2023-7-27',
+          '2023-7-28',
+          '2023-7-29',
+          '2023-7-30',
+          '2023-7-31',
+          '2023-8-1',
+          '2023-8-2',
+          '2023-8-3',
+          '2023-8-4',
+          '2023-8-5',
+          '2023-8-6',
+        ],
       }
       /*{
         name: 'DownTownBikes am Hbf.',
@@ -176,7 +198,6 @@ const testRides = [
           "09:00-12:00,12:00-18:00",
           "09:00-12:00,12:00-14:00",
         ],
-        disableDate: createdisableDates(5),
       },
       {
         name: 'fahrradladen-wulf',
@@ -227,6 +248,29 @@ const testRides = [
      ],
      stores: [
        {
+         name: 'Anneke Gabriel',
+         phone: '+00491799955692',
+         email: 'yannick.vannoy@thecycleverse.com',
+         timezone: "Mainz, Germany (GMT+1)",
+         add: "Schwübb, 22529 Hamburg, Germany",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Hamburg_19874cca-b8ea-4f39-824a-d987e3410a01.jpg?v=1683867163",
+         testrideSpot: "Hamburg",
+         testRideSize: "M",
+         isPartner: true,
+         availableSizes: [
+          'Carbon One Size M'
+          ],
+         businessHours: [
+           "",
+           "09:00-18:00",
+           "09:00-18:00",
+           "09:00-18:00",
+           "09:00-18:00",
+           "09:00-18:00",
+           "09:00-18:00",
+         ],
+       },
+       {
          name: 'Matthias Kaltenbach',
          phone: '+4915772388217',
          email: 'kaltenbach.matthias@gmail.com',
@@ -250,29 +294,8 @@ const testRides = [
            "12:00-18:00",
          ],
          disableDate: [
-          '2023-6-6',
-           '2023-6-7',
-           '2023-6-8',
-           '2023-6-9',
-           '2023-6-10',
-           '2023-6-11',
-           '2023-6-12',
-           '2023-6-13',
-           '2023-6-14',
-           '2023-6-15',
-           '2023-6-16',
-           '2023-6-17',
-           '2023-6-18',
-           '2023-6-19',
-           '2023-6-20',
-           '2023-6-21',
-           '2023-6-22',
-           '2023-6-23',
-           '2023-6-24',
-           '2023-6-25',
-           '2023-6-26',
-           '2023-6-27',
-           '2023-6-28',
+           '2023-6-29',
+           '2023-6-30',
            '2023-7-1',
            '2023-7-2',
            '2023-7-3',
@@ -288,23 +311,7 @@ const testRides = [
            '2023-7-13',
            '2023-7-14',
            '2023-7-15',
-           '2023-7-16',
-           '2023-7-17',
-           '2023-7-18',
-           '2023-7-19',
-           '2023-7-20',
-           '2023-7-21',
-           '2023-7-22',
-           '2023-7-23',
-           '2023-7-24',
-           '2023-7-25',
-           '2023-7-26',
-           '2023-7-27',
-           '2023-7-28',
-           '2023-7-29',
-           '2023-7-30',
-           '2023-7-31',
-        ]
+         ]
        },
        /*{
          name: 'Anneke Gabriel',
@@ -340,11 +347,11 @@ const testRides = [
     ],
     stores: [
       {
-        name: 'Len Lucas',
+        name: 'Len',
         phone: '+49 1512 8804444',
         email: 'len.lucas@gmx.de',
         timezone: "Mainz, Germany (GMT+1)",
-        add: "Killerstrasse 15 82166 Graefelfing, Munich, Bavaria",
+        add: "82166 Graefelfing, Munich, Bavaria",
         imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Munchen.jpg?v=1679406972",
         testrideSpot: "München",
         testRideSize: "M",
@@ -358,17 +365,9 @@ const testRides = [
           "8:00-9:30,13:00-14:30,18:00-20:00",
           "10:00-12:00,12:00-20:00",
         ],
-        disableDate: [
-           '2023-6-14',
-           '2023-6-15',
-           '2023-6-16',
-           '2023-6-17',
-           '2023-6-18',
-           '2023-6-19',
-           '2023-6-20'
-        ],
+        disableDate: [],
       },
-      {
+      /*{
         name: 'Radsport Holzbauer',
         phone: '+4989481334',
         email: 'radsport.holzbauer@web.de',
@@ -386,7 +385,7 @@ const testRides = [
           "10:00-12:00,12:00-18:00",
           "09:00-12:00,12:00-12:00",
         ],
-      },
+      },*/
       {
         name: 'Supercycles',
         phone: '+498945145610',
@@ -517,35 +516,15 @@ const testRides = [
           "18:00-20:00",
           "09:00-12:00,12:00-19:00",
         ],
-        disableDate: [
-          '2023-4-7',
-          '2023-4-8',
-          '2023-4-9',
-          '2023-4-10',
-          '2023-4-11',
-          '2023-4-12',
-          '2023-4-13',
-          '2023-4-14',
-          '2023-4-15',
-          '2023-4-16',
-          '2023-4-17',
-          '2023-4-18',
-          '2023-4-19',
-          '2023-4-20',
-          '2023-4-21',
-          '2023-4-22',
-          '2023-4-23',
-          '2023-4-24',
-        ]
       },
-      {
-        name: 'Schneider Lastenrad Köln Verkauf & Fahrradwerkstatt',
-        phone: '+4922131040711',
-        email: 'verkauf@lastenrad-koeln.de',
-        timezone: "Mainz, Germany (GMT+1)",
-        add: "Rothgerberbach 2, 50676 Köln",
-        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/IMG_0935.jpg?v=1680923331",
-        testrideSpot: "Köln",
+      //{
+        //name: 'Schneider Lastenrad Köln Verkauf & Fahrradwerkstatt',
+        //phone: '+4922131040711',
+       // email: 'verkauf@lastenrad-koeln.de',
+        //timezone: "Mainz, Germany (GMT+1)",
+        //add: "Rothgerberbach 2, 50676 Köln",
+       // imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/IMG_0935.jpg?v=1680923331",
+       /* testrideSpot: "Köln",
         testRideSize: "M/L",
         businessHours: [
           "",
@@ -556,7 +535,7 @@ const testRides = [
           "08:00-12:00,12:00-18:00",
           "",
         ],
-      },
+      },*/
     ]
   },
   {
@@ -617,7 +596,7 @@ const testRides = [
       },
       {
         name: 'alf bikes & coffee',
-        phone: '+49 178 149 47 22',
+        phone: '"+49711 47988965"',
         email: 'simon@alleliebenfahrrad.de',
         timezone: "Mainz, Germany (GMT+1)",
         add: "Villastraße 14, 70190 Stuttgart",
@@ -642,7 +621,7 @@ const testRides = [
       },
     ]
   },
-  {
+  /*{
     city: 'Hannover',
     cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Hannover.jpg?v=1679406972',
     series: [
@@ -669,27 +648,27 @@ const testRides = [
           "",
         ],
       },
-      //{
-        //name: 'Fahrradcafé GmbH',
-       // phone: '+49511 45014270',
-       // email: 'post@fahrradcafe.de',
-       // timezone: "Mainz, Germany (GMT+1)",
-       // add: "Asternstraße 2 30167 Hannover",
-       // imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/IMG_0883.jpg?v=1680923639",
-      //  testrideSpot: "Hannover",
-      //  testRideSize: "L",
-      //  businessHours: [
-      //    "",
-      //    "10:00-18:00",
-     //     "10:00-18:00",
-      //    "10:00-18:00",
-      //    "10:00-18:00",
-     //     "10:00-18:00",
-     //     "10:00-14:30",
-    //    ],
-    //  },
+      {
+        name: 'Fahrradcafé GmbH',
+       phone: '+49511 45014270',
+        email: 'post@fahrradcafe.de',
+        timezone: "Mainz, Germany (GMT+1)",
+        add: "Asternstraße 2 30167 Hannover",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/IMG_0883.jpg?v=1680923639",
+        testrideSpot: "Hannover",
+        testRideSize: "L",
+        businessHours: [
+          "",
+          "10:00-18:00",
+        "10:00-18:00",
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-14:30",
+       ],
+      },
     ]
-  },
+  },*/
   {
     city: 'Essen',
     cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Essen.jpg?v=1679406971',
