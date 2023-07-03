@@ -175,7 +175,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       >
     </div>
     {{ tracking_code }}
-    <div class="klarna-dialog" style="height: 0;overflow: hidden;padding: 0;">
+    
+  </body>
+  <script>
+    const html = `<div class="klarna-dialog" style="height: 0;overflow: hidden;padding: 0;">
       <div class="u24DemiBold_v2"><img
               src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Image_167_2x_a31405e4-22c9-4546-8404-ec68e30f98ad.png?v=1685686187"
               alt="">{{ 'checkout_klarna.title' | t }}</div>
@@ -214,12 +217,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       </div>
       <div onclick="closeMiniDialog()" class="my-button my-button-black">{{ 'checkout_klarna.button' | t }}</div>
       <span onclick="closeMiniDialog()" class="close">×</span>
-    </div>
-  </body>
-  <script>
-    const html = $('.klarna-dialog').html()
+    </div>`
 
-    getSearchValues().show_klarna_dialog && showMiniDialog(`<div class="klarna-dialog">${html}</div>`)
+    getSearchValues().show_klarna_dialog && showMiniDialog(html)
   
     setTimeout(() => {
       //jQuery('.klarna-dialog .close').on('click', closeMiniDialog)
