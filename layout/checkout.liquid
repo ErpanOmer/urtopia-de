@@ -289,7 +289,7 @@ $('.klarna .u14Medium_v2').html(price === '112.45' ? `{{ 'checkout_klarna.Klarna
                   </div>
                   <div class="u17Medium_v2">
                       <span>{{ 'checkout_klarna.fixed' | t }}</span>
-                      <span>2.699 €*</span>
+                      <span>${price === '112.45' ? '2.699' : '2.999'} €*</span>
                   </div>
                   <div class="u11Medium_v2">{{ 'checkout_klarna.limited' | t }}</div>
               </div>
