@@ -433,7 +433,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         'quantity'        : {{line_item.quantity | json}},
         'discount'		  : {{line_item.discount.code | json}},
         'title'		  : {{line_item.title | json}},
-        'dddd'      : {{ line_item.product | json }}
+        'dddd'      : {{ line_item.product.selected_or_first_available_variant.option1 | json }}
         },{% endfor %}],
     };
 
