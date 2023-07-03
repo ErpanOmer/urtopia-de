@@ -201,7 +201,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         'item_list_name'  : {{line_item.collection.title | json}},
         'quantity'        : {{line_item.quantity | json}},
         'discount'		  : {{line_item.discount.code | json}},
-        'series'      : {{ line_item.title | json }}
+        'title'      : {{ line_item.title | json }}
         },{% endfor %}],
     };
 
@@ -258,9 +258,9 @@ $(document).on('page:load', function(e) {
 });
 
 let price = '112.45'
-if (ecommerce.items.find(item => item.series === 'Carbon Belt')) {
+if (ecommerce.items.find(item => item.title.includes('Carbon Belt'))) {
   price = '112.45'
-} else if (ecommerce.items.find(item => item.series === 'Shimano Gear')) {
+} else if (ecommerce.items.find(item => item.title.includes('Shimano Gear'))) {
   price = '124.94'
 } else {
   price = '112.45'
