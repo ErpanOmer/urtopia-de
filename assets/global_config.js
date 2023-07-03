@@ -1,6 +1,6 @@
 const global_config = {
     // 活动产品id
-    event_bike_product_id: '7633738727640',
+    event_bike_product_id: '8007220035800',
     // 活动送配件 variant_id
     event_accessories_variant_ids: ['43817744793816', '43745263255768', '43745261748440'],
 
