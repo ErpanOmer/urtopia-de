@@ -1254,12 +1254,17 @@
 
                 .u20Light_v2 {
                     font-size: 17px;
-                    margin: 15px 0 30px;
                 }
 
                 &>div {
                     img {
                         max-width: 140px;
+                    }
+
+                    &:first-child {
+                        .u20Light_v2 {
+                            margin: 15px 0 30px;
+                        }
                     }
 
                     &:last-child {
