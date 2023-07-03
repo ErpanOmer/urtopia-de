@@ -258,7 +258,10 @@ $(document).on('page:load', function(e) {
 });
 
 let price = '112.45'
-if (ecommerce.items.find(item => item.title.includes('Carbon Belt'))) {
+
+if (ecommerce.items.find(item => item.title.includes('Carbon Belt')) && ecommerce.items.find(item => item.title.includes('Shimano Gear'))) {
+  price = '112.45'
+} else if (ecommerce.items.find(item => item.title.includes('Carbon Belt'))) {
   price = '112.45'
 } else if (ecommerce.items.find(item => item.title.includes('Shimano Gear'))) {
   price = '124.94'
