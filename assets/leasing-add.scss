@@ -1227,6 +1227,16 @@
 
 @media (max-width: 767px) {
     .leasing-add {
+        .banner_origin {
+            .u20Medium_v2 {
+                font-size: 14px;
+
+                .u24DemiBold_v2 {
+                    font-size: 16px;
+                }
+            }
+        }
+
         .banner {
             background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_20918_2x_69aafcfc-00d5-43cd-a8c8-58a610abf615.jpg?v=1683700910');
             height: calc(100vh - 107px);
