@@ -220,7 +220,7 @@
                         <td class="cart-item__quantity" role="cell" headers="CartDrawer-ColumnQuantity">
                           <div class="cart-item__quantity-wrapper">
                             {% if item.product.id!=sale_product_id and discountTitle or is_insurance_product %}
-                              <div style="width: 100%;display: flex;align-items: center;">{{ item.quantity }}</div>
+                              <div {{ item.quantity }} style="width: 100%;display: flex;align-items: center;">{{ item.quantity }}</div>
                             {% else %}
                                 <quantity-input class="quantity">
                                   <button class="quantity__button no-js-hidden" name="minus" type="button">
