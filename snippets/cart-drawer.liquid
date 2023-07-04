@@ -69,6 +69,7 @@
 
                   <tbody role="rowgroup">
                     {%- for item in cart.items -%}
+                      {% assign discountTitle = item.discounts.first.title %}
                       <tr 
                         id="CartDrawer-Item-{{ item.index | plus: 1 }}"
                         class="cart-item" role="row"
@@ -233,7 +234,7 @@
                             </quantity-input>
 
                             <cart-remove-button id="CartDrawer-Remove-{{ item.index | plus: 1 }}" data-index="{{ item.index | plus: 1 }}">
-                              <button class="button button--tertiary" aria-label="{{ 'sections.cart.remove_title' | t: title: item.title }}">
+                              <button {% if item.product.id!=sale_product_id and discountTitle %}style='display:none' {% endif %} class="button button--tertiary" aria-label="{{ 'sections.cart.remove_title' | t: title: item.title }}">
                                 {% render 'icon-remove' %}
                               </button>
                             </cart-remove-button>
