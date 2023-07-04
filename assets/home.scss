@@ -139,16 +139,19 @@
         }
 
       .summer-sale {
-            background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_21062_2x_5712a7d0-3739-4e98-84dd-5614126787b9.jpg?v=1688049000');
+            background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_21467_2x_c38da697-0614-4c4d-ac28-4e49ce85bcb4.png?v=1688439940');
             background-color: rgb(15, 25, 30);
 
             .centeral-content {
                 height: 85%;
                 
                 &>div {
+                    & > img {
+                        max-width: 488px;
+                    }
 
-                    .u24Medium_v2 {
-                        margin: 12px 0 24px;
+                    .u36DemiBold_v2 {
+                        margin: 20px 0 60px;
                     }
                 }
             }
@@ -451,7 +454,7 @@
             }
 
           .summer-sale {
-                background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230630-141041.jpg?v=1688105525');
+                background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_21036_2x_f4be54f5-b0f8-44f6-bfb0-b2b2e71d3ef5.jpg?v=1688440816');
 
                 .centeral-content {
                     height: 100%;
@@ -459,25 +462,15 @@
 
                     &>div {
                         padding: 12vw 0 18vw;
-                        display: flex;
-                        flex-direction: column;
-                        align-items: center;
-                        text-align: center;
 
+                        & > img {
+                            max-width: 192px;
+                        }
+    
                         .u36DemiBold_v2 {
                             font-size: 20px;
+                            margin: 10px 0 0;
                         }
-
-                        .u72DemiBold_v2 {
-                            margin: 12px 0;
-                            font-size: 36px;
-                        }
-
-                        .u24Medium_v2 {
-                            font-size: 14px;
-                            margin: 0;
-                        }
-                        
                     }
                 }
             }
