@@ -146,6 +146,9 @@
                 height: 85%;
                 
                 &>div {
+                    & > img {
+                        max-width: 488px;
+                    }
 
                     .u24Medium_v2 {
                         margin: 12px 0 24px;
