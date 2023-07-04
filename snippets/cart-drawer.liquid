@@ -222,7 +222,7 @@
                             {% if item.product.id!=sale_product_id and discountTitle or is_insurance_product %}
                               <div {{ item.quantity }} style="width: 100%;display: flex;align-items: center;">{{ item.quantity }}</div>
                             {% else %}
-                                <quantity-input class="quantity">
+                                <quantity-input class="quantity" {{ item.quantity }}>
                                   <button class="quantity__button no-js-hidden" name="minus" type="button">
                                     <span class="visually-hidden">{{ 'products.product.quantity.decrease' | t: product: item.product.title | escape }}</span>
                                     {% render 'icon-minus' %}
