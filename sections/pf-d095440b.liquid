@@ -1559,23 +1559,26 @@
             if (model === 'Carbon Belt') {
                 //$('.product .belt').show()
                 //$('.product .gear').hide()
-                $('.product .buttons .jobrad').show()
+                
 
-                global_config.event_accessories_variant_ids = ['43817744793816', '43745263255768', '43745261748440']
+                global_config.event_accessories_variant_ids = ['43817744793816', '43745263255768', '43745261748440'];
 
-                $(`.product .product-panel .options .option .vanilla`).show()
+                $(`.product .product-panel .options .option .vanilla`).show();
 
-                $('.buttons .orderTestRideBtn .stages').text('112')
+                $('.buttons .orderTestRideBtn .stages').text('112');
+                $('.product .buttons .jobrad').show();
             } else {
                 //$('.product .belt').hide()
                 //$('.product .gear').show()
-                $('.product .buttons .jobrad').hide()
+                
 
-                global_config.event_accessories_variant_ids = ['43866498891992', '43866499121368', '43871557779672']
+                global_config.event_accessories_variant_ids = ['43866498891992', '43866499121368', '43871557779672'];
 
-                $(`.product .product-panel .options .option .vanilla`).hide()
+                $(`.product .product-panel .options .option .vanilla`).hide();
 
-                $('.buttons .orderTestRideBtn .stages').text('124')
+                $('.buttons .orderTestRideBtn .stages').text('124');
+
+                $('.product .buttons .jobrad').hide();
             }
         }
 
