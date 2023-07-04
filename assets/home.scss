@@ -461,26 +461,13 @@
                     align-items: unset;
 
                     &>div {
-                        padding: 12vw 0 18vw;
-                        display: flex;
-                        flex-direction: column;
-                        align-items: center;
-                        text-align: center;
-
+                        & > img {
+                            max-width: 192px;
+                        }
+    
                         .u36DemiBold_v2 {
-                            font-size: 20px;
+                            margin: 20px 0 60px;
                         }
-
-                        .u72DemiBold_v2 {
-                            margin: 12px 0;
-                            font-size: 36px;
-                        }
-
-                        .u24Medium_v2 {
-                            font-size: 14px;
-                            margin: 0;
-                        }
-                        
                     }
                 }
             }
