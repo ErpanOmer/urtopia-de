@@ -96,7 +96,7 @@
                 </div>
                 <div class="u11Light_v2">*Not available with leasing</div>
             </div>
-            <div class="sale_acc mb12 gear" id="sale_acc">
+            <!--<div class="sale_acc mb12 gear" id="sale_acc">
                 <div class="u14Light_v2">Get Accessories for <span class="u20DemiBold_v2">Free</span></div>
                 {% assign accessories_map_1s = "7633738596568,7633738531032" | split: ',' %}
                 <div class="accs_1s">
@@ -115,7 +115,7 @@
                     {% endfor %}
                 </div>
                 <div class="u11Light_v2">*Not available with leasing</div>
-            </div>
+            </div>-->
             <div class="count-down mb12 mobileHide">
                 <div class="u17Medium_v2">€600 off + 3 Free Accessories Ends in：</div>
                 <img src="http://i.countdownmail.com/2mmaed.gif">
@@ -167,7 +167,7 @@
                     >
                     <i class="fa fa-spinner fa-spin"></i><span data-pf-type="Text" class="addToCartText u17DemiBold_v2">Add to Cart</span>
                 </div>
-                <div onclick="testRideTrace('lease_on_jobrad', this)" class="orderTestRideBtn">
+                <div onclick="testRideTrace('lease_on_jobrad', this)" class="orderTestRideBtn jobrad">
                     <img class="oneeee" src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/jobradorg_2x_423443a0-1c79-4785-97a0-2be8ae66ceb6.png?v=1685414275"/>
                     <span><span class="u17DemiBold_v2">Lease Now</span><!--<span>36 months, €48/month</span>--></span>
                   </div>
@@ -1552,26 +1552,31 @@
             $(`.product .commonComponent .sale .u20DemiBold_v2`).text(`${model === 'Carbon Belt' ? '{{ 269900 | money }}' : '{{ 299000 | money }}'} NOW`)
             $(`.product .commonComponent .sale .u17DemiBold_v2`).text(`with ${model === 'Carbon Belt' ? '{{ settings.sale_name }}' : 'Pre-order Sale'}`)
 
-            $(`.product .count-down .u17Medium_v2`).text(`with ${model === 'Carbon Belt' ? '€600 off + 3 Free Accessories Ends in:' : '€300 off + 2 Free Accessories Ends in:'}`)
+            $(`.product .count-down .u17Medium_v2`).text(`with ${model === 'Carbon Belt' ? '€600 off + 3 Free Accessories Ends in:' : '€300 off + 3 Free Accessories Ends in:'}`)
 
             if (model === 'Carbon Belt') {
-                $('.product .belt').show()
-                $('.product .gear').hide()
+                //$('.product .belt').show()
+                //$('.product .gear').hide()
+                
 
-                global_config.event_accessories_variant_ids = ['43817744793816', '43745263255768', '43745261748440']
+                global_config.event_accessories_variant_ids = ['43817744793816', '43745263255768', '43745261748440'];
 
-                $(`.product .product-panel .options .option .vanilla`).show()
+                $(`.product .product-panel .options .option .vanilla`).show();
 
-                $('.buttons .orderTestRideBtn .stages').text('112')
+                $('.buttons .orderTestRideBtn .stages').text('112');
+                $('.product .buttons .jobrad').css({ height: '47px', overflow: 'unset', border: '2px solid #161c1f' });
             } else {
-                $('.product .belt').hide()
-                $('.product .gear').show()
+                //$('.product .belt').hide()
+                //$('.product .gear').show()
+                
 
-                global_config.event_accessories_variant_ids = ['43866498891992', '43866499121368']
+                global_config.event_accessories_variant_ids = ['43866498891992', '43866499121368', '43871557779672'];
 
-                $(`.product .product-panel .options .option .vanilla`).hide()
+                $(`.product .product-panel .options .option .vanilla`).hide();
 
-                $('.buttons .orderTestRideBtn .stages').text('124')
+                $('.buttons .orderTestRideBtn .stages').text('124');
+
+                $('.product .buttons .jobrad').css({ height: 0, overflow: 'hidden', border: 'none' });
             }
         }
 
