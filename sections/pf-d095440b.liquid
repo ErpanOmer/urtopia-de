@@ -1566,7 +1566,7 @@
                 $(`.product .product-panel .options .option .vanilla`).show();
 
                 $('.buttons .orderTestRideBtn .stages').text('112');
-                $('.product .buttons .jobrad')[0].style.display = 'grid'
+                $('.product .buttons .jobrad').css({ height: '47px', overflow: 'unset'; border: '2px solid #161c1f' );
             } else {
                 //$('.product .belt').hide()
                 //$('.product .gear').show()
@@ -1578,7 +1578,7 @@
 
                 $('.buttons .orderTestRideBtn .stages').text('124');
 
-                $('.product .buttons .jobrad')[0].style.display = 'none';
+                $('.product .buttons .jobrad').css({ height: 0, overflow: 'hidden'; border: 'none' );
             }
         }
 
