@@ -5,6 +5,7 @@
     {% render 'cart-drawer' %}
 {% endcomment %}
 
+
 {% assign sale_product_id = 7633738727640 %}
 
 <script src="{{ 'cart.js' | asset_url }}" defer="defer"></script>
@@ -221,7 +222,10 @@
                             {% if item.product.id!=sale_product_id and discountTitle or is_insurance_product %}
                               <div {{ item.quantity }} style="width: 100%;display: flex;align-items: center;">{{ item.quantity }}</div>
                             {% else %}
-                                <quantity-input class="quantity" {{ item.quantity }}>
+                              {% if item.product.id!=sale_product_id and discountTitle or is_insurance_product %}
+                                <div style="width: 100%;display: flex;align-items: center;">{{ item.quantity }}</div>
+                              {% else %}
+                                <quantity-input class="quantity">
                                   <button class="quantity__button no-js-hidden" name="minus" type="button">
                                     <span class="visually-hidden">{{ 'products.product.quantity.decrease' | t: product: item.product.title | escape }}</span>
                                     {% render 'icon-minus' %}
@@ -240,6 +244,8 @@
                                     {% render 'icon-plus' %}
                                   </button>
                                 </quantity-input>
+                              {% endif %}
+                  
                             {% endif %}
 
                             <cart-remove-button id="CartDrawer-Remove-{{ item.index | plus: 1 }}" data-index="{{ item.index | plus: 1 }}">
