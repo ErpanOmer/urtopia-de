@@ -5,9 +5,6 @@
     {% render 'cart-drawer' %}
 {% endcomment %}
 
-
-{% assign sale_product_id = 7633738727640 %}
-
 <script src="{{ 'cart.js' | asset_url }}" defer="defer"></script>
 
 <style>
@@ -69,23 +66,7 @@
 
                   <tbody role="rowgroup">
                     {%- for item in cart.items -%}
-                      {% assign discountTitle = item.discounts.first.title %}
-                      {%- assign is_insurance_product = false -%}
-                      {% if item.properties._product_variant_id != blank %}
-                        {%- assign is_insurance_product = true -%}
-                      {%- endif -%}
-                      <tr 
-                        id="CartDrawer-Item-{{ item.index | plus: 1 }}"
-                        class="cart-item" role="row"
-                        data-cart-item="{{ item.key }}"
-                        data-line-item="{{ forloop.index }}"
-                        data-quantity="{{- item.quantity -}}"
-                        data-line-item-product-id="{{- item.product_id -}}"
-                        data-line-item-variant-id="{{- item.variant_id -}}"
-                        data-line-item-sale-name="{{- item.discounts.first.title -}}"
-                        {% if item.properties['_insurance_variant_id'] %} data-insurance-variant-id="{{- item.properties['_insurance_variant_id'] -}}"{% endif %}
-                        {% if item.properties['_product_variant_id'] %} data-insurance-product-variant-id="{{- item.properties['_product_variant_id'] -}}"{% endif %}
-                        >
+                      <tr id="CartDrawer-Item-{{ item.index | plus: 1 }}" class="cart-item" role="row">
                         <td class="cart-item__media" role="cell" headers="CartDrawer-ColumnProductImage">
                           {% if item.image %}
                             {% comment %} Leave empty space due to a:empty CSS display: none rule {% endcomment %}
@@ -219,37 +200,28 @@
 
                         <td class="cart-item__quantity" role="cell" headers="CartDrawer-ColumnQuantity">
                           <div class="cart-item__quantity-wrapper">
-                            {% if item.product.id!=sale_product_id and discountTitle or is_insurance_product %}
-                              <div {{ item.quantity }} style="width: 100%;display: flex;align-items: center;">{{ item.quantity }}</div>
-                            {% else %}
-                              {% if item.product.id!=sale_product_id and discountTitle or is_insurance_product %}
-                                <div style="width: 100%;display: flex;align-items: center;">{{ item.quantity }}</div>
-                              {% else %}
-                                <quantity-input class="quantity">
-                                  <button class="quantity__button no-js-hidden" name="minus" type="button">
-                                    <span class="visually-hidden">{{ 'products.product.quantity.decrease' | t: product: item.product.title | escape }}</span>
-                                    {% render 'icon-minus' %}
-                                  </button>
-                                  <input class="quantity__input"
-                                    type="number"
-                                    name="updates[]"
-                                    value="{{ item.quantity }}"
-                                    min="0"
-                                    aria-label="{{ 'products.product.quantity.input_label' | t: product: item.product.title | escape }}"
-                                    id="Drawer-quantity-{{ item.index | plus: 1 }}"
-                                    data-index="{{ item.index | plus: 1 }}"
-                                  >
-                                  <button class="quantity__button no-js-hidden" name="plus" type="button">
-                                    <span class="visually-hidden">{{ 'products.product.quantity.increase' | t: product: item.product.title | escape }}</span>
-                                    {% render 'icon-plus' %}
-                                  </button>
-                                </quantity-input>
-                              {% endif %}
-                  
-                            {% endif %}
+                            <quantity-input class="quantity">
+                              <button class="quantity__button no-js-hidden" name="minus" type="button">
+                                <span class="visually-hidden">{{ 'products.product.quantity.decrease' | t: product: item.product.title | escape }}</span>
+                                {% render 'icon-minus' %}
+                              </button>
+                              <input class="quantity__input"
+                                type="number"
+                                name="updates[]"
+                                value="{{ item.quantity }}"
+                                min="0"
+                                aria-label="{{ 'products.product.quantity.input_label' | t: product: item.product.title | escape }}"
+                                id="Drawer-quantity-{{ item.index | plus: 1 }}"
+                                data-index="{{ item.index | plus: 1 }}"
+                              >
+                              <button class="quantity__button no-js-hidden" name="plus" type="button">
+                                <span class="visually-hidden">{{ 'products.product.quantity.increase' | t: product: item.product.title | escape }}</span>
+                                {% render 'icon-plus' %}
+                              </button>
+                            </quantity-input>
 
                             <cart-remove-button id="CartDrawer-Remove-{{ item.index | plus: 1 }}" data-index="{{ item.index | plus: 1 }}">
-                              <button {% if item.product.id!=sale_product_id and discountTitle %}style='display:none' {% endif %} class="button button--tertiary" aria-label="{{ 'sections.cart.remove_title' | t: title: item.title }}">
+                              <button class="button button--tertiary" aria-label="{{ 'sections.cart.remove_title' | t: title: item.title }}">
                                 {% render 'icon-remove' %}
                               </button>
                             </cart-remove-button>
