@@ -1566,7 +1566,7 @@
                 $(`.product .product-panel .options .option .vanilla`).show();
 
                 $('.buttons .orderTestRideBtn .stages').text('112');
-                $('.product .buttons .jobrad').css({ display: 'grid' });
+                $('.product .buttons .jobrad')[0].style.display = 'grid'
             } else {
                 //$('.product .belt').hide()
                 //$('.product .gear').show()
