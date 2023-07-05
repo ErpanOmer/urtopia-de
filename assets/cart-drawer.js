@@ -107,7 +107,7 @@ class CartDrawer extends HTMLElement {
 customElements.define('cart-drawer', CartDrawer);
 
 class CartDrawerItems extends CartItems {
-  updateCarbonOneWithComponents (lineItemVariantId, beforeQuantity, afterQuantity) {
+  updateCarbonOneWithComponents (e, lineItemVariantId, beforeQuantity, afterQuantity) {
     console.log('beforeQuantity', beforeQuantity)
     console.log('afterQuantity', afterQuantity)
 
