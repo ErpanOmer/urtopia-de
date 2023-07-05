@@ -244,7 +244,7 @@
                               </quantity-input>
                             {% endif %}
 
-                            {% unless item.product.id != sale_product_id %}
+                            {% unless item.product.id != sale_product_id and discountTitle %}
                               <cart-remove-button id="CartDrawer-Remove-{{ item.index | plus: 1 }}" data-index="{{ item.index | plus: 1 }}">
                                 <button class="button button--tertiary" aria-label="{{ 'sections.cart.remove_title' | t: title: item.title }}">
                                   {% render 'icon-remove' %}
