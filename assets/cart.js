@@ -53,8 +53,6 @@ class CartItems extends HTMLElement {
     // 
     const bike = $(`.cart-items .cart-item[data-line-item-variant-id="${lineItemVariantId}"]`)
     const sale_name = bike.attr('data-line-item-sale-name')
-
-    this.enableLoading(bike.attr('data-index'))
     
 
     const components = $(`.cart-items .cart-item[data-line-item-sale-name="${sale_name}"]:not([data-line-item-variant-id="${lineItemVariantId}"]):not([data-line-item-product-id="${bike.attr('data-line-item-product-id')}"])`)
@@ -85,15 +83,9 @@ class CartItems extends HTMLElement {
     fetch('/cart/update.js', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', 'Accept': `application/json` },
-      body: JSON.stringify({ 
-        updates,
-        sections: this.getSectionsToRender().map((section) => section.section),
-        sections_url: window.location.pathname
-      })
+      body: JSON.stringify({ updates })
     }).then(response => response.json()).then(data => {
-      // location.reload(true);
-
-      console.log('data', data)
+      location.reload(true);
 
       return data
     }).catch((error) => {
