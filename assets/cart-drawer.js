@@ -141,13 +141,13 @@ class CartDrawerItems extends CartItems {
     // 活动配件
     components.each((i, item) => {
       updates.push({
-        id: $(item).attr('data-line-item-variant-id'),
+        id: Number($(item).attr('data-line-item')),
         quantity: afterQuantity + other_bikes_quantity
       })
     })
 
     updates.push({
-      id: bike.attr('data-cart-item'),
+      line: Number(bike.attr('data-line-item')),
       quantity: afterQuantity
     })
 
