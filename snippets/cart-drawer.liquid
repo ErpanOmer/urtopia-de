@@ -569,6 +569,12 @@
     });
   });
 
+  $('.cart-drawer-items .accessories .item .my-button').on('click', e => {
+    const t = $(e.target)
+
+    console.log(t)
+  })
+
 
   function testRideTrace(type = '', target) {
     if (type === 'klarna_check_out') {
