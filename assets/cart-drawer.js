@@ -142,7 +142,7 @@ class CartDrawerItems extends CartItems {
 
     // 活动配件
     components.each((i, item) => {
-      updates[($(item).attr('data-cart-item')] = afterQuantity + other_bikes_quantity
+      updates[$(item).attr('data-cart-item')] = afterQuantity + other_bikes_quantity
     })
 
     updates[bike.attr('data-cart-item')] = afterQuantity
