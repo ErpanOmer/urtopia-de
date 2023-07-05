@@ -326,7 +326,7 @@ function addToCartInsurance(parse, show = false) {
     if (formData.get('items[0]properties[_insurance_variant_id]')) {
       item0.properties = {
         _insurance_variant_id: formData.get('items[0]properties[_insurance_variant_id]'),
-        _insurance_key
+        // _insurance_key
       }
     }
     
@@ -342,7 +342,7 @@ function addToCartInsurance(parse, show = false) {
           _product_variant_id: $('input[name="id"]').val(),
           _model: formData.get('items[1]properties[_model]'),
           _variant_name: formData.get('items[1]properties[_variant_name]'),
-          _insurance_key
+          //_insurance_key
         }
       }
 
