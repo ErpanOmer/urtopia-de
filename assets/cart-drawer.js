@@ -130,7 +130,10 @@ class CartDrawerItems extends CartItems {
     const all_bikes = $(`.cart-items .cart-item[data-line-item-sale-name="${sale_name}"][data-line-item-product-id="${bike.attr('data-line-item-product-id')}"][data-line-item-variant-id="${lineItemVariantId}"]`)
 
     // 查找保险产品
-    const insurance = $(`.cart-items .cart-item[data-insurance-product-variant-id="${lineItemVariantId}"]`)
+    const insurance = $(`.cart-items .cart-item[data-insurance-product-variant-id="${lineItemVariantId}"][data-line-item="${Number(bike.attr('data-line-item')) + 1}"]`)
+
+    console.log(insurance, 'insurance')
+
     // 如果存在 跟车绑定的保险产品
     if (insurance.length) {
       updates[insurance.attr('data-cart-item')] = afterQuantity
