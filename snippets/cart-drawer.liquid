@@ -15,6 +15,12 @@
   .cart-drawer .drawer__cart-items-wrapper .cart-item{
     grid-gap: 15px 0;
   }
+
+  .cart-drawer .drawer__cart-items-wrapper .cart-item .quantity {
+    max-width: 100px;
+    height: 30px;
+    min-height: 30px;
+  }
 </style>
 
 <cart-drawer class="drawer{% if cart == empty %} is-empty{% endif %}">
