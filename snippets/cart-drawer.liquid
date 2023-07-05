@@ -570,9 +570,33 @@
   });
 
   $('.cart-drawer-items .accessories .item .my-button').on('click', e => {
-    const variant_id = $(e.target).closest('.item').attr('variant-id')
+    const sections = $('.cart-drawer-items')[0].getSectionsToRender()
 
-    console.log('variant_id', variant_id)
+    const body = {
+      sections: sections.map((section) => section.section),
+      sections_url: window.location.pathname,
+      items: [
+        {
+          id: $(e.target).closest('.item').attr('variant-id'),
+          quantity: 1
+        }
+      ]
+    }
+
+    fetch("/cart/add.js", {
+      method: "POST",
+      body: JSON.stringify(cartListNew), // formData
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    }).then((res) => res.json()).then(parsedState => {
+      console.log('parsedState', parsedState)
+
+    }).catch(e => {
+      console.log()
+    }).finally(() => {
+
+    })
 
   })
 
