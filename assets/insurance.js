@@ -379,7 +379,7 @@ function addToCartInsurance(parse, show = false) {
         if (res1.items.length == 2) {
           swapElements(res1.items, 0, 1);
         }
-        cart1New.querySelector('.drawer').classList.contains('is-empty') && this.querySelector('.drawer').classList.remove('is-empty');
+        cart1New.classList.contains('is-empty') && cart1New.classList.remove('is-empty');
         
         cart1New.renderContents(res1);
         !show && changeAddToCartText(parse, 0);
