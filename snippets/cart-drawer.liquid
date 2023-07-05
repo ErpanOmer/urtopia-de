@@ -229,7 +229,7 @@
                             {% if item.product.id != sale_product_id and discountTitle %}
                               <div style="width: 99%;display: flex;align-items: center;">{{ item.quantity }}</div>
                             {% else %}
-                                {% if item.product.id == 7952778658008 and has_insurance_product %}
+                                {% if item.product.id == 7952778658008 and has_insurance_product or is_insurance_product %}
                                 <div style="width: 100%;display: flex;align-items: center;">{{ item.quantity }}</div>
                               {% else  %}
                                   <quantity-input class="quantity">
