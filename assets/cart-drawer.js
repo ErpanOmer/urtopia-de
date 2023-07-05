@@ -111,7 +111,7 @@ class CartDrawerItems extends CartItems {
     console.log('beforeQuantity', beforeQuantity)
     console.log('afterQuantity', afterQuantity)
 
-    const updates = []
+    const updates = {}
     const changes = {
       sections: this.getSectionsToRender().map((section) => section.section),
       sections_url: window.location.pathname
@@ -142,16 +142,10 @@ class CartDrawerItems extends CartItems {
 
     // 活动配件
     components.each((i, item) => {
-      updates.push({
-        line: Number($(item).attr('data-cart-item')),
-        quantity: afterQuantity + other_bikes_quantity
-      })
+      updates[Number($(item).attr('data-cart-item'))] = afterQuantity + other_bikes_quantity
     })
 
-    updates.push({
-      id: Number(bike.attr('data-cart-item')),
-      quantity: afterQuantity
-    })
+    updates[bike.attr('data-cart-item')] = afterQuantity
 
     console.log('updates', updates)
 
