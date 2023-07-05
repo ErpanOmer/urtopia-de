@@ -226,10 +226,10 @@
                           {%- endif -%}
 
                           <div class="cart-item__quantity-wrapper" id="{{item.product.id}}" sale_product_id="{{sale_product_id}}" is_insurance_product="{{is_insurance_product}}" discountTitle="{{discountTitle}}">
-                            {% unless item.product.id!=sale_product_id and discountTitle or is_insurance_product %}
-                              <div style="width: 100%;display: flex;align-items: center;">{{ item.quantity }}</div>
+                            {% if item.product.id!=sale_product_id and discountTitle or is_insurance_product %}
+                              <div style="width: 99%;display: flex;align-items: center;">{{ item.quantity }}</div>
                             {% else %}
-                                {% unless item.product.id == 7952778658008 and has_insurance_product %}
+                                {% if item.product.id == 7952778658008 and has_insurance_product %}
                                 <div style="width: 100%;display: flex;align-items: center;">{{ item.quantity }}</div>
                               {% else  %}
                                   <quantity-input class="quantity">
@@ -251,8 +251,8 @@
                                       {% render 'icon-plus' %}
                                     </button>
                                   </quantity-input>
-                              {% endunless %}
-                            {% endunless %}
+                              {% endif %}
+                            {% endif %}
 
                             {% unless item.product.id != sale_product_id and discountTitle %}
                               <cart-remove-button id="CartDrawer-Remove-{{ item.index | plus: 1 }}" data-index="{{ item.index | plus: 1 }}">
