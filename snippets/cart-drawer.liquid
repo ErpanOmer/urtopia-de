@@ -570,9 +570,10 @@
   });
 
   $('.cart-drawer-items .accessories .item .my-button').on('click', e => {
-    const t = $(e.target)
+    const variant_id = $(e.target).closest('item').attr('variant-id')
 
-    console.log(t)
+    console.log('variant_id', variant_id)
+
   })
 
 
