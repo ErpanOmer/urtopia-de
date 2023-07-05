@@ -138,6 +138,8 @@ class CartDrawerItems extends CartItems {
     // 车总数
     let all_bikes_count = 0
     all_bikes.each((i, item) => {
+      console.log(item === bike[0])
+
       all_bikes_count += Number($(item).attr('data-quantity'))
     })
 
