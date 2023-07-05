@@ -172,6 +172,7 @@ class CartDrawerItems extends CartItems {
       throw new Error(error);
     }).finally(() => {
       this.disableLoading()
+      refreshProductCode()
     })
   }
 
