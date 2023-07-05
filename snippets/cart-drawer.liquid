@@ -615,13 +615,13 @@
 
 
           } else if (chord_quantly > 0) {
-            document.querySelector(`.product_code`).innerHTML = '' 
+            $('.drawer__footer .enjoy').hide()
             //document.querySelector(`.product_code .bold`).innerHTML = 'OK300'
             //document.querySelector(`.product_code .carbon_text > div:nth-child(1) span`).innerHTML = `Save €${chord_quantly * 300}.00!`
             //document.querySelector(`.product_code .carbon_text > div:nth-child(2)`).innerHTML = ''
           } else {
             if (carbon_quantly === 0) {
-              document.querySelector(`.product_code`).innerHTML = ''
+              $('.drawer__footer .enjoy').hide()
             } else {
               let sum = 0
 
@@ -635,6 +635,7 @@
 
 
               $('.drawer .cart__ctas .orderTestRideBtn .stages').text('112')
+              $('.drawer__footer .enjoy .ppppp').text(sum)
             }
           }
       }
