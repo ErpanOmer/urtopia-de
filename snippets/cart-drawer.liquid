@@ -11,6 +11,10 @@
   .drawer {
     visibility: hidden;
   }
+
+  .cart-drawer .drawer__cart-items-wrapper .cart-item{
+    grid-gap: 15px 0;
+  }
 </style>
 
 <cart-drawer class="drawer{% if cart == empty %} is-empty{% endif %}">
