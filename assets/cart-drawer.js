@@ -107,31 +107,26 @@ class CartDrawer extends HTMLElement {
 customElements.define('cart-drawer', CartDrawer);
 
 class CartDrawerItems extends CartItems {
-  updateCarbonOneWithComponents (event, lineItemVariantId, beforeQuantity, afterQuantity) {
+  updateCarbonOneWithComponents (lineItemVariantId, beforeQuantity, afterQuantity) {
     console.log('beforeQuantity', beforeQuantity)
     console.log('afterQuantity', afterQuantity)
 
     const updates = {}
-    const changes = {
-      sections: this.getSectionsToRender().map((section) => section.section),
-      sections_url: window.location.pathname
-    }
-    //
-    const bike = $(event.target.closest('.cart-item'))
+    // 
+    const bike = $(`.cart-items .cart-item[data-line-item-variant-id="${lineItemVariantId}"]`)
     const sale_name = bike.attr('data-line-item-sale-name')
-    const insurance_key = bike.attr('data-insurance-key')
 
     this.enableLoading(bike.attr('data-index'))
+    
 
     const components = $(`.cart-items .cart-item[data-line-item-sale-name="${sale_name}"]:not([data-line-item-variant-id="${lineItemVariantId}"]):not([data-line-item-product-id="${bike.attr('data-line-item-product-id')}"])`)
     const other_bikes = $(`.cart-items .cart-item[data-line-item-sale-name="${sale_name}"][data-line-item-product-id="${bike.attr('data-line-item-product-id')}"]:not([data-line-item-variant-id="${lineItemVariantId}"])`)
 
     // 查找保险产品
-    const insurance = $(`.cart-items .cart-item[data-insurance-product-variant-id="${lineItemVariantId}"][data-insurance-key="${insurance_key}"]`)
+    const insurance = $(`.cart-items .cart-item[data-insurance-product-variant-id="${lineItemVariantId}"]`)
     // 如果存在 跟车绑定的保险产品
     if (insurance.length) {
-      changes['line'] = Number(insurance.attr('data-line-item'))
-      changes['quantity'] = afterQuantity
+      updates[insurance.attr('data-line-item-variant-id')] = afterQuantity
     }
 
 
@@ -142,19 +137,27 @@ class CartDrawerItems extends CartItems {
 
     // 活动配件
     components.each((i, item) => {
-      updates[$(item).attr('data-cart-item')] = afterQuantity + other_bikes_quantity
+      updates[$(item).attr('data-line-item-variant-id')] = afterQuantity + other_bikes_quantity
     })
 
-    updates[bike.attr('data-cart-item')] = afterQuantity
+    updates[lineItemVariantId] = afterQuantity
 
     console.log('updates', updates)
 
-    const fn = parsedState => {
+    fetch('/cart/update.js', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': `application/json` },
+      body: JSON.stringify({ 
+        updates,
+        sections: this.getSectionsToRender().map((section) => section.section),
+        sections_url: window.location.pathname
+      })
+    }).then(response => response.json()).then(parsedState => {
       console.log('parsedState', parsedState)
       // location.reload(true);
       this.classList.toggle('is-empty', parsedState.item_count === 0);
       const cartDrawerWrapper = document.querySelector('cart-drawer');
-
+      
       this.getSectionsToRender().forEach((section => {
         const elementToReplace =
           document.getElementById(section.id).querySelector(section.selector) || document.getElementById(section.id);
@@ -165,27 +168,10 @@ class CartDrawerItems extends CartItems {
       if (cartDrawerWrapper) cartDrawerWrapper.classList.toggle('is-empty', parsedState.item_count === 0);
 
       return parsedState
-    }
-
-    fetch('/cart/update.js', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json', 'Accept': `application/json` },
-      body: JSON.stringify({ 
-        updates,
-        sections: this.getSectionsToRender().map((section) => section.section),
-        sections_url: window.location.pathname
-      })
-    }).then(response => response.json()).then(fn).then(() => {
-      return fetch('/cart/change.js', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', 'Accept': `application/json` },
-        body: JSON.stringify(changes)
-      }).then(response => response.json()).then(fn)
     }).catch((error) => {
       throw new Error(error);
     }).finally(() => {
       this.disableLoading()
-      refreshProductCode()
     })
   }
 
