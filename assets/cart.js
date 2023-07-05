@@ -12,11 +12,12 @@ class CartRemoveButton extends HTMLElement {
 
       const pruduct_id = lineItem.dataset.lineItemProductId
       const quantity = lineItem.dataset.quantity
+      const index = lineItem.dataset.lineItem
       console.log('pruduct_id', pruduct_id)
 
         // 如果是carbon one 单车
       if (pruduct_id === global_config.event_bike_product_id) {
-        return cartItems.updateCarbonOneWithComponents(lineId, parseInt(quantity), 0)
+        return cartItems.updateCarbonOneWithComponents(parseInt(index), lineId, parseInt(quantity), 0)
       }
 
       // Remove the Product and it's Insurance product
@@ -45,7 +46,7 @@ class CartItems extends HTMLElement {
     this.addEventListener('change', this.debouncedOnChange.bind(this));
   }
 
-  updateCarbonOneWithComponents (lineItemVariantId, beforeQuantity, afterQuantity) {
+  updateCarbonOneWithComponents (currentIndex, lineItemVariantId, beforeQuantity, afterQuantity) {
     console.log('beforeQuantity', beforeQuantity)
     console.log('afterQuantity', afterQuantity)
 
@@ -131,11 +132,12 @@ class CartItems extends HTMLElement {
     const lineId = lineItem.dataset.lineItemVariantId;
     const pruduct_id = lineItem.dataset.lineItemProductId
     const quantity = lineItem.dataset.quantity
+    const index = lineItem.dataset.lineItem
     console.log('pruduct_id', pruduct_id)
 
 
     if (pruduct_id === global_config.event_bike_product_id) {
-        return this.updateCarbonOneWithComponents(lineId, parseInt(quantity), parseInt(event.target.value));
+        return this.updateCarbonOneWithComponents(parseInt(index), lineId, parseInt(quantity), parseInt(event.target.value));
     }
     
     ////购物车逻辑
