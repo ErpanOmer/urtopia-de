@@ -141,7 +141,7 @@ class CartDrawerItems extends CartItems {
     // 活动配件
     components.each((i, item) => {
       updates.push({
-        id: Number($(item).attr('data-line-item')),
+        line: Number($(item).attr('data-line-item')),
         quantity: afterQuantity + other_bikes_quantity
       })
     })
