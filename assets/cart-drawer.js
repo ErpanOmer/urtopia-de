@@ -107,7 +107,7 @@ class CartDrawer extends HTMLElement {
 customElements.define('cart-drawer', CartDrawer);
 
 class CartDrawerItems extends CartItems {
-  updateCarbonOneWithComponents (lineItemVariantId, beforeQuantity, afterQuantity) {
+  updateCarbonOneWithComponents (event, lineItemVariantId, beforeQuantity, afterQuantity) {
     console.log('beforeQuantity', beforeQuantity)
     console.log('afterQuantity', afterQuantity)
 
@@ -117,6 +117,9 @@ class CartDrawerItems extends CartItems {
     const sale_name = bike.attr('data-line-item-sale-name')
 
     this.enableLoading(bike.attr('data-index'))
+
+
+    43650357657816:136947597e0f36d805ca48e107a5048c
     
 
     const components = $(`.cart-items .cart-item[data-line-item-sale-name="${sale_name}"]:not([data-line-item-variant-id="${lineItemVariantId}"]):not([data-line-item-product-id="${bike.attr('data-line-item-product-id')}"])`)

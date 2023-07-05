@@ -17,7 +17,7 @@ class CartRemoveButton extends HTMLElement {
 
         // 如果是carbon one 单车
       if (pruduct_id === global_config.event_bike_product_id) {
-        return cartItems.updateCarbonOneWithComponents(parseInt(index), lineId, parseInt(quantity), 0)
+        return cartItems.updateCarbonOneWithComponents(event, lineId, parseInt(quantity), 0)
       }
 
       // Remove the Product and it's Insurance product
@@ -137,7 +137,7 @@ class CartItems extends HTMLElement {
 
 
     if (pruduct_id === global_config.event_bike_product_id) {
-        return this.updateCarbonOneWithComponents(parseInt(index), lineId, parseInt(quantity), parseInt(event.target.value));
+        return this.updateCarbonOneWithComponents(event, lineId, parseInt(quantity), parseInt(event.target.value));
     }
     
     ////购物车逻辑
