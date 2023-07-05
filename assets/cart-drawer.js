@@ -111,12 +111,11 @@ class CartDrawerItems extends CartItems {
     console.log('beforeQuantity', beforeQuantity)
     console.log('afterQuantity', afterQuantity)
 
-    console.log('event', event.target.closest('.cart-item').dataset.insuranceKey)
-
-    const updates = {}
-    // 
-    const bike = $(`.cart-items .cart-item[data-line-item-variant-id="${lineItemVariantId}"]`)
+    const updates = []
+    //
+    const bike = $(event.target.closest('.cart-item'))
     const sale_name = bike.attr('data-line-item-sale-name')
+    const insurance_key = bike.attr('data-insurance-key')
 
     this.enableLoading(bike.attr('data-index'))
 
@@ -124,10 +123,13 @@ class CartDrawerItems extends CartItems {
     const other_bikes = $(`.cart-items .cart-item[data-line-item-sale-name="${sale_name}"][data-line-item-product-id="${bike.attr('data-line-item-product-id')}"]:not([data-line-item-variant-id="${lineItemVariantId}"])`)
 
     // 查找保险产品
-    const insurance = $(`.cart-items .cart-item[data-insurance-product-variant-id="${lineItemVariantId}"][data-insurance-key="${bike.attr('data-insurance-key')}"]`)
+    const insurance = $(`.cart-items .cart-item[data-insurance-product-variant-id="${lineItemVariantId}"][data-insurance-key="${insurance_key}"]`)
     // 如果存在 跟车绑定的保险产品
     if (insurance.length) {
-      updates[insurance.attr('data-cart-item')] = afterQuantity
+      updates.push({
+        line: Number(insurance.attr('data-line-item')),
+        quantity: afterQuantity
+      })
     }
 
 
@@ -138,14 +140,20 @@ class CartDrawerItems extends CartItems {
 
     // 活动配件
     components.each((i, item) => {
-      updates[$(item).attr('data-line-item-variant-id')] = afterQuantity + other_bikes_quantity
+      updates.push({
+        id: $(item).attr('data-line-item-variant-id'),
+        quantity: afterQuantity + other_bikes_quantity
+      })
     })
 
-    updates[lineItemVariantId] = afterQuantity
+    updates.push({
+      id: bike.attr('data-cart-item'),
+      quantity: afterQuantity
+    })
 
     console.log('updates', updates)
 
-    fetch('/cart/update.js', {
+    fetch('/cart/change.js', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', 'Accept': `application/json` },
       body: JSON.stringify({ 
