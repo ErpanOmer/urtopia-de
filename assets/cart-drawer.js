@@ -135,7 +135,7 @@ class CartDrawerItems extends CartItems {
     if (insurance.length) {
       updates[insurance.attr('data-cart-item')] = afterQuantity
 
-      updates2[insurance.attr('data-line-item')] = afterQuantity
+      updates2[insurance.attr('data-line-item') - 1] = afterQuantity
     }
 
     // 车总数
