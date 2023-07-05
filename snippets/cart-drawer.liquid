@@ -69,6 +69,7 @@
                       <tr 
                         id="CartDrawer-Item-{{ item.index | plus: 1 }}"
                         class="cart-item" role="row"
+                        data-index="{{ item.index | plus: 1 }}"
                         data-cart-item="{{ item.key }}"
                         data-line-item="{{ forloop.index }}"
                         data-quantity="{{- item.quantity -}}"
