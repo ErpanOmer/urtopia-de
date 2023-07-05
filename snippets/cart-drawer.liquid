@@ -39,6 +39,17 @@
     height: 30px;
     min-height: 30px;
   }
+
+  .cart-drawer .accessories .items {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .cart-drawer .accessories .items .item {
+    display: grid;
+    grid-template-columns: 75px 2fr 1fr;
+    grid-column-gap: 25px;
+  }
 </style>
 
 <cart-drawer class="drawer{% if cart == empty %} is-empty{% endif %}">
