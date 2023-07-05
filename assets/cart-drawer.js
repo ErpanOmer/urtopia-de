@@ -119,7 +119,7 @@ class CartDrawerItems extends CartItems {
 
     const updates = {}
     // 
-    const bike = $(`.cart-items .cart-item[data-line-item-variant-id="${lineItemVariantId}"]`)
+    const bike = $(e.target.closest('.cart-item'))
     const sale_name = bike.attr('data-line-item-sale-name')
 
     this.enableLoading(bike.attr('data-index'))
