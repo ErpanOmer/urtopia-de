@@ -314,19 +314,15 @@
         <div class="accessories">
           <div class="u14DemiBold_v2">Recommended for you</div>
           <div class="items mb12">
-                    {% for prod in collections['on-page'].products %}
+                    {% for prod in collections['carbon in cart'].products %}
                         {% if prod.available %}
                             {% assign variant = prod.variants | first %}
                             <div class="item" variant-id="{{ variant.id }}">
-                              <div class="u11Medium_v2">{{ prod.title }}</div>
-                              <div>
-                                <div>
-                                  <span class="u17DemiBold_v2">{{ prod.price | money }}</span>
-                                  <span class=u11Light_v2>
-                                    <i class="fa-solid fa-plus"></i>
-                                  </span>
-                                </div>
-                                {{ prod.featured_image | image_url: width: 400 | image_tag }}
+                              {{ prod.featured_image | image_url: width: 400 | image_tag }}
+                              <div class="u14DemiBold_v2">{{ prod.title }}</div>
+                              <div class="u14Medium_v2">
+                                <span>{{ prod.price | money }}</span>
+                                <div class="my-button my-button-origin">ADD</div>
                               </div>
                             </div>
                         {% endif %}
