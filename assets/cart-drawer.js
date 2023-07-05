@@ -118,10 +118,6 @@ class CartDrawerItems extends CartItems {
 
     this.enableLoading(bike.attr('data-index'))
 
-
-    43650357657816:136947597e0f36d805ca48e107a5048c
-    
-
     const components = $(`.cart-items .cart-item[data-line-item-sale-name="${sale_name}"]:not([data-line-item-variant-id="${lineItemVariantId}"]):not([data-line-item-product-id="${bike.attr('data-line-item-product-id')}"])`)
     const other_bikes = $(`.cart-items .cart-item[data-line-item-sale-name="${sale_name}"][data-line-item-product-id="${bike.attr('data-line-item-product-id')}"]:not([data-line-item-variant-id="${lineItemVariantId}"])`)
 
