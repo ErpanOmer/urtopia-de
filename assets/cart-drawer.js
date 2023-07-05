@@ -137,8 +137,8 @@ class CartDrawerItems extends CartItems {
 
 
     let other_bikes_quantity = 0
-    other_bikes.each((i, item) => {
-      other_bikes_quantity += Number($(item).attr('data-quantity'))
+    all_bikes.each((i, item) => {
+      // other_bikes_quantity += Number($(item).attr('data-quantity'))
     })
 
     // 活动配件
