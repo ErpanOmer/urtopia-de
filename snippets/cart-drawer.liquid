@@ -50,6 +50,23 @@
     grid-template-columns: 75px 2fr 1fr;
     grid-column-gap: 25px;
   }
+
+  .cart-drawer .accessories .items .item {
+    border: 1px solid #eee;
+    border-radius: 5px;
+  }
+
+  .cart-drawer .accessories .items .item .u14Medium_v2 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-between;
+  }
+
+  .cart-drawer .accessories .items .item .u14Medium_v2 .my-button {
+    padding: 5px 20px;
+    font-size: 12px;
+  }
 </style>
 
 <cart-drawer class="drawer{% if cart == empty %} is-empty{% endif %}">
