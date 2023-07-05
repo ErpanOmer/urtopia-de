@@ -314,7 +314,7 @@
         <div class="accessories">
           <div class="u14DemiBold_v2">Recommended for you</div>
           <div class="items mb12">
-                    {% for prod in collections['carbon in cart'].products %}
+                    {% for prod in collections['carbon-in-cart'].products %}
                         {% if prod.available %}
                             {% assign variant = prod.variants | first %}
                             <div class="item" variant-id="{{ variant.id }}">
