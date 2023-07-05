@@ -123,7 +123,7 @@ class CartDrawerItems extends CartItems {
     const other_bikes = $(`.cart-items .cart-item[data-line-item-sale-name="${sale_name}"][data-line-item-product-id="${bike.attr('data-line-item-product-id')}"]:not([data-line-item-variant-id="${lineItemVariantId}"])`)
 
     // 查找保险产品
-    const insurance = $(`.cart-items .cart-item[data-insurance-product-variant-id="${lineItemVariantId}"]`)
+    const insurance = $(`.cart-items .cart-item[data-insurance-product-variant-id="${lineItemVariantId}"][data-insurance-key="${bike.attr('data-insurance-key')}"]`)
     // 如果存在 跟车绑定的保险产品
     if (insurance.length) {
       updates[insurance.attr('data-line-item-variant-id')] = afterQuantity
