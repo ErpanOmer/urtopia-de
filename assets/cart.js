@@ -112,7 +112,9 @@ class CartItems extends HTMLElement {
     });
 
     const formData = {
-      updates: itemsQuantityArray
+      updates: itemsQuantityArray,
+      sections: this.getSectionsToRender().map((section) => section.section),
+      sections_url: window.location.pathname
     }
 
     let info = fetch('/cart/update.js', {
