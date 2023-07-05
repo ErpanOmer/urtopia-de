@@ -111,6 +111,8 @@ class CartDrawerItems extends CartItems {
     console.log('beforeQuantity', beforeQuantity)
     console.log('afterQuantity', afterQuantity)
 
+    console.log(event, event.target)
+
     const updates = {}
     // 
     const bike = $(`.cart-items .cart-item[data-line-item-variant-id="${lineItemVariantId}"]`)
