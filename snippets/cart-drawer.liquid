@@ -218,7 +218,7 @@
                             {%- assign is_insurance_product = true -%}
                           {%- endif -%}
 
-                          <div class="cart-item__quantity-wrapper">
+                          <div class="cart-item__quantity-wrapper" id="{{item.product.id}}" sale_product_id="{{sale_product_id}}" is_insurance_product="{{is_insurance_product}}" discountTitle="{{discountTitle}}">
                             {% if item.product.id!=sale_product_id and discountTitle or is_insurance_product %}
                               <div style="width: 100%;display: flex;align-items: center;">{{ item.quantity }}</div>
                             {% else %}
