@@ -161,7 +161,7 @@ class CartDrawerItems extends CartItems {
 
     $(`.cart-items .cart-item`).each((index, item) => {
       if (updates2[index] === undefined) {
-        updates2[index] = $(item).attr('data-quantity')
+        updates2[index] = Number($(item).attr('data-quantity'))
       }
     })
 
