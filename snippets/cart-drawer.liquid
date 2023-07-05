@@ -455,6 +455,7 @@
           </div>
           <div id="CartDrawer-CartErrors" role="alert"></div>
         </form>
+        {%- if cart != empty -%}
         <div class="accessories">
           <div class="u14DemiBold_v2">Recommended for you</div>
           <div class="items mb12">
@@ -472,7 +473,8 @@
                         {% endif %}
                     {% endfor %}
                 </div>
-        </div>
+          </div>
+        {%endif%}
       </cart-drawer-items>
       <div class="drawer__footer">
         <div class="enjoy emphasize">
