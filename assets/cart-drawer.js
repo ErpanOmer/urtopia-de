@@ -112,6 +112,10 @@ class CartDrawerItems extends CartItems {
     console.log('afterQuantity', afterQuantity)
 
     const updates = []
+    const changes = {
+      sections: this.getSectionsToRender().map((section) => section.section),
+      sections_url: window.location.pathname
+    }
     //
     const bike = $(event.target.closest('.cart-item'))
     const sale_name = bike.attr('data-line-item-sale-name')
@@ -126,10 +130,8 @@ class CartDrawerItems extends CartItems {
     const insurance = $(`.cart-items .cart-item[data-insurance-product-variant-id="${lineItemVariantId}"][data-insurance-key="${insurance_key}"]`)
     // 如果存在 跟车绑定的保险产品
     if (insurance.length) {
-      updates.push({
-        line: Number(insurance.attr('data-line-item')),
-        quantity: afterQuantity
-      })
+      changes['line'] = Number(insurance.attr('data-line-item'))
+      changes['quantity'] = afterQuantity
     }
 
 
@@ -141,27 +143,19 @@ class CartDrawerItems extends CartItems {
     // 活动配件
     components.each((i, item) => {
       updates.push({
-        line: Number($(item).attr('data-line-item')),
+        line: Number($(item).attr('data-cart-item')),
         quantity: afterQuantity + other_bikes_quantity
       })
     })
 
     updates.push({
-      line: Number(bike.attr('data-line-item')),
+      id: Number(bike.attr('data-cart-item')),
       quantity: afterQuantity
     })
 
     console.log('updates', updates)
 
-    fetch('/cart/change.js', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json', 'Accept': `application/json` },
-      body: JSON.stringify({ 
-        updates,
-        sections: this.getSectionsToRender().map((section) => section.section),
-        sections_url: window.location.pathname
-      })
-    }).then(response => response.json()).then(parsedState => {
+    const fn = parsedState => {
       console.log('parsedState', parsedState)
       // location.reload(true);
       this.classList.toggle('is-empty', parsedState.item_count === 0);
@@ -177,6 +171,27 @@ class CartDrawerItems extends CartItems {
       if (cartDrawerWrapper) cartDrawerWrapper.classList.toggle('is-empty', parsedState.item_count === 0);
 
       return parsedState
+    }
+
+    fetch('/cart/update.js', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': `application/json` },
+      body: JSON.stringify({ 
+        updates,
+        sections: this.getSectionsToRender().map((section) => section.section),
+        sections_url: window.location.pathname
+      })
+    }).then(response => response.json()).then(fn).then(() => {
+      return fetch('/cart/change.js', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': `application/json` },
+        body: JSON.stringify({ 
+          updates,
+          
+        })
+      }).then(response => response.json()).then(fn)
+
+
     }).catch((error) => {
       throw new Error(error);
     }).finally(() => {
