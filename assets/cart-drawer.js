@@ -38,7 +38,7 @@ class CartDrawer extends HTMLElement {
       console.log('containerToTrapFocusOn', containerToTrapFocusOn)
       console.log('focusElement', containerToTrapFocusOn)
 
-      trapFocus(containerToTrapFocusOn, focusElement);
+      // trapFocus(containerToTrapFocusOn, focusElement);
       }, 300);
     }, { once: true });
 
