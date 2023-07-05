@@ -637,6 +637,10 @@
                 $('.drawer .cart__ctas .orderTestRideBtn .stages').text('24 months, €112/month')
               }
 
+              if (sale_names['Pre-order Sale'] && sale_names['{{ settings.sale_name }}']) {
+                $('.drawer .cart__ctas .orderTestRideBtn .stages').text('24 months, €112/month')
+              }
+
 
               
               $('.drawer__footer .enjoy .ppppp').text(sum)
