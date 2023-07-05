@@ -28,8 +28,7 @@
               {%- if shop.customer_accounts_enabled and customer == nil -%}
                 <p class="cart__login-title h3 u17DemiBold_v2">{{ 'sections.cart.login.title' | t }}</p>
                 <p class="cart__login-paragraph u17DemiBold_v2">
-                  {{ 'sections.cart.login.paragraph_html' | t: link: routes.account_login_url }}
-                  {{ 'Log in' | link_to: routes.account_login_url, class: 'emphasize' }}to check out faster.
+                  {{ 'Log in' | link_to: routes.account_login_url, class: 'emphasize' }} to check out faster.
                 </p>
               {%- endif -%}
             </div>
