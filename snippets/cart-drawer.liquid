@@ -16,6 +16,10 @@
     grid-gap: 15px 0;
   }
 
+  .cart-drawer {
+    
+  }
+
   .cart-drawer .drawer__cart-items-wrapper .cart-item .quantity {
     max-width: 100px;
     height: 30px;
@@ -42,6 +46,7 @@
 
   .cart-drawer .accessories {
     background-color: #F7F8FA;
+    padding: 10px 0;
   }
   
   .cart-drawer .accessories .items {
@@ -107,7 +112,7 @@
         <h2 class="drawer__heading u36DemiBold_v2">{{ 'sections.cart.title' | t }}</h2>
         <button class="drawer__close" type="button" onclick="this.closest('cart-drawer').close()" aria-label="{{ 'accessibility.close' | t }}">{% render 'icon-close' %}</button>
       </div>
-      <cart-drawer-items {% if cart == empty %}class=" is-empty"{% endif %}>
+      <cart-drawer-items {% if cart == empty %}class=" is-empty"{% endif %} class="cart-drawer-items">
         <form action="{{ routes.cart_url }}" id="CartDrawer-Form" class="cart__contents cart-drawer__form" method="post">
           <div id="CartDrawer-CartItems" class="drawer__contents js-contents">
             {%- if cart != empty -%}
