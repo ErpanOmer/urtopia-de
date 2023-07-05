@@ -143,21 +143,21 @@ class CartDrawerItems extends CartItems {
     all_bikes.each((i, item) => {
       if (item === bike[0]) {
         all_bikes_count += beforeQuantity
-
-        updates2[bike.attr('data-line-item') - 1] = beforeQuantity
       } else {
         all_bikes_count += Number($(item).attr('data-quantity'))
-
-        updates2[$(item).attr('data-line-item') - 1] = beforeQuantity
       }      
     })
 
     // 活动配件
     components.each((i, item) => {
       updates[$(item).attr('data-cart-item')] = (all_bikes_count - beforeQuantity) + afterQuantity
+
+      updates2[$(item).attr('data-line-item') - 1] = (all_bikes_count - beforeQuantity) + afterQuantity
     })
 
     updates[bike.attr('data-cart-item')] = afterQuantity
+
+    updates2[bike.attr('data-line-item')] = afterQuantity
 
     console.log('updates', updates2)
 
