@@ -135,11 +135,10 @@ class CartDrawerItems extends CartItems {
       updates[insurance.attr('data-line-item-variant-id')] = afterQuantity
     }
 
-
-    let other_bikes_quantity = 0
+    // 车总数
+    let all_bikes_count = 0
     all_bikes.each((i, item) => {
-      console.log(Number($(item).attr('data-quantity')))
-      // other_bikes_quantity += 
+      all_bikes_count += Number($(item).attr('data-quantity'))
     })
 
     // 活动配件
