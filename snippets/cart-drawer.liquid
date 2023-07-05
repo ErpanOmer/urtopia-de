@@ -25,6 +25,15 @@
   .cart-drawer .drawer__cart-items-wrapper .cart-item .quantity .quantity__button {
     flex-shrink: unset;
   }
+
+  .cart-drawer .drawer__cart-items-wrapper .cart-item .quantity .cart-remove-button {
+    margin: 0;
+  }
+
+  .cart-drawer .drawer__cart-items-wrapper .cart-item .quantity .cart-remove-button .button {
+    height: 30px;
+    min-height: 30px;
+  }
 </style>
 
 <cart-drawer class="drawer{% if cart == empty %} is-empty{% endif %}">
@@ -268,7 +277,7 @@
                             {% endif %}
 
                             {% unless item.product.id != sale_product_id and discountTitle %}
-                              <cart-remove-button id="CartDrawer-Remove-{{ item.index | plus: 1 }}" data-index="{{ item.index | plus: 1 }}">
+                              <cart-remove-button id="CartDrawer-Remove-{{ item.index | plus: 1 }}" data-index="{{ item.index | plus: 1 }}" class="cart-remove-button">
                                 <button class="button button--tertiary" aria-label="{{ 'sections.cart.remove_title' | t: title: item.title }}">
                                   {% render 'icon-remove' %}
                                 </button>
