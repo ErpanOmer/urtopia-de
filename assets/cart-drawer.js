@@ -171,7 +171,7 @@ class CartDrawerItems extends CartItems {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', 'Accept': `application/json` },
       body: JSON.stringify({ 
-        updates,
+        updates: updates2,
         sections: this.getSectionsToRender().map((section) => section.section),
         sections_url: window.location.pathname
       })
