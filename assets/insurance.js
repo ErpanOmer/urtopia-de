@@ -336,7 +336,7 @@ function addToCartInsurance(parse, show = false) {
   
       if (formData.get('items[1]properties[_product_variant_id]') && formData.get('items[1]properties[_product_variant_id]') && formData.get('items[1]properties[_variant_name]')) {
         item1.properties = {
-          _product_variant_id: formData.get('items[1]properties[_product_variant_id]'),
+          _product_variant_id: $('input[name="id"]').val(),
           _model: formData.get('items[1]properties[_model]'),
           _variant_name: formData.get('items[1]properties[_variant_name]')
         }
