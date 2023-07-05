@@ -31,13 +31,15 @@ class CartDrawer extends HTMLElement {
     setTimeout(() => {this.classList.add('animate', 'active')});
 
     this.addEventListener('transitionend', () => {
-      const containerToTrapFocusOn = this.classList.contains('is-empty') ? this.querySelector('.drawer__inner-empty') : document.getElementById('CartDrawer');
+      setTimeout(() => {
+        const containerToTrapFocusOn = this.classList.contains('is-empty') ? this.querySelector('.drawer__inner-empty') : document.getElementById('CartDrawer');
       const focusElement = this.querySelector('.drawer__inner') || this.querySelector('.drawer__close');
 
       console.log('containerToTrapFocusOn', containerToTrapFocusOn)
       console.log('focusElement', containerToTrapFocusOn)
 
       trapFocus(containerToTrapFocusOn, focusElement);
+      }, 300);
     }, { once: true });
 
     document.body.classList.add('overflow-hidden');
