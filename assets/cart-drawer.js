@@ -132,7 +132,7 @@ class CartDrawerItems extends CartItems {
     const insurance = $(`.cart-items .cart-item[data-insurance-product-variant-id="${lineItemVariantId}"]`)
     // 如果存在 跟车绑定的保险产品
     if (insurance.length) {
-      updates[insurance.attr('data-line-item-variant-id')] = afterQuantity
+      updates[insurance.attr('data-cart-item')] = afterQuantity
     }
 
     // 车总数
@@ -147,10 +147,10 @@ class CartDrawerItems extends CartItems {
 
     // 活动配件
     components.each((i, item) => {
-      updates[$(item).attr('data-line-item-variant-id')] = (all_bikes_count - beforeQuantity) + afterQuantity
+      updates[$(item).attr('data-cart-item')] = (all_bikes_count - beforeQuantity) + afterQuantity
     })
 
-    updates[lineItemVariantId] = afterQuantity
+    updates[bike.attr('data-cart-item')] = afterQuantity
 
     console.log('updates', updates)
 
