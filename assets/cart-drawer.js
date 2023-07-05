@@ -157,7 +157,13 @@ class CartDrawerItems extends CartItems {
 
     updates[bike.attr('data-cart-item')] = afterQuantity
 
-    updates2[bike.attr('data-line-item')] = afterQuantity
+    updates2[bike.attr('data-line-item') - 1] = afterQuantity
+
+    $(`.cart-items .cart-item`).each((index, item) => {
+      if (updates2[index] === undefined) {
+        updates2[index] = $(item).attr('data-quantity')
+      }
+    })
 
     console.log('updates', updates2)
 
