@@ -118,6 +118,7 @@ class CartDrawerItems extends CartItems {
     console.log('afterQuantity', afterQuantity)
 
     const updates = {}
+    const updates2 = []
     // 
     const bike = $(e.target.closest('.cart-item'))
     const sale_name = bike.attr('data-line-item-sale-name')
@@ -133,6 +134,8 @@ class CartDrawerItems extends CartItems {
     // 如果存在 跟车绑定的保险产品
     if (insurance.length) {
       updates[insurance.attr('data-cart-item')] = afterQuantity
+
+      updates2[insurance.attr('data-line-item')] = afterQuantity
     }
 
     // 车总数
@@ -152,7 +155,7 @@ class CartDrawerItems extends CartItems {
 
     updates[bike.attr('data-cart-item')] = afterQuantity
 
-    console.log('updates', updates)
+    console.log('updates', updates2)
 
     fetch('/cart/update.js', {
       method: 'POST',
