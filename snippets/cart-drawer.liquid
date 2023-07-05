@@ -570,7 +570,8 @@
   });
 
   $('.cart-drawer-items .accessories .item .my-button').on('click', e => {
-    const sections = $('.cart-drawer-items')[0].getSectionsToRender()
+    const items = $('.cart-drawer-items')[0]
+    const sections = items.getSectionsToRender()
 
     const body = {
       sections: sections.map((section) => section.section),
@@ -591,6 +592,18 @@
       }
     }).then((res) => res.json()).then(parsedState => {
       console.log('parsedState', parsedState)
+
+      items.classList.toggle('is-empty', parsedState.item_count === 0);
+      const cartDrawerWrapper = document.querySelector('cart-drawer');
+
+      sections.forEach((section => {
+        const elementToReplace =
+          document.getElementById(section.id).querySelector(section.selector) || document.getElementById(section.id);
+        elementToReplace.innerHTML =
+        items.getSectionInnerHTML(parsedState.sections[section.section], section.selector);
+      }));
+
+      if (cartDrawerWrapper) cartDrawerWrapper.classList.toggle('is-empty', parsedState.item_count === 0);
 
     }).catch(e => {
       console.log()
