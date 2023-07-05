@@ -570,6 +570,8 @@
   });
 
   $('.cart-drawer-items .accessories .item .my-button').on('click', e => {
+    console.log($(e.target).closest('.item').attr('variant-id'))
+
     const items = $('.cart-drawer-items')[0]
     const sections = items.getSectionsToRender()
 
