@@ -126,7 +126,7 @@ class CartDrawerItems extends CartItems {
     const insurance = $(`.cart-items .cart-item[data-insurance-product-variant-id="${lineItemVariantId}"][data-insurance-key="${bike.attr('data-insurance-key')}"]`)
     // 如果存在 跟车绑定的保险产品
     if (insurance.length) {
-      updates[insurance.attr('data-line-item-variant-id')] = afterQuantity
+      updates[insurance.attr('data-cart-item')] = afterQuantity
     }
 
 
