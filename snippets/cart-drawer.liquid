@@ -210,8 +210,8 @@
                         </td>
 
                         <td class="cart-item__quantity" role="cell" headers="CartDrawer-ColumnQuantity">
-                          {%- assign discountTitle = item.discounts.first.title -%}
-                          {%- assign sale_product_id = 7633738727640 -%}
+                          {% assign discountTitle = item.discounts.first.title %}
+                          {% assign sale_product_id = 7633738727640 %}
                           {%- assign is_insurance_product = false -%}
               
                           {% if item.properties._product_variant_id != blank %}
