@@ -83,7 +83,11 @@ class CartItems extends HTMLElement {
     fetch('/cart/update.js', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', 'Accept': `application/json` },
-      body: JSON.stringify({ updates })
+      body: JSON.stringify({ 
+        updates,
+        sections: this.getSectionsToRender().map((section) => section.section),
+        sections_url: window.location.pathname
+      })
     }).then(response => response.json()).then(data => {
       // location.reload(true);
 
@@ -112,9 +116,7 @@ class CartItems extends HTMLElement {
     });
 
     const formData = {
-      updates: itemsQuantityArray,
-      sections: this.getSectionsToRender().map((section) => section.section),
-      sections_url: window.location.pathname
+      updates: itemsQuantityArray
     }
 
     let info = fetch('/cart/update.js', {
