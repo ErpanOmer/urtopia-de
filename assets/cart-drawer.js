@@ -143,8 +143,12 @@ class CartDrawerItems extends CartItems {
     all_bikes.each((i, item) => {
       if (item === bike[0]) {
         all_bikes_count += beforeQuantity
+
+        updates2[bike.attr('data-line-item') - 1] = beforeQuantity
       } else {
         all_bikes_count += Number($(item).attr('data-quantity'))
+
+        updates2[$(item).attr('data-line-item') - 1] = beforeQuantity
       }      
     })
 
