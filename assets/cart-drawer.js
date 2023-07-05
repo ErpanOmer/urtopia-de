@@ -111,7 +111,7 @@ class CartDrawerItems extends CartItems {
     console.log('beforeQuantity', beforeQuantity)
     console.log('afterQuantity', afterQuantity)
 
-    console.log(event, event.target)
+    console.log(event, $(event.target.closest('.cart-item')).attr('data-insurance-key'))
 
     const updates = {}
     // 
