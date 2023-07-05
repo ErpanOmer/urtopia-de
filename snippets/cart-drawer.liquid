@@ -226,7 +226,7 @@
                           {%- endif -%}
 
                           <div class="cart-item__quantity-wrapper" id="{{item.product.id}}" sale_product_id="{{sale_product_id}}" is_insurance_product="{{is_insurance_product}}" discountTitle="{{discountTitle}}">
-                            {% if item.product.id != sale_product_id %}
+                            {% if item.product.id != sale_product_id and discountTitle %}
                               <div style="width: 99%;display: flex;align-items: center;">{{ item.quantity }}</div>
                             {% else %}
                                 {% if item.product.id == 7952778658008 and has_insurance_product %}
