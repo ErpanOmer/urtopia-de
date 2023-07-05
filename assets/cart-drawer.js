@@ -152,19 +152,21 @@ class CartDrawerItems extends CartItems {
         sections: this.getSectionsToRender().map((section) => section.section),
         sections_url: window.location.pathname
       })
-    }).then(response => response.json()).then(data => {
+    }).then(response => response.json()).then(parsedState => {
+      console.log('parsedState', parsedState)
       // location.reload(true);
+      this.classList.toggle('is-empty', parsedState.item_count === 0);
+      const cartDrawerWrapper = document.querySelector('cart-drawer');
+      const cartFooter = document.getElementById('main-cart-footer');
 
-      console.log('data', data)
-
-      return data
+      return parsedState
     }).catch((error) => {
       throw new Error(error);
-    });
-
-    // this.disableLoading(index);
+    }).finally(() => {
+      this.disableLoading()
+    })
   }
-  
+
   getSectionsToRender() {
     return [
       {
