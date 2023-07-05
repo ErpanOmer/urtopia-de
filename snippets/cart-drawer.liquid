@@ -244,13 +244,13 @@
                               </quantity-input>
                             {% endif %}
 
-                            {% unless item.product.id!=sale_product_id %}
+                            {% if item.product.id!=sale_product_id %}
                               <cart-remove-button id="CartDrawer-Remove-{{ item.index | plus: 1 }}" data-index="{{ item.index | plus: 1 }}">
                                 <button class="button button--tertiary" aria-label="{{ 'sections.cart.remove_title' | t: title: item.title }}">
                                   {% render 'icon-remove' %}
                                 </button>
                               </cart-remove-button>
-                            {% endunless %}
+                            {% endif %}
                           </div>
 
                           <div id="CartDrawer-LineItemError-{{ item.index | plus: 1 }}" class="cart-item__error" role="alert">
