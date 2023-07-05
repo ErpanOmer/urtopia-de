@@ -185,13 +185,8 @@ class CartDrawerItems extends CartItems {
       return fetch('/cart/change.js', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', 'Accept': `application/json` },
-        body: JSON.stringify({ 
-          updates,
-          
-        })
+        body: JSON.stringify(changes)
       }).then(response => response.json()).then(fn)
-
-
     }).catch((error) => {
       throw new Error(error);
     }).finally(() => {
