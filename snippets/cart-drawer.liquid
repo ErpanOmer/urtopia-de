@@ -580,12 +580,7 @@
     const body = {
       sections: sections.map((section) => section.section),
       sections_url: window.location.pathname,
-      items: [
-        {
-          id,
-          quantity: 1
-        }
-      ]
+      items: [ { id, quantity: 1 } ]
     }
 
     fetch("/cart/add.js", {
