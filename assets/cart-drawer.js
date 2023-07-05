@@ -157,7 +157,15 @@ class CartDrawerItems extends CartItems {
       // location.reload(true);
       this.classList.toggle('is-empty', parsedState.item_count === 0);
       const cartDrawerWrapper = document.querySelector('cart-drawer');
-      const cartFooter = document.getElementById('main-cart-footer');
+
+      this.getSectionsToRender().forEach((section => {
+        const elementToReplace =
+          document.getElementById(section.id).querySelector(section.selector) || document.getElementById(section.id);
+        elementToReplace.innerHTML =
+          this.getSectionInnerHTML(parsedState.sections[section.section], section.selector);
+      }));
+
+      if (cartDrawerWrapper) cartDrawerWrapper.classList.toggle('is-empty', parsedState.item_count === 0);
 
       return parsedState
     }).catch((error) => {
