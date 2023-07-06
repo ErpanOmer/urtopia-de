@@ -249,16 +249,16 @@ const testRides = [
      stores: [
        {
          name: 'Anneke Gabriel',
-         phone: '+00491799955692',
+         phone: '+0049 171 74 24 105',
          email: 'yannick.vannoy@thecycleverse.com',
          timezone: "Mainz, Germany (GMT+1)",
          add: "Schwübb, 22529 Hamburg, Germany",
         imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Hamburg_19874cca-b8ea-4f39-824a-d987e3410a01.jpg?v=1683867163",
          testrideSpot: "Hamburg",
-         testRideSize: "M",
+         testRideSize: "L",
          isPartner: true,
          availableSizes: [
-          'Carbon One Size M'
+          'Carbon One Size L'
           ],
          businessHours: [
            "",
