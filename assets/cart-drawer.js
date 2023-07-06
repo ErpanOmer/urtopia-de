@@ -31,15 +31,13 @@ class CartDrawer extends HTMLElement {
     setTimeout(() => {this.classList.add('animate', 'active')});
 
     this.addEventListener('transitionend', () => {
-      setTimeout(() => {
-        const containerToTrapFocusOn = this.classList.contains('is-empty') ? this.querySelector('.drawer__inner-empty') : document.getElementById('CartDrawer');
+      const containerToTrapFocusOn = this.classList.contains('is-empty') ? this.querySelector('.drawer__inner-empty') : document.getElementById('CartDrawer');
       const focusElement = this.querySelector('.drawer__inner') || this.querySelector('.drawer__close');
 
       console.log('containerToTrapFocusOn', containerToTrapFocusOn)
       console.log('focusElement', containerToTrapFocusOn)
 
-      // trapFocus(containerToTrapFocusOn, focusElement);
-      }, 300);
+      trapFocus(containerToTrapFocusOn, focusElement);
     }, { once: true });
 
     document.body.classList.add('overflow-hidden');
@@ -78,7 +76,7 @@ class CartDrawer extends HTMLElement {
     setTimeout(() => {
       this.querySelector('#CartDrawer-Overlay').addEventListener('click', this.close.bind(this));
       this.open();
-      setTimeout(refreshProductCode, 300)
+      setTimeout(refreshProductCode, 200)
     });
   }
 
