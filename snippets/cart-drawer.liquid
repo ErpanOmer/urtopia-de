@@ -78,6 +78,7 @@
 
   .cart-drawer .drawer__footer .cart__ctas {
     flex-direction: column;
+    gap: 0;
   }
 
   .cart-drawer .drawer__footer .cart__ctas .orderTestRideBtn {
@@ -233,7 +234,18 @@
                   </thead>
 
                   <tbody role="rowgroup">
+                    {% assign has_carbon = false %}
+                    {% assign has_chord = false %}
+
                     {%- for item in cart.items -%}
+                      {% if item.product.id == 7633738727640 %}
+                        {% assign has_carbon = true %}
+                      {% endif %}
+
+                      {% if item.product.id == 7952778658008 %}
+                        {% assign has_chord = true %}
+                      {% endif %}
+
                       <tr 
                         id="CartDrawer-Item-{{ item.index | plus: 1 }}"
                         class="cart-item" role="row"
@@ -296,7 +308,23 @@
                                 {%- for option in item.options_with_values -%}
                                   <div class="product-option u14Medium_v2" style="line-height: 1.25em;color: #555;margin: 0;">
                                     <!--<dt>{{ option.name }}: </dt>-->
-                                    <dd>{{ option.value }}</dd>
+                                    <dd>{{ option.value }}
+                                      {% if option.name == 'Size' or option.name == 'Frame' %}
+                                        <span>
+                                        {% case option.value %}
+                                          {% when 'M' %}
+                                            (Fit for 170-185 cm)
+                                          {% when 'L' %}
+                                            (Fit for 180-195 cm)
+                                          {% when 'High-Step' %}
+                                            (Fit for 170cm - 195cm)
+                                          {% when 'Step-Through' %}
+                                            (Fit for 160cm - 185cm)
+                                          {% else %}
+                                      {% endcase %}
+                                        </span>
+                                      {% endif%}
+                                    </dd>
                                   </div>
                                 {%- endfor -%}
                               {%- endif -%}
@@ -455,10 +483,25 @@
           <div id="CartDrawer-CartErrors" role="alert"></div>
         </form>
         {%- if cart != empty -%}
-        <div class="accessories">
+
+        {% if has_carbon and has_chord %}
+            {% assign collection_value = 'carbon-in-cart' %}
+        {% elsif has_carbon %}
+            {% assign collection_value = 'carbon-in-cart' %}
+        {% elsif has_chord %}
+            {% assign collection_value = 'chord-in-cart' %}
+        {% else %}
+            {% assign collection_value = 'carbon-in-cart' %}
+        {% endif %}
+
+        <!-- {{has_carbon}} -->
+        <!-- {{has_chord}} -->
+
+        <div class="accessories" collection_value="{{collection_value}}">
           <div class="u14DemiBold_v2">Recommended for you</div>
           <div class="items mb12">
-                    {% for prod in collections['carbon-in-cart'].products %}
+
+                    {% for prod in collections[collection_value].products %}
                         {% if prod.available %}
                             {% assign variant = prod.variants | first %}
                             <div class="item" variant-id="{{ variant.id }}">
@@ -476,17 +519,19 @@
         {%endif%}
       </cart-drawer-items>
       <div class="drawer__footer">
-        <div class="enjoy emphasize">
-          <div class="u14DemiBold_v2">Enjoy the limited time only price!!!</div>
-          <div class="u14Medium_v2">
-            <img src="" alt="">
-            <span>Save $<span class="ppppp">600</span>.00!</span>
+        {% if has_carbon %}
+          <div class="enjoy emphasize">
+            <div class="u14DemiBold_v2">Enjoy the limited time only price!!!</div>
+            <div class="u14Medium_v2">
+              <img src="" alt="">
+              <span>Save $<span class="ppppp">600</span>.00!</span>
+            </div>
+            <div class="u14Medium_v2">
+              <img src="" alt="">
+              <span>Free accessories applied</span>
+            </div>
           </div>
-          <div class="u14Medium_v2">
-            <img src="" alt="">
-            <span>Free accessories applied</span>
-          </div>
-        </div>
+        {% endif %}
 
         {%- if settings.show_cart_note -%}
           <details id="Details-CartDrawer">
@@ -541,7 +586,7 @@
           <button type="submit" id="CartDrawer-Checkout" class="cart__checkout-button button" name="checkout" form="CartDrawer-Form"{% if cart == empty %} disabled{% endif %}>
             Proceed to Check Out
           </button>
-          <div onclick="testRideTrace('klarna_check_out', this)" class="orderTestRideBtn">
+          <div onclick="testRideTrace2('klarna_check_out', this)" class="orderTestRideBtn">
             <img class="twoooo"src="https://cdn.shopifycdn.net/s/files/1/0633/2068/6808/files/20230530-121400.png?v=1685420054"/>
             <span><span class="u17DemiBold_v2">0% APR Financing</span><span class="stages">24 months, €112/month</span></span>
           </div>
@@ -608,13 +653,11 @@
 
     }).catch(e => {
       console.log()
-    }).finally(() => {
-
-    })
+    }).finally(refreshProductCode)
   }
 
 
-  function testRideTrace(type = '', target) {
+  function testRideTrace2(type = '', target) {
     if (type === 'klarna_check_out') {
       fetchBuried('websiteclick', `cart-page`, { button: type, action_type: sessionStorage.carbon_one_a_b_test_flag }, true)
 
@@ -659,13 +702,13 @@
 
 
           } else if (chord_quantly > 0) {
-            $('.drawer__footer .enjoy').hide()
+            // $('.drawer__footer .enjoy').hide()
             //document.querySelector(`.product_code .bold`).innerHTML = 'OK300'
             //document.querySelector(`.product_code .carbon_text > div:nth-child(1) span`).innerHTML = `Save €${chord_quantly * 300}.00!`
             //document.querySelector(`.product_code .carbon_text > div:nth-child(2)`).innerHTML = ''
           } else {
             if (carbon_quantly === 0) {
-              $('.drawer__footer .enjoy').hide()
+              // $('.drawer__footer .enjoy').hide()
             } else {
               let sum = 0
 
