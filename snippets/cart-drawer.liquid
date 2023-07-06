@@ -193,7 +193,7 @@
             <div class="cart-drawer__empty-content">
               <h2 class="cart__empty-text u36DemiBold_v2">{{ 'sections.cart.empty' | t }}</h2>
               <button class="drawer__close" type="button" onclick="this.closest('cart-drawer').close()" aria-label="{{ 'accessibility.close' | t }}">{% render 'icon-close' %}</button>
-              <a href="{{ routes.collections_url }}" class="button" style="color: #fff;">Shop Urtopia E-Bike</a>
+              <a href="/collections/e-bikes" class="button" style="color: #fff;">Shop Urtopia E-Bike</a>
 
               {%- if shop.customer_accounts_enabled and customer == nil -%}
                 <p class="cart__login-title h3 u17DemiBold_v2">{{ 'sections.cart.login.title' | t }}</p>
