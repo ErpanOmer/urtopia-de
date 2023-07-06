@@ -225,7 +225,7 @@ class CartDrawerItems extends CartItems {
     })
 
     console.log('updates', updates)
-    this.fetchAndRefreshCart(updates2)
+    this.fetchAndRefreshCart(updates)
   }
 
   getSectionsToRender() {
