@@ -8,7 +8,7 @@
 <script src="{{ 'cart.js' | asset_url }}" defer="defer"></script>
 
 <style>
-  .orderTestRideBtn{
+  .cart-drawer .drawer__footer .orderTestRideBtn{
     width: 100%;
 	height: 47px;
 	font: normal normal 600 23px/28px Urbane;
@@ -35,11 +35,11 @@
       justify-items: right;
     }
 
-    .orderTestRideBtn:hover {
+    .cart-drawer .drawer__footer .orderTestRideBtn:hover {
       opacity: 0.7;
     }
   
-    .orderTestRideBtn > span {
+    .cart-drawer .drawer__footer .orderTestRideBtn > span {
     display: flex;
       width: 100%;
     flex-direction: column;
@@ -49,19 +49,19 @@
       font-weight: 500;
     }
   
-    .orderTestRideBtn > span .u17DemiBold_v2 {
+    .cart-drawer .drawer__footer .orderTestRideBtn > span .u17DemiBold_v2 {
     font-weight: 700;
     }
   
-    .orderTestRideBtn .oneeee {
+    .cart-drawer .drawer__footer .orderTestRideBtn .oneeee {
     width: 90px;
     }
   
-    .orderTestRideBtn .twoooo {
+    .cart-drawer .drawer__footer .orderTestRideBtn .twoooo {
     width: 95px;
     }
   
-    .orderTestRideBtn .threeee {
+    .cart-drawer .drawer__footer .orderTestRideBtn .threeee {
     width: 125px;
     }
   .drawer {
@@ -161,23 +161,23 @@
   }
 
   @media (max-width: 767px) {
-    .orderTestRideBtn{
+    .cart-drawer .drawer__footer .orderTestRideBtn{
       font-size:14px;
     }
   
-    .orderTestRideBtn > span {
+    .cart-drawer .drawer__footer .orderTestRideBtn > span {
       grid-template-columns: 0.7fr 1fr;
     }
   
-    .orderTestRideBtn .oneeee {
+    .cart-drawer .drawer__footer .orderTestRideBtn .oneeee {
       width: 80px;
       }
     
-      .orderTestRideBtn .twoooo {
+      .cart-drawer .drawer__footer .orderTestRideBtn .twoooo {
       width: 85px;
       }
     
-      .orderTestRideBtn .threeee {
+      .cart-drawer .drawer__footer .orderTestRideBtn .threeee {
       width: 110px;
       }
   }
