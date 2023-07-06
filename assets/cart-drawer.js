@@ -200,9 +200,26 @@ class CartDrawerItems extends CartItems {
   }
 
   removeInsuranceProducts (e) {
+    const updates = []
     const bike = $(e.target.closest('.cart-item'))
 
-    console.log(bike)
+    // 查找保险产品
+    const insurance = $(`.cart-items .cart-item[data-insurance-product-variant-id="${bike.attr('data-line-item-variant-id')}"][data-line-item="${Number(bike.attr('data-line-item')) + 1}"]`)
+
+    // 如果存在 跟车绑定的保险产品
+    if (insurance.length) {
+      updates[insurance.attr('data-line-item') - 1] = 0
+    }
+
+    updates[bike.attr('data-line-item') - 1] = 0
+    
+    $(`.cart-items .cart-item`).each((index, item) => {
+      if (updates[index] === undefined) {
+        updates[index] = Number($(item).attr('data-quantity'))
+      }
+    })
+
+    console.log('updates', updates)
 
   }
 
