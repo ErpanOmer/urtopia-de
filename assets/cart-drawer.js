@@ -199,7 +199,11 @@ class CartDrawerItems extends CartItems {
     })
   }
 
-  removeInsuranceProducts () {
+  removeInsuranceProducts (e) {
+    const bike = $(e.target.closest('.cart-item'))
+
+    console.log(bike)
+
   }
 
   getSectionsToRender() {
