@@ -303,6 +303,8 @@ function addToCartInsurance(parse, show = false) {
     !show && fetchBuried('websiteclick', `carbon-order-page`, { button: 'ATC' })
   }
 
+  const _insurance_key = Date.now().toString(36)
+
 
   const cart1New =
     document.querySelector("cart-notification") ||
@@ -323,7 +325,8 @@ function addToCartInsurance(parse, show = false) {
     
     if (formData.get('items[0]properties[_insurance_variant_id]')) {
       item0.properties = {
-        _insurance_variant_id: formData.get('items[0]properties[_insurance_variant_id]')
+        _insurance_variant_id: formData.get('items[0]properties[_insurance_variant_id]'),
+        // _insurance_key
       }
     }
     
@@ -336,9 +339,10 @@ function addToCartInsurance(parse, show = false) {
   
       if (formData.get('items[1]properties[_product_variant_id]') && formData.get('items[1]properties[_product_variant_id]') && formData.get('items[1]properties[_variant_name]')) {
         item1.properties = {
-          _product_variant_id: formData.get('items[1]properties[_product_variant_id]'),
+          _product_variant_id: $('input[name="id"]').val(),
           _model: formData.get('items[1]properties[_model]'),
-          _variant_name: formData.get('items[1]properties[_variant_name]')
+          _variant_name: formData.get('items[1]properties[_variant_name]'),
+          //_insurance_key
         }
       }
 
@@ -375,6 +379,7 @@ function addToCartInsurance(parse, show = false) {
         if (res1.items.length == 2) {
           swapElements(res1.items, 0, 1);
         }
+        cart1New.classList.contains('is-empty') && cart1New.classList.remove('is-empty');
         
         cart1New.renderContents(res1);
         !show && changeAddToCartText(parse, 0);
