@@ -541,7 +541,7 @@
           <button type="submit" id="CartDrawer-Checkout" class="cart__checkout-button button" name="checkout" form="CartDrawer-Form"{% if cart == empty %} disabled{% endif %}>
             Proceed to Check Out
           </button>
-          <div onclick="testRideTrace('klarna_check_out', this)" class="orderTestRideBtn">
+          <div onclick="testRideTrace2('klarna_check_out', this)" class="orderTestRideBtn">
             <img class="twoooo"src="https://cdn.shopifycdn.net/s/files/1/0633/2068/6808/files/20230530-121400.png?v=1685420054"/>
             <span><span class="u17DemiBold_v2">0% APR Financing</span><span class="stages">24 months, €112/month</span></span>
           </div>
@@ -614,7 +614,7 @@
   }
 
 
-  function testRideTrace(type = '', target) {
+  function testRideTrace2(type = '', target) {
     if (type === 'klarna_check_out') {
       fetchBuried('websiteclick', `cart-page`, { button: type, action_type: sessionStorage.carbon_one_a_b_test_flag }, true)
 
