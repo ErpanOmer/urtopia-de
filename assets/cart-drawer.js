@@ -199,6 +199,9 @@ class CartDrawerItems extends CartItems {
     })
   }
 
+  removeInsuranceProducts () {
+  }
+
   getSectionsToRender() {
     return [
       {
