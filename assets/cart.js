@@ -22,7 +22,7 @@ class CartRemoveButton extends HTMLElement {
 
       // Remove the Product and it's Insurance product
       if (insuranceId) {
-        cartItems.removeInsuranceProducts(lineId, insuranceId);
+        cartItems.removeInsuranceProducts(event, lineId, insuranceId);
       } else {
         cartItems.updateQuantity(this.dataset.index, 0,"","remove");//更改
       }
@@ -96,7 +96,7 @@ class CartItems extends HTMLElement {
     // this.disableLoading(index);
   }
 
-  removeInsuranceProducts(lineItemId, insuranceId) {
+  removeInsuranceProducts(event, lineItemId, insuranceId) {
     const items = document.querySelectorAll('.cart-items [data-cart-item]');
     let itemsQuantityArray = [];
 

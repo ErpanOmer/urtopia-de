@@ -112,6 +112,39 @@ class CartDrawer extends HTMLElement {
 customElements.define('cart-drawer', CartDrawer);
 
 class CartDrawerItems extends CartItems {
+  fetchAndRefreshCart(updates = []) {
+    fetch('/cart/update.js', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': `application/json` },
+      body: JSON.stringify({ 
+        updates,
+        sections: this.getSectionsToRender().map((section) => section.section),
+        sections_url: window.location.pathname
+      })
+    }).then(response => response.json()).then(parsedState => {
+      console.log('parsedState', parsedState)
+      // location.reload(true);
+      this.classList.toggle('is-empty', parsedState.item_count === 0);
+      const cartDrawerWrapper = document.querySelector('cart-drawer');
+      
+      this.getSectionsToRender().forEach((section => {
+        const elementToReplace =
+          document.getElementById(section.id).querySelector(section.selector) || document.getElementById(section.id);
+        elementToReplace.innerHTML =
+          this.getSectionInnerHTML(parsedState.sections[section.section], section.selector);
+      }));
+
+      if (cartDrawerWrapper) cartDrawerWrapper.classList.toggle('is-empty', parsedState.item_count === 0);
+
+      return parsedState
+    }).catch((error) => {
+      throw new Error(error);
+    }).finally(() => {
+      this.disableLoading()
+      refreshProductCode()
+    })
+  }
+
   updateCarbonOneWithComponents (e, lineItemVariantId, beforeQuantity, afterQuantity) {
     console.log('beforeQuantity', beforeQuantity)
     console.log('afterQuantity', afterQuantity)
@@ -167,36 +200,32 @@ class CartDrawerItems extends CartItems {
 
     console.log('updates', updates2)
 
-    fetch('/cart/update.js', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json', 'Accept': `application/json` },
-      body: JSON.stringify({ 
-        updates: updates2,
-        sections: this.getSectionsToRender().map((section) => section.section),
-        sections_url: window.location.pathname
-      })
-    }).then(response => response.json()).then(parsedState => {
-      console.log('parsedState', parsedState)
-      // location.reload(true);
-      this.classList.toggle('is-empty', parsedState.item_count === 0);
-      const cartDrawerWrapper = document.querySelector('cart-drawer');
-      
-      this.getSectionsToRender().forEach((section => {
-        const elementToReplace =
-          document.getElementById(section.id).querySelector(section.selector) || document.getElementById(section.id);
-        elementToReplace.innerHTML =
-          this.getSectionInnerHTML(parsedState.sections[section.section], section.selector);
-      }));
+    this.fetchAndRefreshCart(updates2)
+  }
 
-      if (cartDrawerWrapper) cartDrawerWrapper.classList.toggle('is-empty', parsedState.item_count === 0);
+  removeInsuranceProducts (e) {
+    const updates = []
+    const bike = $(e.target.closest('.cart-item'))
+    this.enableLoading(bike.attr('data-index'))
 
-      return parsedState
-    }).catch((error) => {
-      throw new Error(error);
-    }).finally(() => {
-      this.disableLoading()
-      refreshProductCode()
+    // 查找保险产品
+    const insurance = $(`.cart-items .cart-item[data-insurance-product-variant-id="${bike.attr('data-line-item-variant-id')}"][data-line-item="${Number(bike.attr('data-line-item')) + 1}"]`)
+
+    // 如果存在 跟车绑定的保险产品
+    if (insurance.length) {
+      updates[insurance.attr('data-line-item') - 1] = 0
+    }
+
+    updates[bike.attr('data-line-item') - 1] = 0
+    
+    $(`.cart-items .cart-item`).each((index, item) => {
+      if (updates[index] === undefined) {
+        updates[index] = Number($(item).attr('data-quantity'))
+      }
     })
+
+    console.log('updates', updates)
+    this.fetchAndRefreshCart(updates)
   }
 
   getSectionsToRender() {
