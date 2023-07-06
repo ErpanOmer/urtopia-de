@@ -456,16 +456,31 @@
           <div id="CartDrawer-CartErrors" role="alert"></div>
         </form>
         {%- if cart != empty -%}
+
+        {% assign has_carbon = false %}
+        {% assign has_chord = false %}
         {%- for item in cart.items -%}
-         {% if item.product.id == 7633738727640 %}
-            {% assign collection_value = 'carbon-in-cart' %}
-         {% elsif item.product.id == 7952778658008 %}
-            {% assign collection_value = 'chord-in-cart' %}
-         {% endif %}
-            {% assign collection_value = 'carbon-in-cart' %}
+
+          {% if item.product.id == 7633738727640 %}
+            {% assign has_carbon = true %}
+          {% endif %}
+
+          {% if item.product.id == 7952778658008 %}
+            {% assign has_chord = true %}
+          {% endif %}
         {% endfor %}
 
-        <div class="accessories">
+       {% if has_carbon and has_chord %}
+          {% assign collection_value = 'carbon-in-cart' %}
+       {% elsif has_carbon %}
+          {% assign collection_value = 'carbon-in-cart' %}
+       {% elsif has_carbon %}
+          {% assign collection_value = 'chord-in-cart' %}
+       {% else %}
+          {% assign collection_value = 'carbon-in-cart' %}
+       {% endif %}
+
+        <div class="accessories" collection_value="{{collection_value}}">
           <div class="u14DemiBold_v2">Recommended for you</div>
           <div class="items mb12">
 
