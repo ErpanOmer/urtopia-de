@@ -3,14 +3,22 @@
     "title": "Über Klarna-Finanzierung",
     "title1": "Wählen Sie Klarna als Zahlungsoption.",
     "title2": "Holen Sie sich, was Sie lieben, und entscheiden Sie, wie Sie bezahlen.",
+<<<<<<< HEAD
     "pay_in": "Zahlen Sie in 24 Monaten, 0% Sollzinssatz für Carbon 1/1s",
+=======
+    "pay_in": "Zahlen Sie in 24 Monaten, 0% Sollzinssatz für Carbon 1\/1s",
+>>>>>>> 648632360f8865dc129bad6b09dc1a273a33623b
     "month": "€\/Monat",
     "payments": "24 Raten",
     "fixed": "0 % p.a. (festen)",
     "total": "Gesamt",
     "limited": "*Aktionspreis, nur für begrenzte Zeit",
     "works": "Wie es funktioniert",
+<<<<<<< HEAD
     "work1": "Sie sind jetzt mit Ihrem ausgewählten Carbon 1/1s an der Kasse",
+=======
+    "work1": "Sie sind jetzt mit Ihrem ausgewählten Carbon 1\/1s an der Kasse",
+>>>>>>> 648632360f8865dc129bad6b09dc1a273a33623b
     "work2": "Geben Sie Ihre Kontaktinformationen und Lieferadresse ein und klicken Sie auf Weiter zum Versand.",
     "work3": "Bestätigen Sie Ihre Kontakt- und Lieferinformationen und klicken Sie auf Weiter zur Zahlung.",
     "work4": "Jetzt finden Sie Klarna als Zahlungsoption im Zahlungsbereich als Bild unter",
@@ -18,8 +26,13 @@
     "work6": "Nun werden Sie zum Klarna-Zahlungsportal weitergeleitet. Wähle monatliche Raten als Option, die am besten für dich passen.",
     "work7": "Genieße deinen Einkauf und lasse automatische Zahlungen den Rest erledigen",
     "button": "Weiter Auschecken",
+<<<<<<< HEAD
     "Klarna_for": "0 APR, 24 Monate, 112 €\/Monat für Carbon 1/1s",
     "Klarna_for2": "0 APR, 24 Monate, 124 €\/Monat für Carbon 1/1s",
+=======
+    "Klarna_for": "0 APR, 24 Monate, 112 €\/Monat für Carbon 1\/1s",
+    "Klarna_for2": "0 APR, 24 Monate, 124 €\/Monat für Carbon 1\/1s",
+>>>>>>> 648632360f8865dc129bad6b09dc1a273a33623b
     "Klarna_learn": "lernen, wie man"
   },
   "general": {
