@@ -139,15 +139,14 @@
         }
 
       .summer-sale {
-            background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_21467_2x_c38da697-0614-4c4d-ac28-4e49ce85bcb4.png?v=1688439940');
-            background-color: rgb(61, 197, 171);
+            background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_21039_2x_1cb9b026-5642-49ed-9914-abb3e6630212.jpg?v=1688695332');
 
             .centeral-content {
-                height: 85%;
+                // height: 85%;
                 
                 &>div {
                     & > img {
-                        max-width: 488px;
+                        max-width: 318px;
                     }
 
                     .u36DemiBold_v2 {
@@ -454,14 +453,16 @@
             }
 
           .summer-sale {
-                background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_21036_2x_f4be54f5-b0f8-44f6-bfb0-b2b2e71d3ef5.jpg?v=1688440816');
+                background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/prime_day_2x_3115957c-1fdb-4af1-90bd-988b22081918.jpg?v=1688696134');
 
                 .centeral-content {
                     height: 100%;
                     align-items: unset;
 
                     &>div {
-                        padding: 12vw 0 18vw;
+                        padding: 6vw 0 18vw;
+                        align-items: center;
+                        text-align: center;
 
                         & > img {
                             max-width: 192px;
