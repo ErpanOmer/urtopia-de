@@ -1255,6 +1255,19 @@ $sale_text_color: #13B698;
             .sizes {
                 display: grid;
                 grid-template-columns: 1fr 1fr;
+
+                .texts {
+                    display: flex;
+
+                    .text {
+                        display: flex;
+                        flex-direction: column;
+
+                        div + div {
+                            margin-top: 10px;
+                        }
+                    }
+                }
             }
         }
 
