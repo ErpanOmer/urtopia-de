@@ -1221,12 +1221,18 @@ $sale_text_color: #13B698;
 
             .u36DemiBold_v2 {
                 cursor: pointer;
+                
+                span {
+                    color: #999;
+                    margin-right: 10px;
+                    font-weight: 200;
+                }
             }
 
             .pf-c {
                 padding-left: 0;
                 padding-right: 0;
-                margin-right: 12px;
+                margin-right: 15px;
             }
         }
 
