@@ -8,6 +8,28 @@
 <script src="{{ 'cart.js' | asset_url }}" defer="defer"></script>
 
 <style>
+  .cart-drawer .drawer__cart-items-wrapper .cart-items thead {
+    margin-bottom: 12px;
+  }
+
+  .cart-drawer .drawer__cart-items-wrapper .cart-items th {
+    padding-bottom: 6px;
+  }
+
+  .cart-drawer .drawer__cart-items-wrapper .cart-drawer .cart-items td,
+  .cart-drawer .drawer__cart-items-wrapper .cart-drawer .cart-items > td+td{
+    padding-top: 0;
+  }
+
+  .cart-drawer .cart-item>td+td,
+  .cart-drawer .cart-items td {
+    padding-top: 0 !important;
+  }
+
+  .cart-drawer .drawer__heading {
+    margin: 0;
+  }
+
   .cart-drawer .drawer__footer .orderTestRideBtn{
     width: 100%;
 	height: 47px;
@@ -70,7 +92,29 @@
   }
 
   .cart-drawer .drawer__cart-items-wrapper .cart-item{
-    grid-gap: 12px 0;
+    grid-gap: 6px 0;
+    grid-template-columns: 60px 1fr 75px;
+  }
+
+  .cart-drawer .drawer__cart-items-wrapper .cart-item .cart-item__media {
+    max-width: 60px;
+  }
+
+  .cart-drawer .drawer__cart-items-wrapper .cart-item .cart-item__totals {
+    max-width: 75px;
+  }
+
+  .cart-drawer .drawer__cart-items-wrapper .cart-item .cart-item__totals .u14Medium_v2:not(.emphasize) {
+    font-size: 12px;
+  }
+
+  .cart-drawer .drawer__cart-items-wrapper .cart-item .cart-item__totals .price {
+    font-size: 14px;
+  }
+
+  .cart-drawer .drawer__cart-items-wrapper .cart-item .cart-item__details .u14Medium_v2,
+  .cart-drawer .drawer__cart-items-wrapper .cart-item .cart-item__details .u14DemiBold_v2 {
+    font-size: 12px;
   }
 
   .cart-drawer .drawer__footer {
@@ -131,6 +175,10 @@
     background-color: #F7F8FA;
     padding: 10px 1.5rem;
   }
+
+  .cart-drawer .accessories .u14DemiBold_v2 {
+    font-size: 12px;
+  }
   
   .cart-drawer .accessories .items {
     display: flex;
@@ -139,9 +187,9 @@
 
   .cart-drawer .accessories .items .item {
     display: grid;
-    grid-template-columns: 75px 2fr 1fr;
-    grid-column-gap: 25px;
-    margin-top: 20px;
+    grid-template-columns: 60px 2fr 1fr;
+    grid-column-gap: 10px;
+    margin-top: 10px;
   }
 
   .cart-drawer .accessories .items .item img {
@@ -571,7 +619,7 @@
             {%- endif -%}
           </div>
 
-          <!--<small class="tax-note caption-large rte">Tax(VAT) included. Free Shipping.</small>-->
+          <small class="tax-note caption-large rte">VAT included. Free Shipping.</small>
         </div>
 
         <!-- CTAs -->
