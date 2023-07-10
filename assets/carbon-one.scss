@@ -1229,6 +1229,7 @@ $sale_text_color: #13B698;
                     max-width: 30px;
                     transform: rotate(-90deg);
                     height: 15px;
+                    transition: all .3s;
                 }
 
                 span {
@@ -1238,7 +1239,7 @@ $sale_text_color: #13B698;
                 }
 
                 .down {
-
+                    transform: rotate(0);
                 }
             }
 
