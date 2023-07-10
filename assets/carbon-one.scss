@@ -1864,6 +1864,14 @@ $sale_text_color: #13B698;
                 .u36DemiBold_v2 {
                     font-size: 24px;
                 }
+
+                .sizes {
+                    grid-template-columns: 1fr;
+
+                    & > div {
+                        order: 1;
+                    }
+                }
             }
         }
     }
