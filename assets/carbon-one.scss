@@ -1870,6 +1870,13 @@ $sale_text_color: #13B698;
 
                     & > div {
                         order: 1;
+                        font-size: 12px;
+
+                        .text {
+                            div + div {
+                                margin-top: 10px;
+                            }
+                        }
                     }
                 }
             }
