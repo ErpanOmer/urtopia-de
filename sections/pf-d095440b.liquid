@@ -794,6 +794,25 @@
   </div>
 </div>
 
+<script>
+  $('.size-and-specs .titleeee').click(function () {
+        $(this)
+            .siblings('.size-and-specs .content')
+            .slideToggle()
+            .parent()
+            .siblings()
+            .find('.size-and-specs .content')
+            .slideUp();
+        $(this).children('i').toggleClass('faq-content-plus');
+        $(this)
+            .parent()
+            .siblings()
+            .find('.size-and-specs .titleeee')
+            .children('i')
+            .addClass('faq-content-plus');
+    });
+</script>
+
 <div class="__pf __pf_lUQL6LKn ever">
   <div class="centeral-content">
     <div
