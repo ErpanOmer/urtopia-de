@@ -701,7 +701,7 @@
 
     }).catch(e => {
       console.log()
-    }).finally(refreshProductCode)
+    }).finally(refreshProductCodeWithDrawer)
   }
 
 
@@ -713,7 +713,7 @@
     }
   }
 
-  function refreshProductCode () {
+  function refreshProductCodeWithDrawer () {
           const carbon = $(`.cart-items [data-line-item-product-id="${global_config.event_bike_product_id}"]`)
           const has_chord = document.querySelectorAll(`.cart-items [data-line-item-product-id="7952778658008"]`)
 
@@ -777,6 +777,6 @@
           }
       }
       
-  setTimeout(refreshProductCode, 300)
+  setTimeout(refreshProductCodeWithDrawer, 300)
 </script>
 
