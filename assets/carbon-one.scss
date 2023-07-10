@@ -1230,6 +1230,7 @@ $sale_text_color: #13B698;
                     transform: rotate(-90deg);
                     height: 15px;
                     transition: all .3s;
+                    margin-right: 5px;
                 }
 
                 span {
@@ -1256,6 +1257,10 @@ $sale_text_color: #13B698;
 
         .__pf_lUQL6LKn .pf-637_ {
             padding: 0;
+        }
+
+        .content {
+            display: none;
         }
     }
 }
