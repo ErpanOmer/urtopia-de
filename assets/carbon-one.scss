@@ -1221,6 +1221,15 @@ $sale_text_color: #13B698;
 
             .u36DemiBold_v2 {
                 cursor: pointer;
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+
+                img {
+                    max-width: 30px;
+                    transform: rotate(-90deg);
+                    height: 15px;
+                }
 
                 span {
                     color: #999;
@@ -1229,7 +1238,7 @@ $sale_text_color: #13B698;
                 }
 
                 .down {
-                    
+
                 }
             }
 
