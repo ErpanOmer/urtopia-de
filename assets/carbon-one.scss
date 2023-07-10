@@ -1217,11 +1217,15 @@ $sale_text_color: #13B698;
 .size-and-specs {
     .centeral-content {
         .item {
-            margin: 0;
             
+
             .u36DemiBold_v2 {
                 cursor: pointer;
             }
+        }
+
+        .item + .item {
+            margin-top: 20px;
         }
 
         .__pf_lUQL6LKn .pf-637_ {
