@@ -1253,7 +1253,8 @@ $sale_text_color: #13B698;
             }
 
             .sizes {
-                
+                display: grid;
+                grid-template-columns: 1fr 1fr;
             }
         }
 
@@ -1266,7 +1267,7 @@ $sale_text_color: #13B698;
         }
 
         .content {
-            display: none;
+            //display: none;
         }
     }
 }
