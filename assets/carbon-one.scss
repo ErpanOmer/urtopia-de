@@ -1214,6 +1214,16 @@ $sale_text_color: #13B698;
     }
 }
 
+.size-and-specs {
+    .centeral-content {
+        .item {
+            .u36DemiBold_v2 {
+                cursor: pointer;
+            }
+        }
+    }
+}
+
 
 @media (max-width: 767px) {
     .test-ride {
