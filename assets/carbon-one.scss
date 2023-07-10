@@ -1867,6 +1867,7 @@ $sale_text_color: #13B698;
 
                 .sizes {
                     grid-template-columns: 1fr;
+                    padding: 15px 0;
 
                     & > div {
                         order: 1;
@@ -1875,6 +1876,11 @@ $sale_text_color: #13B698;
                         .text {
                             div + div {
                                 margin-top: 10px !important;
+                                
+                            }
+
+                            .u17DemiBold_v2 {
+                                font-size: 14px;
                             }
                         }
                     }
