@@ -76,7 +76,7 @@ class CartDrawer extends HTMLElement {
     setTimeout(() => {
       this.querySelector('#CartDrawer-Overlay').addEventListener('click', this.close.bind(this));
       this.open();
-      setTimeout(refreshProductCode, 200)
+      setTimeout(refreshProductCodeWithDrawer, 200)
     });
   }
 
@@ -141,7 +141,7 @@ class CartDrawerItems extends CartItems {
       throw new Error(error);
     }).finally(() => {
       this.disableLoading()
-      refreshProductCode()
+      refreshProductCodeWithDrawer()
     })
   }
 
