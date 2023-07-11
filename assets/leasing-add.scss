@@ -1331,9 +1331,12 @@
                         grid-template-columns: 1fr;
                         margin-bottom: 24px;
                         grid-gap: 6px;
+                        border-top: 1px solid #ddd;
+                        padding-top: 24px;
+                        margin-top: 24px;
 
                         .u17DemiBold_v2 {
-                            padding: 9px 0;
+                            padding: 2px 0;
                             font-size: 14px;
                             background-color: transparent;
                             color: #000;
