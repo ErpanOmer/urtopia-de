@@ -454,9 +454,11 @@ setTimeout(() => {
         partnerSelect.sumo.add(item.name, item.name)
     }
 
+    partnerSelect.sumo.add('None of above/Not sure which one my employer provided', 'none')
+
     $('select[name="partner"]').on('change', e => {
         const v = e.target.value
-        console.log('e.target.value', )
+        console.log('e.target.value', v)
 
         $('input[name="offers"]').closest('.item').find('.u24Medium span').html(v)
 
