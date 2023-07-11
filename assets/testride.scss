@@ -378,7 +378,7 @@
 
             .u30DemiBold_v2 {
                 margin: 50px 0;
-                
+
                 & > div {
                     display: flex;
                     margin-top: 12px;
@@ -1240,6 +1240,14 @@
                             height: 80vw;
                         }
                     }
+                }
+            }
+        }
+
+        .golf-banner {
+            .centeral-content {
+                .u48DemiBold_v2 {
+                    font-size: 24px;
                 }
             }
         }
