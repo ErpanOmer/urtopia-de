@@ -1338,6 +1338,7 @@
                             background-color: transparent;
                             color: #000;
                             opacity: 1;
+                            align-items: baseline;
 
                             &::before {
                                 content: "";
@@ -1345,6 +1346,8 @@
                                 width: 10px;
                                 height: 10px;
                                 border-radius: 50%;
+                                background-color: #fd4b17;
+                                margin-right: 6px;
                             }
                         }
                     }
