@@ -1646,7 +1646,7 @@
                 $(`.product .product-panel .options .option .vanilla`).show();
 
                 $('.buttons .orderTestRideBtn .stages').text('112');
-                $('.product .buttons .jobrad').css({ height: '47px', overflow: 'unset', border: '2px solid #161c1f' });
+                // $('.product .buttons .jobrad').css({ height: '47px', overflow: 'unset', border: '2px solid #161c1f' });
             } else {
                 //$('.product .belt').hide()
                 //$('.product .gear').show()
@@ -1658,7 +1658,7 @@
 
                 $('.buttons .orderTestRideBtn .stages').text('124');
 
-                $('.product .buttons .jobrad').css({ height: 0, overflow: 'hidden', border: 'none' });
+                //$('.product .buttons .jobrad').css({ height: 0, overflow: 'hidden', border: 'none' });
             }
         }
 
@@ -1779,7 +1779,7 @@
     
             t.removeClass('loading')
             t.find('span').html(text)
-            return window.open(`/pages/ebike-leasing?bike_style=${current_variant.option1}&bike_size=${current_variant.option2}&utm_source=order_page#forms`)
+            return window.open(`/pages/ebike-leasing?bike_model=${current_variant.option1}&bike_style=${current_variant.option3}&bike_size=${current_variant.option2}&utm_source=order_page#forms`)
         }
     
         if (type === 'klarna_check_out') {

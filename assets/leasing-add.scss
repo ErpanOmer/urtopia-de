@@ -1333,8 +1333,22 @@
                         grid-gap: 6px;
 
                         .u17DemiBold_v2 {
-                            padding: 9px 6px;
+                            padding: 9px 0;
                             font-size: 14px;
+                            background-color: transparent;
+                            color: #000;
+                            opacity: 1;
+                            align-items: baseline;
+
+                            &::before {
+                                content: "";
+                                display: block;
+                                width: 10px;
+                                height: 10px;
+                                border-radius: 50%;
+                                background-color: #fd4b17;
+                                margin-right: 6px;
+                            }
                         }
                     }
 
