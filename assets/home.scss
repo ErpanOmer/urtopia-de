@@ -522,6 +522,24 @@
                 }
             }
 
+            .golf {
+                background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_21474_2x_34cbc7d2-48a9-4254-acfb-7f90ad400f4d.jpg?v=1689073592');
+    
+                .centeral-content {
+                    & > div {
+                        align-items: flex-start;
+    
+                        .u30DemiBold_v2 {
+                            margin-top: 28px;
+                        }
+    
+                        .u24Light_v2 {
+                            margin: 30px 0 50px;
+                        }
+                    }
+                }
+            }
+
 
 
             .count-down {
