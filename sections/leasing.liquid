@@ -458,7 +458,7 @@ setTimeout(() => {
         partnerSelect.sumo.add(item.name, item.name)
     }
 
-    partnerSelect.sumo.add('None of above/Not sure which one my employer provided', 'none')
+    partnerSelect.sumo.add('none', 'None of above/Not sure which one my employer provided')
 
     $('select[name="partner"]').on('change', e => {
         const v = e.target.value
