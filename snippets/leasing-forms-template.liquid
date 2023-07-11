@@ -496,6 +496,7 @@ setTimeout(() => {
     $('form .multiple-checkbox :input').on('change', e => {
         // 全部重置为默认状态
         $(`form .multiple-checkbox label`).removeClass('active')
+        
         $(`form .multiple-checkbox label img`).hide()
 
         $(`form .multiple-checkbox label[for="${e.currentTarget.id}"]`).addClass('active')
