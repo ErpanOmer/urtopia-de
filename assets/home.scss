@@ -528,13 +528,21 @@
                 .centeral-content {
                     & > div {
                         align-items: flex-start;
+
+                        .u72DemiBold_v2 {
+                            font-size: 48px;
+                        }
+
+                        .u36Medium_v2 {
+                            font-size: 18px;
+                        }
     
                         .u30DemiBold_v2 {
-                            margin-top: 28px;
+                            font-size: 18px;
                         }
     
                         .u24Light_v2 {
-                            margin: 30px 0 50px;
+                            font-size: 14px;
                         }
                     }
                 }
