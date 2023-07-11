@@ -241,6 +241,22 @@ if(Shopify.Checkout.step){
 }
 
 
+// 页面退出之前，往服务器提交数据
+$(document).on('page:load', function(e) {
+  console.log('e', e)
+
+  if (window.sessionStorage.clicked_klarna_checkout_button) {
+    fetchBuried('a-b-test', 'order-page-klarna', {
+      action_type: window.sessionStorage.carbon_one_a_b_test_flag,
+      payment_step: Shopify.Checkout.step,
+      value: Shopify.Checkout.totalPrice,
+      check_id: ecommerce.transaction_id,
+      ecommerce
+    })
+  }
+
+});
+
 let price = '112.45'
 
 if (ecommerce.items.find(item => item.title.includes('Carbon Belt')) && ecommerce.items.find(item => item.title.includes('Shimano Gear'))) {
@@ -299,7 +315,7 @@ $('.klarna .u14Medium_v2').html(price === '112.45' ? `{{ 'checkout_klarna.Klarna
       <span onclick="closeMiniDialog()" class="close">×</span>
     </div>`
 
-    // getSearchValues().show_klarna_dialog && showMiniDialog(html)
+    getSearchValues().show_klarna_dialog && showMiniDialog(html)
   
     setTimeout(() => {
       //jQuery('.klarna-dialog .close').on('click', closeMiniDialog)
@@ -307,24 +323,6 @@ $('.klarna .u14Medium_v2').html(price === '112.45' ? `{{ 'checkout_klarna.Klarna
 
       jQuery('.klarna').on('click', () => showMiniDialog(html))
     }, 100)
-
-    // 页面退出之前，往服务器提交数据
-$(document).on('page:load', function(e) {
-  console.log('e', e)
-
-  if (window.sessionStorage.clicked_klarna_checkout_button) {
-    fetchBuried('a-b-test', 'order-page-klarna', {
-      action_type: window.sessionStorage.carbon_one_a_b_test_flag,
-      payment_step: Shopify.Checkout.step,
-      value: Shopify.Checkout.totalPrice,
-      check_id: ecommerce.transaction_id,
-      ecommerce
-    })
-
-    showMiniDialog(html)
-  }
-
-});
   </script>
 </html>
 
