@@ -444,6 +444,10 @@ setTimeout(() => {
                 'justify-content': 'space-between'
             })
 
+            if (!find) {
+                return li
+            }
+
             li.append(`<img style="max-height: 20px;width: auto;" src="${find.img}"/>`)
 
             return li
