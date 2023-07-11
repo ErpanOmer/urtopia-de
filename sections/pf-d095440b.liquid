@@ -1779,7 +1779,7 @@
     
             t.removeClass('loading')
             t.find('span').html(text)
-            return window.open(`/pages/ebike-leasing?bike_style=${current_variant.option1}&bike_size=${current_variant.option2}&utm_source=order_page#forms`)
+            return window.open(`/pages/ebike-leasing?bike_model=${current_variant.option1}&bike_style=${current_variant.option3}&bike_size=${current_variant.option2}&utm_source=order_page#forms`)
         }
     
         if (type === 'klarna_check_out') {
