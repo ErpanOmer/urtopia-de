@@ -343,6 +343,7 @@ function mergeValues () {
     merge.bike_model = merge.bike_model === "Shimano Gear" ? "Carbon 1s" : "Carbon 1"
     merge.bike_size = merge.bike_size + ' - ' + (size_map[merge.bike_size] || '')
     merge.page_type = page_infos.page_name
+    merge.offers = forms.partner === 'none' ? 'no' : 'yes'
 
     {% unless template == "page.leasing" %}
         merge.partner = page_infos.page_name === 'jobrad' ? 'Jobrad' : 'Mein-dienstrad.de'
