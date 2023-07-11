@@ -537,7 +537,7 @@ $sale_text_color: #13B698;
                         line-height: 14px;
                         display: flex;
                         align-items: center;
-                        width: 40%;
+                        //width: 40%;
                         justify-content: space-between;
                         cursor: pointer;
 
@@ -550,6 +550,7 @@ $sale_text_color: #13B698;
                             font-size: 12px;
                             align-items: center;
                             justify-content: center;
+                            margin-left: 6px;
                         }
                     }
 
