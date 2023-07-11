@@ -366,6 +366,11 @@ function submit (forms = {}) {
 
 
     fetchBuried('leasing', 'submit', forms)
+
+    if (forms.offers === 'no') {
+        return
+    }
+
     // fbq
     fbq('track', 'CompleteRegistration', {
         value: 3596,
