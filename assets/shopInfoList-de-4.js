@@ -198,6 +198,9 @@ const testRides = [
           "09:00-12:00,12:00-18:00",
           "09:00-12:00,12:00-14:00",
         ],
+        disableDate: [
+          '2023-7-13'
+        ]
       },
       {
         name: 'fahrradladen-wulf',
