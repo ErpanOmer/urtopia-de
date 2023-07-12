@@ -3,14 +3,35 @@
 {{ 'testride.scss.css' | asset_url | stylesheet_tag }}
 
 <div class="testride">
-    <div class="banner">
+    <!--<div class="banner">
         <div class="centeral-content">
             <div class="u48DemiBold_v2">Your first hand on Urtopia</div>
             <div class="u17Medium_v2"></div>
             <div class="u17Medium_v2">
                 Take your first step in to experience the stunning appearance and smooth riding. Book a test ride today with our partners and ambassadors! Their extensive expertise and enthusiasm will help you out with any questions in and out.
             </div>
-            <!--<div class="my-button my-button-origin">Learn more</div>-->
+            <div class="my-button my-button-origin">Learn more</div>
+        </div>
+    </div>-->
+    <div class="golf-banner">
+        <div class="centeral-content">
+            <div class="u48DemiBold_v2">Golf Charity Tournament</div>
+            <div class="flex-1 pcHide"></div>
+            <div class="u30DemiBold_v2">
+                <div>
+                <span>Registration:</span>
+                <span class="u24Light_v2">Urtopia@eitap.de</span>
+                </div>
+                <div>
+                    <span>Event Location:</span>
+                    <span class="u24Light_v2">Golf&More in Duisburg</span>
+                </div>
+                <div>
+                    <span>Event Date:</span>
+                    <span class="u24Light_v2">July 15, 2023, 15:00 - 19:00<br class="mobileHide">(German time)</span>
+                </div>
+            </div>
+            <div class="my-button my-button-origin">Test-Ride Now</div>
         </div>
     </div>
     <div class="map" id="map">
@@ -642,37 +663,37 @@
 
 
     const sale_store = {
-        name: 'Golf & Bike',
-        phone: '+4917632496651',
-        email: 'info@golfclubhosel.de',
+        name: 'Golf Charity Tournament',
+        phone: '',
+        email: 'Urtopia@eitap.de',
         timezone: "Mainz, Germany (GMT+1)",
-        add: "Höseler Str. 147, 42579 Heiligenhaus, Germany",
+        add: "Golf&More in Duisburg",
         imgUrl: "https://cdn.shopifycdn.net/s/files/1/0633/2068/6808/files/20230607-142007.jpg?v=1686118943",
-        testrideSpot: "Berlin",
-        testRideSize: "M, Chord",
+        testrideSpot: "Duisburg",
+        testRideSize: "M/L",
         isPartner: true,
         availableSizes: [
-          'Carbon One Size M',
+          'Carbon One Size M/L',
           'Chord'
         ],
         isAutoSelected: true,
         businessHours: [
-          "09:00-16:00",
           "",
           "",
           "",
           "",
           "",
           "",
+          "15:00-19:00",
         ],
-        disableDate: createdisableDates(100, ['2023-6-18']),
+        disableDate: createdisableDates(100, ['2023-7-15']),
       }
 
     // banner 按钮
-    $('.testride .banner .my-button').on('click', () => {
-        // booknow(sale_store)
+    $('.testride .golf-banner .my-button').on('click', () => {
+        booknow(sale_store)
 
-        location.href = '/blogs/blog/urtopia-is-gear-up-for-eurobike-2023'
+        //location.href = '/blogs/blog/urtopia-is-gear-up-for-eurobike-2023'
     })
 
     search.from_home_page && booknow(sale_store)

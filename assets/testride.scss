@@ -362,6 +362,37 @@
         }
     }
 
+    .golf-banner {
+        background: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_21475_2x_6b99ab57-f8c7-48a4-bbff-f3d17ae55e22.jpg?v=1689074243') center center/cover no-repeat;
+        height: 536px;
+        color: #fff;
+        display: flex;
+
+        .centeral-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            width: 100%;
+            height: 100%;
+
+            .u30DemiBold_v2 {
+                margin: 50px 0;
+
+                & > div {
+                    display: flex;
+                    margin-top: 12px;
+
+                    span {
+                        &:first-child {
+                            min-width: 300px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
     .explained {
         background-color: #F7F8FA;
 
@@ -1208,6 +1239,32 @@
                             margin: 0;
                             height: 80vw;
                         }
+                    }
+                }
+            }
+        }
+
+        .golf-banner {
+            background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_21477_2x_fa448c3a-9e67-47dd-afe0-c8903abd76be.jpg?v=1689075496');
+            .centeral-content {
+                padding: 12vw 4vw 12vw;
+
+                .u48DemiBold_v2 {
+                    font-size: 24px;
+                }
+
+                .u30DemiBold_v2 {
+                    font-size: 18px;
+                    margin: 24px 0;
+
+                    & > div {
+                        flex-direction: column;
+                        margin-top: 18px;
+                    }
+
+                    .u24Light_v2 {
+                        font-size: 14px;
+                        margin-top: 6px;
                     }
                 }
             }
