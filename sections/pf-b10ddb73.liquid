@@ -1308,14 +1308,6 @@ new Swiper('#section3', {
 
 
 <script>
-{%- assign xxxx = collections['chord-accessories'].products -%}
-{%- assign xxxs = collections['chord-accessories-1'].products -%}
-{%- assign xxx = xxxx | concat: xxxs -%}
-
-{% for x in xxx %}
-  console.log('xxxx', {{ x | json }})
-{% endfor %}
-
 new Swiper('#section5', {    
         spaceBetween: 15,
         slidesPerView: isMobile ? 1 : 4,
