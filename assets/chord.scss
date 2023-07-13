@@ -28,6 +28,16 @@ $sale_text_color: #13B698;
         box-sizing: border-box;
     }
 
+    .fenders {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        img {
+            max-width: 116px;
+        }
+    }
+
     .centeral-content {
         display: grid;
         grid-template-columns: 1.77fr 1fr;
