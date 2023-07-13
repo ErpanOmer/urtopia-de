@@ -2551,3 +2551,11 @@ section.mobile-motor {
     border-radius: 25px;
     overflow: hidden;
 }
+
+.vanmoof .centeral-content > div .u24Light_v2 {
+    margin: 28px 0 40px;
+}
+
+.vanmoof .centeral-content > div .my-button {
+    margin-bottom: 40px;
+}
