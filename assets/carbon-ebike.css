@@ -617,7 +617,7 @@ img {
 section.more {
     height: auto;
     padding: 80px 0px;
-    padding-top: 240px;
+    padding-top: 0;
 }
 
 .more .more-container>h2 {
