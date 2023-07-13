@@ -165,31 +165,8 @@ $sale_text_color: #13B698;
 
                     .active {
                         background-color: transparent !important;
-                        border: 2px solid #666;
-
-                        &[attribute="Sirius"]::after {
-                            background-color: #FA812B;
-                        }
-
-                        &[attribute="Lyra"]::after {
-                            background-color: #747474;
-                        }
-
-                        &[attribute="vanilla"]::after {
-                            background-color: #FAF5E7;
-                        }
-
-                        &[attribute="Midnight in Paris"]::after {
-                            background-color: #FFEC0B;
-                        }
-
-                        &[attribute="Midnight in Paris"]::before {
-                            left: 2px;
-                            top: 2px;
-                            right: 2px;
-                            height: 14px;
-                            width: 26px;
-                        }
+                        border: 2px solid #000;
+                        background-color: #000;
                     }
                 }
 
