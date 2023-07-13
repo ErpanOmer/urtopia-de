@@ -224,7 +224,7 @@
             $(`.product .product-panel .Frame > div[attribute="${frame}"]`).addClass('active')
 
             if (frame === 'High-Step') {
-              $(`.product .product-panel .accessories .chord-accessories-1 .item`).removeClass('active')
+              $(`.product .product-panel .accessories .chord-accessories-1 .active`).click()
               $(`.product .product-panel .accessories .chord-accessories`).show()
               $(`.product .product-panel .accessories .chord-accessories-1`).hide()
 
@@ -232,7 +232,7 @@
 
 
             } else {
-              $(`.product .product-panel .accessories .chord-accessories .item`).removeClass('active')
+              $(`.product .product-panel .accessories .chord-accessories .active`).click()
               $(`.product .product-panel .accessories .chord-accessories`).hide()
               $(`.product .product-panel .accessories .chord-accessories-1`).show()
 
