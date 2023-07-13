@@ -639,6 +639,11 @@ $sale_text_color: #13B698;
             .u17Light_v2 {
                 font-size: 14px;
             }
+
+            & > div {
+                text-align: left;
+                margin-left: 5%;
+            }
         }
     
         .centeral-content {
