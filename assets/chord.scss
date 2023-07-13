@@ -185,6 +185,7 @@ $sale_text_color: #13B698;
                         padding: 4px 25px;
                         border: 2px solid #000;
                         border-radius: 30px;
+                        cursor: pointer;
                     }
 
                     div + div {
@@ -192,7 +193,7 @@ $sale_text_color: #13B698;
                     }
 
                     .active {
-                        background-color: #fff;
+                        background-color: #000;
                         color: #fff;
                     }
                 }
