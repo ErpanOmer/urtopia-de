@@ -2571,6 +2571,10 @@ section.mobile-motor {
         grid-row-gap: 25px;
     }
 
+    .vanmoof .centeral-content > div > div {
+        padding: 8vw;
+    }
+
     .vanmoof .centeral-content > div  > div .u36DemiBold_v2 {
         font-size: 24px;
     }
