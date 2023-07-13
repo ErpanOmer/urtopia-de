@@ -190,6 +190,11 @@ $sale_text_color: #13B698;
                     div + div {
                         margin-left: 15px;
                     }
+
+                    .active {
+                        background-color: #fff;
+                        color: #fff;
+                    }
                 }
             }
 
