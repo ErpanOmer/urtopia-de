@@ -110,6 +110,33 @@ const global_config = {
         ]
       }
     },
+    // 产品图下面的media模块, 根据产品图 循环轮播 
+    product_media_images: [
+      {
+        text: `“Best Electric Bike for 2022”`,
+        img: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/CNET-Logo_2x_585b6404-bc14-4a34-af64-299587c59efd.png?v=1687187217"
+      },
+      {
+        text: `“Urtopia is an over the top e-bike”`,
+        img: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18604_2x_dbde7d31-6b13-4fa7-80be-7f7c1ea23c13.png?v=1687188893"
+      },
+      {
+        text: `“Eye-catching styled carbon frame”`,
+        img: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18605_2x_1fb17080-bba1-42a3-a5e0-b5a5fe63c252.png?v=1687188923"
+      },
+      {
+        text: `“The carbon pedelec from Urtopia is also stylish, light and electric.”`,
+        img: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18537_2x_ab067425-468d-4359-8136-daf2681d1af6.png?v=1687188959"
+      },
+      {
+        text: `“Lightweight, networked and highly secure”`,
+        img: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18603_2x_a65ec9f7-1b63-459d-8b53-fb3624b5d492.png?v=1687188993"
+      },
+      {
+        text: `“Lightweight carbon fiber road e-bike with affordably-price”`,
+        img: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18602_2x_d83cb682-76f4-43f5-809c-0212ebf68b24.png?v=1687188826"
+      }
+    ],
     ebike_delivery_time: {
       // outlet carbon 1
       43820311281880: 'Ships within <span>7 business days</span> from local warehouse.',
