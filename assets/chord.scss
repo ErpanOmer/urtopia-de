@@ -55,6 +55,12 @@ $sale_text_color: #13B698;
             }
         }
 
+        #credit-promotion-badge *::part(osm-container) {
+            padding: 0;
+            border: none;
+            line-height: 12px;
+        }
+
         .product-panel {
             display: flex;
             flex-direction: column;
