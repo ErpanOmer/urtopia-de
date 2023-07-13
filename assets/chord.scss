@@ -154,33 +154,12 @@ $sale_text_color: #13B698;
                             border-radius: 100%;
                         }
 
-                        &[attribute="Sirius"] {
-                            background-color: #FA812B;
+                        &[attribute="White"] {
+                            background-color: #fff;
                         }
 
-                        &[attribute="Lyra"] {
-                            background-color: #747474;
-                        }
-
-                        &[attribute="vanilla"] {
-                            background-color: #FAF5E7;
-                        }
-
-                        &[attribute="Midnight in Paris"] {
-                            background-color: #FFEC0B;
-                            position: relative;
-                        }
-
-                        &[attribute="Midnight in Paris"]::before {
-                            content: "";
-                            display: inline-block;
-                            background-color: #ff6c00;
-                            position: absolute;
-                            z-index: 1;
-                            width: 100%;
-                            height: 55%;
-                            border-top-right-radius: 100px;
-                            border-top-left-radius: 100px;
+                        &[attribute="Black"] {
+                            background-color: #000;
                         }
                     }
 
