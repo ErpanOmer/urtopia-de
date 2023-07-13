@@ -2569,6 +2569,7 @@ section.mobile-motor {
 @media (max-width: 767px) {
     .vanmoof {
         margin-top: 30vw;
+        height: 100vh;
     }
 
     .vanmoof .centeral-content {
