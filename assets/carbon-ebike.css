@@ -2543,4 +2543,10 @@ section.mobile-motor {
 .vanmoof .centeral-content {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    grid-column-gap: 40px;
+}
+
+.vanmoof .centeral-content > div {
+    border-radius: 25px;
+    overflow: hidden;
 }
