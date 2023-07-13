@@ -1309,7 +1309,7 @@ new Swiper('#section3', {
 
 <script>
 {% assign variable = collections['chord-accessories-1'].products | concat: collections['chord-accessories-1'].products %}
-console.log({{ variable }})
+console.log({{ variable | json }})
 new Swiper('#section5', {    
         spaceBetween: 15,
         slidesPerView: isMobile ? 1 : 4,
