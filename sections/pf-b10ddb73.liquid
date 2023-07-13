@@ -1309,7 +1309,7 @@ new Swiper('#section3', {
 
 <script>
   
-console.log({{collections | json }})
+console.log({{collections['chord-accessories-1'].products | concat: collections['chord-accessories-1'].products   }})
 new Swiper('#section5', {    
         spaceBetween: 15,
         slidesPerView: isMobile ? 1 : 4,
