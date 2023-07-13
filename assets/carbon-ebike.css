@@ -2568,5 +2568,6 @@ section.mobile-motor {
 @media (max-width: 767px) {
     .vanmoof .centeral-content {
         grid-template-columns: 1fr;
+        grid-row-gap: 25px;
     }
 }
