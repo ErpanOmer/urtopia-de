@@ -56,6 +56,10 @@ const global_config = {
     },
     // chrod order page 配置项
     chord_order_page_config: {
+      // 产品图
+      product_images: {
+
+      },
       ebike_delivery_time: {
               
         // chord
