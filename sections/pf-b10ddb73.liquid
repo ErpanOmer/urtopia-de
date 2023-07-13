@@ -257,7 +257,7 @@
         }
 
 
-        if (frame !== current_frame && style !== current_style) {
+        if (frame !== current_frame || style !== current_style) {
             current_variant = findVariantOptions(frame, style)
             current_variant_id = current_variant.id
             current_frame = frame
