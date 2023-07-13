@@ -166,7 +166,15 @@ $sale_text_color: #13B698;
                     .active {
                         background-color: transparent !important;
                         border: 2px solid #000;
-                        background-color: #000;
+                        
+
+                        &[attribute="White"]::after {
+                            background-color: #000;
+                        }
+
+                        &[attribute="Black"]::after {
+                            background-color: #000;
+                        }
                     }
                 }
 
