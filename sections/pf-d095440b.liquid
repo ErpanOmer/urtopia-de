@@ -1499,95 +1499,6 @@
     const styles = {}
     const sizes = {}
     const models = {}
-
-    const commonSwiper = [
-        'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230620-232407.png?v=1687274659',
-        'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230620-232428.png?v=1687274678',
-        'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230620-232506.png?v=1687274717',
-        'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230620-232525.png?v=1687274790',
-        'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230620-232545.png?v=1687274794',
-        'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230620-232556.png?v=1687274807'
-    ]
-
-    const medias = [
-        {
-            text: `“Best Electric Bike for 2022”`,
-            img: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/CNET-Logo_2x_585b6404-bc14-4a34-af64-299587c59efd.png?v=1687187217"
-        },
-        {
-            text: `“Urtopia is an over the top e-bike”`,
-            img: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18604_2x_dbde7d31-6b13-4fa7-80be-7f7c1ea23c13.png?v=1687188893"
-        },
-        {
-            text: `“Eye-catching styled carbon frame”`,
-            img: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18605_2x_1fb17080-bba1-42a3-a5e0-b5a5fe63c252.png?v=1687188923"
-        },
-        {
-            text: `“The carbon pedelec from Urtopia is also stylish, light and electric.”`,
-            img: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18537_2x_ab067425-468d-4359-8136-daf2681d1af6.png?v=1687188959"
-        },
-        {
-            text: `“Lightweight, networked and highly secure”`,
-            img: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18603_2x_a65ec9f7-1b63-459d-8b53-fb3624b5d492.png?v=1687188993"
-        },
-        {
-            text: `“Lightweight carbon fiber road e-bike with affordably-price”`,
-            img: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18602_2x_d83cb682-76f4-43f5-809c-0212ebf68b24.png?v=1687188826"
-        }
-    ]
-
-    const swiper_series = {
-        "Carbon Belt": {
-          Sirius: [
-            "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18687.png?v=1688112408",
-            "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18686.png?v=1688112407",
-            "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18685.png?v=1688112407"
-          ],
-          Lyra: [
-              'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18525.png?v=1688112407'
-          ],
-          "Midnight in Paris": [
-              "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18526.png?v=1688112407"
-          ],
-          vanilla: [
-              "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18699.png?v=1688112407",
-              "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18698.png?v=1688112407",
-              "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18697.png?v=1688112407",
-              "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18695.png?v=1688112407",
-              "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18696.png?v=1688112407"
-          ],
-          commonSwiper: [
-            "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18693.png?v=1688112407",
-            "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18692.png?v=1688112407",
-            "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18691.png?v=1688112407",
-            "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18690.png?v=1688112407",
-            "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18689.png?v=1688112407",
-            "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18688.png?v=1688112407",
-            "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/ssss_6e9b22f2-3d7e-4f41-82b7-dd7b575dea98.png?v=1688112407"
-          ]
-        },
-        "Shimano Gear": {
-          Sirius: [
-            "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18145.png?v=1688113259",
-            "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18704.png?v=1688113258",
-            "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18705.png?v=1688113259"
-          ],
-          Lyra: [
-              'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18700.png?v=1688113259'
-          ],
-          "Midnight in Paris": [
-              "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18701.png?v=1688113259"
-          ],
-          commonSwiper: [
-            "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/14031687412304_.pic_hd_eb7f49ff-842e-4ab5-8736-f1b98393fc17.png?v=1688113259",
-            "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/14051687412317_.pic_hd_20e0b017-4162-47fa-884b-2301802ce812.png?v=1688113259",
-            "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/45_9d0ec03f-9490-4093-96ea-907e4d4ffdeb.png?v=1688113259",
-            "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18702.png?v=1688113259",
-            "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18703.png?v=1688113259",
-            "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/ssss_1c3776c9-2428-4a84-8576-35639d72ec78.png?v=1688113259",
-          ]
-        }
-    }
     
     const leftSwiper = new Swiper(".product .left-swiper", {
         direction: 'vertical',
@@ -1669,7 +1580,7 @@
 
             let swiper_arr = []
 
-            swiper_arr = swiper_arr.concat(swiper_series[model][style], style === 'vanilla' ? [] : swiper_series[model]['commonSwiper'])
+            swiper_arr = swiper_arr.concat(global_config.carbon_order_page_config.product_images[model][style], style === 'vanilla' ? [] : global_config.carbon_order_page_config.product_images[model]['commonSwiper'])
 
             $('.product .right-swiper .swiper-wrapper').html(swiper_arr.map((s, i) => {
                 const index = i % 6
@@ -1677,8 +1588,8 @@
                 return  `<div class="swiper-slide">
                             <img src="${s}">
                             <div>
-                                <span class="u20DemiBold_v2">${medias[index].text}</span>
-                                <img src="${medias[index].img}">
+                                <span class="u20DemiBold_v2">${global_config.carbon_order_page_config.product_media_images[index].text}</span>
+                                <img src="${global_config.carbon_order_page_config.product_media_images[index].img}">
                             </div>
                         </div>`
               }).join(''))
@@ -1708,7 +1619,7 @@
 
             history.replaceState(null, '', `${location.pathname}?variant=${current_variant_id}`);
             $('.product .product-panel input[name="id"]').val(current_variant_id)
-            $('.product .delivery_time').html(global_config.ebike_delivery_time[current_variant_id] || 'Free shipping <span>within 5 days</span>')
+            $('.product .delivery_time').html(global_config.carbon_order_page_config.ebike_delivery_time[current_variant_id] || 'Free shipping <span>within 5 days</span>')
 
             const btn =  $('.product .buttons .addToCartBtn')
             if (current_variant.available) {
@@ -1865,7 +1776,14 @@
         const find = findVariantFromId(search.variant)
         changeVariant(find.option1, find.option2, find.option3) 
     } else {
-        const find = findAvailableVariant()
+      const default_variant = global_config.carbon_order_page_config.default_variant
+      let find = findVariantFromId(default_variant)
+  
+      // 如果默认 variant 也不可用，那晒显出能用的variant
+      if (!find || !find.available) {
+        find = findAvailableVariant()
+      }
+  
         changeVariant(find.option1, find.option2, find.option3) 
     }
 
