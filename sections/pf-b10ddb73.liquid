@@ -341,10 +341,15 @@
 
 
     $('.accessories .navigate > div').on('click', e => {
-        const items = $('.accessories .items')
+        const items1 = $('.product .accessories .chord-accessories')
+        const items2 = $('.product .accessories .chord-accessories-1')
 
-        items.animate({
-            scrollLeft: $('.accessories .items').scrollLeft() + ($(e.target).hasClass('next') ? 180 : -180)
+        items1.animate({
+            scrollLeft: items1.scrollLeft() + ($(e.target).hasClass('next') ? 180 : -180)
+        }, 300)
+
+        items2.animate({
+            scrollLeft: items2.scrollLeft() + ($(e.target).hasClass('next') ? 180 : -180)
         }, 300)
     })
 
