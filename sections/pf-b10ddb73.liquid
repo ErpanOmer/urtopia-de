@@ -84,7 +84,7 @@
                     <div class="prev"></div>
                     <div class="next"></div>
                 </div>
-                <div class="items mb12" class="chord-accessories">
+                <div class="items mb12 chord-accessories">
                     {% for prod in collections['chord-accessories'].products %}
                         {% if prod.available %}
                             {% assign variant = prod.variants | first %}
@@ -103,7 +103,7 @@
                         {% endif %}
                     {% endfor %}
                 </div>
-                <div class="items mb12" class="chord-accessories-1">
+                <div class="items mb12 chord-accessories-1">
                     {% for prod in collections['chord-accessories-1'].products %}
                         {% if prod.available %}
                             {% assign variant = prod.variants | first %}
@@ -263,6 +263,17 @@
         if (frame) {
             $(`.product .product-panel .Frame .active`).removeClass('active')
             $(`.product .product-panel .Frame > div[attribute="${frame}"]`).addClass('active')
+
+            if (frame === 'High-Step') {
+              $(`.product .product-panel .accessories .chord-accessories-1 .items .item`).removeClass('active')
+              $(`.product .product-panel .accessories .chord-accessories`).show()
+              $(`.product .product-panel .accessories .chord-accessories-1`).hide()
+            } else {
+              $(`.product .product-panel .accessories .chord-accessories .items .item`).removeClass('active')
+              $(`.product .product-panel .accessories .chord-accessories`).hide()
+              $(`.product .product-panel .accessories .chord-accessories-1`).show()
+            }
+
         }
 
         if (style) {
