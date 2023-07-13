@@ -1780,7 +1780,7 @@
       let find = findVariantFromId(default_variant)
   
       // 如果默认 variant 也不可用，那晒显出能用的variant
-      if (!find.available) {
+      if (!find || !find.available) {
         find = findAvailableVariant()
       }
   
