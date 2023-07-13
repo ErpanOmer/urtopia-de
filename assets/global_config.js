@@ -52,15 +52,18 @@ const global_config = {
       // 1s-m-pb
         43869302948056: 'Pre-order items ships from July 31, 2023',
       // 1s-l-pb
-        43869302980824: 'Pre-order items ships from July 31, 2023',
-      
+        43869302980824: 'Pre-order items ships from July 31, 2023',      
+    },
+    // chrod order page 配置项
+    chord_order_page_config: {
+      delivery_time: {
+              
         // chord
         43705718997208: 'Pre-order items shipped from September 1 - 15, 2023',
         43705719029976: 'Pre-order items shipped from September 1 - 15, 2023',
         // chord x
         43705719062744: 'Pre-order items shipped from September 1 - 15, 2023',
         43705719095512: 'Pre-order items shipped from September 1 - 15, 2023',
-
-      
+      }
     }
 }
