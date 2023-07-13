@@ -2552,6 +2552,12 @@ section.mobile-motor {
     overflow: hidden;
 }
 
+.vanmoof .centeral-content > div  > div {
+    background-color: #1F1F1F;
+    padding: 40px 30px;
+}
+
+
 .vanmoof .centeral-content > div .u36DemiBold_v2 {
     margin-top: 40px;
 }
