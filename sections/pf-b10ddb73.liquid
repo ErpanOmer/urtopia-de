@@ -1308,7 +1308,9 @@ new Swiper('#section3', {
 
 
 <script>
-{%- assign xxx = collections['chord-accessories'].products | concat: collections['chord-accessories'].products -%}
+{%- assign xxxx = collections['chord-accessories'].products -%}
+{%- assign xxxs = collections['chord-accessories-1'].products -%}
+{%- assign xxx = xxxx | concat: xxxs -%}
 
 {% for x in xxx %}
   console.log('xxxx', {{ x | json }})
