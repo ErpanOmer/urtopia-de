@@ -2570,4 +2570,8 @@ section.mobile-motor {
         grid-template-columns: 1fr;
         grid-row-gap: 25px;
     }
+
+    .vanmoof .centeral-content > div  > div .u36DemiBold_v2 {
+        font-size: 24px;
+    }
 }
