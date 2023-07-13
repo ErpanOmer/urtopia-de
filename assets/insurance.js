@@ -282,21 +282,15 @@ function addToCartInsurance(parse, show = false) {
 
   const cartListNew = {
     // 如果是carbon 页面，自动把配件加进去
-    items: location.href.includes('urtopia-carbon') ? (function () {
-      const ids = global_config.event_accessories_variant_ids.map(id => ({ id, quantity: 1 }))
-
-      // 额外买的配件
-      const accessories = []
-      $('.product .accessories .items .active').each((i, item) => {
-        accessories.push({ 
-          id: $(item).attr('variant-id'), 
-          quantity: 1
-        })
-      })
-
-      return ids.concat(accessories)
-    })() : []
+    items: location.href.includes('urtopia-carbon') ? global_config.event_accessories_variant_ids.map(id => ({ id, quantity: 1 })) : []
   }
+
+  $('.product .accessories .items .active').each((i, item) => {
+    cartListNew.items.push({ 
+      id: $(item).attr('variant-id'), 
+      quantity: 1
+    })
+  })
 
   // 加埋点
   if (location.href.includes('urtopia-carbon')) {
