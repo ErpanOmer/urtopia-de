@@ -2564,3 +2564,9 @@ section.mobile-motor {
 .vanmoof .centeral-content > div .u24Light_v2 {
     margin: 28px 0 40px;
 }
+
+@media (max-width: 767px) {
+    .vanmoof .centeral-content {
+        grid-template-columns: 1fr;
+    }
+}
