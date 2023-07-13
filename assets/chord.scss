@@ -180,11 +180,15 @@ $sale_text_color: #13B698;
 
                 .Frame {
                     display: flex;
-                    
+
                     & > div {
                         padding: 4px 25px;
                         border: 2px solid #000;
                         border-radius: 30px;
+                    }
+
+                    div + div {
+                        margin-left: 15px;
                     }
                 }
             }
