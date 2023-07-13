@@ -18,42 +18,7 @@ const global_config = {
   // 邮件弹窗 延迟弹出时间，单位:s
   subscribe_email_show_delay_time: 10,
 
-  // 发货时间映射表  key: vairant_id  -> value: 发货时间文案
-  ebike_delivery_time: {
-    // outlet carbon 1
-    43820311281880: 'Ships within <span>7 business days</span> from local warehouse.',
-    43820311314648: 'Ships within <span>7 business days</span> from local warehouse.',
-
-    // carbon 1/1s
-    // 1-m-sb
-    43705718997208: 'Free shipping within 5 days',
-    // 1-l-sb
-    42615025369304: 'Free shipping within 5 days',
-    // 1-m-lb
-    42615025238232: 'Ships between August 1 - 15 from local warehouse.',
-    // 1-l-lb
-    42615025434840: 'Free shipping within 5 days',
-    // 1-m-pb
-    42615025303768: 'Ships between August 1 - 15 from local warehouse.',
-    // 1-l-pb
-    42615025500376: 'Free shipping within 5 days',
-    // 1-m-pw
-    43608364417240: ' ',
-    // 1-l-pw
-    43608364450008: ' ',
-    // 1s-m-sb
-    43869302816984: 'Pre-order items ships from July 31, 2023',
-    // 1s-l-sb
-    43869302849752: 'Pre-order items ships from July 31, 2023',
-    // 1s-m-lb
-    43869302882520: 'Pre-order items ships from July 31, 2023',
-    // 1s-l-lb
-    43869302915288: 'Pre-order items ships from July 31, 2023',
-    // 1s-m-pb
-    43869302948056: 'Pre-order items ships from July 31, 2023',
-    // 1s-l-pb
-    43869302980824: 'Pre-order items ships from July 31, 2023',
-  },
+  // carbon 车配置
   carbon_order_page_config: {
     // carbon 车默认显示 variant_id, 只有 url 上的 variant 参数为空的时候生效
     default_variant: 42615025172696,
