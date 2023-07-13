@@ -56,7 +56,7 @@ const global_config = {
     },
     // chrod order page 配置项
     chord_order_page_config: {
-      delivery_time: {
+      ebike_delivery_time: {
               
         // chord
         43705718997208: 'Pre-order items shipped from September 1 - 15, 2023',
