@@ -4,6 +4,217 @@
 {{ 'chord.scss.css' | asset_url | stylesheet_tag: preload: true }}
 
 <div style="opacity:0" class="sc-bYoBSM hUVNGC __pf __pf_DdtzRleX" id="__pf"><div data-pf-type="Body" class="sc-hjGZqJ fNoOP pf-1_"><div data-pf-type="Layout" class="sc-htJRVC dNJAjO pf-2_">
+
+<div class="product" data-pf-type="ProductBox">
+    <div class="centeral-content">
+        <div class="commonComponent pcHide">
+            <div class="u36DemiBold_v2">{{ product.title }}</div>
+            <div data-pf-type="JudgeMe" class="sc-eZhRLC gtfCKx pf-25_ order-djs mb6">
+                <div class="pf-judme">{% render "judgeme_widgets", widget_type: "judgeme_preview_badge", jm_style: "", concierge_install: false, product: product %}</div>
+            </div>
+            <div class="u30DemiBold_v2 mb6">{{ product.price | money }}</div>
+            <div class="sale mb6" id="sale_accmb" style="background-image: linear-gradient(90deg,var(--sale-color1),var(--sale-color2));">
+                <div class="u20DemiBold_v2" style="color: var(--sale-color1);">€2.699,00 NOW</div>
+                <div class="u17DemiBold_v2">with {{ settings.sale_name }}</div>
+            </div>
+        </div>
+        <div class="featured_image">
+            <div class="swiper left-swiper mobileHide">
+                <div class="swiper-wrapper">
+                </div>
+            </div>
+            <div class="swiper right-swiper" style="--swiper-navigation-color: #fff;--swiper-theme-color: #000;--swiper-pagination-color: #000;">
+                <div class="swiper-wrapper">
+                    {% comment %} {% for image in product.images %}
+                        <div class="swiper-slide">
+                            {{ image | image_url: width: 1000 | image_tag }}
+                        </div>
+                    {% endfor %} {% endcomment %}
+                </div>
+                <div class="swiper-button-prev mobileHide"></div><!--左箭头。如果放置在swiper外面，需要自定义样式。-->
+                <div class="swiper-button-next mobileHide"></div><!--右箭头。如果放置在swiper外面，需要自定义样式。-->
+                <div class="swiper-pagination pcHide"></div>
+                <div class="flex-1 mobileHide"></div>
+                <div class="parameters mobileHide">
+                    <div>
+                        <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18448_2x_833c8995-fa19-4297-af29-678ac4064d0c.png?v=1687176385"/>
+                        <span><span class="u14Light_v2">Carbon Fiber</span><span class="u17DemiBold_v2">15 kg.</span></span>
+                    </div>
+                    <div>
+                        <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18449_2x_e118ab7b-18ca-4612-afb3-20758874d9c7.png?v=1687177181"/>
+                        <span><span class="u14Light_v2">Fast & Easy</span><span class="u17DemiBold_v2">90% Assembled</span></span>
+                    </div>
+                    <div>
+                        <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18445_2x_2e6c6230-7ed1-4c3d-99ad-54ba48fa57b4.png?v=1687177370"/>
+                        <span><span class="u14Light_v2">Adaptive</span><span class="u17DemiBold_v2">Torque Sensor</span></span>
+                    </div>
+                    <div>
+                        <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18447_2x_c102facd-9087-4028-8f97-34a7af31b1f6.png?v=1687177414"/>
+                        <span><span class="u14Light_v2">Range</span><span class="u17DemiBold_v2">100 Km</span></span>
+                    </div>
+                    <div>
+                        <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18450_2x_50383af6-61df-4632-9cbc-531630580f61.png?v=1687177242"/>
+                        <span><span class="u14Light_v2">Phone App</span><span class="u17DemiBold_v2">iOS, Android</span></span>
+                    </div>
+                    <div>
+                        <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18446_2x_791e060a-ed39-42c5-9cf0-965d7e5110bb.png?v=1687177232"/>
+                        <span><span class="u14Light_v2">Anti-theft</span><span class="u17DemiBold_v2">GPS Tracking</span></span>
+                    </div>
+                </div>
+            </div>            
+        </div>
+        <form method="post" accept-charset="UTF-8" action="/cart/add" class="product-panel pf-product-form" data-productid={{ product.id }} id="product_form_{{ product.id }}" enctype="multipart/form-data">
+            <input type="hidden" name="id" data-product-id="{{product.id}}" value="{{ product.selected_or_first_available_variant.id }}"/>
+            <input type="hidden" name="form_type" value="product">
+            <input type="hidden" name="utf8" value="✓">
+            <div class="commonComponent mobileHide" id="sale_acc">
+                <div class="u36DemiBold_v2 mb12">{{ product.title }}</div>
+                <div data-pf-type="JudgeMe" class="sc-eZhRLC gtfCKx pf-25_ order-djs mb12">
+                    <div class="pf-judme">{% render "judgeme_widgets", widget_type: "judgeme_preview_badge", jm_style: "", concierge_install: false, product: product %}</div>
+                </div>
+                <div class="u30DemiBold_v2 mb12">{{ product.price | money }}</div>
+                <div class="sale mb12" style="background-image: linear-gradient(90deg,var(--sale-color1),var(--sale-color2));">
+                    <div class="u20DemiBold_v2" style="color: var(--sale-color1);">€2.699,00 NOW</div>
+                    <div class="u17DemiBold_v2">with {{ settings.sale_name }}</div>
+                </div>
+            </div>
+            <div class="sale_acc mb12 belt">
+                <div class="u14Light_v2" style="background-image: linear-gradient(90deg,var(--sale-color3),var(--sale-color3));">And get <span style="font-weight: 600;"> €179 </span> Accessories for <span class="u20DemiBold_v2"> Free</span></div>
+                {% assign accessories_map = "7633738596568,7633738662104,7633738531032" | split: ',' %}
+                <div class="accs">
+                    {% for acc in accessories_map %}
+                        {% for prod in collections["accessories"].products %}
+                            {% if acc contains prod.id %}
+                                <div class="acc">
+                                    {{ prod.featured_image | image_url: width: 400 | image_tag }}
+                                    {% if acc == "7633738662104" %}
+                                        <span class="u11Medium_v2">{{ prod.title | truncatewords: 3, "" | replace: "-", "" }}</span>
+                                    {% else %}
+                                        <span class="u11Medium_v2">{{ prod.title }}</span>
+                                    {% endif %}
+                                </div>
+                            {% endif %}
+                        {% endfor %}
+                    {% endfor %}
+                </div>
+                <div class="u11Light_v2">*Not available with leasing</div>
+            </div>
+            <!--<div class="sale_acc mb12 gear" id="sale_acc">
+                <div class="u14Light_v2">Get Accessories for <span class="u20DemiBold_v2">Free</span></div>
+                {% assign accessories_map_1s = "7633738596568,7633738531032" | split: ',' %}
+                <div class="accs_1s">
+                    {% for acc in accessories_map_1s %}
+                        {% for prod in collections["accessories"].products %}
+                            {% if acc contains prod.id %}
+                                <div>
+                                    {{ prod.featured_image | image_url: width: 400 | image_tag }}
+                                    <div>
+                                        <span class="u14Medium_v2">{{ prod.title }}</span><br>
+                                        <span class="u17DemiBold_v2">{{ prod.price | money }}</span>
+                                    </div>
+                                </div>
+                            {% endif %}
+                        {% endfor %}
+                    {% endfor %}
+                </div>
+                <div class="u11Light_v2">*Not available with leasing</div>
+            </div>-->
+            <div class="count-down mb12 mobileHide" style="color: var(--sale-color3);">
+                <div class="u17Medium_v2">€600 off + 3 Free Accessories Ends in：</div>
+                <img src="http://i.countdownmail.com/2mmaed.gif">
+            </div>
+            <div class="options">
+                {% for option in product.options %}
+                    <div class="option" option={{option}}>
+                        <div class="u17DemiBold_v2 mb12">{{ option }} - <span class="u17Light_v2"></span></div>
+                        <div class="{{ option }} mb12"></div>
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="accessories">
+                <div class="u17DemiBold_v2 mb12">Accessories</div>
+                <div class="navigate">
+                    <div class="prev"></div>
+                    <div class="next"></div>
+                </div>
+                <div class="items mb12">
+                    {% for prod in collections['on-page'].products %}
+                        {% if prod.available %}
+                            {% assign variant = prod.variants | first %}
+                            <div class="item" variant-id="{{ variant.id }}">
+                              <div class="u11Medium_v2">{{ prod.title }}</div>
+                              <div>
+                                <div>
+                                  <span class="u17DemiBold_v2">{{ prod.price | money }}</span>
+                                  <span class=u11Light_v2>
+                                    <i class="fa-solid fa-plus"></i>
+                                  </span>
+                                </div>
+                                {{ prod.featured_image | image_url: width: 400 | image_tag }}
+                              </div>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            </div>       
+            <div class="buttons">
+                <div class="count-down mb12 pcHide" style="color: var(--sale-color3);">
+                    <div class="u17Medium_v2">€600 off + 3 Free Accessories Ends in：</div>
+                    <img src="http://i.countdownmail.com/2mmaed.gif">
+                </div>
+                <div
+                    data-product-id="{{ product.id }}"
+                    class="my-button my-button-origin addToCartBtn"
+                    onclick="addAllToCart('atc')"
+                    id="addToCart"
+                    >
+                    <i class="fa fa-spinner fa-spin"></i><span data-pf-type="Text" class="addToCartText u17DemiBold_v2">Add to Cart</span>
+                </div>
+                <div onclick="testRideTrace('lease_on_jobrad', this)" class="orderTestRideBtn jobrad">
+                    <img class="oneeee" src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/jobradorg_2x_423443a0-1c79-4785-97a0-2be8ae66ceb6.png?v=1685414275"/>
+                    <span><span class="u17DemiBold_v2">Lease Now</span><!--<span>36 months, €48/month</span>--></span>
+                  </div>
+                  <div onclick="testRideTrace('klarna_check_out', this)" class="orderTestRideBtn">
+                    <img class="twoooo"src="https://cdn.shopifycdn.net/s/files/1/0633/2068/6808/files/20230530-121400.png?v=1685420054"/>
+                    <span><span class="u17DemiBold_v2">0% APR Financing</span><span>24 months, €<span class="stages">112</span>/month</span></span>
+                </div>
+            </div>
+            <div class="delivery_time mb12">Free shipping <span>within 5 days</span></div>
+            <div class="support mb12">
+                <a href="#boxs3">
+                    <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230621-005713.png?v=1687280264"/>
+                    <span class="u11Medium_v2">30+ Spots<br>of Service</span>
+                </a>
+                <a href="/pages/shipping-and-return" target="_blank">
+                    <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_17959_2x_cff00041-4dce-479b-b87d-55b1cb89cd7a.png?v=1687161086"/>
+                    <span class="u11Medium_v2">14-Day<br>Returns</span>
+                </a>
+                <a href="/pages/warranty" target="_blank">
+                    <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_17958_2x_1e776f09-0686-4672-a22f-b29d2df3898d.png?v=1687161098"/>
+                    <span class="u11Medium_v2">2-Year<br>Warranty</span>
+                </a>
+            </div>
+            <div class="dialogs">
+                <div class="u17Medium_v2">
+                    <span>Size & Fit</span>
+                    <span>&gt;</span>
+                </div>
+                <div class="u17Medium_v2">
+                    <span>Technical Specifications</span>
+                    <span>&gt;</span>
+                </div>
+                <div class="u17Medium_v2">
+                    <span>Support & Service</span>
+                    <span>&gt;</span>
+                </div>
+                <div class="u17Medium_v2">
+                    <span>FAQs</span>
+                    <span>&gt;</span>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
     
 <div data-section-id="pf-b3fb" data-pf-type="Section" class="sc-fmciRz bheIgq pf-38_"><div class="sc-gjNHFA gwWIgj"><div class="sc-ezbkAF A-dmbO pf-39_ pf-r pf-c-cm pf-r-eh" style="--s-xs:0px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-md:12;--c-lg:12"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-40_"><div data-pf-type="Custom.HTML" class="sc-AjmGg eCTxfx pf-41_"><style>
   #section1 {
