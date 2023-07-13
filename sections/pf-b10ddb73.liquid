@@ -244,16 +244,12 @@
             $(`.product .product-panel .accessories .items`).animate({
                 scrollLeft: 0
             }, 300)
-
-            current_frame = frame
         }
 
         if (current_style !== style) {
             $(`.product .product-panel .Style .active`).removeClass('active')
             $(`.product .product-panel .Style > div[attribute="${style}"]`).addClass('active')
             $(`.product .product-panel .options > div[option="Style"] .u17DemiBold_v2 .u17Light_v2`).text(style)
-
-            current_style = style
         }
 
 
