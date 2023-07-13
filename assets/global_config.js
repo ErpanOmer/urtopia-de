@@ -131,12 +131,10 @@ const global_config = {
           'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18700.png?v=1688113259'
         ],
         commonSwiper: [
-          "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/14031687412304_.pic_hd_eb7f49ff-842e-4ab5-8736-f1b98393fc17.png?v=1688113259",
-          "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/14051687412317_.pic_hd_20e0b017-4162-47fa-884b-2301802ce812.png?v=1688113259",
-          "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/45_9d0ec03f-9490-4093-96ea-907e4d4ffdeb.png?v=1688113259",
-          "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18702.png?v=1688113259",
-          "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18703.png?v=1688113259",
-          "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/ssss_1c3776c9-2428-4a84-8576-35639d72ec78.png?v=1688113259",
+          'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230224-145020_4c046e1d-5af9-48af-a786-4b35087a5a87.png?v=1689236898',
+          'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230224-145010_f48cb52f-2d3d-4a4f-b7f7-c6c2980349c9.png?v=1689236897',
+          'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_-1.png?v=1689236897',
+          'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/DSCF-1.png?v=1689236898'
         ]
       }
     },
