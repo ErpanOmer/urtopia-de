@@ -253,26 +253,6 @@
             $(`.product .product-panel .Style > div[attribute="${style}"]`).addClass('active')
             $(`.product .product-panel .options > div[option="Style"] .u17DemiBold_v2 .u17Light_v2`).text(style)
 
-            const swiper_arr = global_config.chord_order_page_config.product_images[frame][style].concat(global_config.chord_order_page_config.product_images[frame]['commonSwiper'])
-
-            $('.product .right-swiper .swiper-wrapper').html(swiper_arr.map((s, i) => {
-                const index = i % 6
-
-                return  `<div class="swiper-slide">
-                            <img src="${s}">
-                        </div>`
-              }).join(''))
-            $('.product .left-swiper .swiper-wrapper').html(swiper_arr.map(s => `<div class="swiper-slide"><img src="${s}"></div>`).join(''))
-            
-            // update
-            setTimeout(() => {
-                rightSwiper.update()
-                rightSwiper.slideTo(0, 0)
-                
-                leftSwiper.update()
-                leftSwiper.slideTo(0, 0)
-            }, 0)
-
             current_style = style
         }
 
@@ -294,6 +274,26 @@
                 btn.find('span').text('Sold out')
                 btn.addClass('disabled')
             }
+
+            const swiper_arr = global_config.chord_order_page_config.product_images[frame][style].concat(global_config.chord_order_page_config.product_images[frame]['commonSwiper'])
+
+            $('.product .right-swiper .swiper-wrapper').html(swiper_arr.map((s, i) => {
+                const index = i % 6
+
+                return  `<div class="swiper-slide">
+                            <img src="${s}">
+                        </div>`
+              }).join(''))
+            $('.product .left-swiper .swiper-wrapper').html(swiper_arr.map(s => `<div class="swiper-slide"><img src="${s}"></div>`).join(''))
+            
+            // update
+            setTimeout(() => {
+                rightSwiper.update()
+                rightSwiper.slideTo(0, 0)
+                
+                leftSwiper.update()
+                leftSwiper.slideTo(0, 0)
+            }, 0)
         }
 
         console.log(current_variant)
