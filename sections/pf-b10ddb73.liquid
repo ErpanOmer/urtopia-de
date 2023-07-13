@@ -161,46 +161,9 @@
 
     let current_variant_id = null
     let current_variant = null
+    const frames = {}
     const styles = {}
-    const sizes = {}
-    const models = {}
-
-    const commonSwiper = [
-        'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230620-232407.png?v=1687274659',
-        'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230620-232428.png?v=1687274678',
-        'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230620-232506.png?v=1687274717',
-        'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230620-232525.png?v=1687274790',
-        'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230620-232545.png?v=1687274794',
-        'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230620-232556.png?v=1687274807'
-    ]
-
-    const medias = [
-        {
-            text: `“Best Electric Bike for 2022”`,
-            img: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/CNET-Logo_2x_585b6404-bc14-4a34-af64-299587c59efd.png?v=1687187217"
-        },
-        {
-            text: `“Urtopia is an over the top e-bike”`,
-            img: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18604_2x_dbde7d31-6b13-4fa7-80be-7f7c1ea23c13.png?v=1687188893"
-        },
-        {
-            text: `“Eye-catching styled carbon frame”`,
-            img: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18605_2x_1fb17080-bba1-42a3-a5e0-b5a5fe63c252.png?v=1687188923"
-        },
-        {
-            text: `“The carbon pedelec from Urtopia is also stylish, light and electric.”`,
-            img: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18537_2x_ab067425-468d-4359-8136-daf2681d1af6.png?v=1687188959"
-        },
-        {
-            text: `“Lightweight, networked and highly secure”`,
-            img: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18603_2x_a65ec9f7-1b63-459d-8b53-fb3624b5d492.png?v=1687188993"
-        },
-        {
-            text: `“Lightweight carbon fiber road e-bike with affordably-price”`,
-            img: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18602_2x_d83cb682-76f4-43f5-809c-0212ebf68b24.png?v=1687188826"
-        }
-    ]
-
+    
     const swiper_series = {
         "Carbon Belt": {
           Sirius: [
@@ -278,8 +241,8 @@
         },
       });
 
-    function findVariantOptions (model, size, style) {
-        return variants.find(v => `${model} / ${size} / ${style}` === v.title)
+    function findVariantOptions (frame, style) {
+        return variants.find(v => `${frame} / ${style}` === v.title)
     }
 
     function findVariantFromId (id) {
@@ -290,41 +253,10 @@
         return variants.find(v => v.available)
     }
 
-    function changeVariant (model, size, style) {
-        if (model) {
-            $(`.product .product-panel .Model .active`).removeClass('active')
-            $(`.product .product-panel .Model > div[attribute="${model}"]`).addClass('active')
-            $(`.product .product-panel .options > div[option="Model"] .u17DemiBold_v2 .u17Light_v2`).text(`Urtopia Carbon ${model === 'Carbon Belt' ? '1' : '1s'}`)
-
-            $(`.product .commonComponent .sale .u20DemiBold_v2`).text(`${model === 'Carbon Belt' ? '{{ 269900 | money }}' : '{{ 299900 | money }}'} NOW`)
-            $(`.product .commonComponent .sale .u17DemiBold_v2`).text(`with ${model === 'Carbon Belt' ? '{{ settings.sale_name }}' : 'Pre-order Sale'}`)
-
-            $(`.product .count-down .u17Medium_v2`).text(`with ${model === 'Carbon Belt' ? '€600 off + 3 Free Accessories Ends in:' : '€300 off + 3 Free Accessories Ends in:'}`)
-
-            if (model === 'Carbon Belt') {
-                //$('.product .belt').show()
-                //$('.product .gear').hide()
-                
-
-                global_config.event_accessories_variant_ids = ['43817744793816', '43745263255768', '43745261748440'];
-
-                $(`.product .product-panel .options .option .vanilla`).show();
-
-                $('.buttons .orderTestRideBtn .stages').text('112');
-                // $('.product .buttons .jobrad').css({ height: '47px', overflow: 'unset', border: '2px solid #161c1f' });
-            } else {
-                //$('.product .belt').hide()
-                //$('.product .gear').show()
-                
-
-                global_config.event_accessories_variant_ids = ['43866498891992', '43866499121368', '43871557779672'];
-
-                $(`.product .product-panel .options .option .vanilla`).hide();
-
-                $('.buttons .orderTestRideBtn .stages').text('124');
-
-                //$('.product .buttons .jobrad').css({ height: 0, overflow: 'hidden', border: 'none' });
-            }
+    function changeVariant (frame, style) {
+        if (frame) {
+            $(`.product .product-panel .Frame .active`).removeClass('active')
+            $(`.product .product-panel .Frame > div[attribute="${frame}"]`).addClass('active')
         }
 
         if (style) {
@@ -334,17 +266,13 @@
 
             let swiper_arr = []
 
-            swiper_arr = swiper_arr.concat(swiper_series[model][style], style === 'vanilla' ? [] : swiper_series[model]['commonSwiper'])
+            swiper_arr = swiper_arr.concat(swiper_series[frame][style], swiper_series[frame]['commonSwiper'])
 
             $('.product .right-swiper .swiper-wrapper').html(swiper_arr.map((s, i) => {
                 const index = i % 6
 
                 return  `<div class="swiper-slide">
                             <img src="${s}">
-                            <div>
-                                <span class="u20DemiBold_v2">${medias[index].text}</span>
-                                <img src="${medias[index].img}">
-                            </div>
                         </div>`
               }).join(''))
             $('.product .left-swiper .swiper-wrapper').html(swiper_arr.map(s => `<div class="swiper-slide"><img src="${s}"></div>`).join(''))
@@ -359,15 +287,9 @@
             }, 0)
         }
 
-        if (size) {
-            $(`.product .product-panel .Size .active`).removeClass('active')
-            $(`.product .product-panel .Size > div[attribute="${size}"]`).addClass('active')
-            $(`.product .product-panel .options > div[option="Size"] .u17DemiBold_v2 .u17Light_v2`).text(size_map[size])
-        }
 
-
-        if (model && style && size) {
-            current_variant = findVariantOptions(model, size, style)
+        if (frame && style) {
+            current_variant = findVariantOptions(frame, style)
             current_variant_id = current_variant.id
 
 
@@ -379,28 +301,9 @@
             if (current_variant.available) {
                 btn.find('span').text('Add to Cart')
                 btn.removeClass('disabled')
-                $('.product .buttons .orderTestRideBtn').show()
             } else {
                 btn.find('span').text('Sold out')
                 btn.addClass('disabled')
-                $('.product .buttons .orderTestRideBtn').hide()
-            }
-
-
-            if (model === "Shimano Gear" && style === "vanilla") {
-
-              for (const style in styles) {
-                if (Object.hasOwnProperty.call(styles, style) && style !== "vanilla") {
-                  const f = findVariantOptions(model, size, style)
-
-                  // 查找可用的variant
-                  if (f) {
-                    changeVariant(f.option1, f.option2, f.option3)
-                    break
-                  }                  
-                }
-              }
-              
             }
         }
 
@@ -421,45 +324,38 @@
     }
 
     {% for variant in product.variants %}
-        models[{{ variant.option1 | json }}] = 1
-        styles[{{ variant.option3 | json }}] = 1
-        sizes[{{ variant.option2 | json }}] = 1
+        frames[{{ variant.option1 | json }}] = 1
+        styles[{{ variant.option2 | json }}] = 1
     {% endfor %}
 
     console.log('variants', variants)
 
-    for (const model of Object.keys(models)) {
-        $('.product .product-panel .Model').append(`<div attribute="${model}" class="${model}">${model}</div>`)
+    for (const frame of Object.keys(frames)) {
+        $('.product .product-panel .Frame').append(`<div attribute="${frame}" class="${frame}">${frame}</div>`)
     }
 
     for (const style of Object.keys(styles)) {
         $('.product .product-panel .Style').append(`<div attribute="${style}" class="${style}"></div>`)
     }
 
-    for (const size of Object.keys(sizes)) {
-        $('.product .product-panel .Size').append(`<div attribute="${size}" class="${size} u17Light_v2">${size}</div>`)
-    }
-
 
     $('.product-panel .options .option >div:not(.u17DemiBold_v2) > div').on('click',e => {
         const t = $(e.target)
 
-        if ($(e.target).parent().hasClass('Model')) {
-            changeVariant(t.attr('attribute'), current_variant.option2, current_variant.option3)
-        } else if ($(e.target).parent().hasClass('Size')) {
-            changeVariant(current_variant.option1, t.attr('attribute'), current_variant.option3)
+        if ($(e.target).parent().hasClass('Frame')) {
+            changeVariant(t.attr('attribute'), current_variant.option2)
         } else {
-            changeVariant(current_variant.option1, current_variant.option2, t.attr('attribute'))
+            changeVariant(current_variant.option1, t.attr('attribute'))
         }
     })
 
     // 如果有查询参数
     if (search.variant) {
         const find = findVariantFromId(search.variant)
-        changeVariant(find.option1, find.option2, find.option3) 
+        changeVariant(find.option1, find.option2) 
     } else {
         const find = findAvailableVariant()
-        changeVariant(find.option1, find.option2, find.option3) 
+        changeVariant(find.option1, find.option2) 
     }
 
 
@@ -513,48 +409,6 @@
         })
     })
 
-    $('.toTop').on('click', e => {
-        $('html').animate({
-            scrollTop: 0
-        }, 300)
-    })
-
-
-    let currnetScroolTop = 0
-    $(document).on('scroll', throttle(e => {
-        const top1 = $('#freedom').offset().top
-        const top3 = $('.product .addToCartBtn').offset().top
-        const top2 = $(e.target).scrollTop()
-
-        const h = window.screen.height
-
-        if (global_config.is_mobile) {
-            if (top2 > top3) {
-                $('.bottom-fixed').show()
-            } else {
-                $('.bottom-fixed').hide()
-            }
-        } else {
-            if (top2 > top1) {
-                $('.top-fixed').show()
-            } else {
-                $('.top-fixed').hide()
-            }
-
-            if (currnetScroolTop > top2) {
-                $('.top-fixed').hide()
-            }
-
-            currnetScroolTop = top2
-        }
-
-        top2 > (h * 2) ? $('.toTop').show() : $('.toTop').hide()
-
-    }, 300, 100))
-
-    // 默认隐藏
-    $('.bottom-fixed').hide()
-    $('.top-fixed').hide()
     $('.toTop').hide()
 </script>
     
