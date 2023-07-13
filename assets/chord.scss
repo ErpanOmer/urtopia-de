@@ -624,6 +624,17 @@ $sale_text_color: #13B698;
 
     .product {
         margin: 0;
+
+        .fenders {
+    
+            img {
+                max-width: 80px;
+            }
+    
+            span {
+                margin: 0;
+            }
+        }
     
         .centeral-content {
             padding: 0 4vw;
