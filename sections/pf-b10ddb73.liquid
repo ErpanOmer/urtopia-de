@@ -218,8 +218,10 @@
         return variants.find(v => v.available)
     }
 
+    let current_frame = ''
+    let current_style = ''
     function changeVariant (frame, style) {
-        if (frame) {
+        if (current_frame !== frame) {
             $(`.product .product-panel .Frame .active`).removeClass('active')
             $(`.product .product-panel .Frame > div[attribute="${frame}"]`).addClass('active')
 
@@ -243,9 +245,10 @@
                 scrollLeft: 0
             }, 300)
 
+            current_frame = frame
         }
 
-        if (style) {
+        if (current_style !== style) {
             $(`.product .product-panel .Style .active`).removeClass('active')
             $(`.product .product-panel .Style > div[attribute="${style}"]`).addClass('active')
             $(`.product .product-panel .options > div[option="Style"] .u17DemiBold_v2 .u17Light_v2`).text(style)
@@ -269,6 +272,8 @@
                 leftSwiper.update()
                 leftSwiper.slideTo(0, 0)
             }, 0)
+
+            current_style = style
         }
 
 
