@@ -68,13 +68,13 @@
                     <div class="pf-judme">{% render "judgeme_widgets", widget_type: "judgeme_preview_badge", jm_style: "", concierge_install: false, product: product %}</div>
                 </div>
                 <div class="u30DemiBold_v2 mb6">{{ product.price | money }}</div>
-                <klarna-placement
+            </div>
+            <klarna-placement
                   id="credit-promotion-badge"
                   data-key="credit-promotion-badge"
                   data-locale="de-DE"
                   data-purchase-amount=""
-                ></klarna-placement>
-            </div>
+            ></klarna-placement>
             <div class="options">
                 {% for option in product.options %}
                     <div class="option" option={{option}}>
