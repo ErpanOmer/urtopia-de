@@ -2539,6 +2539,10 @@ section.mobile-motor {
     min-height: unset;
 }
 
+.vanmoof {
+    display: flex;
+    align-items: center;
+}
 
 .vanmoof .centeral-content {
     display: grid;
