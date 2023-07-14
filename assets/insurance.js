@@ -276,6 +276,10 @@ class Insurance {
 }
 
 const insurance = new Insurance();
+const url_to_page_map = {
+  "/products/urtopia-chord-ebike": 'chord-order-page',
+  "/products/urtopia-carbon-e-bike": 'carbon-order-page'
+}
 
 function addToCartInsurance(parse, show = false) {
   window.show_notification_checkout_button = show
@@ -293,9 +297,7 @@ function addToCartInsurance(parse, show = false) {
   })
 
   // 加埋点
-  if (location.href.includes('urtopia-carbon')) {
-    !show && fetchBuried('websiteclick', `carbon-order-page`, { button: 'ATC' })
-  }
+  !show && fetchBuried('websiteclick', url_to_page_map[location.pathname], { button: 'ATC' })
 
   const _insurance_key = Date.now().toString(36)
 
