@@ -69,7 +69,7 @@ padding-bottom: {{ section.settings.padding_bottom }}px;
         <ul class="footer-block__details-content list-unstyled">
           {%- for link in block.settings.menu.links -%}
           <li>
-            <a href="{{ link.url }}"
+            <a href="{{ link.url }}" target="_blank" class="link link--text list-menu__item list-menu__item--link{% if link.active %} list-menu__item--active{% endif %}"
               class="link link--text list-menu__item list-menu__item--link{% if link.active %} list-menu__item--active{% endif %} {% if link.url == "
               /pages/affiliateprogram" or link.url=="/en/pages/affiliateprogram" %}affiliateBtn{% endif %} {% if
               link.url=="/pages/klarnafaq" or link.url=="/en/pages/klarnafaq" %}klarnafaqBtn{% endif %} {% if
