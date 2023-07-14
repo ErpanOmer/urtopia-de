@@ -13,7 +13,7 @@ const global_config = {
   message_box_show_delay_time: 10,
 
 
-  // 右键弹窗有关配置
+  // 邮件弹窗有关配置
   subscribe_email_dialog_config: {
         // 是否隐藏 邮件弹窗
     is_hide: false,
