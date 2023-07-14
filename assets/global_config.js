@@ -13,10 +13,17 @@ const global_config = {
   message_box_show_delay_time: 10,
 
 
-  // 是否隐藏 邮件弹窗
-  subscribe_email_is_hide: false,
-  // 邮件弹窗 延迟弹出时间，单位:s
-  subscribe_email_show_delay_time: 10,
+  // 邮件弹窗有关配置
+  subscribe_email_dialog_config: {
+    // 是否隐藏 邮件弹窗
+    is_hide: false,
+    // 邮件弹窗 延迟弹出时间，单位:s
+    show_delay_time: 10,
+    // 邮件 pc 背景图
+    background_imgae_pc: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20221008-untitled-4659_2x_026f342b-e152-496e-8149-4edb28692c0d.jpg?v=1689301493',
+    // 邮件 mobile 背景图
+    background_imgae_mb: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20221008-untitled-4659_2x_acdb2959-15a8-4839-b643-76b62eb34bd2.jpg?v=1689301955'
+  },
 
   // carbon 车配置
   carbon_order_page_config: {
@@ -102,6 +109,8 @@ const global_config = {
         img: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18602_2x_d83cb682-76f4-43f5-809c-0212ebf68b24.png?v=1687188826"
       }
     ],
+    // 默认的发货时间 文案
+    ebike_default_delivery_time: 'Free shipping <span>within 5 days</span>',
     ebike_delivery_time: {
       // outlet carbon 1
       43820311281880: 'Ships within <span>7 business days</span> from local warehouse.',
@@ -140,6 +149,8 @@ const global_config = {
   },
   // chrod order page 配置项
   chord_order_page_config: {
+    // chord 车默认显示 variant_id, 只有 url 上的 variant 参数为空的时候生效
+    default_variant: 43705718997208,
     // 产品图
     product_images: {
       "High-Step": {
@@ -195,6 +206,9 @@ const global_config = {
         ]
       }
     },
+    // 默认的发货时间 文案
+    ebike_default_delivery_time: 'Free shipping <span>within 5 days</span>',
+    // 每一种variant 的发货时间文案
     ebike_delivery_time: {
 
       // chord
