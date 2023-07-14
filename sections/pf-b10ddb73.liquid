@@ -877,29 +877,7 @@
         <div class="swiper-button-next"></div><!--右箭头。如果放置在swiper外面，需要自定义样式。-->
       </div>
   </div>
-
-<script setup>
-
-
-const width = document.body.clientWidth
-const isMobile = width < 768
-
-new Swiper('#section3', {
-        slidesOffsetBefore: width > 1280 ? (width - 1280) / 2 : 0,  
-        spaceBetween: isMobile ? '4%' : '2%',
-        slidesPerView: isMobile ? 1.5 : 4,
-        freeMode: isMobile ? true : false,
-        navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
-       },
-       scrollbar: {
-            el: '.swiper-scrollbar',
-		       draggable: true,
-      },
-  }) 
-
-</script></div></div></div></div></div></div><div data-section-id="pf-c967" data-pf-type="Section" class="sc-fmciRz bheIgq pf-52_"><div class="sc-gjNHFA gwWIgj"><div class="sc-ezbkAF A-dmbO pf-53_ pf-r pf-c-cm pf-r-eh" style="--s-xs:0px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-md:12;--c-lg:12"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-54_"><div data-pf-type="Custom.HTML" class="sc-AjmGg eCTxfx pf-55_"><style>
+</div></div></div></div></div></div><div data-section-id="pf-c967" data-pf-type="Section" class="sc-fmciRz bheIgq pf-52_"><div class="sc-gjNHFA gwWIgj"><div class="sc-ezbkAF A-dmbO pf-53_ pf-r pf-c-cm pf-r-eh" style="--s-xs:0px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-md:12;--c-lg:12"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-54_"><div data-pf-type="Custom.HTML" class="sc-AjmGg eCTxfx pf-55_"><style>
 
 #section5 {
       max-width: 1280px;
@@ -1714,6 +1692,30 @@ const isMobilee = widthh < 768
        },
   })
   
+</script>
+
+
+<script setup>
+
+
+const width = document.body.clientWidth
+const isMobile = width < 768
+
+new Swiper('#section3', {
+        slidesOffsetBefore: width > 1280 ? (width - 1280) / 2 : 0,  
+        spaceBetween: isMobile ? '4%' : '2%',
+        slidesPerView: isMobile ? 1.5 : 4,
+        freeMode: isMobile ? true : false,
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+       },
+       scrollbar: {
+            el: '.swiper-scrollbar',
+		       draggable: true,
+      },
+  }) 
+
 </script>
 
 <script>
