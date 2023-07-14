@@ -1488,6 +1488,18 @@
         }
     }
 
+    function pageInit() {
+      const variant_id = search.variant || global_config.carbon_order_page_config.default_variant
+      let find = findVariantFromId(variant_id)
+
+      if (!find || !find.available) {
+        find = findAvailableVariant()
+      }
+
+      // 如果默认 variant 也不可用，那晒显出能用的variant
+      changeVariant(find.option1, find.option2) 
+    }
+
     {% for variant in product.variants %}
         frames[{{ variant.option1 | json }}] = 1
         styles[{{ variant.option2 | json }}] = 1
@@ -1513,22 +1525,6 @@
             changeVariant(current_variant.option1, t.attr('attribute'))
         }
     })
-
-    function pageInit() {
-      const variant_id = search.variant || global_config.carbon_order_page_config.default_variant
-      let find = findVariantFromId(variant_id)
-
-      if (!find || !find.available) {
-        find = findAvailableVariant()
-      }
-
-      // 如果默认 variant 也不可用，那晒显出能用的variant
-      changeVariant(find.option1, find.option2) 
-    }
-
-
-    // 页面初始化
-    pageInit()
 
     $('.accessories .navigate > div').on('click', e => {
         const items1 = $('.product .accessories .chord-accessories')
@@ -1585,6 +1581,9 @@
     })
 
     $('.toTop').hide()
+
+    // 页面初始化
+    pageInit()
 </script>
 
 <script src="https://cdn.jsdelivr.net/gh/StephanWagner/jBox@v1.3.3/dist/jBox.all.min.js"></script>
