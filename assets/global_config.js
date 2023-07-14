@@ -13,10 +13,14 @@ const global_config = {
   message_box_show_delay_time: 10,
 
 
-  // 是否隐藏 邮件弹窗
-  subscribe_email_is_hide: false,
-  // 邮件弹窗 延迟弹出时间，单位:s
-  subscribe_email_show_delay_time: 10,
+  // 右键弹窗有关配置
+  subscribe_email_dialog_config: {
+        // 是否隐藏 邮件弹窗
+    is_hide: false,
+    // 邮件弹窗 延迟弹出时间，单位:s
+    subscribe_email_show_delay_time: 10,
+    subscribe_email_back: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20221008-untitled-4659_2x_026f342b-e152-496e-8149-4edb28692c0d.jpg?v=1689301493'
+  },
 
   // carbon 车配置
   carbon_order_page_config: {
