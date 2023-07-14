@@ -1347,6 +1347,28 @@
   </div>
 </div>
 
+<img class="toTop" src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_21049.svg?v=1687267470">
+
+<div class="top-fixed mobileHide">
+    <div class="centeral-content">
+        <span class="u20DemiBold_v2">{{ product.title }}</span>
+        <span class="flex-1"></span>
+        <div>
+            <span class="u17Light_v2"><span class="u20DemiBold_v2 emphasize" style="font-weight: 600;">{{ 269900 | money }}</span> <span style="text-decoration: line-through;">{{ product.price | money }}</span></span>
+            <span class="u14Light_v2">or as low as €112/Month</span>
+        </div>
+        <a href="#sale_acc" class="my-button my-button-origin">Order Now</a>
+    </div>
+</div>
+
+<div class="bottom-fixed pcHide">
+    <a href="#sale_accmb" class="my-button my-button-origin">Order Now</a>
+    <div>
+        <span class="u14Light_v2"><span class="emphasize" style="font-weight: 600;">{{ 269900 | money }}</span> <span style="text-decoration: line-through;">{{ product.price | money }}</span></span>
+        <span class="u14Light_v2">or as low as €112/Month</span>
+    </div>
+</div>
+
 <script>
     const search = getSearchValues()
     const variants = JSON.parse(JSON.stringify({{ product.variants | json }}))
