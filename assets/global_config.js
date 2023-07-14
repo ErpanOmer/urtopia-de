@@ -109,6 +109,8 @@ const global_config = {
         img: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18602_2x_d83cb682-76f4-43f5-809c-0212ebf68b24.png?v=1687188826"
       }
     ],
+    // 默认的发货时间 文案
+    ebike_default_delivery_time: 'Free shipping <span>within 5 days</span>',
     ebike_delivery_time: {
       // outlet carbon 1
       43820311281880: 'Ships within <span>7 business days</span> from local warehouse.',
