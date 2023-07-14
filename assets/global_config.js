@@ -202,6 +202,9 @@ const global_config = {
         ]
       }
     },
+    // 默认的发货时间 文案
+    ebike_default_delivery_time: 'Free shipping <span>within 5 days</span>',
+    // 每一种variant 的发货时间文案
     ebike_delivery_time: {
 
       // chord
