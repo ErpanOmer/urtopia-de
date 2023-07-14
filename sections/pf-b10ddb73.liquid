@@ -980,9 +980,6 @@
 			  {% for collection in collections %}
 			   {% if collection.title == 'Chord Accessories' %}
 				{% for producti in collection.products %}
-            {% comment %} <script>
-              console.log({{ producti | json }})
-            </script> {% endcomment %}
             <div class="swiper-slide" data-product-id="{{producti.id}}" onclick="gotoAccessor('{{ producti.handle }}')">
               <img src="{{ producti.media[0] | image_url}}"/>
               <div class="text">
@@ -1000,35 +997,7 @@
      <div class="swiper-scrollbar"></div>
   </div>
 
-
-<script>
-new Swiper('#section5', {    
-        spaceBetween: 15,
-        slidesPerView: isMobile ? 1 : 4,
-        navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
-       },
-       scrollbar: {
-            el: '.swiper-scrollbar',
-            draggable: true,
-      },
- })
-
- function gotoAccessor (handle) {
-  if (!handle) {
-    return
-  }
-
-  location.href = `${location.href.replace(/urtopia-chord-ebike(.*)/g, '')}${handle}`
-}
-
-  var accessories_global = {
-  items: []
-}
-  
-
-</script></div></div></div></div></div></div>
+</div></div></div></div></div></div>
 
 <!--
 <div data-section-id="pf-16f2" data-pf-type="Section" class="sc-fmciRz bheIgq pf-56_"><div class="sc-gjNHFA gwWIgj"><div class="sc-ezbkAF A-dmbO pf-57_ pf-r pf-c-cm pf-r-eh" style="--s-xs:0px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-md:12;--c-lg:12"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-58_"><div data-pf-type="Custom.HTML" class="sc-AjmGg eCTxfx pf-59_">
@@ -1715,6 +1684,35 @@ new Swiper('#section3', {
 		       draggable: true,
       },
   }) 
+
+</script>
+
+<script>
+new Swiper('#section5', {    
+        spaceBetween: 15,
+        slidesPerView: isMobile ? 1 : 4,
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+       },
+       scrollbar: {
+            el: '.swiper-scrollbar',
+            draggable: true,
+      },
+ })
+
+ function gotoAccessor (handle) {
+  if (!handle) {
+    return
+  }
+
+  location.href = `${location.href.replace(/urtopia-chord-ebike(.*)/g, '')}${handle}`
+}
+
+  var accessories_global = {
+  items: []
+}
+  
 
 </script>
 
