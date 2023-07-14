@@ -1602,6 +1602,47 @@
         })
     })
 
+    $('.toTop').on('click', e => {
+        $('html').animate({
+            scrollTop: 0
+        }, 300)
+    })
+
+    let currnetScroolTop = 0
+    $(document).on('scroll', throttle(e => {
+        const top1 = $('#freedom').offset().top
+        const top3 = $('.product .addToCartBtn').offset().top
+        const top2 = $(e.target).scrollTop()
+
+        const h = window.screen.height
+
+        if (global_config.is_mobile) {
+            if (top2 > top3) {
+                $('.bottom-fixed').show()
+            } else {
+                $('.bottom-fixed').hide()
+            }
+        } else {
+            if (top2 > top1) {
+                $('.top-fixed').show()
+            } else {
+                $('.top-fixed').hide()
+            }
+
+            if (currnetScroolTop > top2) {
+                $('.top-fixed').hide()
+            }
+
+            currnetScroolTop = top2
+        }
+
+        top2 > (h * 2) ? $('.toTop').show() : $('.toTop').hide()
+
+    }, 300, 100))
+
+    // 默认隐藏
+    $('.bottom-fixed').hide()
+    $('.top-fixed').hide()
     $('.toTop').hide()
 
     // 页面初始化
