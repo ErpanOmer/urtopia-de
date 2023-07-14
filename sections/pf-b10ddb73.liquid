@@ -1519,8 +1519,15 @@
         const find = findVariantFromId(search.variant)
         changeVariant(find.option1, find.option2) 
     } else {
-        const find = findAvailableVariant()
-        changeVariant(find.option1, find.option2) 
+        const default_variant = global_config.carbon_order_page_config.default_variant
+        let find = findVariantFromId(default_variant)
+    
+        // 如果默认 variant 也不可用，那晒显出能用的variant
+        if (!find || !find.available) {
+          find = findAvailableVariant()
+        }
+    
+          changeVariant(find.option1, find.option2) 
     }
 
 
