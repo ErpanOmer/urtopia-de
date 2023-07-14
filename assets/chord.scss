@@ -666,6 +666,21 @@ $sale_text_color: #13B698;
 
 
 @media (max-width: 767px) {
+    .toTop {
+        flex-direction: column;
+        border-radius: 50%;
+
+        img {
+            max-width: 18px;
+            margin: 0;
+        }
+
+        .u14Medium_v2 {
+            line-height: 12px;
+        }
+    }
+
+    
     .mediaaaaa {
         .centeral-content {
             display: flex;
