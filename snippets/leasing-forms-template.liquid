@@ -591,13 +591,20 @@ setTimeout(() => {
         floatWidth: 768,
     })
 
+    $(function() {
+        var cache = {};
+        $('select[name="address"]').autocomplete({
+        minLength: 1,
+        source: function( request, response ) {
+            console.log('request', request)
 
-    const addressSelect = $('select[name="address"]').SumoSelect({
-        search: true,
-        searchText: 'Enter here.',
-        placeholder: '',
-        floatWidth: 768,
-    })
+            //$.getJSON( "/try/jqueryui/search.php", request, function( data, status, xhr ) {
+            //cache[ term ] = data;
+            //response( data );
+            //});
+            }
+        });
+    });
 
 
     // url 参数
