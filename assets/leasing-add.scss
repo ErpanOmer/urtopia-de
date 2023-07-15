@@ -4,6 +4,11 @@ body {
         background: #fff;
         border: 1px solid #ddd;
         box-shadow: 2px 3px 3px rgba(0,0,0,.11);
+        padding: 0;
+
+        .ui-menu-item {
+            padding: 6px 17px;
+        }
     }
 }
 
