@@ -572,8 +572,8 @@
                 background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/E-Bike317_2x_81abb0c6-5bcf-4e9a-8e09-c87e5893fa7f.jpg?v=1689408477');
     
                 .centeral-content {
-                    div {
-                        padding: 6vw 0 18vw;
+                    & > div {
+                        padding: 8vw 0 18vw;
                         align-items: center;
                         text-align: center;
 
