@@ -668,6 +668,12 @@ body {
                     }
                 }
 
+                input[name="address"] {
+                    &::after {
+                        content: '';
+                    }
+                }
+
                 input[type="image"] {
                     max-width: 50%;
                     // transform: translateY(-10%);
