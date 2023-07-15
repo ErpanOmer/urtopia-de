@@ -614,7 +614,7 @@ setTimeout(() => {
           },
           select: function( event, ui ) {
             console.log(ui.item)
-            $('input[name="city"]').val(ui.item.text_de)
+            $('input[name="city"]').val(ui.item.f.text_de)
            setTimeout(() =>  console.log(event.target.value))
           }
         });
