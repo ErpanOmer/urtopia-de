@@ -5,9 +5,19 @@ body {
         border: 1px solid #ddd;
         box-shadow: 2px 3px 3px rgba(0,0,0,.11);
         padding: 0;
+        overflow: hidden;
 
         .ui-menu-item {
             padding: 6px 17px;
+
+            a {
+                padding: 0;
+            }
+
+            .ui-state-focus {
+                background-color: #e4e4e4;
+                border: none;
+            }
         }
     }
 }
