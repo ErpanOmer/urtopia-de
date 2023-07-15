@@ -631,12 +631,14 @@ setTimeout(() => {
             $('input[name="address"]').val('')
     })
 
-    $('input[name="address"]').on('focus', () => $('.forms .item .clear').show())
-    $('input[name="address"]').on('input', e => {
-        console.log('e', e.target.value)
-
-        $('.forms .item .clear').show()
+    $('input[name="address"]').on('focus', e => {
+        e.target.value ? $('.forms .item .clear').show() : $('.forms .item .clear').hide()
     })
+
+    $('input[name="address"]').on('input', e => {
+        e.target.value ? $('.forms .item .clear').show() : $('.forms .item .clear').hide()
+    })
+
     $('input[name="address"]').on('blur', () => setTimeout(() => $('.forms .item .clear').hide(), 200))
 
 
