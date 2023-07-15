@@ -625,7 +625,11 @@ setTimeout(() => {
     const script = document.getElementById('search-js');
     script.onload = function() {
         mapboxsearch.autofill({
-            accessToken: 'pk.eyJ1IjoiaGFya2lyYW43MjM3IiwiYSI6ImNrcGdwaWpoYzJqaGwzMW54ajdrbW0xZjUifQ.qXWqhm4BiHFwMh1UOi69uQ'
+            accessToken: 'pk.eyJ1IjoiaGFya2lyYW43MjM3IiwiYSI6ImNrcGdwaWpoYzJqaGwzMW54ajdrbW0xZjUifQ.qXWqhm4BiHFwMh1UOi69uQ',
+            options: { 
+                country: 'DE',
+                language: 'de'
+            }
         });
     };
 
