@@ -602,11 +602,11 @@ setTimeout(() => {
 
 
             fetch(`https://api.mapbox.com/geocoding/v5/mapbox.places/${search}.json?country=US&limit=5&types=country,region,postcode,district,place,locality,neighborhood&language=en&access_token=pk.eyJ1IjoiaGFya2lyYW43MjM3IiwiYSI6ImNrcGdwaWpoYzJqaGwzMW54ajdrbW0xZjUifQ.qXWqhm4BiHFwMh1UOi69uQ`).then(r => r.json()).then(r => {
-                console.log('r', r)
+                console.log('r', f.features)
 
                 response(r.features.map(f => ({
-                    label: f.place_name,
-                    value: f.place_name
+                    label: f.place_name_en,
+                    value: f.place_name_en
                 })))
             }).catch(e => {
                 console.log(e)
