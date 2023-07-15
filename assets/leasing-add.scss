@@ -671,7 +671,7 @@ body {
                 .clear {
                     position: absolute;
                     right: 0;
-                    top: 55%;
+                    top: 45%;
                     width: 50px;
                     height: 47px;
                     font-size: 30px;
@@ -679,6 +679,7 @@ body {
                     text-align: center;
                     cursor: pointer;
                     transition: all .3s;
+                    display: none;
                 }
 
                 input[type="image"] {
