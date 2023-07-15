@@ -1,4 +1,5 @@
 {{ 'sumoselect.min.css' | asset_url | stylesheet_tag }}
+{{ 'jquery-ui.css' | asset_url | stylesheet_tag }}
 
 <div class="forms" id="forms">
     <div class="centeral-content">
@@ -87,17 +88,18 @@
     
                 <div class="item">
                     <div class="u24Medium">Delivery address<i>*</i></div>
-                    <input type="text" name="address" required>
+                    <input type="text" name="address" autocomplete="address-line1" required>
+                    <span class="clear">×</span>
                 </div>
                 <div class="item">
                     <div class="mini-item">
                         <div>
                             <div class="u24Medium">Postal code<i>*</i></div>
-                            <input type="text" name="postal_code" required>
+                            <input type="text" name="postal_code" autocomplete="postal-code" required>
                         </div>
                         <div>
                             <div class="u24Medium">City<i>*</i></div>
-                            <input type="text" name="city" required>
+                            <input type="text" name="city" autocomplete="address-level2" required>
                         </div>
                     </div>
                 </div>
@@ -222,6 +224,9 @@
 
 
 {{ 'sumoselect.js' | asset_url | script_tag }}
+{{ 'jquery-ui.min.js' | asset_url | script_tag }}
+
+<script id="search-js" defer src="https://api.mapbox.com/search-js/v1.0.0-beta.17/web.js"></script>
 <script>
 
 // 页面信息
@@ -589,6 +594,80 @@ setTimeout(() => {
         csvDispCount: 0,
         floatWidth: 768,
     })
+
+    $(function() {
+        var cache = {};
+        $('input[name="address"]').autocomplete({
+        minLength: 1,
+        source: function( request, response ) {
+            const search = request.term
+            fetch(`https://api.mapbox.com/geocoding/v5/mapbox.places/${search}.json?country=DE&language=de&limit=5&types=postcode,district,place,locality,address,poi&access_token=pk.eyJ1IjoiaGFya2lyYW43MjM3IiwiYSI6ImNrcGdwaWpoYzJqaGwzMW54ajdrbW0xZjUifQ.qXWqhm4BiHFwMh1UOi69uQ`).then(r => r.json()).then(r => {
+                response(r.features.map(f => {
+                    return {
+                        label: f.place_name_de,
+                        value: f.place_name_de,
+                        f
+                    }
+                }))
+            }).catch(e => {
+                console.log(e)
+            })
+          },
+          select: function( event, ui ) {
+            const city = ui.item.f.context.find(i => i.id.includes('place'))
+            const postal_code = ui.item.f.context.find(i => i.id.includes('postcode'))
+
+            if (city) {
+                $('input[name="city"]').val(city.text_de)
+            } else {
+                $('input[name="city"]').val('')
+            }
+
+            if (postal_code) {
+                $('input[name="postal_code"]').val(postal_code.text_de)
+            } else {
+                $('input[name="postal_code"]').val('')
+            }
+          },
+          change: function (event, ui) {
+            console.log('e', event)
+            console.log('ui', ui)
+          }
+        });
+    });
+
+    $('.forms .item .clear').on('click', () => {
+            console.log('eeeeee')
+
+            $('input[name="address"]').val('')
+    })
+
+    $('input[name="address"]').on('focus', e => {
+        e.target.value ? $('.forms .item .clear').show() : $('.forms .item .clear').hide()
+    })
+
+    $('input[name="address"]').on('input', e => {
+        e.target.value ? $('.forms .item .clear').show() : $('.forms .item .clear').hide()
+    })
+
+    $('input[name="address"]').on('blur', () => setTimeout(() => $('.forms .item .clear').hide(), 200))
+
+
+    /*
+    const script = document.getElementById('search-js');
+    script.onload = function() {
+        mapboxsearch.autofill({
+            accessToken: 'pk.eyJ1IjoiaGFya2lyYW43MjM3IiwiYSI6ImNrcGdwaWpoYzJqaGwzMW54ajdrbW0xZjUifQ.qXWqhm4BiHFwMh1UOi69uQ',
+            options: { 
+                country: 'DE',
+                language: 'de',
+                limit: 5,
+            },
+            types: 'country,region,postcode,district,place,locality'
+        });
+    };
+
+    */
 
 
     // url 参数
