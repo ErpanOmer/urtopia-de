@@ -596,7 +596,10 @@ setTimeout(() => {
         $('input[name="address"]').autocomplete({
         minLength: 1,
         source: function( request, response ) {
-            console.log('request', request)
+            const search = request.term
+            console.log('request', search)
+
+            console.log(response)
 
             //$.getJSON( "/try/jqueryui/search.php", request, function( data, status, xhr ) {
             //cache[ term ] = data;
