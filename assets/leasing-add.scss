@@ -674,15 +674,17 @@ body {
 
                 .clear {
                     position: absolute;
-                    right: 0;
-                    top: 45%;
-                    width: 50px;
-                    height: 47px;
+                    right: 10px;
+                    top: 55%;
+                    width: 30px;
+                    height: 30px;
                     font-size: 30px;
-                    line-height: 47px;
+                    line-height: 31px;
                     text-align: center;
                     cursor: pointer;
                     transition: all .3s;
+                    background-color: #f5f5f5;
+                    border-radius: 10px;
                     display: none;
                 }
 
