@@ -621,7 +621,7 @@ setTimeout(() => {
         });
     });
 
-    $('.forms .item .clear').on('click', () => $('input[name="address"]'))
+    $('.forms .item .clear').on('click', () => $('input[name="address"]').val(''))
 
     $('input[name="address"]').on('focus', () => $('.forms .item .clear').show())
     $('input[name="address"]').on('blur', () => $('.forms .item .clear').hide())
