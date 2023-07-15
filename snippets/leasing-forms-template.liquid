@@ -632,7 +632,8 @@ setTimeout(() => {
     })
 
     $('input[name="address"]').on('focus', () => $('.forms .item .clear').show())
-    $('input[name="address"]').on('blur', () => setTimeout(() => $('.forms .item .clear').hide(), 50))
+    $('input[name="address"]').on('input', () => $('.forms .item .clear').show())
+    $('input[name="address"]').on('blur', () => setTimeout(() => $('.forms .item .clear').hide(), 200))
 
 
     /*
