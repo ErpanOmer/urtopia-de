@@ -614,7 +614,7 @@ setTimeout(() => {
             })
           },
           select: function( event, ui ) {
-            const city = ui.item.context.find(i => i.id.includes('place'))
+            const city = ui.item.f.context.find(i => i.id.includes('place'))
             if (city) {
                 $('input[name="city"]').val(city.text_de)
             }
