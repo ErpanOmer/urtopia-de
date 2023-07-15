@@ -604,7 +604,8 @@ setTimeout(() => {
                 response(r.features.map(f => {
                     return {
                         label: f.place_name_de,
-                        value: f.place_name_de
+                        value: f.place_name_de,
+                        f
                     }
                 }))
             }).catch(e => {
