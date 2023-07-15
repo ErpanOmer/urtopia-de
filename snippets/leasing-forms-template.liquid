@@ -619,10 +619,14 @@ setTimeout(() => {
 
             if (city) {
                 $('input[name="city"]').val(city.text_de)
+            } else {
+                $('input[name="city"]').val('')
             }
 
             if (postal_code) {
                 $('input[name="postal_code"]').val(postal_code.text_de)
+            } else {
+                $('input[name="postal_code"]').val('')
             }
           },
           change: function (event, ui) {
