@@ -613,8 +613,8 @@ setTimeout(() => {
             })
           },
           select: function( event, ui ) {
-            console.log(event)
-            console.log(ui)
+            console.log(ui.item)
+            $('input[name="city"]').val(ui.item.text_de)
            setTimeout(() =>  console.log(event.target.value))
           }
         });
