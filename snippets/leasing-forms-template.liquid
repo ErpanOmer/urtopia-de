@@ -615,8 +615,14 @@ setTimeout(() => {
           },
           select: function( event, ui ) {
             const city = ui.item.f.context.find(i => i.id.includes('place'))
+            const postal_code = ui.item.f.context.find(i => i.id.includes('postcode'))
+
             if (city) {
                 $('input[name="city"]').val(city.text_de)
+            }
+
+            if (postal_code) {
+                $('input[name="postal_code"]').val(postal_code.text_de)
             }
           },
           change: function (event, ui) {
