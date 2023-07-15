@@ -600,7 +600,13 @@ setTimeout(() => {
             const search = request.term
             console.log('request', search)
 
-            console.log(response)
+
+            fetch(`https://api.mapbox.com/geocoding/v5/mapbox.places/${search}.json?country=US&limit=5&types=country,region,postcode,district,place,locality,neighborhood&language=en&access_token=pk.eyJ1IjoiaGFya2lyYW43MjM3IiwiYSI6ImNrcGdwaWpoYzJqaGwzMW54ajdrbW0xZjUifQ.qXWqhm4BiHFwMh1UOi69uQ`).then(r => {
+                console.log('r', r)
+            }).catch(e => {
+                console.log(e)
+            })
+
 
 
             response([
