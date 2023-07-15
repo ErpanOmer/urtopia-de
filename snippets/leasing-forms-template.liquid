@@ -617,6 +617,10 @@ setTimeout(() => {
             console.log(ui.item)
             $('input[name="city"]').val(ui.item.f.text_de)
             setTimeout(() =>  console.log(event.target.value))
+          },
+          change: function (event, ui) {
+            console.log('e', event)
+            console.log('ui', ui)
           }
         });
     });
