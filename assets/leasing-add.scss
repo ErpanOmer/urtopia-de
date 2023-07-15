@@ -8,10 +8,10 @@ body {
         overflow: hidden;
 
         .ui-menu-item {
-            padding: 6px 17px;
+            padding: 0;
 
             a {
-                padding: 0;
+                padding: 6px 17px;
             }
 
             .ui-state-focus {
