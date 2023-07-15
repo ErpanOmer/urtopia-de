@@ -124,7 +124,9 @@
 
 
  $('.banner .unknown a').on('click', e => {
-    console.log('e', $(e.target).text())
+    fetchBuried('websiteclick', 'homepage-banner', {
+        button: $(e.target).text()
+    }, true)
  })
 
 </script>
