@@ -614,9 +614,10 @@ setTimeout(() => {
             })
           },
           select: function( event, ui ) {
-            console.log(ui.item)
-            $('input[name="city"]').val(ui.item.f.text_de)
-            setTimeout(() =>  console.log(event.target.value))
+            const city = ui.item.context.find(i => i.id.includes('place'))
+            if (city) {
+                $('input[name="city"]').val(city.text_de)
+            }
           },
           change: function (event, ui) {
             console.log('e', event)
