@@ -601,7 +601,7 @@ setTimeout(() => {
         minLength: 1,
         source: function( request, response ) {
             const search = request.term
-            fetch(`https://api.mapbox.com/search/searchbox/v1/suggest?q=${search}country=DE&language=de&limit=5&types=country,region,postcode,district,place,locality,street,address&access_token=pk.eyJ1IjoiaGFya2lyYW43MjM3IiwiYSI6ImNrcGdwaWpoYzJqaGwzMW54ajdrbW0xZjUifQ.qXWqhm4BiHFwMh1UOi69uQ`).then(r => r.json()).then(r => {
+            fetch(`https://api.mapbox.com/search/searchbox/v1/suggest?q=${search}&country=DE&language=de&limit=5&types=country,region,postcode,district,place,locality,street,address&access_token=pk.eyJ1IjoiaGFya2lyYW43MjM3IiwiYSI6ImNrcGdwaWpoYzJqaGwzMW54ajdrbW0xZjUifQ.qXWqhm4BiHFwMh1UOi69uQ`).then(r => r.json()).then(r => {
                 response(r.features.map(f => {
                     return {
                         label: f.place_name_de,
