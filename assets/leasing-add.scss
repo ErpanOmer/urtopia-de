@@ -670,7 +670,7 @@ body {
 
                 input[name="address"] {
                     &::after {
-                        content: '';
+                        content: '✖';
                     }
                 }
 
