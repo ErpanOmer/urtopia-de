@@ -21,6 +21,10 @@ body {
                 margin: 0 !important;
             }
         }
+
+        .ui-menu-item + .ui-menu-item {
+            border-top: 1px solid #f5f5f5;
+        }
     }
 }
 
