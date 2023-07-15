@@ -601,7 +601,7 @@ setTimeout(() => {
             console.log('request', search)
 
 
-            fetch(`https://api.mapbox.com/geocoding/v5/mapbox.places/${search}.json?country=DE&limit=5&types=country,region,postcode,district,place,locality,neighborhood&language=en&access_token=pk.eyJ1IjoiaGFya2lyYW43MjM3IiwiYSI6ImNrcGdwaWpoYzJqaGwzMW54ajdrbW0xZjUifQ.qXWqhm4BiHFwMh1UOi69uQ`).then(r => r.json()).then(r => {
+            fetch(`https://api.mapbox.com/geocoding/v5/mapbox.places/${search}.json?country=DE&language=de&limit=5&types=country,region,postcode,district,place,locality,neighborhood&language=en&access_token=pk.eyJ1IjoiaGFya2lyYW43MjM3IiwiYSI6ImNrcGdwaWpoYzJqaGwzMW54ajdrbW0xZjUifQ.qXWqhm4BiHFwMh1UOi69uQ`).then(r => r.json()).then(r => {
                 console.log('r', r.features)
 
                 response(r.features.map(f => {
