@@ -2,8 +2,20 @@ class CartRemoveButton extends HTMLElement {
   constructor() {
     super();
 
-    this.addEventListener('click', (event) => {
-      
+    this.addEventListener('click', event => {
+      // 查找当前行
+      const line_item = $(event.target.closest('.cart-item'))
+
+      const product_id = line_item.attr('data-line-item-product-id')
+      const variant_id = line_item.attr('data-line-item-variant-id')
+      const quantity = line_item.attr('data-quantity')
+      const index = line_item.attr('data-index')
+      const sale_name = line_item.attr('data-line-item-sale-name')
+
+      // 查找保险产品
+      const insurance = $(`.cart-items .cart-item[data-insurance-product-variant-id="${variant_id}"][data-line-item="${index + 1}"]`)
+
+      console.log('$(event.target', $(event.target).val())
     })
 
 
