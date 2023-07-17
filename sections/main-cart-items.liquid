@@ -350,46 +350,36 @@ padding-bottom: {{ section.settings.padding_bottom }}px;
                     <label class="visually-hidden" for="Quantity-{{ item.index | plus: 1 }}">
                       {{ 'products.product.quantity.label' | t }}
                     </label>
+                    
                     {% assign discountTitle = item.discounts.first.title %}
                     {% assign sale_product_id = 7633738727640 %}
                     {%- assign is_insurance_product = false -%}
-                    {%- assign has_insurance_product = false -%}
-                    {%- assign item_prop_insurance_variant_id = item.properties._insurance_variant_id | times: 1 -%}
-                    {%- assign insurance_prop_product_id = insurance_item.properties._product_variant_id | times: 1 -%}
         
                     {% if item.properties._product_variant_id != blank %}
                       {%- assign is_insurance_product = true -%}
                     {%- endif -%}
 
-                    {%- if item.id == insurance_prop_product_id and insurance_item.id == item_prop_insurance_variant_id -%}
-                      {%- assign has_insurance_product = true -%}
-                    {%- endif -%}
-
                     {% if item.product.id != sale_product_id and discountTitle or is_insurance_product %}
                       <div style="width: 100%;display: flex;align-items: center;">{{ item.quantity }}</div>
                     {% else %}
-                      {% if item.product.id == 7952778658008 and has_insurance_product %}
-                          <div style="width: 100%;display: flex;align-items: center;">{{ item.quantity }} xxxx</div>
-                        {% else  %}
-                        <quantity-input class="quantity">
-                          <button class="quantity__button no-js-hidden" name="minus" type="button">
-                            <span class="visually-hidden">{{ 'products.product.quantity.decrease' | t: product:
-                              item.product.title | escape }}</span>
-                            {% render 'icon-minus' %}
-                          </button>
-    
-                          <input class="quantity__input" type="number" name="updates[]" value="{{ item.quantity }}" min="0"
-                            aria-label="{{ 'products.product.quantity.input_label' | t: product: item.product.title | escape }}"
-                            id="Quantity-{{ item.index | plus: 1 }}" data-index="{{ item.index | plus: 1 }}">
-    
-    
-                          <button class="quantity__button no-js-hidden" name="plus" type="button">
-                            <span class="visually-hidden">{{ 'products.product.quantity.increase' | t: product:
-                              item.product.title | escape }}</span>
-                            {% render 'icon-plus' %}
-                          </button>
-                        </quantity-input>
-                        {% endif %}
+                      <quantity-input class="quantity">
+                        <button class="quantity__button no-js-hidden" name="minus" type="button">
+                          <span class="visually-hidden">{{ 'products.product.quantity.decrease' | t: product:
+                            item.product.title | escape }}</span>
+                          {% render 'icon-minus' %}
+                        </button>
+
+                        <input class="quantity__input" type="number" name="updates[]" value="{{ item.quantity }}" min="0"
+                          aria-label="{{ 'products.product.quantity.input_label' | t: product: item.product.title | escape }}"
+                          id="Quantity-{{ item.index | plus: 1 }}" data-index="{{ item.index | plus: 1 }}">
+
+
+                        <button class="quantity__button no-js-hidden" name="plus" type="button">
+                          <span class="visually-hidden">{{ 'products.product.quantity.increase' | t: product:
+                            item.product.title | escape }}</span>
+                          {% render 'icon-plus' %}
+                        </button>
+                      </quantity-input>
                     {% endif %}
                     
                     <cart-remove-button id="Remove-{{ item.index | plus: 1 }}" data-index="{{ item.index | plus: 1 }}">
