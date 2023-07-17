@@ -56,6 +56,38 @@ class CartItems extends HTMLElement {
     this.addEventListener('change', this.debouncedOnChange.bind(this));
   }
 
+  fetchAndRefreshCart(updates = []) {
+    fetch('/cart/update.js', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': `application/json` },
+      body: JSON.stringify({ 
+        updates,
+        sections: this.getSectionsToRender().map((section) => section.section),
+        sections_url: window.location.pathname
+      })
+    }).then(response => response.json()).then(parsedState => {
+      console.log('parsedState', parsedState)
+      // location.reload(true);
+      this.classList.toggle('is-empty', parsedState.item_count === 0);
+      const cartDrawerWrapper = document.querySelector('cart-drawer');
+      
+      this.getSectionsToRender().forEach((section => {
+        const elementToReplace =
+          document.getElementById(section.id).querySelector(section.selector) || document.getElementById(section.id);
+        elementToReplace.innerHTML =
+          this.getSectionInnerHTML(parsedState.sections[section.section], section.selector);
+      }));
+
+      if (cartDrawerWrapper) cartDrawerWrapper.classList.toggle('is-empty', parsedState.item_count === 0);
+
+      return parsedState
+    }).catch((error) => {
+      throw new Error(error);
+    }).finally(() => {
+      this.disableLoading()
+    })
+  }
+
   onCartChange (event) {
     // 查找当前行
     const line_item = $(event.target.closest('.cart-item'))
