@@ -76,7 +76,7 @@ class CartItems extends HTMLElement {
     const quantity_arr = []
 
     // 查找保险产品
-    const insurance = $(`.cart-items .cart-item[data-insurance-product-variant-id="${variant_id}"][data-index="${index + 1}"]`)
+    const insurance = $(`.cart-items .cart-item[data-insurance-product-variant-id="${variant_id}"]`)
 
     console.log('insurance', insurance)
 
