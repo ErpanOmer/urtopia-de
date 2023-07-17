@@ -612,7 +612,7 @@
           </span>
         </a>
       {%- endif -%}
-      <a href="{{ routes.cart_url }}" class="header__icon header__icon--cart link focus-inset" id="cart-icon-bubble" {% if template != 'cart' %}style="display: none;"{% endif %}>
+      <a href="{{ routes.cart_url }}" class="header__icon header__icon--cart link focus-inset" id="cart-icon-bubble" {% if template == 'cart' %}style="display: none;"{% endif %}>
           {%- liquid
             if cart == empty
               render 'icon-cart-empty'
