@@ -70,6 +70,8 @@ class CartItems extends HTMLElement {
     const index = line_item.attr('data-index')
     const sale_name = line_item.attr('data-line-item-sale-name')
 
+    console.log(sale_name, index, quantity, to_quantity)
+
     // 数量变动
     const quantity_arr = []
 
