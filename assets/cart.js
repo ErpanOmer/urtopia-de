@@ -63,7 +63,7 @@ class CartItems extends HTMLElement {
     const product_id = line_item.attr('data-line-item-product-id')
     const variant_id = line_item.attr('data-line-item-variant-id')
 
-    const quantity = line_item.attr('data-quantity')
+    const quantity = parseInt(line_item.attr('data-quantity'))
     // 如果 target value 有值，是onchange , 否则 onremove
     const to_quantity = event.target.value ? parseInt(event.target.value) : 0
 
