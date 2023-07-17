@@ -92,6 +92,9 @@ class CartItems extends HTMLElement {
       quantity_arr[insurance.attr('data-index') - 1] = to_quantity
     }
 
+    // 修改产品本身
+    quantity_arr[index - 1] = to_quantity
+
     // batch update quantity
     $(`.cart-items .cart-item`).each((index, item) => {
       if (quantity_arr[index] === undefined) {
