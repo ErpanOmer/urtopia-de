@@ -78,6 +78,8 @@ class CartItems extends HTMLElement {
     // 查找保险产品
     const insurance = $(`.cart-items .cart-item[data-insurance-product-variant-id="${variant_id}"][data-index="${index + 1}"]`)
 
+    console.log('insurance', insurance)
+
     // 如果是带活动产品
     if (sale_name) {
 
