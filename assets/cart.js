@@ -1,6 +1,9 @@
 class CartRemoveButton extends HTMLElement {
   constructor() {
     super();
+
+
+    /*
     this.addEventListener('click', (event) => {
       console.log('event', event)
       event.preventDefault();
@@ -27,6 +30,7 @@ class CartRemoveButton extends HTMLElement {
         cartItems.updateQuantity(this.dataset.index, 0,"","remove");//更改
       }
     });
+    */
   }
 }
 
