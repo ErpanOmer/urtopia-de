@@ -62,16 +62,34 @@ class CartItems extends HTMLElement {
 
     const product_id = line_item.attr('data-line-item-product-id')
     const variant_id = line_item.attr('data-line-item-variant-id')
+
     const quantity = line_item.attr('data-quantity')
+    // 如果 target value 有值，是onchange , 否则 onremove
+    const to_quantity = event.target.value ? parseInt(event.target.value) : 0
+
     const index = line_item.attr('data-index')
     const sale_name = line_item.attr('data-line-item-sale-name')
+
+    // 数量变动
+    const quantity_arr = []
 
     // 查找保险产品
     const insurance = $(`.cart-items .cart-item[data-insurance-product-variant-id="${variant_id}"][data-line-item="${index + 1}"]`)
 
-    console.log('$(event.target', $(event.target).val())
+    // 如果是带活动产品
+    if (sale_name) {
+
+    } else {
+
+    }
+
+    // 如果当前车variant 存在保险
+    if (insurance.length === 1) {
+      quantity_arr[insurance.attr('data-line-item') - 1] = to_quantity
+    }
 
 
+    console.log('quantity_arr', quantity_arr)
 
     event.preventDefault();
   }
