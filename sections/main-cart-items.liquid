@@ -337,7 +337,7 @@ padding-bottom: {{ section.settings.padding_bottom }}px;
                       {%- assign is_insurance_product = true -%}
                     {%- endif -%}
 
-                    {% if sale_product_id contains item.product.id and discountTitle or is_insurance_product %}
+                    {% if sale_product_id != item.product.id and discountTitle or is_insurance_product %}
                       <div style="width: 100%;display: flex;align-items: center;">{{ item.quantity }}</div>
                     {% else %}
                       <quantity-input class="quantity">
