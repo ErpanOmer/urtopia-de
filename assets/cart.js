@@ -67,7 +67,7 @@ class CartItems extends HTMLElement {
     // 如果 target value 有值，是onchange , 否则 onremove
     const to_quantity = event.target.value ? parseInt(event.target.value) : 0
 
-    const index = line_item.attr('data-index')
+    const index = parseInt(line_item.attr('data-index'))
     const sale_name = line_item.attr('data-line-item-sale-name')
 
     console.log(variant_id, sale_name, index, quantity, to_quantity)
@@ -76,7 +76,7 @@ class CartItems extends HTMLElement {
     const quantity_arr = []
 
     // 查找保险产品
-    const insurance = $(`.cart-items .cart-item[data-insurance-product-variant-id="${variant_id}"]`)
+    const insurance = $(`.cart-items .cart-item[data-insurance-product-variant-id="${variant_id}"][data-index="${index + 1}"]`)
 
     console.log('insurance', insurance)
 
@@ -92,6 +92,14 @@ class CartItems extends HTMLElement {
       quantity_arr[insurance.attr('data-index') - 1] = to_quantity
     }
 
+    // batch update quantity
+    $(`.cart-items .cart-item`).each((index, item) => {
+      if (quantity_arr[index] === undefined) {
+        quantity_arr[index] = parseInt($(item).attr('data-quantity'))
+      }
+    })
+
+    
 
     console.log('quantity_arr', quantity_arr)
 
