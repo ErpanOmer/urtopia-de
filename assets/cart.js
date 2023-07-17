@@ -156,6 +156,9 @@ class CartItems extends HTMLElement {
 
     console.log('quantity_arr', quantity_arr)
 
+    // loading
+    this.enableLoading(index)
+    // fetch
     this.fetchAndRefreshCart(quantity_arr)
     event.preventDefault();
   }
