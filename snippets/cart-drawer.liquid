@@ -459,19 +459,13 @@
                           {% assign discountTitle = item.discounts.first.title %}
                           {% assign sale_product_id = 7633738727640 %}
                           {%- assign is_insurance_product = false -%}
-                          {%- assign has_insurance_product = false -%}
-                          {%- assign item_prop_insurance_variant_id = item.properties._insurance_variant_id | times: 1 -%}
-                          {%- assign insurance_prop_product_id = insurance_item.properties._product_variant_id | times: 1 -%}
               
                           {% if item.properties._product_variant_id != blank %}
                             {%- assign is_insurance_product = true -%}
                           {%- endif -%}
 
-                          {%- if item.id == insurance_prop_product_id and insurance_item.id == item_prop_insurance_variant_id -%}
-                            {%- assign has_insurance_product = true -%}
-                          {%- endif -%}
 
-                          <div class="cart-item__quantity-wrapper" id="{{item.product.id}}" sale_product_id="{{sale_product_id}}" is_insurance_product="{{is_insurance_product}}" discountTitle="{{discountTitle}}">
+                          <div class="cart-item__quantity-wrapper" id="{{item.product.id}}">
                             {% if item.product.id != sale_product_id and discountTitle or is_insurance_product %}
                               <div style="width: 99%;display: flex;align-items: center;">{{ item.quantity }}</div>
                             {% else %}
