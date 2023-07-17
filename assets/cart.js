@@ -85,7 +85,7 @@ class CartItems extends HTMLElement {
 
     // 如果当前车variant 存在保险
     if (insurance.length === 1) {
-      quantity_arr[insurance.attr('data-line-item') - 1] = to_quantity
+      quantity_arr[insurance.attr('data-index') - 1] = to_quantity
     }
 
 
