@@ -16,6 +16,10 @@ class CartRemoveButton extends HTMLElement {
       const insurance = $(`.cart-items .cart-item[data-insurance-product-variant-id="${variant_id}"][data-line-item="${index + 1}"]`)
 
       console.log('$(event.target', $(event.target).val())
+
+
+
+      event.preventDefault();
     })
 
 
