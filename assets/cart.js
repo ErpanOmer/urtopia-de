@@ -82,8 +82,24 @@ class CartItems extends HTMLElement {
 
     // 如果是带活动产品
     if (sale_name) {
+      const sale_components = $(`.cart-items .cart-item[data-line-item-sale-name="${sale_name}"]:not([data-line-item-variant-id="${variant_id}"]):not([data-line-item-product-id="${product_id}"])`)
+      const sale_bikes = $(`.cart-items .cart-item[data-line-item-sale-name="${sale_name}"][data-line-item-product-id="${product_id}"]`)
 
-    } else {
+      // 计算车总数
+      let count = 0
+      // 遍历活动车
+      sale_bikes.each((i, item) => {
+        if (item === line_item[0]) {
+          count += quantity
+        } else {
+          count += parseInt($(item).attr('data-quantity'))
+        }      
+      })
+
+      // 活动配件
+      sale_components.each((i, item) => {
+        quantity_arr[$(item).attr('data-index') - 1] = (count - quantity) + to_quantity
+      })
 
     }
 
@@ -92,7 +108,7 @@ class CartItems extends HTMLElement {
       quantity_arr[insurance.attr('data-index') - 1] = to_quantity
     }
 
-    // 修改产品本身
+    // 修改产品本身 quantity
     quantity_arr[index - 1] = to_quantity
 
     // batch update quantity
