@@ -122,7 +122,7 @@ class CartItems extends HTMLElement {
 
     console.log('quantity_arr', quantity_arr)
 
-    fetchAndRefreshCart(quantity_arr)
+    this.fetchAndRefreshCart(quantity_arr)
     event.preventDefault();
   }
 
