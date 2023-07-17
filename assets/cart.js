@@ -134,7 +134,7 @@ class CartItems extends HTMLElement {
     event.preventDefault();
   }
 
-  onChange(event, ...a) {
+  onChange(event) {
     this.onCartChange(event)
   }
   getSectionsToRender() {
