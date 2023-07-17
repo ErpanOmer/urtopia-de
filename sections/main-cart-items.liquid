@@ -5,6 +5,8 @@
 {{ 'component-discounts.css' | asset_url | stylesheet_tag }}
 {{ 'component-loading-overlay.css' | asset_url | stylesheet_tag }}
 
+{% assign sale_product_id = "7633738727640" %}
+
 {%- style -%}
 .section-{{ section.id }}-padding {
 padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
@@ -107,9 +109,6 @@ padding-bottom: {{ section.settings.padding_bottom }}px;
                   {%- endif -%}
                 {%- endif -%}
               {%- endfor -%}
-
-              {% comment %} 活动配件 {% endcomment %}
-              {%- assign is_event_components = false %}
               
               {%- comment -%} Check if the item has an active Insurance product in cart {%- endcomment -%}
               {%- for insurance_item in cart.items -%}
@@ -119,12 +118,6 @@ padding-bottom: {{ section.settings.padding_bottom }}px;
                 {%- if item == insurance_item -%}
                   {%- continue -%}
                 {%- endif -%}
-
-                 {% comment %} 如果是赠送的活动配件 {% endcomment %}
-                      {%- if item.id == 43745263255768 or item.id == 43745261748440 or item.id == 43745264697560 -%}
-                          {%- assign is_event_components = true -%}
-                            {%- break -%}
-                  {%- endif -%}
                 
               {%- endfor -%}
             
@@ -338,14 +331,13 @@ padding-bottom: {{ section.settings.padding_bottom }}px;
                     </label>
                     
                     {% assign discountTitle = item.discounts.first.title %}
-                    {% assign sale_product_id = 7633738727640 %}
                     {%- assign is_insurance_product = false -%}
         
                     {% if item.properties._product_variant_id != blank %}
                       {%- assign is_insurance_product = true -%}
                     {%- endif -%}
 
-                    {% if item.product.id != sale_product_id and discountTitle or is_insurance_product %}
+                    {% if sale_product_id contains item.product.id and discountTitle or is_insurance_product %}
                       <div style="width: 100%;display: flex;align-items: center;">{{ item.quantity }}</div>
                     {% else %}
                       <quantity-input class="quantity">
