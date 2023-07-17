@@ -62,8 +62,8 @@ class CartItems extends HTMLElement {
 
   onCartChange (event) {
     // 查找当前行
-    const line_item = $(event.target.closest('.cart-item'))
     const items = $(event.target.closest('.cart-items'))
+    const line_item = $(event.target.closest('.cart-item'))
 
     const product_id = line_item.attr('data-line-item-product-id')
     const variant_id = line_item.attr('data-line-item-variant-id')
