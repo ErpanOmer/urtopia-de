@@ -70,6 +70,10 @@ class CartItems extends HTMLElement {
       // location.reload(true);
       this.classList.toggle('is-empty', parsedState.item_count === 0);
       const cartDrawerWrapper = document.querySelector('cart-drawer');
+      const cartFooter = document.getElementById('main-cart-footer');
+
+      if (cartFooter) cartFooter.classList.toggle('is-empty', parsedState.item_count === 0);
+      if (cartDrawerWrapper) cartDrawerWrapper.classList.toggle('is-empty', parsedState.item_count === 0);
       
       this.getSectionsToRender().forEach((section => {
         const elementToReplace =
@@ -77,8 +81,6 @@ class CartItems extends HTMLElement {
         elementToReplace.innerHTML =
           this.getSectionInnerHTML(parsedState.sections[section.section], section.selector);
       }));
-
-      if (cartDrawerWrapper) cartDrawerWrapper.classList.toggle('is-empty', parsedState.item_count === 0);
 
       return parsedState
     }).catch((error) => {
