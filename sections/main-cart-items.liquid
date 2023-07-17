@@ -5,9 +5,6 @@
 {{ 'component-discounts.css' | asset_url | stylesheet_tag }}
 {{ 'component-loading-overlay.css' | asset_url | stylesheet_tag }}
 
-
-{% assign sale_product_id = 7633738727640 %}
-
 {%- style -%}
 .section-{{ section.id }}-padding {
 padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
@@ -111,12 +108,6 @@ padding-bottom: {{ section.settings.padding_bottom }}px;
             {% assign alltotal = threedivided | plus: helmetQuantity %}
 
             {%- for item in cart.items -%}
-              {%- assign is_insurance_product = false -%}
-              
-              {% if item.properties._product_variant_id != blank %}
-                {%- assign is_insurance_product = true -%}
-              {%- endif -%}
-
               {% comment %} Find the related Product to the Insurance and get it's variant.title {% endcomment %}
               {%- assign main_product_title = '' -%}
 
@@ -131,8 +122,6 @@ padding-bottom: {{ section.settings.padding_bottom }}px;
                 {%- endif -%}
               {%- endfor -%}
 
-              {%- assign has_insurance_product = false -%}
-
               {% comment %} 活动配件 {% endcomment %}
               {%- assign is_event_components = false %}
               
@@ -143,11 +132,6 @@ padding-bottom: {{ section.settings.padding_bottom }}px;
 
                 {%- if item == insurance_item -%}
                   {%- continue -%}
-                {%- endif -%}
-                
-                {%- if item.id == insurance_prop_product_id and insurance_item.id == item_prop_insurance_variant_id -%}
-                  {%- assign has_insurance_product = true -%}
-                  {%- break -%}
                 {%- endif -%}
 
                  {% comment %} 如果是赠送的活动配件 {% endcomment %}
@@ -367,6 +351,19 @@ padding-bottom: {{ section.settings.padding_bottom }}px;
                       {{ 'products.product.quantity.label' | t }}
                     </label>
                     {% assign discountTitle = item.discounts.first.title %}
+                    {% assign sale_product_id = 7633738727640 %}
+                    {%- assign is_insurance_product = false -%}
+                    {%- assign has_insurance_product = false -%}
+                    {%- assign item_prop_insurance_variant_id = item.properties._insurance_variant_id | times: 1 -%}
+                    {%- assign insurance_prop_product_id = insurance_item.properties._product_variant_id | times: 1 -%}
+        
+                    {% if item.properties._product_variant_id != blank %}
+                      {%- assign is_insurance_product = true -%}
+                    {%- endif -%}
+
+                    {%- if item.id == insurance_prop_product_id and insurance_item.id == item_prop_insurance_variant_id -%}
+                      {%- assign has_insurance_product = true -%}
+                    {%- endif -%}
 
                     {% if item.product.id != sale_product_id and discountTitle or is_insurance_product %}
                       <div style="width: 100%;display: flex;align-items: center;">{{ item.quantity }}</div>
