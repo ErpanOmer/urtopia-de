@@ -163,6 +163,7 @@ padding-bottom: {{ section.settings.padding_bottom }}px;
                 class="cart-item" 
                 id="CartItem-{{ item.index | plus: 1 }}"
                 data-cart-item="{{ item.key }}"
+                data-index="{{ item.index | plus: 1 }}"
                 data-line-item="{{ forloop.index }}"
                 data-quantity="{{- item.quantity -}}"
                 data-line-item-product-id="{{- item.product_id -}}"

@@ -93,6 +93,7 @@ class CartItems extends HTMLElement {
   onCartChange (event) {
     // 查找当前行
     const line_item = $(event.target.closest('.cart-item'))
+    const items = $(event.target.closest('.cart-items'))
 
     const product_id = line_item.attr('data-line-item-product-id')
     const variant_id = line_item.attr('data-line-item-variant-id')
@@ -110,14 +111,14 @@ class CartItems extends HTMLElement {
     const quantity_arr = []
 
     // 查找保险产品
-    const insurance = $(`.cart-items .cart-item[data-insurance-product-variant-id="${variant_id}"][data-index="${index + 1}"]`)
+    const insurance = items.find(`.cart-item[data-insurance-product-variant-id="${variant_id}"][data-index="${index + 1}"]`)
 
     console.log('insurance', insurance)
 
     // 如果是带活动产品
     if (sale_name) {
-      const sale_components = $(`.cart-items .cart-item[data-line-item-sale-name="${sale_name}"]:not([data-line-item-variant-id="${variant_id}"]):not([data-line-item-product-id="${product_id}"])`)
-      const sale_bikes = $(`.cart-items .cart-item[data-line-item-sale-name="${sale_name}"][data-line-item-product-id="${product_id}"]`)
+      const sale_components = items.find(`.cart-item[data-line-item-sale-name="${sale_name}"]:not([data-line-item-variant-id="${variant_id}"]):not([data-line-item-product-id="${product_id}"])`)
+      const sale_bikes = items.find(`.cart-item[data-line-item-sale-name="${sale_name}"][data-line-item-product-id="${product_id}"]`)
 
       // 计算车总数
       let count = 0
@@ -146,7 +147,7 @@ class CartItems extends HTMLElement {
     quantity_arr[index - 1] = to_quantity
 
     // batch update quantity
-    $(`.cart-items .cart-item`).each((index, item) => {
+    items.find('.cart-item').each((index, item) => {
       if (quantity_arr[index] === undefined) {
         quantity_arr[index] = parseInt($(item).attr('data-quantity'))
       }
