@@ -3247,7 +3247,13 @@ function splitTimeFormat(item = '') {
             ...extra_data,
             ...body.extras,
             ...body.extras.userInfo,
-            test_ride_model: extra_data.test_ride_model
+            test_ride_model: extra_data.test_ride_model,
+            extras: {
+              spot: that.config.shopInfo.testrideSpot,
+              userInfo: that.userInfo,
+              test_ride_model: extra_data.test_ride_model,
+              test_ride_time: extra_data.test_ride_time,
+            },
           }
 
           console.log('extra_data', extra_data)
