@@ -654,6 +654,12 @@
     });
   });
 
+
+  //Bing UET
+  document.querySelector('#CartDrawer-Checkout').addEventListener('click', function () {
+    fetchBuried('websiteclick', `cart-page`, { button: 'checkout' }, true)
+  })
+
   function addTocartFromAccessories (id) {
     if (!id) {
       return
