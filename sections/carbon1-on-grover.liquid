@@ -1487,8 +1487,10 @@
 </div>
 
 <script>
+    const stint = [43891331006680, 43891331137752]
+
     const search = getSearchValues()
-    const variants = JSON.parse(JSON.stringify({{ product.variants | json }}))
+    const variants = JSON.parse(JSON.stringify({{ product.variants | json }})).filter(i => stint.includes(i.id))
     const size_map = {
         M: 'Fit for 170-185 cm',
         L: 'Fit for 180-195 cm'
