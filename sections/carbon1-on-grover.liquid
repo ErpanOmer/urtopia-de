@@ -1509,6 +1509,7 @@
 
 <script>
     const stint = [43891331006680, 43891331137752]
+    global_config.subscribe_email_dialog_config.is_hide = true
 
     const search = getSearchValues()
     const variants = JSON.parse(JSON.stringify({{ product.variants | json }})).filter(i => stint.includes(i.id))
