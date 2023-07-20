@@ -1762,11 +1762,11 @@
         }
     }
 
-    {% comment %} {% for variant in product.variants %}
-        models[{{ variant.option1 | json }}] = 1
+    {% for variant in product.variants %}
+        // models[{{ variant.option1 | json }}] = 1
         styles[{{ variant.option3 | json }}] = 1
         sizes[{{ variant.option2 | json }}] = 1
-    {% endfor %} {% endcomment %}
+    {% endfor %}
 
     console.log('variants', variants)
 
