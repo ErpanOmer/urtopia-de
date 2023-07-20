@@ -112,11 +112,8 @@
                     margin-left: 6px;
                     line-height: 1;">- 18%</span><span style="text-decoration: line-through;margin-left: 10px;">UVP {{ product.price | money }}</span>
                 </div>
-                <div class="u24DemiBold_v2 mb12" style="color: #707070;">
-                    <span class="u17DemiBold_v2">From</span>
-                    <span style="color: #000;text-decoration: line-through;">{{ 14900 | money }}</span>
-                    <span style="color: #E90000;">{{ 13900 | money }}</span>
-                    <span class="u17DemiBold_v2">/month</span>
+                <div class="u24DemiBold_v2 mb12" style="color: #E90000;">
+                    <span>{{ product.price | minus: 60000 | money }}</span>
                 </div>
             </div>
             <div class="sale_acc mb12 belt pcHide mobileHide">
