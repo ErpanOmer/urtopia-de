@@ -1882,7 +1882,7 @@
     let currnetScroolTop = 0
     $(document).on('scroll', throttle(e => {
         const top1 = $('#freedom').offset().top
-        const top3 = $('.product .parameters').offset().top
+        const top3 = $('#product_form_{{ product.id }}').offset().top
         const top2 = $(e.target).scrollTop()
 
         const h = window.screen.height
