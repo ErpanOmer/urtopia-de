@@ -122,7 +122,7 @@ const global_config = {
       // 1-l-sb
       42615025369304: 'Free shipping within 5 days',
       // 1-m-lb
-      42615025238232: 'Free shipping within 5 days',
+      42615025238232: 'Ships between August 1 - 15 from local warehouse.',
       // 1-l-lb
       42615025434840: 'Free shipping within 5 days',
       // 1-m-pb
