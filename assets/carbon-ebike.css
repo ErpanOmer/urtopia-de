@@ -2594,6 +2594,7 @@ section.mobile-motor {
 
 .strava {
     max-height: 500px;
+    margin-top: 16px;
 }
 
 .strava .pc-maxW {
