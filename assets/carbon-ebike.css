@@ -2607,5 +2607,6 @@ section.mobile-motor {
 .strava .pc-maxW > div {
     display: flex;
     flex-direction: column;
+    max-width: 40%;
 }
 
