@@ -2614,6 +2614,11 @@ section.mobile-motor {
     margin: 40px 0 30px;
 }
 
+.strava .pc-maxW > div .u30DemiBold_v2 {
+    color: #fff;
+    margin-top: 8px;
+}
+
 .strava .pc-maxW > div img {
     max-width: 135px;
 }
