@@ -2604,6 +2604,10 @@ section.mobile-motor {
     .strava-mobile .u24DemiBold_v2 {
         color: #fff;
     }
+
+    .strava-mobile img {
+        max-width: 92px;
+    }
 }
 
 
