@@ -18,13 +18,13 @@
         "type": "text",
         "id": "sale_name",
         "label": "活动名称",
-        "default": "Green Riding Sale"
+        "default": "Outdoor Season Sale"
       },
       {
         "type": "text",
         "id": "sale_end_time",
         "label": "活动结束文案",
-        "default": "Ends on July 20"
+        "default": "Ends on July 24"
       }
     ]
   },
