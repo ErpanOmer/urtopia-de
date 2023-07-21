@@ -957,4 +957,36 @@ const testRides = [
       },
     ]
   },
+  {
+    city: 'Güstrow',
+    cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/schloss_guestrow_drohne17_aNoB_ubertr_kUrh_005-1351x900.jpg?v=1689910159',
+    series: [
+      'Urtopia Carbon 1',
+      // 'Urtopia Carbon 1'
+    ],
+    stores: [
+      {
+        name: 'Mabea GmbH',
+        phone: '+49 01743069724',
+        email: 'support@mabea-mobility.de',
+        timezone: "Mainz, Germany (GMT+1)",
+        add: "Neue Str. 6, 18273 Güstrow, Germany",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/schloss_guestrow_drohne17_aNoB_ubertr_kUrh_005-1351x900.jpg?v=1689910159",
+        testrideSpot: "Güstrow",
+        testRideSize: "L",
+        availableSizes: [
+          'Carbon One Size L',
+          ],
+        businessHours: [
+          "",
+          "12:00-16:00",
+          "12:00-16:00",
+          "12:00-16:00",
+          "12:00-16:00",
+          "12:00-16:00",
+          "",
+        ],
+      },
+    ]
+  },
 ]
