@@ -20,9 +20,9 @@ const global_config = {
     // 邮件弹窗 延迟弹出时间，单位:s
     show_delay_time: 10,
     // 邮件 pc 背景图
-    background_imgae_pc: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230609-untitled-9762_2x_61c939a1-85d2-49aa-935d-677ec7142dcf.jpg?v=1689645158',
+    background_imgae_pc: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Urtopia_Photo_Sesh_14_of_14_2x_a41a7ead-23bd-447d-b467-52b3c8c231f6.jpg?v=1689904640',
     // 邮件 mobile 背景图
-    background_imgae_mb: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230609-untitled-9762_2x_6a4c8e28-22ea-412e-9ac9-ed7477cfded3.jpg?v=1689645165'
+    background_imgae_mb: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Urtopia_Photo_Sesh_14_of_14_2x_db4fd2bf-28a8-4e13-a099-8ab8ccf01500.jpg?v=1689904654'
   },
 
   // carbon 车配置
