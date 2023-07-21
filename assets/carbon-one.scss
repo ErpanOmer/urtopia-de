@@ -1665,6 +1665,14 @@ $sale_text_color: #13B698;
                     order: 3;
                 }
 
+                &:nth-child(5) {
+                    order: 5;
+                }
+
+                &:nth-child(6) {
+                    order: 6;
+                }
+
                 .u36DemiBold_v2 {
                     font-size: 24px;
                 }
