@@ -2600,6 +2600,10 @@ section.mobile-motor {
     .strava-mobile .u17Light_v2 {
         margin: 20px 0;
     }
+
+    .strava-mobile .u24DemiBold_v2 {
+        color: #fff;
+    }
 }
 
 
