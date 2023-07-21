@@ -2603,3 +2603,7 @@ section.mobile-motor {
     color: #fff;
 }
 
+.strava .pc-maxW > div {
+    display: flex;
+}
+
