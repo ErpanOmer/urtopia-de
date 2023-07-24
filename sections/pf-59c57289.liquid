@@ -2616,6 +2616,10 @@ if (document.querySelector("#anti-movie-btn")) {
     document.querySelector("#movie-case-modal").style.display = "block";
   };
 }
+
+$('.strava .details-full-btn').on('click', () => $('#anti-movie-btn').click())
+
+
 if (document.querySelector("#case-closeBtn")) {
   document.querySelector("#case-closeBtn").onclick = () => {
     document.body.style.overflow = "auto";
