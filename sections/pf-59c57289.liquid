@@ -2639,6 +2639,9 @@ if (document.querySelector("#mobile-anti-movie-details-btn")) {
     document.querySelector("#mobile-movie-anti-modal").style.display = "block";
   };
 }
+
+$('.strava-mobile .details-full-btn').on('click', () => $('#mobile-anti-movie-details-btn').click())
+
 if (document.querySelector("#mobile-movie-anti-closeBtn")) {
   document.querySelector("#mobile-movie-anti-closeBtn").onclick = () => {
     document.body.style.overflow = "auto";
