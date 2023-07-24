@@ -54,7 +54,7 @@
             English
           </li>
           <li data-code="de" data-value="German" onclick="updateLang(this)">German</li>
-          <li data-code="fr" data-value="French" onclick="updateLang(this)">French</li>
+          <!--<li data-code="fr" data-value="French" onclick="updateLang(this)">French</li>-->
         </ul>
       </div>
       <button type="button" onclick="goToPage()"><span>Sel<span>ect</span></button>
@@ -254,8 +254,7 @@
     } else {
       let notShowModal =
         (langCode === 'de' && locale === 'de') ||
-        (langCode === 'fr' && locale === 'fr') ||
-        (langCode !== 'de' && langCode !== 'fr' && locale === 'en');
+        (langCode !== 'de' && locale === 'en');
 
       let recommendCode = langmap[langCode]?.code || 'en';
       let recommendVal = langmap[langCode]?.value || 'English';
