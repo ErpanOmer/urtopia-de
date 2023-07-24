@@ -1678,8 +1678,14 @@
         }
     }
 
-    function gotoXXXXX () {
-      fetchBuried('websiteclick', `ad-mediamarkt-page`, { button: 'shop on mediamarkt' }, true)
+    function gotoXXXXX (to = '') {
+      if (to === 'goOrderPage') {
+        fetchBuried('websiteclick', `ad-mediamarkt-page`, { button: 'Buy from Urtopia' })
+
+        return window.open(`/products/urtopia-carbon-e-bike`)
+      }
+
+      fetchBuried('websiteclick', `ad-mediamarkt-page`, { button: 'shop on mediamarkt' })
 
       window.open(`https://www.mediamarkt.de/de/search.html?query=urtopia&filter=carType%3ACitybike`)
     }
