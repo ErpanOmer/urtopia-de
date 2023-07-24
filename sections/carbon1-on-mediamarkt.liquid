@@ -10,6 +10,10 @@
   .product .centeral-content .product-panel .options .Model>div:after {
     background-color: var(--sale-color3);
   }
+
+  .orderBtn {
+    display: flex;
+}
   
 </style>
 
@@ -189,7 +193,8 @@
                     <span><span class="u17DemiBold_v2">0% APR Financing</span><span>24 months, €<span class="stages">112</span>/month</span></span>
                 </div>
             </div>
-            <div onclick="gotoXXXXX()" href="https://www.mediamarkt.de/de/search.html?query=urtopia&filter=carType%3ACitybike" target="_blank" class="my-button my-button-black mb12" style="background-color: #E90000;">Buy On MediaMarkt</div>
+            <div onclick="gotoXXXXX('goOrderPage')" class="my-button my-button-black mb12" style="background-color: #FF9300;">Buy from Urtopia</div>
+            <div onclick="gotoXXXXX()" class="my-button my-button-black mb12" style="background-color: #E90000;">Buy On MediaMarkt</div>
             <div class="delivery_time mb12 pcHide mobileHide">Free shipping <span>within 5 days</span></div>
             <div class="support mb12 pcHide mobileHide">
                 <a href="#boxs3">
@@ -1674,8 +1679,14 @@
         }
     }
 
-    function gotoXXXXX () {
-      fetchBuried('websiteclick', `ad-mediamarkt-page`, { button: 'shop on mediamarkt' }, true)
+    function gotoXXXXX (to = '') {
+      if (to === 'goOrderPage') {
+        fetchBuried('websiteclick', `ad-mediamarkt-page`, { button: 'Buy from Urtopia' })
+
+        return window.open(`/products/urtopia-carbon-e-bike`)
+      }
+
+      fetchBuried('websiteclick', `ad-mediamarkt-page`, { button: 'shop on mediamarkt' })
 
       window.open(`https://www.mediamarkt.de/de/search.html?query=urtopia&filter=carType%3ACitybike`)
     }

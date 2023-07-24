@@ -404,6 +404,7 @@ href="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/swiper-3.4.2.min.cs
           <div class="u30DemiBold_v2">Integrated with <br>Apple Watch and Strava</div>
           <div class="u17Light_v2">Urtopia E-Bike allow syncing Apple Watch for Heart Rate Monitoring on Smartbar in real time. Urtopia App also break data barriers, sync with Apple Health, and share to Strava in just one click!</div>
           <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_21509_2x_48f1c3fa-566c-489d-a088-5b3f8b7f7a30.png?v=1689911099" alt="">
+          <div class="details-full-btn">Watch Video</div>
         </div>
       </div>
     </section>
@@ -1577,6 +1578,7 @@ href="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/swiper-3.4.2.min.cs
       <div class="u24DemiBold_v2">Integrated with <br>Strava and Apple Watch</div>
       <div class="u17Light_v2">Urtopia E-Bike allow syncing Apple Watch for Heart Rate Monitoring on Smartbar in real time. Urtopia App also break data barriers, sync with Apple Health, and share to Strava in just one click!</div>
       <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_21509_2x_48f1c3fa-566c-489d-a088-5b3f8b7f7a30.png?v=1689911099" alt="">
+      <div class="details-full-btn">Watch Video</div>
     </section>
     <section class="mobile-ebike-content">
       <div class="mobile-ebike-box">
@@ -2380,6 +2382,7 @@ href="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/swiper-3.4.2.min.cs
   }
   #anti-movie-btn:hover{
     background-color: #fd4b17;
+    color: #fff;
   }
 </style>
 <script>
@@ -2610,10 +2613,14 @@ if (document.querySelector("#anti-movie-btn")) {
   document.querySelector("#anti-movie-btn").onclick = () => {
     document.body.style.overflow = "hidden";
     document.querySelector("#movie-case-modal > div > div > iframe").src =
-      "https://www.youtube.com/embed/AGzByTWHoz8?autoplay=1&cc_load_policy=1";
+      "https://www.youtube.com/embed/GBt6O-Zw8C8?autoplay=1&cc_load_policy=1";
     document.querySelector("#movie-case-modal").style.display = "block";
   };
 }
+
+$('.strava .details-full-btn').on('click', () => $('#anti-movie-btn').click())
+
+
 if (document.querySelector("#case-closeBtn")) {
   document.querySelector("#case-closeBtn").onclick = () => {
     document.body.style.overflow = "auto";
@@ -2628,10 +2635,13 @@ if (document.querySelector("#mobile-anti-movie-details-btn")) {
     document.querySelector(
       "#mobile-movie-anti-modal > div > div > iframe"
     ).src =
-      "https://www.youtube.com/embed/AGzByTWHoz8?autoplay=1&cc_load_policy=1";
+      "https://www.youtube.com/embed/GBt6O-Zw8C8?autoplay=1&cc_load_policy=1";
     document.querySelector("#mobile-movie-anti-modal").style.display = "block";
   };
 }
+
+$('.strava-mobile .details-full-btn').on('click', () => $('#mobile-anti-movie-details-btn').click())
+
 if (document.querySelector("#mobile-movie-anti-closeBtn")) {
   document.querySelector("#mobile-movie-anti-closeBtn").onclick = () => {
     document.body.style.overflow = "auto";
