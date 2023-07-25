@@ -139,14 +139,14 @@
         }
 
       .summer-sale {
-            background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_21481_2x_3ebefac0-d7f0-4d10-b1f1-10d8a1511de7.jpg?v=1689903623');
+            background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_21450_2x_8a9166cc-0555-4e73-ae12-638669dc2c2f.jpg?v=1690248203');
 
             .centeral-content {
                 // height: 85%;
                 
                 &>div {
                     & > img {
-                        max-width: 500px;
+                        max-width: 440px;
                     }
 
                     .u36DemiBold_v2 {
@@ -477,46 +477,15 @@
                 }
             }
 
-            .spring-sale {
-                background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_21481_2x_3ebefac0-d7f0-4d10-b1f1-10d8a1511de7.jpg?v=1689903623');
-
-                .centeral-content {
-                    height: 100%;
-                    align-items: unset;
-
-                    &>div {
-                        padding: 12vw 0 18vw;
-
-                        img {
-                            max-width: 250px;
-                            // transform: translate(-15%);
-                        }
-
-                        .u56DemiBold_v2 {
-                            font-size: 26px;
-                        }
-
-                        .u48Medium_v2,
-                        .u36DemiBold_v2 {
-                            font-size: 20px;
-                        }
-
-                        .u36DemiBold_v2 {
-                            margin: 20px 0 0;
-                        }
-                    }
-                }
-            }
-
           .summer-sale {
-                background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_21486_2x_1f52d5b9-ddfc-4105-9f58-e857dd384703.jpg?v=1689904040');
+                background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_21488_2x_a5b1fca8-898c-4bb0-9104-f88860a9c773.jpg?v=1690248667');
 
                 .centeral-content {
                     height: 100%;
                     align-items: unset;
 
                     &>div {
-                        padding: 6vw 0 18vw;
+                        padding: 6vw 0 8vw;
                         align-items: center;
                         text-align: center;
 
@@ -538,7 +507,7 @@
                 .centeral-content {
                     & > div {
                         &:last-child {
-                            padding: 18vw 0;
+                            padding: 18vw 0 8vw;
                             flex: unset;
 
                             .imgaes {
@@ -560,44 +529,13 @@
                 }
             }
 
-            .golf {
-                background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_21474_2x_34cbc7d2-48a9-4254-acfb-7f90ad400f4d.jpg?v=1689073592');
-    
-                .centeral-content {
-                    & > div {
-                        height: 100%;
-                        padding: 6vw 0 18vw;
-
-                        .u72DemiBold_v2 {
-                            font-size: 48px;
-                            width: 100%;
-                            text-align: center;
-                        }
-
-                        .u36Medium_v2 {
-                            font-size: 18px;
-                            width: 100%;
-                            text-align: center;
-                        }
-    
-                        .u30DemiBold_v2 {
-                            font-size: 18px;
-                        }
-    
-                        .u24Light_v2 {
-                            font-size: 14px;
-                        }
-                    }
-                }
-            }
-
 
             .unknown {
                 background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/E-Bike317_2x_81abb0c6-5bcf-4e9a-8e09-c87e5893fa7f.jpg?v=1689408477');
     
                 .centeral-content {
                     & > div {
-                        padding: 8vw 0 18vw;
+                        padding: 8vw 0 8vw;
                         align-items: center;
                         text-align: center;
 
@@ -645,6 +583,10 @@
                 margin-top: 15px;
             }
 
+        }
+
+        .swiper-pagination {
+            bottom: 4px;
         }
     }
 }
