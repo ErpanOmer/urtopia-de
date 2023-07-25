@@ -5,7 +5,60 @@
   
 {% render 'home-page-banner' %}
 
-{% render 'home-page-media' %}
+<style>
+.markt {
+  background: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_21571_2x_aacb2cc7-902e-4cfc-9590-ff4ecddea5c6.jpg?v=1690272927') center center/cover no-repeat;
+  height: 340px;
+  display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+
+  .markt .u30DemiBold_v2 {
+    margin: 55px 0 45px;
+  }
+
+  .markt img {
+    max-width: 500px;
+  }
+
+  @media (max-width: 767px) {
+    .markt {
+          background-image: url("https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_21572_2x_4fa6dc65-8204-4835-a05d-7b754134b9be.jpg?v=1690274822");
+          padding: 0 8vw;
+    }
+
+    .markt .u30DemiBold_v2 {
+      font-size: 24px;
+      margin: 10vw 0;
+    }
+
+    .markt img {
+      max-width: 80vw;
+    }
+  }
+  
+</style>
+   
+<div class="markt">
+    <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230720-150230.png?v=1689836578" alt="">
+   <div class="u30DemiBold_v2">Urtopia Carbon 1 is now on MediaMarkt</div>
+    <div class="my-button my-button-black" target="_blank" href="https://www.mediamarkt.de/de/search.html?query=urtopia&filter=carType%3ACitybike" style="background-color: #E90100;">Shop on MediaMarkt</div>
+</div>
+
+   <script>
+     $('.markt .my-button').on('click', () => {
+       fetchBuried('websiteclick', 'homepage', {
+        button: 'shop on mediamarkt-2'
+      })
+
+       window.open("https://www.mediamarkt.de/de/search.html?query=urtopia&filter=carType%3ACitybike")
+     })
+   </script>
+
+<!-- {% render 'home-page-media' %} -->
 
 <div data-section-id="pf-2881" data-pf-type="Section" class="sc-fmciRz bheIgq pf-15_"><div class="sc-gjNHFA gwWIgj"><div class="sc-ezbkAF A-dmbO pf-16_ pf-r pf-c-cm pf-r-eh" style="--s-xs:0px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-md:12;--c-lg:12"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-17_"><div data-pf-type="Custom.HTML" class="sc-AjmGg eCTxfx pf-18_"><style>
   #bike {
