@@ -538,7 +538,7 @@
                 .centeral-content {
                     & > div {
                         &:last-child {
-                            padding: 18vw 0;
+                            padding: 18vw 0 8vw;
                             flex: unset;
 
                             .imgaes {
@@ -560,44 +560,13 @@
                 }
             }
 
-            .golf {
-                background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_21474_2x_34cbc7d2-48a9-4254-acfb-7f90ad400f4d.jpg?v=1689073592');
-    
-                .centeral-content {
-                    & > div {
-                        height: 100%;
-                        padding: 6vw 0 18vw;
-
-                        .u72DemiBold_v2 {
-                            font-size: 48px;
-                            width: 100%;
-                            text-align: center;
-                        }
-
-                        .u36Medium_v2 {
-                            font-size: 18px;
-                            width: 100%;
-                            text-align: center;
-                        }
-    
-                        .u30DemiBold_v2 {
-                            font-size: 18px;
-                        }
-    
-                        .u24Light_v2 {
-                            font-size: 14px;
-                        }
-                    }
-                }
-            }
-
 
             .unknown {
                 background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/E-Bike317_2x_81abb0c6-5bcf-4e9a-8e09-c87e5893fa7f.jpg?v=1689408477');
     
                 .centeral-content {
                     & > div {
-                        padding: 8vw 0 18vw;
+                        padding: 8vw 0 8vw;
                         align-items: center;
                         text-align: center;
 
