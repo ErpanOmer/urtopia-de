@@ -1707,6 +1707,13 @@
 
 
     function gotoXXXXX () {
+      if (to === 'goOrderPage') {
+        fetchBuried('websiteclick', `ad-grover-page`, { button: 'Buy from Urtopia' })
+
+        return window.open(`/products/urtopia-carbon-e-bike`)
+      }
+
+
       fetchBuried('websiteclick', `ad-grover-page`, { button: 'rent on grover' }, true)
 
       window.open(`https://www.grover.com/de-de/products/urtopia-carbon-1-ebike`)
