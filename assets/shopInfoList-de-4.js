@@ -1,13 +1,14 @@
 //  禁用日期动态生成函数
-//  limit: 从今天开始 禁用几天
-//  ignore_date： 忽略日期
+//  disable_limit:  禁用几天               格式:  365
+//  ignore_date：   跳过某些日期不禁用      格式:  ['2023-7-27', '2023-7-28', '2023-7-29']  
+//  start_time:     从什么时候开始禁用      格式： 2023-7-27 （默认今天)
 
-function createdisableDates(limit = 0, ignore_date = []) {
+function createdisableDates(disable_limit = 0, ignore_date = [], start_time = new Date()) {
   const temp = []
   const one_day = 60 * 60 * 24 * 1000
 
-  for (let index = 0; index < limit; index++) {
-    const time = new Date(+new Date() + (one_day * index))
+  for (let index = 0; index < disable_limit; index++) {
+    const time = new Date(+new Date(start_time) + (one_day * index))
     const str = `${time.getFullYear()}-${time.getMonth() + 1}-${time.getDate()}`
 
     if (ignore_date.includes(str)) {
@@ -981,7 +982,7 @@ const testRides = [
     ],
     stores: [
       {
-        name: 'Wybren van der Wal ',
+        name: 'Wybren van der Wal',
         phone: '+31 623976683',
         email: 'wybrenvanderwal@gmail.com',
         timezone: "Mainz, Germany (GMT+1)",
@@ -993,15 +994,16 @@ const testRides = [
           'Carbon One Size M',
           ],
         businessHours: [
-          "",
           "12:00-16:00",
           "12:00-16:00",
           "12:00-16:00",
           "12:00-16:00",
           "12:00-16:00",
-          "",
+          "12:00-16:00",
+          "12:00-16:00",
         ],
         disableDate: createdisableDates(365, ['2023-7-29','2023-7-30','2023-8-5','2023-8-6','2023-8-19','2023-8-20','2023-8-26','2023-8-27','2023-9-16','2023-9-17','2023-9-23','2023-9-24']),
+        isPartner: true
       },
     ]
   },
