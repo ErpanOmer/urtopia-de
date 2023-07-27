@@ -2,7 +2,6 @@
   "sections": {
     "main": {
       "type": "main-product",
-      "disabled": true,
       "blocks": {
         "vendor": {
           "type": "text",
@@ -35,6 +34,11 @@
         },
         "judgeme_preview_badge_product_page_26718223": {
           "type": "shopify:\/\/apps\/judge-me-product-reviews\/blocks\/preview_badge\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+          }
+        },
+        "f60291b1-deea-479b-81c1-51b22b5fc6b3": {
+          "type": "shopify:\/\/apps\/appstle-subscriptions\/blocks\/appstle-subscription-product-page-widget\/fe257d39-6f88-4f35-ab08-bd437e3aa94e",
           "settings": {
           }
         },
@@ -74,6 +78,7 @@
         "rating",
         "price",
         "judgeme_preview_badge_product_page_26718223",
+        "f60291b1-deea-479b-81c1-51b22b5fc6b3",
         "variant_picker",
         "quantity_selector",
         "buy_buttons",
@@ -93,7 +98,6 @@
     },
     "product-recommendations": {
       "type": "product-recommendations",
-      "disabled": true,
       "settings": {
         "heading": "You may also like",
         "heading_size": "h2",

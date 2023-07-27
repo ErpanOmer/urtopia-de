@@ -122,11 +122,11 @@ const global_config = {
       // 1-l-sb
       42615025369304: 'Free shipping within 5 days',
       // 1-m-lb
-      42615025238232: 'Ships between August 1 - 15 from local warehouse.',
+      42615025238232: 'Free shipping within 5 days',
       // 1-l-lb
       42615025434840: 'Free shipping within 5 days',
       // 1-m-pb
-      42615025303768: 'Ships between August 1 - 15 from local warehouse.',
+      42615025303768: 'Free shipping within 5 days',
       // 1-l-pb
       42615025500376: 'Free shipping within 5 days',
       // 1-m-pw
@@ -134,17 +134,17 @@ const global_config = {
       // 1-l-pw
       43608364450008: ' ',
       // 1s-m-sb
-      43869302816984: 'Pre-order items ships from July 31, 2023',
+      43869302816984: 'Pre-order items ships from August 7, 2023',
       // 1s-l-sb
-      43869302849752: 'Pre-order items ships from July 31, 2023',
+      43869302849752: 'Pre-order items ships from August 7, 2023',
       // 1s-m-lb
-      43869302882520: 'Pre-order items ships from July 31, 2023',
+      43869302882520: 'Pre-order items ships from August 7, 2023',
       // 1s-l-lb
-      43869302915288: 'Pre-order items ships from July 31, 2023',
+      43869302915288: 'Pre-order items ships from August 7, 2023',
       // 1s-m-pb
-      43869302948056: 'Pre-order items ships from July 31, 2023',
+      43869302948056: 'Pre-order items ships from August 7, 2023',
       // 1s-l-pb
-      43869302980824: 'Pre-order items ships from July 31, 2023',
+      43869302980824: 'Pre-order items ships from August 7, 2023',
     },
   },
   // chrod order page 配置项
