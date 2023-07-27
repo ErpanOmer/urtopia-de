@@ -180,6 +180,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <script>
     var ecommerce = {
     'transaction_id': '{{checkout.order_number | json}}',
+    'id': '{{ checkout.id | json}}',
     'affiliation': {{shop.name | json}},
     'value': parseInt((Number({{checkout.total_price | json }})) / 100),
     'tax': parseInt((Number({{checkout.tax_price | json }})) / 100),
@@ -298,8 +299,6 @@ $('.klarna .u14Medium_v2').html(price === '112.45' ? `{{ 'checkout_klarna.Klarna
       <div onclick="closeMiniDialog()" class="my-button my-button-black">{{ 'checkout_klarna.button' | t }}</div>
       <span onclick="closeMiniDialog()" class="close">×</span>
     </div>`
-
-    // getSearchValues().show_klarna_dialog && showMiniDialog(html)
   
     setTimeout(() => {
       //jQuery('.klarna-dialog .close').on('click', closeMiniDialog)
@@ -307,6 +306,31 @@ $('.klarna .u14Medium_v2').html(price === '112.45' ? `{{ 'checkout_klarna.Klarna
 
       jQuery('.klarna').on('click', () => showMiniDialog(html))
     }, 100)
+
+
+
+    const checkout_email = getSearchValues().checkout_email
+
+    const fn = c => {
+      Checkout.$('.step__sections input[type="email"]').val(c).attr('disabled', true)
+      $('nav').hide()
+      $('.logo--left').hide()
+      $('.step__footer__previous-link').hide()
+      $('.layout-flex__item').hide()
+    }
+
+    if (checkout_email) {
+      window.sessionStorage.checkout_email = checkout_email
+      window.sessionStorage.checkout_email_local = `${Shopify.Checkout.token}=${checkout_email}`
+      fn(checkout_email)
+    } else {
+        if (window.sessionStorage.checkout_email_local === `${Shopify.Checkout.token}=${window.sessionStorage.checkout_email}`) {
+          fn(window.sessionStorage.checkout_email)
+        } else {
+          window.sessionStorage.checkout_email = ''
+          window.sessionStorage.checkout_email_local = ''
+        }
+    }
 
     // 页面退出之前，往服务器提交数据
 $(document).on('page:load', function(e) {
