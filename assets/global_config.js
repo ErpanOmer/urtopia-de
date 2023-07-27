@@ -110,7 +110,7 @@ const global_config = {
       }
     ],
     // 默认的发货时间 文案
-    ebike_default_delivery_time: 'Free shipping <span>within 5 days</span>',
+    ebike_default_delivery_time: 'Free shipping <span>5 working days</span>',
     ebike_delivery_time: {
       // outlet carbon 1
       43820311281880: 'Ships within <span>7 business days</span> from local warehouse.',
@@ -118,33 +118,33 @@ const global_config = {
 
       // carbon 1/1s
       // 1-m-sb
-      43705718997208: 'Free shipping within 5 days',
+      43705718997208: 'Free shipping within 5 working days',
       // 1-l-sb
-      42615025369304: 'Free shipping within 5 days',
+      42615025369304: 'Free shipping within 5 working days',
       // 1-m-lb
-      42615025238232: 'Free shipping within 5 days',
+      42615025238232: 'Free shipping within 5 working days',
       // 1-l-lb
-      42615025434840: 'Free shipping within 5 days',
+      42615025434840: 'Free shipping within 5 working days',
       // 1-m-pb
-      42615025303768: 'Free shipping within 5 days',
+      42615025303768: 'Free shipping within 5 working days',
       // 1-l-pb
-      42615025500376: 'Free shipping within 5 days',
+      42615025500376: 'Free shipping within 5 working days',
       // 1-m-pw
       43608364417240: ' ',
       // 1-l-pw
       43608364450008: ' ',
       // 1s-m-sb
-      43869302816984: 'Pre-order items ships from August 7, 2023',
+      43869302816984: 'Free shipping within 10 working days',
       // 1s-l-sb
-      43869302849752: 'Pre-order items ships from August 7, 2023',
+      43869302849752: 'Free shipping within 10 working days',
       // 1s-m-lb
-      43869302882520: 'Pre-order items ships from August 7, 2023',
+      43869302882520: 'Free shipping within 10 working days',
       // 1s-l-lb
-      43869302915288: 'Pre-order items ships from August 7, 2023',
+      43869302915288: 'Free shipping within 10 working days',
       // 1s-m-pb
-      43869302948056: 'Pre-order items ships from August 7, 2023',
+      43869302948056: 'Free shipping within 10 working days',
       // 1s-l-pb
-      43869302980824: 'Pre-order items ships from August 7, 2023',
+      43869302980824: 'Free shipping within 10 working days',
     },
   },
   // chrod order page 配置项
