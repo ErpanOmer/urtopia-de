@@ -6,7 +6,11 @@
   const IS_B = window.sessionStorage.carbon_one_a_b_test_flag === 'B'
 
   if (IS_B) {
-
+    const root = document.querySelector(':root')
+    root.style.setProperty('--sale-color1', '#E30D0D')
+    root.style.setProperty('--sale-color2', '#E30D0D')
+    root.style.setProperty('--sale-color3', '#E30D0D')
+    root.style.setProperty('--sale-color4', '#E30D0D')
   }
 </script>
 
