@@ -1990,6 +1990,13 @@ $sale_text_color: #13B698;
          .abtest-text {
             display: flex !important;
             margin-top: -6px;
+            align-items: center;
+
+            img {
+                max-height: 15px;
+                width: auto;
+                margin-left: 6px;
+            }
          }
 
          .abtest-logo {
