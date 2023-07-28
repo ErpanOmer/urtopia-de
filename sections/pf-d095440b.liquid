@@ -2,6 +2,14 @@
 {{ 'pagefly.d095440b.css' | asset_url | stylesheet_tag: preload: true }}
 {{ 'carbon-one.scss.css' | asset_url | stylesheet_tag: preload: true }}
 
+<script>
+  const IS_B = window.sessionStorage.carbon_one_a_b_test_flag === 'B'
+
+  if (IS_B) {
+
+  }
+</script>
+
 <style>
   .product .centeral-content .product-panel .options .Model .active {
     border-color: var(--sale-color3);
