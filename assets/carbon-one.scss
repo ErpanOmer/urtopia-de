@@ -1970,15 +1970,21 @@ $sale_text_color: #13B698;
             }
          }
 
-         .abtest-logo {
-            padding: 15px 12px;
-            border-radius: 25px;
-            color: #fff;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            max-width: max-content;
-            margin: 0;
+         .featured_image {
+            grid-template-rows: 775px;
+
+            .abtest-logo {
+                padding: 15px 12px;
+                border-radius: 25px;
+                color: #fff;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                max-width: max-content;
+                margin: 0;
+             }
          }
+
+         
     }
 }
