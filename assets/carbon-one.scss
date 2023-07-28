@@ -1999,6 +1999,10 @@ $sale_text_color: #13B698;
             display: unset !important;
          }
 
+         .abtest-text {
+            display: flex !important;
+         }
+
          
     }
 }
