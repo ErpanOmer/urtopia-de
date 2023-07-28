@@ -2027,6 +2027,10 @@ $sale_text_color: #13B698;
              .abtest-price-mobile {
                 display: unset !important;
              }
+
+             .count-down.mb12.mobileHide.abtest-count-down {
+                display: none !important;
+             }
         }
     }
 }
