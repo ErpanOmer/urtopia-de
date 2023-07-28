@@ -2007,3 +2007,15 @@ $sale_text_color: #13B698;
          
     }
 }
+
+@media (max-width: 767px) {
+    .product {
+        .featured_image {
+            grid-template-rows: 90vw;
+
+            .abtest-logo {
+                display: none !important;
+             }
+         }
+    }
+}
