@@ -1939,7 +1939,8 @@ $sale_text_color: #13B698;
 #B {
     .product {
          .commonComponent {
-            & > .u30DemiBold_v2 {
+            & > .u30DemiBold_v2,
+            &> .sale {
                 display: none;
             }
          }
