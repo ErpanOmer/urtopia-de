@@ -1944,5 +1944,30 @@ $sale_text_color: #13B698;
                 display: none;
             }
          }
+
+         .abtest-price {
+            .u14DemiBold_v2 {
+                display: flex;
+                align-items: center;
+
+                span {
+                    &:first-child {
+                        background-color: #E90000;
+                        color: #fff;
+                        border-radius: 11px;
+                        padding: 2px 5px;
+                        display: flex;
+                        align-items: center;
+                        margin-left: 6px;
+                        line-height: 1;
+                    }
+
+                    &:last-child {
+                        text-decoration: line-through;
+                        margin-left: 10px;
+                    }
+                }
+            }
+         }
     }
 }
