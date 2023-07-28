@@ -1999,10 +1999,15 @@ $sale_text_color: #13B698;
             display: flex !important;
             align-items: center;
             justify-content: center;
+            flex-direction: row;
             max-width: max-content;
             margin: 0;
             transform: none;
             opacity: 1;
+
+            img {
+                max-height: 15px;
+            }
          }
 
          
