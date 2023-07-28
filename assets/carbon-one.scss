@@ -1971,7 +1971,15 @@ $sale_text_color: #13B698;
          }
 
          .abtest-logo {
-            
+            height: 47px;
+            position: absolute;
+            width: 100px;
+            z-index: 10;
+            border-radius: 25px;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
          }
     }
 }
