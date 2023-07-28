@@ -2022,6 +2022,10 @@ $sale_text_color: #13B698;
              .abtest-price {
                 display: none !important;
              }
+
+             .abtest-price-mobile {
+                display: unset !important;
+             }
         }
     }
 }
