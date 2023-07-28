@@ -2020,16 +2020,14 @@ $sale_text_color: #13B698;
                  }
              }
 
+             .count-down.mb12.mobileHide.abtest-count-down,
              .abtest-price {
                 display: none !important;
              }
 
+             .count-down.mb12.pcHide.abtest-count-down,
              .abtest-price-mobile {
                 display: unset !important;
-             }
-
-             .count-down.mb12.mobileHide.abtest-count-down {
-                display: none !important;
              }
         }
     }
