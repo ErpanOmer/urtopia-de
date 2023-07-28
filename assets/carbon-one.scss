@@ -1941,9 +1941,15 @@ $sale_text_color: #13B698;
          .commonComponent {
             & > .u30DemiBold_v2,
             &> .sale {
-                display: none;
+                display: none !important;
             }
          }
+
+         .count-down.mb12.mobileHide {
+            display: none !important;
+         }
+
+         
 
          .abtest-price {
             display: unset !important;
