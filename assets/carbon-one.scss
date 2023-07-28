@@ -1971,14 +1971,14 @@ $sale_text_color: #13B698;
          }
 
          .abtest-logo {
-            padding: 16px 12px;
-            z-index: 10;
+            padding: 15px 12px;
             border-radius: 25px;
             color: #fff;
             display: flex;
             align-items: center;
             justify-content: center;
-            position: absolute;
+            max-width: min-content;
+            margin: 0;
          }
     }
 }
