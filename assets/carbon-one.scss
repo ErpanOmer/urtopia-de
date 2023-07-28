@@ -2019,6 +2019,14 @@ $sale_text_color: #13B698;
 
          
     }
+
+
+    .top-fixed,
+    .bottom-fixed {
+        .my-button {
+            background-color: #E90000;
+        }
+    }
 }
 
 @media (max-width: 767px) {
