@@ -2,7 +2,7 @@
 {{ 'pagefly.d095440b.css' | asset_url | stylesheet_tag: preload: true }}
 {{ 'carbon-one.scss.css' | asset_url | stylesheet_tag: preload: true }}
 
-{% capture random %}{{ 'now' | date: "%N" }}{% endcapture %}
+{% assign random = "now" | date: "%N" | modulo: 100 %}
 
 <script>
   const test_flag = window.sessionStorage.carbon_one_a_b_test_flag
@@ -18,7 +18,7 @@
     root.id = test_flag
   }
 
-  console.log('{{random | minus: 2 }}')
+  console.log('{{random}}')
 </script>
 
 <style>
