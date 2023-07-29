@@ -21,6 +21,7 @@
   {% assign max = 0 %}
   {% for variant in (1..1000) %}
       {% assign random = "now" | date: "%L" %}
+      console.log('{{ random }}')
       {% if random < 500 %}
           {% capture min %}{{ min | plus:1 }}{% endcapture %}
       {% else %}
