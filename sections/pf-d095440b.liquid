@@ -27,6 +27,7 @@
           {% capture max %}{{ max | plus:1 }}{% endcapture %}
       {% endif %}
   {% endfor %}
+  console.log('{{ "now" | date: "%N" }}')
   
   console.log('{{min}}')
   console.log('{{max}}')
