@@ -1932,3 +1932,127 @@ $sale_text_color: #13B698;
         }
     }
 }
+
+
+
+
+#B {
+    .product {
+         .commonComponent {
+            & > .u30DemiBold_v2,
+            &> .sale {
+                display: none !important;
+            }
+         }
+
+         .count-down.mb12.pcHide,
+         .count-down.mb12.mobileHide {
+            display: none !important;
+         }
+
+         
+
+         .abtest-price {
+            display: unset !important;
+            .u14DemiBold_v2 {
+                display: flex;
+                align-items: center;
+
+                span {
+                    &:first-child {
+                        background-color: #E90000;
+                        color: #fff;
+                        border-radius: 11px;
+                        padding: 2px 5px;
+                        display: flex;
+                        align-items: center;
+                        margin-left: 6px;
+                        line-height: 1;
+                    }
+
+                    &:last-child {
+                        text-decoration: line-through;
+                        margin-left: 10px;
+                    }
+                }
+            }
+         }
+
+         .featured_image {
+            grid-template-rows: 775px;
+         }
+
+
+         .count-down.mb12.mobileHide.abtest-count-down {
+            display: unset !important;
+         }
+
+         .abtest-text {
+            display: flex !important;
+            margin-top: -6px;
+            align-items: center;
+
+            img {
+                max-height: 15px;
+                width: auto;
+                margin-left: 6px;
+            }
+         }
+
+         .abtest-logo {
+            padding: 15px 12px;
+            border-radius: 25px;
+            color: #fff;
+            display: flex !important;
+            align-items: center;
+            justify-content: center;
+            flex-direction: row;
+            max-width: max-content;
+            margin: 0;
+            transform: none;
+            opacity: 1;
+
+            img {
+                max-height: 15px;
+            }
+         }
+
+         
+    }
+
+
+    .top-fixed,
+    .bottom-fixed {
+        .my-button {
+            background-color: #E90000;
+        }
+
+        .emphasize {
+            color: #E90000;
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    #B {
+        .product {
+            .featured_image {
+                grid-template-rows: 90vw;
+    
+                .abtest-logo {
+                    display: none !important;
+                 }
+             }
+
+             .count-down.mb12.mobileHide.abtest-count-down,
+             .abtest-price {
+                display: none !important;
+             }
+
+             .count-down.mb12.pcHide.abtest-count-down,
+             .abtest-price-mobile {
+                display: block !important;
+             }
+        }
+    }
+}

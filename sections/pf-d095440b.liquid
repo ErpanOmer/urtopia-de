@@ -2,6 +2,21 @@
 {{ 'pagefly.d095440b.css' | asset_url | stylesheet_tag: preload: true }}
 {{ 'carbon-one.scss.css' | asset_url | stylesheet_tag: preload: true }}
 
+<script>
+  const test_flag = window.sessionStorage.carbon_one_a_b_test_flag
+
+  if (test_flag === 'B') {
+    const root = document.querySelector(':root')
+    root.style.setProperty('--sale-color1', '#E30D0D')
+    root.style.setProperty('--sale-color2', '#E30D0D')
+    root.style.setProperty('--sale-color3', '#E30D0D')
+    root.style.setProperty('--sale-color4', '#E30D0D')
+
+    // 给root 元素设置唯一id ，有利于控制样式表
+    root.id = test_flag
+  }
+</script>
+
 <style>
   .product .centeral-content .product-panel .options .Model .active {
     border-color: var(--sale-color3);
@@ -9,6 +24,14 @@
 
   .product .centeral-content .product-panel .options .Model>div:after {
     background-color: var(--sale-color3);
+  }
+
+  .abtest-logo,
+  .abtest-text,
+  .count-down.mb12.mobileHide.abtest-count-down,
+  .count-down.mb12.pcHide.abtest-count-down,
+  .abtest-price {
+    display: none !important;
   }
   
 </style>
@@ -19,6 +42,20 @@
             <div class="u36DemiBold_v2">{{ product.title }}</div>
             <div data-pf-type="JudgeMe" class="sc-eZhRLC gtfCKx pf-25_ order-djs mb6">
                 <div class="pf-judme">{% render "judgeme_widgets", widget_type: "judgeme_preview_badge", jm_style: "", concierge_install: false, product: product %}</div>
+            </div>
+            <div class="abtest-price mobileHide abtest-price-mobile">
+              <div class="abtest-logo mobileHide mb6" style="background-color: var(--sale-color1);display: flex !important;padding: 8px 10px;margin-bottom: 6px;width: fit-content;">
+                  <span class="u11Medium_v2">Also available on</span>
+                  <img style="width: auto;" src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230728-171406.png?v=1690535660"/>
+              </div>
+              <div class="u14DemiBold_v2 mb6">
+                    <span style="background-color: var(--sale-color1);">- 18%</span><span>UVP {{ product.price | money }}</span>
+                </div>
+                <div class="u30DemiBold_v2 mb6" style="color: var(--sale-color1);">
+                    <span>{{ product.price | minus: 60000 | money }}</span><br>
+                    <span class="u14DemiBold_v2">{{ settings.sale_name }}</span>
+                </div>
+                <div class="u14Light_v2 mb12" style="text-decoration: underline;">incl. VAT. Free shipping.</div>
             </div>
             <div class="u30DemiBold_v2 mb6">{{ product.price | money }}</div>
             <div class="sale mb6" id="sale_accmb" style="background-image: linear-gradient(-90deg,var(--sale-color3),var(--sale-color4));">
@@ -86,6 +123,16 @@
                     <div class="u17DemiBold_v2">with {{ settings.sale_name }}</div>
                 </div>
             </div>
+            <div class="abtest-price mobileHide">
+              <div class="u14DemiBold_v2 mb6">
+                    <span style="background-color: var(--sale-color1);">- 18%</span><span>UVP {{ product.price | money }}</span>
+                </div>
+                <div class="u30DemiBold_v2 mb6" style="color: var(--sale-color1);">
+                    <span>{{ product.price | minus: 60000 | money }}</span>
+                    <span class="u17DemiBold_v2">{{ settings.sale_name }}</span>
+                </div>
+                <div class="u14Light_v2 mb12" style="text-decoration: underline;">incl. VAT. Free shipping.</div>
+            </div>
             <div class="sale_acc mb12 belt">
                 <div class="u14Light_v2" style="background-image: linear-gradient(-90deg,var(--sale-color3),var(--sale-color4));">And get <span style="font-weight: 600;"> €179 </span> Accessories for <span class="u20DemiBold_v2"> Free</span></div>
                 {% assign accessories_map = "7633738596568,7633738662104,7633738531032" | split: ',' %}
@@ -131,6 +178,10 @@
                 <div class="u17Medium_v2">€600 off + 3 Free Accessories Ends in：</div>
                 <img src="http://i.countdownmail.com/2mmaed.gif">
             </div>
+            <div class="count-down mb12 mobileHide abtest-count-down" style="color: var(--sale-color4);">
+                <div class="u17Medium_v2">€600 off + 3 Free Accessories Ends in：</div>
+                <img src="http://i.countdownmail.com/2p2esm.gif">
+            </div>
             <div class="options">
                 {% for option in product.options %}
                     <div class="option" option={{option}}>
@@ -170,11 +221,16 @@
                     <div class="u17Medium_v2">€600 off + 3 Free Accessories Ends in：</div>
                     <img src="http://i.countdownmail.com/2mmaed.gif">
                 </div>
+                <div class="count-down mb12 pcHide abtest-count-down" style="color: var(--sale-color4);">
+                    <div class="u17Medium_v2">€600 off + 3 Free Accessories Ends in：</div>
+                    <img src="http://i.countdownmail.com/2p2esm.gif">
+                </div>
                 <div
                     data-product-id="{{ product.id }}"
                     class="my-button my-button-origin addToCartBtn"
                     onclick="addAllToCart('atc')"
                     id="addToCart"
+                    style="background: var(--sale-color3);"
                     >
                     <i class="fa fa-spinner fa-spin"></i><span data-pf-type="Text" class="addToCartText u17DemiBold_v2">Add to Cart</span>
                 </div>
@@ -188,6 +244,10 @@
                 </div>
             </div>
             <div class="delivery_time mb12">Free shipping <span>within 5 days</span></div>
+            <div class="abtest-text u11Medium_v2 mb12">
+              <span>Also available on</span>
+              <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230728-172336.png?v=1690536230" alt="">
+            </div>
             <div class="support mb12">
                 <a href="#boxs3">
                     <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230621-005713.png?v=1687280264"/>
@@ -1554,8 +1614,15 @@
 
             $(`.product .commonComponent .sale .u20DemiBold_v2`).text(`${model === 'Carbon Belt' ? '{{ 269900 | money }}' : '{{ 299900 | money }}'} NOW`)
             $(`.product .commonComponent .sale .u17DemiBold_v2`).text(`with ${model === 'Carbon Belt' ? '{{ settings.sale_name }}' : 'Pre-order Sale'}`)
-
             $(`.product .count-down .u17Medium_v2`).text(`with ${model === 'Carbon Belt' ? '€600 off + 3 Free Accessories Ends in:' : '€300 off + 3 Free Accessories Ends in:'}`)
+            $('.top-fixed .u17Light_v2 .emphasize').text(`${model === 'Carbon Belt' ? '{{ 269900 | money }}' : '{{ 299900 | money }}'}`)
+            $('.bottom-fixed .u14Light_v2 .emphasize').text(`${model === 'Carbon Belt' ? '{{ 269900 | money }}' : '{{ 299900 | money }}'}`)
+
+
+            // abtest
+            $(`.product .abtest-price .u30DemiBold_v2 span:first-child`).text(`${model === 'Carbon Belt' ? '{{ 269900 | money }}' : '{{ 299900 | money }}'}`)
+            $(`.product .abtest-price .u30DemiBold_v2 span:last-child`).text(`${model === 'Carbon Belt' ? '{{ settings.sale_name }}' : 'Pre-order Sale'}`)
+            $(`.product .abtest-price .u14DemiBold_v2 span:first-child`).text(`${model === 'Carbon Belt' ? '- 18%' : '- 9%'}`)
 
             if (model === 'Carbon Belt') {
                 //$('.product .belt').show()
@@ -1596,6 +1663,10 @@
                 const index = i % 6
 
                 return  `<div class="swiper-slide">
+                            <div class="abtest-logo mobileHide" style="background-color: var(--sale-color1);">
+                              <span class="u14Medium_v2">Also available on</span>
+                              <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230728-171406.png?v=1690535660"/>
+                            </div>
                             <img src="${s}">
                             <div>
                                 <span class="u20DemiBold_v2">${global_config.carbon_order_page_config.product_media_images[index].text}</span>
