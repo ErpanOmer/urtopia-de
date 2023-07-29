@@ -2,6 +2,8 @@
 {{ 'pagefly.d095440b.css' | asset_url | stylesheet_tag: preload: true }}
 {{ 'carbon-one.scss.css' | asset_url | stylesheet_tag: preload: true }}
 
+{% capture random %}{{ 'now' | date: "%09N" }}{% endcapture %}
+
 <script>
   const test_flag = window.sessionStorage.carbon_one_a_b_test_flag
 
@@ -15,6 +17,8 @@
     // 给root 元素设置唯一id ，有利于控制样式表
     root.id = test_flag
   }
+
+  console.log('{{random}}')
 </script>
 
 <style>
