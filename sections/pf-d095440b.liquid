@@ -22,7 +22,7 @@
   {% assign max = 0 %}
   {% for variant in (1..10000) %}
 
-      {% if random < 500 %}
+      {% if random < 249 %}
           {% capture min %}{{ min | plus:1 }}{% endcapture %}
       {% else %}
           {% capture max %}{{ max | plus:1 }}{% endcapture %}
