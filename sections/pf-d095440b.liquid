@@ -16,7 +16,7 @@
     root.id = test_flag
   }
 
-  {% assign random = "now" | date: "%L" %}
+  {% assign random = "now" | date: "%L" | divided_by: 2 %}
   
   console.log('{{ random }}')
 </script>
