@@ -18,9 +18,12 @@
     root.id = test_flag
   }
   
-  {% for item in (1..10000) %}
-    console.log('{{item}}')
+  {%- assign variable = 0 -%}
+  {% for item in (1..10000000) %}
+    {%- assign variable = variable | plus: 1 -%}
   {% endfor %}
+
+  console.log('{{variable}}')
 </script>
 
 <style>
