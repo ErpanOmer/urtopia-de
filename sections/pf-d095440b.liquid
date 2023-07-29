@@ -18,11 +18,7 @@
     root.id = test_flag
   }
   
-  {% assign amount = 0 %}
-  {% for variant in (0..100) %}
-      {% capture amount %}{{ amount | plus:1 }}{% endcapture %}
-  {% endfor %}
-
+ 
   //console.log('{{amount}}')
 </script>
 
