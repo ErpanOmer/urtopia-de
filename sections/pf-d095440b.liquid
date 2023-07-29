@@ -16,6 +16,7 @@
     root.id = test_flag
   }
   
+  console.log('{{ "now" | date: "%N" }}')
   {% assign min = 0 %}
   {% assign max = 0 %}
   {% for variant in (1..10000) %}
@@ -26,7 +27,7 @@
           {% capture max %}{{ max | plus:1 }}{% endcapture %}
       {% endif %}
   {% endfor %}
-  console.log('{{random}}')
+  
   console.log('{{min}}')
   console.log('{{max}}')
 </script>
