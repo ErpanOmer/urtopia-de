@@ -18,12 +18,18 @@
     root.id = test_flag
   }
   
-  {% assign amount = 0 %}
+  {% assign min = 0 %}
+  {% assign max = 0 %}
   {% for variant in (0..100) %}
-      {% capture amount %}{{ amount | plus:1 }}{% endcapture %}
+      {% if random < 50 %}
+          {% capture min %}{{ min | plus:1 }}{% endcapture %}
+      {% else %}
+          {% capture max %}{{ max | plus:1 }}{% endcapture %}
+      {% endif %}
   {% endfor %}
 
-  console.log('{{amount}}')
+  console.log('{{min}}')
+  console.log('{{max}}')
 </script>
 
 <style>
