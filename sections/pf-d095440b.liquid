@@ -16,12 +16,10 @@
     root.id = test_flag
   }
 
-  {% assign random = "now" | date: "%L" | divided_by: 2 %}
-
   {% assign min = 0 %}
   {% assign max = 0 %}
   {% for variant in (1..10000) %}
-
+      {% assign random = "now" | date: "%L" | divided_by: 2 %}
       {% if random < 249 %}
           {% capture min %}{{ min | plus:1 }}{% endcapture %}
       {% else %}
