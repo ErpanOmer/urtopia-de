@@ -18,12 +18,12 @@
     root.id = test_flag
   }
   
-  {%- assign variable = 0 -%}
-  {% for item in (1..10000000) %}
-    {%- assign variable = variable -%}
+  {% assign amount = 0 %}
+  {% for variant in (0..10000000) %}
+      {% capture amount %}{{ amount | plus:1 }}{% endcapture %}
   {% endfor %}
 
-  console.log('{{variable}}')
+  console.log('{{amount}}')
 </script>
 
 <style>
