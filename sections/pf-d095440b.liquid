@@ -15,6 +15,9 @@
     // 给root 元素设置唯一id ，有利于控制样式表
     root.id = test_flag
   }
+
+  {% assign random = "now" | date: "%L" | modulo: 2 %}
+  console.log('{{ random }}')
 </script>
 
 <style>
@@ -58,7 +61,7 @@
                 <div class="u14Light_v2 mb12" style="text-decoration: underline;">incl. VAT. Free shipping.</div>
             </div>
             <div class="u30DemiBold_v2 mb6">{{ product.price | money }}</div>
-            <div class="sale mb6" id="sale_accmb" style="background-image: linear-gradient(-90deg,var(--sale-color3),var(--sale-color4));">
+            <div class="sale mb6" style="background-image: linear-gradient(-90deg,var(--sale-color3),var(--sale-color4));">
                 <div class="u20DemiBold_v2" style="color: var(--sale-color4);">€2.699,00 NOW</div>
                 <div class="u17DemiBold_v2">with {{ settings.sale_name }}</div>
             </div>
@@ -133,7 +136,7 @@
                 </div>
                 <div class="u14Light_v2 mb12" style="text-decoration: underline;">incl. VAT. Free shipping.</div>
             </div>
-            <div class="sale_acc mb12 belt">
+            <div class="sale_acc mb12 belt" id="sale_accmb">
                 <div class="u14Light_v2" style="background-image: linear-gradient(-90deg,var(--sale-color3),var(--sale-color4));">And get <span style="font-weight: 600;"> €179 </span> Accessories for <span class="u20DemiBold_v2"> Free</span></div>
                 {% assign accessories_map = "7633738596568,7633738662104,7633738531032" | split: ',' %}
                 <div class="accs">
@@ -294,12 +297,12 @@
             <span class="u17Light_v2"><span class="u20DemiBold_v2 emphasize" style="font-weight: 600;">{{ 269900 | money }}</span> <span style="text-decoration: line-through;">{{ product.price | money }}</span></span>
             <span class="u14Light_v2">or as low as €112/Month</span>
         </div>
-        <a href="#sale_acc" class="my-button my-button-origin">Order Now</a>
+        <a href="#sale_acc" class="my-button my-button-origin" style="background: var(--sale-color3);">Order Now</a>
     </div>
 </div>
 
 <div class="bottom-fixed pcHide">
-    <a href="#sale_accmb" class="my-button my-button-origin">Order Now</a>
+    <a href="#sale_accmb" class="my-button my-button-origin" style="background: var(--sale-color3);">Order Now</a>
     <div>
         <span class="u14Light_v2"><span class="emphasize" style="font-weight: 600;">{{ 269900 | money }}</span> <span style="text-decoration: line-through;">{{ product.price | money }}</span></span>
         <span class="u14Light_v2">or as low as €112/Month</span>
@@ -1621,7 +1624,6 @@
 
             // abtest
             $(`.product .abtest-price .u30DemiBold_v2 span:first-child`).text(`${model === 'Carbon Belt' ? '{{ 269900 | money }}' : '{{ 299900 | money }}'}`)
-            $(`.product .abtest-price .u30DemiBold_v2 span:last-child`).text(`${model === 'Carbon Belt' ? '{{ settings.sale_name }}' : 'Pre-order Sale'}`)
             $(`.product .abtest-price .u14DemiBold_v2 span:first-child`).text(`${model === 'Carbon Belt' ? '- 18%' : '- 9%'}`)
 
             if (model === 'Carbon Belt') {
