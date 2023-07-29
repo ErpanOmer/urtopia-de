@@ -17,6 +17,18 @@
   }
 
   {% assign random = "now" | date: "%L" | divided_by: 2 %}
+
+  {% assign min = 0 %}
+  {% assign max = 0 %}
+  {% for variant in (1..10000) %}
+
+      {% if random < 500 %}
+          {% capture min %}{{ min | plus:1 }}{% endcapture %}
+      {% else %}
+          {% capture max %}{{ max | plus:1 }}{% endcapture %}
+      {% endif %}
+  {% endfor %}
+  console.log('{{ "now" | date: "%s%L" }}')
   
   console.log('{{ random }}')
 </script>
