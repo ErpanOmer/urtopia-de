@@ -1869,15 +1869,15 @@
 
 
 
-    $('.accessories .navigate > div').on('click', e => {
-        const items = $('.accessories .items')
+    $('.product .product-panel .accessories .navigate > div').on('click', e => {
+        const items = $('.product .product-panel .accessories .items')
 
         items.animate({
-            scrollLeft: $('.accessories .items').scrollLeft() + ($(e.target).hasClass('next') ? 180 : -180)
+            scrollLeft: $('.product .product-panel .accessories .items').scrollLeft() + ($(e.target).hasClass('next') ? 180 : -180)
         }, 300)
     })
 
-    $('.accessories .items .item').on('click', e => {
+    $('.product .product-panel .accessories .items .item').on('click', e => {
         const item = $(e.target).closest('.item')
         const icon = item.find('.u11Light_v2')
 
