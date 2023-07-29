@@ -15,23 +15,10 @@
     // 给root 元素设置唯一id ，有利于控制样式表
     root.id = test_flag
   }
+
+  {% assign random = "now" | date: "%L" %}
   
-  console.log('{{ "now" | date: "%s%L" }}')
-  {% assign min = 0 %}
-  {% assign max = 0 %}
-  {% for variant in (1..1000) %}
-      {% assign random = "now" | date: "%L" | modulo: 999 %}
-      console.log('{{ random }}')
-      {% if random < 500 %}
-          {% capture min %}{{ min | plus:1 }}{% endcapture %}
-      {% else %}
-          {% capture max %}{{ max | plus:1 }}{% endcapture %}
-      {% endif %}
-  {% endfor %}
-  console.log('{{ "now" | date: "%s%L" }}')
-  
-  console.log('{{min}}')
-  console.log('{{max}}')
+  console.log('{{ random }}')
 </script>
 
 <style>
