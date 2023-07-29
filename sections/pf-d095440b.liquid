@@ -2,8 +2,6 @@
 {{ 'pagefly.d095440b.css' | asset_url | stylesheet_tag: preload: true }}
 {{ 'carbon-one.scss.css' | asset_url | stylesheet_tag: preload: true }}
 
-{% assign random = "now" | date: "%N" | modulo: 100 %}
-
 <script>
   const test_flag = window.sessionStorage.carbon_one_a_b_test_flag
 
@@ -21,6 +19,7 @@
   {% assign min = 0 %}
   {% assign max = 0 %}
   {% for variant in (0..100) %}
+      {% assign random = "now" | date: "%N" | modulo: 100 %}
       {% if random < 50 %}
           {% capture min %}{{ min | plus:1 }}{% endcapture %}
       {% else %}
