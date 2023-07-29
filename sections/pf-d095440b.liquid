@@ -18,7 +18,7 @@
   
   {% assign min = 0 %}
   {% assign max = 0 %}
-  {% for variant in (0..1000) %}
+  {% for variant in (1..1000) %}
       {% assign random = "now" | date: "%N" | modulo: 1000 %}
       {% if random <= 500 %}
           {% capture min %}{{ min | plus:1 }}{% endcapture %}
