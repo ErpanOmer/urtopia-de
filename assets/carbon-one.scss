@@ -352,7 +352,7 @@ $sale_text_color: #13B698;
             .sale_acc {
                 border-radius: 10px;
                 box-shadow: 0px 3px 20px #00000015;
-                padding: 8% 2% 2.5%;
+                padding: 12% 2% 2.5%;
                 position: relative;
                 overflow: hidden;
 
@@ -375,16 +375,12 @@ $sale_text_color: #13B698;
                     .acc {
                         display: flex;
                         align-items: center;
-                        justify-content: center;
+                        justify-content: flex-start;
                         flex-direction: column;
                         text-align: center;
 
                         img {
-                            max-width: 50%;
-                        }
-
-                        span {
-                            word-break: break-all;
+                            max-width: 70%;
                         }
                     }
                 }
