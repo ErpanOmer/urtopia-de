@@ -5,7 +5,7 @@
   
 {% render 'home-page-banner' %}
 
-<style>
+<!--<style>
 .markt {
   background: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_21571_2x_aacb2cc7-902e-4cfc-9590-ff4ecddea5c6.jpg?v=1690272927') center center/cover no-repeat;
   height: 340px;
@@ -56,7 +56,51 @@
 
        window.open("https://www.mediamarkt.de/de/search.html?query=urtopia&filter=carType%3ACitybike")
      })
-   </script>
+   </script>-->
+
+   <style>
+    .mmmmmmm {
+      margin-bottom: 120px;
+    }
+  
+    .mmmmmmm .home-page-media {
+      height: 400px;
+    }
+  
+    .mmmmmmm .home-page-media .logos {
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+      width: 100%;
+      flex-wrap: wrap;
+    }
+  
+    .mmmmmmm .home-page-media .texts {
+      text-align: center;
+    }
+  
+    .mmmmmmm .home-page-media .logos img {
+      margin: 0 24px 24px;
+      max-height: 48px;
+      height: unset;
+    }
+  
+    @media (max-width: 767px) {
+      .mmmmmmm {
+        margin-bottom: 60px;
+      }
+  
+      .mmmmmmm .centeral-content {
+        padding: 0;
+      }
+    }
+  </style>
+  
+  <div class="mmmmmmm">
+    <div class="centeral-content">
+      {% render 'home-page-media' %} 
+    </div>
+  </div>
 
 <!-- {% render 'home-page-media' %} -->
 
@@ -446,50 +490,6 @@ new Swiper ('#bike', {
 
 
 </script></div></div></div></div></div></div>
-
-<style>
-  .mmmmmmm {
-    margin-bottom: 120px;
-  }
-
-  .mmmmmmm .home-page-media {
-    height: 400px;
-  }
-
-  .mmmmmmm .home-page-media .logos {
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    width: 100%;
-    flex-wrap: wrap;
-  }
-
-  .mmmmmmm .home-page-media .texts {
-    text-align: center;
-  }
-
-  .mmmmmmm .home-page-media .logos img {
-    margin: 0 24px 24px;
-    max-height: 48px;
-    height: unset;
-  }
-
-  @media (max-width: 767px) {
-    .mmmmmmm {
-      margin-bottom: 60px;
-    }
-
-    .mmmmmmm .centeral-content {
-      padding: 0;
-    }
-  }
-</style>
-
-<div class="mmmmmmm">
-  <div class="centeral-content">
-    {% render 'home-page-media' %} 
-  </div>
-</div>
 
 <!--
 <style>
