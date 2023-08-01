@@ -146,9 +146,11 @@
                                 <div class="acc">
                                     {{ prod.featured_image | image_url: width: 400 | image_tag }}
                                     {% if acc == "7633738662104" %}
-                                        <span class="u11Medium_v2">{{ prod.title | truncatewords: 3, "" | replace: "-", "" }}</span>
+                                      <span class="u11Medium_v2">{{ prod.title | truncatewords: 3, "" | replace: "-", "" }}</span>
+                                    {% elsif acc == "7924079526104" %}
+                                      <span class="u11Medium_v2">{{ prod.title | truncatewords: 2, "" | replace: "-", "" }}</span>
                                     {% else %}
-                                        <span class="u11Medium_v2">{{ prod.title }}</span>
+                                      <span class="u11Medium_v2">{{ prod.title }}</span>
                                     {% endif %}
                                 </div>
                             {% endif %}
