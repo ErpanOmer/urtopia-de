@@ -874,4 +874,42 @@
             }
         }
     }
+
+    .size-and-specs {
+        .centeral-content {
+            padding: 0 4%;
+            .item {
+                
+    
+                .u36DemiBold_v2 {
+                    font-size: 24px;
+
+                    img {
+                        max-width: 20px;
+                    }
+                }
+
+                .sizes {
+                    grid-template-columns: 1fr;
+                    padding: 15px 0;
+
+                    & > div {
+                        order: 1;
+                        font-size: 12px;
+
+                        .text {
+                            div + div {
+                                margin-top: 10px !important;
+                                
+                            }
+
+                            .u17DemiBold_v2 {
+                                font-size: 14px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
