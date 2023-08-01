@@ -382,6 +382,13 @@ $sale_text_color: #13B698;
                         img {
                             max-width: 70%;
                         }
+
+                        span {
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            flex: 1;
+                        }
                     }
                 }
 
