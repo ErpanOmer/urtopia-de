@@ -5,7 +5,7 @@
   
 {% render 'home-page-banner' %}
 
-<style>
+<!--<style>
 .markt {
   background: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_21571_2x_aacb2cc7-902e-4cfc-9590-ff4ecddea5c6.jpg?v=1690272927') center center/cover no-repeat;
   height: 340px;
@@ -56,7 +56,47 @@
 
        window.open("https://www.mediamarkt.de/de/search.html?query=urtopia&filter=carType%3ACitybike")
      })
-   </script>
+   </script>-->
+
+   <style>
+    .mmmmmmm {
+      background-color: #f7f8fa;
+    }
+  
+    .mmmmmmm .home-page-media .logos {
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+      width: 100%;
+      flex-wrap: wrap;
+    }
+  
+    .mmmmmmm .home-page-media .texts {
+      text-align: center;
+    }
+  
+    .mmmmmmm .home-page-media .logos img {
+      margin: 0 24px 24px;
+      max-height: 48px;
+      height: unset;
+    }
+  
+    @media (max-width: 767px) {
+      .mmmmmmm {
+        margin-bottom: 60px;
+      }
+  
+      .mmmmmmm .centeral-content {
+        padding: 0;
+      }
+    }
+  </style>
+  
+  <div class="mmmmmmm">
+    <div class="centeral-content">
+      {% render 'home-page-media' %} 
+    </div>
+  </div>
 
 <!-- {% render 'home-page-media' %} -->
 
@@ -325,7 +365,7 @@
               </div>
               <a href="/products/urtopia-carbon-e-bike?variant=42615025172696" class="my-button my-button-white">Order now</a>
               <div class="my-button my-button-black new" style="background-image: linear-gradient(90deg, var(--sale-color1), var(--sale-color2))">€600 off +</div>
-            <div class="my-button my-button-black new" style="transform: translateY(110%);background-image: linear-gradient(-90deg, var(--sale-color3), var(--sale-color4));">3 Freebies</div>
+            <div class="my-button my-button-black new" style="transform: translateY(110%);background-image: linear-gradient(-90deg, var(--sale-color3), var(--sale-color4));">4 Freebies</div>
             </div>
             <div class="swiper-slide">
             <div class="name">Carbon 1s</div>
@@ -345,7 +385,7 @@
               </div>
               <a href="/products/urtopia-carbon-e-bike?variant=43869302816984" class="my-button my-button-white">Order now</a>
               <div class="my-button my-button-black new" style="background-image: linear-gradient(90deg, var(--sale-color1), var(--sale-color2))">€300 off</div>
-              <div class="my-button my-button-black new" style="transform: translateY(110%);background-image: linear-gradient(-90deg, var(--sale-color3), var(--sale-color4));">3 Freebies</div>
+              <div class="my-button my-button-black new" style="transform: translateY(110%);background-image: linear-gradient(-90deg, var(--sale-color3), var(--sale-color4));">4 Freebies</div>
              <!--<div class="my-button my-button-black new" style="border-radius: 20px;transform: translate(10%, 10%);">New</div>-->
             </div>
           <div class="swiper-slide">
@@ -447,50 +487,6 @@ new Swiper ('#bike', {
 
 </script></div></div></div></div></div></div>
 
-<style>
-  .mmmmmmm {
-    margin-bottom: 120px;
-  }
-
-  .mmmmmmm .home-page-media {
-    height: 400px;
-  }
-
-  .mmmmmmm .home-page-media .logos {
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    width: 100%;
-    flex-wrap: wrap;
-  }
-
-  .mmmmmmm .home-page-media .texts {
-    text-align: center;
-  }
-
-  .mmmmmmm .home-page-media .logos img {
-    margin: 0 24px 24px;
-    max-height: 48px;
-    height: unset;
-  }
-
-  @media (max-width: 767px) {
-    .mmmmmmm {
-      margin-bottom: 60px;
-    }
-
-    .mmmmmmm .centeral-content {
-      padding: 0;
-    }
-  }
-</style>
-
-<div class="mmmmmmm">
-  <div class="centeral-content">
-    {% render 'home-page-media' %} 
-  </div>
-</div>
-
 <!--
 <style>
   .maksim {
@@ -578,6 +574,29 @@ new Swiper ('#bike', {
     </div>
 </div>
 -->
+
+<div class="test-ride">
+  <div class="centeral-content">
+    <div>
+      <div>
+        <div class="u36DemiBold_v2">Test ride spots near you</div>
+        <div class="u20DemiBold_v2">Experience the bike in real</div>
+        <a
+          class="my-button my-button-origin"
+          href="/pages/test-ride"
+          target="_blank">Book a Free Test Ride</a>
+      </div>
+    </div>
+    <div>
+      <div style="padding: 0;">
+        <div
+          id="storepoint-container"
+          data-tags="euro"
+          data-map-id="162f21804990ff"></div>
+      </div>
+    </div>
+  </div>
+</div>
 
 
 <div data-section-id="pf-8805" data-pf-type="Section" class="sc-fmciRz bheIgq pf-23_"><div class="sc-gjNHFA gwWIgj"><div class="sc-ezbkAF A-dmbO pf-24_ pf-r pf-c-cm pf-r-eh" style="--s-xs:0px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-md:12;--c-lg:12"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-25_"><div data-pf-type="Custom.HTML" class="sc-AjmGg eCTxfx pf-26_"><style>
@@ -834,78 +853,9 @@ new Swiper ('#bike', {
   </div>
 </div>
 
-</div></div></div></div></div></div><div data-section-id="pf-d154" data-pf-type="Section" class="sc-fmciRz bheIgq pf-31_"><div class="sc-gjNHFA gwWIgj"><div class="sc-ezbkAF A-dmbO pf-32_ pf-r pf-c-cm pf-r-eh" style="--s-xs:0px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-md:12;--c-lg:12"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-33_"><div data-pf-type="Custom.HTML" class="sc-AjmGg eCTxfx pf-34_"><div id="section5">
-  <div class="info">
-	  <h1>Test Ride</h1>
-	  <div class="u20Light">Experience the perfect ride – try it and you'll know!</div>
-	  <a class="my-button" href="https://newurtopia.de/pages/test-ride">Book Now</a>
-  </div>
-</div>
+</div></div></div></div></div></div>
 
-
-<style>
-  #section5 {
-	height: 650px;
-	max-width: 1280px;
-	background: url("https://cdn.shopify.com/s/files/1/0583/5810/4213/files/DSCF9950_2x_8687d7e5-88f3-465b-869e-b322d8fef18a.png?v=1677563399") center center/cover no-repeat;
-	color: #fff;
-	  display: flex;
-    color: #fff;
-	    justify-content: flex-end;
-    align-items: center;
-	  margin: 0 auto;
-	padding-right: 250px;
-  }
-  
-  #section5 h1 {
-	color: #fff;
-	margin: 0;
-  }
-  
-  #section5 .u20Light {
-	margin: 12px 0 30px;
-	width: 280px;
-  }
-  
-  #section5 .info {
-	width: 280px;
-  }
-</style>
-
-<style>
-  @media (max-width: 767px) {
-	#section5 {
-	  height: 390px;
-	  justify-content: center;
-    align-items: unset;
-	  padding: 0;
-	      padding-top: 10%;
-	  background: url("https://cdn.shopify.com/s/files/1/0583/5810/4213/files/DSCF9950_2x_6f2c5510-a3b0-4500-9e96-753bf86d0e45.png?v=1677666583") center center/cover no-repeat;
-	}
-	
-	#section5 .info {
-	  display: flex;
-     flex-direction: column;
-     align-items: center;
-	      text-align: center;
-	}
-	
-	#section5 .info h1 {
-	  font-size: 30px;
-	}
-	
-	#section5 .info .u20Light {
-	  font-size: 14px;
-	  width: 240px;
-	}
-	
-	#section5 .info .my-button {
-	  position: absolute;
-     bottom: 10%;
-	}
-	
-  }
-</style></div></div></div></div></div></div><div data-section-id="pf-76d6" data-pf-type="Section" class="sc-fmciRz bheIgq pf-35_"><div class="sc-gjNHFA gwWIgj"><div class="sc-ezbkAF A-dmbO pf-36_ pf-r pf-c-cm pf-r-eh" style="--s-xs:0px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-md:12;--c-lg:12"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-37_"><div data-pf-type="Custom.HTML" class="sc-AjmGg eCTxfx pf-38_"><div id="section6">
+<div data-section-id="pf-76d6" data-pf-type="Section" class="sc-fmciRz bheIgq pf-35_"><div class="sc-gjNHFA gwWIgj"><div class="sc-ezbkAF A-dmbO pf-36_ pf-r pf-c-cm pf-r-eh" style="--s-xs:0px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-md:12;--c-lg:12"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-37_"><div data-pf-type="Custom.HTML" class="sc-AjmGg eCTxfx pf-38_"><div id="section6">
   <h1>Ambass Reviews</h1>
   <div class="u20Medium">
 		Feel the Love From Celebrities and Athletes <a href="https://newurtopia.de/pages/community">Learn more<a>
@@ -1122,3 +1072,15 @@ new Swiper('#section7', {
   ]
 }
 {% endschema %}
+
+<script>
+  (function() {
+    var a = document.createElement("script");
+    a.type = "text/javascript";
+    a.src = "https://cdn.storepoint.co/api/v1/js/162f21804990ff.js";
+    var b = document.getElementsByTagName("script")[0];
+    b.parentNode.insertBefore(a, b);
+  }());
+
+//
+</script>

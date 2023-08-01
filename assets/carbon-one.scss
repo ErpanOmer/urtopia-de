@@ -352,7 +352,7 @@ $sale_text_color: #13B698;
             .sale_acc {
                 border-radius: 10px;
                 box-shadow: 0px 3px 20px #00000015;
-                padding: 8% 2% 2.5%;
+                padding: 12% 2% 2.5%;
                 position: relative;
                 overflow: hidden;
 
@@ -369,18 +369,25 @@ $sale_text_color: #13B698;
 
                 .accs {
                     display: grid;
-                    grid-template-columns: repeat(3, 1fr);
-                    grid-column-gap: 5%;
+                    grid-template-columns: repeat(4, 1fr);
+                    grid-column-gap: 1.5%;
 
                     .acc {
                         display: flex;
                         align-items: center;
-                        justify-content: center;
+                        justify-content: flex-start;
                         flex-direction: column;
                         text-align: center;
 
                         img {
-                            max-width: 50%;
+                            max-width: 70%;
+                        }
+
+                        span {
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            flex: 1;
                         }
                     }
                 }
@@ -1976,10 +1983,6 @@ $sale_text_color: #13B698;
                     }
                 }
             }
-         }
-
-         .featured_image {
-            grid-template-rows: 775px;
          }
 
 

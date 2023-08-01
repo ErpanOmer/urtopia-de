@@ -137,8 +137,8 @@
                 <div class="u14Light_v2 mb12" style="text-decoration: underline;">incl. VAT. Free shipping.</div>
             </div>
             <div class="sale_acc mb12 belt" id="sale_accmb">
-                <div class="u14Light_v2" style="background-image: linear-gradient(-90deg,var(--sale-color3),var(--sale-color4));">And get <span style="font-weight: 600;"> €179 </span> Accessories for <span class="u20DemiBold_v2"> Free</span></div>
-                {% assign accessories_map = "7633738596568,7633738662104,7633738531032" | split: ',' %}
+                <div class="u14Light_v2" style="background-image: linear-gradient(-90deg,var(--sale-color3),var(--sale-color4));">And get <span style="font-weight: 600;"> €278 </span> Accessories for <span class="u20DemiBold_v2"> Free</span></div>
+                {% assign accessories_map = "7633738596568,7633738662104,7924079526104,7633738531032" | split: ',' %}
                 <div class="accs">
                     {% for acc in accessories_map %}
                         {% for prod in collections["accessories"].products %}
@@ -146,9 +146,11 @@
                                 <div class="acc">
                                     {{ prod.featured_image | image_url: width: 400 | image_tag }}
                                     {% if acc == "7633738662104" %}
-                                        <span class="u11Medium_v2">{{ prod.title | truncatewords: 3, "" | replace: "-", "" }}</span>
+                                      <span class="u11Medium_v2">{{ prod.title | truncatewords: 3, "" | replace: "-", "" }}</span>
+                                    {% elsif acc == "7924079526104" %}
+                                      <span class="u11Medium_v2">{{ prod.title | truncatewords: 2, "" | replace: "-", "" }}</span>
                                     {% else %}
-                                        <span class="u11Medium_v2">{{ prod.title }}</span>
+                                      <span class="u11Medium_v2">{{ prod.title }}</span>
                                     {% endif %}
                                 </div>
                             {% endif %}
@@ -178,11 +180,11 @@
                 <div class="u11Light_v2">*Not available with leasing</div>
             </div>-->
             <div class="count-down mb12 mobileHide" style="color: var(--sale-color4);">
-                <div class="u17Medium_v2">€600 off + 3 Free Accessories Ends in：</div>
+                <div class="u17Medium_v2">€600 off + 4 Free Accessories Ends in：</div>
                 <img src="http://i.countdownmail.com/2mmaed.gif">
             </div>
             <div class="count-down mb12 mobileHide abtest-count-down" style="color: var(--sale-color4);">
-                <div class="u17Medium_v2">€600 off + 3 Free Accessories Ends in：</div>
+                <div class="u17Medium_v2">€600 off + 4 Free Accessories Ends in：</div>
                 <img src="http://i.countdownmail.com/2p2esm.gif">
             </div>
             <div class="options">
@@ -221,11 +223,11 @@
             </div>       
             <div class="buttons">
                 <div class="count-down mb12 pcHide" style="color: var(--sale-color4);">
-                    <div class="u17Medium_v2">€600 off + 3 Free Accessories Ends in：</div>
+                    <div class="u17Medium_v2">€600 off + 4 Free Accessories Ends in：</div>
                     <img src="http://i.countdownmail.com/2mmaed.gif">
                 </div>
                 <div class="count-down mb12 pcHide abtest-count-down" style="color: var(--sale-color4);">
-                    <div class="u17Medium_v2">€600 off + 3 Free Accessories Ends in：</div>
+                    <div class="u17Medium_v2">€600 off + 4 Free Accessories Ends in：</div>
                     <img src="http://i.countdownmail.com/2p2esm.gif">
                 </div>
                 <div
@@ -247,10 +249,10 @@
                 </div>
             </div>
             <div class="delivery_time mb12">Free shipping <span>within 5 days</span></div>
-            <div class="abtest-text u11Medium_v2 mb12">
+            <!--<div class="abtest-text u11Medium_v2 mb12">
               <span>Also available on</span>
               <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230728-172336.png?v=1690536230" alt="">
-            </div>
+            </div>-->
             <div class="support mb12">
                 <a href="#boxs3">
                     <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230621-005713.png?v=1687280264"/>
@@ -1617,7 +1619,7 @@
 
             $(`.product .commonComponent .sale .u20DemiBold_v2`).text(`${model === 'Carbon Belt' ? '{{ 269900 | money }}' : '{{ 299900 | money }}'} NOW`)
             //$(`.product .commonComponent .sale .u17DemiBold_v2`).text(`with ${model === 'Carbon Belt' ? '{{ settings.sale_name }}' : 'Pre-order Sale'}`)
-            $(`.product .count-down .u17Medium_v2`).text(`with ${model === 'Carbon Belt' ? '€600 off + 3 Free Accessories Ends in:' : '€300 off + 3 Free Accessories Ends in:'}`)
+            $(`.product .count-down .u17Medium_v2`).text(`with ${model === 'Carbon Belt' ? '€600 off + 4 Free Accessories Ends in:' : '€300 off + 4 Free Accessories Ends in:'}`)
             $('.top-fixed .u17Light_v2 .emphasize').text(`${model === 'Carbon Belt' ? '{{ 269900 | money }}' : '{{ 299900 | money }}'}`)
             $('.bottom-fixed .u14Light_v2 .emphasize').text(`${model === 'Carbon Belt' ? '{{ 269900 | money }}' : '{{ 299900 | money }}'}`)
 
@@ -1631,7 +1633,7 @@
                 //$('.product .gear').hide()
                 
 
-                global_config.event_accessories_variant_ids = ['43817744793816', '43745263255768', '43745261748440'];
+                global_config.event_accessories_variant_ids = ['43817744793816', '43745263255768', '43788921274584', '43745261748440'];
 
                 $(`.product .product-panel .options .option .vanilla`).show();
 
@@ -1642,7 +1644,7 @@
                 //$('.product .gear').show()
                 
 
-                global_config.event_accessories_variant_ids = ['43866498891992', '43866499121368', '43871557779672'];
+                global_config.event_accessories_variant_ids = ['43866498891992', '43866499121368', '43907982622936', '43871557779672'];
 
                 $(`.product .product-panel .options .option .vanilla`).hide();
 
@@ -1665,10 +1667,6 @@
                 const index = i % 6
 
                 return  `<div class="swiper-slide">
-                            <div class="abtest-logo mobileHide" style="background-color: var(--sale-color1);">
-                              <span class="u14Medium_v2">Also available on</span>
-                              <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230728-171406.png?v=1690535660"/>
-                            </div>
                             <img src="${s}">
                             <div>
                                 <span class="u20DemiBold_v2">${global_config.carbon_order_page_config.product_media_images[index].text}</span>
