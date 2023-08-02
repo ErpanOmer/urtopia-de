@@ -587,7 +587,7 @@ setTimeout(() => {
 
     
     // SELECT 插件
-    const selectPlugin = $('select[name="accessories"]').SumoSelect({
+    window.selectPlugin = $('select[name="accessories"]').SumoSelect({
         placeholder: '',
         csvDispCount: 0,
         floatWidth: 768,
@@ -686,7 +686,7 @@ setTimeout(() => {
     // 如果有 accessories 存在
     if (urlSearch.accessories) {
         for (const acc of urlSearch.accessories.split(',')) {
-            selectPlugin.sumo.selectItem(acc)
+            window.selectPlugin.sumo.selectItem(acc)
         }
     }
     
