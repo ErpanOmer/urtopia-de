@@ -1,5 +1,9 @@
 {% render 'carbon-ebike-page-b' %}
 
 <script>
-  
+  $('[action_type]').on('click', e => {
+    const t = $(e.target)
+
+    console.log('t', t)
+  })
 </script>
