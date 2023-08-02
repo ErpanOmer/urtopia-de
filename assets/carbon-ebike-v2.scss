@@ -187,6 +187,10 @@
             .u24Medium_v2 {
                 margin: 38px 0 12px;
             }
+
+            &:last-child {
+                padding: 0 10%;
+            }
            }
         }
     }
@@ -374,31 +378,31 @@
             }
         }
     }
+}
 
-    .top-fixed {
-        position: sticky;
-        top: 0;
-        right: 0;
-        left: 0;
-        z-index: 999998;
-        background-color: #fff;
-        box-shadow: 0 3px 6px #00000014;
-        transition: top .4s ease,transform .4s ease,box-shadow .4s ease,-webkit-transform .4s ease,-webkit-box-shadow .4s ease;
+.top-fixed {
+    position: sticky;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 999998;
+    background-color: #fff;
+    box-shadow: 0 3px 6px #00000014;
+    transition: top .4s ease,transform .4s ease,box-shadow .4s ease,-webkit-transform .4s ease,-webkit-box-shadow .4s ease;
 
-        .centeral-content {
-            height: 70px;
+    .centeral-content {
+        height: 70px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        & > div {
             display: flex;
-            align-items: center;
-            justify-content: space-between;
+            flex-direction: column;
+        }
 
-            & > div {
-                display: flex;
-                flex-direction: column;
-            }
-
-            .my-button {
-                margin-left: 15px;
-            }
+        .my-button {
+            margin-left: 15px;
         }
     }
 }
@@ -561,7 +565,7 @@
                 justify-content: flex-start;
 
                 .u60Medium_v2 {
-                    font-size: 48px;
+                    font-size: 42px;
                 }
 
                 .u36Light_extra_v2 {
@@ -714,7 +718,7 @@
                 padding-top: 12vw;
 
                 & > div {
-                    padding: 0;
+                    padding: 0 !important;
 
                     .u30Medium_v2 {
                         font-size: 24px;
@@ -838,7 +842,7 @@
         }
 
         .torque-sensor {
-            padding: 0;
+            padding: 0 0 60px;
 
             .centeral-content {
                 grid-template-columns: 1fr;
@@ -972,5 +976,9 @@
                 }
             }
         }
+    }
+
+    #launcher {
+        bottom: 55px!important;
     }
 }
