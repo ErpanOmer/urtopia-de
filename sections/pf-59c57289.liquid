@@ -8,8 +8,8 @@
 
     fetchBuried('a-b-test', 'carbon-ebikepage', {
         action_type: abtest_type,
-        event_name: 'page view'
-    })
+        event_name: 'page-view'
+    }, true)
   }
 
   clarity("set", "A_B_TEST", `carbon-ebikepage-${abtest_type}`);
@@ -34,7 +34,7 @@
         action_type: abtest_type,
         event_name: 'button-click',
         button: action_type
-      })
+      }, true)
     }
   })
 </script>
