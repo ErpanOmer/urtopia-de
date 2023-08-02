@@ -462,6 +462,7 @@ setTimeout(() => {
     partnerSelect.sumo.unSelectItem('Jobrad');
 
 
+    const a = ['7924079526104, 7633738498264']
     $('select[name="partner"]').on('change', e => {
         const v = e.target.value
         console.log('e.target.value', v)
@@ -482,14 +483,12 @@ setTimeout(() => {
         $('select[name="accessories"] option').each((i, t) => {
             const id = $(t).val()
 
-            console.log(id)
-        })
+            if (a.includes(id) && v === "Jobrad") {
+                return window.selectPlugin.sumo.disableItem(i)
+            }
 
-        if (v === "Jobrad") {
-            window.selectPlugin.sumo.disableItem(1)
-        } else {
-            window.selectPlugin.sumo.enableItem(1)
-        }
+            window.selectPlugin.sumo.enableItem(i)
+        })
     })
 
     $('.partners .swiper-wrapper .swiper-slide .my-button').on('click', e => {
