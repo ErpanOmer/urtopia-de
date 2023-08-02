@@ -444,11 +444,15 @@ setTimeout(() => {
                 'justify-content': 'space-between'
             })
 
-            if (!find) {
+            if (name === '---') {
                 li.css({
                     'display': 'none',
                 })
+                
+                return li
+            }
 
+            if (!find) {
                 return li
             }
 
