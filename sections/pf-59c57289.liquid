@@ -16,7 +16,7 @@
   clarity("set", "A_B_TEST", `carbon-ebikepage-${abtest_type}`);
 </script>
 
-{% if random == 0 %}
+{% if random == 1 %}
   {% render 'carbon-ebike-page-a' %}
 {% else %}
   {% render 'carbon-ebike-page-b' %}
