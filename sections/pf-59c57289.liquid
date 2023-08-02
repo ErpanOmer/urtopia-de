@@ -1,4 +1,15 @@
-{% render 'carbon-ebike-page-b' %}
+{% assign random = "now" | date: "%L" | modulo: 2 %}
+
+<script>
+  const abtest_type = '{% if random == 0 %}A{% else %}B{% endif %}'
+
+</script>
+
+{% if random == 0 %}
+  {% render 'carbon-ebike-page-a' %}
+{% else %}
+  {% render 'carbon-ebike-page-b' %}
+{% endif %}
 
 <script>
   $('[action_type]').on('click', e => {
