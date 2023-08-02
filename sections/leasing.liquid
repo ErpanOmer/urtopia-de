@@ -460,6 +460,8 @@ setTimeout(() => {
 
     partnerSelect.sumo.add('none', 'None of above/Not sure which one my employer provided')
 
+    partnerSelect.sumo.unSelectItem('Jobrad');
+
     $('select[name="partner"]').on('change', e => {
         const v = e.target.value
         console.log('e.target.value', v)
