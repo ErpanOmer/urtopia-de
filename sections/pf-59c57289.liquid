@@ -2,7 +2,7 @@
 
 <script>
   const abtest_type =  '{% if random == 0 %}A{% else %}B{% endif %}'
-  console.log('abtest_type', {{ session  }})
+  console.log('abtest_type', {{ session | json}})
 
   if (!window.sessionStorage.ebikePageVisited) {
     window.sessionStorage.ebikePageVisited = 'ebikePageVisited'
