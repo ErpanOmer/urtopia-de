@@ -1,4 +1,4 @@
-{% assign random = "now" | date: "%M" | divided_by: 10 %}
+{% assign random = "now" | date: "%M" | divided_by: 10 | modulo: 2 %}
 
 <script>
   const abtest_type =  '{% if random == 0 %}A{% else %}B{% endif %}'
