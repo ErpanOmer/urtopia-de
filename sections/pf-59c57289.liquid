@@ -3,6 +3,15 @@
 <script>
   const abtest_type = '{% if random == 0 %}A{% else %}B{% endif %}'
 
+  if (!window.sessionStorage.ebikePageVisited) {
+    window.sessionStorage.ebikePageVisited = 'ebikePageVisited'
+
+    fetchBuried('a-b-test', 'carbon-ebikepage', {
+        action_type: abtest_type,
+        event_name: 'page view'
+    })
+  }
+
 </script>
 
 {% if random == 0 %}
