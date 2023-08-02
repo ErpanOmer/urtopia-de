@@ -478,6 +478,13 @@ setTimeout(() => {
             offers.attr('type', 'text')
             offers.closest('.item').show()
         }
+
+
+        if (v === "Jobrad") {
+            selectPlugin.sumo.disableItem(1)
+        } else {
+            selectPlugin.sumo.enableItem(1)
+        }
     })
 
     $('.partners .swiper-wrapper .swiper-slide .my-button').on('click', e => {
