@@ -488,13 +488,13 @@ setTimeout(() => {
             offers.closest('.item').show()
         }
 
-        //window.selectPlugin.sumo.unSelectAll()
+        window.selectPlugin.sumo.unSelectAll()
 
         $('select[name="accessories"] option').each((i, t) => {
             const id = $(t).val()
 
             if (a.includes(id) && v === "Jobrad") {
-                window.selectPlugin.sumo.unSelectItem(id)
+                //window.selectPlugin.sumo.unSelectItem(id)
                 window.selectPlugin.sumo.disableItem(i)
 
                 return 
