@@ -9,9 +9,9 @@
                 <span class="flex-1"></span>
                 <div>
                     <span class="u17Light_v2"><span class="u20DemiBold_v2 emphasize"
-                            style="font-weight: 600;">$2,199.00</span> <span
-                            style="text-decoration: line-through;">$2,799.00</span></span>
-                    <span class="u14Light_v2">or as low as $91.6/Month</span>
+                            style="font-weight: 600;">{{ all_products['urtopia-carbon-e-bike'].price | minus: 60000 | money }}</span> <span
+                            style="text-decoration: line-through;">{{ all_products['urtopia-carbon-e-bike'].price | money }}</span></span>
+                    <span class="u14Light_v2">or as low as €112/Month</span>
                 </div>
                 <a href="/products/urtopia-carbon-e-bike" target="_blank" class="my-button my-button-origin">order/lease now</a>
             </div>
