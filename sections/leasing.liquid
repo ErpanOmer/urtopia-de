@@ -479,6 +479,12 @@ setTimeout(() => {
             offers.closest('.item').show()
         }
 
+        accessories
+        $('select[name="accessories"] option').each(i, t => {
+            const id = $(t).val()
+
+            console.log(id)
+        })
 
         if (v === "Jobrad") {
             window.selectPlugin.sumo.disableItem(1)
