@@ -47,7 +47,7 @@
                 body: JSON.stringify(body)
             })
             .then(response => {
-                // location.href = `/checkout?checkout_email=${checkout_email}`
+                location.href = `/checkout?checkout_email=${checkout_email}`
             })
             .catch((error) => {
                 console.error('Error:', error);
