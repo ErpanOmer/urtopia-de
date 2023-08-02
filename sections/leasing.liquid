@@ -448,7 +448,7 @@ setTimeout(() => {
                 li.css({
                     'display': 'none',
                 })
-                
+
                 return li
             }
 
@@ -492,7 +492,10 @@ setTimeout(() => {
             const id = $(t).val()
 
             if (a.includes(id) && v === "Jobrad") {
-                return window.selectPlugin.sumo.disableItem(i)
+                window.selectPlugin.sumo.unSelectItem(i)
+                window.selectPlugin.sumo.disableItem(i)
+
+                return 
             }
 
             window.selectPlugin.sumo.enableItem(i)
