@@ -1,8 +1,8 @@
 {% assign random = "now" | date: "%L" | modulo: 2 %}
 
 <script>
-  const abtest_type = '{% if random == 0 %}A{% else %}B{% endif %}'
-  console.log('abtest_type', abtest_type)
+  const abtest_type =  '{% if random == 0 %}A{% else %}B{% endif %}'
+  console.log('abtest_type', {{ cart | json }})
 
   if (!window.sessionStorage.ebikePageVisited) {
     window.sessionStorage.ebikePageVisited = 'ebikePageVisited'
