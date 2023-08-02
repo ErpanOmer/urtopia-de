@@ -2,7 +2,7 @@
 
 {%- assign page_url = content_for_header | split:'"pageurl":"' | last | split:'"' | first | split: request.host | last | replace:'\/','/' | replace:'%20',' ' | replace:'\u0026','&'  -%}
 
-{% if product and product.id == 7633738531032 and page_url contains "checkout_email"%}
+{% if product and product.id == 7633738531032 %}
   {% render 'product-to-checkout' %}
 {% else %}
 <html class="no-js" lang="{{ request.locale.iso_code }}">
