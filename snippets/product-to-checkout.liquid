@@ -1,9 +1,4 @@
-<html lang="en">
-  <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>{{ product.title }}</title>
-      <style>
+<style>
         body {
             height: 100vh;
             width: 100vw;
@@ -21,20 +16,6 @@
         }
       </style>
       <script>
-            // 查询url 参数
-            function getSearchValues () {
-                const search = {}
-
-                // 页面url
-                const url = new URL(location.href)
-
-                for (const [k, v] of url.searchParams.entries()) {
-                    search[k] = v
-                }
-
-                return search
-            }
-
             console.log(JSON.parse(JSON.stringify({{ product | json }})))
             const body = { items: [{ id: '{{ product.first_available_variant.id  }}', quantity: 1 }] }
             const checkout_email = getSearchValues().checkout_email
@@ -48,16 +29,15 @@
             })
             .then(response => {
                 //window.sessionStorage.checkout_email = checkout_email
-                location.href = `/checkout?checkout_email=${checkout_email}`
+                //location.href = `/checkout?checkout_email=${checkout_email}`
             })
             .catch((error) => {
                 console.error('Error:', error);
             })
         
       </script>
-  </head>
-  <body>
-    <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230727-173718.gif?v=1690450698" alt="">
-    <div> It won't take too long<br> Please wait...</div>
-  </body>
-</html>
+
+      <div class="product-to-checkout">
+        <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230727-173718.gif?v=1690450698" alt="">
+        <div> It won't take too long<br> Please wait...</div>
+      </div>
