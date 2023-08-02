@@ -2,6 +2,7 @@
 
 <script>
   const abtest_type =  '{% if random == 0 %}A{% else %}B{% endif %}'
+  window.sessionStorage.ebikeabtest_type = abtest_type
   console.log('abtest_type', {{ random }})
 
   if (!window.sessionStorage.ebikePageVisited) {
