@@ -6,4 +6,9 @@
             localStorage.setItem("CountryCode", readWinCountry);
         }
     }, 300))
+
+
+    document.body.addEventListener("mouseleave", debounce((evt) => {
+        console.log('mouseleave', evt)
+    }, 300))
 </script>
