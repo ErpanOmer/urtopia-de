@@ -131,16 +131,16 @@ function throttle(method, delay, duration){
  }
 
     function showMiniDialog(html = '') {
-        $('body .mini-dialog').remove()
+        const mini_dialog = $('body .mini-dialog')
+
+        if (mini_dialog.length) {
+            return setTimeout(showMiniDialog, 10000, html)
+        }
+        
+
+        // $('body .mini-dialog').remove()
         setTimeout(() => {
             $("body").append(`<div class="mini-dialog" style="display: flex;">${html}</div>`)
-        
-            {% comment %} setTimeout(() => {
-            $('body .mini-dialog > div').on('click', e => {
-                e.stopPropagation();
-                return false;
-            })
-            }, 100) {% endcomment %}
         })
     }
     
