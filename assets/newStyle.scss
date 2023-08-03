@@ -532,6 +532,10 @@ input {
   flex: 1;
 }
 
+.testride_dialog {
+
+}
+
 .mini-dialog {
   position: fixed;
   top: 0;
@@ -730,6 +734,17 @@ body .jBox-Modal {
     color: #999;
     cursor: pointer;
   }
+}
+
+.testride_dialog {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    max-width: 1000px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 3px 6px #00000029;
+    align-items: center;
+    justify-items: flex-start;
 }
 
 
