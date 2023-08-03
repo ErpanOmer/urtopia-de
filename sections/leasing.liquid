@@ -470,7 +470,6 @@ setTimeout(() => {
     partnerSelect.sumo.unSelectItem('Jobrad');
 
 
-    const jobrad_disabled = ['7633738694872', '7633738629336']
     $('select[name="partner"]').on('change', e => {
         const v = e.target.value
         console.log('e.target.value', v)
@@ -494,8 +493,8 @@ setTimeout(() => {
         $('select[name="accessories"] option').each((i, t) => {
             const id = $(t).val()
             
-            if (v === "Jobrad" && jobrad_disabled.includes(id)) {
-                const hasDisable = selectAccessories.some(s => jobrad_disabled.includes(s))
+            if (v === "Jobrad" && global_config.leasing.jobrad_disabled_accessories.includes(id)) {
+                const hasDisable = selectAccessories.some(s => global_config.leasing.jobrad_disabled_accessories.includes(s))
 
                 if (hasDisable) {
                     $('.forms form select[name="partner"]').closest('.item').find('.error').text(`Please select your accessioes again due to the change of leasing partner`)
