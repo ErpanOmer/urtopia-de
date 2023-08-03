@@ -20,10 +20,10 @@
         }
     }, 300))
 
-    document.body.addEventListener("mouseleave", debounce((evt) => {
+    global_config.is_pc && !global_config.is_mobile && !window.sessionStorage.hideTestRideDialog && document.body.addEventListener("mouseleave", debounce((evt) => {
         console.log('mouseleave', evt)
     }, 300))
 
 
-    showMiniDialog(testride_dialog)
+    
 </script>
