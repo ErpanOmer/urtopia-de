@@ -3,7 +3,7 @@
 <script>
   const abtest_type =  '{% if random == 0 %}A{% else %}B{% endif %}'
   window.sessionStorage.ebikeabtest_type = abtest_type
-  console.log('abtest_type', {{ random }})
+  console.log('abtest_type', abtest_type)
 
   if (!window.sessionStorage.ebikePageVisited) {
     window.sessionStorage.ebikePageVisited = 'ebikePageVisited'
@@ -17,7 +17,7 @@
   clarity("set", "A_B_TEST", `carbon-ebikepage-${abtest_type}`);
 </script>
 
-{% if random == 1 %}
+{% if random == 0 %}
   {% render 'carbon-ebike-page-a' %}
 {% else %}
   {% render 'carbon-ebike-page-b' %}
