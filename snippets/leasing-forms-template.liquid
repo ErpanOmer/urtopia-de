@@ -433,7 +433,7 @@ const changeBikeImage = e => {
     // 如果当前variant 库存不足
     if (!find.available) {
         $('select[name="bike_style"]').val('')
-        $('.froms form select[name="bike_size"]').closest('.item').find('.error').text(`Your selection is currently reached our stock limit - size: ${size}, style: ${style}`)
+        $('.forms form select[name="bike_size"]').closest('.item').find('.error').text(`Your selection is currently reached our stock limit - size: ${size}, style: ${style}`)
         
         return clearBikeImage()
     }
