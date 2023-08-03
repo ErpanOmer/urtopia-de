@@ -506,6 +506,11 @@ setTimeout(() => {
         })
     })
 
+    $('select[name="accessories"]').on('change', e => {
+        $('.forms form select[name="partner"]').closest('.item').find('.error').text(``)
+        $('.forms form select[name="accessories"]').closest('.item').find('.error').text(``)
+    })
+
     $('.partners .swiper-wrapper .swiper-slide .my-button').on('click', e => {
         const name = $(e.target).attr('name')
 
