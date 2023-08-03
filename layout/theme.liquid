@@ -381,16 +381,7 @@
         const observer = lozad(); // lazy loads elements with default selector as '.lozad'
         observer.observe('.lozad');
       </script>
-      <script>
-        document.body.addEventListener("mouseout", (evt) => {
-          let readWinCountry =
-            window.CozyCountryRedirect && window.CozyCountryRedirect.country;
-          // console.log("离开页面====读取window下国家====", readWinCountry);
-          if (readWinCountry) {
-            localStorage.setItem("CountryCode", readWinCountry);
-          }
-        });
-      </script>
+      
 
       {%- if template.name == 'product' -%}
         {%- render 'insurance-templates' -%}
@@ -401,6 +392,7 @@
   </body>
   {% render 'global-message-box' %}
   {% render 'global-subscribe-email' %}
+  {% render 'global-testride-dialog' %}
   </html>
 
 
