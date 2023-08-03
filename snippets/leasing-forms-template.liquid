@@ -106,6 +106,14 @@
                     <div class="u24Medium">Country<i>*</i></div>
                     <input type="text" name="country" value="Deutschland" disabled required>
                 </div>
+                {% if template == "page.leasing" %}
+                    <div class="item">
+                        <div class="u24Medium">Leasing partner your employer provided<i>*</i></div>
+                        <select name="partner" required>
+                            <option value="">---</option>
+                        </select>
+                    </div>
+                {% endif %}
                 <div class="item" name="bike_image" style="display:none;">
                     <div class="u24Medium">Bike you choose:</div>
                     <input type="image" name="bike_image" src="">
@@ -158,15 +166,6 @@
                     </select>
                     <!-- <input type="text" name="accessories" placeholder="" > -->
                 </div>
-                
-                {% if template == "page.leasing" %}
-                    <div class="item">
-                        <div class="u24Medium">Leasing partner your employer provided<i>*</i></div>
-                        <select name="partner" required>
-                            <option value="">---</option>
-                        </select>
-                      </div>
-                {% endif %}
                 <div class="item">
                     <div class="u24Medium">Employer ID:<br><span style="font-size: 12px;color: #666;line-height: 16px;display: inline-block;">It is a ID provide by your employer or HR department.</span></div>
                     <input type="text" name="employer_id">
