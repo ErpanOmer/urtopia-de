@@ -12,6 +12,12 @@ const global_config = {
   // 右下角message弹窗 延迟弹出时间，单位:s
   message_box_show_delay_time: 10,
 
+  // leasing 有关配置
+  leasing: {
+    // 需要禁用的jobrad 配件
+    jobrad_disabled_accessories: ['7633738694872', '7633738629336'],
+  },
+
 
   // 邮件弹窗有关配置
   subscribe_email_dialog_config: {
