@@ -500,8 +500,9 @@ setTimeout(() => {
                 if (hasDisable) {
                     $('.forms form select[name="partner"]').closest('.item').find('.error').text(`Please select your accessioes again due to the change of leasing partner`)
                     $('.forms form select[name="accessories"]').closest('.item').find('.error').text(`Due to the change of leasing partner, please select your accessioes again and some of it might be unavailble.`)
-                    return window.selectPlugin.sumo.disableItem(i)
                 }
+
+                return window.selectPlugin.sumo.disableItem(i)
             }
 
             window.selectPlugin.sumo.enableItem(i)
