@@ -2,23 +2,6 @@
 {{ 'pagefly.d095440b.css' | asset_url | stylesheet_tag: preload: true }}
 {{ 'carbon-one.scss.css' | asset_url | stylesheet_tag: preload: true }}
 
-<script>
-  const test_flag = window.sessionStorage.carbon_one_a_b_test_flag
-
-  if (test_flag === 'B') {
-    const root = document.querySelector(':root')
-    root.style.setProperty('--sale-color1', '#E30D0D')
-    root.style.setProperty('--sale-color2', '#E30D0D')
-    root.style.setProperty('--sale-color3', '#E30D0D')
-    root.style.setProperty('--sale-color4', '#E30D0D')
-
-    // 给root 元素设置唯一id ，有利于控制样式表
-    root.id = test_flag
-  }
-
-  {% assign random = "now" | date: "%L" | modulo: 2 %}
-  console.log('{{ random }}')
-</script>
 
 <style>
   .product .centeral-content .product-panel .options .Model .active {
@@ -27,14 +10,6 @@
 
   .product .centeral-content .product-panel .options .Model>div:after {
     background-color: var(--sale-color3);
-  }
-
-  .abtest-logo,
-  .abtest-text,
-  .count-down.mb12.mobileHide.abtest-count-down,
-  .count-down.mb12.pcHide.abtest-count-down,
-  .abtest-price {
-    display: none !important;
   }
   
 </style>
