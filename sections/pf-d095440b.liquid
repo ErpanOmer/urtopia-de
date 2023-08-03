@@ -1778,7 +1778,7 @@
             fetchBuried('websiteclick', `carbon-order-page`, { button: type, action_type: sessionStorage.carbon_one_a_b_test_flag }, true)
             window.sessionStorage.clicked_klarna_checkout_button = 'clicked_klarna_checkout_button'
     
-            if (sessionStorage.carbon_one_a_b_test_flag === 'B') {
+            if (true) {
                 setTimeout(() => {
                     t.removeClass('loading')
                     t.find('span').html(text)
