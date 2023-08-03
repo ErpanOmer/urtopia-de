@@ -1,9 +1,9 @@
 <script>
-    document.body.addEventListener("mouseout", (evt) => {
+    document.body.addEventListener("mouseout", debounce((evt) => {
         let readWinCountry = window.CozyCountryRedirect && window.CozyCountryRedirect.country;
         // console.log("离开页面====读取window下国家====", readWinCountry);
         if (readWinCountry) {
             localStorage.setItem("CountryCode", readWinCountry);
         }
-    })
+    }, 300))
 </script>
