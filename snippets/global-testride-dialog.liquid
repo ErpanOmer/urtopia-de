@@ -30,11 +30,14 @@
         }
     }, 300))
 
+
+    let is_show = false
     global_config.is_pc && !global_config.is_mobile && document.body.addEventListener("mouseleave", debounce((evt) => {
-        if (!window.sessionStorage.hideTestRideDialog) {
+        if (!window.sessionStorage.hideTestRideDialog && !is_show) {
+            is_show = true
             showMiniDialog(testride_dialog)
         }
-        
+
         console.log('mouseleave', evt)
     }, 300))
 
