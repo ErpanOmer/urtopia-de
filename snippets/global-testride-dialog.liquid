@@ -1,4 +1,6 @@
 <script>
+    const testride_dialog = ``
+
     document.body.addEventListener("mouseout", debounce((evt) => {
         let readWinCountry = window.CozyCountryRedirect && window.CozyCountryRedirect.country;
         // console.log("离开页面====读取window下国家====", readWinCountry);
@@ -7,8 +9,10 @@
         }
     }, 300))
 
-
     document.body.addEventListener("mouseleave", debounce((evt) => {
         console.log('mouseleave', evt)
     }, 300))
+
+
+    showMiniDialog(testride_dialog)
 </script>
