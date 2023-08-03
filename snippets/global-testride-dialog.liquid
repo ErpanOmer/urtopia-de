@@ -1,11 +1,14 @@
 <link rel="prefetch" href="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230609-untitled-9762.jpg?v=1691048775" as="image">
 <script>
+    let Test_ride_spots_near_you_is_show = false
     function Test_ride_spots_near_you () {
+        Test_ride_spots_near_you_is_show = false
         fetchBuried('emailpop', 'exitpop', { button: 'book a test ride' }, true)
         window.sessionStorage.hideTestRideDialog = 'hideTestRideDialog'
     }
 
     function Test_ride_spots_near_you_close () {
+        Test_ride_spots_near_you_is_show = false
         window.sessionStorage.hideTestRideDialog = 'hideTestRideDialog'
         closeMiniDialog()
     }
@@ -30,11 +33,9 @@
         }
     }, 300))
 
-
-    let is_show = false
     global_config.is_pc && !global_config.is_mobile && document.body.addEventListener("mouseleave", debounce((evt) => {
-        if (!window.sessionStorage.hideTestRideDialog && !is_show) {
-            is_show = true
+        if (!window.sessionStorage.hideTestRideDialog && !Test_ride_spots_near_you_is_show) {
+            Test_ride_spots_near_you_is_show = true
             showMiniDialog(testride_dialog)
         }
 
