@@ -19,7 +19,7 @@
               <input type="hidden" name="utf8" value="✓">
               <input type="hidden" name="contact[tags]" value="newsletter">
               <input placeholder="Enter email here" type="email" name="contact[email]" required>
-              <button class="my-button my-button-black" type="submit">Subscribe</button>
+              <button class="my-button my-button-black" id="global_email_submit_button" type="submit">Subscribe</button>
         </div>
       </form>
     </div>
@@ -65,7 +65,12 @@
       $('.subscribe-container form').on('submit', function (event) {
         const email = $('.subscribe-container form input[type="email"]').val();
         // 埋点
-        fetchBuried('emailpop', 'submit', { email, tag: 'DE,POPUP' });
+        fetchBuried('emailpop', 'submit', { email, tag: 'DE,POPUP' }).then(() => {
+          dataLayer.push({
+                'event'    :'global_email_submit',
+                'pageType' :'emailpop',
+            });
+        });
         closeEmailDialog(14);
 
         event.preventDefault();
