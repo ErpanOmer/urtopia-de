@@ -19,6 +19,15 @@ const global_config = {
     // 需要禁用的jobrad 配件
     jobrad_disabled_accessories: ['7633738694872', '7633738629336'],
   },
+  // test ride 弹窗
+    test_ride_dialog_config: {
+        // 是否隐藏
+        is_hide: false,
+        // 延迟弹出时间，单位:s
+        show_delay_time: 15,
+        // pc 背景图
+        background_imgae: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230609-untitled-9762.jpg?v=1691048775'
+    },
 
 
   // 邮件弹窗有关配置
