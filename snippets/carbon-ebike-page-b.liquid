@@ -743,7 +743,6 @@ function scrollFunc() {
 
   window.onscroll = throttle(function (e) {
     scrollFunc()
-    console.log('scrollDirection', scrollDirection)
   try {
     if (scrollDirection == 'down') {
       //页面向下滚动要做的事情
@@ -768,5 +767,5 @@ function scrollFunc() {
       }
     }
   } catch (error) {}
-}, 100);
+}, 50);
 </script>
