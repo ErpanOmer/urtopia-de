@@ -750,7 +750,7 @@ function scrollFunc() {
       // console.log('-====向下滚动了');
       document.querySelector('.header-wrapper').style.position = 'inherit';
       $('.top-fixed').css({ top: 0, 'z-index': 3 })
-      $('.tl-options.open').hide()
+      $('.tl-options').hasClass('open') && $('.tl-options').hide()
       
     } else if (scrollDirection == 'up') {
       //页面向上滚动要做的事情
@@ -759,7 +759,7 @@ function scrollFunc() {
       document.querySelector('.header-wrapper').style.top = 0;
       document.querySelector('.header-wrapper').style.width = '100%';
       $('.top-fixed').css({ top: '60px', 'z-index': 2 })
-      $('.tl-options.open').show()
+      $('.tl-options').hasClass('open') && $('.tl-options').show()
 
       if (scrollAction.y < 80) {
         document.querySelector('.header-wrapper').style.position = 'inherit';
