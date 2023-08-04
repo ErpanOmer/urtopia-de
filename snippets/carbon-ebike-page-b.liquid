@@ -741,7 +741,7 @@ function scrollFunc() {
   scrollAction.y = window.pageYOffset;
 }
 
-  window.onscroll = function (e) {
+  window.onscroll = throttle(function (e) {
     scrollFunc()
     console.log('scrollDirection', scrollDirection)
   try {
@@ -768,5 +768,5 @@ function scrollFunc() {
       }
     }
   } catch (error) {}
-};
+}, 100);
 </script>
