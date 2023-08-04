@@ -759,9 +759,9 @@ function scrollFunc() {
       document.querySelector('.header-wrapper').style.width = '100%';
       $('.top-fixed').css({ top: '52px' })
 
-      {% comment %} if (scrollAction.y < 80) {
+      if (scrollAction.y < 80) {
         document.querySelector('.header-wrapper').style.position = 'inherit';
-      } {% endcomment %}
+      }
     }
   } catch (error) {}
 };
