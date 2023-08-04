@@ -743,6 +743,7 @@ function scrollFunc() {
 
   window.onscroll = function (e) {
     scrollFunc()
+    console.log('scrollDirection', scrollDirection)
   try {
     if (scrollDirection == 'down') {
       //页面向下滚动要做的事情
