@@ -710,3 +710,29 @@
             .addClass('down');
     });
 </script>
+
+<script>
+  window.onscroll = function (e) {
+    const scrollDirection = $('html').attr('data-scrolldir')
+  try {
+    if (scrollDirection == 'down') {
+      //页面向下滚动要做的事情
+      // console.log('-====向下滚动了');
+      document.querySelector('.header-wrapper').style.position = 'inherit';
+      $('.top-fixed').css({ top: 0 })
+      
+    } else if (scrollDirection == 'up') {
+      //页面向上滚动要做的事情
+      // console.log('-====向上滚动了');
+      document.querySelector('.header-wrapper').style.position = 'fixed';
+      document.querySelector('.header-wrapper').style.top = 0;
+      document.querySelector('.header-wrapper').style.width = '100%';
+      $('.top-fixed').css({ top: '52px' })
+
+      {% comment %} if (scrollAction.y < 80) {
+        document.querySelector('.header-wrapper').style.position = 'inherit';
+      } {% endcomment %}
+    }
+  } catch (error) {}
+};
+</script>
