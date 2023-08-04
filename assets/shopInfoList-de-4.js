@@ -70,25 +70,6 @@ const testRides = [
           "",
         ],
       },
-      /*{
-        name: 'mein-fahrradhaendler',
-        phone: '+496101 9951561',
-        email: '',
-        timezone: "Mainz, Germany (GMT+1)",
-        add: "Alt Erlenbach 35, 60437 Frankfurt/Main",
-        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Screenshot_2023-04-06_at_00.04.43.jpg?v=1680921842",
-        testrideSpot: "Frankfurt am Main",
-        testRideSize: "L",
-        businessHours: [
-          "",
-          "10:00-12:00,12:00-18:00",
-          "10:00-12:00,12:00-18:00",
-          "10:00-12:00,12:00-15:00",
-          "10:00-12:00,12:00-18:00",
-          "10:00-12:00,12:00-18:00",
-          "10:00-12:00,12:00-15:00",
-        ],
-      }*/
     ]
   },
   {
@@ -152,25 +133,6 @@ const testRides = [
           '2023-8-27',
         ],
       }
-      /*{
-        name: 'DownTownBikes am Hbf.',
-        phone: '+49211 26194969',
-        email: 'david@downtownbikes.de',
-        timezone: "Mainz, Germany (GMT+1)",
-        add: "Immermannstraße 3440210 Düsseldorf",
-        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/2022-02-22.jpg?v=1680921947",
-        testrideSpot: "Düsseldorf",
-        testRideSize: "L",
-        businessHours: [
-          "",
-          "13:00-17:00",
-          "13:00-17:00",
-          "13:00-17:00",
-          "13:00-17:00",
-          "13:00-17:00",
-          "",
-        ],
-      }*/
     ]
   },
   {
@@ -246,6 +208,25 @@ const testRides = [
           "10:00-18:00",
           "09:00-12:00,12:00-19:00",
           "11:00-12:00,12:00-14:00",
+        ],
+      },
+      {
+        name: 'Fahrradstation GmbH',
+        phone: '+49 180510 8000',
+        email: 'buero@fahrradstation.de',
+        timezone: "Mainz, Germany (GMT+1)",
+        add: "Dorotheenstraße 30 10117 Berlin",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Fahrradstation_GmbH.jpg?v=1691088538",
+        testrideSpot: "Berlin",
+        testRideSize: "M",
+        businessHours: [
+          "",
+          "10:00-19:00",
+          "10:00-19:00",
+          "10:00-19:00",
+          "10:00-19:00",
+          "10:00-19:00",
+          "10:00-18:00",
         ],
       }
     ]
@@ -329,6 +310,28 @@ const testRides = [
            "9:00-18:00",
          ],
        }*/
+       {
+         name: 'Zweiradhaus Ehrig',
+         phone: '+49 406034501',
+         email: 'info@ehrig24.de',
+         timezone: "Mainz, Germany (GMT+1)",
+         add: "Claus-Ferck-Straße 39 22359 Hamburg",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Zweiradhaus_Ehrig1.jpg?v=1691088195",
+         testrideSpot: "Hamburg",
+         testRideSize: "M",
+         availableSizes: [
+          'Carbon One Size M'
+          ],
+         businessHours: [
+           "",
+           "10:00-19:00",
+           "10:00-19:00",
+           "10:00-19:00",
+           "10:00-19:00",
+           "10:00-19:00",
+           "10:00-16:00",
+         ],
+       }
      ]
    },
   {
@@ -376,25 +379,6 @@ const testRides = [
            '2023-7-28',
          ]
       },
-      /*{
-        name: 'Radsport Holzbauer',
-        phone: '+4989481334',
-        email: 'radsport.holzbauer@web.de',
-        timezone: "Mainz, Germany (GMT+1)",
-        add: "Regerplatz 481541 München",
-        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/IMG_0437.jpg?v=1680922957",
-        testrideSpot: "München",
-        testRideSize: "L",
-        businessHours: [
-          "",
-          "10:00-12:00,12:00-18:00",
-          "10:00-12:00,12:00-18:00",
-          "10:00-12:00,12:00-18:00",
-          "10:00-12:00,12:00-18:00",
-          "10:00-12:00,12:00-18:00",
-          "09:00-12:00,12:00-12:00",
-        ],
-      },*/
       {
         name: 'Supercycles',
         phone: '+498945145610',
@@ -526,25 +510,6 @@ const testRides = [
           "09:00-12:00,12:00-19:00",
         ],
       },*/
-      //{
-        //name: 'Schneider Lastenrad Köln Verkauf & Fahrradwerkstatt',
-        //phone: '+4922131040711',
-       // email: 'verkauf@lastenrad-koeln.de',
-        //timezone: "Mainz, Germany (GMT+1)",
-        //add: "Rothgerberbach 2, 50676 Köln",
-       // imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/IMG_0935.jpg?v=1680923331",
-       /* testrideSpot: "Köln",
-        testRideSize: "M/L",
-        businessHours: [
-          "",
-          "",
-          "08:00-12:00,12:00-18:00",
-          "08:00-12:00,12:00-18:00",
-          "08:00-12:00,12:00-18:00",
-          "08:00-12:00,12:00-18:00",
-          "",
-        ],
-      },*/
     ]
   },
   {
@@ -656,28 +621,7 @@ const testRides = [
           "10:00-12:00,12:00-18:00",
           "",
         ],
-      },
-      {
-        name: 'Fahrradcafé GmbH',
-       phone: '+49511 45014270',
-        email: 'post@fahrradcafe.de',
-        timezone: "Mainz, Germany (GMT+1)",
-        add: "Asternstraße 2 30167 Hannover",
-        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/IMG_0883.jpg?v=1680923639",
-        testrideSpot: "Hannover",
-        testRideSize: "L",
-        businessHours: [
-          "",
-          "10:00-18:00",
-        "10:00-18:00",
-          "10:00-18:00",
-          "10:00-18:00",
-          "10:00-18:00",
-          "10:00-14:30",
-       ],
-      },
-    ]
-  },*/
+      },*/
   {
     city: 'Essen',
     cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Essen.jpg?v=1679406971',
@@ -969,6 +913,38 @@ const testRides = [
           "12:00-16:00",
           "12:00-16:00",
           "",
+        ],
+      },
+    ]
+  },
+  {
+    city: 'Freiburg',
+    cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/schloss_guestrow_drohne17_aNoB_ubertr_kUrh_005-1351x900.jpg?v=1689910159',
+    series: [
+      'Urtopia Carbon 1',
+      // 'Urtopia Carbon 1'
+    ],
+    stores: [
+      {
+        name: 'Lauf&Rad Guth',
+        phone: '+49 7615577840',
+        email: 'info@laufundrad-guth.de',
+        timezone: "Mainz, Germany (GMT+1)",
+        add: "Zähringer Str. 8, 79108 Freiburg im Breisgau",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Screenshot_2023-08-04_at_02.35.22.png?v=1691087750",
+        testrideSpot: "Freiburg",
+        testRideSize: "L",
+        availableSizes: [
+          'Carbon One Size M',
+          ],
+        businessHours: [
+          "",
+          "9:00-18:00",
+          "9:00-18:00",
+          "9:00-18:00",
+          "9:00-18:00",
+          "9:00-18:00",
+          "10:00-13:00",
         ],
       },
     ]
