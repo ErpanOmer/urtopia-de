@@ -11,6 +11,21 @@
   .product .centeral-content .product-panel .options .Model>div:after {
     background-color: var(--sale-color3);
   }
+
+  .product .list-payment__item {
+    padding: 0.3rem;
+  }
+
+  .product .list-payment__item:nth-child(2) svg {
+    height: 30px;
+    width: auto;
+  }
+
+  .product .list-payment {
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+  }
   
 </style>
 
@@ -206,6 +221,7 @@
                     <span class="u11Medium_v2">2-Year<br>Warranty</span>
                 </a>
             </div>
+            {% render 'footer__payment' %}
             <div class="dialogs">
                 <div class="u17Medium_v2">
                     <span>Size & Fit</span>
