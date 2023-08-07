@@ -1,30 +1,15 @@
-{% assign random = "now" | date: "%M" | divided_by: 10 | modulo: 2 %}
+{% render 'carbon-ebike-page-b' %}
 
 <script>
-  const abtest_type =  '{% if random == 0 %}A{% else %}B{% endif %}'
-  window.sessionStorage.ebikeabtest_type = abtest_type
-  console.log('abtest_type', abtest_type)
-
   if (!window.sessionStorage.ebikePageVisited) {
     window.sessionStorage.ebikePageVisited = 'ebikePageVisited'
 
-    
-  }
-
-  clarity("set", "A_B_TEST", `carbon-ebikepage-${abtest_type}`);
-</script>
-
-{% if random == 0 %}
-  {% render 'carbon-ebike-page-a' %}
-{% else %}
-  {% render 'carbon-ebike-page-b' %}
-{% endif %}
-
-<script>
-  fetchBuried('a-b-test', 'carbon-ebikepage', {
+    fetchBuried('a-b-test', 'carbon-ebikepage', {
       //action_type: abtest_type,
       event_name: 'page-view'
-  }, true)
+    }, true)
+  }
+  
 
 
   $('[action_type]').on('click', e => {
