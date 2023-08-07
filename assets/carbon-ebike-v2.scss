@@ -19,6 +19,26 @@
             flex-direction: column;
             justify-content: center;
 
+            .sale {
+                display: flex;
+                flex-direction: column;
+                max-width: 300px;
+                background-color: var(--sale-color1);
+                padding: 0 36px;
+                border-radius: 100px;
+                overflow: hidden;
+                margin-bottom: 50px;
+
+                .u17DemiBold_v2,
+                img {
+                    transform: translateY(12px);
+                }
+
+                img {
+                    margin-top: 6px;
+                }
+            }
+
             .u36Light_extra_v2 {
                 display: flex;
                 margin: 40px 0;

@@ -1,29 +1,17 @@
-{% assign random = "now" | date: "%M" | divided_by: 10 | modulo: 2 %}
+{% render 'carbon-ebike-page-b' %}
 
 <script>
-  const abtest_type =  '{% if random == 0 %}A{% else %}B{% endif %}'
-  window.sessionStorage.ebikeabtest_type = abtest_type
-  console.log('abtest_type', abtest_type)
-
   if (!window.sessionStorage.ebikePageVisited) {
     window.sessionStorage.ebikePageVisited = 'ebikePageVisited'
 
     fetchBuried('a-b-test', 'carbon-ebikepage', {
-        action_type: abtest_type,
-        event_name: 'page-view'
+      //action_type: abtest_type,
+      event_name: 'page-view'
     }, true)
   }
+  
 
-  clarity("set", "A_B_TEST", `carbon-ebikepage-${abtest_type}`);
-</script>
 
-{% if random == 0 %}
-  {% render 'carbon-ebike-page-a' %}
-{% else %}
-  {% render 'carbon-ebike-page-b' %}
-{% endif %}
-
-<script>
   $('[action_type]').on('click', e => {
 
     // 如果点击过 就别再统计
@@ -33,7 +21,7 @@
       window.sessionStorage.ebikePageButtonClicked = 'ebikePageButtonClicked'
 
       fetchBuried('a-b-test', 'carbon-ebikepage', {
-        action_type: abtest_type,
+        //action_type: abtest_type,
         event_name: 'button-click',
         button: action_type
       }, true)
