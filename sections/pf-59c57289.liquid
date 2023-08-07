@@ -1,17 +1,6 @@
 {% render 'carbon-ebike-page-b' %}
 
 <script>
-  if (!window.sessionStorage.ebikePageVisited) {
-    window.sessionStorage.ebikePageVisited = 'ebikePageVisited'
-
-    fetchBuried('a-b-test', 'carbon-ebikepage', {
-      //action_type: abtest_type,
-      event_name: 'page-view'
-    }, true)
-  }
-  
-
-
   $('[action_type]').on('click', e => {
 
     // 如果点击过 就别再统计
@@ -20,7 +9,7 @@
 
       window.sessionStorage.ebikePageButtonClicked = 'ebikePageButtonClicked'
 
-      fetchBuried('a-b-test', 'carbon-ebikepage', {
+      fetchBuried('websiteclick', 'carbon-ebikepage', {
         //action_type: abtest_type,
         event_name: 'button-click',
         button: action_type
