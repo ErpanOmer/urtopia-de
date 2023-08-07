@@ -8,10 +8,7 @@
   if (!window.sessionStorage.ebikePageVisited) {
     window.sessionStorage.ebikePageVisited = 'ebikePageVisited'
 
-    fetchBuried('a-b-test', 'carbon-ebikepage', {
-        action_type: abtest_type,
-        event_name: 'page-view'
-    }, true)
+    
   }
 
   clarity("set", "A_B_TEST", `carbon-ebikepage-${abtest_type}`);
@@ -24,6 +21,12 @@
 {% endif %}
 
 <script>
+  fetchBuried('a-b-test', 'carbon-ebikepage', {
+      //action_type: abtest_type,
+      event_name: 'page-view'
+  }, true)
+
+
   $('[action_type]').on('click', e => {
 
     // 如果点击过 就别再统计
@@ -33,7 +36,7 @@
       window.sessionStorage.ebikePageButtonClicked = 'ebikePageButtonClicked'
 
       fetchBuried('a-b-test', 'carbon-ebikepage', {
-        action_type: abtest_type,
+        //action_type: abtest_type,
         event_name: 'button-click',
         button: action_type
       }, true)
