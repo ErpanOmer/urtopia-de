@@ -13,11 +13,6 @@
                 return
             }
 
-            // 排除不是en 开头的
-            if (!location.pathname.startsWith('/en')) {
-                return
-            }
-
 
             let path = ''
 
@@ -26,6 +21,11 @@
 
                 // 如果是外部url
                 if (location.origin !== url.origin && !window.__SHOPIFY_CLI_ENV__) {
+                    return
+                }
+
+                // 排除不是en 开头的
+                if (!location.pathname.startsWith('/en')) {
                     return
                 }
 
