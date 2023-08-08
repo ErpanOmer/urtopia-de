@@ -1,5 +1,5 @@
 <script>
-    $('main').on('click', function (event) {
+    function linkEvent (event) {
         const t = event.target.closest('a')
 
         if (t && t.nodeName.toLocaleLowerCase() === 'a') {
@@ -54,8 +54,9 @@
                 window.location.href = path
             }
         }
+    }
 
 
-        
-    })
+    $('main').on('click', linkEvent)
+    $('#shopify-section-announcement-bar').on('click', linkEvent)
 </script>
