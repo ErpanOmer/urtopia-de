@@ -5,6 +5,7 @@
         if (t.nodeName.toLocaleLowerCase() === 'a') {
             const href = t.getAttribute('href') || ''
             const target = t.getAttribute("target")
+            const local = window.location.pathname.startsWith('/en') ? 'en' : 'de'
 
             // 排除#开头的
             if (href.startsWith('#')) {
@@ -27,20 +28,17 @@
                 path = href
             }
 
-            // 排除不是en 开头的
-            if (!window.location.pathname.startsWith('/en')) {
+            if (path.startsWith('/en') && local  === 'en') {
                 return
             }
 
-            if (!path.startsWith('/en')) {
-                return
-            }
+
 
 
 
             event.preventDefault()
 
-            path = '/en' + path
+            path = local  === 'en' ? '/en' + path
 
             if (target === '_blank') {
                 window.open(path)
