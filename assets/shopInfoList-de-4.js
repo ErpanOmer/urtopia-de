@@ -333,9 +333,9 @@ const testRides = [
          ],
        },
        {
-         name: 'CruiseVision GmbH',
-         phone: '+49 403980460',
-         email: '',
+         name: 'CityBikeEvents – CruiseVision GmbH',
+         phone: '+49 40398046-23',
+         email: 'info@city-bike-events.de',
          timezone: "Mainz, Germany (GMT+1)",
          add: "Jessenstraße 4，22767 Hamburg",
         imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/CruiseVision_GmbH.jpg?v=1691401803",
