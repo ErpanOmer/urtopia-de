@@ -142,9 +142,6 @@ function throttle(method, delay, duration){
         // $('body .mini-dialog').remove()
         setTimeout(() => {
             $("body").append(`<div class="mini-dialog" style="display: flex;">${html}</div>`)
-
-            // 挂在事件监听
-            setTimeout(() => $('.mini-dialog').on('click', linkEvent), 500)
         })
     }
     
