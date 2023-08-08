@@ -1,5 +1,10 @@
 <script>
     $('main').on('click', function (event) {
         console.log('event', event)
+        const target = event.target
+
+        if (target.nodeName.toLocaleLowerCase() === 'a') {
+            event.preventDefault()
+        }
     })
 </script>
