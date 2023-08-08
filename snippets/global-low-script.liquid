@@ -34,13 +34,13 @@
             }
 
             // 排除 de 
-            if (local  === 'de')
+            if (local === 'de') {
                 return
             }
 
             event.preventDefault()
 
-            path = (local  === 'en' ? '/en' : '') + path
+            path = (local === 'en' ? '/en' : '') + path
 
             if (target === '_blank') {
                 window.open(path)
