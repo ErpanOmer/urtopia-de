@@ -7,7 +7,7 @@
             const target = t.getAttribute("target")
             const local = window.location.pathname.startsWith('/en') ? 'en' : 'de'
 
-            console.log(local, target, local)
+            console.log(href, target, local)
 
             // 排除#开头的
             if (href.startsWith('#')) {
