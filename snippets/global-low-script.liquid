@@ -1,6 +1,6 @@
 <script>
     $('main').on('click', function (event) {
-        const t = event.target
+        const t = event.target.closest('a')
 
         if (t.nodeName.toLocaleLowerCase() === 'a') {
             const href = t.getAttribute('href') || ''
