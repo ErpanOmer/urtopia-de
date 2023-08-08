@@ -12,8 +12,7 @@
             }
 
 
-            let pathname = ''
-            let search = ''
+            let path = ''
 
             try {
                 const url = new URL(href)
@@ -23,6 +22,7 @@
                     return
                 }
 
+                path = url.pathname + url.search
             } catch {
             }
 
@@ -30,7 +30,7 @@
             event.preventDefault()
 
 
-            console.log('target', t, href)
+            console.log('target', path)
         }
 
 
