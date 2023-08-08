@@ -22,14 +22,14 @@
                     return
                 }
 
-                // 排除不是en 开头的
-                if (!window.location.pathname.startsWith('/en')) {
-                    return
-                }
-
                 path = url.pathname + url.search
             } catch(e) {
                 path = href
+            }
+
+            // 排除不是en 开头的
+            if (!window.location.pathname.startsWith('/en')) {
+                return
             }
 
             event.preventDefault()
@@ -41,13 +41,6 @@
             } else {
                 window.location.href = path
             }
-
-            // 
-            
-
-
-            
-
 
             console.log('target', path)
         }
