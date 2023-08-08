@@ -331,6 +331,28 @@ const testRides = [
            "10:00-19:00",
            "10:00-16:00",
          ],
+       },
+       {
+         name: 'CruiseVision GmbH',
+         phone: '+49 403980460',
+         email: '',
+         timezone: "Mainz, Germany (GMT+1)",
+         add: "Jessenstraße 4，22767 Hamburg",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/CruiseVision_GmbH.jpg?v=1691401803",
+         testrideSpot: "Hamburg",
+         testRideSize: "M",
+         availableSizes: [
+          'Carbon One Size M/L'
+          ],
+         businessHours: [
+           "10:00-19:00",
+           "10:00-19:00",
+           "10:00-19:00",
+           "10:00-19:00",
+           "10:00-19:00",
+           "10:00-19:00",
+           "10:00-16:00",
+         ],
        }
      ]
    },
