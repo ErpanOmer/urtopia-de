@@ -18,7 +18,7 @@
         "type": "text",
         "id": "sale_name",
         "label": "活动名称",
-        "default": "Adventure Summer Sale"
+        "default": "Back to Stock Sale"
       },
       {
         "type": "text",
