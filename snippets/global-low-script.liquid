@@ -1,7 +1,5 @@
 <script>
     $('main').on('click', function (event) {
-        event.preventDefault()
-
         const t = event.target
 
         if (t.nodeName.toLocaleLowerCase() === 'a') {
@@ -20,18 +18,28 @@
                 const url = new URL(href)
 
                 // 如果是外部url
-                if (location.origin !== url.origin && !window.__SHOPIFY_CLI_ENV__) {
+                if (window.location.origin !== url.origin && !window.__SHOPIFY_CLI_ENV__) {
                     return
                 }
 
                 // 排除不是en 开头的
-                if (!location.pathname.startsWith('/en')) {
+                if (!window.location.pathname.startsWith('/en')) {
                     return
                 }
 
                 path = url.pathname + url.search
             } catch(e) {
                 path = href
+            }
+
+            event.preventDefault()
+
+            path = '/en' + path
+
+            if (target === '_blank') {
+                window.open(path)
+            } else {
+                window.location.href = path
             }
 
             // 
