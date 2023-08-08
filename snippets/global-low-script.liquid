@@ -32,6 +32,12 @@
                 return
             }
 
+            if (!path.startsWith('/en')) {
+                return
+            }
+
+
+
             event.preventDefault()
 
             path = '/en' + path
