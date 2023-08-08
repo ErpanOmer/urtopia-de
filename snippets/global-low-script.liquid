@@ -1,7 +1,7 @@
 <script>
     $('main').on('click', function (event) {
         event.preventDefault()
-        
+
         const t = event.target
 
         if (t.nodeName.toLocaleLowerCase() === 'a') {
@@ -20,7 +20,7 @@
                 const url = new URL(href)
 
                 // 如果是外部url
-                if (location.origin !== url.origin) {
+                if (location.origin !== url.origin && !window.__SHOPIFY_CLI_ENV__) {
                     return
                 }
 
