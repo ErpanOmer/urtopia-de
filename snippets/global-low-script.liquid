@@ -2,7 +2,7 @@
     function linkEvent (event) {
         const t = event.target.closest('a')
 
-        console.log('t', t)
+        console.log('event', event)
 
         if (t && t.nodeName.toLocaleLowerCase() === 'a') {
             const href = t.getAttribute('href') || ''
