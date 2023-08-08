@@ -33,6 +33,8 @@
                 path = href
             }
 
+            console.log('target', path)
+
             // 排除 en 前缀的链接
             if (path.startsWith('/en') && local === 'en') {
                 return
@@ -49,8 +51,6 @@
             } else {
                 window.location.href = path
             }
-
-            console.log('target', path)
         }
 
 
