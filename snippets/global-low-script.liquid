@@ -6,9 +6,24 @@
             const href = t.getAttribute('href') || ''
             const target = t.getAttribute("target")
 
-
+            // 排除#开头的
             if (href.startsWith('#')) {
                 return
+            }
+
+
+            let pathname = ''
+            let search = ''
+
+            try {
+                const url = new URL(href)
+
+                // 如果是外部url
+                if (location.origin !== url.origin) {
+                    return
+                }
+
+            } catch {
             }
 
 
