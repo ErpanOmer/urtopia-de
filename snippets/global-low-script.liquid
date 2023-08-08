@@ -1,0 +1,64 @@
+<script>
+    function linkEvent (event) {
+        const t = event.target.closest('a')
+
+        console.log('event', event)
+
+        if (t && t.nodeName.toLocaleLowerCase() === 'a') {
+            const href = t.getAttribute('href') || ''
+            const target = t.getAttribute("target")
+            const local = window.localStorage.getItem('translation-lab-lang')
+
+            console.log(href, target, local)
+
+            // 排除#开头的
+            if (href.startsWith('#')) {
+                return
+            }
+
+            // 排除 de 
+            if (local === 'de') {
+                return
+            }
+
+
+            let path = ''
+
+            try {
+                const url = new URL(href)
+
+                // 如果是外部url
+                if (window.location.origin !== url.origin && !window.__SHOPIFY_CLI_ENV__) {
+                    return
+                }
+
+                path = url.pathname + url.search
+            } catch(e) {
+                path = href
+            }
+
+            console.log('target', path)
+
+            // 排除 en 前缀的链接
+            if (path.startsWith('/en') && local === 'en') {
+                return
+            }
+
+            
+
+            event.preventDefault()
+
+            path = (local === 'en' ? '/en' : '') + path
+
+            if (target === '_blank') {
+                window.open(path)
+            } else {
+                window.location.href = path
+            }
+        }
+    }
+
+
+    $('main').on('click', linkEvent)
+    $('#shopify-section-announcement-bar').on('click', linkEvent)
+</script>
