@@ -4,10 +4,13 @@
         const target = event.target
 
         if (target.nodeName.toLocaleLowerCase() === 'a') {
-            event.preventDefault()
+            event.preventDefault()\
+
+
+            console.log('target', target)
         }
 
 
-        console.log('target', target)
+        
     })
 </script>
