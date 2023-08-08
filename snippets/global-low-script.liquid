@@ -1,6 +1,5 @@
 <script>
     $('main').on('click', function (event) {
-        event.preventDefault()
         const t = event.target
 
         if (t.nodeName.toLocaleLowerCase() === 'a') {
@@ -33,7 +32,7 @@
                 return
             }
 
-            
+            event.preventDefault()
 
             path = '/en' + path
 
