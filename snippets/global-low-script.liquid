@@ -1,13 +1,15 @@
 <script>
     $('main').on('click', function (event) {
-        console.log('event', event)
-        const target = event.target
+        const t = event.target
 
-        if (target.nodeName.toLocaleLowerCase() === 'a') {
+        const href = getAttribute('href')
+        const target = t.getAttribute("target")
+
+        if (t.nodeName.toLocaleLowerCase() === 'a') {
             event.preventDefault()
 
 
-            console.log('target', target)
+            console.log('target', t)
         }
 
 
