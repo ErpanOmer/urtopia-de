@@ -13,6 +13,11 @@
                 return
             }
 
+            // 排除不是en 开头的
+            if (!location.pathname.startsWith('/en')) {
+                return
+            }
+
 
             let path = ''
 
@@ -28,6 +33,9 @@
             } catch(e) {
                 path = href
             }
+
+            // 
+            
 
 
             
