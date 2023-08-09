@@ -1,13 +1,14 @@
 <script>
+    window.sessionStorage.localPathPerfix = window.Shopify.locale === 'en' ? '/en' : '';
+
     function linkEvent (event) {
         const t = event.target.closest('a')
 
         if (t && t.nodeName.toLocaleLowerCase() === 'a') {
             const href = t.getAttribute('href') || ''
             const target = t.getAttribute("target")
-            const localPathPerfix = window.sessionStorage.localPathPerfix = window.Shopify.locale === 'en' ? '/en' : '';
-
-            console.log(href, target, local)
+            const localPathPerfix = window.sessionStorage.localPathPerfix
+            console.log(href, target, localPathPerfix)
 
             // 排除#开头的
             if (href.startsWith('#')) {
