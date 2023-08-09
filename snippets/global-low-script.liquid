@@ -1,5 +1,5 @@
 <script>
-    window.sessionStorage.localPathPerfix = window.Shopify.locale === 'en' ? '/en' : '';
+    window.sessionStorage.localPathPerfix = window.Shopify.locale === 'de' ? '' : `/${window.Shopify.locale}`;
 
     function linkEvent (event) {
         const t = event.target.closest('a')
