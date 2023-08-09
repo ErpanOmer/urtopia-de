@@ -1727,7 +1727,7 @@
             t.removeClass('loading')
             t.find('span').html(text)
 
-            const url = (window.localStorage.getItem('translation-lab-lang') === 'en' ? '/en' : '') + `/pages/ebike-leasing?bike_model=${current_variant.option1}&bike_style=${current_variant.option3}&bike_size=${current_variant.option2}&utm_source=order_page#forms`
+            const url = window.sessionStorage.localPathPerfix + `/pages/ebike-leasing?bike_model=${current_variant.option1}&bike_style=${current_variant.option3}&bike_size=${current_variant.option2}&utm_source=order_page#forms`
 
             return window.open(url)
         }
