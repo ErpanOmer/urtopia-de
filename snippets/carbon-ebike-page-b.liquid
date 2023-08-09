@@ -746,16 +746,8 @@ function scrollFunc() {
 }
 
 if (!global_config.is_mobile && global_config.is_pc) {
-      let flag = '' 
-
       window.onscroll = throttle(function (e) {
       scrollFunc()
-
-      if (scrollDirection === flag) {
-        return
-      }
-
-      flag = scrollDirection
 
       try {
         if (scrollDirection == 'down') {
