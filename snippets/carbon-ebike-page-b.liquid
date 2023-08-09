@@ -758,6 +758,10 @@ if (!global_config.is_mobile && global_config.is_pc) {
           if ($('.tl-select').hasClass('open')) {
             $('.tl-select')[0].click()
           }
+
+          if ($('header-menu details[open]')) {
+            $('header-menu details[open] summary')[0].click()
+          }
           
         } else if (scrollDirection == 'up') {
           //页面向上滚动要做的事情
