@@ -856,7 +856,7 @@ if (!global_config.is_mobile && global_config.is_pc) {
           //页面向下滚动要做的事情
           // console.log('-====向下滚动了');
           document.querySelector('.header-wrapper').style.position = 'inherit';
-          $('.top-fixed').css({ top: 0, 'z-index': 3 })
+          $('.chord-ebike .topbar').css({ top: 0, 'z-index': 3 })
 
           if ($('.tl-select').hasClass('open')) {
             $('.tl-select')[0].click()
@@ -872,7 +872,7 @@ if (!global_config.is_mobile && global_config.is_pc) {
           document.querySelector('.header-wrapper').style.position = 'fixed';
           document.querySelector('.header-wrapper').style.top = 0;
           document.querySelector('.header-wrapper').style.width = '100%';
-          $('.top-fixed').css({ top: '60px', 'z-index': 2 })
+          $('.chord-ebike .topbar').css({ top: '60px', 'z-index': 2 })
 
           if (scrollAction.y < 80) {
             document.querySelector('.header-wrapper').style.position = 'inherit';
