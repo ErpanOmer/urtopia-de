@@ -5,7 +5,7 @@
         if (t && t.nodeName.toLocaleLowerCase() === 'a') {
             const href = t.getAttribute('href') || ''
             const target = t.getAttribute("target")
-            const local = window.sessionStorage.localPathPerfix = window.Shopify.locale === 'en' ? '/en' : '';
+            const localPathPerfix = window.sessionStorage.localPathPerfix = window.Shopify.locale === 'en' ? '/en' : '';
 
             console.log(href, target, local)
 
