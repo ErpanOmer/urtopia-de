@@ -816,3 +816,69 @@
         t.slideToggle()
     })
 </script>
+
+<script>
+  let scrollAction = { x: 'undefined', y: 'undefined' }
+  let scrollDirection = ''
+
+function scrollFunc() {
+  if (typeof scrollAction.x == 'undefined') {
+    scrollAction.x = window.pageXOffset;
+    scrollAction.y = window.pageYOffset;
+  }
+  var diffX = scrollAction.x - window.pageXOffset;
+  var diffY = scrollAction.y - window.pageYOffset;
+  if (diffX < 0) {
+    // Scroll right
+    scrollDirection = 'right';
+  } else if (diffX > 0) {
+    // Scroll left
+    scrollDirection = 'left';
+  } else if (diffY < 0) {
+    // Scroll down
+    scrollDirection = 'down';
+  } else if (diffY > 0) {
+    // Scroll up
+    scrollDirection = 'up';
+  } else {
+    // First scroll event
+  }
+  scrollAction.x = window.pageXOffset;
+  scrollAction.y = window.pageYOffset;
+}
+
+if (!global_config.is_mobile && global_config.is_pc) {
+      window.onscroll = throttle(function (e) {
+      scrollFunc()
+
+      try {
+        if (scrollDirection == 'down') {
+          //页面向下滚动要做的事情
+          // console.log('-====向下滚动了');
+          document.querySelector('.header-wrapper').style.position = 'inherit';
+          //$('.chord-ebike .topbar').css({ top: 0, 'z-index': 3 })
+
+          if ($('.tl-select').hasClass('open')) {
+            $('.tl-select')[0].click()
+          }
+
+          if ($('header-menu details[open]')) {
+            $('header-menu details[open] summary')[0].click()
+          }
+          
+        } else if (scrollDirection == 'up') {
+          //页面向上滚动要做的事情
+          // console.log('-====向上滚动了');
+          document.querySelector('.header-wrapper').style.position = 'fixed';
+          document.querySelector('.header-wrapper').style.top = 0;
+          document.querySelector('.header-wrapper').style.width = '100%';
+          //$('.chord-ebike .topbar').css({ top: '60px', 'z-index': 2 })
+
+          if (scrollAction.y < 80) {
+            document.querySelector('.header-wrapper').style.position = 'inherit';
+          }
+        }
+      } catch (error) {}
+    }, 30);
+}
+</script>
