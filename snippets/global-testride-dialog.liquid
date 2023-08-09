@@ -14,18 +14,6 @@
         closeMiniDialog()
     }
 
-    const testride_dialog = `
-        <div class="testride_dialog">
-            <img src="${global_config.test_ride_dialog_config.background_imgae}">
-            <div>
-                <div class="u30DemiBold_v2">Test ride spots near you</div>
-                <div class="u24Medium_v2">Experience the bike in real</div>
-                <a href="${window.localStorage.getItem('translation-lab-lang') === 'en' ? '/en' : ''}/pages/test-ride" class="my-button my-button-black" onclick="Test_ride_spots_near_you()">Book Now</a>
-            </div>
-            <span class="close" onclick="Test_ride_spots_near_you_close()">×</span>
-        </div>
-    `
-
     document.body.addEventListener("mouseout", debounce((evt) => {
         let readWinCountry = window.CozyCountryRedirect && window.CozyCountryRedirect.country;
         // console.log("离开页面====读取window下国家====", readWinCountry);
@@ -38,6 +26,21 @@
         global_config.is_pc && !global_config.is_mobile && document.body.addEventListener("mouseleave", debounce((evt) => {
         if (!window.sessionStorage.hideTestRideDialog && !Test_ride_spots_near_you_is_show && !global_config.test_ride_dialog_config.is_hide) {
             Test_ride_spots_near_you_is_show = true
+
+            const testride_dialog = `
+                <div class="testride_dialog">
+                    <img src="${global_config.test_ride_dialog_config.background_imgae}">
+                    <div>
+                        <div class="u30DemiBold_v2">Test ride spots near you</div>
+                        <div class="u24Medium_v2">Experience the bike in real</div>
+                        <a href="${window.sessionStorage.localPathPerfix}/pages/test-ride" class="my-button my-button-black" onclick="Test_ride_spots_near_you()">Book Now</a>
+                    </div>
+                    <span class="close" onclick="Test_ride_spots_near_you_close()">×</span>
+                </div>
+            `
+
+
+
             showMiniDialog(testride_dialog)
         }
         }, 500))

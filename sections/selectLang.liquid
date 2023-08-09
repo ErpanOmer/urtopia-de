@@ -207,12 +207,9 @@
     },
   };
   window.onload = () => {
-
-    console.log('加载了');
     let langCode = window.CozyCountryRedirect.country;
     let locale = window.Shopify.locale;
 
-    {% comment %} let langCookie = storage.get('selectLang') || '' {% endcomment %}
     let langCookie = sessionStorage.getItem('selectLang') || ''
     
 
@@ -221,9 +218,7 @@
     if (langCookie) {
       gotoLocation(langCookie)
     } else {
-      let notShowModal =
-        (langCode === 'de' && locale === 'de') ||
-        (langCode !== 'de' && locale === 'en');
+      let notShowModal = (langCode === 'de' && locale === 'de') || (langCode !== 'de' && locale === 'en');
 
       let recommendCode = langmap[langCode]?.code || 'en';
       let recommendVal = langmap[langCode]?.value || 'English';
