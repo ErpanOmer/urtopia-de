@@ -2,12 +2,10 @@
     function linkEvent (event) {
         const t = event.target.closest('a')
 
-        console.log('event', event)
-
         if (t && t.nodeName.toLocaleLowerCase() === 'a') {
             const href = t.getAttribute('href') || ''
             const target = t.getAttribute("target")
-            const local = window.localStorage.getItem('translation-lab-lang')
+            const local = window.sessionStorage.localPathPerfix = window.Shopify.locale === 'en' ? '/en' : '';
 
             console.log(href, target, local)
 
