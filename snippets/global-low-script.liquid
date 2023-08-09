@@ -8,7 +8,7 @@
             const href = t.getAttribute('href') || ''
             const target = t.getAttribute("target")
             const localPathPerfix = window.sessionStorage.localPathPerfix
-            
+
             console.log(href, target, localPathPerfix)
 
             // 排除#开头的
@@ -17,7 +17,7 @@
             }
 
             // 排除 de 
-            if (localPathPerfix === '') {
+            if (window.Shopify.locale === 'de') {
                 return
             }
 
@@ -40,7 +40,7 @@
             console.log('path', path)
 
             // 排除 en 前缀的链接
-            if (path.startsWith(`${localPathPerfix}`) && localPathPerfix === '/en') {
+            if (path.startsWith(`${localPathPerfix}`)) {
                 return
             }
 
