@@ -1006,4 +1006,38 @@ const testRides = [
       },
     ]
   },
+  {
+    city: 'Wernigerode',
+    cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Schloss_Wernigerode_nach_Sonnenuntergang.jpg?v=1691564874',
+    series: [
+      'Urtopia Carbon 1',
+      // 'Urtopia Carbon 1'
+    ],
+    stores: [
+      {
+        name: 'Hendrik Uhlemann',
+        phone: '+49 1520 2015919',
+        email: 'wybrenvanderwal@gmail.com',
+        timezone: "Mainz, Germany (GMT+1)",
+        add: "Johannisstraße, 38855 Wernigerode",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Schloss_Wernigerode_nach_Sonnenuntergang.jpg?v=1691564874",
+        testrideSpot: "Wernigerode",
+        testRideSize: "L",
+        availableSizes: [
+          'Carbon One Size L',
+          ],
+        businessHours: [
+          "9:00-17:00",
+          "9:00-17:00",
+          "9:00-17:00",
+          "9:00-17:00",
+          "9:00-17:00",
+          "9:00-17:00",
+          "9:00-17:00",
+        ],
+        //disableDate: createdisableDates(365, ['2023-7-29','2023-7-30','2023-8-5','2023-8-6','2023-8-19','2023-8-20','2023-8-26','2023-8-27','2023-9-16','2023-9-17','2023-9-23','2023-9-24']),
+        isPartner: true
+      },
+    ]
+  },
 ]
