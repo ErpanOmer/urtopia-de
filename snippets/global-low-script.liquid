@@ -2,6 +2,11 @@
     window.sessionStorage.localPathPerfix = window.Shopify.locale === 'de' ? '' : `/${window.Shopify.locale}`;
 
     function linkEvent (event) {
+        // 如果是开发环境，直接退出
+        if (window.__SHOPIFY_CLI_ENV__) {
+            return
+        }
+
         const t = event.target.closest('a')
 
         if (t && t.nodeName.toLocaleLowerCase() === 'a') {
@@ -28,7 +33,7 @@
                 const url = new URL(href)
 
                 // 如果是外部url
-                if (window.location.origin !== url.origin && !window.__SHOPIFY_CLI_ENV__) {
+                if (window.location.origin !== url.origin) {
                     return
                 }
 
