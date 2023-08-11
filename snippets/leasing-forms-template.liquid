@@ -9,7 +9,7 @@
             <a class="my-button my-button-white" href="/pages/contactus">Contact us</a>
             <div class="sooner">
                 <div class="u48DemiBold_v2">Exclusive discount for direct purchases</div>
-                <div class="u24Medium_v2">we are now offering a one time <span class="emphasize">€600</span> off and <span class="emphasize">3 Free</span> accessories.</div>
+                <div class="u24Medium_v2">we are now offering a one time <span class="emphasize">{{ settings.carbon_ebike_discount_price | money_without_trailing_zeros }}</span> off and <span class="emphasize">{{ settings.carbon_ebike_free_accessories_count }} Free</span> accessories.</div>
                 <div class="choice">
                     <img src="https://cdn.shopifycdn.net/s/files/1/0633/2068/6808/products/img_v2_c011bd46-4e3b-4b0f-8b9f-074a0ba53e6g_1.webp?v=1678963826"/>
                     <div>
@@ -19,7 +19,7 @@
                         <div class="u17DemiBold_v2"><span>Size:</span><span class="u17Light_v2">Sirius</span></div>
                         <img src="https://cdn.shopifycdn.net/s/files/1/0633/2068/6808/files/Group_21116_2x_8d10631e-2acb-4f2b-ba9f-1fd52fd3aa40.png?v=1685351322"/>
                         <div class="u14DemiBold_v2">
-                            <div>3 Free Accessories (worth €179)</div>
+                            <div>{{ settings.carbon_ebike_free_accessories_count }} Free Accessories (worth {{ settings.carbon_ebike_free_accessories_price | money_without_trailing_zeros }})</div>
                             <div class="u11Light_v2">(Apply in your checkout automatically)</div>
                         </div>
                         <div class="my-button my-button-black bynow">Buy now</div>
@@ -29,7 +29,7 @@
         </div>
         <div class="nothankyou">
             <div class="u48DemiBold_v2">Request a quote for Urtopia E-bike leasing now</div>
-            <div class="u17Light_v2">When you complete this form, we will provide a quote for you and you authorize us to use the information you submit and contact you via email, text message or phone to move the business process forward.<br><br>Get <span class="emphasize u20DemiBold_v2">€600</span> off on Carbon 1,<br><span class="emphasize u20DemiBold_v2">€300</span> discount on carbon 1s<br>now on leasing<br></div>
+            <div class="u17Light_v2">When you complete this form, we will provide a quote for you and you authorize us to use the information you submit and contact you via email, text message or phone to move the business process forward.<br><br>Get <span class="emphasize u20DemiBold_v2">{{ settings.carbon_ebike_discount_price | money_without_trailing_zeros }}</span> off on Carbon 1,<br><span class="emphasize u20DemiBold_v2">€300</span> discount on carbon 1s<br>now on leasing<br></div>
             
             
             <form action="" method="post">
