@@ -157,11 +157,11 @@ const global_config = {
       // 1s-m-lb
       43869302882520: 'Free shipping within 5 working days',
       // 1s-l-lb
-      43869302915288: 'Free shipping within 10 working days',
+      43869302915288: 'Free shipping within 5 working days',
       // 1s-m-pb
-      43869302948056: 'Free shipping within 10 working days',
+      43869302948056: 'Free shipping within 5 working days',
       // 1s-l-pb
-      43869302980824: 'Free shipping within 10 working days',
+      43869302980824: 'Free shipping within 5 working days',
     },
   },
   // chrod order page 配置项
