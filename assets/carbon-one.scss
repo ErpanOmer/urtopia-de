@@ -1505,9 +1505,16 @@ $sale_text_color: #13B698;
 
             .service {
                 margin-bottom: 6px;
-                
+                box-shadow: 0px 3px 20px #00000014;
+                background-color: #fff;
+                padding-top: 8px;
+
                 .u17DemiBold_v2 {
                     font-size: 12px;
+                }
+
+                & > div {
+                    transform: translateY(-3px);
                 }
             }
 
