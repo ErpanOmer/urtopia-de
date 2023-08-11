@@ -395,7 +395,7 @@ $sale_text_color: #13B698;
                 .accs_1s {
                     display: grid;
                     grid-template-columns: repeat(2, 1fr);
-                    grid-column-gap: 5%;
+                    // grid-column-gap: 5%;
                     // margin: 2.5% 0;
 
                     &>div {
