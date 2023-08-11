@@ -91,7 +91,7 @@ const testRides = [
         testRideSize: "M, Chord",
         isPartner: true,
         availableSizes: [
-          'Carbon One Size M',
+          'Carbon One Size M/L',
           'Chord'
         ],
         businessHours: [
@@ -1017,7 +1017,7 @@ const testRides = [
       {
         name: 'Hendrik Uhlemann',
         phone: '+49 1520 2015919',
-        email: 'wybrenvanderwal@gmail.com',
+        email: 'hendrikuhlemann@googlemail.com',
         timezone: "Mainz, Germany (GMT+1)",
         add: "Johannisstraße, 38855 Wernigerode",
         imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Schloss_Wernigerode_nach_Sonnenuntergang.jpg?v=1691564874",
