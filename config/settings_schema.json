@@ -16,6 +16,12 @@
       },
       {
         "type": "text",
+        "id": "carbon_ebike_discount_price",
+        "label": "carbon车折扣价",
+        "default": "13400"
+      },
+      {
+        "type": "text",
         "id": "carbon_ebike_free_accessories_price",
         "label": "carbon车送配件价格统一显示",
         "default": "13400"
