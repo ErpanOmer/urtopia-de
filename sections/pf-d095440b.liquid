@@ -135,7 +135,12 @@
                                 <div>
                                     {{ prod.featured_image | image_url: width: 400 | image_tag }}
                                     <div>
-                                        <span class="u14Medium_v2">{{ prod.title }}</span><br>
+                                        {% if acc == "7633738662104" %}
+                                          <span class="u11Medium_v2">{{ prod.title | truncatewords: 3, "" | replace: "-", "" }}</span>
+                                        {% else %}
+                                          <span class="u14Medium_v2">{{ prod.title }}</span>
+                                        {% endif %}
+                                        <br>
                                         <span class="u17DemiBold_v2">{{ prod.price | money_without_trailing_zeros }}</span>
                                     </div>
                                 </div>
