@@ -1558,7 +1558,7 @@
             $(`.product .commonComponent .sale .u20DemiBold_v2`).text(`${model === 'Carbon Belt' ? '{{ 269900 | money }}' : '{{ 299900 | money }}'} NOW`)
             $(`.product .commonComponent .sale .u17DemiBold_v2`).text(`with ${model === 'Carbon Belt' ? '{{ settings.sale_name }}' : 'Pre-order Sale'}`)
 
-            $(`.product .count-down .u17Medium_v2`).text(`with ${model === 'Carbon Belt' ? '€600 off + 3 Free Accessories Ends in:' : '€300 off + 3 Free Accessories Ends in:'}`)
+            $(`.product .count-down .u17Medium_v2`).text(`with ${model === 'Carbon Belt' ? '€600 off + {{ settings.carbon_ebike_free_accessories_count }} Free Accessories Ends in:' : '€300 off + {{ settings.carbon_ebike_free_accessories_count }} Free Accessories Ends in:'}`)
 
             if (model === 'Carbon Belt') {
                 //$('.product .belt').show()
