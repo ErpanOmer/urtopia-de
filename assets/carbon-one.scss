@@ -396,7 +396,7 @@ $sale_text_color: #13B698;
                     display: grid;
                     grid-template-columns: repeat(2, 1fr);
                     grid-column-gap: 5%;
-                    margin: 2.5% 0;
+                    // margin: 2.5% 0;
 
                     &>div {
                         display: flex;
@@ -405,6 +405,7 @@ $sale_text_color: #13B698;
 
                         img {
                             max-width: 40%;
+                            margin-right: 5%;
                         }
 
                         .u17DemiBold_v2 {
