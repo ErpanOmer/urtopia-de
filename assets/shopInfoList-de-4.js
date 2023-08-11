@@ -1040,4 +1040,38 @@ const testRides = [
       },
     ]
   },
+  {
+    city: 'Budenheim',
+    cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Schloss_Wernigerode_nach_Sonnenuntergang.jpg?v=1691564874',
+    series: [
+      'Urtopia Carbon 1',
+      // 'Urtopia Carbon 1'
+    ],
+    stores: [
+      {
+        name: 'Helmut Riedl',
+        phone: '+0176 41451532',
+        email: 'helmut-riedl@web.de',
+        timezone: "Mainz, Germany (GMT+1)",
+        add: "Langstrasse, 55257 Budenheim",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Schloss_Wernigerode_nach_Sonnenuntergang.jpg?v=1691564874",
+        testrideSpot: "Budenheim",
+        testRideSize: "L",
+        availableSizes: [
+          'Carbon One Size L',
+        ],
+        businessHours: [
+          "14:00-18:00",
+          "16:00-20:00",
+          "16:00-20:00",
+          "16:00-20:00",
+          "16:00-19:00",
+          "16:00-20:00",
+          "14:00-18:00",
+        ],
+        //disableDate: createdisableDates(365, ['2023-7-29','2023-7-30','2023-8-5','2023-8-6','2023-8-19','2023-8-20','2023-8-26','2023-8-27','2023-9-16','2023-9-17','2023-9-23','2023-9-24']),
+        isPartner: true
+      },
+    ]
+  },
 ]

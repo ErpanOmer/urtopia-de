@@ -16,6 +16,11 @@
 
             console.log(href, target, localPathPerfix)
 
+            // 如果不存在href 也要退出
+            if (!href) {
+                return
+            }
+
             // 排除#开头的
             if (href.startsWith('#')) {
                 return
