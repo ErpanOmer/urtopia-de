@@ -252,7 +252,7 @@
                   // 把所属国家也加上
                   store.country = city.country || 'Deutschland'
     
-                    if (store.name.replace(/ /g, '') === name.replace(/ /g, '')) {
+                    if (store.name.replace(/\s*/g, "") === name.replace(/\s*/g, "")) {
                         return store
                     }
                 }
@@ -519,7 +519,7 @@
 
                     console.log('item', item.getAttribute('name'), $(iterator).find('.storepoint-name').text())
 
-                    if (item.getAttribute('name') === $(iterator).find('.storepoint-name').text()) {
+                    if (item.getAttribute('name').replace(/\s*/g, "") === $(iterator).find('.storepoint-name').text().replace(/\s*/g, "")) {
                         iterator.classList.add('selected')
 
                         console.log('iterator', iterator)
