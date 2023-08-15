@@ -441,7 +441,7 @@ const testRides = [
         testRideSize: "L, Chord",
         isPartner: true,
         availableSizes: [
-          'Carbon One Size L',
+          'Carbon One Size M/L',
           'Chord'
         ],
         businessHours: [
