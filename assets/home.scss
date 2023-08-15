@@ -139,14 +139,14 @@
         }
 
       .summer-sale {
-            background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_21492_2x_ba299715-d353-48b2-a8bb-8cc2eaf18aed.jpg?v=1691458726');
+            background-image: var(--sale-banner-background-image-pc);
 
             .centeral-content {
                 // height: 85%;
                 
                 &>div {
                     & > img {
-                        max-width: 400px;
+                        max-width: var(--sale-banner-image-max-width);
                     }
 
                     .u36DemiBold_v2 {
@@ -531,7 +531,7 @@
             }
 
           .summer-sale {
-                background-image: url('https://newurtopia.com/cdn/shop/files/carbon_1s_stock_g_2x_d2b08928-ff0d-4301-82dc-b3eb72c08933.jpg?v=1691486466');
+                background-image: var(--sale-banner-background-image-mb);
 
                 .centeral-content {
                     height: 100%;
