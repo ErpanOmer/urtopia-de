@@ -1249,7 +1249,7 @@
             height: calc(100vh - 98px);
             .centeral-content {
                 height: 100%;
-                padding: 12vw 4vw 12vw;
+                padding: 12vw 4vw 20vw;
 
                 .u48DemiBold_v2 {
                     font-size: 24px;
@@ -1262,6 +1262,11 @@
                     & > div {
                         flex-direction: column;
                         margin-top: 18px;
+                        display: unset;
+
+                        span {
+                            display: unset;
+                        }
                     }
 
                     .u24Light_v2 {
