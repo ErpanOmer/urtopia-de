@@ -1,5 +1,8 @@
-$sale_background_image: linear-gradient(90deg, #15B79A, #63DED7);
+$sale_background_image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_22697_2x_160ff7ce-17e3-4241-a831-109ca041ec28.png?v=1691995995') !important;
+$sale_background: transparent right bottom/cover no-repeat;
 $sale_text_color: #13B698;
+
+$sale-components_image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_22721.png?v=1691996003') !important;
 
 .orderBtn {
     display: none;
@@ -320,6 +323,7 @@ $sale_text_color: #13B698;
 
         .commonComponent {
             .sale {
+                background: $sale_background;
                 background-image: $sale_background_image;
                 border-radius: 25px;
                 display: flex;
@@ -373,7 +377,8 @@ $sale_text_color: #13B698;
 
 
                 .u14Light_v2 {
-                    background-image: $sale_background_image;
+                    background: $sale_background;
+                    background-image: $sale-components_image;
                     color: #fff;
                     position: absolute;
                     left: 0;

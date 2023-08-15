@@ -654,27 +654,6 @@
     })
 
 
-    
-
-
-    if (!sessionStorage.isPreviewTestRide) {
-        fetchBuried('testride', 'pageview')
-    }
-
-    // 记录来过这个页面
-    sessionStorage.isPreviewTestRide = 'isPreviewTestRide'
-
-    window.onbeforeunload = () => {
-        // 只要其中一个有值
-        (last_select_city || last_select_store) && fetchBuried('testride', 'select', {
-            last_select_city,
-            last_select_store,
-            select_city_count,
-            select_store_count
-        })
-    }
-
-
 
     let search = {}
     const u = new URL(location.href)
@@ -721,4 +700,25 @@
     })
 
     search.from_home_page && booknow(sale_store)
+
+
+
+    if (!sessionStorage.isPreviewTestRide) {
+        const form_page = search.form_page || ''
+
+        fetchBuried('testride', 'pageview', { form_page })
+    }
+
+    // 记录来过这个页面
+    sessionStorage.isPreviewTestRide = 'isPreviewTestRide'
+
+    window.onbeforeunload = () => {
+        // 只要其中一个有值
+        (last_select_city || last_select_store) && fetchBuried('testride', 'select', {
+            last_select_city,
+            last_select_store,
+            select_city_count,
+            select_store_count
+        })
+    }
     </script>
