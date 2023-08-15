@@ -3,7 +3,7 @@
 {{ 'testride.scss.css' | asset_url | stylesheet_tag }}
 
 <div class="testride">
-    <div class="banner">
+    <!--<div class="banner">
         <div class="centeral-content">
             <div class="u48DemiBold_v2">Your first hand on Urtopia</div>
             <div class="u17Medium_v2"></div>
@@ -11,28 +11,28 @@
                 Take your first step in to experience the stunning appearance and smooth riding. Book a test ride today with our partners and ambassadors! Their extensive expertise and enthusiasm will help you out with any questions in and out.
             </div>
         </div>
-    </div>
-    <!--<div class="golf-banner">
+    </div>-->
+    <div class="golf-banner">
         <div class="centeral-content">
-            <div class="u48DemiBold_v2">Golf Charity Tournament</div>
-            <div class="flex-1 pcHide"></div>
-            <div class="u30DemiBold_v2">
+            <div class="u48DemiBold_v2">Experience <br class="pcHide">Urtopia test rides <br>+ free coffee!</div>
+            <div class="u24Medium_v2">
                 <div>
-                <span>Registration:</span>
-                <span class="u24Light_v2">Urtopia@eitap.de</span>
+                <span>Café:</span>
+                <span class="">&nbsp;&nbsp;Saras Wohnzimmer Münster</span>
                 </div>
                 <div>
-                    <span>Event Location:</span>
-                    <span class="u24Light_v2">Golf&More in Duisburg</span>
+                    <span>Location:</span>
+                    <span class="">&nbsp;&nbsp;GrevenerStr. 173 Münster</span>
                 </div>
                 <div>
-                    <span>Event Date:</span>
-                    <span class="u24Light_v2">July 15, 2023, 15:00 - 19:00<br class="mobileHide">(German time)</span>
+                    <span>Time:</span>
+                    <span class="">&nbsp;&nbsp;18.August-19.August 13:00 -18:00</span>
                 </div>
             </div>
-            <div class="my-button my-button-origin">Test-Ride Now</div>
+            <div class="flex-1 pcHide"></div>
+            <div class="my-button my-button-black">Test-Ride Now</div>
         </div>
-    </div>-->
+    </div>
     <div class="map" id="map">
         <div class="centeral-content">
             <div class="u36DemiBold_v2">Choose your location</div>
@@ -687,13 +687,13 @@
 
 
     const sale_store = {
-        name: 'Golf Charity Tournament',
-        phone: '',
-        email: 'Urtopia@eitap.de',
+        name: 'Saras Wohnzimmer Münster',
+        phone: '+0174 9610700',
+        email: 'wbeurich@muenster.de',
         timezone: "Mainz, Germany (GMT+1)",
-        add: "Golf&More in Duisburg",
-        imgUrl: "https://cdn.shopifycdn.net/s/files/1/0633/2068/6808/files/20230607-142007.jpg?v=1686118943",
-        testrideSpot: "Duisburg",
+        add: "GrevenerStr. 173 Münster",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230815-192709.jpg?v=1692098846",
+        testrideSpot: "Münster",
         testRideSize: "M/L",
         isPartner: true,
         availableSizes: [
@@ -707,10 +707,10 @@
           "",
           "",
           "",
-          "",
-          "15:00-19:00",
+          "13:00-18:00",
+          "13:00-18:00",
         ],
-        //disableDate: createdisableDates(100, ['2023-7-15']),
+        disableDate: createdisableDates(100, ['2023-8-18', '2023-8-19']),
       }
 
     // banner 按钮

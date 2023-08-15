@@ -363,9 +363,9 @@
     }
 
     .golf-banner {
-        background: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_21475_2x_6b99ab57-f8c7-48a4-bbff-f3d17ae55e22.jpg?v=1689074243') center center/cover no-repeat;
-        height: 536px;
-        color: #fff;
+        background: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18571_2x_e542d007-cc8c-42d1-856c-a0db5b1e7aaf.jpg?v=1692097124') center center/cover no-repeat;
+        height: calc(100vh - 106px);
+        color: #713F13;
         display: flex;
 
         .centeral-content {
@@ -374,18 +374,18 @@
             justify-content: center;
             align-items: flex-start;
             width: 100%;
-            height: 100%;
+            height: 75%;
 
-            .u30DemiBold_v2 {
-                margin: 50px 0;
+            .u24Medium_v2 {
+                margin: 50px 0 100px;
 
                 & > div {
                     display: flex;
-                    margin-top: 12px;
+                    margin-top: 10px;
 
                     span {
                         &:first-child {
-                            min-width: 300px;
+                            //min-width: 300px;
                         }
                     }
                 }
@@ -1245,21 +1245,28 @@
         }
 
         .golf-banner {
-            background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_21477_2x_fa448c3a-9e67-47dd-afe0-c8903abd76be.jpg?v=1689075496');
+            background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18850_2x_200fd6f9-df10-4df4-a122-413f713101a4.jpg?v=1692097869');
+            height: calc(100vh - 98px);
             .centeral-content {
-                padding: 12vw 4vw 12vw;
+                height: 100%;
+                padding: 12vw 4vw 20vw;
 
                 .u48DemiBold_v2 {
                     font-size: 24px;
                 }
 
-                .u30DemiBold_v2 {
-                    font-size: 18px;
+                .u24Medium_v2 {
+                    font-size: 16px;
                     margin: 24px 0;
 
                     & > div {
                         flex-direction: column;
-                        margin-top: 18px;
+                        margin-top: 12px;
+                        display: block;
+
+                        span {
+                            display: unset;
+                        }
                     }
 
                     .u24Light_v2 {
