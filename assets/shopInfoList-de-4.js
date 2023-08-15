@@ -168,8 +168,7 @@ const testRides = [
           "09:00-12:00,12:00-14:00",
         ],
         disableDate: [
-          '2023-8-4',
-          '2023-8-11'
+          '2023-8-19'
         ]
       },
       {
@@ -1042,7 +1041,7 @@ const testRides = [
   },
   /*{
     city: 'Budenheim',
-    cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Budenheim.png?v=1691776766',
+    cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230814-105334.jpg?v=1691981632',
     series: [
       'Urtopia Carbon 1',
       // 'Urtopia Carbon 1'
@@ -1053,8 +1052,8 @@ const testRides = [
         phone: '0176 41451532',
         email: 'helmut-riedl@web.de',
         timezone: "Mainz, Germany (GMT+1)",
-        add: "Langstrasse, 55257 Budenheim",
-        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Budenheim.png?v=1691776766",
+        add: "Langstrasse 44, 55257 Budenheim",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230814-105334.jpg?v=1691981632",
         testrideSpot: "Budenheim",
         testRideSize: "L",
         availableSizes: [
@@ -1076,7 +1075,7 @@ const testRides = [
   },*/
   {
     city: 'Budenheim',
-    cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Budenheim.png?v=1691776766',
+    cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230814-105334.jpg?v=1691981632',
     series: [
       'Urtopia Carbon 1',
       // 'Urtopia Carbon 1'
@@ -1087,8 +1086,8 @@ const testRides = [
         phone: '0176 41451532',
         email: 'helmut-riedl@web.de',
         timezone: "Mainz, Germany (GMT+1)",
-        add: "Langstrasse, 55257 Budenheim",
-        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Budenheim.png?v=1691776766",
+        add: "Langstrasse 44, 55257 Budenheim",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230814-105334.jpg?v=1691981632",
         testrideSpot: "Budenheim",
         testRideSize: "L",
         availableSizes: [
@@ -1102,6 +1101,39 @@ const testRides = [
           "16:00-19:00",
           "16:00-20:00",
           "14:00-18:00",
+        ],
+        isPartner: true
+      },
+    ]
+  },
+  {
+    city: 'Geldern',
+    cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Geldern.jpg?v=1691835197',
+    series: [
+      'Urtopia Carbon 1',
+      // 'Urtopia Carbon 1'
+    ],
+    stores: [
+      {
+        name: 'Uwe Zapf',
+        phone: '+49 1723 596116',
+        email: 'uzapf@icloud.com',
+        timezone: "Mainz, Germany (GMT+1)",
+        add: "Pinnertstr, 47608 Geldern",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Geldern.jpg?v=1691835197",
+        testrideSpot: "Geldern",
+        testRideSize: "L",
+        availableSizes: [
+          'Carbon One Size L',
+          ],
+        businessHours: [
+          "11:00-19:00",
+          "11:00-19:00",
+          "11:00-19:00",
+          "11:00-19:00",
+          "11:00-19:00",
+          "11:00-19:00",
+          "11:00-19:00",
         ],
         isPartner: true
       },
