@@ -1,6 +1,6 @@
 {% for group in robots.default_groups %}
-  {{- group.user_agent -}}
-  {%- render 'robots-noindex' -%}
+{{ group.user_agent }}
+{%- render 'robots-noindex' -%}
   {% for rule in group.rules %}
     {{- rule -}}
   {% endfor %}
