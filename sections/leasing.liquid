@@ -6,7 +6,7 @@
           <div>
               <div class="u36DemiBold_v2">From €48/month</div>
               <div class="u72DemiBold_v2">Urtopia E-Bikes Leasing</div>
-              <div class="u20Light_v2">We work with the best leasing providers. To Provide you the smoothest leasing experience and enjoy you riding as soon as possible.<br><br><div class="u20Medium_v2 banner_origin">Get <span class="u24DemiBold_v2">{{ settings.carbon_ebike_discount_price | money_without_trailing_zeros }}</span> off on carbon 1,<br><span class="u24DemiBold_v2">€300</span> discount on carbon 1s<br>via leasing</div></div>
+              <div class="u20Light_v2">We work with the best leasing providers. To Provide you the smoothest leasing experience and enjoy you riding as soon as possible.<br><br><div class="u20Medium_v2 banner_origin">Get <span class="u24DemiBold_v2">{{ settings.carbon_ebike_discount_price | money_without_trailing_zeros }}</span> off on carbon 1,<br><span class="u24DemiBold_v2">{{settings.carbon1s_ebike_discount_price | money_without_trailing_zeros}}</span> discount on carbon 1s<br>via leasing</div></div>
               <div class="buttons">
                   <a href="#forms" class="my-button">Request leasing offer</a>
                   <a href="/products/urtopia-carbon-e-bike" class="my-button my-button-ghost">Shop Online</a>
@@ -559,7 +559,7 @@ setTimeout(() => {
                 </div>
             </div>`)
 
-            $('.parameters .bottom-content .buttons .my-button-white').text('Shop Online({{ 269900 | money }})')
+            $('.parameters .bottom-content .buttons .my-button-white').text('Shop Online({{ product.price | minus: settings.carbon_ebike_discount_price | money }})')
         } else {
             $('.parameters .bottom-content>div:first-child').css({ "background-image": "url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/MaskGroup18145.png?v=1688105290')" })
             $('.parameters .bottom-content .boxs > div:nth-child(1)').replaceWith(`<div>
@@ -579,7 +579,7 @@ setTimeout(() => {
                 </div>
             </div>`)
 
-            $('.parameters .bottom-content .buttons .my-button-white').text('Shop Online({{ 299900 | money }})')
+            $('.parameters .bottom-content .buttons .my-button-white').text('Shop Online({{ product.price | minus: settings.carbon1s_ebike_discount_price | money }})')
         }
     })
 }, 300)
