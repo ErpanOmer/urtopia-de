@@ -462,7 +462,7 @@ const buynow = (e, values) => {
         },
       }).then(r => {
            const body = { items: [{ id: values.variant_id, quantity: 1 }] }
-           body.items = body.items.concat(global_config.event_accessories_variant_ids.map(id => ({ id, quantity: 1 })))
+           body.items = body.items.concat(global_config.carbon_order_page_config.events.carbon1_send_accessories_variant_ids.map(id => ({ id, quantity: 1 })))
 
            fetch(window.Shopify.routes.root + 'cart/add.js', {
              method: 'POST',
@@ -529,7 +529,6 @@ setTimeout(() => {
         const values = mergeValues()
 
         submit(values)
-
 
         // 隐藏form
         $('.forms .centeral-content').css('max-width', '1280px')
