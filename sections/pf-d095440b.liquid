@@ -1537,10 +1537,6 @@
       console.time('start')
       for (const product of products) {
         for (const variant of product.variants) {
-          if (variant.id === 43745263255768) {
-            variant.available = false
-          }
-
           // 如果此配件不可用 
           if (!variant.available) {
             const carbon1_send_accessories_variant_ids = JSON.parse(JSON.stringify(global_config.carbon_order_page_config.events.carbon1_send_accessories_variant_ids))
