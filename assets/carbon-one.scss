@@ -840,8 +840,10 @@ $sale_text_color: #13B698;
         .featured_image {
             display: grid;
             grid-template-columns: 64px 1fr;
-            grid-template-rows: 810px;
             grid-column-gap: 40px;
+            height: fit-content;
+            position: sticky;
+            top: 90px;
 
 
             .swiper {
@@ -849,8 +851,6 @@ $sale_text_color: #13B698;
                 width: 100%;
                 height: 100%;
                 overflow: hidden;
-                position: sticky;
-                top: 90px;
             }
 
             .left-swiper {
@@ -861,12 +861,20 @@ $sale_text_color: #13B698;
             .right-swiper {
                 display: flex;
                 flex-direction: column;
-                justify-content: space-between;
 
                 .swiper-wrapper {
+                    margin-bottom: 40px;
+
                     .swiper-slide {
+                        display: flex;
+                        width: 100%;
+                        height: 0;
+                        flex-direction: column;
+                        padding-bottom: 75%;
+                        justify-content: space-between;
+
                         &>div {
-                            margin: 40px 0;
+                            margin-top: 5%;
                             display: flex;
                             flex-direction: column;
                             align-items: center;
@@ -1586,6 +1594,7 @@ $sale_text_color: #13B698;
             .featured_image {
                 grid-template-columns: 1fr;
                 grid-template-rows: 90vw;
+                position: static;
 
                 .swiper-pagination {
                     // position: static;
@@ -1604,8 +1613,14 @@ $sale_text_color: #13B698;
                 }
 
                 .right-swiper {
+                    justify-content: flex-start;
                     .swiper-wrapper {
+                        margin: 0;
+
                         .swiper-slide {
+                            padding: 0;
+                            height: fit-content;
+
                             &>div {
                                 margin: 20px 0;
 
