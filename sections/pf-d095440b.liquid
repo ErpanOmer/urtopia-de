@@ -1,5 +1,5 @@
-{% assign first_paint_swiper = "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18687.png?v=1688112408" %}
-{% assign first_paint_media = "hhttps://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18604_2x_dbde7d31-6b13-4fa7-80be-7f7c1ea23c13.png?v=1687188893" %}
+{% assign first_paint_swiper = "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18687.png?v=1688112408&width=700" %}
+{% assign first_paint_media = "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18604_2x_dbde7d31-6b13-4fa7-80be-7f7c1ea23c13.png?v=1687188893&width=350" %}
 {{ first_paint_swiper | preload_tag: as: 'image' }}
 {{ first_paint_media | preload_tag: as: 'image' }}
 
@@ -166,7 +166,7 @@
                         {% for prod in collections["accessories"].products %}
                             {% if acc contains prod.id %}
                                 <div>
-                                    {{ prod.featured_image | image_url: width: 400 | image_tag }}
+                                    {{ prod.featured_image | image_url: width: 200 | image_tag }}
                                     <div>
                                         {% if acc == "7633738662104" %}
                                           <span class="u11Medium_v2">{{ prod.title | truncatewords: 3, "" | replace: "-", "" }}</span>
@@ -221,7 +221,7 @@
                                     <i class="fa-solid fa-plus"></i>
                                   </span>
                                 </div>
-                                {{ prod.featured_image | image_url: width: 400 | image_tag }}
+                                {{ prod.featured_image | image_url: width: 200 | image_tag }}
                               </div>
                             </div>
                         {% endif %}
@@ -435,8 +435,9 @@
 </div>
 
 <div class="mediaaaaa gray-background-color mobileHide" style="--swiper-theme-color: #000;--swiper-pagination-color: #000;">
-  <div class="centeral-content swiper-wrapper">
-    <div class="swiper-slide">
+  <div class="centeral-content">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
       <div class="u17DemiBold_v2">“Urtopia is an over the top e-bike”</div>
       <div class="flex-1"></div>
       <img src="https://cdn.shopifycdn.net/s/files/1/0633/2068/6808/files/Mask_Group_18604_2x_0a53e289-f2f5-4d7b-8024-17cb83aa826d.png?v=1686216700" alt="">
@@ -465,6 +466,7 @@
       <div class="u17DemiBold_v2">“Lightweight carbon fiber road e-bike with affordably-price”</div>
       <div class="flex-1"></div>
       <img src="https://cdn.shopifycdn.net/s/files/1/0633/2068/6808/files/Mask_Group_18602_2x_12b3eebc-888a-4bd6-bf4c-90881502f123.png?v=1686217108" alt="">
+    </div>
     </div>
   </div>
   <div class="swiper-pagination"></div>
@@ -515,16 +517,16 @@
       <div class="u17Light_v2">We offer you the opportunity to get your dream bike at low monthly leasing rates through various leasing providers.</div>
       <div class="logos">
         <div>
-          <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/JR-Logo_-RGB-schwarz-large-4x_2x_90eff7ba-f64b-45ef-8e7e-65490e740385.png?v=1687260470" />
+          <img class="lozad" data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/JR-Logo_-RGB-schwarz-large-4x_2x_90eff7ba-f64b-45ef-8e7e-65490e740385.png?v=1687260470&width=200" />
         </div>
         <div>
-          <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18616_2x_d0fb1804-0a96-4524-9463-6cd30673cf6d.png?v=1687260793" />
+          <img class="lozad" data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18616_2x_d0fb1804-0a96-4524-9463-6cd30673cf6d.png?v=1687260793&width=200" />
         </div>
        <div>
-          <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18617_2x_6706fd9c-d8f3-434b-b77f-6e35eb007eb3.png?v=1687260762" />
+          <img class="lozad" data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18617_2x_6706fd9c-d8f3-434b-b77f-6e35eb007eb3.png?v=1687260762&width=200" />
        </div>
         <div>
-          <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/logo_meinstdienstrad_2021_2x_d5a1936d-fc18-418a-bb45-b9bb73e6c96a.png?v=1687260731" />
+          <img class="lozad" data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/logo_meinstdienstrad_2021_2x_d5a1936d-fc18-418a-bb45-b9bb73e6c96a.png?v=1687260731&width=200" />
         </div>
       </div>
       <a
@@ -564,19 +566,8 @@
                 <div class="component" onclick="openComponent(0)">
                   <div class="img-container">
                     <img
-                      src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/finger_print-1.jpg?v=1675741851"
-                      srcset="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/finger_print-1.jpg?v=1675741851 768w"
-                      width="737"
-                      height="432"
-                      sizes="(min-width: 1536px) 1536px, (min-width: 1024px) 1280px, (min-width: 640px) 768px, 320px"
-                      loading="lazy"
-                      data-pf-type="Image3"
-                      class="hover-bigger pf-hide">
-                    <img
-                      src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/finger_print-1.jpg?v=1675741851"
-                      loading="lazy"
-                      data-pf-type="Image3"
-                      class="pf-lg-hide pf-md-hide pf-sm-hide hover-bigger">
+                      data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/finger_print-1.jpg?v=1675741851&width=320"
+                      class="lozad">
                   </div>
                   <div class="des-container">
                     Anti-glare LED Display
@@ -593,19 +584,8 @@
                 <div class="component" onclick="openComponent(1)">
                   <div class="img-container">
                     <img
-                      src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_20477.jpg?v=1678931505"
-                      srcset="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_20477.jpg?v=1678931505 1536w"
-                      width="737"
-                      height="432"
-                      sizes="(min-width: 1536px) 1536px, (min-width: 1024px) 1280px, (min-width: 640px) 768px, 320px"
-                      loading="lazy"
-                      data-pf-type="Image3"
-                      class="hover-bigger pf-hide">
-                    <img
-                      src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_20477.jpg?v=1678931505"
-                      loading="lazy"
-                      data-pf-type="Image3"
-                      class="pf-lg-hide pf-md-hide pf-sm-hide hover-bigger">
+                      data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_20477.jpg?v=1678931505&width=320"
+                      class="lozad">
                   </div>
                   <div class="des-container">
                     Gamepad Controls
@@ -622,19 +602,8 @@
                   <div class="img-container">
 
                     <img
-                      src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230630-175922.jpg?v=1688119198"
-                      srcset="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230630-175922.jpg?v=1688119198"
-                      width="737"
-                      height="432"
-                      sizes="(min-width: 1536px) 1536px, (min-width: 1024px) 1280px, (min-width: 640px) 768px, 320px"
-                      loading="lazy"
-                      data-pf-type="Image3"
-                      class="hover-bigger pf-hide">
-                    <img
-                      src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230630-175922.jpg?v=1688119198"
-                      loading="lazy"
-                      data-pf-type="Image3"
-                      class="pf-lg-hide pf-md-hide pf-sm-hide hover-bigger">
+                      data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230630-175922.jpg?v=1688119198&width=320"
+                      class="lozad">
                   </div>
                   <div class="des-container">
                     Quiet Motor
@@ -655,19 +624,8 @@
                 <div class="component" onclick="openComponent(3)">
                   <div class="img-container">
                     <img
-                      src="https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/img_v2_06e9e228324d4f448d2305cd464dff8g-1668581451333.png"
-                      srcset="https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/img_v2_06e9e228324d4f448d2305cd464dff8g-1668581451333.png"
-                      width="737"
-                      height="432"
-                      sizes="(min-width: 1536px) 1536px, (min-width: 1024px) 1280px, (min-width: 640px) 768px, 320px"
-                      loading="lazy"
-                      data-pf-type="Image3"
-                      class="hover-bigger pf-hide">
-                    <img
-                      src="https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/img_v2_5ec42ce4a41d4b2aa28a2615ab3cbe0g-1668579533664.png"
-                      loading="lazy"
-                      data-pf-type="Image3"
-                      class="pf-lg-hide pf-md-hide pf-sm-hide hover-bigger">
+                      data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/img_v2_06e9e228324d4f448d2305cd464dff8g-1668581451333.png?width=320"
+                      class="lozad">
                   </div>
                   <div class="des-container">
                     Smart App
@@ -683,19 +641,8 @@
                 <div class="component" onclick="openComponent(4)">
                   <div class="img-container">
                     <img
-                      src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/WechatIMG892_2x_fadbc31b-d3f5-4be5-b6c2-34dc86e4edaa.jpg?v=1687962634"
-                      srcset="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/WechatIMG892_2x_fadbc31b-d3f5-4be5-b6c2-34dc86e4edaa.jpg?v=1687962634 1536w"
-                      width="737"
-                      height="432"
-                      sizes="(min-width: 1536px) 1536px, (min-width: 1024px) 1280px, (min-width: 640px) 768px, 320px"
-                      loading="lazy"
-                      data-pf-type="Image3"
-                      class="hover-bigger pf-hide">
-                    <img
-                      src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/WechatIMG892_2x_fadbc31b-d3f5-4be5-b6c2-34dc86e4edaa.jpg?v=1687962634"
-                      loading="lazy"
-                      data-pf-type="Image3"
-                      class="pf-lg-hide pf-md-hide pf-sm-hide hover-bigger">
+                      data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/WechatIMG892_2x_fadbc31b-d3f5-4be5-b6c2-34dc86e4edaa.jpg?v=1687962634&width=320"
+                      class="lozad">
                   </div>
                   <div class="des-container">
                     Removable Battery
@@ -711,19 +658,8 @@
                 <div class="component" onclick="openComponent(5)">
                   <div class="img-container">
                     <img
-                      src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/asset-1.jpg?v=1675741851"
-                      srcset="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/asset-1.jpg?v=1675741851 1536w"
-                      width="737"
-                      height="432"
-                      sizes="(min-width: 1536px) 1536px, (min-width: 1024px) 1280px, (min-width: 640px) 768px, 320px"
-                      loading="lazy"
-                      data-pf-type="Image3"
-                      class="hover-bigger pf-hide">
-                    <img
-                      src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/asset-1.jpg?v=1675741851"
-                      loading="lazy"
-                      data-pf-type="Image3"
-                      class="pf-lg-hide pf-md-hide pf-sm-hide hover-bigger">
+                      data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/asset-1.jpg?v=1675741851&width=320"
+                      class="lozad">
                   </div>
                   <div class="des-container">
                     Modular Rear Light
@@ -746,19 +682,8 @@
                   <div class="img-container">
 
                     <img
-                      src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/55555657.jpg?v=1675741851"
-                      srcset="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/55555657.jpg?v=1675741851 1536w"
-                      width="737"
-                      height="432"
-                      sizes="(min-width: 1536px) 1536px, (min-width: 1024px) 1280px, (min-width: 640px) 768px, 320px"
-                      loading="lazy"
-                      data-pf-type="Image3"
-                      class="hover-bigger pf-hide">
-                    <img
-                      src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/55555657.jpg?v=1675741851"
-                      loading="lazy"
-                      data-pf-type="Image3"
-                      class="pf-lg-hide pf-md-hide pf-sm-hide hover-bigger">
+                      data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/55555657.jpg?v=1675741851&width=320"
+                      class="lozad">
                   </div>
                   <div class="des-container">
                     20 Lux Headlight
@@ -774,19 +699,8 @@
                 <div class="component" onclick="openComponent(7)">
                   <div class="img-container">
                     <img
-                      src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_19560_2x_f8348e02-d011-4cd4-992d-db143cd3f381.jpg?v=1687962062"
-                      srcset="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230630-175856.jpg?v=1688119197"
-                      width="737"
-                      height="432"
-                      sizes="(min-width: 1536px) 1536px, (min-width: 1024px) 1280px, (min-width: 640px) 768px, 320px"
-                      loading="lazy"
-                      data-pf-type="Image3"
-                      class="hover-bigger pf-hide">
-                    <img
-                      src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_19560_2x_f8348e02-d011-4cd4-992d-db143cd3f381.jpg?v=1687962062"
-                      loading="lazy"
-                      data-pf-type="Image3"
-                      class="pf-lg-hide pf-md-hide pf-sm-hide hover-bigger">
+                      data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_19560_2x_f8348e02-d011-4cd4-992d-db143cd3f381.jpg?v=1687962062&width=320"
+                      class="lozad">
                   </div>
                   <div class="des-container">
                     Gearing
@@ -802,19 +716,8 @@
                 <div class="component" onclick="openComponent(8)">
                   <div class="img-container">
                     <img
-                      src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/WechatIMG2452_2x_c5786ba7-e1b6-4208-93ea-ee33b1be6b8b.jpg?v=1687962198"
-                      srcset="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/WechatIMG2452_2x_c5786ba7-e1b6-4208-93ea-ee33b1be6b8b.jpg?v=1687962198"
-                      width="737"
-                      height="432"
-                      sizes="(min-width: 1536px) 1536px, (min-width: 1024px) 1280px, (min-width: 640px) 768px, 320px"
-                      loading="lazy"
-                      data-pf-type="Image3"
-                      class="hover-bigger pf-hide">
-                    <img
-                      src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/WechatIMG2452_2x_c5786ba7-e1b6-4208-93ea-ee33b1be6b8b.jpg?v=1687962198"
-                      loading="lazy"
-                      data-pf-type="Image3"
-                      class="pf-lg-hide pf-md-hide pf-sm-hide hover-bigger">
+                      data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/WechatIMG2452_2x_c5786ba7-e1b6-4208-93ea-ee33b1be6b8b.jpg?v=1687962198&width=320"
+                      class="lozad"/>
                   </div>
                   <div class="des-container">
                     Torque Sensor
@@ -884,35 +787,35 @@
               <div id="world-swiper" class="swiper">
                 <div class="swiper-wrapper swiper-no-swiping">
                   <div class="swiper-slide slide">
-                    <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/img_77662x-1672048952210.jpg" />
+                    <img class="lozad" data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/img_77662x-1672048952210.jpg?width=400" />
                     <div class="description">
                       <span>Karina Schwirtlich</span>
                       “it is much easier to use :) Going uphill is so much easier, I could even read a book while doing this.”
                     </div>
                   </div>
                   <div class="swiper-slide slide">
-                    <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/screen-shot-20221018-at-72910-pm-1666785985034.jpg" />
+                    <img class="lozad" data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/screen-shot-20221018-at-72910-pm-1666785985034.jpg?width=400" />
                     <div class="description">
                       <span>Rex Peters</span>
                       “I got 4 other brands and I still learning the Urtopia but so far my favorite e-bike . Look how far technology has come so fast . Happy and safe riding.”
                     </div>
                   </div>
                   <div class="swiper-slide slide">
-                    <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/072a06992x-1672048952203.jpg" />
+                    <img class="lozad" data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/072a06992x-1672048952203.jpg?width=400" class="lozad" />
                     <div class="description">
                       <span>v.wrightfitness</span>
                       “The smoothest riding e-bike I have tried! Thank you.”
                     </div>
                   </div>
                   <div class="swiper-slide slide">
-                    <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/5590a91dd1b546e99f5f381a1c1aa0c4-1666785985022.jpg" />
+                    <img class="lozad" data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/5590a91dd1b546e99f5f381a1c1aa0c4-1666785985022.jpg?width=400" />
                     <div class="description">
                       <span>Chris</span>
                       “Outstanding performance. I love this bike.”
                     </div>
                   </div>
                   <div class="swiper-slide slide">
-                    <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/85831919d8ee4553808b75fb1ffc469e-1666785985025.jpg" />
+                    <img class="lozad" data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/85831919d8ee4553808b75fb1ffc469e-1666785985025.jpg?width=400" />
                     <div class="description">
                       <span>Rino Folisi</span>
                       “Finally Endlich vereint.”
@@ -1061,11 +964,7 @@
               class="sc-gUQvok iVVDxu pf-831_">
               <div data-pf-type="Block" class="sc-cbTzjv cciAhs pf-832_">
                 <div data-pf-type="Image" class="sc-jgrJph bzUUvT pf-833_">
-                  <img
-                    src="https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/undraw_designer_girl_re_h54c-1642130420787.png?v=1642130429"
-                    srcSet="https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/undraw_designer_girl_re_h54c-1642130420787.png?v=1642130429 1536w"
-                    width="803"
-                    height="669" />
+                  <img class="lozad" data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/undraw_designer_girl_re_h54c-1642130420787.png?v=1642130429&width=200"  />
                 </div>
               </div>
               <div data-pf-type="Block" class="sc-cbTzjv cciAhs pf-834_">
@@ -1083,11 +982,7 @@
               class="sc-gUQvok iVVDxu pf-838_">
               <div data-pf-type="Block" class="sc-cbTzjv cciAhs pf-839_">
                 <div data-pf-type="Image" class="sc-jgrJph bzUUvT pf-840_">
-                  <img
-                    src="https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/undraw_biking_kc4f-1642130420783.png?v=1642130425"
-                    srcSet="https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/undraw_biking_kc4f-1642130420783.png?v=1642130425 1536w"
-                    width="803"
-                    height="669" />
+                  <img class="lozad" data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/undraw_biking_kc4f-1642130420783.png?v=1642130425&width=200"/>
                 </div>
               </div>
               <div data-pf-type="Block" class="sc-cbTzjv cciAhs pf-841_">
@@ -1105,11 +1000,7 @@
               class="sc-gUQvok iVVDxu pf-845_">
               <div data-pf-type="Block" class="sc-cbTzjv cciAhs pf-846_">
                 <div data-pf-type="Image" class="sc-jgrJph bzUUvT pf-847_">
-                  <img
-                    src="https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/undraw_team_spirit_re_yl1v-1642130420780.png?v=1642130422"
-                    srcSet="https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/undraw_team_spirit_re_yl1v-1642130420780.png?v=1642130422 1536w"
-                    width="803"
-                    height="669" />
+                  <img class="lozad" data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/undraw_team_spirit_re_yl1v-1642130420780.png?v=1642130422&width=200" />
                 </div>
               </div>
               <div data-pf-type="Block" class="sc-cbTzjv cciAhs pf-848_">
@@ -1258,14 +1149,14 @@
                 const index = i % 6
 
                 return  `<div class="swiper-slide">
-                            <img src="${s}">
+                            <img src="${s}&width=700"/>
                             <div>
                                 <span class="u20DemiBold_v2">${global_config.carbon_order_page_config.product_media_images[index].text}</span>
-                                <img src="${global_config.carbon_order_page_config.product_media_images[index].img}">
+                                <img src="${global_config.carbon_order_page_config.product_media_images[index].img}&width=350">
                             </div>
                         </div>`
               }).join(''))
-            $('.product .left-swiper .swiper-wrapper').html(swiper_arr.map(s => `<div class="swiper-slide"><img src="${s}"></div>`).join(''))
+            $('.product .left-swiper .swiper-wrapper').html(swiper_arr.map(s => `<div class="swiper-slide"><img src="${s}&width=700"></div>`).join(''))
             
             // update
             setTimeout(() => {
