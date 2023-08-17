@@ -1607,7 +1607,7 @@ $sale_text_color: #13B698;
 
             .featured_image {
                 grid-template-columns: 1fr;
-                grid-template-rows: 90vw;
+                grid-template-rows: 87.5vw;
                 position: static;
 
                 .swiper-pagination {
@@ -1636,7 +1636,7 @@ $sale_text_color: #13B698;
                             height: fit-content;
 
                             &>div {
-                                margin: 20px 0;
+                                margin-top: 4vw;
 
                                 .u20DemiBold_v2 {
                                     font-size: 14px;
