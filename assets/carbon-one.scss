@@ -860,6 +860,7 @@ $sale_text_color: #13B698;
             }
 
             .right-swiper {
+                position: relative;
                 display: flex;
                 flex-direction: column;
                 overflow: hidden;
