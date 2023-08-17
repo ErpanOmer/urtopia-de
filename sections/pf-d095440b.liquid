@@ -1,3 +1,8 @@
+{% assign first_paint_swiper = "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18687.png?v=1688112408" %}
+{% assign first_paint_media = "hhttps://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18604_2x_dbde7d31-6b13-4fa7-80be-7f7c1ea23c13.png?v=1687188893" %}
+{{ first_paint_swiper | preload_tag: as: 'image' }}
+{{ first_paint_media | preload_tag: as: 'image' }}
+
 {{ 'pagefly-main.css' | asset_url | stylesheet_tag: preload: true }}
 {{ 'pagefly.d095440b.css' | asset_url | stylesheet_tag: preload: true }}
 {{ 'carbon-one.scss.css' | asset_url | stylesheet_tag: preload: true }}
@@ -62,18 +67,19 @@
             </div>
         </div>
         <div class="featured_image">
-            <div class="swiper left-swiper mobileHide">
+            <div class="left-swiper mobileHide">
                 <div class="swiper-wrapper">
                 </div>
             </div>
-            <div class="swiper right-swiper" style="--swiper-navigation-color: #fff;--swiper-theme-color: #000;--swiper-pagination-color: #000;">
+            <div class="right-swiper" style="--swiper-navigation-color: #fff;--swiper-theme-color: #000;--swiper-pagination-color: #000;">
                 <div class="swiper-wrapper">
-                  <div class="swiper-slide"></div>
-                    {% comment %} {% for image in product.images %}
-                        <div class="swiper-slide">
-                            {{ image | image_url: width: 1000 | image_tag }}
-                        </div>
-                    {% endfor %} {% endcomment %}
+                  <div class="swiper-slide">
+                    <img src="{{ first_paint_swiper }}">
+                    <div>
+                        <span class="u20DemiBold_v2">“Urtopia is an over the top e-bike”</span>
+                        <img src="{{ first_paint_media  }}">
+                    </div>
+                  </div>
                 </div>
                 <div class="swiper-button-prev mobileHide"></div><!--左箭头。如果放置在swiper外面，需要自定义样式。-->
                 <div class="swiper-button-next mobileHide"></div><!--右箭头。如果放置在swiper外面，需要自定义样式。-->
