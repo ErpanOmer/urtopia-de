@@ -166,7 +166,7 @@
                         {% for prod in collections["accessories"].products %}
                             {% if acc contains prod.id %}
                                 <div>
-                                    {{ prod.featured_image | image_url: width: 400 | image_tag }}
+                                    {{ prod.featured_image | image_url: width: 200 | image_tag }}
                                     <div>
                                         {% if acc == "7633738662104" %}
                                           <span class="u11Medium_v2">{{ prod.title | truncatewords: 3, "" | replace: "-", "" }}</span>
@@ -221,7 +221,7 @@
                                     <i class="fa-solid fa-plus"></i>
                                   </span>
                                 </div>
-                                {{ prod.featured_image | image_url: width: 400 | image_tag }}
+                                {{ prod.featured_image | image_url: width: 200 | image_tag }}
                               </div>
                             </div>
                         {% endif %}
