@@ -851,7 +851,7 @@ $sale_text_color: #13B698;
                 max-width: 100%;
                 width: 100%;
                 height: 100%;
-                overflow: hidden;
+                
             }
 
             .left-swiper {
@@ -862,9 +862,11 @@ $sale_text_color: #13B698;
             .right-swiper {
                 display: flex;
                 flex-direction: column;
+                overflow: hidden;
 
                 .swiper-wrapper {
                     margin-bottom: 40px;
+                    overflow: hidden;
 
                     .swiper-slide {
                         display: flex;
