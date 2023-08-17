@@ -288,28 +288,6 @@
     </div>
 </div>
 
-<img class="toTop" src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_21049.svg?v=1687267470">
-
-<div class="top-fixed mobileHide">
-    <div class="centeral-content">
-        <span class="u20DemiBold_v2">{{ product.title }}</span>
-        <span class="flex-1"></span>
-        <div>
-            <span class="u17Light_v2"><span class="u20DemiBold_v2 emphasize" style="font-weight: 600;color:var(--sale-color3);">{{ product.price | minus: settings.carbon_ebike_discount_price | money }}</span> <span style="text-decoration: line-through;">{{ product.price | money }}</span></span>
-            <span class="u14Light_v2">or as low as €112/Month</span>
-        </div>
-        <a href="#sale_acc" class="my-button my-button-origin" style="background: var(--sale-color3);">Order Now</a>
-    </div>
-</div>
-
-<div class="bottom-fixed pcHide">
-    <a href="#sale_accmb" class="my-button my-button-origin" style="background: var(--sale-color3);">Order Now</a>
-    <div>
-        <span class="u14Light_v2"><span class="emphasize" style="font-weight: 600;color:var(--sale-color3);">{{ product.price | minus: settings.carbon_ebike_discount_price | money }}</span> <span style="text-decoration: line-through;">{{ product.price | money }}</span></span>
-        <span class="u14Light_v2">or as low as €112/Month</span>
-    </div>
-</div>
-
 <div id="freedom" class="freedom">
   <div class="centeral-content">
     <div class="u42DemiBold_v2">Smartest and Lightest E-Bike</div>
@@ -1146,10 +1124,33 @@
   </div>
 </div>
 
+
+
+<img class="toTop" src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_21049.svg?v=1687267470">
+<div class="top-fixed mobileHide">
+    <div class="centeral-content">
+        <span class="u20DemiBold_v2">{{ product.title }}</span>
+        <span class="flex-1"></span>
+        <div>
+            <span class="u17Light_v2"><span class="u20DemiBold_v2 emphasize" style="font-weight: 600;color:var(--sale-color3);">{{ product.price | minus: settings.carbon_ebike_discount_price | money }}</span> <span style="text-decoration: line-through;">{{ product.price | money }}</span></span>
+            <span class="u14Light_v2">or as low as €112/Month</span>
+        </div>
+        <a href="#sale_acc" class="my-button my-button-origin" style="background: var(--sale-color3);">Order Now</a>
+    </div>
+</div>
+<div class="bottom-fixed pcHide">
+    <a href="#sale_accmb" class="my-button my-button-origin" style="background: var(--sale-color3);">Order Now</a>
+    <div>
+        <span class="u14Light_v2"><span class="emphasize" style="font-weight: 600;color:var(--sale-color3);">{{ product.price | minus: settings.carbon_ebike_discount_price | money }}</span> <span style="text-decoration: line-through;">{{ product.price | money }}</span></span>
+        <span class="u14Light_v2">or as low as €112/Month</span>
+    </div>
+</div>
+
 <script>
-  {% for item in all_products %}
-    console.log('{{ forloop.length | json }}')
-  {% endfor %}
+    // 默认隐藏
+    $('.bottom-fixed').hide()
+    $('.top-fixed').hide()
+    $('.toTop').hide()
 
     const search = getSearchValues()
     const variants = JSON.parse(JSON.stringify({{ product.variants | json }}))
@@ -1523,11 +1524,6 @@
         top2 > (h * 2) ? $('.toTop').show() : $('.toTop').hide()
 
     }, 300, 100))
-
-    // 默认隐藏
-    $('.bottom-fixed').hide()
-    $('.top-fixed').hide()
-    $('.toTop').hide()
 
     pageInit()
 
