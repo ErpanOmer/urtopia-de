@@ -1122,9 +1122,9 @@ const testRides = [
         add: "Pinnertstr, 47608 Geldern",
         imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Geldern.jpg?v=1691835197",
         testrideSpot: "Geldern",
-        testRideSize: "L",
+        testRideSize: "M",
         availableSizes: [
-          'Carbon One Size L',
+          'Carbon One Size M',
           ],
         businessHours: [
           "11:00-19:00",
