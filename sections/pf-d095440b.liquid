@@ -62,7 +62,7 @@
             </div>
             <div class="u30DemiBold_v2 mb6">{{ product.price | money }}</div>
             <div class="sale mb6" style="background-image: linear-gradient(-90deg,var(--sale-color3),var(--sale-color4));">
-                <div class="u20DemiBold_v2" style="color: var(--sale-color4);">€2.699,00 NOW</div>
+                <div class="u20DemiBold_v2" style="color: var(--sale-color4);">{{ product.price | minus: settings.carbon_ebike_discount_price | money }} NOW</div>
                 <div class="u17DemiBold_v2">with {{ settings.sale_name }}</div>
             </div>
         </div>
@@ -131,7 +131,7 @@
                 </div>
                 <div class="u30DemiBold_v2 mb6">{{ product.price | money }}</div>
                 <div class="sale mb12" style="background-image: linear-gradient(-90deg,var(--sale-color3),var(--sale-color4));">
-                    <div class="u20DemiBold_v2" style="color: var(--sale-color4);">€2.699,00 NOW</div>
+                    <div class="u20DemiBold_v2" style="color: var(--sale-color4);">{{ product.price | minus: settings.carbon_ebike_discount_price | money }} NOW</div>
                     <div class="u17DemiBold_v2">with {{ settings.sale_name }}</div>
                 </div>
             </div>
@@ -248,7 +248,7 @@
                   </div>
                   <div onclick="testRideTrace('klarna_check_out', this)" class="orderTestRideBtn">
                     <img class="twoooo"src="https://cdn.shopifycdn.net/s/files/1/0633/2068/6808/files/20230530-121400.png?v=1685420054"/>
-                    <span><span class="u17DemiBold_v2">0% APR Financing</span><span>24 months, €<span class="stages">112</span>/month</span></span>
+                    <span><span class="u17DemiBold_v2">0% APR Financing</span><span>24 months, <span class="stages">{{ product.price | minus: settings.carbon_ebike_discount_price | divided_by: 24 | money_without_trailing_zeros }}</span>/month</span></span>
                 </div>
             </div>
             <div class="delivery_time mb12">Free shipping <span>within 5 days</span></div>
@@ -1025,7 +1025,7 @@
         <span class="flex-1"></span>
         <div>
             <span class="u17Light_v2"><span class="u20DemiBold_v2 emphasize" style="font-weight: 600;color:var(--sale-color3);">{{ product.price | minus: settings.carbon_ebike_discount_price | money }}</span> <span style="text-decoration: line-through;">{{ product.price | money }}</span></span>
-            <span class="u14Light_v2">or as low as €112/Month</span>
+            <span class="u14Light_v2">or as low as {{ product.price | minus: settings.carbon_ebike_discount_price | divided_by: 24 | money_without_trailing_zeros }}/Month</span>
         </div>
         <a href="#sale_acc" class="my-button my-button-origin" style="background: var(--sale-color3);">Order Now</a>
     </div>
@@ -1034,7 +1034,7 @@
     <a href="#sale_accmb" class="my-button my-button-origin" style="background: var(--sale-color3);">Order Now</a>
     <div>
         <span class="u14Light_v2"><span class="emphasize" style="font-weight: 600;color:var(--sale-color3);">{{ product.price | minus: settings.carbon_ebike_discount_price | money }}</span> <span style="text-decoration: line-through;">{{ product.price | money }}</span></span>
-        <span class="u14Light_v2">or as low as €112/Month</span>
+        <span class="u14Light_v2">or as low as {{ product.price | minus: settings.carbon_ebike_discount_price | divided_by: 24 | money_without_trailing_zeros }}/Month</span>
     </div>
 </div>
 
@@ -1102,25 +1102,24 @@
             $(`.product .commonComponent .sale .u20DemiBold_v2`).text(`${model === 'Carbon Belt' ? '{{ product.price | minus: settings.carbon_ebike_discount_price | money }}' : '{{ product.price | minus: settings.carbon1s_ebike_discount_price | money }}'} NOW`)
             //$(`.product .commonComponent .sale .u17DemiBold_v2`).text(`with ${model === 'Carbon Belt' ? '{{ settings.sale_name }}' : 'Pre-order Sale'}`)
             $(`.product .count-down .u17Medium_v2`).text(`with ${model === 'Carbon Belt' ? '{{ settings.carbon_ebike_discount_price | money_without_trailing_zeros }} off + {{ settings.carbon_ebike_free_accessories_count }} Free Accessories Ends in:' : '{{settings.carbon1s_ebike_discount_price | money_without_trailing_zeros}} off + {{ settings.carbon_ebike_free_accessories_count }} Free Accessories Ends in:'}`)
-            $('.top-fixed .u17Light_v2 .emphasize').text(`${model === 'Carbon Belt' ? '{{ product.price | minus: settings.carbon_ebike_discount_price | money }}' : '{{ product.price | minus: settings.carbon1s_ebike_discount_price | money }}'}`)
-            $('.bottom-fixed .u14Light_v2 .emphasize').text(`${model === 'Carbon Belt' ? '{{ product.price | minus: settings.carbon_ebike_discount_price | money }}' : '{{ product.price | minus: settings.carbon1s_ebike_discount_price | money }}'}`)
-
-
-            // abtest
-            //$(`.product .abtest-price .u30DemiBold_v2 span:first-child`).text(`${model === 'Carbon Belt' ? '{{ product.price | minus: settings.carbon_ebike_discount_price | money }}' : '{{ product.price | minus: settings.carbon1s_ebike_discount_price | money }}'}`)
-            //$(`.product .abtest-price .u14DemiBold_v2 span:first-child`).text(`${model === 'Carbon Belt' ? '- 18%' : '- 9%'}`)
 
             if (model === 'Carbon Belt') {
-                //$('.product .belt').show()
-                //$('.product .gear').hide()
+
                 
 
                 global_config.event_accessories_variant_ids = global_config.carbon_order_page_config.events.carbon1_send_accessories_variant_ids
 
                 $(`.product .product-panel .options .option .vanilla`).show();
+                $('.buttons .orderTestRideBtn .stages').text('{{ product.price | minus: settings.carbon_ebike_discount_price | divided_by: 24 | money_without_trailing_zeros }}');
+                $('.top-fixed .centeral-content > div').html(`
+                  <span class="u17Light_v2"><span class="u20DemiBold_v2 emphasize" style="font-weight: 600;color:var(--sale-color3);">{{ product.price | minus: settings.carbon_ebike_discount_price | money }}</span> <span style="text-decoration: line-through;">{{ product.price | money }}</span></span>
+                  <span class="u14Light_v2">or as low as {{ product.price | minus: settings.carbon_ebike_discount_price | divided_by: 24 | money_without_trailing_zeros }}/Month</span>
+              `)
 
-                $('.buttons .orderTestRideBtn .stages').text('112');
-                // $('.product .buttons .jobrad').css({ height: '47px', overflow: 'unset', border: '2px solid #161c1f' });
+              $('.bottom-fixed > div').html(`
+                <span class="u14Light_v2"><span class="emphasize" style="font-weight: 600;color:var(--sale-color3);">{{ product.price | minus: settings.carbon_ebike_discount_price | money }}</span> <span style="text-decoration: line-through;">{{ product.price | money }}</span></span>
+                <span class="u14Light_v2">or as low as {{ product.price | minus: settings.carbon_ebike_discount_price | divided_by: 24 | money_without_trailing_zeros }}/Month</span>
+              `)
             } else {
                 //$('.product .belt').hide()
                 //$('.product .gear').show()
@@ -1129,8 +1128,16 @@
                 global_config.event_accessories_variant_ids = global_config.carbon_order_page_config.events.carbon1s_send_accessories_variant_ids
 
                 $(`.product .product-panel .options .option .vanilla`).hide();
+                $('.buttons .orderTestRideBtn .stages').text('{{ product.price | minus: settings.carbon1s_ebike_discount_price | divided_by: 24 | money_without_trailing_zeros }}');
+                $('.top-fixed .centeral-content > div').html(`
+                  <span class="u17Light_v2"><span class="u20DemiBold_v2 emphasize" style="font-weight: 600;color:var(--sale-color3);">{{ product.price | minus: settings.carbon1s_ebike_discount_price | money }}</span> <span style="text-decoration: line-through;">{{ product.price | money }}</span></span>
+                  <span class="u14Light_v2">or as low as {{ product.price | minus: settings.carbon1s_ebike_discount_price | divided_by: 24 | money_without_trailing_zeros }}/Month</span>
+              `)
 
-                $('.buttons .orderTestRideBtn .stages').text('112');
+              $('.bottom-fixed > div').html(`
+                <span class="u14Light_v2"><span class="emphasize" style="font-weight: 600;color:var(--sale-color3);">{{ product.price | minus: settings.carbon1s_ebike_discount_price | money }}</span> <span style="text-decoration: line-through;">{{ product.price | money }}</span></span>
+                <span class="u14Light_v2">or as low as {{ product.price | minus: settings.carbon1s_ebike_discount_price | divided_by: 24 | money_without_trailing_zeros }}/Month</span>
+              `)
 
                 //$('.product .buttons .jobrad').css({ height: 0, overflow: 'hidden', border: 'none' });
             }
