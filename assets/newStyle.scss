@@ -244,6 +244,17 @@ a.moreBtn.bannerBtn.buyBtn:hover,
 
 // 样式隔离
 
+// 样式隔离
+@keyframes mini-dialog-show {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
 
 
 body {
