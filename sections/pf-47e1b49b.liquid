@@ -1,29 +1,35 @@
+{{ 'pagefly-main.css' | asset_url | stylesheet_tag: preload: true }}
+{{ 'pagefly.9b29433f.css' | asset_url | stylesheet_tag: preload: true }}
 {{ 'chord-ebike.scss.css' | asset_url | stylesheet_tag }}
 <link rel="preload" href="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/3_1_2x_c75e6ef5-a3ac-49af-bb2f-c19dd565cfad.jpg?v=1689154308" as="image">
 <link rel="preload" href="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/3_1_2x_c75e6ef5-a3ac-49af-bb2f-c19dd565cfad.jpg?v=1689154308" as="image">
 
-<div class="chord-ebike">
-    <div class="topbar">
-        <div class="centeral-content">
-            <span class="u17DemiBold_v2">Chord</span>
-            <span class="flex-1"></span>
-            <span class="pcHide">
-                <svg color="#000" width="20" height="20" viewBox="64 64 896 896" focusable="false" data-icon="down"
-                    fill="currentColor" aria-hidden="true">
-                    <path
-                        d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z">
-                    </path>
-                </svg>
-            </span>
-            <a class="u11Medium_v2 mobileHide" href="/pages/lightweight-commuter-ebike-urtopia-chord">Overview</a>
-            <a class="u11Medium_v2 mobileHide" href="/pages/chord-specs">Spec & Size Guide</a>
-            <a href="/products/urtopia-chord-ebike" class="my-button my-button-black">Order now</a>
+<div class="top-fixed mobileHide">
+    <div class="centeral-content">
+        <span class="u20DemiBold_v2">{{all_products['urtopia-chord-ebike'].title}}</span>
+        <span class="flex-1"></span>
+        <div>
+            <span class="u17Light_v2"><span class="u20DemiBold_v2 emphasize"
+                    style="font-weight: 600;">{{ all_products['urtopia-chord-ebike'].price | minus: 0 | money }}</span>
+                    <!--<span style="text-decoration: line-through;">{{ all_products['urtopia-chord-ebike'].price | money }}</span>!-->
+                    </span>
+            <span class="u14Light_v2">or as low as {{ all_products['urtopia-chord-ebike'].price | minus: 0 | divided_by: 24 | money_without_trailing_zeros }}/Month</span>
         </div>
-        <div class="dropdown pcHide" style="display: none;">
-            <a class="u11Medium_v2" href="/pages/lightweight-commuter-ebike-urtopia-chord">Overview</a>
-            <a class="u11Medium_v2" href="/pages/chord-specs">Spec & Size Guide</a>
-        </div>
+        <a href="/products/urtopia-chord-ebike" target="_blank" class="my-button my-button-origin" action_type="Buynow_0">Order Now</a>
     </div>
+</div>
+<div class="bottom-fixed pcHide">
+    <a href="/products/urtopia-chord-ebike" target="_blank" class="my-button my-button-origin" action_type="Buynow_0">Order Now</a>
+    <div>
+        <span>
+            <span class="u17DemiBold_v2 emphasize">{{ all_products['urtopia-chord-ebike'].price | minus: 0 | money }}</span> 
+            <!--<span class="u11Light_v2" style="text-decoration: line-through;">{{ all_products['urtopia-chord-ebike'].price | money }}</span>-->
+        </span>
+        <span class="u11Light_v2">or as low as {{ all_products['urtopia-chord-ebike'].price | minus: 0 | divided_by: 24 | money_without_trailing_zeros }}/Month</span>
+    </div>
+</div>
+
+<div class="chord-ebike">
     <div class="banner">
         <div class="centeral-content">
             <div class="u72DemiBold_v2">Urtopia Chord</div>
@@ -490,6 +496,18 @@
             <div class="u17Light_v2">Urtopia is dedicated to deploying authorised service providers throughout the country for satisfactory service and maintenance.</div>
         </div>
     </div>
+    {% render 'chord-size-and-specs' %}
+    <div class="assembly">
+		<div class="centeral-content" style="box-sizing: content-box;">
+			<div class="gray-background-color">
+				<div class="u36DemiBold_v2">90% assembly</div>
+				<div class="u17DemiLight_v2">Delight in the convenience of our 90% pre-assembled e-bike package, making assembly a breeze!</div>
+			</div>
+			<div>
+				<img onclick="showVideoDialog('https://www.youtube.com/embed/meJBiIp32E0?autoplay=1&cc_load_policy=1')" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/openvideo-1667475097262.svg" alt="">
+			</div>
+		</div>
+	</div>
     <div class="accessories">
         <div class="centeral-content">
             <div class="u42DemiBold_v2">Customized Accessories</div>
