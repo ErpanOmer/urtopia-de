@@ -190,10 +190,10 @@
                       <div class="text-decoration">{{ all_products['esim-card'].price | money_without_trailing_zeros }}/year</div>
                   </div>
               </div>
-            <div class="count-down mb12 mobileHide" style="color: var(--sale-color4);">
+            <!--<div class="count-down mb12 mobileHide" style="color: var(--sale-color4);">
                 <div class="u17Medium_v2">{{ settings.carbon_ebike_discount_price | money_without_trailing_zeros }} off + {{ settings.carbon_ebike_free_accessories_count }} Free Accessories Ends in：</div>
                 <img src="http://i.countdownmail.com/2mmaed.gif">
-            </div>
+            </div>-->
             <div class="options">
                 {% for option in product.options %}
                     <div class="option" option={{option}}>
@@ -230,8 +230,8 @@
             </div>       
             <div class="buttons">
                 <div class="count-down mb12 pcHide" style="color: var(--sale-color4);">
-                    <div class="u17Medium_v2">{{ settings.carbon_ebike_discount_price | money_without_trailing_zeros }} off + {{ settings.carbon_ebike_free_accessories_count }} Free Accessories Ends in：</div>
-                    <img src="http://i.countdownmail.com/2mmaed.gif">
+                    <!--<div class="u17Medium_v2">{{ settings.carbon_ebike_discount_price | money_without_trailing_zeros }} off + {{ settings.carbon_ebike_free_accessories_count }} Free Accessories Ends in：</div>
+                    <img src="http://i.countdownmail.com/2mmaed.gif">-->
                 </div>
                 <div
                     data-product-id="{{ product.id }}"
