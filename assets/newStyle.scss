@@ -571,6 +571,7 @@ input {
   z-index: 100000001;
   max-height: 85vh;
   overflow: hidden;
+  animation: mini-dialog-show .4s;
 }
 
 body {
