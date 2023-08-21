@@ -240,7 +240,7 @@ const testRides = [
      stores: [
        {
          name: 'Anneke Gabriel',
-         phone: '+0049 171 74 24 105',
+         phone: '+49 1717424105',
          email: 'dominic@2do-digital.de',
          timezone: "Mainz, Germany (GMT+1)",
          add: "Schwübb, 22529 Hamburg, Germany",
@@ -286,29 +286,29 @@ const testRides = [
          ],
          disableDate: createdisableDates(365, ['2023-7-28','2023-7-29','2023-7-30','2023-7-31','2023-8-7','2023-8-8','2023-8-9','2023-8-11','2023-8-12','2023-8-26']),
        },
-       /*{
-         name: 'Anneke Gabriel',
-         phone: '+491799955692',
-         email: 'yannick.vannoy@thecycleverse.com',
-         timezone: "Mainz, Germany (GMT+1)",
-         add: "Schwübb, 22529 Hamburg, Germany",
+       {
+         name: 'Moritz Falk',
+         phone: '+49 151 14461642',
+         email: 'moritz.urtopia@gmail.com',
+         timezone: "Hamburg, Germany (GMT+1)",
+         add: "Winterhude, 22299 Hamburg",
         imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Hamburg_19874cca-b8ea-4f39-824a-d987e3410a01.jpg?v=1683867163",
          testrideSpot: "Hamburg",
-         testRideSize: "M",
+         testRideSize: "L",
          isPartner: true,
          availableSizes: [
-          'Carbon One Size M',
+          'Carbon One Size L',
         ],
          businessHours: [
-           "9:00-18:00",
-           "9:00-18:00",
-           "9:00-18:00",
-           "9:00-18:00",
-           "9:00-18:00",
-           "9:00-18:00",
-           "9:00-18:00",
+           "9:00-21:00",
+           "16:00-21:00",
+           "16:00-21:00",
+           "16:00-21:00",
+           "16:00-21:00",
+           "16:00-21:00",
+           "9:00-21:00",
          ],
-       }*/
+       },
        {
          name: 'Zweiradhaus Ehrig',
          phone: '+49 406034501',
@@ -1135,6 +1135,41 @@ const testRides = [
           "11:00-19:00",
           "11:00-19:00",
         ],
+        isPartner: true
+      },
+    ]
+  },
+  {
+    country:'Finland',
+    city: 'Meritullinkatu',
+    cityBackground: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/A93E0E1F-608D-44BE-9840-426BD29C34E6-lg.webp?v=1692340290',
+    series: [
+      'Urtopia Carbon 1',
+      // 'Urtopia Carbon 1'
+    ],
+    stores: [
+      {
+        name: 'Ari Huusela',
+        phone: '+358 45 6745488',
+        email: 'ari.huusela@icloud.com',
+        timezone: "Meritullinkatu, Finland (GMT+1)",
+        add: "Meritullinkatu 9 A 00170 Helsinki",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/A93E0E1F-608D-44BE-9840-426BD29C34E6-lg.webp?v=1692340290",
+        testrideSpot: "Meritullinkatu",
+        testRideSize: "M",
+        availableSizes: [
+          'Carbon One Size M',
+          ],
+        businessHours: [
+          "",
+          "",
+          "",
+          "11:00-19:00",
+          "",
+          "",
+          "",
+        ],
+        disableDate: createdisableDates(365, ['']),
         isPartner: true
       },
     ]

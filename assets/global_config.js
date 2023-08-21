@@ -140,7 +140,7 @@ const global_config = {
 
       // carbon 1/1s
       // 1-m-sb
-      43705718997208: 'Free shipping within 5 working days',
+      42615025172696: 'Free shipping within 5 working days',
       // 1-l-sb
       42615025369304: 'Free shipping within 5 working days',
       // 1-m-lb
@@ -234,11 +234,11 @@ const global_config = {
     ebike_delivery_time: {
 
       // chord
-      43705718997208: 'Pre-order items shipped from September 1 - 15, 2023',
-      43705719029976: 'Pre-order items shipped from September 1 - 15, 2023',
+      43705718997208: 'Pre-order items shipped from October 1 - 15, 2023',
+      43705719029976: 'Pre-order items shipped from October 1 - 15, 2023',
       // chord x
-      43705719062744: 'Pre-order items shipped from September 1 - 15, 2023',
-      43705719095512: 'Pre-order items shipped from September 1 - 15, 2023',
+      43705719062744: 'Pre-order items shipped from October 1 - 15, 2023',
+      43705719095512: 'Pre-order items shipped from October 1 - 15, 2023',
     }
   }
 }
