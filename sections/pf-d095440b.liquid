@@ -1045,9 +1045,10 @@
     $('.toTop').hide()
 
     const variants = []
+    let temp = null
 
     {% for variant in product.variants %}
-      const temp = JSON.parse(JSON.stringify({{ variant | json }}))
+      temp = JSON.parse(JSON.stringify({{ variant | json }}))
 
       variants.push(temp)
     {% endfor %}
