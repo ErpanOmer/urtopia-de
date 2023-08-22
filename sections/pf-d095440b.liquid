@@ -1044,12 +1044,15 @@
     $('.top-fixed').hide()
     $('.toTop').hide()
 
+    const variants = []
+
     {% for variant in product.variants %}
-      console.log(JSON.parse(JSON.stringify({{ variant | json }})))
+      variants.push(JSON.parse(JSON.stringify({{ variant | json }})))
+      console.log()
     {% endfor %}
 
     const search = getSearchValues()
-    const variants = JSON.parse(JSON.stringify({{ product.variants | json }}))
+    
     const size_map = {
         M: 'Fit for 170-185 cm',
         L: 'Fit for 180-195 cm'
