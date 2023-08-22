@@ -1047,8 +1047,9 @@
     const variants = []
 
     {% for variant in product.variants %}
-      variants.push(JSON.parse(JSON.stringify({{ variant | json }})))
-      console.log()
+      const temp = JSON.parse(JSON.stringify({{ variant | json }}))
+
+      variants.push(temp)
     {% endfor %}
 
     const search = getSearchValues()
