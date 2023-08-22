@@ -1050,7 +1050,7 @@
     {% for variant in product.variants %}
       temp = JSON.parse(JSON.stringify({{ variant | json }}))
       temp.inventory_quantity = {{ variant.inventory_quantity }}
-
+      
       variants.push(temp)
     {% endfor %}
 
