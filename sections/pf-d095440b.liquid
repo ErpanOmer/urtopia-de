@@ -1044,6 +1044,10 @@
     $('.top-fixed').hide()
     $('.toTop').hide()
 
+    {% for variant in product.variants %}
+      JSON.parse(JSON.stringify({{ variant | inventory_quantity }}))
+    {% endfor %}
+
     const search = getSearchValues()
     const variants = JSON.parse(JSON.stringify({{ product.variants | json }}))
     const size_map = {
