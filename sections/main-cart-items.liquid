@@ -308,6 +308,9 @@ padding-bottom: {{ section.settings.padding_bottom }}px;
                         {{ item.original_line_price | money }}
                       </span>
                     {%- endif -%}
+                    {% if item.product.id == 7633738727640 %}
+                      <span class="u14Medium_v2 emphasize" style="color: #EB5A2D;margin-top: 4px;">Only {{ item.variant.inventory_quantity | at_least: 2 }} Left</span>
+                    {% endif %}
 
                     {%- if item.variant.available and item.unit_price_measurement -%}
                       <div class="unit-price caption">
@@ -415,6 +418,9 @@ padding-bottom: {{ section.settings.padding_bottom }}px;
                         {{ item.original_line_price | money }}
                       </span>
                     {%- endif -%}
+                    {% if item.product.id == 7633738727640 %}
+                      <span class="u14Medium_v2 emphasize" style="color: #EB5A2D;margin-top: 4px;">Only {{ item.variant.inventory_quantity | at_least: 2 }} Left</span>
+                    {% endif %}
 
                     {%- if item.variant.available and item.unit_price_measurement -%}
                       <div class="unit-price caption">

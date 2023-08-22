@@ -22,6 +22,12 @@
     "Klarna_learn": "lernen, wie man",
     "klarna_apr": "Die 0% APR Finanzierung ist eine spezielle Subvention, die von Urtopia zur Verfügung gestellt wird. Bei Stornierung einer Bestellung, die mit dieser Finanzierungshilfe getätigt wurde, wird eine Stornogebühr von 13% fällig, andere Zahlungsarten über Klarna bleiben davon jedoch unverändert."
   },
+  "order_page": {
+    "only": "Nur noch",
+    "stock": "auf Lager",
+    "out": "Ausverkauft",
+    "sale": "Verkauf"
+  },
   "general": {
     "password_page": {
       "login_form_heading": "Shop mit Passwort betreten:",
