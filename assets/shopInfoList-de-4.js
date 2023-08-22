@@ -591,7 +591,7 @@ const testRides = [
       },
       {
         name: 'alf bikes & coffee',
-        phone: '"+49711 47988965"',
+        phone: '+49711 47988965',
         email: 'simon@alleliebenfahrrad.de',
         timezone: "Mainz, Germany (GMT+1)",
         add: "Villastraße 14, 70190 Stuttgart",
@@ -1157,6 +1157,7 @@ const testRides = [
         imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/A93E0E1F-608D-44BE-9840-426BD29C34E6-lg.webp?v=1692340290",
         testrideSpot: "Meritullinkatu",
         testRideSize: "M",
+        noBook: true,
         availableSizes: [
           'Carbon One Size M',
           ],

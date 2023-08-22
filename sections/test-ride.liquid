@@ -624,25 +624,56 @@
         document.querySelector('.mapboxgl-popup .mapboxgl-popup-content').style.display = 'none'
         const href = document.querySelector('#storepoint-map .storepoint-location-popup .storepoint-popup-directions').getAttribute('href')
 
-        $(popup).append(`
-            <div class="map-popup">
-                <img src="${store.imgUrl}"/>
-                <div class="infos">
-                    <div class="name">${store.name}</div>
-                    ${store.stories? `<a href="${store.stories.blogUrl}" class="address gray my-link">${store.stories.urlText}</a><div class="available" style="margin-bottom: -6px;">Add:</div>` : ''}
-                    <div class="address gray">${store.add}</div>
-                    <div class="available">Available Model:</div>
-                    <ul>
-                        ${store.availableSizes ? store.availableSizes.map(i => `<li class="gray">${i}</li>`).join('') : `<li class="gray">Carbon One Size ${store.testRideSize}</li>`}
-                    </ul>
-                    <div class="time gray"><img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/calendar_2x_af8d9192-1ff9-43f0-aba6-3547b1129854.jpg?v=1680938382"/> Earliest available time: <div>&nbsp;${store.findAvalibaleDate()}</div></div>
-                    <div class="buttons">
-                        <a class="my-button my-button-black" onclick="booknow('${store.name}')">Book Now</a>
-                        <a class="my-button my-button-white" style="margin-left: 6px;" target="_blank" href="${href}">Direction</a>
+        if (store.noBook) {
+            $(popup).append(`
+                <div class="map-popup">
+                    <img src="${store.imgUrl}"/>
+                    <div class="infos nobook">
+                        <div class="name">${store.name}</div>
+                        <div class="available">Available Model:</div>
+                        <ul>
+                            ${store.availableSizes ? store.availableSizes.map(i => `<li class="gray">${i}</li>`).join('') : `<li class="gray">Carbon One Size ${store.testRideSize}</li>`}
+                        </ul>
+                        <div class="contact">
+                            <div>
+                                <span class="u14DemiBold_v2">Email: </span>
+                                <span class="u14Light_v2">${store.email}</span>
+                            </div>
+                            <div>
+                                <span class="u14DemiBold_v2">Phone: </span>
+                                <span class="u14Light_v2">${store.phone}</span>
+                            </div>
+                            <div>
+                                <span class="u14DemiBold_v2">Add: </span>
+                                <span class="u14Light_v2">${store.add}</span>
+                            </div>
+                        </div>
+                        <div class="u14DemiBold_v2">Please contact the Ambassadors directly to arrange test ride</div>
                     </div>
                 </div>
-            </div>
-        `)
+            `)
+
+        } else {
+            $(popup).append(`
+                <div class="map-popup">
+                    <img src="${store.imgUrl}"/>
+                    <div class="infos">
+                        <div class="name">${store.name}</div>
+                        ${store.stories? `<a href="${store.stories.blogUrl}" class="address gray my-link">${store.stories.urlText}</a><div class="available" style="margin-bottom: -6px;">Add:</div>` : ''}
+                        <div class="address gray">${store.add}</div>
+                        <div class="available">Available Model:</div>
+                        <ul>
+                            ${store.availableSizes ? store.availableSizes.map(i => `<li class="gray">${i}</li>`).join('') : `<li class="gray">Carbon One Size ${store.testRideSize}</li>`}
+                        </ul>
+                        <div class="time gray"><img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/calendar_2x_af8d9192-1ff9-43f0-aba6-3547b1129854.jpg?v=1680938382"/> Earliest available time: <div>&nbsp;${store.findAvalibaleDate()}</div></div>
+                        <div class="buttons">
+                            <a class="my-button my-button-black" onclick="booknow('${store.name}')">Book Now</a>
+                            <a class="my-button my-button-white" style="margin-left: 6px;" target="_blank" href="${href}">Direction</a>
+                        </div>
+                    </div>
+                </div>
+            `)
+        }
     }
 
     observerElement('#storepoint-container').then(r => {
