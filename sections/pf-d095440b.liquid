@@ -1045,7 +1045,7 @@
     $('.toTop').hide()
 
     {% for variant in product.variants %}
-      console.log(JSON.parse(JSON.stringify({{ variant.inventory_quantity | json }})))
+      console.log(JSON.parse(JSON.stringify({{ variant | json }})))
     {% endfor %}
 
     const search = getSearchValues()
