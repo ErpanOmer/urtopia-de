@@ -1,0 +1,200 @@
+// 根字体大小: px
+$root-font-size: 18;
+
+// 尺寸间隔: px;
+$size-gap: 4;
+
+// 圆角尺寸: px
+$border-radius-sizes: 10, 20, 30, 40, 50, 60;
+
+// 字体粗细尺寸
+$font-weight-sizes: 100, 200, 300, 400, 500, 600, 700;
+
+// 颜色透明度
+$color-opacity: 95, 85, 75, 65, 55, 45, 35, 25, 15;
+
+// 颜色取值
+$colors: #000, #fff, #FD4B17, #191D3B, #FFDA12, #808080;
+$colors-name: "black", "white", "orange", "secondary", "yellow", "gray";
+
+
+article {
+    font: normal normal normal $root-font-size + px/1.25em urbane;
+}
+
+section {
+    max-width: 1280px;
+    margin: 6em auto;
+    padding: 0 30px;
+    box-sizing: content-box !important;
+}
+
+a {
+    text-decoration: none;
+    outline: none;
+    transition: color .3s;
+}
+
+table {
+    text-align: center;
+    background-color: rgb(15, 23, 42);
+    color: #e5e5e5;
+    border: none;
+    border-spacing: 0;
+
+    th, td {
+        border-color: #94a3b81a;
+        padding: 0.75em;
+    }
+
+    tr {
+        td {
+            border-top: 1px solid #94a3b833;
+            cursor: pointer;
+        }
+    }
+
+    
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+img,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span {
+    line-height: 1.25em;
+}
+
+p {
+    line-height: 1.5em;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 600;
+}
+
+
+h1 { font-size: 3.75em; }
+h2 { font-size: 3em; }
+h3 { font-size: 2.625em; }
+h4 { font-size: 2.25em; }
+h5 { font-size: 1.875em; }
+h6 { font-size: 1.5em; }
+p { line-height: 1.5em; }
+
+@for $i from 1 through 30 {
+    .margin-#{$i * $size-gap } { margin: $i * $size-gap  + px; }
+    .margin-left-#{$i * $size-gap } { margin-left: $i * $size-gap  + px; }
+    .margin-top-#{$i * $size-gap } { margin-top: $i * $size-gap  + px; }
+    .margin-right-#{$i * $size-gap } { margin-right: $i * $size-gap  + px; }
+    .margin-bottom-#{$i * $size-gap } { margin-bottom: $i * $size-gap  + px; }
+    .margin-top-bottom-#{$i * $size-gap } { margin: $i * $size-gap  + px 0; }
+    .margin-left-right-#{$i * $size-gap } { margin: 0 $i * $size-gap  + px; }
+
+    .padding-#{$i * $size-gap } { padding: $i * $size-gap  + px; }
+    .padding-left-#{$i * $size-gap } { padding-left: $i * $size-gap  + px; }
+    .padding-top-#{$i * $size-gap } { padding-top: $i * $size-gap  + px; }
+    .padding-right-#{$i * $size-gap } { padding-right: $i * $size-gap  + px; }
+    .padding-bottom-#{$i * $size-gap } { padding-bottom: $i * $size-gap  + px; }
+    .padding-left-right-#{$i * $size-gap } { padding: 0 $i * $size-gap  + px; }
+    .padding-top-bottom-#{$i * $size-gap } { padding: $i * $size-gap  + px 0; }
+
+    .grid-column-gap-#{$i * $size-gap } { grid-column-gap: $i * $size-gap  + px; }
+    .grid-row-gap-#{$i * $size-gap } { grid-row-gap: $i * $size-gap  + px; }
+
+    .font-size-#{$i * $size-gap } { font-size: $i * $size-gap  + px; }
+
+    $gap: 20;
+    .width-#{$i * $gap } { width: $i * $gap  + px; }
+    .height-#{$i * $gap } { height: $i * $gap  + px; }
+}
+
+
+@each $size in $border-radius-sizes {
+    .border-radius-#{$size} {
+        border-radius: $size + px;
+    }
+}
+
+@each $size in $font-weight-sizes {
+    .font-weight-#{$size} {
+        font-weight: $size;
+    }
+}
+
+@each $opacity in $color-opacity {
+    .opacity-#{$opacity} {
+        opacity: $opacity / 100;
+    }
+}
+
+@each $color in $colors {
+    $index: index($colors, $color);
+    $name: nth($colors-name, $index);
+
+    .color-#{$name} { color: $color; }
+    .background-#{$name} { background-color: $color; }
+    .border-#{$name} { border-color: $color; }
+}
+
+.grid-box {
+    display: grid;
+}
+
+@for $i from 1 through 5 {
+    .grid-columns-#{$i} {
+        grid-template-columns: repeat($i, 1fr);
+    }
+}
+
+.flex {
+    display: flex;
+}
+
+.flex-column {
+    flex-direction: column;
+}
+
+.flex-align-center {
+    align-items: center;
+}
+
+.flex-center {
+    align-items: center;
+    justify-content: center;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-disabled {
+    color: #000;
+    opacity: 0.25;
+    cursor: not-allowed;
+    user-select: none;
+}
+

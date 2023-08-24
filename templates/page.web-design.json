@@ -1,0 +1,12 @@
+{
+  "sections": {
+    "web-design": {
+      "type": "web-design",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "web-design"
+  ]
+}
