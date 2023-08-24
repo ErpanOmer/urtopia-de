@@ -284,7 +284,7 @@ const testRides = [
            "14:00-19:00",
            "14:00-19:00",
          ],
-         disableDate: createdisableDates(365, ['2023-7-28','2023-7-29','2023-7-30','2023-7-31','2023-8-7','2023-8-8','2023-8-9','2023-8-11','2023-8-12','2023-8-26']),
+         disableDate: createdisableDates(100, ['2023-7-28','2023-7-29','2023-7-30','2023-7-31','2023-8-7','2023-8-8','2023-8-9','2023-8-11','2023-8-12','2023-8-26']),
        },
        {
          name: 'Moritz Falk',
@@ -352,8 +352,31 @@ const testRides = [
            "10:00-19:00",
            "10:00-16:00",
          ],
+       },
+  {
+         name: 'Volkan Kartal',
+         phone: '+49 176 56710791',
+         email: 'volkan.newsletter@gmail.com',
+         timezone: "Hamburg, Germany (GMT+1)",
+         add: "Am Knill 1H, 22147 Hamburg",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Hamburg_19874cca-b8ea-4f39-824a-d987e3410a01.jpg?v=1683867163",
+         testrideSpot: "Hamburg",
+         testRideSize: "L",
+         isPartner: true,
+         availableSizes: [
+          'Carbon One Size L',
+        ],
+         businessHours: [
+           "",
+           "10:00-18:00",
+           "10:00-18:00",
+           "10:00-18:00",
+           "10:00-18:00",
+           "10:00-18:00",
+           "",
+         ],
        }
-     ]
+       ]
    },
   {
     city: 'München',
@@ -382,23 +405,6 @@ const testRides = [
           "8:00-9:30,13:00-14:30,18:00-20:00",
           "10:00-12:00,12:00-20:00",
         ],
-        disableDate: [
-           '2023-7-14',
-           '2023-7-15',
-           '2023-7-16',
-           '2023-7-17',
-           '2023-7-18',
-           '2023-7-19',
-           '2023-7-20',
-           '2023-7-21',
-           '2023-7-22',
-           '2023-7-23',
-           '2023-7-24',
-           '2023-7-25',
-           '2023-7-26',
-           '2023-7-27',
-           '2023-7-28',
-         ]
       },
       {
         name: 'Supercycles',
@@ -1000,7 +1006,7 @@ const testRides = [
           "12:00-16:00",
           "12:00-16:00",
         ],
-        disableDate: createdisableDates(365, ['2023-7-29','2023-7-30','2023-8-5','2023-8-6','2023-8-19','2023-8-20','2023-8-26','2023-8-27','2023-9-16','2023-9-17','2023-9-23','2023-9-24']),
+        disableDate: createdisableDates(100, ['2023-7-29','2023-7-30','2023-8-5','2023-8-6','2023-8-19','2023-8-20','2023-8-26','2023-8-27','2023-9-16','2023-9-17','2023-9-23','2023-9-24']),
         isPartner: true
       },
     ]
@@ -1018,7 +1024,7 @@ const testRides = [
         phone: '+49 1520 2015919',
         email: 'hendrikuhlemann@googlemail.com',
         timezone: "Mainz, Germany (GMT+1)",
-        add: "Johannisstraße, 38855 Wernigerode",
+        add: "Johannisstraße 13, 38855 Wernigerode",
         imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Schloss_Wernigerode_nach_Sonnenuntergang.jpg?v=1691564874",
         testrideSpot: "Wernigerode",
         testRideSize: "L",
@@ -1034,45 +1040,10 @@ const testRides = [
           "9:00-17:00",
           "9:00-17:00",
         ],
-        //disableDate: createdisableDates(365, ['2023-7-29','2023-7-30','2023-8-5','2023-8-6','2023-8-19','2023-8-20','2023-8-26','2023-8-27','2023-9-16','2023-9-17','2023-9-23','2023-9-24']),
         isPartner: true
       },
     ]
   },
-  /*{
-    city: 'Budenheim',
-    cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230814-105334.jpg?v=1691981632',
-    series: [
-      'Urtopia Carbon 1',
-      // 'Urtopia Carbon 1'
-    ],
-    stores: [
-      {
-        name: 'Helmut Riedl',
-        phone: '0176 41451532',
-        email: 'helmut-riedl@web.de',
-        timezone: "Mainz, Germany (GMT+1)",
-        add: "Langstrasse 44, 55257 Budenheim",
-        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230814-105334.jpg?v=1691981632",
-        testrideSpot: "Budenheim",
-        testRideSize: "L",
-        availableSizes: [
-          'Carbon One Size L',
-        ],
-        businessHours: [
-          "14:00-18:00",
-          "16:00-20:00",
-          "16:00-20:00",
-          "16:00-20:00",
-          "16:00-19:00",
-          "16:00-20:00",
-          "14:00-18:00",
-        ],
-        //disableDate: createdisableDates(365, ['2023-7-29','2023-7-30','2023-8-5','2023-8-6','2023-8-19','2023-8-20','2023-8-26','2023-8-27','2023-9-16','2023-9-17','2023-9-23','2023-9-24']),
-        isPartner: true
-      },
-    ]
-  },*/
   {
     city: 'Budenheim',
     cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230814-105334.jpg?v=1691981632',
@@ -1101,6 +1072,20 @@ const testRides = [
           "16:00-19:00",
           "16:00-20:00",
           "14:00-18:00",
+        ],
+        disableDate: [
+          "2023-8-28",
+          "2023-8-29",
+          "2023-8-30",
+          "2023-8-31",
+          "2023-9-1",
+          "2023-9-2",
+          "2023-9-3",
+          "2023-9-4",
+          "2023-9-5",
+          "2023-9-6",
+          "2023-9-7",
+          "2023-9-8",
         ],
         isPartner: true
       },
@@ -1164,13 +1149,12 @@ const testRides = [
         businessHours: [
           "",
           "",
-          "",
           "11:00-19:00",
           "",
           "",
           "",
+          "",
         ],
-        disableDate: createdisableDates(365, ['']),
         isPartner: true
       },
     ]
