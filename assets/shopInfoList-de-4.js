@@ -1159,4 +1159,38 @@ const testRides = [
       },
     ]
   },
+  {
+    city: 'Heringsdorf',
+    cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/heringsdorf.webp?v=1692933986',
+    series: [
+      'Urtopia Carbon 1',
+      // 'Urtopia Carbon 1'
+    ],
+    stores: [
+      {
+        name: 'Maximilian Will',
+        phone: '+49 1721532159',
+        email: 'maxe-will@t-online.de',
+        timezone: "Heringsdorf, Germany (GMT+1)",
+        add: "Dreherstraße 19, 17419 Seebad Ahlbeck",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/heringsdorf.webp?v=1692933986",
+        testrideSpot: "Heringsdorf",
+        testRideSize: "M",
+        noBook: true,
+        availableSizes: [
+          'Carbon One Size L',
+          ],
+        businessHours: [
+          "",
+          "",
+          "11:00-19:00",
+          "",
+          "",
+          "",
+          "",
+        ],
+        isPartner: true
+      },
+    ]
+  },
 ]
