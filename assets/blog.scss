@@ -299,7 +299,7 @@ article {
     .#{$prefix}grid-box {
         display: grid;
     }
-    
+
     .#{$prefix}flex {
         display: flex;
     }
@@ -307,20 +307,24 @@ article {
     .#{$prefix}flex-1 {
         flex: 1;
     }
-    
+
     .#{$prefix}flex-column {
         flex-direction: column;
     }
-    
+
     .#{$prefix}flex-align-center {
         align-items: center;
     }
-    
+
+    .#{$prefix}flex-justify-center {
+        justify-content: center;
+    }
+
     .#{$prefix}flex-center {
         align-items: center;
         justify-content: center;
     }
-    
+
     .#{$prefix}text-center {
         text-align: center;
     }
@@ -328,12 +332,24 @@ article {
     .#{$prefix}text-left {
         text-align: left;
     }
-    
+
+    .#{$prefix}text-right {
+        text-align: right;
+    }
+
     .#{$prefix}text-disabled {
         color: #000;
         opacity: 0.25;
         cursor: not-allowed;
         user-select: none;
+    }
+
+    .#{$prefix}height-fill {
+        height: 100%;
+    }
+
+    .#{$prefix}width-fill {
+        width: 100%;
     }
 }
 
