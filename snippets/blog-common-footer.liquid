@@ -16,7 +16,7 @@
       <h2 class="text-center padding-top-40 padding-bottom-60 mb-padding-bottom-4 mb-font-size-36 mb-text-left">More Stories</h2>
       <div class="grid-box grid-columns-3 grid-column-gap-32 mb-grid-columns-1">
         {% for article in blogs.blog.articles %}
-          {% if forloop.index <= 3 %}
+          {% if forloop.index < 5 and forloop.index > 1 %}
             <a href="{{ article.url }}" class="flex flex-column border-radius-10 mb-margin-top-40" style="overflow: hidden;border: 1px solid #e6e6e6;">
               <div class="lozad" data-background-image="{{ article.image.src | image_url: width: 400 }}"></div>
               <div class="flex-1 padding-top-24 padding-bottom-24 padding-right-12 padding-left-12 mb-padding-12">
