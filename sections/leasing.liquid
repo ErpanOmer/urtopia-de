@@ -1,5 +1,7 @@
 {{ 'leasing-add.scss.css' | asset_url | stylesheet_tag }}
 
+{{ 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/MaskGroup18145.png?v=1688105290&width=640' | preload_tag: as: 'image' }}
+
 <div class="leasing-add">
   <div class="banner">
       <div class="centeral-content">
@@ -99,7 +101,7 @@
               </div>
               <div class="buttons">
                   <a href="#forms" class="my-button my-button-black">Request leasing offer(40% off)</a>
-                  <a href="/products/urtopia-carbon-e-bike" class="my-button my-button-white">Shop Online(€2699)</a>
+                  <a href="/products/urtopia-carbon-e-bike" class="my-button my-button-white">Shop Online({{ all_products['urtopia-carbon-e-bike'].price | minus: settings.carbon_ebike_discount_price | money }})</a>
               </div>
           </div>
       </div>
@@ -559,9 +561,9 @@ setTimeout(() => {
                 </div>
             </div>`)
 
-            $('.parameters .bottom-content .buttons .my-button-white').text('Shop Online({{ product.price | minus: settings.carbon_ebike_discount_price | money }})')
+            $('.parameters .bottom-content .buttons .my-button-white').text('Shop Online({{ all_products['urtopia-carbon-e-bike'].price | minus: settings.carbon_ebike_discount_price | money }})')
         } else {
-            $('.parameters .bottom-content>div:first-child').css({ "background-image": "url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/MaskGroup18145.png?v=1688105290')" })
+            $('.parameters .bottom-content>div:first-child').css({ "background-image": "url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/MaskGroup18145.png?v=1688105290&width=640')" })
             $('.parameters .bottom-content .boxs > div:nth-child(1)').replaceWith(`<div>
                       <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18448_2x_d3fbd8a8-d1e2-4a84-b4eb-ce513f342438.png?v=1683705373"
                           alt="">
@@ -579,7 +581,7 @@ setTimeout(() => {
                 </div>
             </div>`)
 
-            $('.parameters .bottom-content .buttons .my-button-white').text('Shop Online({{ product.price | minus: settings.carbon1s_ebike_discount_price | money }})')
+            $('.parameters .bottom-content .buttons .my-button-white').text('Shop Online({{ all_products['urtopia-carbon-e-bike'].price | minus: settings.carbon1s_ebike_discount_price | money }})')
         }
     })
 }, 300)
