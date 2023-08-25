@@ -12,6 +12,58 @@
 
 let extra_data = {}
 
+const bike_sizes = [
+  {
+    id: 1,
+    name: 'Carbon 1',
+    fit: 'Fit for 170-185 cm',
+    size: 'M',
+    img: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18409_2x_87c499be-99e5-457b-869b-963e270f0ea1.jpg?v=1683614780'
+  },
+  {
+    id: 2,
+    name: 'Carbon 1',
+    fit: 'Fit for 180-195 cm',
+    size: 'L',
+    img: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18409_2x_87c499be-99e5-457b-869b-963e270f0ea1.jpg?v=1683614780'
+  },
+  {
+    id: 3,
+    name: 'Carbon 1s',
+    fit: 'Fit for 170-185 cm',
+    size: 'S',
+    img: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20230614-215228.png?v=1686750766'
+  },
+  {
+    id: 4,
+    name: 'Carbon 1s',
+    fit: 'Fit for 170-185 cm',
+    size: 'M',
+    img: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20230614-215228.png?v=1686750766'
+  },
+  {
+    id: 5,
+    name: 'Carbon 1s',
+    fit: 'Fit for 180-195 cm',
+    size: 'L',
+    img: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20230614-215228.png?v=1686750766'
+  },
+  {
+    id: 6,
+    name: 'Chord',
+    fit: 'Fit for 170-195 cm',
+    size: 'High-step',
+    img: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/1_1_2x_c0a40bb0-8853-4818-aa56-0b6cdad81548.jpg?v=1683612101'
+  },
+  {
+    id: 7,
+    name: 'Chord X',
+    fit: 'Fit for 160-185 cm',
+    size: 'Step-Through',
+    img: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/1_1_2x_c0a40bb0-8853-4818-aa56-0b6cdad81548.jpg?v=1683612101'
+  }
+]
+
 function splitTimeFormat(item = '') {
   if (!item) {
     return ''
@@ -3293,64 +3345,34 @@ function splitTimeFormat(item = '') {
     //预约时间，即初始s
 
     else if (that.step == 0) {
-      const carbonM = {
-        id: 1,
-        name: 'Carbon 1',
-        fit: 'Fit for 170 - 185cm',
-        size: 'M',
-        img: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18409_2x_87c499be-99e5-457b-869b-963e270f0ea1.jpg?v=1683614780'
-      }
+      let sizes = that.config.shopInfo.availableSizes
+      let choose = []
 
-      const carbonL = {
-        id: 2,
-        name: 'Carbon 1',
-        fit: 'Fit for 180 - 195cm',
-        size: 'L',
-        img: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18409_2x_87c499be-99e5-457b-869b-963e270f0ea1.jpg?v=1683614780'
-      }
+      for (const size of sizes) {
+        const s = size.split(' ').pop().split('/')
 
-      const chordX = {
-        id: 3,
-        name: 'Chord',
-        fit: 'Fit for 170 - 195cm',
-        size: '',
-        img: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/1_1_2x_c0a40bb0-8853-4818-aa56-0b6cdad81548.jpg?v=1683612101'
-      }
+         // 如果是1s 车
+         if (size.includes('Carbon 1s')) {
+          choose = choose.concat(s.map(i => {
+            const find = bike_sizes.find(b => b.name === 'Carbon 1s' && b.size === i)
 
-      let sizes = that.config.shopInfo.availableSizes || that.config.shopInfo.testRideSize
-      const choose = []
+            return find
 
-      // 如果是数组
-      if (Array.isArray(sizes)) {
-        const carbon = sizes.find(s => s.includes('Carbon'))
-        const chord = sizes.includes('Chord')
+          }).filter(Boolean))
 
-        // 如果carbon 存在
-        if (carbon) {
-          const size = carbon.split(' ').pop()
-          if (size === 'M/L') {
-            choose.push(carbonM, carbonL)
-          } else if (size === 'M') {
-            choose.push(carbonM)
-          } else {
-            choose.push(carbonL)
-          }
-        }
-
-        // 如果chord存在
-        if (chord) {
-          choose.push(chordX)
-        }
-
-      } else {
-          const size = sizes
-          if (size === 'M/L') {
-            choose.push(carbonM, carbonL)
-          } else if (size === 'M') {
-            choose.push(carbonM)
-          } else {
-            choose.push(carbonL)
-          }
+         } else {
+            // 如果是chrod
+            if (size.includes('Chord')) {
+              choose.push(bike_sizes.find(b => b.name === 'Chord'))
+            } else {
+              choose = choose.concat(s.map(i => {
+                const find = bike_sizes.find(b => b.name === 'Carbon 1' && b.size === i)
+    
+                return find
+    
+              }).filter(Boolean))
+            }
+         }
       }
 
       console.log('choose', choose)
@@ -3375,13 +3397,15 @@ function splitTimeFormat(item = '') {
 
       setTimeout(() => {
         $('.choose .item').on('click', e => {
-          const find = e.currentTarget.id === '1' ? carbonM : e.currentTarget.id === '2' ? carbonL : chordX
+          const id = e.currentTarget.id
+          const find = bike_sizes.find(i => String(i.id) === id)
 
           console.log(find)
+
           $('.shop-detail').append(`
           <div class="item test-ride" style="border-top: 1px solid #ddd;padding-top: 12px;">
               <label class="u20DemiBold">Test ride model:</label>
-              <span class="u20Medium">${find.size ? `Carbon One, size ${find.size}` : 'Chord'}</br>${find.fit}</span>
+              <span class="u20Medium">${find.name} Size ${find.size}</br>${find.fit}</span>
           </div>
           `)
 
@@ -3391,7 +3415,7 @@ function splitTimeFormat(item = '') {
           that.next();
 
 
-          extra_data.test_ride_model = `${find.size ? `Carbon One, size ${find.size}` : 'Chord'}</br>${find.fit}`
+          extra_data.test_ride_model = `${find.name} Size ${find.size}</br>${find.fit}`
         })
       }, 300)
 

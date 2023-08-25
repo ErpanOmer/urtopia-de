@@ -60,6 +60,9 @@ const testRides = [
         imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Frankfurt_am_Main_dcfbb429-041a-46e8-809c-988adaf41dfd.jpg?v=1680920985",
         testrideSpot: "Frankfurt am Main",
         testRideSize: "M/L",
+        availableSizes: [
+          'Carbon 1 Size M/L',
+        ],
         businessHours: [
           "",
           "09:00-12:00,12:00-18:00",
@@ -91,7 +94,7 @@ const testRides = [
         testRideSize: "M, Chord",
         isPartner: true,
         availableSizes: [
-          'Carbon One Size M/L',
+          'Carbon 1 Size M/L',
           'Chord'
         ],
         businessHours: [
@@ -155,7 +158,7 @@ const testRides = [
         testRideSize: "M,L,Chord",
         isPartner: true,
         availableSizes: [
-          'Carbon One Size M/L',
+          'Carbon 1 Size M/L',
           'Chord'
         ],
         businessHours: [
@@ -180,6 +183,9 @@ const testRides = [
         imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/IMG_0821.jpg?v=1680922149",
         testrideSpot: "Berlin",
         testRideSize: "L",
+        availableSizes: [
+          'Carbon 1 Size L',
+        ],
         businessHours: [
           "",
           "10:00-12:00,12:00-19:00",
@@ -199,6 +205,9 @@ const testRides = [
         imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/IMG_0827.jpg?v=1680922453",
         testrideSpot: "Berlin",
         testRideSize: "M",
+        availableSizes: [
+          'Carbon 1 Size M',
+        ],
         businessHours: [
           "",
           "09:00-12:00,12:00-19:00",
@@ -218,6 +227,9 @@ const testRides = [
         imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Fahrradstation_GmbH.jpg?v=1691088538",
         testrideSpot: "Berlin",
         testRideSize: "M",
+        availableSizes: [
+          'Carbon 1 Size M',
+        ],
         businessHours: [
           "",
           "10:00-19:00",
@@ -249,7 +261,7 @@ const testRides = [
          testRideSize: "L",
          isPartner: true,
          availableSizes: [
-          'Carbon One Size L'
+          'Carbon 1 Size L'
           ],
          businessHours: [
            "",
@@ -272,7 +284,7 @@ const testRides = [
          testRideSize: "L,Chord",
          isPartner: true,
          availableSizes: [
-          'Carbon One Size L',
+          'Carbon 1 Size L',
            'Chord'
         ],
          businessHours: [
@@ -297,7 +309,7 @@ const testRides = [
          testRideSize: "L",
          isPartner: true,
          availableSizes: [
-          'Carbon One Size L',
+          'Carbon 1 Size L',
         ],
          businessHours: [
            "9:00-21:00",
@@ -319,7 +331,7 @@ const testRides = [
          testrideSpot: "Hamburg",
          testRideSize: "M",
          availableSizes: [
-          'Carbon One Size M'
+          'Carbon 1 Size M'
           ],
          businessHours: [
            "",
@@ -341,7 +353,7 @@ const testRides = [
          testrideSpot: "Hamburg",
          testRideSize: "M",
          availableSizes: [
-          'Carbon One Size M/L'
+          'Carbon 1 Size M/L'
           ],
          businessHours: [
            "10:00-19:00",
@@ -364,7 +376,8 @@ const testRides = [
          testRideSize: "L",
          isPartner: true,
          availableSizes: [
-          'Carbon One Size L',
+          'Carbon 1 Size L',
+          'Carbon 1s Size L',
         ],
          businessHours: [
            "",
@@ -396,6 +409,9 @@ const testRides = [
         testrideSpot: "München",
         testRideSize: "M",
         isPartner: true,
+        availableSizes: [
+          'Carbon 1 Size M',
+        ],
         businessHours: [
           "10:00-12:00,12:00-20:00",
           "8:00-9:30,13:00-14:30,18:00-20:00",
@@ -415,6 +431,9 @@ const testRides = [
         imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/IMG_0440.jpg?v=1680923045",
         testrideSpot: "München",
         testRideSize: "L",
+        availableSizes: [
+          'Carbon 1 Size L',
+        ],
         businessHours: [
           "",
           "",
@@ -447,7 +466,7 @@ const testRides = [
         testRideSize: "L, Chord",
         isPartner: true,
         availableSizes: [
-          'Carbon One Size M/L',
+          'Carbon 1 Size M/L',
           'Chord'
         ],
         businessHours: [
@@ -469,6 +488,9 @@ const testRides = [
         imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/IMG_0948.jpg?v=1680923218",
         testrideSpot: "Münster",
         testRideSize: "L",
+        availableSizes: [
+          'Carbon 1 Size L',
+        ],
         businessHours: [
           "",
           "9:00-12:00, 12:00-13:00, 14:30-18:00",
@@ -500,7 +522,7 @@ const testRides = [
         testRideSize: "L,Chord",
         isPartner: true,
         availableSizes: [
-          'Carbon One Size L',
+          'Carbon 1 Size L',
           'Chord'
         ],
         stories: {
@@ -556,6 +578,9 @@ const testRides = [
         imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Sportshop_Bittner.jpg?v=1680923400",
         testrideSpot: "Leipzig",
         testRideSize: "M",
+        availableSizes: [
+          'Carbon 1 Size M',
+        ],
         businessHours: [
           "",
           "10:00-12:00,12:00-18:00",
@@ -585,6 +610,9 @@ const testRides = [
         imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/IMG_0393.jpg?v=1680923489",
         testrideSpot: "Stuttgart",
         testRideSize: "M",
+        availableSizes: [
+          'Carbon 1 Size M',
+        ],
         businessHours: [
           "",
           "10:00-12:00,12:00-18:00",
@@ -605,7 +633,7 @@ const testRides = [
         testrideSpot: "Stuttgart",
         testRideSize: "M",
         availableSizes: [
-          'Carbon One Size M/L',
+          'Carbon 1 Size M/L',
         ],
         businessHours: [
           "",
@@ -666,6 +694,9 @@ const testRides = [
         imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/IMG_0017.jpg?v=1680924343",
         testrideSpot: "Essen",
         testRideSize: "M",
+        availableSizes: [
+          'Carbon 1 Size M',
+        ],
         businessHours: [
           "",
           "",
@@ -695,6 +726,9 @@ const testRides = [
         imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/IMG_0781.jpg?v=1680924453",
         testrideSpot: "Dresden",
         testRideSize: "M",
+        availableSizes: [
+          'Carbon 1 Size M',
+        ],
         businessHours: [
           "",
           "10:00-12:00,12:00-18:00",
@@ -724,6 +758,9 @@ const testRides = [
         imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/IMG_0364.jpg?v=1680924533",
         testrideSpot: "Nürnberg",
         testRideSize: "M",
+        availableSizes: [
+          'Carbon 1 Size M',
+        ],
         businessHours: [
           "",
           "",
@@ -753,6 +790,9 @@ const testRides = [
         imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/IMG_0479.jpg?v=1680924648",
         testrideSpot: "Regensburg",
         testRideSize: "M",
+        availableSizes: [
+          'Carbon 1 Size M',
+        ],
         businessHours: [
           "09:00-12:00",
           "08:00-12:00,12:00-21:00",
@@ -812,6 +852,9 @@ const testRides = [
         imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Offenburg.jpg?v=1681442327",
         testrideSpot: "Offenburg",
         testRideSize: "L",
+        availableSizes: [
+          'Carbon 1 Size L',
+        ],
         businessHours: [
           "09:00-18:00",
           "09:00-18:00",
@@ -841,6 +884,9 @@ const testRides = [
         imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230413-203921.jpg?v=1681442327",
         testrideSpot: "Löbau",
         testRideSize: "M",
+        availableSizes: [
+          'Carbon 1 Size M',
+        ],
         businessHours: [
           "",
           "07:00-18:00",
@@ -870,6 +916,9 @@ const testRides = [
         imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Zittau.jpg?v=1681442327",
         testrideSpot: "Zittau",
         testRideSize: "L",
+        availableSizes: [
+          'Carbon 1 Size L',
+        ],
         businessHours: [
           "",
           "07:00-18:00",
@@ -899,6 +948,9 @@ const testRides = [
         imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Riegelsberg__view_from_the_panorama_point.jpg?v=1683900380",
         testrideSpot: "Riegelsberg",
         testRideSize: "L",
+        availableSizes: [
+          'Carbon 1 Size L',
+        ],
         businessHours: [
           "",
           "",
@@ -930,7 +982,7 @@ const testRides = [
         testrideSpot: "Güstrow",
         testRideSize: "L",
         availableSizes: [
-          'Carbon One Size L',
+          'Carbon 1 Size L',
           ],
         businessHours: [
           "",
@@ -962,7 +1014,7 @@ const testRides = [
         testrideSpot: "Freiburg",
         testRideSize: "L",
         availableSizes: [
-          'Carbon One Size M',
+          'Carbon 1 Size M',
           ],
         businessHours: [
           "",
@@ -995,7 +1047,7 @@ const testRides = [
         testrideSpot: "Utrecht",
         testRideSize: "L",
         availableSizes: [
-          'Carbon One Size M',
+          'Carbon 1 Size M',
           ],
         businessHours: [
           "12:00-16:00",
@@ -1029,7 +1081,7 @@ const testRides = [
         testrideSpot: "Wernigerode",
         testRideSize: "L",
         availableSizes: [
-          'Carbon One Size L',
+          'Carbon 1 Size L',
           ],
         businessHours: [
           "9:00-17:00",
@@ -1062,7 +1114,7 @@ const testRides = [
         testrideSpot: "Budenheim",
         testRideSize: "L",
         availableSizes: [
-          'Carbon One Size L',
+          'Carbon 1 Size L',
           ],
         businessHours: [
           "14:00-18:00",
@@ -1109,7 +1161,7 @@ const testRides = [
         testrideSpot: "Geldern",
         testRideSize: "M",
         availableSizes: [
-          'Carbon One Size M',
+          'Carbon 1 Size M',
           ],
         businessHours: [
           "11:00-19:00",
@@ -1144,7 +1196,7 @@ const testRides = [
         testRideSize: "M",
         noBook: true,
         availableSizes: [
-          'Carbon One Size M',
+          'Carbon 1 Size M',
           ],
         businessHours: [
           "",
@@ -1178,7 +1230,7 @@ const testRides = [
         testRideSize: "M",
         noBook: true,
         availableSizes: [
-          'Carbon One Size L',
+          'Carbon 1 Size L',
           ],
         businessHours: [
           "",
