@@ -369,7 +369,7 @@ const testRides = [
   {
          name: 'Volkan Kartal',
          phone: '+49 176 56710791',
-         email: 'volkan.newsletter@gmail.com',
+         email: 'Volkan.urtopia@gmail.com',
          timezone: "Hamburg, Germany (GMT+1)",
          add: "Am Knill 1H, 22147 Hamburg",
         imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Hamburg_19874cca-b8ea-4f39-824a-d987e3410a01.jpg?v=1683867163",
@@ -377,7 +377,6 @@ const testRides = [
          testRideSize: "L",
          isPartner: true,
          availableSizes: [
-          'Carbon 1 Size L',
           'Carbon 1s Size L',
         ],
          businessHours: [
