@@ -51,7 +51,6 @@
       <meta name="theme-color" content="">
       <link rel="canonical" href="{{ canonical_url }}">
       <link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
-      <link rel="preload" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
       <link rel="stylesheet" href="https://use.typekit.net/fzb3fxo.css" onload="this.onload=null;this.rel='stylesheet'">
 
       {%- if settings.favicon != blank -%}
@@ -265,10 +264,8 @@
         }
       {% endstyle %}
 
-      {{ 'global-font-face.css' | asset_url | stylesheet_tag }}
       {{ 'base.css' | asset_url | stylesheet_tag }}
-      {{ 'newStyle.scss.css' | asset_url | stylesheet_tag }}
-      {{ 'component-insurance.css' | asset_url | stylesheet_tag }}
+      {{ 'component.css' | asset_url | stylesheet_tag }}
 
       {%- unless settings.type_body_font.system? -%}
         <link rel="preload" as="font" href="{{ settings.type_body_font | font_url }}" type="font/woff2" crossorigin>
@@ -276,15 +273,6 @@
       {%- unless settings.type_header_font.system? -%}
         <link rel="preload" as="font" href="{{ settings.type_header_font | font_url }}" type="font/woff2" crossorigin>
       {%- endunless -%}
-
-      {%- if settings.predictive_search_enabled -%}
-        <link
-          rel="stylesheet"
-          href="{{ 'component-predictive-search.css' | asset_url }}"
-          media="print"
-          onload="this.media='all'"
-        >
-      {%- endif -%}
 
       <script>
         document.documentElement.className = document.documentElement.className.replace('no-js', 'js');

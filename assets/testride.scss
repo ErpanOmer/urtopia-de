@@ -679,6 +679,7 @@
                 #storepoint-tag-dropdown,
                 #storepoint-radius-dropdown,
                 #stpt-show-more-btn,
+                .mapboxgl-control-container,
                 #storepoint-brand {
                     display: none !important;
                 }
@@ -854,8 +855,8 @@
                         }
                     }
 
-                    input {
-                        margin-bottom: 6px;
+                    select {
+                        margin-top: 6px;
                     }
                     
                 
@@ -939,6 +940,24 @@
 
                     & > [active="true"] {
                         background-color: #F7F7F7;
+                    }
+                }
+
+                .no_result {
+                    position: absolute;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    top: 0;
+                    z-index: 2;
+                    background-color: #fff;
+                    display: none;
+                    align-items: center;
+                    justify-content: center;
+                    flex-direction: column;
+
+                    .my-link {
+                        margin-top: 5%;
                     }
                 }
             }
@@ -1190,7 +1209,7 @@
                 #storepoint-container {
                     #storepoint-map {
                         // position: relative !important;
-                        transform: translateY(100px);
+                        transform: translateY(140px);
 
                         .mapboxgl-popup {
                             max-width: 300px !important;
@@ -1226,6 +1245,10 @@
                             height: 0;
                             overflow: hidden;
                             padding: 0;
+                        }
+
+                        .no_result {
+                            top: -5px;
                         }
                     }
                 }
