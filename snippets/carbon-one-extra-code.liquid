@@ -483,19 +483,23 @@
 	  </div>
 	  <div style="overflow-y: auto;max-height: 550px;">
 	  <div class="sizefit-switch order-flex-row">
+		{% unless hide_balabalabala %}
+			<div class="switch-radio">
+				<input id="tab-1" name="Chord" type="radio" checked />
+				<button class="btn">Medium<br><span>Fit for 170-185 cm</span></button>
+			</div>
+		{% endunless %}
 		<div class="switch-radio">
-		  <input id="tab-1" name="Chord" type="radio" checked />
-		  <button class="btn">Medium<br><span>Fit for 170-185 cm</span></button>
-		</div>
-		<div class="switch-radio">
-		  <input id="tab-2" name="Chord" type="radio" />
+		  <input id="tab-2" name="Chord" type="radio" {% if hide_balabalabala %}
+		  	checked
+		  {% endif %}/>
 		  <button class="btn">Large<br><span>Fit for 180-195 cm</span></button>
 		</div>
 	  </div>
 	  <div class="order-layer-body order-flex-row" style="min-height: 400px">
 		<!-- 内容 -->
 
-		<div id="chord-dom" class="order-flex-row" style="width: 100%">
+		<div id="chord-dom" class="order-flex-row" style="width: 100%;{% if hide_balabalabala %}display: none;{% endif %}">
 		  <div class="sizefit-box">
 			<div class="sizefit-item order-flex-row">
 			  <p>A. Standover height</p>
@@ -544,7 +548,8 @@
 		<div
 		  id="chordx-dom"
 		  class="order-flex-row"
-		  style="width: 100%; display: none"
+		  style="width: 100%; display: none;{% if hide_balabalabala %}display: flex;{% endif %}"
+		  
 		>
 		  <div class="sizefit-box">
 			<div class="sizefit-item order-flex-row">
@@ -637,7 +642,9 @@
 		<div class="tec-spac-b order-flex-row">
 		  <div class="tec-spac-item order-flex-row">
 			<h4>Motor</h4>
-			<p>Carbon 1: 36V 250W(rated), 35 N.m <br>Carbon 1s: 36V 250W(rated), 45 N.m </p>
+			<p>Carbon 1: 36V 250W(rated), 35 N.m {%  unless hide_balabalabala  %}
+				<br>Carbon 1s: 36V 250W(rated), 45 N.m
+			{% endunless %} </p>
 		  </div>
 		  <div class="tec-spac-item order-flex-row">
 			<h4>Speed modes</h4>
@@ -662,7 +669,9 @@
 		<div class="tec-spac-b order-flex-row">
 		  <div class="tec-spac-item order-flex-row">
 			<h4>Weight</h4>
-			<p>Carbon 1:&nbsp;&nbsp;15 kg<br>Carbon 1s: &nbsp;&nbsp;15.8 kg</p>
+			<p>Carbon 1:&nbsp;&nbsp;15 kg {% unless hide_balabalabala %}
+				<br>Carbon 1s: &nbsp;&nbsp;15.8 kg
+			{% endunless %}</p>
 		  </div>
 		  <div class="tec-spac-item order-flex-row">
 			<h4>Payload Capacity</h4>
@@ -682,7 +691,9 @@
 		  </div>
 		  <div class="tec-spac-item order-flex-row">
 			<h4>Gearing</h4>
-			<p>Carbon 1: Gates Carbon Drive™ CDN™ belt(up to 30,000km)<br><br>Carbon 1s: Shimano 7-Speed Rear Drivetrain with ALIVIO Rear Derailleur</p>
+			<p>Carbon 1: Gates Carbon Drive™ CDN™ belt(up to 30,000km) {% unless hide_balabalabala %}
+				<br><br>Carbon 1s: Shimano 7-Speed Rear Drivetrain with ALIVIO Rear Derailleur
+			{% endunless %}</p>
 		  </div>
 		  <div class="tec-spac-item order-flex-row">
 			<h4>Integrated lights</h4>
@@ -926,10 +937,13 @@
 	  const chordDom = document.getElementById("chord-dom");
 	  const chordXDom = document.getElementById("chordx-dom");
   
-	  chordTab.addEventListener("click", function () {
-		chordDom.style.display = "flex";
-		chordXDom.style.display = "none";
-	  });
+	  {% unless hide_balabalabala %}
+		chordTab.addEventListener("click", function () {
+			chordDom.style.display = "flex";
+			chordXDom.style.display = "none";
+		});
+	  {% endunless %}
+
 	  chordXTab.addEventListener("click", function () {
 		chordDom.style.display = "none";
 		chordXDom.style.display = "flex";

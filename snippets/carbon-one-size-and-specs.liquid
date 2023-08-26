@@ -1,4 +1,4 @@
-<div class="size-and-specs">
+<div class="size-and-specs" {{ hide_balabalabala }}>
   <div class="centeral-content">
     <div class="item">
       <div class="u36DemiBold_v2"><img class="down" src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_20413.svg?v=1688982520" alt=""/> Size Guide</div>
@@ -18,20 +18,22 @@
             <div>I. Head tube length</div>
             <div>J. Headset height</div>
           </div>
-          <div class="text">
-            <div class="u17DemiBold_v2">Medium</div>
-            <div>170-185 cm</div>
-            <div>800 mm</div>
-            <div>60 mm</div>
-            <div>1010 mm</div>
-            <div>460 mm</div>
-            <div>1080 mm</div>
-            <div>1810 mm</div>
-            <div>690 mm</div>
-            <div>580 mm</div>
-            <div>170 mm</div>
-            <div>100 mm</div>
-          </div>
+          {% unless hide_balabalabala %}
+            <div class="text">
+              <div class="u17DemiBold_v2">Medium</div>
+              <div>170-185 cm</div>
+              <div>800 mm</div>
+              <div>60 mm</div>
+              <div>1010 mm</div>
+              <div>460 mm</div>
+              <div>1080 mm</div>
+              <div>1810 mm</div>
+              <div>690 mm</div>
+              <div>580 mm</div>
+              <div>170 mm</div>
+              <div>100 mm</div>
+            </div>
+          {% endunless %}
           <div class="text">
             <div class="u17DemiBold_v2">Large</div>
             <div>180-195 cm</div>
@@ -183,7 +185,9 @@
                     <span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-694_">Motor</span>
                   </h3>
                   <p class="sc-jtXEFf jydWoQ pf-695_" data-pf-type="Paragraph">
-                    <span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-697_">Carbon 1: 36V 250W(rated), 35 N.m <br>Carbon 1s: 36V 250W(rated), 45 N.m </span>
+                    <span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-697_">Carbon 1: 36V 250W(rated), 35 N.m {% unless hide_balabalabala %}
+                      <br>Carbon 1s: 36V 250W(rated), 45 N.m
+                    {% endunless %} </span>
                   </p>
                 </div>
               </div>
@@ -255,7 +259,9 @@
                     <span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-736_">Weight</span>
                   </h3>
                   <p class="sc-jtXEFf jydWoQ pf-737_" data-pf-type="Paragraph">
-                    <span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-739_">Carbon 1: &nbsp;&nbsp;15 kg<br>Carbon 1s: &nbsp;&nbsp;15.8 kg</span>
+                    <span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-739_">Carbon 1: &nbsp;&nbsp;15 kg {% unless hide_balabalabala %}
+                      <br>Carbon 1s: &nbsp;&nbsp;15.8 kg
+                    {% endunless %}</span>
                   </p>
                 </div>
               </div>
@@ -310,7 +316,9 @@
                     <span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-772_">Gearing</span>
                   </h3>
                   <p class="sc-jtXEFf jydWoQ pf-773_" data-pf-type="Paragraph">
-                    <span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-775_">Carbon 1: Gates Carbon Drive™ CDN™ belt(up to 30,000km)<br><br>Carbon 1s: Shimano 7-Speed Rear Drivetrain with ALIVIO Rear Derailleur</span>
+                    <span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-775_">Carbon 1: Gates Carbon Drive™ CDN™ belt(up to 30,000km) {% unless hide_balabalabala %}
+                      <br><br>Carbon 1s: Shimano 7-Speed Rear Drivetrain with ALIVIO Rear Derailleur
+                    {% endunless %}</span>
                   </p>
                 </div>
               </div>
