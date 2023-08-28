@@ -63,17 +63,14 @@
 
   .product .emphasize-list li {
       list-style: none;
+      display: flex;
   }
 
-  .product .emphasize-list li > span {
+  .product .emphasize-list li > span:first-child {
       color: rgb(253, 75, 23);
       margin-right: 5px;
       transform: translateY(-1px);
       display: inline-block;
-  }
-
-  .product .emphasize-list li:last-child span {
-    color: transparent;
   }
 
   .__pf_lUQL6LKn .pf-685_,
@@ -263,10 +260,10 @@
             </div>-->
             <ul class="emphasize-list u17Medium_v2">
               <li><span>●</span><span >Include sample bikes with the same quality and appearance as new bikes</span></li>
-              <li><span>●</span>2 year warranty</li>
-              <li><span>●</span>Not avaliable for leasing</li>
-              <li><span>●</span>Model and Style is</li>
-              <li><span>●</span>Carbon1-Carbon Belt-Sirius</li>
+              <li><span>●</span><span>2 year warranty</span></li>
+              <li><span>●</span><span>Not avaliable for leasing</span></li>
+              <li><span>●</span><span>Model and Style is</span></li>
+              <li><span>●</span><span>Carbon1-Carbon Belt-Sirius</span></li>
             </ul>
             <div class="options">
                 {% for option in product.options %}
