@@ -19,21 +19,6 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
 
       <!--<script src="https://www.googleoptimize.com/optimize.js?id=OPT-52Q8D8M"></script>-->
 
-      <!-- Taboola Pixel Code -->
-      <script type='text/javascript'>
-      window._tfa = window._tfa || [];
-      window._tfa.push({notify: 'event', name: 'page_view', id: 1410404});
-      !function (t, f, a, x) {
-            if (!document.getElementById(x)) {
-                t.async = 1;t.src = a;t.id=x;f.parentNode.insertBefore(t, f);
-            }
-      }(document.createElement('script'),
-      document.getElementsByTagName('script')[0],
-      '//cdn.taboola.com/libtrc/unip/1410404/tfa.js',
-      'tb_tfa_script');
-      </script>
-      <!-- End of Taboola Pixel Code -->
-
       
       <script>
       /*** mircosoft clarity ***/
@@ -55,7 +40,6 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
       <meta name="theme-color" content="">
       <link rel="canonical" href="{{ canonical_url }}">
       <link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
-      <link rel="preload" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
       <link rel="stylesheet" href="https://use.typekit.net/fzb3fxo.css" onload="this.onload=null;this.rel='stylesheet'">
 
       {%- if settings.favicon != blank -%}
@@ -231,15 +215,15 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
         }
 
         :root {
-          --sale-color1: #0E8059;
-          --sale-color2: #0E8059;
-          --sale-color3: #0E8059;
-          --sale-color4: #0E8059;
-          --sale-banner-background-image-pc: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_22689_2x_b64db022-159f-4450-b97a-20af765b797e.jpg?v=1691994330');
-          --sale-banner-background-image-mb: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_22690_2x_d44eed89-a847-4252-a053-9bef76b8182a.jpg?v=1691994550');
-          --sale-banner-image-max-width: 550px;
-          --sale-collection-image: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/1_2x_87a91318-7bd8-40b6-9f9c-21aea6eb75d6.png?v=1691740750');
-          --sale-collection-image-max-width: 550px;
+          --sale-color1: #FF7600;
+          --sale-color2: #FFC400;
+          --sale-color3: #FF7600;
+          --sale-color4: #FFC400;
+          --sale-banner-background-image-pc: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_22776_2x_263e75c7-8e33-4626-abb4-460f7810367c.jpg?v=1693189826');
+          --sale-banner-background-image-mb: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_22777_2x_cee3c291-daca-4eeb-8bb8-ca4210d227d6.jpg?v=1693190083');
+          --sale-banner-image-max-width: 380px;
+          --sale-collection-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/6_2x_0db9f436-0d10-46eb-b6ed-96e5e43dfa43.png?v=1693190155');
+          --sale-collection-image-max-width: 360px;
         }
 
         html {
@@ -269,10 +253,8 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
         }
       {% endstyle %}
 
-      {{ 'global-font-face.css' | asset_url | stylesheet_tag }}
       {{ 'base.css' | asset_url | stylesheet_tag }}
-      {{ 'newStyle.scss.css' | asset_url | stylesheet_tag }}
-      {{ 'component-insurance.css' | asset_url | stylesheet_tag }}
+      {{ 'component.css' | asset_url | stylesheet_tag }}
 
       {%- unless settings.type_body_font.system? -%}
         <link rel="preload" as="font" href="{{ settings.type_body_font | font_url }}" type="font/woff2" crossorigin>
@@ -280,15 +262,6 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
       {%- unless settings.type_header_font.system? -%}
         <link rel="preload" as="font" href="{{ settings.type_header_font | font_url }}" type="font/woff2" crossorigin>
       {%- endunless -%}
-
-      {%- if settings.predictive_search_enabled -%}
-        <link
-          rel="stylesheet"
-          href="{{ 'component-predictive-search.css' | asset_url }}"
-          media="print"
-          onload="this.media='all'"
-        >
-      {%- endif -%}
 
       <script>
         document.documentElement.className = document.documentElement.className.replace('no-js', 'js');

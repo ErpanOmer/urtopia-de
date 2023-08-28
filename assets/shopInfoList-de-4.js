@@ -160,6 +160,7 @@ const testRides = [
         isPartner: true,
         availableSizes: [
           'Carbon 1 Size M/L',
+          'Carbon 1s Size L',
           'Chord'
         ],
         businessHours: [
@@ -1224,7 +1225,7 @@ const testRides = [
         phone: '+49 1721532159',
         email: 'maxe-will@t-online.de',
         timezone: "Heringsdorf, Germany (GMT+1)",
-        add: "Dreherstraße 19, 17419 Seebad Ahlbeck",
+        add: "17419 Ahlbeck",
         imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/heringsdorf.webp?v=1692933986",
         testrideSpot: "Heringsdorf",
         testRideSize: "M",
