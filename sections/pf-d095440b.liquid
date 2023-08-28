@@ -56,8 +56,8 @@
                 <div class="pf-judme">{% render "judgeme_widgets", widget_type: "judgeme_preview_badge", jm_style: "", concierge_install: false, product: product %}</div>
             </div>
             <div class="u30DemiBold_v2 mb6">{{ product.price | money }}</div>
-            <div class="sale mb6" style="background-image: linear-gradient(-90deg,var(--sale-color3),var(--sale-color4));">
-                <div class="u20DemiBold_v2" style="color: var(--sale-color4);">{{ product.price | minus: settings.carbon_ebike_discount_price | money }} NOW</div>
+            <div class="sale mb6" style="background-image: linear-gradient(-90deg,var(--sale-color4),var(--sale-color3));">
+                <div class="u20DemiBold_v2" style="color: var(--sale-color3);">{{ product.price | minus: settings.carbon_ebike_discount_price | money }} NOW</div>
                 <div class="u17DemiBold_v2">with {{ settings.sale_name }}</div>
             </div>
         </div>
@@ -125,8 +125,8 @@
                     <div class="pf-judme">{% render "judgeme_widgets", widget_type: "judgeme_preview_badge", jm_style: "", concierge_install: false, product: product %}</div>
                 </div>
                 <div class="u30DemiBold_v2 mb6">{{ product.price | money }}</div>
-                <div class="sale mb12" style="background-image: linear-gradient(-90deg,var(--sale-color3),var(--sale-color4));">
-                    <div class="u20DemiBold_v2" style="color: var(--sale-color4);">{{ product.price | minus: settings.carbon_ebike_discount_price | money }} NOW</div>
+                <div class="sale mb12" style="background-image: linear-gradient(-90deg,var(--sale-color4),var(--sale-color3));">
+                    <div class="u20DemiBold_v2" style="color: var(--sale-color3);">{{ product.price | minus: settings.carbon_ebike_discount_price | money }} NOW</div>
                     <div class="u17DemiBold_v2">with {{ settings.sale_name }}</div>
                 </div>
             </div>
@@ -154,7 +154,7 @@
                 <div class="u11Light_v2">*Not available with leasing</div>
             </div>-->
             <div class="sale_acc mb12 gear" id="sale_acc">
-              <div class="u14Light_v2" style="background-image: linear-gradient(-90deg,var(--sale-color3),var(--sale-color4));">And get <span style="font-weight: 600;">  {{ settings.carbon_ebike_free_accessories_price | money_without_trailing_zeros }} </span> Accessories for <span class="u20DemiBold_v2"> Free</span></div>
+              <div class="u14Light_v2" style="background-image: linear-gradient(-90deg,var(--sale-color4),var(--sale-color3));">And get <span style="font-weight: 600;">  {{ settings.carbon_ebike_free_accessories_price | money_without_trailing_zeros }} </span> Accessories for <span class="u20DemiBold_v2"> Free</span></div>
                 {% assign accessories_map_1s = "7633738596568,7633738662104" | split: ',' %}
                 <div class="accs_1s">
                     {% for acc in accessories_map_1s %}
@@ -185,7 +185,7 @@
                       <div class="text-decoration">{{ all_products['esim-card'].price | money_without_trailing_zeros }}/year</div>
                   </div>
               </div>
-            <div class="count-down mb12 mobileHide" style="color: var(--sale-color4);">
+            <div class="count-down mb12 mobileHide" style="color: var(--sale-color3);">
                 <div class="u17Medium_v2">{{ settings.carbon_ebike_discount_price | money_without_trailing_zeros }} off + {{ settings.carbon_ebike_free_accessories_count }} Free Accessories Ends in：</div>
                 <img src="http://i.countdownmail.com/2mmaed.gif">
             </div>
@@ -230,7 +230,7 @@
                 </div>
             </div>       
             <div class="buttons">
-                <div class="count-down mb12 pcHide" style="color: var(--sale-color4);">
+                <div class="count-down mb12 pcHide" style="color: var(--sale-color3);">
                     <div class="u17Medium_v2">{{ settings.carbon_ebike_discount_price | money_without_trailing_zeros }} off + {{ settings.carbon_ebike_free_accessories_count }} Free Accessories Ends in：</div>
                     <img src="http://i.countdownmail.com/2mmaed.gif">
                 </div>

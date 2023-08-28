@@ -37,9 +37,9 @@ const global_config = {
     // 邮件弹窗 延迟弹出时间，单位:s
     show_delay_time: 10,
     // 邮件 pc 背景图
-    background_imgae_pc: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20220619-untitled-0871_2x_e63191d7-5f9d-4404-b894-f4b28129f24b.jpg?v=1690854939',
+    background_imgae_pc: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/DSC9850_2x_2c7acf3e-9256-4fbc-9f01-7a5baa78d8ee.jpg?v=1693190776&width=500',
     // 邮件 mobile 背景图
-    background_imgae_mb: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20220619-untitled-0871_2x_91cbff9f-2300-461f-8787-99af11d73d76.jpg?v=1690854946'
+    background_imgae_mb: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/DSC9850_2x_d5965f74-e288-45be-9b68-dd7283a3da05.jpg?v=1693190845&width=375'
   },
 
   // carbon 车配置

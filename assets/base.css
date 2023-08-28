@@ -3815,12 +3815,12 @@ body .jBox-Modal {
   border-radius: 10px
 }
 
-.subscribe-container .subscribe .u30DemiBold_v2 {
-  margin: 4% 0 14%
-}
-
 .subscribe-container .subscribe .u17Light_v2 {
   margin-bottom: 30px
+}
+
+.subscribe-container .subscribe .u17Medium_v2 {
+  margin: 10% 0;
 }
 
 .subscribe-container .subscribe .email {
@@ -3969,20 +3969,17 @@ body .jBox-Modal {
       line-height: 21px
   }
 
-  .subscribe-container .subscribe .u30DemiBold_v2 {
-      font-size: 20px
-  }
-
-  .subscribe-container .subscribe .u30DemiBold_v2 .u72DemiBold_v2 {
-      font-size: 48px
-  }
-
-  .subscribe-container .subscribe .u30DemiBold_v2 .u24Medium_v2 {
-      font-size: 20px
-  }
-
   .subscribe-container .subscribe .u20DemiBold_v2 {
       font-size: 18px
+  }
+
+  .subscribe-container .subscribe .u17Medium_v2 {
+    font-size: 14px;
+    margin: 5% 0;
+  }
+
+  .subscribe-container .subscribe .u17Medium_v2 .u72DemiBold_v2 {
+    font-size: 42px;
   }
 
   .subscribe-container .subscribe img {
