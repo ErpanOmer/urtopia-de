@@ -356,6 +356,11 @@ article {
     .#{$prefix}width-fill {
         width: 100%;
     }
+
+    .#{$prefix}text-wrap {
+        word-break: break-word;
+        white-space: break-spaces;
+    }
 }
 
 
