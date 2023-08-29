@@ -172,11 +172,11 @@ article {
         }
 
         .#{$prefix}margin-top-bottom-#{$i * $size-gap } {
-            margin: $i * $size-gap + px 0;
+            margin: $i * $size-gap + px auto;
         }
 
         .#{$prefix}margin-left-right-#{$i * $size-gap } {
-            margin: 0 $i * $size-gap + px;
+            margin: auto $i * $size-gap + px;
         }
 
         .#{$prefix}padding-#{$i * $size-gap } {
@@ -200,11 +200,11 @@ article {
         }
 
         .#{$prefix}padding-left-right-#{$i * $size-gap } {
-            padding: 0 $i * $size-gap + px;
+            padding: auto $i * $size-gap + px;
         }
 
         .#{$prefix}padding-top-bottom-#{$i * $size-gap } {
-            padding: $i * $size-gap + px 0;
+            padding: $i * $size-gap + px auto;
         }
 
         .#{$prefix}grid-column-gap-#{$i * $size-gap } {
