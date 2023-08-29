@@ -363,12 +363,16 @@ article {
         height: 100%;
     }
 
-    .#{$prefix}height-viewport {
+    .#{$prefix}height-fill-viewport {
         height: 100dvh;
         height: 100vh;
     }
 
     .#{$prefix}width-fill {
+        width: 100%;
+    }
+
+    .#{$prefix}width-fill-viewport {
         width: 100%;
     }
 
