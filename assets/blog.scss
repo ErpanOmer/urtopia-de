@@ -364,8 +364,8 @@ article {
     }
 
     .#{$prefix}height-fill-viewport {
-        height: 100dvh;
         height: 100vh;
+        height: 100dvh;
     }
 
     .#{$prefix}width-fill {
