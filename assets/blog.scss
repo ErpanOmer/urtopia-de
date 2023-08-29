@@ -323,6 +323,10 @@ article {
         flex-direction: column;
     }
 
+    .#{$prefix}flex-row {
+        flex-direction: row;
+    }
+
     .#{$prefix}flex-align-center {
         align-items: center;
     }
