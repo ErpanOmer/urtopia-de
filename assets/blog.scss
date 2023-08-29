@@ -366,6 +366,10 @@ article {
         word-break: break-word;
         white-space: break-spaces;
     }
+
+    .#{$prefix}text-nowrap {
+        text-wrap: nowrap;
+    }
 }
 
 
