@@ -373,7 +373,8 @@ article {
     }
 
     .#{$prefix}width-fill-viewport {
-        width: 100%;
+        width: 100vw;
+        width: 100dvw;
     }
 
     .#{$prefix}text-wrap {
