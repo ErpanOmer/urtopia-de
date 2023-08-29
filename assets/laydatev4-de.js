@@ -16,7 +16,7 @@ const bike_sizes = [
   {
     id: 1,
     name: 'Carbon 1',
-    fit: 'Fit for 170-180 cm',
+    fit: 'Fit for 165-180 cm',
     size: 'M',
     img: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18409_2x_87c499be-99e5-457b-869b-963e270f0ea1.jpg?v=1683614780'
   },
@@ -37,7 +37,7 @@ const bike_sizes = [
   {
     id: 4,
     name: 'Carbon 1s',
-    fit: 'Fit for 170-180 cm',
+    fit: 'Fit for 165-180 cm',
     size: 'M',
     img: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20230614-215228.png?v=1686750766'
   },
