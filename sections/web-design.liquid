@@ -369,7 +369,7 @@
 
 <script>
     $('article [copy]').on('click', e => {
-        console.log(e.target)
+        console.log($(e.target).text())
         {% comment %} navigator.clipboard.writeText($(e.target).closest('tr').find('td:first-child').text()); {% endcomment %}
     })
 </script>
