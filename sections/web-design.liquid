@@ -368,7 +368,8 @@
 </article>
 
 <script>
-    $('table tr td').on('click', e => {
-        navigator.clipboard.writeText($(e.target).closest('tr').find('td:first-child').text());
+    $('[copy]').on('click', e => {
+        console.log(e.target)
+        {% comment %} navigator.clipboard.writeText($(e.target).closest('tr').find('td:first-child').text()); {% endcomment %}
     })
 </script>
