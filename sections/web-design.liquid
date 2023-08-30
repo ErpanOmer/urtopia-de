@@ -834,6 +834,7 @@
     color: #000;
     border-radius: 6px;
     font-size: 12px;
+    animation: mini-dialog-show .4s;
   }
 </style>
 
@@ -844,8 +845,8 @@
     copyTips.classList.add('copy-tips')
     document.body.appendChild(copyTips)
 
-    const x = e.clientX
-    const y = e.clientY
+    const x = e.clientX + 20
+    const y = e.clientY - 20
 
     console.log(e)
 
