@@ -836,16 +836,28 @@
 </style>
 
 <script>
-  const copyTips = document.createElement('div')
-  copyTips.classList.add('copy-tips')
-  document.body.appendChild(copyTips)
 
   $('article [copy]').on('click', e => {
+    const copyTips = document.createElement('div')
+    copyTips.classList.add('copy-tips')
+    document.body.appendChild(copyTips)
+
     const x = e.pageX
     const y = e.pageY
 
     console.log(x, y)
 
+    $(copyTips).css({
+      left: `${x}px`,
+      top: `${y}px`,
+    })
+
+    $(copyTips).text('copy')
+
     navigator.clipboard.writeText($(e.target).text())
+
+    setTimeout(() => {
+      copyTips.parentNode.removeChild(copyTips);
+    }, 2000)
   })
 </script>
