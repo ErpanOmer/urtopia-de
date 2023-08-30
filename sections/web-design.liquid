@@ -827,12 +827,14 @@
 </article>
 
 <script>
+  const copyTips = document.createElement('div')
+
   $('article [copy]').on('click', e => {
     const x = e.pageX
     const y = e.pageY
 
     console.log(x, y)
-    
+
     navigator.clipboard.writeText($(e.target).text())
   })
 </script>
