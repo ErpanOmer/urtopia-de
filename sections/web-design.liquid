@@ -841,6 +841,10 @@
 <script>
 
   $('article [copy]').on('click', e => {
+    if (document.querySelector('.copy-tips')) {
+      return
+    }
+
     const copyTips = document.createElement('div')
     copyTips.classList.add('copy-tips')
     document.body.appendChild(copyTips)
