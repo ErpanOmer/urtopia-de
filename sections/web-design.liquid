@@ -845,8 +845,8 @@
     copyTips.classList.add('copy-tips')
     document.body.appendChild(copyTips)
 
-    const x = e.clientX + 20
-    const y = e.clientY - 20
+    const x = e.clientX + 10
+    const y = e.clientY - 40
 
     console.log(e)
 
@@ -855,7 +855,7 @@
       top: `${y}px`,
     })
 
-    $(copyTips).text('copy')
+    $(copyTips).text('copied!')
 
     navigator.clipboard.writeText($(e.target).text())
 
