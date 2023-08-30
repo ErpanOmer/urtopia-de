@@ -89,10 +89,12 @@ const global_config = {
           "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18705.png?v=1688113259"
         ],
         Lyra: [
-          'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18700.png?v=1688113259'
+          'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/lyra_side.png?v=1693322636',
+          'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/lyra_front.png?v=1693322636'
         ],
         "Midnight in Paris": [
-          "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18701.png?v=1688113259"
+          "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/might_night_in_pairs_side.png?v=1693322636",
+          'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/midnight_in_pairs_front.png?v=1693322636'
         ],
         commonSwiper: [
           "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/14031687412304_.pic_hd_eb7f49ff-842e-4ab5-8736-f1b98393fc17.png?v=1688113259",
