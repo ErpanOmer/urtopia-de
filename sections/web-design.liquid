@@ -856,8 +856,8 @@
 
     navigator.clipboard.writeText($(e.target).text())
 
-    setTimeout(() => {
+    {% comment %} setTimeout(() => {
       copyTips.parentNode.removeChild(copyTips);
-    }, 2000)
+    }, 2000) {% endcomment %}
   })
 </script>
