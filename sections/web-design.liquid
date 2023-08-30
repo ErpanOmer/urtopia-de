@@ -828,6 +828,8 @@
 
 <script>
   const copyTips = document.createElement('div')
+  copyTips.addClass('copy-tips')
+  document.body.appendChild(copyTips)
 
   $('article [copy]').on('click', e => {
     const x = e.pageX
