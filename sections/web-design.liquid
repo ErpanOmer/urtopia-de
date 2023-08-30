@@ -840,7 +840,7 @@
 
 <script>
 
-  $('article [copy]').on('click', throttle(e => {
+  $('article [copy]').on('click', e => {
     const copyTips = document.createElement('div')
     copyTips.classList.add('copy-tips')
     document.body.appendChild(copyTips)
@@ -862,5 +862,5 @@
     setTimeout(() => {
       copyTips.parentNode.removeChild(copyTips);
     }, 1000)
-  }, 500))
+  })
 </script>
