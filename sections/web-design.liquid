@@ -828,7 +828,11 @@
 
 <script>
   $('article [copy]').on('click', e => {
-    console.log(e)
+    const x = e.pageX
+    const y = e.pageY
+
+    console.log(x, y)
+    
     navigator.clipboard.writeText($(e.target).text())
   })
 </script>
