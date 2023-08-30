@@ -859,12 +859,12 @@
       top: `${y}px`,
     })
 
-    $(copyTips).text('copied!')
+    $(copyTips).text('copied !')
 
     navigator.clipboard.writeText($(e.target).text())
 
-    {% comment %} setTimeout(() => {
+    setTimeout(() => {
       copyTips.parentNode.removeChild(copyTips);
-    }, 1000) {% endcomment %}
+    }, 1000)
   })
 </script>
