@@ -360,6 +360,18 @@ function addToCartInsurance(parse, show = false) {
       console.log(res1);
       res1.key = "";
 
+      if (res1.message && res1.status) {
+        $('.product .js-fake-add-to-cart').before('<span style="color:red;" class="error-tip u14Medium_v2">Your order quantity has reached our stock limit</span>')
+
+        setTimeout(() => {
+          $('.product .buttons .error-tip').remove()
+        }, 8000)
+
+        return !show && changeAddToCartText(parse, 0);
+      }
+
+
+
       if (parse=="buynow") {
         window.location.href="/checkout"
       } else {
@@ -378,7 +390,7 @@ function addToCartInsurance(parse, show = false) {
       }
     })
     .catch((err) => {
-      throw new Error(err);
+      
     });
   }
 }
