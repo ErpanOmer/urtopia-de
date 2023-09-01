@@ -50,7 +50,7 @@ const global_config = {
       carbon1s_send_accessories_variant_ids: ['43866498891992', '43871557779672'],
     },
     // carbon 车默认显示 variant_id, 只有 url 上的 variant 参数为空的时候生效
-    default_variant: 42615025500376,
+    default_variant: 42615025303768,
     // 产品系列图
     product_images: {
       "Carbon Belt": {

@@ -493,7 +493,7 @@ const testRides = [
         name: 'Supercycles',
         phone: '+498945145610',
         email: 'info@supercycles.de',
-        timezone: "Mainz, Germany (GMT+1)",
+        timezone: "München, Germany (GMT+1)",
         add: "Am Mitterfeld 381829 München",
         imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/IMG_0440.jpg?v=1680923045",
         testrideSpot: "München",
@@ -510,6 +510,29 @@ const testRides = [
           "12:00-12:00,12:00-19:00",
           "09:00-12:00,12:00-13:00",
         ],
+      },
+      {
+        name: 'Michael Kerber',
+        phone: '',
+        email: 'michael@kerber-privat.de',
+        timezone: "München, Germany (GMT+1)",
+        add: "Maria-Eich-Str. , D 82166 Graefelfing",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Munchen.jpg?v=1679406972",
+        testrideSpot: "München",
+        testRideSize: "L",
+        availableSizes: [
+          'Carbon 1 Size L',
+        ],
+        businessHours: [
+          "13:00-20:00",
+          "13:00-20:00",
+          "13:00-20:00",
+          "13:00-20:00",
+          "13:00-20:00",
+          "13:00-20:00",
+          "13:00-20:00",
+        ],
+        disableDate: createdisableDates(100, ['2023-9-1','2023-9-2','2023-9-3','2023-9-4','2023-9-5','2023-9-6','2023-9-7','2023-9-8','2023-9-17','2023-9-18','2023-9-19','2023-9-20','2023-9-21','2023-9-22','2023-9-23','2023-9-24','2023-9-25','2023-9-26','2023-9-27','2023-9-28','2023-9-29','2023-9-30','2023-10-1','2023-10-2','2023-10-3','2023-10-10','2023-10-11']),
       }
     ]
   },
@@ -1309,6 +1332,41 @@ const testRides = [
           "",
         ],
         isPartner: true
+      },
+    ]
+  },
+   {
+    city: 'Troisdorf-Kriegsdorf',
+    cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Bonn-center-2016-01.jpg?v=1693473942',
+    series: [
+      'Urtopia Carbon 1',
+      'Urtopia Carbon 1s',
+      'Chord',
+    ],
+    stores: [
+      {
+        name: 'Satking GmbH',
+        phone: '+49 (0) 2241 / 88109 -25',
+        email: 'b.aydogdu@satking.de',
+        timezone: "Troisdorf-Kriegsdorf, Germany (GMT+1)",
+        add: "Junkersring 18, 53844 Troisdorf-Kriegsdorf",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Satking_GmbH.jpg?v=1693473391",
+        testrideSpot: "Troisdorf-Kriegsdorf",
+        testRideSize: "M",
+        availableSizes: [
+          'Carbon 1 Size M/L',
+          'Carbon 1s Size M/L',
+          'Chord',
+          ],
+        businessHours: [
+          "",
+          "9:00-18:00",
+          "9:00-18:00",
+          "9:00-18:00",
+          "9:00-18:00",
+          "9:00-18:00",
+          "",
+        ],
       },
     ]
   },
