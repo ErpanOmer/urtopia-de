@@ -1825,20 +1825,17 @@
     })
 
     // 如果有查询参数
-    if (search.variant) {
-        const find = findVariantFromId(search.variant)
-        changeVariant(find.option1, find.option2, find.option3) 
-    } else {
-      const default_variant = global_config.carbon_order_page_config.default_variant
-      let find = findVariantFromId(default_variant)
+    function pageInit() {
+      const variant_id = search.variant || global_config.carbon_order_page_config.default_variant
+      let find = findVariantFromId(variant_id)
   
-      // 如果默认 variant 也不可用，那晒显出能用的variant
       if (!find || !find.available) {
         find = findAvailableVariant()
       }
   
-        changeVariant(find.option1, find.option2, find.option3) 
-    }
+      // 如果默认 variant 也不可用，那晒显出能用的variant
+      changeVariant(find.option1, find.option2, find.option3) 
+  }
 
 
 
