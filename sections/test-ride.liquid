@@ -656,7 +656,7 @@
             iterator.style.display = 'none'
 
             for (const result of results) {
-                const name1 = result.querySelector('.storepoint-name').innerText
+                const name1 = $(result.querySelector('.storepoint-name')).text()
                 const name2 = iterator.getAttribute('name')
 
                 console.log('name1', name1, 'name2', name2)
