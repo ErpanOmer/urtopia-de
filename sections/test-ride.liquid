@@ -235,7 +235,6 @@
     
                       const findDisable = disableDate.find(i => getDateString(getData(i)) === str)    
                       if (findDisable) {
-                        // console.log(str, timestamp, find, getNowDate(find))
                         return findAvalibaleDate(timestamp + oneDay)
                       }
     
@@ -244,8 +243,6 @@
     
                   store.findAvalibaleDate = () => {
                     const time = getData(findAvalibaleDate(getData())).toString().split(' ')
-
-                    // console.log(time)
     
                     return `${time[2]}. ${time[1]}`
                   }
@@ -260,9 +257,7 @@
             }
         }
     
-      function CalendarOpen(shopPoint, shop, isSpecDay = false, timetp = 0) {
-        console.log(arguments)
-    
+      function CalendarOpen(shopPoint, shop, isSpecDay = false, timetp = 0) {    
         laydate.render({
           elem: '#urtopia-calendar',
           lang: 'en',
@@ -367,9 +362,6 @@
 
         // 然后再合并
         const tags = default_tags.slice(0).concat(custom_tags.slice(0)).filter(Boolean)
-
-        console.log('tags', tags)
-
         if (tags.length === 2 && !$('.mapboxgl-ctrl-geocoder--input').val()) {
             return reset()
         }
@@ -431,8 +423,6 @@
         }
 
         const value = e.target.value
-
-        console.log('value', value)
     }
 
     function onFocus() {
@@ -515,7 +505,6 @@
             const elem = $(store).find('.storepoint-name')
 
             const name = elem.text()
-            console.time(`store: ${name}`)
             const info = findStore(name)
             // 如果搜不到 店铺
             if (!info) {
@@ -573,14 +562,8 @@
 
                 for (const iterator of locations) {
                     iterator.classList.remove('selected')
-
-                    console.log('item', item.getAttribute('name'), $(iterator).find('.storepoint-name').text())
-
                     if (item.getAttribute('name').replace(/\s*/g, "") === $(iterator).find('.storepoint-name').text().replace(/\s*/g, "")) {
                         iterator.classList.add('selected')
-
-                        console.log('iterator', iterator)
-
                         iterator.click()
 
                         break
@@ -602,8 +585,6 @@
             if (!options.find(option => option.getAttribute('city') === info.testrideSpot )) {
                 options.push(option)
             }
-            
-            console.timeEnd(`store: ${name}`)
         }
 
         // 首字母排序
@@ -632,9 +613,6 @@
         for (const bike of bike_options) {
             bike_select.appendChild(bike)
         }
-        
-
-        console.log('optgroup', optgroup)
 
         storeList.appendChild(items)
         storeList.appendChild(no_result)
