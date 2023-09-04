@@ -242,13 +242,13 @@
                       return currentWeek === AvailableWeek ? str : findAvalibaleDate(timestamp + (oneDay * findOffset([currentWeek, AvailableWeek])))
                   }
     
-                  store.findAvalibaleDate = () => {
+                  store.findAvalibaleDate = (() => {
                     const time = getData(findAvalibaleDate(getData())).toString().split(' ')
 
                     // console.log(time)
     
                     return `${time[2]}. ${time[1]}`
-                  }
+                  })()
 
                   // 把所属国家也加上
                   store.country = city.country || 'Deutschland'
