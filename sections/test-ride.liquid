@@ -37,7 +37,7 @@
     <div class="map" id="map">
         <div class="centeral-content">
             <div class="u36DemiBold_v2">Choose your location</div>
-            <div id="storepoint-container" data-tags="euro,Test Ride" data-map-id="162f21804990ff"></div>
+            <div id="storepoint-container" data-tags="euro" data-map-id="162f21804990ff"></div>
         </div>
     </div>
     <div class="explained">
@@ -656,10 +656,10 @@
             iterator.style.display = 'none'
 
             for (const result of results) {
-                const name1 = result.querySelector('.storepoint-name').innerText
-                const name2 = iterator.getAttribute('name')
+                const name1 = $(result.querySelector('.storepoint-name')).text() || ''
+                const name2 = iterator.getAttribute('name') || ''
 
-                if (name1 === name2) {
+                if (name1.replace(/\s*/g, "") === name2.replace(/\s*/g, "")) {
                     iterator.style.display = 'block'
                     break
                 }
