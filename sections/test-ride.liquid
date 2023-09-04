@@ -512,11 +512,10 @@
         // document.querySelector('.mapboxgl-ctrl-geocoder--input').addEventListener('focus', onFocus)
 
         for (const store of stores) {
-            console.time(`store: ${name}`)
             const elem = $(store).find('.storepoint-name')
 
             const name = elem.text()
-            
+            console.time(`store: ${name}`)
             const info = findStore(name)
             // 如果搜不到 店铺
             if (!info) {
