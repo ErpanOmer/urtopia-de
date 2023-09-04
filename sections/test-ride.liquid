@@ -238,6 +238,10 @@
                       const timestamp = +getData(str)
                       const currentWeek = getData(str).getDay()
                       const AvailableWeek = findAvailableWeek(currentWeek)
+
+                      if (AvailableWeek === -1) {
+                        return findAvalibaleDate(+new Date())
+                      }
     
                       const findDisable = disableDate.find(i => getDateString(getData(i)) === str)    
                       if (findDisable) {
