@@ -214,18 +214,6 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
           box-sizing: inherit;
         }
 
-        :root {
-          --sale-color1: #FF7600;
-          --sale-color2: #FFC400;
-          --sale-color3: #FF7600;
-          --sale-color4: #FFC400;
-          --sale-banner-background-image-pc: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_22776_2x_263e75c7-8e33-4626-abb4-460f7810367c.jpg?v=1693189826');
-          --sale-banner-background-image-mb: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_22777_2x_cee3c291-daca-4eeb-8bb8-ca4210d227d6.jpg?v=1693190083');
-          --sale-banner-image-max-width: 380px;
-          --sale-collection-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/6_2x_0db9f436-0d10-46eb-b6ed-96e5e43dfa43.png?v=1693190155');
-          --sale-collection-image-max-width: 360px;
-        }
-
         html {
           box-sizing: border-box;
           font-size: calc(var(--font-body-scale) * 62.5%);
@@ -252,6 +240,8 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
           }
         }
       {% endstyle %}
+
+      {% render 'sale-color' %}
 
       {{ 'base.css' | asset_url | stylesheet_tag }}
       {{ 'component.css' | asset_url | stylesheet_tag }}
