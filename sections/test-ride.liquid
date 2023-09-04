@@ -512,12 +512,12 @@
         // document.querySelector('.mapboxgl-ctrl-geocoder--input').addEventListener('focus', onFocus)
 
         for (const store of stores) {
+            console.time(`store: ${name}`)
             const elem = $(store).find('.storepoint-name')
 
             const name = elem.text()
-            console.time(`store: ${name}`)
+            
             const info = findStore(name)
-            console.timeEnd(`store: ${name}`)
             // 如果搜不到 店铺
             if (!info) {
                 continue
@@ -602,7 +602,7 @@
                 options.push(option)
             }
             
-
+            console.timeEnd(`store: ${name}`)
         }
 
         // 首字母排序
