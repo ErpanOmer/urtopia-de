@@ -1,0 +1,12 @@
+{
+  "sections": {
+    "carbon1-on-grover": {
+      "type": "carbon1-on-grover",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "carbon1-on-grover"
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "sections": {
+    "carbon1-on-mediamarkt": {
+      "type": "carbon1-on-mediamarkt",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "carbon1-on-mediamarkt"
+  ]
+}

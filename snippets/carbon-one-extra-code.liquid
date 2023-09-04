@@ -114,7 +114,7 @@
 	  flex: 1;
 	  height: 340px;
 	  margin-left: 50px;
-	  background-image: url("https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20230413-101607.jpg?v=1681352192") ;
+	  background-image: url("https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230823-113031.png?v=1692761477") ;
 	  background-position: center;
 	  background-size: auto 100%;
 	  background-repeat: no-repeat;
@@ -483,19 +483,23 @@
 	  </div>
 	  <div style="overflow-y: auto;max-height: 550px;">
 	  <div class="sizefit-switch order-flex-row">
+		{% unless hide_balabalabala %}
+			<div class="switch-radio">
+				<input id="tab-1" name="Chord" type="radio" checked />
+				<button class="btn">Medium<br><span>Fit for 165-180 cm</span></button>
+			</div>
+		{% endunless %}
 		<div class="switch-radio">
-		  <input id="tab-1" name="Chord" type="radio" checked />
-		  <button class="btn">Medium<br><span>Fit for 170-185 cm</span></button>
-		</div>
-		<div class="switch-radio">
-		  <input id="tab-2" name="Chord" type="radio" />
-		  <button class="btn">Large<br><span>Fit for 180-195 cm</span></button>
+		  <input id="tab-2" name="Chord" type="radio" {% if hide_balabalabala %}
+		  	checked
+		  {% endif %}/>
+		  <button class="btn">Large<br><span>Fit for 175-195 cm</span></button>
 		</div>
 	  </div>
 	  <div class="order-layer-body order-flex-row" style="min-height: 400px">
 		<!-- 内容 -->
 
-		<div id="chord-dom" class="order-flex-row" style="width: 100%">
+		<div id="chord-dom" class="order-flex-row" style="width: 100%;{% if hide_balabalabala %}display: none;{% endif %}">
 		  <div class="sizefit-box">
 			<div class="sizefit-item order-flex-row">
 			  <p>A. Standover height</p>
@@ -544,7 +548,8 @@
 		<div
 		  id="chordx-dom"
 		  class="order-flex-row"
-		  style="width: 100%; display: none"
+		  style="width: 100%; display: none;{% if hide_balabalabala %}display: flex;{% endif %}"
+		  
 		>
 		  <div class="sizefit-box">
 			<div class="sizefit-item order-flex-row">
@@ -616,7 +621,7 @@
 		  </div>
 		  <div class="tec-spac-item order-flex-row">
 			<h4>Connectivity</h4>
-			<p>eSIM with 4G, Bluetooth & WiFi</p>
+			<p>Connect Service with 4G, Bluetooth & WiFi</p>
 		  </div>
 		  <div class="tec-spac-item order-flex-row">
 			<h4>IoT sensors</h4>
@@ -626,13 +631,20 @@
 			<h4>App</h4>
 			<p>iOS & Android</p>
 		  </div>
+		  <div class="tec-spac-item order-flex-row">
+			<h4>Connect Service</h4>
+			<p>1 year included*</p>
+		  </div>
+		  <div style="width: 30%"></div>
 		</div>
 
 		<h3 class="tec-spac-t">Power</h3>
 		<div class="tec-spac-b order-flex-row">
 		  <div class="tec-spac-item order-flex-row">
 			<h4>Motor</h4>
-			<p>Carbon 1: 36V 250W(rated), 35 N.m <br>Carbon 1s: 36V 250W(rated), 45 N.m </p>
+			<p>Carbon 1: 36V 250W(rated), 35 N.m {%  unless hide_balabalabala  %}
+				<br>Carbon 1s: 36V 250W(rated), 45 N.m
+			{% endunless %} </p>
 		  </div>
 		  <div class="tec-spac-item order-flex-row">
 			<h4>Speed modes</h4>
@@ -657,7 +669,9 @@
 		<div class="tec-spac-b order-flex-row">
 		  <div class="tec-spac-item order-flex-row">
 			<h4>Weight</h4>
-			<p>Carbon 1:&nbsp;&nbsp;15 kg<br>Carbon 1s: &nbsp;&nbsp;15.8 kg</p>
+			<p>Carbon 1:&nbsp;&nbsp;15 kg {% unless hide_balabalabala %}
+				<br>Carbon 1s: &nbsp;&nbsp;15.8 kg
+			{% endunless %}</p>
 		  </div>
 		  <div class="tec-spac-item order-flex-row">
 			<h4>Payload Capacity</h4>
@@ -665,7 +679,7 @@
 		  </div>
 		  <div class="tec-spac-item order-flex-row">
 			<h4>Size</h4>
-			<p>Medium, Large (see Size Guide)</p>
+			<p>{% unless hide_balabalabala %}Medium, {% endunless %}Large (see Size Guide)</p>
 		  </div>
 		  <div class="tec-spac-item order-flex-row">
 			<h4>Body material</h4>
@@ -677,7 +691,9 @@
 		  </div>
 		  <div class="tec-spac-item order-flex-row">
 			<h4>Gearing</h4>
-			<p>Carbon 1: Gates Carbon Drive™ CDN™ belt(up to 30,000km)<br><br>Carbon 1s: Shimano 7-Speed Rear Drivetrain with ALIVIO Rear Derailleur</p>
+			<p>Carbon 1: Gates Carbon Drive™ CDN™ belt(up to 30,000km) {% unless hide_balabalabala %}
+				<br><br>Carbon 1s: Shimano 7-Speed Rear Drivetrain with ALIVIO Rear Derailleur
+			{% endunless %}</p>
 		  </div>
 		  <div class="tec-spac-item order-flex-row">
 			<h4>Integrated lights</h4>
@@ -707,7 +723,9 @@
 			<h4>Frame (accessory) bag</h4>
 			<p>4mm Allen wrench, 15mm combination wrench, front-wheel quick-release device</p>
 		  </div>
-		  <div style="width: 30%"></div>
+		  <div style="width: 100%;">
+			<p class="u11Light_v2" style="font-size: 12px;color: #999;line-height: 1.5em;">*This service will be automatically activated once the bike is activated and bound to your account. We provide free access in the first year, with the following terms to be renewed by subscription to this service. A code will be sent to your email which can be used to renew the service in our App.</span>
+		  </div>
 		</div>
 	  </div>
 	</div>
@@ -919,10 +937,13 @@
 	  const chordDom = document.getElementById("chord-dom");
 	  const chordXDom = document.getElementById("chordx-dom");
   
-	  chordTab.addEventListener("click", function () {
-		chordDom.style.display = "flex";
-		chordXDom.style.display = "none";
-	  });
+	  {% unless hide_balabalabala %}
+		chordTab.addEventListener("click", function () {
+			chordDom.style.display = "flex";
+			chordXDom.style.display = "none";
+		});
+	  {% endunless %}
+
 	  chordXTab.addEventListener("click", function () {
 		chordDom.style.display = "none";
 		chordXDom.style.display = "flex";

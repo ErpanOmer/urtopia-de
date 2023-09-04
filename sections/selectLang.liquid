@@ -3,37 +3,6 @@
 <!-- Cozy Country Redirect Optimization Code Start -->
 
 <script defer crossorigin="anonymous" src="https://connect.facebook.net/de_DE/sdk.js#xfbml=1&version=v14.0" nonce="nryZARoa"></script>
-<!--outbrain tracking -->
-<script data-obct type = "text/javascript">
-  /** DO NOT MODIFY THIS CODE**/
-  !function(_window, _document) {
-    var OB_ADV_ID = '004724a1910ea66ba6f18eea401c197373';
-    if (_window.obApi) {
-      var toArray = function(object) {
-        return Object.prototype.toString.call(object) === '[object Array]' ? object : [object];
-      };
-      _window.obApi.marketerId = toArray(_window.obApi.marketerId).concat(toArray(OB_ADV_ID));
-      return;
-    }
-    var api = _window.obApi = function() {
-      api.dispatch ? api.dispatch.apply(api, arguments) : api.queue.push(arguments);
-    };
-    api.version = '1.1';
-    api.loaded = true;
-    api.marketerId = OB_ADV_ID;
-    api.queue = [];
-    var tag = _document.createElement('script');
-    tag.async = true;
-    tag.src = '//amplify.outbrain.com/cp/obtp.js';
-    tag.type = 'text/javascript';
-    var script = _document.getElementsByTagName('script')[0];
-    script.parentNode.insertBefore(tag, script);
-  }(window, document);
-
-  obApi('track', 'PAGE_VIEW');
-</script>
-    <!--outbrain tracking -->
-
 
 <div class="selectLangModal" id="selectLangModal">
   <div class="selectLangContainer">
@@ -54,7 +23,7 @@
             English
           </li>
           <li data-code="de" data-value="German" onclick="updateLang(this)">German</li>
-          <li data-code="fr" data-value="French" onclick="updateLang(this)">French</li>
+          <!--<li data-code="fr" data-value="French" onclick="updateLang(this)">French</li>-->
         </ul>
       </div>
       <button type="button" onclick="goToPage()"><span>Sel<span>ect</span></button>
@@ -215,7 +184,7 @@
     const findLang = allOptions.find(tl => tl.dataset.value === code)
 
     if (active.dataset.value === code) {
-      return setTimeout(showEmailDialog, global_config.subscribe_email_show_delay_time* 1000)
+      return setTimeout(showEmailDialog, global_config.subscribe_email_dialog_config.show_delay_time* 1000)
     }
 
     setTimeout(() => {
@@ -238,13 +207,10 @@
     },
   };
   window.onload = () => {
-
-    console.log('加载了');
     let langCode = window.CozyCountryRedirect.country;
     let locale = window.Shopify.locale;
 
-    {% comment %} let langCookie = storage.get('selectLang') || '' {% endcomment %}
-    let langCookie = sessionStorage.getItem('selectLang') || ''
+    let langCookie = sessionStorage.getItem('selectLang') || storage.get('selectLang')
     
 
     console.log('当前国家', langCode, '当前语言', locale, 'langCookie', langCookie);
@@ -252,10 +218,7 @@
     if (langCookie) {
       gotoLocation(langCookie)
     } else {
-      let notShowModal =
-        (langCode === 'de' && locale === 'de') ||
-        (langCode === 'fr' && locale === 'fr') ||
-        (langCode !== 'de' && langCode !== 'fr' && locale === 'en');
+      let notShowModal = (langCode === 'de' && locale === 'de') || (langCode !== 'de' && locale === 'en');
 
       let recommendCode = langmap[langCode]?.code || 'en';
       let recommendVal = langmap[langCode]?.value || 'English';
@@ -265,7 +228,7 @@
       if (!notShowModal && !window.__SHOPIFY_CLI_ENV__ && !sessionStorage.getItem('selectLangDialog')) {
         document.querySelector('#selectLangModal').classList.add('open');
       } else {
-        setTimeout(showEmailDialog, global_config.subscribe_email_show_delay_time* 1000)
+        setTimeout(showEmailDialog, global_config.subscribe_email_dialog_config.show_delay_time* 1000)
       }
     }
   };
@@ -292,7 +255,7 @@
     sessionStorage.setItem('selectLangDialog', 'selectLangDialog')
     // 如果是单纯的关闭，直接退出去
     if (isClose) {
-      return setTimeout(showEmailDialog, global_config.subscribe_email_show_delay_time* 1000)
+      return setTimeout(showEmailDialog, global_config.subscribe_email_dialog_config.show_delay_time* 1000)
     }
 
     var d = new Date();

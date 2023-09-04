@@ -10,13 +10,34 @@
             <div class="u17Medium_v2">
                 Take your first step in to experience the stunning appearance and smooth riding. Book a test ride today with our partners and ambassadors! Their extensive expertise and enthusiasm will help you out with any questions in and out.
             </div>
-            <!--<div class="my-button my-button-origin">Learn more</div>-->
         </div>
     </div>
+    <!--<div class="golf-banner">
+        <div class="centeral-content">
+            <div class="u48DemiBold_v2">Experience <br class="pcHide">Urtopia test rides <br>+ free coffee!</div>
+            <div class="u24Medium_v2">
+                <div>
+                <span>Café:</span>
+                <span class="">&nbsp;&nbsp;Saras Wohnzimmer Münster</span>
+                </div>
+                <div>
+                    <span>Location:</span>
+                    <span class="">&nbsp;&nbsp;GrevenerStr. 173 Münster</span>
+                </div>
+                <div>
+                    <span>Time:</span>
+                    <span class="">&nbsp;&nbsp;18.August-19.August 13:00 -18:00</span>
+                </div>
+            </div>
+            <div class="flex-1 pcHide"></div>
+            <div class="my-button my-button-black mobileHide">Test-Ride Now</div>
+            <div class="my-button my-button-black pcHide" style="    background-color: #E5AD61;">Test-Ride Now</div>
+        </div>
+    </div>-->
     <div class="map" id="map">
         <div class="centeral-content">
             <div class="u36DemiBold_v2">Choose your location</div>
-            <div id="storepoint-container" data-tags="de,Test Ride" data-map-id="162f21804990ff"></div>
+            <div id="storepoint-container" data-tags="euro" data-map-id="162f21804990ff"></div>
         </div>
     </div>
     <div class="explained">
@@ -96,6 +117,7 @@
             <div class="videos">
                 <div>
                     <video muted playsinline autoplay loop
+                        poster="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230808-200228.jpg?v=1691496166"
                         src="https://player.vimeo.com/progressive_redirect/playback/814462353/rendition/1080p/file.mp4?loc=external&signature=11383a8e982e4f086f6b10b252f533c2841151e1cf6f9f5feeefaf79431cd15c"></video>
                 </div>
                 <div>
@@ -103,6 +125,7 @@
                     <span class="u20DemiBold_v2 pcHide">Full Carbon Fiber <br> Weight only 15 kg</span>
                     <span class="u20DemiBold_v2">Try the advantage <br> of a lightweight e-bike</span>
                     <video muted playsinline autoplay loop
+                        poster="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230808-200219.jpg?v=1691496166"
                         src="https://player.vimeo.com/progressive_redirect/playback/814462300/rendition/1080p/file.mp4?loc=external&signature=35b1c5e5b7c43b3e18e042ebe5593b25890c8d8af27c31f0cb73ca5dd9483dd7"></video>
                     <span class="u20DemiBold_v2">The riding experience <br> will not let you down</span>
                 </div>
@@ -166,7 +189,7 @@
     let select_city_count = 0
     let select_store_count = 0
 
-    const getData = function (date = new Date()) {
+    const getData = (date = new Date()) => {
         if (typeof date !== 'object') {
             if (typeof date === 'string') {
                 date = date.replace(/-/g, '/')
@@ -195,48 +218,87 @@
                   }
     
     const oneDay = 24 * 60 * 60 * 1000
+    const now = +new Date()
     
     const findStore = name => {
             for (const city of testRides) {
                 for (const store of city.stores) {
-                  const businessHours = store.businessHours
+                  const businessHours = (store.businessHours || []).filter(Boolean)
                   const disableDate = store.disableDate || []
                   // 查找可预约到星期几
-                  const findAvailableWeek = d => businessHours[d] ? d : findAvailableWeek(d === 6 ? 0 : ++d)
+
+                  const findAvailableWeek = d => {
+                    if (businessHours[d]) {
+                        return d
+                    }
+
+                    for (let i = d; i < d + 7; i++) {
+
+                        if (businessHours[i % 7]) {
+                            return i % 7
+                        }
+                    }
+
+                    return -1
+                  }
+
+                  const findDisable = str => {
+                    for (let i = 0; i < disableDate.length; i++) {
+                        if (getDateString(getData(disableDate[i])) === str) {
+                            return true
+                        }
+                    }
+                  }
+
+
+                  //const findAvailableWeek = d => businessHours[d] ? d : findAvailableWeek(d === 6 ? 0 : ++d)
                   // 可用日期计算
-                  const findAvalibaleDate = date => {
+                  const findAvalibaleDate = (date, count = 0) => {
+                    console.log('count', count)
+                     if (!businessHours.length) {
+                        return now
+                     }
+
+                     if (count > 30) {
+                        return date
+                     }
+
                       const str = getDateString(getData(date))
                       const timestamp = +getData(str)
+
+                      if (findDisable(str)) {
+                        return findAvalibaleDate(timestamp + oneDay, ++count)
+                      }
+
+
                       const currentWeek = getData(str).getDay()
                       const AvailableWeek = findAvailableWeek(currentWeek)
-    
-                      const findDisable = disableDate.find(i => getDateString(getData(i)) === str)    
-                      if (findDisable) {
-                        // console.log(str, timestamp, find, getNowDate(find))
-                        return findAvalibaleDate(timestamp + oneDay)
+
+                      if (AvailableWeek === -1) {
+                        return now
                       }
     
-                      return currentWeek === AvailableWeek ? str : findAvalibaleDate(timestamp + (oneDay * findOffset([currentWeek, AvailableWeek])))
+                      return currentWeek === AvailableWeek ? str : findAvalibaleDate(timestamp + (oneDay * findOffset([currentWeek, AvailableWeek])), ++count)
                   }
     
                   store.findAvalibaleDate = () => {
                     const time = getData(findAvalibaleDate(getData())).toString().split(' ')
-
-                    // console.log(time)
+                    console.log(store.name)
     
                     return `${time[2]}. ${time[1]}`
                   }
+
+                  // 把所属国家也加上
+                  store.country = city.country || 'Deutschland'
     
-                    if (store.name.replace(/ /g, '') === name.replace(/ /g, '')) {
+                    if (store.name.replace(/\s*/g, "") === name.replace(/\s*/g, "")) {
                         return store
                     }
                 }
             }
         }
     
-      function CalendarOpen(shopPoint, shop, isSpecDay = false, timetp = 0) {
-        console.log(arguments)
-    
+      function CalendarOpen(shopPoint, shop, isSpecDay = false, timetp = 0) {    
         laydate.render({
           elem: '#urtopia-calendar',
           lang: 'en',
@@ -322,14 +384,28 @@
     b.parentNode.insertBefore(a, b);
 
     function reset() {
+        $('#storepoint-search .forms select').val('')
+        custom_tags = []
+
         // STOREPOINT.set_tags(['DE'])
         STOREPOINT.reset()
-        document.querySelector('.storepoint-tag-checkbox[value="de"]').click()
+        document.querySelector('.storepoint-tag-checkbox[value="euro"]').click()
         document.querySelector('.storepoint-tag-checkbox[value="test%20ride"]').click()
+        
     }
 
-    function refresh(tags = []) {
-        tags.push('DE', 'Test Ride')
+    const default_tags = ['euro', 'Test Ride']
+    let custom_tags = []
+
+    function refresh(index, tag) {
+        // 先覆盖先有的值
+        custom_tags[index] = tag
+
+        // 然后再合并
+        const tags = default_tags.slice(0).concat(custom_tags.slice(0)).filter(Boolean)
+        if (tags.length === 2 && !$('.mapboxgl-ctrl-geocoder--input').val()) {
+            return reset()
+        }
 
         STOREPOINT.set_tags(tags)
         STOREPOINT.reload_locations()
@@ -357,19 +433,12 @@
     }
 
     function onSelect(e) {
-        e.srcElement && reset()
+        //e.srcElement && reset()
 
         const city = e.target.value
 
-        // const items = Array.from(document.querySelectorAll('#storepoint-panel .items .item'))
+        refresh(0, city)
 
-        // for (const iterator of items) {
-        //     iterator.style.display = !city || iterator.getAttribute('city') === city ? 'block' : 'none'
-        // }
-
-        city ? refresh([city]) : refresh()
-
-        e.target.style.color = city ? '#000' : '#a1a1a1'
 
         if (city) {
             last_select_city = city
@@ -377,20 +446,24 @@
         }
     }
 
+    function onSelectBike (e) {
+        const bike = e.target.value
+
+        refresh(1, bike)
+    }
+
     function onInput(e) {
         const select = document.querySelector('#storepoint-search .forms select')
 
         if (select.value) {
             select.value = ''
-            select.style.color = '#a1a1a1'
+            // select.style.color = '#a1a1a1'
             onSelect({
                 target: select
             })
         }
 
         const value = e.target.value
-
-        console.log('value', value)
     }
 
     function onFocus() {
@@ -399,6 +472,14 @@
         // if (!input.value) {
         //     reset()
         // }
+    }
+
+    function getBikeAndSeries (availableSizes = []) {
+        return availableSizes.map(size => {
+            const [bike, series] = size.split(' ')
+
+            return `${bike}${series ? ' ' + series : ''}`
+        })
     }
 
     function insertCustomElements(target) {
@@ -410,7 +491,10 @@
 
         // 商店列表
         const items = document.createElement("div")
+        const no_result = document.createElement('div')
         items.classList.add('items')
+        no_result.classList.add('no_result')
+        no_result.innerHTML = `<div>No locations found near you</div><div>but we'd love to change that. </div><div class="my-link" onclick="reset()">Show all results?</div>`
 
         // 搜索父表单
         const form = document.createElement("div")
@@ -419,12 +503,6 @@
         // 选择框
         const select = document.createElement('select')
         select.setAttribute('placeholder', '')
-        select.style.color = '#a1a1a1'
-
-        // 输入框
-        // const input = document.createElement('input')
-        // input.setAttribute('placeholder', 'Search…')
-
         // 首选项
         const option = document.createElement('option')
         // option.setAttribute('disabled', true)
@@ -433,16 +511,36 @@
         option.innerText = '--- Select your city ---'
 
         select.appendChild(option)
+
+        // 车型选择框
+        const bike_select = document.createElement('select')
+        bike_select.setAttribute('placeholder', '')
+
+        const bike_option = document.createElement('option')
+        bike_option.setAttribute('selected', true)
+        bike_option.setAttribute('value', '')
+        bike_option.innerText = '--- Select bike ---'
+
+        bike_select.appendChild(bike_option)
+
+        // 输入框
+        // const input = document.createElement('input')
+        // input.setAttribute('placeholder', 'Search…')
+
+    
         // option 选项，作为排序所用
         const options = []
+        const bike_options = []
 
         // form.appendChild(input)
         form.appendChild(select)
+        form.appendChild(bike_select)
 
         select.addEventListener('change', onSelect)
-        document.querySelector('button[aria-label="Clear"]').addEventListener('click', reset)
-        document.querySelector('.mapboxgl-ctrl-geocoder--input').addEventListener('input', debounce(onInput, 300))
-        document.querySelector('.mapboxgl-ctrl-geocoder--input').addEventListener('focus', onFocus)
+        bike_select.addEventListener('change', onSelectBike)
+        document.querySelector('button[aria-label="Clear"]').addEventListener('click', () => refresh(2))
+        // document.querySelector('.mapboxgl-ctrl-geocoder--input').addEventListener('input', debounce(onInput, 300))
+        // document.querySelector('.mapboxgl-ctrl-geocoder--input').addEventListener('focus', onFocus)
 
         for (const store of stores) {
             const elem = $(store).find('.storepoint-name')
@@ -458,6 +556,7 @@
 
             const item = document.createElement("div")
             const option = document.createElement('option')
+            const bike_option = document.createElement('option')
 
             item.classList.add('item')
             item.setAttribute('index', $(store).attr('id'))
@@ -466,7 +565,21 @@
 
             option.innerText = info.testrideSpot
             option.setAttribute('city', info.testrideSpot)
+            option.setAttribute('country', info.country)
 
+            for (const b of getBikeAndSeries(info.availableSizes)) {
+                if (bike_options.find(i => i.getAttribute('bike') === b)) {
+                    continue
+                }
+
+
+                bike_option.innerText = b
+                bike_option.setAttribute('bike', b)
+                bike_options.push(bike_option)
+            }
+
+
+            info.avalibaleDate = info.findAvalibaleDate()
             item.innerHTML = `
                 <div class="name">${info.name}<span>${info.isPartner ? ' - Ambassadors' : ' - Partner Store'}</span><i><svg class="icon" style="width: 1em;height: 1em;vertical-align: middle;fill: currentColor;overflow: hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5533"><path d="M748.3 533.3c0.1-0.2 0.3-0.4 0.4-0.6 0.2-0.3 0.5-0.7 0.7-1 0.1-0.1 0.2-0.3 0.2-0.4 0.3-0.4 0.5-0.8 0.8-1.2l0.1-0.1c2.6-4.6 4.1-9.6 4.6-14.7v-0.2c0-0.5 0.1-0.9 0.1-1.4v-0.6-1-1-0.6c0-0.5-0.1-0.9-0.1-1.4v-0.2c-0.4-5.1-2-10.1-4.6-14.7l-0.1-0.1c-0.2-0.4-0.5-0.8-0.8-1.3-0.1-0.1-0.2-0.3-0.2-0.4-0.2-0.3-0.4-0.7-0.7-1-0.1-0.2-0.3-0.4-0.4-0.6-0.2-0.3-0.4-0.5-0.6-0.8-0.2-0.2-0.4-0.5-0.6-0.7-0.1-0.1-0.2-0.2-0.3-0.4-0.1-0.1-0.2-0.2-0.2-0.3-0.2-0.3-0.5-0.5-0.7-0.8-0.2-0.2-0.4-0.4-0.5-0.6l-0.7-0.7-0.6-0.6c-0.2-0.2-0.5-0.4-0.7-0.7l-0.6-0.6-0.3-0.3-414.6-347.6c-15.2-12.7-38-10.7-50.7 4.4-12.7 15.2-10.7 38 4.4 50.7L663.2 512 281.6 832.2c-15.2 12.7-17.2 35.6-4.4 50.7 12.7 15.2 35.6 17.2 50.7 4.4l414.4-347.7 0.3-0.3 0.6-0.6c0.2-0.2 0.5-0.4 0.7-0.7l0.6-0.6 0.7-0.7c0.2-0.2 0.4-0.4 0.5-0.6 0.2-0.3 0.5-0.5 0.7-0.8 0.1-0.1 0.2-0.2 0.2-0.3 0.1-0.1 0.2-0.2 0.3-0.4 0.2-0.2 0.4-0.5 0.6-0.7 0.4-0.1 0.6-0.4 0.8-0.6z" fill="#333333" p-id="5534"></path></svg></i></div>
                 <div class="address gray">${info.add}</div>
@@ -474,7 +587,7 @@
                 <ul>
                     ${info.availableSizes ? info.availableSizes.map(i => `<li class="gray">${i}</li>`).join('') : `<li class="gray">Carbon One Size ${info.testRideSize}</li>`}
                 </ul>
-                <div class="time gray"><img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/calendar_2x_af8d9192-1ff9-43f0-aba6-3547b1129854.jpg?v=1680938382"/> Earliest available time: <div>&nbsp;${info.findAvalibaleDate()}</div></div>
+                <div class="time gray"><img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/calendar_2x_af8d9192-1ff9-43f0-aba6-3547b1129854.jpg?v=1680938382"/> Earliest available time: <div>&nbsp;${info.avalibaleDate}</div></div>
             `
             
             // 点击item 代理到真实的store
@@ -490,14 +603,8 @@
 
                 for (const iterator of locations) {
                     iterator.classList.remove('selected')
-
-                    console.log('item', item.getAttribute('name'), $(iterator).find('.storepoint-name').text())
-
-                    if (item.getAttribute('name') === $(iterator).find('.storepoint-name').text()) {
+                    if (item.getAttribute('name').replace(/\s*/g, "") === $(iterator).find('.storepoint-name').text().replace(/\s*/g, "")) {
                         iterator.classList.add('selected')
-
-                        console.log('iterator', iterator)
-
                         iterator.click()
 
                         break
@@ -518,18 +625,38 @@
 
             if (!options.find(option => option.getAttribute('city') === info.testrideSpot )) {
                 options.push(option)
-                {% comment %} select.appendChild(option) {% endcomment %}
             }
         }
 
         // 首字母排序
         options.sort((a, b) => a.getAttribute('city').localeCompare(b.getAttribute('city')))
 
+        // select group
+        const optgroup = []
         for (const option of options) {
-            select.appendChild(option)
+            const country = option.getAttribute('country')
+            // find
+            let group = optgroup.find(o => o.getAttribute('label') === country)
+
+            if (!group) {
+                group = document.createElement('optgroup')
+                group.setAttribute('label', country)
+                optgroup.push(group)
+            }
+
+            group.appendChild(option)
+        }
+
+        for (const group of optgroup) {
+            select.appendChild(group)
+        }
+
+        for (const bike of bike_options) {
+            bike_select.appendChild(bike)
         }
 
         storeList.appendChild(items)
+        storeList.appendChild(no_result)
         forms.appendChild(form)
 
         target.parentNode.appendChild(storeList)
@@ -542,21 +669,27 @@
     }
 
     function observerItems(mutationsList) {
+        const no_result = document.querySelector('#storepoint-panel .no_result')
         const results = Array.from(document.querySelectorAll('#storepoint-results-container .storepoint-location'))
         const items = Array.from(document.querySelectorAll('#storepoint-panel .items .item'))
+        no_result.style.display = 'none'
 
         for (const iterator of items) {
             iterator.style.display = 'none'
 
             for (const result of results) {
-                const name1 = result.querySelector('.storepoint-name').innerText
-                const name2 = iterator.getAttribute('name')
+                const name1 = $(result.querySelector('.storepoint-name')).text() || ''
+                const name2 = iterator.getAttribute('name') || ''
 
-                if (name1 === name2) {
+                if (name1.replace(/\s*/g, "") === name2.replace(/\s*/g, "")) {
                     iterator.style.display = 'block'
                     break
                 }
             }
+        }
+
+        if (results.length === 0 && document.querySelector('#storepoint-results-container .storepoint-no-results')) {
+            no_result.style.display = 'flex'
         }
     }
 
@@ -578,25 +711,56 @@
         document.querySelector('.mapboxgl-popup .mapboxgl-popup-content').style.display = 'none'
         const href = document.querySelector('#storepoint-map .storepoint-location-popup .storepoint-popup-directions').getAttribute('href')
 
-        $(popup).append(`
-            <div class="map-popup">
-                <img src="${store.imgUrl}"/>
-                <div class="infos">
-                    <div class="name">${store.name}</div>
-                    ${store.stories? `<a href="${store.stories.blogUrl}" class="address gray my-link">${store.stories.urlText}</a><div class="available" style="margin-bottom: -6px;">Add:</div>` : ''}
-                    <div class="address gray">${store.add}</div>
-                    <div class="available">Available Model:</div>
-                    <ul>
-                        ${store.availableSizes ? store.availableSizes.map(i => `<li class="gray">${i}</li>`).join('') : `<li class="gray">Carbon One Size ${store.testRideSize}</li>`}
-                    </ul>
-                    <div class="time gray"><img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/calendar_2x_af8d9192-1ff9-43f0-aba6-3547b1129854.jpg?v=1680938382"/> Earliest available time: <div>&nbsp;${store.findAvalibaleDate()}</div></div>
-                    <div class="buttons">
-                        <a class="my-button my-button-black" onclick="booknow('${store.name}')">Book Now</a>
-                        <a class="my-button my-button-white" style="margin-left: 6px;" target="_blank" href="${href}">Direction</a>
+        if (store.noBook) {
+            $(popup).append(`
+                <div class="map-popup">
+                    <img src="${store.imgUrl}"/>
+                    <div class="infos nobook">
+                        <div class="name">${store.name}</div>
+                        <div class="available">Available Model:</div>
+                        <ul>
+                            ${store.availableSizes ? store.availableSizes.map(i => `<li class="gray">${i}</li>`).join('') : `<li class="gray">Carbon One Size ${store.testRideSize}</li>`}
+                        </ul>
+                        <div class="contact">
+                            <div>
+                                <span class="u14DemiBold_v2">Email: </span>
+                                <span class="u14Light_v2">${store.email}</span>
+                            </div>
+                            <div>
+                                <span class="u14DemiBold_v2">Phone: </span>
+                                <span class="u14Light_v2">${store.phone}</span>
+                            </div>
+                            <div>
+                                <span class="u14DemiBold_v2">Add: </span>
+                                <span class="u14Light_v2">${store.add}</span>
+                            </div>
+                        </div>
+                        <div class="u14DemiBold_v2">Please contact the Ambassadors directly to arrange test ride</div>
                     </div>
                 </div>
-            </div>
-        `)
+            `)
+
+        } else {
+            $(popup).append(`
+                <div class="map-popup">
+                    <img src="${store.imgUrl}"/>
+                    <div class="infos">
+                        <div class="name">${store.name}</div>
+                        ${store.stories? `<a href="${store.stories.blogUrl}" class="address gray my-link">${store.stories.urlText}</a><div class="available" style="margin-bottom: -6px;">Add:</div>` : ''}
+                        <div class="address gray">${store.add}</div>
+                        <div class="available">Available Model:</div>
+                        <ul>
+                            ${store.availableSizes ? store.availableSizes.map(i => `<li class="gray">${i}</li>`).join('') : `<li class="gray">Carbon One Size ${store.testRideSize}</li>`}
+                        </ul>
+                        <div class="time gray"><img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/calendar_2x_af8d9192-1ff9-43f0-aba6-3547b1129854.jpg?v=1680938382"/> Earliest available time: <div>&nbsp;${store.avalibaleDate}</div></div>
+                        <div class="buttons">
+                            <a class="my-button my-button-black" onclick="booknow('${store.name}')">Book Now</a>
+                            <a class="my-button my-button-white" style="margin-left: 6px;" target="_blank" href="${href}">Direction</a>
+                        </div>
+                    </div>
+                </div>
+            `)
+        }
     }
 
     observerElement('#storepoint-container').then(r => {
@@ -642,37 +806,37 @@
 
 
     const sale_store = {
-        name: 'Golf & Bike',
-        phone: '+4917632496651',
-        email: 'info@golfclubhosel.de',
+        name: 'Saras Wohnzimmer Münster',
+        phone: '+0174 9610700',
+        email: 'wbeurich@muenster.de',
         timezone: "Mainz, Germany (GMT+1)",
-        add: "Höseler Str. 147, 42579 Heiligenhaus, Germany",
-        imgUrl: "https://cdn.shopifycdn.net/s/files/1/0633/2068/6808/files/20230607-142007.jpg?v=1686118943",
-        testrideSpot: "Berlin",
-        testRideSize: "M, Chord",
+        add: "GrevenerStr. 173 Münster",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230815-192709.jpg?v=1692098846",
+        testrideSpot: "Münster",
+        testRideSize: "M/L",
         isPartner: true,
         availableSizes: [
-          'Carbon One Size M',
+          'Carbon One Size M/L',
           'Chord'
         ],
-        isAutoSelected: true,
+        //isAutoSelected: true,
         businessHours: [
-          "09:00-16:00",
           "",
           "",
           "",
           "",
           "",
-          "",
+          "13:00-18:00",
+          "13:00-18:00",
         ],
-        disableDate: createdisableDates(100, ['2023-6-18']),
+        disableDate: createdisableDates(100, [], '2023-8-20'),
       }
 
     // banner 按钮
-    $('.testride .banner .my-button').on('click', () => {
-        // booknow(sale_store)
+    $('.testride .golf-banner .my-button').on('click', () => {
+        booknow(sale_store)
 
-        location.href = '/blogs/blog/urtopia-is-gear-up-for-eurobike-2023'
+        //location.href = '/blogs/blog/urtopia-is-gear-up-for-eurobike-2023'
     })
 
     search.from_home_page && booknow(sale_store)

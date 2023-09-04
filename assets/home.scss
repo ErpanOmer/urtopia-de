@@ -97,85 +97,56 @@
             background: center center/cover no-repeat;
         }
 
-
-        // 常规banner
-        .common {
-            background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230418-105138.jpg?v=1681786322');
-
-            .centeral-content {
-                &>div {
-                    &:last-child {
-                        max-width: 500px;
-                        text-align: left;
-                    }
-                }
-            }
-
-            .right {
-                .u60DemiBold_v2 {
-                    margin: 10px 0 110px;
-                }
-            }
-        }
-
-
-        // maksim banner
-        .maksim {
-            background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230418-110500.jpg?v=1681787114');
-
-            .centeral-content {
-                &>div {
-                    &:last-child {
-                        max-width: 550px;
-                    }
-                }
-            }
-
-            .right {
-                .u48DemiBold_v2 {
-                    margin: 16px 0 136px;
-                }
-            }
-        }
-
       .summer-sale {
-            background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_21039_2x_1cb9b026-5642-49ed-9914-abb3e6630212.jpg?v=1688695332');
+            background-image: var(--sale-banner-background-image-pc);
 
             .centeral-content {
                 // height: 85%;
                 
                 &>div {
                     & > img {
-                        max-width: 318px;
+                        max-width: var(--sale-banner-image-max-width);
                     }
 
                     .u36DemiBold_v2 {
-                        margin: 20px 0 60px;
+                        margin: 40px 0;
                     }
                 }
             }
         }
 
-        .leasing {
-            background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_20984_2x_94ab1de8-17d3-48cd-b2f3-1ec58ed8098e.jpg?v=1686661143');
+        .unknown {
+            background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_21247_2x_7cd40516-8883-4f7c-b773-324efb138fcd.jpg?v=1689407517');
 
             .centeral-content {
+                img {
+                    max-width: 640px;
+                }
+
+                .u36DemiBold_v2 {
+                    margin: 30px 0 100px;
+                }
+            }
+        }
+
+      .strava {
+            background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_21253_2x_945b0603-6617-4e75-8180-997dd03fc967.jpg?v=1689664830');
+
+            .centeral-content {
+                height: 42%;
+
                 & > div {
-                    &:last-child {
-                        flex: 1;
+                    text-align: center;
+                    justify-content: center;
+                    align-items: center;
 
-                        .imgaes {
-                            display: grid;
-                            grid-template-columns: 1fr 1fr;
-                            grid-template-rows: 60px;
-                            grid-gap: 40px;
-                            margin: 70px 0 140px;
+                    img {
+                        max-height: 54px;
+                        width: auto;
+                    }
 
-                            img {
-                                width: auto;
-                                max-height: 60px;
-                            }
-                        }
+                    .u24Medium_v2 {
+                        margin: 32px 0 40px;
                     }
                 }
             }
@@ -196,7 +167,7 @@
             margin-top: 20px;
 
             img {
-                transform: translateY(15%);
+                transform: translateY(30px);
             }
         }
     }
@@ -219,98 +190,120 @@
 }
 
 
-.home-page-media {
-    display: flex;
-    height: 340px;
-    width: 100%;
-    flex-direction: column;
-    align-items: center;
-    padding: 75px 0;
-    box-sizing: border-box;
+.page-media {
     background-color: #f7f8fa;
 
-    .texts {
-        flex: 1;
-        font: normal normal bold 30px/40px Urbane;
-        display: flex;
-        align-items: center;
-        flex-direction: column;
+    .centeral-content {
+        background-color: #f7f8fa;
 
-        div {
-            animation-duration: 0.5s;
-            animation-timing-function: ease-out;
-        }
+        .home-page-media {
+            display: flex;
+            height: 340px;
+            width: 100%;
+            flex-direction: column;
+            align-items: center;
+            padding: 75px 0;
+            box-sizing: border-box;
+        
+            .texts {
+                flex: 1;
+                font: normal normal bold 30px/40px Urbane;
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+                text-align: center;
+        
+                div {
+                    animation-duration: 0.5s;
+                    animation-timing-function: ease-out;
+                }
+        
+                .toTop {
+                    opacity: 1;
+                    animation-name: toTop;
+                    transform: translateY(-40px);
+                }
+        
+                .toBottom {
+                    opacity: 0;
+                    animation-name: toBottom;
+                    transform: translateY(40px);
+                }
+            }
+        
+            .logos {
+                display: flex;
+                align-items: center;
+                justify-content: space-evenly;
+                width: 100%;
+                flex-wrap: wrap;
 
-        .toTop {
-            opacity: 1;
-            animation-name: toTop;
-            transform: translateY(-40px);
-        }
-
-        .toBottom {
-            opacity: 0;
-            animation-name: toBottom;
-            transform: translateY(40px);
-        }
-    }
-
-    .logos {
-        img {
-            height: 48px;
-            width: auto;
-            margin: 0 39px;
-            opacity: 0.5;
-
-            &[active] {
-                opacity: 1;
+                img {
+                    width: auto;
+                    opacity: 0.5;
+                    margin: 0 24px 24px;
+                    max-height: 48px;
+                    height: unset;
+        
+                    &[active] {
+                        opacity: 1;
+                    }
+                }
             }
         }
     }
 }
 
+.test-ride {
+    margin-bottom: 120px;
 
-.home-page-media-mb {
-    padding-top: 65px;
-    padding-bottom: 65px;
-    background-color: #f7f8fa;
-    overflow: hidden;
+    .centeral-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
 
-    .swiper-slide {
-        box-sizing: border-box;
-        padding: 0 10%;
-          display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
+        &>div {
+            padding-bottom: 100%;
+            position: relative;
 
-        img {
-            height: 48px;
-          width: auto;
+            &>div {
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                height: 100%;
+                width: 100%;
+                background-color: #F7F8FA;
+
+                &:first-child {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: flex-start;
+                    padding: 0 10%;
+
+                }
+
+                .u20DemiBold_v2 {
+                    margin: 24px 0 48px;
+                }
+            }
+
+            #storepoint-tag-dropdown,
+            #storepoint-search,
+            #storepoint-panel {
+                display: none !important;
+            }
+
+            #storepoint-map,
+            #storepoint-container,
+            #storepoint-map canvas {
+                width: 100% !important;
+                height: 100% !important;
+                max-height: 100% !important;
+                border: none;
+            }
         }
-
-        .u20Medium {
-            font-weight: 600;
-            margin: 20px 0 40px;
-            font-size: 22px;
-            line-height: 26px;
-        }
-    }
-
-    .swiper-pagination {
-        position: static;
-    }
-
-    .swiper-pagination-bullet {
-        height: 6px;
-        width: 6px;
-    }
-
-    .swiper-pagination-bullet-active {
-        width: 30px;
-        height: 6px;
-        border-radius: 5px;
-        transition: all .3s;
     }
 }
 
@@ -370,15 +363,16 @@
                 }
             }
 
-            // .buttons {
-            //     a {
-            //         margin: 0 12px 12px 0;
-            //     }
+            .buttons {
+                a {
+                     margin:0;
+                       width: 100%;
+                 }
 
-            //     & > a + a {
-            //         margin: 0;
-            //     }
-            // }
+                & > a + a {
+                     margin-top: 12px;
+                 }
+             }
         }
 
 
@@ -387,122 +381,73 @@
                 background-position-y: top;
             }
 
-            // 常规banner
-            .common {
-                background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230418-102832.png?v=1681784932');
-
-                .right {
-                    padding: 20vw 0;
-                    color: #000;
-
-                    .u24Medium_v2 {
-                        font-size: 17px;
-                    }
-
-                    .u60DemiBold_v2 {
-                        font-size: 30px;
-                        margin-bottom: 0;
-                        // margin: 10px 0 110px;
-                    }
-                }
-            }
-
-
-            .maksim {
-                background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_20869_2x_095b2a64-3bee-4b82-a920-f596bd11b508.jpg?v=1681788172');
-
-                .right {
-                    padding: 10vw 0 20vw;
-
-                    .u48DemiBold_v2 {
-                        font-size: 36px;
-                        margin: 0;
-                    }
-                }
-            }
-
-            .spring-sale {
-                background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18586_2x_1f62765a-3051-463a-a6d0-9d9f6fdbb0b7.jpg?v=1687281118');
-
-                .centeral-content {
-                    height: 100%;
-                    align-items: unset;
-
-                    &>div {
-                        padding: 12vw 0 18vw;
-
-                        img {
-                            max-width: 250px;
-                            // transform: translate(-15%);
-                        }
-
-                        .u56DemiBold_v2 {
-                            font-size: 26px;
-                        }
-
-                        .u48Medium_v2,
-                        .u36DemiBold_v2 {
-                            font-size: 20px;
-                        }
-
-                        .u36DemiBold_v2 {
-                            margin: 20px 0 0;
-                        }
-                    }
-                }
-            }
-
           .summer-sale {
-                background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/prime_day_2x_3115957c-1fdb-4af1-90bd-988b22081918.jpg?v=1688696134');
+            background-image: var(--sale-banner-background-image-mb);
 
                 .centeral-content {
                     height: 100%;
                     align-items: unset;
 
                     &>div {
-                        padding: 6vw 0 18vw;
+                        padding: 6vw 0 8vw;
                         align-items: center;
                         text-align: center;
 
                         & > img {
-                            max-width: 192px;
+                            max-width: var(--sale-banner-image-max-width-mb);
                         }
     
                         .u36DemiBold_v2 {
                             font-size: 20px;
-                            margin: 10px 0 0;
+                            margin-top: 20px;
                         }
                     }
                 }
             }
 
-            .leasing {
-                background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_20985_2x_ce450aac-52e3-4e0b-8031-c657fa46700d.jpg?v=1686662126');
+
+            .unknown {
+                background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/E-Bike317_2x_81abb0c6-5bcf-4e9a-8e09-c87e5893fa7f.jpg?v=1689408477');
     
                 .centeral-content {
                     & > div {
-                        &:last-child {
-                            padding: 18vw 0;
-                            flex: unset;
+                        padding: 8vw 0 8vw;
+                        align-items: center;
+                        text-align: center;
 
-                            .imgaes {
-                                grid-template-columns: 1fr;
-                                grid-gap: 24px;
-                                margin-top: 12vw;
-                                margin-bottom: 0;
+                        img {
+                            max-width: 180px;
+                        }
+        
+                        .u36DemiBold_v2 {
+                            font-size: 20px;
+                            margin: 15px 0;
+                        }
 
-                                img {
-                                    max-height: 32px;
-                                }
-                            }
-
-                            .u36DemiBold_v2 {
-                                font-size: 24px;
-                            }
+                        .my-button {
+                            width: 100%;
                         }
                     }
                 }
             }
+
+          .strava {
+                .centeral-content {
+                    & > div {
+                        img {
+                            max-width: 100%;
+                            height: auto;
+                        }
+
+                        .u24Medium_v2 {
+                            margin: 20px 0;
+                            font-size: 17px;
+                        }
+                    }
+                }
+            }
+
+            
 
 
 
@@ -517,9 +462,328 @@
 
             .count-down-gif {
                 max-width: 210px;
-                margin-top: 15px;
+                margin-top: 0px;
+
+                img {
+                    transform: translateY(5vw);
+                }
             }
 
+        }
+
+        .swiper-pagination {
+            bottom: 4px;
+        }
+    }
+
+    .test-ride {
+        margin-bottom: 60px;
+
+        .centeral-content {
+            grid-template-columns: 1fr;
+
+            &>div {
+
+                &>div {
+                    &:first-child {
+                        padding: 8vw 4vw;
+                    }
+                }
+
+                &:first-child {
+                    order: 1;
+                    padding-bottom: 60vw;
+
+                    .u36DemiBold_v2 {
+                        font-size: 24px;
+                    }
+
+                    .u20DemiBold_v2 {
+                        font-size: 16px;
+                        margin-top: 6px;
+                    }
+                }
+            }
+        }
+    }
+
+    .page-media {
+        .centeral-content {
+            padding: 0;
+            
+            .home-page-media-mb {
+                padding-top: 65px;
+                padding-bottom: 65px;
+                background-color: #f7f8fa;
+                overflow: hidden;
+            
+                .swiper-slide {
+                    box-sizing: border-box;
+                    padding: 0 10%;
+                      display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    text-align: center;
+            
+                    img {
+                        height: 48px;
+                      width: auto;
+                    }
+            
+                    .u20Medium {
+                        font-weight: 600;
+                        margin: 20px 0 40px;
+                        font-size: 22px;
+                        line-height: 26px;
+                    }
+                }
+            
+                .swiper-pagination {
+                    position: static;
+                }
+            
+                .swiper-pagination-bullet {
+                    height: 6px;
+                    width: 6px;
+                }
+            
+                .swiper-pagination-bullet-active {
+                    width: 30px;
+                    height: 6px;
+                    border-radius: 5px;
+                    transition: all .3s;
+                }
+            }
+        }
+    }
+}
+
+
+@mixin home-page-ebike-banner {
+    background: transparent center center/cover no-repeat;
+    color: #fff;
+
+    .centeral-content {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        height: 700px;
+
+        .u17Light_v2 {
+            margin: 12px 0 40px;
+        }
+    }
+
+    @media (max-width: 767px) {
+        .centeral-content {
+            height: 150vw;
+            justify-content: flex-start;
+            padding-top: 8vw;
+            align-items: center;
+            text-align: center;
+
+            .u42DemiBold_v2 {
+                font-size: 24px
+            }
+
+            .u17Light_v2 {
+                font-size: 14px;
+                margin-bottom: 24px;
+            }
+        }
+    }
+}
+
+.home-page-ebike-banner {
+	@include home-page-ebike-banner;
+    background-image: url("https://cdn.shopify.com/s/files/1/0583/5810/4213/files/img_v2_e35c9305-6b5b-4545-98c7-cb826aa79c4g_2x_c6e5837f-d3db-412c-90cb-80e5c97dc4c7.png?v=1677566638");
+
+    @media (max-width: 767px) {
+        background-image: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18371_2x_650a7a22-6c8e-4295-b1d2-a44c5759079a.png?v=1677662189');
+    }
+}
+
+.home-page-ebike-banner-chord {
+	@include home-page-ebike-banner;
+    background-image: url("https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20230217-untitled-7317_2x_f9e6e7ad-635a-44c8-a608-87a568febfd0.png?v=1677566487");
+
+    @media (max-width: 767px) {
+        background-image: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18372_2x_6af0891a-02ab-4e62-83a2-9b7318118d67.png?v=1677661324');
+    }
+}
+
+.boxs {
+    padding: 120px 0;
+
+    .centeral-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+
+        img[alt="app"] {
+            background-color: #161A22;
+            max-height: 600px;
+            object-fit: contain;
+            padding-top: 10%;
+        }
+
+        & > div {
+            display: flex;
+            align-items: flex-start;
+            flex-direction: column;
+            justify-content: center;
+            padding: 0 15%;
+            background-color: #fff;
+
+            .u17Light_v2 {
+                margin: 20px 0 40px;
+            }
+
+            .images {
+                display: flex;
+
+                a {
+                    display: block;
+                    margin-right: 16px;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+
+    @media (max-width: 767px) {
+        padding: 60px 0;
+
+        .centeral-content {
+            grid-template-columns: 1fr;
+
+            & > div {
+                padding: 12vw 4vw;
+
+                .u48DemiBold_v2 {
+                    font-size: 24px;
+                }
+
+                .u17Light_v2 {
+                    margin: 10px 0 20px;
+                    font-size: 14px;
+                }
+
+                &:nth-of-type(2) {
+                    order: 4;
+                }
+    
+                &:nth-of-type(3) {
+                    order: 6;
+                }
+            }
+
+            img {
+                max-height: 80vw !important;
+    
+                &:nth-of-type(3) {
+                    order: 5;
+                }
+            }
+
+            
+        }
+    }
+}
+
+
+.ambass {
+    padding-bottom: 60px;
+
+    .centeral-content {
+        .u20Medium_v2 {
+            margin-top: 20px;
+        }
+    }
+
+    @media (max-width: 767px) {
+        padding-bottom: 30px;
+
+        .centeral-content {
+            .u48DemiBold_v2 {
+                font-size: 24px;
+            }
+
+            .u20Medium_v2,
+            .u20DemiBold_v2 {
+                font-size: 14px;
+            }
+
+            .u20Medium_v2 {
+                margin-top: 10px;
+            }
+        }
+    }
+}
+
+.nba {
+    padding-bottom: 120px;
+
+    @media (max-width: 767px) {
+        padding-bottom: 60px;
+    }
+}
+
+
+.ebikes {
+    margin: 120px 0;
+
+    @media (max-width: 767px) {
+        margin: 60px 0;
+
+        .centeral-content {
+            padding: 0;
+        }
+    }
+}
+
+
+.greenest {
+    margin: 120px 0;
+
+    .centeral-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        background-clip: content-box;
+        align-items: center;
+
+        & > div {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+            padding: 0 10%;
+
+            .u17Light_v2 {
+                margin: 30px 0;
+            }
+        }
+    }
+
+    @media (max-width: 767px) {
+        margin: 60px 0;
+
+        .centeral-content {
+            grid-template-columns: 1fr;
+
+            & > div {
+                padding: 8vw 4vw;
+
+                .u36DemiBold_v2 {
+                    font-size: 24px
+                }
+
+                .u17Light_v2 {
+                    font-size: 14px;
+                    margin: 15px 0 30px;
+                }
+            }
         }
     }
 }

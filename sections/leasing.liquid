@@ -5,15 +5,15 @@
       <div class="centeral-content">
           <div>
               <div class="u36DemiBold_v2">From €48/month</div>
-              <div class="u72DemiBold_v2">Urtopia E-Bikes leasing</div>
-              <div class="u20Light_v2">We work with the best leasing providers. To Provide you the smoothest leasing experience and enjoy you riding as soon as possible.<br><br><div class="u20Medium_v2 banner_origin">Get <span class="u24DemiBold_v2">€600</span> discount on leasing</div></div>
+              <div class="u72DemiBold_v2">Urtopia E-Bikes Leasing</div>
+              <div class="u20Light_v2">We work with the best leasing providers. To Provide you the smoothest leasing experience and enjoy you riding as soon as possible.<br><br><div class="u20Medium_v2 banner_origin">Get <span class="u24DemiBold_v2">{{ settings.carbon_ebike_discount_price | money_without_trailing_zeros }}</span> off on carbon 1,<br><span class="u24DemiBold_v2">{{settings.carbon1s_ebike_discount_price | money_without_trailing_zeros}}</span> discount on carbon 1s<br>via leasing</div></div>
               <div class="buttons">
                   <a href="#forms" class="my-button">Request leasing offer</a>
                   <a href="/products/urtopia-carbon-e-bike" class="my-button my-button-ghost">Shop Online</a>
               </div>
           </div>
           <div>
-              <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_20952_2x_60b1c0bc-7b0c-4dad-9487-1e4451197cb5.png?v=1683700382"
+              <img class="mobileHide" src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_20952_2x_60b1c0bc-7b0c-4dad-9487-1e4451197cb5.png?v=1683700382"
                   alt="">
           </div>
       </div>
@@ -30,9 +30,9 @@
     <div class="centeral-content top-content">
         <div class="u48DemiBold_v2">Available Urtopia<br>E-Bikes</div>
         <div class="select">
-            <select disabled>
+            <select>
                 <option value="carbon">Urtopia Carbon 1</option>
-                <!--<option value="carbon1s">Urtopia Carbon 1s</option>-->
+                <option value="carbon1s">Urtopia Carbon 1s</option>
             </select>
         </div>
     </div>
@@ -99,7 +99,7 @@
               </div>
               <div class="buttons">
                   <a href="#forms" class="my-button my-button-black">Request leasing offer(40% off)</a>
-                  <a href="/products/urtopia-carbon-e-bike" class="my-button my-button-white">Shop Online(€2699)</a>
+                  <a href="/products/urtopia-carbon-e-bike" class="my-button my-button-white">Shop Online({{ all_products['urtopia-carbon-e-bike'].price | minus: settings.carbon_ebike_discount_price | money }})</a>
               </div>
           </div>
       </div>
@@ -358,11 +358,6 @@ const swiperItems = [
         `
     },
     {
-        name: 'Business Bike',
-        img: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230613-152534.png?v=1686641146',
-        text: 'If your employer is registered with BusinessBike, you can order by filling out this form. We’ll share this information with BusinessBike, who will process your order. BusinessBike will confirm the order with your employer.'
-    },
-    {
         name: 'Bike Leasing',
         img: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230613-153443.png?v=1686641693',
         text: 'If your employer is registered with bikeleasing.de, you can order by filling out this form. We’ll share this information with bikeleasing.de, who will process your order. Mein Dienstrad will confirm the order with your employer.'
@@ -372,6 +367,11 @@ const swiperItems = [
         img: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230613-153746.png?v=1686641878',
         text: 'If your employer is registered with Mein Dienstrad, you can order by filling out this form. We’ll share this information with Mein Dienstrad, who will process your order. Mein Dienstrad will confirm the order with your employer.'
     },
+    //{
+      //  name: 'Business Bike',
+       // img: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230613-152534.png?v=1686641146',
+        //text: 'If your employer is registered with BusinessBike, you can order by filling out this form. We’ll share this information with BusinessBike, who will process your order. BusinessBike will confirm the order with your employer.'
+    //},
 ]
 
 
@@ -444,6 +444,18 @@ setTimeout(() => {
                 'justify-content': 'space-between'
             })
 
+            if (name === '---') {
+                li.css({
+                    'display': 'none',
+                })
+
+                return li
+            }
+
+            if (!find) {
+                return li
+            }
+
             li.append(`<img style="max-height: 20px;width: auto;" src="${find.img}"/>`)
 
             return li
@@ -454,22 +466,51 @@ setTimeout(() => {
         partnerSelect.sumo.add(item.name, item.name)
     }
 
+    partnerSelect.sumo.add('none', 'None of above/Not sure which one my employer provided')
+    partnerSelect.sumo.unSelectItem('Jobrad');
+
+
     $('select[name="partner"]').on('change', e => {
         const v = e.target.value
-        console.log('e.target.value', )
+        console.log('e.target.value', v)
 
         $('input[name="offers"]').closest('.item').find('.u24Medium span').html(v)
 
         page_infos.form_thankyou_content2 = page_infos.form_thankyou_content2.replace(/<span>([^<]*?)<\/span>/gi, `<span>${v}</span>`)
 
         const offers = $('input[name="employer_id"]')
-        if (v === "Jobrad") {
+        if (v === "Jobrad" || v === 'none') {
             offers.attr('type', 'hidden')
             offers.closest('.item').hide()
         } else {
             offers.attr('type', 'text')
             offers.closest('.item').show()
         }
+
+        const selectAccessories = $('select[name="accessories"]').val() || []
+        window.selectPlugin.sumo.unSelectAll()
+
+        $('select[name="accessories"] option').each((i, t) => {
+            const id = $(t).val()
+            
+            if (v === "Jobrad" && global_config.leasing.jobrad_disabled_accessories.includes(id)) {
+                const hasDisable = selectAccessories.some(s => global_config.leasing.jobrad_disabled_accessories.includes(s))
+
+                if (hasDisable) {
+                    $('.forms form select[name="partner"]').closest('.item').find('.error').text(`Please select your accessioes again due to the change of leasing partner`)
+                    $('.forms form select[name="accessories"]').closest('.item').find('.error').text(`Due to the change of leasing partner, please select your accessioes again and some of it might be unavailble.`)
+                }
+
+                return window.selectPlugin.sumo.disableItem(i)
+            }
+
+            window.selectPlugin.sumo.enableItem(i)
+        })
+    })
+
+    $('select[name="accessories"]').on('change', e => {
+        $('.forms form select[name="partner"]').closest('.item').find('.error').text(``)
+        $('.forms form select[name="accessories"]').closest('.item').find('.error').text(``)
     })
 
     $('.partners .swiper-wrapper .swiper-slide .my-button').on('click', e => {
@@ -518,9 +559,9 @@ setTimeout(() => {
                 </div>
             </div>`)
 
-            $('.parameters .bottom-content .buttons .my-button-white').text('Shop Online({{ 269900 | money }})')
+            $('.parameters .bottom-content .buttons .my-button-white').text('Shop Online({{ all_products['urtopia-carbon-e-bike'].price | minus: settings.carbon_ebike_discount_price | money }})')
         } else {
-            $('.parameters .bottom-content>div:first-child').css({ "background-image": "url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/MaskGroup18145.png?v=1688105290')" })
+            $('.parameters .bottom-content>div:first-child').css({ "background-image": "url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/MaskGroup18145.png?v=1688105290&width=640')" })
             $('.parameters .bottom-content .boxs > div:nth-child(1)').replaceWith(`<div>
                       <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18448_2x_d3fbd8a8-d1e2-4a84-b4eb-ce513f342438.png?v=1683705373"
                           alt="">
@@ -538,7 +579,7 @@ setTimeout(() => {
                 </div>
             </div>`)
 
-            $('.parameters .bottom-content .buttons .my-button-white').text('Shop Online({{ 299900 | money }})')
+            $('.parameters .bottom-content .buttons .my-button-white').text('Shop Online({{ all_products['urtopia-carbon-e-bike'].price | minus: settings.carbon1s_ebike_discount_price | money }})')
         }
     })
 }, 300)

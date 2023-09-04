@@ -1,4 +1,5 @@
 {{ 'sumoselect.min.css' | asset_url | stylesheet_tag }}
+{{ 'jquery-ui.css' | asset_url | stylesheet_tag }}
 
 <div class="forms" id="forms">
     <div class="centeral-content">
@@ -8,7 +9,7 @@
             <a class="my-button my-button-white" href="/pages/contactus">Contact us</a>
             <div class="sooner">
                 <div class="u48DemiBold_v2">Exclusive discount for direct purchases</div>
-                <div class="u24Medium_v2">we are now offering a one time <span class="emphasize">€600</span> off and <span class="emphasize">3 free</span> accessories.</div>
+                <div class="u24Medium_v2">we are now offering a one time <span class="emphasize">{{ settings.carbon_ebike_discount_price | money_without_trailing_zeros }}</span> off and <span class="emphasize">{{ settings.carbon_ebike_free_accessories_count }} Free</span> accessories.</div>
                 <div class="choice">
                     <img src="https://cdn.shopifycdn.net/s/files/1/0633/2068/6808/products/img_v2_c011bd46-4e3b-4b0f-8b9f-074a0ba53e6g_1.webp?v=1678963826"/>
                     <div>
@@ -18,8 +19,7 @@
                         <div class="u17DemiBold_v2"><span>Size:</span><span class="u17Light_v2">Sirius</span></div>
                         <img src="https://cdn.shopifycdn.net/s/files/1/0633/2068/6808/files/Group_21116_2x_8d10631e-2acb-4f2b-ba9f-1fd52fd3aa40.png?v=1685351322"/>
                         <div class="u14DemiBold_v2">
-                            <div>3 Free Accessories (worth €179):</div>
-                            <div>Kickstand, Micro Fender and one-Year eSIM Services</div>
+                            <div>{{ settings.carbon_ebike_free_accessories_count }} Free Accessories (worth {{ settings.carbon_ebike_free_accessories_price | money_without_trailing_zeros }})</div>
                             <div class="u11Light_v2">(Apply in your checkout automatically)</div>
                         </div>
                         <div class="my-button my-button-black bynow">Buy now</div>
@@ -29,7 +29,7 @@
         </div>
         <div class="nothankyou">
             <div class="u48DemiBold_v2">Request a quote for Urtopia E-bike leasing now</div>
-            <div class="u17Light_v2">When you complete this form, we will provide a quote for you and you authorize us to use the information you submit and contact you via email, text message or phone to move the business process forward.<br><br>Get <span class="emphasize u20DemiBold_v2">€600</span> off on Carbon 1<br>now on leasing<br></div>
+            <div class="u17Light_v2">When you complete this form, we will provide a quote for you and you authorize us to use the information you submit and contact you via email, text message or phone to move the business process forward.<br><br>Get <span class="emphasize u20DemiBold_v2">{{ settings.carbon_ebike_discount_price | money_without_trailing_zeros }}</span> off on Carbon 1,<br><span class="emphasize u20DemiBold_v2">{{settings.carbon1s_ebike_discount_price | money_without_trailing_zeros}}</span> discount on carbon 1s<br>now on leasing<br></div>
             
             
             <form action="" method="post">
@@ -87,17 +87,18 @@
     
                 <div class="item">
                     <div class="u24Medium">Delivery address<i>*</i></div>
-                    <input type="text" name="address" required>
+                    <input type="text" name="address" autocomplete="address-line1" required>
+                    <span class="clear">×</span>
                 </div>
                 <div class="item">
                     <div class="mini-item">
                         <div>
                             <div class="u24Medium">Postal code<i>*</i></div>
-                            <input type="text" name="postal_code" required>
+                            <input type="text" name="postal_code" autocomplete="postal-code" required>
                         </div>
                         <div>
                             <div class="u24Medium">City<i>*</i></div>
-                            <input type="text" name="city" required>
+                            <input type="text" name="city" autocomplete="address-level2" required>
                         </div>
                     </div>
                 </div>
@@ -105,17 +106,26 @@
                     <div class="u24Medium">Country<i>*</i></div>
                     <input type="text" name="country" value="Deutschland" disabled required>
                 </div>
+                {% if template == "page.leasing" %}
+                    <div class="item">
+                        <div class="u24Medium">Leasing partner your employer provided<i>*</i></div>
+                        <select name="partner" required>
+                            <option value="">---</option>
+                        </select>
+                        <span class="error"></span>
+                    </div>
+                {% endif %}
                 <div class="item" name="bike_image" style="display:none;">
                     <div class="u24Medium">Bike you choose:</div>
                     <input type="image" name="bike_image" src="">
                 </div>
                 <div class="item">
                     <div class="u24Medium">Bike Model<i>*</i></div>
-                    <select name="bike_model" value="Carbon 1" required disabled>
+                    <select name="bike_model" value="Carbon 1" required>
                         <option value="Carbon Belt">Carbon 1</option>
-                        <!--<option value="Shimano Gear">Carbon 1s</option>-->
+                        <option value="Shimano Gear">Carbon 1s</option>
                     </select>
-                    <span style="text-align: left;line-height: 2em;" class="tips u14Light_v2">Pre-order items ships from <span class="emphasize" style="font-weight: 600;">July 31, 2023</span></span>
+                    <span style="text-align: left;line-height: 2em;" class="tips u14Light_v2">Free shipping within <span class="emphasize" style="font-weight: 600;">10 working days</span></span>
                 </div>
                 <div class="item">
                     <div class="mini-item">
@@ -155,23 +165,14 @@
                           {% endif %}
                         {% endfor %}
                     </select>
+                    <span class="error"></span>
                     <!-- <input type="text" name="accessories" placeholder="" > -->
                 </div>
                 <div class="item">
-                  <div class="u24Medium">Note</div>
-                  <input type="text" name="note">
-                </div>
-                {% if template == "page.leasing" %}
-                    <div class="item">
-                        <div class="u24Medium">Your Leasing partner<i>*</i></div>
-                        <select name="partner" required></select>
-                      </div>
-                {% endif %}
-                <div class="item">
-                    <div class="u24Medium">Employer ID:</div>
+                    <div class="u24Medium">Employer ID:<br><span style="font-size: 12px;color: #666;line-height: 16px;display: inline-block;">It is a ID provide by your employer or HR department.</span></div>
                     <input type="text" name="employer_id">
                 </div> 
-                <div class="item">
+                <!--<div class="item">
                     <div class="u24Medium">Your employer already offers JobRad?<i>*</i></div>
                     <div class="multiple-checkbox">
                         <label for="yes">
@@ -193,7 +194,11 @@
                             <input type="radio" id="not_sure" name="offers" value="not_sure" required />
                         </label>
                     </div>
-                </div>
+                </div>-->
+                <div class="item">
+                    <div class="u24Medium">Note</div>
+                    <input type="text" name="note">
+                  </div>
                 <div class="item">
                     <div class="checkbox">
                         <input type="checkbox" id="subscribe" name="subscribe" value="subscribe" required />
@@ -201,7 +206,6 @@
                             personal data, including receiving emails, text messages and SMS.<i>*</i></label>
                     </div>
                 </div>
-                
                 <div class="item">
                     <div style="display: flex;">
                         <button class="my-button my-button-black" type="submit">Submit</button>
@@ -222,6 +226,7 @@
 
 
 {{ 'sumoselect.js' | asset_url | script_tag }}
+{{ 'jquery-ui.min.js' | asset_url | script_tag }}
 <script>
 
 // 页面信息
@@ -252,8 +257,8 @@ const page_infos = {% case template | json %}
 
 // size 映射
 const size_map = {
-    M: 'Fit for 170-185 cm',
-    L: 'Fit for 180-195 cm'
+    M: 'Fit for 165-180 cm',
+    L: 'Fit for 175-195 cm'
 }
 // 表单忽略项
 const ignore = ['submit', 'checkbox', 'image', 'hidden']
@@ -343,6 +348,7 @@ function mergeValues () {
     merge.bike_model = merge.bike_model === "Shimano Gear" ? "Carbon 1s" : "Carbon 1"
     merge.bike_size = merge.bike_size + ' - ' + (size_map[merge.bike_size] || '')
     merge.page_type = page_infos.page_name
+    merge.offers = forms.partner === 'none' ? 'no' : 'yes'
 
     {% unless template == "page.leasing" %}
         merge.partner = page_infos.page_name === 'jobrad' ? 'Jobrad' : 'Mein-dienstrad.de'
@@ -365,6 +371,11 @@ function submit (forms = {}) {
 
 
     fetchBuried('leasing', 'submit', forms)
+
+    if (forms.offers === 'no') {
+        return
+    }
+
     // fbq
     fbq('track', 'CompleteRegistration', {
         value: 3596,
@@ -424,7 +435,7 @@ const changeBikeImage = e => {
     // 如果当前variant 库存不足
     if (!find.available) {
         $('select[name="bike_style"]').val('')
-        $('.forms form .item .error').text(`Your selection is currently reached our stock limit - size: ${size}, style: ${style}`)
+        $('.forms form select[name="bike_size"]').closest('.item').find('.error').text(`Your selection is currently reached our stock limit - size: ${size}, style: ${style}`)
         
         return clearBikeImage()
     }
@@ -451,7 +462,7 @@ const buynow = (e, values) => {
         },
       }).then(r => {
            const body = { items: [{ id: values.variant_id, quantity: 1 }] }
-           body.items = body.items.concat(global_config.event_accessories_variant_ids.map(id => ({ id, quantity: 1 })))
+           body.items = body.items.concat(global_config.carbon_order_page_config.events.carbon1_send_accessories_variant_ids.map(id => ({ id, quantity: 1 })))
 
            fetch(window.Shopify.routes.root + 'cart/add.js', {
              method: 'POST',
@@ -488,6 +499,7 @@ $('select[name="bike_style"]').html('<option value="">---</option>' + style.map(
 // 延迟执行一些DOM
 setTimeout(() => {
     $('.forms form .item .tips').hide()
+    $('input[name="employer_id"]').closest('.item').hide()
     // 更改 offers label
     $('input[name="offers"]').closest('.item').find('.u24Medium').html(page_infos.form_offers_label)
 
@@ -495,6 +507,7 @@ setTimeout(() => {
     $('form .multiple-checkbox :input').on('change', e => {
         // 全部重置为默认状态
         $(`form .multiple-checkbox label`).removeClass('active')
+        
         $(`form .multiple-checkbox label img`).hide()
 
         $(`form .multiple-checkbox label[for="${e.currentTarget.id}"]`).addClass('active')
@@ -516,7 +529,6 @@ setTimeout(() => {
         const values = mergeValues()
 
         submit(values)
-
 
         // 隐藏form
         $('.forms .centeral-content').css('max-width', '1280px')
@@ -576,11 +588,85 @@ setTimeout(() => {
 
     
     // SELECT 插件
-    const selectPlugin = $('select[name="accessories"]').SumoSelect({
+    window.selectPlugin = $('select[name="accessories"]').SumoSelect({
         placeholder: '',
         csvDispCount: 0,
         floatWidth: 768,
     })
+
+    $(function() {
+        var cache = {};
+        $('input[name="address"]').autocomplete({
+        minLength: 1,
+        source: function( request, response ) {
+            const search = request.term
+            fetch(`https://api.mapbox.com/geocoding/v5/mapbox.places/${search}.json?country=DE&language=de&limit=5&types=postcode,district,place,locality,address,poi&access_token=pk.eyJ1IjoiaGFya2lyYW43MjM3IiwiYSI6ImNrcGdwaWpoYzJqaGwzMW54ajdrbW0xZjUifQ.qXWqhm4BiHFwMh1UOi69uQ`).then(r => r.json()).then(r => {
+                response(r.features.map(f => {
+                    return {
+                        label: f.place_name_de,
+                        value: f.place_name_de,
+                        f
+                    }
+                }))
+            }).catch(e => {
+                console.log(e)
+            })
+          },
+          select: function( event, ui ) {
+            const city = ui.item.f.context.find(i => i.id.includes('place'))
+            const postal_code = ui.item.f.context.find(i => i.id.includes('postcode'))
+
+            if (city) {
+                $('input[name="city"]').val(city.text_de)
+            } else {
+                $('input[name="city"]').val('')
+            }
+
+            if (postal_code) {
+                $('input[name="postal_code"]').val(postal_code.text_de)
+            } else {
+                $('input[name="postal_code"]').val('')
+            }
+          },
+          change: function (event, ui) {
+            console.log('e', event)
+            console.log('ui', ui)
+          }
+        });
+    });
+
+    $('.forms .item .clear').on('click', () => {
+            console.log('eeeeee')
+
+            $('input[name="address"]').val('')
+    })
+
+    $('input[name="address"]').on('focus', e => {
+        e.target.value ? $('.forms .item .clear').show() : $('.forms .item .clear').hide()
+    })
+
+    $('input[name="address"]').on('input', e => {
+        e.target.value ? $('.forms .item .clear').show() : $('.forms .item .clear').hide()
+    })
+
+    $('input[name="address"]').on('blur', () => setTimeout(() => $('.forms .item .clear').hide(), 200))
+
+
+    /*
+    const script = document.getElementById('search-js');
+    script.onload = function() {
+        mapboxsearch.autofill({
+            accessToken: 'pk.eyJ1IjoiaGFya2lyYW43MjM3IiwiYSI6ImNrcGdwaWpoYzJqaGwzMW54ajdrbW0xZjUifQ.qXWqhm4BiHFwMh1UOi69uQ',
+            options: { 
+                country: 'DE',
+                language: 'de',
+                limit: 5,
+            },
+            types: 'country,region,postcode,district,place,locality'
+        });
+    };
+
+    */
 
 
     // url 参数
@@ -601,7 +687,7 @@ setTimeout(() => {
     // 如果有 accessories 存在
     if (urlSearch.accessories) {
         for (const acc of urlSearch.accessories.split(',')) {
-            selectPlugin.sumo.selectItem(acc)
+            window.selectPlugin.sumo.selectItem(acc)
         }
     }
     

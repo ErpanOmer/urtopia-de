@@ -276,35 +276,29 @@ class Insurance {
 }
 
 const insurance = new Insurance();
+const url_to_page_map = {
+  "/products/urtopia-chord-ebike": 'chord-order-page',
+  "/products/urtopia-carbon-e-bike": 'carbon-order-page',
+  "/products/outlet-carbon-1-1s": 'outlet-order-page'
+}
 
 function addToCartInsurance(parse, show = false) {
   window.show_notification_checkout_button = show
 
   const cartListNew = {
     // 如果是carbon 页面，自动把配件加进去
-    items: location.href.includes('urtopia-carbon') ? (function () {
-      const ids = global_config.event_accessories_variant_ids.map(id => ({ id, quantity: 1 }))
-
-      // 额外买的配件
-      const accessories = []
-      $('.product .accessories .items .active').each((i, item) => {
-        accessories.push({ 
-          id: $(item).attr('variant-id'), 
-          quantity: 1
-        })
-      })
-
-      return ids.concat(accessories)
-    })() : []
+    items: location.href.includes('urtopia-carbon-e-bike') ? global_config.event_accessories_variant_ids.map(id => ({ id, quantity: 1 })) : []
   }
+
+  $('.product .accessories .items .active').each((i, item) => {
+    cartListNew.items.push({ 
+      id: $(item).attr('variant-id'), 
+      quantity: 1
+    })
+  })
 
   // 加埋点
-  if (location.href.includes('urtopia-carbon')) {
-    !show && fetchBuried('websiteclick', `carbon-order-page`, { button: 'ATC' })
-  }
-
-  const _insurance_key = Date.now().toString(36)
-
+  !show && fetchBuried('websiteclick', url_to_page_map[location.pathname], { button: 'ATC' })
 
   const cart1New =
     document.querySelector("cart-notification") ||
@@ -326,7 +320,6 @@ function addToCartInsurance(parse, show = false) {
     if (formData.get('items[0]properties[_insurance_variant_id]')) {
       item0.properties = {
         _insurance_variant_id: formData.get('items[0]properties[_insurance_variant_id]'),
-        // _insurance_key
       }
     }
     
@@ -342,7 +335,6 @@ function addToCartInsurance(parse, show = false) {
           _product_variant_id: $('input[name="id"]').val(),
           _model: formData.get('items[1]properties[_model]'),
           _variant_name: formData.get('items[1]properties[_variant_name]'),
-          //_insurance_key
         }
       }
 
@@ -368,6 +360,18 @@ function addToCartInsurance(parse, show = false) {
       console.log(res1);
       res1.key = "";
 
+      if (res1.message && res1.status) {
+        $('.product .js-fake-add-to-cart').before('<span style="color:red;" class="error-tip u14Medium_v2">Your order quantity has reached our stock limit</span>')
+
+        setTimeout(() => {
+          $('.product .buttons .error-tip').remove()
+        }, 8000)
+
+        return !show && changeAddToCartText(parse, 0);
+      }
+
+
+
       if (parse=="buynow") {
         window.location.href="/checkout"
       } else {
@@ -386,7 +390,7 @@ function addToCartInsurance(parse, show = false) {
       }
     })
     .catch((err) => {
-      throw new Error(err);
+      
     });
   }
 }

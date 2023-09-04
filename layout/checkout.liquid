@@ -70,10 +70,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           <header class="main__header" role="banner">
             {{ content_for_logo }}
             {{ breadcrumb }}
-            <div class="klarna">
-              <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Klarna-Logo.wine_2x_4831cc33-3ad3-4cb7-8d01-bc04c379811a.png?v=1686369579">
-              <div class="u14Medium_v2">{{ 'checkout_klarna.Klarna_for' | t }}<span class="learn">{{ 'checkout_klarna.Klarna_learn' | t }}</span></div>
-            </div>
+            {% if checkout.total_price >= 150000 %}
+                <div class="klarna">
+                  <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Klarna-Logo.wine_2x_4831cc33-3ad3-4cb7-8d01-bc04c379811a.png?v=1686369579">
+                  <div class="u14Medium_v2">{{ 'checkout_klarna.Klarna_for' | t }}{{checkout.total_price  | divided_by: 24 | money }}{{ 'checkout_klarna.month' | t }}. &nbsp;<span class="learn">{{ 'checkout_klarna.Klarna_learn' | t }}</span></div>
+                </div>
+            {% endif %}
             {{ alternative_payment_methods }}
           </header>
           <main class="main__content" role="main">
@@ -180,6 +182,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <script>
     var ecommerce = {
     'transaction_id': '{{checkout.order_number | json}}',
+    'id': '{{ checkout.id | json}}',
     'affiliation': {{shop.name | json}},
     'value': parseInt((Number({{checkout.total_price | json }})) / 100),
     'tax': parseInt((Number({{checkout.tax_price | json }})) / 100),
@@ -241,23 +244,6 @@ if(Shopify.Checkout.step){
 }
 
 
-let price = '112.45'
-
-if (ecommerce.items.find(item => item.title.includes('Carbon Belt')) && ecommerce.items.find(item => item.title.includes('Shimano Gear'))) {
-  price = '112.45'
-} else if (ecommerce.items.find(item => item.title.includes('Carbon Belt'))) {
-  price = '112.45'
-} else if (ecommerce.items.find(item => item.title.includes('Shimano Gear'))) {
-  price = '124.94'
-} else {
-  price = '112.45'
-}
-
-
-// <div class="u14Medium_v2">/div>
-$('.klarna .u14Medium_v2').html(price === '112.45' ? `{{ 'checkout_klarna.Klarna_for' | t }}<span class="learn">{{ 'checkout_klarna.Klarna_learn' | t }}</span>` : `{{ 'checkout_klarna.Klarna_for2' | t }}<span class="learn">{{ 'checkout_klarna.Klarna_learn' | t }}</span>`)
-
-
     const html = `<div class="klarna-dialog">
       <div class="u24DemiBold_v2"><img
               src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Image_167_2x_a31405e4-22c9-4546-8404-ec68e30f98ad.png?v=1685686187"
@@ -266,7 +252,7 @@ $('.klarna .u14Medium_v2').html(price === '112.45' ? `{{ 'checkout_klarna.Klarna
           <div class="u17Medium_v2">{{ 'checkout_klarna.title1' | t }}<br class="mobileHide">{{ 'checkout_klarna.title2' | t }}</div>
           <div class="pay">
               <div class="u20DemiBold_v2">{{ 'checkout_klarna.pay_in' | t }}</div>
-              <div class="u17Medium_v2"><span>${price} {{ 'checkout_klarna.month' | t }}</span>
+              <div class="u17Medium_v2"><span>{{checkout.total_price | divided_by: 24 | money }}{{ 'checkout_klarna.month' | t }}</span>
                   <div>{{ 'checkout_klarna.payments' | t }}</div>
               </div>
               <div class="total">
@@ -276,7 +262,7 @@ $('.klarna .u14Medium_v2').html(price === '112.45' ? `{{ 'checkout_klarna.Klarna
                   </div>
                   <div class="u17Medium_v2">
                       <span>{{ 'checkout_klarna.fixed' | t }}</span>
-                      <span>${price === '112.45' ? '2.699' : '2.999'} €*</span>
+                      <span>{{ checkout.total_price | money }}</span>
                   </div>
                   <div class="u11Medium_v2">{{ 'checkout_klarna.limited' | t }}</div>
               </div>
@@ -294,12 +280,11 @@ $('.klarna .u14Medium_v2').html(price === '112.45' ? `{{ 'checkout_klarna.Klarna
                   <div class="u17Medium_v2">{{ 'checkout_klarna.work6' | t }}<span></span></div>
                   <div class="u17Medium_v2">{{ 'checkout_klarna.work7' | t }}<span></span></div>
           </div>
+          <div style="padding: 10px;">{{ 'checkout_klarna.klarna_apr' | t }}</div>
       </div>
       <div onclick="closeMiniDialog()" class="my-button my-button-black">{{ 'checkout_klarna.button' | t }}</div>
       <span onclick="closeMiniDialog()" class="close">×</span>
     </div>`
-
-    // getSearchValues().show_klarna_dialog && showMiniDialog(html)
   
     setTimeout(() => {
       //jQuery('.klarna-dialog .close').on('click', closeMiniDialog)
@@ -308,12 +293,37 @@ $('.klarna .u14Medium_v2').html(price === '112.45' ? `{{ 'checkout_klarna.Klarna
       jQuery('.klarna').on('click', () => showMiniDialog(html))
     }, 100)
 
+
+
+    const checkout_email = getSearchValues().checkout_email
+
+    const fn = c => {
+      Checkout.$('.step__sections input[type="email"]').val(c).attr('disabled', true)
+      $('nav').hide()
+      $('.logo--left').hide()
+      $('.step__footer__previous-link').hide()
+      $('.layout-flex__item').hide()
+    }
+
+    if (checkout_email) {
+      window.sessionStorage.checkout_email = checkout_email
+      window.sessionStorage.checkout_email_local = `${Shopify.Checkout.token}=${checkout_email}`
+      fn(checkout_email)
+    } else {
+        if (window.sessionStorage.checkout_email_local === `${Shopify.Checkout.token}=${window.sessionStorage.checkout_email}`) {
+          fn(window.sessionStorage.checkout_email)
+        } else {
+          window.sessionStorage.checkout_email = ''
+          window.sessionStorage.checkout_email_local = ''
+        }
+    }
+
     // 页面退出之前，往服务器提交数据
 $(document).on('page:load', function(e) {
   console.log('e', e)
 
   if (window.sessionStorage.clicked_klarna_checkout_button) {
-    fetchBuried('a-b-test', 'order-page-klarna', {
+    fetchBuried('a-b-test', 'orderpage-mm', {
       action_type: window.sessionStorage.carbon_one_a_b_test_flag,
       payment_step: Shopify.Checkout.step,
       value: Shopify.Checkout.totalPrice,
@@ -321,7 +331,9 @@ $(document).on('page:load', function(e) {
       ecommerce
     })
 
-    showMiniDialog(html)
+    {% if checkout.total_price >= 150000 %}
+        showMiniDialog(html)
+    {% endif %}
   }
 
 });

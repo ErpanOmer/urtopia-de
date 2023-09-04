@@ -266,6 +266,10 @@
     flex-direction: column;
     margin-top: 25px;
     color: #000;
+    padding-right: 15px;
+    margin-right: -15px;
+    max-height: 400px;
+    overflow-y: auto;
 }
 
 .booking-popup .choose .item {
@@ -358,6 +362,37 @@
             .u17Medium_v2 {
                 max-width: 510px;
                 margin-top: 24px;
+            }
+        }
+    }
+
+    .golf-banner {
+        background: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230815-195156.jpg?v=1692100334') center center/cover no-repeat;
+        height: 600px;
+        color: #713F13;
+        display: flex;
+
+        .centeral-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            width: 100%;
+            height: 100%;
+
+            .u24Medium_v2 {
+                margin: 50px 0 100px;
+
+                & > div {
+                    display: flex;
+                    margin-top: 10px;
+
+                    span {
+                        &:first-child {
+                            //min-width: 300px;
+                        }
+                    }
+                }
             }
         }
     }
@@ -648,6 +683,7 @@
                 #storepoint-tag-dropdown,
                 #storepoint-radius-dropdown,
                 #stpt-show-more-btn,
+                .mapboxgl-control-container,
                 #storepoint-brand {
                     display: none !important;
                 }
@@ -725,6 +761,33 @@
                             }
                         }
 
+                        .nobook {
+                            .name {
+                                margin-bottom: 12px;
+                            }
+
+                            .contact {
+                                display: flex;
+                                flex-direction: column;
+                                margin-bottom: 6px;
+
+                                & > div {
+                                    display: grid;
+                                    grid-template-columns: 1fr 3fr;
+                                    margin: 2px 0;
+                                
+
+                                    .u14Light_v2 {
+                                        word-break: break-word;
+                                    }
+                                }
+                            }
+
+                            & > .u14DemiBold_v2 {
+                                margin-top: 10px;
+                            }
+                        }
+
                         & > img {
                             height: 100%;
                             object-fit: cover;
@@ -796,8 +859,8 @@
                         }
                     }
 
-                    input {
-                        margin-bottom: 6px;
+                    select {
+                        margin-top: 6px;
                     }
                     
                 
@@ -881,6 +944,24 @@
 
                     & > [active="true"] {
                         background-color: #F7F7F7;
+                    }
+                }
+
+                .no_result {
+                    position: absolute;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    top: 0;
+                    z-index: 2;
+                    background-color: #fff;
+                    display: none;
+                    align-items: center;
+                    justify-content: center;
+                    flex-direction: column;
+
+                    .my-link {
+                        margin-top: 5%;
                     }
                 }
             }
@@ -1132,7 +1213,7 @@
                 #storepoint-container {
                     #storepoint-map {
                         // position: relative !important;
-                        transform: translateY(100px);
+                        transform: translateY(140px);
 
                         .mapboxgl-popup {
                             max-width: 300px !important;
@@ -1168,6 +1249,10 @@
                             height: 0;
                             overflow: hidden;
                             padding: 0;
+                        }
+
+                        .no_result {
+                            top: -5px;
                         }
                     }
                 }
@@ -1212,5 +1297,41 @@
                 }
             }
         }
+
+        .golf-banner {
+            background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18850_2x_200fd6f9-df10-4df4-a122-413f713101a4.jpg?v=1692097869');
+            height: calc(100vh - 98px);
+            .centeral-content {
+                height: 100%;
+                padding: 12vw 4vw 20vw;
+
+                .u48DemiBold_v2 {
+                    font-size: 24px;
+                }
+
+                .u24Medium_v2 {
+                    font-size: 16px;
+                    margin: 24px 0;
+
+                    & > div {
+                        flex-direction: column;
+                        margin-top: 12px;
+                        display: block;
+
+                        span {
+                            display: unset;
+                        }
+                    }
+
+                    .u24Light_v2 {
+                        font-size: 14px;
+                        margin-top: 6px;
+                    }
+                }
+            }
+        }
+
+
+        
     }
 }

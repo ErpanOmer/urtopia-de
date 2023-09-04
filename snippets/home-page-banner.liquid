@@ -5,44 +5,53 @@
                       <div>
                           <!--<div class="u56DemiBold_v2">{{ settings.sale_name }}</div>-->
                           <!--<div class="u48Medium_v2">Urtopia embraces ESG</div>-->
-                          <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_21034_2x_13433c49-0c28-4507-82bc-9f1056b391a9.png?v=1688695430">
-                          <div class="u36DemiBold_v2">€600 off + 3 Freebies<br> on Carbon 1 {{ settings.sale_end_time }}</div>
+                          <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_20998_2x_ce576d65-ec90-42eb-8547-c867fdddd6e5.png?v=1693794217">
+                          <div class="u36DemiBold_v2">Get {{ settings.carbon_ebike_discount_price | money_without_trailing_zeros }} off + {{ settings.carbon_ebike_free_accessories_count }} Freebies<br> on Carbon 1 {{ settings.sale_end_time }}</div>
                           <!--<div class="count-down pcHide">
                               <iframe height="155" width="352" src="https://w2.countingdownto.com/4780378" scrolling="no" frameborder="0"></iframe>
                           </div>-->
-                        <div class="count-down-gif pcHide">
+                        <div class="count-down-gif pcHide mobileHide">
                           <img src="http://i.countdownmail.com/2mcl4c.gif"/>
                         </div>
                           <div class="flex-1 pcHide"></div>
-                          <div class="buttons">
-                              <a class="my-button" href="/products/urtopia-carbon-e-bike?variant=42615025172696">Order now</a>
+                          <div class="buttons mobileHide">
+                              <a class="my-button" href="/products/urtopia-carbon-e-bike">Order now</a>
                               <a class="my-button my-button-ghost" href="/pages/e-bike">Meet Carbon 1</a>
+                          </div>
+                          <div class="buttons pcHide">
+                              <a class="my-button my-button-black" href="/products/urtopia-carbon-e-bike">Order now</a>
+                              <a class="my-button" href="/pages/e-bike">Meet Carbon 1</a>
                           </div>
                           <!--<div class="count-down mobileHide">
                               <iframe height="308" width="350" src="https://w2.countingdownto.com/4780368" scrolling="no" frameborder="0"></iframe>
                           </div>-->
-                        <div class="count-down-gif mobileHide">
+                        <div class="count-down-gif mobileHide pcHide">
                           <img src="http://i.countdownmail.com/2mcl4c.gif"/>
                         </div>
                       </div>
                       <div></div>
                   </div>
               </div>
-        <div class="swiper-slide leasing">
+      <div class="swiper-slide strava">
+                <div class="centeral-content">
+                  <div>
+                    <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_21258_2x_b6eefd8c-d9c9-4a58-ae7b-284408aad2af.png?v=1689664928" alt="">
+                    <div class="u24Medium_v2">World’s First E-bike Integrated with Strava</div>
+                    <a class="my-button" target="_blank" href="/blogs/blog/urtopia-x-strava">Read the blog</a>
+                  </div>
+                </div>
+              </div>
+        <div class="swiper-slide unknown">
             <div class="centeral-content">
-                <div class="mobileHide"></div>
                 <div>
-                    <div class="u36DemiBold_v2">Leasing just gets easier! <br class="mobileHide"> In partnership with</div>
-                    <div class="imgaes">
-                        <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18584_2x_f805d892-dcc9-476d-8376-d69a6c06b8c3.png?v=1686661948" alt="">
-                        <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18374_2x_928607a8-b83f-4820-a964-24b561606ba1.png?v=1686661717" alt="">
-                        <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18583_2x_ff5f2620-54f2-40e8-8d7c-7ff5b1392a98.png?v=1686661382" alt="">
-                        <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/logo_meinstdienstrad_2021_2x_52c0ef66-8012-401d-bd85-8c993d123dc6.png?v=1686661875" alt="">
-                    </div>
+                    <img class="mobileHide" src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_21483_2x_b2386168-c7ec-4ac8-8c5a-88cdcb37c09b.png?v=1689407663" alt="">
+                    <img class="pcHide" src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_21482_2x_b9194456-4f54-4bd5-b2ab-79981f69563e.png?v=1689408084" alt="">
+                    <div class="u36DemiBold_v2">Urtopia Available on <br>MeidaMarkt and Grover</div>
                     <div class="flex-1 pcHide"></div>
                     <div class="buttons">
-                        <a href="/pages/ebike-leasing#froms" class="my-button">Lease now</a>
-                        <a href="/pages/ebike-leasing" class="my-button my-button-ghost">Learn more</a>
+                        <a class="my-button" target="_blank" href="https://www.mediamarkt.de/de/search.html?query=urtopia&filter=carType%3ACitybike">Shop on MediaMarkt</a>
+                        <a class="my-button my-button-ghost mobileHide" target="_blank" href="https://www.grover.com/de-de/products/urtopia-carbon-1-ebike">Shop on Grover</a>
+                        <a class="my-button my-button-black pcHide" target="_blank" href="https://www.grover.com/de-de/products/urtopia-carbon-1-ebike">Shop on Grover</a>
                     </div>
                 </div>
             </div>
@@ -85,12 +94,10 @@
  })
 
 
- $('.banner a').on('click', e => {
-    const t = $(e.target)
-    const slide = t.closest('.swiper-slide')
-
+ $('.banner .unknown a').on('click', e => {
     fetchBuried('websiteclick', 'homepage-banner', {
-        button: slide.hasClass('bluetti') ? (t.hasClass('my-button-ghost') ? 'learn_more' : 'order_now_buletti') : (t.hasClass('my-button-ghost') ? 'meet_carbon' : 'order_now')
-    }, true)
+        button: $(e.target).text()
+    })
  })
+
 </script>

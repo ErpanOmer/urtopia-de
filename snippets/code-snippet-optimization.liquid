@@ -6,6 +6,7 @@
         {% when 'product.pf-d095440b' %}
         {% when 'page.pf-3b2bc3c4' %}
         {% when 'page.jobrad' %}
+        {% when 'page.pf-59c57289' %}    
         {% else %}
             <script src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/1.14.2-TweenMax.js?v=1663912518"></script>
             <script src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/2.0.3-ScrollMagic.min.js?v=1663912592"></script>
@@ -20,6 +21,9 @@
 <script src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/1.9.1-jquery.min.js?v=1663911504"></script>
 <script src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/8-swiper-bundle.min.js?v=1663912984"></script>
 <script>
+// 普通页面清掉这两个参数
+window.sessionStorage.checkout_email = ''
+window.sessionStorage.checkout_email_local = ''
     // 当前页面id
 const current_page_id = '{{ template }}'
 console.log('current_page_id:', current_page_id);
@@ -30,7 +34,7 @@ console.log('current_page_id:', current_page_id);
 
     // carbon 车 A/B TEST ,出现50% 的概率
     if (!falg) {
-        w.sessionStorage.carbon_one_a_b_test_flag = Math.round(Math.random()) === 10 ? 'A' : 'B'
+        w.sessionStorage.carbon_one_a_b_test_flag = Math.round(Math.random()) === 11 ? 'B' : 'A'
     }    
 })(window);
 
@@ -128,16 +132,16 @@ function throttle(method, delay, duration){
  }
 
     function showMiniDialog(html = '') {
-        $('body .mini-dialog').remove()
+        const mini_dialog = $('body .mini-dialog')
+
+        if (mini_dialog.length) {
+            return setTimeout(showMiniDialog, 5000, html)
+        }
+        
+
+        // $('body .mini-dialog').remove()
         setTimeout(() => {
             $("body").append(`<div class="mini-dialog" style="display: flex;">${html}</div>`)
-        
-            {% comment %} setTimeout(() => {
-            $('body .mini-dialog > div').on('click', e => {
-                e.stopPropagation();
-                return false;
-            })
-            }, 100) {% endcomment %}
         })
     }
     

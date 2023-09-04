@@ -5,8 +5,6 @@
 {{ 'component-discounts.css' | asset_url | stylesheet_tag }}
 {{ 'component-loading-overlay.css' | asset_url | stylesheet_tag }}
 
-
-{% assign event_name = settings.sale_name %}
 {% assign sale_product_id = 7633738727640 %}
 
 {%- style -%}
@@ -70,18 +68,11 @@ padding-bottom: {{ section.settings.padding_bottom }}px;
 
           <tbody>
             {%- for item in cart.items -%}            
-              {% if item.title contains "Carbon One" %}
-              {% assign bikeQuantity = bikeQuantity | plus:item.quantity %}
-              {% endif %}
               <!--"helmet"-->
               {% if item.id == 43502341095640 %}
               {% assign helmetQuantity = helmetQuantity | plus: item.quantity %}
               {% endif %}
 
-              <!--"glass"-->
-              {% if item.id == 43565513834712 %}
-              {% assign glassQuantity = glassQuantity | plus: item.quantity %}
-              {% endif %}
               <!--"Kickstand"-->
               {% if item.id == 42615024713944 %}
               {% assign kickstandQuantity = kickstandQuantity | plus: item.quantity %}
@@ -95,13 +86,6 @@ padding-bottom: {{ section.settings.padding_bottom }}px;
               {% assign customizedMudguardsQuantity = customizedMudguardsQuantity | plus: item.quantity %}
               {% endif %}
 
-
-              {% comment %} 是否有carbon one {% endcomment %}
-                {% assign has_carbon_one = false %}
-                {%- if item.product_id == 7633738727640 -%}
-                  {%- assign has_carbon_one = true -%}
-                  {%- break -%}
-                {%- endif -%}
             {% endfor %}
 
             <!-- all -->
@@ -112,12 +96,6 @@ padding-bottom: {{ section.settings.padding_bottom }}px;
             {% assign alltotal = threedivided | plus: helmetQuantity %}
 
             {%- for item in cart.items -%}
-              {%- assign is_insurance_product = false -%}
-              
-              {% if item.properties._product_variant_id != blank %}
-                {%- assign is_insurance_product = true -%}
-              {%- endif -%}
-
               {% comment %} Find the related Product to the Insurance and get it's variant.title {% endcomment %}
               {%- assign main_product_title = '' -%}
 
@@ -131,11 +109,6 @@ padding-bottom: {{ section.settings.padding_bottom }}px;
                   {%- endif -%}
                 {%- endif -%}
               {%- endfor -%}
-
-              {%- assign has_insurance_product = false -%}
-
-              {% comment %} 活动配件 {% endcomment %}
-              {%- assign is_event_components = false %}
               
               {%- comment -%} Check if the item has an active Insurance product in cart {%- endcomment -%}
               {%- for insurance_item in cart.items -%}
@@ -146,23 +119,13 @@ padding-bottom: {{ section.settings.padding_bottom }}px;
                   {%- continue -%}
                 {%- endif -%}
                 
-                {%- if item.id == insurance_prop_product_id and insurance_item.id == item_prop_insurance_variant_id -%}
-                  {%- assign has_insurance_product = true -%}
-                  {%- break -%}
-                {%- endif -%}
-
-                 {% comment %} 如果是赠送的活动配件 {% endcomment %}
-                      {%- if item.id == 43745263255768 or item.id == 43745261748440 or item.id == 43745264697560 -%}
-                          {%- assign is_event_components = true -%}
-                            {%- break -%}
-                  {%- endif -%}
-                
               {%- endfor -%}
             
               <tr 
                 class="cart-item" 
                 id="CartItem-{{ item.index | plus: 1 }}"
                 data-cart-item="{{ item.key }}"
+                data-index="{{ item.index | plus: 1 }}"
                 data-line-item="{{ forloop.index }}"
                 data-quantity="{{- item.quantity -}}"
                 data-line-item-product-id="{{- item.product_id -}}"
@@ -256,9 +219,9 @@ padding-bottom: {{ section.settings.padding_bottom }}px;
                               <span style="color:#484848;">
                               {% case option.value %}
                                 {% when 'M' %}
-                                  (Fit for 170-185 cm)
+                                  (Fit for 165-180 cm)
                                 {% when 'L' %}
-                                  (Fit for 180-195 cm)
+                                  (Fit for 175-195 cm)
                                 {% when 'High-Step' %}
                                   (Fit for 170cm - 195cm)
                                 {% when 'Step-Through' %}
@@ -345,6 +308,9 @@ padding-bottom: {{ section.settings.padding_bottom }}px;
                         {{ item.original_line_price | money }}
                       </span>
                     {%- endif -%}
+                    {% if item.product.id == 7633738727640 %}
+                      <span class="u14Medium_v2 emphasize" style="color: #EB5A2D;margin-top: 4px;">Only {{ item.variant.inventory_quantity | at_least: 2 }} Left</span>
+                    {% endif %}
 
                     {%- if item.variant.available and item.unit_price_measurement -%}
                       <div class="unit-price caption">
@@ -366,37 +332,39 @@ padding-bottom: {{ section.settings.padding_bottom }}px;
                     <label class="visually-hidden" for="Quantity-{{ item.index | plus: 1 }}">
                       {{ 'products.product.quantity.label' | t }}
                     </label>
+                    
                     {% assign discountTitle = item.discounts.first.title %}
+                    {%- assign is_insurance_product = false -%}
+        
+                    {% if item.properties._product_variant_id != blank %}
+                      {%- assign is_insurance_product = true -%}
+                    {%- endif -%}
 
-                    {% if item.product.id!=sale_product_id and discountTitle or is_insurance_product %}
+                    {% if sale_product_id != item.product.id and discountTitle or is_insurance_product %}
                       <div style="width: 100%;display: flex;align-items: center;">{{ item.quantity }}</div>
                     {% else %}
-                      {% if item.product.id == 7952778658008 and has_insurance_product %}
-                          <div style="width: 100%;display: flex;align-items: center;">{{ item.quantity }}</div>
-                        {% else  %}
-                        <quantity-input class="quantity">
-                          <button class="quantity__button no-js-hidden" name="minus" type="button">
-                            <span class="visually-hidden">{{ 'products.product.quantity.decrease' | t: product:
-                              item.product.title | escape }}</span>
-                            {% render 'icon-minus' %}
-                          </button>
-    
-                          <input class="quantity__input" type="number" name="updates[]" value="{{ item.quantity }}" min="0"
-                            aria-label="{{ 'products.product.quantity.input_label' | t: product: item.product.title | escape }}"
-                            id="Quantity-{{ item.index | plus: 1 }}" data-index="{{ item.index | plus: 1 }}">
-    
-    
-                          <button class="quantity__button no-js-hidden" name="plus" type="button">
-                            <span class="visually-hidden">{{ 'products.product.quantity.increase' | t: product:
-                              item.product.title | escape }}</span>
-                            {% render 'icon-plus' %}
-                          </button>
-                        </quantity-input>
-                        {% endif %}
+                      <quantity-input class="quantity">
+                        <button class="quantity__button no-js-hidden" name="minus" type="button">
+                          <span class="visually-hidden">{{ 'products.product.quantity.decrease' | t: product:
+                            item.product.title | escape }}</span>
+                          {% render 'icon-minus' %}
+                        </button>
+
+                        <input class="quantity__input" type="number" name="updates[]" value="{{ item.quantity }}" min="0"
+                          aria-label="{{ 'products.product.quantity.input_label' | t: product: item.product.title | escape }}"
+                          id="Quantity-{{ item.index | plus: 1 }}" data-index="{{ item.index | plus: 1 }}">
+
+
+                        <button class="quantity__button no-js-hidden" name="plus" type="button">
+                          <span class="visually-hidden">{{ 'products.product.quantity.increase' | t: product:
+                            item.product.title | escape }}</span>
+                          {% render 'icon-plus' %}
+                        </button>
+                      </quantity-input>
                     {% endif %}
                     
                     <cart-remove-button id="Remove-{{ item.index | plus: 1 }}" data-index="{{ item.index | plus: 1 }}">
-                      <a href="{{ item.url_to_remove }}" class="button button--tertiary" {% if item.product.id!=sale_product_id and discountTitle %}style='display:none' {% endif %}
+                      <a href="{{ item.url_to_remove }}" class="button button--tertiary" {% if item.product.id != sale_product_id and discountTitle %}style='display:none' {% endif %}
                         aria-label="{{ 'sections.cart.remove_title' | t: title: item.title }}">
                         {% render 'icon-remove' %}
                       </a>
@@ -450,6 +418,9 @@ padding-bottom: {{ section.settings.padding_bottom }}px;
                         {{ item.original_line_price | money }}
                       </span>
                     {%- endif -%}
+                    {% if item.product.id == 7633738727640 %}
+                      <span class="u14Medium_v2 emphasize" style="color: #EB5A2D;margin-top: 4px;">Only {{ item.variant.inventory_quantity | at_least: 2 }} Left</span>
+                    {% endif %}
 
                     {%- if item.variant.available and item.unit_price_measurement -%}
                       <div class="unit-price caption">
@@ -484,40 +455,6 @@ padding-bottom: {{ section.settings.padding_bottom }}px;
     </div>-->
   </form>
 </cart-items>
-<script>/*
-var bikeQuantity = Number('{{ bikeQuantity }}');
-var helmetQuantity = Number('{{ helmetQuantity }}')
-var threeDivided = Number('{{ threedivided }}')
-var glassQuantity = Number('{{ glassQuantity }}')
-var kickstandQuantity = Number('{{ kickstandQuantity }}')
-var waterBottleCageQuantity = Number('{{ waterBottleCageQuantity }}')
-var customizedMudguardsQuantity = Number('{{ customizedMudguardsQuantity }}')
-var isChange = false;
-if (helmetQuantity < bikeQuantity) { helmetQuantity = bikeQuantity; isChange = true; }
-if (glassQuantity < bikeQuantity) { glassQuantity = bikeQuantity; isChange = true; }
-//if (kickstandQuantity < bikeQuantity) { kickstandQuantity = bikeQuantity; isChange = true; }
-//if (waterBottleCageQuantity < bikeQuantity) { waterBottleCageQuantity = bikeQuantity; isChange = true; }
-//if (customizedMudguardsQuantity < bikeQuantity) { customizedMudguardsQuantity = bikeQuantity; isChange = true; }
-if (isChange) {
-updateCartItem(helmetQuantity, glassQuantity);
-}
-function updateCartItem(hNum, gNum) {//, wNum, mNum) {
-var body = { updates: { "43502341095640": hNum, "43565513834712": gNum } };
-fetch("/cart/update.js", {
-method: "POST",
-body: JSON.stringify(body),
-headers: {
-"Content-Type": "application/json",
-},
-})
-.then((res) => res.json())
-.then((res1) => {
-location.reload();
-})
-.catch((err) => {
-});
-}*/
-</script>
 {% schema %}
 {
 "name": "t:sections.main-cart-items.name",
