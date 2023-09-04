@@ -225,9 +225,7 @@
                   const businessHours = (store.businessHours || []).filter(Boolean)
                   const disableDate = store.disableDate || []
                   // 查找可预约到星期几
-                  function findAvailableWeek (d) {
-                    return businessHours[d] ? d : findAvailableWeek(d === 6 ? 0 : ++d)
-                  } 
+                  const findAvailableWeek = d => businessHours[d] ? d : findAvailableWeek(d === 6 ? 0 : ++d)
                   // 可用日期计算
                   const findAvalibaleDate = date => {
                      if (!businessHours.length) {
