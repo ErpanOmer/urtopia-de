@@ -222,27 +222,22 @@
     const findStore = name => {
             for (const city of testRides) {
                 for (const store of city.stores) {
-                  const businessHours = store.businessHours || []
+                  const businessHours = (store.businessHours || []).filter(Boolean)
                   const disableDate = store.disableDate || []
                   // 查找可预约到星期几
-                  function findAvailableWeek (d, count = 0) {
-                    console.log('count', count, count >= 7)
-                    if (count >= 7) {
-                        return -1
-                    }
-
-                    return businessHours[d] ? d : findAvailableWeek(d === 6 ? 0 : ++d, ++count)
+                  function findAvailableWeek (d) {
+                    return businessHours[d] ? d : findAvailableWeek(d === 6 ? 0 : ++d)
                   } 
                   // 可用日期计算
                   const findAvalibaleDate = date => {
+                     if (!businessHours.length) {
+                        return date
+                     }
+
                       const str = getDateString(getData(date))
                       const timestamp = +getData(str)
                       const currentWeek = getData(str).getDay()
                       const AvailableWeek = findAvailableWeek(currentWeek)
-
-                      if (AvailableWeek === -1) {
-                        return findAvalibaleDate(+new Date())
-                      }
     
                       const findDisable = disableDate.find(i => getDateString(getData(i)) === str)    
                       if (findDisable) {
