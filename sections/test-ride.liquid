@@ -515,7 +515,9 @@
             const elem = $(store).find('.storepoint-name')
 
             const name = elem.text()
+            console.time(`store: ${name}`)
             const info = findStore(name)
+            console.timeEnd(`store: ${name}`)
             // 如果搜不到 店铺
             if (!info) {
                 continue
