@@ -210,19 +210,6 @@
           box-sizing: inherit;
         }
 
-        :root {
-          --sale-color1: #EA9E67;
-          --sale-color2: #EB5A2D;
-          --sale-color3: #EE6426;
-          --sale-color4: #F4492A;
-          --sale-banner-background-image-pc: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_20911_2x_061517a1-9c68-4abe-a146-41e69984d40e.jpg?v=1693793998');
-          --sale-banner-background-image-mb: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18530_2x_5ccf28ad-01ba-43ad-aebc-cb855a2ce6bb.jpg?v=1693794161');
-          --sale-banner-image-max-width: 320px;
-
-          --sale-collection-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/6_2x_0db9f436-0d10-46eb-b6ed-96e5e43dfa43.png?v=1693190155');
-          --sale-collection-image-max-width: 360px;
-        }
-
         html {
           box-sizing: border-box;
           font-size: calc(var(--font-body-scale) * 62.5%);
@@ -249,6 +236,8 @@
           }
         }
       {% endstyle %}
+
+      {% render 'sale-color' %}
 
       {{ 'base.css' | asset_url | stylesheet_tag }}
       {{ 'component.css' | asset_url | stylesheet_tag }}

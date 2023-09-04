@@ -97,47 +97,6 @@
             background: center center/cover no-repeat;
         }
 
-
-        // 常规banner
-        .common {
-            background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230418-105138.jpg?v=1681786322');
-
-            .centeral-content {
-                &>div {
-                    &:last-child {
-                        max-width: 500px;
-                        text-align: left;
-                    }
-                }
-            }
-
-            .right {
-                .u60DemiBold_v2 {
-                    margin: 10px 0 110px;
-                }
-            }
-        }
-
-
-        // maksim banner
-        .maksim {
-            background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230418-110500.jpg?v=1681787114');
-
-            .centeral-content {
-                &>div {
-                    &:last-child {
-                        max-width: 550px;
-                    }
-                }
-            }
-
-            .right {
-                .u48DemiBold_v2 {
-                    margin: 16px 0 136px;
-                }
-            }
-        }
-
       .summer-sale {
             background-image: var(--sale-banner-background-image-pc);
 
@@ -151,49 +110,6 @@
 
                     .u36DemiBold_v2 {
                         margin: 40px 0;
-                    }
-                }
-            }
-        }
-
-        .leasing {
-            background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_20984_2x_94ab1de8-17d3-48cd-b2f3-1ec58ed8098e.jpg?v=1686661143');
-
-            .centeral-content {
-                & > div {
-                    &:last-child {
-                        flex: 1;
-
-                        .imgaes {
-                            display: grid;
-                            grid-template-columns: 1fr 1fr;
-                            grid-template-rows: 60px;
-                            grid-gap: 40px;
-                            margin: 70px 0 140px;
-
-                            img {
-                                width: auto;
-                                max-height: 60px;
-                            }
-                        }
-                    }
-                }
-            }
-        }
-
-        .golf {
-            background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_21473_2x_0354c98d-7718-463a-a282-7dfeeded5a15.jpg?v=1689072659');
-
-            .centeral-content {
-                & > div {
-                    align-items: flex-start;
-
-                    .u30DemiBold_v2 {
-                        margin-top: 28px;
-                    }
-
-                    .u24Light_v2 {
-                        margin: 30px 0 50px;
                     }
                 }
             }
@@ -465,40 +381,6 @@
                 background-position-y: top;
             }
 
-            // 常规banner
-            .common {
-                background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230418-102832.png?v=1681784932');
-
-                .right {
-                    padding: 20vw 0;
-                    color: #000;
-
-                    .u24Medium_v2 {
-                        font-size: 17px;
-                    }
-
-                    .u60DemiBold_v2 {
-                        font-size: 30px;
-                        margin-bottom: 0;
-                        // margin: 10px 0 110px;
-                    }
-                }
-            }
-
-
-            .maksim {
-                background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_20869_2x_095b2a64-3bee-4b82-a920-f596bd11b508.jpg?v=1681788172');
-
-                .right {
-                    padding: 10vw 0 20vw;
-
-                    .u48DemiBold_v2 {
-                        font-size: 36px;
-                        margin: 0;
-                    }
-                }
-            }
-
           .summer-sale {
             background-image: var(--sale-banner-background-image-mb);
 
@@ -512,40 +394,12 @@
                         text-align: center;
 
                         & > img {
-                            max-width: 192px;
+                            max-width: var(--sale-banner-image-max-width-mb);
                         }
     
                         .u36DemiBold_v2 {
                             font-size: 20px;
                             margin-top: 20px;
-                        }
-                    }
-                }
-            }
-
-            .leasing {
-                background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_20985_2x_ce450aac-52e3-4e0b-8031-c657fa46700d.jpg?v=1686662126');
-    
-                .centeral-content {
-                    & > div {
-                        &:last-child {
-                            padding: 18vw 0 8vw;
-                            flex: unset;
-
-                            .imgaes {
-                                grid-template-columns: 1fr;
-                                grid-gap: 24px;
-                                margin-top: 12vw;
-                                margin-bottom: 0;
-
-                                img {
-                                    max-height: 32px;
-                                }
-                            }
-
-                            .u36DemiBold_v2 {
-                                font-size: 24px;
-                            }
                         }
                     }
                 }

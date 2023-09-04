@@ -4019,7 +4019,7 @@ body .jBox-Modal {
 #announcement-bar {
   height: 38px;
   overflow: hidden;
-  background-color: var(--sale-color3);
+  background-color: var(--sale-order-page-text-color);
   color: #fff;
   text-align: center;
 }
