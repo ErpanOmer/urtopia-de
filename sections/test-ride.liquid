@@ -656,10 +656,19 @@
             iterator.style.display = 'none'
 
             for (const result of results) {
+<<<<<<< HEAD
                 const name1 = $(result.querySelector('.storepoint-name')).text() || ''
                 const name2 = iterator.getAttribute('name') || ''
 
                 if (name1.replace(/\s*/g, "") === name2.replace(/\s*/g, "")) {
+=======
+                const name1 = $(result.querySelector('.storepoint-name')).text()
+                const name2 = iterator.getAttribute('name')
+
+                console.log('name1', name1, 'name2', name2)
+
+                if (name1 === name2) {
+>>>>>>> 5bcc1fc0c4c25cc1b551a3edd0612afa7d126673
                     iterator.style.display = 'block'
                     break
                 }
