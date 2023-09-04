@@ -226,7 +226,7 @@
                   const disableDate = store.disableDate || []
                   // 查找可预约到星期几
                   const findAvailableWeek = (d, count = 0) => {
-                    console.log('count', count)
+                    console.log('count', count === 7)
                     if (count > 7) {
                         return -1
                     }
