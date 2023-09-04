@@ -254,7 +254,6 @@
                   //const findAvailableWeek = d => businessHours[d] ? d : findAvailableWeek(d === 6 ? 0 : ++d)
                   // 可用日期计算
                   const findAvalibaleDate = (date, count = 0) => {
-                    console.log('count', count)
                      if (!businessHours.length) {
                         return now
                      }
@@ -282,9 +281,7 @@
                   }
     
                   store.findAvalibaleDate = () => {
-                    const time = getData(findAvalibaleDate(getData())).toString().split(' ')
-                    console.log(store.name)
-    
+                    const time = getData(findAvalibaleDate(getData())).toString().split(' ')    
                     return `${time[2]}. ${time[1]}`
                   }
 
