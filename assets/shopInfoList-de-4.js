@@ -6,7 +6,7 @@
 function createdisableDates(disable_limit = 0, ignore_date = [], start_time = new Date()) {
   const temp = []
   const one_day = 60 * 60 * 24 * 1000
-  disable_limit = Math.min(100, disable_limit)
+  disable_limit = Math.min(60, disable_limit)
 
   for (let index = 0; index < disable_limit; index++) {
     const time = new Date(+new Date(start_time) + (one_day * index))
