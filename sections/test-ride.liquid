@@ -242,43 +242,50 @@
                     return -1
                   }
 
-                  const findDisable = str => {
-                    for (let i = 0; i < disableDate.length; i++) {
-                        if (getDateString(getData(disableDate[i])) === str) {
-                            return true
+                  const findDisable = (str, index = 0) => {
+                        for (let i = index; i < disableDate.length; i++) {
+                            if (disableDate[i].replace(/-/g, '/') === str) {
+                                return i
+                            }
                         }
                     }
-                  }
 
-
-                  //const findAvailableWeek = d => businessHours[d] ? d : findAvailableWeek(d === 6 ? 0 : ++d)
                   // 可用日期计算
-                  const findAvalibaleDate = (date, count = 0) => {
-                     if (!businessHours.length) {
-                        return now
-                     }
+                  const findAvalibaleDate = (date) => {
 
-                     if (count > 30) {
-                        return date
-                     }
+                        if (!businessHours.length) {
+                            return now
+                        }
 
-                      const str = getDateString(getData(date))
-                      const timestamp = +getData(str)
+                        let index = 0
 
-                      if (findDisable(str)) {
-                        return findAvalibaleDate(timestamp + oneDay, ++count)
-                      }
+                        while (true) {
+                            const d = getData(date)
+                            const str = getDateString(d)
+
+                            // 保存上次 循环的index
+                            index = findDisable(str, index)
+
+                            if (!isNaN(index)) {
+                                date = +d + oneDay
+                                continue
+                            }
+
+                            const currentWeek = d.getDay()
+                            const AvailableWeek = findAvailableWeek(currentWeek)
+
+                            if (AvailableWeek === -1) {
+                                return now
+                            }
+
+                            if (currentWeek === AvailableWeek) {
+                                return str
+                            }
 
 
-                      const currentWeek = getData(str).getDay()
-                      const AvailableWeek = findAvailableWeek(currentWeek)
-
-                      if (AvailableWeek === -1) {
-                        return now
-                      }
-    
-                      return currentWeek === AvailableWeek ? str : findAvalibaleDate(timestamp + (oneDay * findOffset([currentWeek, AvailableWeek])), ++count)
-                  }
+                            date = +d + (oneDay * findOffset([currentWeek, AvailableWeek]))
+                        }
+                    }
     
                   store.findAvalibaleDate = () => {
                     const time = getData(findAvalibaleDate(getData())).toString().split(' ')    
