@@ -487,6 +487,7 @@
     }
 
     function insertCustomElements(target) {
+        console.time('insertCustomElements')
         target.style.opacity = 0
         const stores = Array.from(target.querySelectorAll('.storepoint-location'))
 
@@ -670,6 +671,7 @@
         // popup.classList.add('mapboxgl-popup')
 
         // document.querySelector('#storepoint-map').appendChild(popup)
+        console.timeEnd('insertCustomElements')
     }
 
     function observerItems(mutationsList) {
