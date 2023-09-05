@@ -189,7 +189,7 @@
     let select_city_count = 0
     let select_store_count = 0
 
-    const getData = function (date = new Date()) {
+    const getData = (date = new Date()) => {
         if (typeof date !== 'object') {
             if (typeof date === 'string') {
                 date = date.replace(/-/g, '/')
@@ -218,6 +218,7 @@
                   }
     
     const oneDay = 24 * 60 * 60 * 1000
+    const now = +new Date()
     
     const findStore = name => {
             for (const city of testRides) {
@@ -225,29 +226,62 @@
                   const businessHours = (store.businessHours || []).filter(Boolean)
                   const disableDate = store.disableDate || []
                   // 查找可预约到星期几
-                  const findAvailableWeek = d => businessHours[d] ? d : findAvailableWeek(d === 6 ? 0 : ++d)
+
+                  const findAvailableWeek = d => {
+                    if (businessHours[d]) {
+                        return d
+                    }
+
+                    for (let i = d; i < d + 7; i++) {
+
+                        if (businessHours[i % 7]) {
+                            return i % 7
+                        }
+                    }
+
+                    return -1
+                  }
+
+                  const findDisable = str => {
+                    for (let i = 0; i < disableDate.length; i++) {
+                        if (getDateString(getData(disableDate[i])) === str) {
+                            return true
+                        }
+                    }
+                  }
+
+
+                  //const findAvailableWeek = d => businessHours[d] ? d : findAvailableWeek(d === 6 ? 0 : ++d)
                   // 可用日期计算
-                  const findAvalibaleDate = date => {
+                  const findAvalibaleDate = (date, count = 0) => {
                      if (!businessHours.length) {
+                        return now
+                     }
+
+                     if (count > 30) {
                         return date
                      }
 
                       const str = getDateString(getData(date))
                       const timestamp = +getData(str)
+
+                      if (findDisable(str)) {
+                        return findAvalibaleDate(timestamp + oneDay, ++count)
+                      }
+
+
                       const currentWeek = getData(str).getDay()
                       const AvailableWeek = findAvailableWeek(currentWeek)
-    
-                      const findDisable = disableDate.find(i => getDateString(getData(i)) === str)    
-                      if (findDisable) {
-                        return findAvalibaleDate(timestamp + oneDay)
+
+                      if (AvailableWeek === -1) {
+                        return now
                       }
     
-                      return currentWeek === AvailableWeek ? str : findAvalibaleDate(timestamp + (oneDay * findOffset([currentWeek, AvailableWeek])))
+                      return currentWeek === AvailableWeek ? str : findAvalibaleDate(timestamp + (oneDay * findOffset([currentWeek, AvailableWeek])), ++count)
                   }
     
                   store.findAvalibaleDate = () => {
-                    const time = getData(findAvalibaleDate(getData())).toString().split(' ')
-    
+                    const time = getData(findAvalibaleDate(getData())).toString().split(' ')    
                     return `${time[2]}. ${time[1]}`
                   }
 
