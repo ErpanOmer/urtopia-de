@@ -182,6 +182,7 @@
 
 {{ 'shopInfoList-de-4.js' | asset_url | script_tag }}
 {{ 'laydatev4-de.js' | asset_url | script_tag }}
+<script src="https://cdn.storepoint.co/api/v1/js/162f21804990ff.js"></script>
 <script>
 
     let last_select_city = ''
@@ -251,7 +252,7 @@
                     }
 
                   // 可用日期计算
-                  const findAvalibaleDate = (date) => {
+                  const findAvalibaleDate = date => {
 
                         if (!businessHours.length) {
                             return now
@@ -286,10 +287,12 @@
 
                             date = Number(d) + (oneDay * findOffset([currentWeek, AvailableWeek]))
                         }
+
+                        return date
                     }
     
                   store.findAvalibaleDate = () => {
-                    const time = getData(findAvalibaleDate(getData())).toString().split(' ')    
+                    const time = getData(findAvalibaleDate()).toString().split(' ')    
                     return `${time[2]}. ${time[1]}`
                   }
 
@@ -379,14 +382,6 @@
                 .addClass('faq-content-plus');
         });
     }, 300)
-
-
-    const a = document.createElement("script");
-    a.type = "text/javascript";
-    // a.async = !0;
-    a.src = "https://cdn.storepoint.co/api/v1/js/162f21804990ff.js";
-    const b = document.getElementsByTagName("script")[0];
-    b.parentNode.insertBefore(a, b);
 
     function reset() {
         $('#storepoint-search .forms select').val('')
