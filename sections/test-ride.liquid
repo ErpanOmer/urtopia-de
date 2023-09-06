@@ -190,109 +190,88 @@
     let select_city_count = 0
     let select_store_count = 0
 
-    const getData = (date = new Date()) => {
-        if (typeof date !== 'object') {
-            if (typeof date === 'string') {
-                date = date.replace(/-/g, '/')
-            }
-
-            date = new Date(date)
+    // 查询日期偏移量
+    const findOffset = ([nowWeek, vailableWeek]) => {
+        if (nowWeek === vailableWeek) {
+            return 0
         }
 
-        date.setHours(0)
-        date.setMinutes(0)
-        date.setSeconds(0)
-
-        return date
+        return vailableWeek > nowWeek ? vailableWeek - nowWeek : 7 - (nowWeek - vailableWeek)
     }
 
-    const getDateString = function (date) {
-        return `${date.getFullYear()}/${date.getMonth() + 1}/${date.getDate()}`
+    // 查找可预约到星期几
+    const findAvailableWeek = (d, businessHours) => {
+        if (businessHours[d]) {
+            return d
+        }
+
+        for (let i = d; i < d + 7; i++) {
+
+            if (businessHours[i % 7]) {
+                return i % 7
+            }
+        }
+
+        return -1
     }
 
-    const findOffset = ([nowWeek, vailableWeek]) => {
-                    if (nowWeek === vailableWeek) {
-                      return 0
-                    }
-    
-                    return vailableWeek > nowWeek ? vailableWeek - nowWeek : 7 - (nowWeek - vailableWeek)
-                  }
-    
-    const oneDay = 24 * 60 * 60 * 1000
-    const now = +new Date()
+    // 查询禁用日期
+    const findDisable = (str, index = 0, disableDate) => {
+        for (let i = index; i < disableDate.length; i++) {
+            if (disableDate[i] === str) {
+                return i
+            }
+        }
+    }
+
+     // 可用日期计算
+     const findAvalibaleDate = store => {
+            if (!store.businessHours.length) {
+                return now
+            }
+
+            let index = 0
+            let count = 0
+            let date = now
+
+            while (++count < 60) {
+                const d = getData(date)
+                const str = getDateString(d)
+
+                // 保存上次 循环的index
+                index = findDisable(str, index, store.disableDate)
+
+                if (!isNaN(index)) {
+                    date = Number(d) + oneDay
+                    continue
+                }
+
+                const currentWeek = d.getDay()
+                const AvailableWeek = findAvailableWeek(currentWeek, store.businessHours)
+
+                if (AvailableWeek === -1) {
+                    return now
+                }
+
+                if (currentWeek === AvailableWeek) {
+                    return str
+                }
+
+
+                date = Number(d) + (oneDay * findOffset([currentWeek, AvailableWeek]))
+            }
+
+            return date
+    }
     
     const findStore = name => {
             for (const city of testRides) {
                 for (const store of city.stores) {
-                  const businessHours = (store.businessHours || []).filter(Boolean)
-                  const disableDate = store.disableDate || []
-                  // 查找可预约到星期几
+                  store.disableDate = store.disableDate || []
+                  store.businessHours = store.businessHours || []
 
-                  const findAvailableWeek = d => {
-                    if (businessHours[d]) {
-                        return d
-                    }
-
-                    for (let i = d; i < d + 7; i++) {
-
-                        if (businessHours[i % 7]) {
-                            return i % 7
-                        }
-                    }
-
-                    return -1
-                  }
-
-                  const findDisable = (str, index = 0) => {
-                        for (let i = index; i < disableDate.length; i++) {
-                            if (disableDate[i].replace(/-/g, '/') === str) {
-                                return i
-                            }
-                        }
-                    }
-
-                  // 可用日期计算
-                  const findAvalibaleDate = date => {
-
-                        if (!businessHours.length) {
-                            return now
-                        }
-
-                        let index = 0
-                        let count = 0
-
-                        while (++count < 100) {
-                            const d = getData(date)
-                            const str = getDateString(d)
-
-                            // 保存上次 循环的index
-                            index = findDisable(str, index)
-
-                            if (!isNaN(index)) {
-                                date = Number(d) + oneDay
-                                continue
-                            }
-
-                            const currentWeek = d.getDay()
-                            const AvailableWeek = findAvailableWeek(currentWeek)
-
-                            if (AvailableWeek === -1) {
-                                return now
-                            }
-
-                            if (currentWeek === AvailableWeek) {
-                                return str
-                            }
-
-
-                            date = Number(d) + (oneDay * findOffset([currentWeek, AvailableWeek]))
-                        }
-
-                        return date
-                    }
-    
                   store.findAvalibaleDate = () => {
-                    const time = getData(findAvalibaleDate()).toString().split(' ')    
+                    const time = getData(findAvalibaleDate(store)).toString().split(' ')    
                     return `${time[2]}. ${time[1]}`
                   }
 

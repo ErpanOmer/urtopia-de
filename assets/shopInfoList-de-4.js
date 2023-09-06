@@ -1,27 +1,83 @@
+const getData = (date = new Date()) => {
+  if (typeof date !== 'object') {
+      if (typeof date === 'string') {
+          date = date.replace(/-/g, '/')
+      }
+
+      date = new Date(date)
+  }
+
+  date.setHours(0)
+  date.setMinutes(0)
+  date.setSeconds(0)
+
+  return date
+}
+
+const getDateString = function (date) {
+  return `${date.getFullYear()}/${date.getMonth() + 1}/${date.getDate()}`
+}
+
+const oneDay = 24 * 60 * 60 * 1000
+const now = +new Date()
+
+
 //  禁用日期动态生成函数
-//  disable_limit:  禁用几天               格式:  365
+//  disable_limit:  禁用几天               格式:  365 或者区间 [['2023-9-10', '2023-10-10'], ['2023-10-22', '2023-11-10']]
 //  ignore_date：   跳过某些日期不禁用      格式:  ['2023-7-27', '2023-7-28', '2023-7-29']  
 //  start_time:     从什么时候开始禁用      格式： 2023-7-27 （默认今天)
 
 function createdisableDates(disable_limit = 0, ignore_date = [], start_time = new Date()) {
-  const temp = []
-  const one_day = 60 * 60 * 24 * 1000
-  disable_limit = Math.min(60, disable_limit)
+  let temp = []
 
-  for (let index = 0; index < disable_limit; index++) {
-    const time = new Date(+new Date(start_time) + (one_day * index))
-    const str = `${time.getFullYear()}-${time.getMonth() + 1}-${time.getDate()}`
+  if (Array.isArray(disable_limit)) {
+    while(disable_limit.length) {
+      const item = disable_limit.shift()
 
-    if (ignore_date.includes(str)) {
+      if (typeof item === 'string') {
+        temp.push(getDateString(getData(item)))
         continue
-    }
+      }
 
-    temp.push(str)
+      let [start, end] = item
+
+      start = getData(start)
+      end = getData(end)
+
+      while (Number(start) !== Number(end)) {
+        temp.push(getDateString(start))
+
+        start = getData(oneDay + Number(start))
+      }
+
+      temp.push(getDateString(end))
+    }
+  } else {
+    let start = getData(start_time)
+
+    while(disable_limit--) {
+      temp.push(getDateString(start))
+
+      start = getData(oneDay + Number(start))
+    }
+  }
+
+
+
+  temp = temp.slice(0, Math.min(60, temp.length))
+
+  for (const iterator of ignore_date) {
+    const date = getDateString(getData(iterator))
+
+    const index = temp.findIndex(t => t === date)
+
+    if (index > -1) {
+      temp.splice(index, 1)
+    }
   }
 
   return temp
 }
-
 
 const testRides = [
   {
