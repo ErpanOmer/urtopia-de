@@ -1487,12 +1487,8 @@
 
     pageInit()
 
-    jQuery.getJSON(window.Shopify.routes.root + 'products.json', res => {
-      const products = res.products
-
-      console.time('start')
-      for (const product of products) {
-        for (const variant of product.variants) {
+    jQuery.getJSON(window.Shopify.routes.root + 'products/urtopia-carbon-e-bike.js', res => {
+        for (const variant of res.variants) {
           // 如果此配件不可用 
           if (!variant.available) {
             const carbon1_send_accessories_variant_ids = JSON.parse(JSON.stringify(global_config.carbon_order_page_config.events.carbon1_send_accessories_variant_ids))
@@ -1518,9 +1514,6 @@
             }
           }
         }
-      }
-
-      console.timeEnd('start')
     })
 </script>
 
