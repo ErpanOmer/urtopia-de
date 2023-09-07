@@ -236,6 +236,7 @@
             flex-direction: column;
             width: 100%;
             z-index: 1;
+            align-items: flex-start;
 
             .u24Light_v2 {
                 margin: 2vh 0 10vh;
@@ -243,6 +244,28 @@
 
             .my-button {
                 margin: 0 12px 12px 0;
+            }
+
+            .sale {
+                display: flex;
+                flex-direction: column;
+                background-color: #FD4B17;
+                padding: 0 36px;
+                border-radius: 100px;
+                overflow: hidden;
+                margin-bottom: 50px;
+                align-items: center;
+                justify-content: center;
+
+                .u17DemiBold_v2,
+                img {
+                    transform: translateY(12px);
+                }
+
+                img {
+                    margin-top: 6px;
+                    max-width: 300px;
+                }
             }
         }
 
@@ -1289,6 +1312,7 @@
                 text-align: center;
                 padding-bottom: 8vw;
                 padding-top: 16vw;
+                align-items: unset;
 
                 .u72DemiBold_v2 {
                     font-size: 36px;
