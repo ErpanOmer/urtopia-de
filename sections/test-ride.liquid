@@ -216,7 +216,7 @@
     }
 
     // 查询禁用日期
-    const findDisable = (str, index = 0, disableDate) => {
+    const findDisable = (str, index = 0, disableDate = []) => {
         for (let i = index; i < disableDate.length; i++) {
             if (disableDate[i] === str) {
                 return i
