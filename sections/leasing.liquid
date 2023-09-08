@@ -535,8 +535,8 @@ $('.partners .swiper-wrapper').html(swiperItems.map(item => `
     const switch_bike = {
         carbon1: {
             background_image: `{{ carbon1 }}`,
-            price: `{{ all_products['urtopia-carbon-e-bike'].price | minus: settings.carbon_ebike_discount_price | money  }}`,
-            orginal_price: `{{ all_products['urtopia-carbon-e-bike'].price | money  }}`,
+            price: `{{ all_products['urtopia-carbon-e-bike'].price | minus: settings.carbon_ebike_discount_price | money_without_trailing_zeros  }}`,
+            orginal_price: `{{ all_products['urtopia-carbon-e-bike'].price | money_without_trailing_zeros  }}`,
             discount_price: `{{ settings.carbon_ebike_discount_price | money_without_trailing_zeros }}`,
             box1_svg_image: `https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18449_2x_8fc05a36-e73b-4c68-8462-5cdfa6cea6b3.png?v=1683702610`,
             box1_text1: 'Carbon Fiber',
@@ -547,8 +547,8 @@ $('.partners .swiper-wrapper').html(swiperItems.map(item => `
         },
         carbon1s: {
             background_image: `{{ carbon1s }}`,
-            price: `{{ all_products['urtopia-carbon-e-bike'].price | minus: settings.carbon1s_ebike_discount_price | money  }}`,
-            orginal_price: `{{ all_products['urtopia-carbon-e-bike'].price | money  }}`,
+            price: `{{ all_products['urtopia-carbon-e-bike'].price | minus: settings.carbon1s_ebike_discount_price | money_without_trailing_zeros  }}`,
+            orginal_price: `{{ all_products['urtopia-carbon-e-bike'].price | money_without_trailing_zeros  }}`,
             discount_price: `{{ settings.carbon1s_ebike_discount_price | money_without_trailing_zeros }}`,
             box1_svg_image: `https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18448_2x_d3fbd8a8-d1e2-4a84-b4eb-ce513f342438.png?v=1683705373`,
             box1_text1: 'Torque',
@@ -559,8 +559,8 @@ $('.partners .swiper-wrapper').html(swiperItems.map(item => `
         },
         chord: {
             background_image: `{{ chord }}`,
-            price: `{{ all_products['urtopia-chord-ebike'].price | minus: settings.chord_ebike_discount_price | money  }}`,
-            orginal_price: `{{ all_products['urtopia-chord-ebike'].price | money  }}`,
+            price: `{{ all_products['urtopia-chord-ebike'].price | minus: settings.chord_ebike_discount_price | money_without_trailing_zeros  }}`,
+            orginal_price: `{{ all_products['urtopia-chord-ebike'].price | money_without_trailing_zeros  }}`,
             discount_price: `{{ settings.chord_ebike_discount_price | money_without_trailing_zeros }}`,
             box1_svg_image: `https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18448_2x_d3fbd8a8-d1e2-4a84-b4eb-ce513f342438.png?v=1683705373`,
             box1_text1: 'Torque',
@@ -571,8 +571,8 @@ $('.partners .swiper-wrapper').html(swiperItems.map(item => `
         },
         chordx: {
             background_image: `{{ chordx }}`,
-            price: `{{ all_products['urtopia-chord-ebike'].price | minus: settings.chord_ebike_discount_price | money  }}`,
-            orginal_price: `{{ all_products['urtopia-chord-ebike'].price | money  }}`,
+            price: `{{ all_products['urtopia-chord-ebike'].price | minus: settings.chord_ebike_discount_price | money_without_trailing_zeros  }}`,
+            orginal_price: `{{ all_products['urtopia-chord-ebike'].price | money_without_trailing_zeros  }}`,
             discount_price: `{{ settings.chord_ebike_discount_price | money_without_trailing_zeros }}`,
             box1_svg_image: `https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18448_2x_d3fbd8a8-d1e2-4a84-b4eb-ce513f342438.png?v=1683705373`,
             box1_text1: 'Torque',
