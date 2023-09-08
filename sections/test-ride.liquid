@@ -418,6 +418,12 @@
         })
     }
 
+    function asyncFunc () {
+        const [func, ...args] = Array.from(arguments)
+
+        setTimeout(func, 100, ...args)
+    }
+
      // 可用日期计算
      const findAvalibaleDate = (store, target) => {
             let index = 0
@@ -467,7 +473,8 @@
             return
         }
 
-        setTimeout(findAvalibaleDate, 300, store, target)
+
+        asyncFunc(findAvalibaleDate, store, target)
     }
 
     function insertCustomElements(target) {
