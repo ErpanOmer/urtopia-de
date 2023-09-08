@@ -24,7 +24,7 @@ const now = +new Date()
 // 禁用日期 最大天数
 const disable_date_max_limit = 60
 // 禁用日期 最大区间查找天数
-const disable_date_max_interval_limit = 60
+const disable_date_max_limit = 60
 // 禁用日期 最大循环次数
 const disable_date_max_loop_limit = 60
 
@@ -51,7 +51,7 @@ function createdisableDates(disable_limit = 0, ignore_date = [], start_time = ne
         let start = getData(iterator[0])
         let end = getData(iterator[1])
 
-        for (let index = 0; index < disable_date_max_interval_limit; index++) {
+        for (let index = 0; index < disable_date_max_limit; index++) {
           if (Number(start) === Number(end)) {
             break
           }
