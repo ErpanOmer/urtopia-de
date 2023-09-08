@@ -425,10 +425,9 @@
             }
 
             let index = 0
-            let count = 0
             let date = now
 
-            while (++count < disable_date_max_loop_limit) {
+            for (let i = 0; index < disable_date_max_loop_limit; index++) {
                 const d = getData(date)
                 const str = getDateString(d)
 
@@ -450,7 +449,6 @@
                 if (currentWeek === AvailableWeek) {
                     return str
                 }
-
 
                 date = Number(d) + (oneDay * findOffset([currentWeek, AvailableWeek]))
             }
