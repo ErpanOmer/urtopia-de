@@ -425,7 +425,9 @@
 
         //requestIdleCallback(() => func(...args))
 
-        Promise.resolve(...args).then(func)
+        Promise.resolve(...args).then(function () {
+            console.log(arguments)
+        })
     }
 
      // 可用日期计算
