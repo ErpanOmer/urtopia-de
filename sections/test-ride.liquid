@@ -224,46 +224,6 @@
         }
     }
 
-     // 可用日期计算
-     const findAvalibaleDate = store => {
-            if (!store.businessHours.length) {
-                return now
-            }
-
-            let index = 0
-            let count = 0
-            let date = now
-
-            while (++count < disable_date_max_loop_limit) {
-                const d = getData(date)
-                const str = getDateString(d)
-
-                // 保存上次 循环的index
-                index = findDisable(str, index, store.disableDate)
-
-                if (!isNaN(index)) {
-                    date = Number(d) + oneDay
-                    continue
-                }
-
-                const currentWeek = d.getDay()
-                const AvailableWeek = findAvailableWeek(currentWeek, store.businessHours)
-
-                if (AvailableWeek === -1) {
-                    return now
-                }
-
-                if (currentWeek === AvailableWeek) {
-                    return str
-                }
-
-
-                date = Number(d) + (oneDay * findOffset([currentWeek, AvailableWeek]))
-            }
-
-            return date
-    }
-
     const dateToString = (time = new Date()) => {
         time = time.toString().split(' ')    
         return `${time[2]}. ${time[1]}`
@@ -272,14 +232,6 @@
     const findStore = name => {
             for (const city of testRides) {
                 for (const store of city.stores) {
-                  store.disableDate = store.disableDate || []
-                  store.businessHours = store.businessHours || []
-
-                  store.findAvalibaleDate = () => {
-                    const time = getData(findAvalibaleDate(store)).toString().split(' ')    
-                    return `${time[2]}. ${time[1]}`
-                  }
-
                   // 把所属国家也加上
                   store.country = city.country || 'Deutschland'
     
@@ -466,9 +418,54 @@
         })
     }
 
+     // 可用日期计算
+     const findAvalibaleDate = store => {
+            if (!store.businessHours.length) {
+                return now
+            }
+
+            let index = 0
+            let count = 0
+            let date = now
+
+            while (++count < disable_date_max_loop_limit) {
+                const d = getData(date)
+                const str = getDateString(d)
+
+                // 保存上次 循环的index
+                index = findDisable(str, index, store.disableDate)
+
+                if (!isNaN(index)) {
+                    date = Number(d) + oneDay
+                    continue
+                }
+
+                const currentWeek = d.getDay()
+                const AvailableWeek = findAvailableWeek(currentWeek, store.businessHours)
+
+                if (AvailableWeek === -1) {
+                    return now
+                }
+
+                if (currentWeek === AvailableWeek) {
+                    return str
+                }
+
+
+                date = Number(d) + (oneDay * findOffset([currentWeek, AvailableWeek]))
+            }
+
+            return date
+    }
+
 
     function calculateFunc (store, target, disableDate) {
-        
+        if (typeof disableDate === 'function') {
+
+            return
+        }
+
+        setTimeout(findAvalibaleDate, 300, store, target)
     }
 
     function insertCustomElements(target) {
