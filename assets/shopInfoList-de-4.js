@@ -21,6 +21,16 @@ const getDateString = function (date) {
 const oneDay = 24 * 60 * 60 * 1000
 const now = +new Date()
 
+// 禁用日期 最大天数
+const disable_date_max_limit = 60
+// 禁用日期 最大区间查找天数
+const disable_date_max_interval_limit = 60
+// 禁用日期 最大循环次数
+const disable_date_max_loop_limit = 60
+
+let store_list_calculate_total_time = +new Date()
+
+
 
 //  禁用日期动态生成函数
 //  disable_limit:  禁用几天               格式:  365 或者区间 [['2023-9-10', '2023-10-10'], ['2023-10-22', '2023-11-10']]
@@ -40,7 +50,7 @@ function createdisableDates(disable_limit = 0, ignore_date = [], start_time = ne
       let start = getData(iterator[0])
       let end = getData(iterator[1])
 
-      for (let index = 0; index < 60; index++) {
+      for (let index = 0; index < disable_date_max_interval_limit; index++) {
         if (Number(start) === Number(end)) {
            break
         }
@@ -62,7 +72,7 @@ function createdisableDates(disable_limit = 0, ignore_date = [], start_time = ne
     }
   }
 
-  temp = temp.slice(0, Math.min(60, temp.length))
+  temp = temp.slice(0, Math.min(disable_date_max_limit, temp.length))
 
   for (const iterator of ignore_date) {
     const date = getDateString(getData(iterator))
@@ -1415,3 +1425,5 @@ const testRides = [
     ]
   },
 ]
+
+store_list_calculate_total_time = +new Date()

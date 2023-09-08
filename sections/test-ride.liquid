@@ -234,7 +234,7 @@
             let count = 0
             let date = now
 
-            while (++count < 60) {
+            while (++count < disable_date_max_loop_limit) {
                 const d = getData(date)
                 const str = getDateString(d)
 
@@ -462,7 +462,7 @@
     }
 
     function insertCustomElements(target) {
-        console.time('insertCustomElements')
+        const store_list_render_total_time = +new Date()
         target.style.opacity = 0
 
         const storeList = $(document.createDocumentFragment())
@@ -641,7 +641,13 @@
         $(target).parent().append(storeList)
         $('#storepoint-search').append(forms)
 
-        console.timeEnd('insertCustomElements')
+        fetchBuried('testride', 'performance', {
+            store_list_render_total_time: `${+new Date() - store_list_render_total_time} ms`,
+            store_list_calculate_total_time: `${+new Date() - store_list_calculate_total_time} ms`,
+            disable_date_max_limit,
+            disable_date_max_interval_limit,
+            disable_date_max_loop_limit,
+        })
     }
 
     function observerItems(mutationsList) {
@@ -819,4 +825,8 @@
     })
 
     search.from_home_page && booknow(sale_store)
+    </script>
+
+    <script>
+        
     </script>
