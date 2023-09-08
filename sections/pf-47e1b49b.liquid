@@ -10,10 +10,10 @@
         <span class="flex-1"></span>
         <div>
             <span class="u17Light_v2"><span class="u20DemiBold_v2 emphasize"
-                    style="font-weight: 600;">{{ all_products['urtopia-chord-ebike'].price | minus: 0 | money }}</span>
-                    <!--<span style="text-decoration: line-through;">{{ all_products['urtopia-chord-ebike'].price | money }}</span>!-->
+                    style="font-weight: 600;">{{ all_products['urtopia-chord-ebike'].price | minus: settings.chord_ebike_discount_price | money }}</span>
+                    <span style="text-decoration: line-through;">{{ all_products['urtopia-chord-ebike'].price | money }}</span>
                     </span>
-            <span class="u14Light_v2">or as low as {{ all_products['urtopia-chord-ebike'].price | minus: 0 | divided_by: 24 | money_without_trailing_zeros }}/Month</span>
+            <span class="u14Light_v2">or as low as {{ all_products['urtopia-chord-ebike'].price | minus: settings.chord_ebike_discount_price | divided_by: 24 | money_without_trailing_zeros }}/Month</span>
         </div>
         <a href="/products/urtopia-chord-ebike" target="_blank" class="my-button my-button-origin" action_type="Buynow_0">Order Now</a>
     </div>
@@ -22,16 +22,20 @@
     <a href="/products/urtopia-chord-ebike" target="_blank" class="my-button my-button-origin" action_type="Buynow_0">Order Now</a>
     <div>
         <span>
-            <span class="u17DemiBold_v2 emphasize">{{ all_products['urtopia-chord-ebike'].price | minus: 0 | money }}</span> 
-            <!--<span class="u11Light_v2" style="text-decoration: line-through;">{{ all_products['urtopia-chord-ebike'].price | money }}</span>-->
+            <span class="u17DemiBold_v2 emphasize">{{ all_products['urtopia-chord-ebike'].price | minus: settings.chord_ebike_discount_price | money }}</span> 
+            <span class="u11Light_v2" style="text-decoration: line-through;">{{ all_products['urtopia-chord-ebike'].price | money }}</span>
         </span>
-        <span class="u11Light_v2">or as low as {{ all_products['urtopia-chord-ebike'].price | minus: 0 | divided_by: 24 | money_without_trailing_zeros }}/Month</span>
+        <span class="u11Light_v2">or as low as {{ all_products['urtopia-chord-ebike'].price | minus: settings.chord_ebike_discount_price | divided_by: 24 | money_without_trailing_zeros }}/Month</span>
     </div>
 </div>
 
 <div class="chord-ebike">
     <div class="banner">
         <div class="centeral-content">
+            <div class="sale mobileHide">
+                    <div class="u17DemiBold_v2">Promotion Ends in:</div>
+                    <img src="http://i.countdownmail.com/2qa2or.gif">
+            </div>
             <div class="u72DemiBold_v2">Urtopia Chord</div>
             <div class="u24Light_v2">Experience elegance and efficiency in one ride</div>
             <div class="flex-1 pcHide"></div>
@@ -205,7 +209,7 @@
                 <div class="u20Light_v2">Range</div>
             </div>
             <div class="u48DemiBold_v2">
-                360<span class="u20Medium_v2"> W</span>
+                360<span class="u20Medium_v2"> Wh</span>
                 <div class="u20Light_v2">Battery</div>
             </div>
             <div class="u48DemiBold_v2">

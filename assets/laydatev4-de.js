@@ -2715,7 +2715,7 @@ function splitTimeFormat(item = '') {
       YMD[1]++;
       YMD[2] = st + 1;
       
-      if (options.shopInfo.disableDate && options.shopInfo.disableDate.includes(YMD.join("-"))) {
+      if (options.shopInfo.disableDate && options.shopInfo.disableDate.includes(YMD.join("/"))) {
         item.addClass("disabled-day");
       }
 

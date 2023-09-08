@@ -1,22 +1,87 @@
+const getData = (date = new Date()) => {
+  if (typeof date !== 'object') {
+      if (typeof date === 'string') {
+          date = date.replace(/-/g, '/')
+      }
+
+      date = new Date(date)
+  }
+
+  date.setHours(0)
+  date.setMinutes(0)
+  date.setSeconds(0)
+
+  return date
+}
+
+const getDateString = function (date) {
+  return `${date.getFullYear()}/${date.getMonth() + 1}/${date.getDate()}`
+}
+
+const oneDay = 24 * 60 * 60 * 1000
+const now = +new Date()
+
+// 禁用日期 最大天数
+const disable_date_max_limit = 60
+// 禁用日期 最大区间查找天数
+const disable_date_max_interval_limit = 60
+// 禁用日期 最大循环次数
+const disable_date_max_loop_limit = 60
+
+let store_list_calculate_total_time = +new Date()
+
+
+
 //  禁用日期动态生成函数
-//  disable_limit:  禁用几天               格式:  365
+//  disable_limit:  禁用几天               格式:  365 或者区间 [['2023-9-10', '2023-10-10'], ['2023-10-22', '2023-11-10']]
 //  ignore_date：   跳过某些日期不禁用      格式:  ['2023-7-27', '2023-7-28', '2023-7-29']  
 //  start_time:     从什么时候开始禁用      格式： 2023-7-27 （默认今天)
 
 function createdisableDates(disable_limit = 0, ignore_date = [], start_time = new Date()) {
-  const temp = []
-  const one_day = 60 * 60 * 24 * 1000
-  disable_limit = Math.min(30, disable_limit)
+  let temp = []
 
-  for (let index = 0; index < disable_limit; index++) {
-    const time = new Date(+new Date(start_time) + (one_day * index))
-    const str = `${time.getFullYear()}-${time.getMonth() + 1}-${time.getDate()}`
-
-    if (ignore_date.includes(str)) {
+  if (Array.isArray(disable_limit)) {
+    for (const iterator of disable_limit) {
+      if (typeof iterator === 'string') {
+        temp.push(getDateString(getData(iterator)))
         continue
-    }
+      }
 
-    temp.push(str)
+      let start = getData(iterator[0])
+      let end = getData(iterator[1])
+
+      for (let index = 0; index < disable_date_max_interval_limit; index++) {
+        if (Number(start) === Number(end)) {
+           break
+        }
+
+        temp.push(getDateString(start))
+
+        start = getData(oneDay + Number(start))
+      }
+
+
+      temp.push(getDateString(end))
+    }
+  } else {
+    let start = getData(start_time)
+
+    for (let index = 0; index < disable_limit; index++) {
+      temp.push(getDateString(start))
+      start = getData(oneDay + Number(start))
+    }
+  }
+
+  temp = temp.slice(0, Math.min(disable_date_max_limit, temp.length))
+
+  for (const iterator of ignore_date) {
+    const date = getDateString(getData(iterator))
+
+    const index = temp.findIndex(t => t === date)
+
+    if (index > -1) {
+      temp.splice(index, 1)
+    }
   }
 
   return temp
@@ -258,15 +323,15 @@ const testRides = [
            'Chord'
         ],
          businessHours: [
+           "14:00-20:00",
+           "14:00-20:00",
            "",
-           "14:00-19:00",
-           "14:00-19:00",
-           "14:00-19:00",
-           "14:00-19:00",
-           "14:00-19:00",
-           "14:00-19:00",
+           "14:00-20:00",
+           "14:00-17:00",
+           "",
+           "",
          ],
-         disableDate: createdisableDates(100),
+         disableDate: createdisableDates(100, ['2023-9-7', '2023-9-18', '2023-9-24', '2023-9-27', '2023-9-28']),
        },
        {
          name: 'Moritz Falk',
@@ -357,6 +422,7 @@ const testRides = [
            "10:00-18:00",
            "",
          ],
+        disableDate: createdisableDates([['2023-9-16', '2023-10-8']]),
        },
          {
          name: 'Norddeutsche Zweiradschiede',
@@ -500,7 +566,7 @@ const testRides = [
           "13:00-20:00",
           "13:00-20:00",
         ],
-        disableDate: createdisableDates(100, ['2023-9-5','2023-9-6','2023-9-7','2023-9-8','2023-9-17','2023-9-18','2023-9-19','2023-9-20','2023-9-21','2023-9-22','2023-9-23','2023-9-24','2023-9-25','2023-9-26','2023-9-27','2023-9-28','2023-9-29','2023-9-30','2023-10-1','2023-10-2','2023-10-3','2023-10-10','2023-10-11']),
+        disableDate: createdisableDates([['2023-9-9', '2023-9-16'], ['2023-10-4', '2023-10-9'], ['2023-10-12', '2023-12-22']]),
       }
     ]
   },
@@ -1157,7 +1223,7 @@ const testRides = [
         email: 'hendrikuhlemann@googlemail.com',
         timezone: "Mainz, Germany (GMT+1)",
         add: "Johannisstraße 13, 38855 Wernigerode",
-        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Schloss_Wernigerode_nach_Sonnenuntergang.jpg?v=1691564874",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230908-140440.jpg?v=1694153100",
         testrideSpot: "Wernigerode",
         testRideSize: "L",
         availableSizes: [
@@ -1205,7 +1271,7 @@ const testRides = [
           "16:00-20:00",
           "14:00-18:00",
         ],
-        /*disableDate: [
+        disableDate: [
           "2023-8-28",
           "2023-8-29",
           "2023-8-30",
@@ -1218,7 +1284,7 @@ const testRides = [
           "2023-9-6",
           "2023-9-7",
           "2023-9-8",
-        ],*/
+        ],
         isPartner: true
       },
     ]
@@ -1336,17 +1402,15 @@ const testRides = [
     stores: [
       {
         name: 'Satking GmbH',
-        phone: '+49 (0) 2241 / 88109 -25',
-        email: 'b.aydogdu@satking.de',
+        phone: '02241 881 090',
+        email: 'info@satking.de',
         timezone: "Troisdorf-Kriegsdorf, Germany (GMT+1)",
         add: "Junkersring 18, 53844 Troisdorf-Kriegsdorf",
         imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Satking_GmbH.jpg?v=1693473391",
         testrideSpot: "Troisdorf-Kriegsdorf",
         testRideSize: "M",
         availableSizes: [
-          'Carbon 1 Size M/L',
-          'Carbon 1s Size M/L',
-          'Chord',
+          'Carbon 1 Size M',
           ],
         businessHours: [
           "",
@@ -1360,4 +1424,72 @@ const testRides = [
       },
     ]
   },
+  {
+    country:'Austira',
+    city: 'Linz',
+    cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Linz.jpg?v=1694169315',
+    series: [
+      'Urtopia Carbon 1',
+      // 'Urtopia Carbon 1'
+    ],
+    stores: [
+      {
+        name: 'Volo Bike Galerie',
+        phone: '+436644624765',
+        email: 'office@volobike.at',
+        timezone: "Linz, Austira (GMT+1)",
+        add: "Siglweg 1, 4061 Pasching, Austria",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Volo_Bike_Galerie.jpg?v=1694169314",
+        testrideSpot: "Linz",
+        testRideSize: "L",
+        availableSizes: [
+          'Carbon 1 Size L',
+          ],
+        businessHours: [
+          "",
+          "8:00-12:00, 13:00-18:00",
+          "8:00-12:00, 13:00-18:00",
+          "8:00-12:00, 13:00-18:00",
+          "8:00-12:00, 13:00-18:00",
+          "8:00-12:00, 13:00-18:00",
+          "9:00-13:00",
+        ],
+      },
+    ]
+  },
+  {
+    country:'Austira',
+    city: 'Wien',
+    cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Wien.jpg?v=1694169314',
+    series: [
+      'Urtopia Carbon 1',
+      // 'Urtopia Carbon 1'
+    ],
+    stores: [
+      {
+        name: 'Best Bike',
+        phone: '+4312708618',
+        email: 'info@best-bike.at',
+        timezone: "Wien, Austira (GMT+1)",
+        add: "Katsushikastr. 1,1210 Wien",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Best_Bike.png?v=1694169315",
+        testrideSpot: "Wien",
+        testRideSize: "L",
+        availableSizes: [
+          'Carbon 1 Size L',
+          ],
+        businessHours: [
+          "",
+          "9:00-19:00",
+          "9:00-19:00",
+          "9:00-19:00",
+          "9:00-19:00",
+          "9:00-13:00, 14:00-19:00",
+          "9:00-17:00",
+        ],
+      },
+    ]
+  },
 ]
+
+store_list_calculate_total_time = +new Date() - store_list_calculate_total_time

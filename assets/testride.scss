@@ -49,6 +49,10 @@
     transition: transform 400ms cubic-bezier(0.4, 0, 0.25, 1) 0ms;
 }
 
+.shop-img {
+  object-position: center center;
+}
+
 .shop-item-img:after {
     position: absolute;
     top: 0;

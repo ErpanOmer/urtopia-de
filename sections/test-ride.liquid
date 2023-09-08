@@ -182,6 +182,7 @@
 
 {{ 'shopInfoList-de-4.js' | asset_url | script_tag }}
 {{ 'laydatev4-de.js' | asset_url | script_tag }}
+<script src="https://cdn.storepoint.co/api/v1/js/162f21804990ff.js"></script>
 <script>
 
     let last_select_city = ''
@@ -189,99 +190,88 @@
     let select_city_count = 0
     let select_store_count = 0
 
-    const getData = (date = new Date()) => {
-        if (typeof date !== 'object') {
-            if (typeof date === 'string') {
-                date = date.replace(/-/g, '/')
-            }
-
-            date = new Date(date)
+    // 查询日期偏移量
+    const findOffset = ([nowWeek, vailableWeek]) => {
+        if (nowWeek === vailableWeek) {
+            return 0
         }
 
-        date.setHours(0)
-        date.setMinutes(0)
-        date.setSeconds(0)
-
-        return date
+        return vailableWeek > nowWeek ? vailableWeek - nowWeek : 7 - (nowWeek - vailableWeek)
     }
 
-    const getDateString = function (date) {
-        return `${date.getFullYear()}/${date.getMonth() + 1}/${date.getDate()}`
+    // 查找可预约到星期几
+    const findAvailableWeek = (d, businessHours) => {
+        if (businessHours[d]) {
+            return d
+        }
+
+        for (let i = d; i < d + 7; i++) {
+
+            if (businessHours[i % 7]) {
+                return i % 7
+            }
+        }
+
+        return -1
     }
 
-    const findOffset = ([nowWeek, vailableWeek]) => {
-                    if (nowWeek === vailableWeek) {
-                      return 0
-                    }
-    
-                    return vailableWeek > nowWeek ? vailableWeek - nowWeek : 7 - (nowWeek - vailableWeek)
-                  }
-    
-    const oneDay = 24 * 60 * 60 * 1000
-    const now = +new Date()
+    // 查询禁用日期
+    const findDisable = (str, index = 0, disableDate) => {
+        for (let i = index; i < disableDate.length; i++) {
+            if (disableDate[i] === str) {
+                return i
+            }
+        }
+    }
+
+     // 可用日期计算
+     const findAvalibaleDate = store => {
+            if (!store.businessHours.length) {
+                return now
+            }
+
+            let index = 0
+            let count = 0
+            let date = now
+
+            while (++count < disable_date_max_loop_limit) {
+                const d = getData(date)
+                const str = getDateString(d)
+
+                // 保存上次 循环的index
+                index = findDisable(str, index, store.disableDate)
+
+                if (!isNaN(index)) {
+                    date = Number(d) + oneDay
+                    continue
+                }
+
+                const currentWeek = d.getDay()
+                const AvailableWeek = findAvailableWeek(currentWeek, store.businessHours)
+
+                if (AvailableWeek === -1) {
+                    return now
+                }
+
+                if (currentWeek === AvailableWeek) {
+                    return str
+                }
+
+
+                date = Number(d) + (oneDay * findOffset([currentWeek, AvailableWeek]))
+            }
+
+            return date
+    }
     
     const findStore = name => {
             for (const city of testRides) {
                 for (const store of city.stores) {
-                  const businessHours = (store.businessHours || []).filter(Boolean)
-                  const disableDate = store.disableDate || []
-                  // 查找可预约到星期几
+                  store.disableDate = store.disableDate || []
+                  store.businessHours = store.businessHours || []
 
-                  const findAvailableWeek = d => {
-                    if (businessHours[d]) {
-                        return d
-                    }
-
-                    for (let i = d; i < d + 7; i++) {
-
-                        if (businessHours[i % 7]) {
-                            return i % 7
-                        }
-                    }
-
-                    return -1
-                  }
-
-                  const findDisable = str => {
-                    for (let i = 0; i < disableDate.length; i++) {
-                        if (getDateString(getData(disableDate[i])) === str) {
-                            return true
-                        }
-                    }
-                  }
-
-
-                  //const findAvailableWeek = d => businessHours[d] ? d : findAvailableWeek(d === 6 ? 0 : ++d)
-                  // 可用日期计算
-                  const findAvalibaleDate = (date, count = 0) => {
-                     if (!businessHours.length) {
-                        return now
-                     }
-
-                     if (count > 30) {
-                        return date
-                     }
-
-                      const str = getDateString(getData(date))
-                      const timestamp = +getData(str)
-
-                      if (findDisable(str)) {
-                        return findAvalibaleDate(timestamp + oneDay, ++count)
-                      }
-
-
-                      const currentWeek = getData(str).getDay()
-                      const AvailableWeek = findAvailableWeek(currentWeek)
-
-                      if (AvailableWeek === -1) {
-                        return now
-                      }
-    
-                      return currentWeek === AvailableWeek ? str : findAvalibaleDate(timestamp + (oneDay * findOffset([currentWeek, AvailableWeek])), ++count)
-                  }
-    
                   store.findAvalibaleDate = () => {
-                    const time = getData(findAvalibaleDate(getData())).toString().split(' ')    
+                    const time = getData(findAvalibaleDate(store)).toString().split(' ')    
                     return `${time[2]}. ${time[1]}`
                   }
 
@@ -371,14 +361,6 @@
                 .addClass('faq-content-plus');
         });
     }, 300)
-
-
-    const a = document.createElement("script");
-    a.type = "text/javascript";
-    // a.async = !0;
-    a.src = "https://cdn.storepoint.co/api/v1/js/162f21804990ff.js";
-    const b = document.getElementsByTagName("script")[0];
-    b.parentNode.insertBefore(a, b);
 
     function reset() {
         $('#storepoint-search .forms select').val('')
@@ -480,45 +462,45 @@
     }
 
     function insertCustomElements(target) {
+        const store_list_render_total_time = +new Date()
         target.style.opacity = 0
-        const stores = Array.from(target.querySelectorAll('.storepoint-location'))
 
-        const storeList = document.createDocumentFragment()
-        const forms = document.createDocumentFragment()
+        const storeList = $(document.createDocumentFragment())
+        const forms = $(document.createDocumentFragment())
 
         // 商店列表
-        const items = document.createElement("div")
-        const no_result = document.createElement('div')
-        items.classList.add('items')
-        no_result.classList.add('no_result')
-        no_result.innerHTML = `<div>No locations found near you</div><div>but we'd love to change that. </div><div class="my-link" onclick="reset()">Show all results?</div>`
+        const items = $(document.createElement("div"))
+        const no_result = $(document.createElement('div'))
+        items.addClass('items')
+        no_result.addClass('no_result')
+        no_result.html(`<div>No locations found near you</div><div>but we'd love to change that. </div><div class="my-link" onclick="reset()">Show all results?</div>`)
 
         // 搜索父表单
-        const form = document.createElement("div")
-        form.classList.add('forms')
+        const form = $(document.createElement("div"))
+        form.addClass('forms')
 
         // 选择框
-        const select = document.createElement('select')
-        select.setAttribute('placeholder', '')
+        const select = $(document.createElement('select'))
+        select.attr('placeholder', '')
         // 首选项
-        const option = document.createElement('option')
+        const option = $(document.createElement('option'))
         // option.setAttribute('disabled', true)
-        option.setAttribute('selected', true)
-        option.setAttribute('value', '')
-        option.innerText = '--- Select your city ---'
+        option.attr('selected', true)
+        option.attr('value', '')
+        option.text('--- Select your city ---')
 
-        select.appendChild(option)
+        select.append(option)
 
         // 车型选择框
-        const bike_select = document.createElement('select')
-        bike_select.setAttribute('placeholder', '')
+        const bike_select = $(document.createElement('select'))
+        bike_select.attr('placeholder', '')
 
-        const bike_option = document.createElement('option')
-        bike_option.setAttribute('selected', true)
-        bike_option.setAttribute('value', '')
-        bike_option.innerText = '--- Select bike ---'
+        const bike_option = $(document.createElement('option'))
+        bike_option.attr('selected', true)
+        bike_option.attr('value', '')
+        bike_option.text('--- Select bike ---') 
 
-        bike_select.appendChild(bike_option)
+        bike_select.append(bike_option)
 
         // 输入框
         // const input = document.createElement('input')
@@ -530,54 +512,52 @@
         const bike_options = []
 
         // form.appendChild(input)
-        form.appendChild(select)
-        form.appendChild(bike_select)
+        form.append(select)
+        form.append(bike_select)
 
-        select.addEventListener('change', onSelect)
-        bike_select.addEventListener('change', onSelectBike)
-        document.querySelector('button[aria-label="Clear"]').addEventListener('click', () => refresh(2))
-        // document.querySelector('.mapboxgl-ctrl-geocoder--input').addEventListener('input', debounce(onInput, 300))
-        // document.querySelector('.mapboxgl-ctrl-geocoder--input').addEventListener('focus', onFocus)
+        select.on('change', onSelect)
+        bike_select.on('change', onSelectBike)
+        $('button[aria-label="Clear"]').on('click', () => refresh(2))
 
-        for (const store of stores) {
+        $('.storepoint-location').each((i, store) => {
             const elem = $(store).find('.storepoint-name')
 
             const name = elem.text()
             const info = findStore(name)
             // 如果搜不到 店铺
             if (!info) {
-                continue
+                return true
             }
 
 
 
-            const item = document.createElement("div")
-            const option = document.createElement('option')
-            const bike_option = document.createElement('option')
+            const item = $(document.createElement("div"))
+            const option = $(document.createElement('option'))
+            const bike_option = $(document.createElement('option'))
 
-            item.classList.add('item')
-            item.setAttribute('index', $(store).attr('id'))
-            item.setAttribute('city', info.testrideSpot)
-            item.setAttribute('name', info.name)
+            item.addClass('item')
+            item.attr('index', elem.attr('id'))
+            item.attr('city', info.testrideSpot)
+            item.attr('name', info.name)
 
-            option.innerText = info.testrideSpot
-            option.setAttribute('city', info.testrideSpot)
-            option.setAttribute('country', info.country)
+            option.text(info.testrideSpot)
+            option.attr('city', info.testrideSpot)
+            option.attr('country', info.country)
 
             for (const b of getBikeAndSeries(info.availableSizes)) {
-                if (bike_options.find(i => i.getAttribute('bike') === b)) {
+                if (bike_options.find(i => i.attr('bike') === b)) {
                     continue
                 }
 
 
-                bike_option.innerText = b
-                bike_option.setAttribute('bike', b)
+                bike_option.text(b)
+                bike_option.attr('bike', b)
                 bike_options.push(bike_option)
             }
 
 
             info.avalibaleDate = info.findAvalibaleDate()
-            item.innerHTML = `
+            item.html(`
                 <div class="name">${info.name}<span>${info.isPartner ? ' - Ambassadors' : ' - Partner Store'}</span><i><svg class="icon" style="width: 1em;height: 1em;vertical-align: middle;fill: currentColor;overflow: hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5533"><path d="M748.3 533.3c0.1-0.2 0.3-0.4 0.4-0.6 0.2-0.3 0.5-0.7 0.7-1 0.1-0.1 0.2-0.3 0.2-0.4 0.3-0.4 0.5-0.8 0.8-1.2l0.1-0.1c2.6-4.6 4.1-9.6 4.6-14.7v-0.2c0-0.5 0.1-0.9 0.1-1.4v-0.6-1-1-0.6c0-0.5-0.1-0.9-0.1-1.4v-0.2c-0.4-5.1-2-10.1-4.6-14.7l-0.1-0.1c-0.2-0.4-0.5-0.8-0.8-1.3-0.1-0.1-0.2-0.3-0.2-0.4-0.2-0.3-0.4-0.7-0.7-1-0.1-0.2-0.3-0.4-0.4-0.6-0.2-0.3-0.4-0.5-0.6-0.8-0.2-0.2-0.4-0.5-0.6-0.7-0.1-0.1-0.2-0.2-0.3-0.4-0.1-0.1-0.2-0.2-0.2-0.3-0.2-0.3-0.5-0.5-0.7-0.8-0.2-0.2-0.4-0.4-0.5-0.6l-0.7-0.7-0.6-0.6c-0.2-0.2-0.5-0.4-0.7-0.7l-0.6-0.6-0.3-0.3-414.6-347.6c-15.2-12.7-38-10.7-50.7 4.4-12.7 15.2-10.7 38 4.4 50.7L663.2 512 281.6 832.2c-15.2 12.7-17.2 35.6-4.4 50.7 12.7 15.2 35.6 17.2 50.7 4.4l414.4-347.7 0.3-0.3 0.6-0.6c0.2-0.2 0.5-0.4 0.7-0.7l0.6-0.6 0.7-0.7c0.2-0.2 0.4-0.4 0.5-0.6 0.2-0.3 0.5-0.5 0.7-0.8 0.1-0.1 0.2-0.2 0.2-0.3 0.1-0.1 0.2-0.2 0.3-0.4 0.2-0.2 0.4-0.5 0.6-0.7 0.4-0.1 0.6-0.4 0.8-0.6z" fill="#333333" p-id="5534"></path></svg></i></div>
                 <div class="address gray">${info.add}</div>
                 <div class="available">Available Model:</div>
@@ -585,105 +565,116 @@
                     ${info.availableSizes ? info.availableSizes.map(i => `<li class="gray">${i}</li>`).join('') : `<li class="gray">Carbon One Size ${info.testRideSize}</li>`}
                 </ul>
                 <div class="time gray"><img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/calendar_2x_af8d9192-1ff9-43f0-aba6-3547b1129854.jpg?v=1680938382"/> Earliest available time: <div>&nbsp;${info.avalibaleDate}</div></div>
-            `
+            `)
             
             // 点击item 代理到真实的store
-            item.addEventListener('click', e => {
-                const active = document.querySelector('#storepoint-panel .items .item[active="true"]')
-                const locations = Array.from(document.querySelectorAll('#storepoint-results-container .storepoint-location'))
+            item.on('click', e => {
+                const active = $('#storepoint-panel .items .item[active="true"]')
+                const locations = $('#storepoint-results-container .storepoint-location')
 
                 
 
-                if (active) {
-                    active.setAttribute('active', false)
+                if (active.length) {
+                    active.attr('active', false)
                 }
 
-                for (const iterator of locations) {
-                    iterator.classList.remove('selected')
-                    if (item.getAttribute('name').replace(/\s*/g, "") === $(iterator).find('.storepoint-name').text().replace(/\s*/g, "")) {
-                        iterator.classList.add('selected')
-                        iterator.click()
 
-                        break
+                locations.each((i, elemm) => {
+                    const iterator = $(elemm)
+                    iterator.removeClass('selected')
+                    if (item.attr('name').replace(/\s*/g, "") === iterator.find('.storepoint-name').text().replace(/\s*/g, "")) {
+                        iterator.addClass('selected')
+                        iterator[0].click()
+
+                        return false
                     }
-                }
+                })
 
-                item.setAttribute('active', true)
+                item.attr('active', true)
 
                 document.body.clientWidth < 768 && $('html').scrollTop($('.map').offset().top)
 
-                last_select_store = item.getAttribute('name')
+                last_select_store = item.attr('name')
                 select_store_count += 1
             })
 
-            items.appendChild(item)
+            items.append(item)
 
             
 
-            if (!options.find(option => option.getAttribute('city') === info.testrideSpot )) {
+            if (!options.find(option => option.attr('city') === info.testrideSpot )) {
                 options.push(option)
             }
-        }
+        })
 
         // 首字母排序
-        options.sort((a, b) => a.getAttribute('city').localeCompare(b.getAttribute('city')))
+        options.sort((a, b) => a.attr('city').localeCompare(b.attr('city')))
 
         // select group
         const optgroup = []
         for (const option of options) {
-            const country = option.getAttribute('country')
+            const country = option.attr('country')
             // find
-            let group = optgroup.find(o => o.getAttribute('label') === country)
+            let group = optgroup.find(o => o.attr('label') === country)
 
             if (!group) {
-                group = document.createElement('optgroup')
-                group.setAttribute('label', country)
+                group = $(document.createElement('optgroup'))
+                group.attr('label', country)
                 optgroup.push(group)
             }
 
-            group.appendChild(option)
+            group.append(option)
         }
 
         for (const group of optgroup) {
-            select.appendChild(group)
+            select.append(group)
         }
 
         for (const bike of bike_options) {
-            bike_select.appendChild(bike)
+            bike_select.append(bike)
         }
 
-        storeList.appendChild(items)
-        storeList.appendChild(no_result)
-        forms.appendChild(form)
+        storeList.append(items)
+        storeList.append(no_result)
+        forms.append(form)
 
-        target.parentNode.appendChild(storeList)
-        document.querySelector('#storepoint-search').appendChild(forms)
+        $(target).parent().append(storeList)
+        $('#storepoint-search').append(forms)
 
-        // const popup = document.createElement('div')
-        // popup.classList.add('mapboxgl-popup')
-
-        // document.querySelector('#storepoint-map').appendChild(popup)
+        fetchBuried('testride', 'performance', {
+            store_list_render_total_time: `${+new Date() - store_list_render_total_time} ms`,
+            store_list_calculate_total_time: `${store_list_calculate_total_time} ms`,
+            disable_date_max_limit,
+            disable_date_max_interval_limit,
+            disable_date_max_loop_limit,
+            userAgent: navigator.userAgent,
+            userAgentData: navigator.userAgentData,
+        })
     }
 
     function observerItems(mutationsList) {
         const no_result = document.querySelector('#storepoint-panel .no_result')
-        const results = Array.from(document.querySelectorAll('#storepoint-results-container .storepoint-location'))
-        const items = Array.from(document.querySelectorAll('#storepoint-panel .items .item'))
         no_result.style.display = 'none'
 
-        for (const iterator of items) {
-            iterator.style.display = 'none'
+        const results = $('#storepoint-results-container .storepoint-location')
+        
 
-            for (const result of results) {
-                const name1 = $(result.querySelector('.storepoint-name')).text() || ''
-                const name2 = iterator.getAttribute('name') || ''
+        $('#storepoint-panel .items .item').each((_, e) => {
+            const iterator = $(e)
+            iterator.hide()
+
+            results.each((__, ee) => {
+                const result = $(ee)
+
+                const name1 = result.find('.storepoint-name').text() || ''
+                const name2 = iterator.attr('name') || ''
 
                 if (name1.replace(/\s*/g, "") === name2.replace(/\s*/g, "")) {
-                    iterator.style.display = 'block'
-                    break
+                    iterator.show()
+                    return false
                 }
-            }
-        }
+            })
+        })
 
         if (results.length === 0 && document.querySelector('#storepoint-results-container .storepoint-no-results')) {
             no_result.style.display = 'flex'
@@ -691,25 +682,24 @@
     }
 
     function observerPopup() {
-        const popup = document.querySelector('#storepoint-map .mapboxgl-popup')
+        const popup = $('#storepoint-map .mapboxgl-popup')
 
-        if (!popup) {
+        if (!popup.length) {
             return
         }
 
-        const name = document.querySelector('#storepoint-map .storepoint-location-popup b').innerText
-        const store = findStore(name)
+        const store = findStore($('#storepoint-map .storepoint-location-popup b').text())
 
         if (!store) {
             return
         }
 
+        popup.find('.mapboxgl-popup-content').hide()
 
-        document.querySelector('.mapboxgl-popup .mapboxgl-popup-content').style.display = 'none'
-        const href = document.querySelector('#storepoint-map .storepoint-location-popup .storepoint-popup-directions').getAttribute('href')
+        const href = $('#storepoint-map .storepoint-location-popup .storepoint-popup-directions').attr('href')
 
         if (store.noBook) {
-            $(popup).append(`
+            popup.append(`
                 <div class="map-popup">
                     <img src="${store.imgUrl}"/>
                     <div class="infos nobook">
@@ -738,7 +728,7 @@
             `)
 
         } else {
-            $(popup).append(`
+            popup.append(`
                 <div class="map-popup">
                     <img src="${store.imgUrl}"/>
                     <div class="infos">
@@ -826,7 +816,7 @@
           "13:00-18:00",
           "13:00-18:00",
         ],
-        disableDate: createdisableDates(100, [], '2023-8-20'),
+        //disableDate: createdisableDates(100, [], '2023-8-20'),
       }
 
     // banner 按钮
@@ -837,4 +827,8 @@
     })
 
     search.from_home_page && booknow(sale_store)
+    </script>
+
+    <script>
+        
     </script>

@@ -1,6 +1,4 @@
 $sale_background_image: linear-gradient(90deg, #15B79A, #63DED7);
-$sale_text_color: #13B698;
-
 
 .orderBtn {
     display: none;
@@ -158,11 +156,47 @@ $sale_text_color: #13B698;
                 }
 
                 .u20DemiBold_v2 {
-                    color: $sale_text_color;
+                    color: var(--sale-order-page-text-color);
                     background-color: #fff;
                     border-radius: 20px;
                     padding: 3px 10px;
                     margin: 6px 0;
+                }
+            }
+
+
+            .product-price {
+                color: var(--sale-order-page-text-color);
+                margin-top: 12px;
+
+                &[data-price]::after {
+                    content: attr(data-price);
+                    display: inline-block;
+                    color: #000;
+                    text-decoration: line-through;
+                    margin-left: 5px;
+                    font-size: 17px;
+                    font-weight: 600;
+                    transform: translateY(-40%);
+                }
+            }
+
+            .sale-tag {
+                display: flex;
+                align-items: baseline;
+                flex-wrap: wrap;
+
+                .u17Medium_v2 {
+                    background-image: var(--sale-order-page-sale-background);
+                    color: #fff;
+                    padding: 2px 3%;
+                    border-radius: 12px;
+                    margin-right: 8px;
+                }
+
+                .u14Light_v2 {
+                    text-decoration: underline;
+                    margin-top: 6px;
                 }
             }
         }
@@ -241,7 +275,7 @@ $sale_text_color: #13B698;
             }
 
             .count-down {
-                color: $sale_text_color;
+                color: var(--sale-order-page-text-color);
                 overflow: hidden;
 
                 img {
@@ -299,23 +333,50 @@ $sale_text_color: #13B698;
 
                 .Frame {
                     display: flex;
+                    // align-items: center;
+                    justify-content: flex-start;
 
-                    & > div {
-                        padding: 4px 25px;
-                        border: 2px solid #000;
-                        border-radius: 30px;
+                    &>div {
+                        border-radius: 10px;
+                        border: 2px solid #0000004D;
+                        opacity: .6;
+                        padding: 12px;
+                        font-size: 14px;
+                        line-height: 14px;
+                        display: flex;
+                        align-items: center;
+                        width: 40%;
+                        justify-content: space-between;
                         cursor: pointer;
-                        transition: all .1s;
-                    }
 
-                    div + div {
-                        margin-left: 15px;
+                        &::after {
+                            content: "Sale";
+                            display: flex;
+                            background-color: var(--sale-order-page-text-color);
+                            color: #fff;
+                            border-radius: 10px;
+                            padding: 2px 6px;
+                            font-size: 12px;
+                            align-items: center;
+                            justify-content: center;
+                            margin-left: 6px;
+                        }
                     }
 
                     .active {
-                        background-color: #000;
-                        color: #fff;
+                        border-color: var(--sale-order-page-text-color);
+                        color: var(--sale-order-page-text-color);
+                        opacity: 1;
                     }
+
+                    &>div+div {
+                        margin-left: 12px;
+                    }
+
+                    // .active {
+                    //     border-color: #000;
+                    //     opacity: 1;
+                    // }
                 }
             }
 
@@ -436,6 +497,7 @@ $sale_text_color: #13B698;
                     border: none;
                     margin-bottom: 6px;
                     padding: 14px 36px;
+                    background-color: var(--sale-order-page-text-color);
 
                     &:hover {
                         opacity: 0.9;
@@ -455,6 +517,56 @@ $sale_text_color: #13B698;
                     cursor: not-allowed;
                     opacity: .5;
                     pointer-events: none;
+                }
+
+                .orderTestRideBtn {
+                    width: 100%;
+                    height: 47px;
+                    font: normal normal 600 23px/28px Urbane;
+                    border-radius: 30px;
+                    margin-bottom: 6px;
+                    // transition: all 0.3s;
+                    line-height: 47px;
+                    text-align: center;
+                    border: 2px solid #161c1f;
+                    font-size: 15px;
+                    cursor: pointer;
+                    line-height: unset;
+                    text-align: center;
+                    background: #fff;
+                    color: #000;
+                    border: 2px solid #161c1f;
+                    display: grid;
+                    grid-template-columns: 0.65fr 1fr;
+                    grid-column-gap: 12px;
+                    align-items: center;
+                    justify-items: right;
+
+                    &:hover {
+                        opacity: 0.9;
+                    }
+
+                    &>span {
+                        display: flex;
+                        width: 100%;
+                        flex-direction: column;
+                        align-items: flex-start;
+                        line-height: 16px;
+                        font-size: 16px;
+                        font-weight: 500;
+
+                        .u17DemiBold_v2 {
+                            font-weight: 700;
+                        }
+                    }
+
+                    .oneeee {
+                        width: 90px;
+                    }
+
+                    .twoooo {
+                        width: 95px;
+                    }
                 }
 
                 .loading {
@@ -766,6 +878,15 @@ $sale_text_color: #13B698;
                         font-size: 12px;
                     }
                 }
+
+                .sale-tag {
+                    flex-direction: column;
+                    align-items: flex-start;
+
+                    .u17Medium_v2 {
+                        font-size: 12px;
+                    }
+                }
             }
     
             .product-panel {
@@ -792,6 +913,14 @@ $sale_text_color: #13B698;
                 .count-down {
                     .u17Medium_v2 {
                         font-size: 12px;
+                    }
+                }
+
+                .options {
+                    .Frame {
+                        & > div {
+                            width: 50%;
+                        }
                     }
                 }
     

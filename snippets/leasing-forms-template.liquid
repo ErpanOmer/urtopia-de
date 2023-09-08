@@ -11,7 +11,7 @@
                 <div class="u48DemiBold_v2">Exclusive discount for direct purchases</div>
                 <div class="u24Medium_v2">we are now offering a one time <span class="emphasize">{{ settings.carbon_ebike_discount_price | money_without_trailing_zeros }}</span> off and <span class="emphasize">{{ settings.carbon_ebike_free_accessories_count }} Free</span> accessories.</div>
                 <div class="choice">
-                    <img src="https://cdn.shopifycdn.net/s/files/1/0633/2068/6808/products/img_v2_c011bd46-4e3b-4b0f-8b9f-074a0ba53e6g_1.webp?v=1678963826"/>
+                    <!--<img src="https://cdn.shopifycdn.net/s/files/1/0633/2068/6808/products/img_v2_c011bd46-4e3b-4b0f-8b9f-074a0ba53e6g_1.webp?v=1678963826"/>-->
                     <div>
                         <div class="u30DemiBold_v2">Bike of Your Choice:</div>
                         <div class="u24DemiBold_v2">Carbon 1<i style="visibility: hidden;" class="fa fa-spinner fa-spin"></i></div>
@@ -29,7 +29,8 @@
         </div>
         <div class="nothankyou">
             <div class="u48DemiBold_v2">Request a quote for Urtopia E-bike leasing now</div>
-            <div class="u17Light_v2">When you complete this form, we will provide a quote for you and you authorize us to use the information you submit and contact you via email, text message or phone to move the business process forward.<br><br>Get <span class="emphasize u20DemiBold_v2">{{ settings.carbon_ebike_discount_price | money_without_trailing_zeros }}</span> off on Carbon 1,<br><span class="emphasize u20DemiBold_v2">{{settings.carbon1s_ebike_discount_price | money_without_trailing_zeros}}</span> discount on carbon 1s<br>now on leasing<br></div>
+            <div class="u17Light_v2">When you complete this form, we will provide a quote for you and you authorize us to use the information you submit and contact you via email, text message or phone to move the business process forward.<br><br>
+            Get <span class="emphasize u20DemiBold_v2">{{ settings.carbon_ebike_discount_price | money_without_trailing_zeros }}</span> off on Carbon 1, <span class="emphasize u20DemiBold_v2">{{ settings.carbon1s_ebike_discount_price | money_without_trailing_zeros }}</span> off on carbon 1s and <span class="emphasize u20DemiBold_v2">{{ settings.chord_ebike_discount_price | money_without_trailing_zeros }}</span> off on Chord/Chord X, now on leasing</div>
             
             
             <form action="" method="post">
@@ -121,11 +122,14 @@
                 </div>
                 <div class="item">
                     <div class="u24Medium">Bike Model<i>*</i></div>
-                    <select name="bike_model" value="Carbon 1" required>
-                        <option value="Carbon Belt">Carbon 1</option>
-                        <option value="Shimano Gear">Carbon 1s</option>
+                    <select name="bike_model" required>
+                        <option value="">---</option>
+                        <option value="carbon1">Carbon 1</option>
+                        <option value="carbon1s">Carbon 1s</option>
+                        <option value="chord">Chord</option>
+                        <option value="chordx">Chord X</option>
                     </select>
-                    <span style="text-align: left;line-height: 2em;" class="tips u14Light_v2">Free shipping within <span class="emphasize" style="font-weight: 600;">10 working days</span></span>
+                    <span class="tips u14Light_v2"></span>
                 </div>
                 <div class="item">
                     <div class="mini-item">
@@ -156,15 +160,7 @@
                     <div class="u24Medium">Accessories you would like
                         <!--<br><span style="font-size: 12px;color: #666;line-height: 16px;display: inline-block;">Father’s Day gifts: kickstand, Fender, water bottle cage will sent to you automatically, will not show in your jobrad offer (Ends on 18th of May)</span>-->
                     </div>
-                    <select name="accessories" multiple>
-                      {% for collection in collections %}
-                          {% if collection.title == 'Carbon 1 leasing acc' %}
-                              {% for product in collection.products %}
-                                  <option title="{{product.title}}" value="{{product.id}}">{{product.title}}</option>
-                              {% endfor %}
-                          {% endif %}
-                        {% endfor %}
-                    </select>
+                    <select name="accessories" multiple></select>
                     <span class="error"></span>
                     <!-- <input type="text" name="accessories" placeholder="" > -->
                 </div>
@@ -217,14 +213,6 @@
         </div>
     </div>
 </div>
-
-<link rel="prefetch" href="https://cdn.shopifycdn.net/s/files/1/0633/2068/6808/products/img_v2_008465de-4dc9-42f4-99b9-52816dbc2eag_1.webp?v=1678963826" as="image">
-<link rel="prefetch" href="https://cdn.shopifycdn.net/s/files/1/0633/2068/6808/products/img_v2_c011bd46-4e3b-4b0f-8b9f-074a0ba53e6g_1.webp?v=1678963826" as="image">
-<link rel="prefetch" href="https://cdn.shopifycdn.net/s/files/1/0633/2068/6808/products/img_v2_c1f4e864-1ce0-4700-a6da-18071624e1dg_1.webp?v=1678963826" as="image">
-<link rel="prefetch" href="https://cdn.shopifycdn.net/s/files/1/0633/2068/6808/products/MaskGroup18137_1.webp?v=1678963826" as="image">
-<link rel="preload" href="https://use.fontawesome.com/releases/v6.2.0/webfonts/fa-solid-900.woff2" as="font">
-
-
 {{ 'sumoselect.js' | asset_url | script_tag }}
 {{ 'jquery-ui.min.js' | asset_url | script_tag }}
 <script>
@@ -257,26 +245,68 @@ const page_infos = {% case template | json %}
 
 // size 映射
 const size_map = {
-    M: 'Fit for 165-180 cm',
-    L: 'Fit for 175-195 cm'
+    'M': 'Fit for 165-180 cm',
+    'L': 'Fit for 175-195 cm',
+    'High-Step': 'Fit for 170-195 cm',
+    'Step-Through': 'Fit for 160-185 cm'
 }
+
+// model map 
+const bike_model_map = {
+    'carbon1': 'Carbon 1',
+    'carbon1s': 'Carbon 1s',
+    'chord': 'Chord',
+    'chordx': 'Chord X'
+}
+
+
 // 表单忽略项
 const ignore = ['submit', 'checkbox', 'image', 'hidden']
 // carbon 产品信息
 const carbon = JSON.parse(JSON.stringify({{ all_products['leasing-urtopia-carbon-1s'] | json }}))
+const chord = JSON.parse(JSON.stringify({{ all_products['leasing-urtopia-chord'] | json }}))
 
 // 尺寸信息
-const model = Array.from(new Set(carbon.variants.map(i => i.option1)))
-const size = Array.from(new Set(carbon.variants.map(i => i.option2)))
-const style = Array.from(new Set(carbon.variants.map(i => i.option3)))
+const carbon_model = Array.from(new Set(carbon.variants.map(i => i.option1)))
+const carbon_size = Array.from(new Set(carbon.variants.map(i => i.option2)))
+const carbon_style = Array.from(new Set(carbon.variants.map(i => i.option3)))
+
+const chord_frame = Array.from(new Set(chord.variants.map(i => i.option1)))
+const chord_style = Array.from(new Set(chord.variants.map(i => i.option2)))
 
 // 是否已提交
 let is_submited = false
 // 是否已点击buynow, 为了防止重新提交
 let buynow_clicked = false
 
-console.log('page_infos', page_infos)
 console.log('carbon', carbon)
+console.log('chord', chord)
+
+function partnerForAccessoriesDisable (v, isSelect = false) {
+        const selectAccessories = $('select[name="accessories"]').val() || []
+        window.selectPlugin.sumo.unSelectAll()
+
+        isSelect && $('select[name="accessories"] option').length && $('.forms form select[name="partner"]').closest('.item').find('.error').text(`Please select your accessioes again due to the change of leasing partner`)
+
+        $('select[name="accessories"] option').each((i, t) => {
+            const id = $(t).val()
+            const text = $(t).text()
+            
+            if ((v === "Jobrad" || v === 'none') && global_config.leasing.jobrad_disabled_accessories.includes(id)) {
+                const hasDisable = selectAccessories.some(s => global_config.leasing.jobrad_disabled_accessories.includes(s))
+
+                if (hasDisable) {
+                    $('.forms form select[name="accessories"]').closest('.item').find('.error').text(`Due to the change of leasing partner, please select your accessioes again and some of it might be unavailble.`)
+                }
+
+                $(`.optWrapper ul li[title="${text}"]`).hide()
+                return window.selectPlugin.sumo.disableItem(i)
+            }
+
+            $(`.optWrapper ul li[title="${text}"]`).show()
+            window.selectPlugin.sumo.enableItem(i)
+        })
+    }
 
 function gtag_report_conversion(url) {
     var callback = function () {
@@ -328,12 +358,16 @@ function getFormValues (elem = '') {
         temp[target.name] = target.value
     })
 
-    temp.variant_id = carbon.variants.find(c => c.title === `${temp.bike_model} / ${temp.bike_size} / ${temp.bike_style}`)
-    temp.variant_id = temp.variant_id ? temp.variant_id.id : ''
+    if (temp.bike_model.includes('carbon')) {
+        temp.variant_id = carbon.variants.find(c => c.title === `${temp.bike_model} / ${temp.bike_size} / ${temp.bike_style}`)
+        temp.variant_id = temp.variant_id ? temp.variant_id.id : ''
+    } else {
+        temp.variant_id = chord.variants.find(c => c.title === `${temp.bike_size} / ${temp.bike_style}`)
+        temp.variant_id = temp.variant_id ? temp.variant_id.id : ''
+    }
+
+    
     temp.offers = $('.forms label[class="active"]').attr('for')
-
-
-
     return temp
 }
 
@@ -345,7 +379,7 @@ function mergeValues () {
     const merge = Object.assign(search, forms)
 
     // 重写bike 参数
-    merge.bike_model = merge.bike_model === "Shimano Gear" ? "Carbon 1s" : "Carbon 1"
+    merge.bike_model = bike_model_map[merge.bike_model]
     merge.bike_size = merge.bike_size + ' - ' + (size_map[merge.bike_size] || '')
     merge.page_type = page_infos.page_name
     merge.offers = forms.partner === 'none' ? 'no' : 'yes'
@@ -392,21 +426,15 @@ const clearBikeImage = () => {
 }
 
 
-const changeBikeImage = e => {
-    const model = $('select[name="bike_model"]').val()
-    const size = $('select[name="bike_size"]').val()
-    const style = $('select[name="bike_style"]').val()
-
-    console.log(model, size, style)
-    
-    $('.forms form .item .error').text('')
-
+const carbonBikeChange = (model, size, style) => {
+    $('.forms form .item .tips').html(`${global_config.leasing.ebike_delivery_time[model]}`)
+    model = model === 'carbon1' ? "Carbon Belt" : "Shimano Gear"
     // 通过遍历 判断option 是否可用
     $(`select[name="bike_style"] option`).each((i, item) => {
         const v = item.value
 
         if (i === 0) {
-            return
+            return true
         }
 
         const vari = carbon.variants.find(c => c.title === `${model} / ${size} / ${v}`)
@@ -418,87 +446,179 @@ const changeBikeImage = e => {
         item.disabled = !vari ? false : !!!vari.available
     })
 
-    if (model === "Shimano Gear") {
-        $('.forms form .item .tips').show()
-    } else {
-        $('.forms form .item .tips').hide()
-    }
 
-    if (!size || !style) {
+    if (!size || !style || !carbon_size.includes(size) || !carbon_style.includes(style)) {
         return clearBikeImage()
     }
+
 
     const find = carbon.variants.find(c => c.title === `${model} / ${size} / ${style}`)
 
     console.log('find', find)
 
     // 如果当前variant 库存不足
-    if (!find.available) {
+    if (!find || !find.available) {
         $('select[name="bike_style"]').val('')
         $('.forms form select[name="bike_size"]').closest('.item').find('.error').text(`Your selection is currently reached our stock limit - size: ${size}, style: ${style}`)
         
         return clearBikeImage()
     }
 
-    $('.forms form .item input[name="bike_image"]').attr('src', find.featured_image.src)
+    $('.forms form .item input[name="bike_image"]').attr('src', `${find.featured_image.src}&width=400`)
     $('.forms form .item[name="bike_image"]').show()
 }
 
 
-const buynow = (e, values) => {
-    const t = $(e.target)
+let current_chord_model = ''
+const chordBikeChange = (model, size, style) => {
+    console.log('current_chord_model !== model', current_chord_model, model)
+    if (current_chord_model !== model) {
+        // 渲染acc
+         $('select[name="accessories"]').html(model === 'chord' ? `{% for product in collections["chord-leasing-accessories"].products %}
+        <option title="{{product.title}}" value="{{product.id}}">{{product.title}}</option>
+        {% endfor %}`: `{% for product in collections["chord-x-leasing-acc"].products %}
+            <option title="{{product.title}}" value="{{product.id}}">{{product.title}}</option>
+        {% endfor %}`)
 
-    if (t.hasClass('loading')) {
+        window.selectPlugin.sumo.reload()
+
+        $('select[name="partner"]').val() && setTimeout(() => {
+            partnerForAccessoriesDisable($('select[name="partner"]').val())
+        }, 300)
+    }
+
+
+    current_chord_model = model
+    size = model === 'chord' ? 'High-Step' : 'Step-Through'
+    setTimeout(() => $('select[name="bike_size"]').val(size))
+
+    $('.forms form .item .tips').html(`${global_config.leasing.ebike_delivery_time[model]}<br>Free Fenders and Kickstand Included`)
+    
+
+    // 通过遍历 判断option 是否可用
+    $(`select[name="bike_style"] option`).each((i, item) => {
+        const v = item.value
+
+        if (i === 0) {
+            return true
+        }
+
+        const vari = chord.variants.find(c => c.title === `${size} / ${v}`)
+        item.disabled = !vari ? false : !!!vari.available
+    })
+
+
+    if (!size || !style || !chord_frame.includes(size) || !chord_style.includes(style)) {
+        return clearBikeImage()
+    }
+
+    const find = chord.variants.find(c => c.title === `${size} / ${style}`)
+
+    console.log('find', find)
+
+    // 如果当前variant 库存不足
+    if (!find || !find.available) {
+        $('select[name="bike_style"]').val('')
+        $('.forms form select[name="bike_size"]').closest('.item').find('.error').text(`Your selection is currently reached our stock limit - size: ${size}, style: ${style}`)
+        
+        return clearBikeImage()
+    }
+
+    $('.forms form .item input[name="bike_image"]').attr('src', `${find.featured_image.src}&width=400`)
+    $('.forms form .item[name="bike_image"]').show()
+}
+
+let current_model = ''
+const changeBikeImage = e => {
+    $('.forms form .item .error').text('')
+    $('select[name="bike_size"]')[0].disabled = false
+
+    const model = $('select[name="bike_model"]').val()
+
+    if (!model) {
+        $('select[name="bike_size"]').html('<option value="">---</option>')
+        $('select[name="bike_style"]').html('<option value="">---</option>')
+        $('select[name="accessories"]').html('')
+        $('.forms form .item .tips').hide()
+        window.selectPlugin.sumo.reload()
+        current_model = ''
+        current_chord_model = ''
+
+        return clearBikeImage()
+    }
+
+    const current = model === 'carbon1' || model === 'carbon1s' ? 'carbon' : 'chord'
+
+    if (current === 'chord') {
+        $('select[name="bike_size"]')[0].disabled = true
+    } else {
+        current_chord_model = ''
+    }
+    
+
+    const size = $('select[name="bike_size"]').val()
+    const style = $('select[name="bike_style"]').val()
+
+    console.log(current, model, size, style)
+
+
+    current === 'carbon' ? carbonBikeChange(model, size, style) : chordBikeChange(model, size, style)
+
+
+
+    // 如果同一产品 就不用走后面的
+    if (current_model === current) {
         return
     }
 
-    t.addClass('loading')
-    t.html('<i class="fa fa-spinner fa-spin"></i>Processing...')
+    current_model = current
 
-    fetch(window.Shopify.routes.root + 'cart/clear.js', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-      }).then(r => {
-           const body = { items: [{ id: values.variant_id, quantity: 1 }] }
-           body.items = body.items.concat(global_config.carbon_order_page_config.events.carbon1_send_accessories_variant_ids.map(id => ({ id, quantity: 1 })))
+    window.selectPlugin.sumo.unSelectAll()
 
-           fetch(window.Shopify.routes.root + 'cart/add.js', {
-             method: 'POST',
-             headers: {
-               'Content-Type': 'application/json'
-             },
-             body: JSON.stringify(body)
-           })
-           .then(response => {
-            fetchBuried('websiteclick', `${page_infos.page_name}-leasing`, { button: 'aftersubmit_buynow' }, true)
-            location.href = `/discount/onetimespecial?redirect=%2Fcheckout`
-           })
-           .catch((error) => {
-            t.removeClass('loading')
-            t.html('Buy now')
+    if (current === 'carbon') {
+        // 动态渲染Size
+        $('select[name="bike_size"]').html('<option value="">---</option>' + carbon_size.map(v => {
+            return `<option value="${v}">${v} - ${size_map[v]}</option>`
+        }))
 
-            console.error('Error:', error);
-           })
-    });
+        // 动态渲染Style
+        $('select[name="bike_style"]').html('<option value="">---</option>' + carbon_style.map(v => {
+            if (v === 'Vanilla') {
+                return
+            }
+
+            return `<option value="${v}">${v}</option>`
+        }).filter(Boolean))
+
+        // 渲染acc
+        $('select[name="accessories"]').html(`{% for product in collections["carbon-1-leasing-acc"].products %}
+            <option title="{{product.title}}" value="{{product.id}}">{{product.title}}</option>
+        {% endfor %}`)
+
+        
+        window.selectPlugin.sumo.reload()
+
+        $('select[name="partner"]').val() && setTimeout(() => {
+            partnerForAccessoriesDisable($('select[name="partner"]').val())
+        }, 300)
+    } else {
+        // 动态渲染Size
+        $('select[name="bike_size"]').html('<option value="">---</option>' + chord_frame.map(v => {
+            return `<option value="${v}">${v} - ${size_map[v]}</option>`
+        }))
+
+        // 动态渲染Style
+        $('select[name="bike_style"]').html('<option value="">---</option>' + chord_style.map(v => {
+            return `<option value="${v}">${v}</option>`
+        }))
+    }
+
+    $('.forms form .item .tips').show()
 }
-
-// 动态渲染Size
-$('select[name="bike_size"]').html('<option value="">---</option>' + size.map(v => {
-    return `<option value="${v}">${v} - ${size_map[v]}</option>`
-}))
-
-// 动态渲染Style
-$('select[name="bike_style"]').html('<option value="">---</option>' + style.map(v => {
-    return `<option value="${v}">${v}</option>`
-}))
-
 
 
 // 延迟执行一些DOM
 setTimeout(() => {
-    $('.forms form .item .tips').hide()
     $('input[name="employer_id"]').closest('.item').hide()
     // 更改 offers label
     $('input[name="offers"]').closest('.item').find('.u24Medium').html(page_infos.form_offers_label)
@@ -536,49 +656,14 @@ setTimeout(() => {
         $('.forms .thankyou').show()
         
         
-        // 如果选择了 不是no 的选项
-        if (values.offers === 'yes' || values.bike_model === "Carbon 1s") {
-            $('.forms .thankyou .sooner').hide()
-            $('.forms .thankyou > .u24Medium_v2').html(page_infos.form_thankyou_content)
-        } else {
-            $('.forms .thankyou > .u24Medium_v2').html(page_infos.page_name === 'jobrad' ? page_infos.form_thankyou_content2 : page_infos.form_thankyou_content)
-            $('.forms .thankyou .sooner').show()
-            $('.forms .thankyou .sooner .u24DemiBold_v2').text(values.bike_model)
-            $('.forms .thankyou .sooner .u17Light_v2')[0].innerText = values.bike_style
-            $('.forms .thankyou .sooner .u17Light_v2')[1].innerText = values.bike_size
-            $('.forms .thankyou .sooner .u24DemiBold_v2').text(values.bike_model)
-            $('.forms .thankyou .sooner .choice > img').attr('src', $('input[type="image"]').attr('src'))
-        }
+        $('.forms .thankyou .sooner').hide()
+        $('.forms .thankyou > .u24Medium_v2').html(page_infos.form_thankyou_content)
         
 
         setTimeout(() => {
             $('html').animate({
-                scrollTop: $('.forms').offset().top - (values.offers === 'yes' ? ((document.documentElement.clientHeight / 2) + ($('.forms').height() / 2)) / 2 : 40)
+                scrollTop: $('.forms').offset().top - (((document.documentElement.clientHeight / 2) + ($('.forms').height() / 2)) / 2)
             }, 300)
-
-            // offers 不等于yes ,才去监听buy now
-            values.offers !== 'yes' && $('.bynow').on('click', e => buynow(e, values))
-
-            {% comment %} page_infos.page_name === 'jobrad' && $('.forms .centeral-content .forms-link').on('click', e => {
-                const item = document.querySelector(`.faqs .faq-item[index="7"]`)
-                const title = item.querySelector('.faq-title')
-                const content = item.querySelector('.faq-content')
-        
-                // 如果是隐藏状态才展开
-                if (window.getComputedStyle(content).display === 'none') {
-                    title.click()
-                }
-                
-                setTimeout(() => {
-                    $('html').animate({
-                        scrollTop: $(item).offset().top - 85
-                    }, 300)
-                })
-        
-        
-                e.preventDefault();
-                return false;
-            }) {% endcomment %}
         }, 50)
 
         event.preventDefault();
@@ -672,16 +757,22 @@ setTimeout(() => {
     // url 参数
     const urlSearch = getSearchValues()
 
+    console.log('urlSearch', urlSearch)
+
     // 如果存在车型参数
     if (urlSearch.bike_style) {
         $(`select[name="bike_model"]`).val(urlSearch.bike_model)
-        // 填充size
-        $(`select[name="bike_size"]`).val(urlSearch.bike_size)
-        // 填充style
-        $(`select[name="bike_style"]`).val(urlSearch.bike_style)
 
-        // change bike image
         setTimeout(changeBikeImage)
+
+        setTimeout(() => {
+            // 填充size
+            $(`select[name="bike_size"]`).val(urlSearch.bike_size)
+            // 填充style
+            $(`select[name="bike_style"]`).val(urlSearch.bike_style)
+            // change bike image
+            setTimeout(changeBikeImage, 300)
+        }, 300)
     }
 
     // 如果有 accessories 存在
