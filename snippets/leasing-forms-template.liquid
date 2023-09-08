@@ -568,6 +568,8 @@ const changeBikeImage = e => {
         return
     }
 
+    current_model = current
+
     window.selectPlugin.sumo.unSelectAll()
 
     if (current === 'carbon') {
@@ -609,7 +611,6 @@ const changeBikeImage = e => {
     }
 
     $('.forms form .item .tips').show()
-    current_model = current
 }
 
 
