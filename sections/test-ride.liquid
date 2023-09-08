@@ -614,10 +614,8 @@
                 options.push(option)
             }
 
-            // 如果有disableDate 需要异步计算
-            if (info.disableDate) {
-                setTimeout(calculateFunc, 300, info, item)
-            }
+            // 异步计算
+            setTimeout(calculateFunc, 300, info, item)
         })
 
         // 首字母排序
