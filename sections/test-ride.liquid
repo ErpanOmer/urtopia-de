@@ -419,6 +419,7 @@
     }
 
     function asyncFunc () {
+        console.log(new Date())
         const [func, ...args] = Array.from(arguments)
 
         setTimeout(func, 100, ...args)
