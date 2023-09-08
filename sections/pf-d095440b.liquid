@@ -1322,7 +1322,9 @@
             t.removeClass('loading')
             t.find('span').html(text)
 
-            const url = window.sessionStorage.localPathPerfix + `/pages/ebike-leasing?bike_model=${current_variant.option1}&bike_style=${current_variant.option3}&bike_size=${current_variant.option2}&utm_source=order_page#forms`
+            const bike_model = current_variant.option1 === 'Carbon Belt' ? 'carbon1' : 'carbon1s'
+
+            const url = window.sessionStorage.localPathPerfix + `/pages/ebike-leasing?bike_model=${bike_model}&bike_size=${current_variant.option2}&bike_style=${current_variant.option3}&utm_source=order_page#forms`
 
             return window.open(url)
         }
