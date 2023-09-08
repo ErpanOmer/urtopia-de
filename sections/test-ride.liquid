@@ -421,7 +421,9 @@
     function asyncFunc () {
         const [func, ...args] = Array.from(arguments)
 
-        setTimeout(func, 100, ...args)
+        //setTimeout(func, 100, ...args)
+
+        requestIdleCallback()
     }
 
      // 可用日期计算
@@ -457,7 +459,10 @@
                 date = Number(d) + (oneDay * findOffset([currentWeek, AvailableWeek]))
             }
 
-            asyncFunc(() => target.find('.time > div').text(dateToString(getData(date))))
+            date = dateToString(getData(date))
+
+            asyncFunc(() => target.find('.time > div').text(date)))
+            store.avalibaleDate = date
     }
 
 
