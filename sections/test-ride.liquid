@@ -263,6 +263,11 @@
 
             return date
     }
+
+    const dateToString = (time = new Date()) => {
+        time = time.toString().split(' ')    
+        return `${time[2]}. ${time[1]}`
+    }
     
     const findStore = name => {
             for (const city of testRides) {
