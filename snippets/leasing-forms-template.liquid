@@ -471,6 +471,7 @@ const carbonBikeChange = (model, size, style) => {
 
 let current_chord_model = ''
 const chordBikeChange = (model, size, style) => {
+    console.log('current_chord_model !== model', current_chord_model, model)
     if (current_chord_model !== model) {
         // 渲染acc
          $('select[name="accessories"]').html(model === 'chord' ? `{% for product in collections["chord-leasing-accessories"].products %}
