@@ -423,7 +423,7 @@
 
         //setTimeout(func, 100, ...args)
 
-        requestIdleCallback()
+        requestIdleCallback(() => func(...args))
     }
 
      // 可用日期计算
