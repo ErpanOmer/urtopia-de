@@ -443,11 +443,13 @@
                 const AvailableWeek = findAvailableWeek(currentWeek, store.businessHours)
 
                 if (AvailableWeek === -1) {
-                    return now
+                    date = now
+                    break
                 }
 
                 if (currentWeek === AvailableWeek) {
-                    return str
+                    date = str
+                    break
                 }
 
                 date = Number(d) + (oneDay * findOffset([currentWeek, AvailableWeek]))
