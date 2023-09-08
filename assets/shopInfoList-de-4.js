@@ -24,10 +24,6 @@ const now = +new Date()
 // 禁用日期 最大天数
 const disable_date_max_limit = 60
 
-let store_list_calculate_total_time = +new Date()
-
-
-
 //  禁用日期动态生成函数
 //  disable_limit:  禁用几天               格式:  365 或者区间 [['2023-9-10', '2023-10-10'], ['2023-10-22', '2023-11-10']]
 //  ignore_date：   跳过某些日期不禁用      格式:  ['2023-7-27', '2023-7-28', '2023-7-29']  
@@ -1475,5 +1471,3 @@ const testRides = [
     ]
   },
 ]
-
-store_list_calculate_total_time = +new Date() - store_list_calculate_total_time
