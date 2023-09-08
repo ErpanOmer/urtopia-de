@@ -22,9 +22,7 @@ const oneDay = 24 * 60 * 60 * 1000
 const now = +new Date()
 
 // 禁用日期 最大天数
-const disable_date_max_limit = 60
-// 禁用日期 最大循环次数
-const disable_date_max_limit = 60
+const disable_date_max_limit = 600
 
 let store_list_calculate_total_time = +new Date()
 
