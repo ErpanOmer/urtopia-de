@@ -37,10 +37,8 @@ function createdisableDates(disable_limit = 0, ignore_date = [], start_time = ne
         continue
       }
 
-      let [start, end] = iterator
-
-      start = getData(start)
-      end = getData(end)
+      let start = getData(iterator[0])
+      let end = getData(iterator[1])
 
       for (let index = 0; index < 60; index++) {
         if (Number(start) === Number(end)) {
