@@ -271,7 +271,7 @@
                   store.businessHours = store.businessHours || []
 
                   store.findAvalibaleDate = () => {
-                    const time = getData(findAvalibaleDate(store)).toString().split(' ')    
+                    const time = new Date().toString().split(' ')    
                     return `${time[2]}. ${time[1]}`
                   }
 

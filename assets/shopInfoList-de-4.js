@@ -30,6 +30,8 @@ const now = +new Date()
 function createdisableDates(disable_limit = 0, ignore_date = [], start_time = new Date()) {
   let temp = []
 
+  return temp;
+
   if (Array.isArray(disable_limit)) {
     while(disable_limit.length) {
       const item = disable_limit.shift()
@@ -64,7 +66,7 @@ function createdisableDates(disable_limit = 0, ignore_date = [], start_time = ne
 
 
 
-  temp = temp.slice(0, Math.min(90, temp.length))
+  temp = temp.slice(0, Math.min(60, temp.length))
 
   for (const iterator of ignore_date) {
     const date = getDateString(getData(iterator))
