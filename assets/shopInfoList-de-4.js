@@ -1,10 +1,10 @@
 const getData = (date = new Date()) => {
   if (typeof date !== 'object') {
-      if (typeof date === 'string') {
-          date = date.replace(/-/g, '/')
-      }
+    if (typeof date === 'string') {
+      date = date.replace(/-/g, '/')
+    }
 
-      date = new Date(date)
+    date = new Date(date)
   }
 
   date.setHours(0)
@@ -23,14 +23,6 @@ const now = +new Date()
 
 // 禁用日期 最大天数
 const disable_date_max_limit = 60
-// 禁用日期 最大区间查找天数
-const disable_date_max_interval_limit = 60
-// 禁用日期 最大循环次数
-const disable_date_max_loop_limit = 60
-
-let store_list_calculate_total_time = +new Date()
-
-
 
 //  禁用日期动态生成函数
 //  disable_limit:  禁用几天               格式:  365 或者区间 [['2023-9-10', '2023-10-10'], ['2023-10-22', '2023-11-10']]
@@ -38,53 +30,55 @@ let store_list_calculate_total_time = +new Date()
 //  start_time:     从什么时候开始禁用      格式： 2023-7-27 （默认今天)
 
 function createdisableDates(disable_limit = 0, ignore_date = [], start_time = new Date()) {
-  let temp = []
+  return function () {
+    let temp = []
 
-  if (Array.isArray(disable_limit)) {
-    for (const iterator of disable_limit) {
-      if (typeof iterator === 'string') {
-        temp.push(getDateString(getData(iterator)))
-        continue
-      }
-
-      let start = getData(iterator[0])
-      let end = getData(iterator[1])
-
-      for (let index = 0; index < disable_date_max_interval_limit; index++) {
-        if (Number(start) === Number(end)) {
-           break
+    if (Array.isArray(disable_limit)) {
+      for (const iterator of disable_limit) {
+        if (typeof iterator === 'string') {
+          temp.push(getDateString(getData(iterator)))
+          continue
         }
 
-        temp.push(getDateString(start))
+        let start = getData(iterator[0])
+        let end = getData(iterator[1])
 
+        for (let index = 0; index < disable_date_max_limit; index++) {
+          if (Number(start) === Number(end)) {
+            break
+          }
+
+          temp.push(getDateString(start))
+
+          start = getData(oneDay + Number(start))
+        }
+
+
+        temp.push(getDateString(end))
+      }
+    } else {
+      let start = getData(start_time)
+
+      for (let index = 0; index < disable_limit; index++) {
+        temp.push(getDateString(start))
         start = getData(oneDay + Number(start))
       }
-
-
-      temp.push(getDateString(end))
     }
-  } else {
-    let start = getData(start_time)
 
-    for (let index = 0; index < disable_limit; index++) {
-      temp.push(getDateString(start))
-      start = getData(oneDay + Number(start))
+    temp = temp.slice(0, Math.min(disable_date_max_limit, temp.length))
+
+    for (const iterator of ignore_date) {
+      const date = getDateString(getData(iterator))
+
+      const index = temp.findIndex(t => t === date)
+
+      if (index > -1) {
+        temp.splice(index, 1)
+      }
     }
+
+    return temp
   }
-
-  temp = temp.slice(0, Math.min(disable_date_max_limit, temp.length))
-
-  for (const iterator of ignore_date) {
-    const date = getDateString(getData(iterator))
-
-    const index = temp.findIndex(t => t === date)
-
-    if (index > -1) {
-      temp.splice(index, 1)
-    }
-  }
-
-  return temp
 }
 
 
@@ -146,7 +140,7 @@ const testRides = [
     cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Dusseldorf.jpg?v=1679406972',
     series: [
       'Urtopia Carbon 1',
-       'Urtopia Chord'
+      'Urtopia Chord'
     ],
     stores: [
       {
@@ -277,221 +271,221 @@ const testRides = [
       }
     ]
   },
-   {
-     city: 'Hamburg',
-     cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Hamburg_19874cca-b8ea-4f39-824a-d987e3410a01.jpg?v=1683867163',
-     series: [
-       'Urtopia Carbon 1',
-       // 'Urtopia Carbon 1'
-     ],
-     stores: [
-       {
-         name: 'Anneke Gabriel',
-         phone: '+49 1717424105',
-         email: 'dominic@2do-digital.de',
-         timezone: "Mainz, Germany (GMT+1)",
-         add: "Schwübb, 22529 Hamburg, Germany",
-        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Hamburg_19874cca-b8ea-4f39-824a-d987e3410a01.jpg?v=1683867163",
-         testrideSpot: "Hamburg",
-         testRideSize: "L",
-         isPartner: true,
-         availableSizes: [
-          'Carbon 1 Size L'
-          ],
-         businessHours: [
-           "",
-           "17:00-20:00",
-           "17:00-20:00",
-           "17:00-20:00",
-           "17:00-20:00",
-           "17:00-20:00",
-           "17:00-20:00",
-         ],
-       },
-       {
-         name: 'Matthias Kaltenbach',
-         phone: '+4915772388217',
-         email: 'urtopia.hamburg@outlook.de',
-         timezone: "Mainz, Germany (GMT+1)",
-         add: "Eimsbüttel, 20255 Hamburg",
-        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Hamburg_19874cca-b8ea-4f39-824a-d987e3410a01.jpg?v=1683867163",
-         testrideSpot: "Hamburg",
-         testRideSize: "L,Chord",
-         isPartner: true,
-         availableSizes: [
-          'Carbon 1 Size L',
-           'Chord'
-        ],
-         businessHours: [
-           "14:00-20:00",
-           "14:00-20:00",
-           "",
-           "14:00-20:00",
-           "14:00-17:00",
-           "",
-           "",
-         ],
-         disableDate: createdisableDates(100, ['2023-9-7', '2023-9-18', '2023-9-24', '2023-9-27', '2023-9-28']),
-       },
-       {
-         name: 'Moritz Falk',
-         phone: '+49 151 14461642',
-         email: 'moritz.urtopia@gmail.com',
-         timezone: "Hamburg, Germany (GMT+1)",
-         add: "Winterhude, 22299 Hamburg",
-        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Hamburg_19874cca-b8ea-4f39-824a-d987e3410a01.jpg?v=1683867163",
-         testrideSpot: "Hamburg",
-         testRideSize: "L",
-         isPartner: true,
-         availableSizes: [
-          'Carbon 1 Size L',
-        ],
-         businessHours: [
-           "9:00-21:00",
-           "16:00-21:00",
-           "16:00-21:00",
-           "16:00-21:00",
-           "16:00-21:00",
-           "16:00-21:00",
-           "9:00-21:00",
-         ],
-       },
-       {
-         name: 'Zweiradhaus Ehrig',
-         phone: '+49 406034501',
-         email: 'info@ehrig24.de',
-         timezone: "Mainz, Germany (GMT+1)",
-         add: "Claus-Ferck-Straße 39 22359 Hamburg",
-        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Zweiradhaus_Ehrig1.jpg?v=1691088195",
-         testrideSpot: "Hamburg",
-         testRideSize: "M",
-         availableSizes: [
-          'Carbon 1 Size M'
-          ],
-         businessHours: [
-           "",
-           "10:00-19:00",
-           "10:00-19:00",
-           "10:00-19:00",
-           "10:00-19:00",
-           "10:00-19:00",
-           "10:00-16:00",
-         ],
-       },
-       {
-         name: 'CityBikeEvents – CruiseVision GmbH',
-         phone: '+49 40398046-23',
-         email: 'info@city-bike-events.de',
-         timezone: "Mainz, Germany (GMT+1)",
-         add: "Jessenstraße 4，22767 Hamburg",
-        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/CruiseVision_GmbH.jpg?v=1691401803",
-         testrideSpot: "Hamburg",
-         testRideSize: "M",
-         availableSizes: [
-          'Carbon 1 Size M/L'
-          ],
-         businessHours: [
-           "10:00-19:00",
-           "10:00-19:00",
-           "10:00-19:00",
-           "10:00-19:00",
-           "10:00-19:00",
-           "10:00-19:00",
-           "10:00-16:00",
-         ],
-       },
   {
-         name: 'Volkan Kartal',
-         phone: '+49 176 56710791',
-         email: 'Volkan.urtopia@gmail.com',
-         timezone: "Hamburg, Germany (GMT+1)",
-         add: "Am Knill 1H, 22147 Hamburg",
+    city: 'Hamburg',
+    cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Hamburg_19874cca-b8ea-4f39-824a-d987e3410a01.jpg?v=1683867163',
+    series: [
+      'Urtopia Carbon 1',
+      // 'Urtopia Carbon 1'
+    ],
+    stores: [
+      {
+        name: 'Anneke Gabriel',
+        phone: '+49 1717424105',
+        email: 'dominic@2do-digital.de',
+        timezone: "Mainz, Germany (GMT+1)",
+        add: "Schwübb, 22529 Hamburg, Germany",
         imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Hamburg_19874cca-b8ea-4f39-824a-d987e3410a01.jpg?v=1683867163",
-         testrideSpot: "Hamburg",
-         testRideSize: "L",
-         isPartner: true,
-         availableSizes: [
+        testrideSpot: "Hamburg",
+        testRideSize: "L",
+        isPartner: true,
+        availableSizes: [
+          'Carbon 1 Size L'
+        ],
+        businessHours: [
+          "",
+          "17:00-20:00",
+          "17:00-20:00",
+          "17:00-20:00",
+          "17:00-20:00",
+          "17:00-20:00",
+          "17:00-20:00",
+        ],
+      },
+      {
+        name: 'Matthias Kaltenbach',
+        phone: '+4915772388217',
+        email: 'urtopia.hamburg@outlook.de',
+        timezone: "Mainz, Germany (GMT+1)",
+        add: "Eimsbüttel, 20255 Hamburg",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Hamburg_19874cca-b8ea-4f39-824a-d987e3410a01.jpg?v=1683867163",
+        testrideSpot: "Hamburg",
+        testRideSize: "L,Chord",
+        isPartner: true,
+        availableSizes: [
+          'Carbon 1 Size L',
+          'Chord'
+        ],
+        businessHours: [
+          "14:00-20:00",
+          "14:00-20:00",
+          "",
+          "14:00-20:00",
+          "14:00-17:00",
+          "",
+          "",
+        ],
+        disableDate: createdisableDates(100, ['2023-9-7', '2023-9-18', '2023-9-24', '2023-9-27', '2023-9-28']),
+      },
+      {
+        name: 'Moritz Falk',
+        phone: '+49 151 14461642',
+        email: 'moritz.urtopia@gmail.com',
+        timezone: "Hamburg, Germany (GMT+1)",
+        add: "Winterhude, 22299 Hamburg",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Hamburg_19874cca-b8ea-4f39-824a-d987e3410a01.jpg?v=1683867163",
+        testrideSpot: "Hamburg",
+        testRideSize: "L",
+        isPartner: true,
+        availableSizes: [
+          'Carbon 1 Size L',
+        ],
+        businessHours: [
+          "9:00-21:00",
+          "16:00-21:00",
+          "16:00-21:00",
+          "16:00-21:00",
+          "16:00-21:00",
+          "16:00-21:00",
+          "9:00-21:00",
+        ],
+      },
+      {
+        name: 'Zweiradhaus Ehrig',
+        phone: '+49 406034501',
+        email: 'info@ehrig24.de',
+        timezone: "Mainz, Germany (GMT+1)",
+        add: "Claus-Ferck-Straße 39 22359 Hamburg",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Zweiradhaus_Ehrig1.jpg?v=1691088195",
+        testrideSpot: "Hamburg",
+        testRideSize: "M",
+        availableSizes: [
+          'Carbon 1 Size M'
+        ],
+        businessHours: [
+          "",
+          "10:00-19:00",
+          "10:00-19:00",
+          "10:00-19:00",
+          "10:00-19:00",
+          "10:00-19:00",
+          "10:00-16:00",
+        ],
+      },
+      {
+        name: 'CityBikeEvents – CruiseVision GmbH',
+        phone: '+49 40398046-23',
+        email: 'info@city-bike-events.de',
+        timezone: "Mainz, Germany (GMT+1)",
+        add: "Jessenstraße 4，22767 Hamburg",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/CruiseVision_GmbH.jpg?v=1691401803",
+        testrideSpot: "Hamburg",
+        testRideSize: "M",
+        availableSizes: [
+          'Carbon 1 Size M/L'
+        ],
+        businessHours: [
+          "10:00-19:00",
+          "10:00-19:00",
+          "10:00-19:00",
+          "10:00-19:00",
+          "10:00-19:00",
+          "10:00-19:00",
+          "10:00-16:00",
+        ],
+      },
+      {
+        name: 'Volkan Kartal',
+        phone: '+49 176 56710791',
+        email: 'Volkan.urtopia@gmail.com',
+        timezone: "Hamburg, Germany (GMT+1)",
+        add: "Am Knill 1H, 22147 Hamburg",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Hamburg_19874cca-b8ea-4f39-824a-d987e3410a01.jpg?v=1683867163",
+        testrideSpot: "Hamburg",
+        testRideSize: "L",
+        isPartner: true,
+        availableSizes: [
           'Carbon 1s Size L',
         ],
-         businessHours: [
-           "",
-           "10:00-18:00",
-           "10:00-18:00",
-           "10:00-18:00",
-           "10:00-18:00",
-           "10:00-18:00",
-           "",
-         ],
+        businessHours: [
+          "",
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-18:00",
+          "",
+        ],
         disableDate: createdisableDates([['2023-9-16', '2023-10-8']]),
-       },
-         {
-         name: 'Norddeutsche Zweiradschiede',
-         phone: '+494088359912',
-         email: 'zweiradschmiede.nord@gmail.com',
-         timezone: "Hamburg, Germany (GMT+1)",
-         add: "Bramfelder Ch 220, 22799 Hamburg",
+      },
+      {
+        name: 'Norddeutsche Zweiradschiede',
+        phone: '+494088359912',
+        email: 'zweiradschmiede.nord@gmail.com',
+        timezone: "Hamburg, Germany (GMT+1)",
+        add: "Bramfelder Ch 220, 22799 Hamburg",
         imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Norddeutsche_Zweiradschiede.jpg?v=1693272716",
-         testrideSpot: "Hamburg",
-         testRideSize: "L",
-         availableSizes: [
+        testrideSpot: "Hamburg",
+        testRideSize: "L",
+        availableSizes: [
           'Carbon 1 Size L',
         ],
-         businessHours: [
-           "",
-           "10:00-13:00, 17:00-18:00",
-           "10:00-13:00, 17:00-18:00",
-           "10:00-13:00, 17:00-18:00",
-           "10:00-13:00, 17:00-18:00",
-           "10:00-13:00, 17:00-18:00",
-           "",
-         ],
-       },
-       {
-         name: 'Velo Shop',
-         phone: '+49404204944',
-         email: 'info@veloshop.de',
-         timezone: "Hamburg, Germany (GMT+1)",
-         add: "Eppendrofer Weg 250",
+        businessHours: [
+          "",
+          "10:00-13:00, 17:00-18:00",
+          "10:00-13:00, 17:00-18:00",
+          "10:00-13:00, 17:00-18:00",
+          "10:00-13:00, 17:00-18:00",
+          "10:00-13:00, 17:00-18:00",
+          "",
+        ],
+      },
+      {
+        name: 'Velo Shop',
+        phone: '+49404204944',
+        email: 'info@veloshop.de',
+        timezone: "Hamburg, Germany (GMT+1)",
+        add: "Eppendrofer Weg 250",
         imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/VELO_SHOP.jpg?v=1693272717",
-         testrideSpot: "Hamburg",
-         testRideSize: "L",
-         availableSizes: [
+        testrideSpot: "Hamburg",
+        testRideSize: "L",
+        availableSizes: [
           'Carbon 1 Size L',
         ],
-         businessHours: [
-           "",
-           "14:00-19:00",
-           "11:00-19:00",
-           "11:00-19:00",
-           "11:00-19:00",
-           "11:00-19:00",
-           "11:00-14:00",
-         ],
-       },
-       {
-         name: 'Fahrrad Rothe',
-         phone: '+4940865020',
-         email: 'service@fahrrad-rothe.de',
-         timezone: "Hamburg, Germany (GMT+1)",
-         add: "Dormienstraße 4, 22587 Hamburg",
+        businessHours: [
+          "",
+          "14:00-19:00",
+          "11:00-19:00",
+          "11:00-19:00",
+          "11:00-19:00",
+          "11:00-19:00",
+          "11:00-14:00",
+        ],
+      },
+      {
+        name: 'Fahrrad Rothe',
+        phone: '+4940865020',
+        email: 'service@fahrrad-rothe.de',
+        timezone: "Hamburg, Germany (GMT+1)",
+        add: "Dormienstraße 4, 22587 Hamburg",
         imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Fahrrad_Rothe.jpg?v=1693272716",
-         testrideSpot: "Hamburg",
-         testRideSize: "L",
-         availableSizes: [
+        testrideSpot: "Hamburg",
+        testRideSize: "L",
+        availableSizes: [
           'Carbon 1 Size L',
         ],
-         businessHours: [
-           "",
-           "",
-           "10:00-13:00, 14:00-18:00",
-           "10:00-13:00, 14:00-18:00",
-           "10:00-13:00, 14:00-18:00",
-           "10:00-13:00, 14:00-18:00",
-           "10:00-14:00",
-         ],
-       }
-       ]
-   },
+        businessHours: [
+          "",
+          "",
+          "10:00-13:00, 14:00-18:00",
+          "10:00-13:00, 14:00-18:00",
+          "10:00-13:00, 14:00-18:00",
+          "10:00-13:00, 14:00-18:00",
+          "10:00-14:00",
+        ],
+      }
+    ]
+  },
   {
     city: 'München',
     cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Munchen.jpg?v=1679406972',
@@ -574,7 +568,7 @@ const testRides = [
     city: 'Münster',
     cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/testride-munster.jpg?v=1671252848',
     series: [
-       'Urtopia Carbon 1',
+      'Urtopia Carbon 1',
       'Urtopia Chord'
       // 'Urtopia Carbon 1'
     ],
@@ -981,7 +975,7 @@ const testRides = [
       },
     ]
   },*/
-   {
+  {
     city: 'Offenburg',
     cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Offenburg.jpg?v=1681442327',
     series: [
@@ -1013,7 +1007,7 @@ const testRides = [
       },
     ]
   },
-{
+  {
     city: 'Löbau',
     cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230413-203921.jpg?v=1681442327',
     series: [
@@ -1045,7 +1039,7 @@ const testRides = [
       },
     ]
   },
-{
+  {
     city: 'Zittau',
     cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Zittau.jpg?v=1681442327',
     series: [
@@ -1129,7 +1123,7 @@ const testRides = [
         testRideSize: "L",
         availableSizes: [
           'Carbon 1 Size L',
-          ],
+        ],
         businessHours: [
           "",
           "12:00-16:00",
@@ -1161,7 +1155,7 @@ const testRides = [
         testRideSize: "L",
         availableSizes: [
           'Carbon 1 Size M',
-          ],
+        ],
         businessHours: [
           "",
           "9:00-18:00",
@@ -1175,7 +1169,7 @@ const testRides = [
     ]
   },
   {
-    country:'Netherlands',
+    country: 'Netherlands',
     city: 'Utrecht',
     cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Utrecht_canal.jpg?v=1690441967',
     series: [
@@ -1194,7 +1188,7 @@ const testRides = [
         testRideSize: "L",
         availableSizes: [
           'Carbon 1 Size M',
-          ],
+        ],
         businessHours: [
           "12:00-16:00",
           "12:00-16:00",
@@ -1204,7 +1198,7 @@ const testRides = [
           "12:00-16:00",
           "12:00-16:00",
         ],
-        disableDate: createdisableDates(100, ['2023-9-16','2023-9-17','2023-9-23','2023-9-24']),
+        disableDate: createdisableDates(100, ['2023-9-16', '2023-9-17', '2023-9-23', '2023-9-24']),
         isPartner: true
       },
     ]
@@ -1228,7 +1222,7 @@ const testRides = [
         testRideSize: "L",
         availableSizes: [
           'Carbon 1 Size L',
-          ],
+        ],
         businessHours: [
           "9:00-17:00",
           "9:00-17:00",
@@ -1261,7 +1255,7 @@ const testRides = [
         testRideSize: "L",
         availableSizes: [
           'Carbon 1 Size L',
-          ],
+        ],
         businessHours: [
           "14:00-18:00",
           "16:00-20:00",
@@ -1270,20 +1264,6 @@ const testRides = [
           "16:00-19:00",
           "16:00-20:00",
           "14:00-18:00",
-        ],
-        disableDate: [
-          "2023-8-28",
-          "2023-8-29",
-          "2023-8-30",
-          "2023-8-31",
-          "2023-9-1",
-          "2023-9-2",
-          "2023-9-3",
-          "2023-9-4",
-          "2023-9-5",
-          "2023-9-6",
-          "2023-9-7",
-          "2023-9-8",
         ],
         isPartner: true
       },
@@ -1308,7 +1288,7 @@ const testRides = [
         testRideSize: "M",
         availableSizes: [
           'Carbon 1 Size M',
-          ],
+        ],
         businessHours: [
           "11:00-19:00",
           "11:00-19:00",
@@ -1323,7 +1303,7 @@ const testRides = [
     ]
   },
   {
-    country:'Finland',
+    country: 'Finland',
     city: 'Meritullinkatu',
     cityBackground: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/A93E0E1F-608D-44BE-9840-426BD29C34E6-lg.webp?v=1692340290',
     series: [
@@ -1343,7 +1323,7 @@ const testRides = [
         noBook: true,
         availableSizes: [
           'Carbon 1 Size M',
-          ],
+        ],
         businessHours: [
           "",
           "",
@@ -1377,7 +1357,7 @@ const testRides = [
         noBook: true,
         availableSizes: [
           'Carbon 1 Size L',
-          ],
+        ],
         businessHours: [
           "",
           "",
@@ -1391,7 +1371,7 @@ const testRides = [
       },
     ]
   },
-   {
+  {
     city: 'Troisdorf-Kriegsdorf',
     cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Bonn-center-2016-01.jpg?v=1693473942',
     series: [
@@ -1411,7 +1391,7 @@ const testRides = [
         testRideSize: "M",
         availableSizes: [
           'Carbon 1 Size M',
-          ],
+        ],
         businessHours: [
           "",
           "9:00-18:00",
@@ -1425,7 +1405,7 @@ const testRides = [
     ]
   },
   {
-    country:'Austira',
+    country: 'Austira',
     city: 'Linz',
     cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Linz.jpg?v=1694169315',
     series: [
@@ -1444,7 +1424,7 @@ const testRides = [
         testRideSize: "L",
         availableSizes: [
           'Carbon 1 Size L',
-          ],
+        ],
         businessHours: [
           "",
           "8:00-12:00, 13:00-18:00",
@@ -1458,7 +1438,7 @@ const testRides = [
     ]
   },
   {
-    country:'Austira',
+    country: 'Austira',
     city: 'Wien',
     cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Wien.jpg?v=1694169314',
     series: [
@@ -1477,7 +1457,7 @@ const testRides = [
         testRideSize: "L",
         availableSizes: [
           'Carbon 1 Size L',
-          ],
+        ],
         businessHours: [
           "",
           "9:00-19:00",
@@ -1491,5 +1471,3 @@ const testRides = [
     ]
   },
 ]
-
-store_list_calculate_total_time = +new Date() - store_list_calculate_total_time
