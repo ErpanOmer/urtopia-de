@@ -64,7 +64,7 @@ function createdisableDates(disable_limit = 0, ignore_date = [], start_time = ne
 
 
 
-  temp = temp.slice(0, Math.min(60, temp.length))
+  temp = temp.slice(0, Math.min(90, temp.length))
 
   for (const iterator of ignore_date) {
     const date = getDateString(getData(iterator))
@@ -558,7 +558,7 @@ const testRides = [
           "13:00-20:00",
           "13:00-20:00",
         ],
-        disableDate: createdisableDates(100, ['2023-9-5','2023-9-6','2023-9-7','2023-9-8','2023-9-17','2023-9-18','2023-9-19','2023-9-20','2023-9-21','2023-9-22','2023-9-23','2023-9-24','2023-9-25','2023-9-26','2023-9-27','2023-9-28','2023-9-29','2023-9-30','2023-10-1','2023-10-2','2023-10-3','2023-10-10','2023-10-11']),
+        disableDate: createdisableDates([['2023-9-9', '2023-9-16'], ['2023-10-4', '2023-10-9'], ['2023-10-12', '2023-12-22']]),
       }
     ]
   },
