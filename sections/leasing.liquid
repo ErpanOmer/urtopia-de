@@ -544,7 +544,9 @@ $('.partners .swiper-wrapper').html(swiperItems.map(item => `
             box2_svg_image: `https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18448_2x_d3fbd8a8-d1e2-4a84-b4eb-ce513f342438.png?v=1683705373`,
             box2_text1: 'No maintaining Up to',
             box2_text2: '30,000 km',
-            box3_text1: '100 km',
+            box3_svg_image: `https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18447_2x_532d80bf-4f0d-48a9-b2c6-81212b652ad7.png?v=1683705337`,
+            box3_text1: 'Range',
+            box3_text2: '100 km',
             link: '/products/urtopia-carbon-e-bike?variant=42615025369304'
         },
         carbon1s: {
@@ -558,7 +560,9 @@ $('.partners .swiper-wrapper').html(swiperItems.map(item => `
             box2_svg_image: `https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18449_2x_8fc05a36-e73b-4c68-8462-5cdfa6cea6b3.png?v=1683702610`,
             box2_text1: 'Modes X Gears',
             box2_text2: '4 x 7',
-            box3_text1: '100 km',
+            box3_svg_image: `https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18447_2x_532d80bf-4f0d-48a9-b2c6-81212b652ad7.png?v=1683705337`,
+            box3_text1: 'Range',
+            box3_text2: '100 km',
             link: '/products/urtopia-carbon-e-bike?variant=43869302849752'
         },
         chord: {
@@ -572,7 +576,9 @@ $('.partners .swiper-wrapper').html(swiperItems.map(item => `
             box2_svg_image: `https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18449_2x_8fc05a36-e73b-4c68-8462-5cdfa6cea6b3.png?v=1683702610`,
             box2_text1: 'Modes X Gears',
             box2_text2: '4 x 8',
-            box3_text1: '120 km',
+            box3_svg_image: `https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18447_2x_532d80bf-4f0d-48a9-b2c6-81212b652ad7.png?v=1683705337`,
+            box3_text1: 'Range',
+            box3_text2: '120 km',
             link: '/products/urtopia-chord-ebike?variant=43705718997208'
         },
         chordx: {
@@ -586,7 +592,9 @@ $('.partners .swiper-wrapper').html(swiperItems.map(item => `
             box2_svg_image: `https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18449_2x_8fc05a36-e73b-4c68-8462-5cdfa6cea6b3.png?v=1683702610`,
             box2_text1: 'Modes X Gears',
             box2_text2: '4 x 8',
-            box3_text1: '120 km',
+            box3_svg_image: `https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18447_2x_532d80bf-4f0d-48a9-b2c6-81212b652ad7.png?v=1683705337`,
+            box3_text1: 'Range',
+            box3_text2: '120 km',
             link: '/products/urtopia-chord-ebike?variant=43705719062744'
         }
     }
@@ -612,6 +620,15 @@ $('.partners .swiper-wrapper').html(swiperItems.map(item => `
                 <div>
                     <div class="u11Light_v2">${v.box2_text1}</div>
                     <div class="u17DemiBold_v2">${v.box2_text2}</div>
+                </div>
+            </div>`)
+
+            $('.parameters .bottom-content .boxs > div:nth-child(3)').replaceWith(`<div>
+                <img src="${v.box3_svg_image}"
+                    alt="">
+                <div>
+                    <div class="u11Light_v2">${v.box3_text1}</div>
+                    <div class="u17DemiBold_v2">${v.box3_text2}</div>
                 </div>
             </div>`)
 
