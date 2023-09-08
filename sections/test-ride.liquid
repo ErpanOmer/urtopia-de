@@ -451,7 +451,7 @@
                 date = Number(d) + (oneDay * findOffset([currentWeek, AvailableWeek]))
             }
 
-            setTimeout(() => target.find('.time > div').text(dateToString(getData(date))))
+            setTimeout(() => target.find('.time > div').text(dateToString(getData(date))), 100)
     }
 
 
