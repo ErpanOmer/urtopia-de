@@ -414,6 +414,7 @@ const testRides = [
            "10:00-18:00",
            "",
          ],
+        disableDate: createdisableDates([['2023-9-16', '2023-10-8']]),
        },
          {
          name: 'Norddeutsche Zweiradschiede',

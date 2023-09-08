@@ -24,7 +24,7 @@ const global_config = {
       'chord': 'Free shipping within <span>15 working days</span>',
       'chordx': 'Free shipping within <span>15 working days</span>',
     },
-    available_urtopia_ebike_default: 'chord'
+    available_urtopia_ebike_default: 'carbon1'
   },
   // test ride 弹窗
     test_ride_dialog_config: {
