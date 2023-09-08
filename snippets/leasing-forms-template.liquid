@@ -471,6 +471,7 @@ const carbonBikeChange = (model, size, style) => {
 
 let current_chord_model = ''
 const chordBikeChange = (model, size, style) => {
+    console.log('current_chord_model !== model', current_chord_model, model)
     if (current_chord_model !== model) {
         // 渲染acc
          $('select[name="accessories"]').html(model === 'chord' ? `{% for product in collections["chord-leasing-accessories"].products %}
@@ -550,6 +551,8 @@ const changeBikeImage = e => {
 
     if (current === 'chord') {
         $('select[name="bike_size"]')[0].disabled = true
+    } else {
+        current_chord_model = ''
     }
     
 
@@ -567,6 +570,8 @@ const changeBikeImage = e => {
     if (current_model === current) {
         return
     }
+
+    current_model = current
 
     window.selectPlugin.sumo.unSelectAll()
 
@@ -609,7 +614,6 @@ const changeBikeImage = e => {
     }
 
     $('.forms form .item .tips').show()
-    current_model = current
 }
 
 

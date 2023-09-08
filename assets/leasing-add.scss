@@ -226,11 +226,11 @@ body {
 
         .top-content {
             .select {
-                background-color: #fff;
+                background-color: #EB5A2D;
                 border-radius: 30px;
                 padding: 0 40px;
                 height: 60px;
-                border: 2px solid #fff;
+                border: 2px solid #EB5A2D;
                 transition: all .3s;
                 overflow: hidden;
                 box-sizing: border-box;
@@ -241,14 +241,20 @@ body {
                     height: 100%;
                     font: normal normal 600 20px/1.4em urbane;
                     border: none;
-
+                    appearance: none;
+                    background-color: #EB5A2D;
+                    color: #fff;
+                    background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18620.svg?v=1694171860');
+                    background-position: right center;
+                    background-repeat: no-repeat;
+                    background-size: 25px;
                     
 
                     &:focus-visible {
                         outline-offset: unset;
                         box-shadow: unset;
                         outline: unset;
-                        border-color: #000;
+                        // border-color: #000;
                     }
 
                     option[disabled] {
@@ -263,7 +269,7 @@ body {
                 }
 
                 &:focus-within {
-                    border: 2px solid #000;
+                    border: 2px solid #EB5A2D;
                 }
             }
 
@@ -1422,10 +1428,11 @@ body {
             .top-content {
                 .select {
                     height: 45px;
-                    padding: 0 15px;
+                    padding: 0 30px;
                     
                     select {
                         font-size: 12px;
+                        background-size: 12.5px;
                     }
                 }
 
