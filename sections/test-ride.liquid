@@ -466,6 +466,11 @@
         })
     }
 
+
+    function calculateFunc (store, target, disableDate) {
+        
+    }
+
     function insertCustomElements(target) {
         const store_list_render_total_time = +new Date()
         target.style.opacity = 0
@@ -609,6 +614,10 @@
 
             if (!options.find(option => option.attr('city') === info.testrideSpot )) {
                 options.push(option)
+            }
+
+            if (typeof info.disableDate) {
+                setTimeout(calculateFunc, 300, store, item, info.disableDate)
             }
         })
 
