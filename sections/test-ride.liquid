@@ -422,7 +422,7 @@
         console.log(+new Date())
         const [func, ...args] = Array.from(arguments)
 
-        setTimeout(func, 100, ...args)
+        setTimeout(func, 0, ...args)
 
         //requestIdleCallback(() => func(...args))
 
