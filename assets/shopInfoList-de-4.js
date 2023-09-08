@@ -1392,17 +1392,15 @@ const testRides = [
     stores: [
       {
         name: 'Satking GmbH',
-        phone: '+49 (0) 2241 / 88109 -25',
-        email: 'b.aydogdu@satking.de',
+        phone: '02241 881 090',
+        email: 'info@satking.de',
         timezone: "Troisdorf-Kriegsdorf, Germany (GMT+1)",
         add: "Junkersring 18, 53844 Troisdorf-Kriegsdorf",
         imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Satking_GmbH.jpg?v=1693473391",
         testrideSpot: "Troisdorf-Kriegsdorf",
         testRideSize: "M",
         availableSizes: [
-          'Carbon 1 Size M/L',
-          'Carbon 1s Size M/L',
-          'Chord',
+          'Carbon 1 Size M',
           ],
         businessHours: [
           "",
