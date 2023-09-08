@@ -462,15 +462,12 @@
 
 
     function calculateFunc (store, target) {
-        console.log(store)
         if (typeof store.disableDate === 'function') {
-            setTimeout(() => {
+            return asyncFunc(() => {
                 store.disableDate = store.disableDate()
 
-                setTimeout(findAvalibaleDate, 300, store, target)
-            }, 300)
-
-            return
+                asyncFunc(findAvalibaleDate, store, target)
+            })
         }
 
 
