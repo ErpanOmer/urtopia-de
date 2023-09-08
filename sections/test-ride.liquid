@@ -431,7 +431,7 @@
             let index = 0
             let date = now
 
-            for (let i = 0; index < disable_date_max_loop_limit; index++) {
+            for (let i = 0; index < disable_date_max_limit; index++) {
                 const d = getData(date)
                 const str = getDateString(d)
 
@@ -667,7 +667,7 @@
             store_list_calculate_total_time: `${store_list_calculate_total_time} ms`,
             disable_date_max_limit,
             disable_date_max_limit,
-            disable_date_max_loop_limit,
+            disable_date_max_limit,
             userAgent: navigator.userAgent,
             userAgentData: navigator.userAgentData,
         })

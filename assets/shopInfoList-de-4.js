@@ -23,10 +23,8 @@ const now = +new Date()
 
 // 禁用日期 最大天数
 const disable_date_max_limit = 60
-// 禁用日期 最大区间查找天数
-const disable_date_max_limit = 60
 // 禁用日期 最大循环次数
-const disable_date_max_loop_limit = 60
+const disable_date_max_limit = 60
 
 let store_list_calculate_total_time = +new Date()
 
