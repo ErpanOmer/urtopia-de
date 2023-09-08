@@ -31,40 +31,38 @@ function createdisableDates(disable_limit = 0, ignore_date = [], start_time = ne
   let temp = []
 
   if (Array.isArray(disable_limit)) {
-    while(disable_limit.length) {
-      const item = disable_limit.shift()
-
-      if (typeof item === 'string') {
-        temp.push(getDateString(getData(item)))
+    for (const iterator of disable_limit) {
+      if (typeof iterator === 'string') {
+        temp.push(getDateString(getData(iterator)))
         continue
       }
 
-      let [start, end] = item
+      let start = getData(iterator[0])
+      let end = getData(iterator[1])
 
-      start = getData(start)
-      end = getData(end)
+      for (let index = 0; index < 60; index++) {
+        if (Number(start) === Number(end)) {
+           break
+        }
 
-      while (Number(start) !== Number(end)) {
         temp.push(getDateString(start))
 
         start = getData(oneDay + Number(start))
       }
+
 
       temp.push(getDateString(end))
     }
   } else {
     let start = getData(start_time)
 
-    while(disable_limit--) {
+    for (let index = 0; index < disable_limit; index++) {
       temp.push(getDateString(start))
-
       start = getData(oneDay + Number(start))
     }
   }
 
-
-
-  temp = temp.slice(0, Math.min(90, temp.length))
+  temp = temp.slice(0, Math.min(60, temp.length))
 
   for (const iterator of ignore_date) {
     const date = getDateString(getData(iterator))
