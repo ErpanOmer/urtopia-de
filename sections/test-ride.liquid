@@ -419,7 +419,7 @@
     }
 
      // 可用日期计算
-     const findAvalibaleDate = store => {
+     const findAvalibaleDate = (store, target) => {
             if (!store.businessHours.length) {
                 return now
             }
@@ -455,7 +455,7 @@
                 date = Number(d) + (oneDay * findOffset([currentWeek, AvailableWeek]))
             }
 
-            return date
+            console.log('target', target, date)
     }
 
 
