@@ -1215,7 +1215,7 @@ const testRides = [
         email: 'hendrikuhlemann@googlemail.com',
         timezone: "Mainz, Germany (GMT+1)",
         add: "Johannisstraße 13, 38855 Wernigerode",
-        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Schloss_Wernigerode_nach_Sonnenuntergang.jpg?v=1691564874",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230908-140440.jpg?v=1694153100",
         testrideSpot: "Wernigerode",
         testRideSize: "L",
         availableSizes: [
