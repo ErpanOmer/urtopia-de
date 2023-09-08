@@ -421,9 +421,9 @@
     function asyncFunc () {
         const [func, ...args] = Array.from(arguments)
 
-        //setTimeout(func, 100, ...args)
+        setTimeout(func, 100, ...args)
 
-        requestIdleCallback(() => func(...args))
+        //requestIdleCallback(() => func(...args))
     }
 
      // 可用日期计算
