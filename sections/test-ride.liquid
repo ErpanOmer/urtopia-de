@@ -459,8 +459,8 @@
     }
 
 
-    function calculateFunc (store, target, disableDate) {
-        if (typeof disableDate === 'function') {
+    function calculateFunc (store, target) {
+        if (typeof store.disableDate === 'function') {
 
             return
         }
