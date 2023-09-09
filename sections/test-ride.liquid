@@ -189,6 +189,7 @@
     let last_select_store = ''
     let select_city_count = 0
     let select_store_count = 0
+    let store_list_render_total_time = 0
 
     // 查询日期偏移量
     const findOffset = ([nowWeek, vailableWeek]) => {
@@ -420,10 +421,17 @@
 
     const tasks = []
     const asyncFunc = window.requestIdleCallback || window.requestAnimationFrame || (fn => window.setTimeout(fn, 20));
+    const delayFetch = debounce(fetchBuried, 3000)
 
     function run () {
         if (tasks.length === 0) {
-            return
+            return delayFetch('testride', 'performance', {
+                store_list_render_total_time: `${+new Date() - store_list_render_total_time} ms`,
+                disable_date_max_limit,
+                asyncFuncName: asyncFunc.name,
+                userAgent: navigator.userAgent,
+                userAgentData: navigator.userAgentData,
+            })
         }
 
         const task = tasks.shift()
@@ -501,7 +509,7 @@
     }
 
     function insertCustomElements(target) {
-        const store_list_render_total_time = +new Date()
+        store_list_render_total_time = +new Date()
         target.style.opacity = 0
 
         const storeList = $(document.createDocumentFragment())
@@ -682,14 +690,6 @@
 
         $(target).parent().append(storeList)
         $('#storepoint-search').append(forms)
-
-        fetchBuried('testride', 'performance', {
-            store_list_render_total_time: `${+new Date() - store_list_render_total_time} ms`,
-            disable_date_max_limit,
-            asyncFuncName: asyncFunc.name,
-            userAgent: navigator.userAgent,
-            userAgentData: navigator.userAgentData,
-        })
     }
 
     function observerItems(mutationsList) {
