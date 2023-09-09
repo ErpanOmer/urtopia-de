@@ -541,7 +541,7 @@ const testRides = [
       },
       {
         name: 'Michael Kerber',
-        phone: '',
+        phone: '+49 89 89868895',
         email: 'michael@kerber-privat.de',
         timezone: "München, Germany (GMT+1)",
         add: "Maria-Eich-Str. , D 82166 Graefelfing",
@@ -925,11 +925,35 @@ const testRides = [
         name: 'RADFAHRWERK',
         phone: '+491632379785',
         email: 'info@radfahrwerk.de',
-        timezone: "Mainz, Germany (GMT+1)",
+        timezone: "Regensburg, Germany (GMT+1)",
         add: "St. Emmerams Ring 4, 93309 Kelheim",
         imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/IMG_0479.jpg?v=1680924648",
         testrideSpot: "Regensburg",
         testRideSize: "M",
+        availableSizes: [
+          'Carbon 1 Size M',
+        ],
+        businessHours: [
+          "09:00-12:00",
+          "08:00-12:00,12:00-21:00",
+          "08:00-12:00,12:00-21:00",
+          "08:00-12:00,12:00-21:00",
+          "08:00-12:00,12:00-21:00",
+          "08:00-12:00,12:00-21:00",
+          "09:00-12:00",
+        ],
+      },
+      {
+        name: 'Thomas Schödl',
+        phone: '+49 15122654233',
+        email: 'thomas.schoedl@hotmail.de',
+        timezone: "Regensburg, Germany (GMT+1)",
+        add: "Holzgartenstr 93059 Regensburg",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Regensburg.jpg?v=1679406972",
+        testrideSpot: "Regensburg",
+        testRideSize: "M",
+        noBook: true,
+        isPartner: true,
         availableSizes: [
           'Carbon 1 Size M',
         ],
@@ -1470,4 +1494,38 @@ const testRides = [
       },
     ]
   },
+  {
+    city: 'Edewecht',
+    cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Edewecht_-_Hauptstrasse___Kokermuhle_04_ies.jpg?v=1694247951',
+    series: [
+      'Urtopia Carbon 1s',
+      // 'Urtopia Carbon 1'
+    ],
+    stores: [
+      {
+        name: 'Thomas von Thülen ',
+        phone: '04486/3689063',
+        email: 'urtopiatestfahrt@gmail.com',
+        timezone: "Edewecht, Germany (GMT+1)",
+        add: "Weißmoorweg, 26188 Edewecht ",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Edewecht_-_Hauptstrasse___Kokermuhle_04_ies.jpg?v=1694247951",
+        testrideSpot: "Edewecht",
+        testRideSize: "L",
+        noBook: true,
+        availableSizes: [
+          'Carbon 1s Size L',
+        ],
+        businessHours: [
+          "",
+          "9:00-19:00",
+          "9:00-19:00",
+          "9:00-19:00",
+          "9:00-19:00",
+          "9:00-13:00, 14:00-19:00",
+          "9:00-17:00",
+        ],
+        isPartner: true
+      },
+    ]
+  },  
 ]
