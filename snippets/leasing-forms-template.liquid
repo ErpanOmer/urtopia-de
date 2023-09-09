@@ -359,7 +359,8 @@ function getFormValues (elem = '') {
     })
 
     if (temp.bike_model.includes('carbon')) {
-        temp.variant_id = carbon.variants.find(c => c.title === `${temp.bike_model} / ${temp.bike_size} / ${temp.bike_style}`)
+        const bike_model = 'carbon1' ? "Carbon Belt" : "Shimano Gear"
+        temp.variant_id = carbon.variants.find(c => c.title === `${bike_model} / ${temp.bike_size} / ${temp.bike_style}`)
         temp.variant_id = temp.variant_id ? temp.variant_id.id : ''
     } else {
         temp.variant_id = chord.variants.find(c => c.title === `${temp.bike_size} / ${temp.bike_style}`)
@@ -368,6 +369,7 @@ function getFormValues (elem = '') {
 
     
     temp.offers = $('.forms label[class="active"]').attr('for')
+    console.log('temp', temp)
     return temp
 }
 

@@ -418,14 +418,33 @@
         })
     }
 
-    function asyncFunc () {
-        const [func, ...args] = Array.from(arguments)
+    const tasks = []
+    const asyncFunc = window.requestIdleCallback || window.requestAnimationFrame || (fn => window.setTimeout(fn, 20));
 
-        setTimeout(func, 100, ...args)
+    function run () {
+        if (tasks.length === 0) {
+            return
+        }
 
-        //requestIdleCallback(() => func(...args))
+        const task = tasks.shift()
+        task.func.apply(null, task.args)
 
-        //Promise.resolve(...args).then(func)
+        // 用微任务去调用 宏任务
+        Promise.resolve(run).then(asyncFunc)
+    }
+
+
+    const runTasks = debounce(run, 300)
+
+    function asyncTaskPush () {
+        const args = Array.from(arguments)
+
+        tasks.push({ 
+            func: args[0],
+            args: args.slice(1)
+        })
+
+        runTasks()
     }
 
      // 可用日期计算
@@ -463,22 +482,22 @@
 
             date = dateToString(getData(date))
 
-            asyncFunc(() => target.find('.time > div').text(date))
+            asyncTaskPush(() => target.find('.time > div').text(date))
             store.avalibaleDate = date
     }
 
 
     function calculateFunc (store, target) {
         if (typeof store.disableDate === 'function') {
-            return asyncFunc(() => {
+            return asyncTaskPush(() => {
                 store.disableDate = store.disableDate()
 
-                asyncFunc(findAvalibaleDate, store, target)
+                asyncTaskPush(findAvalibaleDate, store, target)
             })
         }
 
 
-        asyncFunc(findAvalibaleDate, store, target)
+        asyncTaskPush(findAvalibaleDate, store, target)
     }
 
     function insertCustomElements(target) {
@@ -627,7 +646,7 @@
             }
 
             // 异步计算
-            asyncFunc(calculateFunc, info, item)
+            asyncTaskPush(calculateFunc, info, item)
         })
 
         // 首字母排序
