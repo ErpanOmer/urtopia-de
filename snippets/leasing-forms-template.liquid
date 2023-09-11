@@ -359,7 +359,7 @@ function getFormValues (elem = '') {
     })
 
     if (temp.bike_model.includes('carbon')) {
-        const bike_model = 'carbon1' ? "Carbon Belt" : "Shimano Gear"
+        const bike_model = temp.bike_model === 'carbon1' ? "Carbon Belt" : "Shimano Gear"
         temp.variant_id = carbon.variants.find(c => c.title === `${bike_model} / ${temp.bike_size} / ${temp.bike_style}`)
         temp.variant_id = temp.variant_id ? temp.variant_id.id : ''
     } else {

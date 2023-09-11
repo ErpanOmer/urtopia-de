@@ -1,3 +1,4 @@
+{{ 'shopInfoList-de-4.js' | asset_url | preload_tag: as: 'script' }}
 <link rel="stylesheet" href="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/laydatev3.css">
 <link rel="preload" href="https://cdn.shopifycdn.net/s/files/1/0633/2068/6808/files/20230607-142007.jpg?v=1686118943" as="image">
 {{ 'testride.scss.css' | asset_url | stylesheet_tag }}
@@ -180,68 +181,34 @@
     <div id="urtopia-calendar"></div>
 </div>
 
-{{ 'shopInfoList-de-4.js' | asset_url | script_tag }}
 {{ 'laydatev4-de.js' | asset_url | script_tag }}
 <script src="https://cdn.storepoint.co/api/v1/js/162f21804990ff.js"></script>
 <script>
+    const start_time = +new Date()
+    let loaded_worker = 0
+    let testRides = new Map()
+    let search = {}
+    const u = new URL(location.href)
+
+    for (const [k, v] of u.searchParams.entries()) {
+        search[k] = v
+    }
+
+    const worker = new Worker('{{ 'shopInfoList-de-4.js' | asset_url }}')
+    worker.onmessage = function (e) {
+        testRides = e.data
+        loaded_worker = +new Date() - start_time
+
+        search.name && booknow(search.name)
+    }
 
     let last_select_city = ''
     let last_select_store = ''
     let select_city_count = 0
     let select_store_count = 0
     let store_list_render_total_time = 0
-
-    // 查询日期偏移量
-    const findOffset = ([nowWeek, vailableWeek]) => {
-        if (nowWeek === vailableWeek) {
-            return 0
-        }
-
-        return vailableWeek > nowWeek ? vailableWeek - nowWeek : 7 - (nowWeek - vailableWeek)
-    }
-
-    // 查找可预约到星期几
-    const findAvailableWeek = (d, businessHours) => {
-        if (businessHours[d]) {
-            return d
-        }
-
-        for (let i = d; i < d + 7; i++) {
-
-            if (businessHours[i % 7]) {
-                return i % 7
-            }
-        }
-
-        return -1
-    }
-
-    // 查询禁用日期
-    const findDisable = (str, index = 0, disableDate = []) => {
-        for (let i = index; i < disableDate.length; i++) {
-            if (disableDate[i] === str) {
-                return i
-            }
-        }
-    }
-
-    const dateToString = (time = new Date()) => {
-        time = time.toString().split(' ')    
-        return `${time[2]}. ${time[1]}`
-    }
     
-    const findStore = name => {
-            for (const city of testRides) {
-                for (const store of city.stores) {
-                  // 把所属国家也加上
-                  store.country = city.country || 'Deutschland'
-    
-                    if (store.name.replace(/\s*/g, "") === name.replace(/\s*/g, "")) {
-                        return store
-                    }
-                }
-            }
-        }
+    const findStore = name => testRides.get(name.replace(/\s*/g, ""))
     
       function CalendarOpen(shopPoint, shop, isSpecDay = false, timetp = 0) {    
         laydate.render({
@@ -455,45 +422,6 @@
         runTasks()
     }
 
-     // 可用日期计算
-     const findAvalibaleDate = (store, target) => {
-            let index = 0
-            let date = now
-
-            for (let i = 0; index < disable_date_max_limit; index++) {
-                const d = getData(date)
-                const str = getDateString(d)
-
-                // 保存上次 循环的index
-                index = findDisable(str, index, store.disableDate)
-
-                if (!isNaN(index)) {
-                    date = Number(d) + oneDay
-                    continue
-                }
-
-                const currentWeek = d.getDay()
-                const AvailableWeek = findAvailableWeek(currentWeek, store.businessHours)
-
-                if (AvailableWeek === -1) {
-                    date = now
-                    break
-                }
-
-                if (currentWeek === AvailableWeek) {
-                    date = str
-                    break
-                }
-
-                date = Number(d) + (oneDay * findOffset([currentWeek, AvailableWeek]))
-            }
-
-            date = dateToString(getData(date))
-
-            asyncTaskPush(() => target.find('.time > div').text(date))
-            store.avalibaleDate = date
-    }
-
 
     function calculateFunc (store, target) {
         if (typeof store.disableDate === 'function') {
@@ -504,12 +432,12 @@
             })
         }
 
-
         asyncTaskPush(findAvalibaleDate, store, target)
     }
 
     function insertCustomElements(target) {
-        store_list_render_total_time = +new Date()
+        loaded_map = +new Date() - start_time
+        loaded_list = +new Date()
         target.style.opacity = 0
 
         const storeList = $(document.createDocumentFragment())
@@ -602,17 +530,7 @@
                 bike_options.push(bike_option)
             }
 
-
-            info.avalibaleDate = dateToString()
-            item.html(`
-                <div class="name">${info.name}<span>${info.isPartner ? ' - Ambassadors' : ' - Partner Store'}</span><i><svg class="icon" style="width: 1em;height: 1em;vertical-align: middle;fill: currentColor;overflow: hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5533"><path d="M748.3 533.3c0.1-0.2 0.3-0.4 0.4-0.6 0.2-0.3 0.5-0.7 0.7-1 0.1-0.1 0.2-0.3 0.2-0.4 0.3-0.4 0.5-0.8 0.8-1.2l0.1-0.1c2.6-4.6 4.1-9.6 4.6-14.7v-0.2c0-0.5 0.1-0.9 0.1-1.4v-0.6-1-1-0.6c0-0.5-0.1-0.9-0.1-1.4v-0.2c-0.4-5.1-2-10.1-4.6-14.7l-0.1-0.1c-0.2-0.4-0.5-0.8-0.8-1.3-0.1-0.1-0.2-0.3-0.2-0.4-0.2-0.3-0.4-0.7-0.7-1-0.1-0.2-0.3-0.4-0.4-0.6-0.2-0.3-0.4-0.5-0.6-0.8-0.2-0.2-0.4-0.5-0.6-0.7-0.1-0.1-0.2-0.2-0.3-0.4-0.1-0.1-0.2-0.2-0.2-0.3-0.2-0.3-0.5-0.5-0.7-0.8-0.2-0.2-0.4-0.4-0.5-0.6l-0.7-0.7-0.6-0.6c-0.2-0.2-0.5-0.4-0.7-0.7l-0.6-0.6-0.3-0.3-414.6-347.6c-15.2-12.7-38-10.7-50.7 4.4-12.7 15.2-10.7 38 4.4 50.7L663.2 512 281.6 832.2c-15.2 12.7-17.2 35.6-4.4 50.7 12.7 15.2 35.6 17.2 50.7 4.4l414.4-347.7 0.3-0.3 0.6-0.6c0.2-0.2 0.5-0.4 0.7-0.7l0.6-0.6 0.7-0.7c0.2-0.2 0.4-0.4 0.5-0.6 0.2-0.3 0.5-0.5 0.7-0.8 0.1-0.1 0.2-0.2 0.2-0.3 0.1-0.1 0.2-0.2 0.3-0.4 0.2-0.2 0.4-0.5 0.6-0.7 0.4-0.1 0.6-0.4 0.8-0.6z" fill="#333333" p-id="5534"></path></svg></i></div>
-                <div class="address gray">${info.add}</div>
-                <div class="available">Available Model:</div>
-                <ul>
-                    ${info.availableSizes ? info.availableSizes.map(i => `<li class="gray">${i}</li>`).join('') : `<li class="gray">Carbon One Size ${info.testRideSize}</li>`}
-                </ul>
-                ${!info.noBook ? `<div class="time gray"><img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/calendar_2x_af8d9192-1ff9-43f0-aba6-3547b1129854.jpg?v=1680938382"/> Earliest available time: &nbsp;<div>${info.avalibaleDate}</div></div>` : '' }
-            `)
+            item.html(info.html)
             
             // 点击item 代理到真实的store
             item.on('click', e => {
@@ -652,9 +570,6 @@
             if (!options.find(option => option.attr('city') === info.testrideSpot )) {
                 options.push(option)
             }
-
-            // 异步计算
-            !info.noBook && asyncTaskPush(calculateFunc, info, item)
         })
 
         // 首字母排序
@@ -690,6 +605,14 @@
 
         $(target).parent().append(storeList)
         $('#storepoint-search').append(forms)
+
+        fetchBuried('testride', 'performance', {
+            loaded_worker: `${loaded_worker} ms`,
+            loaded_map: `${loaded_map} ms`,
+            loaded_list: `${+new Date() - loaded_list} ms`,
+            userAgent: navigator.userAgent,
+            userAgentData: navigator.userAgentData,
+        })
     }
 
     function observerItems(mutationsList) {
@@ -819,17 +742,6 @@
             select_store_count
         })
     }
-
-
-
-    let search = {}
-    const u = new URL(location.href)
-
-    for (const [k, v] of u.searchParams.entries()) {
-        search[k] = v
-    }
-
-    search.name && booknow(search.name)
 
 
     const sale_store = {
