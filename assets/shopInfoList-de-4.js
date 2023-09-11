@@ -830,7 +830,7 @@ const testRides = [
         phone: '+49 20147412306',
         email: 'team@fahrradparadies-essen.de',
         timezone: "Essen, Germany (GMT+1)",
-        add: "Steelerstraße 198 45138 Essen",
+        add: "Frankenstraße 122, Essen 45134",
         imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Essen.jpg?v=1679406971",
         testrideSpot: "Essen",
         testRideSize: "M",
