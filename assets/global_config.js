@@ -149,11 +149,11 @@ const global_config = {
 
       // carbon 1/1s
       // 1-m-sb
-      42615025172696: 'Free shipping within 5 working days',
+      42615025172696: 'Free shipping within 10 working days',
       // 1-l-sb
       42615025369304: 'Free shipping within 5 working days',
       // 1-m-lb
-      42615025238232: 'Free shipping within 5 working days',
+      42615025238232: 'Free shipping within 10 working days',
       // 1-l-lb
       42615025434840: 'Free shipping within 5 working days',
       // 1-m-pb
