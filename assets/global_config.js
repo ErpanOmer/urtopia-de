@@ -21,8 +21,8 @@ const global_config = {
     ebike_delivery_time: {
       'carbon1': 'Free shipping within <span>5 working days</span>',
       'carbon1s': 'Free shipping within <span>5 working days</span>',
-      'chord': 'Free shipping within <span>15 working days</span>',
-      'chordx': 'Free shipping within <span>15 working days</span>',
+      'chord': 'Free shipping within <span>10 working days</span>',
+      'chordx': 'Free shipping within <span>10 working days</span>',
     },
     available_urtopia_ebike_default: 'carbon1'
   },
@@ -243,11 +243,11 @@ const global_config = {
     ebike_delivery_time: {
 
       // chord
-      43705718997208: 'Pre-order items shipped from October 1 - 15, 2023',
-      43705719029976: 'Pre-order items shipped from October 1 - 15, 2023',
+      43705718997208: 'Free shipping within 10 working days',
+      43705719029976: 'Free shipping within 10 working days',
       // chord x
-      43705719062744: 'Pre-order items shipped from October 1 - 15, 2023',
-      43705719095512: 'Pre-order items shipped from October 1 - 15, 2023',
+      43705719062744: 'Free shipping within 10 working days',
+      43705719095512: 'Free shipping within 10 working days',
     }
   }
 }
