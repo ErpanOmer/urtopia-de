@@ -437,7 +437,10 @@
     function insertCustomElements(target) {
         loaded_map = +new Date() - start_time
         loaded_list = +new Date()
-        target.style.opacity = 0
+
+        if (testRides.size) {
+            target.style.opacity = 0
+        }
 
         const storeList = $(document.createDocumentFragment())
         const forms = $(document.createDocumentFragment())
@@ -602,8 +605,11 @@
         storeList.append(no_result)
         forms.append(form)
 
-        $(target).parent().append(storeList)
-        $('#storepoint-search').append(forms)
+        if (testRides.size) {
+            $(target).parent().append(storeList)
+            $('#storepoint-search').append(forms)    
+        }
+
 
         fetchBuried('testride', 'performance', {
             loaded_worker: `${loaded_worker} ms`,
