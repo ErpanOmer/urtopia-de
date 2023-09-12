@@ -434,9 +434,14 @@
         asyncTaskPush(findAvalibaleDate, store, target)
     }
 
-    function insertCustomElements(target) {
+    function insertCustomElements(target, count = 0) {
         loaded_map = +new Date() - start_time
         loaded_list = +new Date()
+
+        // 如果 worker 还没加载完成, 300s 重复调用, 止到调用10次
+        if (loaded_worker === 0 && count < 10) {
+            return setTimeout(insertCustomElements, 300, target, ++count)
+        }
 
         if (testRides.size) {
             target.style.opacity = 0
