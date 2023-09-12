@@ -34,6 +34,14 @@ const findOffset = ([nowWeek, vailableWeek]) => {
   return vailableWeek > nowWeek ? vailableWeek - nowWeek : 7 - (nowWeek - vailableWeek)
 }
 
+function getBikeAndSeries (availableSizes = []) {
+  return availableSizes.map(size => {
+      const [bike, series] = size.split(' ')
+
+      return `${bike}${series ? ' ' + series : ''}`
+  })
+}
+
 // 查找可预约到星期几
 const findAvailableWeek = (d, businessHours) => {
   if (businessHours[d]) {
@@ -1651,12 +1659,24 @@ const testRides = [
 
 
 const store_list = new Map()
+const bike_options = new Set()
+let city_options = new Set()
+
 for (const city of testRides) {
   for (const store of city.stores) {
     // 把所属国家也加上
       store.country = city.country || 'Deutschland'
       store.city = city.city
       store.avalibaleDate = findAvalibaleDate(store)
+
+
+      for (const sizes of store.availableSizes) {
+        const [bike, series] = sizes.split(' ')
+        bike_options.add(`${bike}${series ? ' ' + series : ''}`)    
+      }
+
+      city_options.add(`${store.city}---${store.country}`)
+      
 
       store.html = `
           <div class="name">${store.name}<span>${store.isPartner ? ' - Ambassadors' : ' - Partner Store'}</span><i><svg class="icon" style="width: 1em;height: 1em;vertical-align: middle;fill: currentColor;overflow: hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5533"><path d="M748.3 533.3c0.1-0.2 0.3-0.4 0.4-0.6 0.2-0.3 0.5-0.7 0.7-1 0.1-0.1 0.2-0.3 0.2-0.4 0.3-0.4 0.5-0.8 0.8-1.2l0.1-0.1c2.6-4.6 4.1-9.6 4.6-14.7v-0.2c0-0.5 0.1-0.9 0.1-1.4v-0.6-1-1-0.6c0-0.5-0.1-0.9-0.1-1.4v-0.2c-0.4-5.1-2-10.1-4.6-14.7l-0.1-0.1c-0.2-0.4-0.5-0.8-0.8-1.3-0.1-0.1-0.2-0.3-0.2-0.4-0.2-0.3-0.4-0.7-0.7-1-0.1-0.2-0.3-0.4-0.4-0.6-0.2-0.3-0.4-0.5-0.6-0.8-0.2-0.2-0.4-0.5-0.6-0.7-0.1-0.1-0.2-0.2-0.3-0.4-0.1-0.1-0.2-0.2-0.2-0.3-0.2-0.3-0.5-0.5-0.7-0.8-0.2-0.2-0.4-0.4-0.5-0.6l-0.7-0.7-0.6-0.6c-0.2-0.2-0.5-0.4-0.7-0.7l-0.6-0.6-0.3-0.3-414.6-347.6c-15.2-12.7-38-10.7-50.7 4.4-12.7 15.2-10.7 38 4.4 50.7L663.2 512 281.6 832.2c-15.2 12.7-17.2 35.6-4.4 50.7 12.7 15.2 35.6 17.2 50.7 4.4l414.4-347.7 0.3-0.3 0.6-0.6c0.2-0.2 0.5-0.4 0.7-0.7l0.6-0.6 0.7-0.7c0.2-0.2 0.4-0.4 0.5-0.6 0.2-0.3 0.5-0.5 0.7-0.8 0.1-0.1 0.2-0.2 0.2-0.3 0.1-0.1 0.2-0.2 0.3-0.4 0.2-0.2 0.4-0.5 0.6-0.7 0.4-0.1 0.6-0.4 0.8-0.6z" fill="#333333" p-id="5534"></path></svg></i></div>
@@ -1672,5 +1692,22 @@ for (const city of testRides) {
   }
 }
 
+city_options = Array.from(city_options).sort((a, b) => a.localeCompare(b))
+const country_group = {}
 
-postMessage(store_list)
+for (const option of city_options) {
+    const [city, country] = option.split('---')
+
+    if (country_group[country]) {
+      country_group[country].push(city) 
+      continue
+    }
+
+    country_group[country] = [city]
+}
+
+postMessage({
+  store_list,
+  country_group,
+  bike_options
+})

@@ -186,6 +186,8 @@
     const start_time = +new Date()
     let loaded_worker = 0
     let testRides = new Map()
+    let bike_options = new Set()
+    let country_group = {}
     let search = {}
     const u = new URL(location.href)
 
@@ -195,7 +197,10 @@
 
     const worker = new Worker('{{ 'shopInfoList-de-4.js' | asset_url }}')
     worker.onmessage = function (e) {
-        testRides = e.data
+        testRides = e.data.store_list
+        bike_options = e.data.bike_options
+        country_group = e.data.country_group
+
         loaded_worker = +new Date() - start_time
 
         search.name && booknow(search.name)
@@ -484,15 +489,6 @@
 
         bike_select.append(bike_option)
 
-        // 输入框
-        // const input = document.createElement('input')
-        // input.setAttribute('placeholder', 'Search…')
-
-    
-        // option 选项，作为排序所用
-        const options = []
-        const bike_options = []
-
         // form.appendChild(input)
         form.append(select)
         form.append(bike_select)
@@ -514,28 +510,11 @@
 
 
             const item = $(document.createElement("div"))
-            const option = $(document.createElement('option'))
-            const bike_option = $(document.createElement('option'))
 
             item.addClass('item')
             item.attr('index', elem.attr('id'))
             item.attr('city', info.testrideSpot)
             item.attr('name', info.name)
-
-            option.text(info.testrideSpot)
-            option.attr('city', info.testrideSpot)
-            option.attr('country', info.country)
-
-            for (const b of getBikeAndSeries(info.availableSizes)) {
-                if (bike_options.find(i => i.attr('bike') === b)) {
-                    continue
-                }
-
-
-                bike_option.text(b)
-                bike_option.attr('bike', b)
-                bike_options.push(bike_option)
-            }
 
             item.html(info.html)
             
@@ -571,40 +550,33 @@
             })
 
             items.append(item)
-
-            
-
-            if (!options.find(option => option.attr('city') === info.testrideSpot )) {
-                options.push(option)
-            }
         })
 
-        // 首字母排序
-        options.sort((a, b) => a.attr('city').localeCompare(b.attr('city')))
+        for (const country in country_group) {
+            const group = $(document.createElement('optgroup'))
+            const citys = country_group[country]
 
-        // select group
-        const optgroup = []
-        for (const option of options) {
-            const country = option.attr('country')
-            // find
-            let group = optgroup.find(o => o.attr('label') === country)
+            group.attr('label', country)
 
-            if (!group) {
-                group = $(document.createElement('optgroup'))
-                group.attr('label', country)
-                optgroup.push(group)
+            for (const city of citys) {
+                const option = $(document.createElement('option'))
+                option.text(city)
+                option.attr('city', city)
+                option.attr('country', country)
+
+                group.append(option)
             }
 
-            group.append(option)
-        }
-
-        for (const group of optgroup) {
             select.append(group)
         }
 
-        for (const bike of bike_options) {
-            bike_select.append(bike)
-        }
+        bike_options.forEach(option => {
+            const bike_option = $(document.createElement('option'))
+            bike_option.text(option)
+            bike_option.attr('bike', option)
+
+            bike_select.append(bike_option)
+        })
 
         storeList.append(items)
         storeList.append(no_result)
