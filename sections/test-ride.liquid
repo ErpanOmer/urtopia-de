@@ -3,7 +3,64 @@
 {{ 'testride.scss.css' | asset_url | stylesheet_tag }}
 
 <div class="testride">
-    <div class="banner">
+    <div class="test-ride-new-banner">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide common">
+                <div class="centeral-content">
+                    <div>
+                        <div class="u48DemiBold_v2">Your first hand on Urtopia</div>
+                        <div class="u17Medium_v2">
+                            Take your first step in to experience the stunning appearance and smooth riding. Book a test ride today with our partners and ambassadors! Their extensive expertise and enthusiasm will help you out with any questions in and out.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide one">
+                <div class="centeral-content">
+                    <div>
+                        <div class="u20Light_v2">Ambassador’s Story - <span class="u20DemiBold_v2">Stefan Gehrke</span></div>
+                        <div class="u36DemiBold_v2">Always Curious, <br class="mobileHide">Always Share</div>
+                        <div class="u17Medium_v2">Address: buero fuer neues denken, Bötzowstr. 18, 10407 Berlin</div>
+                        <div class="flex-1"></div>
+                        <div class="buttons">
+                            <a href="/blogs/blog/stefan-gehrke" target="_blank" class="my-button">Read more</a>
+                            <div onclick="booknow('Stefan Gehrke')" class="my-button">Test ride</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide two">
+                <div class="centeral-content">
+                    <div>
+                        <div class="u20Light_v2">Partner’s Story - <span class="u20DemiBold_v2">Jörg Kaufmann</span></div>
+                        <div class="u36DemiBold_v2">Why a 4S Dealership<br class="mobileHide">Choose Urtopia E-Bike</div>
+                        <div class="u17Medium_v2">Address: An d. Hohle 15, 02708 Löbau, Deutschland</div>
+                        <div class="flex-1"></div>
+                        <div class="buttons">
+                            <a href="/blogs/blog/why-a-4s-dealership-choose-urtopia-e-bike" target="_blank" class="my-button">Read more</a>
+                            <div onclick="booknow('Autohaus Löbau')" class="my-button">Test ride</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide three">
+                <div class="centeral-content">
+                    <div>
+                        <div class="u20Light_v2">Ambassador’s Story - <span class="u20DemiBold_v2">Henky R.</span></div>
+                        <div class="u36DemiBold_v2">An E-bike, a Scenic City,<br class="mobileHide">and a Plate of Sardines</div>
+                        <div class="u17Medium_v2">Address: Nippes, 50737 Köln (in der Nähe der Straßenbahn und Bus Haltestelle: Wilhelm Sollmann Straße)</div>
+                        <div class="flex-1"></div>
+                        <div class="buttons">
+                            <a href="/blogs/blog/henky-s-story" target="_blank" class="my-button">Read more</a>
+                            <div onclick="booknow('Henky Roucourt')" class="my-button">Test ride</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-pagination"></div>
+    </div>
+    <!--<div class="banner">
         <div class="centeral-content">
             <div class="u48DemiBold_v2">Your first hand on Urtopia</div>
             <div class="u17Medium_v2"></div>
@@ -11,7 +68,7 @@
                 Take your first step in to experience the stunning appearance and smooth riding. Book a test ride today with our partners and ambassadors! Their extensive expertise and enthusiasm will help you out with any questions in and out.
             </div>
         </div>
-    </div>
+    </div>-->
     <!--<div class="golf-banner">
         <div class="centeral-content">
             <div class="u48DemiBold_v2">Experience <br class="pcHide">Urtopia test rides <br>+ free coffee!</div>
@@ -204,6 +261,8 @@
         loaded_worker = +new Date() - start_time
 
         search.name && booknow(search.name)
+
+        //$('.test-ride-new-banner .buttons').show()
     }
 
     let last_select_city = ''
@@ -761,4 +820,19 @@
     })
 
     search.from_home_page && booknow(sale_store)
+
+
+    new Swiper('.test-ride-new-banner', {
+        autoplay: {
+            disableOnInteraction: false,
+            pauseOnMouseEnter: true,
+            delay: 10000,
+        },
+        loop: true,
+        speed: 1000,
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true
+        }
+    })
     </script>

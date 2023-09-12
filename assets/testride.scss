@@ -1339,3 +1339,151 @@
         
     }
 }
+
+
+.test-ride-new-banner {
+    position: relative;
+    color: #fff;
+    overflow-x: hidden;
+
+    .swiper-wrapper {
+        .swiper-slide {
+            background: center center/cover no-repeat;
+
+            .centeral-content {
+                height: 500px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+
+                & > div {
+                    height: 70%;
+                    display: flex;
+                    flex-direction: column;
+                }
+
+                .u36DemiBold_v2 {
+                    margin: 16px 0 32px;    
+                }
+
+                .u17Medium_v2 {
+                    max-width: 440px;
+                }
+
+                .buttons {
+                    //display: none;
+                    .my-button {
+                        margin-right: 20px;
+                    }
+                }
+            }
+        }
+
+        .one {
+            background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230912-151407.jpg?v=1694502895');
+        }
+
+        .two {
+            background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230912-151425.jpg?v=1694502895');
+        }
+
+        .three {
+            background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230912-151432.jpg?v=1694502895');
+        }
+
+        .common {
+            background-image: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_20828_2x_171a90b4-fb4e-43f8-b5f1-9366db738aea.jpg?v=1686734762');
+
+            .centeral-content {
+                & > div {
+                    height: 50%;
+
+                    .u48DemiBold_v2 {
+                        margin-bottom: 24px;
+                    }
+                }
+            }
+        }
+    }
+
+    .swiper-pagination-bullet {
+        height: 6px;
+        width: 6px;
+        background-color: #d5d5d5;
+        opacity: 0.5;
+    }
+
+    .swiper-pagination-bullet-active {
+        width: 30px;
+        height: 6px;
+        border-radius: 5px;
+        transition: all .3s;
+        opacity: 1;
+    }
+
+    @media (max-width: 767px) {
+        .swiper-wrapper {
+            .swiper-slide {
+                
+                .centeral-content {
+                    height: 550px;
+
+                    & > div {
+                        height: 84%;
+                    }
+
+                    .u20Light_v2 {
+                        font-size: 16px;
+
+                        .u20DemiBold_v2 {
+                            font-size: 16px;
+                        }
+                    }
+
+                    .u36DemiBold_v2 {
+                        font-size: 27px;
+                        margin: 16px 0;
+                    }
+
+                    .buttons {
+                        .my-button {
+                            margin-right: 10px;
+                        }
+                    }
+                }
+            }
+
+
+            .one {
+                background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_21379_2x_ff77bba8-9a01-437c-a876-2b8d62923111.jpg?v=1694499176');
+            }
+
+            .two {
+                background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_21378_2x_c322c44f-3933-41d3-8a11-800e0ca93042.jpg?v=1694501117');
+            }
+    
+            .three {
+                background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_21380_2x_db08778e-b262-434c-b088-45dbfb3f472c.jpg?v=1694501124');
+            }
+
+            .common {
+                background-image: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_20831_2x_c22c2296-d840-4acb-94a2-a37ce27a5336.jpg?v=1686735038');
+    
+                .centeral-content {
+                    & > div {
+                        height: 50%;
+    
+                        .u48DemiBold_v2 {
+                            margin: 5vw 0;
+                            font-size: 24px;
+                        }
+
+                        .u17Medium_v2 {
+                            font-size: 15px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
