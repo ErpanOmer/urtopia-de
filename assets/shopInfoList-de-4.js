@@ -383,7 +383,7 @@ const testRides = [
       // 'Urtopia Carbon 1'
     ],
     stores: [
-      {
+      /*{
         name: 'Anneke Gabriel',
         phone: '+49 1717424105',
         email: 'dominic@2do-digital.de',
@@ -405,7 +405,7 @@ const testRides = [
           "17:00-20:00",
           "17:00-20:00",
         ],
-      },
+      },*/
       {
         name: 'Matthias Kaltenbach',
         phone: '+4915772388217',
