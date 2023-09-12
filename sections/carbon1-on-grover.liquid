@@ -1456,11 +1456,10 @@
 </div>
 
 <script>
-    const stint = [43891331006680, 43891331137752]
     global_config.subscribe_email_dialog_config.is_hide = true
 
     const search = getSearchValues()
-    const variants = JSON.parse(JSON.stringify({{ product.variants | json }})).filter(i => stint.includes(i.id))
+    const variants = JSON.parse(JSON.stringify({{ product.variants | json }})).filter(i => i.option1 === 'Carbon Belt')
     const size_map = {
         M: 'Fit for 165-180 cm',
         L: 'Fit for 175-195 cm'
@@ -1470,7 +1469,10 @@
     let current_variant = null
 
     const styles = {
-        Sirius: 1
+        'Sirius': 1,
+        'Lyra': 1,
+        'Midnight in Paris': 1,
+        'vanilla': 1
     }
 
     const sizes = {
