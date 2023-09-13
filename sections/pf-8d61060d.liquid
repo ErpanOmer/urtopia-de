@@ -1145,7 +1145,7 @@
     let temp = null
 
     {% for variant in product.variants %}
-        {% if variant.option1 == "Carbon Belt" %}
+        {% if variant.option1 == "Carbon Belt" and variant.option2 == "L" %}
             temp = JSON.parse(JSON.stringify({{ variant | json }}))
             temp.inventory_quantity = {{ variant.inventory_quantity }}
             
@@ -1437,7 +1437,7 @@
     }
 
     {% for variant in product.variants %}
-      {% if variant.option1 == "Carbon Belt" %}
+      {% if variant.option1 == "Carbon Belt" and variant.option2 == "L" %}
             models[{{ variant.option1 | json }}] = 1
             styles[{{ variant.option3 | json }}] = 1
             sizes[{{ variant.option2 | json }}] = 1
