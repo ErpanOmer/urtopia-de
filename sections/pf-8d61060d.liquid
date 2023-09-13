@@ -1437,7 +1437,7 @@
     }
 
     {% for variant in product.variants %}
-      {% if variant.option1 == "Carbon Belt" and variant.option2 == "L" %}
+      {% if variant.option1 == "Carbon Belt" and variant.option2 == "L" and variant.option3 != "vanilla" %}
             models[{{ variant.option1 | json }}] = 1
             styles[{{ variant.option3 | json }}] = 1
             sizes[{{ variant.option2 | json }}] = 1
