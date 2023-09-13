@@ -103,7 +103,32 @@
                             <p class="caption-with-letter-spacing light">{{ item.product.vendor }}</p>
                           {%- endif -%}
 
-                          <a href="{{ item.url }}" class="cart-item__name h4 break u14DemiBold_v2">{{ item.product.title | escape }}</a>
+                          {%- for main_product_item in cart.items -%}
+                            {%- assign insurance_variant_id = main_product_item.properties._insurance_variant_id -%}
+            
+                            {%- if insurance_variant_id contains item.id -%}
+                              {%- if item.properties._product_variant_id contains main_product_item.id -%}
+                                {%- assign main_product_title = main_product_item.title -%}
+                                {%- break -%}
+                              {%- endif -%}
+                            {%- endif -%}
+                          {%- endfor -%}
+
+                          {%- if item.properties._product_variant_id != blank -%}
+                              {%- comment -%} Insurance title {%- endcomment -%}
+                              <p class="cart-item__name h4 break u14DemiBold_v2">
+                                {{ item.product.metafields.insurance.title }} - 
+
+                                {% if main_product_title != blank %}
+                                  {{ main_product_title }}
+                                {% endif %}
+                              </p>
+                            {%- else -%}
+                              {%- comment -%} Regular title {%- endcomment -%}
+                              <a href="{{ item.url }}" class="cart-item__name h4 break u14DemiBold_v2">{{ item.product.title | escape }}</a>
+                            {%- endif -%}
+
+                          
 
                           <!--{%- if item.original_price != item.final_price -%}
                             <div class="cart-item__discounted-prices">
