@@ -242,6 +242,19 @@ const global_config = {
     // 每一种variant 的发货时间文案
     ebike_delivery_time: {
 
+      //outlet chord
+      //chord
+      //white
+      43950919024856: 'Free shipping within 10 working days',
+      //black
+      43950919057624: 'Free shipping within 10 working days',
+      //chord X
+      //white
+      43950919090392:'Free shipping within 10 working days',
+      //black
+      43950919123160:'Free shipping within 10 working days',
+
+        
       // chord
       43705718997208: 'Free shipping within 10 working days',
       43705719029976: 'Free shipping within 10 working days',
