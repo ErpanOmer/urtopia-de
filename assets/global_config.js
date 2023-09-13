@@ -116,8 +116,8 @@ const global_config = {
     // 产品图下面的media模块, 根据产品图 循环轮播 
     product_media_images: [
       {
-        text: `“Best Electric Bike for 2022”`,
-        img: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/CNET-Logo_2x_585b6404-bc14-4a34-af64-299587c59efd.png?v=1687187217"
+        text: `“The AI-powered co-pilot adds a new level of intelligence and interactivity”`,
+        img: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230913-173450.png?v=1694597715"
       },
       {
         text: `“Urtopia is an over the top e-bike”`,
