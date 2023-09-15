@@ -235,6 +235,7 @@ const testRides = [
         testrideSpot: "Düsseldorf",
         testRideSize: "M, Chord",
         isPartner: true,
+        noBook: true,
         availableSizes: [
           'Carbon 1 Size M/L',
           'Chord'
