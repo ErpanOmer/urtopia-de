@@ -40,7 +40,7 @@
             <div class="u24Light_v2">Experience elegance and efficiency in one ride</div>
             <div class="flex-1 pcHide"></div>
             <div class="buttons">
-                <a href="/pages/test-ride" class="my-button">Test Rides</a>
+                <a href="/pages/test-ride" class="my-button" action_type="Bookatest ride_1">Test Rides</a>
                 <div class="my-button my-button-ghost" onclick="showVideoDialog('https://www.youtube.com/embed/BzI6yGGH47o?autoplay=1&cc_load_policy=1')">Watch video</div>
             </div>
         </div>
@@ -103,7 +103,7 @@
                         <div class="u20Light_v2">Fit for 170cm - 195cm</div>
                     </div>
                     <a class="my-button my-button-black"
-                        href="/products/urtopia-chord-ebike?variant=43705718997208">Order now</a>
+                        href="/products/urtopia-chord-ebike?variant=43705718997208" action_type="Buynow_1">Order now</a>
                 </div>
             </div>
             <div>
@@ -123,7 +123,7 @@
                         <div class="u20Light_v2">Fit for 160cm - 185cm</div>
                     </div>
                     <a class="my-button my-button-black"
-                        href="/products/urtopia-chord-ebike?variant=43705719062744">Order now</a>
+                        href="/products/urtopia-chord-ebike?variant=43705719062744" action_type="Buynow_1">Order now</a>
                 </div>
             </div>
             <!-- <span></span> -->
@@ -903,4 +903,16 @@ if (!global_config.is_mobile && global_config.is_pc) {
       } catch (error) {}
     }, 30);
 }
+</script>
+
+<script>
+  $('[action_type]').on('click', e => {
+        const action_type = $(e.target).closest('[action_type]').attr('action_type')
+
+      fetchBuried('websiteclick', 'chord-ebikepage', {
+        //action_type: abtest_type,
+        event_name: 'button-click',
+        button: action_type
+      }, true)
+  })
 </script>
