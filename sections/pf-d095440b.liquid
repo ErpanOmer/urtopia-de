@@ -1232,7 +1232,8 @@
             current_variant = findVariantOptions(model, size, style)
             current_variant_id = current_variant.id
 
-            replaceSearchValue('variant', current_variant_id)
+
+            history.replaceState(null, '', `${location.pathname}?variant=${current_variant_id}`);
             $('.product .product-panel input[name="id"]').val(current_variant_id)
             $('.product .delivery_time').html(global_config.carbon_order_page_config.ebike_delivery_time[current_variant_id] || global_config.carbon_order_page_config.ebike_default_delivery_time)
 
