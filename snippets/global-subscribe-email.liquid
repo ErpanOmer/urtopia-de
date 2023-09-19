@@ -1,5 +1,5 @@
-<link rel="prefetch" href="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/DSCF1917_2x_0b6b06c9-1b85-4b3c-a719-ec14d98e1f44.jpg?v=1694504440&width=500" as="image">
-<link rel="prefetch" href="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/DSCF1917_2x_dfd4cb85-f938-4f12-a549-6eedec9aa47c.jpg?v=1694504405&width=375" as="image">
+<link rel="preload" href="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/DSCF1917_2x_0b6b06c9-1b85-4b3c-a719-ec14d98e1f44.jpg?v=1694504440&width=500" as="image">
+<link rel="preload" href="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/DSCF1917_2x_dfd4cb85-f938-4f12-a549-6eedec9aa47c.jpg?v=1694504405&width=375" as="image">
 <style>
   .subscribe-container .u72DemiBold_v2 {
     margin: 12% 0;
@@ -64,12 +64,12 @@
 */
 
 
-  function showEmailDialog() {
+  function showEmailDialog(emailtag) {
     if (global_config.subscribe_email_dialog_config.is_hide) {
         return
     }
 
-    if (storage.get(email_dialog_session_key)) {
+    if (!emailtag && storage.get(email_dialog_session_key)) {
       return;
     }
 
@@ -79,7 +79,7 @@
       $('.subscribe-container form').on('submit', function (event) {
         const email = $('.subscribe-container form input[type="email"]').val();
         // 埋点
-        fetchBuried('emailpop', 'submit', { email, tag: 'DE,POPUP' }).then(() => {
+        fetchBuried('emailpop', 'submit', { email, tag: emailtag || 'DE,POPUP' }).then(() => {
           dataLayer.push({
                 'event'    :'global_email_submit',
                 'pageType' :'emailpop',

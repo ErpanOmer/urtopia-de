@@ -166,6 +166,7 @@
 </style>
 <script>
   const storage = new MyStorage()
+  const emailtag = getSearchValues().emailtag
   const options = document.querySelectorAll('.tl-options .tl-option')
 
   // 监听页面语言插件切换
@@ -184,7 +185,7 @@
     const findLang = allOptions.find(tl => tl.dataset.value === code)
 
     if (active.dataset.value === code) {
-      return setTimeout(showEmailDialog, global_config.subscribe_email_dialog_config.show_delay_time* 1000)
+      return setTimeout(showEmailDialog, emailtag ? 1000 : global_config.subscribe_email_dialog_config.show_delay_time* 1000, emailtag)
     }
 
     setTimeout(() => {
@@ -228,7 +229,7 @@
       if (!notShowModal && !window.__SHOPIFY_CLI_ENV__ && !sessionStorage.getItem('selectLangDialog')) {
         document.querySelector('#selectLangModal').classList.add('open');
       } else {
-        setTimeout(showEmailDialog, global_config.subscribe_email_dialog_config.show_delay_time* 1000)
+        setTimeout(showEmailDialog, emailtag ? 1000 : global_config.subscribe_email_dialog_config.show_delay_time* 1000, emailtag)
       }
     }
   };
@@ -255,7 +256,7 @@
     sessionStorage.setItem('selectLangDialog', 'selectLangDialog')
     // 如果是单纯的关闭，直接退出去
     if (isClose) {
-      return setTimeout(showEmailDialog, global_config.subscribe_email_dialog_config.show_delay_time* 1000)
+      return setTimeout(showEmailDialog, emailtag ? 1000 : global_config.subscribe_email_dialog_config.show_delay_time* 1000, emailtag)
     }
 
     var d = new Date();
