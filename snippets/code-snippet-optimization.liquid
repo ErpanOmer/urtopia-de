@@ -70,6 +70,18 @@ function getSearchValues () {
     return search
 }
 
+// url 
+function replaceSearchValue (k, v) {
+    if (!k || !v) {
+        return
+    }
+
+    const url = new URL(location.href)
+    url.searchParams.set(k, v)
+
+    history.replaceState(null, '', url);
+}
+
 
 function debounce(fn, wait) {
     // 自由变量，debounce执行完成被释放，time也不会被释放
