@@ -26,7 +26,9 @@
     "only": "Only",
     "stock": "Left in Stock",
     "out": "Sold out",
-    "sale": "Sale"
+    "sale": "Sale",
+    "style": "Style",
+    "size": "Size"
   },
   "general": {
     "password_page": {

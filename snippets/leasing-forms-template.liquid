@@ -165,9 +165,13 @@
                     <!-- <input type="text" name="accessories" placeholder="" > -->
                 </div>
                 <div class="item">
-                    <div class="u24Medium">Employer ID:<br><span style="font-size: 12px;color: #666;line-height: 16px;display: inline-block;">It is a ID provide by your employer or HR department.</span></div>
+                    <div class="u24Medium"><span>Partner code:</span><br><span style="font-size: 12px;color: #666;line-height: 16px;display: inline-block;">It is a ID provide by your employer or HR department.</span></div>
                     <input type="text" name="employer_id">
-                </div> 
+                </div>
+                <div class="item">
+                    <div class="u24Medium"><span>Employer number:</span><br><span style="font-size: 12px;color: #666;line-height: 16px;display: inline-block;">It is a number issued by your employer or the Human Resources Department.</span></div>
+                    <input type="text" name="employer_number">
+                </div>
                 <!--<div class="item">
                     <div class="u24Medium">Your employer already offers JobRad?<i>*</i></div>
                     <div class="multiple-checkbox">
@@ -429,7 +433,7 @@ const clearBikeImage = () => {
 
 
 const carbonBikeChange = (model, size, style) => {
-    $('.forms form .item .tips').html(`${global_config.leasing.ebike_delivery_time[model]}`)
+    $('.forms form .item .tips').html(`incl. ${model === 'carbon1' ? switch_bike.carbon1.discount_price: switch_bike.carbon1s.discount_price } <label>discount, ${global_config.leasing.ebike_delivery_time[model]}</label>`)
     model = model === 'carbon1' ? "Carbon Belt" : "Shimano Gear"
     // 通过遍历 判断option 是否可用
     $(`select[name="bike_style"] option`).each((i, item) => {
@@ -461,7 +465,7 @@ const carbonBikeChange = (model, size, style) => {
     // 如果当前variant 库存不足
     if (!find || !find.available) {
         $('select[name="bike_style"]').val('')
-        $('.forms form select[name="bike_size"]').closest('.item').find('.error').text(`Your selection is currently reached our stock limit - size: ${size}, style: ${style}`)
+        $('.forms form select[name="bike_size"]').closest('.item').find('.error').html(`<span>Your selection is currently reached our stock limit</span> - {{ 'order_page.size' | t  }}: ${size}, {{ 'order_page.style' | t  }}: ${style}`)
         
         return clearBikeImage()
     }
@@ -494,7 +498,7 @@ const chordBikeChange = (model, size, style) => {
     size = model === 'chord' ? 'High-Step' : 'Step-Through'
     setTimeout(() => $('select[name="bike_size"]').val(size))
 
-    $('.forms form .item .tips').html(`${global_config.leasing.ebike_delivery_time[model]}<br>Free Fenders and Kickstand Included`)
+    $('.forms form .item .tips').html(`incl. ${model === 'chord' ? switch_bike.chord.discount_price: switch_bike.chordx.discount_price } <label>discount with free bike stand and mudguard, ${global_config.leasing.ebike_delivery_time[model]}</label>`)
     
 
     // 通过遍历 判断option 是否可用
@@ -521,7 +525,7 @@ const chordBikeChange = (model, size, style) => {
     // 如果当前variant 库存不足
     if (!find || !find.available) {
         $('select[name="bike_style"]').val('')
-        $('.forms form select[name="bike_size"]').closest('.item').find('.error').text(`Your selection is currently reached our stock limit - size: ${size}, style: ${style}`)
+        $('.forms form select[name="bike_size"]').closest('.item').find('.error').html(`<span>Your selection is currently reached our stock limit</span> - {{ 'order_page.size' | t  }}: ${size}, {{ 'order_page.style' | t  }}: ${style}`)
         
         return clearBikeImage()
     }
@@ -622,6 +626,7 @@ const changeBikeImage = e => {
 // 延迟执行一些DOM
 setTimeout(() => {
     $('input[name="employer_id"]').closest('.item').hide()
+    $('input[name="employer_number"]').closest('.item').hide()
     // 更改 offers label
     $('input[name="offers"]').closest('.item').find('.u24Medium').html(page_infos.form_offers_label)
 
