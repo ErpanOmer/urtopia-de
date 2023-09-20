@@ -1654,6 +1654,39 @@ const testRides = [
       },
     ]
   },
+  {
+    city: 'Markt Indersdorf',
+    cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/1200px-Markt_Indersdorf_-_Kloster_-_Panorama.jpg?v=1695126568',
+    series: [
+      'Urtopia Carbon 1',
+      // 'Urtopia Carbon 1'
+    ],
+    stores: [
+      {
+        name: 'Arsalan Minhas',
+        phone: '+49 1728815092',
+        email: 'arsalan.minhas@gmail.com',
+        timezone: "Markt Indersdorf, Germany (GMT+1)",
+        add: "Raiffeisenstr, 85229 Markt Indersdorf",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230919-200135_0b62d2f6-5448-4b10-a557-c2ed408afec0.jpg?v=1695126569",
+        testrideSpot: "Arsalan Minhas",
+        testRideSize: "M",
+        availableSizes: [
+          'Carbon 1 Size M',
+        ],
+        businessHours: [
+          "8:00-19:00",
+          "8:00-19:00",
+          "8:00-19:00",
+          "8:00-19:00",
+          "8:00-19:00",
+          "8:00-19:00",
+          "8:00-19:00",
+        ],
+        isPartner: true
+      },
+    ]
+  },
 ]
 
 
