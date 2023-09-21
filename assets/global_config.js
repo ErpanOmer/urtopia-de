@@ -58,6 +58,11 @@ const global_config = {
     },
     // carbon 车默认显示 variant_id, 只有 url 上的 variant 参数为空的时候生效
     default_variant: 42615025303768,
+    ignore_variants_available_false: [],
+    size_map: {
+      M: 'Fit for 170-185 cm',
+      L: 'Fit for 180-195 cm'
+    },
     // 产品系列图
     product_images: {
       "Carbon Belt": {

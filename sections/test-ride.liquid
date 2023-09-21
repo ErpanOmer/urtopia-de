@@ -702,6 +702,8 @@
 
         const href = $('#storepoint-map .storepoint-location-popup .storepoint-popup-directions').attr('href')
 
+        const noBook = typeof store.noBook === "string" ? store.noBook : 'Please contact the Ambassadors directly to arrange test ride'
+
         if (store.noBook) {
             popup.append(`
                 <div class="map-popup">
@@ -726,7 +728,7 @@
                                 <span class="u14Light_v2">${store.add}</span>
                             </div>
                         </div>
-                        <div class="u14DemiBold_v2">Please contact the Ambassadors directly to arrange test ride</div>
+                        <div class="u14DemiBold_v2">${noBook}</div>
                     </div>
                 </div>
             `)
