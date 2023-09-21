@@ -202,6 +202,7 @@ const testRides = [
         imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Frankfurt_am_Main_dcfbb429-041a-46e8-809c-988adaf41dfd.jpg?v=1680920985",
         testrideSpot: "Frankfurt am Main",
         testRideSize: "M/L",
+        noBook: "Please contact the store directly to arrange test ride",
         availableSizes: [
           'Carbon 1 Size M/L',
         ],
@@ -259,6 +260,7 @@ const testRides = [
         imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Zweirad_Schottke.png?v=1694425015",
         testrideSpot: "Düsseldorf",
         testRideSize: "L",
+        noBook: "Please contact the store directly to arrange test ride",
         availableSizes: [
           'Carbon 1 Size L',
         ],
@@ -317,6 +319,7 @@ const testRides = [
         imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/IMG_0821.jpg?v=1680922149",
         testrideSpot: "Berlin",
         testRideSize: "L",
+        noBook: "Please contact the store directly to arrange test ride",
         availableSizes: [
           'Carbon 1 Size L',
         ],
@@ -339,6 +342,7 @@ const testRides = [
         imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/IMG_0827.jpg?v=1680922453",
         testrideSpot: "Berlin",
         testRideSize: "M",
+        noBook: true,
         availableSizes: [
           'Carbon 1 Size M',
         ],
@@ -361,6 +365,7 @@ const testRides = [
         imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Fahrradstation_GmbH.jpg?v=1691088538",
         testrideSpot: "Berlin",
         testRideSize: "M",
+        noBook: "Please contact the store directly to arrange test ride",
         availableSizes: [
           'Carbon 1 Size M',
         ],
@@ -464,6 +469,7 @@ const testRides = [
         imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Zweiradhaus_Ehrig1.jpg?v=1691088195",
         testrideSpot: "Hamburg",
         testRideSize: "M",
+        noBook: "Please contact the store directly to arrange test ride",
         availableSizes: [
           'Carbon 1 Size M'
         ],
@@ -486,6 +492,7 @@ const testRides = [
         imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/CruiseVision_GmbH.jpg?v=1691401803",
         testrideSpot: "Hamburg",
         testRideSize: "M",
+        noBook: "Please contact the store directly to arrange test ride",
         availableSizes: [
           'Carbon 1 Size M/L'
         ],
@@ -532,6 +539,7 @@ const testRides = [
         imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Norddeutsche_Zweiradschiede.jpg?v=1693272716",
         testrideSpot: "Hamburg",
         testRideSize: "L",
+        noBook: "Please contact the store directly to arrange test ride",
         availableSizes: [
           'Carbon 1 Size L',
         ],
@@ -554,6 +562,7 @@ const testRides = [
         imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/VELO_SHOP.jpg?v=1693272717",
         testrideSpot: "Hamburg",
         testRideSize: "L",
+        noBook: "Please contact the store directly to arrange test ride",
         availableSizes: [
           'Carbon 1 Size L',
         ],
@@ -576,6 +585,7 @@ const testRides = [
         imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Fahrrad_Rothe.jpg?v=1693272716",
         testrideSpot: "Hamburg",
         testRideSize: "L",
+        noBook: "Please contact the store directly to arrange test ride",
         availableSizes: [
           'Carbon 1 Size L',
         ],
@@ -631,6 +641,7 @@ const testRides = [
         imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/IMG_0440.jpg?v=1680923045",
         testrideSpot: "München",
         testRideSize: "L",
+        noBook: "Please contact the store directly to arrange test ride",
         availableSizes: [
           'Carbon 1 Size L',
         ],
@@ -711,6 +722,7 @@ const testRides = [
         imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/IMG_0948.jpg?v=1680923218",
         testrideSpot: "Münster",
         testRideSize: "L",
+        noBook: "Please contact the store directly to arrange test ride",
         availableSizes: [
           'Carbon 1 Size L',
         ],
@@ -801,6 +813,7 @@ const testRides = [
         imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Sportshop_Bittner.jpg?v=1680923400",
         testrideSpot: "Leipzig",
         testRideSize: "M",
+        noBook: "Please contact the store directly to arrange test ride",
         availableSizes: [
           'Carbon 1 Size M',
         ],
@@ -833,6 +846,7 @@ const testRides = [
         imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/IMG_0393.jpg?v=1680923489",
         testrideSpot: "Stuttgart",
         testRideSize: "M",
+        noBook: "Please contact the store directly to arrange test ride",
         availableSizes: [
           'Carbon 1 Size M',
         ],
@@ -855,6 +869,7 @@ const testRides = [
         imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/IMG_0432.jpg?v=1680923539",
         testrideSpot: "Stuttgart",
         testRideSize: "M",
+        noBook: "Please contact the store directly to arrange test ride",
         availableSizes: [
           'Carbon 1 Size M',
         ],
@@ -917,6 +932,7 @@ const testRides = [
         imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/IMG_0017.jpg?v=1680924343",
         testrideSpot: "Essen",
         testRideSize: "M",
+        noBook: "Please contact the store directly to arrange test ride",
         availableSizes: [
           'Carbon 1 Size M',
         ],
@@ -939,6 +955,7 @@ const testRides = [
         imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Essen.jpg?v=1679406971",
         testrideSpot: "Essen",
         testRideSize: "M",
+        noBook: "Please contact the store directly to arrange test ride",
         availableSizes: [
           'Carbon 1 Size M',
         ],
@@ -971,6 +988,7 @@ const testRides = [
         imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/IMG_0781.jpg?v=1680924453",
         testrideSpot: "Dresden",
         testRideSize: "M",
+        noBook: "Please contact the store directly to arrange test ride",
         availableSizes: [
           'Carbon 1 Size M',
         ],
@@ -1003,6 +1021,7 @@ const testRides = [
         imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/IMG_0364.jpg?v=1680924533",
         testrideSpot: "Nürnberg",
         testRideSize: "M",
+        noBook: "Please contact the store directly to arrange test ride",
         availableSizes: [
           'Carbon 1 Size M',
         ],
@@ -1035,6 +1054,7 @@ const testRides = [
         imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/IMG_0479.jpg?v=1680924648",
         testrideSpot: "Regensburg",
         testRideSize: "M",
+        noBook: "Please contact the store directly to arrange test ride",
         availableSizes: [
           'Carbon 1 Size M',
         ],
@@ -1120,6 +1140,7 @@ const testRides = [
         imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Offenburg.jpg?v=1681442327",
         testrideSpot: "Offenburg",
         testRideSize: "L",
+        noBook: "Please contact the store directly to arrange test ride",
         availableSizes: [
           'Carbon 1 Size L',
         ],
@@ -1152,6 +1173,7 @@ const testRides = [
         imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230413-203921.jpg?v=1681442327",
         testrideSpot: "Löbau",
         testRideSize: "M",
+        noBook: "Please contact the store directly to arrange test ride",
         availableSizes: [
           'Carbon 1 Size M',
         ],
@@ -1184,6 +1206,7 @@ const testRides = [
         imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Zittau.jpg?v=1681442327",
         testrideSpot: "Zittau",
         testRideSize: "L",
+        noBook: "Please contact the store directly to arrange test ride",
         availableSizes: [
           'Carbon 1 Size L',
         ],
@@ -1249,6 +1272,7 @@ const testRides = [
         imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/schloss_guestrow_drohne17_aNoB_ubertr_kUrh_005-1351x900.jpg?v=1689910159",
         testrideSpot: "Güstrow",
         testRideSize: "L",
+        noBook: "Please contact the store directly to arrange test ride",
         availableSizes: [
           'Carbon 1 Size L',
         ],
@@ -1281,6 +1305,7 @@ const testRides = [
         imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Screenshot_2023-08-04_at_02.35.22.png?v=1691087750",
         testrideSpot: "Freiburg",
         testRideSize: "L",
+        noBook: "Please contact the store directly to arrange test ride",
         availableSizes: [
           'Carbon 1 Size M',
         ],
@@ -1517,6 +1542,7 @@ const testRides = [
         imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Satking_GmbH.jpg?v=1693473391",
         testrideSpot: "Troisdorf-Kriegsdorf",
         testRideSize: "M",
+        noBook: "Please contact the store directly to arrange test ride",
         availableSizes: [
           'Carbon 1 Size M',
         ],
@@ -1550,6 +1576,7 @@ const testRides = [
         imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Volo_Bike_Galerie.jpg?v=1694169314",
         testrideSpot: "Linz",
         testRideSize: "L",
+        noBook: "Please contact the store directly to arrange test ride",
         availableSizes: [
           'Carbon 1 Size L',
         ],
@@ -1583,6 +1610,7 @@ const testRides = [
         imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Best_Bike.png?v=1694169315",
         testrideSpot: "Wien",
         testRideSize: "L",
+        noBook: "Please contact the store directly to arrange test ride",
         availableSizes: [
           'Carbon 1 Size L',
         ],
@@ -1605,6 +1633,7 @@ const testRides = [
         imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Arizona_Bike.png?v=1694425015",
         testrideSpot: "Wien",
         testRideSize: "L",
+        noBook: "Please contact the store directly to arrange test ride",
         availableSizes: [
           'Carbon 1 Size L',
         ],
