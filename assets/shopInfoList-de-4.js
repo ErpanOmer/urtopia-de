@@ -856,7 +856,7 @@ const testRides = [
         testrideSpot: "Stuttgart",
         testRideSize: "M",
         availableSizes: [
-          'Carbon 1 Size M/L',
+          'Carbon 1 Size M',
         ],
         businessHours: [
           "",
