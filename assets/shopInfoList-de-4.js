@@ -611,7 +611,7 @@ const testRides = [
     stores: [
       {
         name: 'Len',
-        phone: '+49 1512 8804444',
+        phone: '0170 5231069',
         email: 'len.lucas@gmx.de',
         timezone: "Mainz, Germany (GMT+1)",
         add: "82166 Graefelfing, Munich, Bavaria",
