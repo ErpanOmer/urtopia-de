@@ -1,1 +1,696 @@
-<div></div>
+{% assign carbon1 = "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18842_2x_311e472b-5f53-4c92-8120-29a7d5448c75.png?v=1694070569" %}
+{% assign carbon1s = "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18841_2x_d1bd8de1-5910-454a-9271-306815705052.png?v=1694070547" %}
+{% assign chord = "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18589_2x_4ca8137f-ac74-49c3-b2c4-a523904d4bf7.png?v=1694070560" %}
+{% assign chordx = "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18840_2x_d185d12d-30c6-4959-8197-bf586c703aae.png?v=1694070555" %}
+
+<link rel="preload" href="{{ carbon1s }}" as="image">
+<link rel="preload" href="{{ chord }}" as="image">
+<link rel="preload" href="{{ chordx }}" as="image">
+
+{{ 'leasing-add.scss.css' | asset_url | stylesheet_tag }}
+
+<style>
+    .leasing-add .what .bottom .centeral-content>div .u17Light_v2 {
+        margin-bottom: 30px;
+    }
+
+    .leasing-add .glance .centeral-content .u20DemiBold_v2 {
+        padding: 16px 50px;
+        max-width: 75%;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .leasing-add .glance .centeral-content .u20DemiBold_v2 span:first-child {
+        margin-bottom: 10px;
+    }
+
+    .leasing-add .calculate .centeral-content {
+        max-width: 1000px;
+    }
+
+
+    .leasing-add .calculate .centeral-content .videos {
+        display: flex;
+    }
+
+    .leasing-add .calculate .centeral-content .u48DemiBold_v2 {
+        margin-bottom: 50px;
+    }
+
+    .leasing-add .calculate .centeral-content .videos>div:last-child {
+        align-items: center;
+    }
+
+    .leasing-add .calculate .centeral-content .videos>div:last-child .u17Light_v2 {
+        margin-bottom: 30px;
+    }
+
+    .leasing-add .calculate {
+        padding: 120px 0;
+        background-color: transparent;
+    }
+
+    @media (max-width: 767px) {
+        .leasing-add .glance .centeral-content .u20DemiBold_v2 {
+            max-width: unset;
+            padding: 4vw;
+            margin-top: 4vw;
+        }
+
+        .leasing-add .glance .centeral-content .u20DemiBold_v2 .u17Light_v2 {
+            font-size: 14px;
+        }
+
+        .leasing-add .calculate {
+            padding: 0 0 60px 0;
+        }
+
+        .leasing-add .calculate .centeral-content {
+            max-width: unset;
+        }
+
+        .leasing-add .calculate .centeral-content .u48DemiBold_v2 {
+            margin-bottom: 24px;
+        }
+    }
+</style>
+
+<div class="leasing-add">
+  <div class="banner">
+      <div class="centeral-content">
+          <div>
+              <div class="u36DemiBold_v2">From {{ 4989 | money }}/month</div>
+              <div class="u72DemiBold_v2">Urtopia E-Bikes Leasing</div>
+              <div class="u20Light_v2">We work with the best leasing providers. To Provide you the smoothest leasing experience and enjoy you riding as soon as possible.</div>
+              <div class="u20Medium_v2 banner_origin">Enjoy the limited time promotion</div>
+              <div class="buttons">
+                  <a href="#forms" class="my-button">Request leasing offer</a>
+                  <a href="/products/urtopia-carbon-e-bike" class="my-button my-button-ghost">Shop Online</a>
+              </div>
+          </div>
+          <div>
+          </div>
+      </div>
+  </div>
+  <div class="partners" style="--swiper-theme-color: #ff6600;--swiper-navigation-color: #fff;--swiper-navigation-size: 15px;">
+    <div class="u48DemiBold_v2">E-Bike Leasing Partners</div>
+    <div class="swiper-wrapper"></div>
+    <div class="buttons mobileHide">
+        <div class="swiper-button-prev"></div><!--左箭头。如果放置在swiper外面，需要自定义样式。-->
+        <div class="swiper-button-next"></div><!--右箭头。如果放置在swiper外面，需要自定义样式。-->
+    </div>
+  </div>
+  <div class="centeral-content u48DemiBold_v2">Available Urtopia E-Bikes</div>
+  <div class="parameters">
+    <div class="centeral-content top-content">
+        <div class="select">
+            <select>
+                <option value="carbon1">Urtopia Carbon 1</option>
+                <option value="carbon1s">Urtopia Carbon 1s</option>
+                <option value="chord">Urtopia Chord</option>
+                <option value="chordx">Urtopia Chord X</option>
+            </select>
+        </div>
+    </div>
+      <div class="centeral-content bottom-content">
+          <div>
+             <div class="product-price u30DemiBold_v2" data-price="{{ all_products['urtopia-carbon-e-bike'].price | money }}">{{ all_products['urtopia-carbon-e-bike'].price | minus: settings.carbon_ebike_discount_price | money }}</div>
+             <div class="sale-tag u17Medium_v2">{{ settings.carbon_ebike_discount_price | money_without_trailing_zeros }} OFF</div>
+             <div class="background-image pcHide" style="height: 56.75vw;margin: 24px 0px;"></div>
+              <div class="boxs">
+                  <div>
+                      <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18449_2x_8fc05a36-e73b-4c68-8462-5cdfa6cea6b3.png?v=1683702610"
+                          alt="">
+                      <div>
+                          <div class="u11Light_v2">Carbon Fiber</div>
+                          <div class="u17DemiBold_v2">15 kg</div>
+                      </div>
+                  </div>
+                  <div>
+                      <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18448_2x_d3fbd8a8-d1e2-4a84-b4eb-ce513f342438.png?v=1683705373"
+                          alt="">
+                      <div>
+                          <div class="u11Light_v2">No maintaining Up to</div>
+                          <div class="u17DemiBold_v2">30,000 km</div>
+                      </div>
+                  </div>
+                  <div>
+                      <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18447_2x_532d80bf-4f0d-48a9-b2c6-81212b652ad7.png?v=1683705337"
+                          alt="">
+                      <div>
+                          <div class="u11Light_v2">Range</div>
+                          <div class="u17DemiBold_v2">100 km</div>
+                      </div>
+                  </div>
+                  <div>
+                      <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18446_2x_e64c38e1-535a-401d-a722-cbe2b3b4e450.png?v=1683705358"
+                          alt="">
+                      <div>
+                          <div class="u11Light_v2">Anti-theft</div>
+                          <div class="u17DemiBold_v2">GPS Tracking</div>
+                      </div>
+                  </div>
+                  <div>
+                      <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18450_2x_3726a023-532f-459e-826b-ecc6a1d3502c.png?v=1683705347"
+                          alt="">
+                      <div>
+                          <div class="u11Light_v2">Smart App</div>
+                          <div class="u17DemiBold_v2">iOS, Android</div>
+                      </div>
+                  </div>
+                  <div>
+                      <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18445_2x_8378bdff-585c-4ae2-a3f9-f557107230d8.png?v=1683705353"
+                          alt="">
+                      <div>
+                          <div class="u11Light_v2">Adaptive</div>
+                          <div class="u17DemiBold_v2">Torque Sensor</div>
+                      </div>
+                  </div>
+              </div>
+              <div class="boxs2">
+                  <div class="u17DemiBold_v2">Brushless 250 w Quiet Motor</div>
+                  <div class="u17DemiBold_v2">Portable Samsung Battery</div>
+                  <div class="u17DemiBold_v2">TEKTRO Hydraulic Disc Brakes</div>
+                  <div class="u17DemiBold_v2">Big Anti-Glare LED Display</div>
+                  <div class="u17DemiBold_v2">On-bike Navigation</div>
+                  <div class="u17DemiBold_v2">Integrated lighting system</div>
+              </div>
+              <div class="buttons">
+                  <a href="#forms" class="my-button my-button-black">Request leasing offer(40% off)</a>
+                  <a href="/products/urtopia-carbon-e-bike" class="my-button my-button-white">Shop Online({{ all_products['urtopia-carbon-e-bike'].price | minus: settings.carbon_ebike_discount_price | money }})</a>
+              </div>
+          </div>
+          <div class="background-image mobileHide"></div>
+      </div>
+  </div>
+  <div class="why">
+      <div class="centeral-content">
+          <div>
+              <div class="u48DemiBold_v2">Why is a bike leasing bike cheaper than buying it directly?</div>
+              <div class="u17Light_v2">This is mainly due to the tax advantages resulting from the company car regulation. With bike leasing, the employer is the lessee and provides the bike to the employee for use. If an employee decides to purchase a company bike, he or she also decides to convert part of his or her salary entitlement into a benefit in kind. This reduces the taxable income for both the employee and the employer. In this case, the so-called non-cash benefit for the company car (1% of the quarter of the manufacturer's recommended retail price rounded down to a full 100 euros) is added back to the taxable salary. The lower taxable income also reduces social security contributions and thus also corresponding benefits by a small amount (e.g. in the old-age pension). </div>
+              <a href="#forms" class="my-button my-button-black">Request leasing offer</a>
+          </div>
+          <img class="mobileHide"
+              src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20221010-untitled-7468_2x_2e9db42e-3c57-41ce-842c-43a31a37326a.jpg?v=1683708173"
+              alt="">
+          <img class="pcHide"
+              src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20221010-untitled-7468_2x_84a2a10e-6e2d-45c5-be8a-3412ca764f72.jpg?v=1683708831"
+              alt="">
+      </div>
+  </div>
+  <div class="what">
+
+      <div class="top">
+          <div class="centeral-content">
+              <div></div>
+              <div class="u48DemiBold_v2">What can I benefit from as an employee?</div>
+          </div>
+      </div>
+      <div class="bottom">
+          <div class="centeral-content">
+              <div><img
+                      src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/3_2x_212df522-b272-4a54-99fa-ec6829dff114.png?v=1683709949"
+                      alt=""></div>
+              <div>
+                  <div class="u17Light_v2">Bike leasing for employees: Lease cheaply. Get there better.<br><br>
+                  The main advantage of bike leasing is that it is significantly cheaper for employees to use a company bike and take it over afterwards than to buy a bike or e-bike directly. Other benefits include bike insurance, healthy exercise, sustainability and saving on fuel costs. With company bike leasing, you can save up to 40% on the purchase of your dream bike and actively contribute to the transport revolution with sustainable, healthy mobility. </div>
+                  <a href="#forms" class="my-button my-button-black">Request leasing offer</a>
+              </div>
+          </div>
+      </div>
+  </div>
+  <div class="glance">
+      <div class="centeral-content">
+          <div class="u48DemiBold_v2">Your advantages at a glance</div>
+          <div class="u20DemiBold_v2">
+              <span>1.save money</span>
+              <span class="u17Light_v2">Thanks to salary conversion and tax benefits, as an employee you can save up to 40% on the purchase of a company bike compared to buying one outright.</span>
+          </div>
+          <div class="u20DemiBold_v2">
+              <span>2. privately mobile</span>
+              <span class="u17Light_v2">Take your e-bike into town after work or out into the countryside at the weekend - private use is explicitly permitted with company bike leasing.</span>
+          </div>
+          <div class="u20DemiBold_v2">
+              <span>3. free choice</span>
+              <span class="u17Light_v2">Folding bike, road bike or e-bike? Market leader or niche manufacturer? You have the choice and decide independently which bike will be your company bike.</span>
+          </div>
+          <div class="u20DemiBold_v2">
+              <span>4. best insurance</span>
+              <span class="u17Light_v2">Well insured in case of theft and accident as well as in case of dismissal, parental leave, etc.: With our comprehensive insurance coverage.</span>
+          </div>
+          <div class="u20DemiBold_v2">
+              <span>5. simply online</span>
+              <span class="u17Light_v2">Manage contracts, book service appointments or report damage - all this can be done online via our portal, simply, unbureaucratically and at any time.</span>
+          </div>
+          <div class="u20DemiBold_v2">
+              <span>6. on-site service</span>
+              <span class="u17Light_v2">We rely on stationary trade: As a bike leasing user, you can expect personal advice and reliable service on site at over 7,100 bike leasing partners in German-speaking countries.</span>
+          </div>
+      </div>
+  </div>
+  <div class="calculate">
+      <div class="centeral-content">
+          <div class="u48DemiBold_v2">Find your dream bike at a reasonable price with bike leasing</div>
+          <div class="videos">
+              <div>
+                  <div class="u17Light_v2">Good for you, your wallet and the environment: with Dienstrad-Leasing you can save up to 40% on the purchase of your dream bike.
+
+                  But that's not all: as a Dienstrad rider, you also save yourself high fuel costs, stressful traffic jams and nerve-wracking searches for parking spaces. Healthy exercise and a good environmental conscience come free of charge.</div>
+                  <a href="#forms" class="my-button my-button-black mobileHide">Request leasing offer</a>
+              </div>
+          </div>
+          <a href="#forms" class="my-button my-button-black pcHide">Request leasing offer</a>
+      </div>
+  </div>
+  {% render 'leasing-forms-template' %}
+  {% render 'leasing-companies-template' %}
+</div>
+
+
+<script>
+  window.addEventListener(
+    'message',
+    (function () {
+        // NOTE: This is how we can support multiple instances in same page.
+        var id = 'jobrad-fachhandel-werbematerial-werkzeugkasten-iframe-main'
+
+        console.log('message');
+
+        return function (event) {
+            if (
+                id === 'jobrad-fachhandel-werbematerial-werkzeugkasten-iframe-main' &&
+                event.origin === 'https://bike-leasing-calculator.jobrad.org' &&
+                typeof event.data === 'object' &&
+                'genericState' in event.data &&
+                event.data.genericState.body.outerHeightInPixel > 0
+            )
+                window.document.querySelector(
+                    '.jobrad-bike-leasing-calculator#jobrad-fachhandel-werbematerial-werkzeugkasten-iframe-main iframe'
+                ).style.height =
+                    event.data.genericState.body.outerHeightInPixel + 'px'
+        }
+    })(),
+    false
+)
+
+
+const faqs = [
+    {
+        title: "For whom is a service bike or service e-bike via salary conversion worthwhile?",
+        content: `The good news: Company bike leasing with JobRad is always worthwhile for employees thanks to salary conversion and tax incentives (0.25% rule). You save up to 40 percent with bike leasing compared to conventional purchase.`
+    },
+    {
+        title: 'What is salary conversion/deferred compensation for bike leasing or e-bike leasing?',
+        content: 'In the case of <b>salary conversion</b> (also known as deferred compensation or cash salary conversion), the employee decides to receive a portion of the contractually agreed salary not in cash, but as a payment in kind for the period during which the leased asset, for example a JobCycle, is leased. This means that the employer withholds a portion of the monthly salary in the amount of the leasing rate. This cash salary is in turn converted into so-called non-cash compensation, which in the case of <b>JobRad is the transfer of a bicycle or an e-bike.</b><br><br> The conversion results in a <b>tax advantage.</b>'
+    },
+    {
+        title: 'What happens on the employee’s pay stub when salary is converted?',
+        content: 'The gross salary is reduced by the usage rate for the duration of the use of the company bike or company e-bike. The significantly lower <a target="_blank" href="https://www.jobrad.org/aktuelles/dienstrad-versteuerung.html">non-cash benefit<a/> for the JobRad, which is taxable, is added. <br><br><b>Example: </b><br>An employer provides an employee who earns 3,000 euros gross with a JobRad with a list price of 3,900 euros. The usage rate is 113.39 euros, and the taxable non-cash benefit (0.25 percent) is 9 euros.'
+    },
+    {
+        title: 'Is there a tax advantage to deferred compensation for bicycle leasing?',
+        content: 'Yes, if an employer provides an employee with a company bike, tax benefits arise in <a target="_blank" href="https://www.jobrad.org/aktuelles/dienstrad-versteuerung.html">all cases.</a> <br><br>a) JobRad as salary extra, the tax-free service bike variant (since 2019):<br><br> If an employer provides an employee with a company bike (bicycles or e-bikes) in addition to the salary owed anyway (Section 3 No. 37 EstG), there is no taxation of the non-cash benefit since 2019. In this variant, there is no salary conversion, because the employee receives the bicycle or e-bike on top. For more information, <a target="_blank" href="https://www.jobrad.org/arbeitgeber/gehaltsextra.html">see JobRad as a salary extra.</a><br><br> b) JobRad by salary conversion, the variant with the 0.25% rule (since 2020):<br><br> If an employee receives the JobRad as a salary conversion, he or she receives a small portion of the contractually agreed salary not in cash, but as a benefit in kind. This is for the period during which the company bike is provided (36 months). During the transfer, the employer retains a portion of the monthly salary in the amount of the lease payments. <br>Since 2020, the employee has only had to pay tax on the non-cash benefit for the private use of the JobRad at 0.25 percent of the recommended retail price. As a result, the employee saves up to 40 percent compared to a traditional purchase.'
+    },
+    {
+        title: "For which employment relationships is JobRad not eligible?",
+        content: `The individual leasing contract for a JobRad always has a term of 36 months. Therefore, our company bike leasing is not suitable for all employees - for example, because it is foreseeable that one will not be able to fulfill the contract term. <br><br>JobRad is not recommended for, among others: <br>- Trainees <br>- Employees in probationary period <br>- temporary workers <br>- mini- and midi-jobbers <br>- Employees who receive minimum wage <br>- Employees who plan to retire (early) in less than three years, take extended parental leave, or take a sabbatical.`
+    },
+    {
+        title: "Am I qualified for JobRad?",
+        content: `You are an employee: If your company already works with JobRad, you can order your Urtopia today. If not, you can introduce your employer <a target="_blank" href="https://www.jobrad.org/kontakt.html">here</a> at JobRad.<br><br> You are self-employed: You can certainly lease one or more Urtopias for your company via JobRad. You can find more practical information <a target="_blank" href="https://www.jobrad.org/kontakt.html">here</a> .`
+    },
+    {
+        title: "What is the benefit of leasing a Urtopia through JobRad?",
+        content: `You can save up to 40% compared to a conventional purchase. The monthly installments are simply deducted from your gross salary and the additional tax benefit saves you money.`
+    },
+    {
+        title: "How does the eSIM service apply to leasing?",
+        content: `No, it is not possible to add the eSIM service to the offer. <br><br>The first year is free. <br>After that you can purchase it from Urtopia’s official website.<br><br> Outdoor 4G connectivity requires an active eSIM service to ensure constant connectivity and security on the go. It is required for many advanced smart features such as activity tracking, AI voice control, motion alerts, and OTA updates.`
+    },
+    {
+        title: "How do I order a Urtopia via JobRad?",
+        content: `Please fill out this form with your contact details to request a quote. We will then post an offer for you on the JobRad portal. You can view the offer and confirm what you will see in your portal. <br><br>After confirmation, the offer is converted into an order.<br><br> Your employer and JobRad must approve the order. You will receive a confirmation email once your order has been reviewed and approved. Soon you’ll be riding your Urtopia bike!`
+    },
+    {
+        title: "How long is the lease period?",
+        content: `The leasing period is 36 months. The installments will be deducted from your gross salary monthly until the end of this period.`
+    },
+    {
+        title: "What happens if I leave my employer?",
+        content: `Depending on the situation, there are different options. It is best to discuss the possibilities with your employer. You can find more information <a target="_blank" href="https://www.jobrad.org/arbeitgeber/ausfallmanagement.html">here .</a>`
+    },
+    {
+        title: "Can I add Urtopia Theft Insurance to my JobRad order?",
+        content: `No, it is not possible to add our theft insurance to the offer. JobRad has its own insurance against theft, accidents and damage, which is included in the leasing package.`
+    },
+    {
+        title: "Can I add accessories to my JobRad order?",
+        content: `Yes, you can add both the bike and the accessories to your order. The availability is depends on our local stock, our specialist will contact you about your order.`
+    },
+    {
+        title: "I have already bought a bike from you. Can I use this order for leasing via JobRad?",
+        content: `Unfortunately, no. The only option here would be to cancel your order and place a new order through JobRad.`
+    },
+    {
+        title: "What happens if I want to return my Urtopia?",
+        content: `Generally this is not possible. When you receive your bike, it is very important that you carefully inspect it for any imperfections or defects. If your bike was delivered damaged, please contact our customer service. An exchange for the same bike is possible in certain cases.`
+    },
+    {
+        title: "Can I return my JobRad order within the 14 day period?",
+        content: `No. Unfortunately, this is not possible, as you have agreed on a leasing contract with the duration of 36 months with JobRad. If you have questions about the terms of your contract, please contact JobRad.`
+    },
+    {
+        title: 'What is the conversion rate for bike leasing or e-bike leasing with JobRad?',
+        content: 'The conversion rate is the rate that is deducted from the employee’s gross salary on the basis of salary conversion. It is made up of several components:<br><br> 1. from the monthly usage rate. This is the accrued rate for the use of the JobRad or Jobbike. <br>2. monthly rate for JobRad comprehensive <a target="_blank" href="https://www.jobrad.org/arbeitnehmer/service.html">insurance and JobRad mobility guarantee</a> plus optional <a target="_blank" href="https://www.jobrad.org/arbeitnehmer/service.html">JobRad inspection or JobRad FullService</a> if these additional services are not covered by the employer.'
+    },
+    {
+        title: "Your employer doesn’t offer JobRad yet?",
+        content: `No problem. They can use the <a target="_blank" href="https://www.jobrad.org/kontakt-mittler.html">contact form</a> to get in touch with JobRad quickly and easily and even request contract documents directly. Here you can find the advantages and <a target="_blank" href="https://www.jobrad.org/arbeitgeber.html">further information for employers.</a><br><br> In order for you to lease a JobRad from us, your employer must offer JobRad. The leasing contract runs through your employer. If your employer does not offer JobRad, it does not matter. She/he can simply sign up. The leasing concept not only offers advantages to you, but also to your employer. <a target="_blank" href="https://www.jobrad.org/arbeitgeber.html">Click here for more information for employers. </a>If you are self-employed, you can also <a target="_blank" href="https://selbststaendige.jobrad.org/">find useful information about tax benefits, requirements and the leasing request form on the JobRad website.</a>`
+    },
+]
+
+const swiperItems = [
+    {
+        name: 'Jobrad',
+        img: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/JR-Logo_-RGB-schwarz-large-4x_2x_de75d7be-f614-4b9c-b23f-bfc210ae792b.png?v=1686554527',
+        text: 'If your employer is registered with JobRad, you can order your Urtopia bike by filling out this form. We will then place an offer for you on the JobRad portal, which you can review and confirm.',
+        dialog: `
+            <div class="partners-dialog">
+                <div class="head">
+                    <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/JR-Logo_-RGB-schwarz-large-4x_2x_de75d7be-f614-4b9c-b23f-bfc210ae792b.png?v=1686554527"/>
+                    <span onclick="closeMiniDialog()">×</span>
+                </div>
+                <div class="content">
+                    <div>
+                        <div class="u20DemiBold_v2">Your benefits <br> through JobRad</div>
+                        <div class="u17DemiBold_v2">Deducted from your salary</div>
+                        <div class="u14Light_v2">Monthly contributions towards your lease of a Urtopia will be deducted from your gross salary. A 36 month leasing plan let you split the cost and enjoy the product.</div>
+                        <div class="u17DemiBold_v2">Additional monthly savings</div>
+                        <div class="u14Light_v2">If you lease with JobRad, your purchase is tax deductible. You can save up to 40% compared to buying a bike with a traditional payment method.</div>
+                        <div class="u17DemiBold_v2">Enjoy it from now, even outside of work</div>
+                        <div class="u14Light_v2">Ride away from stress and towards happiness! Request your bike today to take advantage of an enjoyable biking experience both during work hours as well as after.</div>
+                    </div>
+                    <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20221010-untitled-7468_2x_5cab2645-5d81-4b3f-8963-9a6ad866ff09.png?v=1686635073"/>
+                </div>
+                <div class="foot"><a name="Jobrad" href="#forms" class="my-button my-button-black">Request a quote</a></div>
+            </div>
+        `
+    },
+    {
+        name: 'Bike Leasing',
+        img: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230613-153443.png?v=1686641693',
+        text: 'If your employer is registered with bikeleasing.de, you can order by filling out this form. We’ll share this information with bikeleasing.de, who will process your order. Mein Dienstrad will confirm the order with your employer.'
+    },
+    {
+        name: 'Mein-dienstrad.de',
+        img: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230613-153746.png?v=1686641878',
+        text: 'If your employer is registered with Mein Dienstrad, you can order by filling out this form. We’ll share this information with Mein Dienstrad, who will process your order. Mein Dienstrad will confirm the order with your employer.'
+    },
+    //{
+      //  name: 'Business Bike',
+       // img: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230613-152534.png?v=1686641146',
+        //text: 'If your employer is registered with BusinessBike, you can order by filling out this form. We’ll share this information with BusinessBike, who will process your order. BusinessBike will confirm the order with your employer.'
+    //},
+]
+
+
+$('.faqs .swiper-slide').html(faqs.map((faq, index) => `
+  <div class="faq-item" index=${index + 1}>
+     <div class="faq-title">
+       <span>${faq.title}</span>
+       <i class="faq-content-plus"></i>
+     </div>
+     <div class="faq-content">${faq.content}</div>
+  </div>`).join(''))
+
+$('.partners .swiper-wrapper').html(swiperItems.map(item => `
+    <div class="swiper-slide">
+        <img src="${item.img}" />
+        <div class="u24Medium_v2">Germany</div>
+        <div class="u17Light_v2">${item.text}</div>
+        ${item.dialog ? `<div class="my-link u17DemiBold_v2" name="${item.name}">Learn More ></div>` : ''}
+        <div class="flex-1"></div>
+        <a href="#forms" name="${item.name}" class="my-button my-button-black">Request a quote</a>
+    </div>
+`).join(''))
+
+
+
+    $('.faq-title').click(function () {
+        $(this)
+            .siblings('.faq-content')
+            .slideToggle()
+            .parent()
+            .siblings()
+            .find('.faq-content')
+            .slideUp();
+        $(this).children('i').toggleClass('faq-content-plus');
+        $(this)
+            .parent()
+            .siblings()
+            .find('.faq-title')
+            .children('i')
+            .addClass('faq-content-plus');
+    });
+    
+    const width = document.body.clientWidth;
+    const isMobile = width < 768;
+
+    !isMobile && new Swiper('.leasing-add .partners', {
+        slidesOffsetBefore: width > 1280 ? (width - 1280) / 2 : 30,
+        slidesOffsetAfter: width > 1280 ? (width - 1280) / 2 : 30,
+        spaceBetween: isMobile ? '4%' : 24,
+        slidesPerView: isMobile ? 1.2 : 4,
+        freeMode: isMobile ? true : false,
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        }
+    })
+
+
+    const partnerSelect = $('select[name="partner"]').SumoSelect({
+        placeholder: '',
+        csvDispCount: 0,
+        floatWidth: 768,
+        renderLi: (li, originalOption) => {
+            const name = li.find('label').text()
+            const find = swiperItems.find(i => i.name === name)
+
+            li.css({
+                'display': 'flex',
+                'align-items': 'center',
+                'justify-content': 'space-between'
+            })
+
+            if (name === '---') {
+                li.css({
+                    'display': 'none',
+                })
+
+                return li
+            }
+
+            if (!find) {
+                return li
+            }
+
+            li.append(`<img style="max-height: 20px;width: auto;" src="${find.img}"/>`)
+
+            return li
+        }
+    })
+
+    for (const item of swiperItems) {
+        partnerSelect.sumo.add(item.name, item.name)
+    }
+
+    partnerSelect.sumo.add('none', 'None of above/Not sure which one my employer provided')
+    partnerSelect.sumo.unSelectItem('Jobrad');
+
+
+    $('select[name="partner"]').on('change', e => {
+        const v = e.target.value
+        console.log('e.target.value', v)
+
+        $('input[name="offers"]').closest('.item').find('.u24Medium span').html(v)
+
+        page_infos.form_thankyou_content2 = page_infos.form_thankyou_content2.replace(/<span>([^<]*?)<\/span>/gi, `<span>${v}</span>`)
+
+        const employer_id = $('input[name="employer_id"]')
+        const employer_number = $('input[name="employer_number"]')
+
+        if (v === "Jobrad" || v === 'none') {
+            employer_id.closest('.item').hide()
+            employer_number.closest('.item').hide()
+
+            employer_id.attr('type', 'hidden')
+            employer_number.attr('type', 'hidden')
+        } else {
+            employer_id.closest('.item').show()
+            employer_number.closest('.item').show()
+
+            employer_id.attr('type', 'text')
+            employer_number.attr('type', 'text')
+
+            if (v === 'Bike Leasing') {
+                employer_id.closest('.item').find('.u24Medium > span:first-child').text('Company code:')
+                employer_id.closest('.item').find('.u24Medium > span:last-child').text('Submit leasing request via company code or customer number (employee does not yet have a bikeleasing bike).')
+
+                employer_number.closest('.item').find('.u24Medium > span:first-child').text('Bikeleasing-user-ID:')
+                employer_number.closest('.item').find('.u24Medium > span:last-child').text('Leasing request via the bike leasing user ID of the employee.')
+            } else {
+                employer_id.closest('.item').find('.u24Medium > span:first-child').text('Partner code:')
+                employer_id.closest('.item').find('.u24Medium > span:last-child').text('It is a ID provide by your employer or HR department.')
+
+                employer_number.closest('.item').find('.u24Medium > span:first-child').text('Employer number:')
+                employer_number.closest('.item').find('.u24Medium > span:last-child').text('It is a number issued by your employer or the Human Resources Department.')
+            }
+            
+        }
+
+        partnerForAccessoriesDisable(v, true)
+    })
+
+    $('select[name="accessories"]').on('change', e => {
+        $('.forms form select[name="partner"]').closest('.item').find('.error').text(``)
+        $('.forms form select[name="accessories"]').closest('.item').find('.error').text(``)
+    })
+
+    $('.partners .swiper-wrapper .swiper-slide .my-button').on('click', e => {
+        const name = $(e.target).attr('name')
+
+        $('input[name="offers"]').closest('.item').find('.u24Medium span').html(name)
+        partnerSelect.sumo.selectItem(name)
+    })
+
+    $('.partners .swiper-wrapper .swiper-slide .my-link').on('click', e => {
+        const name = $(e.target).attr('name')
+        const find = swiperItems.find(i => i.name === name)
+
+        showMiniDialog(find.dialog)
+        setTimeout(() => {
+            $('.partners-dialog .my-button').on('click', e => {
+                const name = $(e.target).attr('name')
+                closeMiniDialog()
+
+                $('input[name="offers"]').closest('.item').find('.u24Medium span').html(name)
+                partnerSelect.sumo.selectItem(name)
+            })
+        }, 500)
+    })
+
+    const switch_bike = {
+        carbon1: {
+            background_image: `{{ carbon1 }}`,
+            price: `{{ all_products['urtopia-carbon-e-bike'].price | minus: settings.carbon_ebike_discount_price | money_without_trailing_zeros  }}`,
+            orginal_price: `{{ all_products['urtopia-carbon-e-bike'].price | money_without_trailing_zeros  }}`,
+            discount_price: `{{ settings.carbon_ebike_discount_price | money_without_trailing_zeros }}`,
+            box1_svg_image: `https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18449_2x_8fc05a36-e73b-4c68-8462-5cdfa6cea6b3.png?v=1683702610`,
+            box1_text1: 'Carbon Fiber',
+            box1_text2: '15 kg',
+            box2_svg_image: `https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18448_2x_d3fbd8a8-d1e2-4a84-b4eb-ce513f342438.png?v=1683705373`,
+            box2_text1: 'No maintaining Up to',
+            box2_text2: '30,000 km',
+            box3_svg_image: `https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18447_2x_532d80bf-4f0d-48a9-b2c6-81212b652ad7.png?v=1683705337`,
+            box3_text1: 'Range',
+            box3_text2: '100 km',
+            link: '/products/urtopia-carbon-e-bike?variant=42615025369304'
+        },
+        carbon1s: {
+            background_image: `{{ carbon1s }}`,
+            price: `{{ all_products['urtopia-carbon-e-bike'].price | minus: settings.carbon1s_ebike_discount_price | money_without_trailing_zeros  }}`,
+            orginal_price: `{{ all_products['urtopia-carbon-e-bike'].price | money_without_trailing_zeros  }}`,
+            discount_price: `{{ settings.carbon1s_ebike_discount_price | money_without_trailing_zeros }}`,
+            box1_svg_image: `https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18448_2x_d3fbd8a8-d1e2-4a84-b4eb-ce513f342438.png?v=1683705373`,
+            box1_text1: 'Torque',
+            box1_text2: '45 NM',
+            box2_svg_image: `https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18449_2x_8fc05a36-e73b-4c68-8462-5cdfa6cea6b3.png?v=1683702610`,
+            box2_text1: 'Modes X Gears',
+            box2_text2: '4 x 7',
+            box3_svg_image: `https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18447_2x_532d80bf-4f0d-48a9-b2c6-81212b652ad7.png?v=1683705337`,
+            box3_text1: 'Range',
+            box3_text2: '100 km',
+            link: '/products/urtopia-carbon-e-bike?variant=43869302849752'
+        },
+        chord: {
+            background_image: `{{ chord }}`,
+            price: `{{ all_products['urtopia-chord-ebike'].price | minus: settings.chord_ebike_discount_price | money_without_trailing_zeros  }}`,
+            orginal_price: `{{ all_products['urtopia-chord-ebike'].price | money_without_trailing_zeros  }}`,
+            discount_price: `{{ settings.chord_ebike_discount_price | money_without_trailing_zeros }}`,
+            box1_svg_image: `https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18448_2x_d3fbd8a8-d1e2-4a84-b4eb-ce513f342438.png?v=1683705373`,
+            box1_text1: 'Torque',
+            box1_text2: '45 NM',
+            box2_svg_image: `https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18449_2x_8fc05a36-e73b-4c68-8462-5cdfa6cea6b3.png?v=1683702610`,
+            box2_text1: 'Modes X Gears',
+            box2_text2: '4 x 8',
+            box3_svg_image: `https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18447_2x_532d80bf-4f0d-48a9-b2c6-81212b652ad7.png?v=1683705337`,
+            box3_text1: 'Range',
+            box3_text2: '120 km',
+            link: '/products/urtopia-chord-ebike?variant=43705718997208'
+        },
+        chordx: {
+            background_image: `{{ chordx }}`,
+            price: `{{ all_products['urtopia-chord-ebike'].price | minus: settings.chord_ebike_discount_price | money_without_trailing_zeros  }}`,
+            orginal_price: `{{ all_products['urtopia-chord-ebike'].price | money_without_trailing_zeros  }}`,
+            discount_price: `{{ settings.chord_ebike_discount_price | money_without_trailing_zeros }}`,
+            box1_svg_image: `https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18448_2x_d3fbd8a8-d1e2-4a84-b4eb-ce513f342438.png?v=1683705373`,
+            box1_text1: 'Torque',
+            box1_text2: '45 NM',
+            box2_svg_image: `https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18449_2x_8fc05a36-e73b-4c68-8462-5cdfa6cea6b3.png?v=1683702610`,
+            box2_text1: 'Modes X Gears',
+            box2_text2: '4 x 8',
+            box3_svg_image: `https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18447_2x_532d80bf-4f0d-48a9-b2c6-81212b652ad7.png?v=1683705337`,
+            box3_text1: 'Range',
+            box3_text2: '120 km',
+            link: '/products/urtopia-chord-ebike?variant=43705719062744'
+        }
+    }
+
+
+    function choiceEbike (v) {
+        $('.parameters .bottom-content .product-price').text(v.price)
+        $('.parameters .bottom-content .product-price').attr('data-price', v.orginal_price)
+        $('.parameters .bottom-content .sale-tag').text(`${v.discount_price} OFF`)
+
+        $('.parameters .bottom-content .background-image').css({ "background-image": `url('${v.background_image}')` })
+            $('.parameters .bottom-content .boxs > div:nth-child(1)').replaceWith(`<div>
+                      <img src="${v.box1_svg_image}"
+                          alt="">
+                      <div>
+                          <div class="u11Light_v2">${v.box1_text1}</div>
+                          <div class="u17DemiBold_v2">${v.box1_text2}</div>
+                      </div>
+                  </div>`)
+            $('.parameters .bottom-content .boxs > div:nth-child(2)').replaceWith(`<div>
+                <img src="${v.box2_svg_image}"
+                    alt="">
+                <div>
+                    <div class="u11Light_v2">${v.box2_text1}</div>
+                    <div class="u17DemiBold_v2">${v.box2_text2}</div>
+                </div>
+            </div>`)
+
+            $('.parameters .bottom-content .boxs > div:nth-child(3)').replaceWith(`<div>
+                <img src="${v.box3_svg_image}"
+                    alt="">
+                <div>
+                    <div class="u11Light_v2">${v.box3_text1}</div>
+                    <div class="u17DemiBold_v2">${v.box3_text2}</div>
+                </div>
+            </div>`)
+
+            $('.parameters .bottom-content .buttons .my-button-white').text(`Shop Online(${v.price})`)
+            $('.parameters .bottom-content .buttons .my-button-white').attr('href', v.link)
+    }
+
+
+    $('.parameters .select select').on('change', e => {
+        choiceEbike(switch_bike[e.target.value])
+    })
+
+
+    choiceEbike(switch_bike[global_config.leasing.available_urtopia_ebike_default || 'carbon1'])
+    $('.parameters .select select').val(global_config.leasing.available_urtopia_ebike_default || 'carbon1')
+</script>

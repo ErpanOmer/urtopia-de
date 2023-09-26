@@ -107,15 +107,13 @@
                     <div class="u24Medium">Country<i>*</i></div>
                     <input type="text" name="country" value="Deutschland" disabled required>
                 </div>
-                {% if template == "page.leasing" %}
-                    <div class="item">
+                <div class="item">
                         <div class="u24Medium">Leasing partner your employer provided<i>*</i></div>
                         <select name="partner" required>
                             <option value="">---</option>
                         </select>
                         <span class="error"></span>
                     </div>
-                {% endif %}
                 <div class="item" name="bike_image" style="display:none;">
                     <div class="u24Medium">Bike you choose:</div>
                     <input type="image" name="bike_image" src="">
@@ -222,29 +220,12 @@
 <script>
 
 // 页面信息
-const page_infos = {% case template | json %}
-    {% when 'page.jobrad-leasing-new' %}
-        {
-            page_name: 'jobrad',
-            form_offers_label: 'Your employer already offers JobRad?<i>*</i>',
-            form_thankyou_content: 'Thank you for your request. You will receive a quote from info@jobrad.org via email within one business day. Please check your inbox. <br><br>If you have any questions, please do not hesitate to contact us: Email: <a class="my-link" href="mailto:leasing@newurtopia.de">leasing@newurtopia.de</a>',
-            form_thankyou_content2: `Thank you for your request. You will receive a quote from info@jobrad.org via email within one business day. Please check your inbox. <br><br>Since your company has not yet partnered with JobRad, we would like to offer you an exclusive discount for direct purchases as an expression of our gratitude and support.`
-        }
-    {% when 'page.mein-dienstrad' %}
-        {
-            page_name: 'mein-dienstrad',
-            form_offers_label: 'Your employer already offers mein-dienstrad?<i>*</i>',
-            form_thankyou_content: 'You have successfully submit the form. Our expert will contact you soon. Feel free to contact us if you have any questions.',
-            form_thankyou_content2: `Thank you for your request. You will receive a quote from info@mein-dienstrad.org via email within one business day. Please check your inbox. <br><br>Since your company has not yet partnered with mein-dienstrad, we would like to offer you an exclusive discount for direct purchases as an expression of our gratitude and support.`
-        }
-    {% else %}
-        {
-            page_name: 'leasing',
-            form_offers_label: 'Your employer already offers<br class="pcHide mobileHide"> <span>leasing</span>?<i>*</i>',
-            form_thankyou_content: 'You have successfully submit the form. Our expert will contact you soon. <br><br>If you have any questions, please do not hesitate to contact us: Email: <a class="my-link" href="mailto:leasing@newurtopia.de">leasing@newurtopia.de',
-            form_thankyou_content2: `Thank you for your request. Our expert will contact you soon. Please check your inbox. <br><br>Since your company has not yet partnered with <span></span>, we would like to offer you an exclusive discount for direct purchases as an expression of our gratitude and support.`
-        }
-{% endcase %}
+const page_infos = {
+    page_name: 'leasing',
+    form_offers_label: 'Your employer already offers<br class="pcHide mobileHide"> <span>leasing</span>?<i>*</i>',
+    form_thankyou_content: 'You have successfully submit the form. Our expert will contact you soon. <br><br>If you have any questions, please do not hesitate to contact us: Email: <a class="my-link" href="mailto:leasing@newurtopia.de">leasing@newurtopia.de',
+    form_thankyou_content2: `Thank you for your request. Our expert will contact you soon. Please check your inbox. <br><br>Since your company has not yet partnered with <span></span>, we would like to offer you an exclusive discount for direct purchases as an expression of our gratitude and support.`
+}
 
 
 // size 映射
@@ -389,10 +370,6 @@ function mergeValues () {
     merge.bike_size = merge.bike_size + ' - ' + (size_map[merge.bike_size] || '')
     merge.page_type = page_infos.page_name
     merge.offers = forms.partner === 'none' ? 'no' : 'yes'
-
-    {% unless template == "page.leasing" %}
-        merge.partner = page_infos.page_name === 'jobrad' ? 'Jobrad' : 'Mein-dienstrad.de'
-    {% endunless %}
 
     return merge
 }
