@@ -655,15 +655,16 @@ const testRides = [
           "09:00-12:00,12:00-13:00",
         ],
       },
-      {
+      /*{
         name: 'Michael Kerber',
         phone: '+49 89 89868895',
         email: 'michael@kerber-privat.de',
         timezone: "München, Germany (GMT+1)",
-        add: "Maria-Eich-Str. , D 82166 Graefelfing",
+        add: "Maria-Eich-Str. , D 82166 Graefelfing, Munich, Bavaria",
         imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Munchen.jpg?v=1679406972",
         testrideSpot: "München",
         testRideSize: "L",
+        isPartner: true,
         availableSizes: [
           'Carbon 1 Size L',
         ],
@@ -677,7 +678,7 @@ const testRides = [
           "13:00-20:00",
         ],
         disableDate: createdisableDates([['2023-9-9', '2023-9-16'], ['2023-10-4', '2023-10-9'], ['2023-10-12', '2023-12-22']]),
-      }
+      }*/
     ]
   },
   {
@@ -1697,7 +1698,7 @@ const testRides = [
         email: 'arsalan.minhas@gmail.com',
         timezone: "Markt Indersdorf, Germany (GMT+1)",
         add: "Raiffeisenstr, 85229 Markt Indersdorf",
-        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230919-200135_0b62d2f6-5448-4b10-a557-c2ed408afec0.jpg?v=1695126569",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230925-112304.jpg?v=1695626886",
         testrideSpot: "Arsalan Minhas",
         testRideSize: "M",
         availableSizes: [
@@ -1713,6 +1714,39 @@ const testRides = [
           "8:00-19:00",
         ],
         isPartner: true
+      },
+    ]
+  },
+  {
+    country: 'France',
+    city: 'Paris',
+    cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/22hours-paris-tjzf-superJumbo.jpg?v=1695383046',
+    series: [
+      'Chord',
+      // 'Urtopia Carbon 1'
+    ],
+    stores: [
+      {
+        name: 'Alice Abraham',
+        phone: '+33 622228796',
+        email: 'alice-abraham@hotmail.fr',
+        timezone: "Paris, France (GMT+1)",
+        add: "Saint-Fargeau 75020 Paris",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/22hours-paris-tjzf-superJumbo.jpg?v=1695383046",
+        testrideSpot: "Paris",
+        testRideSize: "Chord",
+        availableSizes: [
+          'Chord',
+        ],
+        businessHours: [
+          "10:00-15:00",
+          "10:00-15:00",
+          "10:00-15:00",
+          "10:00-12:00, 19:00-20:00",
+          "10:00-15:00",
+          "10:00-15:00",
+          "10:00-15:00",
+        ],
       },
     ]
   },
