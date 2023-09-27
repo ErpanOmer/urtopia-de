@@ -70,6 +70,18 @@ function getSearchValues () {
     return search
 }
 
+// product price 格式化函数
+function getPriceFormat (value = 0, ignoreZero = false) {
+    const instance =  new Intl.NumberFormat("de-DE", {
+      style: "currency",
+      currency: Shopify.currency.active,
+      minimumFractionDigits: ignoreZero ? 0 : 2,
+      maximumFractionDigits: ignoreZero ? 0 : 2
+    })
+
+    return `€${instance.format(value / 100).replace(/ €/g, '')}`
+ }
+
 // url 
 function replaceSearchValue (k, v) {
     if (!k || !v) {
