@@ -1,6 +1,7 @@
   <div id="announcement-bar" class="announcement-bar-common" dir="rtl">
     <div class="swiper-wrapper">
       <div class="swiper-slide"><p>{{ settings.carbon_ebike_discount_price | money_without_trailing_zeros }} off + {{ settings.carbon_ebike_free_accessories_count }} Freebies with Carbon 1. <a href="/products/urtopia-carbon-e-bike">Get yours Now</a></p></div>
+      <div class="swiper-slide"><p><span>Lowest price</span> of the year guaranteed! <a href="/products/urtopia-carbon-e-bike">Get yours Now</a></p></div>
       <div class="swiper-slide"><p>Financing with 24 months, 0 APR.<a href="/products/urtopia-carbon-e-bike">Get yours Now</a></p><img style="width:45px;margin-right:10px;" src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Image_154_2x_a6f60481-bf07-4fd4-93c7-8b9964570bbd.png?v=1685605445"/></div>
       <div class="swiper-slide"><p>Save with bike leasing from employers <a href="/pages/ebike-leasing">Learn More</a></p></div>
       <div class="swiper-slide"><p>Try Urtopia Carbon 1 for Free  <br class="pcHide"> <a href="/pages/test-ride">Book My Test Ride Now</a></p></div>
@@ -21,22 +22,24 @@
   });
 </script>
 
-{% if template == "product.pf-d095440b" or template == "page.pf-59c57289"  or template == "product.pf-b10ddb73" or template == "page.pf-47e1b49b"%}
-  <div id="announcement-bar" class="pcHide"  style="height: 65px;display: flex;flex-direction: column;align-items: center;justify-content: flex-start;text-align: center;">
-    {% if template == "product.pf-b10ddb73" or template == "page.pf-47e1b49b" %}
-      <div class="u11Light_v2">Promotion Ends in:</div>
-    {% else %}
-      <div class="u11Light_v2">{{ settings.sale_name }} ends in:</div>
-    {% endif %}
-    <img src="http://i.countdownmail.com/2ml0k2.gif"/>
-  </div>
+{% unless settings.hide_sale_countdown %}  
+  {% if template == "product.pf-d095440b" or template == "page.pf-59c57289"  or template == "product.pf-b10ddb73" or template == "page.pf-47e1b49b"%}
+      <div id="announcement-bar" class="pcHide"  style="height: 65px;display: flex;flex-direction: column;align-items: center;justify-content: flex-start;text-align: center;">
+        {% if template == "product.pf-b10ddb73" or template == "page.pf-47e1b49b" %}
+          <div class="u11Light_v2">Promotion Ends in:</div>
+        {% else %}
+          <div class="u11Light_v2">{{ settings.sale_name }} ends in:</div>
+        {% endif %}
+        <img src="http://i.countdownmail.com/2ml0k2.gif"/>
+      </div>
 
-  <script>
-    if (global_config.is_mobile) {
-      $('.announcement-bar-common').hide()
-    }
-  </script>
-{% endif %}
+      <script>
+        if (global_config.is_mobile) {
+          $('.announcement-bar-common').hide()
+        }
+      </script>
+  {% endif %}
+{% endunless %}
 
 {%- for block in section.blocks -%}
   {%- case block.type -%}

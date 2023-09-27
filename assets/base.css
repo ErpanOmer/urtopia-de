@@ -3804,7 +3804,7 @@ body .jBox-Modal {
 .subscribe-container .subscribe {
   display: flex;
   flex-direction: column;
-  padding: 12%;
+  padding: 10%;
   justify-content: center;
   background-color: #fff
 }
