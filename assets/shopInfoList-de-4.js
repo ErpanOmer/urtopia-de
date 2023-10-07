@@ -1423,7 +1423,7 @@ const testRides = [
       },
     ]
   },
-  {
+  /*{
     city: 'Geldern',
     cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Geldern.jpg?v=1691835197',
     series: [
@@ -1455,7 +1455,7 @@ const testRides = [
         isPartner: true
       },
     ]
-  },
+  },*/
   {
     country: 'Finland',
     city: 'Meritullinkatu',
@@ -1467,10 +1467,10 @@ const testRides = [
     stores: [
       {
         name: 'Ari Huusela',
-        phone: '+358 45 6745488',
-        email: 'ari.huusela@icloud.com',
+        phone: '',
+        email: 'aribikes93@gmail.com',
         timezone: "Meritullinkatu, Finland (GMT+1)",
-        add: "Meritullinkatu 9 A 00170 Helsinki",
+        add: "Helsinki",
         imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/A93E0E1F-608D-44BE-9840-426BD29C34E6-lg.webp?v=1692340290",
         testrideSpot: "Meritullinkatu",
         testRideSize: "M",

@@ -6,13 +6,13 @@
         "type": "text",
         "id": "sale_name",
         "label": "活动名称",
-        "default": "Clearance Sale"
+        "default": "Holiday Season Sale"
       },
       {
         "type": "text",
         "id": "sale_end_time",
         "label": "活动结束文案",
-        "default": "Ends Sep 27"
+        "default": "Ends Sep 30"
       },
       {
         "type": "text",
@@ -24,7 +24,7 @@
         "type": "text",
         "id": "carbon1s_ebike_discount_price",
         "label": "carbon 1s 活动折扣价",
-        "default": "30000"
+        "default": "60000"
       },
       {
         "type": "text",
@@ -42,7 +42,7 @@
         "type": "text",
         "id": "chord_sale_name",
         "label": "chord 活动名称",
-        "default": "Labor Day Sale"
+        "default": "Holiday Season Sale"
       },
       {
         "type": "text",
@@ -54,13 +54,13 @@
         "type": "text",
         "id": "chord_ebike_discount_price",
         "label": "chord 车折扣价",
-        "default": "20000"
+        "default": "50000"
       },
       {
         "type": "text",
         "id": "chord_sale_end_time",
         "label": "chord 活动结束文案",
-        "default": "Ends on Sep 27"
+        "default": "Ends on Sep 30"
       },
       {
         "type": "checkbox",

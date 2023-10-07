@@ -57,7 +57,7 @@ const global_config = {
       carbon1s_send_accessories_variant_ids: ['43866498891992', '43942187598040'],
     },
     // carbon 车默认显示 variant_id, 只有 url 上的 variant 参数为空的时候生效
-    default_variant: 42615025303768,
+    default_variant: 43869302816984,
     ignore_variants_available_false: [],
     size_map: {
       M: 'Fit for 170-185 cm',
@@ -266,8 +266,8 @@ const global_config = {
       43705718997208: 'Free shipping within 10 working days',
       43705719029976: 'Free shipping within 10 working days',
       // chord x
-      43705719062744: 'Free shipping within 10 working days',
-      43705719095512: 'Free shipping within 10 working days',
+      43705719062744: 'Ships between December 1-15, 2023',
+      43705719095512: 'Ships between December 1-15, 2023',
     }
   }
 }
