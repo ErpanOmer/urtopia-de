@@ -125,7 +125,7 @@
                         <option value="carbon1">Carbon 1</option>
                         <option value="carbon1s">Carbon 1s</option>
                         <option value="chord">Chord</option>
-                        <option value="chordx">Chord X</option>
+                        <!--<option value="chordx">Chord X</option>-->
                     </select>
                     <span class="tips u14Light_v2"></span>
                 </div>
@@ -386,7 +386,7 @@ function submit (forms = {}) {
     //}
 
 
-
+    forms.url = location.href
     fetchBuried('leasing', 'submit', forms)
 
     if (forms.offers === 'no') {
