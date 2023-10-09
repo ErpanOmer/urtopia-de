@@ -53,8 +53,8 @@ const global_config = {
   carbon_order_page_config: {
     // carbon车 活动相关
     events: {
-      carbon1_send_accessories_variant_ids: ['43788921241816', '43745261748440'],
-      carbon1s_send_accessories_variant_ids: ['43866498891992', '43942187598040'],
+      carbon1_send_accessories_variant_ids: ['43988113621208', '43745261748440'],
+      carbon1s_send_accessories_variant_ids: ['43866498891992', '43988117356760'],
     },
     // carbon 车默认显示 variant_id, 只有 url 上的 variant 参数为空的时候生效
     default_variant: 43869302816984,

@@ -33,7 +33,7 @@
     padding: 8px 12px;
     background-image: linear-gradient(90deg, #EE6426, #F4492A);
     color: #fff;
-    margin: 6px 0 -6px;
+    margin: 6px 0 12px;
   }
 
   .sale-big-text .u20DemiBold_v2 {
@@ -96,10 +96,19 @@
                 <div class="swiper-pagination pcHide"></div>
                 <div class="flex-1 mobileHide pcHide"></div>
                 <div class="service mobileHide">
-                  <img style="max-width: 53px;" src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230811-120544.png?v=1691726759" alt="">
-                  <div class="u17DemiBold_v2">
-                      <div class="emphasize">Free 1 year connect service included for each bike</div>
-                      <div class="text-decoration">{{ all_products['esim-card'].price | money_without_trailing_zeros }}/year</div>
+                  <div class="u24DemiBold_v2">
+                    <img style="max-width: 60px;" src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230811-120544.png?v=1691726759" alt="">
+                    <span class="emphasize">+</span>
+                    <img style="max-width: 46px;" src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20231008-164445.png?v=1696754716" alt="">
+                  </div>
+                  <div class="u17DemiBold_v2 emphasize">
+                    <span>Free Kickstand,</span>
+                    <span>1-Year Connect Service Included</span>
+                    <span class="u14Light_v2">*Not available with leasing</span>
+                  </div>
+                  <div class="u17Medium_v2">
+                    <span>{{ 8000 | money_without_trailing_zeros }}</span>
+                    <span>FREE</span>
                   </div>
                 </div>
                 <div class="parameters mobileHide">
@@ -177,7 +186,7 @@
                 </div>
                 <div class="u11Light_v2">*Not available with leasing</div>
             </div>-->
-            <div class="sale_acc mb12 gear" id="sale_acc">
+            <!--<div class="sale_acc mb12 gear" id="sale_acc">
               <div class="u14Light_v2">Save <span class="discount" style="font-weight: 600;">{{ settings.carbon_ebike_discount_price | money_without_trailing_zeros }}</span> and Get <span style="font-weight: 600;">{{ settings.carbon_ebike_free_accessories_price | money_without_trailing_zeros }}</span>  Accessories for <span style="font-weight: 600;"> Free</span></div>
                 {% assign accessories_map_1s = "7633738596568,7900136702168" | split: ',' %}
                 <div class="accs_1s">
@@ -189,7 +198,7 @@
                                     <div>
                                         {% if acc == "7900136702168" %}
                                           <span class="u14Medium_v2">Fenders</span>
-                                          <!--<span class="u11Medium_v2">{{ prod.title | truncatewords: 3, "" | replace: "-", "" }}</span>-->
+                                          <span class="u11Medium_v2">{{ prod.title | truncatewords: 3, "" | replace: "-", "" }}</span>
                                         {% else %}
                                           <span class="u14Medium_v2">{{ prod.title }}</span>
                                         {% endif %}
@@ -202,14 +211,27 @@
                     {% endfor %}
                 </div>
                 <div class="u11Light_v2">*Not available with leasing</div>
-            </div>
+            </div>-->
             <div class="service pcHide mb6">
-                  <img style="max-width: 53px;" src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230811-120544.png?v=1691726759" alt="">
-                  <div class="u17DemiBold_v2">
-                      <div class="emphasize">Free 1 year connect service <br>included for each bike</div>
-                      <div class="text-decoration">{{ all_products['esim-card'].price | money_without_trailing_zeros }}/year</div>
+                  <div>
+                    <div class="u24DemiBold_v2">
+                      <img style="max-width: 40px;" src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230811-120544.png?v=1691726759" alt="">
+                      <span class="emphasize">+</span>
+                      <img style="max-width: 30px;" src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20231008-164445.png?v=1696754716" alt="">
+                    </div>
+                    <div>
+                      <div class="u14Medium_v2">
+                        <span>FREE</span>
+                        <span>{{ 8000 | money_without_trailing_zeros }}</span>
+                      </div>
+                      <div class="u14DemiBold_v2 emphasize">
+                        <span>Free Kickstand,</span>
+                        <span>1-Year Connect Service Included</span>
+                      </div>
+                    </div>
                   </div>
-              </div>
+                  <span class="u11Light_v2">*Not available with leasing</span>
+                </div>
             {% unless settings.hide_sale_countdown  %}
               <div class="count-down mb12 mobileHide">
                 <div class="u17Medium_v2">{{ settings.carbon_ebike_discount_price | money_without_trailing_zeros }} off + {{ settings.carbon_ebike_free_accessories_count }} Free Accessories Ends in：</div>

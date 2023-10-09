@@ -382,13 +382,49 @@
             border-radius: 10px;
             margin-bottom: 24px;
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
-            padding: 12px 20px 0;
+            padding: 1.5% 3%;
 
-            & > div {
-                margin-left: 8px;
-                transform: translateY(-6px);
+            & > .u24DemiBold_v2 {
+                display: flex;
+                align-items: center;
+                transform: translateY(6px);
+                min-width: 130px;
+
+                .emphasize {
+                    margin-left: 8%;
+                }
+            }
+
+            & > .u17DemiBold_v2 {
+                display: flex;
+                flex-direction: column;
+
+                .u14Light_v2 {
+                    color: #999;
+                }
+            }
+
+            & > .u17Medium_v2 {
+                min-width: 100px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                & > span {
+                    &:first-child {
+                        text-decoration: line-through;
+                        margin-right: 12px;
+                    }
+
+                    &:last-child {
+                        padding: 7px;
+                        background-color: #EB5A2D;
+                        color: #fff;
+                        border-radius: 7px;
+                    }
+                }
             }
         }
 
@@ -1655,17 +1691,61 @@
             }
 
             .service {
-                margin-bottom: 6px;
                 box-shadow: 0px 3px 20px #00000014;
                 background-color: #fff;
-                padding: 2vw 4vw 0;
+                padding: 2vw;
+                flex-direction: column;
+                align-items: flex-start;
+                margin-bottom: 12px;
 
-                .u17DemiBold_v2 {
-                    font-size: 12px;
+                .u11Light_v2 {
+                    color: #999;
                 }
 
                 & > div {
-                    transform: translateY(-3px);
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+
+                    .u24DemiBold_v2 {
+                        .emphasize {
+                            margin-left: 1vw;
+                        }
+                    }
+
+                    & > div {
+                        &:last-child {
+                            flex: 1;
+                            margin-left: 4vw;
+
+                            .u14DemiBold_v2 {
+                                font-size: 12px;
+                                display: flex;
+                                flex-direction: column;
+                                margin: 6px 0;
+                            }
+
+                            .u14Medium_v2 {
+                                display: flex;
+                                align-items: center;
+                                justify-content: flex-start;
+                                span {
+                                    &:last-child {
+                                        text-decoration: line-through;
+                                        margin-right: 12px;
+                                    }
+
+                                    &:first-child {
+                                        padding: 3px 6px;
+                                        background-color: #EB5A2D;
+                                        color: #fff;
+                                        border-radius: 7px;
+                                        margin-right: 6px;
+                                    }
+                                }
+                            }
+                        }
+                    }
                 }
             }
 
