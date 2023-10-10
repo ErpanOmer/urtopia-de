@@ -166,9 +166,9 @@ const global_config = {
       // 1-l-pb
       42615025500376: 'Free shipping within 5 working days',
       // 1-m-pw
-      43608364417240: 'Free shipping within 10 working days',
+      43608364417240: 'Free shipping within 5 working days',
       // 1-l-pw
-      43608364450008: 'Free shipping within 10 working days',
+      43608364450008: 'Free shipping within 5 working days',
       // 1s-m-sb
       43869302816984: 'Free shipping within 5 working days',
       // 1s-l-sb

@@ -598,6 +598,52 @@ const testRides = [
           "10:00-13:00, 14:00-18:00",
           "10:00-14:00",
         ],
+      },
+      {
+        name: 'Michael Kaersten(am)',
+        phone: '+49 1781817761',
+        email: 'urtopia@kaersten.net',
+        timezone: "Hamburg, Germany (GMT+1)",
+        add: "Am Neuländer Gewerbepark 21079 Hamburg/Germany",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/output.jpg?v=1696859457",
+        testrideSpot: "Hamburg",
+        testRideSize: "L",
+        isPartner: true,
+        availableSizes: [
+          'Carbon 1 Size L'
+        ],
+        businessHours: [
+          "",
+          "10:00-11:00",
+          "10:00-11:00",
+          "10:00-11:00",
+          "10:00-11:00",
+          "",
+          "",
+        ],
+      },
+      {
+        name: 'Michael Kaersten(pm)',
+        phone: '+49 1781817761',
+        email: 'urtopia@kaersten.net',
+        timezone: "Hamburg, Germany (GMT+1)",
+        add: "Grandweg 22529 Hamburg/Germany",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/output.jpg?v=1696859457",
+        testrideSpot: "Hamburg",
+        testRideSize: "L",
+        isPartner: true,
+        availableSizes: [
+          'Carbon 1 Size L'
+        ],
+        businessHours: [
+          "",
+          "15:00-16:00",
+          "15:00-16:00",
+          "15:00-16:00",
+          "15:00-16:00",
+          "",
+          "",
+        ],
       }
     ]
   },
@@ -1260,8 +1306,8 @@ const testRides = [
     city: 'Güstrow',
     cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/schloss_guestrow_drohne17_aNoB_ubertr_kUrh_005-1351x900.jpg?v=1689910159',
     series: [
-      'Urtopia Carbon 1',
-      // 'Urtopia Carbon 1'
+      'Urtopia Carbon 1 Size L',
+      'Urtopia Carbon 1s Size M'
     ],
     stores: [
       {
@@ -1276,6 +1322,7 @@ const testRides = [
         noBook: "Please contact the store directly to arrange test ride",
         availableSizes: [
           'Carbon 1 Size L',
+          'Carbon 1s Size M'
         ],
         businessHours: [
           "",
@@ -1409,6 +1456,7 @@ const testRides = [
         testRideSize: "L",
         availableSizes: [
           'Carbon 1 Size L',
+          'Chord X',
         ],
         businessHours: [
           "14:00-18:00",
