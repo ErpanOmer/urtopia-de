@@ -44,9 +44,9 @@ const global_config = {
     // 邮件弹窗 延迟弹出时间，单位:s
     show_delay_time: 10,
     // 邮件 pc 背景图
-    background_imgae_pc: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Urtopia_-_Auto_Rack_-_Original_Size_-_RAW-42_2x_c51070d5-9aa9-42ab-b10a-35524e2def35.jpg?v=1695795850&width=500',
+    background_imgae_pc: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Urtopia_-_Auto_Rack_-_Original_Size_-_RAW-42_2x_c51070d5-9aa9-42ab-b10a-35524e2def35.jpg?v=1695795850',
     // 邮件 mobile 背景图
-    background_imgae_mb: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Urtopia_-_Auto_Rack_-_Original_Size_-_RAW-42_2x_72bd6e40-f01f-4c4c-8b0c-32145fe68360.jpg?v=1695795956&width=375'
+    background_imgae_mb: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20231010-101621.jpg?v=1696904221&width=500'
   },
 
   // carbon 车配置
@@ -187,6 +187,11 @@ const global_config = {
   chord_order_page_config: {
     // chord 车默认显示 variant_id, 只有 url 上的 variant 参数为空的时候生效
     default_variant: 43705719062744,
+    ignore_variants_available_false: [],
+    size_map: {
+      'High-Step': 'Fit for 170-195 cm',
+      'Step-Through': 'Fit for 160-185 cm'
+    },
     // 产品图
     product_images: {
       "High-Step": {
@@ -234,6 +239,15 @@ const global_config = {
           'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18770_ae2056ef-cd08-42d1-a7b4-e8f125eae35a.png?v=1689237082',
           'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18771.png?v=1689237081',
           'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18772_58e3cebc-b65d-42e2-bee0-f40c0662e725.png?v=1695388441'
+        ],
+        Gray: [
+          'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/chord_x_gr_side.png?v=1696833425',
+          'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/chord_x_gr_front.png?v=1696833426',
+          'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/chord_x_gr_back.png?v=1696833425',
+
+          'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/chord_x_gr_bar.png?v=1696833426',
+          'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/chord_x_gr_gear.png?v=1696833426',
+          'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/chord_x_gr_downtube.png?v=1696833426'
         ],
         commonSwiper: [
           'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230224-145010_f48cb52f-2d3d-4a4f-b7f7-c6c2980349c9.png?v=1689236897',

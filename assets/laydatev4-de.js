@@ -3363,7 +3363,11 @@ function splitTimeFormat(item = '') {
          } else {
             // 如果是chrod
             if (size.includes('Chord')) {
-              choose.push(bike_sizes.find(b => b.name === 'Chord'))
+              if (size.includes('X')) {
+                choose.push(bike_sizes.find(b => b.name === 'Chord X'))
+              } else {
+                choose.push(bike_sizes.find(b => b.name === 'Chord'))
+              }
             } else {
               choose = choose.concat(s.map(i => {
                 const find = bike_sizes.find(b => b.name === 'Carbon 1' && b.size === i)

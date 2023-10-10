@@ -3535,6 +3535,11 @@ input:focus-visible {
   animation: mini-dialog-show .4s
 }
 
+.mini-dialog>div  img {
+  height: 100%;
+  object-fit: cover;
+}
+
 body .my-button {
   display: inline-block;
   padding: 14px 36px;
@@ -3957,7 +3962,8 @@ body .jBox-Modal {
   }
 
   .subscribe-container {
-      grid-template-columns: 1fr
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr 2fr;
   }
 
   .subscribe-container .subscribe {
@@ -3970,7 +3976,7 @@ body .jBox-Modal {
   }
 
   .subscribe-container .subscribe .u20DemiBold_v2 {
-      font-size: 18px
+      font-size: 15px;
   }
 
   .subscribe-container .subscribe .u17Medium_v2 {

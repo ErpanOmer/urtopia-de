@@ -280,6 +280,19 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
     background-color: #919191;
   }
 
+  #bike .swiper-slide .dots > div[gray2] {
+    background-color: #405364;
+  }
+
+  #bike .swiper-slide .dots .active[gray2] {
+    background-color: transparent;
+    border: 2px solid #405364;
+  }
+
+  #bike .swiper-slide .dots .active[gray2]::after  {
+    background-color: #405364;
+  }
+
   #bike .swiper-slide .dots > div[peach] {
     background-color: #F0EEDF;
   }
@@ -475,7 +488,7 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
                 <div class="dots-and-price">
                   <div class="dots">
                     <div onclick="changeBike('/products/urtopia-chord-ebike?variant=43705719062744', 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/chordX_2x_fe86f1a1-6d47-4dd4-b1b9-80ee149da0fe.jpg?v=1689154670', this)" white class="active"></div>
-                    <div onclick="changeBike('/products/urtopia-chord-ebike?variant=43705719095512', 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/chordX_2x_ac6e3457-6ab6-4c57-a190-b58c8171d6c8.jpg?v=1689154690', this)" black></div>
+                    <div onclick="changeBike('/products/urtopia-chord-ebike?variant=43988553859288', 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20231009-150822.png?v=1696835332', this)" gray2></div>
                   </div>
                 <div class="u24DemiBold_v2" {% if settings.chord_ebike_discount_price != "0" %} data-price="{{all_products['urtopia-chord-ebike'].price | money_without_trailing_zeros }}"{% endif %}>
                   {{ all_products['urtopia-chord-ebike'].price | minus: settings.chord_ebike_discount_price | money_without_trailing_zeros }}
