@@ -617,10 +617,10 @@
                             font-weight: 500;
                             font-size: 12px;
                         }
-                    }
 
-                    & > div + div {
-                        margin-left: 12px;
+                        &:not(:last-child) {
+                          margin-right: 12px;
+                        }
                     }
 
                     .active {
@@ -661,6 +661,10 @@
                             justify-content: center;
                             margin-left: 6px;
                         }
+
+                      &:not(:last-child) {
+                          margin-right: 12px;
+                        }
                     }
 
                     // div[attribute="Carbon Belt"]::after {
@@ -670,10 +674,6 @@
                     // div[attribute="Shimano Gear"]::after {
                     //     content: "Sale";
                     // }
-
-                    &>div+div {
-                        margin-left: 12px;
-                    }
 
                     .active {
                         border-color: var(--sale-order-page-text-color);

@@ -21,10 +21,6 @@
     background-color: var(--sale-color3);
   }
 
-  .product .centeral-content .product-panel .options .Size>div+div {
-    margin: 0;
-  }
-
   .product .centeral-content [data-price]::after {
       content: attr(data-price);
       font-size: 24px;
@@ -841,7 +837,7 @@
 </div>
 
 
-{% render 'carbon-one-size-and-specs', hide_balabalabala: true %}
+{% render 'carbon-one-size-and-specs', hide_balabalabala: false, hide_1s: true %}
 
 
 <div class="assembly">
@@ -1588,4 +1584,4 @@
 
 
 
-{% render 'carbon-one-extra-code', hide_balabalabala: true %}
+{% render 'carbon-one-extra-code', hide_balabalabala: false, hide_1s: true %}

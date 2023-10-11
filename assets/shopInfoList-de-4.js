@@ -1798,6 +1798,40 @@ const testRides = [
       },
     ]
   },
+  {
+    country: 'Poland',
+    city: 'Dobra',
+    cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/widoki-z-wiezy-fantastyczne.jpg?v=1696928346',
+    series: [
+      'Chord',
+      // 'Urtopia Carbon 1'
+    ],
+    stores: [
+      {
+        name: 'AX Technology Sp. z o.o. Sp. K.',
+        phone: '+48 918173114',
+        email: 'l.grab@axtechnology.eu',
+        timezone: "Dobra, Poland (GMT+1)",
+        add: "Szczecińska 1W, 72-003 Dobra, Poland",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/2_ebedd351-b768-481a-b902-81fb28d5928d.jpg?v=1696927710",
+        testrideSpot: "Dobra",
+        testRideSize: "Chord",
+        availableSizes: [
+          'Carbon 1 Size M/L',
+          'Chord',
+        ],
+        businessHours: [
+          "",
+          "8:00-16:00",
+          "8:00-16:00",
+          "8:00-16:00",
+          "8:00-16:00",
+          "8:00-16:00",
+          "",
+        ],
+      },
+    ]
+  },
 ]
 
 

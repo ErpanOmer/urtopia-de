@@ -60,8 +60,8 @@ const global_config = {
     default_variant: 43869302816984,
     ignore_variants_available_false: [],
     size_map: {
-      M: 'Fit for 170-185 cm',
-      L: 'Fit for 180-195 cm'
+      M: 'Fit for 165-180 cm',
+      L: 'Fit for 175-195 cm'
     },
     // 产品系列图
     product_images: {
