@@ -234,23 +234,30 @@
                 </div>
             {% unless settings.hide_sale_countdown  %}
               <div class="count-down mb12 mobileHide">
-                <div class="u17Medium_v2">{{ settings.carbon_ebike_discount_price | money_without_trailing_zeros }} off + {{ settings.carbon_ebike_free_accessories_count }} Free Accessories Ends in：</div>
+                <div class="u17Medium_v2">Promotion Ends in:</div>
                 <img src="http://i.countdownmail.com/2mmaed.gif">
               </div>
             {% endunless %}
             <div class="options">
-                {% for option in product.options %}
-                    {% if option != "Size" %}
-                      <div class="option" option={{option}}>
-                        <div class="u17DemiBold_v2 mb12">{{ option }} - <span class="u17Light_v2"></span></div>
-                        <div class="{{ option }} mb12"></div>
-                      </div>
-                    {% endif %}
-                {% endfor %}
-                <div class="option" option="Size">
-                        <div class="u17DemiBold_v2 mb12">Size - <span class="u17Light_v2"></span></div>
-                        <div class="Size mb12"></div>
-                </div>
+              {% for option in product.options_with_values %}
+                  <div class="option" option={{option.name}} position="{{ option.position }}">
+                    <div class="u17DemiBold_v2 mb12">{{ option.name }} - <span class="u17Light_v2"></span></div>
+                    <div class="{{ option.name }} mb12">
+                      {% for value in option.values %}
+                        {% case option.name %}
+                        {% when "Model" %}
+                            <div data-sale="{{ "order_page.sale" | t }}" attribute="{{ value }}" class="{{ value }}">{{ value }}</div>
+                        {% when "Size" %}
+                            <div attribute="{{ value }}" class="{{ value }} u14DemiBold_v2">{% if value == "L" %}Large{% else %}Medium{% endif %}</div>
+                        {% when "Style" %}
+                          <div attribute="{{ value }}" class="{{ value }}"></div>
+                        {% else %}
+                            <div attribute="{{ value }}" class="{{ value }}">{{ value }}</div>
+                        {% endcase %}                     
+                      {% endfor %}
+                    </div>
+                  </div>
+              {% endfor %}
             </div>
             <div class="accessories">
                 <div class="u17DemiBold_v2 mb12">Accessories</div>
@@ -281,7 +288,7 @@
             <div class="buttons">
                 <div class="count-down mb12 pcHide">
                   {% unless settings.hide_sale_countdown  %}
-                    <div class="u17Medium_v2">{{ settings.carbon_ebike_discount_price | money_without_trailing_zeros }} off + {{ settings.carbon_ebike_free_accessories_count }} Free Accessories Ends in：</div>
+                    <div class="u17Medium_v2">Promotion Ends in:</div>
                     <img src="http://i.countdownmail.com/2mmaed.gif">
                   {% endunless %}
                 </div>
@@ -1103,7 +1110,7 @@
         <span class="flex-1"></span>
         <div>
             <span class="u17Light_v2"><span class="u20DemiBold_v2 emphasize" style="font-weight: 600;color:var(--sale-order-page-text-color);">{{ product.price | minus: settings.carbon_ebike_discount_price | money }}</span> <span style="text-decoration: line-through;">{{ product.price | money }}</span></span>
-            <span class="u14Light_v2">or as low as {{ product.price | minus: settings.carbon_ebike_discount_price | divided_by: 24 | money_without_trailing_zeros }}/Month</span>
+            <span class="u14Light_v2">or as low as <span class="stages">{{ product.price | minus: settings.carbon_ebike_discount_price | divided_by: 24 | money_without_trailing_zeros }}</span>/Month</span>
         </div>
         <a href="#sale_acc" class="my-button my-button-origin" style="background: var(--sale-order-page-text-color);">Order Now</a>
     </div>
@@ -1112,7 +1119,7 @@
     <a href="#sale_accmb" class="my-button my-button-origin" style="background: var(--sale-order-page-text-color);">Order Now</a>
     <div>
         <span class="u14Light_v2"><span class="emphasize" style="font-weight: 600;color:var(--sale-order-page-text-color);">{{ product.price | minus: settings.carbon_ebike_discount_price | money }}</span> <span style="text-decoration: line-through;">{{ product.price | money }}</span></span>
-        <span class="u14Light_v2">or as low as {{ product.price | minus: settings.carbon_ebike_discount_price | divided_by: 24 | money_without_trailing_zeros }}/Month</span>
+        <span class="u14Light_v2">or as low as <span class="stages">{{ product.price | minus: settings.carbon_ebike_discount_price | divided_by: 24 | money_without_trailing_zeros }}</span>/Month</span>
     </div>
 </div>
 
@@ -1121,29 +1128,6 @@
     $('.bottom-fixed').hide()
     $('.top-fixed').hide()
     $('.toTop').hide()
-
-    const variants = []
-    let temp = null
-
-    {% for variant in product.variants %}
-      temp = JSON.parse(JSON.stringify({{ variant | json }}))
-      temp.inventory_quantity = {{ variant.inventory_quantity }}
-      
-      variants.push(temp)
-    {% endfor %}
-
-    const search = getSearchValues()
-    
-    const size_map = {
-        M: 'Fit for 165-180 cm',
-        L: 'Fit for 175-195 cm'
-    }
-
-    let current_variant_id = null
-    let current_variant = null
-    const styles = {}
-    const sizes = {}
-    const models = {}
     
     const leftSwiper = new Swiper(".product .left-swiper", {
         direction: 'vertical',
@@ -1169,87 +1153,31 @@
         },
       });
 
-    function findVariantOptions (model, size, style) {
-        return variants.find(v => `${model} / ${size} / ${style}` === v.title)
-    }
+      document.addEventListener('onChangeModel', e => {
+        $(`.product .product-panel .options > div[option="Model"] .u17DemiBold_v2 .u17Light_v2`).text(`Urtopia Carbon ${e.value === 'Carbon Belt' ? '1' : '1s'}`)
 
-    function findVariantFromId (id) {
-        return variants.find(v => String(v.id) === String(id))
-    }
-
-    function findAvailableVariant () {
-        return variants.find(v => v.available)
-    }
-
-    function changeVariant (model, size, style) {
-        if (model) {
-            $(`.product .product-panel .Model .active`).removeClass('active')
-            $(`.product .product-panel .Model > div[attribute="${model}"]`).addClass('active')
-            $(`.product .product-panel .options > div[option="Model"] .u17DemiBold_v2 .u17Light_v2`).text(`Urtopia Carbon ${model === 'Carbon Belt' ? '1' : '1s'}`)
-
-            //$(`.product .commonComponent .sale .u20DemiBold_v2`).text(`${model === 'Carbon Belt' ? '{{ product.price | minus: settings.carbon_ebike_discount_price | money }}' : '{{ product.price | minus: settings.carbon1s_ebike_discount_price | money }}'} NOW`)
-            //$(`.product .commonComponent .sale .u17DemiBold_v2`).text(`with ${model === 'Carbon Belt' ? '{{ settings.sale_name }}' : 'Pre-order Sale'}`)
-            //$(`.product .count-down .u17Medium_v2`).text(`with ${model === 'Carbon Belt' ? '{{ settings.carbon_ebike_discount_price | money_without_trailing_zeros }} off + {{ settings.carbon_ebike_free_accessories_count }} Free Accessories Ends in:' : '{{settings.carbon1s_ebike_discount_price | money_without_trailing_zeros}} off + {{ settings.carbon_ebike_free_accessories_count }} Free Accessories Ends in:'}`)
-
-            if (model === 'Carbon Belt') {
-
-                
-
-                global_config.event_accessories_variant_ids = global_config.carbon_order_page_config.events.carbon1_send_accessories_variant_ids
-
-                $(`.product .product-panel .options .option .vanilla`).show();
-                $('.buttons .orderTestRideBtn .stages').text('{{ product.price | minus: settings.carbon_ebike_discount_price | divided_by: 24 | money_without_trailing_zeros }}');
-                $('.top-fixed .centeral-content > div').html(`
-                  <span class="u17Light_v2"><span class="u20DemiBold_v2 emphasize" style="font-weight: 600;color:var(--sale-order-page-text-color);">{{ product.price | minus: settings.carbon_ebike_discount_price | money }}</span> <span style="text-decoration: line-through;">{{ product.price | money }}</span></span>
-                  <span class="u14Light_v2">or as low as {{ product.price | minus: settings.carbon_ebike_discount_price | divided_by: 24 | money_without_trailing_zeros }}/Month</span>
-              `)
-
-              $('.bottom-fixed > div').html(`
-                <span class="u14Light_v2"><span class="emphasize" style="font-weight: 600;color:var(--sale-order-page-text-color);">{{ product.price | minus: settings.carbon_ebike_discount_price | money }}</span> <span style="text-decoration: line-through;">{{ product.price | money }}</span></span>
-                <span class="u14Light_v2">or as low as {{ product.price | minus: settings.carbon_ebike_discount_price | divided_by: 24 | money_without_trailing_zeros }}/Month</span>
-              `)
-
-              $(`.product .count-down .u17Medium_v2`).text('Promotion Ends in:')
-              $('.product .commonComponent .product-price').text('{{ product.price | minus: settings.carbon_ebike_discount_price | money }}')
-              $('.product .commonComponent .sale-tag .u17Medium_v2').text('{{ settings.sale_name }}')
-              $('.product .sale_acc .discount').text('{{ settings.carbon_ebike_discount_price | money_without_trailing_zeros }}')
-              $('#announcement-bar .u11Light_v2').text('Promotion Ends in:')
-
-            } else {
-                //$('.product .belt').hide()
-                //$('.product .gear').show()
-                
-
-                global_config.event_accessories_variant_ids = global_config.carbon_order_page_config.events.carbon1s_send_accessories_variant_ids
-
-                $(`.product .product-panel .options .option .vanilla`).hide();
-                $('.buttons .orderTestRideBtn .stages').text('{{ product.price | minus: settings.carbon1s_ebike_discount_price | divided_by: 24 | money_without_trailing_zeros }}');
-                $('.top-fixed .centeral-content > div').html(`
-                  <span class="u17Light_v2"><span class="u20DemiBold_v2 emphasize" style="font-weight: 600;color:var(--sale-order-page-text-color);">{{ product.price | minus: settings.carbon1s_ebike_discount_price | money }}</span> <span style="text-decoration: line-through;">{{ product.price | money }}</span></span>
-                  <span class="u14Light_v2">or as low as {{ product.price | minus: settings.carbon1s_ebike_discount_price | divided_by: 24 | money_without_trailing_zeros }}/Month</span>
-              `)
-
-              $('.bottom-fixed > div').html(`
-                <span class="u14Light_v2"><span class="emphasize" style="font-weight: 600;color:var(--sale-order-page-text-color);">{{ product.price | minus: settings.carbon1s_ebike_discount_price | money }}</span> <span style="text-decoration: line-through;">{{ product.price | money }}</span></span>
-                <span class="u14Light_v2">or as low as {{ product.price | minus: settings.carbon1s_ebike_discount_price | divided_by: 24 | money_without_trailing_zeros }}/Month</span>
-              `)
-
-              $(`.product .count-down .u17Medium_v2`).text('Promotion Ends in:')
-              $('.product .commonComponent .product-price').text('{{ product.price | minus: settings.carbon1s_ebike_discount_price | money }}')
-              $('.product .commonComponent .sale-tag .u17Medium_v2').text('Limited Time and Stock')
-              $('.product .sale_acc .discount').text('{{ settings.carbon1s_ebike_discount_price | money_without_trailing_zeros }}')
-              $('#announcement-bar .u11Light_v2').text('Promotion Ends in:')
-            }
+        if (e.value === "Carbon Belt") {
+          global_config.event_accessories_variant_ids = global_config.carbon_order_page_config.events.carbon1_send_accessories_variant_ids
+        } else {
+          global_config.event_accessories_variant_ids = global_config.carbon_order_page_config.events.carbon1s_send_accessories_variant_ids
         }
 
-        if (style) {
-            $(`.product .product-panel .Style .active`).removeClass('active')
-            $(`.product .product-panel .Style > div[attribute="${style}"]`).addClass('active')
-            $(`.product .product-panel .options > div[option="Style"] .u17DemiBold_v2 .u17Light_v2`).text(style)
+        $('#announcement-bar .u11Light_v2').text('Promotion Ends in:')
 
+      })
+
+      document.addEventListener('onChangeStyle', e => {
+        $(`.product .product-panel .options > div[option="Style"] .u17DemiBold_v2 .u17Light_v2`).text(e.value)
+      })
+
+      document.addEventListener('onChangeSize', e => {
+        $(`.product .product-panel .options > div[option="Size"] .u17DemiBold_v2 .u17Light_v2`).text(global_config.carbon_order_page_config.size_map[e.value])
+      })
+
+      document.addEventListener('onChangeOptions', e => {
             let swiper_arr = []
 
-            swiper_arr = swiper_arr.concat(global_config.carbon_order_page_config.product_images[model][style], style === 'vanilla' ? [] : global_config.carbon_order_page_config.product_images[model]['commonSwiper'])
+            swiper_arr = swiper_arr.concat(global_config.carbon_order_page_config.product_images[e.value.Model][e.value.Style], e.value.Style === 'Vanilla' ? [] : global_config.carbon_order_page_config.product_images[e.value.Model]['commonSwiper'])
 
             $('.product .right-swiper .swiper-wrapper').html(swiper_arr.map((s, i) => {
                 const index = i % 6
@@ -1272,26 +1200,11 @@
                 leftSwiper.update()
                 leftSwiper.slideTo(0, 0)
             }, 0)
-        }
 
-        if (size) {
-            $(`.product .product-panel .Size .active`).removeClass('active')
-            $(`.product .product-panel .Size > div[attribute="${size}"]`).addClass('active')
-            $(`.product .product-panel .options > div[option="Size"] .u17DemiBold_v2 .u17Light_v2`).text(size_map[size])
-        }
-
-
-        if (model && style && size) {
-            current_variant = findVariantOptions(model, size, style)
-            current_variant_id = current_variant.id
-
-
-            history.replaceState(null, '', `${location.pathname}?variant=${current_variant_id}`);
-            $('.product .product-panel input[name="id"]').val(current_variant_id)
-            $('.product .delivery_time').html(global_config.carbon_order_page_config.ebike_delivery_time[current_variant_id] || global_config.carbon_order_page_config.ebike_default_delivery_time)
+            $('.product .delivery_time').html(global_config.carbon_order_page_config.ebike_delivery_time[e.value.id] || global_config.carbon_order_page_config.ebike_default_delivery_time)
 
             const btn =  $('.product .buttons .addToCartBtn')
-            if (current_variant.available) {
+            if (e.value.available) {
                 btn.find('span').text('Add to Cart')
                 btn.removeClass('disabled')
                 $('.product .buttons .orderTestRideBtn').show()
@@ -1301,42 +1214,44 @@
                 $('.product .buttons .orderTestRideBtn').hide()
             }
 
+            const options = titleToOptions(e.value.title)
+            const index = options.findIndex(o => o === e.value.Size)
 
-            if (model === "Shimano Gear" && style === "vanilla") {
+            const getContent = s => {  
+                options[index] = s
+                const f = variants.find(i => i.title === optionsToTtitle(options))
 
-              for (const style in styles) {
-                if (Object.hasOwnProperty.call(styles, style) && style !== "vanilla") {
-                  const f = findVariantOptions(model, size, style)
-
-                  // 查找可用的variant
-                  if (f) {
-                    changeVariant(f.option1, f.option2, f.option3)
-                    break
-                  }                  
+                if (!f || !f.available) {
+                  return '{{ 'order_page.out' | t }}'
                 }
-              }
-              
-            }
 
-            const getContent = s => {
-              const f = findVariantOptions(current_variant.option1, s, current_variant.option3)
-    
-              if (!f || !f.available) {
-                return '{{ 'order_page.out' | t }}'
-              }
-    
-              return `{{ 'order_page.only' | t }} ${Math.max(f.inventory_quantity, 2)} {{ 'order_page.stock' | t }}`
+                return `{{ 'order_page.only' | t }} ${Math.max(f.inventory_quantity, 2)} {{ 'order_page.stock' | t }}`
             }
-    
+          
             setTimeout(() => {
               $(`.product .product-panel .Size > div[attribute="M"]`).attr('data-inventory-quantity', getContent('M'));
               $(`.product .product-panel .Size > div[attribute="L"]`).attr('data-inventory-quantity', getContent('L'));
-            }, 100)
-        }
+            }, 0)
 
-        console.log(current_variant)
-    }
+            let discount = 0
 
+            if (e.value.Model === 'Carbon Belt') {
+              discount = Number('{{ settings.carbon_ebike_discount_price }}')
+            } else {
+              discount = Number('{{ settings.carbon1s_ebike_discount_price }}')
+            }
+
+            $('.product .commonComponent > .product-price').text(getPriceFormat(e.value.price - discount)).attr('data-price', getPriceFormat(e.value.price))
+            $('.product .buttons .orderTestRideBtn .stages').text(getPriceFormat((e.value.price - discount) / 24))
+
+            $('.top-fixed .u17Light_v2 .u20DemiBold_v2').text(getPriceFormat(e.value.price - discount))
+            $('.top-fixed .u17Light_v2 > span:not(.u20DemiBold_v2)').text(getPriceFormat(e.value.price))
+            $('.top-fixed .u14Light_v2 .stages').text(getPriceFormat((e.value.price - discount) / 24))
+            
+            $('.bottom-fixed .u14Light_v2 .emphasize').text(getPriceFormat(e.value.price - discount))
+            $('.bottom-fixed > div .u14Light_v2:first-child > span:not(.emphasize)').text(getPriceFormat(e.value.price))
+            $('.bottom-fixed > div .u14Light_v2:last-child .stages').text(getPriceFormat((e.value.price - discount) / 24))
+      })
 
     function changeAddToCartText (parse, step = 0) {
         if (step) {
@@ -1375,9 +1290,9 @@
             t.removeClass('loading')
             t.find('span').html(text)
 
-            const bike_model = current_variant.option1 === 'Carbon Belt' ? 'carbon1' : 'carbon1s'
+            const bike_model = current_variant_options.Model === 'Carbon Belt' ? 'carbon1' : 'carbon1s'
 
-            const url = window.sessionStorage.localPathPerfix + `/pages/ebike-leasing?bike_model=${bike_model}&bike_size=${current_variant.option2}&bike_style=${current_variant.option3}&utm_source=order_page#forms`
+            const url = window.sessionStorage.localPathPerfix + `/pages/ebike-leasing?bike_model=${bike_model}&bike_size=${current_variant_options.Size}&bike_style=${current_variant_options.Style}&utm_source=order_page#forms`
 
             return window.open(url)
         }
@@ -1403,52 +1318,6 @@
           
         }
     }
-
-    {% for variant in product.variants %}
-        models[{{ variant.option1 | json }}] = 1
-        styles[{{ variant.option3 | json }}] = 1
-        sizes[{{ variant.option2 | json }}] = 1
-    {% endfor %}
-
-    console.log('variants', variants)
-
-    for (const model of Object.keys(models)) {
-        $('.product .product-panel .Model').append(`<div data-sale="{{ "order_page.sale" | t }}" attribute="${model}" class="${model}">${model}</div>`)
-    }
-
-    for (const style of Object.keys(styles)) {
-        $('.product .product-panel .Style').append(`<div attribute="${style}" class="${style}"></div>`)
-    }
-
-    for (const size of Object.keys(sizes)) {
-        $('.product .product-panel .Size').append(`<div attribute="${size}" class="${size} u14DemiBold_v2">${size === 'M' ? 'Medium' : 'Large' }</div>`)
-    }
-
-
-    $('.product-panel .options .option >div:not(.u17DemiBold_v2) > div').on('click',e => {
-        const t = $(e.target)
-
-        if ($(e.target).parent().hasClass('Model')) {
-            changeVariant(t.attr('attribute'), current_variant.option2, current_variant.option3)
-        } else if ($(e.target).parent().hasClass('Size')) {
-            changeVariant(current_variant.option1, t.attr('attribute'), current_variant.option3)
-        } else {
-            changeVariant(current_variant.option1, current_variant.option2, t.attr('attribute'))
-        }
-    })
-
-    // 如果有查询参数
-    function pageInit() {
-      const variant_id = search.variant || global_config.carbon_order_page_config.default_variant
-      let find = findVariantFromId(variant_id)
-  
-      if (!find || !find.available) {
-        find = findAvailableVariant()
-      }
-  
-      // 如果默认 variant 也不可用，那晒显出能用的variant
-      changeVariant(find.option1, find.option2, find.option3) 
-  }
 
 
 
@@ -1539,39 +1408,8 @@
         top2 > (h * 2) ? $('.toTop').show() : $('.toTop').hide()
 
     }, 300, 100))
-
-    pageInit()
-
-    jQuery.getJSON(window.Shopify.routes.root + 'products/urtopia-carbon-e-bike.js', res => {
-        for (const variant of res.variants) {
-          // 如果此配件不可用 
-          if (!variant.available) {
-            const carbon1_send_accessories_variant_ids = JSON.parse(JSON.stringify(global_config.carbon_order_page_config.events.carbon1_send_accessories_variant_ids))
-            const carbon1s_send_accessories_variant_ids = JSON.parse(JSON.stringify(global_config.carbon_order_page_config.events.carbon1s_send_accessories_variant_ids))
-
-            // 查找这个配件 是否在送配件列表里
-            const f1 = carbon1_send_accessories_variant_ids.findIndex(i => i === String(variant.id))
-            const f2 = carbon1s_send_accessories_variant_ids.findIndex(i => i === String(variant.id))
-
-            // 如果存在, 删除送配件列表 并重写赋值全局列表
-            if (f1 >= 0) {
-              carbon1_send_accessories_variant_ids.splice(f1, 1)
-              global_config.carbon_order_page_config.events.carbon1_send_accessories_variant_ids = carbon1_send_accessories_variant_ids
-
-              changeVariant(current_variant.option1, current_variant.option2, current_variant.option3)
-            }
-
-            if (f2 >= 0) {
-              carbon1s_send_accessories_variant_ids.splice(f1, 1)
-              global_config.carbon_order_page_config.events.carbon1s_send_accessories_variant_ids = carbon1s_send_accessories_variant_ids
-
-              changeVariant(current_variant.option1, current_variant.option2, current_variant.option3)
-            }
-          }
-        }
-    })
 </script>
-
+{% render 'product-options', config_name: "carbon_order_page_config" %}
 
 <script>
   (function() {
