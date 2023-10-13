@@ -1639,6 +1639,29 @@ const testRides = [
           "9:00-13:00",
         ],
       },
+      {
+        name: 'bikedistounter',
+        phone: '+436601453660',
+        email: 'office@bike-discounter.at',
+        timezone: "Linz, Austira (GMT+1)",
+        add: "Goethestresse 52, 4020 Linz",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/bikedistounter.jpg?v=1697076748",
+        testrideSpot: "Linz",
+        testRideSize: "M",
+        noBook: "Please contact the store directly to arrange test ride",
+        availableSizes: [
+          'Carbon 1 Size M',
+        ],
+        businessHours: [
+          "",
+          "9:00-18:00",
+          "9:00-18:00",
+          "9:00-18:00",
+          "9:00-18:00",
+          "9:00-18:00",
+          "9:00-16:00",
+        ],
+      },
     ]
   },
   {
