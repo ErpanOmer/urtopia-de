@@ -44,9 +44,9 @@ const global_config = {
     // 邮件弹窗 延迟弹出时间，单位:s
     show_delay_time: 10,
     // 邮件 pc 背景图
-    background_imgae_pc: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Urtopia_-_Auto_Rack_-_Original_Size_-_RAW-42_2x_c51070d5-9aa9-42ab-b10a-35524e2def35.jpg?v=1695795850',
+    background_imgae_pc: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Urtopia_-_Auto_Rack_-_Original_Size_-_RAW-299_2x_84a04d1d-8f14-49ec-a1d8-571133a24a22.jpg?v=1697185452',
     // 邮件 mobile 背景图
-    background_imgae_mb: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20231010-101621.jpg?v=1696904221&width=500'
+    background_imgae_mb: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Urtopia_-_Auto_Rack_-_Original_Size_-_RAW-299_2x_607ae381-92e3-4927-9b90-7f9af7256e5b.jpg?v=1697185459&width=500'
   },
 
   // carbon 车配置
