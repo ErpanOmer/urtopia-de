@@ -1,76 +1,97 @@
-{{ 'pagefly-main.css' | asset_url | stylesheet_tag: preload: true }}
-{{ 'pagefly.102c91e3.css' | asset_url | stylesheet_tag: preload: true }}
 {{ 'home.scss.css' | asset_url | stylesheet_tag: preload: true }}
   
 {% render 'home-page-banner' %}
-
-<div class="greenest">
-  <div class="centeral-content gray-background-color">
-    <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18811_2x_552d51e2-13f7-4175-aa88-d5b0ecdf3988.png?v=1691825401" alt="">
-    <div>
-        <div class="u36DemiBold_v2">Green Deserves Rewards</div>
-        <div class="u17Light_v2">We are introducing the Carbon Credit Rewards program. By riding the most environmentally-friendly e-bike, tracking your routes, and reducing CO2 emissions, you have the opportunity to win exciting prizes. Join us in our mission to create a greener world!</div>
-        <a class="my-button my-button-black" href="/pages/sustainability-carbon-credit">Learn More</a>
-    </div>
-  </div>
-</div>
-
-{% render 'home-page-bikes' %}
-{% render 'home-page-media', is_center: true %}
-
-<div class="test-ride">
-  <div class="centeral-content">
-    <div>
-      <div>
-        <div class="u36DemiBold_v2">Test ride spots near you</div>
-        <div class="u20DemiBold_v2">Experience the bike in real</div>
-        <a
-          class="my-button my-button-origin"
-          href="/pages/test-ride"
-          target="_blank" style=" white-space: normal;">Book a Free Test Ride</a>
-      </div>
-    </div>
-    <div>
-      <div style="padding: 0;">
-        <div
-          id="storepoint-container"
-          data-tags="euro"
-          data-map-id="162f21804990ff"></div>
-      </div>
-    </div>
-  </div>
-</div>
+{% render 'home-page-media' %}
 
 <div class="home-page-ebike-banner">
   <div class="centeral-content ">
+    <div class="flex-1 pcHide"></div>
     <div class="u42DemiBold_v2">Carbon 1</div>
-    <div class="u17Light_v2">Achieve your fitness goals while enjoying a<br class="mobileHide"> fast and sporty ride in style</div>
+    <div class="u24Medium_v2">Sporty and Lightweight</div>
+    <div class="u17Light_v2 mobileHide">Achieve your fitness goals while enjoying a<br class="mobileHide"> fast and sporty ride in style</div>
     <a class="my-button" href="/pages/e-bike">Learn more</a>
+  </div>
+</div>
+
+<div class="centeral-content ebike-products">
+  <div class="product-grid">
+      {% assign product = all_products["urtopia-carbon-e-bike"] %}
+      {% assign product_tags = settings.carbon_ebike_free_accessories_count | append: ' Freebies'   %}
+      {% assign product_variants = product.variants | where: "option1", "Shimano Gear" | where: "available" %}
+      {% render 'product-card',
+          product_variants: product_variants,
+          product_variant_options_find_sort: "M,L",
+          product_name: 'Carbon 1s',
+          product_description: 'Powerful drive system ensures minimal effort and maximum fun',
+          product_discount_price: settings.carbon1s_ebike_discount_price,
+          product_url: product.url,
+      %}
+      {% assign product_variants = product.variants | where: "option1", "Carbon Belt" | where: "available" %}
+      {% render 'product-card',
+          product_variants: product_variants,
+          product_variant_options_find_sort: "M,L",
+          product_name: 'Carbon 1',
+          product_description: 'Sporty, light and nimble e-bike for everyday transport, fitness and fun.',
+          product_discount_price: settings.carbon_ebike_discount_price,
+          product_url: product.url,
+      %}
   </div>
 </div>
 
 <div class="home-page-ebike-banner home-page-ebike-banner-chord">
   <div class="centeral-content ">
+    <div class="flex-1 pcHide"></div>
     <div class="u42DemiBold_v2">Chord</div>
-    <div class="u17Light_v2">Power up your commute and extend <br class="mobileHide">your leisurely daily ride</div>
+    <div class="u24Medium_v2">Comfort and Elegance</div>
+    <div class="u17Light_v2 mobileHide">Achieve your fitness goals while enjoying a <br class="mobileHide">fast and sporty ride in style</div>
     <a class="my-button" href="/products/urtopia-chord-ebike">Learn more</a>
   </div>
 </div>
 
+<div class="centeral-content ebike-products">
+  <div class="product-grid">
+    {% assign product = all_products["urtopia-chord-ebike"] %}
+    {% assign product_variants = product.variants | where: "option1", "High-Step" | where: "available" %}
+    {% render 'product-card',
+        product_variants: product_variants,
+        product_name: 'Chord',
+        product_description: 'Elegantly zip around town for meet-ups, errands, or Sunday fun.',
+        product_discount_price: settings.chord_ebike_discount_price,
+        product_url: product.url,
+    %}
+    {% assign product_variants = product.variants | where: "option1", "Step-Through" | where: "available" %}
+    {% render 'product-card',
+        product_variants: product_variants,
+        product_name: 'Chord X',
+        product_description: 'Easily kickstart your ride for workouts, city cruising, and pure enjoyment.',
+        product_discount_price: settings.chord_ebike_discount_price,
+        product_url: product.url,
+    %}
+  </div>
+</div>
+
+<div class="centeral-content mind">
+  <div class="u42DemiBold_v2">The Bike with a Mind</div>
+  <div class="u17Light_v2">An AI-Driven Smartebike, offering you more than riding.</div>
+  <div class="flex-1"></div>
+  <a class="my-button" href="/pages/sustainability-carbon-credit" target="_blank">Learn more</a>
+</div>
+
+<div class="centeral-content mind greener">
+  <div class="u42DemiBold_v2">Sustainability: Ride Greener</div>
+  <div class="u17Light_v2">Sustainability at the Heart of Urtopia</div>
+  <div class="flex-1"></div>
+  <a class="my-button" href="/pages/sustainability-carbon-credit" target="_blank">Learn more</a>
+</div>
+
 <div class="boxs gray-background-color">
   <div class="centeral-content">
-    <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/6T1A8524_2x_aaecef7e-48c0-4776-8947-fa295f1c24b5.jpg?v=1680163598" alt="">
     <div>
-      <div class="u48DemiBold_v2">Lease an Urtopia</div>
-      <div class="u17Light_v2">We offer you the opportunity to get your dream bike at low monthly leasing rates through various leasing providers, such as Jobrad and mein-dienstrad.</div>
-      <a class="my-button my-button-black" href="/pages/ebike-leasing">Learn more</a>
+      <div class="u48DemiBold_v2">Test ride spots near you</div>
+      <div class="u17Light_v2">Experience the bike in real</div>
+      <a class="my-button my-button-black" href="/pages/test-ride">Book a Free Test Ride</a>
     </div>
-    <div>
-      <div class="u48DemiBold_v2">Peace of Mind</div>
-      <div class="u17Light_v2">Enjoy complete peace of mind with our 2-year warranty and 24/7 support, plus full after-sales service.</div>
-      <a class="my-button my-button-black" href="/pages/care">Learn more</a>
-    </div>
-    <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230306-114106.jpg?v=1678074104" alt="">
+    <div id="storepoint-container" data-tags="euro" data-map-id="162f21804990ff"></div>
     <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18294_2x_849210ff-f5fe-4be8-a248-3afbe6674080.png?v=1677557363" alt="app">
     <div>
       <div class="u48DemiBold_v2">Smart App</div>
@@ -80,6 +101,13 @@
           <a target="_blank" href="https://play.google.com/store/apps/details?id=com.newurtopia"><img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/get-it-on-google-play-badge-1.jpg?v=1680154868" alt=""></a>
       </div>
     </div>
+    <div>
+      <div class="u48DemiBold_v2">Peace of Mind</div>
+      <div class="u17Light_v2">Enjoy complete peace of mind with our 2-year warranty and 24/7 support, plus full after-sales service.</div>
+      <a class="my-button my-button-black" href="/pages/care">Learn more</a>
+    </div>
+    <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230306-114106.jpg?v=1678074104" alt="">
+    
   </div>
 </div>
 
@@ -240,14 +268,6 @@
 
 
 <script>
-  (function() {
-    var a = document.createElement("script");
-    a.type = "text/javascript";
-    a.src = "https://cdn.storepoint.co/api/v1/js/162f21804990ff.js";
-    var b = document.getElementsByTagName("script")[0];
-    b.parentNode.insertBefore(a, b);
-  }());
-
   new Swiper('#section7', {    
           spaceBetween: 15,
           slidesPerView: global_config.is_mobile ? 1.5 : 3.5,
@@ -261,3 +281,52 @@
         },
     })
 </script>
+<script>
+    $('.product-card .dots > div').on('click', e => {
+        const target = $(e.target)
+        const product_card = target.closest('.product-card')
+
+        // 先取消 其它兄弟元素的active, 再设置active
+        target.siblings().removeClass('active')
+        target.addClass('active')
+
+        const price = Number(target.attr('data-price'))
+        const compare_at_price = Number(target.attr('data-compare-at-price'))
+        const discount_price = Number(target.attr('data-product-discount-price'))
+        const variant_id = target.attr('data-variant')
+        const variant_image = target.attr('data-img')
+
+        // outlet 车型
+        if (discount_price === 0) {
+            product_card.find('.product_price .u24DemiBold_v2').text(getPriceFormat(price, true)).attr('data-price', getPriceFormat(compare_at_price, true))
+            product_card.find('.tags > span:first-child').text(`${getPriceFormat(compare_at_price - price, true)} OFF`)
+
+            if (price === compare_at_price) {
+                product_card.find('.product_price .u24DemiBold_v2').attr('data-price', '')
+                product_card.find('.tags > span:first-child').hide()
+            }
+        } else {
+            product_card.find('.product_price .u24DemiBold_v2').text(getPriceFormat(price - discount_price, true)).attr('data-price', getPriceFormat(price, true))
+            product_card.find('.product_price .u17Light_v2 > span').text(getPriceFormat((price - discount_price) / 24))
+            product_card.find('.tags > span:first-child').text(`${getPriceFormat(discount_price, true)} OFF`)
+        }
+
+        product_card.find('.variant-image').attr('src', variant_image)
+        product_card.find('.my-button').attr('href', `${product_card.find('.my-button').attr('href').split('?').shift()}?variant=${variant_id}`)
+    })
+
+    setTimeout(() => {
+        $('.product-card .dots > div:first-child').click()
+
+        $('.product-card .variant-image').on('click', e => {
+            const button = $(e.target).closest('.product-card').find('.my-button')
+
+            if (button.length) {
+                button[0].click()
+            }
+        })
+
+        $('.ebike-products .product-grid .product-card .my-button').removeClass('my-button-origin').addClass('my-button-black')
+    }, 30)
+</script>
+<script src="https://cdn.storepoint.co/api/v1/js/162f21804990ff.js" defer></script>
