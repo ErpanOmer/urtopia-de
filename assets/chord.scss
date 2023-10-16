@@ -1328,11 +1328,11 @@ $sale_background_image: linear-gradient(90deg, #15B79A, #63DED7);
     .boxss {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        grid-template-rows: repeat(2, minmax(1fr, 600px));
+        grid-template-rows: 50%;
         align-items: center;
 
         &>div:not(:first-child) {
-            padding: 10%;
+            padding:15%;
             display: flex;
             flex-direction: column;
             align-items: flex-start;
