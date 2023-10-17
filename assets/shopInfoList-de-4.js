@@ -257,7 +257,7 @@ const testRides = [
         email: 'hofmkay@gmail.com',
         timezone: "Düsseldorf, Germany (GMT+1)",
         add: "Ackerstraße 143, 40233 Düsseldorf",
-        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Dusseldorf.jpg?v=1679406972",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20231016-210310.jpg?v=1697461405",
         testrideSpot: "Düsseldorf",
         testRideSize: "L",
         noBook: "Please contact the store directly to arrange test ride",
@@ -1851,6 +1851,39 @@ const testRides = [
           "8:00-16:00",
           "8:00-16:00",
           "",
+        ],
+      },
+    ]
+  },
+  {
+    city: 'Neunkirchen-Seelscheid',
+    cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Screenshot_2023-10-16_at_20.52.48.png?v=1697460966',
+    series: [
+      'Urtopia Carbon 1',
+      // 'Urtopia Carbon 1'
+    ],
+    stores: [
+      {
+        name: 'Gunawan TURINA',
+        phone: '+49 179 4224508',
+        email: 'gunawanturina@web.de',
+        timezone: "Neunkirchen-Seelscheid, Germany (GMT+1)",
+        add: "Neunkirchen-Seelscheid",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Screenshot_2023-10-16_at_20.52.48.png?v=1697460966",
+        testrideSpot: "Neunkirchen-Seelscheid",
+        testRideSize: "M",
+        availableSizes: [
+          'Carbon 1 Size M',
+        ],
+        isPartner: true,
+        businessHours: [
+          "10:00-16:00",
+          "10:00-16:00",
+          "10:00-16:00",
+          "10:00-16:00",
+          "10:00-16:00",
+          "10:00-16:00",
+          "10:00-16:00",
         ],
       },
     ]
