@@ -201,10 +201,11 @@ const testRides = [
         add: "Otto-Hahn-Str. 5-7 63225 Langen",
         imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Frankfurt_am_Main_dcfbb429-041a-46e8-809c-988adaf41dfd.jpg?v=1680920985",
         testrideSpot: "Frankfurt am Main",
-        testRideSize: "M/L",
+        testRideSize: "M/L, Chord",
         noBook: "Please contact the store directly to arrange test ride",
         availableSizes: [
           'Carbon 1 Size M/L',
+          'Chord',
         ],
         businessHours: [
           "",
@@ -259,10 +260,11 @@ const testRides = [
         add: "Ackerstraße 143, 40233 Düsseldorf",
         imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20231016-210310.jpg?v=1697461405",
         testrideSpot: "Düsseldorf",
-        testRideSize: "L",
+        testRideSize: "L, Chord",
         noBook: "Please contact the store directly to arrange test ride",
         availableSizes: [
           'Carbon 1 Size L',
+          'Chord',
         ],
         businessHours: [
           "",
@@ -318,10 +320,11 @@ const testRides = [
         add: "Kopenhagener Straße 73, 10437 Berlin",
         imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/IMG_0821.jpg?v=1680922149",
         testrideSpot: "Berlin",
-        testRideSize: "L",
+        testRideSize: "L, Chord",
         noBook: "Please contact the store directly to arrange test ride",
         availableSizes: [
           'Carbon 1 Size L',
+          'Chord',
         ],
         businessHours: [
           "",
@@ -538,10 +541,11 @@ const testRides = [
         add: "Bramfelder Ch 220, 22799 Hamburg",
         imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Norddeutsche_Zweiradschiede.jpg?v=1693272716",
         testrideSpot: "Hamburg",
-        testRideSize: "L",
+        testRideSize: "L, Chord",
         noBook: "Please contact the store directly to arrange test ride",
         availableSizes: [
           'Carbon 1 Size L',
+          'Chord',
         ],
         businessHours: [
           "",
@@ -732,7 +736,8 @@ const testRides = [
     cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/testride-munster.jpg?v=1671252848',
     series: [
       'Urtopia Carbon 1',
-      'Urtopia Chord'
+      'Urtopia Chord',
+      'Urtopia Chord X',
       // 'Urtopia Carbon 1'
     ],
     stores: [
@@ -768,10 +773,13 @@ const testRides = [
         add: "Machangelstr 1448282 Emsdetten",
         imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/IMG_0948.jpg?v=1680923218",
         testrideSpot: "Münster",
-        testRideSize: "L",
+        testRideSize: "L, M, Chord, Chord X",
         noBook: "Please contact the store directly to arrange test ride",
         availableSizes: [
           'Carbon 1 Size L',
+          'Carbon 1 Size M/L',
+          'Chord',
+          'Chord X',
         ],
         businessHours: [
           "",
@@ -859,10 +867,11 @@ const testRides = [
         add: "Weißestr. 2604299 Leipzig",
         imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Sportshop_Bittner.jpg?v=1680923400",
         testrideSpot: "Leipzig",
-        testRideSize: "M",
+        testRideSize: "M, Chord",
         noBook: "Please contact the store directly to arrange test ride",
         availableSizes: [
           'Carbon 1 Size M',
+          'Chord',
         ],
         businessHours: [
           "",
@@ -892,10 +901,11 @@ const testRides = [
         add: "Schubartstraße 16-1870190 Stuttgart",
         imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/IMG_0393.jpg?v=1680923489",
         testrideSpot: "Stuttgart",
-        testRideSize: "M",
+        testRideSize: "M, Chord X",
         noBook: "Please contact the store directly to arrange test ride",
         availableSizes: [
           'Carbon 1 Size M',
+          'Chord X',
         ],
         businessHours: [
           "",
@@ -1001,10 +1011,11 @@ const testRides = [
         add: "Frankenstraße 122, Essen 45134",
         imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Essen.jpg?v=1679406971",
         testrideSpot: "Essen",
-        testRideSize: "M",
+        testRideSize: "L, Chord",
         noBook: "Please contact the store directly to arrange test ride",
         availableSizes: [
-          'Carbon 1 Size M',
+          'Carbon 1 Size L',
+          'Chord',
         ],
         businessHours: [
           "",
@@ -1034,10 +1045,11 @@ const testRides = [
         add: "Otto-Mohr-Straße 4, 01237 Dresden",
         imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/IMG_0781.jpg?v=1680924453",
         testrideSpot: "Dresden",
-        testRideSize: "M",
+        testRideSize: "M, Chord",
         noBook: "Please contact the store directly to arrange test ride",
         availableSizes: [
           'Carbon 1 Size M',
+          'Chord',
         ],
         businessHours: [
           "",
@@ -1089,6 +1101,7 @@ const testRides = [
     cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Regensburg.jpg?v=1679406972',
     series: [
       'Urtopia Carbon 1',
+      'Urtopia Chord',
       // 'Urtopia Carbon 1'
     ],
     stores: [
@@ -1100,10 +1113,11 @@ const testRides = [
         add: "St. Emmerams Ring 4, 93309 Kelheim",
         imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/IMG_0479.jpg?v=1680924648",
         testrideSpot: "Regensburg",
-        testRideSize: "M",
+        testRideSize: "M, Chord",
         noBook: "Please contact the store directly to arrange test ride",
         availableSizes: [
           'Carbon 1 Size M',
+          'Chord',
         ],
         businessHours: [
           "09:00-12:00",
@@ -1186,10 +1200,11 @@ const testRides = [
         add: "Am Wiesenrain 2 77652 Offenburg",
         imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Offenburg.jpg?v=1681442327",
         testrideSpot: "Offenburg",
-        testRideSize: "L",
+        testRideSize: "M, Chord",
         noBook: "Please contact the store directly to arrange test ride",
         availableSizes: [
-          'Carbon 1 Size L',
+          'Carbon 1 Size M',
+          'Chord',
         ],
         businessHours: [
           "09:00-18:00",
@@ -1219,10 +1234,13 @@ const testRides = [
         add: "An d. Hohle 15, 02708 Löbau, Deutschland",
         imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230413-203921.jpg?v=1681442327",
         testrideSpot: "Löbau",
-        testRideSize: "M",
+        testRideSize: "M, Chord, Chord X",
         noBook: "Please contact the store directly to arrange test ride",
         availableSizes: [
           'Carbon 1 Size M',
+          'Carbon 1s Size M',
+          'Chord',
+          'Chord X',
         ],
         businessHours: [
           "",
@@ -1318,11 +1336,12 @@ const testRides = [
         add: "Neue Str. 6, 18273 Güstrow, Germany",
         imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/schloss_guestrow_drohne17_aNoB_ubertr_kUrh_005-1351x900.jpg?v=1689910159",
         testrideSpot: "Güstrow",
-        testRideSize: "L",
+        testRideSize: "L, M, Chord",
         noBook: "Please contact the store directly to arrange test ride",
         availableSizes: [
           'Carbon 1 Size L',
-          'Carbon 1s Size M'
+          'Carbon 1s Size M',
+          'Chord',
         ],
         businessHours: [
           "",
@@ -1352,10 +1371,13 @@ const testRides = [
         add: "Zähringer Str. 8, 79108 Freiburg im Breisgau",
         imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Screenshot_2023-08-04_at_02.35.22.png?v=1691087750",
         testrideSpot: "Freiburg",
-        testRideSize: "L",
+        testRideSize: "L, M, Chord, Chord X",
         noBook: "Please contact the store directly to arrange test ride",
         availableSizes: [
-          'Carbon 1 Size M',
+          'Carbon 1 Size M/L',
+          'Carbon 1s Size M',
+          'Chord',
+          'Chord X',
         ],
         businessHours: [
           "",
@@ -1453,7 +1475,7 @@ const testRides = [
         add: "Langstrasse 44, 55257 Budenheim",
         imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230814-105334.jpg?v=1691981632",
         testrideSpot: "Budenheim",
-        testRideSize: "L",
+        testRideSize: "L, Chord X",
         availableSizes: [
           'Carbon 1 Size L',
           'Chord X',
@@ -1590,10 +1612,11 @@ const testRides = [
         add: "Junkersring 18, 53844 Troisdorf-Kriegsdorf",
         imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Satking_GmbH.jpg?v=1693473391",
         testrideSpot: "Troisdorf-Kriegsdorf",
-        testRideSize: "M",
+        testRideSize: "M, Chord",
         noBook: "Please contact the store directly to arrange test ride",
         availableSizes: [
           'Carbon 1 Size M',
+          'Chord',
         ],
         businessHours: [
           "",
@@ -1608,7 +1631,72 @@ const testRides = [
     ]
   },
   {
-    country: 'Austira',
+    city: 'Kiel',
+    cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Kiel.jpg?v=1697540052',
+    series: [
+      'Chord',
+    ],
+    stores: [
+      {
+        name: 'TRANKVILE electric vehicles Kiel',
+        phone: '+43155685104',
+        email: '',
+        timezone: "Kiel, Germany (GMT+1)",
+        add: "Rathausstraße 8, 24103 Kiel",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/TRANKVILE_electric_vehicles_Kiel.jpg?v=1697540052",
+        testrideSpot: "Kiel",
+        testRideSize: "M, Chord",
+        noBook: "Please contact the store directly to arrange test ride",
+        availableSizes: [
+          'Chord',
+        ],
+        businessHours: [
+          "",
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-14:00",
+        ],
+      },
+    ]
+  },
+  {
+    city: 'Magdeburg',
+    cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Magdeburg.jpg?v=1697540051',
+    series: [
+      'Chord',
+    ],
+    stores: [
+      {
+        name: 'Mattbike Rad-Center Matussek',
+        phone: '+493914048855',
+        email: 'h.pide@gmx.de',
+        timezone: "Magdeburg, Germany (GMT+1)",
+        add: "Alt Fermersleben 53, 39122 Magdeburg",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mattbike_Rad-Center_Matussek.jpg?v=1697540051",
+        testrideSpot: "Magdeburg",
+        testRideSize: "M, Chord",
+        noBook: "Please contact the store directly to arrange test ride",
+        availableSizes: [
+          'Carbon 1 Size M/L',
+          'Chord',
+        ],
+        businessHours: [
+          "",
+          "",
+          "10:00-15:00",
+          "10:00-15:00",
+          "10:00-15:00",
+          "10:00-15:00",
+          "",
+        ],
+      },
+    ]
+  },
+  {
+    country: 'Austria',
     city: 'Linz',
     cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Linz.jpg?v=1694169315',
     series: [
@@ -1620,7 +1708,7 @@ const testRides = [
         name: 'Volo Bike Galerie',
         phone: '+436644624765',
         email: 'office@volobike.at',
-        timezone: "Linz, Austira (GMT+1)",
+        timezone: "Linz, Austria (GMT+1)",
         add: "Siglweg 1, 4061 Pasching, Austria",
         imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Volo_Bike_Galerie.jpg?v=1694169314",
         testrideSpot: "Linz",
@@ -1643,14 +1731,15 @@ const testRides = [
         name: 'bikedistounter',
         phone: '+436601453660',
         email: 'office@bike-discounter.at',
-        timezone: "Linz, Austira (GMT+1)",
+        timezone: "Linz, Austria (GMT+1)",
         add: "Goethestresse 52, 4020 Linz",
         imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/bikedistounter.jpg?v=1697076748",
         testrideSpot: "Linz",
-        testRideSize: "M",
+        testRideSize: "M, Chord",
         noBook: "Please contact the store directly to arrange test ride",
         availableSizes: [
           'Carbon 1 Size M',
+          'Chord',
         ],
         businessHours: [
           "",
@@ -1665,7 +1754,7 @@ const testRides = [
     ]
   },
   {
-    country: 'Austira',
+    country: 'Austria',
     city: 'Wien',
     cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Wien.jpg?v=1694169314',
     series: [
@@ -1677,7 +1766,7 @@ const testRides = [
         name: 'Best Bike',
         phone: '+4312708618',
         email: 'info@best-bike.at',
-        timezone: "Wien, Austira (GMT+1)",
+        timezone: "Wien, Austria (GMT+1)",
         add: "Katsushikastr. 1,1210 Wien",
         imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Best_Bike.png?v=1694169315",
         testrideSpot: "Wien",
@@ -1700,14 +1789,15 @@ const testRides = [
         name: 'Arizona Bike',
         phone: '+436801161575',
         email: 'office@arizonabike.at',
-        timezone: "Wien, Austira (GMT+1)",
+        timezone: "Wien, Austria (GMT+1)",
         add: "Nussdorferstr. 3 , 1090 Wien",
         imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Arizona_Bike.png?v=1694425015",
         testrideSpot: "Wien",
-        testRideSize: "L",
+        testRideSize: "L, Chord",
         noBook: "Please contact the store directly to arrange test ride",
         availableSizes: [
           'Carbon 1 Size L',
+          'Chord',
         ],
         businessHours: [
           "",
@@ -1884,6 +1974,106 @@ const testRides = [
           "10:00-16:00",
           "10:00-16:00",
           "10:00-16:00",
+        ],
+      },
+    ]
+  },
+  {
+    country: 'Austria',
+    city: 'Kragenfurt',
+    cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Kragenfurt_Austria.jpg?v=1697540051',
+    series: [
+      'Chord',
+      // 'Urtopia Carbon 1'
+    ],
+    stores: [
+      {
+        name: 'Bikesport Ortner',
+        phone: '+43463349866',
+        email: 'ortner@net4you.at',
+        timezone: "Kragenfurt, Austria (GMT+1)",
+        add: "Miegerer Str. 27, 9065 Gradnitz, Austria",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Bikesport_Ortner.jpg?v=1697540052",
+        testrideSpot: "Dobra",
+        testRideSize: "Chord",
+        availableSizes: [
+          'Chord',
+        ],
+        businessHours: [
+          "",
+          "10:00-18:00",
+          "10:00-16:00",
+          "10:00-16:00",
+          "10:00-16:00",
+          "10:00-16:00",
+          "",
+        ],
+      },
+    ]
+  },
+  {
+    country: 'Austria',
+    city: 'Graz',
+    cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Graz_Austria.jpg?v=1697540051',
+    series: [
+      'Chord',
+      // 'Urtopia Carbon 1'
+    ],
+    stores: [
+      {
+        name: 'Handy-star',
+        phone: '+43 660 3960588',
+        email: 'Ezer.kaan@ortweinschule.at',
+        timezone: "Graz, Austria (GMT+1)",
+        add: "Dietrichsteinpl. 1, 8010 Graz, Austria",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Handy-star.png?v=1697540052",
+        testrideSpot: "Graz",
+        testRideSize: "M, Chord",
+        availableSizes: [
+          'Carbon 1s Size M',
+          'Chord',
+        ],
+        businessHours: [
+          "",
+          "9:00-18:00",
+          "9:00-18:00",
+          "9:00-18:00",
+          "9:00-18:00",
+          "9:00-18:00",
+          "9:00-17:00",
+        ],
+      },
+    ]
+  },
+  {
+    country: 'Austria',
+    city: 'Salzburg',
+    cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Salzburg_Austria.jpg?v=1697540052',
+    series: [
+      'Chord',
+      // 'Urtopia Carbon 1'
+    ],
+    stores: [
+      {
+        name: 'Vogl Bike',
+        phone: '+43662453559',
+        email: 'vogl-bike@gmx.at',
+        timezone: "Salzburg, Austria (GMT+1)",
+        add: "Elisabethstraße 63, 5020 Salzburg, Austria",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Vogl_Bike.jpg?v=1697540052",
+        testrideSpot: "Salzburg",
+        testRideSize: "Chord",
+        availableSizes: [
+          'Chord',
+        ],
+        businessHours: [
+          "",
+          "9:00-12:00, 15:00-18:00",
+          "9:00-12:00, 15:00-18:00",
+          "9:00-12:00, 15:00-18:00",
+          "9:00-12:00, 15:00-18:00",
+          "9:00-12:00, 15:00-18:00",
+          "",
         ],
       },
     ]
