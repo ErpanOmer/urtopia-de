@@ -1908,6 +1908,7 @@ const testRides = [
           "10:00-15:00",
           "10:00-15:00",
         ],
+        isPartner: true,
       },
     ]
   },
