@@ -1,0 +1,12 @@
+{
+  "sections": {
+    "carbon-ebike-page": {
+      "type": "carbon-ebike-page",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "carbon-ebike-page"
+  ]
+}

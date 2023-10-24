@@ -1,8 +1,24 @@
-{{ 'pagefly-main.css' | asset_url | stylesheet_tag: preload: true }}
-{{ 'pagefly.b10ddb73.css' | asset_url | stylesheet_tag: preload: true }}
 {{ 'chord.scss.css' | asset_url | stylesheet_tag: preload: true }}
 
-<div style="opacity:0" class="sc-bYoBSM hUVNGC __pf __pf_DdtzRleX" id="__pf"><div data-pf-type="Body" class="sc-hjGZqJ fNoOP pf-1_"><div data-pf-type="Layout" class="sc-htJRVC dNJAjO pf-2_">
+<style>
+  .sale-big-text {
+    border-radius: 12px;
+    padding: 8px 12px;
+    background-image: linear-gradient(90deg, #EE6426, #F4492A);
+    color: #fff;
+    margin: 6px 0 -6px;
+  }
+
+  .sale-big-text .u20DemiBold_v2 {
+    font-size: 18px;
+  }
+
+  @media (max-width: 767px) { 
+    .sale-big-text .u20DemiBold_v2 {
+      font-size: 14px;
+    }
+  }
+</style>
 
 <div class="product" data-pf-type="ProductBox">
     <div class="centeral-content">
@@ -11,10 +27,15 @@
             <div data-pf-type="JudgeMe" class="sc-eZhRLC gtfCKx pf-25_ order-djs mb6">
                 <div class="pf-judme">{% render "judgeme_widgets", widget_type: "judgeme_preview_badge", jm_style: "", concierge_install: false, product: product %}</div>
             </div>
-            <div class="product-price u30DemiBold_v2" data-price="{{ product.price | money }}">{{ product.price | minus: settings.chord_ebike_discount_price | money }}</div>
+            <div class="u14DemiBold_v2" style="color: var(--sale-order-page-text-color);">Early Black Friday Deals</div>
+            <div class="product-price u30DemiBold_v2" style="margin: 0;" data-price="{{ product.price | money }}">{{ product.price | minus: settings.chord_ebike_discount_price | money }}</div>
             <div class="sale-tag mb6">
-              <div class="u17Medium_v2">Save Now</div>
-              <div class="u14Light_v2">incl. VAT. & Free shipping.</div>
+              <!--<div class="u17Medium_v2">Save Now</div>-->
+              <div class="u14Light_v2" style="margin: 0;">incl. VAT. & Free shipping.</div>
+            </div>
+            <div class="sale-big-text mb6">
+              <div class="u20DemiBold_v2">LOWEST PRICE OF THE YEAR GUARANTEED!</div>
+              <div class="u11Light_v2">For any order during Oct 1 - Dec 31 2023, if there is a price drop within this period on our website, you will get a refund for the difference.</div>
             </div>
         </div>
         <div class="featured_image">
@@ -77,10 +98,15 @@
                 <div data-pf-type="JudgeMe" class="sc-eZhRLC gtfCKx pf-25_ order-djs mb6">
                     <div class="pf-judme">{% render "judgeme_widgets", widget_type: "judgeme_preview_badge", jm_style: "", concierge_install: false, product: product %}</div>
                 </div>
-                <div class="product-price u30DemiBold_v2" data-price="{{ product.price | money }}">{{ product.price | minus: settings.chord_ebike_discount_price | money }}</div>
-                <div class="sale-tag mb12">
-                  <div class="u17Medium_v2">Save Now</div>
-                  <div class="u14Light_v2">incl. VAT. & Free shipping.</div>
+                <div class="u17DemiBold_v2" style="color: var(--sale-order-page-text-color);">Early Black Friday Deals</div>
+                <div class="product-price u30DemiBold_v2" style="margin: 0;" data-price="{{ product.price | money }}">{{ product.price | minus: settings.chord_ebike_discount_price | money }}</div>
+                <div class="sale-tag">
+                  <!--<div class="u17Medium_v2">Save Now</div>-->
+                  <div class="u14Light_v2" style="margin: 0;">incl. VAT. & Free shipping.</div>
+                </div>
+                <div class="sale-big-text mb12">
+                  <div class="u20DemiBold_v2">LOWEST PRICE OF THE YEAR GUARANTEED!</div>
+                  <div class="u11Light_v2">For any order during Oct 1 - Dec 31 2023, if there is a price drop within this period on our website, you will get a refund for the difference.</div>
                 </div>
             </div>
             <div class="fenders pcHide">
@@ -91,16 +117,27 @@
                     <div class="u17Light_v2">Free Fenders, Kickstand, <br>1-Year Connect Service Included</div>
                   </div>
             </div>
-            <div class="count-down mb12 mobileHide">
-                <div class="u17Medium_v2">Promotion Ends in:</div>
-                <img src="http://i.countdownmail.com/2mmaed.gif">
-            </div>
+            {% unless settings.hide_sale_countdown %}
+                <div class="count-down mb12 mobileHide">
+                    <div class="u17Medium_v2">Promotion Ends in:</div>
+                    <img src="http://i.countdownmail.com/2mmaed.gif">
+                </div>
+            {% endunless %}
             <div class="options">
-                {% for option in product.options %}
-                    <div class="option" option={{option}}>
-                        <div class="u17DemiBold_v2 mb12">{{ option }} - <span class="u17Light_v2"></span></div>
-                        <div class="{{ option }} mb12"></div>
+                {% for option in product.options_with_values %}
+                  <div class="option" option={{option.name}} position="{{ option.position }}">
+                    <div class="u17DemiBold_v2 mb12">{{ option.name }} - <span class="u17Light_v2"></span></div>
+                    <div class="{{ option.name }} mb12">
+                      {% for value in option.values %}
+                        {% case option.name %}
+                        {% when "Style" %}
+                          <div attribute="{{ value }}" class="{{ value }}"></div>
+                        {% else %}
+                            <div attribute="{{ value }}" class="{{ value }}">{{ value }}</div>
+                        {% endcase %}                     
+                      {% endfor %}
                     </div>
+                  </div>
                 {% endfor %}
             </div>
             <div class="accessories">
@@ -150,8 +187,10 @@
             </div>
             <div class="buttons">
                 <div class="count-down mb12 pcHide">
-                  <div class="u17Medium_v2">Promotion Ends in:</div>
-                  <img src="http://i.countdownmail.com/2mmaed.gif">
+                  {% unless settings.hide_sale_countdown %}
+                    <div class="u17Medium_v2">Promotion Ends in:</div>
+                    <img src="http://i.countdownmail.com/2mmaed.gif">
+                  {% endunless %}
               </div>
                 <div
                     data-product-id="{{ product.id }}"
@@ -206,1160 +245,248 @@
         </form>
     </div>
 </div>
-    
-<div data-section-id="pf-b3fb" data-pf-type="Section" class="sc-fmciRz bheIgq pf-38_"><div class="sc-gjNHFA gwWIgj"><div class="sc-ezbkAF A-dmbO pf-39_ pf-r pf-c-cm pf-r-eh" style="--s-xs:0px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-md:12;--c-lg:12"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-40_"><div data-pf-type="Custom.HTML" class="sc-AjmGg eCTxfx pf-41_"><style>
-  #section1 {
-    background-color: #F7F8FA;
-    padding: 100px 0;
-  }
-  
-  #section1 .center {
-    margin: 0 auto;
-    max-width: 1280px;
-    display: flex;
-    align-items: center;
-    text-align: left;
-  
-  }
-  
-  #section1 .center > div {
-    flex: 1;
-  }
-  
-  #section1 .center .u17Light {
-    color: #BCBEB9;
-    line-height: 24px;
-    margin-bottom: 10px;
-  }
-  
-  #section1 .center > div:last-child {
-    color: #000;
-  }
-  
-  
-  @media (max-width: 767px) {
-    #section1 {
-      padding: 50px 15px;
-      margin: 0 -15px;
-      margin-top: 40px;
-    }
-  
-    #section1 .center {
-      flex-direction: column;
-      align-items: normal;
-    }
-  
-    #section1 .center .u17Light {
-      font-size: 15px;
-    }
-  
-    #section1 .center .u42DemiBold {
-      font-size: 24px;
-      line-height: 28px;
-      margin-bottom: 24px;
-    }
-  }
-</style>
 
-<div id="section1">
-  <div class="center">
-    <div>
-      <div class="u17Light">CHORD</div>
-      <div class="u42DemiBold">No One Knows <br> It's Electric</div>
-    </div>
-    <img class="mobileHide" style="width: 63px;margin-right: 32px;" src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230330-214014.png?v=1680183690">
-    <div class="u17Light">
-      Meet the new city ebike 2023 - the smartest electric town bike for urban adventurers. With a range of up to 75 miles, this ebike is ideal for commuting or leisurely rides. With the extra safety and convenience that comes with smart features, the Chord Ebike is your first step into a new era of cycling.
-    </div>
-    <img class="pcHide" style="width: 63px;margin-top: 24px;" src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230330-214014.png?v=1680183690">
-  </div>
-</div></div></div></div></div></div></div>
-
-<div data-section-id="pf-8622" data-pf-type="Section" class="sc-fmciRz bheIgq pf-42_"><div class="sc-gjNHFA gwWIgj"><div class="sc-ezbkAF A-dmbO pf-43_ pf-r pf-c-cm pf-r-eh" style="--s-xs:0px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-md:12;--c-lg:12"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-44_"><h3 tabindex="0" spellcheck="false" data-pf-type="Heading2" class="sc-dPiLbb cAoJbW pf-45_ u42DemiBold">Highlights</h3><div data-pf-type="Custom.HTML" class="sc-AjmGg eCTxfx pf-47_"><style>
-  #section2 {
-	  max-width: 1280px;
-    margin: auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-column-gap: 30px;
-	  position: relative;
-  }
-  
-  #section2 .card {
-    box-shadow: 5px 10px 15px 0 #e9e9e9;
-    border-radius: 15px;
-  }
-  
-  #section2 .card .info {
-    display: flex;
-    flex-direction: column;
-	  padding: 30px 8% 30px 10%;
-  }
-  
-  #section2 .card .info .other {
-	 display: flex;
-	margin-top: 18px;
-	justify-content: space-between;
-	align-items: center;
-  }
- 
-  
-  #section2 .card .info .other > div {
-	 flex: 0.85;
-  }
-</style>
-
-<style>
-  @media (max-width: 767px) {
-	#section2 {
-	  grid-template-columns: 1fr;
-	}
-	
-	#section2 .card + .card {
-	  margin-top: 25px;
-   }
-	
-	#section2 .card .info {
-	  padding: 5px 20px 10px;
-	}
-	
-	#section2 .card .info .other {
-	  margin-top: 0;
-	}
-	
-	#section2 .card .info .u30DemiBold {
-	  font-size: 20px;
-	}
-	
-	#section2 .card .info .u20Light {
-	  font-size: 12px;
-     line-height: 18px;
-	}
-  }
-
-</style>
-
-
-<style>
-.section2-design {
-      margin: auto;
-      --swiper-theme-color: #ff6600;/* 设置Swiper风格 */
-      --swiper-navigation-color: #fff;/* 单独设置按钮颜色 */
-      --swiper-navigation-size: 15px;/* 设置按钮大小 */
-      overflow: hidden;
-      cursor: auto;
-      {% comment %} margin-right: -70px; {% endcomment %}
-    }
-    
-    .section2-design img {
-      width: 100%;
-      height: auto;
-      border-radius: 10px;
-    }
-
-    .section2-design .swiper-slide .text {
-        margin-top: 30px;
-      /* left: 10px; */
-        text-align: left;
-        font-size: 16px;
-        padding-right: 5%;
-    }
-  
-    .section2-design .swiper-slide .u17Light {
-        margin-top: 12px;
-        font-size: 14px;
-        font-weight: 400;
-    }
-
-  .section2-design .buttons {
-      display: flex;
-	    margin-top: 20px;
-    }
-
-  .section2-design .buttons .swiper-button-prev,
-  .section2-design .buttons .swiper-button-next {
-        position: static;
-        background-color: #666;
-        border-radius: 50%;
-        margin-right: 20px;
-        /* padding: 20px; */
-        box-sizing: content-box;
-        opacity: .5;
-        width: 40px;
-        height: 40px;
-  }
-
-  .section2-design .swiper-button-next.swiper-button-disabled,
-  .section2-design .swiper-button-prev.swiper-button-disabled {
-    opacity: .25;
-  }
-  
-  
-</style>
-
-<style>
-@media (max-width: 767px) {
-    .section2-design {
-        margin-right: 0;
-        --swiper-theme-color: #000;
-        --swiper-pagination-color: #000;/* 两种都可以 */
-    }
-
-    .section2-design .buttons {
-        display: none;
-    }
-
-    .section2-design .swiper-slide .u20DemiBold {
-        font-size: 18px;
-    }
-
-    .section2-design .swiper-pagination {
-        position: static;
-        margin-top: 15%;
-    }
-
-    .section2-design .swiper-pagination-bullet {
-        height: 6px;
-        width: 6px;
-    }
-
-    .section2-design .swiper-pagination-bullet-active {
-        width: 40px;
-        height: 6px;
-        border-radius: 5px;
-        transition: all .3s;
-    }
-}
-  
-  @media (min-width: 768px) {
-    .section2-design .swiper-pagination {
-        display: none;
-    }
-}
-</style>
-
-
-<style>
-    .section2-smart {
-        position: relative;
-        margin: -30px -70px -50px;
-    }
-
-    .section2-smart .swiper-slide {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        /* grid-column-gap: 80px; */
-    }
-
-    .section2-smart .swiper-slide video {
-        width: 100%;
-        height: auto;
-	  		border-radius: 0.01px;
-    }
-
-    .section2-smart .swiper-slide .texts {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        padding-right: 80px;
-        padding-left: 68px;
-        padding-top: 113px;
-        padding-bottom: 200px;
-        position: relative;
-    }
-
-    .section2-smart .swiper-slide .text {
-        display: flex;
-        align-items: flex-start;
-        margin: 0;
-    }
-    
-    .section2-smart .swiper-slide .text svg {
-      width: 65px;
-      height: 40px;
-      margin-right: 12px;
-      margin-top: 0;
-    }
-
-    .section2-smart .swiper-slide .text img {
-       width: 40px;
-       margin-right: 12px;
-    }
-
-    .section2-smart .swiper-slide .text .u20DemiBold {
-        font-size: 18px;
-    }
-
-    .section2-smart .swiper-slide .other {
-        flex-direction: column;
-        margin-left: 50px;
-    }
-
-    .section2-smart .buttons {
-        position: absolute;
-        bottom: 70px;
-        left: 68px;
-    }
-
-    .section2-smart .swiper-slide .line {
-        position: absolute;
-        height: 1px;
-        background-color: #000;
-        opacity: .35;
-        left: 430px;
-    }
-
-    .section2-smart .swiper-slide .line1 {
-        top: 140px;
-    }
-</style>
-
-<style>
-@media (max-width: 767px) {
-    .section2-smart {
-        margin: -30px -15px;
-    }
-
-    .section2-smart .swiper-slide {
-        display: flex;
-        flex-direction: column;
-    }
-
-    .section2-smart .swiper-slide .texts {
-        padding: 0 22px;
-        height: 40vh;
-        padding-bottom: 10%;
-        justify-content: space-evenly;
-	  		min-height: 330px;
-    }
-
-    .section2-smart .swiper-slide .texts .text .u20DemiBold {
-        font-size: 16px;
-    }
-
-    .section2-smart .swiper-slide .texts .text  .u17Light {
-        font-size: 12px;
-        margin: 0;
-    }
-
-    .section2-smart .swiper-slide .line {
-        display: none;
-    }
-
-    .section2-smart .swiper-pagination {
-        margin: 0;
-		  position: absolute;
-		  top: 300px;
-		  height: 10px;
-    }
-
-    .section2-smart .swiper-slide .other {
-        margin: 0;
-        padding-right: 20px;
-    }
-}
-</style>
-
-<div id="section2">
-  <div class="card">
-		<img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18455.jpg?v=1678959118"/>
-		<div class="info">
-		  	<div class="u30DemiBold">Futuristic Design</div>
-			<div class="other">
-			  <div class="u20Light">Piano-like aesthetics</div>
-			  <a class="my-button my-button-white design">Learn More</a>
-			</div>
-		</div>
-  </div>
-  <div class="card">
-		<img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_20723.jpg?v=1678959312"/>
-		<div class="info">
-		  	<div class="u30DemiBold">Evolving Intelligence</div>
-			<div class="other">
-			  <div class="u20Light">Smart is the new sexy</div>
-			  <a class="my-button my-button-white smart">Learn More</a>
-			</div>
-		</div>
-  </div>
- 
-</div>
-
-<div class="hide">
-   <div class="section2-design" id="section2-design-dialog">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide">
-              <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18381.png?v=1677762656" alt="">
-              <div class="text">
-                <div style="opacity: 0.2;" class="u20DemiBold">Why</div>
-                <div class="u20DemiBold">Inspired by Piano</div>
-                <div class="u17Light">The piano, with its elegant curves and simple color palette, perfectly embodied the vision we had for Chord. We wanted an ebike that would seamlessly blend into the city landscape, yet still stand out as a stunning work of art. And so, Chord was born.</div>
-              </div>
-          </div>
-          <div class="swiper-slide">
-              <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18380.png?v=1677762549" alt="">
-              <div class="text">
-                <div style="opacity: 0.2;" class="u20DemiBold">Who</div>
-                <div class="u20DemiBold">Perfect Persona</div>
-                <div class="u17Light">who will be the character for this idea, the croatian pianist Maksim probably the best answer. His musical soul aligned with our product, sparking new inspiration for design. Working with him was like finding a soulmate for our design concept.</div>
-              </div>
-          </div>
-          <div class="swiper-slide">
-              <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18382.png?v=1677762710" alt="">
-              <div class="text">
-                <div style="opacity: 0.2;" class="u20DemiBold">How</div>
-                <div class="u20DemiBold">Liquid Forging</div>
-                <div class="u17Light">The advanced aluminum alloy casting technique offers 4 main advantages: seamless connected shapes, a wide range of possibilities for design, high product density, and superior strength with casting-like accuracy.</div>
-              </div>
-          </div>
-          <div class="swiper-slide">
-              <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230118-untitled-4665_2x_88873577-0bc4-4ef6-93eb-f4dd84387184.jpg?v=1678366963" alt="">
-              <div class="text">
-                <div style="opacity: 0.2;" class="u20DemiBold">What</div>
-                <div class="u20DemiBold">Urtopia Chord</div>
-                <div class="u17Light">Design-wise, the Chord breaks away from traditional e-bike frame designs with its sleek, pure white curves that give the bike an air of simplicity and elegance.</div>
-              </div>
-          </div>
-      </div>
-      <div class="buttons">
-        <div class="swiper-button-prev"></div><!--左箭头。如果放置在swiper外面，需要自定义样式。-->
-        <div class="swiper-button-next"></div><!--右箭头。如果放置在swiper外面，需要自定义样式。-->
-      </div>
-	    <div class="swiper-pagination"></div>
-    </div>
-
-</div>
-
-<div class="hide">
-        <div class="section2-design section2-smart" id="section2-smart-dialog">
-            <div class="swiper-wrapper">
-            <div class="swiper-slide">
-                <div class="texts">
-                    <div class="text">
-                      {% render 'svg-icons', index: '6' %}
-                        <div>
-                            <div class="u20DemiBold">Built-in Navigation</div>
-                            <div class="u17Light">Goodbye phone, no more struggling to navigate with a tiny screen.</div>
-                        </div>
-                    </div>
-                    <div class="text">
-                        <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18337.svg?v=1677913501" width="40" alt="">
-                        <div>
-                            <div class="u20DemiBold">Fingerprint Unlock</div>
-                            <div class="u17Light">Provides an efficient and intuitive option for riding without the hassle of carrying a key.</div>
-                        </div>
-                    </div>
-                    <div class="text">
-                      {% render 'svg-icons', index: '13' %}
-                        <div>
-                            <div class="u20DemiBold">Bluetooth Music</div>
-                            <div class="u17Light">It’s like having a personal DJ accompanying you everywhere when you ride.</div>
-                        </div>
-                    </div>
-                    <div class="line" style="width: 260px;top: 160px;"></div>
-                    <div class="line" style="width: 240px;top: 280px;"></div>
-                    <div class="line" style="width: 160px;top: 400px;"></div>
-                    <div class="line" style="width: 70px;left: 583px;top: 379px;transform: rotate(-37deg);"></div>
+<div id="freedom" class="freedom">
+        <div class="centeral-content">
+            <div class="u42DemiBold_v2">Smartest and Elegant E-Bike</div>
+            <div class="values">
+                <div>
+                    <span class="u36DemiBold_v2">45
+                        <span class="u17Light_v2">NM</span>
+                    </span>
+                    <span class="u17Light_v2">Torque</span>
                 </div>
-                <video autoplay loop class="mobileHide">
-                    <source src="https://cdn.shopify.com/videos/c/o/v/5318bf068bb24f4eb208da832868df26.mp4" type="video/mp4">
-                </video>
-                <img class="pcHide" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20230310-155147.gif?v=1678434761"/>
+                <div>
+                    <span class="u36DemiBold_v2">120+
+                        <span class="u17Light_v2">KM</span>
+                    </span>
+                    <span class="u17Light_v2">Per Charge</span>
+                </div>
+                <div>
+                    <span class="u36DemiBold_v2">4 x 8
+                        <span class="u17Light_v2">levels</span>
+                    </span>
+                    <span class="u17Light_v2">E-Assists X Gears</span>
+                </div>
+                <div>
+                    <span class="u36DemiBold_v2">360
+                        <span class="u17Light_v2">wh</span>
+                    </span>
+                    <span class="u17Light_v2">Battery</span>
+                </div>
             </div>
-            <div class="swiper-slide">
-                <div class="texts">
-                    <div class="text">
-                        <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18339.svg?v=1677913808" width="40" alt="">
-                        <div>
-                            <div class="u20DemiBold">OTA Update</div>
-                            <div class="u17Light">It provide hassle-free access to the latest bike features and performance enhancements.</div>
-                        </div>
-                    </div>
-                    <div class="text">
-                        <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18342.svg?v=1677913934" width="40" alt="">
-                        <div>
-                            <div class="u20DemiBold">Voice Control</div>
-                            <div class="u17Light">It offers customizable voice commands and horn beeps for fun interaction.</div>
-                        </div>
-                    </div>
-                    <div class="text">
-                        <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18341.svg?v=1677913949" width="40" alt="">
-                        <div>
-                            <div class="u20DemiBold">GPS Anti-Theft</div>
-                            <div class="u17Light">GPS for security and navigation. No more phone distractions and find your bike easily.</div>
-                        </div>
-                    </div>
-                    <div class="line" style="width: 260px;top: 160px;"></div>
-                    <div class="line" style="width: 240px;top: 280px;"></div>
-                    <div class="line" style="width: 220px;top: 400px;"></div>
+            <div class="values2">
+                <div>
+                    <span class="u17Medium_v2">Liquid</span>
+                    <span class="u17Medium_v2">Forging</span>
                 </div>
-                <video autoplay loop class="mobileHide">
-                    <source src="https://cdn.shopify.com/videos/c/o/v/730c0c07cd884ddca88778ea6a49ef33.mp4" type="video/mp4">
-                </video>
-                <img class="pcHide" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20230310-155906.gif?v=1678435158"/>
-            </div>
-            <div class="swiper-slide">
-                <div class="texts">
-                    <div class="text other">
-                        <div class="u20DemiBold">Track Your Route</div>
-                        <div class="u17Light">Track your rides, achieve fitness goals. Calories burned, range, speed, all recorded in our app.</div>
-                    </div>
-                    <div class="text other">
-                        <div class="u20DemiBold">Share You Story</div>
-                        <div class="u17Light">Share rides, photos, stories with Urtopia community in app.</div>
-                    </div>
+                <div>
+                    <span class="u17Medium_v2">90%</span>
+                    <span class="u17Medium_v2">Assembled</span>
                 </div>
-                <img class="mobileHide" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_20568_2x_d38dda23-c5c8-4e39-b47c-941efa9c054b.jpg?v=1677912364" alt="">
-                <img class="pcHide" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18407_2x_87816842-1a24-4ce0-9590-1bb335f1381d.jpg?v=1677929766" alt="">
+                <div>
+                    <span class="u17Medium_v2">Anti-theft</span>
+                    <span class="u17Medium_v2">GPS Tracking</span>
+                </div>
+                <div>
+                    <span class="u17Medium_v2">Magnetic</span>
+                    <span class="u17Medium_v2">Torque Sensor</span>
+                </div>
+                <div>
+                    <span class="u17Medium_v2">Removable</span>
+                    <span class="u17Medium_v2">Samsung Battery</span>
+                </div>
+                <div>
+                    <span class="u17Medium_v2">Hydraulic</span>
+                    <span class="u17Medium_v2">Disc Brakes</span>
+                </div>
             </div>
         </div>
-        <div class="buttons">
-            <div class="swiper-button-prev"></div><!--左箭头。如果放置在swiper外面，需要自定义样式。-->
-            <div class="swiper-button-next"></div><!--右箭头。如果放置在swiper外面，需要自定义样式。-->
+    </div>
+    <div class="gray-background-color centeral-content boxs">
+        <div>
+            <div class="u36DemiBold_v2">Chord X</div>
+            <div class="u20Light_v2">Step-Through</div>
+            <div class="u17Light_v2">Easy on. Easy off. Experience convenience wherever you roll with easy on-and-off access and powerful assistance. Its comfort-focused frame and upright riding position ensures every ride with high enjoyment.</div>
+        </div>
+        <img class="lozad" data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/cc_2x_221680d9-7f5e-4751-8d08-bbde092d9066.jpg?v=1696673188"
+            alt="">
+        <img class="lozad" data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18330_2x_720bb10a-d53c-470c-82f9-e8a37b5adc3d.jpg?v=1696673195"
+            alt="">
+        <div>
+            <div class="u36DemiBold_v2">Elegant Design</div>
+            <div class="u20Light_v2">Inspired from the Piano</div>
+            <div class="u17Light_v2">Chord’s design, achieved through liquid forging, combines seamless shapes, versatile
+                design options, high density, and remarkable strength with casting-like precision. It redefines e-bike
+                frames with sleek curves.</div>
+        </div>
+    </div>
+    <div class="centeral-content girl">
+        <div class="u36DemiBold_v2">Most Relaxed <br>Riding Position</div>
+        <div class="u17Light_v2">With its ergonomic design, Chord has a more upright riding position than regular ebike,
+            reducing back and shoulder pressure for more comfort. you can enjoy your ride for longer periods without any
+            discomfort or strain.</div>
+    </div>
+    <div class="gray-background-color centeral-content boxs2">
+        <img class="lozad" data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_22854_2x_e7d8facd-ffcb-40c0-88d7-a5147ccc6b3a.jpg?v=1696675315"
+            alt="">
+        <div>
+            <div class="u36DemiBold_v2">A bike you never lose</div>
+            <div class="u17Light_v2">Aided by a constant 4G connection, GPS tracking keeps you informed of the e-bike’s
+                position, even in the worst scenario of theft, for as long as 30 days.<br><br>We have helped users all over
+                the world to retreat their beloved bike.</div>
+        </div>
+        <div>
+            <div class="u36DemiBold_v2">Navigation without Cellphone</div>
+            <div class="u17Light_v2">Bright screen shows navigation clearly under daylight, no more ugly phone
+                holder.<br><br>Let you explore the unknown safe and free.</div>
+        </div>
+        <img class="lozad" data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18820_2x_f4a62635-bc6a-4791-85cc-fd5a6b6a0ff9.jpg?v=1696675308"
+            alt="">
+    </div>
+    <div class="gray-background-color centeral-content maksim">
+        <img class="lozad" data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18827_2x_03b206d3-1d21-4edd-98ab-828a812223f1.jpg?v=1696731248$width=640"
+            alt="">
+        <div>
+            <div class="u36DemiBold_v2">Chord X Maksim</div>
+            <div class="u17Light_v2">A passionate prodigy, and one of the world’s <br> fastest pianists. Mr. Mrvica inspired the design <br> the philosophy of Chord, a crossover between <br> art and tech.</div>
+            <div class="my-button my-button-black" onclick="showVideoDialog('https://www.youtube.com/embed/gjYMDVGv_C4?autoplay=1&cc_load_policy=1')">Watch Video</div>
+        </div>
+    </div>
+    <div class="gray-background-color mediaaaaa" style="--swiper-theme-color: #000;--swiper-pagination-color: #000;">
+        <div class="centeral-content">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="u17DemiBold_v2">“The smoothest and cleanest look”</div>
+                    <div class="flex-1"></div>
+                    <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_20921_2x_361face6-eba5-4a46-b1b6-0f038089d90d.png?v=1682577775" alt="">
+                    <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18547_2x_125de9b4-019e-45e9-aa15-ae8622f4b5d0.png?v=1682587490" alt="">
+                </div>
+                <div class="swiper-slide">
+                    <div class="u17DemiBold_v2">“Battery integrated under the top tube like never before.”</div>
+                    <div class="flex-1"></div>
+                    <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_20921_2x_361face6-eba5-4a46-b1b6-0f038089d90d.png?v=1682577775" alt="">
+                    <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18548_2x_fcd811c3-0864-4391-bfdf-ab9d2ff14383.png?v=1682587585" alt="">
+                </div>
+                <div class="swiper-slide">
+                    <div class="u17DemiBold_v2">“A lifestyle piece incorporates cutting-edge technology”</div>
+                    <div class="flex-1"></div>
+                    <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_20921_2x_361face6-eba5-4a46-b1b6-0f038089d90d.png?v=1682577775" alt="">
+                    <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18549_2x_1574b613-b07b-4eb3-be66-1dd662cf5cd8.png?v=1682587573" alt="">
+                </div>
+                <div class="swiper-slide">
+                    <div class="u17DemiBold_v2">“The unusual smart e-bike is worth a look.”</div>
+                    <div class="flex-1"></div>
+                    <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_20921_2x_361face6-eba5-4a46-b1b6-0f038089d90d.png?v=1682577775" alt="">
+                    <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18550_2x_aba70dcd-adaf-4458-9cd7-743f426f353b.png?v=1682587561" alt="">
+                </div>
+                <div class="swiper-slide">
+                    <div class="u17DemiBold_v2">“This is a model destined to conquer the public.”</div>
+                    <div class="flex-1"></div>
+                    <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_20921_2x_361face6-eba5-4a46-b1b6-0f038089d90d.png?v=1682577775" alt="">
+                    <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18551_2x_f2956b2b-028f-44c0-a22a-99e34df986f3.png?v=1682587548" alt="">
+                </div>
+                <div class="swiper-slide">
+                    <div class="u17DemiBold_v2">“one of the most beautiful and futuristic ebikes of 2023”</div>
+                    <div class="flex-1"></div>
+                    <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_20921_2x_361face6-eba5-4a46-b1b6-0f038089d90d.png?v=1682577775" alt="">
+                    <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18552_2x_4194a229-bf02-45a5-ab4f-fcb997a040cd.png?v=1682587535" alt="">
+                </div>
+            </div>
         </div>
         <div class="swiper-pagination"></div>
-        </div>
     </div>
-
-</div></div></div></div></div></div><div data-section-id="pf-c383" data-pf-type="Section" class="sc-fmciRz bheIgq pf-48_"><div class="sc-gjNHFA gwWIgj"><div class="sc-ezbkAF A-dmbO pf-49_ pf-r pf-c-cm pf-r-eh" style="--s-xs:0px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-md:12;--c-lg:12"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-50_"><div data-pf-type="Custom.HTML" class="sc-AjmGg eCTxfx pf-51_"><style>
-
-#section3 {
-      /* max-width: 1280px; */
-      margin: auto;
-      --swiper-theme-color: #ff6600;/* 设置Swiper风格 */
-      --swiper-navigation-color: #fff;/* 单独设置按钮颜色 */
-      --swiper-navigation-size: 15px;/* 设置按钮大小 */
-      position: relative;
-      overflow-x: hidden;
-  	  /* margin-bottom: 150px; */
-      cursor: auto;
-      color: #000;
-    }
-
-    #section3 .u42DemiBold {
-        text-align: left;
-        max-width: 1280px;
-        margin: 0 auto 5%;
-    }
-    
-    #section3 img {
-      width: 100%;
-      height: auto;
-      border-radius: 10px;
-    }
-
-    #section3 .swiper-slide .text {
-      position: relative;
-      text-align: left;
-      font-size: 16px;
-    }
-  
-  #section3 .swiper-slide .u24Medium {
-	    font-weight: 600;
-        margin: 30px 0;
-  }
-
-  #section3 .swiper-slide .u17Light {
-    line-height: 24px;
-  }
-
-  #section3 .swiper-scrollbar {
-    position: static;
-    max-width: 1280px;
-    margin: 5% auto ;
-  }
-
-  #section3 .buttons {
-    max-width: 1280px;
-    margin: 0 auto 5%;
-    display: flex;
-    justify-content: end;
-  }
-
-  #section3 .buttons .swiper-button-prev,
-  #section3 .buttons .swiper-button-next {
-        margin-left: 20px;
-        margin-top: 20px;
-        position: static;
-        background-color: #666;
-        border-radius: 50%;
-        padding: 20px;
-        box-sizing: border-box;
-        opacity: .5;
-			z-index: 2;
-  }
-
-  #section3 .swiper-button-next.swiper-button-disabled,
-  #section3 .swiper-button-prev.swiper-button-disabled {
-    opacity: .25;
-  }
-  
-  
-</style>
-
-<style>
-@media (max-width: 767px) {
-    #section3 .swiper-button-prev,
-    #section3 .swiper-button-next {
-        display: none;
-    }
-
-    #section3 .u42DemiBold {
-        font-size: 24px;
-    }
-
-    #section3 .swiper-scrollbar {
-        height: 2px;
-        position: static;
-        /* margin: 20px auto 0; */
-        width: 100%;
-    }
-
-    #section3 .swiper-slide .u24Medium {
-	    font-weight: 700;
-        margin: 15px 0;
-        font-size: 18px;
-        line-height: 21px;
-    }
-
-    #section3 .swiper-slide .u17Light {
-        font-size: 14px;
-        line-height: 20px;
-        padding-right: 7.5%;
-    }
-}
-</style>
-
-
-<div id="section3">
-      <div class="u42DemiBold">Components</div>
-      <div class="swiper-wrapper">
-          <div class="swiper-slide">
-              <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18353.png?v=1677736550" alt="">
-              <div class="text">
-                <div class="u24Medium">Portable Battery</div>
-                <div class="u17Light">A 352.8 Wh lithium-ion removable battery provides ample energy so a rider can travel up to 120km (50km min.) after a mere 3-hr charge.</div>
-              </div>
-          </div>
-          <div class="swiper-slide">
-              <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20230118-untitled-4684.png?v=1677736653" alt="">
-              <div class="text">
-                <div class="u24Medium">Integrated Light</div>
-                <div class="u17Light">20 Lux Headlight with German road regulation-compliant design: a well-balanced combination of beauty and safety.</div>
-              </div>
-          </div>
-          <div class="swiper-slide">
-              <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18303.png?v=1677736665" alt="">
-              <div class="text">
-                <div class="u24Medium">Adaptive Torque Sensor</div>
-                <div class="u17Light">Unlike jerky cadence sensing, proprietary torque sensor enables super-fast speed adaption.</div>
-              </div>
-          </div>
-          <div class="swiper-slide">
-              <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18304.png?v=1677736802" alt="">
-              <div class="text">
-                <div class="u24Medium">Fenders & Kickstand</div>
-                <div class="u17Light">Navigate rough terrains and any weather conditions with our pre-installed fenders and kickstand included in the package.</div>
-              </div>
-          </div>
-          <div class="swiper-slide">
-              <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18356.png?v=1677736974" alt="">
-              <div class="text">
-                <div class="u24Medium">Reliable Hydraulic Disc Brakes</div>
-                <div class="u17Light">It provide reliable and consistent stopping power in any weather condition, ensuring a safe and smooth ride.</div>
-              </div>
-          </div>
-          <div class="swiper-slide">
-              <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18354.png?v=1677737057" alt="">
-              <div class="text">
-                <div class="u24Medium">8-Speed Shimano Gearing</div>
-                <div class="u17Light">Experience seamless gear shifts and tackle different terrain with the versatile 8-speed Shimano gearing system.</div>
-              </div>
-          </div>
-          <div class="swiper-slide">
-              <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18355.png?v=1677737357" alt="">
-              <div class="text">
-                <div class="u24Medium">Responsive Motor</div>
-                <div class="u17Light">The 250W intelligent motor delivers a quiet and smooth ride while also being energy-efficient, allowing riders to travel further.</div>
-              </div>
-          </div>
-      </div>
-      <div class="swiper-scrollbar"></div>
-      <div class="buttons">
-        <div class="swiper-button-prev"></div><!--左箭头。如果放置在swiper外面，需要自定义样式。-->
-        <div class="swiper-button-next"></div><!--右箭头。如果放置在swiper外面，需要自定义样式。-->
-      </div>
-  </div>
-</div></div></div></div></div></div><div data-section-id="pf-c967" data-pf-type="Section" class="sc-fmciRz bheIgq pf-52_"><div class="sc-gjNHFA gwWIgj"><div class="sc-ezbkAF A-dmbO pf-53_ pf-r pf-c-cm pf-r-eh" style="--s-xs:0px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-md:12;--c-lg:12"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-54_"><div data-pf-type="Custom.HTML" class="sc-AjmGg eCTxfx pf-55_"><style>
-
-#section5 {
-      max-width: 1280px;
-      margin: auto;
-      --swiper-theme-color: #ff6600;/* 设置Swiper风格 */
-      --swiper-navigation-color: #fff;/* 单独设置按钮颜色 */
-      --swiper-navigation-size: 20px;/* 设置按钮大小 */
-      position: relative;
-      overflow: hidden;
-      cursor: auto;
-      color: #000;
-    }
-
-    #section5 > .u42DemiBold {
-        margin-bottom: 50px;
-	  text-align: center;
-    }
-
-    #section5 .swiper-scrollbar {
-        position: static;
-        margin-top: 60px;
-    }
-    
-    #section5 img {
-      width: 100%;
-      height: auto;
-    }
-
-    #section5 .swiper-button-prev,
-    #section5 .swiper-button-next {
-        background-color: #000;
-        opacity: 0.5;
-        border-radius: 50%;
-        height: 40px;
-        width: 40px;
-        top: 35%;
-        z-index: 2;
-    }
-
-    #section5 .swiper-button-prev.swiper-button-disabled,
-    #section5 .swiper-button-next.swiper-button-disabled {
-        opacity: 0.2;
-    }
-
-    #section5 .swiper-slide {
-      cursor: pointer;
-    }
-
-    #section5 .swiper-slide .text {
-      margin-top: 40px;
-      height: 100px;
-    }
-  
-  #section5 .swiper-slide .u24Medium {
-	    font-weight: 600;
-  }
-  
-  #section5 .swiper-slide .u20Medium {
-    font-size: 18px;
-  }
-  
-  
-</style>
-
-<style>
-@media (max-width: 767px) {
-    #section5 .swiper-button-prev,
-    #section5 .swiper-button-next {
-        display: none;
-    }
-
-    #section5 > .u42DemiBold {
-        margin: 0;
-        font-size: 24px;
-    }
-
-    #section5 .swiper-scrollbar {
-        height: 2px;
-        margin: 40px auto 0;
-        /* width: calc(100vw - px); */
-    }
-
-    #section5 .swiper-slide .text {
-        text-align: center;
-        margin-top: 0;
-	      height: 90px;
-    }
-
-    #section5 .swiper-slide .my-button {
-        margin: auto;
-        color: #fff;
-        background-color: #000;
-    }
-}
-</style>
-
-<div id="section5">
-      <div class="u42DemiBold">Upgrade Your Ride</div>
-      <div class="swiper-wrapper">
-			  {% for collection in collections %}
-			   {% if collection.title == 'Chord Accessories' %}
-				{% for producti in collection.products %}
-            <div class="swiper-slide" data-product-id="{{producti.id}}" onclick="gotoAccessor('{{ producti.handle }}')">
-              <img src="{{ producti.media[0] | image_url}}"/>
-              <div class="text">
-                <div class="u24Medium">{{producti.title}}</div>
-                <div class="u20Medium">{{producti.price | money}}</div>
-              </div>
-              {% comment %} <a class="my-button my-button-white" href="">Add to Cart</a> {% endcomment %}
+    <div class="centeral-content smartest">
+        <div class="u42DemiBold_v2">Smartest E-Bike Ever</div>
+        <div class="boxss">
+            <div>
+                <img class="lozad" data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_22127_2x_0054733d-7211-4a90-8015-b42dc42dc886.jpg?v=1696737459"
+                    alt="">
+                <div class="u24DemiBold_v2">Anti-glare LED Display</div>
+                <div class="u17Light_v2">Urtopia’s smart core: Dot-matrix display, voice commands. Vital info and bike
+                    control, no smartphone required for your ride!</div>
             </div>
-					{% endfor %}
-			   {% endif %}
-			{% endfor %}
-      </div>
-      <div class="swiper-button-prev"></div><!--左箭头。如果放置在swiper外面，需要自定义样式。-->
-     <div class="swiper-button-next"></div><!--右箭头。如果放置在swiper外面，需要自定义样式。-->
-     <div class="swiper-scrollbar"></div>
-  </div>
-
-</div></div></div></div></div></div>
-
-<!--
-<div data-section-id="pf-16f2" data-pf-type="Section" class="sc-fmciRz bheIgq pf-56_"><div class="sc-gjNHFA gwWIgj"><div class="sc-ezbkAF A-dmbO pf-57_ pf-r pf-c-cm pf-r-eh" style="--s-xs:0px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-md:12;--c-lg:12"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-58_"><div data-pf-type="Custom.HTML" class="sc-AjmGg eCTxfx pf-59_">
-  <div id="section4">
-  <div class="title">Elegance in Motion</div>
-  <div class="parent">
-		<img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/DSCF2362.png?v=1677747064"/>
-		<div>
-		  	<img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/DSCF1378.png?v=1677748530"/>
-		   <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/DSCF0371.png?v=1677748586"/>
-		   <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20230213-untitled-6354.png?v=1677748659"/>
-		   <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20230213-untitled-6030.png?v=1677748698"/>
-		</div>
-  </div>
-</div>
-
-<style>
-  #section4 {
-	 max-width: 1280px;
-	 margin: auto;
-	 
-  }
-
-  #section4 .title {
-    font-size: 42px;
-    line-height: 36px;
-    font-weight: 600;
-    margin: 0;
-    padding-top: 40px;
-    transform: translateY(-60px);
-  }
-  
-  #section4 .parent {
-	  display: grid;
-	  grid-template-columns: 1fr 1fr;
-     grid-gap: 10px;
-  }
-  
-  #section4 .parent > div > img {
-	width: 98%;
-  }
-  
-  #section4 .parent > div {
-	 display: grid;
-	 grid-template-columns: 1fr 1fr;
-	 grid-gap: 10px;
-  }
-  
-</style>
-
-
-<style>
-  @media (max-width: 767px) {
-	#section4 .parent {
-	      display: flex;
-         flex-direction: column;
-	}
-
-  #section4 .title {
-    font-size: 24px;
-    transform: translateY(-30px);
-    text-align: left;
-  }
-}
-</style></div></div></div></div></div></div>
- -->
-
- <style>
-  .maksim {
-      margin: 120px 0;
-  }
-  
-  .maksim .centeral-content {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-  }
-  
-  .maksim .centeral-content > div {
-      width: 100%;
-      background-color: #F7F8FA;
-  }
-  
-  .maksim .left {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: flex-start;
-      padding-left: 64px;
-  }
-  
-  .maksim .left .u17Light_v2 {
-      margin: 15px 0 75px;
-  }
-  
-  .maksim .right {
-      background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/123.jpg?v=1681887510');
-      background-position: center center;
-      background-size: cover;
-      background-repeat: no-repeat;
-      height: 695px;
-  }
-  
-  @media (max-width: 767px) {
-      .maksim {
-        margin: 60px 0;
-      }
-  
-      .maksim .centeral-content {
-          padding: 0;
-          grid-template-columns: 1fr;
-      }
-  
-      .maksim .right {
-          max-width: 100vw;
-          height: 80vw;
-          flex: auto;
-      }
-  
-      .maksim .left {
-          margin: 0;
-          padding: 10% 4%;
-          box-sizing: border-box;
-          order: 1;
-      }
-  
-      .maksim .left .u42DemiBold_v2 {
-          font-size: 24px;
-      }
-  
-      .maksim .left .u17Light_v2 {
-          margin: 5vw 0 10vw;
-          font-size: 15px;
-      }
-  
-      .maksim .left .my-button {
-          margin: 0 auto;
-      }
-  }
-  </style>
-
- 
-
-  <div class="maksim">
-    <div class="centeral-content">
-        <div class="left">
-            <div class="u42DemiBold_v2">Chord X Maksim</div>
-            <div class="u17Light_v2">A passionate prodigy, and one of the world’s <br> fastest pianists. Mr. Mrvica
-                inspired the design <br> the
-                philosophy of Chord, a crossover between <br> art and tech.</div>
-            <a onclick="showVideoDialog('https://www.youtube.com/embed/gjYMDVGv_C4?autoplay=1&cc_load_policy=1')" class="my-button my-button-black">Watch video</a>
-        </div>
-        <div class="right"></div>
-    </div>
-</div>
-
-  <div class="mediaaaaa gray-background-color"  style="--swiper-theme-color: #000;--swiper-pagination-color: #000;">
-    <div class="centeral-content swiper-wrapper">
-      <div class="swiper-slide">
-        <div class="u17DemiBold_v2">“The smoothest and cleanest look”</div>
-        <div class="flex-1"></div>
-        <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_20921_2x_361face6-eba5-4a46-b1b6-0f038089d90d.png?v=1682577775" alt="">
-        <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18547_2x_125de9b4-019e-45e9-aa15-ae8622f4b5d0.png?v=1682587490" alt="">
-      </div>
-      <div class="swiper-slide">
-        <div class="u17DemiBold_v2">“Battery integrated under the top tube like never before.”</div>
-        <div class="flex-1"></div>
-        <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_20921_2x_361face6-eba5-4a46-b1b6-0f038089d90d.png?v=1682577775" alt="">
-        <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18548_2x_fcd811c3-0864-4391-bfdf-ab9d2ff14383.png?v=1682587585" alt="">
-      </div>
-      <div class="swiper-slide">
-        <div class="u17DemiBold_v2">“A lifestyle piece incorporates cutting-edge technology”</div>
-        <div class="flex-1"></div>
-        <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_20921_2x_361face6-eba5-4a46-b1b6-0f038089d90d.png?v=1682577775" alt="">
-        <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18549_2x_1574b613-b07b-4eb3-be66-1dd662cf5cd8.png?v=1682587573" alt="">
-      </div>
-      <div class="swiper-slide">
-        <div class="u17DemiBold_v2">“The unusual smart e-bike is worth a look.”</div>
-        <div class="flex-1"></div>
-        <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_20921_2x_361face6-eba5-4a46-b1b6-0f038089d90d.png?v=1682577775" alt="">
-        <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18550_2x_aba70dcd-adaf-4458-9cd7-743f426f353b.png?v=1682587561" alt="">
-      </div>
-      <div class="swiper-slide">
-        <div class="u17DemiBold_v2">“This is a model destined to conquer the public.”</div>
-        <div class="flex-1"></div>
-        <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_20921_2x_361face6-eba5-4a46-b1b6-0f038089d90d.png?v=1682577775" alt="">
-        <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18551_2x_f2956b2b-028f-44c0-a22a-99e34df986f3.png?v=1682587548" alt="">
-      </div>
-      <div class="swiper-slide">
-        <div class="u17DemiBold_v2">“one of the most beautiful and futuristic ebikes of 2023”</div>
-        <div class="flex-1"></div>
-        <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_20921_2x_361face6-eba5-4a46-b1b6-0f038089d90d.png?v=1682577775" alt="">
-        <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18552_2x_4194a229-bf02-45a5-ab4f-fcb997a040cd.png?v=1682587535" alt="">
-      </div>
-    </div>
-    <div class="swiper-pagination"></div>
-  </div>
-
-
-<div data-section-id="pf-68d8" style="background-color:unset;" data-pf-type="Section" class="sc-fmciRz bheIgq pf-60_"><div class="sc-gjNHFA gwWIgj"><div class="sc-ezbkAF A-dmbO pf-61_ pf-r pf-c-cm pf-r-eh" style="--s-xs:0px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-md:12;--c-lg:12"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-62_"><div data-pf-type="Custom.HTML" class="sc-AjmGg eCTxfx pf-63_"><div id="section6">
-    <div class="u42DemiBold">Peace of Mind Services</div>
-    <div class="boxs gray-background-color">
-      <div id="storepoint-container" data-tags="euro" data-map-id="162f21804990ff"></div>
-      <div class="texts">
-        <div class="text">
-          <div class="u30DemiBold">After-sales service, Worldwide</div>
-          <div class="u17Light">We have over 20 authorized repair shops across major cities in Germany to provide reliable after-sales service for our e-bikes. Our repair partners are experts in their field and have been carefully selected and trained to provide you with quality products and services.<br><br> Simply visit one of our authorized repair shops for repairs or maintenance. We’re committed to ensuring that you have a positive experience with our e-bikes.</div>
-          <a class="my-button my-button-black" href="/pages/find-a-dealer">Find a Store</a>
-        </div>
-      </div>
-		<div class="texts">
-		  <div class="text">
-			<div class="u30DemiBold">14-Day Free Return</div>
-			<div class="u17Light"> Free return of unused products within 14 days of delivery.</div>
-			<a class="u20DemiBold" href="/pages/care">Learn more</a>
-		  </div>
-		  <div class="text">
-			<div class="u30DemiBold">2-Year Warranty</div>
-			<div class="u17Light"> All Urtopia bikes are covered under our 2-year Limited Warranty for the owner against all manufacturing defects.</div>
-			<a class="u20DemiBold" href="/pages/care">Learn more</a>
-		  </div>
-		</div>
-	   <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230213-untitled-5440.jpg?v=1678012461">
-    </div>
-  </div>
-
-
-<style>
-#section6 {
-  max-width: 1280px;
-  margin: auto;
-}
-
-#section6 .u42DemiBold {
-  margin: 60px auto;
-  text-align: center;
-}
-
-#section6 .boxs {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-}
-
-#section6 .boxs .texts {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-items: center;
-  text-align: left;
-
-}
-
-
-#section6 .boxs .texts .text {
-  max-width: 400px;
-}
-
-#section6 .boxs .texts .text .u17Light {
-  margin: 30px 0 10px 0;
-}
-
-#section6 .boxs .texts .u20DemiBold {
-    text-decoration: underline;
-}
-
-  #section6 .boxs .my-button {
-	margin-top: 20px;
-  }
-
-
-@media (max-width: 767px) {
-  #section6 .boxs {
-    display: flex;
-    flex-direction: column;
-  }
-
-  #section6 .u42DemiBold {
-    margin-bottom: 10%;
-    text-align: left;
-    font-size: 24px;
-	    margin-top: 0;
-  }
-
-  #section6 .boxs .texts {
-    padding: 10% 15px;
-  }
-
-  #section6 .boxs .texts .text + .text {
-    margin-top: 15%;
-  }
-
-  #section6 .boxs .texts .u30DemiBold {
-    font-size: 24px;
-  }
-
-  #section6 .boxs .texts .text .u17Light {
-    font-size: 15px;
-    margin-top: 15px;
-  }
-
-  #section6 .boxs .texts .u20DemiBold {
-    font-size: 14px;
-  }
-
-  #section6 .boxs > *:nth-child(3) {
-    order: 2;
-  }
-
-  #section6 .boxs > *:nth-child(4) {
-    order: 1;
-  }
-}
-</style>
-
-<style>
-  #storepoint-tag-dropdown,
-  #storepoint-search,
-  #storepoint-panel {
-	 display:none!important;
-  }
-  
-  #storepoint-map,
-  #storepoint-container {
-	width: 100% !important;
-  }
-  
-  @media (max-width: 767px) {
-	#storepoint-container {
-	  min-height: calc(100vw - 30px);
-   }
-  }
-</style>
-
-</div></div></div></div></div></div></div></div></div>
-<div data-section-id="pf-053c" data-pf-type="Section" class="sc-fmciRz bheIgq pf-825_">
-  <div style="padding: 0 15px;width: 100%;margin: auto;max-width: 1280px;" class="sc-gjNHFA gwWIgj">
-    <div class="sc-ezbkAF A-dmbO pf-826_ pf-r pf-r-eh" style="--s-xs:15px" data-pf-type="Row">
-      <div class="pf-c" style="--c-xs:12;--c-md:12;--c-lg:12">
-        <div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-827_">
-          <div data-pf-type="JudgeMe" class="sc-eZhRLC gtfCKx pf-828_">
-            <div class="pf-judme">
-              {% include 'judgeme_widgets', widget_type: 'judgeme_review_widget', concierge_install: false %}
+            <div>
+                <img class="lozad" data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_22125_2x_4ae748d1-1ad5-47fd-b05b-cab45d65377e.jpg?v=1696743871"
+                    alt="">
+                <div class="u24DemiBold_v2">Portable Battery</div>
+                <div class="u17Light_v2">A 352.8 Wh lithium-ion removable battery provide sample energy so a rider can travel up to 120km (50km min.) after a mere 3-hr charge.</div>
             </div>
-          </div>
+            <div>
+                <img class="lozad" data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_22126_2x_824cb3a5-4b55-4341-83fe-8d2b911062fb.jpg?v=1696743879"
+                    alt="">
+                <div class="u24DemiBold_v2">20 Lux HeadLight</div>
+                <div class="u17Light_v2">20 Lux Headlight with German road regulation-compliant design: a well-balanced combination of beauty and safety.</div>
+            </div>
+            <div>
+                <img class="lozad" data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_22130_2x_0d904ceb-205a-4450-a858-228909539c66.jpg?v=1696743892"
+                    alt="">
+                <div class="u24DemiBold_v2">Fenders & Kickstand</div>
+                <div class="u17Light_v2">Navigate rough terrains and any weather conditions with our pre-installed fenders
+                    and kickstand included in the package.</div>
+            </div>
+            <div>
+                <img class="lozad" data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_22128_2x_abb6496d-8f8f-48be-945a-b0bb08cdd8ce.jpg?v=1696743899"
+                    alt="">
+                <div class="u24DemiBold_v2">Tektro Hydraulic Disc Brake</div>
+                <div class="u17Light_v2">It provide reliable and consistent stopping power in any weather condition, ensuring a safe and smooth ride.</div>
+            </div>
+            <div>
+                <img class="lozad" data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_22129_2x_6c5b4cfe-d578-4394-a7d0-f5b41ac9532b.jpg?v=1696743907"
+                    alt="">
+                <div class="u24DemiBold_v2">8-Speed Shimano Gearing</div>
+                <div class="u17Light_v2">Experience seamless gear shifts and tackle different terrain with the versatile
+                    8-speed Shimano gearing system.</div>
+            </div>
+            <div>
+                <img class="lozad" data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_22131_2x_a8a7e189-e540-4ec8-a21e-f5b8b212c64c.jpg?v=1696743914"
+                    alt="">
+                <div class="u24DemiBold_v2">Customized Motor</div>
+                <div class="u17Light_v2">The 250W intelligent motor delivers a quiet and smooth ride while also being energy-efficient, allowing riders to travel further.</div>
+            </div>
+            <div>
+                <img class="lozad" data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_22132_2x_96c0d8ea-eb92-4361-a15c-5ac90b800d43.jpg?v=1696743920"
+                    alt="">
+                <div class="u24DemiBold_v2">Torque Sensor</div>
+                <div class="u17Light_v2">Unlike jerky cadence sensing, proprietary torque sensor enables super-fast speed
+                    adaption.</div>
+            </div>
+            <div>
+                <img class="lozad" data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_22133_2x_775a37f8-99de-4243-892f-86eccd1c0914.jpg?v=1696743926"
+                    alt="">
+                <div class="u24DemiBold_v2">Smart App</div>
+                <div class="u17Light_v2">Urtopia’s app maximizes e-bike potential: Real-time locating, route tracking,
+                    anti-theft alert, navigation, speaker, and more. Explore the possibilities!</div>
+            </div>
         </div>
-      </div>
     </div>
-  </div>
-</div>
+    <div class="centeral-content services">
+        <div class="u42DemiBold_v2">Peace of Mind Services</div>
+        <div class="gray-background-color boxss">
+          <div id="storepoint-container" data-tags="euro" data-map-id="162f21804990ff"></div>
+            <div>
+                <div class="u30DemiBold_v2">After-sales service, Worldwide</div>
+                <div class="u17Light_v2">We have over 20 authorized repair shops across major cities in USA to provide
+                    reliable after-sales service for our e-bikes. Our repair partners are experts in their field and have
+                    been carefully selected and trained to provide you with quality products and services.<br><br>
 
-<img class="toTop" src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_21049.svg?v=1687267470">
+                    Simply visit one of our authorized repair shops for repairs or maintenance. We’re committed to ensuring
+                    that you have a positive experience with our e-bikes.</div>
+                <a class="my-button my-button-black" href="/pages/find-a-dealer">Find a Store</a>
+            </div>
+            <div>
+                <div class="u30DemiBold_v2">14-Day Free Return</div>
+                <div class="u17Light_v2">Free return of unused products within 14 days of delivery.</div>
+                <a class="u20DemiBold_v2" href="/pages/care">Learn more</a>
+                <div class="u30DemiBold_v2">2-Year Warranty</div>
+                <div class="u17Light_v2">All Urtopia bikes are covered under our 2-year Limited Warranty for the owner against all manufacturing defects.</div>
+                <a class="u20DemiBold_v2" href="/pages/care">Learn more</a>
+            </div>
+            <img class="lozad" data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230213-untitled-5440.jpg?v=1678012461" alt="">
+        </div>
+    </div>
+
+<img class="toTop lozad" data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_21049.svg?v=1687267470">
 
 <div class="top-fixed mobileHide">
     <div class="centeral-content">
@@ -1382,17 +509,10 @@
 </div>
 
 <script>
-    const search = getSearchValues()
-    const variants = JSON.parse(JSON.stringify({{ product.variants | json }}))
-    const size_map = {
-        'High-Step': 'Fit for 170-195 cm',
-        'Step-Through': 'Fit for 160-185 cm'
-    }
-
-    let current_variant_id = null
-    let current_variant = null
-    const frames = {}
-    const styles = {}
+      // 默认隐藏
+    $('.bottom-fixed').hide()
+    $('.top-fixed').hide()
+    $('.toTop').hide()
     
     const leftSwiper = new Swiper(".product .left-swiper", {
         direction: 'vertical',
@@ -1418,98 +538,61 @@
         },
       });
 
-    function findVariantOptions (frame, style) {
-        return variants.find(v => `${frame} / ${style}` === v.title)
-    }
+      document.addEventListener('onChangeStyle', e => {
+        $(`.product .product-panel .options > div[option="Style"] .u17DemiBold_v2 .u17Light_v2`).text(e.value)
+      })
 
-    function findVariantFromId (id) {
-        return variants.find(v => String(v.id) === String(id))
-    }
-
-    function findAvailableVariant () {
-        return variants.find(v => v.available)
-    }
-
-    let current_frame = ''
-    let current_style = ''
-    function changeVariant (frame, style) {
-        if (current_frame !== frame) {
-            $(`.product .product-panel .Frame .active`).removeClass('active')
-            $(`.product .product-panel .Frame > div[attribute="${frame}"]`).addClass('active')
-
-            if (frame === 'High-Step') {
-              $(`.product .product-panel .accessories .chord-accessories-1 .active`).click()
-              $(`.product .product-panel .accessories .chord-accessories`).show()
-              $(`.product .product-panel .accessories .chord-accessories-1`).hide()
-
-              $(`.product .product-panel .options > div[option="Frame"] .u17DemiBold_v2 .u17Light_v2`).text(`Chord - ${size_map[frame]}`)
-
-
+      document.addEventListener('onChangeFrame', e => {
+            if (e.value === "High-Step") {
+                $(`.product .product-panel .accessories .chord-accessories-1 .active`).click()
+                $(`.product .product-panel .accessories .chord-accessories`).show()
+                $(`.product .product-panel .accessories .chord-accessories-1`).hide()
+                $(`.product .product-panel .options > div[option="Frame"] .u17DemiBold_v2 .u17Light_v2`).text(`Chord - ${global_config.chord_order_page_config.size_map[e.value]}`)
             } else {
-              $(`.product .product-panel .accessories .chord-accessories .active`).click()
-              $(`.product .product-panel .accessories .chord-accessories`).hide()
-              $(`.product .product-panel .accessories .chord-accessories-1`).show()
-
-              $(`.product .product-panel .options > div[option="Frame"] .u17DemiBold_v2 .u17Light_v2`).text(`Chord X - ${size_map[frame]}`)
+                $(`.product .product-panel .accessories .chord-accessories .active`).click()
+                $(`.product .product-panel .accessories .chord-accessories`).hide()
+                $(`.product .product-panel .accessories .chord-accessories-1`).show()
+                $(`.product .product-panel .options > div[option="Frame"] .u17DemiBold_v2 .u17Light_v2`).text(`Chord X - ${global_config.chord_order_page_config.size_map[e.value]}`)
             }
 
             $(`.product .product-panel .accessories .items`).animate({
                 scrollLeft: 0
             }, 300)
-        }
+      })
 
-        if (current_style !== style) {
-            $(`.product .product-panel .Style .active`).removeClass('active')
-            $(`.product .product-panel .Style > div[attribute="${style}"]`).addClass('active')
-            $(`.product .product-panel .options > div[option="Style"] .u17DemiBold_v2 .u17Light_v2`).text(style)
-        }
+      document.addEventListener('onChangeOptions', e => {
+        const swiper_arr = global_config.chord_order_page_config.product_images[e.value.Frame][e.value.Style].concat(global_config.chord_order_page_config.product_images[e.value.Frame]['commonSwiper'])
 
+        $('.product .right-swiper .swiper-wrapper').html(swiper_arr.map((s, i) => {
+            const index = i % 6
 
-        if (frame !== current_frame || style !== current_style) {
-            current_variant = findVariantOptions(frame, style)
-            current_variant_id = current_variant.id
-            current_frame = frame
-            current_style = style
-
-
-            history.replaceState(null, '', `${location.pathname}?variant=${current_variant_id}`);
-            $('.product .product-panel input[name="id"]').val(current_variant_id)
-            $('.product .delivery_time').html(global_config.chord_order_page_config.ebike_delivery_time[current_variant_id] || global_config.chord_order_page_config.ebike_default_delivery_time)
-
-            const btn =  $('.product .buttons .addToCartBtn')
-            if (current_variant.available) {
-                btn.find('span').text('Add to Cart')
-                btn.removeClass('disabled')
-                $('.product .buttons .orderTestRideBtn').show()
-            } else {
-                btn.find('span').text('Sold out')
-                btn.addClass('disabled')
-                $('.product .buttons .orderTestRideBtn').hide()
-            }
-
-            const swiper_arr = global_config.chord_order_page_config.product_images[frame][style].concat(global_config.chord_order_page_config.product_images[frame]['commonSwiper'])
-
-            $('.product .right-swiper .swiper-wrapper').html(swiper_arr.map((s, i) => {
-                const index = i % 6
-
-                return  `<div class="swiper-slide">
-                            <img src="${s}">
-                        </div>`
-              }).join(''))
-            $('.product .left-swiper .swiper-wrapper').html(swiper_arr.map(s => `<div class="swiper-slide"><img src="${s}"></div>`).join(''))
+            return  `<div class="swiper-slide">
+                        <img src="${s}">
+                    </div>`
+          }).join(''))
+        $('.product .left-swiper .swiper-wrapper').html(swiper_arr.map(s => `<div class="swiper-slide"><img src="${s}"></div>`).join(''))
+        $('.product .delivery_time').html(global_config.chord_order_page_config.ebike_delivery_time[e.value.id] || global_config.chord_order_page_config.ebike_default_delivery_time)
+        
+        // update
+        setTimeout(() => {
+            rightSwiper.update()
+            rightSwiper.slideTo(0, 0)
             
-            // update
-            setTimeout(() => {
-                rightSwiper.update()
-                rightSwiper.slideTo(0, 0)
-                
-                leftSwiper.update()
-                leftSwiper.slideTo(0, 0)
-            }, 0)
-        }
+            leftSwiper.update()
+            leftSwiper.slideTo(0, 0)
+        }, 0)
 
-        console.log(current_variant)
-    }
+        const btn =  $('.product .buttons .addToCartBtn')
+        if (e.value.available) {
+            btn.find('span').text('Add to Cart')
+            btn.removeClass('disabled')
+            $('.product .buttons .orderTestRideBtn').show()
+        } else {
+            btn.find('span').text('Sold out')
+            btn.addClass('disabled')
+            $('.product .buttons .orderTestRideBtn').hide()
+        }
+      })
 
 
     function changeAddToCartText (parse, step = 0) {
@@ -1549,9 +632,9 @@
             t.removeClass('loading')
             t.find('span').html(text)
 
-            const bike_model = current_variant.option1 === 'High-Step' ? 'chord' : 'chordx'
+            const bike_model = current_variant_options.Frame === 'High-Step' ? 'chord' : 'chordx'
 
-            const url = window.sessionStorage.localPathPerfix + `/pages/ebike-leasing?bike_model=${bike_model}&bike_size=${current_variant.option1}&bike_style=${current_variant.option2}&utm_source=order_page#forms`
+            const url = window.sessionStorage.localPathPerfix + `/pages/ebike-leasing?bike_model=${bike_model}&bike_size=${current_variant_options.Frame}&bike_style=${current_variant_options.Style}&utm_source=chord_order_page#forms`
 
             return window.open(url)
         }
@@ -1570,44 +653,6 @@
             return addToCartInsurance("atc", true)
         }
     }
-
-    function pageInit() {
-      const variant_id = search.variant || global_config.chord_order_page_config.default_variant
-      let find = findVariantFromId(variant_id)
-
-      if (!find || !find.available) {
-        find = findAvailableVariant()
-      }
-
-      // 如果默认 variant 也不可用，那晒显出能用的variant
-      changeVariant(find.option1, find.option2) 
-    }
-
-    {% for variant in product.variants %}
-        frames[{{ variant.option1 | json }}] = 1
-        styles[{{ variant.option2 | json }}] = 1
-    {% endfor %}
-
-    console.log('variants', variants)
-
-    for (const frame of Object.keys(frames)) {
-        $('.product .product-panel .Frame').append(`<div attribute="${frame}" class="${frame}">${frame}</div>`)
-    }
-
-    for (const style of Object.keys(styles)) {
-        $('.product .product-panel .Style').append(`<div attribute="${style}" class="${style}"></div>`)
-    }
-
-
-    $('.product-panel .options .option >div:not(.u17DemiBold_v2) > div').on('click',e => {
-        const t = $(e.target)
-
-        if ($(e.target).parent().hasClass('Frame')) {
-            changeVariant(t.attr('attribute'), current_variant.option2)
-        } else {
-            changeVariant(current_variant.option1, t.attr('attribute'))
-        }
-    })
 
     $('.accessories .navigate > div').on('click', e => {
         const items1 = $('.product .accessories .chord-accessories')
@@ -1671,7 +716,7 @@
 
     let currnetScroolTop = 0
     $(document).on('scroll', throttle(e => {
-        const top1 = $('div[data-section-id="pf-b3fb"]').offset().top
+        const top1 = $('#freedom').offset().top
         const top3 = $('.product .addToCartBtn').offset().top
         const top2 = $(e.target).scrollTop()
 
@@ -1700,158 +745,26 @@
         top2 > (h * 2) ? $('.toTop').show() : $('.toTop').hide()
 
     }, 300, 100))
-
-    // 默认隐藏
-    $('.bottom-fixed').hide()
-    $('.top-fixed').hide()
-    $('.toTop').hide()
-
-    // 页面初始化
-    pageInit()
 </script>
 
-<script src="https://cdn.jsdelivr.net/gh/StephanWagner/jBox@v1.3.3/dist/jBox.all.min.js"></script>
-<link href="https://cdn.jsdelivr.net/gh/StephanWagner/jBox@v1.3.3/dist/jBox.all.min.css" rel="stylesheet">
-<link rel="preload" href="https://cdn.shopifycdn.net/s/files/1/0090/9236/6436/files/fa-brands-400.woff2" type="font/woff2" as="font">
-
+<div class="centeral-content">{% include 'judgeme_widgets', widget_type: 'judgeme_review_widget', concierge_install: false %}</div>
+{% render 'product-options', config_name: 'chord_order_page_config' %}
+{% render 'chord-extra-code' %}
 
 <script>
-const widthh = document.body.clientWidth
-const isMobilee = widthh < 768
-  
- new jBox('Modal', {
-        width: isMobilee ? 'calc(100vw - 30px)' : '70%',
-        height: 'auto',
-        appendTo: $('#section2'),
-        title: 'Design',
-        closeButton: 'title',
-        content: $('#section2-design-dialog'),
-    }).attach('#section2 .design')
-  
-   new jBox('Modal', {
-        width: isMobilee ? 'calc(100vw - 30px)' : 1000,
-        height: 'auto',
-        appendTo: $('#section2'),
-        title: 'Smart',
-        closeButton: 'title',
-        content: $('#section2-smart-dialog'),
-	 onOpenComplete: function () {
-            const videos =  document.querySelectorAll('video')
-
-            videos.forEach(video => {
-                video.play()
-            })
-          }
-    }).attach('#section2 .smart')
-  
-  new Swiper('#section2-design-dialog', {    
-        spaceBetween: isMobilee ? 0 : '3%',
-        slidesPerView: isMobilee ? 1 : 2.5,
-        // slidesOffsetAfter: 70,
-        navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
-       },
-	    pagination: {
-         el:'.swiper-pagination'
-       },
-  })
-  
-  new Swiper('#section2-smart-dialog', {    
-        spaceBetween: isMobilee ? 0 : '3%',
-          slidesPerView: 1,
-          height: '100%',
-          autoHeight: true,
-        // slidesOffsetAfter: 70,
-        navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
-       },
-	    pagination: {
-         el:'.swiper-pagination'
-       },
-  })
-  
-</script>
-
-
-<script setup>
-
-
-const width = document.body.clientWidth
-const isMobile = width < 768
-
-new Swiper('#section3', {
-        slidesOffsetBefore: width > 1280 ? (width - 1280) / 2 : 0,  
-        spaceBetween: isMobile ? '4%' : '2%',
-        slidesPerView: isMobile ? 1.5 : 4,
-        freeMode: isMobile ? true : false,
-        navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
-       },
-       scrollbar: {
-            el: '.swiper-scrollbar',
-		       draggable: true,
-      },
-  }) 
-
-</script>
-
-<script>
-new Swiper('#section5', {    
-        spaceBetween: 15,
-        slidesPerView: isMobile ? 1 : 4,
-        navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
-       },
-       scrollbar: {
-            el: '.swiper-scrollbar',
-            draggable: true,
-      },
- })
-
- function gotoAccessor (handle) {
-  if (!handle) {
-    return
-  }
-
-  location.href = `${location.href.replace(/urtopia-chord-ebike(.*)/g, '')}${handle}`
-}
-
-  var accessories_global = {
-  items: []
-}
-  
-
-</script>
-
-<script>
-  document.body.clientWidth < 768 && new Swiper ('.mediaaaaa', {    
-    autoplay: {
-      disableOnInteraction: false,
-      pauseOnMouseEnter: false,
-      delay: 5000,
-    },
-    loop: true,
-    effect: 'fade',
-    fadeEffect:{
-      crossFade: true
-    },
-    pagination: {el:'.swiper-pagination'},
-    speed: 300
+  global_config.is_mobile && new Swiper('.mediaaaaa .centeral-content', {
+        autoplay: {
+            disableOnInteraction: false,
+            pauseOnMouseEnter: false,
+            delay: 5000,
+        },
+        loop: true,
+        effect: 'fade',
+        fadeEffect: {
+            crossFade: true
+        },
+        pagination: { el: '.mediaaaaa .swiper-pagination' },
+        speed: 300
     })
 </script>
-
-<script>
-  (function(){
-		var a=document.createElement("script");
-		a.type="text/javascript";
-		a.defer=!0;
-		a.src="https://cdn.storepoint.co/api/v1/js/162f21804990ff.js";
-		var b=document.getElementsByTagName("script")[0];
-		b.parentNode.insertBefore(a,b);}());
-</script>
-
-{% render 'chord-extra-code' %}
+<script src="https://cdn.storepoint.co/api/v1/js/162f21804990ff.js" defer></script>

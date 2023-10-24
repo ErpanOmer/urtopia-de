@@ -382,13 +382,49 @@
             border-radius: 10px;
             margin-bottom: 24px;
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
-            padding: 12px 20px 0;
+            padding: 1.5% 3%;
 
-            & > div {
-                margin-left: 8px;
-                transform: translateY(-6px);
+            & > .u24DemiBold_v2 {
+                display: flex;
+                align-items: center;
+                transform: translateY(6px);
+                min-width: 130px;
+
+                .emphasize {
+                    margin-left: 8%;
+                }
+            }
+
+            & > .u17DemiBold_v2 {
+                display: flex;
+                flex-direction: column;
+
+                .u14Light_v2 {
+                    color: #999;
+                }
+            }
+
+            & > .u17Medium_v2 {
+                min-width: 100px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                & > span {
+                    &:first-child {
+                        text-decoration: line-through;
+                        margin-right: 12px;
+                    }
+
+                    &:last-child {
+                        padding: 7px;
+                        background-color: #EB5A2D;
+                        color: #fff;
+                        border-radius: 7px;
+                    }
+                }
             }
         }
 
@@ -505,7 +541,7 @@
                             background-color: #747474;
                         }
 
-                        &[attribute="vanilla"] {
+                        &[attribute="Vanilla"] {
                             background-color: #FAF5E7;
                         }
 
@@ -539,7 +575,7 @@
                             background-color: #747474;
                         }
 
-                        &[attribute="vanilla"]::after {
+                        &[attribute="Vanilla"]::after {
                             background-color: #FAF5E7;
                         }
 
@@ -581,10 +617,10 @@
                             font-weight: 500;
                             font-size: 12px;
                         }
-                    }
 
-                    & > div + div {
-                        margin-left: 12px;
+                        &:not(:last-child) {
+                          margin-right: 12px;
+                        }
                     }
 
                     .active {
@@ -625,6 +661,10 @@
                             justify-content: center;
                             margin-left: 6px;
                         }
+
+                      &:not(:last-child) {
+                          margin-right: 12px;
+                        }
                     }
 
                     // div[attribute="Carbon Belt"]::after {
@@ -634,10 +674,6 @@
                     // div[attribute="Shimano Gear"]::after {
                     //     content: "Sale";
                     // }
-
-                    &>div+div {
-                        margin-left: 12px;
-                    }
 
                     .active {
                         border-color: var(--sale-order-page-text-color);
@@ -1519,7 +1555,6 @@
 
     .freedom {
         background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_21041_2x_ca903d07-116e-4af8-97fe-cedbf621ba8c.jpg?v=1687272916&width=1000');
-        margin-top: 20px;
 
         .centeral-content {
             padding: 15vw 8vw;
@@ -1655,17 +1690,61 @@
             }
 
             .service {
-                margin-bottom: 6px;
                 box-shadow: 0px 3px 20px #00000014;
                 background-color: #fff;
-                padding: 2vw 4vw 0;
+                padding: 2vw;
+                flex-direction: column;
+                align-items: flex-start;
+                margin-bottom: 12px;
 
-                .u17DemiBold_v2 {
-                    font-size: 12px;
+                .u11Light_v2 {
+                    color: #999;
                 }
 
                 & > div {
-                    transform: translateY(-3px);
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+
+                    .u24DemiBold_v2 {
+                        .emphasize {
+                            margin-left: 1vw;
+                        }
+                    }
+
+                    & > div {
+                        &:last-child {
+                            flex: 1;
+                            margin-left: 4vw;
+
+                            .u14DemiBold_v2 {
+                                font-size: 12px;
+                                display: flex;
+                                flex-direction: column;
+                                margin: 6px 0;
+                            }
+
+                            .u14Medium_v2 {
+                                display: flex;
+                                align-items: center;
+                                justify-content: flex-start;
+                                span {
+                                    &:last-child {
+                                        text-decoration: line-through;
+                                        margin-right: 12px;
+                                    }
+
+                                    &:first-child {
+                                        padding: 3px 6px;
+                                        background-color: #EB5A2D;
+                                        color: #fff;
+                                        border-radius: 7px;
+                                        margin-right: 6px;
+                                    }
+                                }
+                            }
+                        }
+                    }
                 }
             }
 
@@ -1762,6 +1841,7 @@
 
                 .swiper-pagination {
                     // position: static;
+                    bottom: 0;
                 }
 
                 .swiper-pagination-bullet {
@@ -2332,4 +2412,272 @@
         }
     }
     
+}
+
+
+
+$product-tags-color: #FFE2D9;
+
+@mixin dotssss {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 6px 0;
+
+    &>div {
+        width: 34px;
+        height: 34px;
+        margin-right: 20px;
+        border-radius: 50%;
+        cursor: pointer;
+
+        &::after {
+            content: "";
+            display: inline-block;
+            height: 26px;
+            margin: 2px;
+            width: 26px;
+            border-radius: 100%;
+        }
+
+        &[data-stye="Sirius"] {
+            background-color: #FA812B;
+        }
+
+        &[data-stye="Lyra"] {
+            background-color: #747474;
+        }
+
+        &[data-stye="Vanilla"] {
+            background-color: #F0EEDF;
+        }
+
+        &[data-stye="Midnight in Paris"] {
+            background-color: #FFEC0B;
+            position: relative;
+        }
+
+        &[data-stye="White"] {
+            background-color: #ddd;
+        }
+
+        &[data-stye="Black"] {
+            background-color: #000;
+        }
+
+        &[data-stye="Gray"] {
+            border-color: #405364;
+            background-color: #405364;
+        }
+
+        &[data-stye="Midnight in Paris"]::before {
+            content: "";
+            display: inline-block;
+            background-color: #ff6c00;
+            position: absolute;
+            z-index: 1;
+            width: 100%;
+            height: 55%;
+            border-top-right-radius: 100px;
+            border-top-left-radius: 100px;
+        }
+    }
+
+    .active {
+        background-color: transparent !important;
+        border: 2px solid #666;
+
+        &[data-stye="Sirius"]::after {
+            background-color: #FA812B;
+        }
+
+        &[data-stye="Lyra"]::after {
+            background-color: #747474;
+        }
+
+        &[data-stye="Vanilla"]::after {
+            background-color: #F0EEDF;
+        }
+
+        &[data-stye="Midnight in Paris"]::after {
+            background-color: #FFEC0B;
+        }
+
+        &[data-stye="Midnight in Paris"]::before {
+            left: 2px;
+            top: 2px;
+            right: 2px;
+            height: 14px;
+            width: 26px;
+        }
+
+        &[data-stye="White"]::after {
+            background-color: #ddd;
+        }
+
+        &[data-stye="Black"]::after {
+            background-color: #000;
+        }
+
+        &[data-stye="Gray"]::after {
+            background-color: #405364;
+        }
+    }
+
+    @media (max-width: 767px) {
+        & > div {
+            width: 28px;
+            height: 28px;
+            margin-right: 12px;
+            
+            &::after {
+                width: 20px;
+                height: 20px;
+            }
+        }
+
+        .active {
+            &[data-stye="Midnight in Paris"]::before {
+                height: 12px;
+                width: 20px;
+            }
+        }
+    }
+}
+
+@mixin product-card {
+    padding: 5%;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+
+    *,
+    ::after,
+    ::before {
+        box-sizing: border-box;
+    }
+
+    .tags {
+        display: flex;
+        min-height: 28px;
+        flex-wrap: wrap;
+        flex: 1;
+
+        span {
+            background-color: $product-tags-color;
+            border-radius: 10px;
+            padding: 4px 10px;
+        }
+
+        span {
+            margin: 0 6px 6px 0;
+        }
+    }
+
+    .variant-image {
+        cursor: pointer;
+    }
+
+    .dots {
+        @include dotssss;
+    }
+
+    .product_price {
+        display: flex;
+        align-items: center;
+        margin: 10px 0 6px;
+        flex-wrap: wrap;
+
+        img {
+            max-width: 40px;
+            margin-left: 6px;
+        }
+
+        .u24DemiBold_v2 {
+            margin-right: 5%;
+
+            &[data-price]::after {
+                content: attr(data-price);
+                display: inline-block;
+                color: #161c1f;
+                text-decoration: line-through;
+                margin-left: 6px;
+                font-size: 24px;
+                font-weight: 300;
+                opacity: 0.53;
+            }
+        }
+
+        &>.u17Light_v2 {
+            display: flex;
+        }
+    }
+
+    .my-button {
+        width: fit-content;
+    }
+
+    @media (max-width: 767px) {
+        padding: 4vw;
+
+        .product_price {
+            flex-direction: column;
+            align-items: flex-start;
+            margin-bottom: 12px;
+        }
+    }
+}
+
+.ebike-products {
+    .u24Medium_v2 {
+        margin:10px 0 4vh;
+    }
+
+    .product-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 22px;
+
+        .product-card {
+            @include product-card;
+            background-color: #fff;
+        }
+
+        &>.lozad {
+            background-size: cover;
+            background-repeat: no-repeat;
+            border-radius: 10px;
+            overflow: hidden;
+            color: #fff;
+            display: flex;
+            align-items: flex-end;
+            padding: 20px 50% 20px 30px;
+        }
+    }
+
+    @media (max-width: 767px) {
+      padding: 0 4vw;
+      
+        & > .u36DemiBold_v2 {
+            font-size: 30px;
+        }
+        
+        & > .u24Medium_v2 {
+            font-size: 17px;
+            margin-bottom: 10vw;
+        }
+
+        .product-grid {
+            grid-template-columns: 1fr;
+            grid-row-gap: 12px;
+        }
+    }
+}
+
+#choose {
+  background-color: #F7F8FA;
+  padding:100px 0;
+  @media (max-width: 767px) {
+        padding: 40px 0;
+  }
 }

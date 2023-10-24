@@ -21,8 +21,8 @@ const global_config = {
     ebike_delivery_time: {
       'carbon1': 'Free shipping within <span>5 working days</span>',
       'carbon1s': 'Free shipping within <span>5 working days</span>',
-      'chord': 'Free shipping within <span>15 working days</span>',
-      'chordx': 'Free shipping within <span>15 working days</span>',
+      'chord': 'Free shipping within <span>10 working days</span>',
+      'chordx': 'Free shipping within <span>10 working days</span>',
     },
     available_urtopia_ebike_default: 'carbon1'
   },
@@ -44,20 +44,25 @@ const global_config = {
     // 邮件弹窗 延迟弹出时间，单位:s
     show_delay_time: 10,
     // 邮件 pc 背景图
-    background_imgae_pc: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/DSC9850_2x_2c7acf3e-9256-4fbc-9f01-7a5baa78d8ee.jpg?v=1693190776&width=500',
+    background_imgae_pc: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Urtopia_-_Auto_Rack_-_Original_Size_-_RAW-299_2x_84a04d1d-8f14-49ec-a1d8-571133a24a22.jpg?v=1697185452',
     // 邮件 mobile 背景图
-    background_imgae_mb: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/DSC9850_2x_d5965f74-e288-45be-9b68-dd7283a3da05.jpg?v=1693190845&width=375'
+    background_imgae_mb: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Urtopia_-_Auto_Rack_-_Original_Size_-_RAW-299_2x_607ae381-92e3-4927-9b90-7f9af7256e5b.jpg?v=1697185459&width=500'
   },
 
   // carbon 车配置
   carbon_order_page_config: {
     // carbon车 活动相关
     events: {
-      carbon1_send_accessories_variant_ids: ['43788921241816', '43745261748440'],
-      carbon1s_send_accessories_variant_ids: ['43866498891992', '43942187598040'],
+      carbon1_send_accessories_variant_ids: ['43988113621208', '43745261748440'],
+      carbon1s_send_accessories_variant_ids: ['43866498891992', '43988117356760'],
     },
     // carbon 车默认显示 variant_id, 只有 url 上的 variant 参数为空的时候生效
-    default_variant: 42615025303768,
+    default_variant: 43869302816984,
+    ignore_variants_available_false: [],
+    size_map: {
+      M: 'Fit for 165-180 cm',
+      L: 'Fit for 175-195 cm'
+    },
     // 产品系列图
     product_images: {
       "Carbon Belt": {
@@ -72,7 +77,7 @@ const global_config = {
         "Midnight in Paris": [
           "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18526.png?v=1688112407"
         ],
-        vanilla: [
+        Vanilla: [
           "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18699.png?v=1688112407",
           "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18698.png?v=1688112407",
           "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18697.png?v=1688112407",
@@ -116,8 +121,8 @@ const global_config = {
     // 产品图下面的media模块, 根据产品图 循环轮播 
     product_media_images: [
       {
-        text: `“Best Electric Bike for 2022”`,
-        img: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/CNET-Logo_2x_585b6404-bc14-4a34-af64-299587c59efd.png?v=1687187217"
+        text: `“The AI-powered co-pilot adds a new level<br>of intelligence and interactivity”`,
+        img: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230913-173450.png?v=1694597715"
       },
       {
         text: `“Urtopia is an over the top e-bike”`,
@@ -149,11 +154,11 @@ const global_config = {
 
       // carbon 1/1s
       // 1-m-sb
-      42615025172696: 'Free shipping within 5 working days',
+      42615025172696: 'Free shipping within 10 working days',
       // 1-l-sb
       42615025369304: 'Free shipping within 5 working days',
       // 1-m-lb
-      42615025238232: 'Free shipping within 5 working days',
+      42615025238232: 'Free shipping within 10 working days',
       // 1-l-lb
       42615025434840: 'Free shipping within 5 working days',
       // 1-m-pb
@@ -161,9 +166,9 @@ const global_config = {
       // 1-l-pb
       42615025500376: 'Free shipping within 5 working days',
       // 1-m-pw
-      43608364417240: ' ',
+      43608364417240: 'Free shipping within 5 working days',
       // 1-l-pw
-      43608364450008: ' ',
+      43608364450008: 'Free shipping within 5 working days',
       // 1s-m-sb
       43869302816984: 'Free shipping within 5 working days',
       // 1s-l-sb
@@ -181,7 +186,12 @@ const global_config = {
   // chrod order page 配置项
   chord_order_page_config: {
     // chord 车默认显示 variant_id, 只有 url 上的 variant 参数为空的时候生效
-    default_variant: 43705718997208,
+    default_variant: 43705719062744,
+    ignore_variants_available_false: [],
+    size_map: {
+      'High-Step': 'Fit for 170-195 cm',
+      'Step-Through': 'Fit for 160-185 cm'
+    },
     // 产品图
     product_images: {
       "High-Step": {
@@ -201,13 +211,14 @@ const global_config = {
 
           'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18770_ae2056ef-cd08-42d1-a7b4-e8f125eae35a.png?v=1689237082',
           'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18771.png?v=1689237081',
-          'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18772.png?v=1689237082'
+          'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18772_58e3cebc-b65d-42e2-bee0-f40c0662e725.png?v=1695388441'
         ],
         commonSwiper: [
-          'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230224-145020_4c046e1d-5af9-48af-a786-4b35087a5a87.png?v=1689236898',
           'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230224-145010_f48cb52f-2d3d-4a4f-b7f7-c6c2980349c9.png?v=1689236897',
-          'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_-1.png?v=1689236897',
-          'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/DSCF-1.png?v=1689236898'
+          'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230213-untitled-6129.jpg?v=1695387132',
+          'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230213-untitled-6611.jpg?v=1695387132',
+          'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/DSCF2506.jpg?v=1695387132',
+          'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230213-untitled-5302.jpg?v=1695387132'
         ]
       },
       "Step-Through": {
@@ -227,13 +238,23 @@ const global_config = {
 
           'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18770_ae2056ef-cd08-42d1-a7b4-e8f125eae35a.png?v=1689237082',
           'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18771.png?v=1689237081',
-          'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18772.png?v=1689237082'
+          'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18772_58e3cebc-b65d-42e2-bee0-f40c0662e725.png?v=1695388441'
+        ],
+        Gray: [
+          'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/chord_x_gr_side.png?v=1696833425',
+          'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/chord_x_gr_front.png?v=1696833426',
+          'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/chord_x_gr_back.png?v=1696833425',
+
+          'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/chord_x_gr_bar.png?v=1696833426',
+          'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/chord_x_gr_gear.png?v=1696833426',
+          'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/chord_x_gr_downtube.png?v=1696833426'
         ],
         commonSwiper: [
-          'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230224-145020_4c046e1d-5af9-48af-a786-4b35087a5a87.png?v=1689236898',
           'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230224-145010_f48cb52f-2d3d-4a4f-b7f7-c6c2980349c9.png?v=1689236897',
-          'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_-1.png?v=1689236897',
-          'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/DSCF-1.png?v=1689236898'
+          'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230213-untitled-6129.jpg?v=1695387132',
+          'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230213-untitled-6611.jpg?v=1695387132',
+          'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/DSCF2506.jpg?v=1695387132',
+          'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230213-untitled-5302.jpg?v=1695387132'
         ]
       }
     },
@@ -242,12 +263,25 @@ const global_config = {
     // 每一种variant 的发货时间文案
     ebike_delivery_time: {
 
+      //outlet chord
+      //chord
+      //white
+      43950919024856: 'Free shipping within 10 working days',
+      //black
+      43950919057624: 'Free shipping within 10 working days',
+      //chord X
+      //white
+      43950919090392:'Free shipping within 10 working days',
+      //black
+      43950919123160:'Free shipping within 10 working days',
+
+        
       // chord
-      43705718997208: 'Pre-order items shipped from October 1 - 15, 2023',
-      43705719029976: 'Pre-order items shipped from October 1 - 15, 2023',
+      43705718997208: 'Free shipping within 5 working days',
+      43705719029976: 'Free shipping within 5 working days',
       // chord x
-      43705719062744: 'Pre-order items shipped from October 1 - 15, 2023',
-      43705719095512: 'Pre-order items shipped from October 1 - 15, 2023',
+      43705719062744: 'Ships between November 15-30, 2023',
+      43988553859288: 'Ships between November 15-30, 2023',
     }
   }
 }

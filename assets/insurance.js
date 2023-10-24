@@ -279,7 +279,8 @@ const insurance = new Insurance();
 const url_to_page_map = {
   "/products/urtopia-chord-ebike": 'chord-order-page',
   "/products/urtopia-carbon-e-bike": 'carbon-order-page',
-  "/products/outlet-carbon-1-1s": 'outlet-order-page'
+  "/products/outlet-carbon-1-1s": 'outlet-carbon-order-page',
+  "/products/outlet-urtopia-chord": 'outlet-chord-order-page'
 }
 
 function addToCartInsurance(parse, show = false) {
@@ -357,11 +358,11 @@ function addToCartInsurance(parse, show = false) {
     })
     .then((res) => res.json())
     .then((res1) => {
-      console.log(res1);
       res1.key = "";
 
       if (res1.message && res1.status) {
         $('.product .js-fake-add-to-cart').before('<span style="color:red;" class="error-tip u14Medium_v2">Your order quantity has reached our stock limit</span>')
+        fetchBuried('error', 'addtocard-error', res1)
 
         setTimeout(() => {
           $('.product .buttons .error-tip').remove()

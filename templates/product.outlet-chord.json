@@ -1,12 +1,12 @@
 {
   "sections": {
-    "homePage": {
-      "type": "homePage",
+    "outlet-chord": {
+      "type": "outlet-chord",
       "settings": {
       }
     }
   },
   "order": [
-    "homePage"
+    "outlet-chord"
   ]
 }

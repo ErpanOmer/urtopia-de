@@ -37,11 +37,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
       })(window, document, "clarity", "script", "brxngkcx7t");
     </script>
-
-    <!-- Bing UET checkout -->
-    <script>
-      (function (w, d, t, r, u) { var f, n, i; w[u] = w[u] || [], f = function () { var o = { ti: "52014192" }; o.q = w[u], w[u] = new UET(o), w[u].push("pageLoad") }, n = d.createElement(t), n.src = r, n.async = 1, n.onload = n.onreadystatechange = function () { var s = this.readyState; s && s !== "loaded" && s !== "complete" || (f(), n.onload = n.onreadystatechange = null) }, i = d.getElementsByTagName(t)[0], i.parentNode.insertBefore(n, i) })(window, document, "script", "//bat.bing.com/bat.js", "uetq");
-    </script>
     <script>
       window.uetq = window.uetq || []; window.uetq.push('event', 'begin_checkout', { "revenue_value": '{{ checkout.total_price | divided_by:100.0}}', "currency": "EUR" });
     </script>
@@ -280,7 +275,7 @@ if(Shopify.Checkout.step){
                   <div class="u17Medium_v2">{{ 'checkout_klarna.work6' | t }}<span></span></div>
                   <div class="u17Medium_v2">{{ 'checkout_klarna.work7' | t }}<span></span></div>
           </div>
-          <div style="padding: 10px;">{{ 'checkout_klarna.klarna_apr' | t }}</div>
+          <div style="padding: 10px;">{{ 'checkout_klarna.klarna_apr' | t }}&nbsp; <a class="my-link" style="text-decoration: underline;" target="_blank" href="/pages/refund-policy">{{ 'checkout_klarna.klarna_policy' | t }}<a/></div>
       </div>
       <div onclick="closeMiniDialog()" class="my-button my-button-black">{{ 'checkout_klarna.button' | t }}</div>
       <span onclick="closeMiniDialog()" class="close">×</span>

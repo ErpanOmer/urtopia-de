@@ -5,6 +5,7 @@
         {% when 'product.pf-b10ddb73' %}
         {% when 'product.pf-d095440b' %}
         {% when 'page.pf-3b2bc3c4' %}
+            {{ 'shopInfoList-de-4.js' | asset_url | preload_tag: as: 'script', type: 'text/javascript' }}
         {% when 'page.jobrad' %}
         {% when 'page.pf-59c57289' %}    
         {% else %}
@@ -15,8 +16,6 @@
     {% endcase %}
 {% else %}
 {% endif %}
-
-
 
 <script src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/1.9.1-jquery.min.js?v=1663911504"></script>
 <script src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/8-swiper-bundle.min.js?v=1663912984"></script>
@@ -69,6 +68,30 @@ function getSearchValues () {
     }
 
     return search
+}
+
+// product price 格式化函数
+function getPriceFormat (value = 0, ignoreZero = false) {
+    const instance =  new Intl.NumberFormat("de-DE", {
+      style: "currency",
+      currency: Shopify.currency.active,
+      minimumFractionDigits: ignoreZero ? 0 : 2,
+      maximumFractionDigits: ignoreZero ? 0 : 2
+    })
+
+    return `€${instance.format(value / 100).replace(/ €/g, '')}`
+ }
+
+// url 
+function replaceSearchValue (k, v) {
+    if (!k || !v) {
+        return
+    }
+
+    const url = new URL(location.href)
+    url.searchParams.set(k, v)
+
+    history.replaceState(null, '', url);
 }
 
 

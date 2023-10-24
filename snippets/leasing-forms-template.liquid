@@ -107,15 +107,13 @@
                     <div class="u24Medium">Country<i>*</i></div>
                     <input type="text" name="country" value="Deutschland" disabled required>
                 </div>
-                {% if template == "page.leasing" %}
-                    <div class="item">
+                <div class="item">
                         <div class="u24Medium">Leasing partner your employer provided<i>*</i></div>
                         <select name="partner" required>
                             <option value="">---</option>
                         </select>
                         <span class="error"></span>
                     </div>
-                {% endif %}
                 <div class="item" name="bike_image" style="display:none;">
                     <div class="u24Medium">Bike you choose:</div>
                     <input type="image" name="bike_image" src="">
@@ -127,7 +125,7 @@
                         <option value="carbon1">Carbon 1</option>
                         <option value="carbon1s">Carbon 1s</option>
                         <option value="chord">Chord</option>
-                        <option value="chordx">Chord X</option>
+                        <!--<option value="chordx">Chord X</option>-->
                     </select>
                     <span class="tips u14Light_v2"></span>
                 </div>
@@ -165,9 +163,13 @@
                     <!-- <input type="text" name="accessories" placeholder="" > -->
                 </div>
                 <div class="item">
-                    <div class="u24Medium">Employer ID:<br><span style="font-size: 12px;color: #666;line-height: 16px;display: inline-block;">It is a ID provide by your employer or HR department.</span></div>
+                    <div class="u24Medium"><span>Partner code:</span><br><span style="font-size: 12px;color: #666;line-height: 16px;display: inline-block;">It is a ID provide by your employer or HR department.</span></div>
                     <input type="text" name="employer_id">
-                </div> 
+                </div>
+                <div class="item">
+                    <div class="u24Medium"><span>Employer number:</span><br><span style="font-size: 12px;color: #666;line-height: 16px;display: inline-block;">It is a number issued by your employer or the Human Resources Department.</span></div>
+                    <input type="text" name="employer_number">
+                </div>
                 <!--<div class="item">
                     <div class="u24Medium">Your employer already offers JobRad?<i>*</i></div>
                     <div class="multiple-checkbox">
@@ -218,29 +220,12 @@
 <script>
 
 // 页面信息
-const page_infos = {% case template | json %}
-    {% when 'page.jobrad-leasing-new' %}
-        {
-            page_name: 'jobrad',
-            form_offers_label: 'Your employer already offers JobRad?<i>*</i>',
-            form_thankyou_content: 'Thank you for your request. You will receive a quote from info@jobrad.org via email within one business day. Please check your inbox. <br><br>If you have any questions, please do not hesitate to contact us: Email: <a class="my-link" href="mailto:leasing@newurtopia.de">leasing@newurtopia.de</a>',
-            form_thankyou_content2: `Thank you for your request. You will receive a quote from info@jobrad.org via email within one business day. Please check your inbox. <br><br>Since your company has not yet partnered with JobRad, we would like to offer you an exclusive discount for direct purchases as an expression of our gratitude and support.`
-        }
-    {% when 'page.mein-dienstrad' %}
-        {
-            page_name: 'mein-dienstrad',
-            form_offers_label: 'Your employer already offers mein-dienstrad?<i>*</i>',
-            form_thankyou_content: 'You have successfully submit the form. Our expert will contact you soon. Feel free to contact us if you have any questions.',
-            form_thankyou_content2: `Thank you for your request. You will receive a quote from info@mein-dienstrad.org via email within one business day. Please check your inbox. <br><br>Since your company has not yet partnered with mein-dienstrad, we would like to offer you an exclusive discount for direct purchases as an expression of our gratitude and support.`
-        }
-    {% else %}
-        {
-            page_name: 'leasing',
-            form_offers_label: 'Your employer already offers<br class="pcHide mobileHide"> <span>leasing</span>?<i>*</i>',
-            form_thankyou_content: 'You have successfully submit the form. Our expert will contact you soon. <br><br>If you have any questions, please do not hesitate to contact us: Email: <a class="my-link" href="mailto:leasing@newurtopia.de">leasing@newurtopia.de',
-            form_thankyou_content2: `Thank you for your request. Our expert will contact you soon. Please check your inbox. <br><br>Since your company has not yet partnered with <span></span>, we would like to offer you an exclusive discount for direct purchases as an expression of our gratitude and support.`
-        }
-{% endcase %}
+const page_infos = {
+    page_name: 'leasing',
+    form_offers_label: 'Your employer already offers<br class="pcHide mobileHide"> <span>leasing</span>?<i>*</i>',
+    form_thankyou_content: 'You have successfully submit the form. Our expert will contact you soon. <br><br>If you have any questions, please do not hesitate to contact us: Email: <a class="my-link" href="mailto:leasing@newurtopia.de">leasing@newurtopia.de',
+    form_thankyou_content2: `Thank you for your request. Our expert will contact you soon. Please check your inbox. <br><br>Since your company has not yet partnered with <span></span>, we would like to offer you an exclusive discount for direct purchases as an expression of our gratitude and support.`
+}
 
 
 // size 映射
@@ -359,7 +344,8 @@ function getFormValues (elem = '') {
     })
 
     if (temp.bike_model.includes('carbon')) {
-        temp.variant_id = carbon.variants.find(c => c.title === `${temp.bike_model} / ${temp.bike_size} / ${temp.bike_style}`)
+        const bike_model = temp.bike_model === 'carbon1' ? "Carbon Belt" : "Shimano Gear"
+        temp.variant_id = carbon.variants.find(c => c.title === `${bike_model} / ${temp.bike_size} / ${temp.bike_style}`)
         temp.variant_id = temp.variant_id ? temp.variant_id.id : ''
     } else {
         temp.variant_id = chord.variants.find(c => c.title === `${temp.bike_size} / ${temp.bike_style}`)
@@ -368,6 +354,7 @@ function getFormValues (elem = '') {
 
     
     temp.offers = $('.forms label[class="active"]').attr('for')
+    console.log('temp', temp)
     return temp
 }
 
@@ -384,10 +371,6 @@ function mergeValues () {
     merge.page_type = page_infos.page_name
     merge.offers = forms.partner === 'none' ? 'no' : 'yes'
 
-    {% unless template == "page.leasing" %}
-        merge.partner = page_infos.page_name === 'jobrad' ? 'Jobrad' : 'Mein-dienstrad.de'
-    {% endunless %}
-
     return merge
 }
 
@@ -403,7 +386,7 @@ function submit (forms = {}) {
     //}
 
 
-
+    forms.url = location.href
     fetchBuried('leasing', 'submit', forms)
 
     if (forms.offers === 'no') {
@@ -427,7 +410,7 @@ const clearBikeImage = () => {
 
 
 const carbonBikeChange = (model, size, style) => {
-    $('.forms form .item .tips').html(`${global_config.leasing.ebike_delivery_time[model]}`)
+    $('.forms form .item .tips').html(`incl. ${model === 'carbon1' ? switch_bike.carbon1.discount_price: switch_bike.carbon1s.discount_price } <label>discount, ${global_config.leasing.ebike_delivery_time[model]}</label>`)
     model = model === 'carbon1' ? "Carbon Belt" : "Shimano Gear"
     // 通过遍历 判断option 是否可用
     $(`select[name="bike_style"] option`).each((i, item) => {
@@ -459,7 +442,7 @@ const carbonBikeChange = (model, size, style) => {
     // 如果当前variant 库存不足
     if (!find || !find.available) {
         $('select[name="bike_style"]').val('')
-        $('.forms form select[name="bike_size"]').closest('.item').find('.error').text(`Your selection is currently reached our stock limit - size: ${size}, style: ${style}`)
+        $('.forms form select[name="bike_size"]').closest('.item').find('.error').html(`<span>Your selection is currently reached our stock limit</span> - {{ 'order_page.size' | t  }}: ${size}, {{ 'order_page.style' | t  }}: ${style}`)
         
         return clearBikeImage()
     }
@@ -492,7 +475,7 @@ const chordBikeChange = (model, size, style) => {
     size = model === 'chord' ? 'High-Step' : 'Step-Through'
     setTimeout(() => $('select[name="bike_size"]').val(size))
 
-    $('.forms form .item .tips').html(`${global_config.leasing.ebike_delivery_time[model]}<br>Free Fenders and Kickstand Included`)
+    $('.forms form .item .tips').html(`incl. ${model === 'chord' ? switch_bike.chord.discount_price: switch_bike.chordx.discount_price } <label>discount with free bike stand and mudguard, ${global_config.leasing.ebike_delivery_time[model]}</label>`)
     
 
     // 通过遍历 判断option 是否可用
@@ -519,7 +502,7 @@ const chordBikeChange = (model, size, style) => {
     // 如果当前variant 库存不足
     if (!find || !find.available) {
         $('select[name="bike_style"]').val('')
-        $('.forms form select[name="bike_size"]').closest('.item').find('.error').text(`Your selection is currently reached our stock limit - size: ${size}, style: ${style}`)
+        $('.forms form select[name="bike_size"]').closest('.item').find('.error').html(`<span>Your selection is currently reached our stock limit</span> - {{ 'order_page.size' | t  }}: ${size}, {{ 'order_page.style' | t  }}: ${style}`)
         
         return clearBikeImage()
     }
@@ -620,6 +603,7 @@ const changeBikeImage = e => {
 // 延迟执行一些DOM
 setTimeout(() => {
     $('input[name="employer_id"]').closest('.item').hide()
+    $('input[name="employer_number"]').closest('.item').hide()
     // 更改 offers label
     $('input[name="offers"]').closest('.item').find('.u24Medium').html(page_infos.form_offers_label)
 
@@ -685,7 +669,7 @@ setTimeout(() => {
         minLength: 1,
         source: function( request, response ) {
             const search = request.term
-            fetch(`https://api.mapbox.com/geocoding/v5/mapbox.places/${search}.json?country=DE&language=de&limit=5&types=postcode,district,place,locality,address,poi&access_token=pk.eyJ1IjoiaGFya2lyYW43MjM3IiwiYSI6ImNrcGdwaWpoYzJqaGwzMW54ajdrbW0xZjUifQ.qXWqhm4BiHFwMh1UOi69uQ`).then(r => r.json()).then(r => {
+            fetch(`https://api.mapbox.com/geocoding/v5/mapbox.places/${search}.json?country=DE&language=de&limit=5&types=postcode,district,place,locality,address,poi&access_token=pk.eyJ1IjoiYW50b25pby1sbGFubyIsImEiOiJjbDV6bzljMXUxZmI0M2Ntbnl0dDQ0cWE0In0.FNFUfT-_bFq_l6Zo36lnAg`).then(r => r.json()).then(r => {
                 response(r.features.map(f => {
                     return {
                         label: f.place_name_de,

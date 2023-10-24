@@ -43,7 +43,7 @@
                 <option value="carbon1">Urtopia Carbon 1</option>
                 <option value="carbon1s">Urtopia Carbon 1s</option>
                 <option value="chord">Urtopia Chord</option>
-                <option value="chordx">Urtopia Chord X</option>
+                <!--<option value="chordx">Urtopia Chord X</option>-->
             </select>
         </div>
     </div>
@@ -492,13 +492,36 @@ $('.partners .swiper-wrapper').html(swiperItems.map(item => `
 
         page_infos.form_thankyou_content2 = page_infos.form_thankyou_content2.replace(/<span>([^<]*?)<\/span>/gi, `<span>${v}</span>`)
 
-        const offers = $('input[name="employer_id"]')
+        const employer_id = $('input[name="employer_id"]')
+        const employer_number = $('input[name="employer_number"]')
+
         if (v === "Jobrad" || v === 'none') {
-            offers.attr('type', 'hidden')
-            offers.closest('.item').hide()
+            employer_id.closest('.item').hide()
+            employer_number.closest('.item').hide()
+
+            employer_id.attr('type', 'hidden')
+            employer_number.attr('type', 'hidden')
         } else {
-            offers.attr('type', 'text')
-            offers.closest('.item').show()
+            employer_id.closest('.item').show()
+            employer_number.closest('.item').show()
+
+            employer_id.attr('type', 'text')
+            employer_number.attr('type', 'text')
+
+            if (v === 'Bike Leasing') {
+                employer_id.closest('.item').find('.u24Medium > span:first-child').text('Company code:')
+                employer_id.closest('.item').find('.u24Medium > span:last-child').text('Submit leasing request via company code or customer number (employee does not yet have a bikeleasing bike).')
+
+                employer_number.closest('.item').find('.u24Medium > span:first-child').text('Bikeleasing-user-ID:')
+                employer_number.closest('.item').find('.u24Medium > span:last-child').text('Leasing request via the bike leasing user ID of the employee.')
+            } else {
+                employer_id.closest('.item').find('.u24Medium > span:first-child').text('Partner code:')
+                employer_id.closest('.item').find('.u24Medium > span:last-child').text('It is a ID provide by your employer or HR department.')
+
+                employer_number.closest('.item').find('.u24Medium > span:first-child').text('Employer number:')
+                employer_number.closest('.item').find('.u24Medium > span:last-child').text('It is a number issued by your employer or the Human Resources Department.')
+            }
+            
         }
 
         partnerForAccessoriesDisable(v, true)

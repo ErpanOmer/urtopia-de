@@ -60,7 +60,7 @@ const bike_sizes = [
     name: 'Chord X',
     fit: 'Fit for 160-185 cm',
     size: 'Step-Through',
-    img: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/1_1_2x_c0a40bb0-8853-4818-aa56-0b6cdad81548.jpg?v=1683612101'
+    img: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/chordX_2x_fe86f1a1-6d47-4dd4-b1b9-80ee149da0fe.jpg?v=1689154670&width=430'
   }
 ]
 
@@ -3363,7 +3363,11 @@ function splitTimeFormat(item = '') {
          } else {
             // 如果是chrod
             if (size.includes('Chord')) {
-              choose.push(bike_sizes.find(b => b.name === 'Chord'))
+              if (size.includes('X')) {
+                choose.push(bike_sizes.find(b => b.name === 'Chord X'))
+              } else {
+                choose.push(bike_sizes.find(b => b.name === 'Chord'))
+              }
             } else {
               choose = choose.concat(s.map(i => {
                 const find = bike_sizes.find(b => b.name === 'Carbon 1' && b.size === i)

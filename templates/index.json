@@ -20,7 +20,6 @@
     },
     "1656491949bd2577b6": {
       "type": "image-text",
-      "disabled": true,
       "blocks": {
         "e5049491-40c3-47e3-b2c4-495f2171a7ae": {
           "type": "list",
@@ -43,12 +42,12 @@
         "e5049491-40c3-47e3-b2c4-495f2171a7ae",
         "165649194997d6ccf2-0"
       ],
+      "disabled": true,
       "settings": {
       }
     },
     "1656492284a17cede3": {
       "type": "photoWall",
-      "disabled": true,
       "blocks": {
         "053b1246-206f-4f29-8029-a47a33b0d2db": {
           "type": "col",
@@ -101,12 +100,12 @@
         "fa75f057-ba90-4767-bf45-0322fd62fbcf",
         "a57820c4-b419-40f4-9d4b-fa34b80de970"
       ],
+      "disabled": true,
       "settings": {
       }
     },
     "16564927103a32e910": {
       "type": "media-review-list",
-      "disabled": true,
       "blocks": {
         "523b0a8c-0fb1-40bf-921b-aca5140d266a": {
           "type": "review",
@@ -166,13 +165,13 @@
         "180d9ffa-5fdb-406c-bbee-a21c80e4c63b",
         "707cb7cd-ffd5-42d7-b93d-6e5f103df812"
       ],
+      "disabled": true,
       "settings": {
         "heading": ""
       }
     },
     "1656492713cc80b30e": {
       "type": "comments-list",
-      "disabled": true,
       "blocks": {
         "16564927135567635b-0": {
           "type": "list",
@@ -225,14 +224,9 @@
         "43c61818-86b9-4ef1-8312-28ddd4965ee5",
         "c578b660-cab4-4b27-a39f-1bb6c2605179"
       ],
-      "settings": {
-        "heading": "What our customers say"
-      }
-    },
-    "ab5b994e-332c-4d8d-a7a2-c5e2b272dd3f": {
-      "type": "homePage",
       "disabled": true,
       "settings": {
+        "heading": "What our customers say"
       }
     },
     "pagefly-home": {
@@ -248,7 +242,6 @@
     "1656492284a17cede3",
     "16564927103a32e910",
     "1656492713cc80b30e",
-    "ab5b994e-332c-4d8d-a7a2-c5e2b272dd3f",
     "pagefly-home"
   ]
 }

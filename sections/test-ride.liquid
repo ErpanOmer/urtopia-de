@@ -3,7 +3,64 @@
 {{ 'testride.scss.css' | asset_url | stylesheet_tag }}
 
 <div class="testride">
-    <div class="banner">
+    <div class="test-ride-new-banner">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide common">
+                <div class="centeral-content">
+                    <div>
+                        <div class="u48DemiBold_v2">Your first hand on Urtopia</div>
+                        <div class="u17Medium_v2">
+                            Take your first step in to experience the stunning appearance and smooth riding. Book a test ride today with our partners and ambassadors! Their extensive expertise and enthusiasm will help you out with any questions in and out.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide one">
+                <div class="centeral-content">
+                    <div>
+                        <div class="u20Light_v2">Ambassador’s Story - <span class="u20DemiBold_v2">Stefan Gehrke</span></div>
+                        <div class="u36DemiBold_v2">Always Curious, <br class="mobileHide">Always Share</div>
+                        <div class="u17Medium_v2">Address: buero fuer neues denken, Bötzowstr. 18, 10407 Berlin</div>
+                        <div class="flex-1"></div>
+                        <div class="buttons">
+                            <a href="/blogs/blog/stefan-gehrke" target="_blank" class="my-button">Read more</a>
+                            <div onclick="booknow('Stefan Gehrke')" class="my-button">Test ride</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide two">
+                <div class="centeral-content">
+                    <div>
+                        <div class="u20Light_v2">Partner’s Story - <span class="u20DemiBold_v2">Jörg Kaufmann</span></div>
+                        <div class="u36DemiBold_v2">Why a 4S Dealership<br class="mobileHide">Choose Urtopia E-Bike</div>
+                        <div class="u17Medium_v2">Address: An d. Hohle 15, 02708 Löbau, Deutschland</div>
+                        <div class="flex-1"></div>
+                        <div class="buttons">
+                            <a href="/blogs/blog/why-a-4s-dealership-choose-urtopia-e-bike" target="_blank" class="my-button">Read more</a>
+                            <div onclick="booknow('Autohaus Löbau')" class="my-button">Test ride</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide three">
+                <div class="centeral-content">
+                    <div>
+                        <div class="u20Light_v2">Ambassador’s Story - <span class="u20DemiBold_v2">Henky R.</span></div>
+                        <div class="u36DemiBold_v2">An E-bike, a Scenic City,<br class="mobileHide">and a Plate of Sardines</div>
+                        <div class="u17Medium_v2">Address: Nippes, 50737 Köln (in der Nähe der Straßenbahn und Bus Haltestelle: Wilhelm Sollmann Straße)</div>
+                        <div class="flex-1"></div>
+                        <div class="buttons">
+                            <a href="/blogs/blog/henky-s-story" target="_blank" class="my-button">Read more</a>
+                            <div onclick="booknow('Henky Roucourt')" class="my-button">Test ride</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-pagination"></div>
+    </div>
+    <!--<div class="banner">
         <div class="centeral-content">
             <div class="u48DemiBold_v2">Your first hand on Urtopia</div>
             <div class="u17Medium_v2"></div>
@@ -11,7 +68,7 @@
                 Take your first step in to experience the stunning appearance and smooth riding. Book a test ride today with our partners and ambassadors! Their extensive expertise and enthusiasm will help you out with any questions in and out.
             </div>
         </div>
-    </div>
+    </div>-->
     <!--<div class="golf-banner">
         <div class="centeral-content">
             <div class="u48DemiBold_v2">Experience <br class="pcHide">Urtopia test rides <br>+ free coffee!</div>
@@ -180,67 +237,41 @@
     <div id="urtopia-calendar"></div>
 </div>
 
-{{ 'shopInfoList-de-4.js' | asset_url | script_tag }}
 {{ 'laydatev4-de.js' | asset_url | script_tag }}
 <script src="https://cdn.storepoint.co/api/v1/js/162f21804990ff.js"></script>
 <script>
+    const start_time = +new Date()
+    let loaded_worker = 0
+    let testRides = new Map()
+    let bike_options = new Set()
+    let country_group = {}
+    let search = {}
+    const u = new URL(location.href)
+
+    for (const [k, v] of u.searchParams.entries()) {
+        search[k] = v
+    }
+
+    const worker = new Worker('{{ 'shopInfoList-de-4.js' | asset_url }}')
+    worker.onmessage = function (e) {
+        testRides = e.data.store_list
+        bike_options = e.data.bike_options
+        country_group = e.data.country_group
+
+        loaded_worker = +new Date() - start_time
+
+        search.name && booknow(search.name)
+
+        //$('.test-ride-new-banner .buttons').show()
+    }
 
     let last_select_city = ''
     let last_select_store = ''
     let select_city_count = 0
     let select_store_count = 0
-
-    // 查询日期偏移量
-    const findOffset = ([nowWeek, vailableWeek]) => {
-        if (nowWeek === vailableWeek) {
-            return 0
-        }
-
-        return vailableWeek > nowWeek ? vailableWeek - nowWeek : 7 - (nowWeek - vailableWeek)
-    }
-
-    // 查找可预约到星期几
-    const findAvailableWeek = (d, businessHours) => {
-        if (businessHours[d]) {
-            return d
-        }
-
-        for (let i = d; i < d + 7; i++) {
-
-            if (businessHours[i % 7]) {
-                return i % 7
-            }
-        }
-
-        return -1
-    }
-
-    // 查询禁用日期
-    const findDisable = (str, index = 0, disableDate = []) => {
-        for (let i = index; i < disableDate.length; i++) {
-            if (disableDate[i] === str) {
-                return i
-            }
-        }
-    }
-
-    const dateToString = (time = new Date()) => {
-        time = time.toString().split(' ')    
-        return `${time[2]}. ${time[1]}`
-    }
+    let store_list_render_total_time = 0
     
-    const findStore = name => {
-            for (const city of testRides) {
-                for (const store of city.stores) {
-                  // 把所属国家也加上
-                  store.country = city.country || 'Deutschland'
-    
-                    if (store.name.replace(/\s*/g, "") === name.replace(/\s*/g, "")) {
-                        return store
-                    }
-                }
-            }
-        }
+    const findStore = name => testRides.get(name.replace(/\s*/g, ""))
     
       function CalendarOpen(shopPoint, shop, isSpecDay = false, timetp = 0) {    
         laydate.render({
@@ -418,72 +449,67 @@
         })
     }
 
-    function asyncFunc () {
-        const [func, ...args] = Array.from(arguments)
+    const tasks = []
+    const asyncFunc = window.requestIdleCallback || window.requestAnimationFrame || (fn => window.setTimeout(fn, 20));
+    const delayFetch = debounce(fetchBuried, 3000)
 
-        setTimeout(func, 100, ...args)
+    function run () {
+        if (tasks.length === 0) {
+            return delayFetch('testride', 'performance', {
+                store_list_render_total_time: `${+new Date() - store_list_render_total_time} ms`,
+                disable_date_max_limit,
+                asyncFuncName: asyncFunc.name,
+                userAgent: navigator.userAgent,
+                userAgentData: navigator.userAgentData,
+            })
+        }
 
-        //requestIdleCallback(() => func(...args))
+        const task = tasks.shift()
+        task.func.apply(null, task.args)
 
-        //Promise.resolve(...args).then(func)
+        // 用微任务去调用 宏任务
+        Promise.resolve(run).then(asyncFunc)
     }
 
-     // 可用日期计算
-     const findAvalibaleDate = (store, target) => {
-            let index = 0
-            let date = now
 
-            for (let i = 0; index < disable_date_max_limit; index++) {
-                const d = getData(date)
-                const str = getDateString(d)
+    const runTasks = debounce(run, 300)
 
-                // 保存上次 循环的index
-                index = findDisable(str, index, store.disableDate)
+    function asyncTaskPush () {
+        const args = Array.from(arguments)
 
-                if (!isNaN(index)) {
-                    date = Number(d) + oneDay
-                    continue
-                }
+        tasks.push({ 
+            func: args[0],
+            args: args.slice(1)
+        })
 
-                const currentWeek = d.getDay()
-                const AvailableWeek = findAvailableWeek(currentWeek, store.businessHours)
-
-                if (AvailableWeek === -1) {
-                    date = now
-                    break
-                }
-
-                if (currentWeek === AvailableWeek) {
-                    date = str
-                    break
-                }
-
-                date = Number(d) + (oneDay * findOffset([currentWeek, AvailableWeek]))
-            }
-
-            date = dateToString(getData(date))
-
-            asyncFunc(() => target.find('.time > div').text(date))
-            store.avalibaleDate = date
+        runTasks()
     }
 
 
     function calculateFunc (store, target) {
         if (typeof store.disableDate === 'function') {
-            return asyncFunc(() => {
+            return asyncTaskPush(() => {
                 store.disableDate = store.disableDate()
 
-                asyncFunc(findAvalibaleDate, store, target)
+                asyncTaskPush(findAvalibaleDate, store, target)
             })
         }
 
-
-        asyncFunc(findAvalibaleDate, store, target)
+        asyncTaskPush(findAvalibaleDate, store, target)
     }
 
-    function insertCustomElements(target) {
-        const store_list_render_total_time = +new Date()
-        target.style.opacity = 0
+    function insertCustomElements(target, count = 0) {
+        loaded_map = +new Date() - start_time
+        loaded_list = +new Date()
+
+        // 如果 worker 还没加载完成, 300s 重复调用, 止到调用10次
+        if (loaded_worker === 0 && count < 10) {
+            return setTimeout(insertCustomElements, 300, target, ++count)
+        }
+
+        if (testRides.size) {
+            target.style.opacity = 0
+        }
 
         const storeList = $(document.createDocumentFragment())
         const forms = $(document.createDocumentFragment())
@@ -522,15 +548,6 @@
 
         bike_select.append(bike_option)
 
-        // 输入框
-        // const input = document.createElement('input')
-        // input.setAttribute('placeholder', 'Search…')
-
-    
-        // option 选项，作为排序所用
-        const options = []
-        const bike_options = []
-
         // form.appendChild(input)
         form.append(select)
         form.append(bike_select)
@@ -552,40 +569,13 @@
 
 
             const item = $(document.createElement("div"))
-            const option = $(document.createElement('option'))
-            const bike_option = $(document.createElement('option'))
 
             item.addClass('item')
             item.attr('index', elem.attr('id'))
             item.attr('city', info.testrideSpot)
             item.attr('name', info.name)
 
-            option.text(info.testrideSpot)
-            option.attr('city', info.testrideSpot)
-            option.attr('country', info.country)
-
-            for (const b of getBikeAndSeries(info.availableSizes)) {
-                if (bike_options.find(i => i.attr('bike') === b)) {
-                    continue
-                }
-
-
-                bike_option.text(b)
-                bike_option.attr('bike', b)
-                bike_options.push(bike_option)
-            }
-
-
-            info.avalibaleDate = dateToString()
-            item.html(`
-                <div class="name">${info.name}<span>${info.isPartner ? ' - Ambassadors' : ' - Partner Store'}</span><i><svg class="icon" style="width: 1em;height: 1em;vertical-align: middle;fill: currentColor;overflow: hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5533"><path d="M748.3 533.3c0.1-0.2 0.3-0.4 0.4-0.6 0.2-0.3 0.5-0.7 0.7-1 0.1-0.1 0.2-0.3 0.2-0.4 0.3-0.4 0.5-0.8 0.8-1.2l0.1-0.1c2.6-4.6 4.1-9.6 4.6-14.7v-0.2c0-0.5 0.1-0.9 0.1-1.4v-0.6-1-1-0.6c0-0.5-0.1-0.9-0.1-1.4v-0.2c-0.4-5.1-2-10.1-4.6-14.7l-0.1-0.1c-0.2-0.4-0.5-0.8-0.8-1.3-0.1-0.1-0.2-0.3-0.2-0.4-0.2-0.3-0.4-0.7-0.7-1-0.1-0.2-0.3-0.4-0.4-0.6-0.2-0.3-0.4-0.5-0.6-0.8-0.2-0.2-0.4-0.5-0.6-0.7-0.1-0.1-0.2-0.2-0.3-0.4-0.1-0.1-0.2-0.2-0.2-0.3-0.2-0.3-0.5-0.5-0.7-0.8-0.2-0.2-0.4-0.4-0.5-0.6l-0.7-0.7-0.6-0.6c-0.2-0.2-0.5-0.4-0.7-0.7l-0.6-0.6-0.3-0.3-414.6-347.6c-15.2-12.7-38-10.7-50.7 4.4-12.7 15.2-10.7 38 4.4 50.7L663.2 512 281.6 832.2c-15.2 12.7-17.2 35.6-4.4 50.7 12.7 15.2 35.6 17.2 50.7 4.4l414.4-347.7 0.3-0.3 0.6-0.6c0.2-0.2 0.5-0.4 0.7-0.7l0.6-0.6 0.7-0.7c0.2-0.2 0.4-0.4 0.5-0.6 0.2-0.3 0.5-0.5 0.7-0.8 0.1-0.1 0.2-0.2 0.2-0.3 0.1-0.1 0.2-0.2 0.3-0.4 0.2-0.2 0.4-0.5 0.6-0.7 0.4-0.1 0.6-0.4 0.8-0.6z" fill="#333333" p-id="5534"></path></svg></i></div>
-                <div class="address gray">${info.add}</div>
-                <div class="available">Available Model:</div>
-                <ul>
-                    ${info.availableSizes ? info.availableSizes.map(i => `<li class="gray">${i}</li>`).join('') : `<li class="gray">Carbon One Size ${info.testRideSize}</li>`}
-                </ul>
-                <div class="time gray"><img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/calendar_2x_af8d9192-1ff9-43f0-aba6-3547b1129854.jpg?v=1680938382"/> Earliest available time: &nbsp;<div>${info.avalibaleDate}</div></div>
-            `)
+            item.html(info.html)
             
             // 点击item 代理到真实的store
             item.on('click', e => {
@@ -619,54 +609,48 @@
             })
 
             items.append(item)
-
-            
-
-            if (!options.find(option => option.attr('city') === info.testrideSpot )) {
-                options.push(option)
-            }
-
-            // 异步计算
-            asyncFunc(calculateFunc, info, item)
         })
 
-        // 首字母排序
-        options.sort((a, b) => a.attr('city').localeCompare(b.attr('city')))
+        for (const country in country_group) {
+            const group = $(document.createElement('optgroup'))
+            const citys = country_group[country]
 
-        // select group
-        const optgroup = []
-        for (const option of options) {
-            const country = option.attr('country')
-            // find
-            let group = optgroup.find(o => o.attr('label') === country)
+            group.attr('label', country)
 
-            if (!group) {
-                group = $(document.createElement('optgroup'))
-                group.attr('label', country)
-                optgroup.push(group)
+            for (const city of citys) {
+                const option = $(document.createElement('option'))
+                option.text(city)
+                option.attr('city', city)
+                option.attr('country', country)
+
+                group.append(option)
             }
 
-            group.append(option)
-        }
-
-        for (const group of optgroup) {
             select.append(group)
         }
 
-        for (const bike of bike_options) {
-            bike_select.append(bike)
-        }
+        bike_options.forEach(option => {
+            const bike_option = $(document.createElement('option'))
+            bike_option.text(option)
+            bike_option.attr('bike', option)
+
+            bike_select.append(bike_option)
+        })
 
         storeList.append(items)
         storeList.append(no_result)
         forms.append(form)
 
-        $(target).parent().append(storeList)
-        $('#storepoint-search').append(forms)
+        if (testRides.size) {
+            $(target).parent().append(storeList)
+            $('#storepoint-search').append(forms)    
+        }
+
 
         fetchBuried('testride', 'performance', {
-            store_list_render_total_time: `${+new Date() - store_list_render_total_time} ms`,
-            disable_date_max_limit,
+            loaded_worker: `${loaded_worker} ms`,
+            loaded_map: `${loaded_map} ms`,
+            loaded_list: `${+new Date() - loaded_list} ms`,
             userAgent: navigator.userAgent,
             userAgentData: navigator.userAgentData,
         })
@@ -718,6 +702,8 @@
 
         const href = $('#storepoint-map .storepoint-location-popup .storepoint-popup-directions').attr('href')
 
+        const noBook = typeof store.noBook === "string" ? store.noBook : 'Please contact the Ambassadors directly to arrange test ride'
+
         if (store.noBook) {
             popup.append(`
                 <div class="map-popup">
@@ -742,7 +728,7 @@
                                 <span class="u14Light_v2">${store.add}</span>
                             </div>
                         </div>
-                        <div class="u14DemiBold_v2">Please contact the Ambassadors directly to arrange test ride</div>
+                        <div class="u14DemiBold_v2">${noBook}</div>
                     </div>
                 </div>
             `)
@@ -801,17 +787,6 @@
     }
 
 
-
-    let search = {}
-    const u = new URL(location.href)
-
-    for (const [k, v] of u.searchParams.entries()) {
-        search[k] = v
-    }
-
-    search.name && booknow(search.name)
-
-
     const sale_store = {
         name: 'Saras Wohnzimmer Münster',
         phone: '+0174 9610700',
@@ -847,8 +822,19 @@
     })
 
     search.from_home_page && booknow(sale_store)
-    </script>
 
-    <script>
-        
+
+    new Swiper('.test-ride-new-banner', {
+        autoplay: {
+            disableOnInteraction: false,
+            pauseOnMouseEnter: true,
+            delay: 10000,
+        },
+        loop: true,
+        speed: 1000,
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true
+        }
+    })
     </script>
