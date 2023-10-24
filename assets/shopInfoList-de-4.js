@@ -562,7 +562,7 @@ const testRides = [
         phone: '+49404204944',
         email: 'info@veloshop.de',
         timezone: "Hamburg, Germany (GMT+1)",
-        add: "Eppendorfer Weg 250, 20251 Hamburg, Germany",
+        add: "Eppendrofer Weg 250",
         imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/VELO_SHOP.jpg?v=1693272717",
         testrideSpot: "Hamburg",
         testRideSize: "L",
@@ -604,11 +604,11 @@ const testRides = [
         ],
       },
       {
-        name: 'Michael Kaersten',
+        name: 'Michael Kaersten(am)',
         phone: '+49 1781817761',
         email: 'urtopia@kaersten.net',
         timezone: "Hamburg, Germany (GMT+1)",
-        add: "Grandweg 82 22529 Hamburg, Germany",
+        add: "Am Neuländer Gewerbepark 21079 Hamburg/Germany",
         imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/output.jpg?v=1696859457",
         testrideSpot: "Hamburg",
         testRideSize: "L",
@@ -618,14 +618,37 @@ const testRides = [
         ],
         businessHours: [
           "",
-          "10:00-20:00",
-          "10:00-20:00",
-          "10:00-20:00",
-          "10:00-20:00",
+          "10:00-11:00",
+          "10:00-11:00",
+          "10:00-11:00",
+          "10:00-11:00",
           "",
           "",
         ],
       },
+      {
+        name: 'Michael Kaersten(pm)',
+        phone: '+49 1781817761',
+        email: 'urtopia@kaersten.net',
+        timezone: "Hamburg, Germany (GMT+1)",
+        add: "Grandweg 22529 Hamburg/Germany",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/output.jpg?v=1696859457",
+        testrideSpot: "Hamburg",
+        testRideSize: "L",
+        isPartner: true,
+        availableSizes: [
+          'Carbon 1 Size L'
+        ],
+        businessHours: [
+          "",
+          "15:00-16:00",
+          "15:00-16:00",
+          "15:00-16:00",
+          "15:00-16:00",
+          "",
+          "",
+        ],
+      }
     ]
   },
   {
@@ -1294,6 +1317,812 @@ const testRides = [
           "",
         ],
         isPartner: true
+      },
+    ]
+  },
+  {
+    city: 'Güstrow',
+    cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/schloss_guestrow_drohne17_aNoB_ubertr_kUrh_005-1351x900.jpg?v=1689910159',
+    series: [
+      'Urtopia Carbon 1 Size L',
+      'Urtopia Carbon 1s Size M'
+    ],
+    stores: [
+      {
+        name: 'Mabea GmbH',
+        phone: '+49 01743069724',
+        email: 'support@mabea-mobility.de',
+        timezone: "Mainz, Germany (GMT+1)",
+        add: "Neue Str. 6, 18273 Güstrow, Germany",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/schloss_guestrow_drohne17_aNoB_ubertr_kUrh_005-1351x900.jpg?v=1689910159",
+        testrideSpot: "Güstrow",
+        testRideSize: "L, M, Chord",
+        noBook: "Please contact the store directly to arrange test ride",
+        availableSizes: [
+          'Carbon 1 Size L',
+          'Carbon 1s Size M',
+          'Chord',
+        ],
+        businessHours: [
+          "",
+          "12:00-16:00",
+          "12:00-16:00",
+          "12:00-16:00",
+          "12:00-16:00",
+          "12:00-16:00",
+          "",
+        ],
+      },
+    ]
+  },
+  {
+    city: 'Freiburg',
+    cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/schloss_guestrow_drohne17_aNoB_ubertr_kUrh_005-1351x900.jpg?v=1689910159',
+    series: [
+      'Urtopia Carbon 1',
+      // 'Urtopia Carbon 1'
+    ],
+    stores: [
+      {
+        name: 'Lauf&Rad Guth',
+        phone: '+49 7615577840',
+        email: 'info@laufundrad-guth.de',
+        timezone: "Mainz, Germany (GMT+1)",
+        add: "Zähringer Str. 8, 79108 Freiburg im Breisgau",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Screenshot_2023-08-04_at_02.35.22.png?v=1691087750",
+        testrideSpot: "Freiburg",
+        testRideSize: "L, M, Chord, Chord X",
+        noBook: "Please contact the store directly to arrange test ride",
+        availableSizes: [
+          'Carbon 1 Size M/L',
+          'Carbon 1s Size M',
+          'Chord',
+          'Chord X',
+        ],
+        businessHours: [
+          "",
+          "9:00-18:00",
+          "9:00-18:00",
+          "9:00-18:00",
+          "9:00-18:00",
+          "9:00-18:00",
+          "10:00-13:00",
+        ],
+      },
+    ]
+  },
+  {
+    country: 'Netherlands',
+    city: 'Utrecht',
+    cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Utrecht_canal.jpg?v=1690441967',
+    series: [
+      'Urtopia Carbon 1',
+      // 'Urtopia Carbon 1'
+    ],
+    stores: [
+      {
+        name: 'Wybren van der Wal',
+        phone: '+31 623976683',
+        email: 'wybrenvanderwal@gmail.com',
+        timezone: "Mainz, Germany (GMT+1)",
+        add: "3572EE Utrecht The Netherlands",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Utrecht_canal.jpg?v=1690441967",
+        testrideSpot: "Utrecht",
+        testRideSize: "L",
+        availableSizes: [
+          'Carbon 1 Size M',
+        ],
+        businessHours: [
+          "12:00-16:00",
+          "12:00-16:00",
+          "12:00-16:00",
+          "12:00-16:00",
+          "12:00-16:00",
+          "12:00-16:00",
+          "12:00-16:00",
+        ],
+        disableDate: createdisableDates(100, ['2023-9-16', '2023-9-17', '2023-9-23', '2023-9-24']),
+        isPartner: true
+      },
+    ]
+  },
+  {
+    city: 'Wernigerode',
+    cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Schloss_Wernigerode_nach_Sonnenuntergang.jpg?v=1691564874',
+    series: [
+      'Urtopia Carbon 1',
+      // 'Urtopia Carbon 1'
+    ],
+    stores: [
+      {
+        name: 'Hendrik Uhlemann',
+        phone: '+49 1520 2015919',
+        email: 'hendrikuhlemann@googlemail.com',
+        timezone: "Mainz, Germany (GMT+1)",
+        add: "Johannisstraße 13, 38855 Wernigerode",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230908-140440.jpg?v=1694153100",
+        testrideSpot: "Wernigerode",
+        testRideSize: "L",
+        availableSizes: [
+          'Carbon 1 Size L',
+        ],
+        businessHours: [
+          "9:00-17:00",
+          "9:00-17:00",
+          "9:00-17:00",
+          "9:00-17:00",
+          "9:00-17:00",
+          "9:00-17:00",
+          "9:00-17:00",
+        ],
+        isPartner: true
+      },
+    ]
+  },
+  {
+    city: 'Budenheim',
+    cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230814-105334.jpg?v=1691981632',
+    series: [
+      'Urtopia Carbon 1',
+      // 'Urtopia Carbon 1'
+    ],
+    stores: [
+      {
+        name: 'Helmut Riedl',
+        phone: '0176 41451532',
+        email: 'helmut-riedl@web.de',
+        timezone: "Mainz, Germany (GMT+1)",
+        add: "Langstrasse 44, 55257 Budenheim",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230814-105334.jpg?v=1691981632",
+        testrideSpot: "Budenheim",
+        testRideSize: "L, Chord X",
+        availableSizes: [
+          'Carbon 1 Size L',
+          'Chord X',
+        ],
+        businessHours: [
+          "14:00-18:00",
+          "16:00-20:00",
+          "16:00-20:00",
+          "16:00-20:00",
+          "16:00-19:00",
+          "16:00-20:00",
+          "14:00-18:00",
+        ],
+        isPartner: true
+      },
+    ]
+  },
+  /*{
+    city: 'Geldern',
+    cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Geldern.jpg?v=1691835197',
+    series: [
+      'Urtopia Carbon 1',
+      // 'Urtopia Carbon 1'
+    ],
+    stores: [
+      {
+        name: 'Uwe Zapf',
+        phone: '+49 1723 596116',
+        email: 'uzapf@icloud.com',
+        timezone: "Mainz, Germany (GMT+1)",
+        add: "Pinnertstr, 47608 Geldern",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Geldern.jpg?v=1691835197",
+        testrideSpot: "Geldern",
+        testRideSize: "M",
+        availableSizes: [
+          'Carbon 1 Size M',
+        ],
+        businessHours: [
+          "11:00-19:00",
+          "11:00-19:00",
+          "11:00-19:00",
+          "11:00-19:00",
+          "11:00-19:00",
+          "11:00-19:00",
+          "11:00-19:00",
+        ],
+        isPartner: true
+      },
+    ]
+  },*/
+  {
+    country: 'Finland',
+    city: 'Meritullinkatu',
+    cityBackground: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/A93E0E1F-608D-44BE-9840-426BD29C34E6-lg.webp?v=1692340290',
+    series: [
+      'Urtopia Carbon 1',
+      // 'Urtopia Carbon 1'
+    ],
+    stores: [
+      {
+        name: 'Ari Huusela',
+        phone: '',
+        email: 'aribikes93@gmail.com',
+        timezone: "Meritullinkatu, Finland (GMT+1)",
+        add: "Helsinki",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/A93E0E1F-608D-44BE-9840-426BD29C34E6-lg.webp?v=1692340290",
+        testrideSpot: "Meritullinkatu",
+        testRideSize: "M",
+        noBook: true,
+        availableSizes: [
+          'Carbon 1 Size M',
+        ],
+        businessHours: [
+          "",
+          "",
+          "11:00-19:00",
+          "",
+          "",
+          "",
+          "",
+        ],
+        isPartner: true
+      },
+    ]
+  },
+  {
+    city: 'Heringsdorf',
+    cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/heringsdorf.webp?v=1692933986',
+    series: [
+      'Urtopia Carbon 1',
+      // 'Urtopia Carbon 1'
+    ],
+    stores: [
+      {
+        name: 'Maximilian Will',
+        phone: '+49 1721532159',
+        email: 'maxe-will@t-online.de',
+        timezone: "Heringsdorf, Germany (GMT+1)",
+        add: "17419 Ahlbeck",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/heringsdorf.webp?v=1692933986",
+        testrideSpot: "Heringsdorf",
+        testRideSize: "M",
+        noBook: true,
+        availableSizes: [
+          'Carbon 1 Size L',
+        ],
+        businessHours: [
+          "",
+          "",
+          "11:00-19:00",
+          "",
+          "",
+          "",
+          "",
+        ],
+        isPartner: true
+      },
+    ]
+  },
+  {
+    city: 'Troisdorf-Kriegsdorf',
+    cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Bonn-center-2016-01.jpg?v=1693473942',
+    series: [
+      'Urtopia Carbon 1',
+      'Urtopia Carbon 1s',
+      'Chord',
+    ],
+    stores: [
+      {
+        name: 'Satking GmbH',
+        phone: '02241 881 090',
+        email: 'info@satking.de',
+        timezone: "Troisdorf-Kriegsdorf, Germany (GMT+1)",
+        add: "Junkersring 18, 53844 Troisdorf-Kriegsdorf",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Satking_GmbH.jpg?v=1693473391",
+        testrideSpot: "Troisdorf-Kriegsdorf",
+        testRideSize: "M, Chord",
+        noBook: "Please contact the store directly to arrange test ride",
+        availableSizes: [
+          'Carbon 1 Size M',
+          'Chord',
+        ],
+        businessHours: [
+          "",
+          "9:00-18:00",
+          "9:00-18:00",
+          "9:00-18:00",
+          "9:00-18:00",
+          "9:00-18:00",
+          "",
+        ],
+      },
+    ]
+  },
+  {
+    city: 'Kiel',
+    cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Kiel.jpg?v=1697540052',
+    series: [
+      'Chord',
+    ],
+    stores: [
+      {
+        name: 'TRANKVILE electric vehicles Kiel',
+        phone: '+43155685104',
+        email: '',
+        timezone: "Kiel, Germany (GMT+1)",
+        add: "Rathausstraße 8, 24103 Kiel",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/TRANKVILE_electric_vehicles_Kiel.jpg?v=1697540052",
+        testrideSpot: "Kiel",
+        testRideSize: "M, Chord",
+        noBook: "Please contact the store directly to arrange test ride",
+        availableSizes: [
+          'Chord',
+        ],
+        businessHours: [
+          "",
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-14:00",
+        ],
+      },
+    ]
+  },
+  {
+    city: 'Magdeburg',
+    cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Magdeburg.jpg?v=1697540051',
+    series: [
+      'Chord',
+    ],
+    stores: [
+      {
+        name: 'Mattbike Rad-Center Matussek',
+        phone: '+493914048855',
+        email: 'h.pide@gmx.de',
+        timezone: "Magdeburg, Germany (GMT+1)",
+        add: "Alt Fermersleben 53, 39122 Magdeburg",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mattbike_Rad-Center_Matussek.jpg?v=1697540051",
+        testrideSpot: "Magdeburg",
+        testRideSize: "M, Chord",
+        noBook: "Please contact the store directly to arrange test ride",
+        availableSizes: [
+          'Carbon 1 Size M/L',
+          'Chord',
+        ],
+        businessHours: [
+          "",
+          "",
+          "10:00-15:00",
+          "10:00-15:00",
+          "10:00-15:00",
+          "10:00-15:00",
+          "",
+        ],
+      },
+    ]
+  },
+  {
+    country: 'Austria',
+    city: 'Linz',
+    cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Linz.jpg?v=1694169315',
+    series: [
+      'Urtopia Carbon 1',
+      // 'Urtopia Carbon 1'
+    ],
+    stores: [
+      {
+        name: 'Volo Bike Galerie',
+        phone: '+436644624765',
+        email: 'office@volobike.at',
+        timezone: "Linz, Austria (GMT+1)",
+        add: "Siglweg 1, 4061 Pasching, Austria",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Volo_Bike_Galerie.jpg?v=1694169314",
+        testrideSpot: "Linz",
+        testRideSize: "L",
+        noBook: "Please contact the store directly to arrange test ride",
+        availableSizes: [
+          'Carbon 1 Size L',
+        ],
+        businessHours: [
+          "",
+          "8:00-12:00, 13:00-18:00",
+          "8:00-12:00, 13:00-18:00",
+          "8:00-12:00, 13:00-18:00",
+          "8:00-12:00, 13:00-18:00",
+          "8:00-12:00, 13:00-18:00",
+          "9:00-13:00",
+        ],
+      },
+      {
+        name: 'bikedistounter',
+        phone: '+436601453660',
+        email: 'office@bike-discounter.at',
+        timezone: "Linz, Austria (GMT+1)",
+        add: "Goethestresse 52, 4020 Linz",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/bikedistounter.jpg?v=1697076748",
+        testrideSpot: "Linz",
+        testRideSize: "M, Chord",
+        noBook: "Please contact the store directly to arrange test ride",
+        availableSizes: [
+          'Carbon 1 Size M',
+          'Chord',
+        ],
+        businessHours: [
+          "",
+          "9:00-18:00",
+          "9:00-18:00",
+          "9:00-18:00",
+          "9:00-18:00",
+          "9:00-18:00",
+          "9:00-16:00",
+        ],
+      },
+    ]
+  },
+  {
+    country: 'Austria',
+    city: 'Wien',
+    cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Wien.jpg?v=1694169314',
+    series: [
+      'Urtopia Carbon 1',
+      // 'Urtopia Carbon 1'
+    ],
+    stores: [
+      {
+        name: 'Best Bike',
+        phone: '+4312708618',
+        email: 'info@best-bike.at',
+        timezone: "Wien, Austria (GMT+1)",
+        add: "Katsushikastr. 1,1210 Wien",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Best_Bike.png?v=1694169315",
+        testrideSpot: "Wien",
+        testRideSize: "L",
+        noBook: "Please contact the store directly to arrange test ride",
+        availableSizes: [
+          'Carbon 1 Size L',
+        ],
+        businessHours: [
+          "",
+          "9:00-19:00",
+          "9:00-19:00",
+          "9:00-19:00",
+          "9:00-19:00",
+          "9:00-13:00, 14:00-19:00",
+          "9:00-17:00",
+        ],
+      },
+      {
+        name: 'Arizona Bike',
+        phone: '+436801161575',
+        email: 'office@arizonabike.at',
+        timezone: "Wien, Austria (GMT+1)",
+        add: "Nussdorferstr. 3 , 1090 Wien",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Arizona_Bike.png?v=1694425015",
+        testrideSpot: "Wien",
+        testRideSize: "L, Chord",
+        noBook: "Please contact the store directly to arrange test ride",
+        availableSizes: [
+          'Carbon 1 Size L',
+          'Chord',
+        ],
+        businessHours: [
+          "",
+          "9:00-18:00",
+          "9:00-18:00",
+          "9:00-18:00",
+          "9:00-18:00",
+          "9:00-18:00",
+          "9:00-18:00",
+        ],
+      },
+      {
+        name: 'Fahrrad Paradies Mertes',
+        phone: '+49 20147412306',
+        email: 'team@fahrradparadies-essen.de',
+        timezone: "Essen, Germany (GMT+1)",
+        add: "Frankenstraße 122, Essen 45134",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Essen.jpg?v=1679406971",
+        testrideSpot: "Essen",
+        testRideSize: "L, Chord",
+        noBook: "Please contact the store directly to arrange test ride",
+        availableSizes: [
+          'Carbon 1 Size L',
+          'Chord',
+        ],
+        businessHours: [
+          "",
+          "",
+          "11:00-13:00,15:00-19:00",
+          "11:00-13:00,15:00-19:00",
+          "11:00-13:00,15:00-19:00",
+          "11:00-13:00,15:00-19:00",
+          "11:00-14:00",
+        ],
+      },
+    ]
+  },
+  {
+    city: 'Edewecht',
+    cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Edewecht_-_Hauptstrasse___Kokermuhle_04_ies.jpg?v=1694247951',
+    series: [
+      'Urtopia Carbon 1s',
+      // 'Urtopia Carbon 1'
+    ],
+    stores: [
+      {
+        name: 'Thomas von Thülen ',
+        phone: '04486/3689063',
+        email: 'urtopiatestfahrt@gmail.com',
+        timezone: "Edewecht, Germany (GMT+1)",
+        add: "Weißmoorweg, 26188 Edewecht ",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Edewecht_-_Hauptstrasse___Kokermuhle_04_ies.jpg?v=1694247951",
+        testrideSpot: "Edewecht",
+        testRideSize: "L",
+        noBook: true,
+        availableSizes: [
+          'Carbon 1s Size L',
+        ],
+        businessHours: [
+          "",
+          "9:00-19:00",
+          "9:00-19:00",
+          "9:00-19:00",
+          "9:00-19:00",
+          "9:00-13:00, 14:00-19:00",
+          "9:00-17:00",
+        ],
+        isPartner: true
+      },
+    ]
+  },
+  {
+    city: 'Markt Indersdorf',
+    cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/1200px-Markt_Indersdorf_-_Kloster_-_Panorama.jpg?v=1695126568',
+    series: [
+      'Urtopia Carbon 1',
+      // 'Urtopia Carbon 1'
+    ],
+    stores: [
+      {
+        name: 'Arsalan Minhas',
+        phone: '+49 1728815092',
+        email: 'arsalan.minhas@gmail.com',
+        timezone: "Markt Indersdorf, Germany (GMT+1)",
+        add: "Raiffeisenstr, 85229 Markt Indersdorf",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230925-112304.jpg?v=1695626886",
+        testrideSpot: "Arsalan Minhas",
+        testRideSize: "M",
+        availableSizes: [
+          'Carbon 1 Size M',
+        ],
+        businessHours: [
+          "8:00-19:00",
+          "8:00-19:00",
+          "8:00-19:00",
+          "8:00-19:00",
+          "8:00-19:00",
+          "8:00-19:00",
+          "8:00-19:00",
+        ],
+        isPartner: true
+      },
+    ]
+  },
+  {
+    country: 'France',
+    city: 'Paris',
+    cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/22hours-paris-tjzf-superJumbo.jpg?v=1695383046',
+    series: [
+      'Chord',
+      // 'Urtopia Carbon 1'
+    ],
+    stores: [
+      {
+        name: 'Alice Abraham',
+        phone: '+33 622228796',
+        email: 'alice-abraham@hotmail.fr',
+        timezone: "Paris, France (GMT+1)",
+        add: "Saint-Fargeau 75020 Paris",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/22hours-paris-tjzf-superJumbo.jpg?v=1695383046",
+        testrideSpot: "Paris",
+        testRideSize: "Chord",
+        availableSizes: [
+          'Chord',
+        ],
+        businessHours: [
+          "10:00-15:00",
+          "10:00-15:00",
+          "10:00-15:00",
+          "10:00-12:00, 19:00-20:00",
+          "10:00-15:00",
+          "10:00-15:00",
+          "10:00-15:00",
+        ],
+        isPartner: true,
+      },
+      {
+        name: 'Thomas Schödl',
+        phone: '+49 15122654233',
+        email: 'thomas.schoedl@hotmail.de',
+        timezone: "Regensburg, Germany (GMT+1)",
+        add: "Holzgartenstr 93059 Regensburg",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Regensburg.jpg?v=1679406972",
+        testrideSpot: "Regensburg",
+        testRideSize: "M",
+        isPartner: true,
+        availableSizes: [
+          'Carbon 1 Size M',
+        ],
+        businessHours: [
+          "10:00-20:00",
+          "17:00-20:00",
+          "17:00-20:00",
+          "17:00-20:00",
+          "17:00-20:00",
+          "17:00-20:00",
+          "10:00-20:00",
+        ],
+      },
+    ]
+  },
+  {
+    country: 'Poland',
+    city: 'Dobra',
+    cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/widoki-z-wiezy-fantastyczne.jpg?v=1696928346',
+    series: [
+      'Chord',
+      // 'Urtopia Carbon 1'
+    ],
+    stores: [
+      {
+        name: 'AX Technology Sp. z o.o. Sp. K.',
+        phone: '+48 918173114',
+        email: 'l.grab@axtechnology.eu',
+        timezone: "Dobra, Poland (GMT+1)",
+        add: "Szczecińska 1W, 72-003 Dobra, Poland",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/2_ebedd351-b768-481a-b902-81fb28d5928d.jpg?v=1696927710",
+        testrideSpot: "Dobra",
+        testRideSize: "Chord",
+        availableSizes: [
+          'Carbon 1 Size M/L',
+          'Chord',
+        ],
+        businessHours: [
+          "",
+          "8:00-16:00",
+          "8:00-16:00",
+          "8:00-16:00",
+          "8:00-16:00",
+          "8:00-16:00",
+          "",
+        ],
+      },
+    ]
+  },
+  {
+    city: 'Neunkirchen-Seelscheid',
+    cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Screenshot_2023-10-16_at_20.52.48.png?v=1697460966',
+    series: [
+      'Urtopia Carbon 1',
+      // 'Urtopia Carbon 1'
+    ],
+    stores: [
+      {
+        name: 'Gunawan TURINA',
+        phone: '+49 179 4224508',
+        email: 'gunawanturina@web.de',
+        timezone: "Neunkirchen-Seelscheid, Germany (GMT+1)",
+        add: "Neunkirchen-Seelscheid",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Screenshot_2023-10-16_at_20.52.48.png?v=1697460966",
+        testrideSpot: "Neunkirchen-Seelscheid",
+        testRideSize: "M",
+        availableSizes: [
+          'Carbon 1 Size M',
+        ],
+        isPartner: true,
+        businessHours: [
+          "10:00-16:00",
+          "10:00-16:00",
+          "10:00-16:00",
+          "10:00-16:00",
+          "10:00-16:00",
+          "10:00-16:00",
+          "10:00-16:00",
+        ],
+      },
+    ]
+  },
+  {
+    country: 'Austria',
+    city: 'Kragenfurt',
+    cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Kragenfurt_Austria.jpg?v=1697540051',
+    series: [
+      'Chord',
+      // 'Urtopia Carbon 1'
+    ],
+    stores: [
+      {
+        name: 'Bikesport Ortner',
+        phone: '+43463349866',
+        email: 'ortner@net4you.at',
+        timezone: "Kragenfurt, Austria (GMT+1)",
+        add: "Miegerer Str. 27, 9065 Gradnitz, Austria",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Bikesport_Ortner.jpg?v=1697540052",
+        testrideSpot: "Dobra",
+        testRideSize: "Chord",
+        availableSizes: [
+          'Chord',
+        ],
+        businessHours: [
+          "",
+          "10:00-18:00",
+          "10:00-16:00",
+          "10:00-16:00",
+          "10:00-16:00",
+          "10:00-16:00",
+          "",
+        ],
+      },
+    ]
+  },
+  {
+    country: 'Austria',
+    city: 'Graz',
+    cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Graz_Austria.jpg?v=1697540051',
+    series: [
+      'Chord',
+      // 'Urtopia Carbon 1'
+    ],
+    stores: [
+      {
+        name: 'Handy-star',
+        phone: '+43 660 3960588',
+        email: 'Ezer.kaan@ortweinschule.at',
+        timezone: "Graz, Austria (GMT+1)",
+        add: "Dietrichsteinpl. 1, 8010 Graz, Austria",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Handy-star.png?v=1697540052",
+        testrideSpot: "Graz",
+        testRideSize: "M, Chord",
+        availableSizes: [
+          'Carbon 1s Size M',
+          'Chord',
+        ],
+        businessHours: [
+          "",
+          "9:00-18:00",
+          "9:00-18:00",
+          "9:00-18:00",
+          "9:00-18:00",
+          "9:00-18:00",
+          "9:00-17:00",
+        ],
+      },
+    ]
+  },
+  {
+    country: 'Austria',
+    city: 'Salzburg',
+    cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Salzburg_Austria.jpg?v=1697540052',
+    series: [
+      'Chord',
+      // 'Urtopia Carbon 1'
+    ],
+    stores: [
+      {
+        name: 'Vogl Bike',
+        phone: '+43662453559',
+        email: 'vogl-bike@gmx.at',
+        timezone: "Salzburg, Austria (GMT+1)",
+        add: "Elisabethstraße 63, 5020 Salzburg, Austria",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Vogl_Bike.jpg?v=1697540052",
+        testrideSpot: "Salzburg",
+        testRideSize: "Chord",
+        availableSizes: [
+          'Chord',
+        ],
+        businessHours: [
+          "",
+          "9:00-12:00, 15:00-18:00",
+          "9:00-12:00, 15:00-18:00",
+          "9:00-12:00, 15:00-18:00",
+          "9:00-12:00, 15:00-18:00",
+          "9:00-12:00, 15:00-18:00",
+          "",
+        ],
       },
     ]
   },
