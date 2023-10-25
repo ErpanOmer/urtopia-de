@@ -2071,7 +2071,7 @@ const testRides = [
       {
         name: 'Stefan Baumgartner',
         phone: '+4917624306530 ',
-        email: 'Stefe@gmx.net',
+        email: 'urtopia@baumys.de',
         timezone: "Maisach, Germany (GMT+1)",
         add: "Maisacher, 82216 Maisach, Germany",
         imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Miasach_Hans_Seidl_CR_3.jpg?v=1697819734",
