@@ -286,7 +286,6 @@
 
       {% section 'care' %}
       {% section 'footer' %}
-      {% section 'selectLang' %}
 
       {%- if mypath == '/en' -%}
         <style>
@@ -356,9 +355,7 @@
   {% render 'criteo-tracking' %}
   <!-- CRITEO END -->
   </body>
-  {% render 'global-message-box' %}
-  {% render 'global-subscribe-email' %}
-  {% render 'global-testride-dialog' %}
+  {% render 'dialog' %}
   {% render 'global-low-script' %}
   {% render 'performance' %}
   </html>

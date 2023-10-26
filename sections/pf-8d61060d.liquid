@@ -132,6 +132,12 @@
       margin-top: 6px;
     }
   }
+
+
+
+  .product .centeral-content [data-price]::after {
+    color: #000;
+  }
   
 </style>
 
@@ -142,7 +148,7 @@
             <div data-pf-type="JudgeMe" class="sc-eZhRLC gtfCKx pf-25_ order-djs mb6">
                 <div class="pf-judme">{% render "judgeme_widgets", widget_type: "judgeme_preview_badge", jm_style: "", concierge_install: false, product: product %}</div>
             </div>
-            <div class="u30DemiBold_v2 mb6" data-price={{ product.compare_at_price | money }}>{{ product.price | money }}</div>
+            <div class="u30DemiBold_v2 mb6 emphasize" data-price={{ product.compare_at_price | money }}>{{ product.price | money }}</div>
             <!--<div class="sale mb6" style="background-image: linear-gradient(-90deg,var(--sale-color3),var(--sale-color4));">
                 <div class="u20DemiBold_v2" style="color: var(--sale-color4);">{{ product.price | minus: 0 | money }} NOW</div>
                 <div class="u17DemiBold_v2">with {{ settings.sale_name }}</div>
@@ -211,7 +217,7 @@
                 <div data-pf-type="JudgeMe" class="sc-eZhRLC gtfCKx pf-25_ order-djs mb6">
                     <div class="pf-judme">{% render "judgeme_widgets", widget_type: "judgeme_preview_badge", jm_style: "", concierge_install: false, product: product %}</div>
                 </div>
-                <div class="u30DemiBold_v2 mb6" data-price={{ product.compare_at_price | money }}>{{ product.price | money }}</div>
+                <div class="u30DemiBold_v2 mb6 emphasize" data-price={{ product.compare_at_price | money }}>{{ product.price | money }}</div>
                 <!--<div class="sale mb12" style="background-image: linear-gradient(-90deg,var(--sale-color3),var(--sale-color4));">
                     <div class="u20DemiBold_v2" style="color: var(--sale-color4);">{{ product.price | minus: 0 | money }} NOW</div>
                     <div class="u17DemiBold_v2">with {{ settings.sale_name }}</div>
@@ -265,9 +271,9 @@
                 </div>
                 <div class="u11Light_v2">*Not available with leasing</div>
             </div>-->
-            <div class="service pcHide mb6" style="    flex-direction: row;">
+            <div class="service pcHide mb6" style="flex-direction: row;align-items: center;">
                   <img style="max-width: 53px;" src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230811-120544.png?v=1691726759" alt="">
-                  <div class="u17DemiBold_v2">
+                  <div class="u17DemiBold_v2" style="padding: 0 4vw;text-align: center;font-size: 14px;">
                       <div class="emphasize">Free 1 year connect service <br>included for each bike</div>
                       <div class="text-decoration">{{ all_products['esim-card'].price | money_without_trailing_zeros }}/year</div>
                   </div>

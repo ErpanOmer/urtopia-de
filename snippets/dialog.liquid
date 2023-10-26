@@ -1,0 +1,494 @@
+<dialog id="SelectLangDialog">
+    <div class="selectLangContainer">
+    <span class="close">✕</span>
+    <h2>Select Your Language</h2>
+    <p>Would you like to Select a language that you’re more comfortable with?</p>
+    <div class="bottomButton">
+      <div class="selectContainer">
+        <div class="selectBox">
+          <span id="curentLang" data_code="en">English</span>
+        </div>
+        <ul class="downSelectBox">
+          <li
+            data-code="en"
+            data-value="English"          >
+            English
+          </li>
+          <li data-code="de" data-value="German">German</li>
+          <!--<li data-code="fr" data-value="French" onclick="updateLang(this)">French</li>-->
+        </ul>
+      </div>
+      <button type="button"><span>Sel<span>ect</span></button>
+    </div>
+  </div>
+</dialog>
+
+<dialog id="SubscribeEmailDialog">
+    <div class="subscribe-container">
+        <img class="mobileHide" src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Urtopia_-_Auto_Rack_-_Original_Size_-_RAW-299_2x_84a04d1d-8f14-49ec-a1d8-571133a24a22.jpg?v=1697185452" alt="">
+        <img class="pcHide" src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Urtopia_-_Auto_Rack_-_Original_Size_-_RAW-299_2x_607ae381-92e3-4927-9b90-7f9af7256e5b.jpg?v=1697185459&width=500" alt="">
+        <div class="subscribe">
+            <span class="u20DemiBold_v2">{{ settings.sale_name }}</span>
+            <div class="u72DemiBold_v2">{{ settings.carbon_ebike_discount_price | money_without_trailing_zeros }}<span class="u30DemiBold_v2">OFF</span></div>
+            <div class="u30Medium_v2">On Carbon1/1s</div>
+            <span class="u17Light_v2">Subscribe to Urtopia for exclusive coupons, engaging stories, and the latest product news.</span>
+            <form class="new-contact" action="/contact#ContactFooter" target="_blank" method="post" accept-charset="UTF-8">
+            <div class="email">
+                <input type="hidden" name="form_type" value="customer">
+                <input type="hidden" name="utf8" value="✓">
+                <input type="hidden" name="contact[tags]" value="newsletter">
+                <input placeholder="Enter email here" type="email" name="contact[email]" required>
+                <button class="my-button my-button-black" id="global_email_submit_button" type="submit">Subscribe</button>
+            </div>
+        </form>
+        <div class="u11Light_v2 mobileHide">*For any order during Oct 1 - Dec 31 2023, if there is a price drop within this period on our website, you can request a refund for the difference by contacting our support. The refund will be automatically approved and returned to your account.</div>
+        </div>
+        <span class="close">×</span>
+    </div>
+</dialog>
+
+<dialog id="ExitSubscribeEmailDialog">
+    <div class="subscribe-container">
+        <img class="mobileHide" src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Artboard_5_copy_7_2x_922914e5-8939-47a1-9c9c-6849e94a1781.jpg?v=1698227938" alt="">
+        <div class="subscribe">
+            <div class="u17DemiBold_v2">Stay with us, Don’t Miss Out on</div>
+            <div class="u30DemiBold_v2">Exclusive Offers!</div>
+            <span class="u17Light_v2" style="margin: 0 0 10%;">Don’t go just yet! Subscribe to our newsletter for exclusive e-bike offers, riding tips, and exciting updates. Stay connected with over 200,000 member in the community.</span>
+            <form class="new-contact" action="/contact#ContactFooter" target="_blank" method="post" accept-charset="UTF-8">
+            <div class="email">
+                <input type="hidden" name="form_type" value="customer">
+                <input type="hidden" name="utf8" value="✓">
+                <input type="hidden" name="contact[tags]" value="newsletter">
+                <input placeholder="Enter email here" type="email" name="contact[email]" required>
+                <button class="my-button my-button-black" id="global_email_submit_button" type="submit">Subscribe</button>
+            </div>
+        </form>
+        </div>
+        <span class="close">×</span>
+    </div>
+</dialog>
+
+<dialog id="TestRideDialog">
+    <div class="testride_dialog">
+        <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230609-untitled-9762.jpg?v=1691048775">
+        <div>
+            <div class="u30DemiBold_v2">Test ride spots near you</div>
+            <div class="u24Medium_v2">Experience the bike in real</div>
+            <div class="my-button my-button-black"">Book Now</div>
+        </div>
+        <span class="close">×</span>
+    </div>
+</dialog>
+
+<div class="message-box">
+  <div class="u17DemiBold_v2">Don’t Miss Out on Exclusive Updates and Offers!</div>
+  <div class="u14DemiBold_v2 emphasize">UP TO <span class="u24DemiBold_v2">{{ settings.carbon_ebike_discount_price | money_without_trailing_zeros }}</span> OFF NOW</div>
+  <div class="u11Light_v2">Limited-time offer with stock flying off the shelves. Subscribe now for the latest updates and instant notifications.</div>
+  <form class="email" action="/" target="_blank" method="post" accept-charset="UTF-8">
+      <input placeholder="Enter email here" type="email" name="contact[email]" required>
+      <button class="my-button my-button-black" id="global_email_submit_button" type="submit">Subscribe</button>
+  </form>
+  <span class="close" onclick="hideMessageBox()">×</span>
+</div>
+
+<!-- Cozy Country Redirect Optimization Code Start -->
+{{ shop.metafields.CCR.shopat_script }}
+<!-- Cozy Country Redirect Optimization Code Start -->
+{{ 'dialog-polyfill.js' | asset_url | script_tag }}
+
+<script>
+    const storage = {
+        set: function (key, value, expires = 3) {
+            const obj = {
+                data: value, //存储值
+                expires: Date.now() + (expires * 24 * 60 * 60 * 1000), //过期时间
+            }
+
+            localStorage.setItem(`__${key}`, JSON.stringify(obj));
+        },
+        get: function (key) {
+            try {
+                const { data, expires } = JSON.parse(localStorage.getItem(`__${key}`))
+
+                if (expires < Date.now()) {
+                    localStorage.removeItem(`__${key}`);
+                    return undefined;
+                }
+
+                return data;
+            } catch {
+                return undefined
+            }
+        }
+    }
+
+    function showDialog (dialog, callback) {
+        dialogPolyfill.forceRegisterDialog(dialog)
+        dialog.showModal()
+
+        return new Promise(resolve => {
+            dialog.addEventListener("cancel", (event) => {                
+                resolve('close')
+            });
+
+            dialog.addEventListener("close", (event) => {
+                resolve('close')
+            })
+
+            $(dialog).find('.close').on('click', function () {
+                dialog.close()
+            })
+
+            setTimeout(callback, 300, dialog, resolve)
+        })
+    }
+
+    $('.header .header__icons .tl-options .tl-option').on('click', function () {
+        storage.set('selectLang', $(this).attr('data-value'))
+    })
+
+    function showSelectLangDialog () {
+        return new Promise(resolve => {
+            if (global_config.dialog.language.is_hide) {
+                return resolve()
+            }
+
+            const country = window.CozyCountryRedirect.country;
+            const locale = window.Shopify.locale;
+            const localeSelectLang = storage.get('selectLang')
+
+            const langmap = {
+                en: {
+                code: 'en',
+                value: 'English',
+                },
+                de: {
+                code: 'de',
+                value: 'German',
+                },
+                fr: {
+                code: 'fr',
+                value: 'French',
+                },
+            };
+
+            console.log('当前国家', country, '当前语言', locale, '当前选中语言', localeSelectLang)
+
+            function gotoLocation (code = 'de') {
+                // 如果当前code 和 当前语言一致，就退出去 执行下一个弹窗
+                if ($('.header .header__icons .tl-options .active').attr('data-value') === code) {
+                    return resolve()
+                }
+
+                // 否则跳转
+                $(`.header .header__icons .tl-options li[data-value="${code}"]`).click()
+            }
+
+
+
+            if (localeSelectLang) {
+                return gotoLocation(localeSelectLang)
+            }
+
+            const notShowModal = (country === 'de' && locale === 'de') || (country !== 'de' && locale === 'en');
+
+            if (!notShowModal) {
+                return showDialog(document.getElementById('SelectLangDialog'), (dialog, r) => {
+                    $(dialog).find('.selectContainer').on('click', function (e) {
+                        $(this).hasClass('open') ? $(this).removeClass('open') : $(this).addClass('open')
+                    })
+
+                    $(dialog).find('ul > li').on('click', function () {
+                        $(dialog).find('#curentLang').attr('data_code', $(this).attr('data-code'))
+                        $(dialog).find('#curentLang').text($(this).attr('data-value'))
+                    })
+
+                    $(dialog).find('button').on('click', function () {
+                        const code = $(dialog).find('#curentLang').attr('data_code')
+
+                        r(code)
+
+                        dialog.close()
+                    })
+
+                    const recommendCode = (langmap[country] && langmap[country].code) || 'en';
+                    const recommendVal = (langmap[country] && langmap[country].value) || 'English';
+        
+                    $(dialog).find('#curentLang').attr('data_code', recommendCode)
+                    $(dialog).find('#curentLang').text(recommendVal)
+
+
+                }).then(code => {
+                    if (code !== 'close') {
+                        storage.set('selectLang', code, global_config.dialog.language.submit_expires_time)
+                        return gotoLocation(code)
+                    }
+
+                    storage.set('selectLang', $('.header .header__icons .tl-options .active').attr('data-value'), global_config.dialog.language.close_expires_time)
+                    setTimeout(resolve, global_config.dialog.language.show_delay_time * 1000)               
+                })
+            }
+
+            resolve()
+        })
+    }
+
+    function showSubscribeEmailDialog () {
+        const email_dialog_key = 'emailDialog'
+        const subscribe_email_close_expires_time = 'subscribe_email_close_expires_time'
+
+        return new Promise(resolve => {
+            if (global_config.dialog.email.is_hide) {
+                return resolve()
+            }
+
+            if (storage.get(email_dialog_key)) {
+                return resolve()
+            }
+
+            if (storage.get(subscribe_email_close_expires_time)) {
+                return resolve()
+            }
+
+            showDialog(document.getElementById('SubscribeEmailDialog'), (dialog, r) => {
+                $(dialog).find('form').on('submit', function (event) {
+                    r($(dialog).find('form input[type="email"]').val())
+
+                    dialog.close()
+                    event.preventDefault();
+                    return false;
+                });
+
+                let startInput = false;
+                $(dialog).find('form input[type="email"]').on(
+                    'input',
+                    debounce((e) => {
+                    if (startInput) {
+                        return;
+                    }
+
+                    startInput = true;
+                    fetchBuried('emailpop', 'enter', {
+                        email: e.target.value,
+                        tag: 'DE,POPUP,enter pop',
+                    });
+                    }, 2000)
+                );
+            }).then(email => {
+                storage.set(subscribe_email_close_expires_time, subscribe_email_close_expires_time, global_config.dialog.email.subscribe_email_close_expires_time)
+
+                if (email !== 'close') {
+                    const emailtag = getSearchValues().emailtag
+                    // 埋点
+                    fetchBuried('emailpop', 'submit', { email, tag: `DE,POPUP,enter pop${emailtag ? ',' + emailtag : ''}` }).then(() => {
+                        dataLayer.push({
+                            'event'    :'global_email_submit',
+                            'pageType' :'emailpop',
+                        });
+                    });
+
+                    storage.set(email_dialog_key, email_dialog_key, global_config.dialog.email.submit_expires_time)
+                }
+
+                setTimeout(resolve, global_config.dialog.email.show_delay_time * 1000)
+            })
+        })
+    }
+
+    function showExitSubscribeEmailDialog () {
+        const email_dialog_key = 'emailDialog'
+        let show = false
+
+        return new Promise(resolve => {
+            if (global_config.dialog.email.is_hide) {
+                return resolve()
+            }
+
+            if (storage.get(email_dialog_key)) {
+                return resolve()
+            }
+
+            if (!global_config.is_pc && global_config.is_mobile) {
+                return resolve()
+            } 
+
+            document.body.addEventListener("mouseleave", debounce((evt) => {
+                    !show && showDialog(document.getElementById('ExitSubscribeEmailDialog'), (dialog, r) => {
+                        show = true
+
+                        $(dialog).find('form').on('submit', function (event) {
+                            r($(dialog).find('form input[type="email"]').val())
+
+                            dialog.close()
+                            event.preventDefault();
+                            return false;
+                        });
+
+                        let startInput = false;
+                        $(dialog).find('form input[type="email"]').on(
+                            'input',
+                            debounce((e) => {
+                            if (startInput) {
+                                return;
+                            }
+
+                            startInput = true;
+                            fetchBuried('emailpop', 'enter', {
+                                email: e.target.value,
+                                tag: 'DE,POPUP,exit pop',
+                            });
+                            }, 2000)
+                        );
+
+                    }).then(email => {
+                        console.log(email)
+                        storage.set(email_dialog_key, email_dialog_key, global_config.dialog.email.close_expires_time)
+
+                        if (email !== 'close') {
+                            const emailtag = getSearchValues().emailtag
+                            // 埋点
+                            fetchBuried('emailpop', 'submit', { email, tag: `DE,POPUP,exit pop${emailtag ? ',' + emailtag : ''}` }).then(() => {
+                                dataLayer.push({
+                                    'event'    :'global_email_submit',
+                                    'pageType' :'emailpop',
+                                });
+                            });
+
+                            storage.set(email_dialog_key, email_dialog_key, global_config.dialog.email.submit_expires_time)
+                        }
+
+                        setTimeout(resolve, global_config.dialog.email.show_delay_time * 1000)
+                    })
+                }, 500))
+        })
+    }
+
+    function showTestRideDialog () {
+        const test_ride_dialog_key = 'TestRideDialog'
+        let show = false
+
+        return new Promise(resolve => {
+            if (global_config.dialog.test_ride.is_hide) {
+                return resolve()
+            }
+
+            if (storage.get(test_ride_dialog_key)) {
+                return resolve()
+            }
+
+            if (!global_config.is_pc && global_config.is_mobile) {
+                return resolve()
+            }
+
+            document.body.addEventListener("mouseleave", debounce((evt) => {
+                !show && showDialog(document.getElementById('TestRideDialog'), (dialog, r) => {
+                    show = true
+
+                    $(dialog).find('.my-button').on('click', () => {
+                        r('book now')
+                        dialog.close()
+                    })
+
+                }).then(result => {
+                    storage.set(test_ride_dialog_key, test_ride_dialog_key, global_config.dialog.test_ride.close_expires_time)
+
+                    if (result !== 'close') {
+                        fetchBuried('emailpop', 'exitpop', { button: 'book a test ride' }, true)
+
+                        storage.set(test_ride_dialog_key, test_ride_dialog_key, global_config.dialog.test_ride.submit_expires_time)
+
+                        location.href = `${window.sessionStorage.localPathPerfix}/pages/test-ride?form_page=restride-dialog`
+                    }
+
+                    setTimeout(resolve, global_config.dialog.test_ride.show_delay_time * 1000)
+                })
+            }, 500))
+        })
+    }
+
+
+    function showSubscribeEmailMessageBox () {
+        const email_dialog_key = 'emailDialog'
+        const subscribe_email_message_close_expires_time = 'subscribe_email_message_close_expires_time'
+
+        return new Promise(resolve => {
+            if (global_config.dialog.email.is_hide) {
+                return resolve()
+            }
+
+            if (storage.get(email_dialog_key)) {
+                return resolve()
+            }
+
+            if (storage.get(subscribe_email_message_close_expires_time)) {
+                return resolve()
+            }
+
+            const url = new URL(document.referrer)
+            if (!url.pathname.includes('/products/')) {
+                return resolve()
+            }
+
+            const close = () => {
+                $('.message-box').animate({}, 300, function () {
+                    //第一个花括号里面是动画内容，可以为空，但不能省去中括号
+                    $('.message-box').css(global_config.is_mobile ? { transform: 'translateY(100%)' } : { right: '-360px' }); //在回调函数里面改变css属性来实现transform中的动画变换
+                });
+
+                setTimeout(resolve, global_config.dialog.email.show_delay_time * 1000)
+            }
+
+            $('.message-box').animate({}, 300, function () {
+                //第一个花括号里面是动画内容，可以为空，但不能省去中括号
+                $('.message-box').css(global_config.is_mobile ? { transform: 'translateY(0)' } : { right: '18px' }); //在回调函数里面改变css属性来实现transform中的动画变换
+            });
+
+            $('.message-box').find('form').on('submit', function (event) {
+                const email = $('.message-box').find('form input[type="email"]').val()
+
+                const emailtag = getSearchValues().emailtag
+                // 埋点
+                fetchBuried('emailpop', 'submit', { email, tag: `DE,POPUP,small pop${emailtag ? ',' + emailtag : ''}` }).then(() => {
+                    dataLayer.push({
+                        'event'    :'global_email_submit',
+                        'pageType' :'emailpop',
+                    });
+                });
+
+                storage.set(email_dialog_key, email_dialog_key, global_config.dialog.email.submit_expires_time)
+
+                close()
+                event.preventDefault();
+                return false;
+            });
+
+            let startInput = false;
+            $('.message-box').find('form input[type="email"]').on(
+                'input',
+                debounce((e) => {
+                    if (startInput) {
+                        return;
+                    }
+
+                    startInput = true;
+                    fetchBuried('emailpop', 'enter', {
+                        email: e.target.value,
+                        tag: 'DE,POPUP,smail pop',
+                    });
+                }, 2000)
+            );
+
+            $('.message-box .close').on('click', () => {
+                storage.set(subscribe_email_message_close_expires_time, subscribe_email_message_close_expires_time, global_config.is_mobile ? global_config.dialog.email.subscribe_email_message_close_expires_time_mb : global_config.dialog.email.subscribe_email_message_close_expires_time_pc)
+
+                close()
+            })
+        })
+    }
+
+
+    $(function () {
+        showSelectLangDialog().then(showSubscribeEmailDialog).then(showSubscribeEmailMessageBox).then(showExitSubscribeEmailDialog).then(showTestRideDialog).then(console.log)
+    })
+</script>
+<script defer crossorigin="anonymous" src="https://connect.facebook.net/de_DE/sdk.js#xfbml=1&version=v14.0" nonce="nryZARoa"></script>
