@@ -8,7 +8,6 @@ const global_config = {
   is_mobile: document.documentElement.clientWidth < 768,
   // 是否是 pc
   is_pc: !!!navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i),
-
   // leasing 有关配置
   leasing: {
     // 需要禁用的jobrad 配件
@@ -44,6 +43,7 @@ const global_config = {
       show_delay_time: 15
     }
   },
+
   // carbon 车配置
   carbon_order_page_config: {
     // carbon车 活动相关
