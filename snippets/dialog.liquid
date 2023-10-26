@@ -25,13 +25,13 @@
 
 <dialog id="SubscribeEmailDialog">
     <div class="subscribe-container">
-        <img class="mobileHide" src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Urtopia_-_Auto_Rack_-_Original_Size_-_RAW-299_2x_84a04d1d-8f14-49ec-a1d8-571133a24a22.jpg?v=1697185452" alt="">
-        <img class="pcHide" src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Urtopia_-_Auto_Rack_-_Original_Size_-_RAW-299_2x_607ae381-92e3-4927-9b90-7f9af7256e5b.jpg?v=1697185459&width=500" alt="">
+        <img class="mobileHide" style="height: 100%;max-width: 100%;object-fit: cover;" src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Urtopia_-_Auto_Rack_-_Original_Size_-_RAW-299_2x_84a04d1d-8f14-49ec-a1d8-571133a24a22.jpg?v=1697185452" alt="">
+        <img class="pcHide" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20231026-165239.jpg?v=1698310403&width=500" alt="">
         <div class="subscribe">
             <span class="u20DemiBold_v2">{{ settings.sale_name }}</span>
             <div class="u72DemiBold_v2">{{ settings.carbon_ebike_discount_price | money_without_trailing_zeros }}<span class="u30DemiBold_v2">OFF</span></div>
             <div class="u30Medium_v2">On Carbon1/1s</div>
-            <span class="u17Light_v2">Subscribe to Urtopia for exclusive coupons, engaging stories, and the latest product news.</span>
+            <span class="u17Light_v2">Join Our Thriving Community of 200,000+ Enthusiasts! Unlock Urtopia’s Exclusive Offers, Be the First to Know About New Products, Receive Expert Riding Tips, and Dive into Captivating Customer Stories.</span>
             <form class="new-contact" action="/contact#ContactFooter" target="_blank" method="post" accept-charset="UTF-8">
             <div class="email">
                 <input type="hidden" name="form_type" value="customer">
@@ -41,7 +41,6 @@
                 <button class="my-button my-button-black" id="global_email_submit_button" type="submit">Subscribe</button>
             </div>
         </form>
-        <div class="u11Light_v2 mobileHide">*For any order during Oct 1 - Dec 31 2023, if there is a price drop within this period on our website, you can request a refund for the difference by contacting our support. The refund will be automatically approved and returned to your account.</div>
         </div>
         <span class="close">×</span>
     </div>
@@ -421,6 +420,10 @@
             }
 
             if (storage.get(subscribe_email_message_close_expires_time)) {
+                return resolve()
+            }
+
+            if (!document.referrer) {
                 return resolve()
             }
 

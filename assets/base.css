@@ -3975,7 +3975,6 @@ body .jBox-Modal {
 
   .subscribe-container {
       grid-template-columns: 1fr;
-      grid-template-rows: 1fr 2fr;
   }
 
   .subscribe-container .subscribe {
@@ -4293,6 +4292,7 @@ dialog + .backdrop {
 
   .subscribe-container .subscribe .u17Light_v2 {
   margin-top: 8%;
+    font-size: 12px;
   }
 
   .subscribe-container .subscribe .u30Medium_v2 {
