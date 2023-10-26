@@ -8,7 +8,7 @@ const month = (`${now.getMonth() + 1}`).padStart(2, '0')
 const day = (`${now.getDate()}`).padStart(2, '0')
 
 const version = `v${year}.${month}.${day}`
-const theme = `${package.name}-backup(${version})`
+const theme = `${package.name}-backup[${version}]`
 let step = 1
 
 
