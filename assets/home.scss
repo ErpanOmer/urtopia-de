@@ -398,6 +398,42 @@ $product-tags-color: #FFE2D9;
 
 
 
+        .halloween {
+            background-color: rgb(248, 77, 0);
+            background-image: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/500_2x_9c3c4f9e-45e4-4784-9c01-0d6c70babebd.jpg?v=1698316187');
+
+            .centeral-content {
+                & > div {
+                    align-items: flex-start;
+
+                    .u17DemiBold_v2 {
+                        padding: 12px 20px;
+                        background-color: #000;
+                        color: #fff;
+                        border-radius: 22px;
+                    }
+
+                    .u36DemiBold_v2 {
+                        margin: 1.5vh 0;
+                    }
+
+                    .buttons {
+                        margin: 5vh 0;
+                    }
+
+                    .u17Light_v2 {
+                        max-width: 600px;
+                    }
+
+                    img {
+                        max-width: 320px;
+                    }
+               }
+            }
+        }
+
+
+
         .count-down {
             height: 300px;
             transform: translateX(-35px);
@@ -725,6 +761,36 @@ $product-tags-color: #FFE2D9;
                         .u24Medium_v2 {
                             margin: 20px 0;
                             font-size: 17px;
+                        }
+                    }
+                }
+            }
+
+            .halloween {
+                background-image: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_23204_2x_90c927b1-1f14-401d-a419-b91e862907b8.jpg?v=1698316911&width=600');
+
+                .centeral-content {
+                    & > div {
+                        align-items: center;
+                        text-align: center;
+                        height: 100%;
+                        padding: 2vw 0 8vw;
+
+                        img {
+                            max-width: 160px;
+                        }
+
+                        .u36DemiBold_v2 {
+                            font-size: 20px;
+                        }
+
+                        .u17DemiBold_v2 {
+                            font-size: 13px;
+                            padding: 10px;
+                        }
+
+                        .buttons {
+                            margin: 0;
                         }
                     }
                 }
