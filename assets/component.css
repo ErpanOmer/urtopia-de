@@ -1556,7 +1556,7 @@ cart-remove-button .icon-remove {
     font:font: normal normal 500 16px/18px urbane;
   }
   .mega_ebike_content {
-    padding:15px 0px;
+    padding: 40px 0px;
     box-shadow: 0 10px 20px rgb(0 0 0 / 20%);
     background:#fff !important;
   }
@@ -3978,10 +3978,9 @@ button.swiper-pagination-bullet {
   
 
   .hedaer-secondary-menu {
-    padding: 10px 5% 35px;
+    padding: 0 5%;
     color: #000;
     display: flex;
-    align-items: flex-end;
   }
 
   .hedaer-secondary-menu .links {
@@ -3991,6 +3990,15 @@ button.swiper-pagination-bullet {
     place-self: flex-start;
   }
 
+  .hedaer-secondary-menu .sale-image {
+    max-width: 270px;
+    width: 20%;
+    background: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_23277_2x_dd8e661f-39e1-47fa-9368-83afd96869cd.jpg?v=1698377804') center center/cover no-repeat;
+    color: #fff;
+    border-radius: 10px;
+    padding: 15px 30px;
+  }
+
   .hedaer-secondary-menu .links .u14Medium_v2 {
     opacity: 0.77;
     margin-top: 20px;
@@ -3998,11 +4006,6 @@ button.swiper-pagination-bullet {
 
   .hedaer-secondary-menu .links .u14Medium_v2:hover {
     opacity: 1;
-  }
-
-  .hedaer-secondary-menu > img {
-    max-width: 270px;
-    width: 20%;
   }
 
   .hedaer-secondary-menu .centreallllll {
@@ -4039,7 +4042,7 @@ button.swiper-pagination-bullet {
 
   .hedaer-secondary-menu .centreallllll .supportssssss {
     display: flex;
-    margin: 20px auto 40px;
+    margin: 0 auto 40px;
   }
 
 
@@ -4071,9 +4074,14 @@ button.swiper-pagination-bullet {
     cursor: pointer;
   }
 
+  .hedaer-secondary-menu .centreallllll .bikesssssss > div:hover img {
+    transform: scale(1.25);
+  }
+
   .hedaer-secondary-menu .centreallllll .bikesssssss > div img {
     max-width: 90%;
     margin-bottom: 6%;
+    transition: all 0.6s;
   }
 
   .hedaer-secondary-menu .centreallllll .bikesssssss > div .my-button {
@@ -4084,7 +4092,18 @@ button.swiper-pagination-bullet {
   
 
   .hedaer-secondary-menu .centreallllll .bikesssssss > div .u14Light_v2 {
-      margin: 4% 0 8%;
+      margin: 3% 0;
+      opacity: 0.77;
+  }
+
+  .hedaer-secondary-menu .centreallllll .bikesssssss > div .emphasize::after {
+    content: attr(data-price);
+    text-decoration: line-through;
+    position: relative;
+    left: 5px;
+    bottom: 5px;
+    font-size: 14px;
+    color: #000;
   }
 
   .hedaer-secondary-menu .centreallllll .bikesssssss > div .u20DemiBold_v2 {
@@ -4105,7 +4124,7 @@ button.swiper-pagination-bullet {
 
 
   @media (max-width: 1500px) {
-    .hedaer-secondary-menu > img {
+    .hedaer-secondary-menu .sale-image {
       display: none;
     }
   }
@@ -4115,7 +4134,7 @@ button.swiper-pagination-bullet {
   .hedaer-secondary-menu-mb {
     display: flex;
     flex-direction: column;
-    padding: 3vw 2.6rem;
+    padding: 0 2.6rem 3vw;
     color: #000;
   }
 
@@ -4159,7 +4178,7 @@ button.swiper-pagination-bullet {
 
 .hedaer-secondary-menu-mb .supportssssss {
   display: flex;
-  margin: 5vw 0;
+  margin-bottom: 5vw;
   justify-content: space-between;
 } 
 
@@ -4207,6 +4226,17 @@ button.swiper-pagination-bullet {
   align-items: center;
 }
 
+.hedaer-secondary-menu-mb .bikesssssss > div .emphasize::after {
+  content: attr(data-price);
+  text-decoration: line-through;
+  position: relative;
+  left: 3px;
+  bottom: 3px;
+  font-size: 12px;
+  color: #000;
+}
+
+
 .hedaer-secondary-menu-mb .bikesssssss > div .u14DemiBold_v2 span {
   display: inline-block;
   border-top: 2px solid black;
@@ -4215,6 +4245,14 @@ button.swiper-pagination-bullet {
   height: 8px;
   transform: rotate(45deg) translateY(-1px);
   margin-left: 5px;
+}
+
+
+.hedaer-secondary-menu-mb .sale-image {
+  background: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_23277_2x_dd8e661f-39e1-47fa-9368-83afd96869cd.jpg?v=1698377804') center center/cover no-repeat;
+  color: #fff;
+  border-radius: 10px;
+  padding: 4vw 4vw 52.25vw;
 }
 
 
