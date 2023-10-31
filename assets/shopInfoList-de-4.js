@@ -1436,7 +1436,7 @@ const testRides = [
       },
     ]
   },
-  {
+  /*{
     city: 'Budenheim',
     cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230814-105334.jpg?v=1691981632',
     series: [
@@ -1469,7 +1469,7 @@ const testRides = [
         isPartner: true
       },
     ]
-  },
+  },*/
   {
     city: 'Geldern',
     cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Geldern.jpg?v=1691835197',
