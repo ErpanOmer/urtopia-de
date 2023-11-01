@@ -201,16 +201,16 @@
 
         // outlet 车型
         if (discount_price === 0) {
-            product_card.find('.product_price .u24DemiBold_v2').text(getPriceFormat(price, true)).attr('data-price', getPriceFormat(compare_at_price, true))
+            product_card.find('.product_price .u20DemiBold_v2').text(getPriceFormat(price, true)).attr('data-price', getPriceFormat(compare_at_price, true))
             product_card.find('.tags > span:first-child').text(`${getPriceFormat(compare_at_price - price, true)} OFF`)
 
             if (price === compare_at_price) {
-                product_card.find('.product_price .u24DemiBold_v2').attr('data-price', '')
+                product_card.find('.product_price .u20DemiBold_v2').attr('data-price', '')
                 product_card.find('.tags > span:first-child').hide()
             }
         } else {
-            product_card.find('.product_price .u24DemiBold_v2').text(getPriceFormat(price - discount_price, true)).attr('data-price', getPriceFormat(price, true))
-            product_card.find('.product_price .u17Light_v2 > span').text(getPriceFormat((price - discount_price) / 24))
+            product_card.find('.product_price .u20DemiBold_v2').text(getPriceFormat(price - discount_price, true)).attr('data-price', getPriceFormat(price, true))
+            product_card.find('.product_price .u14Light_v2 > span').text(getPriceFormat((price - discount_price) / 24))
             product_card.find('.tags > span:first-child').text(`${getPriceFormat(discount_price, true)} OFF`)
         }
 
