@@ -120,63 +120,49 @@
 
 
 .banner {
-    background: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_21062_2x_99240377-babb-4a3f-a623-38badcbb1406.jpg?v=1698736116') center center/cover no-repeat;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    text-align: center;
+    align-items: flex-end;
+    background-color: #F7F8FA;
+    min-height: 360px;
 
-    .centeral-content {
-        height: 530px;
+    .texts {
         display: flex;
         flex-direction: column;
-        color: #fff;
+        height: 100%;
+        align-items: center;
         justify-content: center;
 
-
-        .xxxxxxxx {
-            display: grid;
-            grid-template-columns: repeat(3, 100px);
-            margin-top: 40px;
-            grid-gap: 25px 50px;
-
-             & > div {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-                text-align: center;
-
-                img {
-                    max-width: 40px;
-                    margin-bottom: 6px;
-                 }
-             }
+        .u17DemiBold_v2 {
+            background-image: linear-gradient(90deg, #F45C17, #FF2700);
+            border-radius: 43px;
+            padding: 12px 24px;
+            color: #fff;
+        }
+    
+        .u30DemiBold_v2 {
+            margin: 24px 0 6px;
+            color: #FD4B17;
         }
     }
 
     @media (max-width: 767px) {
-        background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_23283_2x_2710f446-9aac-4b7a-bc0e-474c975f8cac.png?v=1698737696');
+        grid-template-columns: 1fr;
 
-        .centeral-content {
-            align-items: center;
-            text-align: center;
-            justify-content: flex-end;
-            padding: 0 4vw 12vw;
-
+        .texts {
+            padding: 8vw 4vw 12vw;
             .u48DemiBold_v2 {
                 font-size: 30px;
             }
 
-            .xxxxxxxx {
-                grid-template-columns: repeat(3, 1fr);
-                margin-top: 6vw;
-                width: 100%;
-                grid-gap: 4vw 8vw;
-
-                & > div {
-                    font-size: 11px;
-
-                    img {
-                        max-width: 30px;
-                    }
-                }
+            .u30DemiBold_v2 {
+                font-size: 24px;
+            }
+    
+            .u17DemiBold_v2 {
+                font-size: 14px;
+                padding: 6px 12px;
             }
         }
     }
@@ -458,22 +444,21 @@ $product-tags-color: #FFE2D9;
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    margin-bottom: 5%;
+    margin: 6px 0;
 
     &>div {
-        width: 20px;
-        height: 20px;
-        margin-right: 12px;
+        width: 34px;
+        height: 34px;
+        margin-right: 20px;
         border-radius: 50%;
         cursor: pointer;
-        text-align: center;
 
         &::after {
             content: "";
             display: inline-block;
-            height: 16px;
-            width: 16px;
-            transform: translateY(-2px);
+            height: 26px;
+            margin: 2px;
+            width: 26px;
             border-radius: 100%;
         }
 
@@ -492,7 +477,6 @@ $product-tags-color: #FFE2D9;
         &[data-stye="Midnight in Paris"] {
             background-color: #FFEC0B;
             position: relative;
-            text-align: unset;
         }
 
         &[data-stye="White"] {
@@ -523,7 +507,7 @@ $product-tags-color: #FFE2D9;
 
     .active {
         background-color: transparent !important;
-        border: 1px solid #666;
+        border: 2px solid #666;
 
         &[data-stye="Sirius"]::after {
             background-color: #FA812B;
@@ -541,14 +525,12 @@ $product-tags-color: #FFE2D9;
             background-color: #FFEC0B;
         }
 
-        &[data-stye="Midnight in Paris"] {
-            text-align: center;
-        }
-
         &[data-stye="Midnight in Paris"]::before {
-            top: 1px;
-            height: 9px;
-            width: 16px;
+            left: 2px;
+            top: 2px;
+            right: 2px;
+            height: 14px;
+            width: 26px;
         }
 
         &[data-stye="White"]::after {
@@ -565,8 +547,6 @@ $product-tags-color: #FFE2D9;
     }
 
     @media (max-width: 767px) {
-        margin-bottom: 2.5vw;
-
         & > div {
             width: 28px;
             height: 28px;
@@ -575,19 +555,13 @@ $product-tags-color: #FFE2D9;
             &::after {
                 width: 20px;
                 height: 20px;
-                margin: 2px;
-                transform: unset;
             }
         }
 
         .active {
-            border-width: 2px;
-
             &[data-stye="Midnight in Paris"]::before {
-                height: 11.5px;
+                height: 12px;
                 width: 20px;
-                top: 2px;
-                left: 2px;
             }
         }
     }
@@ -607,6 +581,7 @@ $product-tags-color: #FFE2D9;
 
     .tags {
         display: flex;
+        min-height: 28px;
         flex-wrap: wrap;
         flex: 1;
 
@@ -617,7 +592,7 @@ $product-tags-color: #FFE2D9;
         }
 
         span {
-            margin-right: 6px;
+            margin: 0 6px 6px 0;
         }
     }
 
@@ -629,30 +604,10 @@ $product-tags-color: #FFE2D9;
         @include dotssss;
     }
 
-
-    .stars {
-        display: flex;
-        align-items: self-start;
-        justify-content: flex-start;
-        margin: 6px 0;
-
-        img {
-            max-width: 86px;
-            margin-right: 6px;
-        }
-
-        a {
-            text-decoration: underline;
-            &:hover {
-                opacity: 0.78;
-            }
-        }
-    }
-
     .product_price {
         display: flex;
         align-items: center;
-        margin: 6px 0;
+        margin: 10px 0 6px;
         flex-wrap: wrap;
 
         img {
@@ -660,7 +615,7 @@ $product-tags-color: #FFE2D9;
             margin-left: 6px;
         }
 
-        .u20DemiBold_v2 {
+        .u24DemiBold_v2 {
             margin-right: 5%;
 
             &[data-price]::after {
@@ -669,24 +624,19 @@ $product-tags-color: #FFE2D9;
                 color: #161c1f;
                 text-decoration: line-through;
                 margin-left: 6px;
-                font-size: 20px;
+                font-size: 24px;
                 font-weight: 300;
                 opacity: 0.53;
             }
         }
 
-        &>.u14Light_v2 {
+        &>.u17Light_v2 {
             display: flex;
-            align-items: self-end;
         }
     }
 
     .my-button {
         width: fit-content;
-        padding: 8px 16px;
-        font-size: 14px;
-        font-weight: 600;
-        line-height: 17px;
     }
 
     @media (max-width: 767px) {
@@ -695,24 +645,7 @@ $product-tags-color: #FFE2D9;
         .product_price {
             flex-direction: column;
             align-items: flex-start;
-            margin-bottom: 6px;
-
-            .u20DemiBold_v2 {
-                margin-bottom: 6px;
-
-                &::after {
-                    font-size: 16px;
-                    transform: translateY(-3px);
-                }
-            }
-
-            img {
-                max-width: 34px;
-            }
-        }
-
-        & > .u20DemiBold_v2 {
-            font-size: 16px;
+            margin-bottom: 12px;
         }
     }
 }
@@ -748,7 +681,6 @@ $product-tags-color: #FFE2D9;
 
     @media (max-width: 767px) {
         margin: 40px auto;
-        padding: 0 4vw;
 
         & > .u36DemiBold_v2 {
             text-align: center;
