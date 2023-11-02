@@ -466,14 +466,15 @@ $product-tags-color: #FFE2D9;
         margin-right: 12px;
         border-radius: 50%;
         cursor: pointer;
-        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
 
         &::after {
             content: "";
             display: inline-block;
             height: 16px;
             width: 16px;
-            transform: translateY(-2px);
             border-radius: 100%;
         }
 
@@ -492,7 +493,6 @@ $product-tags-color: #FFE2D9;
         &[data-stye="Midnight in Paris"] {
             background-color: #FFEC0B;
             position: relative;
-            text-align: unset;
         }
 
         &[data-stye="White"] {
@@ -518,6 +518,7 @@ $product-tags-color: #FFE2D9;
             height: 55%;
             border-top-right-radius: 100px;
             border-top-left-radius: 100px;
+            top: 0;
         }
     }
 

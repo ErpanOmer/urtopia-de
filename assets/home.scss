@@ -969,7 +969,7 @@ $product-tags-color: #FFE2D9;
 }
 
 .boxs {
-    padding: 120px 0;
+    padding-top: 120px;
 
     .centeral-content {
         display: grid;
@@ -1010,7 +1010,7 @@ $product-tags-color: #FFE2D9;
     }
 
     @media (max-width: 767px) {
-        padding: 60px 0;
+        padding-top: 60px;
 
         .centeral-content {
             grid-template-columns: 1fr;
@@ -1256,6 +1256,123 @@ $product-tags-color: #FFE2D9;
         background-image: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_22947_2x_83b5f620-4bb4-4cd9-b9e2-3c9bd9a33baa.jpg?v=1697176342');
         margin: 8vw 4vw;
     }
+}
+
+
+.boxs3 {
+    padding-bottom: 120px;
+  
+    .centeral-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+
+        &>div {
+            background-color: #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 0 10%;
+            align-items: flex-start;
+
+            &:nth-child(1) {
+                background: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/6T1A8524_2x_aaecef7e-48c0-4776-8947-fa295f1c24b5.jpg?v=1680163598&width=640') center center/cover no-repeat;
+                padding-bottom: 100%;
+            }
+
+            &:nth-child(4) {
+                background: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/6T1A8524_2x_aaecef7e-48c0-4776-8947-fa295f1c24b5.jpg?v=1680163598&width=640') center center/cover no-repeat;
+                padding-bottom: 100%;
+            }
+
+            .u17Light_v2 {
+                margin: 10% 0;
+
+                div {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                }
+
+                div+div {
+                    margin-top: 4%;
+                }
+
+                img {
+                    max-width: 40px;
+                    margin-right: 8%;
+                }
+            }
+
+            &:nth-child(2) {
+                .u17Light_v2 {
+                    margin: 5% 0;
+                }
+            }
+
+            .logos {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: 25px 25px;
+                grid-gap: 30px 40px;
+                margin-bottom: 12%;
+
+                img {
+                    height: 100%;
+                    width: auto;
+                }
+            }
+        }
+    }
+
+  @media (max-width: 767px) {
+    padding-bottom: 60px;
+    .centeral-content {
+            grid-template-columns: 1fr;
+            padding: 0 4vw;
+
+            &>div {
+                padding: 0;
+
+                &:nth-child(1) {
+                    order: 1;
+                }
+
+                &:nth-child(2) {
+                    padding: 8vw 4vw;
+                    order: 2;
+                }
+
+                &:nth-child(3) {
+                    padding: 8vw 4vw;
+                    order: 4;
+                }
+
+                &:nth-child(4) {
+                    order: 3;
+                }
+
+                .u17Light_v2 {
+                  font-size: 14px;
+                    img {
+                        margin-right: 6vw;
+                    }
+                }
+
+                .logos {
+                    grid-gap: 15vw 8vw;
+
+                    img {
+                        height: auto;
+                        width: 100%;
+                    }
+                }
+            }
+
+            .u30DemiBold_v2 {
+                font-size: 24px;
+            }
+        }
+  }
 }
 
 
