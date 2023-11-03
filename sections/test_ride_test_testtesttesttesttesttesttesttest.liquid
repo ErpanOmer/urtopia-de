@@ -1,258 +1,160 @@
-{% assign carbon1_Sirius = "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230630-181731.png?v=1688120408" %}
-{% assign carbon1_Paris = "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18150_2x_63ea456b-69c1-4d96-988f-efa931148bc1.png?v=1677640442" %}
-{% assign carbon1_Lyra = "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18139_2x_ee2cf1ae-8693-42a3-ab99-d53ea78e2802.png?v=1677640511" %}
-{% assign carbon1_Vanilla = "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230420-182731.jpg?v=1681986478" %}
+{{ 'blog.scss.css' | asset_url | stylesheet_tag: preload: true }}
 
-{% assign chord_white = "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/1_1_2x_3f9f6132-5cac-4f49-bac7-ce6258edad1c.jpg?v=1689154301" %}
-{% assign chord_black = "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/3_1_2x_c75e6ef5-a3ac-49af-bb2f-c19dd565cfad.jpg?v=1689154308" %}
-{% assign chordx_white = "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/chordX_2x_fe86f1a1-6d47-4dd4-b1b9-80ee149da0fe.jpg?v=1689154670" %}
-{% assign chordx_black = "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20231009-150822.png?v=1696835332" %}
-
-{{ 'outlet_v4.scss.css' | asset_url | stylesheet_tag: preload: true }}
-{% assign carbon = all_products["outlet-carbon-1-1s"] %}
-
-
-<style>
-  .banner {
-        background-image: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_21062_2x_8608fd03-f1bf-4e94-8b17-09600fdb389f.jpg?v=1698836778');
-  }
-
-      @media (max-width: 767px) {
-        .banner {
-            background-image: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_23282_2x_efd3cd55-3e9e-4b53-9e02-9d132be0341c.jpg?v=1698836750');
-        }
-
-        .banner .centeral-content {
-            color: #000;
-            justify-content: flex-start;
-            padding-top: 20px;
-        }
-    }
-</style>
-
-<div class="banner">
-    <div class="centeral-content">
-        <div class="u48DemiBold_v2">Smartest E-Bike Ever</div>
-        <div class="xxxxxxxx">
-            <div class="u17Medium_v2">
-                <img class="mobileHide" src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/vat_2x_73621f8d-ae55-4d81-ab06-78f559ac1d5e.png?v=1698736324" alt="">
-                <img class="pcHide" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/vat_2x_83f75fa4-d59c-46ae-86f1-e226cb7fbd83.png?v=1698837280" alt="">
-                <span>VAT</span>
-                <span>Included</span>
-            </div>
-            <div class="u17Medium_v2">
-                <img class="mobileHide" src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_17959_2x_c8719cb1-7053-4b89-81b2-7a6de481016c.png?v=1698736330" alt="">
-                <img class="pcHide" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18914_2x_7f2b9aff-6657-43b2-86a1-72de18ae1886.png?v=1698837287" alt="">
-                <span>14-Day</span>
-                <span>Returns</span>
-            </div>
-            <div class="u17Medium_v2">
-                <img class="mobileHide" src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_17958_2x_e50155e3-9acf-40a8-a806-438b266bfc57.png?v=1698736335" alt="">
-                <img class="pcHide" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18915_2x_f1484da6-2909-4ba3-8c93-6a991c07d6fe.png?v=1698837294" alt="">
-                <span>2-Year</span>
-                <span>Warranty</span>
-            </div>
-            <div class="u17Medium_v2">
-                <img class="mobileHide" src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18916_2x_30f00db4-223f-411c-8523-7ced3de1c1dd.png?v=1698736341" alt="">
-                <img class="pcHide" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18917_2x_aac5e357-f5cd-46c7-9943-f45c0cc9a227.png?v=1698837301" alt="">
-                <span>Free</span>
-                <span>Shipping</span>
-            </div>
-            <div class="u17Medium_v2">
-                <img class="mobileHide" src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/credit-card_2x_5e83a5a5-e4a7-45b9-8370-7ff18aa7619d.png?v=1698736348" alt="">
-                <img class="pcHide" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/credit-card_2x_525d2b3e-d6a9-49e6-aa6f-9c916854cce2.png?v=1698837308" alt="">
-                <span>Flexible</span>
-                <span>Payment</span>
-            </div>
-            <div class="u17Medium_v2">
-                <img class="mobileHide" src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/placeholder_2x_720784c2-b144-4dfc-aa61-607f5ac06385.png?v=1698736357" alt="">
-                <img class="pcHide" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/placeholder_2x_2da9c5cc-c953-470b-9522-245afe75532b.png?v=1698837314" alt="">
-                <span>Local</span>
-                <span>Service</span>
-            </div>
-        </div>
+<article>
+  <header style="--background-image-pc: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/image_cac49c3b-5f53-41f6-b070-a917a3abb760.png?v=1697543466');">
+    <div class="background-blur"></div>
+    <section class="flex flex-center flex-column text-center height-600 mb-height-420">
+      <h1 class="color-white mb-font-size-24">An Ambassador Story</h1>
+      <h2 class="color-light-gray font-size-24 margin-top-32 mb-font-size-16">Arsalan Minhas</h2>
+    </section>
+  </header>
+  <section class="margin-top-60 margin-bottom-60 max-width-720 mb-margin-top-40 mb-margin-bottom-40">
+    <p>
+      If I had to describe Arsalan, a Pakistani born and raised entrepreneur, in three words, it would be that he is
+      adventurous, curious and articulate. First, Arsalan is adventurous because he loves to travel the world,
+      experience new cultures and learn about all walks of life. Second, he is curious because he loves to read and
+      learn about anything that interests him. Finally, he is articulate because he is a talented speaker. During our
+      interview, I was amazed at how well he expressed his feelings, thoughts, and beliefs. So it made sense when he
+      told me that he regularly gives keynote speeches for his day job at Hyland Software. I was grateful to experience
+      this firsthand at the Hyland Summit in Düsseldorf, where Arsalan spoke about digital transformation and how AI is
+      having its iPhone moment thanks to tools like Chat GPT. I must say that I enjoyed his keynote presentation with
+      the important facts mentioned about the usefulness of AI and his amusing comedy sketch that eloquently conveyed
+      the message.
+    </p>
+    <img
+      alt="Urtopia e-bike let you keep fit"
+      src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/output_8ec3052a-b5aa-48da-9249-04c244374f5a.jpg?v=1698921518"
+      class="margin-top-60 mb-margin-top-40 fade"
+    >
+  </section>
+  <section class="margin-top-60 margin-bottom-60 max-width-720 mb-margin-top-40 mb-margin-bottom-40">
+    <p>
+      This incredible entrepreneur is deeply passionate about making a positive difference in the lives of
+      underprivileged people and children. This is what truly brings him joy and gives him a clear purpose for getting
+      up in the morning. In addition to his 9 to 5 job as a sales engineer at Hyland Software, where he gets to travel
+      the world thanks to their annual summits where he routinely delivers keynote speeches, Arsalan also has his own
+      startup. His startup, Digital Munich GmbH, focuses on tech trends such as AI, augmented reality and IoT. These
+      so-called tech trends serve what the startup truly believes in and wants to do at its core, which is to positively
+      impact the lives of poor people and underprivileged children in third world countries. The main reason for the
+      creation of the startup is the will to give back to people in need and change their lives for the better. It is
+      not about making money. For example, the company achieves this objective by promoting tourism in a third world
+      country like Pakistan by developing augmented reality and virtual reality applications in which the user wears
+      glasses. This allows the user to have an immersive 3D experience of Pakistan's great mountains and other fantastic
+      tourist attractions. Another way the company helps the community is by supporting schools that educate
+      underprivileged children. With proper time management, which Arsalan has mastered, he is able to not only grow in
+      his day-to-day job as a sales engineer, but also make a positive difference in the world through his startup,
+      which is very close to his heart.
+    </p>
+    <div class="grid-box grid-columns-2  mb-grid-columns-1 mb-grid-row-gap-20 grid-column-gap-20  margin-top-60 mb-margin-top-40">
+      <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/output_1.jpg?v=1698921763" class="fade" alt="">
+      <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/1280X1280.jpg?v=1698921766" class="fade" alt="">
     </div>
-</div>
-<div class="centeral-content ebike-products">
-    <div class="product-grid">
-        {% assign product = all_products["urtopia-chord-ebike"] %}
-        {% assign product_variants = product.variants | where: "option1", "High-Step" | where: "available" %}
-        {% assign product_reviews_count = 112 %}
-        {% render 'product-card-2',
-            product_variants: product_variants,
-            product_name: 'Chord',
-            product_description: 'Elegantly zip around town for meet-ups, errands, or Sunday fun.',
-            product_discount_price: settings.chord_ebike_discount_price,
-            product_reviews_count: product_reviews_count,
-            product_url: product.url,
-        %}
-        {% assign product_variants = product.variants | where: "option1", "Step-Through" | where: "available" %}
-        {% assign product_reviews_count = 125 %}
-        {% render 'product-card-2',
-            product_variants: product_variants,
-            product_name: 'Chord X',
-            product_description: 'Easily kickstart your ride for workouts, city cruising, and pure enjoyment.',
-            product_discount_price: settings.chord_ebike_discount_price,
-            product_reviews_count: product_reviews_count,
-            product_url: product.url,
-        %}
-        <div class="gray-background-color u30DemiBold_v2 lozad mobileHide" data-background-image="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_22830_2x_8c178fff-ea2f-4b60-99c8-a44937213f1f.jpg?v=1695625131">Casual Comfortable Elegant</div>
-        <div class="gray-background-color u30DemiBold_v2 lozad mobileHide" data-background-image="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_22829_2x_82531e4b-8b9c-40c7-822f-c58f9db7d477.jpg?v=1695625176">Full Carbon Lightweight Sporty</div>
-        {% assign product = all_products["urtopia-carbon-e-bike"] %}
-        {% assign product_variants = product.variants | where: "option1", "Shimano Gear" | where: "available" %}
-        {% assign product_tags = settings.carbon_ebike_free_accessories_count | append: ' Freebies'   %}
-        {% assign product_reviews_count = 312 %}
-        {% render 'product-card-2',
-            product_variants: product_variants,
-            product_variant_options_find_sort: "M,L,S",
-            product_name: 'Carbon 1s',
-            product_description: 'Powerful drive system ensures minimal effort and maximum fun',
-            product_discount_price: settings.carbon1s_ebike_discount_price,
-            product_tags: product_tags,
-            product_reviews_count: product_reviews_count,
-            product_url: product.url,
-        %}
-        {% assign product_variants = product.variants | where: "option1", "Carbon Belt" | where: "available" %}
-        {% assign product_reviews_count = 212 %}
-        {% render 'product-card-2',
-            product_variants: product_variants,
-            product_variant_options_find_sort: "M,L,S",
-            product_name: 'Carbon 1',
-            product_description: 'Sporty, light and nimble e-bike for everyday transport, fitness and fun.',
-            product_discount_price: settings.carbon_ebike_discount_price,
-            product_tags: product_tags,
-            product_reviews_count: product_reviews_count,
-            product_url: product.url,
-        %}
+  </section>
+  <section class="margin-top-60 margin-bottom-60 max-width-720 mb-margin-top-40 mb-margin-bottom-40">
+    <h6 class="margin-bottom-24 mb-font-size-20">It was love at first sight with Urtopia</h6>
+    <p>
+      Arsalan, who usually ignores online ads takes time to fully commit before buying a significant purchase, but when
+      it came to the Urtopia e-bike, for the first time in his life it was a different story. He utterly fell in love
+      with the Carbon 1 after clicking on a Facebook ad. It was love at first sight at its finest. The unique style and
+      look of the e-bike compelled him to purchase not only one, but two Carbon 1 e-bikes directly! He bought one e-bike
+      for his family and one for himself. Nowadays, he uses his Carbon 1 to recharge his batteries by going on exciting
+      and beautiful rides in nature for his own relaxation and pleasure.
+    </p>
+    <img
+      src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/output_2.jpg?v=1698922834"
+      class="margin-top-60 mb-margin-top-40 fade"
+      alt=""
+    >
+  </section>
+  <section class="margin-top-60 margin-bottom-60 max-width-720 mb-margin-top-40 mb-margin-bottom-40">
+    <h6 class="margin-bottom-24 mb-font-size-20">Becoming an Urtopia brand ambassador</h6>
+    <p>
+      Arsalan became an Urtopia brand ambassador to infect other bike aficionados about the transformative experience of
+      riding the Carbon 1 e-bike. As an avid cyclist himself, Arsalan recognized the exceptional quality and unique
+      design of Urtopia's e-bikes, and he couldn't help but share his enthusiasm with others.<br>
+      <br>
+      Through his ambassadorship, Arsalan aims to inspire others to embrace a more sustainable and thrilling mode of
+      transportation while exploring the beauty of nature. He believes that the Carbon 1 e-bike not only offers a
+      thrilling riding experience but also contributes to preserving the environment by reducing carbon emissions. By
+      infecting other bike enthusiasts with his love for Urtopia, Arsalan hopes to create a community of like-minded
+      individuals who share his vision for a greener and more adventurous future. <br>
+      <br>
+      As an Urtopia brand ambassador, Arsalan actively engages with his audience, sharing his personal stories and
+      experiences with the e-bike. If you have any questions or concerns about this remarkable e-bike, rest assured that
+      Arsalan will patiently address them with his firsthand knowledge and expertise.
+    </p>
+    <img
+      src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/output.png?v=1698923020"
+      class="margin-top-60 mb-margin-top-40 fade"
+      alt=""
+    >
+  </section>
+  <section class="margin-top-60 margin-bottom-60 max-width-720 mb-margin-top-40 mb-margin-bottom-40">
+    <h6 class="margin-bottom-24 mb-font-size-20">Adventure sports enthusiast</h6>
+    <p>
+      Skydiving? Walking with lions? Flying? Yes, yes, and yes for Arsalan. Arsalan doesn't like it when outdoor
+      activities get boring or normal. He prefers getting out of his comfort zone and expanding his horizons. What
+      better way to do that then skydive, walk with lions, and fly airplanes? By constantly seeking out these thrilling
+      experiences, Arsalan challenges himself to grow as an individual. He believes that true personal growth lies
+      outside of one's comfort zone. Stepping into unfamiliar territory allows him to confront his weaknesses head-on
+      and develop resilience in the face of adversity. Arsalan knows that life is too short to be lived in monotony. By
+      embracing the extraordinary and seeking out thrilling adventures, he continues to push his own boundaries, defy
+      his fears, and ultimately become the best version of himself. And with every new experience, he welcomes the
+      opportunity to learn, evolve, and discover just how far he can go.
+    </p>
+    <div class="grid-box grid-columns-2 grid-column-gap-20 grid-row-gap-20 margin-top-60 mb-margin-top-40 mb-grid-columns-1 mb-grid-row-gap-20">
+      <img
+        src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/6d845d06-94e0-4d79-9688-0a7384226113.jpg?v=1698923133"
+        class="fade"
+        alt=""
+      >
+      <img
+        src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/d9b1c13a-4a95-43ad-a74b-1a3efb1448bd.jpg?v=1698923133"
+        class="fade"
+        alt=""
+      >
+      <img
+        src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/194e696d-478b-4eff-8019-4aab7ad5a08f.jpg?v=1698923133"
+        class="fade"
+        alt=""
+      >
+      <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/1280X1280_1.jpg?v=1698923133" class="fade" alt="">
     </div>
-</div>
+  </section>
+  <section class="margin-top-60 margin-bottom-60 max-width-720 mb-margin-top-40 mb-margin-bottom-40">
+    <h6 class="margin-bottom-24 mb-font-size-20">From dreamer to achiever</h6>
+    <p>
+      After completing his Bachelor's Degree in Computer Engineering in Pakistan, he moved to Germany with the intention
+      of staying for only a few years. However, Germany ended up becoming his permanent home. Despite coming from humble
+      beginnings, he has managed to lead a fulfilling life. Rather than letting his background hold him back, it has
+      motivated him to grow and succeed.
+    </p>
+    <br>
+    <br>
+    <p>
+      As someone who started as a dreamer and has become an achiever, I was curious to learn about three pieces of
+      advice that have helped him in his personal life, as well as what advice he would offer others. Arsalan shared,
+      "First, it's important to have a big dream, but it's even more crucial to have an actionable plan with specific
+      goals. Second, wholeheartedly committing yourself to that plan is what will truly turn your dreams into reality.
+      Lastly, Arsalan stresses the importance of investing in oneself. Whether it's through education, health, or
+      fitness, investing in yourself is paramount. After all, if you don't invest in yourself, who will?"
+      <div class="margin-top-40"></div>
+      <i class="font-weight-700" style="color: #555;">It's important to have a big dream, but it's even more crucial to have an actionable plan with specific goals.
+        <br>
+        <br>
+        -Arsanal Minhas</i>
+    </p>
 
-<div class="gray-background-color top-area">
-    <div class="centeral-content">
-        <div class="u72DemiBold_v2">OUTLET</div>
-        <div class="u24Medium_v2">The Urtopia Outlet includes demo e-bikes with the same quality and performance as new ones. The e-bikes are tested by our engineers for our customers. Also, meticulous quality control measures are implemented prior to offering them for sale.</div>
-        <div class="product item">
-            <div>
-                <div class="u36DemiBold_v2">Outlet Carbon 1</div>
-                <!--<div class="u20Light_v2">Fit for 175 - 195 cm</div>-->
-                <div class="u30DemiBold_v2 emphasize" data-price={{ carbon.compare_at_price | money_without_trailing_zeros }}>{{ carbon.price | money_without_trailing_zeros }}</div>
-                <div class="dots">
-                    <div data-img="{{ carbon1_Sirius }}" data-variant="43935607259352" orange class="active"></div>
-                    <div data-img="{{ carbon1_Paris }}" data-variant="43935607324888" yellow></div>
-                    <div data-img="{{ carbon1_Lyra }}" data-variant="43935607292120" gray></div>
-                    <!--<div data-img="{{ carbon1_Vanilla }}" data-variant="43935607357656" peach></div>-->
-                </div>
-                <a href="/products/outlet-carbon-1-1s?variant=43935607259352" class="my-button my-button-origin">Order now</a>
-            </div>
-            <div style="flex: 1.5;">
-                <img src="{{carbon1_Sirius}}" alt="">
-                <div class="u48DemiBold_v2 off">{{ carbon.compare_at_price | minus: carbon.price | money_without_trailing_zeros }} OFF</div>
-            </div>
-        </div>
-        <!--<div class="product-chord">
-            <div class="item">
-                <div class="u36DemiBold_v2 mobileHide">Outlet Chord</div>
-                <div class="u24DemiBold_v2 mobileHide">{{ chord.compare_at_price | minus: chord.price | money_without_trailing_zeros }} OFF</div>
-                <div style="position: relative;">
-                    <img src="{{ chord_white }}" alt="">
-                    <div class="u48DemiBold_v2 off pcHide">{{ chord.compare_at_price | minus: chord.price | money_without_trailing_zeros }} OFF</div>
-                </div>
-                <div class="u36DemiBold_v2 pcHide">Outlet Chord</div>
-                <div class="u20Light_v2 pcHide">Fit for 170cm - 195cm</div>
-                <div class="price">
-                    <div class="dots">
-                        <div data-img="{{ chord_white }}" data-variant="43950919024856" white class="active"></div>
-                        <div data-img="{{ chord_black }}" data-variant="43950919057624" black></div>
-                    </div>
-                    <div class="u24DemiBold_v2 emphasize" data-price={{ chord.compare_at_price | money_without_trailing_zeros }}>{{ chord.price | money_without_trailing_zeros }}</div>
-                </div>
-                <div class="u20Light_v2 mobileHide">Fit for 170cm - 195cm</div>
-                <a href="/products/outlet-urtopia-chord?variant=43950919024856" class="my-button my-button-origin">Order now</a>
-            </div>
-            <div class="item">
-                <div class="u36DemiBold_v2 mobileHide">Outlet Chord X</div>
-                <div class="u24DemiBold_v2 mobileHide">{{ chord.compare_at_price | minus: chord.price | money_without_trailing_zeros }} OFF</div>
-                <div style="position: relative;">
-                    <img src="{{ chordx_white }}" alt="">
-                    <div class="u48DemiBold_v2 off pcHide">{{ chord.compare_at_price | minus: chord.price | money_without_trailing_zeros }} OFF</div>
-                </div>
-                <div class="u36DemiBold_v2 pcHide">Outlet Chord X</div>
-                <div class="u20Light_v2 pcHide">Fit for 160cm - 185cm</div>
-                <div class="price">
-                    <div class="dots">
-                        <div data-img="{{ chordx_white }}" data-variant="43950919090392" white class="active"></div>
-                        <div data-img="{{ chordx_black }}" data-variant="43950919123160" black></div>
-                    </div>
-                    <div class="u24DemiBold_v2 emphasize" data-price={{ chord.compare_at_price | money_without_trailing_zeros }}>{{ chord.price | money_without_trailing_zeros }}</div>
-                </div>
-                <div class="u20Light_v2 mobileHide">Fit for 160cm - 185cm</div>
-                <a href="/products/outlet-urtopia-chord?variant=43950919090392" class="my-button my-button-origin">Order now</a>
-            </div>
-        </div>-->
-    </div>
-</div>
-
-<script>
-    $('.top-area .dots > div').on('click', e => {
-        const target = $(e.target)
-
-        const variant = target.attr('data-variant')
-        const image = target.attr('data-img')
-
-        target.siblings().removeClass('active')
-        target.addClass('active')
-
-        const item = target.closest('.item')
-        item.find('img').attr('src', image)
-
-        const button = item.find('.my-button')
-        button.attr('href', `${button.attr('href').split('?').shift()}?variant=${variant}`)
-    })
-</script>
-<script>
-    $('.product-card .dots > div').on('click', e => {
-        const target = $(e.target)
-        const product_card = target.closest('.product-card')
-
-        // 先取消 其它兄弟元素的active, 再设置active
-        target.siblings().removeClass('active')
-        target.addClass('active')
-
-        const price = Number(target.attr('data-price'))
-        const compare_at_price = Number(target.attr('data-compare-at-price'))
-        const discount_price = Number(target.attr('data-product-discount-price'))
-        const variant_id = target.attr('data-variant')
-        const variant_image = target.attr('data-img')
-
-        // outlet 车型
-        if (discount_price === 0) {
-            product_card.find('.product_price .u20DemiBold_v2').text(getPriceFormat(price, true)).attr('data-price', getPriceFormat(compare_at_price, true))
-            product_card.find('.tags > span:first-child').text(`${getPriceFormat(compare_at_price - price, true)} OFF`)
-
-            if (price === compare_at_price) {
-                product_card.find('.product_price .u20DemiBold_v2').attr('data-price', '')
-                product_card.find('.tags > span:first-child').hide()
-            }
-        } else {
-            product_card.find('.product_price .u20DemiBold_v2').text(getPriceFormat(price - discount_price, true)).attr('data-price', getPriceFormat(price, true))
-            product_card.find('.product_price .u14Light_v2 > span').text(getPriceFormat((price - discount_price) / 24))
-            product_card.find('.tags > span:first-child').text(`${getPriceFormat(discount_price, true)} OFF`)
-        }
-
-        product_card.find('.variant-image').attr('src', variant_image)
-        product_card.find('.my-button').attr('href', `${product_card.find('.my-button').attr('href').split('?').shift()}?variant=${variant_id}`)
-        product_card.find('.stars a').attr('href', `${product_card.find('.my-button').attr('href').split('?').shift()}?variant=${variant_id}#judgeme_product_reviews`)
-    })
-
-    setTimeout(() => {
-        $('.product-card .dots > div:first-child').click()
-
-        $('.product-card .variant-image').on('click', e => {
-            const button = $(e.target).closest('.product-card').find('.my-button')
-
-            if (button.length) {
-                button[0].click()
-            }
-        })
-    })
-</script>
+    <img
+      src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/70b9a92d-7b89-4a41-ac19-c01dd3e09738.jpg?v=1698923293"
+      class="margin-top-60 margin-bottom-60 mb-margin-bottom-60 mb-margin-top-40 fade"
+      alt=""
+    >
+    <p>
+      To conclude, Arsalan Minhas stands as an exemplary ambassador who embodies the spirit of adventure, intellectual
+      curiosity, and the determination to make a positive impact on the world. His entrepreneurial ventures, dedication
+      to personal growth, and commitment to helping others serve as an inspiration for individuals aspiring to make a
+      difference in their own lives and in society at large.
+    </p>
+  </section>
+</article>
