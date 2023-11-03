@@ -112,7 +112,7 @@
             <div data-pf-type="JudgeMe" class="sc-eZhRLC gtfCKx pf-25_ order-djs mb6">
                 <div class="pf-judme">{% render "judgeme_widgets", widget_type: "judgeme_preview_badge", jm_style: "", concierge_install: false, product: product %}</div>
             </div>
-            <div class="u14DemiBold_v2 sale-taggggggg mb12" style="max-height: 30px;">{{ settings.sale_name }}<img style="max-width: 70px;" src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20231027-095408.png?v=1698371673" alt=""></div>
+            <div class="u14DemiBold_v2 mb6" style="color: var(--sale-order-page-text-color);">{{ settings.sale_name }}</div>
             <div class="product-price u30DemiBold_v2"  style="margin: 0;" data-price="{{ product.price | money }}">{{ product.price | minus: settings.carbon_ebike_discount_price | money }}</div>
             <div class="sale-tag mb6">
               <!--<div class="u17Medium_v2">{{ settings.sale_name }}</div>-->
@@ -195,7 +195,7 @@
                 <div data-pf-type="JudgeMe" class="sc-eZhRLC gtfCKx pf-25_ order-djs mb6">
                     <div class="pf-judme">{% render "judgeme_widgets", widget_type: "judgeme_preview_badge", jm_style: "", concierge_install: false, product: product %}</div>
                 </div>
-                <div class="u17DemiBold_v2 mb12 sale-taggggggg">{{ settings.sale_name }}<img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20231027-095408.png?v=1698371673" alt=""></div>
+                <div class="u17DemiBold_v2 mb6" style="color: var(--sale-order-page-text-color);">{{ settings.sale_name }}</div>
                 <div class="product-price u30DemiBold_v2" style="margin: 0;" data-price="{{ product.price | money }}">{{ product.price | minus: settings.carbon_ebike_discount_price | money }}</div>
                 <div class="sale-tag">
                   <!--<div class="u17Medium_v2">{{ settings.sale_name }}</div>-->
