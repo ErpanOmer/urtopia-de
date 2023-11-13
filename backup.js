@@ -40,8 +40,8 @@ run('shopify theme list -s urtopia-de.myshopify.com --role unpublished').then(as
         await run(`git push origin ${version} -f`)
 
         // 如果存在 则删除
-        list.includes(theme) && await run(`shopify theme delete -s urtopia-de.myshopify.com -t ${theme} -f`)
-        await run(`shopify theme push --unpublished -s urtopia-de.myshopify.com -t ${theme}`)
+        // list.includes(theme) && await run(`shopify theme delete -s urtopia-de.myshopify.com -t ${theme} -f`)
+        // await run(`shopify theme push --unpublished -s urtopia-de.myshopify.com -t ${theme}`)
         await run(`git checkout master`)
     } catch (error) {
         console.error(error)
