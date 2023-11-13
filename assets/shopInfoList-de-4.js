@@ -2074,7 +2074,7 @@ const testRides = [
         email: 'urtopia@baumys.de',
         timezone: "Maisach, Germany (GMT+1)",
         add: "Maisacher, 82216 Maisach, Germany",
-        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Miasach_Hans_Seidl_CR_3.jpg?v=1697819734",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20231106-113537.jpg?v=1699267284",
         testrideSpot: "Maisach",
         testRideSize: "Carbon 1s Size:M",
         isPartner: true,
