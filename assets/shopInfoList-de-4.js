@@ -534,7 +534,7 @@ const testRides = [
         disableDate: createdisableDates([['2023-9-16', '2023-10-8']]),
       },
       {
-        name: 'Norddeutsche Zweiradschiede',
+        name: 'Norddeutsche Zweiradschmiede',
         phone: '+494088359912',
         email: 'zweiradschmiede.nord@gmail.com',
         timezone: "Hamburg, Germany (GMT+1)",
@@ -544,7 +544,7 @@ const testRides = [
         testRideSize: "L, Chord",
         noBook: "Please contact the store directly to arrange test ride",
         availableSizes: [
-          'Carbon 1 Size L',
+          'Carbon 1 Size M/L',
           'Chord',
         ],
         businessHours: [
