@@ -10,10 +10,28 @@
       "type": "test-ride",
       "settings": {
       }
+    },
+    "17001866480860f02b": {
+      "type": "apps",
+      "blocks": {
+        "575df3d4-a4d8-43d3-98a8-4d275bea899e": {
+          "type": "shopify:\/\/apps\/judge-me-reviews\/blocks\/featured_carousel\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+            "maxwidth": 1080
+          }
+        }
+      },
+      "block_order": [
+        "575df3d4-a4d8-43d3-98a8-4d275bea899e"
+      ],
+      "settings": {
+        "include_margins": true
+      }
     }
   },
   "order": [
     "pf-3b2bc3c4",
-    "test-ride"
+    "test-ride",
+    "17001866480860f02b"
   ]
 }
