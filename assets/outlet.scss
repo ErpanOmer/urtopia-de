@@ -183,13 +183,37 @@
     padding-bottom: 120px;
 
     .centeral-content {
-        &>.u72DemiBold_v2 {
-            margin-bottom: 30px;
-        }
+        .topppppp {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
 
+            &>.u24Medium_v2 {
+                max-width: 530px;
 
-        &>.u24Medium_v2 {
-            max-width: 530px;
+                .u72DemiBold_v2 {
+                    margin-bottom: 30px;
+                }
+            }
+
+            img {
+                max-width: 540px;
+            }
+
+            @media (max-width: 767px) {
+                flex-direction: column-reverse;
+                align-items: flex-start;
+
+                .u24Medium_v2 {
+                    .u72DemiBold_v2 {
+                        margin: 3vw 0 6vw;
+                    }
+                }
+
+                img {
+                    max-width: 200px;
+                }
+            }
         }
 
         .product {
@@ -278,7 +302,7 @@
     }
 
     @media (max-width: 767px) {
-        padding-top: 60px;
+        padding-top: 10vw;
         padding-bottom: 60px;
 
         .centeral-content {
