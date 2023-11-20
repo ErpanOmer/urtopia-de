@@ -1,0 +1,12 @@
+{
+  "sections": {
+    "white": {
+      "type": "white-glow-product",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "white"
+  ]
+}
