@@ -546,12 +546,11 @@
     }
 
     .motion {
-        background: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18282_2x_f0c5aa19-e816-49fd-9106-18966343e20c.jpg?v=1685762456') center center/cover no-repeat;
-        height: 100vh;
         display: flex;
         align-items: center;
-        color: #fff;
+        color: #000;
         margin: 80px 0;
+        text-align:center;
     }
 
 
@@ -1522,10 +1521,8 @@
 
 
         .motion {
-            margin: 60px 0;
-            height: 104vw;
+            margin: 40px 0;
             align-items: unset;
-            padding-top: 8%;
 
             .u72DemiBold_v2 {
                 font-size: 36px;

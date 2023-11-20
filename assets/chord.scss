@@ -85,7 +85,7 @@ $sale_background_image: linear-gradient(90deg, #15B79A, #63DED7);
 }
 
 .product {
-    margin: 80px 0;
+    margin: 80px 0 140px;
 
     .mb12 {
         margin-bottom: 12px;
@@ -772,7 +772,7 @@ $sale_background_image: linear-gradient(90deg, #15B79A, #63DED7);
     }
 
     .product {
-        margin: 0;
+        margin: 0 0 40px;
 
         .fenders {
             margin-bottom: 12px;
@@ -2270,6 +2270,7 @@ $sale_background_image: linear-gradient(90deg, #15B79A, #63DED7);
     grid-template-columns: 1fr 1fr;
     height: 710px;
     padding-bottom: 140px;
+    box-sizing: content-box;
 
     & > div {
         @include easy-box;
