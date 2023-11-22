@@ -1,1 +1,229 @@
-<div>hello world</div>
+{{ 'white-glow.scss.css' | asset_url | stylesheet_tag: preload: true }}
+
+
+<input type="hidden" name="id" data-product-id="{{product.id}}" value="{{ product.selected_or_first_available_variant.id }}"/>
+<div class="banner" style="--swiper-pagination-bullet-horizontal-gap: 10px;">
+        <div class="u24Medium_v2 mobileHide">White Glow</div>
+        <div class="u60Medium_v2">Christmas Special Edition</div>
+        <div class="images">
+            <div>
+                <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_23223_2x_65243ad2-a45b-40f3-afb3-0593518fc137.png?v=1700450177"
+                    alt="">
+                <div class="u17Medium_v2">Complete set of <br>free accessories</div>
+            </div>
+            <div>
+                <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_23219_2x_283c3d24-1e6c-43da-ba74-a62ce2405718.png?v=1700449947"
+                    alt="">
+                <div class="u17Medium_v2">Limited Edition <br>20 Units Worldwide</div>
+            </div>
+            <div>
+                <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_23224_2x_ef74bca7-ca37-4a0f-acba-ee7c55fcdf94.png?v=1700449941"
+                    alt="">
+                <div class="u17Medium_v2">Exclusive 1v1 <br>customer service</div>
+            </div>
+        </div>
+        <div class="flex-1"></div>
+        <div class="swiperrrrr">
+            <div class="swiper-wrapper">
+                {% for media in product.media %}
+                    <div class="swiper-slide">{{- media | media_tag: image_size: '1000x' }}</div>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="swiper-pagination"></div>
+        <div class="bottommmm mobileHide">
+            <img class="swiper-button-prev"
+                src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20231120-133606.png?v=1700458586" alt="">
+            <img class="swiper-button-next"
+                src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20231120-133606.png?v=1700458586" alt="">
+        </div>
+    </div>
+    <div class="gray-background-color product">
+        <div class="centeral-content">
+            <div>
+                <div class="u30DemiBold_v2">White Glow <span class="u20Medium_v2" style="color: #C6241F;">(Christmas Special)</span></div>
+                <div class="u20Light_v2"><span style="font-weight: 500;">{{ product.selected_or_first_available_variant.inventory_quantity | at_least: 2 }} left |</span> total 20 units</div>
+                <div class="u17Light_v2">For this Christmas, Urtopia is releasing a limited edition paint job. Crafting the warmest white from 150 shades of white, making this ‘White Glow’ a radiant warmth in your winter days. Limited edition, only 20 available for sale.”</div>
+                <div class="u17Medium_v2" style="text-decoration: underline;">Free Shipping within 5 days</div>
+            </div>
+            <div>
+                <div class="u17Light_v2"><span class="u17DemiBold_v2">Size -</span> fit for 175-195 cm</div>
+                <div class="u17Light_v2"><span class="u17DemiBold_v2">Color -</span> White Glow</div>
+                <div class="u17DemiBold_v2">Free Accessories</div>
+                <img class="lozad" data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_23292_2x_03443e75-74d6-4b8c-9814-d8b69a3b640b.jpg?v=1700469996&width=500" alt="">
+            </div>
+            <div>
+                <div class="u30DemiBold_v2">{{ product.price | money }} <span class="u14Light_v2">Starting at {{ product.price | divided_by: 24 | money_without_trailing_zeros }}/mo with <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Image_70_2x_8fb8f4b7-8366-43bc-b526-28f1fe7c3dee.png?v=1695607020" alt=""></span></div>
+                <div
+                    data-product-id="{{ product.id }}"
+                    class="my-button my-button-origin addToCartBtn"
+                    id="addToCart"
+                    >
+                    <i class="fa fa-spinner fa-spin"></i><span data-pf-type="Text" class="addToCartText u17DemiBold_v2">Add to Cart</span>
+                </div>
+                <div class="support mb12">
+                    <a href="#boxs3">
+                        <img class="lozad" data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_17960_2x_6b15bf9d-1685-4499-9e1d-c9821b8cb66d.png?v=1700534033"/>
+                        <span class="u11Medium_v2">Free <br>Shipping</span>
+                    </a>
+                    <a href="/pages/shipping-and-return" target="_blank">
+                        <img class="lozad" data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_17959_2x_cff00041-4dce-479b-b87d-55b1cb89cd7a.png?v=1687161086"/>
+                        <span class="u11Medium_v2">14-Day<br>Returns</span>
+                    </a>
+                    <a href="/pages/warranty" target="_blank">
+                        <img class="lozad" data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_17958_2x_1e776f09-0686-4672-a22f-b29d2df3898d.png?v=1687161098"/>
+                        <span class="u11Medium_v2">2-Year<br>Warranty</span>
+                    </a>
+                </div>
+                <div class="dialogs">
+                    <div class="u17Medium_v2">
+                        <span>Size & Fit</span>
+                        <span>&gt;</span>
+                    </div>
+                    <div class="u17Medium_v2">
+                        <span>Technical Specifications</span>
+                        <span>&gt;</span>
+                    </div>
+                    <div class="u17Medium_v2">
+                        <span>Support & Service</span>
+                        <span>&gt;</span>
+                    </div>
+                    <!--<div class="u17Medium_v2">
+                        <span>FAQs</span>
+                        <span>&gt;</span>
+                    </div>-->
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="centeral-content inspired">
+        <div class="u72Medium_v2">Inspired by <br>The Powder Snow in Sunshiny</div>
+        <img class="mobileHide lozad" data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_23288_2x_a0b994af-e5af-4761-be23-6dae0fff4eb0.jpg?v=1700465551" alt="">
+        <img class="pcHide lozad" data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_23234_2x_354116db-1840-4e6e-a589-52751babf501.jpg?v=1700465999&width=600" alt="">
+        <div class="u17Light_v2">Sunlight reflects on the first snow, casting a warm white glow. Embraced by the festive Christmas vibes, White Glow’s design features this concept. The frame is adorned with rainbow lines, adding a touch of Christmas color to its silhouette.</div>
+    </div>
+    <div class="art">
+        <img class="lozad" data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_23289_2x_724b8230-013a-4df1-b9c7-4fea5a977837.jpg?v=1700466281" alt="">
+        <div>
+            <div class="u48Medium_v2">The Art of Handcrafted White</div>
+            <div class="u17Light_v2">This is a color you won’t find elsewhere, meticulously crafted through continuous experimentation among over 150 shades of white. It’s a completely handmade color, and due to its immense complexity in production, only 20 units are available in limited edition.</div>
+        </div>
+    </div>
+    <div class="centeral-content inspired">
+        <div class="u72Medium_v2">A Gift, <br class="mobileHide">for You or Your Lover</div>
+        <img class="mobileHide lozad" style="margin-bottom: 50px;" data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20221008-untitled-4661_copy_2x_1d83ff0a-ada4-4126-949e-7a24ae841b85.jpg?v=1700467088" alt="">
+        <img class="pcHide lozad" style="margin-bottom: 10vw;" data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20221008-untitled-4661_copy_2x_741d3123-5b68-46aa-9be9-4c4c7c76879d.jpg?v=1700467261&width=600" alt="">
+        <div class="u17Light_v2">Create lasting memories this Christmas—gift your loved one a limited edition white glow. Ride together and become a special sight on the streets. You’re not just 1 out of 20; you’re each other’s unique world.</div>
+    </div>
+    <div class="centeral-content vip">
+        <div>
+            <div class="u48Medium_v2">You are VIP</div>
+            <div class="u17Light_v2">For our exclusive limited edition customers, enjoy a tailored experience and get a complete set of accessories. Once you make a purchase, our dedicated customer service will reach out promptly, prioritizing your every question.</div>
+        </div>
+        <img class="lozad" data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_23291_2x_5511c539-554d-453f-ba0f-e26038d66617.jpg?v=1700467836" alt="">
+    </div>
+    <img class="bottom-image lozad mobileHide" data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20221010-untitled-7853_2x_1c9abfb6-c387-4da0-9a0b-3cde11959100.jpg?v=1700468729" alt="">
+    <img class="bottom-image lozad pcHide" data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20231121-161224.jpg?v=1700554604&width=600" alt="">
+    <div></div>
+
+
+    <script>
+         new Swiper('.banner .swiperrrrr', {
+            loop: true,
+            speed: 1000,
+            // direction: 'vertical',
+            navigation: {
+                nextEl: '.banner .bottommmm .swiper-button-next',
+                prevEl: '.banner .bottommmm .swiper-button-prev',
+            },
+            pagination: {
+                el: '.banner .swiper-pagination',
+                clickable: true
+            },
+        })
+
+        $('.product .dialogs > div').on('click', e => {
+            const m = {
+                0: 'one',
+                1: 'two',
+                2: 'three',
+                3: 'four'
+            }
+
+            $('.product .dialogs > div').each((i, t) => {
+                if ($(e.target).closest('.u17Medium_v2')[0] === t) {
+                    console.log(i)
+
+                    const layer = document.querySelector(`.order-modal-${m[i]}`);
+                    const laybox = document.querySelector(`.order-modal-layer-${m[i]}`);
+                    layer.style.display = "flex";
+                    laybox.className += " dialog-open";
+                }
+            })
+        })
+
+        console.log(JSON.parse(JSON.stringify({{ product | json }})))
+        console.log(JSON.parse(JSON.stringify({{ product.featured_media | json }})))
+
+
+        $('#addToCart').on('click', function () {
+            if ($(this).hasClass('loading')) {
+                return
+            }
+
+            const cart = document.querySelector("cart-notification") || document.querySelector("cart-drawer");
+
+            $(this).addClass('loading')
+
+            // 原本的html 存起来
+            const text = $(this).find('span').html()
+            const loading = '<i class="fa fa-spinner fa-spin"></i>Processing...'
+    
+            // loading
+            $(this).find('span').html(loading)
+
+            fetch(window.Shopify.routes.root + 'cart/add.js', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ 
+                    items: [
+                        { id: '{{ product.selected_or_first_available_variant.id }}', quantity: 1 },
+                        { id: '43872706855128', quantity: 1 },
+                        { id: '43502341095640', quantity: 1 },
+                        { id: '42615024713944', quantity: 1 },
+                        { id: '43872727367896', quantity: 1 }
+                    ],
+                    sections: cart.getSectionsToRender().map((section) => section.id).join(",")
+                })
+            }).then(res => res.json()).then(response => {
+                fetchBuried('websiteclick', 'white-glow-order-page', { button: 'ATC' })
+
+
+                cart.classList.contains('is-empty') && cart.classList.remove('is-empty');
+
+                if (!(response.message && response.status)) {
+                    cart.renderContents(response);
+                }
+
+            }).catch((error) => {
+            }).finally(() => {
+                $(this).removeClass('loading')
+                $(this).find('span').html(text)
+            })
+        })
+    </script>
+
+{% render 'carbon-one-extra-code', hide_1s: true, hide_balabalabala: true %}
+
+<script>
+    setTimeout(() => {
+        $($($('.order-modal-layer-two .order-layer-body .tec-spac-b')[1]).find('.tec-spac-item')[0]).find('p').text('36V 250W(rated), 35 N.m')
+        $($($('.order-modal-layer-two .order-layer-body .tec-spac-b')[2]).find('.tec-spac-item')[0]).find('p').text('15 kg')
+        $($($('.order-modal-layer-two .order-layer-body .tec-spac-b')[2]).find('.tec-spac-item')[2]).find('p').text('fit for 175-195 cm')
+        $($($('.order-modal-layer-two .order-layer-body .tec-spac-b')[2]).find('.tec-spac-item')[5]).find('p').text('Gates Carbon Drive™ CDN™ belt(up to 30,000km)')
+
+        $('.order-modal-layer-one .switch-radio').hide()
+    })
+</script>

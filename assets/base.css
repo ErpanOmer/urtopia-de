@@ -3427,6 +3427,10 @@ input:focus-visible {
   font: 500 54px/1.25em urbane
 }
 
+.u72Medium_v2 {
+  font: 500 72px/1.25em urbane
+}
+
 .u36Medium {
   font: 500 36px/42px urbane
 }
@@ -4297,5 +4301,42 @@ dialog + .backdrop {
 
   .subscribe-container .subscribe .u30Medium_v2 {
       font-size: 18px;
+  }
+}
+
+
+@media (max-width: 1220px) {
+  .header--middle-left {
+    column-gap: 0;
+    padding: 0 2rem 0 0.5rem;
+  }
+
+  .header > .header__heading-link {
+    padding: 0.75rem 0;
+  }
+
+  .summary .list-menu__item {
+    padding-right: 2rem;
+  }
+}
+
+@media (max-width: 1100px) {
+  .tl-select {
+    padding: 8px 4px;
+  }
+
+  .header__icon,
+  .header__icon--cart {
+    width: 3.4rem;
+  }
+
+  .header__menu-item {
+    padding: 1.2rem 0.7rem;
+  }
+}
+
+@media (max-width: 990px) {
+  .header--middle-left {
+    padding: 0 3rem 0 2rem;
   }
 }

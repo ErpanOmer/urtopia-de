@@ -7,6 +7,7 @@
 
 {% assign sale_product_id = 7633738727640 %}
 {% assign sale_chord_product_id = 7952778658008 %}
+{% assign sale_white__glow_product_id = 8101314199768 %}
 
 {%- style -%}
 .section-{{ section.id }}-padding {
@@ -211,7 +212,7 @@ padding-bottom: {{ section.settings.padding_bottom }}px;
                   {%- if item.product.has_only_default_variant == false or item.properties.size != 0 or
                   item.selling_plan_allocation != nil -%}
                     <dl>
-                      {%- if item.product.has_only_default_variant == false -%}
+                      {%- if item.product.has_only_default_variant == false and item.product.id != 8101314199768 -%}
                       {%- for option in item.options_with_values -%}
                       <div class="product-option">
                         <dt>{{ option.name }}: </dt>
@@ -234,7 +235,11 @@ padding-bottom: {{ section.settings.padding_bottom }}px;
                         </dd>
                       </div>
                       {%- endfor -%}
-                      {%- endif -%}
+                      {% else %}
+                        {% if item.product.id == 8101314199768 %}
+                          <div class="product-option">fit for 175-195 cm</div>
+                        {% endif %}
+                      {% endif %}
 
                       {%- for property in item.properties -%}
                         {%- assign property_first_char = property.first | slice: 0 -%}
@@ -341,7 +346,7 @@ padding-bottom: {{ section.settings.padding_bottom }}px;
                       {%- assign is_insurance_product = true -%}
                     {%- endif -%}
 
-                    {% if sale_product_id != item.product.id and sale_chord_product_id != item.product.id and discountTitle or is_insurance_product %}
+                    {% if sale_white__glow_product_id != item.product.id and sale_product_id != item.product.id and sale_chord_product_id != item.product.id and discountTitle or is_insurance_product %}
                       <div style="width: 100%;display: flex;align-items: center;">{{ item.quantity }}</div>
                     {% else %}
                       <quantity-input class="quantity">
@@ -365,7 +370,7 @@ padding-bottom: {{ section.settings.padding_bottom }}px;
                     {% endif %}
                     
                     <cart-remove-button id="Remove-{{ item.index | plus: 1 }}" data-index="{{ item.index | plus: 1 }}">
-                      <a href="{{ item.url_to_remove }}" class="button button--tertiary" {% if item.product.id != sale_product_id and sale_chord_product_id != item.product.id and discountTitle %}style='display:none' {% endif %}
+                      <a href="{{ item.url_to_remove }}" class="button button--tertiary" {% if sale_white__glow_product_id != item.product.id and item.product.id != sale_product_id and sale_chord_product_id != item.product.id and discountTitle %}style='display:none' {% endif %}
                         aria-label="{{ 'sections.cart.remove_title' | t: title: item.title }}">
                         {% render 'icon-remove' %}
                       </a>
