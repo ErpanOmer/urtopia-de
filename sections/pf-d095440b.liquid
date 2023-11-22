@@ -281,7 +281,7 @@
                   </div>
                   <span class="u11Light_v2">*Not available with leasing</span>
                 </div>
-            {% unless true  %}
+            {% unless hide_sale_countdown  %}
               <div class="count-down mb12 mobileHide">
                 <div class="u17Medium_v2">End of Promotion</div>
                 <img src="http://i.countdownmail.com/2mmaed.gif">
@@ -336,7 +336,7 @@
             </div>       
             <div class="buttons">
                 <div class="count-down mb12 pcHide">
-                  {% unless true  %}
+                  {% unless hide_sale_countdown  %}
                     <div class="u17Medium_v2">End of Promotion</div>
                     <img src="http://i.countdownmail.com/2mmaed.gif">
                   {% endunless %}
