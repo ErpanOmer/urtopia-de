@@ -699,6 +699,16 @@
                     top: 0;
                     height: 100%;
 
+                  .mapboxgl-canvas-container {
+                    height: 100%;
+                    min-height: 100%;
+
+                    .mapboxgl-canvas {
+                      height: 100% !important;
+                      min-height: 100% !important;
+                    }
+                  }
+
                     .map-popup {
                         background-color: #fff;
                         box-shadow: 0px 0px 10px #00000029;
