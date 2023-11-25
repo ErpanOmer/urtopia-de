@@ -381,7 +381,29 @@ const testRides = [
           "10:00-19:00",
           "10:00-18:00",
         ],
-      }
+      },
+      {
+        name: 'Jan Kunkel',
+        phone: '+49 1573 5994077',
+        email: 'urtopiatesten@jan-kunkel.de',
+        timezone: "Berlin, Germany (GMT+1)",
+        add: "Fontanestr, 15366 Neuenhagen bei Berlin",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Berlin.jpg?v=1679406972",
+        testrideSpot: "Berlin",
+        testRideSize: "M",
+        availableSizes: [
+          'Carbon 1 Size L',
+        ],
+        businessHours: [
+          "10:00-19:00",
+          "10:00-19:00",
+          "10:00-19:00",
+          "10:00-19:00",
+          "10:00-19:00",
+          "10:00-19:00",
+          "10:00-19:00",
+        ],
+      },
     ]
   },
   {
