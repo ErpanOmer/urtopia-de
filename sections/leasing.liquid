@@ -2,10 +2,12 @@
 {% assign carbon1s = "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18841_2x_d1bd8de1-5910-454a-9271-306815705052.png?v=1694070547" %}
 {% assign chord = "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18589_2x_4ca8137f-ac74-49c3-b2c4-a523904d4bf7.png?v=1694070560" %}
 {% assign chordx = "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18840_2x_d185d12d-30c6-4959-8197-bf586c703aae.png?v=1694070555" %}
+{% assign carbonwhiteglow = "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20231125-151802.png?v=1700896701" %}
 
 <link rel="preload" href="{{ carbon1s }}" as="image">
 <link rel="preload" href="{{ chord }}" as="image">
 <link rel="preload" href="{{ chordx }}" as="image">
+<link rel="preload" href="{{ carbonwhiteglow }}" as="image">
 
 {{ 'leasing-add.scss.css' | asset_url | stylesheet_tag }}
 
@@ -40,6 +42,7 @@
     <div class="centeral-content top-content">
         <div class="select">
             <select>
+                <option value="carbonwhiteglow">Urtopia White Glow</option>
                 <option value="carbon1">Urtopia Carbon 1</option>
                 <option value="carbon1s">Urtopia Carbon 1s</option>
                 <option value="chord">Urtopia Chord</option>
@@ -564,6 +567,22 @@ $('.partners .swiper-wrapper').html(swiperItems.map(item => `
     })
 
     const switch_bike = {
+        carbonwhiteglow: {
+            background_image: `{{ carbonwhiteglow }}`,
+            price: `{{ all_products['carbon-1-christmas-special'].price | money_without_trailing_zeros  }}`,
+            orginal_price: `{{ all_products['carbon-1-christmas-special'].price | money_without_trailing_zeros  }}`,
+            discount_price: `{{ settings.carbon_ebike_discount_price | money_without_trailing_zeros }}`,
+            box1_svg_image: `https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18449_2x_8fc05a36-e73b-4c68-8462-5cdfa6cea6b3.png?v=1683702610`,
+            box1_text1: 'Carbon Fiber',
+            box1_text2: '15 kg',
+            box2_svg_image: `https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18448_2x_d3fbd8a8-d1e2-4a84-b4eb-ce513f342438.png?v=1683705373`,
+            box2_text1: 'No maintaining Up to',
+            box2_text2: '30,000 km',
+            box3_svg_image: `https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18447_2x_532d80bf-4f0d-48a9-b2c6-81212b652ad7.png?v=1683705337`,
+            box3_text1: 'Range',
+            box3_text2: '100 km',
+            link: '/products/carbon-1-christmas-special'
+        },
         carbon1: {
             background_image: `{{ carbon1 }}`,
             price: `{{ all_products['urtopia-carbon-e-bike'].price | minus: settings.carbon_ebike_discount_price | money_without_trailing_zeros  }}`,
@@ -633,7 +652,7 @@ $('.partners .swiper-wrapper').html(swiperItems.map(item => `
 
     function choiceEbike (v) {
         $('.parameters .bottom-content .product-price').text(v.price)
-        $('.parameters .bottom-content .product-price').attr('data-price', v.orginal_price)
+        $('.parameters .bottom-content .product-price').attr('data-price', v.link === '/products/carbon-1-christmas-special' ? '' : v.orginal_price)
         $('.parameters .bottom-content .sale-tag').text(`${v.discount_price} OFF`)
 
         $('.parameters .bottom-content .background-image').css({ "background-image": `url('${v.background_image}')` })
@@ -665,6 +684,14 @@ $('.partners .swiper-wrapper').html(swiperItems.map(item => `
 
             $('.parameters .bottom-content .buttons .my-button-white').text(`Shop Online(${v.price})`)
             $('.parameters .bottom-content .buttons .my-button-white').attr('href', v.link)
+
+            if (v.link === '/products/carbon-1-christmas-special') {
+                $('.parameters .bottom-content .sale-tag').css('opacity', 0)
+                $('.parameters .bottom-content .product-price').css('font-size', '34px')
+            } else {
+                $('.parameters .bottom-content .sale-tag').css('opacity', 1)
+                $('.parameters .bottom-content .product-price').css('font-size', '30px')
+            }
     }
 
 

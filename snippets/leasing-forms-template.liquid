@@ -122,6 +122,7 @@
                     <div class="u24Medium">Bike Model<i>*</i></div>
                     <select name="bike_model" required>
                         <option value="">---</option>
+                        <option value="carbonwhiteglow">White Glow</option>
                         <option value="carbon1">Carbon 1</option>
                         <option value="carbon1s">Carbon 1s</option>
                         <option value="chord">Chord</option>
@@ -241,7 +242,8 @@ const bike_model_map = {
     'carbon1': 'Carbon 1',
     'carbon1s': 'Carbon 1s',
     'chord': 'Chord',
-    'chordx': 'Chord X'
+    'chordx': 'Chord X',
+    'carbonwhiteglow': 'White Glow'
 }
 
 
@@ -347,6 +349,10 @@ function getFormValues (elem = '') {
         const bike_model = temp.bike_model === 'carbon1' ? "Carbon Belt" : "Shimano Gear"
         temp.variant_id = carbon.variants.find(c => c.title === `${bike_model} / ${temp.bike_size} / ${temp.bike_style}`)
         temp.variant_id = temp.variant_id ? temp.variant_id.id : ''
+
+        if (temp.bike_model.includes("carbonwhiteglow")) {
+            temp.variant_id = '44129634484440'
+        }
     } else {
         temp.variant_id = chord.variants.find(c => c.title === `${temp.bike_size} / ${temp.bike_style}`)
         temp.variant_id = temp.variant_id ? temp.variant_id.id : ''
@@ -515,6 +521,7 @@ let current_model = ''
 const changeBikeImage = e => {
     $('.forms form .item .error').text('')
     $('select[name="bike_size"]')[0].disabled = false
+    $('select[name="bike_style"]')[0].disabled = false
 
     const model = $('select[name="bike_model"]').val()
 
@@ -529,6 +536,25 @@ const changeBikeImage = e => {
 
         return clearBikeImage()
     }
+
+    if (model === 'carbonwhiteglow') {
+        $('select[name="bike_size"]')[0].disabled = true
+        $('select[name="bike_style"]')[0].disabled = true
+
+        $('select[name="bike_size"]').html('<option value="fit for 175-195 cm">fit for 175-195 cm</option>')
+        $('select[name="bike_style"]').html('<option value="White Glow">White Glow</option>')
+
+        $('.forms form .item input[name="bike_image"]').attr('src', `https://urtopia-de.myshopify.com/cdn/shop/files/1pw_e765a11b-73e6-4503-829c-5a203c15b3d7.png?v=1695624132?v=1700895761&width=400`)
+        $('.forms form .item[name="bike_image"]').show()
+        $('.forms form .item .tips').html('Free shipping within <span>5 working days</span>')
+
+        current_model = 'xxxxxxx'
+
+        return 
+    }
+
+
+
 
     const current = model === 'carbon1' || model === 'carbon1s' ? 'carbon' : 'chord'
 
