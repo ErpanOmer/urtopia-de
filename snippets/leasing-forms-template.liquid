@@ -548,7 +548,18 @@ const changeBikeImage = e => {
         $('.forms form .item[name="bike_image"]').show()
         $('.forms form .item .tips').html('Free shipping within <span>5 working days</span>')
 
-        current_model = 'xxxxxxx'
+        // 渲染acc
+        $('select[name="accessories"]').html(`{% for product in collections["carbon-1-leasing-acc"].products %}
+            <option title="{{product.title}}" value="{{product.id}}">{{product.title}}</option>
+        {% endfor %}`)
+
+        window.selectPlugin.sumo.reload()
+
+        $('select[name="partner"]').val() && setTimeout(() => {
+            partnerForAccessoriesDisable($('select[name="partner"]').val())
+        }, 300)
+
+        current_model = 'carbonwhiteglow'
 
         return 
     }

@@ -366,7 +366,7 @@
 
                 .addToCartBtn {
                     background-color: #AA120D;
-                    margin: 10px 0 15px;
+                    margin: 10px 0 6px;
 
 
                     &:hover {
@@ -380,6 +380,57 @@
 
                     &>.showi {
                         display: inline-block !important;
+                    }
+                }
+
+
+               .orderTestRideBtn {
+                    width: 100%;
+                    height: 47px;
+                    font: normal normal 600 23px/28px Urbane;
+                    border-radius: 30px;
+                    margin:0 0 15px;
+                    // transition: all 0.3s;
+                    line-height: 47px;
+                    text-align: center;
+                    border: 2px solid #161c1f;
+                    font-size: 15px;
+                    cursor: pointer;
+                    line-height: unset;
+                    text-align: center;
+                    background: #fff;
+                    color: #000;
+                    border: 2px solid #161c1f;
+                    display: grid;
+                    grid-template-columns: 0.65fr 1fr;
+                    grid-column-gap: 12px;
+                    align-items: center;
+                    justify-items: right;
+
+                    &:hover {
+                        opacity: 0.9;
+                    }
+
+                    &>span {
+                        display: flex;
+                        width: 100%;
+                        flex-direction: column;
+                        align-items: flex-start;
+                        line-height: 16px;
+                        font-size: 16px;
+                        font-weight: 500;
+
+                        .u17DemiBold_v2 {
+                            font-weight: 700;
+                        }
+                    }
+
+                    .oneeee {
+                        width: 90px;
+                    }
+
+                    .twoooo {
+                        width: 95px;
                     }
                 }
 
@@ -509,6 +560,21 @@
                         .u17Medium_v2 {
                             font-size: 14px;
                         }
+                    }
+
+                  .orderTestRideBtn {
+                        span {
+                            font-size: 14px;
+                        }
+
+                        .oneeee {
+                            width: 80px;
+                        }
+
+                        .twoooo {
+                            width: 85px;
+                        }
+
                     }
                 }
             }

@@ -61,6 +61,10 @@
                     >
                     <i class="fa fa-spinner fa-spin"></i><span data-pf-type="Text" class="addToCartText u17DemiBold_v2">Add to Cart</span>
                 </div>
+                <div class="orderTestRideBtn jobrad">
+                    <img class="oneeee" src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/jobradorg_2x_423443a0-1c79-4785-97a0-2be8ae66ceb6.png?v=1685414275"/>
+                    <span><span class="u17DemiBold_v2">Lease Now</span><span>36 months, €60/month</span></span>
+                  </div>
                 <div class="support mb12">
                     <a href="#boxs3">
                         <img class="lozad" data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_17960_2x_6b15bf9d-1685-4499-9e1d-c9821b8cb66d.png?v=1700534033"/>
@@ -213,6 +217,12 @@
                 $(this).find('span').html(text)
             })
         })
+
+      $('.orderTestRideBtn').on('click', function() {
+           fetchBuried('websiteclick', `white-glow-order-page`, { button: 'lease_on_jobrad' }, true)
+
+           window.open(window.sessionStorage.localPathPerfix + `/pages/ebike-leasing?bike_model=carbonwhiteglow&bike_style=White Glow&utm_source=order_page#forms`)
+      })
     </script>
 
 {% render 'carbon-one-extra-code', hide_1s: true, hide_balabalabala: true %}
