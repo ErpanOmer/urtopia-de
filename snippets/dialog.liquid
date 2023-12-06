@@ -491,6 +491,10 @@
 
 
     $(function () {
+      if (location.href.includes('/pages/ai-e-bike')) {
+          return
+      }
+      
         showSelectLangDialog().then(showSubscribeEmailDialog).then(showSubscribeEmailMessageBox).then(showExitSubscribeEmailDialog).then(showTestRideDialog).then(console.log)
     })
 </script>

@@ -126,7 +126,7 @@
                         <option value="carbon1">Carbon 1</option>
                         <option value="carbon1s">Carbon 1s</option>
                         <option value="chord">Chord</option>
-                        <!--<option value="chordx">Chord X</option>-->
+                        <option value="chordx">Chord X</option>
                     </select>
                     <span class="tips u14Light_v2"></span>
                 </div>
@@ -485,16 +485,26 @@ const chordBikeChange = (model, size, style) => {
     
 
     // 通过遍历 判断option 是否可用
-    $(`select[name="bike_style"] option`).each((i, item) => {
-        const v = item.value
+    setTimeout(() => {
+        $(`select[name="bike_style"] option`).each((i, item) => {
+          const v = item.value
+  
+          if (i === 0) {
+              return true
+          }
+  
+          const vari = chord.variants.find(c => c.title === `${size} / ${v}`)
+          console.log( `${size} / ${v}`, vari);
+          
+          item.disabled = !vari ? false : !!!vari.available
 
-        if (i === 0) {
-            return true
-        }
-
-        const vari = chord.variants.find(c => c.title === `${size} / ${v}`)
-        item.disabled = !vari ? false : !!!vari.available
-    })
+          if (item.disabled) {
+            $(item).hide()
+          } else {
+            $(item).show()
+          }
+      })
+    }, 30)
 
 
     if (!size || !style || !chord_frame.includes(size) || !chord_style.includes(style)) {
