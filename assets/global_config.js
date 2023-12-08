@@ -301,8 +301,9 @@ const global_config = {
       43705718997208: 'Free shipping within 5 working days',
       43705719029976: 'Free shipping within 5 working days',
       // chord x
-      43705719062744: 'Ships between November 15-30, 2023',
-      43988553859288: 'Ships between November 15-30, 2023',
+      43705719062744: 'Free shipping within 5 working days',
+      43988553859288: 'Free shipping within 5 working days',
+      //43988553859288: 'Ships between November 15-30, 2023',
     }
   }
 }

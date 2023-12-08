@@ -892,16 +892,6 @@ const testRides = [
           "14:30-12:00,12:00-19:00",
           "14:30-19:00",
         ],
-        tags: [
-          {
-            color: 'orange',
-            text: 'In Stock'
-          },
-          {
-            color: 'gray',
-            text: 'Ambassadors'
-          },
-        ]
       },
     ]
   },
@@ -1442,7 +1432,7 @@ const testRides = [
       },
     ]
   },
-  /*{
+  {
     city: 'Budenheim',
     cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230814-105334.jpg?v=1691981632',
     series: [
@@ -1475,7 +1465,7 @@ const testRides = [
         isPartner: true
       },
     ]
-  },*/
+  },
   {
     city: 'Geldern',
     cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Geldern.jpg?v=1691835197',
@@ -2002,9 +1992,10 @@ const testRides = [
         add: "Miegerer Str. 27, 9065 Gradnitz, Austria",
         imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Bikesport_Ortner.jpg?v=1697540052",
         testrideSpot: "Dobra",
-        testRideSize: "Chord",
+        testRideSize: "L,Chord",
         noBook: "Please contact the store directly to arrange test ride",
         availableSizes: [
+          'Carbon 1s Size L',
           'Chord',
         ],
         businessHours: [
@@ -2071,9 +2062,10 @@ const testRides = [
         add: "Elisabethstraße 63, 5020 Salzburg, Austria",
         imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Vogl_Bike.jpg?v=1697540052",
         testrideSpot: "Salzburg",
-        testRideSize: "Chord",
+        testRideSize: "M,Chord",
         noBook: "Please contact the store directly to arrange test ride",
         availableSizes: [
+          'Carbon 1s Size M',
           'Chord',
         ],
         businessHours: [
@@ -2106,7 +2098,6 @@ const testRides = [
         testrideSpot: "Maisach",
         testRideSize: "Carbon 1s Size:M",
         isPartner: true,
-        sort: 66,
         availableSizes: [
           'Carbon 1s Size M',
         ],
