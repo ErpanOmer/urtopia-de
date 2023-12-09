@@ -2122,6 +2122,7 @@ const store_list = new Map()
 const bike_options = new Set()
 let city_options = new Set()
 
+
 for (const city of testRides) {
   for (const store of city.stores) {
     // 把所属国家也加上
@@ -2161,6 +2162,7 @@ for (const city of testRides) {
   }
 }
 
+
 city_options = Array.from(city_options).sort((a, b) => a.localeCompare(b))
 const country_group = {}
 
@@ -2174,6 +2176,7 @@ for (const option of city_options) {
 
     country_group[country] = [city]
 }
+
 
 postMessage({
   store_list,

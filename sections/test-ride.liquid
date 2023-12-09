@@ -230,6 +230,7 @@
         search[k] = v
     }
 
+
     const worker = new Worker('{{ 'shopInfoList-de-4.js' | asset_url }}')
     worker.onmessage = function (e) {
         testRides = e.data.store_list
@@ -240,9 +241,9 @@
 
         search.name && booknow(search.name)
 
+
         //$('.test-ride-new-banner .buttons').show()
     }
-
     let last_select_city = ''
     let last_select_store = ''
     let select_city_count = 0
@@ -547,6 +548,7 @@
     }
 
     function insertCustomElements(target, count = 0) {
+        console.log('start1')
         loaded_map = +new Date() - start_time
         loaded_list = +new Date()
 
@@ -558,6 +560,8 @@
         if (testRides.size) {
             target.style.opacity = 0
         }
+
+        console.log('start')
 
         const storeList = $(document.createDocumentFragment())
         const forms = $(document.createDocumentFragment())
