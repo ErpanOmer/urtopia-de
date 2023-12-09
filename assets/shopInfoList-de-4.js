@@ -2113,6 +2113,73 @@ const testRides = [
       },
     ]
   },
+  {
+    city: 'Hanover',
+    cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Think-Germany-Hannover-CityHall-491546298-bbsferrari-copy.jpg?v=1702086748',
+    series: [
+      'Chord X',
+      // 'Urtopia Carbon 1'
+    ],
+    stores: [
+      {
+        name: 'Rad Wechsel',
+        phone: '+49 1514 2477409',
+        email: 'info@radwechsel-shop.de',
+        timezone: "Hanover, Germany (GMT+1)",
+        add: "Engelbosteler Damm, 30167 Hannover",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Rad_Wechsel.png?v=1702086750",
+        testrideSpot: "Hanover",
+        testRideSize: "Chord X",
+        noBook: "Please contact the store directly to arrange test ride",
+        availableSizes: [
+          'Chord X',
+        ],
+        businessHours: [
+          "",
+          "10:00–18:00",
+          "10:00–18:00",
+          "10:00–18:00",
+          "10:00–18:00",
+          "10:00–18:00",
+          "",
+        ],
+      },
+    ]
+  },
+  {
+    country: 'Netherlands',
+    city: 'Schiedam',
+    cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/de-drie-koornbloemen-views.jpg?v=1702086995',
+    series: [
+      'Carbon 1',
+      // 'Urtopia Carbon 1'
+    ],
+    stores: [
+      {
+        name: 'Bikes to go',
+        phone: '+31 6 16454498',
+        email: 'info@bikestogo010.nl',
+        timezone: "Schiedam, Netherlands (GMT+1)",
+        add: "Parkweg 363, 3119 CK Schiedam, Netherlands",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Bikes_to_go.jpg?v=1702086748",
+        testrideSpot: "Schiedam",
+        testRideSize: "L",
+        noBook: "Please contact the store directly to arrange test ride",
+        availableSizes: [
+          'Carbon 1 Size L',
+        ],
+        businessHours: [
+          "",
+          "9:00–17:00",
+          "9:00–17:00",
+          "9:00–17:00",
+          "9:00–17:00",
+          "9:00–17:00",
+          "10:00–17:00",
+        ],
+      },
+    ]
+  },
 ]
 
 
