@@ -94,6 +94,7 @@
               <!--<div class="u17Medium_v2">Save Now</div>-->
               <div class="u14Light_v2" style="margin: 0;">incl. VAT. & Free shipping.</div>
             </div>
+            <div class="adwarsssss"></div>
             <!--<div class="sale-big-text mb6">
               <div class="u20DemiBold_v2">LOWEST PRICE OF THE YEAR GUARANTEED!</div>
               <div class="u11Light_v2">For any order during Oct 1 - Dec 31 2023, if there is a price drop within this period on our website, you will get a refund for the difference.</div>
@@ -105,6 +106,7 @@
                 </div>
             </div>
             <div class="swiper right-swiper" style="--swiper-navigation-color: #fff;--swiper-theme-color: #000;--swiper-pagination-color: #000;">
+                <div class="adwarsssss mobileHide"></div>
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
                         <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18757.png?v=1689237250&width=700">
@@ -583,9 +585,22 @@
 
 <script>
       // 默认隐藏
-    $('.bottom-fixed').hide()
-    $('.top-fixed').hide()
-    $('.toTop').hide()
+    $('.bottom-fixed').hide();
+    $('.top-fixed').hide();
+    $('.toTop').hide();
+
+    ((awards = []) => {
+        if (!awards.length) {
+          return
+        }
+
+        $('.adwarsssss').html(awards.map(a => `<img src="${a}"/>`).join('')).css('height', global_config.is_mobile ? '30px' : '50px')
+
+        if (global_config.is_pc) {
+            $('.product .centeral-content .featured_image').css('grid-template-rows', '875px')
+        }
+
+    })(global_config.chord_order_page_config.awards);
     
     const leftSwiper = new Swiper(".product .left-swiper", {
         direction: 'vertical',

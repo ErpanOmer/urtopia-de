@@ -58,6 +58,10 @@ const global_config = {
       M: 'Fit for 165-180 cm',
       L: 'Fit for 175-195 cm'
     },
+    awards: [
+      'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20231214-163215.png?v=1702542766',
+      'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20231214-163208.png?v=1702542765'
+    ],
     // 产品系列图
     product_images: {
       "Carbon Belt": {
@@ -187,6 +191,9 @@ const global_config = {
       'High-Step': 'Fit for 170-195 cm',
       'Step-Through': 'Fit for 160-185 cm'
     },
+    awards: [
+      'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20231214-163200.png?v=1702542765',
+    ],
     // 产品图
     product_images: {
       "High-Step": {

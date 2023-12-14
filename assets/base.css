@@ -4340,3 +4340,31 @@ dialog + .backdrop {
     padding: 0 3rem 0 2rem;
   }
 }
+
+
+
+
+.product .adwarsssss {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 6px;
+  max-height: 50px;
+  overflow: hidden;
+}
+
+.product .adwarsssss img {
+  height: 100%;
+  width: auto;
+  margin-right: 16px;
+}
+
+@media (max-width: 768px) {
+  .product .adwarsssss {
+    max-height: 30px;
+    margin-bottom: 6px;
+  }
+
+  .product .adwarsssss img {
+    margin-right: 8px;
+  }
+}
