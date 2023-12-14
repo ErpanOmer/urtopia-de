@@ -26,7 +26,7 @@
   "order_page": {
     "only": "Only",
     "stock": "Left in Stock",
-    "out": "Sold out",
+    "out": "Available in other colors",
     "sale": "Sale",
     "style": "Style",
     "size": "Size"

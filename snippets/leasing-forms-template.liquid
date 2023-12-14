@@ -122,7 +122,7 @@
                     <div class="u24Medium">Bike Model<i>*</i></div>
                     <select name="bike_model" required>
                         <option value="">---</option>
-                        <option value="carbonwhiteglow">White Glow</option>
+                        <!--<option value="carbonwhiteglow">White Glow</option>-->
                         <option value="carbon1">Carbon 1</option>
                         <option value="carbon1s">Carbon 1s</option>
                         <option value="chord">Chord</option>
@@ -613,9 +613,7 @@ const changeBikeImage = e => {
 
         // 动态渲染Style
         $('select[name="bike_style"]').html('<option value="">---</option>' + carbon_style.map(v => {
-            if (v === 'Vanilla') {
-                return
-            }
+           
 
             return `<option value="${v}">${v}</option>`
         }).filter(Boolean))

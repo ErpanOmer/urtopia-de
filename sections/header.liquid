@@ -169,23 +169,6 @@
                                       </div>
                                     </div>
                                     <div class="bikesssssss">
-                                      {% assign productttttt = all_products['urtopia-carbon-e-bike'].variants | where: "title", "Carbon Belt / L / Vanilla" %}
-                                        <div class="by-model" href="/products/carbon-1-christmas-special">
-                                            <div>
-                                              <div class="u14DemiBold_v2">White Glow</div>
-                                              <div class="u11Light_v2" style="display: inline-block;
-                                              padding: 2px 6px;
-                                              background-color: #C21C19;
-                                              color: #fff;
-                                              border-radius: 13px;
-                                              line-height: 1.2em;
-                                              margin: 6px 0 0;
-                                              opacity: 1;">Limited 20</div>
-                                              <div class="u11Light_v2">Christmas Special Edition</div>
-                                              <span class="u14DemiBold_v2 emphasize" style="color: #C21C19;">{{ all_products['carbon-1-christmas-special'].price | money_without_trailing_zeros }}</span>
-                                            </div>
-                                            <img src="{{ productttttt.first.featured_image | image_url: width: 300 }}">
-                                        </div>
                                         {% assign productttttt = all_products['urtopia-carbon-e-bike'].variants | where: "title", "Carbon Belt / L / Sirius" %}
                                         <div class="by-model" href="/pages/e-bike">
                                             <div>
@@ -531,23 +514,6 @@
                                   </div>
                                   <div class="flex-1"></div>
                                   <div class="bikesssssss">
-                                      {% assign productttttt = all_products['urtopia-carbon-e-bike'].variants | where: "title", "Carbon Belt / L / Vanilla" %}
-                                      <div class="by-model" href="/products/carbon-1-christmas-special">
-                                          <span class="u14Light_v2" style="position: absolute;
-                                          top: 5px;
-                                          margin: 0;
-                                          opacity: 1;
-                                          color: #fff;
-                                          background-color: #C21C19;
-                                          padding: 6px;
-                                          border-radius: 15px;
-                                          line-height: 1.2em;">Limited 20</span>
-                                          <img src="{{ productttttt.first.featured_image | image_url: width: 500 }}">
-                                          <div class="u20DemiBold_v2">White Glow</div>
-                                          <div class="u14Light_v2">Christmas Special Edition</div>
-                                          <div class="flex-1"></div>
-                                          <span class="u17DemiBold_v2 emphasize" style="color: #C21C19;">{{ all_products['carbon-1-christmas-special'].price | money_without_trailing_zeros }}</span>
-                                      </div>
                                       {% assign productttttt = all_products['urtopia-carbon-e-bike'].variants | where: "title", "Carbon Belt / L / Sirius" %}
                                       <div class="by-model" href="/pages/e-bike">
                                           <img src="{{ productttttt.first.featured_image | image_url: width: 500 }}">
@@ -582,11 +548,11 @@
                                       </div>
                                   </div>
                               </div>
-                              <!--<div class="sale-image">
+                              <div class="sale-image">
                                   <div class="u17DemiBold_v2">{{ settings.sale_name }}</div>
                                   <div>Up to</div>
                                   <div class="u36DemiBold_v2">{{ settings.carbon_ebike_discount_price | money_without_trailing_zeros }} OFF</div>
-                              </div>-->
+                              </div>
                           </div>
                       </div>
                     </details>
