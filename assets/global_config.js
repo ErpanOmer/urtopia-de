@@ -192,7 +192,7 @@ const global_config = {
       'Step-Through': 'Fit for 160-185 cm'
     },
     awards: [
-      'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20231214-163200.png?v=1702542765',
+      'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20231214-163200.png?v=1702542765'
     ],
     // 产品图
     product_images: {

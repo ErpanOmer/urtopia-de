@@ -591,13 +591,13 @@
 
     ((awards = []) => {
         if (!awards.length) {
-          return
+            return $('.adwarsssss').hide()
         }
 
         $('.adwarsssss').html(awards.map(a => `<img src="${a}"/>`).join('')).css('height', global_config.is_mobile ? '30px' : '50px')
 
         if (global_config.is_pc) {
-            $('.product .centeral-content .featured_image').css('grid-template-rows', '875px')
+            $('.product .centeral-content .featured_image').css('grid-template-rows', '900px')
         }
 
     })(global_config.chord_order_page_config.awards);
