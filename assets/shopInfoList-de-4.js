@@ -2101,7 +2101,7 @@ const testRides = [
     stores: [
       {
         name: 'Rad Wechsel',
-        phone: '+49 1514 2477409',
+        phone: '+4951189739150',
         email: 'info@radwechsel-shop.de',
         timezone: "Hanover, Germany (GMT+1)",
         add: "Engelbosteler Damm, 30167 Hannover",
