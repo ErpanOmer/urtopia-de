@@ -1581,3 +1581,48 @@ $product-tags-color: #FFE2D9;
         }
     }
 }
+
+
+
+#chirstmas {
+    background-color: rgb(30, 34, 64);
+    background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_23310_2x_bb54f94f-58b6-4a0a-9d35-e9dea6a68959.jpg?v=1703038555');
+
+    .centeral-content {
+        & > div {
+            align-items: flex-start;
+
+            img {
+                max-width: 360px;
+            }
+    
+            .u24Medium_v2 {
+                margin: 8vh 0 4vh;
+            }
+        }
+    }
+
+
+    @media (max-width: 767px) {
+        background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18945_2x_a1097dca-d99a-4e0f-82aa-c9a16f54f64b.jpg?v=1703039371');
+
+        .centeral-content {
+            flex-direction: column-reverse;
+
+            & > div {
+                align-items: center;
+                text-align: center;
+                padding-bottom: 10vw;
+
+                img {
+                    max-width: 190px;
+                }
+
+                .u24Medium_v2 {
+                    font-size: 18px;
+                    margin: 20px 0;
+                }
+            }
+        }
+    }
+}
