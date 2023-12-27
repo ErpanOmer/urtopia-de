@@ -652,7 +652,6 @@ $('.partners .swiper-wrapper').html(swiperItems.map(item => `
 
     function choiceEbike (v) {
         $('.parameters .bottom-content .product-price').text(v.price)
-        $('.parameters .bottom-content .product-price').attr('data-price', v.link === '/products/carbon-1-christmas-special' ? '' : v.orginal_price)
         $('.parameters .bottom-content .sale-tag').text(`${v.discount_price} OFF`)
 
         $('.parameters .bottom-content .background-image').css({ "background-image": `url('${v.background_image}')` })
@@ -685,12 +684,14 @@ $('.partners .swiper-wrapper').html(swiperItems.map(item => `
             $('.parameters .bottom-content .buttons .my-button-white').text(`Shop Online(${v.price})`)
             $('.parameters .bottom-content .buttons .my-button-white').attr('href', v.link)
 
-            if (v.link === '/products/carbon-1-christmas-special') {
+            if (v.discount_price === '€0') {
                 $('.parameters .bottom-content .sale-tag').css('opacity', 0)
                 $('.parameters .bottom-content .product-price').css('font-size', '34px')
+                $('.parameters .bottom-content .product-price').attr('data-price', "")
             } else {
                 $('.parameters .bottom-content .sale-tag').css('opacity', 1)
                 $('.parameters .bottom-content .product-price').css('font-size', '30px')
+                $('.parameters .bottom-content .product-price').attr('data-price', v.orginal_price)
             }
     }
 

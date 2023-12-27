@@ -359,12 +359,12 @@ $sale_background_image: linear-gradient(90deg, #15B79A, #63DED7);
                         cursor: pointer;
 
                         &::after {
-                            content: "Sale";
+                            content: "";
                             display: flex;
                             background-color: var(--sale-order-page-text-color);
                             color: #fff;
                             border-radius: 10px;
-                            padding: 2px 6px;
+                            //padding: 2px 6px;
                             font-size: 12px;
                             align-items: center;
                             justify-content: center;

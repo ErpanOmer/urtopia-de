@@ -512,7 +512,7 @@ const testRides = [
         ],
       },
       {
-        name: 'Velo Shop',
+        name: 'Velo-Shop',
         phone: '+49404204944',
         email: 'info@veloshop.de',
         timezone: "Hamburg, Germany (GMT+1)",
