@@ -347,7 +347,7 @@ function getFormValues (elem = '') {
 
     if (temp.bike_model.includes('carbon')) {
         const bike_model = temp.bike_model === 'carbon1' ? "Carbon Belt" : "Shimano Gear"
-        temp.variant_id = carbon.variants.find(c => c.title === `${bike_model} / ${temp.bike_size} / ${temp.bike_style}`)
+        temp.variant_id = carbon.variants.find(c => c.title === `${bike_model} / One Size / ${temp.bike_style}`)
         temp.variant_id = temp.variant_id ? temp.variant_id.id : ''
 
         if (temp.bike_model.includes("carbonwhiteglow")) {
@@ -418,8 +418,10 @@ const clearBikeImage = () => {
 const carbonBikeChange = (model, size, style) => {
     $('.forms form .item .tips').html(`incl. ${model === 'carbon1' ? switch_bike.carbon1.discount_price: switch_bike.carbon1s.discount_price } <label>discount with free bike stand, ${global_config.leasing.ebike_delivery_time[model]}</label>`)
     model = model === 'carbon1' ? "Carbon Belt" : "Shimano Gear"
+
     // 通过遍历 判断option 是否可用
-    $(`select[name="bike_style"] option`).each((i, item) => {
+    setTimeout(() => {
+        $(`select[name="bike_style"] option`).each((i, item) => {
         const v = item.value
 
         if (i === 0) {
@@ -434,6 +436,7 @@ const carbonBikeChange = (model, size, style) => {
 
         item.disabled = !vari ? false : !!!vari.available
     })
+    }, 30)
 
 
     if (!size || !style || !carbon_size.includes(size) || !carbon_style.includes(style)) {
@@ -584,6 +587,10 @@ const changeBikeImage = e => {
     } else {
         current_chord_model = ''
     }
+
+    if (current === 'carbon') {
+        $('select[name="bike_size"]')[0].disabled = true
+    }
     
 
     const size = $('select[name="bike_size"]').val()
@@ -592,7 +599,7 @@ const changeBikeImage = e => {
     console.log(current, model, size, style)
 
 
-    current === 'carbon' ? carbonBikeChange(model, size, style) : chordBikeChange(model, size, style)
+    current === 'carbon' ? carbonBikeChange(model, 'One Size', style) : chordBikeChange(model, size, style)
 
 
 
@@ -607,9 +614,11 @@ const changeBikeImage = e => {
 
     if (current === 'carbon') {
         // 动态渲染Size
-        $('select[name="bike_size"]').html('<option value="">---</option>' + carbon_size.map(v => {
-            return `<option value="${v}">${v} - ${size_map[v]}</option>`
-        }))
+        //$('select[name="bike_size"]').html('<option value="">---</option>' + carbon_size.map(v => {
+            //return `<option value="${v}">${v} - ${size_map[v]}</option>`
+        //}))
+
+        $('select[name="bike_size"]').html('<option value="One Size">One Size</option>')
 
         // 动态渲染Style
         $('select[name="bike_style"]').html('<option value="">---</option>' + carbon_style.map(v => {

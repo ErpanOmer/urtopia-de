@@ -61,7 +61,21 @@ const bike_sizes = [
     fit: 'Fit for 160-185 cm',
     size: 'Step-Through',
     img: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/chordX_2x_fe86f1a1-6d47-4dd4-b1b9-80ee149da0fe.jpg?v=1689154670&width=430'
-  }
+  },
+  {
+    id: 8,
+    name: 'Carbon 1s',
+    fit: 'Fit for 165-190 cm',
+    size: 'One Size',
+    img: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20230614-215228.png?v=1686750766'
+  },
+  {
+    id: 9,
+    name: 'Carbon 1',
+    fit: 'Fit for 168-195 cm',
+    size: 'One Size',
+    img: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18409_2x_87c499be-99e5-457b-869b-963e270f0ea1.jpg?v=1683614780'
+  },
 ]
 
 function splitTimeFormat(item = '') {
@@ -3353,12 +3367,13 @@ function splitTimeFormat(item = '') {
 
          // 如果是1s 车
          if (size.includes('Carbon 1s')) {
-          choose = choose.concat(s.map(i => {
-            const find = bike_sizes.find(b => b.name === 'Carbon 1s' && b.size === i)
+          // choose = choose.concat(s.map(i => {
+          //   const find = bike_sizes.find(b => b.name === 'Carbon 1s' && b.size === i)
 
-            return find
+          //   return find
 
-          }).filter(Boolean))
+          // }).filter(Boolean))
+          choose.push(bike_sizes.find(b => b.id === 8))
 
          } else {
             // 如果是chrod
@@ -3369,12 +3384,13 @@ function splitTimeFormat(item = '') {
                 choose.push(bike_sizes.find(b => b.name === 'Chord'))
               }
             } else {
-              choose = choose.concat(s.map(i => {
-                const find = bike_sizes.find(b => b.name === 'Carbon 1' && b.size === i)
+              // choose = choose.concat(s.map(i => {
+              //   const find = bike_sizes.find(b => b.name === 'Carbon 1' && b.size === i)
     
-                return find
+              //   return find
     
-              }).filter(Boolean))
+              // }).filter(Boolean))
+              choose.push(bike_sizes.find(b => b.id === 9))
             }
          }
       }

@@ -2209,10 +2209,17 @@ for (const city of testRides) {
       store.city = city.city
       store.avalibaleDate = findAvalibaleDate(store)
 
+      for (let i = 0; i < store.availableSizes.length; i++) {
+          const sizes = store.availableSizes[i]
 
-      for (const sizes of store.availableSizes) {
-        const [bike, series] = sizes.split(' ')
-        bike_options.add(`${bike}${series ? ' ' + series : ''}`)    
+          const [bike, series] = sizes.split(' ')
+          const n = `${bike}${series ? ' ' + series : ''}`
+          bike_options.add(n)
+          
+          if (sizes.includes('Carbon')) {
+            store.availableSizes[i] = `${n}`
+          }
+        
       }
 
       city_options.add(`${store.city}---${store.country}`)

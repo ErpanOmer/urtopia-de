@@ -280,7 +280,11 @@
                         {% when "Model" %}
                             <div data-sale="{{ "order_page.sale" | t }}" attribute="{{ value }}" class="{{ value }}">{{ value }}</div>
                         {% when "Size" %}
-                            <div attribute="{{ value }}" class="{{ value }} u14DemiBold_v2">{% if value == "L" %}Large{% else %}Medium{% endif %}</div>
+                            <div attribute="{{ value }}" class="{{ value }} u14DemiBold_v2">
+                              {% if value == "L" %}Large
+                              {% elsif value == "M" %}Medium
+                              {% else %}{{value}}{% endif %}
+                                </div>
                         {% when "Style" %}
                           <div attribute="{{ value }}" class="{{ value }}"></div>
                         {% else %}
@@ -850,7 +854,7 @@
 </div>
 
 
-{% render 'carbon-one-size-and-specs' %}
+{% render 'carbon-one-size-and-specs2' %}
 
 
 <div class="assembly">
@@ -1199,8 +1203,10 @@
 
         if (e.value === "Carbon Belt") {
           global_config.event_accessories_variant_ids = global_config.carbon_order_page_config.events.carbon1_send_accessories_variant_ids
+          $(`.product .product-panel .options > div[option="Size"] .u17DemiBold_v2 .u17Light_v2`).text('Fit for 168-195 cm')
         } else {
           global_config.event_accessories_variant_ids = global_config.carbon_order_page_config.events.carbon1s_send_accessories_variant_ids
+          $(`.product .product-panel .options > div[option="Size"] .u17DemiBold_v2 .u17Light_v2`).text('Fit for 165-190 cm')
         }
 
         $('#announcement-bar .u11Light_v2').text('End of Promotion')
@@ -1212,7 +1218,7 @@
       })
 
       document.addEventListener('onChangeSize', e => {
-        $(`.product .product-panel .options > div[option="Size"] .u17DemiBold_v2 .u17Light_v2`).text(global_config.carbon_order_page_config.size_map[e.value])
+        // $(`.product .product-panel .options > div[option="Size"] .u17DemiBold_v2 .u17Light_v2`).text(global_config.carbon_order_page_config.size_map[e.value])
       })
 
       document.addEventListener('onChangeOptions', e => {
@@ -1582,4 +1588,4 @@
 
 
 
-{% render 'carbon-one-extra-code' %}
+{% render 'carbon-one-extra-code2' %}
