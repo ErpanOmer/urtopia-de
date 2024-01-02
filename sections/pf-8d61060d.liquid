@@ -952,7 +952,7 @@
 </div>
 
 
-{% render 'carbon-one-size-and-specs', hide_balabalabala: false, hide_1s: true %}
+{% render 'carbon-one-size-and-specs', hide_balabalabala: true, hide_1s: true %}
 
 
 <div class="assembly">
@@ -1296,7 +1296,7 @@
     })
 
     document.addEventListener('onChangeSize', e => {
-      $(`.product .product-panel .options > div[option="Size"] .u17DemiBold_v2 .u17Light_v2`).text(global_config.carbon_order_page_config.size_map[e.value])
+      $(`.product .product-panel .options > div[option="Size"] .u17DemiBold_v2 .u17Light_v2`).text('Fit for 168-195 cm')
     })
 
     document.addEventListener('onChangeOptions', e => {
@@ -1701,4 +1701,4 @@
 
 
 
-{% render 'carbon-one-extra-code', hide_balabalabala: false, hide_1s: true %}
+{% render 'carbon-one-extra-code', hide_balabalabala: true, hide_1s: true %}
