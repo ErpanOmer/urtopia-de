@@ -220,6 +220,8 @@ padding-bottom: {{ section.settings.padding_bottom }}px;
                             {% if option.name == 'Size' or option.name == 'Frame' %}
                               <span style="color:#484848;">
                               {% case option.value %}
+                                {% when 'One Size' %}
+                                  {% if item.options_with_values.first.value == 'Shimano Gear' %}(Fit for 165-190 cm){% else %}(Fit for 168-195 cm){% endif %}
                                 {% when 'M' %}
                                   (Fit for 165-180 cm)
                                 {% when 'L' %}
