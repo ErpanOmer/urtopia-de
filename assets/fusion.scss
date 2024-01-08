@@ -1,4 +1,5 @@
 .u17Light_v2,
+.u20Light_v2,
 .u24Light_v2,
 .u30Medium_v2 {
     opacity: 0.77;
@@ -503,6 +504,10 @@ h4 {
                 font-size: 24px;
                 margin-bottom: 8vw;
             }
+
+          .u20Light_v2 {
+                font-size: 14px;
+          }
         }
 
         .imgaes {
@@ -511,16 +516,13 @@ h4 {
             grid-row-gap: 10px;
 
             & > div {
-                .u60Medium_v2 {
-                    font-size: 30px;
-                }
 
                 .u42Medium_v2 {
-                    font-size: 20px;
+                    font-size: 24px;
                 }
 
-                .u24Light_v2 {
-                    font-size: 12px;
+                .u20Light_v2 {
+                    font-size: 14px;
                 }
             }
         }
@@ -1376,13 +1378,13 @@ h4 {
         .higggg {
             display: flex;
             overflow: hidden;
-            max-width: 100%;
+            width: 100%;
 
             h2 {
                 transition: opacity 0.6s ease-out;
                 opacity: 0;
                 flex-shrink: 0;
-                max-width: 100%;
+                width: 100%;
                 display: flex;
                 align-items: center;
                 // transform: translateX(120vw);
