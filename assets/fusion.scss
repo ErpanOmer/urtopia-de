@@ -448,8 +448,8 @@ h4 {
         grid-column-gap: 2%;
 
         & > div {
-            padding-top: 10.327869%;
-            padding-bottom: 102.95082%;
+            padding-top: 13.327869%;
+            padding-bottom: 99.95082%;
             background: #fff center center/contain no-repeat;
             display: flex;
             flex-direction: column;
@@ -484,7 +484,7 @@ h4 {
                 background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_23509_2x_a362740a-21d8-4265-b8c4-1122163d051a.jpg?v=1703842866');
 
                  & > div {
-                    bottom: 10.327869%;
+                    bottom: 13.327869%;
                  }
             }
         }
@@ -496,18 +496,14 @@ h4 {
             margin-top: 27.5vw;
             margin-bottom: 8vw;
 
-            .u17Light_v2 {
+            & > .u17Light_v2 {
                 padding: 0;
             }
 
-            .u48Medium_v2 {
+            & > .u48Medium_v2 {
                 font-size: 24px;
                 margin-bottom: 8vw;
             }
-
-          .u20Light_v2 {
-                font-size: 14px;
-          }
         }
 
         .imgaes {
@@ -517,11 +513,15 @@ h4 {
 
             & > div {
 
-                .u42Medium_v2 {
+                .u30Medium_v2 {
                     font-size: 24px;
                 }
 
-                .u20Light_v2 {
+                .u24Medium_v2 {
+                    font-size: 20px;
+                }
+
+                .u17Light_v2 {
                     font-size: 14px;
                 }
             }
@@ -539,7 +539,7 @@ h4 {
             @media (max-width: 767px) {
                 & > div {
                     width: auto;
-                    padding-left: 9vw;
+                    padding-left: 8vw;
                 }
             }
 
@@ -1080,12 +1080,14 @@ h4 {
             & > div {
                 position: absolute;
                 max-width: 50%;
-                padding: 7.5% 5%;
+                padding: 4%;
                 overflow: hidden;
                 box-sizing: border-box;
+                overflow: hidden;
 
                 .u17Light_v2 {
-                    margin-top: 8%;
+                    margin-top: 5%;
+                    font-size: 15px;
                 }
             }
 
@@ -1125,7 +1127,7 @@ h4 {
         }
     }
 
-    @media (max-width: 767px) {
+    @media (max-width: 1000px) {
         padding-top: 18vw;
 
         .centeral-content {
@@ -1216,6 +1218,7 @@ h4 {
 
         & > div {
             max-width: 446px;
+            overflow: hidden;
 
             .u17Light_v2 {
                 margin: 5vh 0 2vh;
