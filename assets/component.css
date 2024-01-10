@@ -2485,7 +2485,7 @@ cart-remove-button .icon-remove {
     margin: 0;
   }
   
-  .totals > h2 {
+  .totals > h4 {
     font-size: calc(var(--font-heading-scale) * 1.6rem);
   }
   

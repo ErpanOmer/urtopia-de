@@ -255,28 +255,25 @@
 
 .page-media {
     background-color: #f7f8fa;
-
     .centeral-content {
-        background-color: #f7f8fa;
-
         .home-page-media {
             display: flex;
-            height: 360px;
+            height: 340px;
             width: 100%;
             flex-direction: column;
             align-items: center;
-            padding: 75px 0;
+            padding: 0 0 150px;
             box-sizing: border-box;
         
             .texts {
                 flex: 1;
-                font: normal normal bold 30px/40px Urbane;
+                font: normal normal 600 30px/40px Urbane;
                 display: flex;
                 align-items: center;
                 flex-direction: column;
                 text-align: center;
         
-                div {
+                h2 {
                     animation-duration: 0.5s;
                     animation-timing-function: ease-out;
                 }
@@ -305,7 +302,7 @@
                     width: auto;
                     opacity: 0.5;
                     margin: 0 24px 24px;
-                    max-height: 48px;
+                    max-height: 45px;
                     height: unset;
         
                     &[active] {
@@ -322,9 +319,8 @@
             padding: 0;
             
             .home-page-media-mb {
-                padding-top: 65px;
-                padding-bottom: 65px;
-                background-color: #f7f8fa;
+                padding-top: 50px;
+                padding-bottom: 50px;
                 overflow: hidden;
             
                 .swiper-slide {
@@ -343,7 +339,7 @@
             
                     .u20Medium {
                         font-weight: 600;
-                        margin: 20px 0 40px;
+                        margin: 20px 0 30px;
                         font-size: 22px;
                         line-height: 26px;
                     }

@@ -4393,3 +4393,10 @@ dialog + .backdrop {
   width: 65px;
   height: 35px;
 }
+
+
+.visuallyhidden {
+  position: absolute;
+  top: 0;
+  transform: translateY(-200%);
+}
