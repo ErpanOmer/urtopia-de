@@ -73,6 +73,12 @@
     <div class="blogs">
         <div class="centeral-content">
           {% assign home_page_blogs = settings.home_page_blogs | split: ',' %}
+
+
+          {% for item in home_page_blogs %}
+            {{ item }}
+          {% endfor %}
+
           {% for article in blogs.blog.articles %}
             {% if settings.home_page_blogs contains article.handle %}
               <div href="{{ article.url }}">
