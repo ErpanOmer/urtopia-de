@@ -1566,6 +1566,7 @@ const testRides = [
         testRideSize: "Chord",
         noBook: "Please contact the store directly to arrange test ride",
         availableSizes: [
+          'Carbon 1',
           'Chord',
         ],
         businessHours: [
