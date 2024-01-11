@@ -279,7 +279,7 @@ function partnerForAccessoriesDisable (v, isSelect = false) {
             const id = $(t).val()
             const text = $(t).text()
             
-            if ((v === "Jobrad" || v === 'none') && global_config.leasing.jobrad_disabled_accessories.includes(id)) {
+            if ((v === "Jobrad" || v === "Deutsche Dienstrad" || v === 'none') && global_config.leasing.jobrad_disabled_accessories.includes(id)) {
                 const hasDisable = selectAccessories.some(s => global_config.leasing.jobrad_disabled_accessories.includes(s))
 
                 if (hasDisable) {
