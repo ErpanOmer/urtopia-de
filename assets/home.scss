@@ -101,7 +101,7 @@ h4 {
 
     .u60Medium_v2 {
         &::after {
-            content: "Coming Soon";
+            content: attr(data-after);
             display: flex;
             right: 0;
             transform: translateX(100%);

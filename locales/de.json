@@ -28,7 +28,8 @@
     "stock": "auf Lager",
     "out": "Erhältlich in anderen Farben",
     "style": "Stil",
-    "size": "Größe"
+    "size": "Größe",
+    "comingsoon": "Demnächst"
   },
   "general": {
     "password_page": {
