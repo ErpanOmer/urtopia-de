@@ -8,7 +8,6 @@
 <link rel="preload" href="{{ chord }}" as="image">
 <link rel="preload" href="{{ chordx }}" as="image">
 <link rel="preload" href="{{ carbonwhiteglow }}" as="image">
-
 {{ 'leasing-add.scss.css' | asset_url | stylesheet_tag }}
 
 <div class="leasing-add">
@@ -347,33 +346,34 @@ const faqs = [
     },
 ]
 
-const swiperItems = [
+
+let swiperItems = [
     {
-        name: 'Jobrad',
-        img: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/JR-Logo_-RGB-schwarz-large-4x_2x_de75d7be-f614-4b9c-b23f-bfc210ae792b.png?v=1686554527',
-        text: 'If your employer is registered with JobRad, you can order your Urtopia bike by filling out this form. We will then place an offer for you on the JobRad portal, which you can review and confirm.',
-        dialog: `
-            <div class="partners-dialog">
-                <div class="head">
-                    <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/JR-Logo_-RGB-schwarz-large-4x_2x_de75d7be-f614-4b9c-b23f-bfc210ae792b.png?v=1686554527"/>
-                    <span onclick="closeMiniDialog()">×</span>
-                </div>
-                <div class="content">
-                    <div>
-                        <div class="u20DemiBold_v2">Your benefits <br> through JobRad</div>
-                        <div class="u17DemiBold_v2">Deducted from your salary</div>
-                        <div class="u14Light_v2">Monthly contributions towards your lease of a Urtopia will be deducted from your gross salary. A 36 month leasing plan let you split the cost and enjoy the product.</div>
-                        <div class="u17DemiBold_v2">Additional monthly savings</div>
-                        <div class="u14Light_v2">If you lease with JobRad, your purchase is tax deductible. You can save up to 40% compared to buying a bike with a traditional payment method.</div>
-                        <div class="u17DemiBold_v2">Enjoy it from now, even outside of work</div>
-                        <div class="u14Light_v2">Ride away from stress and towards happiness! Request your bike today to take advantage of an enjoyable biking experience both during work hours as well as after.</div>
+            name: 'Jobrad',
+            img: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/JR-Logo_-RGB-schwarz-large-4x_2x_de75d7be-f614-4b9c-b23f-bfc210ae792b.png?v=1686554527',
+            text: 'If your employer is registered with JobRad, you can order your Urtopia bike by filling out this form. We will then place an offer for you on the JobRad portal, which you can review and confirm.',
+            dialog: `
+                <div class="partners-dialog">
+                    <div class="head">
+                        <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/JR-Logo_-RGB-schwarz-large-4x_2x_de75d7be-f614-4b9c-b23f-bfc210ae792b.png?v=1686554527"/>
+                        <span onclick="closeMiniDialog()">×</span>
                     </div>
-                    <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20221010-untitled-7468_2x_5cab2645-5d81-4b3f-8963-9a6ad866ff09.png?v=1686635073"/>
+                    <div class="content">
+                        <div>
+                            <div class="u20DemiBold_v2">Your benefits <br> through JobRad</div>
+                            <div class="u17DemiBold_v2">Deducted from your salary</div>
+                            <div class="u14Light_v2">Monthly contributions towards your lease of a Urtopia will be deducted from your gross salary. A 36 month leasing plan let you split the cost and enjoy the product.</div>
+                            <div class="u17DemiBold_v2">Additional monthly savings</div>
+                            <div class="u14Light_v2">If you lease with JobRad, your purchase is tax deductible. You can save up to 40% compared to buying a bike with a traditional payment method.</div>
+                            <div class="u17DemiBold_v2">Enjoy it from now, even outside of work</div>
+                            <div class="u14Light_v2">Ride away from stress and towards happiness! Request your bike today to take advantage of an enjoyable biking experience both during work hours as well as after.</div>
+                        </div>
+                        <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20221010-untitled-7468_2x_5cab2645-5d81-4b3f-8963-9a6ad866ff09.png?v=1686635073"/>
+                    </div>
+                    <div class="foot"><a name="Jobrad" href="#forms" class="my-button my-button-black">Request a quote</a></div>
                 </div>
-                <div class="foot"><a name="Jobrad" href="#forms" class="my-button my-button-black">Request a quote</a></div>
-            </div>
-        `
-    },
+            `
+    },    
     {
         name: 'Bike Leasing',
         img: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230613-153443.png?v=1686641693',
@@ -394,7 +394,11 @@ const swiperItems = [
         img: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/dd-logo-dark-yellow.webp?v=1704940427',
         text: 'If your employer is registered with Deutsche Dienstrad, you can order by filling out this form. We’ll share this information with BusinessBike, who will process your order. BusinessBike will confirm the order with your employer.'
     }
-]
+];
+
+{% if page.handle == "leasing-jobrad" %}
+    swiperItems = [swiperItems[0]]
+{% endif %}
 
 
 $('.faqs .swiper-slide').html(faqs.map((faq, index) => `
