@@ -181,6 +181,91 @@ const global_config = {
       // 1s-l-pb
       43869302980824: 'Free shipping within 5 working days',
     },
+    sizes_and_specs: {
+      sizes: {
+          image: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20231221-151050_2x_d883c889-6e52-477d-8672-a7dda6dbbbdd.png?v=1703577530',
+          parameters: [
+              [
+                  '<span style="color: #fff;">xxxx</span>',
+                  'Recomm. rider height',
+                  'A. Standover height',
+                  'B. Adjustable seat range',
+                  'C. Handlebar grips height',
+                  'D. Seat tube length',
+                  'E. Wheelbase',
+                  'F. Overall length',
+                  'G. Wheel diameter',
+                  'H. Top tube length (effective)',
+                  'I. Head tube length',
+                  'J. Headset height'
+              ],
+              [
+                  '<span class="u17DemiBold_v2">Carbon 1</span>',
+                  '168-195 cm',
+                  '840 mm',
+                  '60 mm',
+                  '1020 mm',
+                  '500 mm',
+                  '1120 mm',
+                  '1850 mm',
+                  '690 mm',
+                  '610 mm',
+                  '180 mm',
+                  '100 mm'
+              ],
+              [
+                  '<span class="u17DemiBold_v2">Carbon 1s</span>',
+                  '165-190 cm',
+                  '800 mm',
+                  '60 mm',
+                  '1010 mm',
+                  '460 mm',
+                  '1080 mm',
+                  '1810 mm',
+                  '690 mm',
+                  '580 mm',
+                  '170 mm',
+                  '100 mm'
+              ]
+          ]
+      },
+      specs: [
+          {
+              title: 'Smart',
+              parameters: [
+                  ["Smartbar features", "Voice control, fingerprint unlock, LED dot-matrix display"],
+                  ["Connectivity", "Connect Service with 4G, Bluetooth & WiFi"],
+                  ["IoT sensors", "Accelerometer, gyroscope, torque"],
+                  ["App", "iOS & Android"],
+                  ["Connect Service", "1 year included*"]
+              ]
+          },
+          {
+              title: 'Power',
+              parameters: [
+                  ["Motor", "Carbon 1: 36V 250W(rated), 35 N.m<br>Carbon 1s: 36V 250W(rated), 45 N.m"],
+                  ["Speed modes", "Pedal, Eco, Comfort, Sport, Turbo"],
+                  ["Top speed (assisted)", "25 km/h"],
+                  ["Range", "Up to 110 km"],
+                  ["Removable battery", "9.8 Ah 352.8 Wh Samsung Li-ion, 2.5-hr quick charge"]
+              ]
+          },
+          {
+              title: 'General',
+              parameters: [
+                  ["Weight", "Carbon 1: 15 kg<br>Carbon 1s: 15.8 kg"],
+                  ["Load-bearing capacity", "Max. 110 kg."],
+                  ["Sizes", "One Size (see Size Guide)"],
+                  ["Body material", "Carbon fiber (frame, fork, handlebar, seatpost)"],
+                  ["Brakes", "Front and rear dual-piston hydraulic disc brakes"],
+                  ["Gearing", "Carbon 1: Gates Carbon Drive™ CDN™ belt(up to 30,000km)<br><br>Carbon 1s: Shimano 7-Speed Rear Drivetrain with ALIVIO Rear Derailleur"],
+                  ["Integrated lights", "StVZO headlight; Advanced Rear Early-indication System (ARES)"],
+                  ["Wheels", "700C (ISO 622 mm BSD), inner rim 19 mm"],
+                  ["Tires", "Kenda Kwest 700x35C (35 mm / 1.4”) (30~45 mm compatible)"]
+              ]
+          },
+      ] 
+    }
   },
   // chrod order page 配置项
   chord_order_page_config: {
@@ -311,6 +396,94 @@ const global_config = {
       43705719062744: 'Free shipping within 5 working days',
       43988553859288: 'Free shipping within 5 working days',
       //43988553859288: 'Ships between November 15-30, 2023',
+    }
+  },
+  // 1pro 配置
+  carbon1pro_order_page_config: {
+    sizes_and_specs: {
+      sizes: {
+          image: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20231221-151050_2x_d883c889-6e52-477d-8672-a7dda6dbbbdd.png?v=1703577530',
+          parameters: [
+              [
+                  '<span style="color: #fff;">xxxx</span>',
+                  'Recomm. rider height',
+                  'A. Standover height',
+                  'B. Adjustable seat range',
+                  'C. Handlebar grips height',
+                  'D. Seat tube length',
+                  'E. Wheelbase',
+                  'F. Overall length',
+                  'G. Wheel diameter',
+                  'H. Top tube length (effective)',
+                  'I. Head tube length',
+                  'J. Headset height'
+              ],
+              [
+                  '<span class="u17DemiBold_v2">Medium</span>',
+                  '165-180 cm',
+                  '804 mm',
+                  '60 mm',
+                  '1011-1041 mm',
+                  '463 mm',
+                  '1093 mm',
+                  '1795 mm',
+                  '702 mm',
+                  '618 mm',
+                  '170 mm',
+                  '90-120 mm'
+              ],
+              [
+                  '<span class="u17DemiBold_v2">Large</span>',
+                  '175-195 cm',
+                  '833 mm',
+                  '60 mm',
+                  '1023-1053 mm',
+                  '498 mm',
+                  '1122 mm',
+                  '1824 mm',
+                  '702 mm',
+                  '653 mm',
+                  '180 mm',
+                  '90-120 mm'
+              ]
+          ]
+      },
+      specs: [
+          {
+              title: 'Smart',
+              parameters: [
+                  ["Smartbar features", "Voice control, fingerprint start, LED dot - matrix display, haptic interaction, bluetooth music, built-in navigation, OTA upgrade"],
+                  ["Connectivity", "eSIM with 4G, Bluetooth, GPS"],
+                  ["IoT sensors", "Accelerometer, gyroscope, torque sensor"],
+                  ["App", "iOS & Android"],
+                  ["Connect Service", "1 year included*"]
+              ]
+          },
+          {
+              title: 'Power',
+              parameters: [
+                  ["Motor", "Customized rear hub, 36 V 250 W (rated), 42 N⋅m"],
+                  ["Speed modes", "Pedal, Eco, Comfort, Sport, Turbo"],
+                  ["Top speed (assisted)", "25 km/h"],
+                  ["Range", "Up to 130 km"],
+                  ["Removable battery", "352.8Wh, Samsung Li-ion, removable battery, 2.5-hr quick charge"]
+              ]
+          },
+          {
+              title: 'General',
+              parameters: [
+                  ["Weight", "17kg excl. accessories"],
+                  ["Load-bearing capacity", "Max. 110 kg."],
+                  ["Sizes", "Medium, Large (see Size Guide)"],
+                  ["Body material", "Carbon fiber (frame, fork)"],
+                  ["Brakes", "Front & rear dual-piston hydraulic disc"],
+                  ["Transmission", "Shimano 10-Speed Rear Drivetrain"],
+                  ["Integrated lights", "StVZO headlight"],
+                  ["Wheels", "700C (ISO 622 mm BSD), inner rim 19 mm"],
+                  ["Tires", "700 x 40C"]
+              ]
+          },
+      ] 
     }
   }
 }

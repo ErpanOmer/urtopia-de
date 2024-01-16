@@ -1130,7 +1130,7 @@ h4 {
 
 
 .your {
-    padding: 13vh 0 20vh;
+    padding: 13vh 0 0;
     background-color: #fff;
 
     .centeral-content {
@@ -1170,7 +1170,7 @@ h4 {
     }
 
     @media (max-width: 767px) {
-        padding: 80px 0 8vw;
+        padding: 80px 0 0;
 
         .centeral-content {
             &>div {
@@ -1188,7 +1188,7 @@ h4 {
             }
 
             img {
-                margin: 10vw -8vw;
+                margin: 10vw -8vw 0;
                 width: 100vw;
             }
         }

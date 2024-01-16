@@ -1,5 +1,3 @@
-{{ 'pagefly-main.css' | asset_url | stylesheet_tag: preload: true }}
-{{ 'pagefly.d095440b.css' | asset_url | stylesheet_tag: preload: true }}
 {{ 'carbon1pro.scss.css' | asset_url | stylesheet_tag: preload: true }}
 
 <div class="banner">
@@ -354,7 +352,7 @@
     </div>
 </div>
 
-{% render 'carbon-one-pro-size-and-specs' %}
+{% render 'size-guide-and-specs-template', config: 'carbon1pro_order_page_config' %}
 
 <script>
   $('.emaillllllllllllll').on('submit', function (event) {

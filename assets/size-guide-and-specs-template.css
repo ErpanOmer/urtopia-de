@@ -1,0 +1,187 @@
+.size-guide-and-specs-template {
+    margin: 12vh auto;
+}
+
+.size-guide-and-specs-template h3,
+.size-guide-and-specs-template h4,
+.size-guide-and-specs-template h5,
+.size-guide-and-specs-template h6 {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    color: inherit;
+    font-family: inherit;
+}
+
+.size-guide-and-specs-template .u17Light_v2 {
+    opacity: 0.77;
+}
+
+.size-guide-and-specs-template h3 {
+    cursor: pointer;
+    display: flex;
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.size-guide-and-specs-template h3 > div {
+    font-weight: 300;
+    margin-right: 10px;
+    transform: rotate(0deg);
+    transition: all .3s ease-out;
+}
+
+.size-guide-and-specs-template h3 > .dowwwwn {
+    transform: rotate(90deg);
+}
+
+.size-guide-and-specs-template h3 > .upppppppppppp {
+    transform: rotate(0deg);
+}
+
+.size-guide-and-specs-template .content {
+    display: none;
+}
+
+.size-guide-and-specs-template .specs .content .icons {
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.size-guide-and-specs-template .specs .content .icons > img {
+    max-width: 40px;
+}
+
+.size-guide-and-specs-template .specs .content .icons > img + img {
+    margin-left: 20px;
+}
+
+.size-guide-and-specs-template .specs .content .parameters {
+    margin-bottom: 30px;
+}
+
+.size-guide-and-specs-template .specs .content .parameters .u30DemiBold_v2 {
+    padding: 6px 24px;
+    background-color: #f3f3f3;
+}
+
+.size-guide-and-specs-template .specs .content .parameters .boxsss {
+    padding: 30px 24px 30px 48px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10% 10%;
+}
+
+.size-guide-and-specs-template .specs .content .parameters .boxsss > div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.size-guide-and-specs-template .specs .content .parameters .boxsss .u24DemiBold_v2 {
+    margin-bottom: 10px;
+}
+
+.size-guide-and-specs-template .specs .content .u11Light_v2{
+    opacity: 0.5;
+    padding: 48px;
+}
+
+
+.size-guide-and-specs-template .size-guide .content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 50px;
+    align-items: center;
+    padding: 30px 0px;
+}
+
+.size-guide-and-specs-template .size-guide .content .texts {
+    display: flex;
+    justify-content: space-between;
+}
+
+.size-guide-and-specs-template .size-guide .content .texts .text {
+    display: flex;
+    flex-direction: column;
+}
+
+.size-guide-and-specs-template .size-guide .content .texts .text div + div {
+    margin-top: 20px;
+}
+
+
+@media (max-width: 767px) {
+    .size-guide-and-specs-template {
+        padding: 0 4vw;
+        margin: 20vw auto;
+    }
+
+    .size-guide-and-specs-template .u17Light_v2 {
+        font-size: 14px;
+    }
+
+    .size-guide-and-specs-template .u36DemiBold_v2 {
+        font-size: 24px;
+    }
+
+    .size-guide-and-specs-template .size-guide .content {
+        grid-template-columns: 1fr;
+        padding: 4vw 0;
+    }
+
+    .size-guide-and-specs-template .size-guide .content .texts {
+        order: 1;
+        font-size: 12px;
+    }
+
+    .size-guide-and-specs-template .size-guide .content .texts .text div + div {
+        margin-top: 10px;
+    }
+
+    .size-guide-and-specs-template .size-guide .content .texts .text .u17DemiBold_v2 {
+        font-size: 13px;
+    }
+
+    .size-guide-and-specs-template .specs .content .icons {
+        margin: 3vw 0;
+    }
+
+    .size-guide-and-specs-template .specs .content .icons > img {
+        max-width: 25px;
+    }
+
+    .size-guide-and-specs-template .specs .content .icons > img + img {
+        margin-left: 3.5vw;
+    }
+
+    .size-guide-and-specs-template .specs .content .parameters {
+        margin: 0;
+    }
+
+    .size-guide-and-specs-template .specs .content .parameters .u30DemiBold_v2 {
+        padding: 2vw 4vw;
+        font-size: 20px;
+    }
+
+    .size-guide-and-specs-template .specs .content .parameters .boxsss {
+        padding: 4vw 6vw 6vw;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .size-guide-and-specs-template .specs .content .parameters .boxsss div + div {
+        margin-top: 6vw;
+    }
+
+    .size-guide-and-specs-template .specs .content .parameters .boxsss .u24DemiBold_v2 {
+        font-size: 17px;
+        margin-bottom: 1vw;
+    }
+
+    .size-guide-and-specs-template .specs .content .u11Light_v2 {
+        padding: 0 8vw;
+    }
+    
+}
