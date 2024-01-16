@@ -278,10 +278,12 @@
                       <div class="text-decoration">{{ all_products['esim-card'].price | money_without_trailing_zeros }}/year</div>
                   </div>
               </div>
-            <!--<div class="count-down mb12 mobileHide" style="color: var(--sale-color4);">
-                <div class="u17Medium_v2">{{ 0 | money_without_trailing_zeros }} off + {{ settings.carbon_ebike_free_accessories_count }} Free Accessories Ends in：</div>
+              {% unless settings.hide_sale_countdown  %}
+              <div class="count-down mb12 mobileHide">
+                <div class="u17Medium_v2">End of Promotion</div>
                 <img src="http://i.countdownmail.com/2mmaed.gif">
-            </div>-->
+              </div>
+            {% endunless %}
             <ul class="emphasize-list u17Medium_v2">
               <li><span>●</span><span >Include sample bikes with the same quality and functions as new bikes</span></li>
               <li><span>●</span><span>2-year warranty</span></li>
@@ -341,9 +343,11 @@
                 </div>
             </div>       
             <div class="buttons">
-                <div class="count-down mb12 pcHide" style="color: var(--sale-color4);">
-                    <!--<div class="u17Medium_v2">{{ 0 | money_without_trailing_zeros }} off + {{ settings.carbon_ebike_free_accessories_count }} Free Accessories Ends in：</div>
-                    <img src="http://i.countdownmail.com/2mmaed.gif">-->
+                <div class="count-down mb12 pcHide">
+                  {% unless settings.hide_sale_countdown  %}
+                    <div class="u17Medium_v2">End of Promotion</div>
+                    <img src="http://i.countdownmail.com/2mmaed.gif">
+                  {% endunless %}
                 </div>
                 <div
                     data-product-id="{{ product.id }}"
