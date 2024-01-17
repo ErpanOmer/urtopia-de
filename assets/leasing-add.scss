@@ -1,3 +1,11 @@
+h1,
+h2,
+h3,
+h4 {
+    color: inherit;
+    margin: 0;
+}
+
 body {
     .ui-menu {
         border-radius: 10px;
@@ -148,15 +156,51 @@ body {
 
     .partners {
         /* 设置按钮大小 */
-        overflow-x: hidden;
-        cursor: auto;
+        // overflow-x: hidden;
+        // cursor: auto;
         color: #000;
-        padding: 120px 0;
+        padding-top: 120px;
+        padding-bottom: 160px;
 
-        &>.u48DemiBold_v2 {
-            text-align: left;
-            max-width: 1280px;
-            margin: 0 auto 40px;
+
+        .items {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 6% 4%;
+            margin-top: 40px;
+
+            & > div {
+                box-shadow: 3px 3px 30px #00000010;
+                border-radius: 15px;
+                padding: 10%;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                box-sizing: border-box;
+
+                img {
+                    height: 35px;
+                    width: auto;
+                    // margin-bottom: 6px;
+                }
+
+                .u24Medium_v2 {
+                    color: #CBCBCB;
+                    margin: 6px 0;
+                }
+    
+                .u17Light_v2 {
+                    margin: 12px 0;
+                }
+    
+                .u17DemiBold_v2 {
+                    color: #000;
+                }
+    
+                .my-button {
+                    margin-top: 30px;
+                }
+            }
         }
 
         .swiper-slide {
@@ -477,7 +521,7 @@ body {
                 margin-bottom: 20px;
             }
 
-            .u20DemiBold_v2 {
+            & > div {
                 display: flex;
                 background-color: #EFEFEF;
                 border-radius: 10px;
@@ -497,7 +541,7 @@ body {
 
     .calculate {
         padding: 60px 0;
-        background-color: #F7F8FA;
+        background-color: #fff;
 
         .centeral-content {
             display: flex;
@@ -550,6 +594,7 @@ body {
 
     .calculator {
         padding: 60px 0 120px;
+        background-color: #f5f5f5;
 
         .u48DemiBold_v2 {
             text-align: center;
@@ -564,7 +609,7 @@ body {
 
     .forms {
         padding: 70px 0;
-        background-color: #F7F8FA;
+        background-color: #fff;
 
         .centeral-content {
             display: flex;
@@ -1585,15 +1630,18 @@ body {
                 }
 
 
-                .u20DemiBold_v2 {
+                & > div {
                     width: 100%;
                     padding: 12px 12px 12px 24px;
-                    font-size: 17px;
                     margin-top: 6px;
 
                     img {
                         margin-right: 12px;
                         max-width: 18px;
+                    }
+
+                    .u20DemiBold_v2 {
+                        font-size: 17px;
                     }
                 }
             }
@@ -1658,7 +1706,6 @@ body {
 
         .forms {
             padding: 40px 0;
-            background-color: #F7F8FA;
 
             .centeral-content {
 
@@ -2114,33 +2161,16 @@ body {
         }
 
         .partners {
-            padding: 60px 8vw;
+            padding: 16vw 8vw;
 
             .u48DemiBold_v2 {
                 font-size: 24px;
-                margin-bottom: 24px;
             }
 
-            .swiper-wrapper {
-                flex-direction: column;
-
-                .swiper-slide {
-                    box-sizing: border-box;
-                    padding: 24px;
-                    height: unset;
-
-                    .u17Light_v2 {
-                        font-size: 15px;
-                    }
-
-                    .my-button {
-                        margin-top: 10vw;
-                    }
-                }
-
-                .swiper-slide+.swiper-slide {
-                    margin-top: 20px;
-                }
+            .items {
+                margin-top: 6vw;
+                grid-template-columns: 1fr;
+                grid-row-gap: 5vw;
             }
         }
     }
