@@ -226,7 +226,7 @@ const global_config = {
                   '580 mm',
                   '170 mm',
                   '100 mm'
-              ]
+              ],
           ]
       },
       specs: [

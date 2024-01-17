@@ -363,11 +363,11 @@
             </div>
             {% render 'footer__payment' %}
             <div class="dialogs">
-                <div class="u17Medium_v2">
+                <div class="u17Medium_v2" onclick="showSizesAndSpecs('SizesDialog')">
                     <span>Size & Fit</span>
                     <span>&gt;</span>
                 </div>
-                <div class="u17Medium_v2">
+                <div class="u17Medium_v2"  onclick="showSizesAndSpecs('SpecsDialog')">
                     <span>Technical Specifications</span>
                     <span>&gt;</span>
                 </div>
@@ -1397,12 +1397,16 @@
         return false;
     })
 
-    $('.product .dialogs > div').on('click', e => {
+    $('.product .dialogs > div').on('click', function(e) {
         const m = {
             0: 'one',
             1: 'two',
             2: 'three',
             3: 'four'
+        }
+
+        if ($(this).attr('onclick')) {
+          return
         }
 
         $('.product .dialogs > div').each((i, t) => {

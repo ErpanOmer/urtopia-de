@@ -13,6 +13,7 @@
     font-family: inherit;
 }
 
+#SpecsDialog .u14Light_v2,
 .size-guide-and-specs-template .u17Light_v2 {
     opacity: 0.77;
 }
@@ -112,6 +113,132 @@
 }
 
 
+#SpecsDialog > div,
+#SizesDialog > div {
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    border-radius: 15px;
+    width: 900px;
+    box-shadow: 0 0 10px 10px rgb(0, 0, 0, 0.08);
+}
+
+#SpecsDialog > div .headerrrr,
+#SizesDialog > div .headerrrr {
+    display: flex;
+    height: 60px;
+    padding: 0 30px;
+    justify-content: space-between;
+    border-bottom: 1px solid #eee;
+    align-items: center;
+}
+
+#SpecsDialog > div .headerrrr .close,
+#SizesDialog > div .headerrrr .close {
+    position: static;
+    width: auto;
+    height: auto;
+    font-size: 24px;
+    opacity: 0.6;
+    cursor: pointer;
+}
+
+#SizesDialog > div .bodyyyyyy {
+    display: flex;
+    flex-direction: column;
+    padding: 30px 30px 50px;
+}
+
+#SizesDialog > div .bodyyyyyy .switchhhhh {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: 0 auto;
+    background-color: #eff0f4;
+    border-radius: 50px;
+    overflow: hidden;
+}
+
+#SizesDialog > div .bodyyyyyy .switchhhhh > div {
+    display: flex;
+    flex-direction: column;
+    padding: 6px 40px;
+    cursor: pointer;
+    transition: all 0.2s;
+    border-radius: 50px;
+}
+
+#SizesDialog > div .bodyyyyyy .switchhhhh .active {
+    background-color: #000;
+    color: #fff;
+}
+
+#SizesDialog > div .bodyyyyyy .content {
+    display: grid;
+    grid-template-columns: 1.25fr 2fr;
+    margin-top: 40px;
+    grid-column-gap: 5%;
+    align-items: center;
+}
+
+#SizesDialog > div .bodyyyyyy .content .parameters {
+    display: flex;
+    flex-direction: column;
+}
+
+#SizesDialog > div .bodyyyyyy .content .parameters > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#SizesDialog > div .bodyyyyyy .content .parameters > div + div {
+    margin-top: 20px;
+}
+
+#SpecsDialog > div {
+    padding-bottom: 30px;
+}
+
+#SpecsDialog > div .bodyyyyyy {
+    padding: 15px 30px 0;
+    max-height: 500px;
+    overflow-y: auto;
+}
+
+#SpecsDialog > div .bodyyyyyy .parameters + .parameters {
+    margin-top: 25px;
+}
+
+#SpecsDialog > div .bodyyyyyy .parameters h4,
+#SpecsDialog > div .bodyyyyyy .parameters h5,
+#SpecsDialog > div .bodyyyyyy .parameters h6 {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    color: inherit;
+    font-family: inherit;
+}
+
+#SpecsDialog > div .bodyyyyyy .parameters .boxsss {
+    padding: 15px 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 24px 8%;
+}
+
+#SpecsDialog > div .bodyyyyyy .parameters .u20DemiBold_v2 {
+    border-bottom: 1px solid #e7e7e7;
+    padding-bottom: 4px;
+}
+
+#SpecsDialog > div .bodyyyyyy .parameters .u17DemiBold_v2 {
+    margin-bottom: 10px;
+    color: #4d4d4d;
+}
+
+
 @media (max-width: 767px) {
     .size-guide-and-specs-template {
         padding: 0 4vw;
@@ -182,6 +309,92 @@
 
     .size-guide-and-specs-template .specs .content .u11Light_v2 {
         padding: 0 8vw;
+    }
+
+
+    #SpecsDialog > div,
+    #SizesDialog > div {
+        max-width: 100%;
+        overflow: hidden;
+        padding-bottom: 20px;
+    }
+
+    #SpecsDialog > div .headerrrr,
+    #SizesDialog > div .headerrrr {
+        padding: 0 5vw;
+        height: 50px;
+    }
+
+    #SpecsDialog > div .bodyyyyyy,
+    #SizesDialog > div .bodyyyyyy {
+        padding: 4vw 5vw 0;
+        max-height: calc(80vh - 50px);
+        overflow-y: auto;
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    #SizesDialog > div .bodyyyyyy .switchhhhh {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(33%, 1fr));
+        margin: 0;
+    }
+
+    #SizesDialog > div .bodyyyyyy .switchhhhh > div {
+        padding: 6px 4vw;
+    }
+
+    #SizesDialog > div .bodyyyyyy .switchhhhh > div .u17DemiBold_v2 {
+        /* font-size: 14px; */
+    }
+
+    #SizesDialog > div .bodyyyyyy .switchhhhh > div .u14Light_v2 {
+        font-size: 12px;
+    }
+
+    #SizesDialog > div .bodyyyyyy .content {
+        grid-template-columns: 1fr;
+        margin-top: 4vw;
+    }
+
+    #SizesDialog > div .bodyyyyyy .content .parameters {
+        order: 1;
+        margin-top: 4vw;
+    }
+
+    #SizesDialog > div .bodyyyyyy .content .parameters .u14DemiBold_v2 {
+        font-size: 12px;
+    }
+
+    #SizesDialog > div .bodyyyyyy .content .parameters .u14Light_v2 {
+        font-size: 12px;
+    }
+
+    #SizesDialog > div .bodyyyyyy .content .parameters > div + div {
+        margin-top: 4vw;
+    }
+
+    #SpecsDialog > div .bodyyyyyy {
+        padding-top: 2vw;
+    }
+
+    #SpecsDialog > div .bodyyyyyy .parameters + .parameters {
+        margin-top: 6vw;
+    }
+
+    #SpecsDialog > div .bodyyyyyy .parameters .boxsss {
+        grid-template-columns: 1fr;
+        grid-row-gap: 6vw;
+        padding: 2.5vw 0;
+    }
+
+    #SpecsDialog > div .bodyyyyyy .parameters .u17DemiBold_v2 {
+        margin-bottom: 1vw;
+        font-size: 15px;
+    }
+
+    #SpecsDialog > div .bodyyyyyy .parameters .u14Light_v2 {
+        font-size: 12px;
     }
     
 }
