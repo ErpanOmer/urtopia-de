@@ -238,6 +238,11 @@
     color: #4d4d4d;
 }
 
+#SpecsDialog > div .bodyyyyyy > .u11Light_v2 {
+    opacity: 0.5;
+    margin-top: 25px;
+}
+
 
 @media (max-width: 767px) {
     .size-guide-and-specs-template {
