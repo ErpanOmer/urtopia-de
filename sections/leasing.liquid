@@ -395,6 +395,11 @@ let swiperItems = [
         name: 'Deutsche Dienstrad',
         img: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/dd-logo-dark-yellow_2x_3d0a06fc-55ef-447a-b387-4abd965a1818.png?v=1705471243',
         text: 'If your employer is registered with Deutsche Dienstrad, you can order by filling out this form. We’ll share this information with BusinessBike, who will process your order. BusinessBike will confirm the order with your employer.'
+    },
+    {
+        name: 'Lease a Bike',
+        img: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20240122-100655.png?v=1705889296',
+        text: 'If your employer is registered with Deutsche Dienstrad, you can order by filling out this form. We’ll share this information with BusinessBike, who will process your order. BusinessBike will confirm the order with your employer.'
     }
 ]
 
@@ -515,33 +520,43 @@ $('.partners .items').html(swiperItems.map(item => `
             employer_id.attr('type', 'hidden')
             employer_number.attr('type', 'hidden')
         } else {
+          if (v === 'Lease a Bike') {
+            employer_id.closest('.item').show()
+            employer_id.attr('type', 'text')
+
+            employer_id.closest('.item').find('.u24Medium > span:first-child').text('Bestellcode:')
+            employer_id.closest('.item').find('.u24Medium > span:last-child').text('').hide()
+             
+          } else {
             employer_id.closest('.item').show()
             employer_number.closest('.item').show()
 
             employer_id.attr('type', 'text')
             employer_number.attr('type', 'text')
 
-            if (v === 'Bike Leasing') {
-                employer_id.closest('.item').find('.u24Medium > span:first-child').text('Company code:')
-                employer_id.closest('.item').find('.u24Medium > span:last-child').text('Submit leasing request via company code or customer number (employee does not yet have a bikeleasing bike).').show()
-
-                employer_number.closest('.item').find('.u24Medium > span:first-child').text('Bikeleasing-user-ID:')
-                employer_number.closest('.item').find('.u24Medium > span:last-child').text('Leasing request via the bike leasing user ID of the employee.')
-            } else {
-                if (v === 'Business Bike') {
-                    employer_id.closest('.item').find('.u24Medium > span:first-child').text('Employee email:')
-                    employer_id.closest('.item').find('.u24Medium > span:last-child').text('').hide()
-    
-                    employer_number.closest('.item').find('.u24Medium > span:first-child').text('Employer ID:')
-                    employer_number.closest('.item').find('.u24Medium > span:last-child').text('It is a number issued by your employer or the Human Resources Department.')
-                } else {
-                  employer_id.closest('.item').find('.u24Medium > span:first-child').text('Partner code:')
-                  employer_id.closest('.item').find('.u24Medium > span:last-child').text('It is a ID provide by your employer or HR department.').show()
+              if (v === 'Bike Leasing') {
+                  employer_id.closest('.item').find('.u24Medium > span:first-child').text('Company code:')
+                  employer_id.closest('.item').find('.u24Medium > span:last-child').text('Submit leasing request via company code or customer number (employee does not yet have a bikeleasing bike).').show()
   
-                  employer_number.closest('.item').find('.u24Medium > span:first-child').text('Employer number:')
-                  employer_number.closest('.item').find('.u24Medium > span:last-child').text('It is a number issued by your employer or the Human Resources Department.')
-                }
-            }
+                  employer_number.closest('.item').find('.u24Medium > span:first-child').text('Bikeleasing-user-ID:')
+                  employer_number.closest('.item').find('.u24Medium > span:last-child').text('Leasing request via the bike leasing user ID of the employee.')
+              } else {
+                  if (v === 'Business Bike') {
+                      employer_id.closest('.item').find('.u24Medium > span:first-child').text('Employee email:')
+                      employer_id.closest('.item').find('.u24Medium > span:last-child').text('').hide()
+      
+                      employer_number.closest('.item').find('.u24Medium > span:first-child').text('Employer ID:')
+                      employer_number.closest('.item').find('.u24Medium > span:last-child').text('It is a number issued by your employer or the Human Resources Department.')
+                  } else {
+                    employer_id.closest('.item').find('.u24Medium > span:first-child').text('Partner code:')
+                    employer_id.closest('.item').find('.u24Medium > span:last-child').text('It is a ID provide by your employer or HR department.').show()
+    
+                    employer_number.closest('.item').find('.u24Medium > span:first-child').text('Employer number:')
+                    employer_number.closest('.item').find('.u24Medium > span:last-child').text('It is a number issued by your employer or the Human Resources Department.')
+                  }
+              }
+          }
+          
             
         }
 

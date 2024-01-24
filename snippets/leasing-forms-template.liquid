@@ -1,6 +1,12 @@
 {{ 'sumoselect.min.css' | asset_url | stylesheet_tag }}
 {{ 'jquery-ui.css' | asset_url | stylesheet_tag }}
 
+<style>
+  .SumoSelect>.optWrapper>.options {
+    max-height: fit-content;
+  }
+</style>
+
 <div class="forms" id="forms">
     <div class="centeral-content">
         <div class="thankyou" style="display:none;">
@@ -289,6 +295,17 @@ function partnerForAccessoriesDisable (v, isSelect = false) {
                 $(`.optWrapper ul li[title="${text}"]`).hide()
                 return window.selectPlugin.sumo.disableItem(i)
             }
+
+          if ((v === "Lease a Bike") && global_config.leasing.leaseabike_disabled_accessories.includes(id)) {
+              const hasDisable = selectAccessories.some(s => global_config.leasing.leaseabike_disabled_accessories.includes(s))
+
+                if (hasDisable) {
+                    $('.forms form select[name="accessories"]').closest('.item').find('.error').text(`Due to the change of leasing partner, please select your accessioes again and some of it might be unavailble.`)
+                }
+
+                $(`.optWrapper ul li[title="${text}"]`).hide()
+                return window.selectPlugin.sumo.disableItem(i)
+          }
 
             $(`.optWrapper ul li[title="${text}"]`).show()
             window.selectPlugin.sumo.enableItem(i)
