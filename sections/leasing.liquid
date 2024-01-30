@@ -374,32 +374,106 @@ let swiperItems = [
                 </div>
                 <div class="foot"><a name="Jobrad" href="#forms" class="my-button my-button-black">Request a quote</a></div>
             </div>
-        `
+        `,
+        forms: {
+            employer_id: {
+                title: '',
+                tips: '',
+                placeholder: ''
+            },
+            employer_number: {
+                title: '',
+                tips: '',
+                placeholder: ''
+            }
+        }
     },
     {
       name: 'Business Bike',
        img: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230613-152534.png?v=1686641146',
-        text: 'If your employer is registered with BusinessBike, you can order by filling out this form. We’ll share this information with BusinessBike, who will process your order. BusinessBike will confirm the order with your employer.'
+        text: 'If your employer is registered with BusinessBike, you can order by filling out this form. We’ll share this information with BusinessBike, who will process your order. BusinessBike will confirm the order with your employer.',
+        forms: {
+            employer_id: {
+                title: 'Employee email:',
+                tips: '',
+                placeholder: ''
+            },
+            employer_number: {
+                title: 'Employer ID:',
+                tips: 'It is a number issued by your employer or the Human Resources Department.',
+                placeholder: ''
+            }
+        }
     },
     {
         name: 'Bike Leasing',
         img: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230613-153443.png?v=1686641693',
-        text: 'If your employer is registered with bikeleasing.de, you can order by filling out this form. We’ll share this information with bikeleasing.de, who will process your order. Mein Dienstrad will confirm the order with your employer.'
+        text: 'If your employer is registered with bikeleasing.de, you can order by filling out this form. We’ll share this information with bikeleasing.de, who will process your order. Mein Dienstrad will confirm the order with your employer.',
+        forms: {
+            employer_id: {
+                show: true,
+                title: 'Company code:',
+                tips: 'Submit leasing request via company code or customer number (employee does not yet have a bikeleasing bike).',
+                placeholder: 'XXXX (4-stellig)'
+            },
+            employer_number: {
+                show: true,
+                title: 'Bikeleasing-user-ID:',
+                tips: 'Leasing request via the bike leasing user ID of the employee.',
+                placeholder: 'XXXX-XXXX (8-stellig)'
+            }
+        }
     },
     {
         name: 'Mein-dienstrad.de',
         img: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230613-153746.png?v=1686641878',
-        text: 'If your employer is registered with Mein Dienstrad, you can order by filling out this form. We’ll share this information with Mein Dienstrad, who will process your order. Mein Dienstrad will confirm the order with your employer.'
+        text: 'If your employer is registered with Mein Dienstrad, you can order by filling out this form. We’ll share this information with Mein Dienstrad, who will process your order. Mein Dienstrad will confirm the order with your employer.',
+        forms: {
+            employer_id: {
+                title: 'Partner code:',
+                tips: 'It is a ID provide by your employer or HR department.',
+                placeholder: ''
+            },
+            employer_number: {
+                title: 'Employer number:',
+                tips: 'It is a number issued by your employer or the Human Resources Department.',
+                placeholder: ''
+            }
+        }
     },
     {
         name: 'Deutsche Dienstrad',
         img: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/dd-logo-dark-yellow_2x_3d0a06fc-55ef-447a-b387-4abd965a1818.png?v=1705471243',
-        text: 'If your employer is registered with Deutsche Dienstrad, you can order by filling out this form. We’ll share this information with BusinessBike, who will process your order. BusinessBike will confirm the order with your employer.'
+        text: 'If your employer is registered with Deutsche Dienstrad, you can order by filling out this form. We’ll share this information with BusinessBike, who will process your order. BusinessBike will confirm the order with your employer.',
+        forms: {
+            employer_id: {
+                title: '',
+                tips: '',
+                placeholder: ''
+            },
+            employer_number: {
+                title: '',
+                tips: '',
+                placeholder: ''
+            }
+        }
     },
     {
         name: 'Lease a Bike',
         img: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20240122-100655.png?v=1705889296',
-        text: 'If your employer is registered with Deutsche Dienstrad, you can order by filling out this form. We’ll share this information with BusinessBike, who will process your order. BusinessBike will confirm the order with your employer.'
+        text: 'If your employer is registered with Deutsche Dienstrad, you can order by filling out this form. We’ll share this information with BusinessBike, who will process your order. BusinessBike will confirm the order with your employer.',
+        forms: {
+            employer_id: {
+                title: 'Bestellcode:',
+                tips: '',
+                placeholder: 'XXXXXX (6-stellig)'
+            },
+            employer_number: {
+                title: '',
+                tips: '',
+                placeholder: ''
+            }
+        }
     }
 ]
 
@@ -448,19 +522,6 @@ $('.partners .items').html(swiperItems.map(item => `
     
     const width = document.body.clientWidth;
     const isMobile = width < 768;
-
-    // !isMobile && new Swiper('.leasing-add .partners', {
-    //     slidesOffsetBefore: width > 1280 ? (width - 1280) / 2 : 30,
-    //     slidesOffsetAfter: width > 1280 ? (width - 1280) / 2 : 30,
-    //     spaceBetween: isMobile ? '4%' : 24,
-    //     slidesPerView: isMobile ? 1.2 : 4,
-    //     freeMode: isMobile ? true : false,
-    //     navigation: {
-    //         nextEl: '.swiper-button-next',
-    //         prevEl: '.swiper-button-prev',
-    //     }
-    // })
-
 
     const partnerSelect = $('select[name="partner"]').SumoSelect({
         placeholder: '',
@@ -513,51 +574,40 @@ $('.partners .items').html(swiperItems.map(item => `
         const employer_id = $('input[name="employer_id"]')
         const employer_number = $('input[name="employer_number"]')
 
-        if (v === "Jobrad" || v === "Deutsche Dienstrad" || v === 'none') {
-            employer_id.closest('.item').hide()
-            employer_number.closest('.item').hide()
+        const infos =  swiperItems.find(s => s.name === v)?.forms
 
-            employer_id.attr('type', 'hidden')
-            employer_number.attr('type', 'hidden')
+        if (infos?.employer_id?.title) {
+            employer_id.closest('.item').find('.u24Medium > span:first-child').text(infos.employer_id.title)
+
+            if (infos.employer_id.tips) {
+                employer_id.closest('.item').find('.u24Medium > span:last-child').text(infos.employer_id.tips).show()                
+            } else {
+                employer_id.closest('.item').find('.u24Medium > span:last-child').hide()
+            }
+
+            employer_id.attr('placeholder', infos.employer_id.placeholder)
+            employer_id.attr('type', 'text')
+            employer_id.closest('.item').show()
         } else {
-          if (v === 'Lease a Bike') {
-            employer_id.closest('.item').show()
-            employer_id.attr('type', 'text')
+            employer_id.attr('type', 'hidden')
+            employer_id.closest('.item').hide()
+        }
 
-            employer_id.closest('.item').find('.u24Medium > span:first-child').text('Bestellcode:')
-            employer_id.closest('.item').find('.u24Medium > span:last-child').text('').hide()
-             
-          } else {
-            employer_id.closest('.item').show()
-            employer_number.closest('.item').show()
+        if (infos?.employer_number?.title) {
+            employer_number.closest('.item').find('.u24Medium > span:first-child').text(infos.employer_number.title)
 
-            employer_id.attr('type', 'text')
+            if (infos.employer_number.tips) {
+                employer_number.closest('.item').find('.u24Medium > span:last-child').text(infos.employer_number.tips).show()                
+            } else {
+                employer_number.closest('.item').find('.u24Medium > span:last-child').hide()
+            }
+
+            employer_number.attr('placeholder', infos.employer_number.placeholder)
             employer_number.attr('type', 'text')
-
-              if (v === 'Bike Leasing') {
-                  employer_id.closest('.item').find('.u24Medium > span:first-child').text('Company code:')
-                  employer_id.closest('.item').find('.u24Medium > span:last-child').text('Submit leasing request via company code or customer number (employee does not yet have a bikeleasing bike).').show()
-  
-                  employer_number.closest('.item').find('.u24Medium > span:first-child').text('Bikeleasing-user-ID:')
-                  employer_number.closest('.item').find('.u24Medium > span:last-child').text('Leasing request via the bike leasing user ID of the employee.')
-              } else {
-                  if (v === 'Business Bike') {
-                      employer_id.closest('.item').find('.u24Medium > span:first-child').text('Employee email:')
-                      employer_id.closest('.item').find('.u24Medium > span:last-child').text('').hide()
-      
-                      employer_number.closest('.item').find('.u24Medium > span:first-child').text('Employer ID:')
-                      employer_number.closest('.item').find('.u24Medium > span:last-child').text('It is a number issued by your employer or the Human Resources Department.')
-                  } else {
-                    employer_id.closest('.item').find('.u24Medium > span:first-child').text('Partner code:')
-                    employer_id.closest('.item').find('.u24Medium > span:last-child').text('It is a ID provide by your employer or HR department.').show()
-    
-                    employer_number.closest('.item').find('.u24Medium > span:first-child').text('Employer number:')
-                    employer_number.closest('.item').find('.u24Medium > span:last-child').text('It is a number issued by your employer or the Human Resources Department.')
-                  }
-              }
-          }
-          
-            
+            employer_number.closest('.item').show()
+        } else {
+            employer_number.attr('type', 'hidden')
+            employer_number.closest('.item').hide()
         }
 
         partnerForAccessoriesDisable(v, true)
