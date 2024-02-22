@@ -2193,6 +2193,176 @@ const testRides = [
       },
     ]
   },
+  {
+    country: 'Denmark',
+    city: 'Rodovre',
+    cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Fri_bikeshop_Rodovre.jpg?v=1706844827',
+    series: [
+      'Carbon 1',
+      // 'Urtopia Carbon 1'
+    ],
+    stores: [
+      {
+        name: 'Fri bikeshop Rodovre',
+        phone: '+45 43422313',
+        email: 'roskildevej@fribikeshp.dk',
+        timezone: "Rodovre, Denmark (GMT+1)",
+        add: "Roskildevej 254, 258, 2610 Rødovre, Denmark",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Fri_bikeshop_Rodovre.jpg?v=1706844827",
+        testrideSpot: "Rodovre",
+        testRideSize: "M",
+        noBook: "Please contact the store directly to arrange test ride",
+        availableSizes: [
+          'Carbon 1 Size M',
+        ],
+        businessHours: [
+          "",
+          "9:00–17:30",
+          "9:00–17:30",
+          "9:00–17:30",
+          "9:00–17:30",
+          "9:00–18:00",
+          "9:00–14:00",
+        ],
+      },
+    ]
+  },
+  {
+    country: 'Denmark',
+    city: 'Vanlose',
+    cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Fri_bikeshop_Vanlose.jpg?v=1706844828',
+    series: [
+      'Carbon 1',
+      // 'Urtopia Carbon 1'
+    ],
+    stores: [
+      {
+        name: 'Fri bikeshop Vanlose',
+        phone: '+45 71992313',
+        email: 'info2720@fribikeshp.dk',
+        timezone: "Vanlose, Denmark (GMT+1)",
+        add: "Godthåbsvej 248, 254, 2720 Vanløse, Denmark",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Fri_bikeshop_Vanlose.jpg?v=1706844828",
+        testrideSpot: "Vanlose",
+        testRideSize: "L",
+        noBook: "Please contact the store directly to arrange test ride",
+        availableSizes: [
+          'Carbon 1 Size L',
+        ],
+        businessHours: [
+          "",
+          "9:00–17:30",
+          "9:00–17:30",
+          "9:00–17:30",
+          "9:00–17:30",
+          "9:00–18:00",
+          "9:00–14:00",
+        ],
+      },
+    ]
+  },
+  {
+    country: 'Denmark',
+    city: 'Farum',
+    cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Fri_bikeshop_Farum.jpg?v=1706844827',
+    series: [
+      'Carbon 1',
+      // 'Urtopia Carbon 1'
+    ],
+    stores: [
+      {
+        name: 'Fri bikeshop Farum',
+        phone: '+45 71922313',
+        email: 'info3520@fribikeshop.dk',
+        timezone: "Farum, Denmark (GMT+1)",
+        add: "Farum Hovedgade 34, 3520 Farum, Denmark",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Fri_bikeshop_Farum.jpg?v=1706844827",
+        testrideSpot: "Farum",
+        testRideSize: "L",
+        noBook: "Please contact the store directly to arrange test ride",
+        availableSizes: [
+          'Carbon 1 Size L',
+        ],
+        businessHours: [
+          "",
+          "9:00–17:30",
+          "9:00–17:30",
+          "9:00–17:30",
+          "9:00–17:30",
+          "9:00–18:00",
+          "9:30–14:00",
+        ],
+      },
+    ]
+  },
+  {
+    country: 'Netherlands',
+    city: 'Rotterdam',
+    cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Superfietsen_Rotterdam.png?v=1706844830',
+    series: [
+      'Carbon 1',
+      // 'Urtopia Carbon 1'
+    ],
+    stores: [
+      {
+        name: 'Superfietsen Rotterdam',
+        phone: '+31 10 - 310 62 65',
+        email: '',
+        timezone: "Rotterdam, Netherlands (GMT+1)",
+        add: "Stadionweg 29 B, 3077 AN Rotterdam, Netherlands",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Superfietsen_Rotterdam.png?v=1706844830",
+        testrideSpot: "Rotterdam",
+        testRideSize: "L",
+        noBook: "Please contact the store directly to arrange test ride",
+        availableSizes: [
+          'Carbon 1 Size L',
+        ],
+        businessHours: [
+          "12:00-17:00",
+          "9:00–18:00",
+          "9:00–18:00",
+          "9:00–18:00",
+          "9:00–18:00",
+          "9:00–18:00",
+          "9:00–18:00",
+        ],
+      },
+    ]
+  },
+  {
+    country: 'Netherlands',
+    city: 'Den Haag',
+    cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Superfietsen_Den_Haag.png?v=1706844830',
+    series: [
+      'Carbon 1',
+      // 'Urtopia Carbon 1'
+    ],
+    stores: [
+      {
+        name: 'Superfietsen Den Haag',
+        phone: '+31 70 - 308 08 40',
+        email: '',
+        timezone: "Den Haag, Netherlands (GMT+1)",
+        add: "Leyweg 595 C, 2545 GH Den Haag,Netherlands",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Superfietsen_Den_Haag.png?v=1706844830",
+        testrideSpot: "Den Haag",
+        testRideSize: "M",
+        noBook: "Please contact the store directly to arrange test ride",
+        availableSizes: [
+          'Carbon 1 Size M',
+        ],
+        businessHours: [
+          "11:30-17:00",
+          "9:00–18:00",
+          "9:00–18:00",
+          "9:00–18:00",
+          "9:00–18:00",
+          "9:00–18:00",
+          "9:00–18:00",
+        ],
+      },
+    ]
+  },
 ]
 
 

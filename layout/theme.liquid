@@ -1,7 +1,7 @@
 <!doctype html>
   <html class="no-js" lang="{{ request.locale.iso_code }}">
     <head>
-      {% render 'pagefly-head' %}
+      
       <meta charset="utf-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="google-site-verification" content="4CyyxbiT2JJKwsI1xsr_c7Qf-ihbvBm4WMiPhI0rOeA">
@@ -255,7 +255,8 @@
 
       {% include 'dataLayer-allPages' %}
       {{ 'global_config.js' | asset_url | script_tag }}
-      </head>
+      
+{% include 'pagefly-app-header' %}</head>
 
     {%- if template.name == 'product' and product.variants[0].metafields.insurance.variant_name -%}
       {%- assign is_insurance_product = true -%}
@@ -280,7 +281,12 @@
 
       {% section 'header' %}
       <main id="MainContent" class="content-for-layout focus-none" role="main" tabindex="-1">
-        {{ content_for_layout }}
+        
+  {% capture pagefly_content_for_layout %}
+    {{ content_for_layout }}
+  {% endcapture %}
+  {% render 'pagefly-render-section', pagefly_content_for_layout: pagefly_content_for_layout %}
+  
       </main>
 
       {% section 'care' %}
