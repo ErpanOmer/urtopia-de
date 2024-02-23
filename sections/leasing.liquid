@@ -44,7 +44,7 @@
             <select>
                 <!--<option value="carbonwhiteglow">Urtopia White Glow</option>-->
                 <option value="carbon1">Urtopia Carbon 1</option>
-                <option value="carbon1s">Urtopia Carbon 1s</option>
+                <!-- <option value="carbon1s">Urtopia Carbon 1s</option> -->
                 <option value="chord">Urtopia Chord</option>
                 <option value="chordx">Urtopia Chord X</option>
             </select>
@@ -674,6 +674,7 @@ $('.partners .items').html(swiperItems.map(item => `
             box3_text2: '100 km',
             link: '/products/urtopia-carbon-e-bike?variant=42615025369304'
         },
+      /*
         carbon1s: {
             background_image: `{{ carbon1s }}`,
             price: `{{ all_products['urtopia-carbon-e-bike'].price | minus: settings.carbon1s_ebike_discount_price | money_without_trailing_zeros  }}`,
@@ -690,6 +691,7 @@ $('.partners .items').html(swiperItems.map(item => `
             box3_text2: '100 km',
             link: '/products/urtopia-carbon-e-bike?variant=43869302849752'
         },
+        */
         chord: {
             background_image: `{{ chord }}`,
             price: `{{ all_products['urtopia-chord-ebike'].price | minus: settings.chord_ebike_discount_price | money_without_trailing_zeros  }}`,

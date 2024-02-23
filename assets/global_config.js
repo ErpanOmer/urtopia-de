@@ -54,7 +54,7 @@ const global_config = {
       carbon1s_send_accessories_variant_ids: ['43866498891992', '43988117356760'],
     },
     // carbon 车默认显示 variant_id, 只有 url 上的 variant 参数为空的时候生效
-    default_variant: 42615025369304,
+    default_variant: 44222041817304,
     ignore_variants_available_false: [],
     size_map: {
       M: 'Fit for 165-180 cm',
