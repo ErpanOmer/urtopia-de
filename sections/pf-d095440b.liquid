@@ -480,26 +480,8 @@
 
 <div class="boxs">
   <div class="centeral-content">
-    <div>
-      <div class="u36DemiBold_v2">Carbon 1s</div>
-      <div class="u20Light_v2">Next-level adventures with gears</div>
-      <div class="u17DemiBold_v2">
-        <div>
-          <span class="emphasize">●</span>
-          250W 45Nm motor</div>
-        <div>
-          <span class="emphasize">●</span>
-          Assist levels x Gears: 4 x 7</div>
-        <div>
-          <span class="emphasize">●</span>
-          Increased ride range</div>
-        <div>
-          <span class="emphasize">●</span>
-          Wider terrain capabilities</div>
-      </div>
-      <div class="u17Light_v2">Carbon 1s offers the options of pushing a harder gear to get more workout or speed; or riding an easy gear with less stress on the legs. The 45Nm motor with gears makes your ride speedier and easier to travel up the hills.</div>
-    </div>
-    <div></div>
+    <span></span>
+    <span></span>
     <div></div>
     <div>
       <div class="u36DemiBold_v2">Carbon 1</div>
@@ -1204,12 +1186,21 @@
         if (e.value === "Carbon Belt") {
           global_config.event_accessories_variant_ids = global_config.carbon_order_page_config.events.carbon1_send_accessories_variant_ids
           $(`.product .product-panel .options > div[option="Size"] .u17DemiBold_v2 .u17Light_v2`).text('Fit for 168-195 cm')
+
+          $('.product-price').attr('data-price',  '{{  product.price | money }}').css('color', 'var(--sale-order-page-text-color)')
+          $('.sale-taggggggg').show()
+          $('.count-down').show()
+
         } else {
           global_config.event_accessories_variant_ids = global_config.carbon_order_page_config.events.carbon1s_send_accessories_variant_ids
           $(`.product .product-panel .options > div[option="Size"] .u17DemiBold_v2 .u17Light_v2`).text('Fit for 165-190 cm')
+
+          $('.product-price').attr('data-price',  '').css('color', '#000')
+          $('.sale-taggggggg').hide()
+          $('.count-down').hide()
         }
 
-        $('#announcement-bar .u11Light_v2').text('End of Promotion')
+        // $('#announcement-bar .u11Light_v2').text('End of Promotion')
 
       })
 
@@ -1284,8 +1275,12 @@
 
             if (e.value.Model === 'Carbon Belt') {
               discount = Number('{{ settings.carbon_ebike_discount_price }}')
+              $('.top-fixed .u17Light_v2 > span:not(.u20DemiBold_v2)').show()
+              $('.bottom-fixed > div .u14Light_v2:first-child > span:not(.emphasize)').show()
             } else {
               discount = Number('{{ settings.carbon1s_ebike_discount_price }}')
+              $('.top-fixed .u17Light_v2 > span:not(.u20DemiBold_v2)').hide()
+              $('.bottom-fixed > div .u14Light_v2:first-child > span:not(.emphasize)').hide()
             }
 
             $('.product .commonComponent > .product-price').text(getPriceFormat(e.value.price - discount)).attr('data-price', getPriceFormat(e.value.price))

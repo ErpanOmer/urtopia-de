@@ -238,6 +238,7 @@
         &>div {
             display: flex;
             flex-direction: column;
+            align-items: flex-end;
         }
 
         .my-button-origin {
@@ -671,9 +672,14 @@
                     //     content: "Sale";
                     // }
 
-                    // div[attribute="Shimano Gear"]::after {
-                    //     content: "Sale";
-                    // }
+                    div[attribute="Shimano Gear"]::after {
+                        content: "";
+                        display: none;
+                    }
+
+                    div[attribute="Shimano Gear"] {
+                        border-color: #000;
+                    }
 
                     .active {
                         border-color: var(--sale-order-page-text-color);
