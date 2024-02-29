@@ -13,6 +13,7 @@
             <div class="u48DemiBold_v2">Thank you!</div>
             <div class="u24Medium_v2"></div>
             <a class="my-button my-button-white" href="/pages/contactus">Contact us</a>
+            <a class="my-button my-button-origin" target="_blank" style="margin-top: 10px;" href="/pages/test-ride">Find test ride spots</a>
             <div class="sooner">
                 <div class="u48DemiBold_v2">Exclusive discount for direct purchases</div>
                 <div class="u24Medium_v2">we are now offering a one time <span class="emphasize">{{ settings.carbon_ebike_discount_price | money_without_trailing_zeros }}</span> off and <span class="emphasize">{{ settings.carbon_ebike_free_accessories_count }} Free</span> accessories.</div>
@@ -285,7 +286,7 @@ function partnerForAccessoriesDisable (v, isSelect = false) {
             const id = $(t).val()
             const text = $(t).text()
             
-            if ((v === "Jobrad" || v === "Deutsche Dienstrad" || v === 'none') && global_config.leasing.jobrad_disabled_accessories.includes(id)) {
+            if ((v === "Jobrad" || v === "Mein-dienstrad.de" || v === "Deutsche Dienstrad" || v === 'none') && global_config.leasing.jobrad_disabled_accessories.includes(id)) {
                 const hasDisable = selectAccessories.some(s => global_config.leasing.jobrad_disabled_accessories.includes(s))
 
                 if (hasDisable) {
@@ -719,7 +720,7 @@ setTimeout(() => {
             $('html').animate({
                 scrollTop: $('.forms').offset().top - (((document.documentElement.clientHeight / 2) + ($('.forms').height() / 2)) / 2)
             }, 300)
-        }, 50)
+        }, 200)
 
         event.preventDefault();
         return false;

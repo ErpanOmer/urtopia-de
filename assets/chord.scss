@@ -1894,8 +1894,8 @@ $sale_background_image: linear-gradient(90deg, #15B79A, #63DED7);
             .logos {
                 display: grid;
                 grid-template-columns: 1fr 1fr;
-                grid-template-rows: 25px 25px;
-                grid-gap: 30px 40px;
+                grid-template-rows: 25px 25px 25px;
+                grid-gap: 25px 40px;
                 margin-bottom: 12%;
 
                 img {
@@ -1939,12 +1939,12 @@ $sale_background_image: linear-gradient(90deg, #15B79A, #63DED7);
                 }
 
                 .logos {
-                    grid-gap: 15vw 8vw;
+                    grid-gap: 6vw 8vw;
 
-                    img {
-                        height: auto;
-                        width: 100%;
-                    }
+                    // img {
+                    //     height: auto;
+                    //     width: 100%;
+                    // }
                 }
             }
 
