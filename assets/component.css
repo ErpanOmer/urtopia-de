@@ -3993,7 +3993,7 @@ button.swiper-pagination-bullet {
   .hedaer-secondary-menu .sale-image {
     max-width: 270px;
     width: 20%;
-    background: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_23277_2x_dd8e661f-39e1-47fa-9368-83afd96869cd.jpg?v=1698377804') center center/cover no-repeat;
+    background: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_23277_2x_dd8e661f-39e1-47fa-9368-83afd96869cd.jpg?v=1698377804&width=300') center center/cover no-repeat;
     color: #fff;
     border-radius: 10px;
     padding: 15px 30px;
@@ -4251,7 +4251,7 @@ button.swiper-pagination-bullet {
 
 
 .hedaer-secondary-menu-mb .sale-image {
-  background: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_23277_2x_dd8e661f-39e1-47fa-9368-83afd96869cd.jpg?v=1698377804') center center/cover no-repeat;
+  background: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_23277_2x_dd8e661f-39e1-47fa-9368-83afd96869cd.jpg?v=1698377804&width=400') center center/cover no-repeat;
   color: #fff;
   border-radius: 10px;
   padding: 4vw 4vw 52.25vw;
