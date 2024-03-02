@@ -43,7 +43,20 @@
 {% endif %}
 
 
+{% comment %} 这些不让爬 {% endcomment %}
 {% if template == "product.carbon1-on-grover" or template == "product.carbon1-on-mediamarkt" or template == "main-product" %}
 <meta name="robots" content="noindex, nofollow">
 {% endif %}
 
+
+
+{% comment %} 这些集中权重 {% endcomment %}
+{% if template == "collection.urtopia-ebike" or template == "collection.urtopia-ebike-v4" or request.path contains "e-bike-leasing" %}
+    <link rel="canonical" href="{{ request.origin }}{{ collections['e-bikes'].url }}">
+{% elsif template == "collection.accessories" or request.path contains "chord-accessories" or request.path contains "carbon-1-1s-accessories" or request.path contains "chord-x-leasing-acc" or request.path contains "carbon-1-leasing-acc" or request.path contains "on-page" or request.path contains "chord-in-cart" or request.path contains "carbon-in-cart" %}
+    <link rel="canonical" href="{{ request.origin }}{{ collections['accessories'].url }}">
+{% elsif template == "page.leasing" %}
+    <link rel="canonical" href="{{ request.origin }}/pages/ebike-leasing">
+{% else %}
+    <link rel="canonical" href="{{ canonical_url }}">
+{% endif %}
