@@ -57,6 +57,8 @@
     <link rel="canonical" href="{{ request.origin }}{{ collections['accessories'].url }}">
 {% elsif template == "page.leasing" %}
     <link rel="canonical" href="{{ request.origin }}/pages/ebike-leasing">
+{% elsif template == "page.123456" %}
+    <link rel="canonical" href="{{ request.origin }}">
 {% else %}
     <link rel="canonical" href="{{ canonical_url }}">
 {% endif %}
