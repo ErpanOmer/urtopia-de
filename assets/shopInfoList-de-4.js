@@ -228,31 +228,6 @@ const testRides = [
     ],
     stores: [
       {
-        name: 'Thomas Krautter',
-        phone: '+0049 160 841 3595',
-        email: 'urtopia@eitap.de',
-        timezone: "Düsseldorf, Germany (GMT+1)",
-        add: "Rahmer Strasse 22G, 40489 Düsseldorf",
-        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Dusseldorf.jpg?v=1679406972",
-        testrideSpot: "Düsseldorf",
-        testRideSize: "M, Chord",
-        isPartner: true,
-        noBook: true,
-        availableSizes: [
-          'Carbon 1 Size M/L',
-          'Chord'
-        ],
-        businessHours: [
-          "16:00-19:00",
-          "14:00-20:00",
-          "14:00-20:00",
-          "14:00-20:00",
-          "14:00-20:00",
-          "14:00-20:00",
-          "16:00-19:00",
-        ],
-      },
-      {
         name: 'Zweirad Hofmann',
         phone: '+49 163 2799708',
         email: 'hofmkay@gmail.com',
@@ -287,7 +262,7 @@ const testRides = [
       // 'Urtopia Carbon 1'
     ],
     stores: [
-      {
+      /*{
         name: 'Stefan Gehrke',
         phone: '+49 30-91706139',
         email: 'urtopia@bfnd.de',
@@ -311,7 +286,7 @@ const testRides = [
           "09:00-12:00,12:00-18:00",
           "09:00-12:00,12:00-14:00",
         ],
-      },
+      },*/
       {
         name: 'fahrradladen-wulf',
         phone: '+4930 74737657',
@@ -336,29 +311,6 @@ const testRides = [
           "10:00-12:00,12:00-17:00",
         ],
       },
-      {
-        name: 'Jan Kunkel',
-        phone: '+49 1573 5994077',
-        email: 'urtopiatesten@jan-kunkel.de',
-        timezone: "Berlin, Germany (GMT+1)",
-        add: "Fontanestr, 15366 Neuenhagen bei Berlin",
-        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Berlin.jpg?v=1679406972",
-        testrideSpot: "Berlin",
-        isPartner: true,
-        testRideSize: "M",
-        availableSizes: [
-          'Carbon 1 Size L',
-        ],
-        businessHours: [
-          "10:00-19:00",
-          "10:00-19:00",
-          "10:00-19:00",
-          "10:00-19:00",
-          "10:00-19:00",
-          "10:00-19:00",
-          "10:00-19:00",
-        ],
-      },
     ]
   },
   {
@@ -369,53 +321,28 @@ const testRides = [
       // 'Urtopia Carbon 1'
     ],
     stores: [
-      /*{
-        name: 'Anneke Gabriel',
-        phone: '+49 1717424105',
-        email: 'dominic@2do-digital.de',
-        timezone: "Mainz, Germany (GMT+1)",
-        add: "Schwübb, 22529 Hamburg, Germany",
-        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Hamburg_19874cca-b8ea-4f39-824a-d987e3410a01.jpg?v=1683867163",
+      {
+        name: 'Fahrradretter',
+        phone: '+4915120406095',
+        email: 'info@fahrradretter.com',
+        timezone: "Hamburg, Germany (GMT+1)",
+        add: "Barmbeker Str. 153, 22299 Hamburg",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Fahrradretter.jpg?v=1710295897",
         testrideSpot: "Hamburg",
         testRideSize: "L",
-        isPartner: true,
+        noBook: "Please contact the store directly to arrange test ride",
         availableSizes: [
           'Carbon 1 Size L'
         ],
         businessHours: [
           "",
-          "17:00-20:00",
-          "17:00-20:00",
-          "17:00-20:00",
-          "17:00-20:00",
-          "17:00-20:00",
-          "17:00-20:00",
-        ],
-      },*/
-      {
-        name: 'Matthias Kaltenbach',
-        phone: '+4915772388217',
-        email: 'urtopia.hamburg@outlook.de',
-        timezone: "Mainz, Germany (GMT+1)",
-        add: "Eimsbüttel, 20255 Hamburg",
-        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Hamburg_19874cca-b8ea-4f39-824a-d987e3410a01.jpg?v=1683867163",
-        testrideSpot: "Hamburg",
-        testRideSize: "L,Chord",
-        isPartner: true,
-        availableSizes: [
-          'Carbon 1 Size L',
-          'Chord'
-        ],
-        businessHours: [
-          "14:00-20:00",
-          "14:00-20:00",
-          "",
-          "14:00-20:00",
-          "14:00-17:00",
-          "",
+          "10:00–18:00",
+          "10:00–18:00",
+          "10:00–18:00",
+          "10:00–18:00",
+          "10:00–18:00",
           "",
         ],
-        disableDate: createdisableDates(100, ['2023-9-7', '2023-9-18', '2023-9-24', '2023-9-27', '2023-9-28']),
       },
       {
         name: 'Moritz Falk',
@@ -1411,40 +1338,6 @@ const testRides = [
     ]
   },
   {
-    city: 'Budenheim',
-    cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230814-105334.jpg?v=1691981632',
-    series: [
-      'Urtopia Carbon 1',
-      // 'Urtopia Carbon 1'
-    ],
-    stores: [
-      {
-        name: 'Helmut Riedl',
-        phone: '0176 41451532',
-        email: 'helmut-riedl@web.de',
-        timezone: "Mainz, Germany (GMT+1)",
-        add: "Langstrasse 44, 55257 Budenheim",
-        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230814-105334.jpg?v=1691981632",
-        testrideSpot: "Budenheim",
-        testRideSize: "L, Chord X",
-        availableSizes: [
-          'Carbon 1 Size L',
-          'Chord X',
-        ],
-        businessHours: [
-          "14:00-18:00",
-          "16:00-20:00",
-          "16:00-20:00",
-          "16:00-20:00",
-          "16:00-19:00",
-          "16:00-20:00",
-          "14:00-18:00",
-        ],
-        isPartner: true
-      },
-    ]
-  },
-  {
     city: 'Geldern',
     cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Geldern.jpg?v=1691835197',
     series: [
@@ -1885,7 +1778,7 @@ const testRides = [
         isPartner: true,
       },
       {
-        name: 'les hauts velos',
+        name: 'Les Hauts Vélos',
         phone: '+33 9 73 88 90 96',
         email: 'contact@lhv.store',
         timezone: "Paris, France (GMT+1)",
@@ -1893,7 +1786,7 @@ const testRides = [
         imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/les_hauts_velos.jpg?v=1709087683",
         testrideSpot: "Paris",
         testRideSize: "L, Chord, Chord X, Fusion",
-        noBook: "Please contact the store directly to arrange test ride",
+        noBook: `Please contact the store directly to arrange test ride,or click <a class="my-link" target="_blank" href="https://calendly.com/contact-yne/essai-urtopia">here to Book Online.</a>`,
         availableSizes: [
           'Carbon 1 Size L',
           'Chord',
@@ -1902,7 +1795,7 @@ const testRides = [
         ],
         businessHours: [
           "",
-          "11:00-19:00",
+          "",
           "11:00-19:00",
           "11:00-19:00",
           "11:00-19:00",
@@ -2385,6 +2278,106 @@ const testRides = [
           "9:00–18:00",
           "9:00–18:00",
           "9:00–18:00",
+        ],
+      },
+    ]
+  },
+  {
+    city: 'Twistringen',
+    cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Zweiradcenter_Heuermann.jpg?v=1710295897',
+    series: [
+      'Urtopia Carbon 1',
+    ],
+    stores: [
+      {
+        name: 'Zweiradcenter Heuermann',
+        phone: '+494243 777',
+        email: 'info@zweiradcenter-heuermann.de',
+        timezone: "Twistringen, Germany (GMT+1)",
+        add: "Langenstraße 5/7a, 27239 Twistringen",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Zweiradcenter_Heuermann.jpg?v=1710295897",
+        testrideSpot: "Twistringen",
+        testRideSize: "L",
+        noBook: "Please contact the store directly to arrange test ride",
+        availableSizes: [
+          'Carbon 1 Size L',
+        ],
+        businessHours: [
+          "",
+          "08:00–12:00, 14:00–18:00",
+          "08:00–12:00, 14:00–18:00",
+          "08:00–12:00, 14:00–18:00",
+          "08:00–12:00, 14:00–18:00",
+          "08:00–12:00, 14:00–18:00",
+          "08:00–12:00",
+        ],
+      },
+    ]
+  },
+  {
+    city: 'Lübeck',
+    cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Cult.Bike_Lubeck_GmbH.jpg?v=1710295897',
+    series: [
+      'Urtopia Carbon 1',
+      'Fusion',
+    ],
+    stores: [
+      {
+        name: 'Cult.Bike Lübeck GmbH',
+        phone: '+491743121383',
+        email: 'ben@cult.bike',
+        timezone: "Lübeck, Germany (GMT+1)",
+        add: "Breite Str. 9, 23552 Lübeck",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Cult.Bike_Lubeck_GmbH.jpg?v=1710295897",
+        testrideSpot: "Lübeck",
+        testRideSize: "L",
+        noBook: "Please contact the store directly to arrange test ride",
+        availableSizes: [
+          'Carbon 1 Size L',
+          'Fusion',
+        ],
+        businessHours: [
+          "",
+          "",
+          "10:00-17:00",
+          "10:00-17:00",
+          "10:00-17:00",
+          "10:00-17:00",
+          "10:00-17:00",
+        ],
+      },
+    ]
+  },
+  {
+    city: 'Karlsruhe',
+    cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Vera_Bike.png?v=1710295897',
+    series: [
+      'Urtopia Carbon 1',
+      'Urtopia Carbon 1s',
+    ],
+    stores: [
+      {
+        name: 'Vera Bike',
+        phone: '+4972147008386',
+        email: 'verabike.fahrrad.service@gmail.com',
+        timezone: "Karlsruhe, Germany (GMT+1)",
+        add: "Leopoldstraße 5B, 76133 Karlsruhe",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Vera_Bike.png?v=1710295897",
+        testrideSpot: "Karlsruhe",
+        testRideSize: "L",
+        noBook: "Please contact the store directly to arrange test ride",
+        availableSizes: [
+          'Carbon 1 Size L',
+          'Carbon 1s Size M',
+        ],
+        businessHours: [
+          "",
+          "10:00–13:00, 14:00–18:00",
+          "10:00–13:00, 14:00–18:00",
+          "10:00–13:00, 14:00–18:00",
+          "10:00–13:00, 14:00–18:00",
+          "10:00–13:00, 14:00–18:00",
+          "10:00-14:00",
         ],
       },
     ]

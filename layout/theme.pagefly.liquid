@@ -35,7 +35,6 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
       <meta name="theme-color" content="">
-      <link rel="canonical" href="{{ canonical_url }}">
       <link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
       <link rel="stylesheet" href="https://use.typekit.net/fzb3fxo.css" onload="this.onload=null;this.rel='stylesheet'">
 
@@ -260,6 +259,15 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
       {% include 'dataLayer-allPages' %}
       {{ 'global_config.js' | asset_url | script_tag }}
       
+
+
+
+
+
+
+
+
+
 {% include 'pagefly-app-header' %}</head>
 
     {%- if template.name == 'product' and product.variants[0].metafields.insurance.variant_name -%}
@@ -267,10 +275,7 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
     {%- endif -%}
 
     <body class="gradient{% if is_insurance_product %} is-insurance-product{% endif %}"><div class="pagefly-container">
-            {% capture pagefly_content_for_layout %}
               {{ content_for_layout }}
-            {% endcapture %}
-            {% render 'pagefly-render-section', pagefly_content_for_layout: pagefly_content_for_layout %}
             </div></body>
   {% render 'dialog' %}
   {% render 'global-low-script' %}

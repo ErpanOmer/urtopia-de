@@ -6,7 +6,7 @@
         "type": "text",
         "id": "sale_name",
         "label": "活动名称",
-        "default": "Gear up for Spring Sale"
+        "default": "March into Savings"
       },
       {
         "type": "text",
