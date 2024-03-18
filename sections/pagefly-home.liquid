@@ -6,6 +6,16 @@
         <h3 class="u20Medium_v2">Sporty and Lightweight</h3>
         <a class="my-button my-button-ghost" href="/products/urtopia-carbon-e-bike" target="_blank">Learn More</a>
     </div>
+    <div class="golffffff">
+      <img class="mobileHide" src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/eeeeaaaa_2x_0fa5b0fe-f3eb-450e-9adc-62c97f27a267.jpg?v=1710382852" alt="">
+      <div>
+          <div class="u42Medium_v2">Urtopia & Golf</div>
+          <div class="u20Light_v2"><span class="u20DemiBold_v2">Event Date: </span>2024/03/25~2024/03/26</div>
+          <div class="u20Light_v2"><span class="u20DemiBold_v2">Location: </span>Golfclub Issum-Niederrhein e.V. Pauenweg 68a, 47661 Issum, Germany</div>
+          <div class="u17Medium_v2">Welcome All Urtopians Enjoy happy life on the grass and fresh air in Spring. Click to join the event and get some lucky draws!</div>
+          <div class="my-button">Sign up</div>
+      </div>
+  </div>
     <div class="banner chord">
         <h2 class="u60Medium_v2">Chord</h2>
         <h3 class="u20Medium_v2">Comfort and Elegance</h3>
@@ -94,6 +104,53 @@
         </div>
     </div>
 
+    <dialog id="GolfDialog">
+    <div class="golf-container">
+        <span class="close">✕</span>
+        <div class="booking-shop-content">
+          <div class="shop-name">Book a Test Ride</div>
+          <img class="shop-img" src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_19061_2x_5fe7b497-7e57-4051-bc9b-75f293c5d70d.jpg?v=1710395688" alt="Asheville Custom E-Bikes">
+          <div class="shop-detail">
+            <div class="u30DemiBold">Urtopia & Golf</div>
+            <div class="item">
+                <label class="u20DemiBold">ADD:</label>
+                <span class="u20Medium">Golfclub Issum-Niederrhein e.V. Pauenweg 68a, 47661 Issum, Germany</span>
+            </div>
+            <div class="item">
+                <label class="u20DemiBold">Email:</label>
+                <span class="u20Medium">caoqian@newurtopia.com</span>
+            </div>             
+                    <div class="item">
+                        <label class="u20DemiBold">Date:</label>
+                        <span class="u20Medium">2024/03/25-2024/03/26 <br>10:00-17:00</span>
+                    </div>
+                    <div class="item">
+                        <label class="u20DemiBold">Note:</label>
+                        <span class="u20Medium">After you sign up, you can visit any time during the event period.</span>
+                    </div>
+                    </div>
+            </div>
+            <form class="booking-info-form" action="/contact#ContactFooter" target="_blank" method="post" accept-charset="UTF-8">
+                <div class="form-content">
+                    <div class="form-name">
+                        <div>Name*</div>
+                        <input type="text" name="name" required>
+                    </div>
+                    <div class="form-phone">
+                        <div class="form-title-phone">Phone*</div>
+                        <input type="tel" name="phone_number" required>
+                    </div>
+                    <div class="form-email">
+                        <div class="form-title-email">Email*</div>
+                        <input type="email" name="email" required>
+                    </div>
+                    </div>
+                    <div class="form-button"><button style="border: none;" class="my-button my-button-origin" type="submit">Confirm Booking</button></div>
+                </form>
+            </div>
+    </div>
+</dialog>
+
     <script>
       $('.gotooooooo').click(() => {
         window.open('/blogs/blog')
@@ -105,5 +162,141 @@
 
       $('.test-ride .centeral-content > div[href]').on('click', function () {
         window.open($(this).attr('href'))
+      })
+    </script>
+
+    <script>
+      $('#GolfDialog').find('form').on('submit', function (event) {
+          const forms = []
+          $('.booking-info-form input').each(function () {
+              forms.push($(this).val())
+          })
+
+          fetchBuried('testride', 'submit', {
+              "test_ride_model": "Chord Size High-step</br>Fit for 5’7’’~6’5’’",
+              "name": forms[0],
+              "phone": forms[1],
+              "email": forms[2],
+              "source": "newurtopia.com",
+              "book_time": "2024-03-25 10:00-11:00",
+              "shop_info": {
+                  "name": "Urtopia & Golf",
+                  "phone": "110",
+                  "email": "caoqian@newurtopia.com",
+                  "timezone": "North Carolina, USA (GMT-7)",
+                  "add": "Golfclub Issum-Niederrhein e.V. Pauenweg 68a, 47661 Issum, Germany",
+                  "imgUrl": "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Asheville_Custom_E-Bikes.jpg?v=1709124879",
+                  "testrideSpot": "North Carolina",
+                  "availableSizes": [
+                      "Chord",
+                      "Chord X"
+                  ],
+                  "businessHours": [
+                      "",
+                      "",
+                      "10:00-18:00",
+                      "10:00-18:00",
+                      "10:00-18:00",
+                      "10:00-18:00",
+                      "10:00-18:00"
+                  ],
+                  "country": "USA",
+                  "city": "North Carolina",
+                  "avalibaleDate": "14. Mar",
+                  "tagsText": [
+                      "Shopping And Advising",
+                      "Test Bikes",
+                      "Repairs And Servicing"
+                  ]
+              },
+              "test_ride_time": "2024-03-25 10:00-11:00",
+              "phone_number": forms[1],
+              "spot": "North Carolina",
+              "shop_info": {
+                  "name": "Urtopia & Golf",
+                  "phone": "110",
+                  "email": "caoqian@newurtopia.com",
+                  "timezone": "North Carolina, USA (GMT-7)",
+                  "add": "Golfclub Issum-Niederrhein e.V. Pauenweg 68a, 47661 Issum, Germany",
+                  "imgUrl": "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Asheville_Custom_E-Bikes.jpg?v=1709124879",
+                  "testrideSpot": "North Carolina",
+                  "availableSizes": [
+                      "Chord",
+                      "Chord X"
+                  ],
+                  "businessHours": [
+                      "",
+                      "",
+                      "10:00-18:00",
+                      "10:00-18:00",
+                      "10:00-18:00",
+                      "10:00-18:00",
+                      "10:00-18:00"
+                  ],
+                  "country": "USA",
+                  "city": "North Carolina",
+                  "avalibaleDate": "14. Mar",
+                  "tagsText": [
+                      "Shopping And Advising",
+                      "Test Bikes",
+                      "Repairs And Servicing"
+                  ]
+              },
+
+              "extras": {
+                  "spot": "North Carolina",
+                  "userInfo": {
+                      "name": forms[0],
+                      "phone": forms[1],
+                      "email": forms[2],
+                      "source": "newurtopia.com",
+                      "shop_info": {
+                  "name": "Urtopia & Golf",
+                  "phone": "110",
+                  "email": "caoqian@newurtopia.com",
+                  "timezone": "North Carolina, USA (GMT-7)",
+                  "add": "Golfclub Issum-Niederrhein e.V. Pauenweg 68a, 47661 Issum, Germany",
+                  "imgUrl": "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Asheville_Custom_E-Bikes.jpg?v=1709124879",
+                  "testrideSpot": "North Carolina",
+                  "availableSizes": [
+                      "Chord",
+                      "Chord X"
+                  ],
+                  "businessHours": [
+                      "",
+                      "",
+                      "10:00-18:00",
+                      "10:00-18:00",
+                      "10:00-18:00",
+                      "10:00-18:00",
+                      "10:00-18:00"
+                  ],
+                  "country": "USA",
+                  "city": "North Carolina",
+                  "avalibaleDate": "14. Mar",
+                  "tagsText": [
+                      "Shopping And Advising",
+                      "Test Bikes",
+                      "Repairs And Servicing"
+                  ]
+                  },
+                  "test_ride_model": "Chord Size High-step</br>Fit for 5’7’’~6’5’’",
+                  "test_ride_time": "2024-03-25 10:00-11:00"
+              }
+}
+})
+
+        setTimeout(() => {
+              $('#GolfDialog .close').click()
+        }, 300)
+        
+          event.preventDefault();
+          return false;
+      })
+
+
+      $('.golffffff .my-button').on('click', e => {
+          showDialog(document.getElementById('GolfDialog'))
+          fetchBuried('testride', 'booknow', { store_name: 'Urtopia & Golf' })
       })
     </script>

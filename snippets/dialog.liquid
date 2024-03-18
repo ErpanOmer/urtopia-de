@@ -503,6 +503,13 @@
       if (location.href.includes('/pages/ces')) {
           return
       }
+
+      if (getSearchValues().name && 'index' === '{{ template }}') {
+           
+           setTimeout(() => {
+             $('.golffffff .my-button').click()
+           }, 300)
+       }
       
         showSelectLangDialog().then(showSubscribeEmailDialog).then(showSubscribeEmailMessageBox).then(showExitSubscribeEmailDialog).then(showTestRideDialog).then(console.log)
     })

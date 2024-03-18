@@ -521,3 +521,231 @@ h4 {
         }
     }
 }
+
+
+.golffffff {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 7.5%;
+    align-items: center;
+    background-color: #052400;
+    color: #fff;
+    margin: 20px 0;
+
+    & > div {
+      padding: 5% 0;
+        max-width: 467px;
+
+        .u17Medium_v2 {
+            margin: 5vh 0;
+        }
+
+      .u42Medium_v2 {
+          margin-bottom: 36px;
+      }
+    }
+
+    @media (max-width: 767px) {
+        background: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_23794_2x_74721b92-dc86-43ba-ada0-94b083deb4b2.jpg?v=1710384658') center center/cover no-repeat;
+        grid-template-columns: 1fr;
+        padding: 13.5vw 8vw;
+        text-align: center;
+        margin: 10px 0;
+          height: 175vw;
+          align-items: flex-start;
+
+      & > div {
+        padding: 0;
+        .u42Medium_v2 {
+        font-size: 30px;
+          margin-bottom: 20px;
+      }
+
+      .u17Medium_v2 {
+        font-size: 15px;
+        text-align: left;
+        margin: 20px 0 30px;
+        font-weight: 300;
+      }
+
+      .u20Light_v2 {
+          text-align: left;
+          font-size: 15px;
+
+        .u20DemiBold_v2 {
+            font-size: 15px;
+        }
+      }
+      }
+    }
+}
+
+
+.golf-container {
+    width: 1000px;
+    background-color: #fff;
+    display: grid;
+    border-radius: 10px;
+    overflow: hidden;
+      padding: 35px;
+      grid-template-columns: 1fr 1.15fr;
+      box-shadow: 0 3px 6px #00000029;
+
+    .booking-shop-content {
+
+
+      .shop-name {
+    font: 600 24px / 35px Urbane;
+    margin-bottom: 12px;
+    letter-spacing: 0px;
+    color: #161c1f;
+}
+
+      .shop-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    object-position: center top;
+    border-radius: 10px;
+            object-position: center center;
+}
+
+      .shop-detail {
+    margin: 24px 0;
+}
+
+      .shop-detail .u30DemiBold {
+    line-height: 36px;
+    margin-bottom: 12px;
+}
+
+      .shop-detail .item {
+    display: flex;
+    margin-bottom: 6px;
+}
+
+      .shop-detail label {
+    display: inline-block;
+    min-width: 80px;
+    font-size: 17px;
+}
+
+      .shop-detail .u20Medium {
+    margin-bottom: 6px;
+    font-size: 17px;
+    color: #555;
+    word-break: break-word;
+}
+    }
+
+  .booking-info-form {
+    margin-top: 50px;
+        margin-left: 25px;
+    padding-left: 25px;
+    border-left: 1px solid #eee;
+  }
+
+
+  .booking-info-form .form-content {
+    font: 600 20px / 28px Urbane;
+    letter-spacing: 0px;
+    color: #161c1f;
+
+    & > div {
+      margin-bottom: 15px;
+    }
+
+    input {
+      background: #fff 0% 0% no-repeat padding-box;
+      transition: background-color 5000s;
+      border: 0px;
+      box-shadow: 0 3px 6px #00000029;
+      border-radius: 22px;
+      height: 35px;
+      width: 60%;
+      padding: 10px;
+    }
+}
+
+   .submit-btn {
+          background: #fd4b17 0% 0% no-repeat padding-box;
+          border-radius: 30px;
+          font: 600 15px / 28px Urbane;
+          border: 0px;
+          letter-spacing: 0px;
+          color: #fff;
+          padding: 10px 15px;
+    }
+
+  .close {
+        position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 40px;
+    cursor: pointer;
+    font-weight: 100;
+    display: block;
+    height: 40px;
+    line-height: 40px;
+    width: 40px;
+    text-align: center;
+    font-size: 30px;
+  }
+
+
+  @media (max-width: 767px) {
+        width: 92vw;
+        transform: translateX(-4vw);
+        padding: 4vw 4vw 10vw;
+        grid-template-columns: 1fr;
+        max-height: 85vh;
+        overflow-y: auto;
+
+    .shop-detail {
+      margin-top: 12px !important;
+
+      .u30DemiBold {
+        font-size: 24px;
+      }
+
+      .u20DemiBold {
+        font-size: 15px !important;
+      }
+
+      .u20Medium {
+        font-size: 15px !important;
+      }
+    }
+
+    .shop-img {
+      height: 150px !important;
+    }
+
+    .booking-info-form {
+      padding: 0;
+      margin: 0;
+      border: 0;
+
+      .form-content {
+        & > div {
+          font-size: 15px;
+        }
+      }
+      
+      .form-content input {
+        width: 100%;
+      }
+    }
+
+
+    .close {
+        font-size: 24px;
+          top: 10px;
+        right: 5px;
+  }
+
+    
+  }
+
+  
+}
