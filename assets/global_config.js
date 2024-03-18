@@ -202,7 +202,7 @@ const global_config = {
                   'J. Headset height'
               ],
               [
-                  '<span class="u17DemiBold_v2">Carbon 1</span>',
+                  '<span class="u17DemiBold_v2">Carbon 1/1s</span>',
                   '168-195 cm',
                   '840 mm',
                   '60 mm',
@@ -215,20 +215,20 @@ const global_config = {
                   '180 mm',
                   '100 mm'
               ],
-              [
-                  '<span class="u17DemiBold_v2">Carbon 1s</span>',
-                  '165-190 cm',
-                  '800 mm',
-                  '60 mm',
-                  '1010 mm',
-                  '460 mm',
-                  '1080 mm',
-                  '1810 mm',
-                  '690 mm',
-                  '580 mm',
-                  '170 mm',
-                  '100 mm'
-              ],
+              // [
+              //     '<span class="u17DemiBold_v2">Carbon 1s</span>',
+              //     '165-190 cm',
+              //     '800 mm',
+              //     '60 mm',
+              //     '1010 mm',
+              //     '460 mm',
+              //     '1080 mm',
+              //     '1810 mm',
+              //     '690 mm',
+              //     '580 mm',
+              //     '170 mm',
+              //     '100 mm'
+              // ],
           ]
       },
       specs: [
