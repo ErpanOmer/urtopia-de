@@ -23,6 +23,49 @@
   </div>
 </dialog>
 
+{% if settings.show_easter_sale %}
+    <style>
+        #SubscribeEmailDialog .subscribe {
+            justify-content: center;
+        }
+
+        #SubscribeEmailDialog .u17Light_v2 {
+            margin: 30px 0 60px;
+        }
+
+        @media (max-width: 767px) {
+            #SubscribeEmailDialog .u42DemiBold_v2 {
+                font-size: 30px;
+            }
+
+            #SubscribeEmailDialog .u17Light_v2 {
+                margin: 5vw 0 10vw;
+            }
+        }
+    </style>
+    <dialog id="SubscribeEmailDialog">
+    <div class="subscribe-container">
+        <img class="mobileHide" style="height: 100%;max-width: 100%;object-fit: cover;" src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_23807_2x_5e0975c9-61e9-4deb-acba-81ece50b03ca.jpg?v=1711089874&width=500" alt="">
+        <img class="pcHide" src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_23808_2x_532c30a9-6f0e-4b90-8c7b-623986f08e28.jpg?v=1711089878&width=400" alt="">
+        <div class="subscribe">
+            <span style="color: #FF6F7E;" class="u17DemiBold_v2">Easter Sale</span>
+            <div class="u42DemiBold_v2">Take {{ settings.carbon_ebike_discount_price | money_without_trailing_zeros  }} off<br>On Carbon 1</div>
+            <div class="u17Light_v2">With Free Shipping and 2-year warranty</div>
+
+            <form class="new-contact" action="/contact#ContactFooter" target="_blank" method="post" accept-charset="UTF-8">
+            <div class="email">
+                <input type="hidden" name="form_type" value="customer">
+                <input type="hidden" name="utf8" value="✓">
+                <input type="hidden" name="contact[tags]" value="newsletter">
+                <input placeholder="Enter email here" type="email" name="contact[email]" required>
+                <button class="my-button my-button-black" id="global_email_submit_button" type="submit">Enjoy {{ settings.carbon_ebike_discount_price | money_without_trailing_zeros  }} Off</button>
+            </div>
+        </form>
+        </div>
+        <span class="close">×</span>
+    </div>
+</dialog>
+{% else %}
 <dialog id="SubscribeEmailDialog">
     <div class="subscribe-container">
         <img class="mobileHide" style="height: 100%;max-width: 100%;object-fit: cover;" src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20240130-115140.jpg?v=1706593234&width=500" alt="">
@@ -46,6 +89,7 @@
         <span class="close">×</span>
     </div>
 </dialog>
+{% endif %}
 
 <dialog id="ExitSubscribeEmailDialog">
     <div class="subscribe-container">
