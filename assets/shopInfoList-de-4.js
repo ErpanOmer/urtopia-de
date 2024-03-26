@@ -722,7 +722,7 @@ const testRides = [
         phone: '+491738110685',
         email: 'greenturtle-germany@web.de',
         timezone: "Mainz, Germany (GMT+1)",
-        add: "Weißestr. 2604299 Leipzig",
+        add: "Weißestr. 26 04299 Leipzig",
         imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Sportshop_Bittner.jpg?v=1680923400",
         testrideSpot: "Leipzig",
         testRideSize: "M, Chord",
