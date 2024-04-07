@@ -287,30 +287,6 @@ const testRides = [
           "09:00-12:00,12:00-14:00",
         ],
       },*/
-      {
-        name: 'fahrradladen-wulf',
-        phone: '+4930 74737657',
-        email: 'fahrradladen-wulf@gmx.de',
-        timezone: "Mainz, Germany (GMT+1)",
-        add: "Kopenhagener Straße 73, 10437 Berlin",
-        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/IMG_0821.jpg?v=1680922149",
-        testrideSpot: "Berlin",
-        testRideSize: "L, Chord",
-        noBook: "Please contact the store directly to arrange test ride",
-        availableSizes: [
-          'Carbon 1 Size L',
-          'Chord',
-        ],
-        businessHours: [
-          "",
-          "10:00-12:00,12:00-19:00",
-          "10:00-12:00,12:00-19:00",
-          "10:00-12:00,12:00-19:00",
-          "10:00-12:00,12:00-19:00",
-          "10:00-12:00,12:00-19:00",
-          "10:00-12:00,12:00-17:00",
-        ],
-      },
     ]
   },
   {
@@ -2078,7 +2054,7 @@ const testRides = [
       },
     ]
   },
-  {
+ /* {
     country: 'Netherlands',
     city: 'Amsterdam',
     cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Amsterdam.webp?v=1702381805',
@@ -2088,30 +2064,9 @@ const testRides = [
     ],
     stores: [
       {
-        name: 'Amsterdam Smartphone Service',
-        phone: '+31 6 24666664',
-        email: 'info@amsterdamsmartphoneservice.nl',
-        timezone: "Amsterdam, Netherlands (GMT+1)",
-        add: "Joris Ivensplein 110, 1087 BP Amsterdam, Netherlands",
-        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Screenshot_2023-12-12_at_19.49.02.png?v=1702381805",
-        testrideSpot: "Amsterdam",
-        testRideSize: "L",
-        noBook: "Please contact the store directly to arrange test ride",
-        availableSizes: [
-          'Carbon 1 Size L',
-        ],
-        businessHours: [
-          "",
-          "12:00–18:00",
-          "10:00–18:00",
-          "10:00–18:00",
-          "10:00–20:00",
-          "10:00–18:00",
-          "10:00–18:00",
-        ],
       },
     ]
-  },
+  },*/
   {
     country: 'Denmark',
     city: 'Rodovre',
