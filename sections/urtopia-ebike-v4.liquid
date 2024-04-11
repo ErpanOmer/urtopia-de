@@ -166,7 +166,7 @@
             product_reviews_count: product_reviews_count,
             product_url: product.url,
         %}
-        {% assign product_variants = product.variants | where: "option1", "Shimano Gear" | where: "available" %}
+        {% comment %} {% assign product_variants = product.variants | where: "option1", "Shimano Gear" | where: "available" %}
         {% assign product_reviews_count = 312 %}
         {% render 'product-card-2',
             product_variants: product_variants,
@@ -177,7 +177,7 @@
             product_tags: product_tags,
             product_reviews_count: product_reviews_count,
             product_url: product.url,
-        %}
+        %} {% endcomment %}
         
     </div>
 </div>

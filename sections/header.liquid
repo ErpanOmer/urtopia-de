@@ -178,7 +178,7 @@
                                             </div>
                                             <img src="{{ productttttt.first.featured_image | image_url: width: 300 }}">
                                         </div>
-                                        {% assign productttttt = all_products['urtopia-carbon-e-bike'].variants | where: "title", "Shimano Gear / M / Midnight in Paris" %}
+                                        {% comment %} {% assign productttttt = all_products['urtopia-carbon-e-bike'].variants | where: "title", "Shimano Gear / M / Midnight in Paris" %}
                                         <div class="by-model" href="/pages/e-bike">
                                             <div>
                                               <div class="u14DemiBold_v2">Carbon 1s</div>
@@ -186,7 +186,7 @@
                                               <span class="u14DemiBold_v2 emphasize">{{ productttttt.first.price | minus: settings.carbon1s_ebike_discount_price | money_without_trailing_zeros }}</span>
                                             </div>
                                             <img src="{{ productttttt.first.featured_image | image_url: width: 300 }}">
-                                        </div>
+                                        </div> {% endcomment %}
                                         {% assign productttttt = all_products['urtopia-chord-ebike'].variants | where: "title", "High-Step / White" %}
                                         <div class="by-model" href="/pages/lightweight-commuter-ebike-urtopia-chord">
                                             <div>
@@ -522,14 +522,14 @@
                                           <div class="flex-1"></div>
                                           <span class="u17DemiBold_v2 emphasize" data-price="{{ productttttt.first.price | money_without_trailing_zeros }}">{{ productttttt.first.price | minus: settings.carbon_ebike_discount_price | money_without_trailing_zeros }}</span>
                                       </div>
-                                      {% assign productttttt = all_products['urtopia-carbon-e-bike'].variants | where: "title", "Shimano Gear / M / Midnight in Paris" %}
+                                      {% comment %} {% assign productttttt = all_products['urtopia-carbon-e-bike'].variants | where: "title", "Shimano Gear / M / Midnight in Paris" %}
                                       <div class="by-model" href="/pages/e-bike">
                                           <img src="{{ productttttt.first.featured_image | image_url: width: 500 }}">
                                           <div class="u20DemiBold_v2">Carbon 1s</div>
                                           <div class="u14Light_v2">Lightweight and speedy</div>
                                           <div class="flex-1"></div>
                                           <span class="u17DemiBold_v2 emphasize">{{ productttttt.first.price | minus: settings.carbon1s_ebike_discount_price | money_without_trailing_zeros }}</span>
-                                      </div>
+                                      </div> {% endcomment %}
                                       {% assign productttttt = all_products['urtopia-chord-ebike'].variants | where: "title", "High-Step / White" %}
                                       <div class="by-model" href="/pages/lightweight-commuter-ebike-urtopia-chord">
                                           <img src="{{ productttttt.first.featured_image | image_url: width: 500 }}">
