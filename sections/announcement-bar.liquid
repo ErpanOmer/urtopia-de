@@ -22,12 +22,12 @@
 </script>
 
 {% unless settings.hide_sale_countdown %}  
-  {% if template == "product.pf-d095440b" or template == "page.carbon-ebike-page" or template == "product.pf-8d61060d" %}
+  {% if template == "product.pf-d095440b" or template == "product.pf-8d61060d" %}
       <div id="announcement-bar" class="pcHide"  style="height: 65px;display: flex;flex-direction: column;align-items: center;justify-content: flex-start;text-align: center;">
         {% if template == "product.pf-b10ddb73" or template == "page.pf-47e1b49b" or template == "product.pf-8d61060d" %}
           <div class="u11Light_v2">Promotion Ends in:</div>
         {% else %}
-          <div class="u11Light_v2">{{ settings.sale_name }} ends in:</div>
+          <div class="u11Light_v2"><span>{{ settings.sale_name }}</span> ends in:</div>
         {% endif %}
         <img src="http://i.countdownmail.com/2hppe5.gif"/>
       </div>
