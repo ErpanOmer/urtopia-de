@@ -1065,7 +1065,7 @@ h4 {
 
 .fingerprint {
     background-color: #EDEDED;
-    padding-top: 20vh;
+    padding: 20vh 0;
 
     .centeral-content {
         display: grid;
@@ -1128,7 +1128,7 @@ h4 {
     }
 
     @media (max-width: 1000px) {
-        padding-top: 18vw;
+        padding: 18vw 0;
 
         .centeral-content {
             grid-template-columns: 1fr;

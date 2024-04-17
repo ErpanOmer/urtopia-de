@@ -639,7 +639,7 @@ const changeBikeImage = e => {
         $('select[name="bike_size"]').html('<option value="One Size">One Size</option>')
 
         // 动态渲染Style
-        $('select[name="bike_style"]').html('<option value="">---</option>' + carbon_style.map(v => {
+        $('select[name="bike_style"]').html('<option value="">---</option>' + ['Sirius'].map(v => {
            
 
             return `<option value="${v}">${v}</option>`
