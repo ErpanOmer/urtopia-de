@@ -1,0 +1,12 @@
+{
+  "sections": {
+    "product-fusion": {
+      "type": "product-fusion",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "product-fusion"
+  ]
+}
