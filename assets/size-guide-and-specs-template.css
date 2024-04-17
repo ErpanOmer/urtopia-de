@@ -71,7 +71,7 @@
     padding: 30px 24px 30px 48px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-gap: 10% 10%;
+    grid-gap: 30px 10%;
 }
 
 .size-guide-and-specs-template .specs .content .parameters .boxsss > div {
