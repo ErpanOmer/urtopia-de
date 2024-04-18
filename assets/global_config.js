@@ -604,7 +604,7 @@ const global_config = {
             ["Brakes", "Fusion: TEKTRO HD-M280 disc brakes <br>Fusion CVT: Magura MT4 eSTOP disc brakes"],
             ["Integrated lights", "StVZO headlight"],
             ["Wheels", "28 Inch"],
-            ["Tires", "Tires"]
+            ["Tires", "Schwalbe Big Apple 55-622(28X2.15)"]
           ]
         },
       ]
