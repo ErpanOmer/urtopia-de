@@ -456,7 +456,7 @@
         </div>
         <a
           class="my-button my-button-black"
-          href="/pages/ebike-leasing"
+          href="/pages/ebike-leasing?utm_source=order_page"
           target="_blank">Lease Now</a>
       </div>
     <div></div>
@@ -694,21 +694,18 @@
         
     
         if (type === 'lease_on_jobrad') {
-            fetchBuried('websiteclick', `carbon-order-page`, { button: type }, true)
+            fetchBuried('websiteclick', `fusion-order-page`, { button: type }, true)
     
             t.removeClass('loading')
             t.find('span').html(text)
 
-            const bike_model = current_variant_options.Model === 'Carbon Belt' ? 'carbon1' : 'carbon1s'
-            const bike_style = current_variant_options.Style === 'Vanilla' ? '' : current_variant_options.Style
-
-            const url = window.sessionStorage.localPathPerfix + `/pages/ebike-leasing?bike_model=${bike_model}&bike_size=${current_variant_options.Size}&bike_style=${bike_style}&utm_source=order_page#forms`
+            const url = window.sessionStorage.localPathPerfix + `/pages/ebike-leasing?bike_model=fusion&bike_size=${current_variant_options.Size}&bike_style=${current_variant_options.Style}&utm_source=order_page#forms`
 
             return window.open(url)
         }
     
         if (type === 'klarna_check_out') {
-            fetchBuried('websiteclick', `carbon-order-page`, { button: type, action_type: sessionStorage.carbon_one_a_b_test_flag }, true)
+            fetchBuried('websiteclick', `fusion-order-page`, { button: type }, true)
             window.sessionStorage.clicked_klarna_checkout_button = 'clicked_klarna_checkout_button'
     
             setTimeout(() => {
@@ -834,7 +831,7 @@
 <script>
   $('.emaillllllllllllll').on('submit', function (event) {
         $(this).find('.u17DemiBold_v2').hide()
-        fetchBuried('emailpop', 'submit', { email: $(this).find('input').val(), tag: `US,1pro-order-page` }).finally(() => $(this).find('.u17DemiBold_v2').show())
+        fetchBuried('emailpop', 'submit', { email: $(this).find('input').val(), tag: `DE,fusion-order-page` }).finally(() => $(this).find('.u17DemiBold_v2').show())
 
         event.preventDefault();
         return false;
