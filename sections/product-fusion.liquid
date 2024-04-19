@@ -203,12 +203,15 @@
             </div>
             <div class="accessories">
                 <div class="u17DemiBold_v2 mb12">Accessories</div>
-                <div class="navigate">
-                    <div class="prev"></div>
-                    <div class="next"></div>
-                </div>
+                {% assign products_size = collections['fusion-accessories'].products | size %}
+                {% if products_size > 2 %}
+                  <div class="navigate">
+                      <div class="prev"></div>
+                      <div class="next"></div>
+                  </div>
+                {% endif %}
                 <div class="items mb12">
-                    {% for prod in collections['on-page'].products %}
+                    {% for prod in collections['fusion-accessories'].products %}
                         {% if prod.available %}
                             {% assign variant = prod.variants | first %}
                             <div class="item" variant-id="{{ variant.id }}">

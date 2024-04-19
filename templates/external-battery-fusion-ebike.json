@@ -1,0 +1,12 @@
+{
+    "sections": {
+      "external-battery-fusion-ebike": {
+        "type": "external-battery-fusion-ebike",
+        "settings": {
+        }
+      }
+    },
+    "order": [
+      "external-battery-fusion-ebike"
+    ]
+  }
