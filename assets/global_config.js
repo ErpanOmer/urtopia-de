@@ -593,15 +593,15 @@ const global_config = {
         {
           title: 'General',
           parameters: [
-            ["Weight", "Fusion: From 23 kg <br>Fusion CVT: From 24 kg"],
+            ["Weight", "Fusion: From 23 kg"],
             ["Load-bearing capacity", "Total max load 150 kg"],
             ["Sizes", "One size, suitable for 160-190 cm"],
             ["Body material", "Carbon fiber (frame)"],
             ["Fork", "SR Suntour suspension fork with 100 mm travel"],
-            ["Seat Post", "Fusion: Aluminum seat post <br>Fusion CVT: SR Suntour NCX Suspension"],
-            ["Transmission", "Fusion: Shimano CUES U6000 1X10 Speed <br>Fusion CVT: Enviolo Heavy Duty (Ratio 380%)"],
-            ["Drivetrain", "Fusion: KMC e10 Turbo <br>Fusion CVT: Gates CDX carbon belt"],
-            ["Brakes", "Fusion: TEKTRO HD-M280 disc brakes <br>Fusion CVT: Magura MT4 eSTOP disc brakes"],
+            ["Seat Post", "Fusion: Aluminum seat post"],
+            ["Transmission", "Fusion: Shimano CUES U6000 1X10 Speed"],
+            ["Drivetrain", "Fusion: KMC e10 Turbo"],
+            ["Brakes", "Fusion: TEKTRO HD-M280 disc brakes"],
             ["Integrated lights", "StVZO headlight"],
             ["Wheels", "28 Inch"],
             ["Tires", "Schwalbe Big Apple 55-622(28X2.15)"]
