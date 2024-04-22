@@ -717,6 +717,30 @@ const testRides = [
           "",
         ],
       },
+      {
+        name: 'eBike-Haus.de GmbH',
+        phone: '+4934197854310',
+        email: 'Leipzig@eBike-Haus.de',
+        timezone: "Mainz, Germany (GMT+1)",
+        add: "Johannispl. 21, 04103 Leipzig",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/output_3.png?v=1713578299",
+        testrideSpot: "Leipzig",
+        testRideSize: "M, Chord",
+        noBook: "Please contact the store directly to arrange test ride",
+        availableSizes: [
+          'Carbon 1 Size L',
+          'Chord X',
+        ],
+        businessHours: [
+          "",
+          "",
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-18:00",
+        ],
+      },
     ]
   },
   {
@@ -2333,6 +2357,141 @@ const testRides = [
           "10:00–13:00, 14:00–18:00",
           "10:00–13:00, 14:00–18:00",
           "10:00-14:00",
+        ],
+      },
+    ]
+  },
+  {
+    city: 'Straßfurt',
+    cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/output_0195b73d-a545-4779-9a0a-df436b012662.png?v=1713577278',
+    series: [
+      'Urtopia Carbon 1',
+      'Urtopia Carbon 1s',
+    ],
+    stores: [
+      {
+        name: 'Yellow Car Store',
+        phone: '+49 178 8887172',
+        email: 'marcus-korte@gmx.de',
+        timezone: "Straßfurt, Germany (GMT+1)",
+        add: "Am Steinbruch 8, 39418 Staßfurt",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/output_0195b73d-a545-4779-9a0a-df436b012662.png?v=1713577278",
+        testrideSpot: "Straßfurt",
+        testRideSize: "L",
+        // noBook: "Please contact the store directly to arrange test ride",
+        availableSizes: [
+          'Carbon 1 Size L'
+        ],
+        businessHours: [
+          "",
+          "07:30–18:30",
+          "07:30–18:30",
+          "07:30–18:30",
+          "07:30–18:30",
+          "07:30–18:30",
+          "",
+        ],
+      },
+    ]
+  },
+  {
+    city: 'Oberursel',
+    cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/output_1.png?v=1713577697',
+    series: [
+      'Urtopia Carbon 1',
+      'Urtopia Carbon 1s',
+    ],
+    stores: [
+      {
+        name: 'City Zweirad Oberursel',
+        phone: '06171 57281',
+        email: 'team@cityzweirad.de',
+        timezone: "Oberursel, Germany (GMT+1)",
+        add: "Korfstr. 2 · 61440 Oberursel",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/output_1.png?v=1713577697",
+        testrideSpot: "Oberursel",
+        testRideSize: "L",
+        // noBook: "Please contact the store directly to arrange test ride",
+        availableSizes: [
+          'Carbon 1 Size L',
+          'Chord',
+          'Fusion'
+        ],
+        businessHours: [
+          "",
+          "10:00–18:00",
+          "10:00–18:00",
+          "10:00–18:00",
+          "10:00–18:00",
+          "10:00–18:00",
+          "10:00–18:00",
+        ],
+      },
+    ]
+  },
+  {
+    city: 'Mönchengladbach',
+    cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/output_2.png?v=1713578059',
+    series: [
+      'Urtopia Carbon 1',
+      'Urtopia Carbon 1s',
+    ],
+    stores: [
+      {
+        name: 'Fahrradhaus Özdin',
+        phone: '+492166 1471576',
+        email: 'oezdin-fahrraeder@arcor.de',
+        timezone: "Mönchengladbach, Germany (GMT+1)",
+        add: "Stapper Weg 65 41199 Mönchengladbach",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/output_2.png?v=1713578059",
+        testrideSpot: "Mönchengladbach",
+        testRideSize: "L",
+        // noBook: "Please contact the store directly to arrange test ride",
+        availableSizes: [
+          'Carbon 1 Size L',
+        ],
+        businessHours: [
+          "",
+          "09:30–18:00",
+          "09:30–18:00",
+          "09:30–18:00",
+          "09:30–18:00",
+          "09:30–18:00",
+          "09:30–14:00",
+        ],
+      },
+    ]
+  },
+  {
+    city: 'Wolfhagen',
+    cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/output_2.png?v=1713578059',
+    series: [
+      'Urtopia Carbon 1',
+      'Urtopia Carbon 1s',
+    ],
+    stores: [
+      {
+        name: 'Autohaus Güde GmbH & Co. KG',
+        phone: '+49569298650',
+        email: 'info@autohausguede.fsoc.de',
+        timezone: "Wolfhagen, Germany (GMT+1)",
+        add: "Kurfürstenstraße 59, 34466 Wolfhagen",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/31ebc4370166f179d3bfdc3e4fceb5b0.jpg?v=1713578620",
+        testrideSpot: "Wolfhagen",
+        testRideSize: "L",
+        // noBook: "Please contact the store directly to arrange test ride",
+        availableSizes: [
+          'Carbon 1 Size L',
+          'Chord X'
+        ],
+        businessHours: [
+          "",
+          "08:00–18:00",
+          "08:00–18:00",
+          "08:00–18:00",
+          "08:00–18:00",
+          "08:00–18:00",
+          "09:00–12:00",
         ],
       },
     ]
