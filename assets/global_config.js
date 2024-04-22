@@ -584,9 +584,9 @@ const global_config = {
           title: 'Power',
           parameters: [
             ["Motor", "Mid-Drive Motor (Bafang), 36V 250W, 95Nm"],
-            ["Speed modes", "Pedal, Eco, Comfort, Sport, Turbo"],
+            ["Speed modes", "Pedal, Eco, Comfort, Sport"],
             ["Top speed (assisted)", "25 km/h"],
-            ["Range", "Up to 120 km"],
+            ["Range", "Up to 140 km"],
             ["Removable battery", "529.2 Wh, 21700 Samsung Li-ion"]
           ]
         },

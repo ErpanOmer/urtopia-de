@@ -2,12 +2,11 @@
 {% assign carbon1s = "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18841_2x_d1bd8de1-5910-454a-9271-306815705052.png?v=1694070547" %}
 {% assign chord = "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18589_2x_4ca8137f-ac74-49c3-b2c4-a523904d4bf7.png?v=1694070560" %}
 {% assign chordx = "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18840_2x_d185d12d-30c6-4959-8197-bf586c703aae.png?v=1694070555" %}
-{% assign carbonwhiteglow = "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20231125-151802.png?v=1700896701" %}
+{% assign fusion = "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20240420-111342.png?v=1713582840" %}
 
-<link rel="preload" href="{{ carbon1s }}" as="image">
 <link rel="preload" href="{{ chord }}" as="image">
 <link rel="preload" href="{{ chordx }}" as="image">
-<link rel="preload" href="{{ carbonwhiteglow }}" as="image">
+<link rel="preload" href="{{ fusion }}" as="image">
 
 {{ 'leasing-add.scss.css' | asset_url | stylesheet_tag }}
 
@@ -42,7 +41,7 @@
     <div class="centeral-content top-content">
         <div class="select">
             <select>
-                <!--<option value="carbonwhiteglow">Urtopia White Glow</option>-->
+                <option value="fusion">Urtopia Fusion</option>
                 <option value="carbon1">Urtopia Carbon 1</option>
                 <!-- <option value="carbon1s">Urtopia Carbon 1s</option> -->
                 <option value="chord">Urtopia Chord</option>
@@ -642,37 +641,83 @@ $('.partners .items').html(swiperItems.map(item => `
     })
 
     const switch_bike = {
-        carbonwhiteglow: {
-            background_image: `{{ carbonwhiteglow }}`,
-            price: `{{ all_products['carbon-1-christmas-special'].price | money_without_trailing_zeros  }}`,
-            orginal_price: `{{ all_products['carbon-1-christmas-special'].price | money_without_trailing_zeros  }}`,
-            discount_price: `{{ settings.carbon_ebike_discount_price | money_without_trailing_zeros }}`,
-            box1_svg_image: `https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18449_2x_8fc05a36-e73b-4c68-8462-5cdfa6cea6b3.png?v=1683702610`,
-            box1_text1: 'Carbon Fiber',
-            box1_text2: '15 kg',
-            box2_svg_image: `https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18448_2x_d3fbd8a8-d1e2-4a84-b4eb-ce513f342438.png?v=1683705373`,
-            box2_text1: 'No maintaining Up to',
-            box2_text2: '30,000 km',
-            box3_svg_image: `https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18447_2x_532d80bf-4f0d-48a9-b2c6-81212b652ad7.png?v=1683705337`,
-            box3_text1: 'Range',
-            box3_text2: '100 km',
-            link: '/products/carbon-1-christmas-special'
+        fusion: {
+            background_image: `{{ fusion }}`,
+            price: `{{ all_products['urtopia-fusion-carbon-ebike'].price | money_without_trailing_zeros  }}`,
+            orginal_price: `{{ all_products['urtopia-fusion-carbon-ebike'].price | money_without_trailing_zeros  }}`,
+            discount_price: `€0`,
+            link: '/products/urtopia-fusion-carbon-ebike',
+            boxs: [
+                [
+                    'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_19081_2x_5c60afa2-856a-4072-a4e0-0a14cdd3a1b2.png?v=1713332294',
+                    '240 Km Range',
+                    'Dual Battery'
+                ],
+                [
+                    'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_19079_2x_6644bb87-6adc-4331-80b3-cf774cead9d8.png?v=1713332300',
+                    '95 Nm Torque',
+                    'Mid-drive Motor'
+                ],
+                [
+                    'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_19076_2x_32e66de0-9493-4b19-8de7-96d05652814a.png?v=1713332289',
+                    'Lightweight e-SUV',
+                    'Toray Carbon Fiber'
+                ],
+                [
+                    'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_19077_2x_57e363c9-f6d7-42ff-abb9-73b5e328d545.png?v=1713332306',
+                    'Fat Tires',
+                    'All-Terrain'
+                ],
+                [
+                    'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_19078_2x_55843080-6529-4b77-b25a-b9e95befd7d1.png?v=1713332311',
+                    'Adaptive',
+                    'Torque Sensor'
+                ],
+                [
+                    'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_19080_2x_95a5db88-b46a-4bd8-bc03-42fbf5f53967.png?v=1713332317',
+                    'Anti-theft',
+                    'GPS Tracking'
+                ]
+            ]
         },
         carbon1: {
             background_image: `{{ carbon1 }}`,
             price: `{{ all_products['urtopia-carbon-e-bike'].price | minus: settings.carbon_ebike_discount_price | money_without_trailing_zeros  }}`,
             orginal_price: `{{ all_products['urtopia-carbon-e-bike'].price | money_without_trailing_zeros  }}`,
             discount_price: `{{ settings.carbon_ebike_discount_price | money_without_trailing_zeros }}`,
-            box1_svg_image: `https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18449_2x_8fc05a36-e73b-4c68-8462-5cdfa6cea6b3.png?v=1683702610`,
-            box1_text1: 'Carbon Fiber',
-            box1_text2: '15 kg',
-            box2_svg_image: `https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18448_2x_d3fbd8a8-d1e2-4a84-b4eb-ce513f342438.png?v=1683705373`,
-            box2_text1: 'No maintaining Up to',
-            box2_text2: '30,000 km',
-            box3_svg_image: `https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18447_2x_532d80bf-4f0d-48a9-b2c6-81212b652ad7.png?v=1683705337`,
-            box3_text1: 'Range',
-            box3_text2: '100 km',
-            link: '/products/urtopia-carbon-e-bike?variant=42615025369304'
+            link: '/products/urtopia-carbon-e-bike?variant=42615025369304',
+            boxs: [
+                [
+                    'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18449_2x_8fc05a36-e73b-4c68-8462-5cdfa6cea6b3.png?v=1683702610',
+                    'Carbon Fiber',
+                    '15 kg'
+                ],
+                [
+                    'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18448_2x_d3fbd8a8-d1e2-4a84-b4eb-ce513f342438.png?v=1683705373',
+                    'No maintaining Up to',
+                    '30,000 km'
+                ],
+                [
+                    'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18447_2x_532d80bf-4f0d-48a9-b2c6-81212b652ad7.png?v=1683705337',
+                    'Range',
+                    '100 km'
+                ],
+                [
+                    'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18446_2x_e64c38e1-535a-401d-a722-cbe2b3b4e450.png?v=1683705358',
+                    'Anti-theft',
+                    'GPS Tracking'
+                ],
+                [
+                    'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18450_2x_3726a023-532f-459e-826b-ecc6a1d3502c.png?v=1683705347',
+                    'Smart App',
+                    'iOS, Android'
+                ],
+                [
+                    'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18445_2x_8378bdff-585c-4ae2-a3f9-f557107230d8.png?v=1683705353',
+                    'Adaptive',
+                    'Torque Sensor'
+                ]
+            ],
         },
       /*
         carbon1s: {
@@ -697,15 +742,38 @@ $('.partners .items').html(swiperItems.map(item => `
             price: `{{ all_products['urtopia-chord-ebike'].price | minus: settings.chord_ebike_discount_price | money_without_trailing_zeros  }}`,
             orginal_price: `{{ all_products['urtopia-chord-ebike'].price | money_without_trailing_zeros  }}`,
             discount_price: `{{ settings.chord_ebike_discount_price | money_without_trailing_zeros }}`,
-            box1_svg_image: `https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18448_2x_d3fbd8a8-d1e2-4a84-b4eb-ce513f342438.png?v=1683705373`,
-            box1_text1: 'Torque',
-            box1_text2: '45 NM',
-            box2_svg_image: `https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18449_2x_8fc05a36-e73b-4c68-8462-5cdfa6cea6b3.png?v=1683702610`,
-            box2_text1: 'Modes X Gears',
-            box2_text2: '4 x 8',
-            box3_svg_image: `https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18447_2x_532d80bf-4f0d-48a9-b2c6-81212b652ad7.png?v=1683705337`,
-            box3_text1: 'Range',
-            box3_text2: '120 km',
+            boxs: [
+                [
+                    'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18448_2x_d3fbd8a8-d1e2-4a84-b4eb-ce513f342438.png?v=1683705373',
+                    'Torque',
+                    '45 NM'
+                ],
+                [
+                    'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18449_2x_8fc05a36-e73b-4c68-8462-5cdfa6cea6b3.png?v=1683702610',
+                    'Modes X Gears',
+                    '4 x 8'
+                ],
+                [
+                    'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18447_2x_532d80bf-4f0d-48a9-b2c6-81212b652ad7.png?v=1683705337',
+                    'Range',
+                    '120 km'
+                ],
+                [
+                    'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18446_2x_e64c38e1-535a-401d-a722-cbe2b3b4e450.png?v=1683705358',
+                    'Anti-theft',
+                    'GPS Tracking'
+                ],
+                [
+                    'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18450_2x_3726a023-532f-459e-826b-ecc6a1d3502c.png?v=1683705347',
+                    'Smart App',
+                    'iOS, Android'
+                ],
+                [
+                    'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18445_2x_8378bdff-585c-4ae2-a3f9-f557107230d8.png?v=1683705353',
+                    'Adaptive',
+                    'Torque Sensor'
+                ]
+            ],
             link: '/products/urtopia-chord-ebike?variant=43705718997208'
         },
         chordx: {
@@ -713,15 +781,38 @@ $('.partners .items').html(swiperItems.map(item => `
             price: `{{ all_products['urtopia-chord-ebike'].price | minus: settings.chord_ebike_discount_price | money_without_trailing_zeros  }}`,
             orginal_price: `{{ all_products['urtopia-chord-ebike'].price | money_without_trailing_zeros  }}`,
             discount_price: `{{ settings.chord_ebike_discount_price | money_without_trailing_zeros }}`,
-            box1_svg_image: `https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18448_2x_d3fbd8a8-d1e2-4a84-b4eb-ce513f342438.png?v=1683705373`,
-            box1_text1: 'Torque',
-            box1_text2: '45 NM',
-            box2_svg_image: `https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18449_2x_8fc05a36-e73b-4c68-8462-5cdfa6cea6b3.png?v=1683702610`,
-            box2_text1: 'Modes X Gears',
-            box2_text2: '4 x 8',
-            box3_svg_image: `https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18447_2x_532d80bf-4f0d-48a9-b2c6-81212b652ad7.png?v=1683705337`,
-            box3_text1: 'Range',
-            box3_text2: '120 km',
+            boxs: [
+                [
+                    'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18448_2x_d3fbd8a8-d1e2-4a84-b4eb-ce513f342438.png?v=1683705373',
+                    'Torque',
+                    '45 NM'
+                ],
+                [
+                    'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18449_2x_8fc05a36-e73b-4c68-8462-5cdfa6cea6b3.png?v=1683702610',
+                    'Modes X Gears',
+                    '4 x 8'
+                ],
+                [
+                    'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18447_2x_532d80bf-4f0d-48a9-b2c6-81212b652ad7.png?v=1683705337',
+                    'Range',
+                    '120 km'
+                ],
+                [
+                    'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18446_2x_e64c38e1-535a-401d-a722-cbe2b3b4e450.png?v=1683705358',
+                    'Anti-theft',
+                    'GPS Tracking'
+                ],
+                [
+                    'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18450_2x_3726a023-532f-459e-826b-ecc6a1d3502c.png?v=1683705347',
+                    'Smart App',
+                    'iOS, Android'
+                ],
+                [
+                    'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18445_2x_8378bdff-585c-4ae2-a3f9-f557107230d8.png?v=1683705353',
+                    'Adaptive',
+                    'Torque Sensor'
+                ]
+            ],
             link: '/products/urtopia-chord-ebike?variant=43705719062744'
         }
     }
@@ -732,44 +823,27 @@ $('.partners .items').html(swiperItems.map(item => `
         $('.parameters .bottom-content .sale-tag').text(`${v.discount_price} OFF`)
 
         $('.parameters .bottom-content .background-image').css({ "background-image": `url('${v.background_image}')` })
-            $('.parameters .bottom-content .boxs > div:nth-child(1)').replaceWith(`<div>
-                      <img src="${v.box1_svg_image}"
-                          alt="">
-                      <div>
-                          <div class="u11Light_v2">${v.box1_text1}</div>
-                          <div class="u17DemiBold_v2">${v.box1_text2}</div>
-                      </div>
-                  </div>`)
-            $('.parameters .bottom-content .boxs > div:nth-child(2)').replaceWith(`<div>
-                <img src="${v.box2_svg_image}"
-                    alt="">
-                <div>
-                    <div class="u11Light_v2">${v.box2_text1}</div>
-                    <div class="u17DemiBold_v2">${v.box2_text2}</div>
-                </div>
-            </div>`)
 
-            $('.parameters .bottom-content .boxs > div:nth-child(3)').replaceWith(`<div>
-                <img src="${v.box3_svg_image}"
-                    alt="">
-                <div>
-                    <div class="u11Light_v2">${v.box3_text1}</div>
-                    <div class="u17DemiBold_v2">${v.box3_text2}</div>
-                </div>
-            </div>`)
+        $('.parameters .bottom-content .boxs > div').each(function (index) {
+            const [src, text1, text2] = v.boxs[index]
 
-            $('.parameters .bottom-content .buttons .my-button-white').text(`Shop Online(${v.price})`)
-            $('.parameters .bottom-content .buttons .my-button-white').attr('href', v.link)
+            $(this).find('img').attr('src', src)
+            $(this).find('.u11Light_v2').text(text1)
+            $(this).find('.u17DemiBold_v2').text(text2)
+        })
 
-            if (v.discount_price === '€0') {
-                $('.parameters .bottom-content .sale-tag').css('opacity', 0)
-                $('.parameters .bottom-content .product-price').css('font-size', '34px')
-                $('.parameters .bottom-content .product-price').attr('data-price', "")
-            } else {
-                $('.parameters .bottom-content .sale-tag').css('opacity', 1)
-                $('.parameters .bottom-content .product-price').css('font-size', '30px')
-                $('.parameters .bottom-content .product-price').attr('data-price', v.orginal_price)
-            }
+        $('.parameters .bottom-content .buttons .my-button-white').text(`Shop Online(${v.price})`)
+        $('.parameters .bottom-content .buttons .my-button-white').attr('href', v.link)
+
+        if (v.discount_price === '€0') {
+            $('.parameters .bottom-content .sale-tag').css('opacity', 0)
+            $('.parameters .bottom-content .product-price').css('font-size', '34px')
+            $('.parameters .bottom-content .product-price').attr('data-price', "")
+        } else {
+            $('.parameters .bottom-content .sale-tag').css('opacity', 1)
+            $('.parameters .bottom-content .product-price').css('font-size', '30px')
+            $('.parameters .bottom-content .product-price').attr('data-price', v.orginal_price)
+        }
     }
 
 

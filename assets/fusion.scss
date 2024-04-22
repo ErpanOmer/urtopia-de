@@ -19,6 +19,66 @@ h4 {
     margin: 0;
 }
 
+#launcher {
+    bottom: 65px!important;
+}
+
+.top-fixed {
+    position: sticky;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 2;
+    background-color: #fff;
+    box-shadow: 0 3px 6px #00000014;
+    transition: top .4s ease,transform .4s ease,box-shadow .4s ease,-webkit-transform .4s ease,-webkit-box-shadow .4s ease;
+
+    .centeral-content {
+        height: 70px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        & > div {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+        }
+
+        .my-button {
+            margin-left: 15px;
+        }
+    }
+}
+
+.bottom-fixed {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2vw;
+    z-index: 999998;
+    width: 100vw;
+    background-color: #fff;
+    box-shadow: 0 3px 6px #00000014;
+    border-top: 1px solid rgba(0,0,0,.16);
+    transition: top .4s ease,transform .4s ease,box-shadow .4s ease,-webkit-transform .4s ease,-webkit-box-shadow .4s ease;
+
+    & > div {
+        display: flex;
+        flex-direction: column;
+        text-align: right;
+
+        .u17DemiBold_v2 {
+            margin-right: 6px;
+        }
+    }
+}
+
 
 .emaillllllllllllll {
     display: flex;

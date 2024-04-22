@@ -1604,7 +1604,7 @@ h4 {
             }
 
             &:nth-child(3) {
-                background: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Screenshot_2023-03-07_at_10.11.44_2x_33bd91c3-c646-4808-8ac8-2b7807903610.jpg?v=1713339428') center center/cover no-repeat;
+                background: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20240419-172035.jpg?v=1713518465') center center/cover no-repeat;
                 padding-bottom: 80%;
             }
 
@@ -1664,7 +1664,6 @@ h4 {
                 div {
                     display: flex;
                     align-items: center;
-                    margin-top: 10%;
 
                     span {
                         &:first-child {
@@ -1672,6 +1671,10 @@ h4 {
                             margin-right: 16px;
                         }
                     }
+                }
+
+                div + div {
+                    margin-top: 10%;
                 }
             }
         }
@@ -1833,6 +1836,7 @@ h4 {
                 &:nth-child(4) {
                     height: auto;
                     padding: 60px 30px 75%;
+                    justify-content: flex-start;
                 }
 
                 &:nth-child(3) {
@@ -1884,6 +1888,7 @@ h4 {
 
                     &:nth-child(3) {
                         background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_23924_2x_b621a966-90d2-49b2-a5c8-5bfac4e0fbfd.jpg?v=1713409466');
+                        height: 145vw !important;
                     }
     
                     &:nth-child(4) {

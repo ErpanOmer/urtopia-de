@@ -56,11 +56,11 @@
                     </div>
                     <div>
                         <img class="lozad" data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_19081_2x_5c60afa2-856a-4072-a4e0-0a14cdd3a1b2.png?v=1713332294"/>
-                        <span><span class="u14Light_v2">200 Km Range</span><span class="u17DemiBold_v2">Dual Battery</span></span>
+                        <span><span class="u14Light_v2">240 Km Range</span><span class="u17DemiBold_v2">Dual Battery</span></span>
                     </div>
                     <div>
                         <img class="lozad" data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_19079_2x_6644bb87-6adc-4331-80b3-cf774cead9d8.png?v=1713332300"/>
-                        <span><span class="u14Light_v2">90 Nm Torque</span><span class="u17DemiBold_v2">Mid-drive Motor</span></span>
+                        <span><span class="u14Light_v2">95 Nm Torque</span><span class="u17DemiBold_v2">Mid-drive Motor</span></span>
                     </div>
                     <div>
                         <img class="lozad" data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_19077_2x_57e363c9-f6d7-42ff-abb9-73b5e328d545.png?v=1713332306"/>
@@ -246,13 +246,13 @@
                     >
                     <i class="fa fa-spinner fa-spin"></i><span data-pf-type="Text" class="addToCartText u17DemiBold_v2">Add to Cart</span>
                 </div>
-                <div onclick="testRideTrace('lease_on_jobrad', this)" class="orderTestRideBtn jobrad">
+                {% comment %} <div onclick="testRideTrace('lease_on_jobrad', this)" class="orderTestRideBtn jobrad">
                     <img class="oneeee lozad" data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/JobRad_Logo_Anthrazit_RGB_4x_2x_4d61b30b-1ef4-492f-a670-734913ec7b54.png?v=1705477646"/>
-                    <span><span class="u17DemiBold_v2">TAX FREE Leasing</span><span>36 months, €70/month</span></span>
-                  </div>
+                    <span><span class="u17DemiBold_v2">TAX FREE Leasing</span><span>36 {{ 'order_page.months' | t }}, €70{{ 'checkout_klarna.month' | t }}</span></span>
+                  </div> {% endcomment %}
                   <div onclick="testRideTrace('klarna_check_out', this)" class="orderTestRideBtn">
                     <img class="twoooo lozad" data-src="https://cdn.shopifycdn.net/s/files/1/0633/2068/6808/files/20230530-121400.png?v=1685420054"/>
-                    <span><span class="u17DemiBold_v2">0% APR Financing</span><span>24 months, <span class="stages">{{ product.price | divided_by: 24 | money_without_trailing_zeros }}</span>/month</span></span>
+                    <span><span class="u17DemiBold_v2">0% APR Financing</span><span>24 {{ 'order_page.months' | t }}, <span class="stages">{{ product.price | divided_by: 2400 | floor | times : 100 | money_without_trailing_zeros }}</span>{{ 'checkout_klarna.month' | t }}</span></span>
                 </div>
             </div>
             <div class="delivery_time mb12">Free shipping in mid-August</div>
@@ -294,11 +294,11 @@
                     
                     <div>
                         <img class="lozad" data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_19081_2x_5c60afa2-856a-4072-a4e0-0a14cdd3a1b2.png?v=1713332294"/>
-                        <span><span class="u14Light_v2">200 Km Range</span><span class="u17DemiBold_v2">Dual Battery</span></span>
+                        <span><span class="u14Light_v2">240 Km Range</span><span class="u17DemiBold_v2">Dual Battery</span></span>
                     </div>
                     <div>
                         <img class="lozad" data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_19079_2x_6644bb87-6adc-4331-80b3-cf774cead9d8.png?v=1713332300"/>
-                        <span><span class="u14Light_v2">90 Nm Torque</span><span class="u17DemiBold_v2">Mid-drive Motor</span></span>
+                        <span><span class="u14Light_v2">95 Nm Torque</span><span class="u17DemiBold_v2">Mid-drive Motor</span></span>
                     </div>
                     <div>
                         <img class="lozad" data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_19077_2x_57e363c9-f6d7-42ff-abb9-73b5e328d545.png?v=1713332306"/>
@@ -381,10 +381,10 @@
           <div>
             <h2 class="u30Medium_v2">Effortless Terrain Mastery</h2>
             <p class="u17Light_v2">
-              <span>With a robust 90Nm middle motor and wide range gears, the Fusion smoothly tackles hills and trails. <br><br>Enhanced by fat tires that provide excellent traction and stability, it’s ready for a ride navigating gravel paths and venturing off-road onto rugged trails.</span>
+              <span>With a robust 95Nm middle motor and wide range gears, the Fusion smoothly tackles hills and trails. <br><br>Enhanced by fat tires that provide excellent traction and stability, it’s ready for a ride navigating gravel paths and venturing off-road onto rugged trails.</span>
             </p>
             <ul class="u24Medium_v2">
-                <li>90 Nm Torque</li>
+                <li>95 Nm Torque</li>
                 <li>Intuitive mid-drive motor</li>
                 <li>Integrated Torque Sensor</li>
             </ul>
@@ -401,11 +401,11 @@
             <h2 class="u30Medium_v2">Embrace Extended Adventures</h2>
             <p class="u17Light_v2">
                 <span>
-                    Confidently embark on long-distance journeys with Fusion’s extensive range up to 200 km (Dual Battery) and dependable hydraulic disc brakes for superior all-weather control during extended rides.
+                    Confidently embark on long-distance journeys with Fusion’s extensive range up to 240 km (Dual Battery) and dependable hydraulic disc brakes for superior all-weather control during extended rides.
                 </span>
             </p>
             <ul class="u24Medium_v2">
-                <li>200 Km All-day range</li>
+                <li>240 Km All-day range</li>
                 <li>Dual Battery option (900 Wh)</li>
             </ul>
         </div>
@@ -566,7 +566,7 @@
       <span class="u17Light_v2"><span class="u20DemiBold_v2 emphasize" style="font-weight: 600;">{{ product.price | money }}</span> {% unless product.compare_at_price == product.price %}
         <span style="text-decoration: line-through;">{{ product.compare_at_price | money }}</span>
     {% endunless %}</span>
-      <span class="u14Light_v2">or as low as {{ product.price | divided_by: 24 | money_without_trailing_zeros }}/Month</span>
+      <span class="u14Light_v2">or as low as {{ product.price | divided_by: 2400 | floor | times : 100 | money_without_trailing_zeros }}{{ 'checkout_klarna.month' | t }}</span>
     </div>
     <a href="#product_form_{{ product.id }}" class="my-button my-button-origin">Order Now</a>
   </div>
@@ -578,7 +578,7 @@
     <span class="u14Light_v2"><span class="emphasize" style="font-weight: 600;">{{ product.price | money }}</span> {% unless product.compare_at_price == product.price %}
       <span style="text-decoration: line-through;">{{ product.compare_at_price | money }}</span>
   {% endunless %}</span>
-    <span class="u14Light_v2">or as low as {{ product.price | divided_by: 24 | money_without_trailing_zeros }}/Month</span>
+    <span class="u14Light_v2">or as low as {{ product.price | divided_by: 2400 | floor | times : 100 | money_without_trailing_zeros }}{{ 'checkout_klarna.month' | t }}</span>
   </div>
 </div>
 

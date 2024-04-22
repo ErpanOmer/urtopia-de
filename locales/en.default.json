@@ -30,7 +30,8 @@
     "sale": "Sale",
     "style": "Style",
     "size": "Size",
-    "comingsoon": "Coming Soon"
+    "comingsoon": "Coming Soon",
+    "months": "months"
   },
   "general": {
     "password_page": {

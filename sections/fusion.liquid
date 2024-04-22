@@ -1,12 +1,42 @@
-{{ 'pagefly-main.css' | asset_url | stylesheet_tag: preload: true }}
-{{ 'pagefly.d095440b.css' | asset_url | stylesheet_tag: preload: true }}
 {{ 'fusion.scss.css' | asset_url | stylesheet_tag: preload: true }}
+
+{% assign product = all_products['urtopia-fusion-carbon-ebike'] %}
+
+<div class="top-fixed mobileHide">
+    <div class="centeral-content">
+        <span class="u20DemiBold_v2">{{ product.title }}</span>
+        <span class="flex-1"></span>
+        <div>
+            <span class="u17Light_v2"><span class="u20DemiBold_v2 emphasize"
+                    style="font-weight: 600;">{{ product.price | money_without_trailing_zeros }}</span>
+                    {% unless product.compare_at_price == product.price %}
+                        <span style="text-decoration: line-through;">{{ product.compare_at_price | money_without_trailing_zeros }}</span>
+                    {% endunless %}
+                    </span>
+            <span class="u14Light_v2">or as low as {{ product.price | divided_by: 2400 | floor | times : 100 | money_without_trailing_zeros }}/Month</span>
+        </div>
+        <a href="{{ product.url }}" target="_blank" class="my-button my-button-origin" action_type="Buynow_0">order/lease now</a>
+    </div>
+</div>
+<div class="bottom-fixed pcHide">
+    <a href="{{ product.url }}" target="_blank" class="my-button my-button-origin" action_type="Buynow_0">order/lease now</a>
+    <div>
+        <span>
+            <span class="u17DemiBold_v2 emphasize">{{ product.price | money_without_trailing_zeros }}</span>
+            {% unless product.compare_at_price == product.price %}
+                <span class="u11Light_v2" style="text-decoration: line-through;">{{ product.price | money_without_trailing_zeros }}</span>
+            {% endunless %}
+        </span>
+        <span class="u11Light_v2">or as low as {{ product.price | divided_by: 2400 | floor | times : 100 | money_without_trailing_zeros  }}/Month</span>
+    </div>
+</div>
+
 
 <div class="banner">
         <div class="u17Medium_v2">NEW</div>
         <h1>Fusion</h1>
     </div>
-    <div class="pricesssss">
+    {% comment %} <div class="pricesssss">
         <div class="centeral-content">
             <div>
                 <div>
@@ -33,7 +63,7 @@
                 <span class="u20Medium_v2 pcHide" style="color: #0055AA;">{{ 499900 | money_without_trailing_zeros }}</span>
             </div>
         </div>
-    </div>
+    </div> {% endcomment %}
     <div class="function">
         <h2 class="u48DemiBold_v2">“Form Follows Emotion”</h2>
         <p class="u24Light_v2">
@@ -130,14 +160,14 @@
                 <span>
                     Capturing every angle, every line, each detail with unique craftsmanship. To achieve this precision and
                     rigor, top-tier, supercar-grade carbon fiber is the only choice. Showcasing the ultimate beauty of
-                    geometric design. <br><br>Subscribe now to be the first to know!
+                    geometric design. 
                 </span>
             </p>
-            <form class="emaillllllllllllll" accept-charset="UTF-8">
+            {% comment %} <form class="emaillllllllllllll" accept-charset="UTF-8">
                 <input class="u17Medium_v2" placeholder="Enter email here" type="email" name="email" required>
                 <button class="my-button my-button-black" type="submit">Subscribe</button>
                 <span class="u17DemiBold_v2">Thanks for subscribing!</span>
-            </form>
+            </form> {% endcomment %}
         </div>
     </div>
     <div class="way">
@@ -147,16 +177,14 @@
                 <p class="u17Light_v2">
                     <span>
                         The lightweight nature of carbon fiber makes Fusion, even as an SUV e-bike, easy to carry, ensuring
-                        faster acceleration, effortless uphill rides, and more responsive handling. <br><br>Subscribe now to
-                        be the
-                        first to know!
+                        faster acceleration, effortless uphill rides, and more responsive handling. 
                     </span>
                 </p>
-                <form class="emaillllllllllllll" accept-charset="UTF-8">
+                {% comment %} <form class="emaillllllllllllll" accept-charset="UTF-8">
                     <input class="u17Medium_v2" placeholder="Enter email here" type="email" name="email" required>
                     <button class="my-button my-button-black" type="submit">Subscribe</button>
                     <span class="u17DemiBold_v2">Thanks for subscribing!</span>
-                </form>
+                </form> {% endcomment %}
             </div>
             <img class="lozad" data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_23478_2x_b4e06be9-5252-459e-954d-12a208a8397f.jpg?v=1703830750"
                 alt="">
@@ -166,16 +194,16 @@
         <img class="mobileHide lozad" data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_23504_2x_bf75dc3f-e90a-4fd6-86b6-61dd8be82a4c.jpg?v=1703832614" alt="">
         <img class="pcHide lozad" data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_23581_2x_a8f1beba-c6bc-49d1-87ac-f744bdfd65d0.png?v=1703840709" alt="">
         <div>
-            <h2 class="u48Medium_v2">Dual Battery <br>Extended to 200km</h2>
+            <h2 class="u48Medium_v2">Dual Battery <br>Extended to 240km</h2>
             <p class="u17Light_v2">
                 <span>
                     With a 540Wh battery, adding an extra 360Wh transforms it into a range extender. It’s a dual-battery
-                    setup, extending the range to 200km.
+                    setup, extending the range to 240km.
                 </span>
             </p>
             <div class="u60Medium_v2 mobileHide">
-                <span>120<span>km</span></span>
-                <span>+80<span>km</span></span>
+                <span>140<span>km</span></span>
+                <span>+100<span>km</span></span>
             </div>
             <div class="lineeeeeeeeee mobileHide">
                 <div></div>
@@ -259,7 +287,7 @@
     </div>
     <div class="pick">
         <h2 class="u48Medium_v2">Pick Your Way of Gearing</h2>
-        <div class="centeral-content">
+        <div class="centeral-content" style="display: none;">
             <img class="mobileHide lozad" data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20240104-222733.jpg?v=1704378481" alt="">
             <img class="pcHide lozad" data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_23534_2x_b1ec278f-89eb-461f-9101-d6009e07f557.jpg?v=1704266860">
             <div>
@@ -483,14 +511,13 @@
                 <div>
                     <p class="u17Light_v2">
                         <span>Your rides and daily activities offer personalized insights. Our AI companion tailors accurate
-                            recommendations exclusively for you—no more generic advice. <br><br>Subscribe now to be the
-                            first to know!</span>
+                            recommendations exclusively for you—no more generic advice. 
                     </p>
-                    <form class="emaillllllllllllll" accept-charset="UTF-8">
+                    {% comment %} <form class="emaillllllllllllll" accept-charset="UTF-8">
                         <input class="u17Medium_v2" placeholder="Enter email here" type="email" name="email" required="">
                         <button class="my-button my-button-black" type="submit">Subscribe</button>
                         <span class="u17DemiBold_v2">Thanks for subscribing!</span>
-                    </form>
+                    </form> {% endcomment %}
                 </div>
             </div>
             <img class="mobileHide lozad" data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_1171275468_2x_e9b7cb14-5cd5-402a-acb8-a1f69706f41e.png?v=1702278548" alt="">
@@ -498,7 +525,7 @@
         </div>
     </div>
 
-{% render 'carbon-one-size-and-specs3' %}
+    {% render 'size-guide-and-specs-template', config: 'fusion_order_page_config' %}
 <script>
 
     setTimeout(() => {
@@ -566,4 +593,71 @@
         event.preventDefault();
         return false;
     })
+</script>
+
+
+<script>
+  let scrollAction = { x: 'undefined', y: 'undefined' }
+  let scrollDirection = ''
+
+function scrollFunc() {
+  if (typeof scrollAction.x == 'undefined') {
+    scrollAction.x = window.pageXOffset;
+    scrollAction.y = window.pageYOffset;
+  }
+  var diffX = scrollAction.x - window.pageXOffset;
+  var diffY = scrollAction.y - window.pageYOffset;
+  if (diffX < 0) {
+    // Scroll right
+    scrollDirection = 'right';
+  } else if (diffX > 0) {
+    // Scroll left
+    scrollDirection = 'left';
+  } else if (diffY < 0) {
+    // Scroll down
+    scrollDirection = 'down';
+  } else if (diffY > 0) {
+    // Scroll up
+    scrollDirection = 'up';
+  } else {
+    // First scroll event
+  }
+  scrollAction.x = window.pageXOffset;
+  scrollAction.y = window.pageYOffset;
+}
+
+if (!global_config.is_mobile && global_config.is_pc) {
+      window.onscroll = throttle(function (e) {
+      scrollFunc()
+
+      try {
+        if (scrollDirection == 'down') {
+          //页面向下滚动要做的事情
+          // console.log('-====向下滚动了');
+          document.querySelector('.header-wrapper').style.position = 'inherit';
+          $('.top-fixed').css({ top: 0, 'z-index': 3 })
+
+          if ($('.tl-select').hasClass('open')) {
+            $('.tl-select')[0].click()
+          }
+
+          if ($('header-menu details[open]')) {
+            $('header-menu details[open] summary')[0].click()
+          }
+          
+        } else if (scrollDirection == 'up') {
+          //页面向上滚动要做的事情
+          // console.log('-====向上滚动了');
+          document.querySelector('.header-wrapper').style.position = 'fixed';
+          document.querySelector('.header-wrapper').style.top = 0;
+          document.querySelector('.header-wrapper').style.width = '100%';
+          $('.top-fixed').css({ top: '60px', 'z-index': 2 })
+
+          if (scrollAction.y < 80) {
+            document.querySelector('.header-wrapper').style.position = 'inherit';
+          }
+        }
+      } catch (error) {}
+    }, 30);
+}
 </script>

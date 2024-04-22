@@ -4066,6 +4066,16 @@ button.swiper-pagination-bullet {
     width: 100%;
   }
 
+  .hedaer-secondary-menu .centreallllll .bikesssssss > div .tagggg {
+    background-color: #FFE2D9;
+    border-radius: 12px;
+    padding: 5px 8px;
+    color: #FD4B17;
+    position: absolute;
+    top: 0;
+    font: normal normal 600 11px/1em Urbane;
+  }
+
   .hedaer-secondary-menu .centreallllll .bikesssssss > div {
     display: flex;
     flex-direction: column;
@@ -4125,7 +4135,7 @@ button.swiper-pagination-bullet {
   }
 
 
-  @media (max-width: 1500px) {
+  @media (max-width: 1700px) {
     .hedaer-secondary-menu .sale-image {
       display: none;
     }
@@ -4255,6 +4265,16 @@ button.swiper-pagination-bullet {
   color: #fff;
   border-radius: 10px;
   padding: 4vw 4vw 52.25vw;
+}
+
+.hedaer-secondary-menu-mb .bikesssssss > div:first-child > div > .u14DemiBold_v2:not(.emphasize)::after {
+    content: "NEW";
+    background-color: #FFE2D9;
+    border-radius: 12px;
+    padding: 4px 6px;
+    color: #FD4B17;
+    font: normal normal 600 11px / 1em Urbane;
+    margin-left: 8px;
 }
 
 
