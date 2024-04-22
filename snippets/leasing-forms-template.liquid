@@ -131,7 +131,7 @@
                         <option value="">---</option>
                         <!--<option value="carbonwhiteglow">White Glow</option>-->
                         <option value="carbon1">Carbon 1</option>
-                        <!-- <option value="carbon1s">Carbon 1s</option> -->
+                        <option value="fusion">Fusion</option>
                         <option value="chord">Chord</option>
                         <option value="chordx">Chord X</option>
                     </select>
@@ -250,7 +250,8 @@ const bike_model_map = {
     'carbon1s': 'Carbon 1s',
     'chord': 'Chord',
     'chordx': 'Chord X',
-    'carbonwhiteglow': 'White Glow'
+    'carbonwhiteglow': 'White Glow',
+    'fusion': 'Fusion'
 }
 
 
@@ -259,6 +260,7 @@ const ignore = ['submit', 'checkbox', 'image', 'hidden']
 // carbon 产品信息
 const carbon = JSON.parse(JSON.stringify({{ all_products['leasing-urtopia-carbon-1s'] | json }}))
 const chord = JSON.parse(JSON.stringify({{ all_products['leasing-urtopia-chord'] | json }}))
+const fusion = JSON.parse(JSON.stringify({{ all_products['leasing-urtopia-fusion'] | json }}))
 
 // 尺寸信息
 const carbon_model = Array.from(new Set(carbon.variants.map(i => i.option1)))
@@ -267,14 +269,16 @@ const carbon_style = Array.from(new Set(carbon.variants.map(i => i.option3)))
 
 const chord_frame = Array.from(new Set(chord.variants.map(i => i.option1)))
 const chord_style = Array.from(new Set(chord.variants.map(i => i.option2)))
+const fusion_style = Array.from(new Set(fusion.variants.map(i => i.option2)))
 
 // 是否已提交
 let is_submited = false
 // 是否已点击buynow, 为了防止重新提交
 let buynow_clicked = false
 
-console.log('carbon', carbon)
-console.log('chord', chord)
+// console.log('carbon', carbon)
+// console.log('chord', chord)
+console.log('fusion', fusion)
 
 function partnerForAccessoriesDisable (v, isSelect = false) {
         const selectAccessories = $('select[name="accessories"]').val() || []
@@ -371,6 +375,9 @@ function getFormValues (elem = '') {
         if (temp.bike_model.includes("carbonwhiteglow")) {
             temp.variant_id = '44129634484440'
         }
+    } else if (temp.bike_model.includes('fusion')) {
+        temp.variant_id = fusion.variants.find(c => c.title === `${temp.bike_size} / ${temp.bike_style}`)
+        temp.variant_id = temp.variant_id ? temp.variant_id.id : ''
     } else {
         temp.variant_id = chord.variants.find(c => c.title === `${temp.bike_size} / ${temp.bike_style}`)
         temp.variant_id = temp.variant_id ? temp.variant_id.id : ''
@@ -568,19 +575,41 @@ const changeBikeImage = e => {
         return clearBikeImage()
     }
 
-    if (model === 'carbonwhiteglow') {
+    if (model === 'fusion') {
+        const style = $('select[name="bike_style"]').val()
         $('select[name="bike_size"]')[0].disabled = true
-        $('select[name="bike_style"]')[0].disabled = true
+        // $('select[name="bike_style"]')[0].disabled = true
 
-        $('select[name="bike_size"]').html('<option value="fit for 175-195 cm">fit for 175-195 cm</option>')
-        $('select[name="bike_style"]').html('<option value="White Glow">White Glow</option>')
+        $('select[name="bike_size"]').html('<option value="One Size">Fit for 160cm-190cm</option>')
+        $('select[name="bike_style"]').html('<option value="">---</option>' + fusion_style.map(v => {
+            return `<option value="${v}">${v}</option>`
+        }))
 
-        $('.forms form .item input[name="bike_image"]').attr('src', `https://urtopia-de.myshopify.com/cdn/shop/files/1pw_e765a11b-73e6-4503-829c-5a203c15b3d7.png?v=1695624132?v=1700895761&width=400`)
-        $('.forms form .item[name="bike_image"]').show()
-        $('.forms form .item .tips').html('Free shipping within <span>5 working days</span>')
+        // 通过遍历 判断option 是否可用
+        setTimeout(() => {
+            $(`select[name="bike_style"] option`).each((i, item) => {
+            const v = item.value
+    
+            if (i === 0) {
+                return true
+            }
+    
+            const vari = fusion.variants.find(c => c.title === `One Size / ${v}`)
+            item.disabled = !vari ? false : !!!vari.available
+
+            if (item.disabled) {
+                $(item).hide()
+            } else {
+                $(item).show()
+            }
+        })
+        }, 30)
+
+
+        $('.forms form .item .tips').html('Free shipping in mid-August')
 
         // 渲染acc
-        $('select[name="accessories"]').html(`{% for product in collections["carbon-1-leasing-acc"].products %}
+        $('select[name="accessories"]').html(`{% for product in collections["fusion-leasing-acc"].products %}
             <option title="{{product.title}}" value="{{product.id}}">{{product.title}}</option>
         {% endfor %}`)
 
@@ -590,7 +619,26 @@ const changeBikeImage = e => {
             partnerForAccessoriesDisable($('select[name="partner"]').val())
         }, 300)
 
-        current_model = 'carbonwhiteglow'
+        if (style) {
+            const find = fusion.variants.find(c => c.title === `One Size / ${style}`)
+
+            console.log('find', find)
+            if (!find || !find.available) {
+                $('select[name="bike_style"]').val('')
+                $('.forms form select[name="bike_size"]').closest('.item').find('.error').html(`<span>Your selection is currently reached our stock limit</span> - {{ 'order_page.size' | t  }}: One Size, {{ 'order_page.style' | t  }}: ${style}`)
+                
+                return clearBikeImage()
+            }
+
+            $('.forms form .item input[name="bike_image"]').attr('src', `${find.featured_image.src}&width=400`)
+            $('.forms form .item[name="bike_image"]').show()
+            $('select[name="bike_style"]').val(style)
+        } else {
+            clearBikeImage()
+        }
+
+
+        current_model = 'fusion'
 
         return 
     }
@@ -636,7 +684,7 @@ const changeBikeImage = e => {
             //return `<option value="${v}">${v} - ${size_map[v]}</option>`
         //}))
 
-        $('select[name="bike_size"]').html('<option value="One Size">One Size</option>')
+        $('select[name="bike_size"]').html('<option value="One Size">Fit for 168-195 cm</option>')
 
         // 动态渲染Style
         $('select[name="bike_style"]').html('<option value="">---</option>' + ['Sirius'].map(v => {
