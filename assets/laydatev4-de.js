@@ -76,6 +76,13 @@ const bike_sizes = [
     size: 'One Size',
     img: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18409_2x_87c499be-99e5-457b-869b-963e270f0ea1.jpg?v=1683614780'
   },
+  {
+    id: 10,
+    name: 'Fusion',
+    fit: 'Fit for 160cm-190cm',
+    size: 'One Size',
+    img: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18886.png?v=1713323995&width=430'
+  },
 ]
 
 function splitTimeFormat(item = '') {
@@ -3363,7 +3370,7 @@ function splitTimeFormat(item = '') {
       let choose = []
 
       for (const size of sizes) {
-        const s = size.split(' ').pop().split('/')
+        // const s = size.split(' ').pop().split('/')
 
          // 如果是1s 车
          if (size.includes('Carbon 1s')) {
@@ -3373,9 +3380,11 @@ function splitTimeFormat(item = '') {
           //   return find
 
           // }).filter(Boolean))
-          choose.push(bike_sizes.find(b => b.id === 8))
+            choose.push(bike_sizes.find(b => b.id === 8))
 
-         } else {
+         } else if (size.includes('Fusion')) {
+            choose.push(bike_sizes.find(b => b.name === size))
+         }  else {
             // 如果是chrod
             if (size.includes('Chord')) {
               if (size.includes('X')) {
