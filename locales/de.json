@@ -28,9 +28,12 @@
     "stock": "auf Lager",
     "out": "Erhältlich in anderen Farben",
     "style": "Stil",
+    "sale": "Sale",
     "size": "Größe",
     "comingsoon": "Demnächst",
-    "months": "Monate"
+    "months": "Monate",
+    "installment": "oder ab {{ installment }} pro Monat",
+    "technical": "Technische Besonderheiten"
   },
   "general": {
     "password_page": {

@@ -31,7 +31,9 @@
     "style": "Style",
     "size": "Size",
     "comingsoon": "Coming Soon",
-    "months": "months"
+    "months": "months",
+    "installment": "or as low as {{ installment }}/Month",
+    "technical": "Technical Specifications"
   },
   "general": {
     "password_page": {

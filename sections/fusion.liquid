@@ -1,6 +1,7 @@
 {{ 'fusion.scss.css' | asset_url | stylesheet_tag: preload: true }}
 
 {% assign product = all_products['urtopia-fusion-carbon-ebike'] %}
+{% assign installment = product.price | divided_by: 2400 | floor | times : 100 | money_without_trailing_zeros %}
 
 <div class="top-fixed mobileHide">
     <div class="centeral-content">
@@ -13,7 +14,7 @@
                         <span style="text-decoration: line-through;">{{ product.compare_at_price | money_without_trailing_zeros }}</span>
                     {% endunless %}
                     </span>
-            <span class="u14Light_v2">or as low as {{ product.price | divided_by: 2400 | floor | times : 100 | money_without_trailing_zeros }}/Month</span>
+            <span class="u14Light_v2">{{ 'order_page.installment' | t: installment: installment }}</span>
         </div>
         <a href="{{ product.url }}" target="_blank" class="my-button my-button-origin" action_type="Buynow_0">order/lease now</a>
     </div>
@@ -27,7 +28,7 @@
                 <span class="u11Light_v2" style="text-decoration: line-through;">{{ product.price | money_without_trailing_zeros }}</span>
             {% endunless %}
         </span>
-        <span class="u11Light_v2">or as low as {{ product.price | divided_by: 2400 | floor | times : 100 | money_without_trailing_zeros  }}/Month</span>
+        <span class="u11Light_v2">{{ 'order_page.installment' | t: installment: installment }}</span>
     </div>
 </div>
 
