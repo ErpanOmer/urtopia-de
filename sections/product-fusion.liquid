@@ -246,10 +246,10 @@
                     >
                     <i class="fa fa-spinner fa-spin"></i><span data-pf-type="Text" class="addToCartText u17DemiBold_v2">Add to Cart</span>
                 </div>
-                {% comment %} <div onclick="testRideTrace('lease_on_jobrad', this)" class="orderTestRideBtn jobrad">
+                <div onclick="testRideTrace('lease_on_jobrad', this)" class="orderTestRideBtn jobrad">
                     <img class="oneeee lozad" data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/JobRad_Logo_Anthrazit_RGB_4x_2x_4d61b30b-1ef4-492f-a670-734913ec7b54.png?v=1705477646"/>
                     <span><span class="u17DemiBold_v2">TAX FREE Leasing</span><span>36 {{ 'order_page.months' | t }}, €70{{ 'checkout_klarna.month' | t }}</span></span>
-                  </div> {% endcomment %}
+                  </div>
                   <div onclick="testRideTrace('klarna_check_out', this)" class="orderTestRideBtn">
                     <img class="twoooo lozad" data-src="https://cdn.shopifycdn.net/s/files/1/0633/2068/6808/files/20230530-121400.png?v=1685420054"/>
                     <span><span class="u17DemiBold_v2">0% APR Financing</span><span>24 {{ 'order_page.months' | t }}, <span class="stages">{{ product.price | divided_by: 2400 | floor | times : 100 | money_without_trailing_zeros }}</span>{{ 'checkout_klarna.month' | t }}</span></span>
