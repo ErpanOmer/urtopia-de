@@ -23,53 +23,10 @@
   </div>
 </dialog>
 
-{% if settings.show_easter_sale %}
-    <style>
-        #SubscribeEmailDialog .subscribe {
-            justify-content: center;
-        }
-
-        #SubscribeEmailDialog .u17Light_v2 {
-            margin: 30px 0 60px;
-        }
-
-        @media (max-width: 767px) {
-            #SubscribeEmailDialog .u42DemiBold_v2 {
-                font-size: 30px;
-            }
-
-            #SubscribeEmailDialog .u17Light_v2 {
-                margin: 5vw 0 10vw;
-            }
-        }
-    </style>
-    <dialog id="SubscribeEmailDialog">
-    <div class="subscribe-container">
-        <img class="mobileHide" style="height: 100%;max-width: 100%;object-fit: cover;" src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_23807_2x_5e0975c9-61e9-4deb-acba-81ece50b03ca.jpg?v=1711089874&width=500" alt="">
-        <img class="pcHide" src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_23808_2x_532c30a9-6f0e-4b90-8c7b-623986f08e28.jpg?v=1711089878&width=400" alt="">
-        <div class="subscribe">
-            <span style="color: #FF6F7E;" class="u17DemiBold_v2">April Adventure Sale</span>
-            <div class="u42DemiBold_v2">Take {{ settings.carbon_ebike_discount_price | money_without_trailing_zeros  }} off<br>On Carbon 1</div>
-            <div class="u17Light_v2">With Free Shipping and 2-year warranty</div>
-
-            <form class="new-contact" action="/contact#ContactFooter" target="_blank" method="post" accept-charset="UTF-8">
-            <div class="email">
-                <input type="hidden" name="form_type" value="customer">
-                <input type="hidden" name="utf8" value="✓">
-                <input type="hidden" name="contact[tags]" value="newsletter">
-                <input placeholder="Enter email here" type="email" name="contact[email]" required>
-                <button class="my-button my-button-black" id="global_email_submit_button" type="submit">Enjoy {{ settings.carbon_ebike_discount_price | money_without_trailing_zeros  }} Off</button>
-            </div>
-        </form>
-        </div>
-        <span class="close">×</span>
-    </div>
-</dialog>
-{% else %}
 <dialog id="SubscribeEmailDialog">
     <div class="subscribe-container">
-        <img class="mobileHide" style="height: 100%;max-width: 100%;object-fit: cover;" src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20240130-115140.jpg?v=1706593234&width=500" alt="">
-        <img class="pcHide" src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_23682.jpg?v=1706593234&width=400" alt="">
+        <img class="mobileHide" style="height: 100%;max-width: 100%;object-fit: cover;" src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/sssss_2x_440dd5b7-2023-4b79-b330-4557403749e1.jpg?v=1713854900&width=500" alt="">
+        <img class="pcHide" src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/sssss_2x_6756bb67-d7ca-4133-aa18-aa2d3c46abd2.jpg?v=1713854893&width=400" alt="">
         <div class="subscribe">
             <!--<span class="u20DemiBold_v2"><span style="color: #EA2F16;">Gear up for Spring</span> Sale </span>-->
           <span class="u20DemiBold_v2"><span style="color: #EA2F16;">{{ settings.sale_name }}</span>
@@ -89,7 +46,6 @@
         <span class="close">×</span>
     </div>
 </dialog>
-{% endif %}
 
 <dialog id="ExitSubscribeEmailDialog">
     <div class="subscribe-container">
@@ -114,11 +70,11 @@
 
 <dialog id="TestRideDialog">
     <div class="testride_dialog">
-        <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Urtopia_-_Auto_Rack_-_Original_Size_-_RAW-299.png?v=1706593454&width=500">
+        <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/img_v2_e35c9305-6b5b-4545-98c7-cb826aa79c4g_2x_37bea0ac-056d-45e5-9af7-c4872fa7549c.jpg?v=1713855264&width=500">
         <div>
             <div class="u30DemiBold_v2">Test ride spots near you</div>
             <div class="u24Medium_v2">Experience the bike in real</div>
-            <div class="my-button my-button-black"">Book Now</div>
+            <div class="my-button my-button-black">Book Now</div>
         </div>
         <span class="close">×</span>
     </div>
