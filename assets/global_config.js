@@ -586,25 +586,26 @@ const global_config = {
             ["Motor", "Mid-Drive Motor (Bafang), 36V 250W, 95Nm"],
             ["Speed modes", "Pedal, Eco, Comfort, Sport"],
             ["Top speed (assisted)", "25 km/h"],
-            ["Range", "Up to 140 km"],
+            ["Range", "Extended to 240 km(Dual baterry)"],
             ["Removable battery", "529.2 Wh, 21700 Samsung Li-ion"]
           ]
         },
         {
           title: 'General',
           parameters: [
-            ["Weight", "Fusion: From 23 kg"],
-            ["Load-bearing capacity", "Total max load 150 kg"],
+            ["Weight", "From 23 kg"],
+            ["Payload capacity", "Max. 150 kg"],
             ["Sizes", "One size, suitable for 160-190 cm"],
             ["Body material", "Carbon fiber (frame)"],
             ["Fork", "SR Suntour suspension fork with 100 mm travel"],
-            ["Seat Post", "Fusion: Aluminum seat post"],
-            ["Transmission", "Fusion: Shimano CUES U6000 1X10 Speed"],
-            ["Drivetrain", "Fusion: KMC e10 Turbo"],
-            ["Brakes", "Fusion: TEKTRO HD-M280 disc brakes"],
-            ["Integrated lights", "StVZO headlight"],
+            ["Seat Post", "Aluminum seat post"],
+            ["Transmission", "Shimano CUES U6000 1X10 Speed"],
+            ["Drivetrain", "KMC e10 Turbo"],
+            ["Brakes", "TEKTRO Hydraulic disc brakes (HD-M280)"],
+            ["Lights", "Front: Integrated StVZO headlight<br>Rear: StVZO Rear Light (Not ARES Lights)"],
             ["Wheels", "28 Inch"],
-            ["Tires", "Schwalbe Big Apple 55-622(28X2.15)"]
+            ["Tires", "Schwalbe Big Apple 55-622(28X2.15)"],
+            ["Included Accessories", "Kickstand, Fenders<br>StVZO Rear Light (Not ARES Lights)"]
           ]
         },
       ]
