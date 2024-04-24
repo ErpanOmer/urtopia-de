@@ -1169,8 +1169,14 @@ h4 {
     display: flex;
     position: relative;
     overflow: hidden;
-    background: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_23934_2x_534307c0-d9af-4699-bf9e-5ea3efc9d60d.jpg?v=1713333776') center center/cover no-repeat;
-    height: 750px;
+    // background: transparent center center/cover no-repeat;
+    // height: 750px;
+    min-height: 550px;
+
+    video {
+        object-fit: cover;
+    }
+
 
     &>div {
         position: absolute;
@@ -1215,7 +1221,6 @@ h4 {
 
     @media (max-width: 767px) {
         flex-direction: column;
-        background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20240116-untitled-35687_2x_81d35f37-f755-448d-af56-dc14142d8aed.jpg?v=1713334338');
         background-size: contain;
         background-position-y: top;
         height: auto;
@@ -1225,7 +1230,7 @@ h4 {
             position: static;
             transform: unset;
             padding: 8vw 8vw 13.5vw;
-            margin-top: 80vw;
+            // margin-top: 80vw;
 
             .u36Medium_v2 {
                 font-size: 20px;
