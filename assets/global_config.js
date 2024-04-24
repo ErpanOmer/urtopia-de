@@ -601,7 +601,7 @@ const global_config = {
             ["Seat Post", "Aluminum seat post"],
             ["Transmission", "Shimano CUES U6000 1X10 Speed"],
             ["Drivetrain", "KMC e10 Turbo"],
-            ["Brakes", "TEKTRO Hydraulic disc brakes (HD-M280)"],
+            ["Brakes", "TEKTRO dual-piston hydraulic disc brakes (HD-M280)"],
             ["Lights", "Front: Integrated StVZO headlight<br>Rear: StVZO Rear Light (Not ARES Lights)"],
             ["Wheels", "28 Inch"],
             ["Tires", "Schwalbe Big Apple 55-622(28X2.15)"],
