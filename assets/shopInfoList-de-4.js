@@ -486,6 +486,110 @@ const testRides = [
     ]
   },
   {
+    city: 'Winsen',
+    cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Munchen.jpg?v=1679406972',
+    series: [
+      'Urtopia Carbon 1',
+      // 'Urtopia Carbon 1'
+    ],
+    stores: [
+      {
+        name: 'Fahrrad Outlet Winsen',
+        phone: '+49 4171 6923355',
+        email: 'Fahrradoutlet2022@gmail.com',
+        timezone: "Hamburg, Germany (GMT+1)",
+        add: "Hamburger Str. 14, 21423 Winsen (Luhe)",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/output_4.png?v=1714095897",
+        testrideSpot: "Winsen",
+        testRideSize: "L",
+        isPartner: true,
+        availableSizes: [
+          'Carbon 1 Size M',
+          'Chord'
+        ],
+        businessHours: [
+          "",
+          "10:00-18:00",
+           "10:00-18:00",
+          "10:00-18:00",
+           "10:00-18:00",
+           "10:00-18:00",
+          "10:00-14:00",
+        ],
+      }
+    ]
+  },
+  {
+    city: 'Crailsheim',
+    cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Munchen.jpg?v=1679406972',
+    series: [
+      'Urtopia Carbon 1',
+      // 'Urtopia Carbon 1'
+    ],
+    stores: [
+      {
+        name: 'Fahrrad Outlet Crailsheim',
+        phone: '+497951 47 21 005',
+        email: 'info@fahrrad-outlet-crailsheim.de',
+        timezone: "Hamburg, Germany (GMT+1)",
+        add: "Blaufelder Str. 6, 74564 Crailsheim",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/output_5.png?v=1714096927",
+        testrideSpot: "Crailsheim",
+        testRideSize: "L",
+        isPartner: true,
+        availableSizes: [
+          'Carbon 1 Size M/L',
+          'Chord',
+          'Fusion'
+        ],
+        businessHours: [
+          "",
+          "09:30-18:00",
+          "09:30-18:00",
+          "09:30-18:00",
+          "09:30-18:00",
+          "09:30-18:00",
+          "09:30-16:00",
+        ],
+      }
+    ]
+  },
+  {
+    city: 'Soest',
+    cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Munchen.jpg?v=1679406972',
+    series: [
+      'Urtopia Carbon 1',
+      // 'Urtopia Carbon 1'
+    ],
+    stores: [
+      {
+        name: 'BikeShop soest',
+        phone: '+49292165087',
+        email: 'info@bikeshop-soest.de',
+        timezone: "Hamburg, Germany (GMT+1)",
+        add: "Römerweg 2A, 59494 Soest",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/output_6.png?v=1714096927",
+        testrideSpot: "Soest",
+        testRideSize: "L",
+        isPartner: true,
+        availableSizes: [
+          'Carbon 1 Size L',
+          'Chord',
+          'Fusion'
+        ],
+        businessHours: [
+          "",
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-13:00",
+        ],
+      }
+    ]
+  },
+  {
     city: 'München',
     cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Munchen.jpg?v=1679406972',
     series: [
