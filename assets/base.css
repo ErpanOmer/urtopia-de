@@ -3831,7 +3831,7 @@ body .jBox-Modal {
   display: flex;
   flex-direction: column;
   padding: 10%;
-  justify-content: flex-end;
+  justify-content: center;
   background-color: #fff
 }
 
@@ -3842,7 +3842,7 @@ body .jBox-Modal {
 }
 
 .subscribe-container .subscribe .u17Light_v2 {
-  margin-bottom: 30px
+  margin: 30px 0 48px;
 }
 
 .subscribe-container .subscribe .u17Medium_v2 {
@@ -4271,19 +4271,9 @@ dialog + .backdrop {
   margin: 6px 0 40px;
 }
 
-.subscribe-container .subscribe .u17Light_v2 {
-  margin: 12% 0 0;
-  font-size: 15px;
-}
-
-.subscribe-container .subscribe .new-contact {
-  margin: 3% 0 12%;
-}
-
 @media (max-width: 767px) {
-  .subscribe-container .subscribe .u72DemiBold_v2 {
-  margin: 4% 0 2%;
-  font-size: 44px;
+  .subscribe-container .subscribe .u42DemiBold_v2 {
+    font-size: 30px;
   }
 
   .subscribe-container .subscribe .u17DemiBold_v2 {
@@ -4295,12 +4285,16 @@ dialog + .backdrop {
   }
 
   .subscribe-container .subscribe .u17Light_v2 {
-  margin-top: 1%;
+    margin: 20px 0 40px;
     font-size: 12px;
   }
 
   .subscribe-container .subscribe .u30Medium_v2 {
       font-size: 18px;
+  }
+
+  .subscribe-container .subscribe .my-button {
+    font-size: 12px;
   }
 }
 
@@ -4374,7 +4368,7 @@ dialog + .backdrop {
 .product .sale-taggggggg {
   background-color: var(--sale-color2);
   color: #fff;
-  padding: 2% 5% 2% 5%;
+  padding: 2% 0 2% 5%;
   border-radius: 18px;
   width: fit-content;
   height: 35px;
@@ -4386,13 +4380,13 @@ dialog + .backdrop {
   margin-top: 9px;
 }
 
-/* .product .sale-taggggggg::after {
+.product .sale-taggggggg::after {
   display: block;
   content: "";
-  background: url(/cdn/shop/files/Mask_Group_18957_2x_7f38301a-c58d-4b30-95a6-64c51efdec3f.png?v=1703815709) center right/cover no-repeat;
-  width: 65px;
+  background: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_23840_2x_e7772d5f-de39-4053-95c3-49d359e5a73c.png?v=1714292484') center right/cover no-repeat;
+  width: 55px;
   height: 35px;
-} */
+}
 
 
 .visuallyhidden {

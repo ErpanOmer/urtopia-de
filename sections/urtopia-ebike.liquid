@@ -11,14 +11,14 @@
 {{ 'outlet_v4.scss.css' | asset_url | stylesheet_tag: preload: true }}
 {% assign carbon = all_products["outlet-carbon-1-1s"] %}
 
-{% if settings.show_easter_sale %}
+{% if true %}
     <style>
         .banner {
-            background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_23811_2x_3ce976ef-1520-4e21-99c9-3ad3f238f677.jpg?v=1711091734');
+            background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_23839_2x_7662b586-9702-427a-963d-64afc6274932.jpg?v=1714291008');
         }
         @media (max-width: 767px) {
             .banner {
-                background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_23813_2x_6ce45277-e268-4ef8-9616-420f994ac36e.jpg?v=1711091739');
+                background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20240428-160116.jpg?v=1714291293');
             }
             .banner .centeral-content {
                 justify-content: flex-start;
@@ -33,8 +33,8 @@
 
 <div class="banner">
     <div class="centeral-content">
-        {% if settings.show_easter_sale %}
-            <div class="u48DemiBold_v2">Enjoy Easter, <br class="pcHide">Enjoy Spring</div>
+        {% if true %}
+            <div class="u48DemiBold_v2">{{ settings.sale_name }}</div>
         {% else %}
             <div class="u48DemiBold_v2">Smartest E-Bike Ever</div>
         {% endif %}
