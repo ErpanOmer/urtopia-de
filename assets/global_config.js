@@ -58,7 +58,8 @@ const global_config = {
     ignore_variants_available_false: [],
     size_map: {
       M: 'Fit for 165-180 cm',
-      L: 'Fit for 175-195 cm'
+      L: 'Fit for 175-195 cm',
+      'One Size': 'Fit for 168-195 cm'
     },
     awards: [
       'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20231214-163215.png?v=1702542766',
@@ -154,16 +155,18 @@ const global_config = {
       43820311314648: 'Ships within <span>7 business days</span> from local warehouse.',
 
       // carbon 1/1s
+      44222041850072: 'Free shipping in early June.',
+      44222041882840: 'Free shipping in early June.',
       // 1-m-sb
-      42615025172696: 'Free shipping within 10 working days',
+      42615025172696: 'Free shipping in early June.',
       // 1-l-sb
       42615025369304: 'Free shipping within 5 working days',
       // 1-m-lb
       42615025238232: 'Free shipping within 10 working days',
       // 1-l-lb
-      42615025434840: 'Free shipping within 5 working days',
+      42615025434840: 'Free shipping in early June.',
       // 1-m-pb
-      42615025303768: 'Free shipping within 5 working days',
+      42615025303768: 'Free shipping in early June.',
       // 1-l-pb
       42615025500376: 'Free shipping within 5 working days',
       // 1-m-pw

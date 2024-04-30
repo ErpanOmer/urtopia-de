@@ -2544,7 +2544,7 @@ const testRides = [
       {
         name: 'Fahrradhaus Özdin',
         phone: '+492166 1471576',
-        email: 'oezdin-fahrraeder@arcor.de',
+        email: 'info@fahrradhaus-ozdin.de',
         timezone: "Mönchengladbach, Germany (GMT+1)",
         add: "Stapper Weg 65 41199 Mönchengladbach",
         imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/output_2.png?v=1713578059",

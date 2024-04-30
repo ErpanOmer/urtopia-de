@@ -1316,7 +1316,6 @@
 
         if (e.value === "Carbon Belt") {
           global_config.event_accessories_variant_ids = global_config.carbon_order_page_config.events.carbon1_send_accessories_variant_ids
-          $(`.product .product-panel .options > div[option="Size"] .u17DemiBold_v2 .u17Light_v2`).text('Fit for 168-195 cm')
 
           $('.product-price').attr('data-price',  '{{  product.price | money }}').css('color', 'var(--sale-order-page-text-color)')
           $('.sale-taggggggg').show()
@@ -1325,7 +1324,6 @@
 
         } else {
           global_config.event_accessories_variant_ids = global_config.carbon_order_page_config.events.carbon1s_send_accessories_variant_ids
-          $(`.product .product-panel .options > div[option="Size"] .u17DemiBold_v2 .u17Light_v2`).text('Fit for 168-195 cm')
 
           $('.product-price').attr('data-price',  '').css('color', '#000')
           $('.sale-taggggggg').hide()
@@ -1342,7 +1340,7 @@
       })
 
       document.addEventListener('onChangeSize', e => {
-        // $(`.product .product-panel .options > div[option="Size"] .u17DemiBold_v2 .u17Light_v2`).text(global_config.carbon_order_page_config.size_map[e.value])
+        $(`.product .product-panel .options > div[option="Size"] .u17DemiBold_v2 .u17Light_v2`).text(global_config.carbon_order_page_config.size_map[e.value])
       })
 
       document.addEventListener('onChangeOptions', e => {
