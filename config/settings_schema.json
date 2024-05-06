@@ -6,7 +6,7 @@
         "type": "text",
         "id": "sale_name",
         "label": "活动名称",
-        "default": "Labor Day Sale"
+        "default": "Gear up for Adventures"
       },
       {
         "type": "text",
@@ -42,7 +42,7 @@
         "type": "text",
         "id": "chord_sale_name",
         "label": "chord 活动名称",
-        "default": "Labor Day Sale"
+        "default": "Gear up for Adventures"
       },
       {
         "type": "text",
@@ -54,7 +54,7 @@
         "type": "text",
         "id": "chord_ebike_discount_price",
         "label": "chord 车折扣价",
-        "default": "0"
+        "default": "60000"
       },
       {
         "type": "text",
@@ -78,7 +78,7 @@
         "type": "text",
         "id": "home_page_blogs",
         "label": "首页blog展示",
-        "default": "blog/smart-e-bike-with-chatgpt-urtopia-eurobike2023,blog/ambassador-s-story-michael-j-coles-over-that-rock,blog/smart-is-more-than-internet-connection"
+        "default": "blog\/smart-e-bike-with-chatgpt-urtopia-eurobike2023,blog\/ambassador-s-story-michael-j-coles-over-that-rock,blog\/smart-is-more-than-internet-connection"
       },
       {
         "type": "text",
@@ -99,8 +99,8 @@
     "theme_name": "Refresh",
     "theme_version": "1.0.0",
     "theme_author": "Shopify",
-    "theme_documentation_url": "https://help.shopify.com/manual/online-store/themes",
-    "theme_support_url": "https://support.shopify.com/"
+    "theme_documentation_url": "https:\/\/help.shopify.com\/manual\/online-store\/themes",
+    "theme_support_url": "https:\/\/support.shopify.com\/"
   },
   {
     "name": "Insurance",
@@ -112,7 +112,7 @@
       {
         "type": "text",
         "id": "insurance_checkbox",
-        "label": "Show/hide checkbox text"
+        "label": "Show\/hide checkbox text"
       },
       {
         "type": "richtext",

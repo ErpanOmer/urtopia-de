@@ -34,11 +34,11 @@ const findOffset = ([nowWeek, vailableWeek]) => {
   return vailableWeek > nowWeek ? vailableWeek - nowWeek : 7 - (nowWeek - vailableWeek)
 }
 
-function getBikeAndSeries(availableSizes = []) {
+function getBikeAndSeries (availableSizes = []) {
   return availableSizes.map(size => {
-    const [bike, series] = size.split(' ')
+      const [bike, series] = size.split(' ')
 
-    return `${bike}${series ? ' ' + series : ''}`
+      return `${bike}${series ? ' ' + series : ''}`
   })
 }
 
@@ -510,10 +510,10 @@ const testRides = [
         businessHours: [
           "",
           "10:00-18:00",
+           "10:00-18:00",
           "10:00-18:00",
-          "10:00-18:00",
-          "10:00-18:00",
-          "10:00-18:00",
+           "10:00-18:00",
+           "10:00-18:00",
           "10:00-14:00",
         ],
       }
@@ -2182,19 +2182,19 @@ const testRides = [
       },
     ]
   },
-  /* {
-     country: 'Netherlands',
-     city: 'Amsterdam',
-     cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Amsterdam.webp?v=1702381805',
-     series: [
-       'Carbon 1',
-       // 'Urtopia Carbon 1'
-     ],
-     stores: [
-       {
-       },
-     ]
-   },*/
+ /* {
+    country: 'Netherlands',
+    city: 'Amsterdam',
+    cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Amsterdam.webp?v=1702381805',
+    series: [
+      'Carbon 1',
+      // 'Urtopia Carbon 1'
+    ],
+    stores: [
+      {
+      },
+    ]
+  },*/
   {
     country: 'Denmark',
     city: 'Rodovre',
@@ -2613,28 +2613,28 @@ let city_options = new Set()
 for (const city of testRides) {
   for (const store of city.stores) {
     // 把所属国家也加上
-    store.country = city.country || 'Deutschland'
-    store.city = city.city
-    store.avalibaleDate = findAvalibaleDate(store)
+      store.country = city.country || 'Deutschland'
+      store.city = city.city
+      store.avalibaleDate = findAvalibaleDate(store)
 
-    for (let i = 0; i < store.availableSizes.length; i++) {
-      const sizes = store.availableSizes[i]
+      for (let i = 0; i < store.availableSizes.length; i++) {
+          const sizes = store.availableSizes[i]
 
-      const [bike, series] = sizes.split(' ')
-      const n = `${bike}${series ? ' ' + series : ''}`
-      bike_options.add(n)
-
-      if (sizes.includes('Carbon')) {
-        store.availableSizes[i] = `${n}`
+          const [bike, series] = sizes.split(' ')
+          const n = `${bike}${series ? ' ' + series : ''}`
+          bike_options.add(n)
+          
+          if (sizes.includes('Carbon')) {
+            store.availableSizes[i] = `${n}`
+          }
+        
       }
 
-    }
+      city_options.add(`${store.city}---${store.country}`)
 
-    city_options.add(`${store.city}---${store.country}`)
+      const tags = store.tags || [{ color: 'gray', text: store.isPartner ? 'Ambassadors' : 'Partner Store' }]
 
-    const tags = store.tags || [{ color: 'gray', text: store.isPartner ? 'Ambassadors' : 'Partner Store' }]
-
-    store.html = `
+      store.html = `
           <div class="name" name="${store.name}">${store.name}<i class="mobileHide"><svg class="icon" style="width: 1em;height: 1em;vertical-align: middle;fill: currentColor;overflow: hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5533"><path d="M748.3 533.3c0.1-0.2 0.3-0.4 0.4-0.6 0.2-0.3 0.5-0.7 0.7-1 0.1-0.1 0.2-0.3 0.2-0.4 0.3-0.4 0.5-0.8 0.8-1.2l0.1-0.1c2.6-4.6 4.1-9.6 4.6-14.7v-0.2c0-0.5 0.1-0.9 0.1-1.4v-0.6-1-1-0.6c0-0.5-0.1-0.9-0.1-1.4v-0.2c-0.4-5.1-2-10.1-4.6-14.7l-0.1-0.1c-0.2-0.4-0.5-0.8-0.8-1.3-0.1-0.1-0.2-0.3-0.2-0.4-0.2-0.3-0.4-0.7-0.7-1-0.1-0.2-0.3-0.4-0.4-0.6-0.2-0.3-0.4-0.5-0.6-0.8-0.2-0.2-0.4-0.5-0.6-0.7-0.1-0.1-0.2-0.2-0.3-0.4-0.1-0.1-0.2-0.2-0.2-0.3-0.2-0.3-0.5-0.5-0.7-0.8-0.2-0.2-0.4-0.4-0.5-0.6l-0.7-0.7-0.6-0.6c-0.2-0.2-0.5-0.4-0.7-0.7l-0.6-0.6-0.3-0.3-414.6-347.6c-15.2-12.7-38-10.7-50.7 4.4-12.7 15.2-10.7 38 4.4 50.7L663.2 512 281.6 832.2c-15.2 12.7-17.2 35.6-4.4 50.7 12.7 15.2 35.6 17.2 50.7 4.4l414.4-347.7 0.3-0.3 0.6-0.6c0.2-0.2 0.5-0.4 0.7-0.7l0.6-0.6 0.7-0.7c0.2-0.2 0.4-0.4 0.5-0.6 0.2-0.3 0.5-0.5 0.7-0.8 0.1-0.1 0.2-0.2 0.2-0.3 0.1-0.1 0.2-0.2 0.3-0.4 0.2-0.2 0.4-0.5 0.6-0.7 0.4-0.1 0.6-0.4 0.8-0.6z" fill="#333333" p-id="5534"></path></svg></i></div>
           <div class="tags">${tags.map(t => `<span class="u14DemiBold_v2 tag-${t.color}">${t.text}</span>`).join('')}</div>
           <div class="u14Light_v2">${store.add}</div>
@@ -2644,7 +2644,7 @@ for (const city of testRides) {
                 ${store.availableSizes ? store.availableSizes.map(i => `<li>${i}</li>`).join('') : `<li>Carbon One Size ${store.testRideSize}</li>`}
              </ul>
           </div>
-          ${!store.noBook ? `<div class="u17Light_v2 time"><img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/calendar_2x_af8d9192-1ff9-43f0-aba6-3547b1129854.jpg?v=1680938382"/> Earliest available time: &nbsp;<div>${store.avalibaleDate}</div></div>` : ''}
+          ${!store.noBook ? `<div class="u17Light_v2 time"><img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/calendar_2x_af8d9192-1ff9-43f0-aba6-3547b1129854.jpg?v=1680938382"/> Earliest available time: &nbsp;<div>${store.avalibaleDate}</div></div>` : '' }
           <div class="flex-1 pcHide"></div>
           <div class="buttons pcHide">
             ${!store.noBook ? `<div class="my-button my-button-black" onclick="booknow('${store.name}')">Book Now</div>` : ''}
@@ -2652,7 +2652,7 @@ for (const city of testRides) {
         </div>
       `
 
-    store_list.set(store.name.replace(/\s*/g, ""), store)
+      store_list.set(store.name.replace(/\s*/g, ""), store)
   }
 }
 
@@ -2661,14 +2661,14 @@ city_options = Array.from(city_options).sort((a, b) => a.localeCompare(b))
 const country_group = {}
 
 for (const option of city_options) {
-  const [city, country] = option.split('---')
+    const [city, country] = option.split('---')
 
-  if (country_group[country]) {
-    country_group[country].push(city)
-    continue
-  }
+    if (country_group[country]) {
+      country_group[country].push(city) 
+      continue
+    }
 
-  country_group[country] = [city]
+    country_group[country] = [city]
 }
 
 
