@@ -405,6 +405,49 @@ const global_config = {
   },
   // 1pro 配置
   carbon1pro_order_page_config: {
+    // variant 为 available:false 的情况下 也要强制显示 
+    ignore_variants_available_false: [],
+    // default_variant: 44288621314296,
+    size_map: {
+      M: 'Fit for 170-185 cm',
+      L: 'Fit for 180-195 cm',
+      'One Size': 'Fit for 168-195 cm'
+    },
+    // 默认的发货时间 文案
+    ebike_default_delivery_time: 'Free shipping in mid-July',
+    // 每一种variant 的发货时间文案
+    ebike_delivery_time: {},
+    product_images: {
+        'Matte Black': [
+            'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/carbon_1_pro_BL_1.png?v=1703570388',
+            'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/carbon_1_pro_BL_2.png?v=1703570387',
+            'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/carbon_1_pro_BL_3.png?v=1703570387',
+            'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20240131-094114.jpg?v=1706665340',
+            'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/carbon_1_pro_BL_5.png?v=1703570387',
+            'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/carbon_1_pro_BL_6.png?v=1703570387'
+        ],
+        'Creme': [
+            'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/carbon_1_pro_wh_1.png?v=1703570387',
+            'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/carbon_1_pro_wh_2.png?v=1703570387',
+            'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/carbon_1_pro_wh_3.png?v=1703570387',
+            'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20240131-094123.jpg?v=1706665341',
+            'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/carbon_1_pro_wh_5.png?v=1703570387',
+            'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/carbon_1_pro_wh_6.png?v=1703570387'
+        ],
+        commonSwiper: [
+            'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20240131-094148.jpg?v=1706665341',
+            'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20240117-180528.png?v=1705485964',
+            'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20231108-untitled-6089.jpg?v=1703570574',
+            'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20231108-untitled-3370.jpg?v=1703570574',
+            'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20231108-untitled-3668.jpg?v=1703570574',
+            'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/DSCF7217_1.jpg?v=1703570574',
+            'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/aaa_2x_9b257387-ce8a-4eb6-a2e9-913573233f93.jpg?v=1714984318',
+            'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/DSCF7217_1_2x_ec4657b0-b04a-494f-82ad-9a6553394400.jpg?v=1714984325',
+            'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20231108-untitled-2785_2x_ab30be84-117b-44b4-8c61-0c6a5936faa2.jpg?v=1714984330',
+            'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20231108-untitled-2778_2x_ccaa8af6-df16-4870-8b8d-e8b21c69d4c4.jpg?v=1714984337',
+            'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/DSCF6952_1_2x_0bc14670-71dc-49a2-8837-9d0bb276e6e6.jpg?v=1714984341'
+        ]
+    },
     sizes_and_specs: {
       sizes: {
         image: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20231221-151050_2x_d883c889-6e52-477d-8672-a7dda6dbbbdd.png?v=1703577530',
@@ -425,7 +468,7 @@ const global_config = {
           ],
           [
             '<span class="u17DemiBold_v2">Medium</span>',
-            '165-180 cm',
+            '170-185 cm',
             '804 mm',
             '60 mm',
             '1011-1041 mm',
@@ -439,7 +482,7 @@ const global_config = {
           ],
           [
             '<span class="u17DemiBold_v2">Large</span>',
-            '175-195 cm',
+            '180-195 cm',
             '833 mm',
             '60 mm',
             '1023-1053 mm',
@@ -467,7 +510,7 @@ const global_config = {
         {
           title: 'Power',
           parameters: [
-            ["Motor", "Customized rear hub, 36 V 250 W (rated), 42 N⋅m"],
+            ["Motor", "Customized rear hub, 36 V 250 W (rated), 45 N⋅m"],
             ["Speed modes", "Pedal, Eco, Comfort, Sport, Turbo"],
             ["Top speed (assisted)", "25 km/h"],
             ["Range", "Up to 130 km"],
@@ -482,10 +525,11 @@ const global_config = {
             ["Sizes", "Medium, Large (see Size Guide)"],
             ["Body material", "Carbon fiber (frame, fork)"],
             ["Brakes", "Front & rear dual-piston hydraulic disc"],
-            ["Transmission", "Shimano 10-Speed Rear Drivetrain"],
-            ["Integrated lights", "StVZO headlight"],
+            ["Transmission", "Shimano CUES U6000 1 x 10 Speed"],
+            ["Lights", "Front: Integrated StVZO headlight<br>Rear: StVZO Rear Light (Not ARES Lights)"],
             ["Wheels", "700C (ISO 622 mm BSD), inner rim 19 mm"],
-            ["Tires", "700 x 40C"]
+            ["Tires", "700 x 40C"],
+            ["Included Accessories", "Kickstand, Fenders<br>StVZO Rear Light (Not ARES Lights)"]
           ]
         },
       ]
