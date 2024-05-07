@@ -33,21 +33,12 @@
                 <div class="swiper-button-next mobileHide"></div><!--右箭头。如果放置在swiper外面，需要自定义样式。-->
                 <div class="swiper-pagination pcHide"></div>
                 <div class="flex-1 mobileHide pcHide"></div>
-                <div class="service mobileHide">
-                  <div class="u24DemiBold_v2">
-                    <img class="lozad" style="max-width: 60px;" data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230811-120544.png?v=1691726759" alt="">
-                    <span class="emphasize">+</span>
-                    <img class="lozad" style="max-width: 46px;" data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20231008-164445.png?v=1696754716" alt="">
-                  </div>
-                  <div class="u17DemiBold_v2 emphasize">
-                    <span>Free Kickstand,</span>
-                    <span>1-Year Connect Service Included</span>
-                    <span class="u14Light_v2">*Not available with leasing</span>
-                  </div>
-                  <div class="u17Medium_v2">
-                    <span>{{ 8000 | money_without_trailing_zeros }}</span>
-                    <span>FREE</span>
-                  </div>
+                <div class="fenders mobileHide">
+                  <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20231226-195048.jpg?v=1703591462" alt="Urtopia Carbon 1 Pro Ebike - Sleek, Full Carbon, Lightweight, Smart">
+                  <span class="u17DemiBold_v2">Free Fenders, Kickstand, <br>
+                    1-Year Connect Service Included</span>
+                  <span class="u17Light_v2" style="text-decoration: line-through;">{{ 15700 | money }}</span>
+                  <span class="u17DemiBold_v2">FREE</span>
                 </div>
                 <div class="parameters mobileHide">
                     <div>
@@ -150,26 +141,17 @@
                 </div>
                 <div class="u11Light_v2">*Not available with leasing</div>
             </div>-->
-            <div class="service pcHide mb6">
-                  <div>
-                    <div class="u24DemiBold_v2">
-                      <img class="lozad" style="max-width: 40px;" data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230811-120544.png?v=1691726759" alt="">
-                      <span class="emphasize">+</span>
-                      <img class="lozad" style="max-width: 30px;" data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20231008-164445.png?v=1696754716" alt="">
-                    </div>
-                    <div>
-                      <div class="u14Medium_v2">
-                        <span>FREE</span>
-                        <span>{{ 8000 | money_without_trailing_zeros }}</span>
-                      </div>
-                      <div class="u14DemiBold_v2 emphasize">
-                        <span>Free Kickstand,</span>
-                        <span>1-Year Connect Service Included</span>
-                      </div>
-                    </div>
-                  </div>
-                  <span class="u11Light_v2">*Not available with leasing</span>
+            <div class="fenders pcHide">
+              <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20231226-195048.jpg?v=1703591462" alt="Urtopia Carbon 1 Pro Ebike - Sleek, Full Carbon, Lightweight, Smart">
+              <div>
+                <span class="u17DemiBold_v2" style="background-color: #263B55; color: #fff;border-radius: 7px;padding: 3px 12px;">FREE</span>
+                <span class="u17DemiBold_v2" style="text-decoration: line-through;">{{ 15700 | money }}</span>
+                <div class="u17Light_v2">
+                  Free Fenders, Kickstand, <br>
+                  1-Year Connect Service Included
                 </div>
+              </div>
+            </div>
             {% unless true  %}
               <div class="count-down mb12 mobileHide">
                 <div class="u17Medium_v2">End of Promotion</div>
@@ -199,7 +181,7 @@
             </div>
             <div class="accessories">
                 <div class="u17DemiBold_v2 mb12">Accessories</div>
-                {% assign products_size = collections['fusion-accessories'].products | size %}
+                {% assign products_size = collections['carbon1pro-accessories'].products | size %}
                 {% if products_size > 2 %}
                   <div class="navigate">
                       <div class="prev"></div>
@@ -207,7 +189,7 @@
                   </div>
                 {% endif %}
                 <div class="items mb12">
-                    {% for prod in collections['fusion-accessories'].products %}
+                    {% for prod in collections['carbon1pro-accessories'].products %}
                         {% if prod.available %}
                             {% assign variant = prod.variants | first %}
                             <div class="item" variant-id="{{ variant.id }}">
@@ -242,10 +224,10 @@
                     >
                     <i class="fa fa-spinner fa-spin"></i><span data-pf-type="Text" class="addToCartText u17DemiBold_v2">Add to Cart</span>
                 </div>
-                <div onclick="testRideTrace('lease_on_jobrad', this)" class="orderTestRideBtn jobrad">
+                {% comment %} <div onclick="testRideTrace('lease_on_jobrad', this)" class="orderTestRideBtn jobrad">
                     <img class="oneeee lozad" data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/JobRad_Logo_Anthrazit_RGB_4x_2x_4d61b30b-1ef4-492f-a670-734913ec7b54.png?v=1705477646"/>
                     <span><span class="u17DemiBold_v2">TAX FREE Leasing</span><span>36 {{ 'order_page.months' | t }}, €70{{ 'checkout_klarna.month' | t }}</span></span>
-                  </div>
+                  </div> {% endcomment %}
                   <div onclick="testRideTrace('klarna_check_out', this)" class="orderTestRideBtn">
                     <img class="twoooo lozad" data-src="https://cdn.shopifycdn.net/s/files/1/0633/2068/6808/files/20230530-121400.png?v=1685420054"/>
                     <span><span class="u17DemiBold_v2">0% APR Financing</span><span>24 {{ 'order_page.months' | t }}, <span class="stages">{{ product.price | divided_by: 2400 | floor | times : 100 | money_without_trailing_zeros }}</span>{{ 'checkout_klarna.month' | t }}</span></span>
@@ -267,7 +249,7 @@
                 </a>
             </div>
             {% render 'footer__payment' %}
-            {% render 'leasing-logo' %}
+            {% comment %} {% render 'leasing-logo' %} {% endcomment %}
             <div class="dialogs">
                 <div class="u17Medium_v2" onclick="showSizesAndSpecs('SizesDialog')">
                     <span>Size & Fit</span>
