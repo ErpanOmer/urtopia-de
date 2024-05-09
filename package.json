@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "shopify theme dev -s urtopia-de.myshopify.com -t 136931705048 --port 8000",
     "pull": "shopify theme pull -s urtopia-de.myshopify.com --live",
-    "backup": "node backup.js"
+    "backup": "node backup.js",
+    "shopify": "shopify"
   },
   "repository": {
     "type": "git",
