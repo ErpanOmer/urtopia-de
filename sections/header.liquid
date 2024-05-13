@@ -169,6 +169,25 @@
                                       </div>
                                     </div>
                                     <div class="bikesssssss">
+                                      {% assign productttttt = all_products['urtopia-carbon-1-pro-ebike'].variants | where: "title", "M / Matte Black" %}
+                                        <div class="by-model" href="/pages/lightweight-ebike-urtopia-carbon-1-pro">
+                                            <div>
+                                              <div class="u14DemiBold_v2">Carbon 1 Pro</div>
+                                              <div class="u11Light_v2">Sporty and Lightweight</div>
+                                              <span class="u14DemiBold_v2 emphasize" {% unless productttttt.first.price == productttttt.first.compare_at_price %}data-price="{{ productttttt.first.price | money_without_trailing_zeros }}"
+                    {% endunless %}>{{ productttttt.first.price | money_without_trailing_zeros }}</span>
+                                            </div>
+                                            <img src="{{ productttttt.first.featured_image | image_url: width: 300 }}">
+                                        </div>
+                                      {% assign productttttt = all_products['urtopia-carbon-e-bike'].variants | where: "title", "Carbon Belt / L / Sirius" %}
+                                        <div class="by-model" href="/pages/e-bike">
+                                            <div>
+                                              <div class="u14DemiBold_v2">Carbon 1</div>
+                                              <div class="u11Light_v2">Lightweight and less maintainance</div>
+                                              <span class="u14DemiBold_v2 emphasize" data-price="{{ productttttt.first.price | money_without_trailing_zeros }}">{{ productttttt.first.price | minus: settings.carbon_ebike_discount_price | money_without_trailing_zeros }}</span>
+                                            </div>
+                                            <img src="{{ productttttt.first.featured_image | image_url: width: 300 }}">
+                                        </div>
                                       {% assign productttttt = all_products['urtopia-fusion-carbon-ebike'].variants | where: "title", "One Size / Vital Orange" %}
                                         <div class="by-model" href="/pages/fusion">
                                             <div>
@@ -179,15 +198,7 @@
                                             </div>
                                             <img src="{{ productttttt.first.featured_image | image_url: width: 300 }}">
                                         </div>
-                                        {% assign productttttt = all_products['urtopia-carbon-e-bike'].variants | where: "title", "Carbon Belt / L / Sirius" %}
-                                        <div class="by-model" href="/pages/e-bike">
-                                            <div>
-                                              <div class="u14DemiBold_v2">Carbon 1</div>
-                                              <div class="u11Light_v2">Lightweight and less maintainance</div>
-                                              <span class="u14DemiBold_v2 emphasize" data-price="{{ productttttt.first.price | money_without_trailing_zeros }}">{{ productttttt.first.price | minus: settings.carbon_ebike_discount_price | money_without_trailing_zeros }}</span>
-                                            </div>
-                                            <img src="{{ productttttt.first.featured_image | image_url: width: 300 }}">
-                                        </div>
+                                        
                                         {% comment %} {% assign productttttt = all_products['urtopia-carbon-e-bike'].variants | where: "title", "Shimano Gear / M / Midnight in Paris" %}
                                         <div class="by-model" href="/pages/e-bike">
                                             <div>
@@ -524,6 +535,24 @@
                                   </div>
                                   <div class="flex-1"></div>
                                   <div class="bikesssssss">
+                                    {% assign productttttt = all_products['urtopia-carbon-1-pro-ebike'].variants | where: "title", "M / Matte Black" %}
+                                      <div class="by-model" href="/pages/lightweight-ebike-urtopia-carbon-1-pro">
+                                          <span class="tagggg">NEW</span>
+                                          <img src="{{ productttttt.first.featured_image | image_url: width: 500 }}">
+                                          <div class="u20DemiBold_v2">Carbon 1 Pro</div>
+                                          <div class="u14Light_v2">Sporty and Lightweight</div>
+                                          <div class="flex-1"></div>
+                                           <span class="u17DemiBold_v2 emphasize" {% unless productttttt.first.price == productttttt.first.compare_at_price  %} data-price="{{ productttttt.first.price | money_without_trailing_zeros }}"
+                                          {% endunless %}>{{ productttttt.first.price | money_without_trailing_zeros }}</span>
+                                      </div>
+                                    {% assign productttttt = all_products['urtopia-carbon-e-bike'].variants | where: "title", "Carbon Belt / L / Sirius" %}
+                                      <div class="by-model" href="/pages/e-bike">
+                                          <img src="{{ productttttt.first.featured_image | image_url: width: 500 }}">
+                                          <div class="u20DemiBold_v2">Carbon 1</div>
+                                          <div class="u14Light_v2">Lightweight and less maintainance</div>
+                                          <div class="flex-1"></div>
+                                          <span class="u17DemiBold_v2 emphasize" data-price="{{ productttttt.first.price | money_without_trailing_zeros }}">{{ productttttt.first.price | minus: settings.carbon_ebike_discount_price | money_without_trailing_zeros }}</span>
+                                      </div>
                                     {% assign productttttt = all_products['urtopia-fusion-carbon-ebike'].variants | where: "title", "One Size / Vital Orange" %}
                                     <div class="by-model" href="/pages/fusion">
                                           <span class="tagggg">NEW</span>
@@ -534,14 +563,7 @@
                                           <span class="u17DemiBold_v2 emphasize" {% unless productttttt.first.price == productttttt.first.compare_at_price  %} data-price="{{ productttttt.first.price | money_without_trailing_zeros }}"
                                           {% endunless %}>{{ productttttt.first.price | money_without_trailing_zeros }}</span>
                                       </div>
-                                      {% assign productttttt = all_products['urtopia-carbon-e-bike'].variants | where: "title", "Carbon Belt / L / Sirius" %}
-                                      <div class="by-model" href="/pages/e-bike">
-                                          <img src="{{ productttttt.first.featured_image | image_url: width: 500 }}">
-                                          <div class="u20DemiBold_v2">Carbon 1</div>
-                                          <div class="u14Light_v2">Lightweight and less maintainance</div>
-                                          <div class="flex-1"></div>
-                                          <span class="u17DemiBold_v2 emphasize" data-price="{{ productttttt.first.price | money_without_trailing_zeros }}">{{ productttttt.first.price | minus: settings.carbon_ebike_discount_price | money_without_trailing_zeros }}</span>
-                                      </div>
+                                      
                                       {% comment %} {% assign productttttt = all_products['urtopia-carbon-e-bike'].variants | where: "title", "Shimano Gear / M / Midnight in Paris" %}
                                       <div class="by-model" href="/pages/e-bike">
                                           <img src="{{ productttttt.first.featured_image | image_url: width: 500 }}">
@@ -568,11 +590,11 @@
                                       </div>
                                   </div>
                               </div>
-                              <div class="sale-image">
+                              <!-- <div class="sale-image">
                                   <div class="u17DemiBold_v2">{{ settings.sale_name }}</div>
                                   <div>Up to</div>
                                   <div class="u36DemiBold_v2">{{ settings.carbon_ebike_discount_price | money_without_trailing_zeros }} OFF</div>
-                              </div>
+                              </div> -->
                           </div>
                       </div>
                     </details>

@@ -61,6 +61,7 @@
                     {% assign has_carbon = false %}
                     {% assign has_chord = false %}
                     {% assign has_fusion = false %}
+                    {% assign has_carbon_1pro = false %}
 
                     {%- for item in cart.items -%}
                       {% if item.product.id == 7633738727640 %}
@@ -73,6 +74,10 @@
 
                       {% if item.product.id == 8286206230744 %}
                         {% assign has_fusion = true %}
+                      {% endif %}
+
+                      {% if item.product.id == 8128883720408 %}
+                        {% assign has_carbon_1pro = true %}
                       {% endif %}
 
                       <tr 
@@ -167,11 +172,11 @@
                                         <span>
                                         {% case option.value %}
                                           {% when 'One Size' %}
-                                            {% if item.options_with_values.first.value == 'Shimano Gear' %}(Fit for 165-190 cm){% else %}(Fit for 168-195 cm){% endif %}
+                                            {% if item.options_with_values.first.value == 'Carbon Belt' %}(Fit for 168-195 cm){% else %}(Fit for 160-190 cm){% endif %}
                                           {% when 'M' %}
-                                            (Fit for 165-180 cm)
+                                            (Fit for 170-185 cm)
                                           {% when 'L' %}
-                                            (Fit for 175-195 cm)
+                                            (Fit for 180-195 cm)
                                           {% when 'High-Step' %}
                                             (Fit for 170cm - 195cm)
                                           {% when 'Step-Through' %}
@@ -344,6 +349,8 @@
           {% assign collection_value = 'chord-in-cart' %}
         {% elsif has_fusion %}
           {% assign collection_value = 'fusion-accessories' %}
+        {% elsif has_carbon_1pro %}
+          {% assign collection_value = 'carbon1pro-accessories' %}
         {% else %}
             {% assign collection_value = 'carbon-in-cart' %}
         {% endif %}

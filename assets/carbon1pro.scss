@@ -260,7 +260,7 @@ h4 {
 
         &>div {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 0.8fr 1fr;
             margin-top: 8vh;
 
             .u17Light_v2 {
@@ -508,11 +508,11 @@ h4 {
                     .rrrrrrrr {
                         font-style: normal;
                         font-weight: 600;
-                        letter-spacing: 20px;
+                        letter-spacing: 10px;
                         border-top: 2px dashed #000;
                         border-bottom: 2px dashed #000;
                         line-height: 0.8;
-                        font-size: 60px;
+                        font-size: 56px;
                         margin-top: 10px;
                     }
                 }

@@ -1421,6 +1421,7 @@ h4 {
 
 .boxs {
     background-color: #F7F8FA;
+  padding-bottom: 12vh;
     // padding: 12vh 0;
 
     .centeral-content {
@@ -1432,7 +1433,7 @@ h4 {
 
 
         &>div {
-            padding: 12%;
+            padding: 7% 12%;
             display: flex;
             align-items: flex-start;
             justify-content: center;
@@ -2083,7 +2084,7 @@ h4 {
                 bottom: 0;
                 left: 0;
                 height: 100%;
-                width: 100%;
+                max-width: 100%;
                 background-color: #F7F8FA;
 
                 &:first-child {

@@ -1,6 +1,7 @@
 {{ 'carbon1pro.scss.css' | asset_url | stylesheet_tag: preload: true }}
 
 {% assign product = all_products['urtopia-carbon-1-pro-ebike'] %}
+{% assign installment = product.price | divided_by: 2400 | floor | times : 100 | money_without_trailing_zeros %}
 
 <div class="top-fixed mobileHide">
     <div class="centeral-content">
@@ -13,7 +14,7 @@
                         <span style="text-decoration: line-through;">{{ product.compare_at_price | money }}</span>
                     {% endunless %}
             </span>
-            <span class="u14Light_v2">or as low as {{ product.price | divided_by: 24 | money_without_trailing_zeros }}/Month</span>
+            <span class="u14Light_v2">{{ 'order_page.installment' | t: installment: installment }}</span>
         </div>
         <a href="{{ product.url }}" target="_blank" class="my-button my-button-origin" action_type="Buynow_0">Order Now</a>
     </div>
@@ -27,7 +28,7 @@
                     <span class="u11Light_v2" style="text-decoration: line-through;">{{ product.compare_at_price | money }}</span>
                 {% endunless %}
             </span>
-            <span class="u11Light_v2">or as low as {{ product.price | divided_by: 24 | money_without_trailing_zeros }}/Month</span>
+            <span class="u11Light_v2">{{ 'order_page.installment' | t: installment: installment }}</span>
         </div>
 </div>
 <div class="banner">
@@ -58,7 +59,7 @@
                 <h3 class="u24DemiBold_v2">Mathis Heller</h3>
                 <h4 class="u20Medium_v2">Carbon 1 Pro’s Concept Designer <br>Former BMW Designer</h4>
                 <p class="u17Light_v2"><span>Carbon 1 Pro is Mr. Heller’s masterpiece, continuing the design of Carbon 1,
-                    optimizing the structure and improving the ride. It’s made for zipping around town and keeping you
+                    optimizing the structure and improving the ride. <br><br>It’s made for zipping around town and keeping you
                     in great shape.</span></p>
                     <span class="flex-1"></span>
                     <div class="immmm">
@@ -100,7 +101,7 @@
                     <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_23422_2x_814ca862-240b-49b3-97cf-15e0e2c1cd8d.png?v=1703227301"
                         alt="Urtopia Ebike - Carbon 1 Pro | Lightweight, Smart Cruiser, Ideal Gravel Catbon Electric Bike">
                     <div>
-                        <h4 class="u20Medium_v2">Increased aerodynamic <br>efficiency by</h4>
+                        <h4 class="u20Medium_v2">Aerodynamic efficiency <br>increased by</h4>
                         <span class="u60Medium_v2">20<span class="u24Medium_v2">%</span></span>
                     </div>
                 </div>
@@ -181,10 +182,10 @@
                 <h2 class="powerrrrrrrrrr">POWER</h2>
                 <div class="flex-1 mobileHide"></div>
                 <p class="u17Light_v2">
-                    <span>Shimano 10-speed gears with adaptive power provide 26% more torque than Carbon 1s.</span>
+                    <span>Shimano 10-speed gears with adaptive power provide 35% more torque than Carbon 1s.</span>
                 </p>
             </div>
-            <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_23438_2x_312ed800-7911-4cce-b391-03fb8e1718be.png?v=1703241276"
+            <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_23438_2x_2acf78e0-e69d-4b4b-b2f0-5d0525f54b4b.png?v=1715235520"
                 alt="Urtopia Ebike - Carbon 1 Pro | Lightweight, Smart Cruiser, Ideal Gravel Catbon Electric Bike">
         </div>
         <div>
@@ -218,8 +219,7 @@
             <h2 class="u36Medium_v2">More Capable</h2>
             <p class="u17Light_v2">
                 <span>
-                    Highly versatile, Carbon 1 Pro supports racks, larger tires, and even front suspension, offering
-                    exceptional DIY possibilities.
+                    Extremely versatile, the Carbon 1 Pro can support racks, wider tires, and even front suspension, offering exceptional DIY possibilities.
                 </span>
             </p>
         </div>

@@ -502,7 +502,6 @@ const testRides = [
         imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/output_4.png?v=1714095897",
         testrideSpot: "Winsen",
         testRideSize: "L",
-        isPartner: true,
         availableSizes: [
           'Carbon 1 Size M',
           'Chord'
@@ -536,7 +535,6 @@ const testRides = [
         imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/output_5.png?v=1714096927",
         testrideSpot: "Crailsheim",
         testRideSize: "L",
-        isPartner: true,
         availableSizes: [
           'Carbon 1 Size M/L',
           'Chord',
@@ -571,7 +569,6 @@ const testRides = [
         imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/output_6.png?v=1714096927",
         testrideSpot: "Soest",
         testRideSize: "L",
-        isPartner: true,
         availableSizes: [
           'Carbon 1 Size L',
           'Chord',

@@ -514,25 +514,27 @@
             product_variants: product_variants,
             product_variant_options_find_sort: "One Size",
             product_name: 'Carbon 1',
-            product_description: 'Powerful drive system ensures minimal effort and maximum fun',
+            product_description: 'The ultra-light commuter e-bike provides a clean city riding experience.',
             product_discount_price: settings.carbon_ebike_discount_price,
             product_url: productt.url,
         %}
-        {% assign productt = all_products["urtopia-chord-ebike"] %}
+        {% assign productt = all_products["urtopia-carbon-1-pro-ebike"] %}
+        {% assign product_variants = productt.variants | where: "option1", "L" | where: "available" %}
+        {% assign product_discount_price = productt.compare_at_price | minus: productt.price %}
+        {% render 'product-card',
+            product_variants: product_variants,
+            product_name: 'Carbon 1 Pro',
+            product_description: 'The lightweight gravel e-bike delivers exceptional performance and style.',
+            product_discount_price: product_discount_price,
+            product_url: productt.url,
+        %}
+      {% assign productt = all_products["urtopia-chord-ebike"] %}
         {% assign product_variants = productt.variants | where: "option1", "High-Step" | where: "available" %}
         {% render 'product-card',
             product_variants: product_variants,
             product_name: 'Chord',
             product_description: 'Elegantly zip around town for meet-ups, errands, or Sunday fun.',
             product_discount_price: settings.chord_ebike_discount_price,
-            product_url: productt.url,
-        %}
-        {% assign product_variants = productt.variants | where: "option1", "Step-Through" | where: "available" %}
-        {% render 'product-card',
-            product_variants: product_variants,
-            product_name: 'Chord X',
-            product_description: 'Easily kickstart your ride for workouts, city cruising, and pure enjoyment.',
-          product_discount_price: settings.chord_ebike_discount_price,
             product_url: productt.url,
         %}
     </div>
