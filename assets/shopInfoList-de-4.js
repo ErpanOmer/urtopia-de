@@ -262,31 +262,62 @@ const testRides = [
       // 'Urtopia Carbon 1'
     ],
     stores: [
-      /*{
-        name: 'Stefan Gehrke',
-        phone: '+49 30-91706139',
-        email: 'urtopia@bfnd.de',
+      {
+        name: 'Fahrradladen&Service',
+        phone: '+4917626607366',
+        email: 'albun.13359@hotmail.com',
         timezone: "Mainz, Germany (GMT+1)",
-        add: "buero fuer neues denken, Bötzowstr. 18, 10407 Berlin",
+        add: "Wollankstr.74, 13359 Berlin",
         imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Berlin.jpg?v=1679406972",
         testrideSpot: "Berlin",
-        testRideSize: "M,L,Chord",
-        isPartner: true,
+        testRideSize: "L",
         availableSizes: [
-          'Carbon 1 Size M/L',
-          'Carbon 1s Size L',
-          'Chord'
+          'Carbon 1 Size L',
         ],
         businessHours: [
           "",
-          "09:00-12:00,12:00-18:00",
-          "09:00-12:00,12:00-18:00",
-          "09:00-12:00,12:00-18:00",
-          "09:00-12:00,12:00-18:00",
-          "09:00-12:00,12:00-18:00",
-          "09:00-12:00,12:00-14:00",
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-16:00",
         ],
-      },*/
+      },
+    ]
+  },
+  {
+    city: 'Bedburg',
+    cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Berlin.jpg?v=1679406972',
+    series: [
+      'Urtopia Carbon 1',
+      'Urtopia Chord'
+      // 'Urtopia Carbon 1'
+    ],
+    stores: [
+      {
+        name: `Son's Bike shop`,
+        phone: '022728064483',
+        email: 'justinburggraf@gmail.com',
+        timezone: "Mainz, Germany (GMT+1)",
+        add: "Lindenstraße 10, 50181 Bedburg",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Berlin.jpg?v=1679406972",
+        testrideSpot: "Bedburg",
+        testRideSize: "L",
+        availableSizes: [
+          'Carbon 1 Size L',
+          'Chord X'
+        ],
+        businessHours: [
+          "",
+          "10:00-18:00",
+          "10:00-18:00",
+          "",
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-14:00",
+        ],
+      },
     ]
   },
   {
@@ -481,6 +512,28 @@ const testRides = [
           "10:00-20:00",
           "",
           "",
+        ],
+      },
+      {
+        name: 'TRANKVILE electric vehicles',
+        phone: '+49 1579 2356034',
+        email: 'kw@trankvile.com',
+        timezone: "Hamburg, Germany (GMT+1)",
+        add: "Nedderfeld 110 K22529 Hamburg Eppendorf",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/output.jpg?v=1696859457",
+        testrideSpot: "Hamburg",
+        testRideSize: "L",
+        availableSizes: [
+          'Carbon 1 Size L'
+        ],
+        businessHours: [
+          "",
+          "12:00-18:00",
+          "12:00-18:00",
+          "12:00-18:00",
+          "12:00-18:00",
+          "12:00-18:00",
+          "12:00-16:00",
         ],
       },
     ]
@@ -724,6 +777,29 @@ const testRides = [
           "9:00-12:00, 12:00-13:00, 14:30-18:00",
           "10:00-12:00, 12:00-13:00, 14:30-17:00",
           "10:00-12:00, 12:00-13:00",
+        ],
+      },
+      {
+        name: 'Zweirad-Fachgeschäft The Cross',
+        phone: '02518715430',
+        email: 'Moni_lombaptist@abv.org',
+        timezone: "Münster, Germany (GMT+1)",
+        add: "Toppheideweg 15, 48161 Münster",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/output_1.png?v=1715654059",
+        testrideSpot: "Münster",
+        testRideSize: "L",
+        availableSizes: [
+          'Carbon 1 Size L',
+          'Chord X',
+        ],
+        businessHours: [
+          "",
+          "",
+          "9:00-18:30",
+          "9:00-18:30",
+          "9:00-18:30",
+          "9:00-18:30",
+          "9:00-18:30",
         ],
       }
     ]
@@ -2179,7 +2255,7 @@ const testRides = [
       },
     ]
   },
- /* {
+ {
     country: 'Netherlands',
     city: 'Amsterdam',
     cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Amsterdam.webp?v=1702381805',
@@ -2189,9 +2265,29 @@ const testRides = [
     ],
     stores: [
       {
+        name: 'Secret Village Bikeshop',
+        phone: '+31 6 47133419',
+        email: 'Zaher-saberi@hotmail.com',
+        timezone: "Schiedam, Netherlands (GMT+1)",
+        add: "Reguliersdwarsstraat 50, 1017 BV Amsterdam",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Bikes_to_go.jpg?v=1702086748",
+        testrideSpot: "Amsterdam",
+        testRideSize: "L",
+        availableSizes: [
+          'Carbon 1 Size M',
+        ],
+        businessHours: [
+          "13:00-19:00",
+          "09:00-18:00",
+          "09:00-18:00",
+          "09:00-18:00",
+          "09:00-18:00",
+          "09:00-18:00",
+          "09:00-18:00",
+        ],
       },
     ]
-  },*/
+  },
   {
     country: 'Denmark',
     city: 'Rodovre',
@@ -2593,6 +2689,74 @@ const testRides = [
           "08:00-18:00",
           "08:00-18:00",
           "09:00-12:00",
+        ],
+      },
+    ]
+  },
+  {
+    city: 'Krefeld',
+    cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/output_2.png?v=1713578059',
+    series: [
+      'Urtopia Carbon 1',
+      'Urtopia Carbon 1s',
+    ],
+    stores: [
+      {
+        name: 'Fahrradladen am Kloster in Krefeld',
+        phone: '021516506538',
+        email: 'info@rad-krefeld.de',
+        timezone: "Wolfhagen, Germany (GMT+1)",
+        add: "Hülser Str.534, 47803 Krefeld",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/31ebc4370166f179d3bfdc3e4fceb5b0.jpg?v=1713578620",
+        testrideSpot: "Krefeld",
+        testRideSize: "L",
+        // noBook: "Please contact the store directly to arrange test ride",
+        availableSizes: [
+          'Carbon 1 Size L',
+          'Chord',
+          'Fusion'
+        ],
+        businessHours: [
+          "",
+          "10:00-19:00",
+          "10:00-19:00",
+          "10:00-19:00",
+          "10:00-19:00",
+          "10:00-19:00",
+          "10:00-14:00",
+        ],
+      },
+    ]
+  },
+  {
+    city: 'Eckernfördee',
+    cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/output_2.png?v=1713578059',
+    series: [
+      'Urtopia Carbon 1',
+      'Urtopia Carbon 1s',
+    ],
+    stores: [
+      {
+        name: 'TRANKVILE electric vehicles Eckernförde',
+        phone: ' +49 1579 2356034',
+        email: 'kw@trankvile.com',
+        timezone: "Wolfhagen, Germany (GMT+1)",
+        add: "Noorstr. 22 24340 Eckernförde",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/31ebc4370166f179d3bfdc3e4fceb5b0.jpg?v=1713578620",
+        testrideSpot: "Eckernfördee",
+        testRideSize: "L",
+        // noBook: "Please contact the store directly to arrange test ride",
+        availableSizes: [
+          'Chord X',
+        ],
+        businessHours: [
+          "",
+          "11:00-16:00",
+          "11:00-16:00",
+          "11:00-16:00",
+          "11:00-16:00",
+          "11:00-16:00",
+          "10:00-14:00",
         ],
       },
     ]
