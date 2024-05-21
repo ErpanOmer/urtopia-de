@@ -801,6 +801,28 @@ const testRides = [
           "9:00-18:30",
           "9:00-18:30",
         ],
+      },
+      {
+        name: 'ProVelo',
+        phone: '017679080008',
+        email: 'provelo-ebike@web.de',
+        timezone: "Münster, Germany (GMT+1)",
+        add: "Von-Holte-Straße 145, 48167 Münster",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/output_b691e4e0-7054-43ae-9db4-0c33785f58a3.jpg?v=1716177902",
+        testrideSpot: "Münster",
+        testRideSize: "L",
+        availableSizes: [
+          'Carbon 1 Size L',
+        ],
+        businessHours: [
+          "",
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-18:00",
+        ],
       }
     ]
   },
@@ -1617,7 +1639,7 @@ const testRides = [
     ]
   },
   {
-    city: 'Troisdorf-Kriegsdorf',
+    city: 'Troisdorf',
     cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Bonn-center-2016-01.jpg?v=1693473942',
     series: [
       'Urtopia Carbon 1',
@@ -1632,7 +1654,7 @@ const testRides = [
         timezone: "Troisdorf-Kriegsdorf, Germany (GMT+1)",
         add: "Junkersring 18, 53844 Troisdorf-Kriegsdorf",
         imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Satking_GmbH.jpg?v=1693473391",
-        testrideSpot: "Troisdorf-Kriegsdorf",
+        testrideSpot: "Troisdorf",
         testRideSize: "Chord",
         noBook: "Please contact the store directly to arrange test ride",
         availableSizes: [
@@ -1646,6 +1668,29 @@ const testRides = [
           "9:00-18:00",
           "9:00-18:00",
           "9:00-18:00",
+          "",
+        ],
+      },
+      {
+        name: 'MB E-BIKE FOR YOU GmbH',
+        phone: '022413276947',
+        email: 'info@ebike-foryou.de',
+        timezone: "Troisdorf-Kriegsdorf, Germany (GMT+1)",
+        add: "Hauptstr. 130, Troisdorf, 53842, Deutschland",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/output_82e2b36e-f277-4567-bcbd-1c821654ef17.png?v=1716176581",
+        testrideSpot: "Troisdorf",
+        testRideSize: "Chord",
+        availableSizes: [
+          'Carbon 1 Size L',
+          'Fusion',
+        ],
+        businessHours: [
+          "",
+          "10:00-18:00",
+           "10:00-18:00",
+           "10:00-18:00",
+           "10:00-18:00",
+           "10:00-15:00",
           "",
         ],
       },
@@ -2456,6 +2501,28 @@ const testRides = [
           "9:00-18:00",
         ],
       },
+      {
+        name: 'Bike Scheveningen',
+        phone: '+31 648645959',
+        email: 'info@bikescheveningen.nl',
+        timezone: "Den Haag, Netherlands (GMT+1)",
+        add: "Prins Willemstraat 26A, 2584 HV Den Haag,Netherlands",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Superfietsen_Den_Haag.png?v=1706844830",
+        testrideSpot: "Den Haag",
+        testRideSize: "M",
+        availableSizes: [
+          'Carbon 1 Size L',
+        ],
+        businessHours: [
+          "12:00-17:00",
+          "10:00-19:00",
+          "10:00-19:00",
+          "10:00-19:00",
+          "10:00-19:00",
+          "10:00-19:00",
+          "",
+        ],
+      },
     ]
   },
   {
@@ -2813,7 +2880,8 @@ for (const city of testRides) {
         </div>
       `
 
-      store_list.set(store.name.replace(/\s*/g, ""), store)
+      store_list.set(store.name.replace(/\s*/g, "").replace(/\'/g, ""), store)
+  
   }
 }
 

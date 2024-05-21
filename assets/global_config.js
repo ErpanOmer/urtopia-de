@@ -565,7 +565,7 @@ const global_config = {
       }
     },
     // 默认的发货时间 文案
-    ebike_default_delivery_time: 'Free shipping in mid-August',
+    ebike_default_delivery_time: 'Free shipping in mid-september',
     // 每一种variant 的发货时间文案
     ebike_delivery_time: {},
     sizes_and_specs: {
@@ -628,10 +628,10 @@ const global_config = {
         {
           title: 'Power',
           parameters: [
-            ["Motor", "Mid-Drive Motor (Bafang), 36V 250W, 95Nm"],
+            ["Motor", "Mid-Drive Motor (Bafang), 36V 250W, 80Nm"],
             ["Speed modes", "Pedal, Eco, Comfort, Sport"],
             ["Top speed (assisted)", "25 km/h"],
-            ["Range", "Extended to 240 km(Dual baterry)"],
+            ["Range", "Up to 140 km <br>Extended to 240 km(Dual baterry)"],
             ["Removable battery", "529.2 Wh, 21700 Samsung Li-ion"]
           ]
         },

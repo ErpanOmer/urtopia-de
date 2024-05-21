@@ -60,7 +60,7 @@
                     </div>
                     <div>
                         <img class="lozad" data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_19079_2x_6644bb87-6adc-4331-80b3-cf774cead9d8.png?v=1713332300"/>
-                        <span><span class="u14Light_v2">95 Nm Torque</span><span class="u17DemiBold_v2">Mid-drive Motor</span></span>
+                        <span><span class="u14Light_v2">80 Nm Torque</span><span class="u17DemiBold_v2">Mid-drive Motor</span></span>
                     </div>
                     <div>
                         <img class="lozad" data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_19077_2x_57e363c9-f6d7-42ff-abb9-73b5e328d545.png?v=1713332306"/>
@@ -246,10 +246,10 @@
                     >
                     <i class="fa fa-spinner fa-spin"></i><span data-pf-type="Text" class="addToCartText u17DemiBold_v2">Add to Cart</span>
                 </div>
-                <div onclick="testRideTrace('lease_on_jobrad', this)" class="orderTestRideBtn jobrad">
+                <!-- <div onclick="testRideTrace('lease_on_jobrad', this)" class="orderTestRideBtn jobrad">
                     <img class="oneeee lozad" data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/JobRad_Logo_Anthrazit_RGB_4x_2x_4d61b30b-1ef4-492f-a670-734913ec7b54.png?v=1705477646"/>
                     <span><span class="u17DemiBold_v2">TAX FREE Leasing</span><span>36 {{ 'order_page.months' | t }}, €70{{ 'checkout_klarna.month' | t }}</span></span>
-                  </div>
+                  </div> -->
                   <div onclick="testRideTrace('klarna_check_out', this)" class="orderTestRideBtn">
                     <img class="twoooo lozad" data-src="https://cdn.shopifycdn.net/s/files/1/0633/2068/6808/files/20230530-121400.png?v=1685420054"/>
                     <span><span class="u17DemiBold_v2">0% APR Financing</span><span>24 {{ 'order_page.months' | t }}, <span class="stages">{{ product.price | divided_by: 2400 | floor | times : 100 | money_without_trailing_zeros }}</span>{{ 'checkout_klarna.month' | t }}</span></span>
@@ -271,7 +271,6 @@
                 </a>
             </div>
             {% render 'footer__payment' %}
-            {% render 'leasing-logo' %}
             <div class="dialogs">
                 <div class="u17Medium_v2" onclick="showSizesAndSpecs('SizesDialog')">
                     <span>Size & Fit</span>
@@ -298,7 +297,7 @@
                     </div>
                     <div>
                         <img class="lozad" data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_19079_2x_6644bb87-6adc-4331-80b3-cf774cead9d8.png?v=1713332300"/>
-                        <span><span class="u14Light_v2">95 Nm Torque</span><span class="u17DemiBold_v2">Mid-drive Motor</span></span>
+                        <span><span class="u14Light_v2">80 Nm Torque</span><span class="u17DemiBold_v2">Mid-drive Motor</span></span>
                     </div>
                     <div>
                         <img class="lozad" data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_19077_2x_57e363c9-f6d7-42ff-abb9-73b5e328d545.png?v=1713332306"/>
@@ -392,7 +391,7 @@
               <span>With a robust 95Nm middle motor and wide range gears, the Fusion smoothly tackles hills and trails. <br><br>Enhanced by fat tires that provide excellent traction and stability, it’s ready for a ride navigating gravel paths and venturing off-road onto rugged trails.</span>
             </p>
             <ul class="u24Medium_v2">
-                <li>95 Nm Torque</li>
+                <li>80 Nm Torque</li>
                 <li>Intuitive mid-drive motor</li>
                 <li>Integrated Torque Sensor</li>
             </ul>
@@ -438,7 +437,7 @@
 
 <div class="boxs3" id="boxs3">
   <div class="centeral-content">
-    <div>
+    <div style="display: none;">
         <div class="u30DemiBold_v2">Leasing Partners at Your Choice</div>
         <div class="u17Light_v2">We offer you the opportunity to get your dream bike at low monthly leasing rates through various leasing providers.</div>
         <div class="logos">
@@ -467,7 +466,7 @@
           href="/pages/ebike-leasing?utm_source=order_page"
           target="_blank">Lease Now</a>
       </div>
-    <div></div>
+    <div style="display: none;"></div>
     <div></div>
     <div>
       <div>
