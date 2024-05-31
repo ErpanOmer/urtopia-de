@@ -265,10 +265,32 @@ const testRides = [
       {
         name: 'Fahrradladen&Service',
         phone: '+4917626607366',
-        email: 'albun.13359@hotmail.com',
+        email: 'Alban.13359@hotmail.de',
         timezone: "Mainz, Germany (GMT+1)",
         add: "Wollankstr.74, 13359 Berlin",
         imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Berlin.jpg?v=1679406972",
+        testrideSpot: "Berlin",
+        testRideSize: "L",
+        availableSizes: [
+          'Carbon 1 Size L',
+        ],
+        businessHours: [
+          "",
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-16:00",
+        ],
+      },
+      {
+        name: 'Fharrad Laden Luft und Liebe',
+        phone: '+4917620344751',
+        email: 'albun.13359@hotmail.com',
+        timezone: "Mainz, Germany (GMT+1)",
+        add: "Danziger Str. 145, 10407 Berlin",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/output_3.png?v=1716805920",
         testrideSpot: "Berlin",
         testRideSize: "L",
         availableSizes: [
@@ -693,30 +715,28 @@ const testRides = [
           "09:00-13:00",
         ],
       },
-      /*{
-        name: 'Michael Kerber',
-        phone: '+49 89 89868895',
-        email: 'michael@kerber-privat.de',
+      {
+        name: '2-Rad',
+        phone: '+49 0892716383',
+        email: 'info@2rad-schwabing.de',
         timezone: "München, Germany (GMT+1)",
-        add: "Maria-Eich-Str. , D 82166 Graefelfing, Munich, Bavaria",
-        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Munchen.jpg?v=1679406972",
+        add: "Georgenstr.39, 80799 München, Germany",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/output_7.png?v=1716862480",
         testrideSpot: "München",
         testRideSize: "L",
-        isPartner: true,
         availableSizes: [
-          'Carbon 1 Size L',
+          'Carbon 1 Pro Size M',
         ],
         businessHours: [
-          "13:00-20:00",
-          "13:00-20:00",
-          "13:00-20:00",
-          "13:00-20:00",
-          "13:00-20:00",
-          "13:00-20:00",
-          "13:00-20:00",
+          "",
+          "08:00-18:00",
+          "08:00-18:00",
+          "08:00-18:00",
+          "08:00-18:00",
+          "08:00-18:00",
+          "",
         ],
-        disableDate: createdisableDates([['2023-9-9', '2023-9-16'], ['2023-10-4', '2023-10-9'], ['2023-10-12', '2023-12-22']]),
-      }*/
+      }
     ]
   },
   {
@@ -822,6 +842,50 @@ const testRides = [
           "10:00-18:00",
           "10:00-18:00",
           "10:00-18:00",
+        ],
+      },
+      {
+        name: 'Zweirad Civak',
+        phone: '+49 025128559940',
+        email: 'provelo-ebike@web.de',
+        timezone: "Münster, Germany (GMT+1)",
+        add: "Kanalstraße 25, 48147 Münster, Germany",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/output_5.png?v=1716806581",
+        testrideSpot: "Münster",
+        testRideSize: "L",
+        availableSizes: [
+          'Carbon 1 Size L',
+        ],
+        businessHours: [
+          "",
+          "09:30-18:30",
+          "09:30-18:30",
+          "09:30-18:30",
+          "09:30-18:30",
+          "09:30-18:30",
+          "09:30-18:30",
+        ],
+      },
+      {
+        name: 'Radwerk Gallien',
+        phone: '+49 0251-76487-03',
+        email: 'info@radwerk-gallien.de',
+        timezone: "Münster, Germany (GMT+1)",
+        add: "Hansaring 33, 48155 Münster, Germany",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/output_6.png?v=1716862289",
+        testrideSpot: "Münster",
+        testRideSize: "L",
+        availableSizes: [
+          'Carbon 1s Size M',
+        ],
+        businessHours: [
+          "",
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-18:00",
+          "11:00-14:00",
         ],
       }
     ]
@@ -1504,6 +1568,72 @@ const testRides = [
     ]
   },
   {
+    country: 'Belgium',
+    city: 'Antwerp',
+    cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Utrecht_canal.jpg?v=1690441967',
+    series: [
+      'Urtopia Carbon 1',
+      // 'Urtopia Carbon 1'
+    ],
+    stores: [
+      {
+        name: `Tomorrow's Bike`,
+        phone: '+32 484 44 25 83',
+        email: 'ibrahim@tomorrowsbike.be',
+        timezone: "Mainz, Germany (GMT+1)",
+        add: "Ringlaan 1, 2170 Antwerpen, Belgium",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/output_4.png?v=1716806270",
+        testrideSpot: "Antwerp",
+        testRideSize: "L",
+        availableSizes: [
+          'Carbon 1 Size L',
+        ],
+        businessHours: [
+          "",
+          "",
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-18:00",
+        ],
+      },
+    ]
+  },
+  {
+    country: 'Belgium',
+    city: 'Lede',
+    cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Utrecht_canal.jpg?v=1690441967',
+    series: [
+      'Urtopia Carbon 1',
+      // 'Urtopia Carbon 1'
+    ],
+    stores: [
+      {
+        name: `D & S Bikes by dimast bvba`,
+        phone: '+3293664057',
+        email: 'info@dnsbikes.be',
+        timezone: "Mainz, Germany (GMT+1)",
+        add: "Molenhoek 8 - 9340 Lede， Belgium",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/output_4.png?v=1716806270",
+        testrideSpot: "Antwerp",
+        testRideSize: "L",
+        availableSizes: [
+          'Carbon 1 Size L',
+        ],
+        businessHours: [
+          "",
+          "",
+          "09:00-18:00",
+          "09:00-18:00",
+          "09:00-18:00",
+          "09:00-18:00",
+          "09:00-18:00",
+        ],
+      },
+    ]
+  },
+  {
     city: 'Wernigerode',
     cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Schloss_Wernigerode_nach_Sonnenuntergang.jpg?v=1691564874',
     series: [
@@ -1686,12 +1816,12 @@ const testRides = [
         ],
         businessHours: [
           "",
-          "10:00-18:00",
-           "10:00-18:00",
-           "10:00-18:00",
-           "10:00-18:00",
-           "10:00-15:00",
           "",
+           "10:00-18:00",
+           "10:00-18:00",
+           "10:00-18:00",
+           "10:00-18:00",
+          "10:00-15:00",
         ],
       },
     ]
@@ -2774,7 +2904,7 @@ const testRides = [
         email: 'info@rad-krefeld.de',
         timezone: "Wolfhagen, Germany (GMT+1)",
         add: "Hülser Str.534, 47803 Krefeld",
-        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/31ebc4370166f179d3bfdc3e4fceb5b0.jpg?v=1713578620",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/output_2.png?v=1716805793",
         testrideSpot: "Krefeld",
         testRideSize: "L",
         // noBook: "Please contact the store directly to arrange test ride",
