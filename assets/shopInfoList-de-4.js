@@ -254,6 +254,70 @@ const testRides = [
     ]
   },
   {
+    city: 'Leingarten',
+    cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Dusseldorf.jpg?v=1679406972',
+    series: [
+      'Urtopia Carbon 1',
+      'Urtopia Chord'
+    ],
+    stores: [
+      {
+        name: 'Leintal Bike GmbH',
+        phone: '+49 7131 901145',
+        email: 'info@leintal-bike.de',
+        timezone: "Düsseldorf, Germany (GMT+1)",
+        add: "Benzstr. 25, 74211 Leingarten",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/output_1_ffa5338b-e099-41c7-9be9-be6c62496c7d.png?v=1717487530",
+        testrideSpot: "Leingarten",
+        testRideSize: "L, Chord",
+        availableSizes: [
+          'Carbon 1 Size L',
+        ],
+        businessHours: [
+          "",
+          "09:00-19:00",
+          "09:00-19:00",
+          "09:00-19:00",
+          "09:00-19:00",
+          "09:00-19:00",
+          "09:00-17:00",
+        ],
+      }
+    ]
+  },
+  {
+    city: 'Trier',
+    cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Dusseldorf.jpg?v=1679406972',
+    series: [
+      'Urtopia Carbon 1',
+      'Urtopia Chord'
+    ],
+    stores: [
+      {
+        name: 'Bikespot Trier',
+        phone: '15225155609',
+        email: 'Info@bikespot-trier.de',
+        timezone: "Düsseldorf, Germany (GMT+1)",
+        add: "Karl-Marx-Straße 12, 54290 Trier",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/output_1_ffa5338b-e099-41c7-9be9-be6c62496c7d.png?v=1717487530",
+        testrideSpot: "Trier",
+        testRideSize: "L, Chord",
+        availableSizes: [
+          'Carbon 1 Size L',
+        ],
+        businessHours: [
+          "",
+          "10:00-18:30",
+          "10:00-18:30",
+          "",
+          "10:00-18:30",
+          "10:00-18:30",
+          "10:00-15:00",
+        ],
+      }
+    ]
+  },
+  {
     city: 'Berlin',
     cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Berlin.jpg?v=1679406972',
     series: [
@@ -262,6 +326,28 @@ const testRides = [
       // 'Urtopia Carbon 1'
     ],
     stores: [
+      {
+        name: 'Fahrradstation',
+        phone: '+49 180 - 510 8000',
+        email: 'buero@fahrradstation.de',
+        timezone: "Mainz, Germany (GMT+1)",
+        add: "Dorotheenstraße 30, 10117 Berlin",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/output_229443ca-c6d0-4ea1-8228-0c7e95433db8.png?v=1717487328",
+        testrideSpot: "Berlin",
+        testRideSize: "L",
+        availableSizes: [
+          'Carbon 1 Size M',
+        ],
+        businessHours: [
+          "",
+          "10:00-18:00",
+          "10:00-19:00",
+          "10:00-19:00",
+          "10:00-18:00",
+          "10:00-19:00",
+          "10:00-16:00",
+        ],
+      },
       {
         name: 'Fahrradladen&Service',
         phone: '+4917626607366',
@@ -323,7 +409,7 @@ const testRides = [
         email: 'justinburggraf@gmail.com',
         timezone: "Mainz, Germany (GMT+1)",
         add: "Lindenstraße 10, 50181 Bedburg",
-        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Berlin.jpg?v=1679406972",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/output_6_d1ad05cd-abde-43a4-b8bb-c3ffebfedc4d.png?v=1717490189",
         testrideSpot: "Bedburg",
         testRideSize: "L",
         availableSizes: [
@@ -847,7 +933,7 @@ const testRides = [
       {
         name: 'Zweirad Civak',
         phone: '+49 025128559940',
-        email: 'provelo-ebike@web.de',
+        email: ' zweirad.civak8@gmail.com',
         timezone: "Münster, Germany (GMT+1)",
         add: "Kanalstraße 25, 48147 Münster, Germany",
         imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/output_5.png?v=1716806581",
@@ -1568,6 +1654,160 @@ const testRides = [
     ]
   },
   {
+    country: 'Netherlands',
+    city: 'Assen',
+    cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Utrecht_canal.jpg?v=1690441967',
+    series: [
+      'Urtopia Carbon 1',
+      // 'Urtopia Carbon 1'
+    ],
+    stores: [
+      {
+        name: 'Klaucke Tweewielerhuis',
+        phone: '31592866142',
+        email: 'jarno@klaucketweewielerhuis.nl',
+        timezone: "Mainz, Germany (GMT+1)",
+        add: "Venestraat 93, 9402 GK Assen, Netherlands",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/output_2_d9ef5376-10aa-4e74-b680-16ae2d71a4f4.png?v=1717487967",
+        testrideSpot: "Assen",
+        testRideSize: "L",
+        availableSizes: [
+          'Carbon 1 Size L',
+        ],
+        businessHours: [
+          "",
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-18:00",
+          "",
+          "10:00-18:00",
+          "10:00-17:00",
+        ],
+      },
+    ]
+  },
+  {
+    country: 'Netherlands',
+    city: 'Hoogeveen',
+    cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Utrecht_canal.jpg?v=1690441967',
+    series: [
+      'Urtopia Carbon 1',
+      // 'Urtopia Carbon 1'
+    ],
+    stores: [
+      {
+        name: 'Luppes & Co Tweewielers V.O.F',
+        phone: '528260880',
+        email: 'mluppes@xs4all.nl',
+        timezone: "Mainz, Germany (GMT+1)",
+        add: "Griendtsveenweg 22b, 7901 EA Hoogeveen ",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/output_2_d9ef5376-10aa-4e74-b680-16ae2d71a4f4.png?v=1717487967",
+        testrideSpot: "Hoogeveen",
+        testRideSize: "L",
+        availableSizes: [
+          'Carbon 1 Size L',
+        ],
+        businessHours: [
+          "",
+          "13:00-18:00",
+          "09:00-18:00",
+          "09:00-18:00",
+          "09:00-18:00",
+          "09:00-18:00",
+          "09:00-17:00",
+        ],
+      },
+      {
+        name: 'Fietspoint Wolbers',
+        phone: '+31 (0)522 254 369',
+        email: 'meppel@fietspointwolbers.nl',
+        timezone: "Mainz, Germany (GMT+1)",
+        add: "Kanalstraße 25, 48147 Münster, Germany",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/output_2_d9ef5376-10aa-4e74-b680-16ae2d71a4f4.png?v=1717487967",
+        testrideSpot: "Hoogeveen",
+        testRideSize: "L",
+        availableSizes: [
+          'Carbon 1 Size L',
+        ],
+        businessHours: [
+          "",
+          "13:00-18:00",
+          "09:00-18:00",
+          "09:00-18:00",
+          "09:00-18:00",
+          "09:00-18:00",
+          "09:00-17:00",
+        ],
+      },
+    ]
+  },
+  {
+    country: 'Netherlands',
+    city: 'Almere',
+    cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Utrecht_canal.jpg?v=1690441967',
+    series: [
+      'Urtopia Carbon 1',
+      // 'Urtopia Carbon 1'
+    ],
+    stores: [
+      {
+        name: `Fietsenwinkel, reparaties en onderhoud | Tweewieler Shop Almere`,
+        phone: '31365259319',
+        email: 'info@tweewielershopalmere.nl',
+        timezone: "Mainz, Germany (GMT+1)",
+        add: "Markerkant 12 06-08, 1314 AK Almere, Netherlands",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/output_4_d83cdb80-0a91-46df-ba8f-cb01f80ed1ac.png?v=1717488717",
+        testrideSpot: "Almere",
+        testRideSize: "L",
+        availableSizes: [
+          'Carbon 1 Size L',
+        ],
+        businessHours: [
+          "",
+           "10:00-18:00",
+         "10:00-18:00",
+         "10:00-18:00",
+          "10:00-18:00",
+          "10:00-18:00",
+         "09:00-17:00",
+        ],
+      },
+    ]
+  },
+  {
+    country: 'Netherlands',
+    city: 'Zwolle',
+    cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Utrecht_canal.jpg?v=1690441967',
+    series: [
+      'Urtopia Carbon 1',
+      // 'Urtopia Carbon 1'
+    ],
+    stores: [
+      {
+        name: `Tweewielercentrum Zwolle`,
+        phone: '038-7501608',
+        email: 'info@tweewielercentrumzwolle.com',
+        timezone: "Mainz, Germany (GMT+1)",
+        add: "Vechtstraat 26, 8021AX Zwolle",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/output_3_f7dd9f57-0513-48b7-bf66-6ed1c1aa8e47.png?v=1717488407",
+        testrideSpot: "Antwerp",
+        testRideSize: "L",
+        availableSizes: [
+          'Carbon 1 Size L',
+        ],
+        businessHours: [
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+        ],
+      },
+    ]
+  },
+  {
     country: 'Belgium',
     city: 'Antwerp',
     cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Utrecht_canal.jpg?v=1690441967',
@@ -1663,6 +1903,199 @@ const testRides = [
           "9:00-17:00",
         ],
         isPartner: true
+      },
+    ]
+  },
+  {
+    city: 'Oldenburg',
+    cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Geldern.jpg?v=1691835197',
+    series: [
+      'Urtopia Carbon 1',
+      // 'Urtopia Carbon 1'
+    ],
+    stores: [
+      {
+        name: 'Best of Bikes',
+        phone: '044140575770',
+        email: 'info@best-of-bikes.de',
+        timezone: "Mainz, Germany (GMT+1)",
+        add: "Posthalterweg 3, 26129 Oldenburg",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/output_5_bbf87bc0-cde2-4e1d-a4f7-9c891492618f.png?v=1717488903",
+        testrideSpot: "Oldenburg",
+        testRideSize: "L",
+        availableSizes: [
+          'Carbon 1 Size L',
+        ],
+        businessHours: [
+          "",
+          "10:00-18:00",
+          "10:00-18:00",
+         "10:00-18:00",
+          "10:00-18:00",
+          "",
+          "10:00-18:00",
+        ],
+      },
+    ]
+  },
+  {
+    city: 'Vechta',
+    cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Geldern.jpg?v=1691835197',
+    series: [
+      'Urtopia Carbon 1',
+      // 'Urtopia Carbon 1'
+    ],
+    stores: [
+      {
+        name: 'Zweirad-Center Pott',
+        phone: '044412444',
+        email: 'zweirad-center-pott@t-online.de',
+        timezone: "Mainz, Germany (GMT+1)",
+        add: "Falkenrotter Str. 14, 49377 Vechta",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/output_0c0f0345-fbda-4426-8c7d-7741b47cd4e5.png?v=1717489086",
+        testrideSpot: "Vechta",
+        testRideSize: "L",
+        availableSizes: [
+          'Carbon 1 Size L',
+        ],
+        businessHours: [
+          "",
+          "09:00-18:00",
+           "09:00-18:00",
+          "09:00-18:00",
+           "09:00-18:00",
+           "09:00-18:00",
+           "09:00-13:00",
+        ],
+      },
+    ]
+  },
+  {
+    city: 'Georgsmarienhütte',
+    cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Geldern.jpg?v=1691835197',
+    series: [
+      'Urtopia Carbon 1',
+      // 'Urtopia Carbon 1'
+    ],
+    stores: [
+      {
+        name: 'JZCycles',
+        phone: '015753771205',
+        email: 'service@jibheadz.com',
+        timezone: "Mainz, Germany (GMT+1)",
+        add: "Hindenburgstraße 28, 49124 Georgsmarienhütte",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/output_1_0bacc422-1ceb-4be3-bad3-9e280a955b3f.png?v=1717489533",
+        testrideSpot: "Georgsmarienhütte",
+        testRideSize: "L",
+        availableSizes: [
+          'Carbon 1 Size L',
+          'Chord X'
+        ],
+        businessHours: [
+          "",
+          "09:00-18:00",
+            "09:00-18:00",
+           "09:00-18:00",
+            "09:00-18:00",
+            "09:00-18:00",
+            "09:00-16:00",
+        ],
+      },
+    ]
+  },
+  {
+    city: 'Cloppenburg',
+    cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Geldern.jpg?v=1691835197',
+    series: [
+      'Urtopia Carbon 1',
+      // 'Urtopia Carbon 1'
+    ],
+    stores: [
+      {
+        name: 'Bertis Bike Center GmbH',
+        phone: '04471932539',
+        email: 'info@bertis-bikes.de',
+        timezone: "Mainz, Germany (GMT+1)",
+        add: "Werner-Eckart-Ring 2, 49661 Cloppenburg",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/output_2_b1c09dd8-2b0f-4a0b-8765-617ff6e07149.png?v=1717489674",
+        testrideSpot: "Georgsmarienhütte",
+        testRideSize: "L",
+        availableSizes: [
+          'Carbon 1 Size L',
+        ],
+        businessHours: [
+          "",
+          "09:00-18:00",
+            "09:00-18:00",
+           "09:00-18:00",
+            "09:00-18:00",
+            "09:00-18:00",
+            "09:00-16:00",
+        ],
+      },
+    ]
+  },
+  {
+    city: 'Ritterhude',
+    cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Geldern.jpg?v=1691835197',
+    series: [
+      'Urtopia Carbon 1',
+      // 'Urtopia Carbon 1'
+    ],
+    stores: [
+      {
+        name: 'Zweirad Kliem',
+        phone: '042921247',
+        email: 'info@zweirad-kliem.de',
+        timezone: "Mainz, Germany (GMT+1)",
+        add: "Beekstraße 2, 27721 Ritterhude",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/output_3_956ea294-86b9-46da-9c1e-28aa1c3b4b02.png?v=1717489838",
+        testrideSpot: "Ritterhude",
+        testRideSize: "L",
+        availableSizes: [
+          'Carbon 1 Size L',
+        ],
+        businessHours: [
+          "",
+          "13:00-18:00",
+            "09:00-18:00",
+           "09:00-18:00",
+            "09:00-18:00",
+            "09:00-18:00",
+            "09:00-17:00",
+        ],
+      },
+    ]
+  },
+  {
+    city: 'Bremerhaven',
+    cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Geldern.jpg?v=1691835197',
+    series: [
+      'Urtopia Carbon 1',
+      // 'Urtopia Carbon 1'
+    ],
+    stores: [
+      {
+        name: 'Fahrrad-Meeradl',
+        phone: '017623640041',
+        email: 'meerdl.official@gmail.com',
+        timezone: "Mainz, Germany (GMT+1)",
+        add: "Bürgermeister-Smidt-Straße 75, 27568 Bremerhaven",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/output_4_5198b09f-1884-4c6d-bebb-233857ff04bb.png?v=1717489955",
+        testrideSpot: "Bremerhaven",
+        testRideSize: "L",
+        availableSizes: [
+          'Carbon 1 Size L',
+        ],
+        businessHours: [
+          "",
+          "13:00-18:00",
+            "09:00-18:00",
+           "09:00-18:00",
+            "09:00-18:00",
+            "09:00-18:00",
+            "09:00-17:00",
+        ],
       },
     ]
   },
@@ -2392,6 +2825,38 @@ const testRides = [
           "10:00-18:00",
           "10:00-18:00",
           "",
+        ],
+      },
+    ]
+  },{
+    country: 'Netherlands',
+    city: 'Grioingen',
+    cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/de-drie-koornbloemen-views.jpg?v=1702086995',
+    series: [
+      'Carbon 1',
+      // 'Urtopia Carbon 1'
+    ],
+    stores: [
+      {
+        name: 'Mayor's Bike',
+        phone: '+31507858121',
+        email: 'info@mayorsbike.nl',
+        timezone: "Schiedam, Netherlands (GMT+1)",
+        add: "Nieuwe Ebbingestraat 19, 9712 NC Groningen,Netherlands",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/output_5_b31a4e32-c7dc-4965-9989-036dde38fc17.png?v=1717490135",
+        testrideSpot: "Grioingen",
+        testRideSize: "L",
+        availableSizes: [
+          'Carbon 1 Size L',
+        ],
+        businessHours: [
+          "",
+          "13:00-18:00",
+          "9:00-18:00",
+          "9:00-18:00",
+          "9:00-18:00",
+          "9:00-18:00",
+           "9:00-17:00",
         ],
       },
     ]

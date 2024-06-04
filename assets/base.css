@@ -3735,10 +3735,11 @@ body .jBox-Modal {
   grid-template-columns: 1fr 1fr;
   max-width: 1000px;
   background-color: #fff;
-  border-radius: 10px;
+  border-radius: 15px;
   box-shadow: 0 3px 6px #00000029;
   align-items: center;
-  justify-items: center
+  justify-items: center;
+      overflow: hidden;
 }
 
 .testride_dialog>div {
@@ -3822,7 +3823,7 @@ body .jBox-Modal {
   display: grid;
   max-width: 976px;
   grid-template-columns: repeat(auto-fit,minmax(320px,1fr));
-  border-radius: 10px;
+  border-radius: 15px;
   background-color: transparent;
   overflow: hidden;
 }
