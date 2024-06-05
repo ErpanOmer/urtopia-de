@@ -33,7 +33,8 @@
     "comingsoon": "Demnächst",
     "months": "Monate",
     "installment": "oder ab {{ installment }} pro Monat",
-    "technical": "Technische Besonderheiten"
+    "technical": "Technische Besonderheiten",
+    "urtopians-worldwide": "Mehr als {{ number_1 }} Urtopian auf der ganzen Welt fahren leidenschaftlich gerne umweltfreundlich mit Urtopia ebikes. Und ihre Gesamtfahrdaten sind beeindruckend: Sie entsprechen der Pflanzung von insgesamt {{ number_2 }} Bäumen."
   },
   "general": {
     "password_page": {

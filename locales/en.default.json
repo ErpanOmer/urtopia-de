@@ -33,7 +33,8 @@
     "comingsoon": "Coming Soon",
     "months": "months",
     "installment": "or as low as {{ installment }}/Month",
-    "technical": "Technical Specifications"
+    "technical": "Technical Specifications",
+    "urtopians-worldwide": "Over {{ number_1 }} Urtopians worldwide are passionate about green riding with Urtopia ebikes, and their total ride data is impressive, equivalent to planting a total of {{ number_2 }} trees."
   },
   "general": {
     "password_page": {
