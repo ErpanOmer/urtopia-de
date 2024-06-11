@@ -414,7 +414,7 @@ const global_config = {
       'One Size': 'Fit for 168-195 cm'
     },
     // 默认的发货时间 文案
-    ebike_default_delivery_time: 'Free shipping in mid-July',
+    ebike_default_delivery_time: 'Shipped from local on July 15',
     // 每一种variant 的发货时间文案
     ebike_delivery_time: {},
     product_images: {

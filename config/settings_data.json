@@ -1,7 +1,7 @@
 {
   "current": {
-    "sale_name": "Ride into Summer",
-    "chord_sale_name": "Ride into Summer",
+    "sale_name": "Car-free Week Sale",
+    "chord_sale_name": "Car-free Day Sale",
     "insurance_checkbox": "Theft\/Damage Insurance",
     "insurance_description": "<p><a href=\"https:\/\/bike.qover.com\/widget\/product-page?lang=en&key=pk_EA674816756D6065C28F&country=DE\" target=\"_blank\" title=\"https:\/\/bike.qover.com\/widget\/product-page?lang=en&key=pk_EA674816756D6065C28F&country=DE\">Learn more<\/a> about the insurance.<\/p>",
     "insurance_consent_product": "<p>By clicking \"Add to cart\", you accept <a href=\"https:\/\/api.prd.qover.io\/documents\/download?apikey=pk_EA674816756D6065C28F&productReference=BIKE&country=DE&language=en&type=generalConditions\" target=\"_blank\" title=\"https:\/\/api.prd.qover.io\/documents\/download?apikey=pk_EA674816756D6065C28F&productReference=BIKE&country=DE&language=en&type=generalConditions\">terms & conditions<\/a> and <a href=\"https:\/\/api.prd.qover.io\/documents\/download?apikey=pk_EA674816756D6065C28F&productReference=BIKE&country=DE&language=en&type=IPID\" target=\"_blank\" title=\"https:\/\/api.prd.qover.io\/documents\/download?apikey=pk_EA674816756D6065C28F&productReference=BIKE&country=DE&language=en&type=IPID\">insurance product information document<\/a>.<\/p>",
@@ -259,11 +259,10 @@
         "settings": {
           "enable_language_switcher": true,
           "enable_country_region_switcher": false,
-          "use_modal_dialog": false,
           "use_currency_for_region": false,
           "switcher_position": "header",
           "show_flags": false,
-          "language_label": "language-code",
+          "use_modal_dialog": false,
           "language_country_mapping": "en:US, de:DE, en:DE",
           "countries_filter": "",
           "custom_css": "",

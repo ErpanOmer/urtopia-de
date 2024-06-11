@@ -2838,7 +2838,7 @@ const testRides = [
     ],
     stores: [
       {
-        name: 'Mayor's Bike',
+        name: `Mayor's Bike`,
         phone: '+31507858121',
         email: 'info@mayorsbike.nl',
         timezone: "Schiedam, Netherlands (GMT+1)",
