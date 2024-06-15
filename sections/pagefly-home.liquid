@@ -2,56 +2,24 @@
 
 <h1 class="visuallyhidden">Urtopia Ebike - Sleek, Full Carbon, Lightweight, Smart</h1>
 
-    <style>
-        .esssst {
-            height: calc(100vh - 106px);
-            position: relative;
-            overflow-x: hidden;
-            background: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/sssas_2x_e98b9a59-f4d1-43f0-8204-a9c13e3af152.jpg?v=1718419495') center center/cover no-repeat;
-            margin-bottom: 2vh;
-            display: flex;
-            align-items: center;
-            justify-content: flex-start;
-            flex-direction: column;
-            padding-top: 6vh;
-            color: #000;
-          text-align: center;
-        }
+<div id="Activity"></div>
 
-        .esssst img {
-            max-width: 250px;
-        }
+<script>
+    const now = new Date().getTime()
+    const Activity = $('#Activity')
 
-        .esssst .u36Medium_v2 {
-            margin: 4vh 0 4vh;
-        }
+    if (now < 1718812800000) {
+        Activity.html(`<img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_23887_2x_02ffd596-65b5-433f-8136-402f97afb5cf.png?v=1718419499" alt="">
+                        <h2 class="u36Medium_v2">Der Grund des Carbon 1 Pro Berichts von N-TV</h2>
+                        <a href="/blogs/blog/thats-why-n-tv-reviewed-carbon-1-pro" target="_blank" class="my-button my-button-black">Learn more</a>`);
 
-        
+        Activity.addClass('esssst');
+    } else {
+        Activity.html('hello world');
+        Activity.removeClass('esssst');
+    }
 
-
-        @media (max-width: 767px) {
-            .esssst {
-                height: calc(100vh - 98px);
-                background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/sssas_2x_5644202e-a647-4b62-b40e-81bde77bd6f1.jpg?v=1718422787');
-                padding-top: 13vw;
-                margin-bottom: 2.5vw;
-            }
-            .esssst img {
-                max-width: 180px;
-            }
-
-            .esssst .u36Medium_v2 {
-                font-size: 22px;
-                margin: 5vw 0 10vw;
-            }
-        }
-    </style>
-
-    <div class="esssst">
-        <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_23887_2x_02ffd596-65b5-433f-8136-402f97afb5cf.png?v=1718419499" alt="">
-        <h2 class="u36Medium_v2">Der Grund des Carbon 1 Pro Berichts von N-TV</h2>
-        <a href="/blogs/blog/thats-why-n-tv-reviewed-carbon-1-pro" target="_blank" class="my-button my-button-black">Learn more</a>
-    </div>
+</script>
 
 <div class="banner">
         <h2 class="u60Medium_v2">Carbon 1</h2>
