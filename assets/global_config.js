@@ -386,20 +386,20 @@ const global_config = {
     ebike_delivery_time: {},
     product_images: {
         'Matte Black': [
-            'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20240614-182901.jpg?v=1718360982',
-            'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/carbon_1_pro_BL_2.png?v=1703570387',
-            'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/carbon_1_pro_BL_3.png?v=1703570387',
-            'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20240131-094114.jpg?v=1706665340',
-            'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/carbon_1_pro_BL_5.png?v=1703570387',
-            'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/carbon_1_pro_BL_6.png?v=1703570387'
+            'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18877.jpg?v=1718438830',
+            'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18873.jpg?v=1718438829',
+            'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18869.jpg?v=1718438828',
+            'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18861.jpg?v=1718439689',
+            'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18857.jpg?v=1718439689',
+            'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18859.jpg?v=1718439689'
         ],
         'Creme': [
-            'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/carbon_1_pro_wh_1.png?v=1703570387',
-            'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/carbon_1_pro_wh_2.png?v=1703570387',
-            'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/carbon_1_pro_wh_3.png?v=1703570387',
-            'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20240131-094123.jpg?v=1706665341',
-            'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/carbon_1_pro_wh_5.png?v=1703570387',
-            'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/carbon_1_pro_wh_6.png?v=1703570387'
+            'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18878.jpg?v=1718438828',
+            'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18874.jpg?v=1718438829',
+            'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18870.jpg?v=1718438829',
+            'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18862.jpg?v=1718439689',
+            'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18858.jpg?v=1718439690',
+            'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18862.jpg?v=1718439689'
         ],
         commonSwiper: [
             'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20240131-094148.jpg?v=1706665341',

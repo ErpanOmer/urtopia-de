@@ -662,7 +662,7 @@
                 const index = i % 6
 
                 return  `<div class="swiper-slide">
-                            <img src="${s}&width=${global_config.is_mobile ? '400' : '700'}"/>
+                            <img src="${s}"/>
                         </div>`
               }).join(''))
             $('.product .left-swiper .swiper-wrapper').html(swiper_arr.map(s => `<div class="swiper-slide"><img src="${s}&width=${global_config.is_mobile ? '400' : '700'}"></div>`).join(''))
