@@ -316,7 +316,7 @@
             product_discount_price: settings.chord_ebike_discount_price,
             product_url: productt.url,
         %}
-      
+         {% assign product_variants = productt.variants | where: "option1", "Step-Through" | where: "available" %}
         {% render 'product-card',
             product_variants: product_variants,
             product_name: 'Chord X',

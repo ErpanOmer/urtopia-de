@@ -220,6 +220,72 @@ const testRides = [
     ]
   },
   {
+    city: 'Wiesbaden',
+    cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/output_5_e5e95421-6975-48c2-b950-ba1bd858744e.png?v=1718328335',
+    series: [
+      'Urtopia Carbon 1',
+      'Urtopia Chord'
+    ],
+    stores: [
+      {
+        name: 'Johanns Velowelt - Bike Rent',
+        phone: '61342401010',
+        email: 'jokraffert@web.de',
+        timezone: "Düsseldorf, Germany (GMT+1)",
+        add: "Hauptstraße 85, 55246 Wiesbaden",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/output_5_e5e95421-6975-48c2-b950-ba1bd858744e.png?v=1718328335",
+        testrideSpot: "Wiesbaden",
+        testRideSize: "L, Chord",
+        availableSizes: [
+          'Carbon 1 Size L',
+          'Chord',
+          'Chord X'
+        ],
+        businessHours: [
+          "",
+          "15:00-18:00",
+          "15:00-18:00",
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-14:00",
+          "",
+        ],
+      }
+    ]
+  },
+  {
+    city: 'Kreuzau',
+    cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Dusseldorf.jpg?v=1679406972',
+    series: [
+      'Urtopia Carbon 1',
+      'Urtopia Chord'
+    ],
+    stores: [
+      {
+        name: 'Fahrrad Schuster',
+        phone: '02422503399',
+        email: 'fahrrad.schuster@t-online.de',
+        timezone: "Düsseldorf, Germany (GMT+1)",
+        add: "An Burg Kreuzau 1, 52372 Kreuzau",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20240605-094824_bb75f969-6a0e-4760-9201-cf1d02556ecb.png?v=1718075604",
+        testrideSpot: "Kreuzau",
+        testRideSize: "L, Chord",
+        availableSizes: [
+          'Carbon 1 Size L',
+        ],
+        businessHours: [
+          "",
+          "08:00-17:00",
+          "08:00-17:00",
+          "",
+          "08:00-17:00",
+          "08:00-17:00",
+          "09:00-13:00",
+        ],
+      }
+    ]
+  },
+  {
     city: 'Düsseldorf',
     cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Dusseldorf.jpg?v=1679406972',
     series: [
@@ -779,29 +845,6 @@ const testRides = [
         ],
       },
       {
-        name: 'Supercycles',
-        phone: '+498945145610',
-        email: 'info@supercycles.de',
-        timezone: "München, Germany (GMT+1)",
-        add: "Am Mitterfeld 381829 München",
-        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/IMG_0440.jpg?v=1680923045",
-        testrideSpot: "München",
-        testRideSize: "L",
-        noBook: "Please contact the store directly to arrange test ride",
-        availableSizes: [
-          'Carbon 1 Size L',
-        ],
-        businessHours: [
-          "",
-          "",
-          "12:00-19:00",
-          "12:00-19:00",
-          "12:00-19:00",
-          "12:00-19:00",
-          "09:00-13:00",
-        ],
-      },
-      {
         name: '2-Rad',
         phone: '+49 0892716383',
         email: 'info@2rad-schwabing.de',
@@ -1356,6 +1399,7 @@ const testRides = [
           "09:00-12:00",
         ],
       },
+      /*
       {
         name: 'Thomas Schödl',
         phone: '+49 15122654233',
@@ -1379,6 +1423,7 @@ const testRides = [
           "10:00-20:00",
         ],
       },
+      */
     ]
   },
   /*{
@@ -3184,6 +3229,50 @@ const testRides = [
           "10:00-17:00",
         ],
       },
+      {
+        name: 'Bone-Cycle',
+        phone: '045158542487',
+        email: 'r.bohnhof@gmx.de',
+        timezone: "Lübeck, Germany (GMT+1)",
+        add: "Im Brandenbaumer Feld 11, 23564 Lübeck",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/output_61d21fef-9d56-4a8d-9cf5-11d1c76da270.png?v=1718077223",
+        testrideSpot: "Lübeck",
+        testRideSize: "L",
+        availableSizes: [
+          'Carbon 1 Size L',
+        ],
+        businessHours: [
+          "",
+          "",
+          "09:00-18:00",
+          "09:00-18:00",
+          "09:00-18:00",
+          "09:00-18:00",
+          "09:00-12:00",
+        ],
+      },
+      {
+        name: 'tobisRad Scharbeutz Fahrradverleih Mietrad Rent a Bike',
+        phone: '04503702861',
+        email: 'info@tobisrad.de',
+        timezone: "Lübeck, Germany (GMT+1)",
+        add: "Badeweg 13, 23683 Scharbeutz",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/output_1_f5304d15-c8de-4caf-8a7f-afde74d58d17.png?v=1718077720",
+        testrideSpot: "Lübeck",
+        testRideSize: "L",
+        availableSizes: [
+          'Carbon 1 Size L',
+        ],
+        businessHours: [
+          "",
+          "09:00-19:00",
+          "09:00-19:00",
+          "09:00-19:00",
+          "09:00-19:00",
+          "09:00-19:00",
+          "09:00-19:00",
+        ],
+      },
     ]
   },
   {
@@ -3216,6 +3305,168 @@ const testRides = [
           "10:00-13:00, 14:00-18:00",
           "10:00-13:00, 14:00-18:00",
           "10:00-14:00",
+        ],
+      },
+    ]
+  },
+  {
+    city: 'Petersberg',
+    cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Vera_Bike.png?v=1710295897',
+    series: [
+      'Urtopia Carbon 1',
+      'Urtopia Carbon 1s',
+    ],
+    stores: [
+      {
+        name: 'Fahrradwelt Seng',
+        phone: '+49 661 96211520',
+        email: 'info@fahrradwelt-seng.de',
+        timezone: "Karlsruhe, Germany (GMT+1)",
+        add: "Dr.-Raabe-Straße 2, 36100 Petersberg",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Vera_Bike.png?v=1710295897",
+        testrideSpot: "Karlsruhe",
+        testRideSize: "L",
+        availableSizes: [
+          'Carbon 1 Size L',
+          'Chord',
+          'Fusion'
+        ],
+        businessHours: [
+          "",
+         "",
+          "10:00-18:00",
+          "10:00-18:00",
+         "10:00-18:00",
+          "10:00-18:00",
+          "09:00-14:00",
+        ],
+      },
+    ]
+  },
+  {
+    city: 'Heidelberg',
+    cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Vera_Bike.png?v=1710295897',
+    series: [
+      'Urtopia Carbon 1',
+      'Urtopia Carbon 1s',
+    ],
+    stores: [
+      {
+        name: 'Bikeservice Ziegler',
+        phone: '+49 6221 402921',
+        email: 'zieglerkrouzek@web.de',
+        timezone: "Karlsruhe, Germany (GMT+1)",
+        add: "Schröderstr. 31, 69120 Heidelberg",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Vera_Bike.png?v=1710295897",
+        testrideSpot: "Karlsruhe",
+        testRideSize: "L",
+        availableSizes: [
+          'Carbon 1 Size L'
+        ],
+        businessHours: [
+          "",
+          "14:00-18:00",
+          "09:00-18:00",
+          "09:00-18:00",
+          "09:00-18:00",
+          "09:00-18:00",
+          "09:00-13:00",
+        ],
+      },
+    ]
+  },
+  {
+    city: 'Deinze',
+    cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Vera_Bike.png?v=1710295897',
+    series: [
+      'Urtopia Carbon 1',
+      'Urtopia Carbon 1s',
+    ],
+    stores: [
+      {
+        name: 'Bikeservice Ziegler',
+        phone: '+49 6221 402921',
+        email: 'gilles@cesano.eu',
+        timezone: "Karlsruhe, Germany (GMT+1)",
+        add: "Leernsesteenweg 117, 9800 Deinze, Belgium",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Vera_Bike.png?v=1710295897",
+        testrideSpot: "Deinze",
+        testRideSize: "L",
+        availableSizes: [
+          'Carbon 1 Size L'
+        ],
+        businessHours: [
+          "",
+          "10:00-17:00",
+          "10:00-17:00",
+          "10:00-17:00",
+          "10:00-17:00",
+          "10:00-17:00",
+          "",
+        ],
+      },
+    ]
+  },
+  {
+    city: 'Lystrup',
+    cityBackground: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/output_2_01bdbcb5-21af-4885-bbc4-b758b5990691.png?v=1718084778',
+    series: [
+      'Urtopia Carbon 1',
+      'Urtopia Carbon 1s',
+    ],
+    stores: [
+      {
+        name: 'MOSQUITO Cykelcenter Lystrup',
+        phone: '04586228266',
+        email: 'mosquitolystrup@gmail.com',
+        timezone: "Karlsruhe, Germany (GMT+1)",
+        add: "Lystrupvej 238, 8520 Lystrup",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/output_2_01bdbcb5-21af-4885-bbc4-b758b5990691.png?v=1718084778",
+        testrideSpot: "Deinze",
+        testRideSize: "L",
+        availableSizes: [
+          'Carbon 1 Size L'
+        ],
+        businessHours: [
+          "",
+          "10:00-17:00",
+          "10:00-17:00",
+          "10:00-17:00",
+          "10:00-17:00",
+          "10:00-17:00",
+          "09:00-12:00",
+        ],
+      },
+    ]
+  },
+  {
+    city: 'Vejle',
+    cityBackground: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/output_2_b7680061-7fc2-4266-bae4-3a3f8625c9cd.png?v=1718084927',
+    series: [
+      'Urtopia Carbon 1',
+      'Urtopia Carbon 1s',
+    ],
+    stores: [
+      {
+        name: 'Vinding Cykelcenter',
+        phone: '04575820306',
+        email: 'info@vindingcykelcenter.dk',
+        timezone: "Karlsruhe, Germany (GMT+1)",
+        add: "Vindinggård Center 17, 7100 Vejle",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/output_2_b7680061-7fc2-4266-bae4-3a3f8625c9cd.png?v=1718084927",
+        testrideSpot: "Vejle",
+        testRideSize: "L",
+        availableSizes: [
+          'Carbon 1 Size L'
+        ],
+        businessHours: [
+          "",
+          "09:00-17:00",
+           "09:00-17:00",
+           "09:00-17:00",
+           "09:00-17:00",
+           "09:00-18:00",
+          "10:00-13:00",
         ],
       },
     ]

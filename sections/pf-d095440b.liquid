@@ -1297,6 +1297,9 @@
 
       const rightSwiper = new Swiper(".product .right-swiper", {
         autoHeight: true,
+        zoom: {
+          maxRatio: 2.5
+        },
         navigation: {
           nextEl: ".product .right-swiper .swiper-button-next",
           prevEl: ".product .right-swiper .swiper-button-prev",
@@ -1352,7 +1355,8 @@
                 const index = i % 6
 
                 return  `<div class="swiper-slide">
-                            <img src="${s}&width=${global_config.is_mobile ? '400' : '700'}"/>
+                       <img src="${s}"/>
+                           
                             <div>
                                 <span class="u20DemiBold_v2">${global_config.carbon_order_page_config.product_media_images[index].text}</span>
                                 <img src="${global_config.carbon_order_page_config.product_media_images[index].img}&width=350">

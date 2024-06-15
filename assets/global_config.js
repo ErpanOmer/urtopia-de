@@ -150,41 +150,8 @@ const global_config = {
     // 默认的发货时间 文案
     ebike_default_delivery_time: 'Free shipping <span>5 working days</span>',
     ebike_delivery_time: {
-      // outlet carbon 1
-      43820311281880: 'Ships within <span>7 business days</span> from local warehouse.',
-      43820311314648: 'Ships within <span>7 business days</span> from local warehouse.',
-
-      // carbon 1/1s
-      44222041850072: 'Free shipping in early June.',
-      44222041882840: 'Free shipping in early June.',
-      // 1-m-sb
-      42615025172696: 'Free shipping in early June.',
-      // 1-l-sb
-      42615025369304: 'Free shipping within 5 working days',
-      // 1-m-lb
-      42615025238232: 'Free shipping within 10 working days',
-      // 1-l-lb
-      42615025434840: 'Free shipping in early June.',
-      // 1-m-pb
-      42615025303768: 'Free shipping in early June.',
-      // 1-l-pb
-      42615025500376: 'Free shipping within 5 working days',
-      // 1-m-pw
-      43608364417240: 'Free shipping within 5 working days',
-      // 1-l-pw
-      43608364450008: 'Free shipping within 5 working days',
-      // 1s-m-sb
-      43869302816984: 'Free shipping within 5 working days',
-      // 1s-l-sb
-      43869302849752: 'Free shipping within 5 working days',
-      // 1s-m-lb
-      43869302882520: 'Free shipping within 5 working days',
-      // 1s-l-lb
-      43869302915288: 'Free shipping within 5 working days',
-      // 1s-m-pb
-      43869302948056: 'Free shipping within 5 working days',
-      // 1s-l-pb
-      43869302980824: 'Free shipping within 5 working days',
+      44222041850072: 'Shipment on June 25th.',
+      44222041882840: 'Shipment on June 25th.',
     },
     sizes_and_specs: {
       sizes: {
@@ -419,7 +386,7 @@ const global_config = {
     ebike_delivery_time: {},
     product_images: {
         'Matte Black': [
-            'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/carbon_1_pro_BL_1.png?v=1703570388',
+            'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20240614-182901.jpg?v=1718360982',
             'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/carbon_1_pro_BL_2.png?v=1703570387',
             'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/carbon_1_pro_BL_3.png?v=1703570387',
             'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20240131-094114.jpg?v=1706665340',
