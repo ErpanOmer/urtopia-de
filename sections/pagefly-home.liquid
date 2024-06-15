@@ -8,15 +8,15 @@
     const now = new Date().getTime()
     const Activity = $('#Activity')
 
-    if (now < 1718812800000) {
+    if (now >= 1718812800000) {
+        Activity.html('hello world');
+        Activity.removeClass('esssst');
+    } else {
         Activity.html(`<img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_23887_2x_02ffd596-65b5-433f-8136-402f97afb5cf.png?v=1718419499" alt="">
                         <h2 class="u36Medium_v2">Der Grund des Carbon 1 Pro Berichts von N-TV</h2>
                         <a href="/blogs/blog/thats-why-n-tv-reviewed-carbon-1-pro" target="_blank" class="my-button my-button-black">Learn more</a>`);
 
         Activity.addClass('esssst');
-    } else {
-        Activity.html('hello world');
-        Activity.removeClass('esssst');
     }
 
 </script>

@@ -2,7 +2,7 @@
     opacity: 0.78;
 
     @media (max-width: 767px) {
-        font-size: 14px;
+        font-size: 15px;
     }
 }
 
@@ -202,7 +202,7 @@ h4 {
 
 .invite {
     background: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/2x_65712e4d-1926-4938-8f10-e7f13e63b50b.jpg?v=1717039099') center center/cover no-repeat;
-    aspect-ratio: 1.75;
+    aspect-ratio: 1.45;
     background-clip: content-box;
     margin-top: 18vh;
     margin-bottom: 18vh;
@@ -249,18 +249,22 @@ h4 {
         }
     }
 
+    .my-button {
+        margin-top: 5vh;
+    }
+
     @media (max-width: 767px) {
         background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/2x_08fcbdda-e593-49b2-9db5-9ed97d5a381a.jpg?v=1717055923');
         align-items: flex-start;
         aspect-ratio: unset;
         text-align: left;
-        height: 180vw;
+        height: 190vw;
         background-clip: border-box;
         margin-top: 16vw;
         margin-bottom: 16vw;
 
         .u48Medium_v2 {
-            font-size: 20px;
+            font-size: 19px;
         }
 
         .items {
@@ -274,6 +278,10 @@ h4 {
             img {
                 max-width: 30px;
             }
+        }
+
+        .my-button {
+            margin-top: 0;
         }
     }
 }
@@ -750,7 +758,7 @@ h4 {
 }
 
 .successsssc {
-  margin-bottom: 15vh;
+  margin-bottom: 7.5vh;
     .u30Light_v2 {
         max-width: 600px;
     }
@@ -812,6 +820,26 @@ h4 {
                     margin-top: 4vw;
                 }
             }
+        }
+    }
+}
+
+
+.contact_information {
+    background-color: #E8ECF0;
+    padding-top: 8vh;
+    padding-bottom: 8vh;
+    text-align: center;
+
+    .u17Light_v2 {
+        margin: 4vh 0 6vh;
+    }
+
+    @media (max-width: 767px) {
+        text-align: left;
+
+        .u48DemiBold_v2 {
+            font-size: 24px;
         }
     }
 }
