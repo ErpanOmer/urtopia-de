@@ -24,6 +24,7 @@
     "klarna_policy": "Refund Policy"
   },
   "order_page": {
+    "klarna_button": "0% APR Financing<\/span><span>24 months, €96\/month",
     "only": "Only",
     "stock": "Left in Stock",
     "out": "Available in other colors",
@@ -32,7 +33,7 @@
     "size": "Size",
     "comingsoon": "Coming Soon",
     "months": "months",
-    "installment": "or as low as {{ installment }}/Month",
+    "installment": "or as low as {{ installment }}\/Month",
     "technical": "Technical Specifications",
     "urtopians-worldwide": "Over {{ number_1 }} Urtopians worldwide are passionate about green riding with Urtopia ebikes, and their total ride data is impressive, equivalent to planting a total of {{ number_2 }} trees."
   },

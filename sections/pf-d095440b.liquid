@@ -433,11 +433,11 @@
                 </div>
                 <div onclick="testRideTrace('lease_on_jobrad', this)" class="orderTestRideBtn jobrad">
                     <img class="oneeee lozad" data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/JobRad_Logo_Anthrazit_RGB_4x_2x_4d61b30b-1ef4-492f-a670-734913ec7b54.png?v=1705477646"/>
-                    <span><span class="u17DemiBold_v2">Lease Now</span><span>36 months, €48/month</span></span>
+                    <span><span class="u17DemiBold_v2">Lease Now</span><span>36 {{ 'order_page.months' | t }}, €47{{ 'checkout_klarna.month' | t }}</span></span>
                   </div>
                   <div onclick="testRideTrace('klarna_check_out', this)" class="orderTestRideBtn">
                     <img class="twoooo lozad" data-src="https://cdn.shopifycdn.net/s/files/1/0633/2068/6808/files/20230530-121400.png?v=1685420054"/>
-                    <span><span class="u17DemiBold_v2">0% APR Financing</span><span>24 months, <span class="stages">{{ product.price | minus: settings.carbon_ebike_discount_price | divided_by: 24 | money_without_trailing_zeros }}</span>/month</span></span>
+                    <span><span class="u17DemiBold_v2">0% APR Financing</span><span>24 {{ 'order_page.months' | t }}, <span class="stages">{{ product.price | divided_by: 2400 | ceil | times: 100 | money_without_trailing_zeros }}</span>/month</span></span>
                 </div>
             </div>
             <div class="delivery_time mb12">Free shipping <span>within 5 days</span></div>
@@ -478,6 +478,91 @@
         </form>
     </div>
 </div>
+
+
+{% if settings.show_choose_different_size %}
+  <div id="choose">
+   <div class="centeral-content ebike-products">
+    <div class="u36DemiBold_v2">More Urtopia E-bikes</div>
+    <div class="u24Medium_v2"></div>
+    <div class="product-grid">
+        {% assign productt = all_products["urtopia-carbon-1-pro-ebike"] %}
+        {% assign product_variants = productt.variants | where: "option1", "L" | where: "available" %}
+        {% assign product_discount_price = productt.compare_at_price | minus: productt.price %}
+        {% render 'product-card',
+            product_variants: product_variants,
+            product_name: 'Carbon 1 Pro',
+            product_description: 'The lightweight gravel e-bike delivers exceptional performance and style.',
+            product_url: productt.url,
+        %}
+        {% assign productt = all_products["outlet-carbon-1-1s"] %}
+        {% assign product_variants = productt.variants | where: "available" %}
+        {% assign product_discount_price = productt.compare_at_price | minus: productt.price %}
+        {% render 'product-card',
+            product_variants: product_variants,
+            product_name: 'Outlet Carbon 1',
+            product_description: 'Offers the same design and performance as new, but at €400 less.',
+            product_url: productt.url,
+        %}
+      {% assign productt = all_products["urtopia-chord-ebike"] %}
+        {% assign product_variants = productt.variants | where: "option1", "High-Step" | where: "available" %}
+        {% render 'product-card',
+            product_variants: product_variants,
+            product_name: 'Chord',
+            product_description: 'Elegantly zip around town for meet-ups, errands, or Sunday fun.',
+            product_discount_price: settings.chord_ebike_discount_price,
+            product_url: productt.url,
+        %}
+    </div>
+</div>
+</div>
+<script>
+    $('.product-card .dots > div').on('click', e => {
+        const target = $(e.target)
+        const product_card = target.closest('.product-card')
+
+        // 先取消 其它兄弟元素的active, 再设置active
+        target.siblings().removeClass('active')
+        target.addClass('active')
+
+        const price = Number(target.attr('data-price'))
+        const compare_at_price = Number(target.attr('data-compare-at-price'))
+        const discount_price = Number(target.attr('data-product-discount-price'))
+        const variant_id = target.attr('data-variant')
+        const variant_image = target.attr('data-img')
+
+        // outlet 车型
+        if (discount_price === 0) {
+            product_card.find('.product_price .u24DemiBold_v2').text(getPriceFormat(price, true)).attr('data-price', getPriceFormat(compare_at_price, true))
+            product_card.find('.tags > span:first-child').text(`${getPriceFormat(compare_at_price - price, true)} OFF`)
+
+            if (price === compare_at_price) {
+                product_card.find('.product_price .u24DemiBold_v2').attr('data-price', '')
+                product_card.find('.tags > span:first-child').hide()
+            }
+        } else {
+            product_card.find('.product_price .u24DemiBold_v2').text(getPriceFormat(price - discount_price, true)).attr('data-price', getPriceFormat(price, true))
+            product_card.find('.product_price .u17Light_v2 > span').text(getPriceFormat((price - discount_price) / 24))
+            product_card.find('.tags > span:first-child').text(`${getPriceFormat(discount_price, true)} OFF`)
+        }
+
+        product_card.find('.variant-image').attr('src', variant_image)
+        product_card.find('.my-button').attr('href', `${product_card.find('.my-button').attr('href').split('?').shift()}?variant=${variant_id}`)
+    })
+
+    setTimeout(() => {
+        $('.product-card .dots > div:first-child').click()
+
+        $('.product-card .variant-image').on('click', e => {
+            const button = $(e.target).closest('.product-card').find('.my-button')
+
+            if (button.length) {
+                button[0].click()
+            }
+        })
+    })
+</script>
+{% endif %}
 
 <div id="freedom" class="freedom">
   <div class="centeral-content">

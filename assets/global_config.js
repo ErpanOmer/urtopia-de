@@ -150,8 +150,6 @@ const global_config = {
     // 默认的发货时间 文案
     ebike_default_delivery_time: 'Free shipping <span>5 working days</span>',
     ebike_delivery_time: {
-      44222041850072: 'Shipment on June 25th.',
-      44222041882840: 'Shipment on June 25th.',
     },
     sizes_and_specs: {
       sizes: {
