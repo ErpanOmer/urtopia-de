@@ -645,7 +645,7 @@
         <span class="u14Light_v2"><span class="emphasize" style="font-weight: 600;color:var(--sale-order-page-text-color);">{{ product.price | minus: settings.chord_ebike_discount_price | money }}</span>
             {% unless settings.chord_ebike_discount_price == "0" %}<span style="text-decoration: line-through;margin-left: 4px;">{{ product.price | money }}</span>{% endunless %}
         </span>
-        <span class="u14Light_v2">or as low as {{ product.price | minus: settings.chord_ebike_discount_price | divided_by: 24 | money_without_trailing_zeros }}/Month</span>
+        <span class="u14Light_v2 pppppp">or as low as {{ product.price | minus: settings.chord_ebike_discount_price | divided_by: 24 | money_without_trailing_zeros }}/Month</span>
     </div>
 </div>
 
@@ -719,6 +719,45 @@
       })
 
       document.addEventListener('onChangeOptions', e => {
+        console.log(e)
+
+        $('.product-price').attr('data-price', getPriceFormat(e.value.price))
+
+        if (e.value.Frame === 'High-Step') {
+            $('.product-price').text(getPriceFormat(e.value.price - {{ settings.chord_ebike_discount_price }})).attr('data-price', getPriceFormat(e.value.price))
+
+            $('.top-fixed .u17Light_v2 .emphasize').text(getPriceFormat(e.value.price - {{ settings.chord_ebike_discount_price }}))
+            $('.top-fixed .u17Light_v2 :not(.emphasize)').text(getPriceFormat(e.value.price))
+
+            $('.top-fixed .u14Light_v2').text(`or as low as ${getPriceFormat((e.value.price - {{ settings.chord_ebike_discount_price }}) / 24) }/Month`)
+
+            $('.bottom-fixed .u14Light_v2 .emphasize').text(getPriceFormat(e.value.price - {{ settings.chord_ebike_discount_price }}))
+            $('.bottom-fixed .u14Light_v2 :not(.emphasize)').text(getPriceFormat(e.value.price))
+
+            $('.bottom-fixed .pppppp').text(`or as low as ${getPriceFormat((e.value.price - {{ settings.chord_ebike_discount_price }}) / 24) }/Month`)
+
+            $('.orderTestRideBtn:not(.jobrad) .stages').text(getPriceFormat((e.value.price - {{ settings.chord_ebike_discount_price }}) / 24))
+            $('.sale-taggggggg').show()
+            $('.count-down').show()
+        } else {
+            $('.product-price').text(getPriceFormat(e.value.price)).attr('data-price', '')
+
+            $('.top-fixed .u17Light_v2 .emphasize').text(getPriceFormat(e.value.price))
+            $('.top-fixed .u17Light_v2 :not(.emphasize)').text('')
+
+            $('.top-fixed .u14Light_v2').text(`or as low as ${getPriceFormat(e.value.price / 24) }/Month`)
+
+            $('.bottom-fixed .u14Light_v2 .emphasize').text(getPriceFormat(e.value.price))
+            $('.bottom-fixed .u14Light_v2 :not(.emphasize)').text('')
+
+            $('.bottom-fixed .pppppp').text(`or as low as ${getPriceFormat((e.value.price) / 24) }/Month`)
+
+            $('.orderTestRideBtn:not(.jobrad) .stages').text(getPriceFormat(e.value.price / 24))
+            $('.sale-taggggggg').hide()
+            $('.count-down').hide()
+        }
+
+
         const swiper_arr = global_config.chord_order_page_config.product_images[e.value.Frame][e.value.Style].concat(global_config.chord_order_page_config.product_images[e.value.Frame]['commonSwiper'])
 
         $('.product .right-swiper .swiper-wrapper').html(swiper_arr.map((s, i) => {

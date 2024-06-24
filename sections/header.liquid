@@ -222,7 +222,7 @@
                                             <div>
                                               <div class="u14DemiBold_v2">Chord X</div>
                                               <div class="u11Light_v2">Easy on, easy off</div>
-                                              <span class="u14DemiBold_v2 emphasize" {% unless settings.chord_ebike_discount_price == "0" %}data-price="{{ productttttt.first.price | money_without_trailing_zeros }}"{% endunless %}>{{ productttttt.first.price | minus: settings.chord_ebike_discount_price | money_without_trailing_zeros }}</span>
+                                              <span class="u14DemiBold_v2 emphasize" {% unless settings.chord_ebike_discount_price == "60000" %}data-price="{{ productttttt.first.price | money_without_trailing_zeros }}"{% endunless %}>{{ productttttt.first.price | money_without_trailing_zeros }}</span>
                                             </div>
                                             <img src="{{ productttttt.first.featured_image | image_url: width: 300 }}">
                                         </div>
@@ -586,7 +586,7 @@
                                           <div class="u20DemiBold_v2">Chord X</div>
                                           <div class="u14Light_v2">Easy on, easy off</div>
                                           <div class="flex-1"></div>
-                                          <span class="u17DemiBold_v2 emphasize" {% unless settings.chord_ebike_discount_price == "0" %}data-price="{{ productttttt.first.price | money_without_trailing_zeros }}"{% endunless %}>{{ productttttt.first.price | minus: settings.chord_ebike_discount_price | money_without_trailing_zeros }}</span>
+                                          <span class="u17DemiBold_v2 emphasize" {% unless settings.chord_ebike_discount_price == "60000" %}data-price="{{ productttttt.first.price | money_without_trailing_zeros }}"{% endunless %}>{{ productttttt.first.price | money_without_trailing_zeros }}</span>
                                       </div>
                                   </div>
                               </div>
