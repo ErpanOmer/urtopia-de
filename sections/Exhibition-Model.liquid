@@ -1,0 +1,135 @@
+{% assign product = all_products['euro-bike-choice'] %}
+{{ 'product-fusion.scss.css' | asset_url | stylesheet_tag: preload: true }}
+
+<style>
+  .product {
+    margin: 8vw 0;
+  }
+
+  .product .options {
+    margin: 4vw 0;
+  }
+
+  .product .centeral-content .product-panel .options .Model>div {
+    padding: 10px;
+  }
+
+  .product .centeral-content .product-panel .options .Model>div:after {
+    padding: 0;
+  }
+
+  .product .centeral-content .product-panel .options .Model .active {
+    border-color: #000;
+  }
+
+  #cart-icon-bubble {
+    display: none !important;
+  }
+</style>
+
+<div class="product">
+  <div class="centeral-content">
+    <img class="imaggeeee"
+      src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20240625-165036_9deb4c35-a7ec-4361-aa0f-c7ddc533472c.png?v=1719306666"
+      alt="">
+    <div class="product-panel commonComponent">
+      <div class="product-price u30DemiBold_v2" style="margin: 0;" {% unless product.compare_at_price==product.price %}
+        data-price="{{ product.compare_at_price | money }}" {% endunless %}>
+        {{ product.price | money }}
+      </div>
+      <div class="options">
+        {% for option in product.options_with_values %}
+        <div class="option" option="{{option.name}}" position="{{ option.position }}">
+          <div class="u20DemiBold_v2 mb12">
+            {{ option.name -}}
+            :
+            <span class="u17Light_v2"></span>
+          </div>
+          <div class="{{ option.name }} mb12">
+            {% for value in option.values %}
+            {% case option.name %}
+            {% when 'Model' %}
+            <div attribute="{{ value }}" style="font-size: 17px;" class="{{ value }}">
+              {{ value }}
+            </div>
+            {% when 'Size' %}
+            <div attribute="{{ value }}" class="{{ value }} u14DemiBold_v2">
+              {% if value == 'L' -%}
+              Large
+              {% elsif value == 'M' -%}
+              Medium
+              {% else -%}
+              {{- value -}}
+              {%- endif %}
+            </div>
+            {% when 'Style' %}
+            <div attribute="{{ value }}" class="{{ value }}"></div>
+            {% else %}
+            <div attribute="{{ value }}" class="{{ value }}">{{ value }}</div>
+            {% endcase %}
+            {% endfor %}
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+      <div class="my-button my-button-origin">Checkout</div>
+    </div>
+  </div>
+</div>
+
+<link rel="preload"
+  href="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18873_2x_82da2d81-10d3-4bf9-b398-3da08d1161d1.png?v=1719284392"
+  as="image">
+<script>
+  const product = JSON.parse(JSON.stringify({{ product | json }}))
+  let current_id = null
+
+  $('.options .Model > div').on('click', function () {
+    $('.options .Model > div').removeClass('active')
+    $(this).addClass('active')
+    const value = $(this).text().trim()
+
+    const find = product.variants.find(v => v.option1 === value)
+    if (find) {
+      current_id = find.id
+      
+      if (value === 'Carbon 1') {
+        $('.product .imaggeeee').attr('src', 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20240625-165036_9deb4c35-a7ec-4361-aa0f-c7ddc533472c.png?v=1719306666')
+        $('.product .product-price').text(getPriceFormat(find.price))
+      } else {
+        $('.product .imaggeeee').attr('src', 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20240625-165049_9c913421-f435-4674-92fa-cf7ca27d4ab6.png?v=1719306666')
+        $('.product .product-price').text(getPriceFormat(find.price))
+      }
+    }
+
+
+
+
+  })
+
+
+  $('.product .my-button').on('click', e => {
+
+    fetch('/cart/clear.js').then(() => {
+      fetch('/cart/add.js', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ items: [{ id: current_id, quantity: 1 }] })
+      })
+        .then(response => {
+          //window.sessionStorage.checkout_email = checkout_email
+          location.href = `/checkout`
+        })
+        .catch((error) => {
+          console.error('Error:', error);
+        })
+    })
+  })
+
+
+  setTimeout(() => {
+    $('.options .Model > div')[0].click()
+  })
+</script>

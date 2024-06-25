@@ -1,0 +1,12 @@
+{
+  "sections": {
+    "Exhibition-Model": {
+      "type": "Exhibition-Model",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "Exhibition-Model"
+  ]
+}
