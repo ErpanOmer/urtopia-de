@@ -1,163 +1,135 @@
-{{ 'blog.scss.css' | asset_url | stylesheet_tag: preload: true }}
+{% assign product = all_products['euro-bike-choice'] %}
+{{ 'product-fusion.scss.css' | asset_url | stylesheet_tag: preload: true }}
 
-<article>
-  <header style="--background-image-pc: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20240615-110656.jpg?v=1718420832');">
-    <div class="background-blur"></div>
-    <section class="flex flex-center flex-column text-center height-600 mb-height-420">
-      <h1 class="color-white mb-font-size-24">Legendary Artist Meets Urtopia Innovation</h1>
-    </section>
-  </header>
-  <section class="margin-top-60 margin-bottom-60 max-width-720 mb-margin-top-40 mb-margin-bottom-40">
-    <div class="video margin-bottom-60 mb-margin-bottom-40">
-      <iframe
-        width="100%"
-        height="100%"
-        src="https://www.youtube.com/embed/cEuUJ0EQJaA?start=0&amp;autoplay=0&amp;loop=0&amp;mute=0&amp;controls=0&amp;enablejsapi=1"
-        title="YouTube video player"
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen=""
-      >
-      </iframe>
-    </div>
-    <p class="margin-bottom-40 font-weight-600">
-      <i>
-        "Olaf Hajek is a magician with colors."
-      </i>
-    </p>
-    <p class="margin-bottom-40">
-      <span>
-        
-Born in Rendsburg, Germany, Olaf Hajek is a renowned German artist whose unique qualities have led him to judge international illustration awards and rank 39th among the world's most influential contemporary artists in 2021, alongside luminaries like Kaws, Takashi Murakami, and Yayoi Kusama. His clientele includes prestigious names such as Hermès, Diptyque, Montblanc, The New York Times, and The Washington Post.
-      </span>
-    </p>
-    <div class="grid-box grid-columns-2 grid-column-gap-12 margin-bottom-40 mb-grid-columns-1 grid-row-gap-12">
-      <img
-        class="fade"
-        src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/c6b7aa99-df16-4a44-b1a2-b2afe336a107.jpg?v=1718647697"
-        alt=""
-      >
-      <img
-        class="fade"
-        src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/9ec76b17-513d-437c-a549-7a5614ff482f.jpg?v=1718647701"
-        style="height: 100%; object-fit: cover;"
-        alt=""
-      >
-      <img
-        class="fade"
-        src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/47b47843-a5ca-41f8-9fcd-7ecb70e9a078.jpg?v=1718647700"
-        alt=""
-      >
-      <img
-        class="fade"
-        src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/388ba955-d56f-42a4-9984-bf3110d5110a.jpg?v=1718647701"
-        style="height: 100%; object-fit: cover;"
-      >
-    </div>
-    <p class="margin-bottom-40">
-      <span>
-        Urtopia is thrilled to announce its collaboration with Olaf for the Carbon 1 Pro art coating project. His theme, "Water of Life," promises to create an unparalleled artistic finish for the Urtopia Carbon 1 Pro, blending aesthetics and technology in a contemporary masterpiece. This blog serves as a trailer to unveil the origin and current creative process behind this artistic endeavor.
-      </span>
-    </p>
-  </section>
-  <section class="margin-top-80 margin-bottom-80 max-width-720 mb-margin-top-60 mb-margin-bottom-60">
-    <h2 class="font-size-28 margin-bottom-40 mb-font-size-24 mb-margin-bottom-28">The Bicycle with an Aesthetic Mind</h2>
-    <p class="margin-bottom-40">
-      <span>
-        At the beginning of 2024, Urtopia initiated a collaboration with artists, aiming to fuse technology and art to present a modern beauty with striking visual impact. This initiative continues to embody Urtopia’s philosophy of “the bicycle with a mind”—not just a technological mind but also an appreciation for aesthetic beauty and artistry. Among the many artists considered, Olaf Hajek stood out with his vibrant and surrealistic paintings that captivate with motifs of flora, fauna, and intricate symbolism.
-      </span>
-    </p>
-    <p class="margin-bottom-40">
-      <span>
-        Olaf's artworks are renowned for their rich colors and complex compositions, hinting at deeper narratives within their depths. Collaborating with such an artist for the design of the Carbon 1 Pro coating promises extraordinary beauty.
-      </span>
-    </p>
-    <p class="margin-bottom-40">
-      <span>
-        The collaboration with Olaf proceeded seamlessly. Upon expressing our interest and showcasing the product, he was immediately drawn to the unique curves of our frame, reminiscent of a Möbius strip. The seed of creativity took root in his mind from the moment he examined the frame.
-      </span>
-    </p>
-    <p class="margin-bottom-40">
-      <span>
-        Thus, he approaches the Carbon 1 Pro as his canvas, intending to weave a tale titled "Water of Life" through the vehicle of surrealism, emphasizing themes of symbiosis, nature, and sustainability.
-      </span>
-    </p>
-  </section>
-  <section class="margin-top-80 margin-bottom-80 max-width-720 mb-margin-top-60 mb-margin-bottom-60">
-    <h3 class="font-size-24 margin-bottom-28 mb-font-size-20">Water of Life</h3>
-    <p class="margin-bottom-40">
-      <span>
-        Water, the source of life, imbues all things with vitality, nurturing nature and fostering growth. Olaf’s original sketches forgo typical blue water imagery, instead highlighting joyous green life forms like birds, circus imagery, and the sun. His artistic language eschews directness, opting for nuance and leaving space for broader imagination.
-        </span
-      >
-    </p>
-    <p class="margin-bottom-40">
-      <span>
-        Urtopia's official artist, Stone, will leverage his impeccable design skills to meticulously transfer Olaf's intricate patterns onto the Carbon 1 Pro frame. By integrating montage artistry inspired by natural life and principles of sustainable development, Stone aims to showcase the symbiotic power of art and environmental stewardship.
-        </span
-      >
-    </p>
+<style>
+  .product {
+    margin: 8vw 0;
+  }
 
-    <div class="grid-box grid-columns-2 grid-column-gap-12 margin-bottom-40 mb-grid-columns-1 grid-row-gap-12">
-      <img
-        class="fade"
-        src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/d62c6de3-ac58-4298-8e82-67f71b893320.png?v=1718648035"
-        alt=""
-      >
-      <img
-        class="fade"
-        src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/5cfb0ec6-7f47-489f-8bce-88bbe7e55fb6.png?v=1718648036"
-        alt=""
-      >
-    </div>
+  .product .options {
+    margin: 4vw 0;
+  }
 
-    <p class="margin-bottom-40">
-      <span>
-        Upon completion, the artwork will undergo a final touch by Olaf himself, ensuring its ultimate form is realized. Stay tuned, as this "Water of Life" will make its debut in just one month!
-        </span
-      >
-    </p>
-    <div class="grid-box grid-columns-2 grid-column-gap-12 margin-bottom-40 mb-grid-columns-1 grid-row-gap-12">
-      <img
-        class="fade"
-        src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/c85eb509-89f5-40df-a86b-e7fb71266ebe.png?v=1718648177"
-        alt=""
-      >
-      <img
-        class="fade"
-        src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/f6af7838-1676-4561-b23b-8edad6c81396.png?v=1718648177"
-        alt=""
-      >
-    </div>
+  .product .centeral-content .product-panel .options .Model>div {
+    padding: 10px;
+  }
 
-    <p class="margin-bottom-40">
-      <span>
-        Urtopia is delighted by this passionate collision of talents. If you’re an artist who shares a deep love for Urtopia e-bikes, we warmly welcome and eagerly anticipate more international artists joining the Urtopia family to create even more spectacular works.
-        </span
-      >
-    </p>
-    <div class="flex flex-center margin-top-40 margin-bottom-60">
-      <a href="/products/urtopia-carbon-1-pro-ebike" class="my-button my-button-origin" target="_blank">Order Now</a>
-    </div>
-  </section>
-</article>
+  .product .centeral-content .product-panel .options .Model>div:after {
+    padding: 0;
+  }
 
+  .product .centeral-content .product-panel .options .Model .active {
+    border-color: #000;
+  }
+
+  #cart-icon-bubble {
+    display: none !important;
+  }
+</style>
+
+<div class="product">
+  <div class="centeral-content">
+    <img class="imaggeeee"
+      src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20240625-165036_9deb4c35-a7ec-4361-aa0f-c7ddc533472c.png?v=1719306666"
+      alt="">
+    <div class="product-panel commonComponent">
+      <div class="product-price u30DemiBold_v2" style="margin: 0;" {% unless product.compare_at_price==product.price %}
+        data-price="{{ product.compare_at_price | money }}" {% endunless %}>
+        {{ product.price | money }}
+      </div>
+      <div class="options">
+        {% for option in product.options_with_values %}
+        <div class="option" option="{{option.name}}" position="{{ option.position }}">
+          <div class="u20DemiBold_v2 mb12">
+            {{ option.name -}}
+            :
+            <span class="u17Light_v2"></span>
+          </div>
+          <div class="{{ option.name }} mb12">
+            {% for value in option.values %}
+            {% case option.name %}
+            {% when 'Model' %}
+            <div attribute="{{ value }}" style="font-size: 17px;" class="{{ value }}">
+              {{ value }}
+            </div>
+            {% when 'Size' %}
+            <div attribute="{{ value }}" class="{{ value }} u14DemiBold_v2">
+              {% if value == 'L' -%}
+              Large
+              {% elsif value == 'M' -%}
+              Medium
+              {% else -%}
+              {{- value -}}
+              {%- endif %}
+            </div>
+            {% when 'Style' %}
+            <div attribute="{{ value }}" class="{{ value }}"></div>
+            {% else %}
+            <div attribute="{{ value }}" class="{{ value }}">{{ value }}</div>
+            {% endcase %}
+            {% endfor %}
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+      <div class="my-button my-button-origin">Checkout</div>
+    </div>
+  </div>
+</div>
+
+<link rel="preload"
+  href="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18873_2x_82da2d81-10d3-4bf9-b398-3da08d1161d1.png?v=1719284392"
+  as="image">
 <script>
-  window.addEventListener("scroll", throttle(() => {
-    $('article .fade').each((i, item) => {
-      let { top } = item.getBoundingClientRect();
-        let s = window.innerHeight - top;
-        if (s > 0) {
-          item.classList.add("fade-in-show")
-        }
+  const product = JSON.parse(JSON.stringify({{ product | json }}))
+  let current_id = null
+
+  $('.options .Model > div').on('click', function () {
+    $('.options .Model > div').removeClass('active')
+    $(this).addClass('active')
+    const value = $(this).text().trim()
+
+    const find = product.variants.find(v => v.option1 === value)
+    if (find) {
+      current_id = find.id
+      
+      if (value === 'Carbon 1') {
+        $('.product .imaggeeee').attr('src', 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20240625-165036_9deb4c35-a7ec-4361-aa0f-c7ddc533472c.png?v=1719306666')
+        $('.product .product-price').text(getPriceFormat(find.price))
+      } else {
+        $('.product .imaggeeee').attr('src', 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20240625-165049_9c913421-f435-4674-92fa-cf7ca27d4ab6.png?v=1719306666')
+        $('.product .product-price').text(getPriceFormat(find.price))
+      }
+    }
+
+
+
+
+  })
+
+
+  $('.product .my-button').on('click', e => {
+
+    fetch('/cart/clear.js').then(() => {
+      fetch('/cart/add.js', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ items: [{ id: current_id, quantity: 1 }] })
+      })
+        .then(response => {
+          //window.sessionStorage.checkout_email = checkout_email
+          location.href = `/checkout`
+        })
+        .catch((error) => {
+          console.error('Error:', error);
+        })
     })
-  }, 50))
+  })
 
-  $('article').append(`{% render 'blog-common-footer' %}`)
 
-  {% for article in blogs.blog.articles %}
-    {% if forloop.index <= 3 %}
-        console.log(JSON.parse(JSON.stringify({{ article | json }})))
-    {% endif %}
-  {% endfor %}
+  setTimeout(() => {
+    $('.options .Model > div')[0].click()
+  })
 </script>
