@@ -11,7 +11,7 @@ const global_config = {
   // leasing 有关配置
   leasing: {
     // 需要禁用的jobrad 配件
-    jobrad_disabled_accessories: ['7633738694872', '7633738629336', '7974077038808', "7633738629336", "8034307703000"],
+    jobrad_disabled_accessories: ['7633738694872', '7974077038808', "8034307703000"],
     // lease a bike 
     leaseabike_disabled_accessories: ['7633738694872', '7974077038808'],
     ebike_delivery_time: {

@@ -224,10 +224,10 @@
                     >
                     <i class="fa fa-spinner fa-spin"></i><span data-pf-type="Text" class="addToCartText u17DemiBold_v2">Add to Cart</span>
                 </div>
-                {% comment %} <div onclick="testRideTrace('lease_on_jobrad', this)" class="orderTestRideBtn jobrad">
+                <div onclick="testRideTrace('lease_on_jobrad', this)" class="orderTestRideBtn jobrad">
                     <img class="oneeee lozad" data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/JobRad_Logo_Anthrazit_RGB_4x_2x_4d61b30b-1ef4-492f-a670-734913ec7b54.png?v=1705477646"/>
-                    <span><span class="u17DemiBold_v2">TAX FREE Leasing</span><span>36 {{ 'order_page.months' | t }}, €70{{ 'checkout_klarna.month' | t }}</span></span>
-                  </div> {% endcomment %}
+                    <span><span class="u17DemiBold_v2">TAX FREE Leasing</span><span>36 {{ 'order_page.months' | t }}, €52{{ 'checkout_klarna.month' | t }}</span></span>
+                  </div>
                   <div onclick="testRideTrace('klarna_check_out', this)" class="orderTestRideBtn">
                     <img class="twoooo lozad" data-src="https://cdn.shopifycdn.net/s/files/1/0633/2068/6808/files/20230530-121400.png?v=1685420054"/>
                     <span><span class="u17DemiBold_v2">0% APR Financing</span><span>24 {{ 'order_page.months' | t }}, <span class="stages">{{ product.price | divided_by: 2400 | floor | times : 100 | money_without_trailing_zeros }}</span>{{ 'checkout_klarna.month' | t }}</span></span>
@@ -249,7 +249,7 @@
                 </a>
             </div>
             {% render 'footer__payment' %}
-            {% comment %} {% render 'leasing-logo' %} {% endcomment %}
+            {% render 'leasing-logo' %}
             <div class="dialogs">
                 <div class="u17Medium_v2" onclick="showSizesAndSpecs('SizesDialog')">
                     <span>Size & Fit</span>
@@ -310,7 +310,7 @@
         {% assign product_tags = settings.carbon_ebike_free_accessories_count | append: ' Freebies'   %}
         {% render 'product-card',
             product_variants: product_variants,
-            product_variant_options_find_sort: "One Size",
+            product_variant_options_find_sort: "M,L",
             product_name: 'Carbon 1',
             product_description: 'The ultra-light commuter e-bike provides a clean city riding experience.',
             product_discount_price: settings.carbon_ebike_discount_price,
@@ -808,18 +808,18 @@
         
     
         if (type === 'lease_on_jobrad') {
-            fetchBuried('websiteclick', `fusion-order-page`, { button: type }, true)
+            fetchBuried('websiteclick', `carbon1pro-order-page`, { button: type }, true)
     
             t.removeClass('loading')
             t.find('span').html(text)
 
-            const url = window.sessionStorage.localPathPerfix + `/pages/ebike-leasing?bike_model=fusion&bike_size=${current_variant_options.Size}&bike_style=${current_variant_options.Color}&utm_source=order_page#forms`
+            const url = window.sessionStorage.localPathPerfix + `/pages/ebike-leasing?bike_model=carbon1pro&bike_size=${current_variant_options.Size}&bike_style=${current_variant_options.Color}&utm_source=order_page#forms`
 
             return window.open(url)
         }
     
         if (type === 'klarna_check_out') {
-            fetchBuried('websiteclick', `fusion-order-page`, { button: type }, true)
+            fetchBuried('websiteclick', `carbon1pro-order-page`, { button: type }, true)
             window.sessionStorage.clicked_klarna_checkout_button = 'clicked_klarna_checkout_button'
     
             setTimeout(() => {

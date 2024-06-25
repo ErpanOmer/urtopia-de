@@ -1,12 +1,14 @@
 {% assign carbon1 = "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18842_2x_311e472b-5f53-4c92-8120-29a7d5448c75.png?v=1694070569" %}
-{% assign carbon1s = "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18841_2x_d1bd8de1-5910-454a-9271-306815705052.png?v=1694070547" %}
+{% comment %} {% assign carbon1s = "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18841_2x_d1bd8de1-5910-454a-9271-306815705052.png?v=1694070547" %} {% endcomment %}
 {% assign chord = "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18589_2x_4ca8137f-ac74-49c3-b2c4-a523904d4bf7.png?v=1694070560" %}
-{% assign chordx = "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18840_2x_d185d12d-30c6-4959-8197-bf586c703aae.png?v=1694070555" %}
-{% assign fusion = "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20240420-111342.png?v=1713582840" %}
+{% comment %} {% assign chordx = "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18840_2x_d185d12d-30c6-4959-8197-bf586c703aae.png?v=1694070555" %} {% endcomment %}
+{% comment %} {% assign fusion = "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20240420-111342.png?v=1713582840" %} {% endcomment %}
+ {% assign carbon1pro = 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18873_2x_82da2d81-10d3-4bf9-b398-3da08d1161d1.png?v=1719284392' %}
 
 <link rel="preload" href="{{ chord }}" as="image">
-<link rel="preload" href="{{ chordx }}" as="image">
-<link rel="preload" href="{{ fusion }}" as="image">
+<link rel="preload" href="{{ carbon1pro }}" as="image">
+{% comment %} <link rel="preload" href="{{ chordx }}" as="image"> {% endcomment %}
+{% comment %} <link rel="preload" href="{{ fusion }}" as="image"> {% endcomment %}
 
 {{ 'leasing-add.scss.css' | asset_url | stylesheet_tag }}
 
@@ -17,7 +19,7 @@
               <h2 class="u36DemiBold_v2">From {{ 4989 | money }}/month</h2>
               <h1 class="u72DemiBold_v2">Urtopia E-Bikes Leasing</h1>
               <div class="u20Light_v2">We work with the best leasing providers. To Provide you the smoothest leasing experience and enjoy you riding as soon as possible.</div>
-              <div class="u20Medium_v2 banner_origin">Enjoy the limited time promotion</div>
+              {% comment %} <div class="u20Medium_v2 banner_origin">Enjoy the limited time promotion</div> {% endcomment %}
               <div class="buttons">
                   <a href="#forms" class="my-button">Request leasing offer</a>
                   <a href="/products/urtopia-carbon-e-bike" class="my-button my-button-ghost">Shop Online</a>
@@ -28,23 +30,24 @@
           </div>
       </div>
   </div>
-  <div class="centeral-content partners">
+  {% comment %} <div class="centeral-content partners">
     <h2 class="u48DemiBold_v2">Leasing Partners</H2>
     <div class="items">
         <div>
 
         </div>
     </div>
-  </div>
-  <h2 class="centeral-content u48DemiBold_v2">Available Urtopia E-Bikes</h2>
+  </div> {% endcomment %}
   <div class="parameters">
     <div class="centeral-content top-content">
+        <h2 class="u48DemiBold_v2">Available Urtopia E-Bikes</h2>
         <div class="select">
             <select>
                 <option value="carbon1">Urtopia Carbon 1</option>
                 <!-- <option value="fusion">Urtopia Fusion</option> -->
                 <!-- <option value="carbon1s">Urtopia Carbon 1s</option> -->
                 <option value="chord">Urtopia Chord</option>
+                <option value="carbon1pro">Urtopia Carbon 1 Pro</option>
                 {% comment %} <option value="chordx">Urtopia Chord X</option> {% endcomment %}
             </select>
         </div>
@@ -393,15 +396,16 @@ let swiperItems = [
         text: 'If your employer is registered with BusinessBike, you can order by filling out this form. We’ll share this information with BusinessBike, who will process your order. BusinessBike will confirm the order with your employer.',
         forms: {
             employer_id: {
-                title: 'Employee email:',
+                title: 'Quickstart (genehmigte Emailadresse)',
                 tips: '',
-                placeholder: ''
+                placeholder: '',
+                required: true
             },
-            employer_number: {
-                title: 'Employer ID:',
-                tips: 'It is a number issued by your employer or the Human Resources Department.',
-                placeholder: ''
-            }
+            // employer_number: {
+            //     title: 'Employer ID:',
+            //     tips: 'It is a number issued by your employer or the Human Resources Department.',
+            //     placeholder: ''
+            // }
         }
     },
     {
@@ -411,16 +415,17 @@ let swiperItems = [
         forms: {
             employer_id: {
                 show: true,
-                title: 'Company code:',
-                tips: 'Submit leasing request via company code or customer number (employee does not yet have a bikeleasing bike).',
-                placeholder: 'XXXX (4-stellig)'
-            },
-            employer_number: {
-                show: true,
                 title: 'Bikeleasing-user-ID:',
                 tips: 'Leasing request via the bike leasing user ID of the employee.',
-                placeholder: 'XXXX-XXXX (8-stellig)'
-            }
+                placeholder: 'XXXX-XXXX (8-stellig)',
+                required: true
+            },
+            // employer_number: {
+            //     show: true,
+            //     title: 'Bikeleasing-user-ID:',
+            //     tips: 'Leasing request via the bike leasing user ID of the employee.',
+            //     placeholder: 'XXXX-XXXX (8-stellig)'
+            // }
         }
     },
     {
@@ -429,34 +434,35 @@ let swiperItems = [
         text: 'If your employer is registered with Mein Dienstrad, you can order by filling out this form. We’ll share this information with Mein Dienstrad, who will process your order. Mein Dienstrad will confirm the order with your employer.',
         forms: {
             employer_id: {
-                title: 'Partner code:',
-                tips: 'It is a ID provide by your employer or HR department.',
-                placeholder: ''
+                title: 'User email address:',
+                tips: 'which was registered on Mein-dienstrad.',
+                placeholder: '',
+                required: true
             },
-            employer_number: {
-                title: 'Employer number:',
-                tips: 'It is a number issued by your employer or the Human Resources Department.',
-                placeholder: ''
-            }
+            // employer_number: {
+            //     title: 'Employer number:',
+            //     tips: 'It is a number issued by your employer or the Human Resources Department.',
+            //     placeholder: ''
+            // }
         }
     },
-    {
-        name: 'Deutsche Dienstrad',
-        img: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/dd-logo-dark-yellow_2x_3d0a06fc-55ef-447a-b387-4abd965a1818.png?v=1705471243',
-        text: 'If your employer is registered with Deutsche Dienstrad, you can order by filling out this form. We’ll share this information with BusinessBike, who will process your order. BusinessBike will confirm the order with your employer.',
-        forms: {
-            employer_id: {
-                title: '',
-                tips: '',
-                placeholder: ''
-            },
-            employer_number: {
-                title: '',
-                tips: '',
-                placeholder: ''
-            }
-        }
-    },
+    // {
+    //     name: 'Deutsche Dienstrad',
+    //     img: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/dd-logo-dark-yellow_2x_3d0a06fc-55ef-447a-b387-4abd965a1818.png?v=1705471243',
+    //     text: 'If your employer is registered with Deutsche Dienstrad, you can order by filling out this form. We’ll share this information with BusinessBike, who will process your order. BusinessBike will confirm the order with your employer.',
+    //     forms: {
+    //         employer_id: {
+    //             title: '',
+    //             tips: '',
+    //             placeholder: ''
+    //         },
+    //         employer_number: {
+    //             title: '',
+    //             tips: '',
+    //             placeholder: ''
+    //         }
+    //     }
+    // },
     {
         name: 'Lease a Bike',
         img: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20240122-100655.png?v=1705889296',
@@ -465,7 +471,8 @@ let swiperItems = [
             employer_id: {
                 title: 'Bestellcode:',
                 tips: '',
-                placeholder: 'XXXXXX (6-stellig)'
+                placeholder: 'XXXXXX (6-stellig)',
+                required: true
             },
             employer_number: {
                 title: '',
@@ -577,6 +584,7 @@ $('.partners .items').html(swiperItems.map(item => `
 
         if (infos?.employer_id?.title) {
             employer_id.closest('.item').find('.u24Medium > span:first-child').text(infos.employer_id.title)
+            employer_id.attr('required', !!infos.employer_id.required)
 
             if (infos.employer_id.tips) {
                 employer_id.closest('.item').find('.u24Medium > span:last-child').text(infos.employer_id.tips).show()                
@@ -590,6 +598,7 @@ $('.partners .items').html(swiperItems.map(item => `
         } else {
             employer_id.attr('type', 'hidden')
             employer_id.closest('.item').hide()
+            employer_id.attr('required', false)
         }
 
         if (infos?.employer_number?.title) {
@@ -814,6 +823,45 @@ $('.partners .items').html(swiperItems.map(item => `
                 ]
             ],
             link: '/products/urtopia-chord-ebike?variant=43705719062744'
+        },
+        carbon1pro: {
+            background_image: `{{ carbon1pro }}`,
+            price: `{{ all_products['urtopia-carbon-1-pro-ebike'].price | money_without_trailing_zeros  }}`,
+            orginal_price: `{{ all_products['urtopia-carbon-1-pro-ebike'].compare_at_price | money_without_trailing_zeros  }}`,
+            discount_price: `{{ all_products['urtopia-carbon-1-pro-ebike'].compare_at_price | minus: all_products['urtopia-carbon-1-pro-ebike'].price | money_without_trailing_zeros }}`,
+            link: '/products/urtopia-carbon-1-pro-ebike',
+            boxs: [
+                [
+                    'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18448_2x_d3fbd8a8-d1e2-4a84-b4eb-ce513f342438.png?v=1683705373',
+                    'Lightweight',
+                    'Toray Carbon Fiber'
+                ],
+                [
+                    'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20240506-183201.png?v=1714991537',
+                    '700 x 40C',
+                    'Cyclocross Tire'
+                ],
+                [
+                    'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18445_2x_8378bdff-585c-4ae2-a3f9-f557107230d8.png?v=1683705353',
+                    'Adaptive',
+                    'Torque Sensor'
+                ],
+                [
+                    'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18447_2x_532d80bf-4f0d-48a9-b2c6-81212b652ad7.png?v=1683705337',
+                    'Range',
+                    '130 km'
+                ],
+                [
+                    'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18450_2x_3726a023-532f-459e-826b-ecc6a1d3502c.png?v=1683705347',
+                    'Phone App',
+                    'iOS, Android'
+                ],
+                [
+                    'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18446_2x_e64c38e1-535a-401d-a722-cbe2b3b4e450.png?v=1683705358',
+                    'Anti-theft',
+                    'GPS Tracking'
+                ]
+            ],
         }
     }
 
