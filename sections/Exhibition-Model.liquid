@@ -29,10 +29,11 @@
 
 <div class="product">
   <div class="centeral-content">
-    <img class="imaggeeee"
+    <img class="imaggeeee mb6"
       src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20240625-165036_9deb4c35-a7ec-4361-aa0f-c7ddc533472c.png?v=1719306666"
       alt="">
     <div class="product-panel commonComponent">
+      <div class="u24DemiBold_v2 mb6">{{ product.title }}</div>
       <div class="product-price u30DemiBold_v2" style="margin: 0;" {% unless product.compare_at_price==product.price %}
         data-price="{{ product.compare_at_price | money }}" {% endunless %}>
         {{ product.price | money }}
