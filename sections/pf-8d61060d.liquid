@@ -398,7 +398,11 @@
                         {% when "Model" %}
                             <div data-sale="{{ "order_page.sale" | t }}" attribute="{{ value }}" class="{{ value }}">{{ value }}</div>
                         {% when "Size" %}
-                            <div attribute="{{ value }}" class="{{ value }} u14DemiBold_v2">One Size</div>
+                            <div attribute="{{ value }}" class="{{ value }} u14DemiBold_v2">
+                              {% if value == "L" %}Large
+                              {% elsif value == "M" %}Medium
+                              {% else %}{{value}}{% endif %}
+                                </div>
                         {% when "Style" %}
                           <div attribute="{{ value }}" class="{{ value }}"></div>
                         {% else %}
@@ -480,11 +484,11 @@
             </div>
             {% render 'footer__payment' %}
             <div class="dialogs">
-                <div class="u17Medium_v2">
+                <div class="u17Medium_v2" onclick="showSizesAndSpecs('SizesDialog')">
                     <span>Size & Fit</span>
                     <span>&gt;</span>
                 </div>
-                <div class="u17Medium_v2">
+                <div class="u17Medium_v2" onclick="showSizesAndSpecs('SpecsDialog')">
                     <span>Technical Specifications</span>
                     <span>&gt;</span>
                 </div>
@@ -1061,7 +1065,7 @@
 </div>
 
 
-{% render 'carbon-one-size-and-specs', hide_balabalabala: true, hide_1s: true %}
+{% render 'size-guide-and-specs-template', config: 'carbon_order_page_config' %}
 
 
 <div class="assembly">
@@ -1405,7 +1409,7 @@
     })
 
     document.addEventListener('onChangeSize', e => {
-      $(`.product .product-panel .options > div[option="Size"] .u17DemiBold_v2 .u17Light_v2`).text('Fit for 168-195 cm')
+      $(`.product .product-panel .options > div[option="Size"] .u17DemiBold_v2 .u17Light_v2`).text(global_config.carbon_order_page_config.size_map[e.value])
     })
 
     document.addEventListener('onChangeOptions', e => {
@@ -1605,12 +1609,16 @@
         return false;
     })
 
-    $('.product .dialogs > div').on('click', e => {
+    $('.product .dialogs > div').on('click', function(e){
         const m = {
             0: 'one',
             1: 'two',
             2: 'three',
             3: 'four'
+        }
+
+      if ($(this).attr('onclick')) {
+          return
         }
 
         $('.product .dialogs > div').each((i, t) => {
