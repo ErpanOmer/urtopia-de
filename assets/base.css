@@ -4367,9 +4367,9 @@ dialog + .backdrop {
 
 
 .product .sale-taggggggg {
-  background-color: var(--sale-color2);
+  background-color: #E2007B;
   color: #fff;
-  padding: 2% 5% 2% 5%;
+  padding: 2% 0 2% 5%;
   border-radius: 18px;
   width: fit-content;
   height: 35px;
@@ -4380,14 +4380,15 @@ dialog + .backdrop {
   text-align: center;
   margin-top: 9px;
 }
-/* 
+
+
 .product .sale-taggggggg::after {
   display: block;
   content: "";
-  background: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_23840_2x_e7772d5f-de39-4053-95c3-49d359e5a73c.png?v=1714292484') center right/cover no-repeat;
-  width: 55px;
+  background: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_24152_2x_07873de3-feec-43c0-a0b4-3bd0ab04db6b.png?v=1719369011') center right/cover no-repeat;
+  width: 80px;
   height: 35px;
-} */
+}
 
 
 .visuallyhidden {
