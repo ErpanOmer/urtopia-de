@@ -173,26 +173,27 @@ const testRides = [
       // 'Urtopia Carbon 1'
     ],
     stores: [
-      // {
-      //   name: 'Charles xie',
-      //   phone: '+49 1741 767140',
-      //   email: 'yicxie2017@gmail.com',
-      //   timezone: "Mainz, Germany (GMT+1)",
-      //   add: "Am Sonnigen Hang 21 55127 Mainz Germany",
-      //   imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Frankfurt_am_Main_dcfbb429-041a-46e8-809c-988adaf41dfd.jpg?v=1680920985",
-      //   testrideSpot: "Frankfurt am Main",
-      //   testRideSize: "M/L",
-      //   businessHours: [
-      //     "09:00-12:00,12:00-19:00",
-      //     "09:00-12:00,12:00-19:00",
-      //     "09:00-12:00,12:00-19:00",
-      //     "09:00-12:00,12:00-19:00",
-      //     "",
-      //     "09:00-12:00,12:00-19:00",
-      //     "09:00-12:00,12:00-19:00",
-      //   ],
-      //   isPartner: true
-      // },
+      {
+        name: 'Fahrrad Laden Wagner',
+        phone: '+496995294844',
+        email: 'info@fahrradwagner.de',
+        timezone: "Mainz, Germany (GMT+1)",
+        add: "Woogstraße 21, 60431 Frankfurt am Main",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Frankfurt_am_Main_dcfbb429-041a-46e8-809c-988adaf41dfd.jpg?v=1680920985",
+        testrideSpot: "Frankfurt am Main",
+        availableSizes: [
+          'Carbon 1 Size L'
+        ],
+        businessHours: [
+          "",
+          "09:00-18:00",
+          "09:00-18:00",
+          "09:00-12:00",
+          "09:00-18:00",
+          "09:00-18:00",
+          "",
+        ],
+      },
       {
         name: 'Service Zentrum',
         phone: '+4961032076414',
@@ -352,6 +353,39 @@ const testRides = [
     ]
   },
   {
+    city: 'Rosenheim',
+    cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Dusseldorf.jpg?v=1679406972',
+    series: [
+      'Urtopia Carbon 1',
+      'Urtopia Chord'
+    ],
+    stores: [
+      {
+        name: 'Mr.bike',
+        phone: '+49 173 1588506',
+        email: 'info@mr-bike.com',
+        timezone: "Düsseldorf, Germany (GMT+1)",
+        add: "Rechenauuerstrasse 20B, 83022. Rosenheim",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/output_1_ffa5338b-e099-41c7-9be9-be6c62496c7d.png?v=1717487530",
+        testrideSpot: "Rosenheim",
+        testRideSize: "L, Chord",
+        availableSizes: [
+          'Carbon 1 Size L',
+          'Chord X'
+        ],
+        businessHours: [
+          "",
+          "09:00-18:00",
+          "09:00-18:00",
+          "09:00-18:00",
+          "09:00-18:00",
+          "09:00-18:00",
+          "09:00-14:00",
+        ],
+      }
+    ]
+  },
+  {
     city: 'Trier',
     cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Dusseldorf.jpg?v=1679406972',
     series: [
@@ -392,6 +426,28 @@ const testRides = [
       // 'Urtopia Carbon 1'
     ],
     stores: [
+      {
+        name: 'Fahrrad & Service Jörg Kohnert',
+        phone: '+493074781493',
+        email: 'info@fahrradservice-Frohnau.de',
+        timezone: "Mainz, Germany (GMT+1)",
+        add: "Welfenallee 1, 13465 Berlin",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/output_229443ca-c6d0-4ea1-8228-0c7e95433db8.png?v=1717487328",
+        testrideSpot: "Berlin",
+        testRideSize: "L",
+        availableSizes: [
+          'Carbon 1 Size M',
+        ],
+        businessHours: [
+          "",
+          "09:00-18:00",
+          "09:00-18:00",
+          "09:00-18:00",
+          "09:00-18:00",
+          "09:00-18:00",
+          "09:00-14:00",
+        ],
+      },
       {
         name: 'Fahrradstation',
         phone: '+49 180 - 510 8000',
@@ -502,29 +558,6 @@ const testRides = [
       // 'Urtopia Carbon 1'
     ],
     stores: [
-      {
-        name: 'Fahrradretter',
-        phone: '+4915120406095',
-        email: 'info@fahrradretter.com',
-        timezone: "Hamburg, Germany (GMT+1)",
-        add: "Barmbeker Str. 153, 22299 Hamburg",
-        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Fahrradretter.jpg?v=1710295897",
-        testrideSpot: "Hamburg",
-        testRideSize: "L",
-        noBook: "Please contact the store directly to arrange test ride",
-        availableSizes: [
-          'Carbon 1 Size L'
-        ],
-        businessHours: [
-          "",
-          "10:00-18:00",
-          "10:00-18:00",
-          "10:00-18:00",
-          "10:00-18:00",
-          "10:00-18:00",
-          "",
-        ],
-      },
       {
         name: 'Moritz Falk',
         phone: '+49 151 14461642',
@@ -1055,26 +1088,28 @@ const testRides = [
           "",
         ],
       },
-      /*{
-        name: 'Hartmut Geyssel',
-        phone: '+49 611 1370 5755',
-        email: 'urtopiakoeln@hophopik.com',
+      {
+        name: 'Rad Welle',
+        phone: '+402216110780',
+        email: 'info@rad-welle.de',
         timezone: "Mainz, Germany (GMT+1)",
-        add: "Agnesviertel / Neustadt Nord, 50670 Köln",
+        add: "Buchheimer Str. 32-34, 51063 Köln",
         imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Koln.jpg?v=1679406972",
         testrideSpot: "Köln",
         testRideSize: "M",
-        isPartner: true,
-        businessHours: [
-          "09:00-12:00,12:00-19:00",
-          "18:00-20:00",
-          "18:00-20:00",
-          "18:00-20:00",
-          "18:00-20:00",
-          "18:00-20:00",
-          "09:00-12:00,12:00-19:00",
+        availableSizes: [
+          'Carbon 1 Size M',
         ],
-      },*/
+        businessHours: [
+          "",
+          "10:00-19:00",
+          "10:00-19:00",
+          "10:00-19:00",
+          "10:00-19:00",
+          "10:00-19:00",
+          "10:00-19:00",
+        ],
+      }
     ]
   },
   {
