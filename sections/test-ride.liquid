@@ -793,6 +793,10 @@
             userAgent: navigator.userAgent,
             userAgentData: navigator.userAgentData,
         })
+
+        setTimeout(() => {
+            window.STOREPOINT.resize()
+        }, 100)
     }
 
     function observerItems(mutationsList) {
