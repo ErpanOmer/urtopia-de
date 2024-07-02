@@ -500,7 +500,7 @@
         {% assign product_discount_price = productt.compare_at_price | minus: productt.price %}
         {% render 'product-card',
             product_variants: product_variants,
-            product_name: 'Outlet Carbon 1',
+            product_name: productt.title,
             product_description: 'Offers the same design and performance as new, but at €400 less.',
             product_url: productt.url,
         %}

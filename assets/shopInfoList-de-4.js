@@ -2303,6 +2303,7 @@ const testRides = [
         availableSizes: [
           'Carbon 1',
           'Chord',
+          'Fusion'
         ],
         businessHours: [
           "",
@@ -3201,6 +3202,76 @@ const testRides = [
     ]
   },
   {
+    country: 'Slovenia',
+    city: 'Maribor',
+    cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Zweiradcenter_Heuermann.jpg?v=1710295897',
+    series: [
+      'Urtopia Carbon 1',
+    ],
+    stores: [
+      {
+        name: 'E-SPORTS',
+        phone: '+386 031 320 024',
+        email: 'info@esportshop.si',
+        timezone: "Maribor, Germany (GMT+1)",
+        add: "Trinkova ulica 17, 2000 Maribor, Slovenia",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Zweiradcenter_Heuermann.jpg?v=1710295897",
+        testrideSpot: "Maribor",
+        testRideSize: "L",
+        noBook: "Please contact the store directly to arrange test ride",
+        availableSizes: [
+          'Carbon 1 Size L',
+          'Chord',
+          'Chord X',
+          'Fusion'
+        ],
+        businessHours: [
+          "",
+          "09:00-18:00",
+          "09:00-18:00",
+          "09:00-18:00",
+          "09:00-18:00",
+          "09:00-18:00",
+          "09:00-18:00",
+        ],
+      },
+    ]
+  },
+  {
+    country: 'Netherlands',
+    city: 'Weesp',
+    cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Zweiradcenter_Heuermann.jpg?v=1710295897',
+    series: [
+      'Urtopia Carbon 1',
+    ],
+    stores: [
+      {
+        name: 'Welectric BV.',
+        phone: '+31(088) 0187 640',
+        email: 'weesp@welectric.nl',
+        timezone: "Weesp, Germany (GMT+1)",
+        add: "ijverheidslaan 1, 1382 LE Weesp, Netherlands",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Zweiradcenter_Heuermann.jpg?v=1710295897",
+        testrideSpot: "Weesp",
+        testRideSize: "L",
+        noBook: "Please contact the store directly to arrange test ride",
+        availableSizes: [
+          'Carbon 1 Size M/L',
+          'Chord'
+        ],
+        businessHours: [
+          "",
+          "09:00-18:00",
+          "09:00-18:00",
+          "09:00-18:00",
+          "09:00-18:00",
+          "09:00-18:00",
+          "09:00-18:00",
+        ],
+      },
+    ]
+  },
+  {
     city: 'Twistringen',
     cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Zweiradcenter_Heuermann.jpg?v=1710295897',
     series: [
@@ -3331,6 +3402,7 @@ const testRides = [
         availableSizes: [
           'Carbon 1 Size L',
           'Carbon 1s Size M',
+          'Fusion'
         ],
         businessHours: [
           "",

@@ -16,7 +16,7 @@
   <div class="banner">
       <div class="centeral-content">
           <div>
-              <h2 class="u36DemiBold_v2">From {{ 4989 | money }}/month</h2>
+              <h2 class="u36DemiBold_v2">From €30/month</h2>
               <h1 class="u72DemiBold_v2">Urtopia E-Bikes Leasing</h1>
               <div class="u20Light_v2">We work with the best leasing providers. To Provide you the smoothest leasing experience and enjoy you riding as soon as possible.</div>
               {% comment %} <div class="u20Medium_v2 banner_origin">Enjoy the limited time promotion</div> {% endcomment %}
@@ -396,7 +396,7 @@ let swiperItems = [
         text: 'If your employer is registered with BusinessBike, you can order by filling out this form. We’ll share this information with BusinessBike, who will process your order. BusinessBike will confirm the order with your employer.',
         forms: {
             employer_id: {
-                title: 'Quickstart (genehmigte Emailadresse)',
+                title: 'Quickstart (genehmigte Emailadresse)<i>*</i>',
                 tips: '',
                 placeholder: '',
                 required: true
@@ -415,7 +415,7 @@ let swiperItems = [
         forms: {
             employer_id: {
                 show: true,
-                title: 'Bikeleasing-user-ID:',
+                title: 'Bikeleasing-user-ID<i>*</i>',
                 tips: 'Leasing request via the bike leasing user ID of the employee.',
                 placeholder: 'XXXX-XXXX (8-stellig)',
                 required: true
@@ -434,7 +434,7 @@ let swiperItems = [
         text: 'If your employer is registered with Mein Dienstrad, you can order by filling out this form. We’ll share this information with Mein Dienstrad, who will process your order. Mein Dienstrad will confirm the order with your employer.',
         forms: {
             employer_id: {
-                title: 'User email address:',
+                title: 'User email address<i>*</i>',
                 tips: 'which was registered on Mein-dienstrad.',
                 placeholder: '',
                 required: true
@@ -469,7 +469,7 @@ let swiperItems = [
         text: 'If your employer is registered with Deutsche Dienstrad, you can order by filling out this form. We’ll share this information with BusinessBike, who will process your order. BusinessBike will confirm the order with your employer.',
         forms: {
             employer_id: {
-                title: 'Bestellcode:',
+                title: 'Order code<i>*</i>',
                 tips: '',
                 placeholder: 'XXXXXX (6-stellig)',
                 required: true
@@ -583,7 +583,7 @@ $('.partners .items').html(swiperItems.map(item => `
         const infos =  swiperItems.find(s => s.name === v)?.forms
 
         if (infos?.employer_id?.title) {
-            employer_id.closest('.item').find('.u24Medium > span:first-child').text(infos.employer_id.title)
+            employer_id.closest('.item').find('.u24Medium > span:first-child').html(infos.employer_id.title)
             employer_id.attr('required', !!infos.employer_id.required)
 
             if (infos.employer_id.tips) {
