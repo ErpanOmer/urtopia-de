@@ -614,7 +614,7 @@
                         line-height: 16px;
 
                         &::after {
-                            content: attr(data-inventory-quantity);
+                            /* content: attr(data-inventory-quantity); */
                             font-weight: 500;
                             font-size: 12px;
                         }

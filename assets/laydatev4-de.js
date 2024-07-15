@@ -83,6 +83,20 @@ const bike_sizes = [
     size: 'One Size',
     img: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18886.png?v=1713323995&width=430'
   },
+  {
+    id: 11,
+    name: 'Carbon 1 Pro',
+    fit: 'Fit for 170-185 cm',
+    size: 'M',
+    img: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/carbon_1_pro_BL_1.png?v=1703570388&width=430'
+  },
+  {
+    id: 12,
+    name: 'Carbon 1 Pro',
+    fit: 'Fit for 180-195 cm',
+    size: 'L',
+    img: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/carbon_1_pro_BL_1.png?v=1703570388&width=430'
+  }
 ]
 
 function splitTimeFormat(item = '') {
@@ -3370,21 +3384,18 @@ function splitTimeFormat(item = '') {
       let choose = []
 
       for (const size of sizes) {
-        // const s = size.split(' ').pop().split('/')
+        const s = size.split(' ').pop().split('/')
 
          // 如果是1s 车
          if (size.includes('Carbon 1s')) {
-          // choose = choose.concat(s.map(i => {
-          //   const find = bike_sizes.find(b => b.name === 'Carbon 1s' && b.size === i)
+          choose = choose.concat(s.map(i => {
+            const find = bike_sizes.find(b => b.name === 'Carbon 1s' && b.size === i)
 
-          //   return find
+            return find
 
-          // }).filter(Boolean))
-            choose.push(bike_sizes.find(b => b.id === 8))
+          }).filter(Boolean))
 
-         } else if (size.includes('Fusion')) {
-            choose.push(bike_sizes.find(b => b.name === size))
-         }  else {
+         } else {
             // 如果是chrod
             if (size.includes('Chord')) {
               if (size.includes('X')) {
@@ -3393,13 +3404,22 @@ function splitTimeFormat(item = '') {
                 choose.push(bike_sizes.find(b => b.name === 'Chord'))
               }
             } else {
-              // choose = choose.concat(s.map(i => {
-              //   const find = bike_sizes.find(b => b.name === 'Carbon 1' && b.size === i)
-    
-              //   return find
-    
-              // }).filter(Boolean))
-              choose.push(bike_sizes.find(b => b.id === 9))
+              if (size.includes('Pro')) {
+                choose = choose.concat(s.map(i => {
+                  const find = bike_sizes.find(b => b.name === 'Carbon 1 Pro' && b.size === i)
+      
+                  return find
+      
+                }).filter(Boolean))
+
+              } else {
+                    choose = choose.concat(s.map(i => {
+                      const find = bike_sizes.find(b => b.name === 'Carbon 1')
+          
+                      return find
+          
+                    }).filter(Boolean))
+              }
             }
          }
       }

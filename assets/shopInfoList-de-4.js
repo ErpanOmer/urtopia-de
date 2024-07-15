@@ -221,6 +221,38 @@ const testRides = [
     ]
   },
   {
+    city: 'Grevesmuhlen',
+    cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/output_5_e5e95421-6975-48c2-b950-ba1bd858744e.png?v=1718328335',
+    series: [
+      'Urtopia Carbon 1',
+      'Urtopia Chord'
+    ],
+    stores: [
+      {
+        name: 'Fahrrad Thurow',
+        phone: '+493881713678',
+        email: 'info@fahrrad-thurow.de',
+        timezone: "Düsseldorf, Germany (GMT+1)",
+        add: "August-Bebel-Straße 33, 23936 Grevesmühlen",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/output_5_e5e95421-6975-48c2-b950-ba1bd858744e.png?v=1718328335",
+        testrideSpot: "Grevesmuhlen",
+        testRideSize: "L, Chord",
+        availableSizes: [
+          'Carbon 1 Size L'
+        ],
+        businessHours: [
+          "",
+          "09:00-17:00",
+          "09:00-17:00",
+          "09:00-17:00",
+          "09:00-17:00",
+          "09:00-17:00",
+          "",
+        ],
+      }
+    ]
+  },
+  {
     city: 'Wiesbaden',
     cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/output_5_e5e95421-6975-48c2-b950-ba1bd858744e.png?v=1718328335',
     series: [
@@ -774,40 +806,6 @@ const testRides = [
            "10:00-18:00",
            "10:00-18:00",
           "10:00-14:00",
-        ],
-      }
-    ]
-  },
-  {
-    city: 'Crailsheim',
-    cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Munchen.jpg?v=1679406972',
-    series: [
-      'Urtopia Carbon 1',
-      // 'Urtopia Carbon 1'
-    ],
-    stores: [
-      {
-        name: 'Fahrrad Outlet Crailsheim',
-        phone: '+497951 47 21 005',
-        email: 'info@fahrrad-outlet-crailsheim.de',
-        timezone: "Hamburg, Germany (GMT+1)",
-        add: "Blaufelder Str. 6, 74564 Crailsheim",
-        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/output_5.png?v=1714096927",
-        testrideSpot: "Crailsheim",
-        testRideSize: "L",
-        availableSizes: [
-          'Carbon 1 Size M/L',
-          'Chord',
-          'Fusion'
-        ],
-        businessHours: [
-          "",
-          "09:30-18:00",
-          "09:30-18:00",
-          "09:30-18:00",
-          "09:30-18:00",
-          "09:30-18:00",
-          "09:30-16:00",
         ],
       }
     ]
@@ -1508,10 +1506,10 @@ const testRides = [
         imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Offenburg.jpg?v=1681442327",
         testrideSpot: "Offenburg",
         testRideSize: "M, Chord",
-        noBook: "Please contact the store directly to arrange test ride",
         availableSizes: [
+          'Carbon 1 Pro Size M',
           'Carbon 1 Size M',
-          'Chord',
+          'Chord X',
         ],
         businessHours: [
           "09:00-18:00",
@@ -1831,7 +1829,7 @@ const testRides = [
     ],
     stores: [
       {
-        name: `Fietsenwinkel, reparaties en onderhoud | Tweewieler Shop Almere`,
+        name: `Tweewieler Shop Almere`,
         phone: '31365259319',
         email: 'info@tweewielershopalmere.nl',
         timezone: "Mainz, Germany (GMT+1)",
@@ -3238,6 +3236,38 @@ const testRides = [
     ]
   },
   {
+    country: 'Denmark',
+    city: 'Aalborg',
+    cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Zweiradcenter_Heuermann.jpg?v=1710295897',
+    series: [
+      'Urtopia Carbon 1',
+    ],
+    stores: [
+      {
+        name: 'Polar Cykler',
+        phone: '+4598146622',
+        email: 'keld@polarcykler.dk',
+        timezone: "Weesp, Germany (GMT+1)",
+        add: "Mylius Erichsens Vej 25, 9210 Aalborg, Dänemark",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Zweiradcenter_Heuermann.jpg?v=1710295897",
+        testrideSpot: "Aalborg",
+        testRideSize: "L",
+        availableSizes: [
+          'Carbon 1 Size L'
+        ],
+        businessHours: [
+          "",
+          "08:00-17:00",
+          "08:00-17:00",
+          "08:00-17:00",
+          "08:00-17:00",
+          "08:00-17:00",
+          "10:00-13:00",
+        ],
+      },
+    ]
+  },
+  {
     country: 'Netherlands',
     city: 'Weesp',
     cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Zweiradcenter_Heuermann.jpg?v=1710295897',
@@ -3798,17 +3828,14 @@ for (const city of testRides) {
       store.city = city.city
       store.avalibaleDate = findAvalibaleDate(store)
 
-      for (let i = 0; i < store.availableSizes.length; i++) {
-          const sizes = store.availableSizes[i]
+      for (const sizes of store.availableSizes) {
+        const [bike, series, ttt] = sizes.split(' ')
 
-          const [bike, series] = sizes.split(' ')
-          const n = `${bike}${series ? ' ' + series : ''}`
-          bike_options.add(n)
-          
-          if (sizes.includes('Carbon')) {
-            store.availableSizes[i] = `${n}`
-          }
-        
+        if (ttt === "Pro") {
+          bike_options.add(`${bike}${series ? ' ' + series : ''} ${ttt}`) 
+        } else {
+          bike_options.add(`${bike}${series ? ' ' + series : ''}`)
+        }
       }
 
       city_options.add(`${store.city}---${store.country}`)

@@ -4367,9 +4367,9 @@ dialog + .backdrop {
 
 
 .product .sale-taggggggg {
-  background-color: #E2007B;
+  background-color: #0080CD;
   color: #fff;
-  padding: 2% 0 2% 5%;
+  padding: 2% 16% 2% 5%;
   border-radius: 18px;
   width: fit-content;
   height: 35px;
@@ -4379,16 +4379,17 @@ dialog + .backdrop {
   justify-content: center;
   text-align: center;
   margin-top: 9px;
+  background: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/24158_2x_4888e1b6-a8af-4f9a-aa76-27b975dcee23.png?v=1720333515') center right/cover no-repeat;
 }
 
-
+/* 
 .product .sale-taggggggg::after {
   display: block;
   content: "";
-  background: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_24152_2x_07873de3-feec-43c0-a0b4-3bd0ab04db6b.png?v=1719369011') center right/cover no-repeat;
+  background: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/24158_2x_4888e1b6-a8af-4f9a-aa76-27b975dcee23.png?v=1720333515') center right/cover no-repeat;
   width: 80px;
   height: 35px;
-}
+} */
 
 
 .visuallyhidden {
@@ -4396,3 +4397,4 @@ dialog + .backdrop {
   top: 0;
   transform: translateY(-200%);
 }
+#0080CD

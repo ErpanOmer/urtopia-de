@@ -847,7 +847,7 @@ h4 {
     height: calc(100vh - 106px);
     position: relative;
     overflow-x: hidden;
-    background: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/euu_2x_5e7128a5-641f-4217-8bf3-b076f2cfe183.jpg?v=1719367793') center center/cover no-repeat;
+    background: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/2x_0ad81afb-c9e3-4c96-9571-0836b91f467f.jpg?v=1720331923') center center/cover no-repeat;
     margin-bottom: 2vh;
     display: flex;
     align-items: center;
@@ -861,23 +861,28 @@ h4 {
         max-width: 250px;
     }
 
-    .u36Medium_v2 {
+    .u20Light_v2 {
         margin: 4vh 0 4vh;
     }
 
     @media (max-width: 767px) {
         height: calc(100vh - 98px);
-        background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/euu_2x_dc37114d-08c1-445e-b065-1d1fcef1fd87.jpg?v=1719368677');
+        background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/2x_8cf61965-3ae9-4030-b9a1-9758a925e269.jpg?v=1720332813');
         padding-top: 13vw;
         margin-bottom: 2.5vw;
+      color: #000;
 
         img {
             max-width: 180px;
         }
 
-        .u36Medium_v2 {
+        .u48Medium_v2 {
             font-size: 22px;
-            margin: 10vw 0;
         }
+
+      .u20Light_v2 {
+        font-size: 15px;
+      }
+      
     }
 }

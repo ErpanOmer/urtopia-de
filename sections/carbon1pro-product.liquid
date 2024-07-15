@@ -250,7 +250,7 @@
             </div>
             {% render 'footer__payment' %}
             {% render 'leasing-logo' %}
-            <div class="dialogs">
+            <div class="dialogs mb12">
                 <div class="u17Medium_v2" onclick="showSizesAndSpecs('SizesDialog')">
                     <span>Size & Fit</span>
                     <span>&gt;</span>
@@ -295,6 +295,7 @@
                         <span><span class="u14Light_v2">Lightweight</span><span class="u17DemiBold_v2">Toray Carbon <br>Fiber</span></span>
                     </div>
                 </div>
+          <span class="u14DemiBold_v2 mb12">Need advice from our experts? Contact us at <a class="my-link" href="tel:+49 30 837 90655">+49 30 837 90655</a> or <a href="mailto:support@newurtopia.com" class="my-link">support@newurtopia.com</a></span>
 
         </form>
     </div>
@@ -323,6 +324,7 @@
         {% render 'product-card',
             product_variants: product_variants,
             product_name: productt.title,
+           product_variant_options_find_sort: "M,L",
             product_description: 'Offers the same design and performance as new, but at €400 less.',
             product_url: productt.url,
         %}
