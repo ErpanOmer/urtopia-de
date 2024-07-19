@@ -625,8 +625,7 @@ const changeBikeImage = e => {
         }, 30)
 
 
-        $('.forms form .item .tips').html('Includes {{ all_products['urtopia-carbon-1-pro-ebike'].compare_at_price | minus: all_products['urtopia-carbon-1-pro-ebike'].price | money_without_trailing_zeros }} discount, bike stand and mudguard. Expected to <span>be shipped on July 15, 2024.</span>')
-
+        $('.forms form .item .tips').html('Shipping within 3 working days. Includes {{ all_products['urtopia-carbon-1-pro-ebike'].compare_at_price | minus: all_products['urtopia-carbon-1-pro-ebike'].price | money_without_trailing_zeros }} discount, bike stand, mudguards and 1 year connect service.')
         // 渲染acc
         $('select[name="accessories"]').html(`{% for product in collections["carbon1pro-leasing-accessories"].products %}
             <option title="{{product.title}}" value="{{product.id}}">{{product.title}}</option>

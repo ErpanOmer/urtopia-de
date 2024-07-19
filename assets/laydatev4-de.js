@@ -3385,46 +3385,28 @@ function splitTimeFormat(item = '') {
 
       for (const size of sizes) {
         const s = size.split(' ').pop().split('/')
+        let fn = Boolean
 
-         // 如果是1s 车
-         if (size.includes('Carbon 1s')) {
-          choose = choose.concat(s.map(i => {
-            const find = bike_sizes.find(b => b.name === 'Carbon 1s' && b.size === i)
+        if (size.includes('Carbon')) {
+          if (size.includes('1s')) {
+            fn = b => b.name === 'Carbon 1s' && s.find(i => b.size === i)
+          } else if (size.includes('Pro')) {
+            fn = b => b.name === 'Carbon 1 Pro' && s.find(i => i === b.size)
+          } else{
+            fn = b => b.name === 'Carbon 1' && s.find(i => b.size === i)
+          }
+        } else if (size.includes('Chord')) {
+          if (size.includes('X')) {
+            fn = b => b.name === 'Chord X'
+          } else {
+            fn = b => b.name === 'Chord'
+          }
+        } else if (size.includes('Fusion')) {
+          fn = b => b.name === 'Fusion'
+        }
 
-            return find
-
-          }).filter(Boolean))
-
-         } else {
-            // 如果是chrod
-            if (size.includes('Chord')) {
-              if (size.includes('X')) {
-                choose.push(bike_sizes.find(b => b.name === 'Chord X'))
-              } else {
-                choose.push(bike_sizes.find(b => b.name === 'Chord'))
-              }
-            } else {
-              if (size.includes('Pro')) {
-                choose = choose.concat(s.map(i => {
-                  const find = bike_sizes.find(b => b.name === 'Carbon 1 Pro' && b.size === i)
-      
-                  return find
-      
-                }).filter(Boolean))
-
-              } else {
-                    choose = choose.concat(s.map(i => {
-                      const find = bike_sizes.find(b => b.name === 'Carbon 1')
-          
-                      return find
-          
-                    }).filter(Boolean))
-              }
-            }
-         }
+        console.log('choose', choose.push(...bike_sizes.filter(fn)))
       }
-
-      console.log('choose', choose)
 
       lay(".select-tip").html("Choose test ride model");
       $('.calendar-content').hide()
