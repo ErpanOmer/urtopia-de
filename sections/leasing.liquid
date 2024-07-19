@@ -1,9 +1,9 @@
-{% assign carbon1 = "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18842_2x_311e472b-5f53-4c92-8120-29a7d5448c75.png?v=1694070569" %}
+{% assign carbon1 = 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18842_2x_311e472b-5f53-4c92-8120-29a7d5448c75.png?v=1694070569' %}
 {% comment %} {% assign carbon1s = "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18841_2x_d1bd8de1-5910-454a-9271-306815705052.png?v=1694070547" %} {% endcomment %}
-{% assign chord = "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18589_2x_4ca8137f-ac74-49c3-b2c4-a523904d4bf7.png?v=1694070560" %}
+{% assign chord = 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18589_2x_4ca8137f-ac74-49c3-b2c4-a523904d4bf7.png?v=1694070560' %}
 {% comment %} {% assign chordx = "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18840_2x_d185d12d-30c6-4959-8197-bf586c703aae.png?v=1694070555" %} {% endcomment %}
 {% comment %} {% assign fusion = "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20240420-111342.png?v=1713582840" %} {% endcomment %}
- {% assign carbon1pro = 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18873_2x_82da2d81-10d3-4bf9-b398-3da08d1161d1.png?v=1719284392' %}
+{% assign carbon1pro = 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18873_2x_82da2d81-10d3-4bf9-b398-3da08d1161d1.png?v=1719284392' %}
 
 <link rel="preload" href="{{ chord }}" as="image">
 <link rel="preload" href="{{ carbon1pro }}" as="image">
@@ -14,265 +14,315 @@
 
 <div class="leasing-add">
   <div class="banner">
-      <div class="centeral-content">
+    <div class="centeral-content">
+      <h2 class="u30DemiBold_v2">From €30/month</h2>
+      <h1 class="u60DemiBold_v2">Urtopia E-Bikes <br>Leasing</h1>
+      <img class="mobileHide" src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_24407_2x_1dde0310-4891-48ce-be32-8f74f00f49f7.png?v=1721379400"/>
+      <div class="pcHide">
+        <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_24406_2x_1af6d124-1207-4bc9-9362-f757401755be.png?v=1721379883" alt="">
+      </div>
+      <div class="buttons">
+        <a href="#forms" class="my-button my-button-black">Request leasing offer</a>
+        <a href="/products/urtopia-carbon-e-bike" class="my-button my-button-white">Shop Online</a>
+      </div>
+    </div>
+  </div>
+  {% comment %}
+    <div class="centeral-content partners">
+      <h2 class="u48DemiBold_v2">Leasing Partners</H2>
+      <div class="items">
           <div>
-              <h2 class="u36DemiBold_v2">From €30/month</h2>
-              <h1 class="u72DemiBold_v2">Urtopia E-Bikes Leasing</h1>
-              <div class="u20Light_v2">We work with the best leasing providers. To Provide you the smoothest leasing experience and enjoy you riding as soon as possible.</div>
-              {% comment %} <div class="u20Medium_v2 banner_origin">Enjoy the limited time promotion</div> {% endcomment %}
-              <div class="buttons">
-                  <a href="#forms" class="my-button">Request leasing offer</a>
-                  <a href="/products/urtopia-carbon-e-bike" class="my-button my-button-ghost">Shop Online</a>
-              </div>
-          </div>
-          <div>
-              <a href="#forms"><img class="mobileHide" src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_20952_2x_91f7ee3e-03ae-4655-a50c-6f928100a7ed.png?v=1705461911" alt=""></a>
+
           </div>
       </div>
-  </div>
-  {% comment %} <div class="centeral-content partners">
-    <h2 class="u48DemiBold_v2">Leasing Partners</H2>
-    <div class="items">
-        <div>
-
-        </div>
     </div>
-  </div> {% endcomment %}
+  {% endcomment %}
   <div class="parameters">
     <div class="centeral-content top-content">
-        <h2 class="u48DemiBold_v2">Available Urtopia E-Bikes</h2>
-        <div class="select">
-            <select>
-                <option value="carbon1">Urtopia Carbon 1</option>
-                <!-- <option value="fusion">Urtopia Fusion</option> -->
-                <!-- <option value="carbon1s">Urtopia Carbon 1s</option> -->
-                <option value="chord">Urtopia Chord</option>
-                <option value="carbon1pro">Urtopia Carbon 1 Pro</option>
-                {% comment %} <option value="chordx">Urtopia Chord X</option> {% endcomment %}
-            </select>
-        </div>
-    </div>
-      <div class="centeral-content bottom-content">
-          <div>
-             <div class="product-price u30DemiBold_v2" data-price="{{ all_products['urtopia-carbon-e-bike'].price | money }}">{{ all_products['urtopia-carbon-e-bike'].price | minus: settings.carbon_ebike_discount_price | money }}</div>
-             <div class="sale-tag u17Medium_v2">{{ settings.carbon_ebike_discount_price | money_without_trailing_zeros }} OFF</div>
-             <div class="background-image pcHide" style="height: 56.75vw;margin: 24px 0px;"></div>
-              <div class="boxs">
-                  <div>
-                      <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18449_2x_8fc05a36-e73b-4c68-8462-5cdfa6cea6b3.png?v=1683702610"
-                          alt="">
-                      <div>
-                          <div class="u11Light_v2">Carbon Fiber</div>
-                          <div class="u17DemiBold_v2">15 kg</div>
-                      </div>
-                  </div>
-                  <div>
-                      <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18448_2x_d3fbd8a8-d1e2-4a84-b4eb-ce513f342438.png?v=1683705373"
-                          alt="">
-                      <div>
-                          <div class="u11Light_v2">No maintaining Up to</div>
-                          <div class="u17DemiBold_v2">30,000 km</div>
-                      </div>
-                  </div>
-                  <div>
-                      <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18447_2x_532d80bf-4f0d-48a9-b2c6-81212b652ad7.png?v=1683705337"
-                          alt="">
-                      <div>
-                          <div class="u11Light_v2">Range</div>
-                          <div class="u17DemiBold_v2">100 km</div>
-                      </div>
-                  </div>
-                  <div>
-                      <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18446_2x_e64c38e1-535a-401d-a722-cbe2b3b4e450.png?v=1683705358"
-                          alt="">
-                      <div>
-                          <div class="u11Light_v2">Anti-theft</div>
-                          <div class="u17DemiBold_v2">GPS Tracking</div>
-                      </div>
-                  </div>
-                  <div>
-                      <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18450_2x_3726a023-532f-459e-826b-ecc6a1d3502c.png?v=1683705347"
-                          alt="">
-                      <div>
-                          <div class="u11Light_v2">Smart App</div>
-                          <div class="u17DemiBold_v2">iOS, Android</div>
-                      </div>
-                  </div>
-                  <div>
-                      <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18445_2x_8378bdff-585c-4ae2-a3f9-f557107230d8.png?v=1683705353"
-                          alt="">
-                      <div>
-                          <div class="u11Light_v2">Adaptive</div>
-                          <div class="u17DemiBold_v2">Torque Sensor</div>
-                      </div>
-                  </div>
-              </div>
-              <div class="boxs2">
-                  <div class="u17DemiBold_v2">Brushless 250 w Quiet Motor</div>
-                  <div class="u17DemiBold_v2">Portable Samsung Battery</div>
-                  <div class="u17DemiBold_v2">TEKTRO Hydraulic Disc Brakes</div>
-                  <div class="u17DemiBold_v2">Big Anti-Glare LED Display</div>
-                  <div class="u17DemiBold_v2">On-bike Navigation</div>
-                  <div class="u17DemiBold_v2">Integrated lighting system</div>
-              </div>
-              <div class="buttons">
-                  <a href="#forms" class="my-button my-button-black">Request leasing offer(40% off)</a>
-                  <a href="/products/urtopia-carbon-e-bike" class="my-button my-button-white">Shop Online({{ all_products['urtopia-carbon-e-bike'].price | minus: settings.carbon_ebike_discount_price | money }})</a>
-              </div>
-          </div>
-          <div class="background-image mobileHide"></div>
+      <h2 class="u48DemiBold_v2">Available Urtopia E-Bikes</h2>
+      <div class="select">
+        <select>
+          <option value="carbon1">Urtopia Carbon 1</option>
+          <!-- <option value="fusion">Urtopia Fusion</option> -->
+          <!-- <option value="carbon1s">Urtopia Carbon 1s</option> -->
+          <option value="chord">Urtopia Chord</option>
+          <option value="carbon1pro">Urtopia Carbon 1 Pro</option>
+          {% comment %} <option value="chordx">Urtopia Chord X</option> {% endcomment %}
+        </select>
       </div>
+    </div>
+    <div class="centeral-content bottom-content">
+      <div>
+        <div
+          class="product-price u30DemiBold_v2"
+          data-price="{{ all_products['urtopia-carbon-e-bike'].price | money }}"
+        >
+          {{ all_products['urtopia-carbon-e-bike'].price | minus: settings.carbon_ebike_discount_price | money }}
+        </div>
+        <div class="sale-tag u17Medium_v2">
+          {{ settings.carbon_ebike_discount_price | money_without_trailing_zeros }} OFF
+        </div>
+        <div class="background-image pcHide" style="height: 56.75vw;margin: 24px 0px;"></div>
+        <div class="boxs">
+          <div>
+            <img
+              src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18449_2x_8fc05a36-e73b-4c68-8462-5cdfa6cea6b3.png?v=1683702610"
+              alt=""
+            >
+            <div>
+              <div class="u11Light_v2">Carbon Fiber</div>
+              <div class="u17DemiBold_v2">15 kg</div>
+            </div>
+          </div>
+          <div>
+            <img
+              src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18448_2x_d3fbd8a8-d1e2-4a84-b4eb-ce513f342438.png?v=1683705373"
+              alt=""
+            >
+            <div>
+              <div class="u11Light_v2">No maintaining Up to</div>
+              <div class="u17DemiBold_v2">30,000 km</div>
+            </div>
+          </div>
+          <div>
+            <img
+              src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18447_2x_532d80bf-4f0d-48a9-b2c6-81212b652ad7.png?v=1683705337"
+              alt=""
+            >
+            <div>
+              <div class="u11Light_v2">Range</div>
+              <div class="u17DemiBold_v2">100 km</div>
+            </div>
+          </div>
+          <div>
+            <img
+              src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18446_2x_e64c38e1-535a-401d-a722-cbe2b3b4e450.png?v=1683705358"
+              alt=""
+            >
+            <div>
+              <div class="u11Light_v2">Anti-theft</div>
+              <div class="u17DemiBold_v2">GPS Tracking</div>
+            </div>
+          </div>
+          <div>
+            <img
+              src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18450_2x_3726a023-532f-459e-826b-ecc6a1d3502c.png?v=1683705347"
+              alt=""
+            >
+            <div>
+              <div class="u11Light_v2">Smart App</div>
+              <div class="u17DemiBold_v2">iOS, Android</div>
+            </div>
+          </div>
+          <div>
+            <img
+              src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18445_2x_8378bdff-585c-4ae2-a3f9-f557107230d8.png?v=1683705353"
+              alt=""
+            >
+            <div>
+              <div class="u11Light_v2">Adaptive</div>
+              <div class="u17DemiBold_v2">Torque Sensor</div>
+            </div>
+          </div>
+        </div>
+        <div class="boxs2">
+          <div class="u17DemiBold_v2">Brushless 250 w Quiet Motor</div>
+          <div class="u17DemiBold_v2">Portable Samsung Battery</div>
+          <div class="u17DemiBold_v2">TEKTRO Hydraulic Disc Brakes</div>
+          <div class="u17DemiBold_v2">Big Anti-Glare LED Display</div>
+          <div class="u17DemiBold_v2">On-bike Navigation</div>
+          <div class="u17DemiBold_v2">Integrated lighting system</div>
+        </div>
+        <div class="buttons">
+          <a href="#forms" class="my-button my-button-black">Request leasing offer(40% off)</a>
+          <a href="/products/urtopia-carbon-e-bike" class="my-button my-button-white"
+            >Shop Online(
+            {{- all_products['urtopia-carbon-e-bike'].price | minus: settings.carbon_ebike_discount_price | money -}}
+            )</a
+          >
+        </div>
+      </div>
+      <div class="background-image mobileHide"></div>
+    </div>
   </div>
   <div class="why">
-      <div class="centeral-content">
-          <div>
-              <h2 class="u48DemiBold_v2">Why is JobRad cheaper than direct purchase?</h2>
-              <div class="u17Light_v2">Everyone is talking about job bikes, company bikes, e-bike leasing and the 1%
-                  or 0.25% regulation for bikes and e-bikes. As an employee, this is easily done via your employer,
-                  who leases the e-bike or bicycle from us and then transfers it to you via deferred compensation. The
-                  monetary benefit of the unlimited private use is taxed at a flat rate via the 1% or the new 0.25%
-                  rule. If your employer covers all the costs, the private use is even completely tax-free. Either
-                  way, you usually save 30-40% compared to private purchase.</div>
-              <a href="#forms" class="my-button my-button-black">Request leasing offer</a>
-          </div>
-          <img class="mobileHide"
-              src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20221010-untitled-7468_2x_2e9db42e-3c57-41ce-842c-43a31a37326a.jpg?v=1683708173"
-              alt="">
-          <img class="pcHide"
-              src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20221010-untitled-7468_2x_84a2a10e-6e2d-45c5-be8a-3412ca764f72.jpg?v=1683708831"
-              alt="">
+    <div class="centeral-content">
+      <div>
+        <h2 class="u48DemiBold_v2">Why is JobRad cheaper than direct purchase?</h2>
+        <div class="u17Light_v2">
+          Everyone is talking about job bikes, company bikes, e-bike leasing and the 1% or 0.25% regulation for bikes
+          and e-bikes. As an employee, this is easily done via your employer, who leases the e-bike or bicycle from us
+          and then transfers it to you via deferred compensation. The monetary benefit of the unlimited private use is
+          taxed at a flat rate via the 1% or the new 0.25% rule. If your employer covers all the costs, the private use
+          is even completely tax-free. Either way, you usually save 30-40% compared to private purchase.
+        </div>
+        <a href="#forms" class="my-button my-button-black">Request leasing offer</a>
       </div>
+      <img
+        class="mobileHide"
+        src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20221010-untitled-7468_2x_2e9db42e-3c57-41ce-842c-43a31a37326a.jpg?v=1683708173"
+        alt=""
+      >
+      <img
+        class="pcHide"
+        src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20221010-untitled-7468_2x_84a2a10e-6e2d-45c5-be8a-3412ca764f72.jpg?v=1683708831"
+        alt=""
+      >
+    </div>
   </div>
   <div class="what">
-
-      <div class="top">
-          <div class="centeral-content">
-              <div></div>
-              <h2 class="u48DemiBold_v2">What can I benefit from as an employee?</h2>
-          </div>
+    <div class="top">
+      <div class="centeral-content">
+        <div></div>
+        <h2 class="u48DemiBold_v2">What can I benefit from as an employee?</h2>
       </div>
-      <div class="bottom">
-          <div class="centeral-content">
-              <div><img
-                      src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/7_1.png?v=1698373244"
-                      alt=""></div>
-              <div>
-                  <div class="u17Light_v2">As an employee, you can convince your employer to lease you a company bike
-                      and provide it to you via deferred compensation. You get a tax-reduced e-bike that can also be
-                      used privately without restriction: for work, everyday life, vacations or sports.</div>
-                  <div class="u20DemiBold_v2">NEWS: from 01.01.2020 to 31.12.2030, employees pay only 0.25% imputed
-                      income and thus save up to 40% compared to private purchases.</div>
-                  <a href="#forms" class="my-button my-button-black">Request leasing offer</a>
-              </div>
+    </div>
+    <div class="bottom">
+      <div class="centeral-content">
+        <div>
+          <img
+            src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/7_1.png?v=1698373244"
+            alt=""
+          >
+        </div>
+        <div>
+          <div class="u17Light_v2">
+            As an employee, you can convince your employer to lease you a company bike and provide it to you via
+            deferred compensation. You get a tax-reduced e-bike that can also be used privately without restriction: for
+            work, everyday life, vacations or sports.
           </div>
+          <div class="u20DemiBold_v2">
+            NEWS: from 01.01.2020 to 31.12.2030, employees pay only 0.25% imputed income and thus save up to 40%
+            compared to private purchases.
+          </div>
+          <a href="#forms" class="my-button my-button-black">Request leasing offer</a>
+        </div>
       </div>
+    </div>
   </div>
   <div class="glance">
-      <div class="centeral-content">
-          <h2 class="u48DemiBold_v2">Your advantages at a glance</h2>
-          <div>
-              <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_20956_2x_28b3e62b-ae48-4b7c-a025-4db2d0cdbf2d.png?v=1683713191"
-                  alt="">
-              <h3 class="u20DemiBold_v2">Save up to 40% compared to direct purchase</h3>
-          </div>
-          <div>
-              <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_20956_2x_28b3e62b-ae48-4b7c-a025-4db2d0cdbf2d.png?v=1683713191"
-                  alt="">
-              <h3 class="u20DemiBold_v2">The monthly installments are automatically deducted from your salary</h3>
-          </div>
-          <div>
-              <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_20956_2x_28b3e62b-ae48-4b7c-a025-4db2d0cdbf2d.png?v=1683713191"
-                  alt="">
-              <h3 class="u20DemiBold_v2">Lean and digital processes via the Jobrad portal</h3>
-          </div>
-          <div>
-              <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_20956_2x_28b3e62b-ae48-4b7c-a025-4db2d0cdbf2d.png?v=1683713191"
-                  alt="">
-              <h3 class="u20DemiBold_v2">Open to all companies - big companies, small companies or self-employed people</h3>
-          </div>
+    <div class="centeral-content">
+      <h2 class="u48DemiBold_v2">Your advantages at a glance</h2>
+      <div>
+        <img
+          src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_20956_2x_28b3e62b-ae48-4b7c-a025-4db2d0cdbf2d.png?v=1683713191"
+          alt=""
+        >
+        <h3 class="u20DemiBold_v2">Save up to 40% compared to direct purchase</h3>
       </div>
+      <div>
+        <img
+          src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_20956_2x_28b3e62b-ae48-4b7c-a025-4db2d0cdbf2d.png?v=1683713191"
+          alt=""
+        >
+        <h3 class="u20DemiBold_v2">The monthly installments are automatically deducted from your salary</h3>
+      </div>
+      <div>
+        <img
+          src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_20956_2x_28b3e62b-ae48-4b7c-a025-4db2d0cdbf2d.png?v=1683713191"
+          alt=""
+        >
+        <h3 class="u20DemiBold_v2">Lean and digital processes via the Jobrad portal</h3>
+      </div>
+      <div>
+        <img
+          src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_20956_2x_28b3e62b-ae48-4b7c-a025-4db2d0cdbf2d.png?v=1683713191"
+          alt=""
+        >
+        <h3 class="u20DemiBold_v2">Open to all companies - big companies, small companies or self-employed people</h3>
+      </div>
+    </div>
   </div>
   <div class="calculate">
-      <div class="centeral-content">
-          <h2 class="u48DemiBold_v2">Calculate your personal e-bike flat rate, which will be deducted from your
-              salary!</h2>
-          <div class="videos">
-              <div>
-                  <div class="u17Light_v2">Can you save up to 40% on your job bike via a gross salary conversion
-                      compared to a private
-                      purchase. Then calculate now how little a great Urtopia e-bike costs you in net salary per
-                      month. The calculator is fiscally up to date and includes the favorable 0.25% regulation.</div>
-                  <br>
-                  <div class="u20DemiBold_v2">Example:</div>
-                  <div class="u17Light_v2 l">An employer provides a JobRad with a list price of 3,900 euros to an
-                      employee who earns 3,000
-                      euros gross. The usage rate is 113.39 euros, and the taxable monetary benefit (0.25 percent) is
-                      9 euros.</div>
-                  <a href="#forms" class="my-button my-button-black mobileHide">Request leasing offer</a>
-              </div>
-              <div>
-                  <h3 class="u20DemiBold_v2">How to use the JobRad Calculator</h3>
-                  <div onclick="showVideoDialog('https://www.youtube.com/embed/FJP3ocrRa-g?autoplay=1&cc_load_policy=1')"><img
-                          src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_18815_2x_672be8f9-42cb-4a87-81b4-9686c4938986.png?v=1683715614"
-                          alt=""></div>
-
-              </div>
+    <div class="centeral-content">
+      <h2 class="u48DemiBold_v2">Calculate your personal e-bike flat rate, which will be deducted from your salary!</h2>
+      <div class="videos">
+        <div>
+          <div class="u17Light_v2">
+            Can you save up to 40% on your job bike via a gross salary conversion compared to a private purchase. Then
+            calculate now how little a great Urtopia e-bike costs you in net salary per month. The calculator is
+            fiscally up to date and includes the favorable 0.25% regulation.
           </div>
-          <a href="#forms" class="my-button my-button-black pcHide">Request leasing offer</a>
+          <br>
+          <div class="u20DemiBold_v2">Example:</div>
+          <div class="u17Light_v2 l">
+            An employer provides a JobRad with a list price of 3,900 euros to an employee who earns 3,000 euros gross.
+            The usage rate is 113.39 euros, and the taxable monetary benefit (0.25 percent) is 9 euros.
+          </div>
+          <a href="#forms" class="my-button my-button-black mobileHide">Request leasing offer</a>
+        </div>
+        <div>
+          <h3 class="u20DemiBold_v2">How to use the JobRad Calculator</h3>
+          <div onclick="showVideoDialog('https://www.youtube.com/embed/FJP3ocrRa-g?autoplay=1&cc_load_policy=1')">
+            <img
+              src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_18815_2x_672be8f9-42cb-4a87-81b4-9686c4938986.png?v=1683715614"
+              alt=""
+            >
+          </div>
+        </div>
       </div>
+      <a href="#forms" class="my-button my-button-black pcHide">Request leasing offer</a>
+    </div>
   </div>
   <div class="calculator">
-      <div class="centeral-content jobrad-bike-leasing-calculator"
-          id="jobrad-relaunch-arbeitnehmer-ersparnis-berechnen-main-content">
-          <h2 class="u48DemiBold_v2">JobRad Calculator</h2>
-          <iframe scrolling="no" width="100%"
-              src="https://20230622-jobrad-new-design-bike-leasing-calculator.jobrad.org/?genericObserve=true"></iframe>
-      </div>
+    <div
+      class="centeral-content jobrad-bike-leasing-calculator"
+      id="jobrad-relaunch-arbeitnehmer-ersparnis-berechnen-main-content"
+    >
+      <h2 class="u48DemiBold_v2">JobRad Calculator</h2>
+      <iframe
+        scrolling="no"
+        width="100%"
+        src="https://20230622-jobrad-new-design-bike-leasing-calculator.jobrad.org/?genericObserve=true"
+      ></iframe>
+    </div>
   </div>
   {% render 'leasing-forms-template' %}
   <div class="faqs">
-      <div class="centeral-content">
-          <div class="faq">
-              <h2 class="titlee">Frequently asked questions about Leasing</h2>
-              <div class="swiper swiper-no-swiping faq-list">
-                  <div class="swiper-wrapper">
-                      <div class="swiper-slide">
-                      </div>
-                  </div>
-              </div>
+    <div class="centeral-content">
+      <div class="faq">
+        <h2 class="titlee">Frequently asked questions about Leasing</h2>
+        <div class="swiper swiper-no-swiping faq-list">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide"></div>
           </div>
+        </div>
       </div>
+    </div>
   </div>
 </div>
 
 <script type="text/javascript">
-        window.addEventListener(
-            'message',
-            (function() {
-                /* we need to do that in JavaScript because we don't know the url in beforehand */
-                const origin_url = new URL('https://20230622-jobrad-new-design-bike-leasing-calculator.jobrad.org/?genericObserve=true').origin;
-                /* we probably need this in order to prevent this function to respond to messages from other iframes */
-                const id = 'jobrad-relaunch-arbeitnehmer-ersparnis-berechnen-main-content'
-                return function(event) {
-                    if (
-                        id === 'jobrad-relaunch-arbeitnehmer-ersparnis-berechnen-main-content' &&
-                        event.origin === origin_url &&
-                        typeof event.data === 'object' &&
-                        'genericState' in event.data &&
-                        event.data.genericState.body.outerHeightInPixel > 0
-                    ) {
-                        const iframe = document.querySelector('.jobrad-bike-leasing-calculator#jobrad-relaunch-arbeitnehmer-ersparnis-berechnen-main-content iframe');
-                        // console.log('iframe', iframe.contentWindow.document)
-                        if (iframe) {
-                            iframe.style.height = event.data.genericState.body.outerHeightInPixel + 60 + 'px';
-                        }
-
-                    }
-                }
-            })(),
-            false
-        )
-    </script>
+  window.addEventListener(
+    'message',
+    (function () {
+      /* we need to do that in JavaScript because we don't know the url in beforehand */
+      const origin_url = new URL(
+        'https://20230622-jobrad-new-design-bike-leasing-calculator.jobrad.org/?genericObserve=true'
+      ).origin;
+      /* we probably need this in order to prevent this function to respond to messages from other iframes */
+      const id = 'jobrad-relaunch-arbeitnehmer-ersparnis-berechnen-main-content';
+      return function (event) {
+        if (
+          id === 'jobrad-relaunch-arbeitnehmer-ersparnis-berechnen-main-content' &&
+          event.origin === origin_url &&
+          typeof event.data === 'object' &&
+          'genericState' in event.data &&
+          event.data.genericState.body.outerHeightInPixel > 0
+        ) {
+          const iframe = document.querySelector(
+            '.jobrad-bike-leasing-calculator#jobrad-relaunch-arbeitnehmer-ersparnis-berechnen-main-content iframe'
+          );
+          // console.log('iframe', iframe.contentWindow.document)
+          if (iframe) {
+            iframe.style.height = event.data.genericState.body.outerHeightInPixel + 60 + 'px';
+          }
+        }
+      };
+    })(),
+    false
+  );
+</script>
 
 <script>
 
