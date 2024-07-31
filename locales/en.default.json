@@ -24,6 +24,7 @@
     "klarna_policy": "Refund Policy"
   },
   "order_page": {
+    "emotion": "Form &lt;br class=pcHide&gt;Follows &lt;br class=pcHide&gt;Emotion",
     "klarna_button": "0% APR Financing<\/span><span>24 months, €96\/month",
     "only": "Only",
     "stock": "Left in Stock",

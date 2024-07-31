@@ -223,6 +223,38 @@ const testRides = [
     ]
   },
   {
+    city: 'otterndorf',
+    cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/output_5_e5e95421-6975-48c2-b950-ba1bd858744e.png?v=1718328335',
+    series: [
+      'Urtopia Carbon 1',
+      'Urtopia Chord'
+    ],
+    stores: [
+      {
+        name: 'NordWestRad',
+        phone: '04751 9910788',
+        email: 'service-nwr@nordwestrad.de',
+        timezone: "Düsseldorf, Germany (GMT+1)",
+        add: "Frank Hoppe,Am Bahnhof 1,21762 Otterndorf",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/output_5_e5e95421-6975-48c2-b950-ba1bd858744e.png?v=1718328335",
+        testrideSpot: "Grevesmuhlen",
+        testRideSize: "L, Chord",
+        availableSizes: [
+          'Carbon 1 Pro Size M'
+        ],
+        businessHours: [
+          "",
+          "10:00-17:00",
+          "10:00-17:00",
+          "10:00-17:00",
+          "10:00-17:00",
+          "10:00-17:00",
+          "10:00-17:00",
+        ],
+      }
+    ]
+  },
+  {
     city: 'Grevesmuhlen',
     cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/output_5_e5e95421-6975-48c2-b950-ba1bd858744e.png?v=1718328335',
     series: [

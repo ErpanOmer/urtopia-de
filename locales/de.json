@@ -24,6 +24,7 @@
     "klarna_policy": "Rückerstattungsrichtlinie"
   },
   "order_page": {
+    "emotion": "Der Emotion &lt;br class=pcHide&gt;folgt die &lt;br class=pcHide&gt;Form",
     "klarna_button": "0 % Finanzierung<\/span><span>24 Monate, €96\/Monat",
     "only": "Nur noch",
     "stock": "auf Lager",
