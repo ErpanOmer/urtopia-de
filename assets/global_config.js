@@ -184,18 +184,18 @@ const global_config = {
             '100 mm'
           ],
           [
-              '<span class="u17DemiBold_v2">Large</span>',
-              '175-195 cm',
-              '840 mm',
-              '60 mm',
-              '1020 mm',
-              '500 mm',
-              '1120 mm',
-              '1850 mm',
-              '690 mm',
-              '610 mm',
-              '180 mm',
-              '100 mm'
+            '<span class="u17DemiBold_v2">Large</span>',
+            '175-195 cm',
+            '840 mm',
+            '60 mm',
+            '1020 mm',
+            '500 mm',
+            '1120 mm',
+            '1850 mm',
+            '690 mm',
+            '610 mm',
+            '180 mm',
+            '100 mm'
           ],
         ]
       },
@@ -383,34 +383,82 @@ const global_config = {
     // 每一种variant 的发货时间文案
     ebike_delivery_time: {},
     product_images: {
-        'Matte Black': [
-            'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18877.jpg?v=1718438830',
-            'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18873.jpg?v=1718438829',
-            'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18869.jpg?v=1718438828',
-            'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18861.jpg?v=1718439689',
-            'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18857.jpg?v=1718439689',
-            'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18859.jpg?v=1718439689'
-        ],
-        'Creme': [
-            'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18878.jpg?v=1718438828',
-            'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18874.jpg?v=1718438829',
-            'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18870.jpg?v=1718438829',
-            'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18862.jpg?v=1718439689',
-            'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18858.jpg?v=1718439690',
-            'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18862.jpg?v=1718439689'
-        ],
-        commonSwiper: [
-            'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20240131-094148.jpg?v=1706665341',
-            'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20240117-180528.png?v=1705485964',
-            'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20231108-untitled-6089.jpg?v=1703570574',
-            'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20231108-untitled-3370.jpg?v=1703570574',
-            'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/aaa_2x_9b257387-ce8a-4eb6-a2e9-913573233f93.jpg?v=1714984318',
-            'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/DSCF7217_1_2x_ec4657b0-b04a-494f-82ad-9a6553394400.jpg?v=1714984325',
-            'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20231108-untitled-2785_2x_ab30be84-117b-44b4-8c61-0c6a5936faa2.jpg?v=1714984330',
-            'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20231108-untitled-2778_2x_ccaa8af6-df16-4870-8b8d-e8b21c69d4c4.jpg?v=1714984337',
-            'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/DSCF6952_1_2x_0bc14670-71dc-49a2-8837-9d0bb276e6e6.jpg?v=1714984341'
-        ]
+      'Matte Black': [
+        'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/3-1.jpg?v=1722064932',
+        'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20231108-untitled-3641.jpg?v=1722064933&width=800',
+        'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20231108-untitled-2778_2x_dc09eb12-516a-4242-8ad9-4976d30865af.jpg?v=1721977722',
+        'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20231108-untitled-3635_2x_ca863040-f526-4b2b-b54f-7202384fe41d.jpg?v=1721977727&width=800',
+        'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/1pro-_-_c_2x_59857988-2ad6-42c3-ba78-b239cc591367.jpg?v=1721977733',
+        'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/1pro-_-_c__1_1_2x_1b9d5dea-a84a-442b-80ec-3fa18757aabd.jpg?v=1721977738',
+        'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/1pro-_1_1.jpg?v=1722064932',
+        'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/1pro-_c_2x_4d3389e3-6c89-4584-a35d-a7586f6f0dec.jpg?v=1721977750',
+        'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_24397.jpg?v=1722064933&width=800'
+      ],
+      'Creme': [
+        'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18878.jpg?v=1722064932',
+        'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20240308-untitled-6217.jpg?v=1722064934&width=800',
+        'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Urtopia-20.jpg?v=1722064933&width=800',
+        'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Urtopia-11.jpg?v=1722064933&width=800',
+        'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18874.jpg?v=1722064932&width=800',
+        'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18870.jpg?v=1722064932&width=800',
+        'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18862.jpg?v=1722064932',
+        'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18858.jpg?v=1722064933',
+        'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_24398.jpg?v=1722064933&width=800'
+      ],
+      commonSwiper: [
+      ]
     },
+    // 产品图下面的media模块, 根据产品图 循环轮播 
+    product_media_images: [
+      {
+          text: 'Carbon Fiber Expert',
+          img: "https://newurtopia.com/cdn/shop/files/logo_0707__1.png?v=1684310857"
+      },
+      {
+          text: `“Visually stunning and lightweight bikes”`,
+          img: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_19051_2x_3c234be0-e1cb-4ab0-b83c-02282fd42cb4.png?v=1705485418"
+      },
+      {
+          text: `“The best electric bikes of 2024”`,
+          img: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_19052_2x_83b17023-7ff5-413b-9a87-571e8e6928ee.png?v=1705485424"
+      },
+      {
+          text: `“Pack with copious use of technology”`,
+          img: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_19053_2x_2b4e11dc-d27b-47ad-9478-92c696e1fac7.png?v=1705485431"
+      },
+      {
+          text: `“Pack with copious use of technology”`,
+          img: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_19054_2x_7feff357-8d1b-48a0-b9af-662442dc41f6.png?v=1705485437"
+      },
+      {
+          text: `“The epitome of raw power”`,
+          img: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_19055_2x_612a45c4-04fe-4477-a252-302e8d11c40e.png?v=1705485444"
+      },
+      {
+          text: `“Carbon 1 Pro as ‘a bike with spirit”`,
+          img: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_19056_2x_b61e963a-f2b3-49f3-8bc2-4aee5f8f2a4c.png?v=1705485451"
+      },
+      {
+          text: `“Standout feature lies in its integration with advanced technology. ”`,
+          img: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_19057_2x_0eabb26b-a2fe-48e8-b00e-209ef2b986e0.png?v=1705485460"
+      },
+      {
+          text: `“Interesting innovation or tech for tech’s sake”`,
+          img: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_19058_2x_b0454fa5-9c44-462e-8f04-5646db60456a.png?v=1705485466"
+      },
+      {
+          text: `“Completely crazy: This e-bike talks to the rider”`,
+          img: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_19059_2x_14b271ba-3eae-41ea-8882-e6896e9f9948.png?v=1705485473"
+      },
+      {
+          text: `“The iPhone among e-bikes”`,
+          img: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_19060_2x_e094650e-c53d-4e29-b805-7e89d127643d.png?v=1705485481"
+      },
+      {
+          text: `“Thanks to its full carbon frame, the Urtopia e-bikes is light”`,
+          img: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_19061_2x_a24c29c4-0fff-421f-9977-25989e38b7e9.png?v=1705485487"
+      }
+  ],
     sizes_and_specs: {
       sizes: {
         image: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20231221-151050_2x_d883c889-6e52-477d-8672-a7dda6dbbbdd.png?v=1703577530',
@@ -477,7 +525,7 @@ const global_config = {
             ["Speed modes", "Pedal, Eco, Comfort, Sport, Turbo"],
             ["Top speed (assisted)", "25 km/h"],
             ["Range", "Up to 130 km"],
-            ["Removable battery", "352.8Wh, Samsung Li-ion, removable battery, 2.5-hr quick charge"]
+            ["Removable battery", "36V 9.8Ah, Samsung Li-ion, 2.5-hr quick charge, certified to UL-2271"]
           ]
         },
         {

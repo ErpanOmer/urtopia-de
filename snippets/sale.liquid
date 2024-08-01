@@ -1,0 +1,136 @@
+{% unless settings.hide_sale_countdown %}
+    <style>
+   .sale {
+     border-radius: 7px;
+                  background-color: #f9f7f6;
+                  overflow: hidden;
+                  margin-bottom: 24px;
+                  user-select: none;
+   }
+  
+      .sale  .u14DemiBold_v2 {
+         background: #FD4B17 url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_19266.svg?v=1721983999') left center/contain no-repeat;
+                      background-position-x: 5px;
+                      color: #fff;
+                      padding: 7.5px 42px;
+       }
+  
+      .sale > div:not(.u14DemiBold_v2) {
+        color: #FD4B17;
+                      display: grid;
+                      grid-template-columns: repeat(4, 1fr);
+                      padding: 12px 0;
+  
+      }
+  
+       .sale > div:not(.u14DemiBold_v2) > div {
+         display: flex;
+                          align-items: center;
+                          justify-content: center;
+                          text-align: center;
+                          flex-direction: column;
+       }
+  
+      .sale > div:not(.u14DemiBold_v2) > div span:last-child {
+                                  opacity: 0.5;
+                                  font-size: 10px;
+                                  font-weight: 500;
+                              }
+  
+      .sale > div:not(.u14DemiBold_v2) > div + div {
+         border-left: 1px solid rgba(99, 99, 99, 0.1);
+       }
+  
+      @media (max-width: 767px) {
+        .sale .u14DemiBold_v2 {
+                          font-size: 12px;
+                      }
+  
+        .sale .u36DemiBold_v2 {
+                          font-size: 30px;
+                      }
+      }
+      
+    </style>
+    <div class="sale" data-sale-end-time="{{ settings.sale_end_time }}">
+      <div class="u14DemiBold_v2">{{ settings.sale_name }}</div>
+      <div>
+        <div>
+          <span class="u36DemiBold_v2">00</span>
+          <span>Days</span>
+        </div>
+        <div>
+          <span class="u36DemiBold_v2">00</span>
+          <span>Hours</span>
+        </div>
+        <div>
+          <span class="u36DemiBold_v2">00</span>
+          <span>Minutes</span>
+        </div>
+        <div>
+          <span class="u36DemiBold_v2">00</span>
+          <span>Seconds</span>
+        </div>
+      </div>
+    </div>
+  
+    <script>
+      window.loaded_sale = false;
+  
+      (() => {
+        if (window.loaded_sale) {
+          return
+        }
+  
+        window.loaded_sale = true
+  
+        const timezoneoffset = (Shopify.shop === 'urtopia.myshopify.com' ? 420 : -120) * 60000;
+  
+        function getUTCTime(now = new Date()) {
+          return now.getTime() + now.getTimezoneOffset() * 60000 + timezoneoffset;
+        }
+  
+        const [y, m, d] = $('.sale').attr('data-sale-end-time').split('-').map(Number);
+        const endtime = getUTCTime(new Date(Date.UTC(y, m - 1, d, 0, 0, 0, 0) + timezoneoffset));
+  
+        const difference = [1000 * 60 * 60 * 24, 1000 * 60 * 60, 1000 * 60, 1000];
+        const cache = ['00', '00', '00', '00'];
+  
+        function updateTimer() {
+          let timeDifference = endtime - getUTCTime();
+  
+          if (timeDifference <= 0) {
+            $('.sale').hide();
+  
+            return console.log('Countdown Ended!');
+          } else {
+            const values = [];
+  
+            for (let i = 0; i < difference.length; i++) {
+              values[i] = String(Math.floor(timeDifference / difference[i])).padStart(2, '0');
+              timeDifference = timeDifference % difference[i];
+            }
+  
+            const diff = {};
+  
+            for (let i = 0; i < values.length; i++) {
+              if (cache[i] !== values[i]) {
+                diff[i] = values[i];
+                cache[i] = values[i];
+              }
+            }
+  
+            for (const k in diff) {
+              $(`.sale > div:not(.u14DemiBold_v2) > div:nth-child(${Number(k) + 1})`)
+                .find('.u36DemiBold_v2')
+                .text(diff[k]);
+            }
+          }
+  
+          setTimeout(updateTimer, 1000);
+        }
+  
+        updateTimer();
+      })();
+    </script>
+  {% endunless %}

@@ -36,7 +36,12 @@
     "months": "months",
     "installment": "or as low as {{ installment }}\/Month",
     "technical": "Technical Specifications",
-    "urtopians-worldwide": "Over {{ number_1 }} Urtopians worldwide are passionate about green riding with Urtopia ebikes, and their total ride data is impressive, equivalent to planting a total of {{ number_2 }} trees."
+    "urtopians-worldwide": "Over {{ number_1 }} Urtopians worldwide are passionate about green riding with Urtopia ebikes, and their total ride data is impressive, equivalent to planting a total of {{ number_2 }} trees.",
+    "bikeshops": "Bike Shops",
+    "14Day": "14-Day",
+    "Trial": "Trial",
+    "2Year": "2-Year",
+    "Warranty": "Warranty"
   },
   "general": {
     "password_page": {

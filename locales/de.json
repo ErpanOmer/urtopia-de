@@ -36,7 +36,12 @@
     "months": "Monate",
     "installment": "oder ab {{ installment }} pro Monat",
     "technical": "Technische Besonderheiten",
-    "urtopians-worldwide": "Mehr als {{ number_1 }} Urtopian auf der ganzen Welt fahren leidenschaftlich gerne umweltfreundlich mit Urtopia ebikes. Und ihre Gesamtfahrdaten sind beeindruckend: Sie entsprechen der Pflanzung von insgesamt {{ number_2 }} Bäumen."
+    "urtopians-worldwide": "Mehr als {{ number_1 }} Urtopian auf der ganzen Welt fahren leidenschaftlich gerne umweltfreundlich mit Urtopia ebikes. Und ihre Gesamtfahrdaten sind beeindruckend: Sie entsprechen der Pflanzung von insgesamt {{ number_2 }} Bäumen.",
+    "bikeshops": "Partnershops",
+    "14Day": "14 Tage",
+    "Trial": "Rückgabe",
+    "2Year": "2 Jahre",
+    "Warranty": "Garantie"
   },
   "general": {
     "password_page": {
