@@ -135,6 +135,10 @@ const global_config = {
     // 产品图下面的media模块, 根据产品图 循环轮播 
     product_media_images: [
       {
+          text: 'Carbon Fiber Expert',
+          img: "https://newurtopia.com/cdn/shop/files/logo_0707__1.png?v=1684310857"
+      },
+      {
         text: `“The AI-powered co-pilot adds a new level of intelligence and interactivity”`,
         img: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230913-173450.png?v=1694597715"
       },

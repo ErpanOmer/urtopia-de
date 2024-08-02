@@ -387,6 +387,199 @@ const testRides = [
     ]
   },
   {
+    city: 'Dossenheim',
+    cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Dusseldorf.jpg?v=1679406972',
+    series: [
+      'Urtopia Carbon 1',
+      'Urtopia Chord'
+    ],
+    stores: [
+      {
+        name: 'Radhaus Gerger-Dossenheim',
+        phone: '06221-868828',
+        email: 'radhaus.gerger@arcor.de',
+        timezone: "Düsseldorf, Germany (GMT+1)",
+        add: "Hauptstraße 23, 69221 Dossenheim, Deutschland",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/output_1_ffa5338b-e099-41c7-9be9-be6c62496c7d.png?v=1717487530",
+        testrideSpot: "Dossenheim",
+        testRideSize: "L, Fusion",
+        availableSizes: [
+          'Carbon 1 Pro Size M',
+          'Fusion'
+        ],
+        businessHours: [
+          "",
+          "09:00-18:00",
+          "09:00-18:00",
+          "09:00-13:00",
+          "09:00-18:00",
+          "09:00-18:00",
+          "09:00-13:00",
+        ],
+      }
+    ]
+  },
+  {
+    city: 'Einhausen',
+    cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Dusseldorf.jpg?v=1679406972',
+    series: [
+      'Urtopia Carbon 1',
+      'Urtopia Chord'
+    ],
+    stores: [
+      {
+        name: `Olek's Radsport - Einhausen`,
+        phone: '+49 (0)6251 530 39',
+        email: 'info@oleks-radsport.de',
+        timezone: "Düsseldorf, Germany (GMT+1)",
+        add: "Mathildenstr. 5464683 Einhausen",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/output_1_ffa5338b-e099-41c7-9be9-be6c62496c7d.png?v=1717487530",
+        testrideSpot: "Einhausen",
+        testRideSize: "L, Fusion",
+        availableSizes: [
+          'Carbon 1 Pro Size M/L',
+        ],
+        businessHours: [
+          "",
+          "09:00-18:00",
+          "09:00-18:00",
+          "09:00-13:00",
+          "09:00-18:00",
+          "09:00-18:00",
+          "09:00-13:00",
+        ],
+      }
+    ]
+  },
+  {
+    city: 'Rauheim',
+    cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Dusseldorf.jpg?v=1679406972',
+    series: [
+      'Urtopia Carbon 1',
+      'Urtopia Chord'
+    ],
+    stores: [
+      {
+        name: `Olek's Radsport - Raunheim`,
+        phone: '+49 (0)6142 833 869 1',
+        email: 'info@biketeam-raunheim.de',
+        timezone: "Düsseldorf, Germany (GMT+1)",
+        add: "Hafenstr. 365479 Raunheim",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/output_1_ffa5338b-e099-41c7-9be9-be6c62496c7d.png?v=1717487530",
+        testrideSpot: "Einhausen",
+        testRideSize: "L, Fusion",
+        availableSizes: [
+          'Carbon 1 Pro Size M/L',
+        ],
+        businessHours: [
+          "",
+          "10:00-19:00",
+          "10:00-19:00",
+          "10:00-19:00",
+          "10:00-19:00",
+          "10:00-16:00",
+          "",
+        ],
+      }
+    ]
+  },
+  {
+    city: `Waghäusel`,
+    cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Dusseldorf.jpg?v=1679406972',
+    series: [
+      'Urtopia Carbon 1',
+      'Urtopia Chord'
+    ],
+    stores: [
+      {
+        name: `Karl's Bikeshop`,
+        phone: '072549583180',
+        email: 'info@karls-bikeshop.de',
+        timezone: "Düsseldorf, Germany (GMT+1)",
+        add: "Kaigartenallee 1268753 Waghäusel",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/output_1_ffa5338b-e099-41c7-9be9-be6c62496c7d.png?v=1717487530",
+        testrideSpot: "Waghäusel",
+        testRideSize: "L, Fusion",
+        availableSizes: [
+          'Carbon 1 Pro Size M/L',
+        ],
+        businessHours: [
+          "",
+          "10:00-18:00",
+          "",
+           "10:00-18:00",
+          "",
+          "10:00-18:00",
+          "10:00-14:00",
+        ],
+      }
+    ]
+  },
+   {
+    city: `Lingenfeld`,
+    cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Dusseldorf.jpg?v=1679406972',
+    series: [
+      'Urtopia Carbon 1',
+      'Urtopia Chord'
+    ],
+    stores: [
+      {
+        name: `Radsport Laufer`,
+        phone: '06344 - 4990',
+        email: 'info@radsport-laufer.de',
+        timezone: "Düsseldorf, Germany (GMT+1)",
+        add: "Hauptstraße 3567360 Lingenfeld",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/output_1_ffa5338b-e099-41c7-9be9-be6c62496c7d.png?v=1717487530",
+        testrideSpot: "Lingenfeld",
+        testRideSize: "L, Fusion",
+        availableSizes: [
+          'Carbon 1 Pro Size M/L',
+        ],
+        businessHours: [
+          "",
+          "10:00-18:00",
+          "10:00-18:00",
+           "10:00-12:00",
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-12:00",
+        ],
+      }
+    ]
+  },
+   {
+    city: `Bad Nauheim`,
+    cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Dusseldorf.jpg?v=1679406972',
+    series: [
+      'Urtopia Carbon 1',
+      'Urtopia Chord'
+    ],
+    stores: [
+      {
+        name: `Zweiradcenter Mensinger`,
+        phone: '06032 / 9251983',
+        email: 'info@zweiradcenter-mensinger.com',
+        timezone: "Düsseldorf, Germany (GMT+1)",
+        add: "Eleonorenring 45 DE-61231 Bad Nauheim",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/output_1_ffa5338b-e099-41c7-9be9-be6c62496c7d.png?v=1717487530",
+        testrideSpot: "Lingenfeld",
+        testRideSize: "L, Fusion",
+        availableSizes: [
+          'Carbon 1 Pro Size M/L',
+        ],
+        businessHours: [
+          "",
+          "10:00-19:00",
+          "10:00-19:00",
+           "",
+          "10:00-19:00",
+          "10:00-19:00",
+          "10:00-14:00",
+        ],
+      }
+    ]
+  },
+  {
     city: 'Leingarten',
     cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Dusseldorf.jpg?v=1679406972',
     series: [
@@ -3511,6 +3704,29 @@ const testRides = [
         testRideSize: "L",
         availableSizes: [
           'Carbon 1 Size L'
+        ],
+        businessHours: [
+          "",
+          "14:00-18:00",
+          "09:00-18:00",
+          "09:00-18:00",
+          "09:00-18:00",
+          "09:00-18:00",
+          "09:00-13:00",
+        ],
+      },
+      {
+        name: 'Radhaus Gerger-Heidelberg',
+        phone: '06221-7500980',
+        email: 'radhaus.gerger@arcor.de',
+        timezone: "Karlsruhe, Germany (GMT+1)",
+        add: "Kranichweg 35, 69123 Heidelberg, Deutschland",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Vera_Bike.png?v=1710295897",
+        testrideSpot: "Radhaus",
+        testRideSize: "L",
+        availableSizes: [
+          'Carbon 1 Pro Size M',
+          'Fusion'
         ],
         businessHours: [
           "",
