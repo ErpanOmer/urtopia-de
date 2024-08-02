@@ -16,7 +16,7 @@ const bike_sizes = [
   {
     id: 1,
     name: 'Carbon 1',
-    fit: 'Fit for 165-180 cm',
+    fit: 'Fit for 165-185 cm',
     size: 'M',
     img: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18409_2x_87c499be-99e5-457b-869b-963e270f0ea1.jpg?v=1683614780'
   },
@@ -86,14 +86,14 @@ const bike_sizes = [
   {
     id: 11,
     name: 'Carbon 1 Pro',
-    fit: 'Fit for 170-185 cm',
+    fit: 'Fit for 165-185 cm',
     size: 'M',
     img: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/carbon_1_pro_BL_1.png?v=1703570388&width=430'
   },
   {
     id: 12,
     name: 'Carbon 1 Pro',
-    fit: 'Fit for 180-195 cm',
+    fit: 'Fit for 175-195 cm',
     size: 'L',
     img: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/carbon_1_pro_BL_1.png?v=1703570388&width=430'
   }

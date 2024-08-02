@@ -57,7 +57,7 @@ const global_config = {
     default_variant: 44222041817304,
     ignore_variants_available_false: [],
     size_map: {
-      M: 'Fit for 165-180 cm',
+      M: 'Fit for 165-185 cm',
       L: 'Fit for 175-195 cm',
       'One Size': 'Fit for 168-195 cm'
     },
@@ -171,7 +171,7 @@ const global_config = {
           ],
           [
             '<span class="u17DemiBold_v2">Medium</span>',
-            '165-180 cm',
+            '165-185 cm',
             '800 mm',
             '60 mm',
             '1010 mm',
@@ -240,7 +240,7 @@ const global_config = {
   // chrod order page 配置项
   chord_order_page_config: {
     // chord 车默认显示 variant_id, 只有 url 上的 variant 参数为空的时候生效
-    default_variant: 43705718997208,
+    default_variant: 43705719029976,
     ignore_variants_available_false: [],
     size_map: {
       'High-Step': 'Fit for 170-195 cm',
@@ -374,8 +374,8 @@ const global_config = {
     ignore_variants_available_false: [],
     // default_variant: 44288621314296,
     size_map: {
-      M: 'Fit for 170-185 cm',
-      L: 'Fit for 180-195 cm',
+      M: 'Fit for 165-185 cm',
+      L: 'Fit for 175-195 cm',
       'One Size': 'Fit for 168-195 cm'
     },
     // 默认的发货时间 文案
@@ -426,10 +426,10 @@ const global_config = {
           text: `“Pack with copious use of technology”`,
           img: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_19053_2x_2b4e11dc-d27b-47ad-9478-92c696e1fac7.png?v=1705485431"
       },
-      {
-          text: `“Pack with copious use of technology”`,
-          img: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_19054_2x_7feff357-8d1b-48a0-b9af-662442dc41f6.png?v=1705485437"
-      },
+      // {
+      //     text: `“Pack with copious use of technology”`,
+      //     img: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_19054_2x_7feff357-8d1b-48a0-b9af-662442dc41f6.png?v=1705485437"
+      // },
       {
           text: `“The epitome of raw power”`,
           img: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_19055_2x_612a45c4-04fe-4477-a252-302e8d11c40e.png?v=1705485444"
@@ -479,7 +479,7 @@ const global_config = {
           ],
           [
             '<span class="u17DemiBold_v2">Medium</span>',
-            '170-185 cm',
+            '165-185 cm',
             '804 mm',
             '60 mm',
             '1011-1041 mm',
@@ -493,7 +493,7 @@ const global_config = {
           ],
           [
             '<span class="u17DemiBold_v2">Large</span>',
-            '180-195 cm',
+            '175-195 cm',
             '833 mm',
             '60 mm',
             '1023-1053 mm',

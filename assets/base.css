@@ -4041,7 +4041,7 @@ body .jBox-Modal {
 #announcement-bar {
   height: 38px;
   overflow: hidden;
-  background-color: var(--sale-order-page-text-color);
+  background-color: #000;
   color: #fff;
   text-align: center;
 }

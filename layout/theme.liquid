@@ -251,7 +251,6 @@
           document.documentElement.classList.add('shopify-design-mode');
         }
       </script>
-
       {% include 'dataLayer-allPages' %}
       {{ 'global_config.js' | asset_url | script_tag }}
       
@@ -434,6 +433,9 @@
     <!-- CRITEO START -->
   {% render 'criteo-tracking' %}
   <!-- CRITEO END -->
+      <!-- Start of testrutopia Zendesk Widget script -->
+<script id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key=731e7980-a3ec-494e-8234-095e28b39bd7"> </script>
+<!-- End of testrutopia Zendesk Widget script -->
   </body>
   {% render 'dialog' %}
   {% render 'global-low-script' %}

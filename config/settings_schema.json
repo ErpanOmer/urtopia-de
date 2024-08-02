@@ -6,13 +6,13 @@
         "type": "text",
         "id": "sale_name",
         "label": "活动名称",
-        "default": "Spring Spark Sales"
+        "default": "August Deals"
       },
       {
         "type": "text",
         "id": "sale_end_time",
         "label": "活动结束文案",
-        "default": "2024-8-2"
+        "default": "2024-8-5"
       },
       {
         "type": "text",
@@ -42,7 +42,7 @@
         "type": "text",
         "id": "chord_sale_name",
         "label": "chord 活动名称",
-        "default": "Spring Spark Sales"
+        "default": "August Deals"
       },
       {
         "type": "text",

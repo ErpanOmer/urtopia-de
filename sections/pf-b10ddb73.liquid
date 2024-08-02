@@ -240,7 +240,7 @@
                     onclick="addAllToCart('atc')"
                     id="addToCart"
                     >
-                    <i class="fa fa-spinner fa-spin"></i><span data-pf-type="Text" class="addToCartText u17DemiBold_v2">Add to Cart</span>
+                    <i class="fa fa-spinner fa-spin"></i><span data-pf-type="Text" class="addToCartText u17DemiBold_v2">{{ 'products.product.add_to_cart' | t }}</span>
                 </div>
                 <div onclick="testRideTrace('lease_on_jobrad', this)" class="orderTestRideBtn jobrad">
                     <img class="oneeee" src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/JobRad_Logo_Anthrazit_RGB_4x_2x_4d61b30b-1ef4-492f-a670-734913ec7b54.png?v=1705477646"/>
@@ -785,7 +785,7 @@
 
         const btn =  $('.product .buttons .addToCartBtn')
         if (e.value.available) {
-            btn.find('span').text('Add to Cart')
+            btn.find('span').text('{{ 'products.product.add_to_cart' | t }}')
             btn.removeClass('disabled')
             $('.product .buttons .orderTestRideBtn').show()
         } else {
@@ -803,7 +803,7 @@
         } else {
             setTimeout(()=>{
                 $(".addToCartBtn i").toggleClass("showi");
-                document.querySelector(".addToCartBtn span").innerHTML = "Add to Cart";
+                document.querySelector(".addToCartBtn span").innerHTML = "{{ 'products.product.add_to_cart' | t }}";
             }, 800)
         }
     }
