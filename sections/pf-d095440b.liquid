@@ -1,6 +1,13 @@
+
+
 {{ 'pagefly-main.css' | asset_url | stylesheet_tag: preload: true }}
 {{ 'pagefly.d095440b.css' | asset_url | stylesheet_tag: preload: true }}
 {{ 'carbon-one.scss.css' | asset_url | stylesheet_tag: preload: true }}
+
+{% assign prelo = 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_24469_2x_71a4b3d2-95b3-4a0f-bfb3-926b4f81d890.jpg?v=1722569930' %}
+<link rel="preload" as="image" href="{{ prelo }}">
+<link rel="preload" as="image" href="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18525.png?v=1688112407">
+<link rel="preload" as="image" href="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18526.png?v=1688112407">
 
 {% assign hide_balabalabala = true %}
 
@@ -167,316 +174,509 @@
     }
 </style>
 
-{% if settings.show_easter_sale %}
-  <script>
-    global_config.carbon_order_page_config.product_images['Carbon Belt']['Sirius'][0] = 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20240322-153231.png?v=1711092781'
-  </script>
-  <style>
-    .product .sale-taggggggg {
-      background: rgb(254, 110, 131) url(https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_23806_2x_437f5712-bd9f-411a-ab7a-eccb83daaca5.png?v=1711072949) bottom right/contain no-repeat;
-      padding: 2% 13.5% 2% 4%;
-    }
-    .product .sale-taggggggg::after {
-      display: none;
-    }
-    @media (max-width: 767px) {
-      .product .sale-taggggggg {
-        padding-right: 15vw;
-      }
-    }
-  </style>
-{% endif %}
-
 <div class="product" data-pf-type="ProductBox">
-    <div class="centeral-content">
-        <div class="commonComponent pcHide">
-            <div class="u36DemiBold_v2">{{ product.title }}</div>
-            <div data-pf-type="JudgeMe" class="sc-eZhRLC gtfCKx pf-25_ order-djs mb6">
-                <div class="pf-judme">{% render "judgeme_widgets", widget_type: "judgeme_preview_badge", jm_style: "", concierge_install: false, product: product %}</div>
-            </div>
-            <div class="u14DemiBold_v2 mb6 sale-taggggggg">{{ settings.sale_name }}</div>
-            <div class="product-price u30DemiBold_v2"  style="margin: 0;" data-price="{{ product.price | money }}">{{ product.price | minus: settings.carbon_ebike_discount_price | money }}</div>
-            <div class="sale-tag mb6">
-              <!--<div class="u17Medium_v2">{{ settings.sale_name }}</div>-->
-              <div class="u14Light_v2"  style="margin: 0;">incl. VAT. & Free Shipping.</div>
-            </div>
-            <div class="adwarsssss"></div>
-            <!--<div class="sale-big-text mb6">
-              <div class="u20DemiBold_v2">LOWEST PRICE OF THE YEAR GUARANTEED!</div>
-              <div class="u11Light_v2">For any order during Oct 1 - Dec 31 2023, if there is a price drop within this period on our website, you will get a refund for the difference.</div>
-            </div>-->
+  <div class="centeral-content">
+    <div class="commonComponent pcHide">
+      <div class="u20DemiBold_v2">{{ product.title }}</div>
+      <div data-pf-type="JudgeMe" class="sc-eZhRLC gtfCKx pf-25_ order-djs mb16">
+        <div class="pf-judme">
+          {% render 'judgeme_widgets',
+            widget_type: 'judgeme_preview_badge',
+            jm_style: '',
+            concierge_install: false,
+            product: product
+          %}
         </div>
-        <div class="featured_image">
-            <div class="left-swiper mobileHide">
-                <div class="swiper-wrapper">
-                </div>
-            </div>
-            <div class="right-swiper" style="--swiper-navigation-color: #fff;--swiper-theme-color: #000;--swiper-pagination-color: #000;">
-                <div class="adwarsssss mobileHide"></div>
-                <div class="swiper-wrapper">
-                  <div class="swiper-slide">
-                  </div>
-                </div>
-                <div class="swiper-button-prev mobileHide"></div><!--左箭头。如果放置在swiper外面，需要自定义样式。-->
-                <div class="swiper-button-next mobileHide"></div><!--右箭头。如果放置在swiper外面，需要自定义样式。-->
-                <div class="swiper-pagination pcHide"></div>
-                <div class="flex-1 mobileHide pcHide"></div>
-                <div class="service mobileHide">
-                  <div class="u24DemiBold_v2">
-                    <img class="lozad" style="max-width: 60px;" data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230811-120544.png?v=1691726759" alt="">
-                    <span class="emphasize">+</span>
-                    <img class="lozad" style="max-width: 46px;" data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20231008-164445.png?v=1696754716" alt="">
-                  </div>
-                  <div class="u17DemiBold_v2 emphasize">
-                    <span>Free Kickstand,</span>
-                    <span>1-Year Connect Service Included</span>
-                    <span class="u14Light_v2">*Not available with leasing</span>
-                  </div>
-                  <div class="u17Medium_v2">
-                    <span>{{ 8000 | money_without_trailing_zeros }}</span>
-                    <span>FREE</span>
-                  </div>
-                </div>
-                <div class="parameters mobileHide">
-                    <div>
-                        <img class="lozad" data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18448_2x_833c8995-fa19-4297-af29-678ac4064d0c.png?v=1687176385"/>
-                        <span><span class="u14Light_v2">Carbon Fiber</span><span class="u17DemiBold_v2">15 kg</span></span>
-                    </div>
-                    <div>
-                        <img class="lozad" data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18449_2x_e118ab7b-18ca-4612-afb3-20758874d9c7.png?v=1687177181"/>
-                        <span><span class="u14Light_v2">Fast & Easy</span><span class="u17DemiBold_v2">90% Assembled</span></span>
-                    </div>
-                    <div>
-                        <img class="lozad" data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18445_2x_2e6c6230-7ed1-4c3d-99ad-54ba48fa57b4.png?v=1687177370"/>
-                        <span><span class="u14Light_v2">Adaptive</span><span class="u17DemiBold_v2">Torque Sensor</span></span>
-                    </div>
-                    <div>
-                        <img class="lozad" data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18447_2x_c102facd-9087-4028-8f97-34a7af31b1f6.png?v=1687177414"/>
-                        <span><span class="u14Light_v2">Range</span><span class="u17DemiBold_v2">100 km</span></span>
-                    </div>
-                    <div>
-                        <img class="lozad" data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18450_2x_50383af6-61df-4632-9cbc-531630580f61.png?v=1687177242"/>
-                        <span><span class="u14Light_v2">Phone App</span><span class="u17DemiBold_v2">iOS, Android</span></span>
-                    </div>
-                    <div>
-                        <img class="lozad" data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18446_2x_791e060a-ed39-42c5-9cf0-965d7e5110bb.png?v=1687177232"/>
-                        <span><span class="u14Light_v2">Anti-theft</span><span class="u17DemiBold_v2">GPS Tracking</span></span>
-                    </div>
-                </div>
-            </div>            
+      </div>
+      <div
+        class="product-price u24DemiBold_v2 mb12"
+        {% unless product.compare_at_price != product.price %}
+          {% comment %} style="color: #000;" {% endcomment %}
+        {% endunless %}
+        {% unless product.compare_at_price == product.price %}
+          data-price="{{ product.compare_at_price | money }}"
+        {% endunless %}
+      >
+        {{ product.price | money }}
+      </div>
+      {% render 'sale' %}
+    </div>
+    <div class="left-swiper mobileHide">
+      <div class="swiper-wrapper">
+        <img class="swiper-slide" alt="Urtopia Carbon 1 Pro" src="{{prelo}}">
+      </div>
+    </div>
+    <span></span>
+    <div
+      class="featured_image mb16"
+      style="--swiper-navigation-color: #000;--swiper-theme-color: #000;--swiper-pagination-color: #000;"
+    >
+      <div class="right-swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide"><img alt="Urtopia Carbon 1 Pro" src="{{prelo}}"></div>
         </div>
-        <form method="post" accept-charset="UTF-8" action="/cart/add" class="product-panel pf-product-form" data-productid={{ product.id }} id="product_form_{{ product.id }}" enctype="multipart/form-data">
-            <input type="hidden" name="id" data-product-id="{{product.id}}" value="{{ product.selected_or_first_available_variant.id }}"/>
-            <input type="hidden" name="form_type" value="product">
-            <input type="hidden" name="utf8" value="✓">
-            <div class="commonComponent mobileHide" id="sale_acc">
-                <div class="u36DemiBold_v2 mb6">{{ product.title }}</div>
-                <div data-pf-type="JudgeMe" class="sc-eZhRLC gtfCKx pf-25_ order-djs mb6">
-                    <div class="pf-judme">{% render "judgeme_widgets", widget_type: "judgeme_preview_badge", jm_style: "", concierge_install: false, product: product %}</div>
-                </div>
-                <div class="u14DemiBold_v2 mb6 sale-taggggggg">{{ settings.sale_name }}</div>
-                <div class="product-price u30DemiBold_v2" style="margin: 0;" data-price="{{ product.price | money }}">{{ product.price | minus: settings.carbon_ebike_discount_price | money }}</div>
-                <div class="sale-tag mb6">
-                  <!--<div class="u17Medium_v2">{{ settings.sale_name }}</div>-->
-                  <div class="u14Light_v2" style="margin: 0;">incl. VAT. & Free shipping.</div>
-                </div>
-                <!--<div class="sale-big-text ">
-                  <div class="u20DemiBold_v2">LOWEST PRICE OF THE YEAR GUARANTEED!</div>
-                  <div class="u11Light_v2">For any order during Oct 1 - Dec 31 2023, if there is a price drop within this period on our website, you will get a refund for the difference.</div>
-                </div>-->
-                <!--<div class="sale mb12">
-                    <div class="u20DemiBold_v2">{{ product.price | minus: settings.carbon_ebike_discount_price | money }} NOW</div>
-                    <div class="u17DemiBold_v2">with {{ settings.sale_name }}</div>
-                </div>-->
-            </div>
-            <!--<div class="sale_acc mb12 belt" id="sale_accmb">
-                <div class="u14Light_v2" style="background-image: linear-gradient(-90deg,var(--sale-color3),var(--sale-color4));">And get <span style="font-weight: 600;">  {{ settings.carbon_ebike_free_accessories_price | money_without_trailing_zeros }} </span> Accessories for <span class="u20DemiBold_v2"> Free</span></div>
-                {% assign accessories_map = "7633738596568,7633738662104,7884881690840" | split: ',' %}
-                <div class="accs">
-                    {% for acc in accessories_map %}
-                        {% for prod in collections["accessories"].products %}
-                            {% if acc contains prod.id %}
-                                <div class="acc">
-                                    {{ prod.featured_image | image_url: width: 400 | image_tag }}
-                                    {% if acc == "7633738662104" %}
-                                      <span class="u11Medium_v2">{{ prod.title | truncatewords: 3, "" | replace: "-", "" }}</span>
-                                    {% elsif acc == "7924079526104" %}
-                                      <span class="u11Medium_v2">{{ prod.title | truncatewords: 2, "" | replace: "-", "" }}</span>
-                                    {% else %}
-                                      <span class="u11Medium_v2">{{ prod.title }}</span>
-                                    {% endif %}
-                                </div>
-                            {% endif %}
-                        {% endfor %}
-                    {% endfor %}
-                </div>
-                <div class="u11Light_v2">*Not available with leasing</div>
-            </div>-->
-            <!--<div class="sale_acc mb12 gear" id="sale_acc">
-              <div class="u14Light_v2">Save <span class="discount" style="font-weight: 600;">{{ settings.carbon_ebike_discount_price | money_without_trailing_zeros }}</span> and Get <span style="font-weight: 600;">{{ settings.carbon_ebike_free_accessories_price | money_without_trailing_zeros }}</span>  Accessories for <span style="font-weight: 600;"> Free</span></div>
-                {% assign accessories_map_1s = "7633738596568,7900136702168" | split: ',' %}
-                <div class="accs_1s">
-                    {% for acc in accessories_map_1s %}
-                        {% for prod in collections["accessories"].products %}
-                            {% if acc contains prod.id %}
-                                <div>
-                                    {{ prod.featured_image | image_url: width: 200 | image_tag }}
-                                    <div>
-                                        {% if acc == "7900136702168" %}
-                                          <span class="u14Medium_v2">Fenders</span>
-                                          <span class="u11Medium_v2">{{ prod.title | truncatewords: 3, "" | replace: "-", "" }}</span>
-                                        {% else %}
-                                          <span class="u14Medium_v2">{{ prod.title }}</span>
-                                        {% endif %}
-                                        <br>
-                                        <span class="u17DemiBold_v2">{{ prod.price | money_without_trailing_zeros }}</span>
-                                    </div>
-                                </div>
-                            {% endif %}
-                        {% endfor %}
-                    {% endfor %}
-                </div>
-                <div class="u11Light_v2">*Not available with leasing</div>
-            </div>-->
-            <div class="service pcHide mb6">
-                  <div>
-                    <div class="u24DemiBold_v2">
-                      <img class="lozad" style="max-width: 40px;" data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230811-120544.png?v=1691726759" alt="">
-                      <span class="emphasize">+</span>
-                      <img class="lozad" style="max-width: 30px;" data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20231008-164445.png?v=1696754716" alt="">
-                    </div>
-                    <div>
-                      <div class="u14Medium_v2">
-                        <span>FREE</span>
-                        <span>{{ 8000 | money_without_trailing_zeros }}</span>
-                      </div>
-                      <div class="u14DemiBold_v2 emphasize">
-                        <span>Free Kickstand,</span>
-                        <span>1-Year Connect Service Included</span>
-                      </div>
-                    </div>
-                  </div>
-                  <span class="u11Light_v2">*Not available with leasing</span>
-                </div>
-            {% unless settings.hide_sale_countdown  %}
-              <div class="count-down mb12 mobileHide">
-                <div class="u17Medium_v2">End of Promotion</div>
-                <img class="lozad" data-src="http://i.countdownmail.com/37l093.gif">
-              </div>
-            {% endunless %}
-            <div class="options">
-              {% for option in product.options_with_values %}
-                  <div class="option" option={{option.name}} position="{{ option.position }}">
-                    <div class="u17DemiBold_v2 mb12">{{ option.name }} - <span class="u17Light_v2"></span></div>
-                    <div class="{{ option.name }} mb12">
-                      {% for value in option.values %}
-                        {% case option.name %}
-                        {% when "Model" %}
-                            <div data-sale="{{ "order_page.sale" | t }}" attribute="{{ value }}" class="{{ value }}">{{ value }}</div>
-                        {% when "Size" %}
-                            <div attribute="{{ value }}" class="{{ value }} u14DemiBold_v2">
-                              {% if value == "L" %}Large
-                              {% elsif value == "M" %}Medium
-                              {% else %}{{value}}{% endif %}
-                                </div>
-                        {% when "Style" %}
-                          <div attribute="{{ value }}" class="{{ value }}"></div>
-                        {% else %}
-                            <div attribute="{{ value }}" class="{{ value }}">{{ value }}</div>
-                        {% endcase %}                     
+        <div class="arrow swiper-button-prev mobileHide"></div>
+        <div class="arrow swiper-button-next mobileHide"></div>
+      </div>
+      <div class="medias">
+        <i class="u17DemiBold_v2">Carbon Fiber Expert</i>
+        <img src="https://newurtopia.com/cdn/shop/files/logo_0707__1.png?v=1684310857" alt="">
+      </div>
+      <div class="swiper-pagination pcHide"></div>
+      <div class="free mobileHide">
+        <span class="u14Medium_v2">Free Kickstand, 1-Year eSIM Service Included</span>
+        <span class="flex-1"></span>
+        <del class="u14Light_v2">{{ 8000 | money }}</del>
+        <span class="u17Medium_v2">Free</span>
+      </div>
+      <div class="icons mobileHide">
+        <div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            width="45"
+            height="45"
+            viewBox="0 0 45 45"
+          >
+            <defs>
+              <clipPath>
+                <rect id="Rectangle_25077" data-name="Rectangle 25077" width="45" height="45" transform="translate(427 824)" fill="#fff" stroke="#bfbfbf" stroke-width="1"/>
+              </clipPath>
+            </defs>
+            <g id="Mask_Group_19076" data-name="Mask Group 19076" transform="translate(-427 -824)" clip-path="url(#clip-path)">
+              <g id="Group_23890" data-name="Group 23890" transform="translate(0.184 -0.523)">
+                <path id="Path_74558" data-name="Path 74558" d="M27.864,0A5,5,0,0,1,32.19,2.493l7.351,12.683a5,5,0,0,1,0,5.014L32.19,32.874a5,5,0,0,1-4.326,2.493H13.13A5,5,0,0,1,8.8,32.874L1.453,20.191a5,5,0,0,1,0-5.014L8.8,2.493A5,5,0,0,1,13.13,0Z" transform="translate(467.184 826.744) rotate(90)" fill="#bfbfbf"/>
+                <path id="Path_74559" data-name="Path 74559" d="M21.126,0a5,5,0,0,1,4.317,2.477l5.076,8.683a5,5,0,0,1,0,5.046L25.443,24.89a5,5,0,0,1-4.317,2.477H10.867A5,5,0,0,1,6.551,24.89L1.475,16.207a5,5,0,0,1,0-5.046L6.551,2.477A5,5,0,0,1,10.867,0Z" transform="translate(463.299 831.423) rotate(90)" fill="#bfbfbf"/>
+                <path id="Path_74549" data-name="Path 74549" d="M9.87.33c4.11,0,6.99-2.19,7.92-5.88l-2.88-.57a4.952,4.952,0,0,1-4.89,3.57c-3.12,0-5.28-2.46-5.28-6.03,0-3.6,2.16-6.06,5.28-6.06a4.782,4.782,0,0,1,4.95,3.6l2.88-.57c-1.08-3.9-3.66-5.88-7.98-5.88-4.95,0-8.49,3.72-8.49,8.91S4.92.33,9.87.33Z" transform="translate(440 856)" fill="#fff"/>
+              </g>
+            </g>
+          </svg>
+
+          <div>
+            <span class="u14Light_v2">Carbon Fiber</span>
+            <span class="u14Medium_v2">15 kg</span>
+          </div>
+        </div>
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="45" height="45" viewBox="0 0 45 45">
+  <defs>
+    <clipPath>
+      <rect id="Rectangle_25572" data-name="Rectangle 25572" width="45" height="45" transform="translate(658 771)" fill="#fff" stroke="#707070" stroke-width="1"/>
+    </clipPath>
+  </defs>
+  <g id="Mask_Group_19290" data-name="Mask Group 19290" transform="translate(-658 -771)" clip-path="url(#clip-path)">
+    <g id="Group_24468" data-name="Group 24468" transform="translate(313.399 -28)">
+      <g id="_03-组装" data-name="03-组装" transform="translate(350 804)">
+        <path id="Path_76310" data-name="Path 76310" d="M40.838,35.323H18.89a2.685,2.685,0,0,1-2.685-2.685V27.513a7.311,7.311,0,0,1-2.732-.537,6.931,6.931,0,0,1-3.993-4.483,2.466,2.466,0,0,1-.117-.584,7.359,7.359,0,0,1,1.471-5.242,6,6,0,0,1,4.389-2,3.439,3.439,0,0,1,.49.012,2.087,2.087,0,0,0,.374.012V9.045A2.685,2.685,0,0,1,18.774,6.36H22.5a.341.341,0,0,0,.105-.023c.035-.257.07-.537.14-.841a6.9,6.9,0,0,1,3.07-4.448A6.791,6.791,0,0,1,31.37.779a5.754,5.754,0,0,1,2.475,1.564A7.627,7.627,0,0,1,35.9,6.231a.636.636,0,0,0,.093.222h4.856a2.685,2.685,0,0,1,2.685,2.685V14.87a2.685,2.685,0,0,1-2.685,2.685h-2a4.09,4.09,0,0,0-2.592,1.506,3.06,3.06,0,0,0,.023,2.592,1.663,1.663,0,0,1,.058.187c.07.269.817,2.615,4.2,2.673h.3A2.685,2.685,0,0,1,43.534,27.2v5.44a2.7,2.7,0,0,1-2.7,2.685ZM19.194,32.335h21.34V27.5H40.5a7.418,7.418,0,0,1-5.534-2.241,6.521,6.521,0,0,1-1.518-2.615,5.889,5.889,0,0,1,.21-5.09A6.97,6.97,0,0,1,38.351,14.6a3.03,3.03,0,0,1,.467-.035h1.716V9.442H35.958A2.935,2.935,0,0,1,33.4,7.971a3.753,3.753,0,0,1-.467-1.284A4.576,4.576,0,0,0,31.65,4.375a2.694,2.694,0,0,0-1.2-.747,3.977,3.977,0,0,0-3.175.023,4.063,4.063,0,0,0-1.634,2.533c-.035.163-.058.35-.082.525a3.023,3.023,0,0,1-2.989,2.638h-3.5v5.615a2.524,2.524,0,0,1-.864,1.985,3.685,3.685,0,0,1-2.837.712,3.083,3.083,0,0,0-2.265.957,4.366,4.366,0,0,0-.759,2.989A3.9,3.9,0,0,0,16.4,24.513c.058,0,.163-.012.28-.012a2.505,2.505,0,0,1,2.183,1.3,2.645,2.645,0,0,1,.327,1.272v5.265ZM16.065,14.975ZM35.888,6.22Z" transform="translate(-9.333 -0.324)" fill="#bfbfbf"/>
+        <rect id="Rectangle_25565" data-name="Rectangle 25565" width="22.703" height="6.622" transform="translate(9.459 8.513)" fill="#bfbfbf"/>
+        <rect id="Rectangle_25566" data-name="Rectangle 25566" width="11.351" height="7.568" rx="2" transform="translate(14.189 2.838)" fill="#bfbfbf"/>
+        <rect id="Rectangle_25567" data-name="Rectangle 25567" width="18.919" height="2.838" transform="translate(8.513 14.189)" fill="#bfbfbf"/>
+        <rect id="Rectangle_25568" data-name="Rectangle 25568" width="17.027" height="17.027" transform="translate(8.513 16.081)" fill="#bfbfbf"/>
+        <rect id="Rectangle_25569" data-name="Rectangle 25569" width="6.622" height="8.514" transform="translate(24.594 24.594)" fill="#bfbfbf"/>
+        <rect id="Rectangle_25570" data-name="Rectangle 25570" width="6.622" height="8.514" transform="translate(2.838 16.081)" fill="#bfbfbf"/>
+      </g>
+    </g>
+  </g>
+</svg>
+
+
+          <div>
+            <span class="u14Light_v2">Fast & Easy</span>
+            <span class="u14Medium_v2">90% Assembled</span>
+          </div>
+        </div>
+        <div>
+          
+        <svg
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+        width="45"
+        height="45"
+        viewBox="0 0 45 44"
+      >
+        <defs>
+          <clipPath>
+            <rect id="Rectangle_25078" data-name="Rectangle 25078" width="45" height="45" transform="translate(625 902)" fill="#fff" stroke="#707070" stroke-width="1"/>
+          </clipPath>
+        </defs>
+        <g id="Mask_Group_19078" data-name="Mask Group 19078" transform="translate(-625 -902)" clip-path="url(#clip-path)">
+          <g id="Group_23887" data-name="Group 23887" transform="translate(2.695)">
+            <g id="Group_23883" data-name="Group 23883" transform="translate(618.081 922.388) rotate(-45)">
+              <path id="Path_74536" data-name="Path 74536" d="M17.4,4.351A13.052,13.052,0,1,0,30.456,17.4,13.067,13.067,0,0,0,17.4,4.351M17.4,0A17.4,17.4,0,1,1,0,17.4,17.4,17.4,0,0,1,17.4,0Z" transform="translate(0 0)" fill="#bfbfbf"/>
+              <path id="Path_74540" data-name="Path 74540" d="M5.8,0A5.8,5.8,0,1,1,0,5.8,5.8,5.8,0,0,1,5.8,0Z" transform="translate(11.602 11.602)" fill="#bfbfbf"/>
+              <path id="Path_74537" data-name="Path 74537" d="M0,0H3.481V31.906H0Z" transform="translate(15.663 1.45)" fill="#bfbfbf"/>
+              <path id="Path_74541" data-name="Path 74541" d="M0,0H3.481V31.906H0Z" transform="translate(1.45 19.144) rotate(-90)" fill="#bfbfbf"/>
+              <path id="Path_74542" data-name="Path 74542" d="M0,0H2.9V2.9H0Z" transform="translate(4.351 16.802) rotate(45)" fill="#bfbfbf"/>
+              <path id="Path_74543" data-name="Path 74543" d="M0,0H2.9V2.9H0Z" transform="translate(4.351 13.902) rotate(45)" fill="#bfbfbf"/>
+              <path id="Path_74546" data-name="Path 74546" d="M0,0H2.9V2.9H0Z" transform="translate(18.004 4.351) rotate(135)" fill="#bfbfbf"/>
+              <path id="Path_74547" data-name="Path 74547" d="M0,0H2.9V2.9H0Z" transform="translate(20.904 4.351) rotate(135)" fill="#bfbfbf"/>
+              <path id="Path_74538" data-name="Path 74538" d="M0,0H2.9V2.9H0Z" transform="translate(18.004 30.456) rotate(135)" fill="#bfbfbf"/>
+              <path id="Path_74539" data-name="Path 74539" d="M0,0H2.9V2.9H0Z" transform="translate(20.904 30.456) rotate(135)" fill="#bfbfbf"/>
+              <path id="Path_74544" data-name="Path 74544" d="M0,0H2.9V2.9H0Z" transform="translate(31.305 18.004) rotate(-135)" fill="#bfbfbf"/>
+              <path id="Path_74545" data-name="Path 74545" d="M0,0H2.9V2.9H0Z" transform="translate(31.305 20.904) rotate(-135)" fill="#bfbfbf"/>
+            </g>
+            <g id="Group_23885" data-name="Group 23885" transform="translate(636.539 922.388) rotate(-45)">
+              <path id="Ellipse_619" data-name="Ellipse 619" d="M4.351,2.175A2.175,2.175,0,1,0,6.526,4.351,2.178,2.178,0,0,0,4.351,2.175M4.351,0A4.351,4.351,0,1,1,0,4.351,4.351,4.351,0,0,1,4.351,0Z" fill="#bfbfbf"/>
+              <path id="Path_74535" data-name="Path 74535" d="M4.351,3.14C6.754,3.14,8.7-1.738,8.7.665V25.32a4.351,4.351,0,1,1-8.7,0V.665C0-1.737,1.948,3.14,4.351,3.14Z" transform="translate(0 3.685)" fill="#bfbfbf"/>
+              <path id="Path_74535_-_Outline" data-name="Path 74535 - Outline" d="M7.251,3.293a4.407,4.407,0,0,1-2.9,1.3,4.407,4.407,0,0,1-2.9-1.3V25.32a2.9,2.9,0,0,0,5.8,0V3.293M.217,0C.788,0,2.423,3.14,4.351,3.14,6.754,3.14,8.7-1.738,8.7.665V25.32a4.351,4.351,0,0,1-8.7,0V.665C0,.191.076,0,.217,0Z" transform="translate(0 3.685)" fill="#bfbfbf"/>
+            </g>
+          </g>
+        </g>
+      </svg>
+      
+          <div>
+            <span class="u14Light_v2">Adaptive</span>
+            <span class="u14Medium_v2">Torque Sensor</span>
+          </div>
+        </div>
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="45" height="45" viewBox="0 0 45 45">
+  <defs>
+    <clipPath>
+      <rect id="Rectangle_25562" data-name="Rectangle 25562" width="45" height="45" transform="translate(427 905)" fill="#fff" stroke="#707070" stroke-width="1"/>
+    </clipPath>
+  </defs>
+  <g id="Mask_Group_19287" data-name="Mask Group 19287" transform="translate(-427 -905)" clip-path="url(#clip-path)">
+    <g id="Group_24466" data-name="Group 24466" transform="translate(-2 -8)">
+      <g id="_021-wheels" data-name="021-wheels" transform="translate(432 915.498)" opacity="0.999">
+        <path id="Path_76290" data-name="Path 76290" d="M38.493,18.632c-.606,0-.564-.663-.618-1.087-.107-.808-.267-1.052.576-1.277l.137-.24L38,13.831c-.065-.236-.332-.114-.5-.069-.583.156-.713-.484-.881-.888l-.236-.534c-.282-.625.492-.763.549-.961v-.149L35.793,9.259c-.122-.21-.355-.027-.488.053-.534.32-.82-.263-1.094-.618-.507-.656-.763-.763-.141-1.4V7L32.453,5.4c-.175-.175-.358.08-.473.191-.427.427-.858-.065-1.2-.332s-.93-.541-.629-1.079c.08-.137.278-.381.061-.5L28.213,2.529c-.187-.1-.305.179-.381.3-.305.549-.85.183-1.262,0-.694-.29-1.071-.3-.82-1.144a.2.2,0,0,0,0-.149l-.118-.092-2.2-.587a.2.2,0,0,0-.149,0l-.16.381c-.156.587-.785.381-1.2.316-.816-.107-1.091,0-1.091-.888L20.632.5H18.345c-.248,0-.194.3-.2.465,0,.606-.663.564-1.087.618-.8.107-1.052.271-1.277-.576L15.542.87l-2.193.587c-.236.065-.114.332-.069.5.156.583-.492.717-.888.881l-.53.229c-.469.214-.694-.2-.839-.458l-.271-.072L8.781,3.681c-.206.126-.031.347.053.488.32.534-.263.82-.618,1.094-.656.5-.763.763-1.4.141H6.524L4.919,7V7.28l.191.194c.423.427-.065.862-.332,1.2s-.541.934-1.079.629c-.137-.08-.381-.278-.5-.061L2.051,11.242c-.1.187.179.305.3.381.549.305.183.85,0,1.262s-.3,1.045-.881.888l-.4-.05-.092.118-.587,2.2a.2.2,0,0,0,0,.149l.381.16c.587.156.381.785.316,1.2-.107.816,0,1.091-.888,1.091L0,18.838v2.288c0,.248.3.194.465.2.606,0,.564.663.618,1.087.107.808.267,1.052-.576,1.277l-.137.24.587,2.2c.065.236.332.114.5.069.583-.156.713.484.881.888l.255.511c.282.625-.492.763-.549.961V28.7l1.144,1.971c.114.21.358.027.488-.053.534-.32.82.263,1.094.618.511.656.763.763.141,1.4v.294l1.617,1.605c.175.175.358-.08.473-.191.427-.427.858.065,1.2.332s.93.557.629,1.079c-.08.137-.278.381-.061.5L10.764,37.4c.191.1.305-.179.381-.3.305-.549.85-.183,1.262,0,.763.313,1.049.294.82,1.144a.2.2,0,0,0,0,.149l.118.092,2.2.587a.2.2,0,0,0,.149,0l.16-.381c.156-.587.785-.381,1.2-.316.816.107,1.091,0,1.091.888l.194.194h2.288c.248,0,.194-.3.2-.465,0-.606.663-.564,1.087-.618.808-.107,1.052-.271,1.277.576l.24.137,2.2-.587c.236-.065.114-.332.069-.5-.156-.583.484-.713.888-.881l.541-.233c.625-.282.763.492.961.549h.149L30.207,36.3c.21-.114.027-.358-.053-.488-.32-.534.263-.82.618-1.094.656-.511.763-.763,1.4-.141h.282l1.605-1.647v-.278c-.214-.214-.561-.534-.229-.934l.7-.911c.412-.6.9.034,1.144-.027a.2.2,0,0,0,.122-.092l1.144-1.994c.1-.187-.179-.305-.3-.381-.549-.305-.183-.85,0-1.258.29-.694.3-1.071,1.144-.82a.2.2,0,0,0,.149,0l.092-.118.587-2.2a.2.2,0,0,0,0-.149l-.381-.16c-.587-.156-.381-.785-.316-1.2.107-.816,0-1.091.888-1.091L39,21.122v-2.3c-.046-.24-.343-.191-.507-.191Z" fill="none" stroke="#bfbfbf" stroke-width="1"/>
+      </g>
+      <g id="Path_76291" data-name="Path 76291" transform="translate(432 916)" fill="none" opacity="0.999">
+        <path d="M19.5,0A19.5,19.5,0,1,1,0,19.5,19.5,19.5,0,0,1,19.5,0Z" stroke="none"/>
+        <path d="M 19.5 4 C 15.35980033874512 4 11.46740913391113 5.612281799316406 8.539850234985352 8.539850234985352 C 5.612281799316406 11.46740913391113 4 15.35980033874512 4 19.5 C 4 23.64019966125488 5.612281799316406 27.53258895874023 8.539850234985352 30.46014976501465 C 11.46740913391113 33.38771820068359 15.35980033874512 35 19.5 35 C 23.64019966125488 35 27.53258895874023 33.38771820068359 30.46014976501465 30.46014976501465 C 33.38771820068359 27.53258895874023 35 23.64019966125488 35 19.5 C 35 15.35980033874512 33.38771820068359 11.46740913391113 30.46014976501465 8.539850234985352 C 27.53258895874023 5.612281799316406 23.64019966125488 4 19.5 4 M 19.5 0 C 30.26955032348633 0 39 8.730449676513672 39 19.5 C 39 30.26955032348633 30.26955032348633 39 19.5 39 C 8.730449676513672 39 0 30.26955032348633 0 19.5 C 0 8.730449676513672 8.730449676513672 0 19.5 0 Z" stroke="none" fill="#bfbfbf"/>
+      </g>
+      <path id="Path_76292" data-name="Path 76292" d="M0,0V7.5" transform="translate(451.5 941.469)" fill="#bfbfbf" stroke="#bfbfbf" stroke-linecap="round" stroke-width="1"/>
+      <path id="Path_76293" data-name="Path 76293" d="M0,0H7.5" transform="translate(438.038 935.728)" fill="#bfbfbf" stroke="#bfbfbf" stroke-linecap="round" stroke-width="1"/>
+      <path id="Path_76294" data-name="Path 76294" d="M0,0V7.5" transform="translate(447.275 939.952) rotate(45)" fill="#bfbfbf" stroke="#bfbfbf" stroke-linecap="round" stroke-width="1"/>
+      <path id="Path_76295" data-name="Path 76295" d="M0,0H7.5" transform="translate(455.688 939.916) rotate(45)" fill="#bfbfbf" stroke="#bfbfbf" stroke-linecap="round" stroke-width="1"/>
+      <g id="Path_76296" data-name="Path 76296" transform="translate(447 931)" fill="#bfbfbf">
+        <path d="M 4.5 8.5 C 2.294389963150024 8.5 0.5 6.705609798431396 0.5 4.5 C 0.5 2.294389963150024 2.294389963150024 0.5 4.5 0.5 C 6.705609798431396 0.5 8.5 2.294389963150024 8.5 4.5 C 8.5 6.705609798431396 6.705609798431396 8.5 4.5 8.5 Z" stroke="none"/>
+        <path d="M 4.5 1 C 2.570089817047119 1 1 2.570089817047119 1 4.5 C 1 6.429909706115723 2.570089817047119 8 4.5 8 C 6.429909706115723 8 8 6.429909706115723 8 4.5 C 8 2.570089817047119 6.429909706115723 1 4.5 1 M 4.5 0 C 6.98528003692627 0 9 2.01471996307373 9 4.5 C 9 6.98528003692627 6.98528003692627 9 4.5 9 C 2.01471996307373 9 0 6.98528003692627 0 4.5 C 0 2.01471996307373 2.01471996307373 0 4.5 0 Z" stroke="none" fill="#bfbfbf"/>
+      </g>
+      <path id="Path_76297" data-name="Path 76297" d="M0,0V7.5" transform="translate(455.724 931.504) rotate(-135)" fill="#bfbfbf" stroke="#bfbfbf" stroke-linecap="round" stroke-width="1"/>
+      <path id="Path_76298" data-name="Path 76298" d="M0,0H7.5" transform="translate(447.312 931.54) rotate(-135)" fill="#bfbfbf" stroke="#bfbfbf" stroke-linecap="round" stroke-width="1"/>
+      <path id="Path_76299" data-name="Path 76299" d="M0,0H7.5" transform="translate(457.463 935.728)" fill="#bfbfbf" stroke="#bfbfbf" stroke-linecap="round" stroke-width="1"/>
+      <path id="Path_76300" data-name="Path 76300" d="M0,0V7.5" transform="translate(451.5 921.819)" fill="#bfbfbf" stroke="#bfbfbf" stroke-linecap="round" stroke-width="1"/>
+      <path id="Path_76301" data-name="Path 76301" d="M0,0V7.5" transform="translate(451.5 941.469)" fill="#bfbfbf" stroke="#bfbfbf" stroke-linecap="round" stroke-width="1"/>
+      <path id="Path_76302" data-name="Path 76302" d="M0,0H7.5" transform="translate(438.037 935.728)" fill="#bfbfbf" stroke="#bfbfbf" stroke-linecap="round" stroke-width="1"/>
+      <path id="Path_76303" data-name="Path 76303" d="M0,0V7.5" transform="translate(447.275 939.952) rotate(45)" fill="#bfbfbf" stroke="#bfbfbf" stroke-linecap="round" stroke-width="1"/>
+      <path id="Path_76304" data-name="Path 76304" d="M0,0H7.5" transform="translate(455.688 939.916) rotate(45)" fill="#bfbfbf" stroke="#bfbfbf" stroke-linecap="round" stroke-width="1"/>
+      <path id="Path_76305" data-name="Path 76305" d="M0,0V7.5" transform="translate(455.724 931.504) rotate(-135)" fill="#bfbfbf" stroke="#bfbfbf" stroke-linecap="round" stroke-width="1"/>
+      <path id="Path_76306" data-name="Path 76306" d="M0,0H7.5" transform="translate(447.312 931.54) rotate(-135)" fill="#bfbfbf" stroke="#bfbfbf" stroke-linecap="round" stroke-width="1"/>
+      <path id="Path_76307" data-name="Path 76307" d="M0,0H7.5" transform="translate(457.463 935.728)" fill="#bfbfbf" stroke="#bfbfbf" stroke-linecap="round" stroke-width="1"/>
+      <path id="Path_76308" data-name="Path 76308" d="M0,0V7.5" transform="translate(451.5 921.819)" fill="#bfbfbf" stroke="#bfbfbf" stroke-linecap="round" stroke-width="1"/>
+    </g>
+  </g>
+</svg>
+          
+
+          <div>
+            <span class="u14Light_v2">Range</span>
+            <span class="u14Medium_v2">100 km</span>
+          </div>
+        </div>
+        <div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            width="45"
+            height="45"
+            viewBox="0 0 45 45"
+          >
+            <defs>
+              <clipPath>
+                <rect id="Rectangle_25371" data-name="Rectangle 25371" width="45" height="45" transform="translate(456 768)" fill="#fff" stroke="#707070" stroke-width="1"/>
+              </clipPath>
+            </defs>
+            <g id="Mask_Group_19197" data-name="Mask Group 19197" transform="translate(-456 -768)" clip-path="url(#clip-path)">
+              <g id="Group_24273" data-name="Group 24273" transform="translate(0.008 -0.197)">
+                <path id="Subtraction_74" data-name="Subtraction 74" d="M-8609.84,14617.589H-8627a3,3,0,0,1-3-3V14584a3,3,0,0,1,3-3h17.161a3,3,0,0,1,3,3v30.588A3,3,0,0,1-8609.84,14617.589Zm-5.41-28.277h0a.486.486,0,0,0-.448.254c-.017.017-.068.077-.152.178l-.014.017c-.206.245-.687.821-1.48,1.706-.443.5-.926,1.043-1.437,1.622l-.279.317c-.627.713-1.362,1.547-2.151,2.433-.6.679-1.167,1.313-1.688,1.9-.7.783-1.361,1.524-1.859,2.1a.6.6,0,0,0-.128.7.5.5,0,0,0,.506.319h5.137l-.635,1.838-1.332,3.8-.119.339-.089.254,0,.013a12.607,12.607,0,0,0-.484,1.489c-.07.28-.052.451.063.568l.129.128h.124a.49.49,0,0,0,.448-.257c.045-.044.445-.511,1.242-1.439l.435-.508.667-.778c.5-.582,1-1.174,1.483-1.746l.1-.118c.949-1.122,1.93-2.283,2.919-3.4,1.3-1.463,2.067-2.347,2.271-2.583l.012-.014a.5.5,0,0,0,.063-.572.66.66,0,0,0-.568-.315h-5.074a7.02,7.02,0,0,0,.285-.781l.02-.058c.218-.635.546-1.595,1.027-2.9.834-2.435,1.27-3.68,1.332-3.8a.53.53,0,0,0-.062-.443l-.129-.129Z" transform="translate(9096.912 -13807.668)" fill="#bfbfbf"/>
+                <path id="Rectangle_25069" data-name="Rectangle 25069" d="M1.859,0h0a0,0,0,0,1,0,0V6.587a0,0,0,0,1,0,0h0A1.859,1.859,0,0,1,0,4.728V1.859A1.859,1.859,0,0,1,1.859,0Z" transform="translate(481.785 771.473) rotate(90)" fill="#bfbfbf"/>
+              </g>
+            </g>
+          </svg>
+
+          <div>
+            <span class="u14Light_v2">Portable Battery</span>
+            <span class="u14Medium_v2">Samsung Li-ion</span>
+          </div>
+        </div>
+        <div>
+          
+
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="45" height="45" viewBox="0 0 45 45">
+<defs>
+  <clipPath>
+    <rect id="Rectangle_25564" data-name="Rectangle 25564" width="45" height="45" transform="translate(853 771)" fill="#fff" stroke="#707070" stroke-width="1"/>
+  </clipPath>
+  <clipPath>
+    <rect id="Rectangle_25563" data-name="Rectangle 25563" width="28" height="28" transform="translate(7402.975 1203.22)" fill="#fff" stroke="#fff" stroke-width="1.5"/>
+  </clipPath>
+</defs>
+<g id="Mask_Group_19289" data-name="Mask Group 19289" transform="translate(-853 -771)" clip-path="url(#clip-path)">
+  <g id="Group_24467" data-name="Group 24467" transform="translate(215 -141)">
+    <circle id="Ellipse_670" data-name="Ellipse 670" cx="20" cy="20" r="20" transform="translate(641 915)" fill="#bfbfbf"/>
+    <g id="Mask_Group_19288" data-name="Mask Group 19288" transform="translate(-6755.975 -281.22)" clip-path="url(#clip-path-2)">
+      <path id="GPS显示_3_" data-name="GPS显示 (3)" d="M205.263,94.612c.127.3.875,1.593,1.857,3.244.586.987,1.251,2.1,1.92,3.21s1.344,2.223,1.935,3.2c.674,1.109,1.241,2.047,1.588,2.609a.416.416,0,0,0,.713,0c.347-.562.914-1.5,1.588-2.609.591-.972,1.261-2.086,1.935-3.2s1.334-2.223,1.92-3.21c.982-1.652,1.73-2.941,1.857-3.244a8.306,8.306,0,1,0-15.313,0Zm7.657,1.363a4.642,4.642,0,1,1,4.642-4.642A4.642,4.642,0,0,1,212.92,95.975Z" transform="translate(7204.1 1122.243)" fill="#fff" stroke="#fff" stroke-width="1.5"/>
+    </g>
+  </g>
+</g>
+</svg>
+          <div>
+            <span class="u14Light_v2">Anti-theft</span>
+            <span class="u14Medium_v2">GPS Tracking</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <span></span>
+    <form
+      method="post"
+      accept-charset="UTF-8"
+      action="/cart/add"
+      class="product-panel pf-product-form"
+      data-productid="{{ product.id }}"
+      id="product_form_{{ product.id }}"
+      enctype="multipart/form-data"
+    >
+      <input
+        type="hidden"
+        name="id"
+        data-product-id="{{product.id}}"
+        value="{{ product.selected_or_first_available_variant.id }}"
+      >
+      <input type="hidden" name="form_type" value="product">
+      <input type="hidden" name="utf8" value="✓">
+      <div class="commonComponent mobileHide" id="sale_acc">
+        <div class="u24DemiBold_v2">{{ product.title }}</div>
+        <div class="mb16">
+          {% render 'judgeme_widgets',
+            widget_type: 'judgeme_preview_badge',
+            jm_style: '',
+            concierge_install: false,
+            product: product
+          %}
+        </div>
+
+        <div
+          class="product-price u30DemiBold_v2 mb12"
+          {% unless product.compare_at_price != product.price %}
+            {% comment %} style="color: #000;" {% endcomment %}
+          {% endunless %}
+          {% unless product.compare_at_price == product.price %}
+            data-price="{{ product.compare_at_price | money }}"
+          {% endunless %}
+        >
+          {{ product.price | money }}
+        </div>
+        {% render 'sale' %}
+      </div>
+      <div class="options">
+        {% for option in product.options_with_values %}
+          {% unless option.name == "Model" %}
+            <div class="option mb24" option="{{option.name}}" position="{{ option.position }}">
+            <div class="u17DemiBold_v2 mb16">{{ option.name }} - <span class="u17Light_v2"></span></div>
+            <div class="{{ option.name }}">
+              {% for value in option.values %}
+                {% case option.name %}
+                  {% when 'Model' %}
+                    <div attribute="{{ value }}" class="{{ value }}">
+                      {% assign values = value | split: ' · ' %}
+                      {% for value in values %}
+                        <span>{{ value }}</span>
                       {% endfor %}
                     </div>
-                  </div>
+                  {% when 'Style' %}
+                    <div attribute="{{ value }}" class="{{ value }}">
+                      <span class="tooltip">{{ value }}</span>
+                    </div>
+                  {% else %}
+                    <div attribute="{{ value }}" class="{{ value }}">{{ value }}</div>
+                {% endcase %}
               {% endfor %}
             </div>
-            <div class="accessories">
-                <div class="u17DemiBold_v2 mb12">Accessories</div>
-                <div class="navigate">
-                    <div class="prev"></div>
-                    <div class="next"></div>
-                </div>
-                <div class="items mb12">
-                    {% for prod in collections['on-page'].products %}
-                        {% if prod.available %}
-                            {% assign variant = prod.variants | first %}
-                            <div class="item" variant-id="{{ variant.id }}">
-                              <div class="u11Medium_v2">{{ prod.title }}</div>
-                              <div>
-                                <div>
-                                  <span class="u17DemiBold_v2">{{ prod.price | money }}</span>
-                                  <span class=u11Light_v2>
-                                    <i class="fa-solid fa-plus"></i>
-                                  </span>
-                                </div>
-                                {{ prod.featured_image | image_url: width: 100 | image_tag }}
-                              </div>
-                            </div>
-                        {% endif %}
-                    {% endfor %}
-                </div>
-            </div>       
-            <div class="buttons">
-                <div class="count-down mb12 pcHide">
-                  {% unless settings.hide_sale_countdown  %}
-                    <div class="u17Medium_v2">End of Promotion</div>
-                    <img class="lozad" data-src="http://i.countdownmail.com/37l093.gif">
-                  {% endunless %}
-                </div>
-                <div
-                    data-product-id="{{ product.id }}"
-                    class="my-button my-button-origin addToCartBtn"
-                    onclick="addAllToCart('atc')"
-                    id="addToCart"
-                    style="background: var(--sale-order-page-text-color);"
-                    >
-                    <i class="fa fa-spinner fa-spin"></i><span data-pf-type="Text" class="addToCartText u17DemiBold_v2">Add to Cart</span>
-                </div>
-                <div onclick="testRideTrace('lease_on_jobrad', this)" class="orderTestRideBtn jobrad">
-                    <img class="oneeee lozad" data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/JobRad_Logo_Anthrazit_RGB_4x_2x_4d61b30b-1ef4-492f-a670-734913ec7b54.png?v=1705477646"/>
-                    <span><span class="u17DemiBold_v2">Lease Now</span><span>36 {{ 'order_page.months' | t }}, €47{{ 'checkout_klarna.month' | t }}</span></span>
+          </div>
+          {% endunless %}
+        {% endfor %}
+      </div>
+      <div class="accessories mb12">
+        <div class="u17DemiBold_v2 mb12">Accessories</div>
+        <div class="prev"></div>
+        <div class="next"></div>
+        <div class="items mb12">
+          {% for prod in collections['on-page'].products %}
+            {% if prod.available %}
+              {% assign variant = prod.variants | first %}
+              <div class="item" variant-id="{{ variant.id }}">
+                <div class="u11Medium_v2">{{ prod.title }}</div>
+                <div>
+                  <div>
+                    <span class="u17DemiBold_v2">{{ prod.price | money }}</span>
+                    <span class="u11Light_v2">
+                      <i class="fa-solid fa-plus"></i>
+                    </span>
                   </div>
-                  <div onclick="testRideTrace('klarna_check_out', this)" class="orderTestRideBtn">
-                    <img class="twoooo lozad" data-src="https://cdn.shopifycdn.net/s/files/1/0633/2068/6808/files/20230530-121400.png?v=1685420054"/>
-                    <span><span class="u17DemiBold_v2">0% APR Financing</span><span>24 {{ 'order_page.months' | t }}, <span class="stages">{{ product.price | divided_by: 2400 | ceil | times: 100 | money_without_trailing_zeros }}</span>/month</span></span>
+                  {{ prod.featured_image | image_url: width: 150 | image_tag: loading: 'lazy' }}
                 </div>
+              </div>
+            {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+      <div class="free pcHide">
+        <span class="u14Medium_v2">Free</span>
+        <span class="u11Light_v2">Free Kickstand, 1-Year eSIM Service Included</span>
+      </div>
+      <div class="error-tip u14Medium_v2 mb12" style="color:red;">Your order quantity has reached our stock limit</div>
+      <div class="buttons mb24">
+        <div
+          data-product-id="{{ product.id }}"
+          class="my-button my-button-origin addToCartBtn mb12"
+          onclick="addAllToCart('atc')"
+          id="addToCart"
+        >
+          <i class="fa fa-spinner fa-spin"></i
+          ><span data-pf-type="Text" class="addToCartText u17DemiBold_v2">Add to Cart</span>
+        </div>
+        <div onclick="testRideTrace('lease_on_jobrad', this)" class="orderTestRideBtn jobrad mb12">
+                    <img class="oneeee lozad" data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/JobRad_Logo_Anthrazit_RGB_4x_2x_4d61b30b-1ef4-492f-a670-734913ec7b54.png?v=1705477646"/>
+                    <span><span class="u14DemiBold_v2">TAX FREE Leasing</span><span class="u14Medium_v2">36 {{ 'order_page.months' | t }}, €47{{ 'checkout_klarna.month' | t }}</span></span>
+                  </div>
+        <div onclick="testRideTrace('klarna_check_out', this)" class="orderTestRideBtn">
+          <img
+            class="twoooo"
+            src="https://cdn.shopifycdn.net/s/files/1/0633/2068/6808/files/20230530-121400.png?v=1685420054"
+          >
+          <span
+            ><span class="u14DemiBold_v2">0 APR Financing</span
+            ><span class="u14Medium_v2"
+              >24 {{ 'order_page.months' | t }}, 
+              <span class="stages">{{ product.price | divided_by: 2400 | floor | times : 100 | money_without_trailing_zeros }}</span
+              >{{ 'checkout_klarna.month' | t }}</span
+            ></span
+          >
+        </div>
+      </div>
+      <div class="contact mb12">
+        <span class="delivery_time u14Medium_v2">Free shipping within 5 business days</span><br>
+        <span class="u14Light_v2">
+          Need advice from our experts? Contact us at
+          <a class="my-link" href="tel:+49 30 837 90655">+49 30 837 90655</a> or
+          <a href="mailto:support@newurtopia.com" class="my-link">support@newurtopia.com</a>
+        </span>
+      </div>
+      <div class="dialogs mb24">
+        <div class="u17Medium_v2" onclick="showSizesAndSpecs('SizesDialog')">
+          <span>Size & Fit</span>
+          <span>&gt;</span>
+        </div>
+        <div class="u17Medium_v2" onclick="showSizesAndSpecs('SpecsDialog')">
+          <span>Technical Specifications</span>
+          <span>&gt;</span>
+        </div>
+        <!--
+          <div class="u17Medium_v2">
+            	<span>Support & Service</span>
+            	<span>&gt;</span>
             </div>
-            <div class="delivery_time mb12">Free shipping <span>within 5 days</span></div>
-            <div class="support mb12">
-                <a href="#boxs3">
-                    <img class="lozad" data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230621-005713.png?v=1687280264"/>
-                    <span class="u11Medium_v2">150+ Spots<br>of Service</span>
-                </a>
-                <a href="/pages/shipping-and-return" target="_blank">
-                    <img class="lozad" data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_17959_2x_cff00041-4dce-479b-b87d-55b1cb89cd7a.png?v=1687161086"/>
-                    <span class="u11Medium_v2">14-Day<br>Returns</span>
-                </a>
-                <a href="/pages/warranty" target="_blank">
-                    <img class="lozad" data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_17958_2x_1e776f09-0686-4672-a22f-b29d2df3898d.png?v=1687161098"/>
-                    <span class="u11Medium_v2">2-Year<br>Warranty</span>
-                </a>
-            </div>
-            {% render 'footer__payment' %}
-            {% render 'leasing-logo' %}
-            <div class="dialogs">
-                <div class="u17Medium_v2" onclick="showSizesAndSpecs('SizesDialog')">
-                    <span>Size & Fit</span>
-                    <span>&gt;</span>
-                </div>
-                <div class="u17Medium_v2"  onclick="showSizesAndSpecs('SpecsDialog')">
-                    <span>Technical Specifications</span>
-                    <span>&gt;</span>
-                </div>
-                <div class="u17Medium_v2">
-                    <span>Support & Service</span>
-                    <span>&gt;</span>
-                </div>
-                <div class="u17Medium_v2">
-                    <span>FAQs</span>
-                    <span>&gt;</span>
-                </div>
-            </div>
-        </form>
-    </div>
+
+          <div class="u17Medium_v2">
+            <span>Pre-order FAQs</span>
+            <span>&gt;</span>
+          </div>
+        -->
+      </div>
+      <div class="support">
+        <a href="#boxs3">
+          <svg
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 30 30"
+            height="30"
+            width="30"
+          >
+            <defs>
+              <clipPath >
+                <rect stroke-width="1.5" stroke="#000" fill="#fff" transform="translate(7402.879 1203.146)" height="30" width="30" data-name="Rectangle 25526" id="Rectangle_25526"/>
+              </clipPath>
+            </defs>
+            <g clip-path="url(#clip-path)" transform="translate(-7402.879 -1203.146)" data-name="Mask Group 19265" id="Mask_Group_19265">
+              <path stroke-width="1.5" stroke="#000" fill="none" transform="translate(7204.457 1122.369)" d="M205.3,95.313c.135.321.928,1.689,1.969,3.441.622,1.047,1.327,2.223,2.036,3.4s1.425,2.358,2.052,3.389c.715,1.176,1.316,2.171,1.684,2.767a.442.442,0,0,0,.757,0c.368-.6.969-1.591,1.684-2.767.627-1.031,1.337-2.213,2.052-3.389s1.415-2.358,2.036-3.4c1.042-1.751,1.834-3.119,1.969-3.441a8.809,8.809,0,1,0-16.24,0Zm8.12,1.446a4.923,4.923,0,1,1,4.923-4.923A4.923,4.923,0,0,1,213.422,96.759Z" data-name="GPS显示 (3)" id="GPS显示_3_"/>
+            </g>
+          </svg>
+          <span class="u11Medium_v2"
+            >150+<br>
+            {{ 'order_page.bikeshops' | t }}</span
+          >
+        </a>
+        <a href="/pages/shipping-and-return" target="_blank">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            width="30"
+            height="30"
+            viewBox="0 0 30 30"
+          >
+            <defs>
+              <clipPath >
+                <rect id="Rectangle_25525" data-name="Rectangle 25525" width="30" height="30" transform="translate(0)" fill="#fff" stroke="#000" stroke-width="1.5"/>
+              </clipPath>
+            </defs>
+            <g id="Mask_Group_19264" data-name="Mask Group 19264" clip-path="url(#clip-path)">
+              <g id="_图层_1-2" transform="translate(0.973 5.885)">
+                <g id="Group_24427" data-name="Group 24427" transform="translate(0 0)">
+                  <g id="Group_24426" data-name="Group 24426" transform="translate(0 1.219)">
+                    <path id="Path_76265" data-name="Path 76265" d="M5.456,6.02,2,9.476l3.5,3.5" transform="translate(-2 -6.02)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+                    <line id="Line_2160" data-name="Line 2160" x2="18.501" transform="translate(0.803 3.401)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+                    <path id="Path_76266" data-name="Path 76266" d="M68.144,29.26A3.641,3.641,0,0,1,64.5,32.9" transform="translate(-45.554 -22.215)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+                    <path id="Path_76267" data-name="Path 76267" d="M68.144,20.884A3.641,3.641,0,0,0,64.5,17.24" transform="translate(-45.554 -13.839)" fill="none" stroke="#000" stroke-linecap="round" stroke-width="1.5"/>
+                    <line id="Line_2161" data-name="Line 2161" x2="6.436" transform="translate(12.332 10.698)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+                  </g>
+                  <path id="Path_76268" data-name="Path 76268" d="M45.491,8.7V22.741c0,1.191-.658,2.158-1.473,2.158H28.473c-.812,0-1.473-.967-1.473-2.158V17.661" transform="translate(-19.422 -6.669)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+                  <path id="Path_76269" data-name="Path 76269" d="M47.651,2.03H33" transform="translate(-23.603 -2.021)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+                  <path id="Path_76270" data-name="Path 76270" d="M83.016,4.146A2.146,2.146,0,0,0,80.87,2" transform="translate(-56.961 -2)" fill="none" stroke="#000" stroke-linecap="round" stroke-width="1.5"/>
+                </g>
+              </g>
+            </g>
+          </svg>
+
+          <span class="u11Medium_v2"
+            >{{ 'order_page.14Day' | t }}<br>
+            {{ 'order_page.Trial' | t }}</span
+          >
+        </a>
+        <a href="/pages/warranty" target="_blank">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            width="30"
+            height="30"
+            viewBox="0 0 30 30"
+          >
+            <defs>
+              <clipPath>
+                <rect id="Rectangle_25524" data-name="Rectangle 25524" width="30" height="30" transform="translate(0)" fill="#fff" stroke="#000" stroke-width="1.5"/>
+              </clipPath>
+            </defs>
+            <g id="Mask_Group_19263" data-name="Mask Group 19263" clip-path="url(#clip-path)">
+              <g id="_图层_1-2" transform="translate(5.107 3.152)">
+                <g id="Group_24425" data-name="Group 24425" transform="translate(0 0)">
+                  <path id="Path_76261" data-name="Path 76261" d="M5.745,12.15A31.986,31.986,0,0,1,2,13.862C3.059,24.45,6.235,27.979,11.882,32.214" transform="translate(-2 -8.568)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+                  <path id="Path_76262" data-name="Path 76262" d="M23.613,2s-1.5.971-3.483,2.118" transform="translate(-13.731 -2)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+                  <path id="Path_76263" data-name="Path 76263" d="M30.06,2.14a65.948,65.948,0,0,0,9.882,5.294c-1.059,10.588-4.235,14.117-9.882,18.353" transform="translate(-20.157 -2.091)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+                  <path id="Path_76264" data-name="Path 76264" d="M21.6,29.9l2.629,2.629,5.082-5.082" transform="translate(-14.682 -18.468)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+                </g>
+              </g>
+            </g>
+          </svg>
+          <span class="u11Medium_v2"
+            >{{ 'order_page.2Year' | t  }}<br>
+            {{ 'order_page.Warranty' | t }}</span
+          >
+        </a>
+      </div>
+    </form>
+  </div>
 </div>
 
 
@@ -1360,72 +1560,69 @@
 
 <script>
     // 默认隐藏
+    $('.product .error-tip').hide();
     $('.bottom-fixed').hide();
     $('.top-fixed').hide();
     $('.toTop').hide();
 
-    ((awards = []) => {
-        if (!awards.length) {
-          return $('.adwarsssss').hide()
+    const leftSwiper = new Swiper('.product .left-swiper', {
+    direction: 'vertical',
+    spaceBetween: 15,
+    slidesPerView: 9,
+    watchSlidesProgress: true,
+    // height: 360,
+  });
+
+    const rightSwiper = new Swiper('.product .right-swiper', {
+    navigation: {
+      nextEl: '.product .featured_image .swiper-button-next',
+      prevEl: '.product .featured_image .swiper-button-prev',
+    },
+    spaceBetween: 10,
+    pagination: { el: '.product .featured_image .swiper-pagination' },
+    thumbs: {
+      swiper: leftSwiper,
+    },
+    roundLengths: true,
+    on: {
+      slideChange: function () {
+        const index = this.activeIndex % global_config.carbon_order_page_config.product_media_images.length;
+        $('.product .medias')
+          .find('.u17DemiBold_v2')
+          .text(global_config.carbon_order_page_config.product_media_images[index].text);
+        $('.product .medias')
+          .find('img')
+          .attr('src', global_config.carbon_order_page_config.product_media_images[index].img);
+
+        if (global_config.carbon_order_page_config.product_media_images[index + 1]) {
+          new Image().src = global_config.carbon_order_page_config.product_media_images[index + 1].img;
         }
 
-        $('.adwarsssss').html(awards.map(a => `<img src="${a}"/>`).join('')).css('height', global_config.is_mobile ? '30px' : '50px')
-
-    })(global_config.carbon_order_page_config.awards);
-    
-    const leftSwiper = new Swiper(".product .left-swiper", {
-        direction: 'vertical',
-        spaceBetween: 8,
-        slidesPerView: 8,
-        freeMode: true,
-        watchSlidesProgress: true,
-      })
-
-      const rightSwiper = new Swiper(".product .right-swiper", {
-        autoHeight: true,
-        zoom: {
-          maxRatio: 2.5
-        },
-        navigation: {
-          nextEl: ".product .right-swiper .swiper-button-next",
-          prevEl: ".product .right-swiper .swiper-button-prev",
-        },
-        pagination: {el:'.swiper-pagination'},
-        effect: 'fade',
-        fadeEffect:{
-            crossFade: true
-        },
-        thumbs: {
-          swiper: leftSwiper,
-        },
-      });
-
-      document.addEventListener('onChangeModel', e => {
-        $(`.product .product-panel .options > div[option="Model"] .u17DemiBold_v2 .u17Light_v2`).text(`Urtopia Carbon ${e.value === 'Carbon Belt' ? '1' : '1s'}`)
-
-        if (e.value === "Carbon Belt") {
-          global_config.event_accessories_variant_ids = global_config.carbon_order_page_config.events.carbon1_send_accessories_variant_ids
-
-          $('.product-price').attr('data-price',  '{{  product.price | money }}').css('color', 'var(--sale-order-page-text-color)')
-          $('.sale-taggggggg').show()
-          $('.count-down').show()
-          $('.orderTestRideBtn.jobrad').show()
-
-        } else {
-          global_config.event_accessories_variant_ids = global_config.carbon_order_page_config.events.carbon1s_send_accessories_variant_ids
-
-          $('.product-price').attr('data-price',  '').css('color', '#000')
-          $('.sale-taggggggg').hide()
-          $('.count-down').hide()
-          $('.orderTestRideBtn.jobrad').hide()
+        if (global_config.carbon_order_page_config.product_media_images[index + 2]) {
+          new Image().src = global_config.carbon_order_page_config.product_media_images[index + 2].img;
         }
-
-        // $('#announcement-bar .u11Light_v2').text('End of Promotion')
-
-      })
+      },
+    },
+  });
 
       document.addEventListener('onChangeStyle', e => {
         $(`.product .product-panel .options > div[option="Style"] .u17DemiBold_v2 .u17Light_v2`).text(e.value)
+
+        let swiper_arr = [];
+        swiper_arr = swiper_arr.concat(
+          global_config.carbon_order_page_config.product_images['Carbon Belt'][e.value],
+          global_config.carbon_order_page_config.product_images['Carbon Belt']['commonSwiper']
+        );
+
+        rightSwiper.removeAllSlides();
+        leftSwiper.removeAllSlides();
+
+        for (let i = 0; i < swiper_arr.length; i++) {
+          rightSwiper.appendSlide(
+            `<div class="swiper-slide"><img alt="Urtopia Carbon 1 Pro" src="${swiper_arr[i]}"/></div>`
+          );
+          leftSwiper.appendSlide(`<img class="swiper-slide" alt="Urtopia Carbon 1 Pro" src="${swiper_arr[i]}"/>`);
+        }
       })
 
       document.addEventListener('onChangeSize', e => {
@@ -1433,33 +1630,6 @@
       })
 
       document.addEventListener('onChangeOptions', e => {
-            let swiper_arr = []
-
-            swiper_arr = swiper_arr.concat(global_config.carbon_order_page_config.product_images[e.value.Model][e.value.Style], e.value.Style === 'Vanilla' ? [] : global_config.carbon_order_page_config.product_images[e.value.Model]['commonSwiper'])
-
-            $('.product .right-swiper .swiper-wrapper').html(swiper_arr.map((s, i) => {
-                const index = i % 6
-
-                return  `<div class="swiper-slide">
-                       <img src="${s}"/>
-                           
-                            <div>
-                                <span class="u20DemiBold_v2">${global_config.carbon_order_page_config.product_media_images[index].text}</span>
-                                <img src="${global_config.carbon_order_page_config.product_media_images[index].img}&width=350">
-                            </div>
-                        </div>`
-              }).join(''))
-            $('.product .left-swiper .swiper-wrapper').html(swiper_arr.map(s => `<div class="swiper-slide"><img src="${s}&width=${global_config.is_mobile ? '400' : '700'}"></div>`).join(''))
-            
-            // update
-            setTimeout(() => {
-                rightSwiper.update()
-                rightSwiper.slideTo(0, 0)
-                
-                leftSwiper.update()
-                leftSwiper.slideTo(0, 0)
-            }, 0)
-
             $('.product .delivery_time').html(global_config.carbon_order_page_config.ebike_delivery_time[e.value.id] || global_config.carbon_order_page_config.ebike_default_delivery_time)
 
             const btn =  $('.product .buttons .addToCartBtn')
@@ -1472,25 +1642,6 @@
                 btn.addClass('disabled')
                 $('.product .buttons .orderTestRideBtn').hide()
             }
-
-            const options = titleToOptions(e.value.title)
-            const index = options.findIndex(o => o === e.value.Size)
-
-            const getContent = s => {  
-                options[index] = s
-                const f = variants.find(i => i.title === optionsToTtitle(options))
-
-                if (!f || !f.available) {
-                  return '{{ 'order_page.out' | t }}'
-                }
-
-                return `{{ 'order_page.only' | t }} ${Math.max(f.inventory_quantity, 2)} {{ 'order_page.stock' | t }}`
-            }
-          
-            setTimeout(() => {
-              $(`.product .product-panel .Size > div[attribute="M"]`).attr('data-inventory-quantity', getContent('M'));
-              $(`.product .product-panel .Size > div[attribute="L"]`).attr('data-inventory-quantity', getContent('L'));
-            }, 0)
 
             let discount = 0
 
@@ -1585,13 +1736,17 @@
 
 
 
-    $('.product .product-panel .accessories .navigate > div').on('click', e => {
-        const items = $('.product .product-panel .accessories .items')
+    $('.product .product-panel .accessories > div:not(.u17DemiBold_v2):not(.items)').on('click', (e) => {
+    const items = $('.product .product-panel .accessories .items');
 
-        items.animate({
-            scrollLeft: $('.product .product-panel .accessories .items').scrollLeft() + ($(e.target).hasClass('next') ? 180 : -180)
-        }, 300)
-    })
+    items.animate(
+      {
+        scrollLeft:
+          $('.product .product-panel .accessories .items').scrollLeft() + ($(e.target).hasClass('next') ? 160 : -160),
+      },
+      300
+    );
+  });
 
     $('.product .product-panel .accessories .items .item').on('click', e => {
         const item = $(e.target).closest('.item')

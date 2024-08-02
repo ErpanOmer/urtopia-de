@@ -2,7 +2,7 @@ const global_config = {
   // 默认活动产品id
   event_bike_product_id: '7633738727640',
   // 默认活动送配件 variant_id
-  event_accessories_variant_ids: ['43788921241816', '43745261748440'],
+  event_accessories_variant_ids: ['43988113621208', '43745261748440'],
 
   // 是否是手机
   is_mobile: document.documentElement.clientWidth < 768,
@@ -69,15 +69,35 @@ const global_config = {
     product_images: {
       "Carbon Belt": {
         Sirius: [
-          "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18687.png?v=1688112408",
-          "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18686.png?v=1688112407",
-          "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18685.png?v=1688112407"
+          "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_24469_2x_71a4b3d2-95b3-4a0f-bfb3-926b4f81d890.jpg?v=1722569930",
+          "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/img_v2_5e5f0b5d-14c0-4ff6-83e9-38a90a8a2aeg_2x_d82d3564-3d6a-4367-9ad6-92435429dad6.jpg?v=1722569937&width=700",
+          "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/img_v2_e35c9305-6b5b-4545-98c7-cb826aa79c4g_2x_b2972ace-e698-4dfe-92e6-3ef7d04dfbf5.jpg?v=1722569944&width=700",
+          "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20220619-untitled-9699-_2x_12244b6e-2ed9-4984-b7a3-d23834b49e5a.jpg?v=1722569949&width=700",
+          'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/DSC0263_Kopie_2x_993f3baa-57ad-4bb1-bd80-50f5e2eba179.jpg?v=1722569956&width=700',
+          'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_24463_2x_0caf50e5-45d3-43b7-b04f-9b63a38de059.jpg?v=1722569962',
+          'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_24464_2x_c044be88-7fdd-4ba9-b03a-b940a29c6f2f.jpg?v=1722569967',
+          'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_24462_2x_9e9fd5e1-7165-4798-bfd3-aaa0ff48d767.jpg?v=1722569972',
+          'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/ssss_2x_f611d378-f8f5-48fa-b95c-50ddcb20dcb4.jpg?v=1722569921'
         ],
         Lyra: [
-          'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18525.png?v=1688112407'
+          'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18525.png?v=1688112407',
+          "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18693.png?v=1688112407",
+          "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18692.png?v=1688112407",
+          "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18691.png?v=1688112407",
+          "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18690.png?v=1688112407",
+          "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18689.png?v=1688112407",
+          "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18688.png?v=1688112407",
+          "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/ssss_6e9b22f2-3d7e-4f41-82b7-dd7b575dea98.png?v=1688112407"
         ],
         "Midnight in Paris": [
-          "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18526.png?v=1688112407"
+          "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18526.png?v=1688112407",
+          "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18693.png?v=1688112407",
+          "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18692.png?v=1688112407",
+          "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18691.png?v=1688112407",
+          "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18690.png?v=1688112407",
+          "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18689.png?v=1688112407",
+          "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18688.png?v=1688112407",
+          "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/ssss_6e9b22f2-3d7e-4f41-82b7-dd7b575dea98.png?v=1688112407"
         ],
         Vanilla: [
           "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18699.png?v=1688112407",
@@ -86,15 +106,7 @@ const global_config = {
           "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18695.png?v=1688112407",
           "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18696.png?v=1688112407"
         ],
-        commonSwiper: [
-          "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18693.png?v=1688112407",
-          "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18692.png?v=1688112407",
-          "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18691.png?v=1688112407",
-          "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18690.png?v=1688112407",
-          "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18689.png?v=1688112407",
-          "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18688.png?v=1688112407",
-          "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/ssss_6e9b22f2-3d7e-4f41-82b7-dd7b575dea98.png?v=1688112407"
-        ]
+        commonSwiper: []
       },
       "Shimano Gear": {
         Sirius: [
@@ -123,7 +135,7 @@ const global_config = {
     // 产品图下面的media模块, 根据产品图 循环轮播 
     product_media_images: [
       {
-        text: `“The AI-powered co-pilot adds a new level<br>of intelligence and interactivity”`,
+        text: `“The AI-powered co-pilot adds a new level of intelligence and interactivity”`,
         img: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230913-173450.png?v=1694597715"
       },
       {
