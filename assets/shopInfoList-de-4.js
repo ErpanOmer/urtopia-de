@@ -400,7 +400,7 @@ const testRides = [
         email: 'radhaus.gerger@arcor.de',
         timezone: "Düsseldorf, Germany (GMT+1)",
         add: "Hauptstraße 23, 69221 Dossenheim, Deutschland",
-        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/output_1_ffa5338b-e099-41c7-9be9-be6c62496c7d.png?v=1717487530",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/output_36a3283f-2134-41eb-a1cd-437e808563dc.png?v=1722852532",
         testrideSpot: "Dossenheim",
         testRideSize: "L, Fusion",
         availableSizes: [
@@ -433,7 +433,7 @@ const testRides = [
         email: 'info@oleks-radsport.de',
         timezone: "Düsseldorf, Germany (GMT+1)",
         add: "Mathildenstr. 5464683 Einhausen",
-        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/output_1_ffa5338b-e099-41c7-9be9-be6c62496c7d.png?v=1717487530",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/output_2_d1c9d03e-fa72-4f72-b29a-81f8c26635ba.png?v=1722852670",
         testrideSpot: "Einhausen",
         testRideSize: "L, Fusion",
         availableSizes: [
@@ -465,7 +465,7 @@ const testRides = [
         email: 'info@biketeam-raunheim.de',
         timezone: "Düsseldorf, Germany (GMT+1)",
         add: "Hafenstr. 365479 Raunheim",
-        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/output_1_ffa5338b-e099-41c7-9be9-be6c62496c7d.png?v=1717487530",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/output_3_e2bb7248-2e26-4938-a35b-5f84aa3d154e.png?v=1722852751",
         testrideSpot: "Einhausen",
         testRideSize: "L, Fusion",
         availableSizes: [
@@ -497,7 +497,7 @@ const testRides = [
         email: 'info@karls-bikeshop.de',
         timezone: "Düsseldorf, Germany (GMT+1)",
         add: "Kaigartenallee 1268753 Waghäusel",
-        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/output_1_ffa5338b-e099-41c7-9be9-be6c62496c7d.png?v=1717487530",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/output_4_8b43ade7-32d3-48bb-850c-ba3b097b0654.png?v=1722852814",
         testrideSpot: "Waghäusel",
         testRideSize: "L, Fusion",
         availableSizes: [
@@ -561,7 +561,7 @@ const testRides = [
         email: 'info@zweiradcenter-mensinger.com',
         timezone: "Düsseldorf, Germany (GMT+1)",
         add: "Eleonorenring 45 DE-61231 Bad Nauheim",
-        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/output_1_ffa5338b-e099-41c7-9be9-be6c62496c7d.png?v=1717487530",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/output_6_65682321-40ff-4017-ab28-2c7ed32cb383.png?v=1722852965",
         testrideSpot: "Lingenfeld",
         testRideSize: "L, Fusion",
         availableSizes: [
@@ -3721,7 +3721,7 @@ const testRides = [
         email: 'radhaus.gerger@arcor.de',
         timezone: "Karlsruhe, Germany (GMT+1)",
         add: "Kranichweg 35, 69123 Heidelberg, Deutschland",
-        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Vera_Bike.png?v=1710295897",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/output_1_a4044358-c8d5-453a-988e-c536888e4e42.png?v=1722852589",
         testrideSpot: "Radhaus",
         testRideSize: "L",
         availableSizes: [

@@ -1,0 +1,12 @@
+{
+  "sections": {
+    "1pro-battery": {
+      "type": "1pro-battery",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "1pro-battery"
+  ]
+}
