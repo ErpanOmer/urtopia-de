@@ -24,16 +24,24 @@
         </div>
       </div>
       <div
-        class="product-price u24DemiBold_v2 mb12"
+        class="product-price u24DemiBold_v2 mb8"
         {% unless product.compare_at_price != product.price %}
           style="color: #000;"
         {% endunless %}
         {% unless product.compare_at_price == product.price %}
-          data-price="{{ product.compare_at_price | money }}"
+          data-price="UVP {{ product.compare_at_price | money }}"
         {% endunless %}
       >
         {{ product.price | money }}
       </div>
+      <div class="LEASING mb20">
+          <span class="u11DemiBold_v2" style="font-size: 12px;">LEASING</span>
+          <span class="u14Medium_v2" style="font-size: 13px;">from {{ 5200 |  money_without_trailing_zeros }} monthly</span>
+        </div>
+        <ul class="list mb20 u11Light_v2">
+          <li>Price incl. VAT plus {{ 9900 |  money_without_trailing_zeros }} shipping costs</li>
+          <li>Delivery to Germany 3-5 working days</li>
+        </ul>
       {% render 'sale' %}
     </div>
     <div class="left-swiper mobileHide">
@@ -311,16 +319,24 @@
         </div>
 
         <div
-          class="product-price u30DemiBold_v2 mb12"
+          class="product-price u30DemiBold_v2"
           {% unless product.compare_at_price != product.price %}
             style="color: #000;"
           {% endunless %}
           {% unless product.compare_at_price == product.price %}
-            data-price="{{ product.compare_at_price | money }}"
+            data-price="UVP {{ product.compare_at_price | money }}"
           {% endunless %}
         >
           {{ product.price | money }}
         </div>
+        <div class="LEASING mb20">
+          <span class="u14DemiBold_v2">LEASING</span>
+          <span class="u14Medium_v2">from {{ 5200 |  money_without_trailing_zeros }} monthly</span>
+        </div>
+        <ul class="list mb20 u14Light_v2">
+          <li>Price incl. VAT plus {{ 9900 |  money_without_trailing_zeros }} shipping costs</li>
+          <li>Delivery to Germany 3-5 working days</li>
+        </ul>
         {% render 'sale' %}
       </div>
       <div class="options">
@@ -407,13 +423,9 @@
           >
         </div>
       </div>
-      <div class="contact mb12">
-        <span class="delivery_time u14Medium_v2">Free shipping within 5 business days</span><br>
-        <span class="u14Light_v2">
-          Need advice from our experts? Contact us at
-          <a class="my-link" href="tel:+49 30 837 90655">+49 30 837 90655</a> or
-          <a href="mailto:support@newurtopia.com" class="my-link">support@newurtopia.com</a>
-        </span>
+      <div class="logosssss mb16">
+        {% render 'footer__payment' %}
+        {% render 'leasing-logo' %}
       </div>
       <div class="dialogs mb24">
         <div class="u17Medium_v2" onclick="showSizesAndSpecs('SizesDialog')">

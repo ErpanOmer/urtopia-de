@@ -77,6 +77,19 @@ h4 {
         align-items: flex-start;
         // grid-column-gap: 3% 7%;
 
+        .logosssss {
+            background-color: $backround-color;
+            padding: 12px 8px 4px;
+            border-radius: 8px;
+
+            .list-payment {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 0;
+            }
+        }
+
 
         .free {
             display: flex;
@@ -152,6 +165,39 @@ h4 {
                     font-size: 17px;
                     font-weight: 500;
                     transform: translateY(-40%);
+                }
+            }
+
+            .LEASING {
+                display: flex;
+                align-items: center;
+                
+                span {
+                    &:first-child {
+                        background-color:  var(--sale-order-page-text-color);
+                        border-radius: 4px;
+                        padding: 4px 8px;
+                        color: #fff;
+                        margin-right: 8px;
+                        line-height: 1.25em;
+                    }
+
+                    &:last-child {
+                        text-decoration: underline;
+                    }
+                }
+
+
+
+            }
+
+            .list {
+                background-color: #F7F4F2;
+                border-radius: 7px;
+                padding: 16px 30px;
+
+                li + li {
+                    margin-top: 8px;
                 }
             }
         }
@@ -927,6 +973,12 @@ h4 {
         .centeral-content {
             padding: 0 4vw 8vw;
             grid-template-columns: 1fr;
+
+            .commonComponent {
+                .list {
+                    padding: 12px 30px;
+                }
+            }
 
             .product-panel {
                 min-width: unset;
