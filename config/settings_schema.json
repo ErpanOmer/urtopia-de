@@ -18,7 +18,7 @@
         "type": "text",
         "id": "carbon_ebike_discount_price",
         "label": "carbon 1 活动折扣价",
-        "default": "60000"
+        "default": "100000"
       },
       {
         "type": "text",
