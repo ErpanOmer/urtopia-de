@@ -1,6 +1,7 @@
   <div id="announcement-bar" class="announcement-bar-common" dir="rtl">
     <div class="swiper-wrapper">
-      <div class="swiper-slide"><p><span style="color:#FD4B17;">{{ settings.carbon_ebike_discount_price | money_without_trailing_zeros }} off  + {{ settings.carbon_ebike_free_accessories_count }}Gifts</span> with Carbon 1. <a href="/products/urtopia-carbon-e-bike">Get yours Now</a></p></div>
+      {% assign price = settings.carbon_ebike_discount_price | money_without_trailing_zeros %}
+      <div class="swiper-slide"><p>{{ 'order_page.bar' | t: price: price | replace: '&lt;', '<' | replace: '&gt;', '>' }}</p></div>
       <div class="swiper-slide"><p>Pay in 24 installments with 0 APR. <a href="/products/urtopia-carbon-e-bike">Get yours now</a></p><img style="width:45px;margin-right:10px;" src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Image_154_2x_a6f60481-bf07-4fd4-93c7-8b9964570bbd.png?v=1685605445"/></div>
       <div class="swiper-slide"><p>Save with bike leasing from your employer. <a href="/pages/ebike-leasing">Learn more</a></p></div>
       <div class="swiper-slide"><p>Try Urtopia E-Bikes for Free <br class="pcHide"> <a href="/pages/test-ride">Book a test ride now</a></p></div>

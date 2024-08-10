@@ -42,7 +42,8 @@
     "Trial": "Rückgabe",
     "2Year": "2 Jahre",
     "Warranty": "Garantie",
-    "Chris": "“Hervorragende Leistung. Ich liebe dieses Fahrrad.”"
+    "Chris": "“Hervorragende Leistung. Ich liebe dieses Fahrrad.”",
+    "bar": "Carbon 1 mit &lt;span style=color:#FD4B17;&gt;{{ price }} Rabatt + 2 Geschenke.&lt;\/span&gt; &lt;a href=\/products\/urtopia-carbon-e-bike&gt;Jetzt bestellen&lt;\/a&gt;"
   },
   "general": {
     "password_page": {
