@@ -222,8 +222,8 @@ const global_config = {
             ["Smartbar features", "Voice control, fingerprint unlock, LED dot-matrix display"],
             ["Connectivity", "Connect Service with 4G, Bluetooth & WiFi"],
             ["IoT sensors", "Accelerometer, gyroscope, torque"],
+            ["Connect Service", "1 year included*"],
             ["App", "iOS & Android"],
-            ["Connect Service", "1 year included*"]
           ]
         },
         {
@@ -241,7 +241,7 @@ const global_config = {
           parameters: [
             ["Weight", "Carbon 1: 15 kg"],
             ["Load-bearing capacity", "Max. 110 kg."],
-            ["Sizes", "One Size (see Size Guide)"],
+            ["Sizes", `M: 28"(Fit for 165-185 cm) <br>L: 28"(Fit for 175-195 cm) <br>`],
             ["Body material", "Carbon fiber (frame, fork, handlebar, seatpost)"],
             ["Brakes", "Front and rear dual-piston hydraulic disc brakes"],
             ["Gearing", "Carbon 1: Gates Carbon Drive™ CDN™ belt(up to 30,000km)"],

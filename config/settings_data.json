@@ -1,8 +1,8 @@
 {
   "current": {
-    "sale_name": "Back to School Sale",
-    "sale_end_time": "2024-8-12",
-    "chord_sale_name": "Back to School Sale",
+    "sale_name": "Back to School Deals",
+    "sale_end_time": "2024-8-15",
+    "chord_sale_name": "Back to School Deals",
     "insurance_checkbox": "Theft\/Damage Insurance",
     "insurance_description": "<p><a href=\"https:\/\/bike.qover.com\/widget\/product-page?lang=en&key=pk_EA674816756D6065C28F&country=DE\" target=\"_blank\" title=\"https:\/\/bike.qover.com\/widget\/product-page?lang=en&key=pk_EA674816756D6065C28F&country=DE\">Learn more<\/a> about the insurance.<\/p>",
     "insurance_consent_product": "<p>By clicking \"Add to cart\", you accept <a href=\"https:\/\/api.prd.qover.io\/documents\/download?apikey=pk_EA674816756D6065C28F&productReference=BIKE&country=DE&language=en&type=generalConditions\" target=\"_blank\" title=\"https:\/\/api.prd.qover.io\/documents\/download?apikey=pk_EA674816756D6065C28F&productReference=BIKE&country=DE&language=en&type=generalConditions\">terms & conditions<\/a> and <a href=\"https:\/\/api.prd.qover.io\/documents\/download?apikey=pk_EA674816756D6065C28F&productReference=BIKE&country=DE&language=en&type=IPID\" target=\"_blank\" title=\"https:\/\/api.prd.qover.io\/documents\/download?apikey=pk_EA674816756D6065C28F&productReference=BIKE&country=DE&language=en&type=IPID\">insurance product information document<\/a>.<\/p>",
@@ -254,32 +254,6 @@
         "settings": {
         }
       },
-      "8765772171712610185": {
-        "type": "shopify:\/\/apps\/t-lab-ai-language-translate\/blocks\/language_switcher\/b5b83690-efd4-434d-8c6a-a5cef4019faf",
-        "disabled": false,
-        "settings": {
-          "enable_language_switcher": true,
-          "enable_country_region_switcher": false,
-          "use_currency_for_region": false,
-          "switcher_position": "header",
-          "show_flags": false,
-          "use_modal_dialog": false,
-          "language_country_mapping": "en:US, de:DE, en:DE",
-          "countries_filter": "",
-          "custom_css": "",
-          "header_switcher_reference_element": ".header__search",
-          "header_switcher_relative_position": "before",
-          "mobile_menu_switcher_reference_element": "",
-          "mobile_switcher_relative_position": "in-element",
-          "header_switcher_border_width": 0,
-          "switcher_viewport_position": "top-right",
-          "custom_switcher_font_size": "8px",
-          "custom_switcher_border_width": 0,
-          "custom_switcher_text_color": "#5c5c5c",
-          "custom_switcher_background_color": "rgba(0,0,0,0)",
-          "custom_switcher_border_color": "#000000"
-        }
-      },
       "10436698916776057164": {
         "type": "shopify:\/\/apps\/appstle-subscriptions\/blocks\/appstle-subscription-helper\/fe257d39-6f88-4f35-ab08-bd437e3aa94e",
         "disabled": false,
@@ -296,6 +270,36 @@
         "type": "shopify:\/\/apps\/pagefly-page-builder\/blocks\/app-embed\/83e179f7-59a0-4589-8c66-c0dddf959200",
         "disabled": false,
         "settings": {
+        }
+      },
+      "8765772171712610185": {
+        "type": "shopify:\/\/apps\/t-lab-ai-language-translate\/blocks\/language_switcher\/b5b83690-efd4-434d-8c6a-a5cef4019faf",
+        "disabled": false,
+        "settings": {
+          "enable_language_switcher": true,
+          "enable_country_region_switcher": false,
+          "use_currency_for_region": false,
+          "switcher_position": "header",
+          "show_flags": false,
+          "switcher_appearance": "language-code",
+          "invert_switcher_icon_colors": false,
+          "dropdown_appearance": "language-code",
+          "use_modal_dialog": false,
+          "language_country_mapping": "en:US, de:DE, en:DE",
+          "countries_filter": "",
+          "custom_css": "",
+          "header_switcher_reference_element": ".header__search",
+          "header_switcher_relative_position": "before",
+          "mobile_menu_switcher_reference_element": "",
+          "mobile_switcher_relative_position": "in-element",
+          "header_switcher_border_width": 0,
+          "switcher_viewport_position": "top-right",
+          "custom_position_spacing": "55,20,20,20",
+          "custom_switcher_font_size": "8px",
+          "custom_switcher_border_width": 0,
+          "custom_switcher_text_color": "#5c5c5c",
+          "custom_switcher_background_color": "rgba(0,0,0,0)",
+          "custom_switcher_border_color": "#000000"
         }
       }
     }
