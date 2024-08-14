@@ -155,7 +155,24 @@
                                 {{ item.final_price | money }}
                               </strong>
                             </div>
-                          {%- else -%}
+                           {% elsif item.product.price < item.product.compare_at_price %}
+                                {% assign product_price = item.quantity | times: item.product.price | money %}
+                                {% assign product_compare_at_price = item.quantity | times: item.product.compare_at_price | money %}
+                                <div class="cart-item__discounted-prices">
+                                <span class="visually-hidden">
+                                  {{ 'products.product.price.regular_price' | t }}
+                                </span>
+                                <s class="cart-item__old-price price price--end u14Medium_v2">
+                                  {{ product_compare_at_price }}
+                                </s>
+                                <span class="visually-hidden">
+                                  {{ 'products.product.price.sale_price' | t }}
+                                </span>
+                                <span class="price price--end u14Medium_v2 emphasize" style="color: #EB5A2D;">
+                                  {{ product_price }}
+                                </span>
+                              </div>
+                            {%- else -%}
                             <div class="product-option">
                               {{ item.original_price | money }}
                             </div>
@@ -172,15 +189,15 @@
                                         <span>
                                         {% case option.value %}
                                           {% when 'One Size' %}
-                                            {% if item.options_with_values.first.value == 'Carbon Belt' %}(Fit for 168-195 cm){% else %}(Fit for 160-190 cm){% endif %}
+                                            {% if item.options_with_values.first.value == 'Carbon Belt' %}(168-195 cm){% else %}(160-190 cm){% endif %}
                                           {% when 'M' %}
-                                            (Fit for 165-185 cm)
+                                            (165-185 cm)
                                           {% when 'L' %}
-                                            (Fit for 175-195 cm)
+                                            (175-195 cm)
                                           {% when 'High-Step' %}
-                                            (Fit for 170cm - 195cm)
+                                            (170cm - 195cm)
                                           {% when 'Step-Through' %}
-                                            (Fit for 160cm - 185cm)
+                                            (160cm - 185cm)
                                           {% else %}
                                       {% endcase %}
                                         </span>
@@ -190,7 +207,7 @@
                                 {%- endfor -%}
                                 {% else %}
                                   {% if item.product.id == 8101314199768 %}
-                                    <div class="product-option u14Medium_v2" style="line-height: 1.25em;color: #555;margin: 1px 0 0 0;">fit for 175-195 cm</div>
+                                    <div class="product-option u14Medium_v2" style="line-height: 1.25em;color: #555;margin: 1px 0 0 0;">175-195 cm</div>
                                   {% endif %}
                                 {% endif %}
 
@@ -249,6 +266,23 @@
                                 </span>
                                 <span class="price price--end u14Medium_v2 emphasize" style="color: #EB5A2D;">
                                   {{ item.final_line_price | money }}
+                                </span>
+                              </div>
+                            {% elsif item.product.price < item.product.compare_at_price %}
+                                {% assign product_price = item.quantity | times: item.product.price | money %}
+                                {% assign product_compare_at_price = item.quantity | times: item.product.compare_at_price | money %}
+                                <div class="cart-item__discounted-prices">
+                                <span class="visually-hidden">
+                                  {{ 'products.product.price.regular_price' | t }}
+                                </span>
+                                <s class="cart-item__old-price price price--end u14Medium_v2">
+                                  {{ product_compare_at_price }}
+                                </s>
+                                <span class="visually-hidden">
+                                  {{ 'products.product.price.sale_price' | t }}
+                                </span>
+                                <span class="price price--end u14Medium_v2 emphasize" style="color: #EB5A2D;">
+                                  {{ product_price }}
                                 </span>
                               </div>
                             {%- else -%}
@@ -370,7 +404,7 @@
                               <div class="u14DemiBold_v2">{{ prod.title }}</div>
                               <div class="u14Medium_v2">
                                 <span>{{ prod.price | money }}</span>
-                                <div class="my-button my-button-origin" onclick="addTocartFromAccessories('{{ variant.id }}')">ADD</div>
+                                <div class="my-button my-button-origin" style="font-size: 24px;" onclick="addTocartFromAccessories('{{ variant.id }}')">+</div>
                               </div>
                             </div>
                         {% endif %}

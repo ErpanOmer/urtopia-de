@@ -301,6 +301,12 @@
           "custom_switcher_background_color": "rgba(0,0,0,0)",
           "custom_switcher_border_color": "#000000"
         }
+      },
+      "11945366711752539959": {
+        "type": "shopify:\/\/apps\/zendesk\/blocks\/zendesk_web_widget\/c0b417b1-b90b-4754-baaf-f55627e6acd4",
+        "disabled": false,
+        "settings": {
+        }
       }
     }
   },

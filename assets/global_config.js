@@ -239,7 +239,7 @@ const global_config = {
         {
           title: 'General',
           parameters: [
-            ["Weight", "Carbon 1: 15 kg"],
+            ["Weight", "15 kg"],
             ["Load-bearing capacity", "Max. 110 kg."],
             ["Sizes", `M: 28"(Fit for 165-185 cm) <br>L: 28"(Fit for 175-195 cm) <br>`],
             ["Body material", "Carbon fiber (frame, fork, handlebar, seatpost)"],

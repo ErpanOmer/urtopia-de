@@ -189,16 +189,19 @@
         </div>
       </div>
       <div
-        class="product-price u24DemiBold_v2 mb12"
-        {% unless product.compare_at_price != product.price %}
-          {% comment %} style="color: #000;" {% endcomment %}
-        {% endunless %}
-        {% unless product.compare_at_price == product.price %}
-          data-price="{{ product.compare_at_price | money }}"
-        {% endunless %}
+        class="product-price u24DemiBold_v2 mb8"
+        data-price="UVP {{ product.compare_at_price | money }}"
       >
         {{ product.price | money }}
       </div>
+      <div class="LEASING mb20">
+          <span class="u11DemiBold_v2" style="font-size: 12px;">LEASING</span>
+          <span class="u14Medium_v2" style="font-size: 13px;">from {{ 5200 |  money_without_trailing_zeros }} monthly</span>
+        </div>
+        <ul class="list mb20 u11Light_v2">
+          <li>Price incl. VAT plus {{ 9900 |  money_without_trailing_zeros }} shipping costs</li>
+          <li>Delivery to Germany 3-5 working days</li>
+        </ul>
       {% render 'sale' %}
     </div>
     <div class="left-swiper mobileHide">
@@ -459,16 +462,19 @@
         </div>
 
         <div
-          class="product-price u30DemiBold_v2 mb12"
-          {% unless product.compare_at_price != product.price %}
-            {% comment %} style="color: #000;" {% endcomment %}
-          {% endunless %}
-          {% unless product.compare_at_price == product.price %}
-            data-price="{{ product.compare_at_price | money }}"
-          {% endunless %}
+          class="product-price u30DemiBold_v2"
+           data-price="UVP {{ product.compare_at_price | money }}"
         >
           {{ product.price | money }}
         </div>
+        <div class="LEASING mb20">
+          <span class="u14DemiBold_v2">LEASING</span>
+          <span class="u14Medium_v2"><a target="_blank" href="/pages/ebike-leasing">from {{ 5200 |  money_without_trailing_zeros }} monthly</a></span>
+        </div>
+        <ul class="list mb20 u14Light_v2">
+          <li>Price incl. VAT plus {{ 9900 |  money_without_trailing_zeros }} shipping costs</li>
+          <li>Delivery to Germany 3-5 working days</li>
+        </ul>
         {% render 'sale' %}
       </div>
       <div class="options">
@@ -508,7 +514,7 @@
             {% if prod.available %}
               {% assign variant = prod.variants | first %}
               <div class="item" variant-id="{{ variant.id }}">
-                <div class="u11Medium_v2">{{ prod.title }}</div>
+                <div class="u11Medium_v2" style="height: 28px;">{{ prod.title }}</div>
                 <div>
                   <div>
                     <span class="u17DemiBold_v2">{{ prod.price | money }}</span>
@@ -540,7 +546,7 @@
         </div>
         <div onclick="testRideTrace('lease_on_jobrad', this)" class="orderTestRideBtn jobrad mb12">
                     <img class="oneeee lozad" data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/JobRad_Logo_Anthrazit_RGB_4x_2x_4d61b30b-1ef4-492f-a670-734913ec7b54.png?v=1705477646"/>
-                    <span><span class="u14DemiBold_v2">TAX FREE Leasing</span><span class="u14Medium_v2">36 {{ 'order_page.months' | t }}, €48{{ 'checkout_klarna.month' | t }}</span></span>
+                    <span><span class="u14DemiBold_v2">Leasing Quote</span><span class="u14Medium_v2">36 {{ 'order_page.months' | t }}, €48{{ 'checkout_klarna.month' | t }}</span></span>
                   </div>
         <div onclick="testRideTrace('klarna_check_out', this)" class="orderTestRideBtn">
           <img
@@ -556,14 +562,6 @@
             ></span
           >
         </div>
-      </div>
-      <div class="contact mb12">
-        <span class="delivery_time u14Medium_v2">Free shipping within 5 business days</span><br>
-        <span class="u14Light_v2">
-          Need advice from our experts? Contact us at
-          <a class="my-link" href="tel:+49 30 837 90655">+49 30 837 90655</a> or
-          <a href="mailto:support@newurtopia.com" class="my-link">support@newurtopia.com</a>
-        </span>
       </div>
       <div class="dialogs mb24">
         <div class="u17Medium_v2" onclick="showSizesAndSpecs('SizesDialog')">
@@ -1647,7 +1645,7 @@
               $('.bottom-fixed > div .u14Light_v2:first-child > span:not(.emphasize)').hide()
             }
 
-            $('.product .commonComponent > .product-price').text(getPriceFormat(e.value.price - discount)).attr('data-price', getPriceFormat(e.value.price))
+            $('.product .commonComponent > .product-price').text(getPriceFormat(e.value.price - discount)).attr('data-price', `UVP ${getPriceFormat(e.value.price)}`)
             $('.product .buttons .orderTestRideBtn .stages').text(getPriceFormat((e.value.price - discount) / 24))
 
             $('.top-fixed .u17Light_v2 .u20DemiBold_v2').text(getPriceFormat(e.value.price - discount))

@@ -43,7 +43,8 @@
     "2Year": "2 Jahre",
     "Warranty": "Garantie",
     "Chris": "“Hervorragende Leistung. Ich liebe dieses Fahrrad.”",
-    "bar": "Carbon 1 mit &lt;span style=color:#FD4B17;&gt;{{ price }} Rabatt + 2 Geschenke.&lt;\/span&gt; &lt;a href=\/products\/urtopia-carbon-e-bike&gt;Jetzt bestellen&lt;\/a&gt;"
+    "bar": "Carbon 1 mit &lt;span style=color:#FD4B17;&gt;{{ price }} Rabatt + 2 Geschenke.&lt;\/span&gt; &lt;a href=\/products\/urtopia-carbon-e-bike&gt;Jetzt bestellen&lt;\/a&gt;",
+    "reviews": "Bewertungen"
   },
   "general": {
     "password_page": {
@@ -279,7 +280,7 @@
       "title": "Dein Warenkorb",
       "caption": "Artikel im Warenkorb",
       "remove_title": "{{ title }} entfernen",
-      "subtotal": "Zwischensumme",
+      "subtotal": "Gesamtpreis",
       "new_subtotal": "Neue Zwischensumme",
       "note": "Spezielle Bestellanweisungen",
       "checkout": "Auschecken",
@@ -291,9 +292,9 @@
       "taxes_included_and_shipping_policy_html": "Inklusive Steuern. <a href=\"{{ link }}\">Versand <\/a> wird beim Checkout berechnet",
       "taxes_and_shipping_at_checkout": "Steuern und Versand werden beim Checkout berechnet",
       "headings": {
-        "product": "Produkt",
+        "product": "Artikel",
         "price": "Preis",
-        "total": "Gesamtsumme",
+        "total": "Einzelpreis",
         "quantity": "Anzahl",
         "image": "Produktbild"
       },
@@ -451,7 +452,7 @@
       "tracking_url": "Tracking-Link",
       "tracking_company": "Versanddienstleister",
       "tracking_number": "Trackingnummer",
-      "subtotal": "Zwischensumme",
+      "subtotal": "Gesamtpreis",
       "total_duties": "Zollgebühren"
     }
   },
