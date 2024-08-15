@@ -264,17 +264,16 @@
       <a href="#forms" class="my-button my-button-black pcHide">Request leasing offer</a>
     </div>
   </div>
+  <script src="https://bike-leasing-calculator.jobrad.org/.resources/jobrad/external-modules/iframeResizer.min.js"></script>
+
+
   <div class="calculator">
     <div
       class="centeral-content jobrad-bike-leasing-calculator"
       id="jobrad-relaunch-arbeitnehmer-ersparnis-berechnen-main-content"
     >
       <h2 class="u48DemiBold_v2">JobRad Calculator</h2>
-      <iframe
-        scrolling="no"
-        width="100%"
-        src="https://20230622-jobrad-new-design-bike-leasing-calculator.jobrad.org/?genericObserve=true"
-      ></iframe>
+      <iframe src="https://bike-leasing-calculator.jobrad.org" scrolling="no" width="100%"></iframe>
     </div>
   </div>
   {% render 'leasing-forms-template' %}
@@ -291,39 +290,7 @@
     </div>
   </div>
 </div>
-
-<script type="text/javascript">
-  window.addEventListener(
-    'message',
-    (function () {
-      /* we need to do that in JavaScript because we don't know the url in beforehand */
-      const origin_url = new URL(
-        'https://20230622-jobrad-new-design-bike-leasing-calculator.jobrad.org/?genericObserve=true'
-      ).origin;
-      /* we probably need this in order to prevent this function to respond to messages from other iframes */
-      const id = 'jobrad-relaunch-arbeitnehmer-ersparnis-berechnen-main-content';
-      return function (event) {
-        if (
-          id === 'jobrad-relaunch-arbeitnehmer-ersparnis-berechnen-main-content' &&
-          event.origin === origin_url &&
-          typeof event.data === 'object' &&
-          'genericState' in event.data &&
-          event.data.genericState.body.outerHeightInPixel > 0
-        ) {
-          const iframe = document.querySelector(
-            '.jobrad-bike-leasing-calculator#jobrad-relaunch-arbeitnehmer-ersparnis-berechnen-main-content iframe'
-          );
-          // console.log('iframe', iframe.contentWindow.document)
-          if (iframe) {
-            iframe.style.height = event.data.genericState.body.outerHeightInPixel + 60 + 'px';
-          }
-        }
-      };
-    })(),
-    false
-  );
-</script>
-
+<script> iFrameResize({log: false});</script>
 <script>
 
 const faqs = [
