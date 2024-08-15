@@ -279,7 +279,8 @@ const url_to_page_map = {
   "/products/urtopia-carbon-e-bike": 'carbon-order-page',
   "/products/outlet-carbon-1-1s": 'outlet-carbon-order-page',
   "/products/outlet-urtopia-chord": 'outlet-chord-order-page',
-  "/products/urtopia-fusion-carbon-ebike": 'fusion-order-page'
+  "/products/urtopia-fusion-carbon-ebike": 'fusion-order-page',
+  '/products/urtopia-carbon-1-pro-ebike': 'carbon1pro-order-page'
 }
 
 function addToCartInsurance(parse, show = false) {
