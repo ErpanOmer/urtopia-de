@@ -2322,3 +2322,87 @@ h4 {
         }
     }
 }
+
+
+.range {
+    background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/24478_2x_3da668f2-e8cc-4e85-8ba5-5fca15417294.jpg?v=1723776295');
+    color: #000;
+    transform: translateY(-2px);
+
+
+    @media (max-width: 767px) {
+        background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/24506_2x_4c2ff042-3499-426a-8ab1-e590cffe6e57.jpg?v=1723777261');
+        padding-bottom: 13.5vw;
+    }
+}
+
+
+.leasingggggg {
+    margin-bottom: 12vh;
+    .centeral-content {
+        overflow: hidden;
+        position: relative;
+
+        .swiper-wrapper {
+            .swiper-slide {
+                display: flex;
+                flex-direction: column;
+                background-color: $backround-color;
+                border-radius: 10px;
+                padding: 40px 25px;
+                align-items: flex-start;
+                cursor: grab;
+                user-select: none;
+                box-sizing: border-box;
+                height: auto;
+
+                .u14Light_v2 {
+                }
+
+                .u20Medium_v2 {
+                    display: block;
+                    height: 8vh;
+                }
+
+                .my-button {
+                    margin-top: 5vh;
+                }
+
+                & > img {
+                    max-height: 50px;
+                    width: fit-content;
+                    margin-bottom: 2.5vh;
+                }
+            }
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: flex-end;
+            margin-top: 8vh;
+
+            .swiper-button-prev,
+            .swiper-button-next {
+                position: static;
+                color: #fff;
+                background-color: #000;
+                border-radius: 50%;
+                width: 35px;
+                height: 35px;
+                margin-left: 15px;
+                z-index: unset;
+                
+
+                &::after {
+                    font-size: 18px;
+                }
+            }
+        }
+    }
+
+    @media (max-width: 767px) {
+        .centeral-content {
+            padding: 0 4vw;
+        }
+    }
+}

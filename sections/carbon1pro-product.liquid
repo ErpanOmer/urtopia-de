@@ -836,6 +836,19 @@
     </div>
   </div>
 </div>
+<div class="build range">
+  <div class="centeral-content">
+    <h3 class="u36Medium_v2">
+      Prioritize Power or Range?<br>
+      Customize anytime.
+    </h3>
+    <p class="u17Light_v2">
+      <span>
+        Tune assist modes to prioritize powerful support for tackling tough hills or opt for energy-saving settings to extend your range on longer rides. Adapt your ride to suit any journey, ensuring you get the most out of every trip.
+      </span>
+    </p>
+  </div>
+</div>
 <div class="faq">
   <div class="centeral-content">
     <h3 class="u36Medium_v2">FAQs</h3>
@@ -1262,6 +1275,52 @@
 
 {% render 'size-guide-and-specs-template', config: 'carbon1pro_order_page_config' %}
 
+<div class="leasingggggg">
+  <div class="centeral-content">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Logo_Jobrad.svg_1_2x_13c0915a-b778-4c36-bd96-405abf7a5f08.png?v=1723778117" alt="">
+        <span class="u20Medium_v2">Hello bike leasing. Hello future!</span>
+        <span class="u14Light_v2">The company bike is one of the most popular benefits, and with good reason: leasing a bike or e-bike saves money, keeps you fit and is sustainable.</span>
+        <span class="flex-1"></span>
+        <a target="_blank" class="my-button my-button-white" href="/pages/ebike-leasing">Lease Quote</a>
+      </div>
+      <div class="swiper-slide">
+        <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/19315_2x_85398090-237e-41c5-8a76-a2163540ed3c.png?v=1723779275" alt="">
+        <span class="u20Medium_v2">The company bike for you</span>
+        <span class="u14Light_v2">Save money with Bikeleasing Be healthy and sustainable on the road Always insured and 100% private use</span>
+        <span class="flex-1"></span>
+        <a target="_blank" class="my-button my-button-white" href="/pages/ebike-leasing">Lease Quote</a>
+      </div>
+      <div class="swiper-slide">
+        <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/19316_2x_0d4599b9-df7b-4ea5-bf53-f0a638305f86.png?v=1723779298" alt="">
+        <span class="u20Medium_v2">Your company bike with BusinessBike</span>
+        <span class="u14Light_v2">Leasing company bikes - an attractive benefit that motivates employees, increases their satisfaction and contributes to healthy and sustainable mobility.</span>
+        <span class="flex-1"></span>
+        <a target="_blank" class="my-button my-button-white" href="/pages/ebike-leasing">Lease Quote</a>
+      </div>
+      <div class="swiper-slide">
+        <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/19317_2x_52eba88e-3aeb-432b-ba3d-af97996219c8.png?v=1723779290" alt="">
+        <span class="u20Medium_v2">Company bike leasing fast & digital</span>
+        <span class="u14Light_v2">Any size of company | simple processing | employee health | skilled worker retention | cost-neutral | all-round carefree package.</span>
+        <span class="flex-1"></span>
+        <a target="_blank" class="my-button my-button-white" href="/pages/ebike-leasing">Lease Quote</a>
+      </div>
+      <div class="swiper-slide">
+        <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/19318_2x_7e119767-7a6f-4979-82b5-8fd3dc98fafb.png?v=1723779285" alt="">
+        <span class="u20Medium_v2">Ride your dream company bike</span>
+        <span class="u14Light_v2">Bike leasing for companies, public employers and employees Simply switch to a bike. Start your bike leasing now and benefit from the extra portion of customer service!</span>
+        <span class="flex-1"></span>
+        <a target="_blank" class="my-button my-button-white" href="/pages/ebike-leasing">Lease Quote</a>
+      </div>
+    </div>
+    <div class="buttons mobileHide">
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+    </div>
+  </div>
+</div>
+
 <div class="judmeeeeeeeee">
   <div class="centeral-content">
     {% include 'judgeme_widgets', widget_type: 'judgeme_review_widget', concierge_install: false %}
@@ -1595,6 +1654,16 @@
     scrollbar: {
       el: '.quality .centeral-content .swiper-scrollbar',
       draggable: true,
+    },
+  });
+
+
+  new Swiper('.leasingggggg .centeral-content', {
+    slidesPerView: global_config.is_mobile ? 1.25 : 3,
+    spaceBetween: global_config.is_mobile ? 16 : 32,
+    navigation: {
+      nextEl: '.leasingggggg .centeral-content .swiper-button-next',
+      prevEl: '.leasingggggg .centeral-content .swiper-button-prev',
     },
   });
 
