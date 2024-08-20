@@ -223,6 +223,40 @@ const testRides = [
     ]
   },
   {
+    city: 'Bruchsal',
+    cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/output_5_e5e95421-6975-48c2-b950-ba1bd858744e.png?v=1718328335',
+    series: [
+      'Urtopia Carbon 1',
+      'Urtopia Chord'
+    ],
+    stores: [
+      {
+        name: 'CLS DAFA GmbH',
+        phone: '49 (0)72515098806 ',
+        email: 'info@cls-dafa.de',
+        timezone: "Düsseldorf, Germany (GMT+1)",
+        add: "Draisstraße 10, 76646 Bruchsal",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/output_9_cf5d389f-dda3-4fc3-8e86-6302e626b5d7.png?v=1724032890",
+        testrideSpot: "Bruchsal",
+        testRideSize: "L, Chord",
+        availableSizes: [
+          'Carbon 1 Pro Size M',
+          'Carbon 1 Size M/L',
+          'Fusion'
+        ],
+        businessHours: [
+          "",
+          "09:00-17:00",
+          "09:00-17:00",
+          "09:00-17:00",
+          "09:00-17:00",
+          "09:00-17:00",
+          "",
+        ],
+      }
+    ]
+  },
+  {
     city: 'otterndorf',
     cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/output_5_e5e95421-6975-48c2-b950-ba1bd858744e.png?v=1718328335',
     series: [

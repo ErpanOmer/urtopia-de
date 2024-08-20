@@ -1,121 +1,135 @@
-<article>
-  <header style="--background-image-pc: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/image_b4ba2d8d-4613-4632-870e-deac6d227c00.png?v=1723791717');">
-    <div class="background-blur"></div>
-    <section class="flex flex-center flex-column text-center height-600 mb-height-420">
-      <h1 class="color-white mb-font-size-24">Urtopia in Spanien: Spaß, Fahrräder und Massenandrang!</h1>
-    </section>
-  </header>
-  <section class="margin-top-60 margin-bottom-60 max-width-720 mb-margin-top-40 mb-margin-bottom-40">
-    <p class="margin-bottom-40">
-      <span>
-        Urtopia hat sich kürzlich mit lokalen Händlern zusammengetan, um zwei aufregende Testfahrten in Spanien zu veranstalten. Als Veranstaltungsorte wurden Vialia und CiCLOSFERIA gewählt. Dies waren unsere allerersten Veranstaltungen in Spanien, und sie erwiesen sich als unglaubliche Erlebnisse!
-      </span>
-    </p>
-  </section>
-  <section class="margin-top-80 margin-bottom-80 max-width-720 mb-margin-top-60 mb-margin-bottom-60">
-    <h2 class="font-size-28 margin-bottom-40 mb-font-size-20 mb-margin-bottom-28">
-      Probefahrt in CiCLOSFERIA
-    </h2>
-    <p class="margin-bottom-40">
-      <span>
-        Wenn Sie auf der Suche nach ultimativer Radsportveranstaltung in Spanien sind, dann sind Sie bei der CiCLOSFERIA genau richtig. Diese Stadtrad- und Touring-Messe ist ein Muss für alle Radfahrer.
-      </span>
-    </p>
+{% assign product = all_products['euro-bike-choice'] %}
+{{ 'product-fusion.scss.css' | asset_url | stylesheet_tag: preload: true }}
 
-    <div class="grid-box grid-columns-2 grid-column-gap-16 margin-bottom-40">
-      <img
-        alt=""
-        src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/image_b4ba2d8d-4613-4632-870e-deac6d227c00.png?v=1723791717"
-        class="fade"
-      >
-      <img
-        style="height: 100%; object-fit: cover;"
-        alt=""
-        src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/2024-08-15_17.00.26.png?v=1723792392"
-        class="fade"
-      >
+<style>
+  .product {
+    margin: 8vw 0;
+  }
+
+  .product .options {
+    margin: 4vw 0;
+  }
+
+  .product .centeral-content .product-panel .options .Model>div {
+    padding: 10px;
+  }
+
+  .product .centeral-content .product-panel .options .Model>div:after {
+    padding: 0;
+  }
+
+  .product .centeral-content .product-panel .options .Model .active {
+    border-color: #000;
+  }
+
+  #cart-icon-bubble {
+    display: none !important;
+  }
+</style>
+
+<div class="product">
+  <div class="centeral-content">
+    <img class="imaggeeee"
+      src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20240625-165036_9deb4c35-a7ec-4361-aa0f-c7ddc533472c.png?v=1719306666"
+      alt="">
+    <div class="product-panel commonComponent">
+      <div class="product-price u30DemiBold_v2" style="margin: 0;" {% unless product.compare_at_price==product.price %}
+        data-price="{{ product.compare_at_price | money }}" {% endunless %}>
+        {{ product.price | money }}
+      </div>
+      <div class="options">
+        {% for option in product.options_with_values %}
+        <div class="option" option="{{option.name}}" position="{{ option.position }}">
+          <div class="u20DemiBold_v2 mb12">
+            {{ option.name -}}
+            :
+            <span class="u17Light_v2"></span>
+          </div>
+          <div class="{{ option.name }} mb12">
+            {% for value in option.values %}
+            {% case option.name %}
+            {% when 'Model' %}
+            <div attribute="{{ value }}" style="font-size: 17px;" class="{{ value }}">
+              {{ value }}
+            </div>
+            {% when 'Size' %}
+            <div attribute="{{ value }}" class="{{ value }} u14DemiBold_v2">
+              {% if value == 'L' -%}
+              Large
+              {% elsif value == 'M' -%}
+              Medium
+              {% else -%}
+              {{- value -}}
+              {%- endif %}
+            </div>
+            {% when 'Style' %}
+            <div attribute="{{ value }}" class="{{ value }}"></div>
+            {% else %}
+            <div attribute="{{ value }}" class="{{ value }}">{{ value }}</div>
+            {% endcase %}
+            {% endfor %}
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+      <div class="my-button my-button-origin">Checkout</div>
     </div>
-    <p class="margin-bottom-40">
-      <span>
-        Während der zweitägigen Veranstaltung kamen 11.500 Besucher. Ein großer Teil dieser Besucher kam zu unserem Stand, um alle E-Bikes von Urtopia zu sehen und detaillierte Informationen über sie zu erhalten. Rund 100 Fachleute - Inhaber von Fahrradgeschäften, Fahrradverleiher und Behörden - informierten sich über die E-Bikes, ihre technischen Daten und Vorteile. Etwa 100 Personen konnten die Räder auf einem abgesperrten Parcours auf der Messe selbst testen und die Modelle Fusion, Carbon oder Chord ausprobieren. Über 500 Flyer mit detaillierten Informationen zu unserem E-Bike-Angebot wurden verteilt. Das Urtopia erregte durch sein schlankes Design und seine intelligenten Funktionen viel Aufmerksamkeit. Als wir die Urtopia-Mitarbeiter vor Ort fragten, wie sie sich gefühlt haben, gaben sie zu, dass es anstrengend, aber auch unglaublich lohnend war. Einer von ihnen meinte scherzhaft: "Das waren vielleicht die zwei arbeitsreichsten Tage meines Jahres, haha!
-      </span>
-    </p>
-    <div class="grid-box grid-columns-2 grid-column-gap-16 margin-bottom-16">
-      <img
-        alt=""
-        src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/2024-08-15_16.59.22.png?v=1723793160"
-        class="fade"
-      >
-      <img
-        style="height: 100%; object-fit: cover;"
-        alt=""
-        src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/2024-08-15_16.59.33.png?v=1723793160"
-        class="fade"
-      >
-    </div>
-    <div class="grid-box grid-columns-2 grid-column-gap-16 margin-bottom-40">
-      <img
-        alt=""
-        src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/2024-08-15_16.59.40.png?v=1723793161"
-        class="fade"
-      >
-      <img
-        style="height: 100%; object-fit: cover;"
-        alt=""
-        src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/2024-08-15_16.58.56.png?v=1723793160"
-        class="fade"
-      >
-    </div>
-  </section>
-  <section class="margin-top-80 margin-bottom-80 max-width-720 mb-margin-top-60 mb-margin-bottom-60">
-    <h2 class="font-size-28 margin-bottom-40 mb-font-size-20 mb-margin-bottom-28">
-      Probefahrt in Vialia
-    </h2>
-    <p class="margin-bottom-40">
-      <span>
-        Vialia, das beliebteste Einkaufszentrum der 300.000 Einwohner zählenden Stadt Vigo, war der ideale Ort für die Präsentation der Urtopia-Flaggschiffe: Carbon 1, Carbon 1 Pro, Chord und Fusion. Wir wollten so vielen Menschen wie möglich das volle Urtopia-Fahrgefühl vermitteln.
-      </span>
-    </p>
-    <div class="grid-box grid-columns-2 grid-column-gap-16 margin-bottom-40">
-      <img
-        alt=""
-        src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/2024-08-15_16.57.56.png?v=1723793295"
-        class="fade"
-      >
-      <img
-        alt=""
-        src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/2024-08-15_16.57.45.png?v=1723793295"
-        class="fade"
-      >
-    </div>
-    <p class="margin-bottom-40">
-      <span>
-        Es war unsere erste Veranstaltung in Spanien und sie dauerte zwei Tage. Die Resonanz war fantastisch - schauen Sie sich nur die Zahlen an! An den beiden Tagen haben rund 35.000 Menschen das Einkaufszentrum durchquert, und etwa 15 % davon haben im Urtopia-Shop Halt gemacht, um sich unsere verschiedenen Fahrradmodelle anzuschauen, sich über ihre Funktionsweise zu informieren und einige haben sogar eine Probefahrt gemacht. Wir haben mehr als 300 Flyer mit Informationen über alle unsere E-Bike-Modelle verteilt. Diese hervorragenden Zahlen geben uns großes Vertrauen in den spanischen Markt.
-      </span>
-    </p>
-    <div class="grid-box grid-columns-2 grid-column-gap-16 margin-bottom-40">
-      <img
-      style="height: 100%; object-fit: cover;"
-        alt=""
-        src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/2024-08-15_16.57.29.png?v=1723793386"
-        class="fade"
-      >
-      <img
-        alt=""
-        src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/2024-08-15_16.57.38.png?v=1723793386"
-        class="fade"
-      >
-    </div>
-  </section>
-  <section class="margin-top-80 margin-bottom-80 max-width-720 mb-margin-top-60 mb-margin-bottom-60">
-    <h2 class="font-size-28 margin-bottom-40 mb-font-size-20 mb-margin-bottom-28">Eine große Zukunft in Spanien</h2>
-    <p class="margin-bottom-40">
-      <span>
-        Diese zwei Urtopia-Veranstaltungen waren eine unglaubliche Erfahrung! Unsere ersten Veranstaltungen in Spanien haben uns so viele positive Überraschungen gebracht. Freuen uns schon auf die Nächste in diesem wunderschönen Land!
-      </span>
-    </p>
-    <div class="flex flex-center margin-top-40 margin-bottom-60">
-      <a href="/products/urtopia-carbon-1-pro-ebike" class="my-button my-button-origin" target="_blank">Order Now</a>
-    </div>
-  </section>
-</article>
+  </div>
+</div>
+
+<link rel="preload"
+  href="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18873_2x_82da2d81-10d3-4bf9-b398-3da08d1161d1.png?v=1719284392"
+  as="image">
+<script>
+  const product = JSON.parse(JSON.stringify({{ product | json }}))
+  let current_id = null
+
+  $('.options .Model > div').on('click', function () {
+    $('.options .Model > div').removeClass('active')
+    $(this).addClass('active')
+    const value = $(this).text().trim()
+
+    const find = product.variants.find(v => v.option1 === value)
+    if (find) {
+      current_id = find.id
+      
+      if (value === 'Carbon 1') {
+        $('.product .imaggeeee').attr('src', 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20240625-165036_9deb4c35-a7ec-4361-aa0f-c7ddc533472c.png?v=1719306666')
+        $('.product .product-price').text(getPriceFormat(find.price))
+      } else {
+        $('.product .imaggeeee').attr('src', 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20240625-165049_9c913421-f435-4674-92fa-cf7ca27d4ab6.png?v=1719306666')
+        $('.product .product-price').text(getPriceFormat(find.price))
+      }
+    }
+
+
+
+
+  })
+
+
+  $('.product .my-button').on('click', e => {
+
+    fetch('/cart/clear.js').then(() => {
+      fetch('/cart/add.js', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ items: [{ id: current_id, quantity: 1 }] })
+      })
+        .then(response => {
+          //window.sessionStorage.checkout_email = checkout_email
+          location.href = `/checkout`
+        })
+        .catch((error) => {
+          console.error('Error:', error);
+        })
+    })
+  })
+
+
+  setTimeout(() => {
+    $('.options .Model > div')[0].click()
+  })
+</script>

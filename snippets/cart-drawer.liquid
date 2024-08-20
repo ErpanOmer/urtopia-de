@@ -135,7 +135,7 @@
                               </p>
                             {%- else -%}
                               {%- comment -%} Regular title {%- endcomment -%}
-                              <a href="{{ item.url }}" class="cart-item__name h4 break u14DemiBold_v2">{{ item.product.title | escape }}</a>
+                              <a href="{% if item.product_id == 8048469901528 %}/products/esim-card{%- else -%}{{ item.url }}{%- endif -%}" class="cart-item__name h4 break u14DemiBold_v2">{{ item.product.title | escape }}</a>
                             {%- endif -%}
 
                           
