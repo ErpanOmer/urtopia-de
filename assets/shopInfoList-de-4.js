@@ -1639,96 +1639,6 @@ const testRides = [
     ]
   },
   {
-    city: 'Regensburg',
-    cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Regensburg.jpg?v=1679406972',
-    series: [
-      'Urtopia Carbon 1',
-      'Urtopia Chord',
-      // 'Urtopia Carbon 1'
-    ],
-    stores: [
-      {
-        name: 'RADFAHRWERK',
-        phone: '+491632379785',
-        email: 'info@radfahrwerk.de',
-        timezone: "Regensburg, Germany (GMT+1)",
-        add: "St. Emmerams Ring 4, 93309 Kelheim",
-        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/IMG_0479.jpg?v=1680924648",
-        testrideSpot: "Regensburg",
-        testRideSize: "M, Chord",
-        noBook: "Please contact the store directly to arrange test ride",
-        availableSizes: [
-          'Carbon 1 Size M',
-          'Chord',
-        ],
-        businessHours: [
-          "09:00-12:00",
-          "08:00-12:00,12:00-21:00",
-          "08:00-12:00,12:00-21:00",
-          "08:00-12:00,12:00-21:00",
-          "08:00-12:00,12:00-21:00",
-          "08:00-12:00,12:00-21:00",
-          "09:00-12:00",
-        ],
-      },
-      /*
-      {
-        name: 'Thomas Schödl',
-        phone: '+49 15122654233',
-        email: 'thomas.schoedl@hotmail.de',
-        timezone: "Regensburg, Germany (GMT+1)",
-        add: "Holzgartenstr 93059 Regensburg",
-        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Regensburg.jpg?v=1679406972",
-        testrideSpot: "Regensburg",
-        testRideSize: "M",
-        isPartner: true,
-        availableSizes: [
-          'Carbon 1 Size M',
-        ],
-        businessHours: [
-          "10:00-20:00",
-          "17:00-20:00",
-          "17:00-20:00",
-          "17:00-20:00",
-          "17:00-20:00",
-          "17:00-20:00",
-          "10:00-20:00",
-        ],
-      },
-      */
-    ]
-  },
-  /*{
-    city: 'Selbitz',
-    cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230328-164146.jpg?v=1679992972',
-    series: [
-      'Urtopia Carbon 1',
-      // 'Urtopia Carbon 1'
-    ],
-    stores: [
-      {
-        name: 'Ralf Döhler',
-        phone: '+0049 171 7061545',
-        email: 'tests@iqhaus.de',
-        timezone: "Mainz, Germany (GMT+1)",
-        add: "Am Eisenbühl 6, 95152 Selbitz, Germany",
-        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230328-164146.jpg?v=1679992972",
-        testrideSpot: "Selbitz",
-        testRideSize: "L",
-        isPartner: true,
-        businessHours: [
-          "09:00-12:00, 12:00-18:00",
-          "09:00-12:00, 12:00-18:00",
-          "09:00-12:00, 12:00-18:00",
-          "09:00-12:00, 12:00-18:00",
-          "09:00-12:00, 12:00-18:00",
-          "09:00-12:00, 12:00-18:00",
-          "09:00-12:00, 12:00-18:00",
-        ],
-      },
-    ]
-  },*/
-  {
     city: 'Offenburg',
     cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Offenburg.jpg?v=1681442327',
     series: [
@@ -1742,7 +1652,7 @@ const testRides = [
         email: 'info@radshopdinger.de',
         timezone: "Mainz, Germany (GMT+1)",
         add: "Am Wiesenrain 2 77652 Offenburg",
-        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Offenburg.jpg?v=1681442327",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/output_2_7b02eb39-bf2b-4744-87da-30e74af225d8.png?v=1724392887&width=500",
         testrideSpot: "Offenburg",
         testRideSize: "M, Chord",
         availableSizes: [
@@ -2374,12 +2284,12 @@ const testRides = [
         ],
         businessHours: [
           "",
-          "13:00-18:00",
-            "09:00-18:00",
-           "09:00-18:00",
-            "09:00-18:00",
-            "09:00-18:00",
-            "09:00-17:00",
+          "08:00-18:00",
+            "08:00-18:00",
+          "08:00-18:00",
+            "08:00-18:00",
+           "08:00-18:00",
+           "08:00-13:00",
         ],
       },
     ]
