@@ -1,6 +1,30 @@
 const global_config = {
-  // 默认活动产品id
-  event_bike_product_id: '7633738727640',
+  sale_end_times: [
+    {
+      sale_name: 'Pre-Fall Savings',
+      sale_end_time: '2024-8-30'
+    },
+    {
+      sale_name: 'August Finale Sale',
+      sale_end_time: '2024-9-2'
+    },
+    {
+      sale_name: 'Cozy Season Sale',
+      sale_end_time: '2024-9-6'
+    },
+    {
+      sale_name: 'Fall into Savings',
+      sale_end_time: '2024-9-9'
+    },
+    {
+      sale_name: 'Autumn Deals',
+      sale_end_time: '2024-9-13'
+    },
+    {
+      sale_name: 'September Steals',
+      sale_end_time: '2024-9-16'
+    }
+  ],
   // 默认活动送配件 variant_id
   event_accessories_variant_ids: ['43988113621208', '43745261748440'],
 

@@ -83,26 +83,38 @@
         }
   
         window.loaded_sale = true
+        // 当前活动索引
+        let sale_end_time_index = 0
   
         const timezoneoffset = (Shopify.shop === 'urtopia.myshopify.com' ? 420 : -120) * 60000;
   
         function getUTCTime(now = new Date()) {
           return now.getTime() + now.getTimezoneOffset() * 60000 + timezoneoffset;
         }
-  
-        const [y, m, d] = $('.sale').attr('data-sale-end-time').split('-').map(Number);
-        const endtime = getUTCTime(new Date(Date.UTC(y, m - 1, d, 0, 0, 0, 0) + timezoneoffset));
-  
+
+        function getEndTime (i) {
+          const [y, m, d] = global_config.sale_end_times[i].sale_end_time.split('-').map(Number);
+          // set name
+          $('.sale > .u14DemiBold_v2').text(global_config.sale_end_times[i].sale_name)
+
+          return getUTCTime(new Date(Date.UTC(y, m - 1, d, 0, 0, 0, 0) + timezoneoffset));
+        }
+
         const difference = [1000 * 60 * 60 * 24, 1000 * 60 * 60, 1000 * 60, 1000];
         const cache = ['00', '00', '00', '00'];
   
-        function updateTimer() {
+        function updateTimer(endtime) {
           let timeDifference = endtime - getUTCTime();
   
           if (timeDifference <= 0) {
-            $('.sale').hide();
-  
-            return console.log('Countdown Ended!');
+            sale_end_time_index++
+            
+            if (sale_end_time_index > global_config.sale_end_times.length - 1) {
+              $('.sale').hide();
+              return console.log('Countdown Ended!');
+            }
+
+            return updateTimer(getEndTime(sale_end_time_index))
           } else {
             const values = [];
   
@@ -127,10 +139,10 @@
             }
           }
   
-          setTimeout(updateTimer, 1000);
+          setTimeout(updateTimer, 1000, endtime);
         }
   
-        updateTimer();
+        updateTimer(getEndTime(sale_end_time_index));
       })();
     </script>
   {% endunless %}
