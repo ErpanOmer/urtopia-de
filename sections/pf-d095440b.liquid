@@ -544,11 +544,7 @@
           <i class="fa fa-spinner fa-spin"></i
           ><span data-pf-type="Text" class="addToCartText u17DemiBold_v2">Add to Cart</span>
         </div>
-        <div onclick="testRideTrace('lease_on_jobrad', this)" class="orderTestRideBtn jobrad mb12">
-                    <img class="oneeee lozad" data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/JobRad_Logo_Anthrazit_RGB_4x_2x_4d61b30b-1ef4-492f-a670-734913ec7b54.png?v=1705477646"/>
-                    <span><span class="u14DemiBold_v2">Leasing Quote</span><span class="u14Medium_v2">36 {{ 'order_page.months' | t }}, €42{{ 'checkout_klarna.month' | t }}</span></span>
-                  </div>
-        <div onclick="testRideTrace('klarna_check_out', this)" class="orderTestRideBtn">
+        <div onclick="testRideTrace('klarna_check_out', this)" class="orderTestRideBtn mb12">
           <img
             class="twoooo"
             src="https://cdn.shopifycdn.net/s/files/1/0633/2068/6808/files/20230530-121400.png?v=1685420054"
@@ -562,6 +558,14 @@
             ></span
           >
         </div>
+        <div onclick="testRideTrace('lease_on_jobrad', this)" class="orderTestRideBtn jobrad">
+                    <img class="oneeee lozad" data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/JobRad_Logo_Anthrazit_RGB_4x_2x_4d61b30b-1ef4-492f-a670-734913ec7b54.png?v=1705477646"/>
+                    <span><span class="u14DemiBold_v2">Leasing Quote</span><span class="u14Medium_v2">36 {{ 'order_page.months' | t }}, €42{{ 'checkout_klarna.month' | t }}</span></span>
+                  </div>
+        
+      </div>
+      <div class="logosssss mb16">
+        {% render 'leasing-logo' %}
       </div>
       <div class="dialogs mb24">
         <div class="u17Medium_v2" onclick="showSizesAndSpecs('SizesDialog')">
