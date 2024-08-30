@@ -246,13 +246,13 @@ const size_map = {
 
 // model map 
 const bike_model_map = {
-    'carbon1': 'Carbon 1',
-    'carbon1s': 'Carbon 1s',
-    'chord': 'Chord',
-    'chordx': 'Chord X',
+    'carbon1': 'Urtopia Carbon 1',
+    'carbon1s': 'Urtopia Carbon 1s',
+    'chord': 'Urtopia Chord',
+    'chordx': 'Urtopia Chord X',
     'carbonwhiteglow': 'White Glow',
-    'fusion': 'Fusion',
-    'carbon1pro': 'Carbon 1 Pro'
+    'fusion': 'Urtopia Fusion',
+    'carbon1pro': 'Urtopia Carbon 1 Pro'
 }
 
 
@@ -409,7 +409,6 @@ function mergeValues () {
     // 重写bike 参数
     merge.bike_model = bike_model_map[merge.bike_model]
     merge.bike_size = merge.bike_size + ' - ' + (size_map[merge.bike_size] || '')
-    merge.page_type = page_infos.page_name
     merge.offers = forms.partner === 'none' ? 'no' : 'yes'
 
     return merge
@@ -421,13 +420,10 @@ function submit (forms = {}) {
     // 状态变为已提交
     is_submited = true
 
-    // 如果 offers 选择no
-    // if (forms.offers === 'no') {
-    //    return fetchBuried(page_infos.page_name, 'submit-nooffer', forms)
-    //}
+    temp.submit_id = Date.now().toString().slice(-6)
+    temp.url = location.href
+    temp.page_type = location.pathname.split('/').pop()
 
-
-    forms.url = location.href
     fetchBuried('leasing', 'submit', forms)
 
     if (forms.offers === 'no') {

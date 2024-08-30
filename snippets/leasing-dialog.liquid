@@ -1,0 +1,390 @@
+{{ 'leasing-dialog.scss.css' | asset_url | stylesheet_tag: preload: true }}
+<dialog id="leasing-dialog">
+  <div class="leasing-dialog">
+    <div class="headerrrr"><span class="u17DemiBold_v2">Leasing request</span><span class="close">✕</span></div>
+    <form action="" method="post" class="bodyyyyyy">
+      <span class="u14Medium_v2" style="text-align: left;">
+        Thank you for your interest in our e-bike leasing. Simply fill out the following form and you will receive an
+        offer within 1 working day. <br>
+        <br>
+        <b>Note:</b> A lock is mandatory with most leasing providers. (such as Bikeleasing, Lease a bike)
+      </span>
+      <div class="item">
+        <div class="u17Medium_v2">Type of request<i>*</i></div>
+        <div class="multiple-checkbox">
+          <label for="binding" tips="Bikes are reserved for 10 days">
+            <img
+              src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_20956_2x_28b3e62b-ae48-4b7c-a025-4db2d0cdbf2d.png?v=1683713191"
+              alt=""
+            >
+            <span class="u17Medium_v2">Binding</span>
+            <input type="radio" id="binding" name="request_type" value="yes" required>
+            <span class="u14Medium_v2">Bikes are reserved for 10 days</span>
+          </label>
+          <label for="nobinding" tips="Bikes are not reserved">
+            <img
+              src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_20956_2x_28b3e62b-ae48-4b7c-a025-4db2d0cdbf2d.png?v=1683713191"
+              alt=""
+            >
+            <span class="u17Medium_v2">Non-binding</span>
+            <input type="radio" id="nobinding" name="request_type" value="no" required>
+            <span class="u14Medium_v2">Bikes are not reserved</span>
+          </label>
+        </div>
+      </div>
+      <div class="item">
+        <div class="u17Medium_v2">Leasing provider<i>*</i></div>
+        <select name="partner" required>
+          <option value="">---</option>
+          <option value="Bikeleasing">Bikeleasing</option>
+          <option value="Businessbike">Businessbike</option>
+          <option value="Jobrad">Jobrad</option>
+          <option value="Lease a bike">Lease a bike</option>
+          <option value="Mein-Dienstrad">Mein-Dienstrad</option>
+          <option value="none">None of above/Not sure which one my employer provided</option>
+        </select>
+      </div>
+      <div class="item" name="employer_id" style="display:none;">
+        <div class="u17Medium_v2"><img src="" alt=""><i>*</i></div>
+        <input type="hidden" name="employer_id">
+      </div>
+      <div class="item" name="bike_image" style="display:none;">
+        <div class="u17Medium_v2"></div>
+        <input type="image" name="bike_image" src="">
+      </div>
+      <div class="item">
+        <div class="mini-item">
+          {% for option in product.options_with_values %}
+            {% if forloop.index >= size_index %}
+              <div>
+                <div class="u17Medium_v2">{{ option.name }}<i>*</i></div>
+                <select name="bike_{{ option.name | downcase }}" required>
+                  <option value="">---</option>
+                  {% for value in option.values %}
+                      <option value="{{ value }}">{{ value }}
+                      {% case value %}
+                          {% when 'M' %}
+                              (Fit for 165-185 cm)
+                          {% when 'L' %}
+                              (Fit for 175-195 cm)
+                          {% when 'High-Step' %}
+                              (Fit for 170cm - 195cm)
+                          {% when 'Step-Through' %}
+                              (Fit for 160cm - 185cm)
+                          {% else %}
+                      {% endcase %}
+                      </option>
+                  {% endfor %}
+                </select>
+              </div>
+            {% endif %}
+          {% endfor %}
+        </div>
+        <span class="error"></span>
+      </div>
+      <div class="item">
+        <div class="u17Medium_v2">Accessories you would like</div>
+        <select name="accessories" multiple>
+          {% for product in collections[accessories_name].products %}
+            <option title="{{product.title}}" value="{{product.id}}">{{ product.title }}</option>
+          {% endfor %}
+        </select>
+      </div>
+      <div class="item">
+        <div class="mini-item">
+          <div>
+            <div class="u17Medium_v2">First name<i>*</i></div>
+            <input type="text" name="first_name" required>
+          </div>
+          <div>
+            <div class="u17Medium_v2">Last name<i>*</i></div>
+            <input type="text" name="last_name" required>
+          </div>
+        </div>
+      </div>
+      <div class="item">
+        <div class="mini-item">
+          <div>
+            <div class="u17Medium_v2">Email address<i>*</i></div>
+            <input type="email" name="email" required>
+          </div>
+          <div>
+            <div class="u17Medium_v2">phone number<i>*</i></div>
+            <input type="tel" name="phone" required>
+          </div>
+        </div>
+      </div>
+      <div class="item">
+        <div class="mini-item">
+          <div>
+            <div class="u17Medium_v2">City<i>*</i></div>
+            <input type="text" name="city" required>
+          </div>
+          <div>
+            <div class="u17Medium_v2">Zip code<i>*</i></div>
+            <input type="text" name="postal_code" required>
+          </div>
+        </div>
+      </div>
+      <div class="item">
+        <div class="u17Medium_v2">Street<i>*</i></div>
+        <input type="text" name="address" required>
+      </div>
+      <div class="item" style="width: 240px;margin-right: auto;">
+        <button class="my-button my-button-black" type="submit">Submit</button>
+      </div>
+    </form>
+    <div class="thankyou" style="display:none;">
+        <span class="u17Medium_v2" style="color: #FD4B17;">Successfully submitted :)</span>
+        <span class="u14Medium_v2">
+          You will receive a quote within 1 business day.
+          Please let us know if you do not receive it.
+        </span>
+        <div class="submitison u17Medium_v2">
+          <div>
+            <img name="bike_image" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/3-1.jpg?v=1722064932" alt=""/>
+            <div name="bike_model"><span></span><span class="u17Medium_v2"></span></div>
+            {% for option in product.options_with_values %}
+              {% if forloop.index >= size_index %}
+                <div name="bike_{{ option.name | downcase }}"><span>{{ option.name }}: </span><span class="u14Light_v2"></span></div>
+              {% endif %}
+            {% endfor %}
+          </div>
+          <div>
+            <div name="name"><span>Name: </span><span class="u14Light_v2">M(Fit for 165-185 cm)</span></div>
+            <div name="email"><span>Email: </span><span class="u14Light_v2">Matte Black</span></div>
+            <div name="phone"><span>Phone: </span><span class="u14Light_v2">Matte Black</span></div>
+            <div name="city"><span>City: </span><span class="u14Light_v2">Matte Black</span></div>
+            <div name="postal_code"><span>Zip code: </span><span class="u14Light_v2">Matte Black</span></div>
+            <div name="address"><span>Street: </span><span class="u14Light_v2">Matte Black</span></div>
+            <div name="partner"><span>Leasing: </span><img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/mdr_logo.svg?v=1724911680" alt=""></div>
+            <div name="accessories"><span>Accessories: </span><span class="u14Light_v2">Matte Black</span></div>
+          </div>
+        </div>
+        <div class="buttons">
+            <div class="my-button my-button-white resubmit">Submit again</div>
+            <div class="my-button my-button-black close">Close</div>
+          </div>
+    </div>
+  </div>
+</dialog>
+{{ 'sumoselect.js' | asset_url | script_tag }}
+<script>
+  // SELECT 插件
+  window.selectPlugin = $('#leasing-dialog select[name="accessories"]').SumoSelect({
+    placeholder: '',
+    csvDispCount: 0,
+    floatWidth: 768,
+  });
+
+  $('#leasing-dialog .multiple-checkbox :input').on('change', (e) => {
+    // 全部重置为默认状态
+    $(`#leasing-dialog .multiple-checkbox label`).removeClass('active');
+    $(`#leasing-dialog .multiple-checkbox label img`).hide();
+
+    $(`#leasing-dialog .multiple-checkbox label[for="${e.currentTarget.id}"]`).addClass('active');
+    $(`#leasing-dialog .multiple-checkbox label[for="${e.currentTarget.id}"] img`).show();
+    // $(`#leasing-dialog .multiple-checkbox > .u14Medium_v2`).text(
+    //   $(`#leasing-dialog .multiple-checkbox label[for="${e.currentTarget.id}"]`).attr('tips')
+    // );
+  });
+
+  function changeProductImage () {
+    const arr = [{% if extra_option %}'{{extra_option}}'{% endif %}]
+
+    $('#leasing-dialog form .item .mini-item select').each(function() {
+        arr.push($(this).val())
+    })
+
+    const find = variants.find(v => v.title === arr.join(' / '))
+    const allNotEmpty = arr.every(Boolean)
+
+    console.log('allNotEmpty', allNotEmpty)
+
+    $('#leasing-dialog form .item .mini-item').closest('.item').find('.error').html('')
+
+    if (find) {
+        $('#leasing-dialog form .item input[name="bike_image"]').attr('src', `${find.featured_image}`)
+        $('#leasing-dialog form .item[name="bike_image"]').show()
+        $('#leasing-dialog form').attr('variant', find.id)
+    } else {
+        $('#leasing-dialog form .item[name="bike_image"]').hide()
+
+        {% assign last_1 = product.options_with_values.size |  minus: 1 %}
+        {% assign last_2 = product.options_with_values.size |  minus: 2 %}
+
+        if (allNotEmpty) {
+            $('#leasing-dialog form .item .mini-item select').val('')
+            $('#leasing-dialog form .item .mini-item').closest('.item').find('.error').html(`<span>Your selection is currently reached our stock limit</span> - {{ product.options_with_values[last_2].name }}: ${arr[arr.length - 2]}, {{ product.options_with_values[last_1].name  }}: ${arr[arr.length - 1]}`)
+        }
+    }
+  }
+
+  {% for option in product.options_with_values %}
+    $('#leasing-dialog form select[name="bike_{{ option.name | downcase }}"]').on('change', function () {
+        const value = $(this).val()
+        console.log('{{ option.name }}', value)
+
+        {% if forloop.index == size_index %} 
+            if (value) {
+                $(this).parent().siblings().find('select').attr('disabled', false)
+            } else {
+                $(this).parent().siblings().find('select').attr('disabled', true).val('').trigger('change')
+            } 
+            {% else  %}
+        {% endif %}
+
+        changeProductImage()
+    })
+  {% endfor %}
+
+  const partner_items = [
+    {
+        placeholder: 'Order code XXXXXX',
+        partner: 'Lease a bike',
+        required: true,
+        img: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20240829-161144.png?v=1724919302&width=300',
+    },
+    {
+        placeholder: 'Employer code XXXX / Bikeleasing user ID XXXX-XXXX',
+        partner: 'Bikeleasing',
+        required: true,
+        img: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20240829-160851.png?v=1724918947&width=300',
+    },
+    {
+        placeholder: 'Quickstart',
+        partner: 'Businessbike',
+        required: true,
+        img: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20240829-160842.png?v=1724918947&width=300',
+    },
+    {
+        placeholder: '',
+        partner: 'Jobrad',
+        img: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20240829-160829.png?v=1724918947&width=300',
+    },
+    {
+        placeholder: 'Mein-Dienstrad User-email',
+        partner: 'Mein-Dienstrad',
+        required: true,
+        img: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/mdr_logo.svg?v=1724911680&width=300',
+    },
+    {
+        placeholder: '',
+        partner: 'none'
+    }
+  ]
+
+
+  $('#leasing-dialog select[name="partner"]').on('change', function () {
+      const value = $(this).val()
+      const partner = partner_items.find(v => v.partner === value)
+
+      $(`#leasing-dialog form .item[name="employer_id"]`).hide()
+      $(`#leasing-dialog form .item[name="employer_id"] input`).attr('required', false).attr('placeholder', '').attr('type', 'hidden')
+      $(`#leasing-dialog form .item[name="employer_id"] img`).attr('src', '')
+
+      if (value && value !== 'none') {
+        if (value === 'Jobrad') {
+            return
+       }
+
+        $(`#leasing-dialog form .item[name="employer_id"]`).show()
+        $(`#leasing-dialog form .item[name="employer_id"] img`).attr('src', partner.img)
+        $(`#leasing-dialog form .item[name="employer_id"] input`).attr('placeholder', partner.placeholder).attr('required', !!partner.required).attr('type', 'text')
+
+        if (!!partner.required) {
+            $(`#leasing-dialog form .item[name="employer_id"] i`).show()
+        } else {
+            $(`#leasing-dialog form .item[name="employer_id"] i`).hide()
+        }
+
+      }
+  })
+
+
+  $('#leasing-dialog form').on('submit', function (event) {
+    const ignore = ['submit', 'checkbox', 'image', 'hidden']
+    const temp = {}
+
+    $(this).find(':input').each(function () {
+
+        if (ignore.includes(this.type)) {
+            return
+        }
+
+        // 配件特殊处理
+        if (this.name === 'accessories') {
+            const accessories = []
+            const accessories_id = []
+            
+            // selected
+            $(this).find('option:selected').each(function () {
+                accessories.push(this.title)
+                accessories_id.push(this.value)
+            })
+
+                
+            temp.accessories = accessories.join()
+            temp.accessories_id = accessories_id.join()
+
+            return
+        }
+
+
+        temp[this.name] = this.value
+    })
+
+    temp.request_type = $('#leasing-dialog form label[class="active"]').attr('for')
+    temp.bike_model = '{{ product.title }}'
+    temp.variant_id = $('#leasing-dialog form').attr('variant')
+    temp.submit_id = Date.now().toString().slice(-6)
+    temp.url = location.href
+    temp.page_type = location.pathname.split('/').pop()
+
+    {% assign index = size_index | minus: 1 %}
+    temp.bike_{{ product.options_with_values[index].name | downcase }} = `${temp.bike_{{ product.options_with_values[index].name | downcase }}} (${global_config.{{ config_name }}.size_map[temp.bike_{{ product.options_with_values[index].name | downcase }}]})`
+
+    fetchBuried('leasing', 'submit', temp)
+
+    for (const key in temp) {
+      $(`#leasing-dialog .thankyou .submitison div[name=${key}] span:last-child`).text(temp[key])
+    }
+
+    $(`#leasing-dialog .thankyou .submitison div[name="name"] span:last-child`).text(`${temp['first_name']}  ${temp['last_name']}`)
+    $(`#leasing-dialog .thankyou .submitison div[name="partner"] img`).attr('src', partner_items.find(v => v.partner === temp.partner).img || '').attr('alt', temp.partner)
+    $(`#leasing-dialog .thankyou .submitison img[name="bike_image"]`).attr('src', $('#leasing-dialog form input[name="bike_image"]').attr('src'))
+
+
+    console.log(temp)
+
+
+    $('#leasing-dialog .thankyou').show().animate({ scrollTop: 0 }, 200)
+    $('#leasing-dialog .bodyyyyyy').hide();
+
+    event.preventDefault();
+    return false;
+  });
+
+
+  $('#leasing-dialog .resubmit').on('click', function () {
+    $('#leasing-dialog .thankyou').hide();
+    $('#leasing-dialog .bodyyyyyy').show();
+  })
+
+
+  for (const item of partner_items) {
+    new Image().src =item.img;
+  }
+
+
+  function showLeasingDialog () {
+    showDialog(document.getElementById('leasing-dialog'), dialog => {
+        for (const option in current_variant_options) {
+          $(dialog).find(`form select[name="bike_${option.toLowerCase()}"]`).val(current_variant_options[option])
+        }
+
+          // 更新产品图
+          changeProductImage()
+      });
+  }
+</script>

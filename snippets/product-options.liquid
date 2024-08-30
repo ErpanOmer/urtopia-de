@@ -37,6 +37,8 @@
         
             temp = temp['{{ option }}']
           {% endfor %}
+
+          console.log(JSON.parse(JSON.stringify({{ variant | json }})))
                 
           Object.assign(temp, {
             id: '{{ variant.id }}',
@@ -44,9 +46,13 @@
             price: '{{ variant.price }}',
             compare_at_price: '{{ variant.compare_at_price }}',
             inventory_quantity: '{{ variant.inventory_quantity }}',
-            available: {{ variant.available }}
+            available: {{ variant.available }},
+            featured_image: '{{ variant.featured_image | image_url: width: 600 }}'
           })
-  
+
+          // preload image
+          new Image().src = temp.featured_image;
+
           variants.push(temp)
         }
    {% endfor %}

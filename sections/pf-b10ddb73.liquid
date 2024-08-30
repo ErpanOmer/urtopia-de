@@ -242,7 +242,7 @@
                     >
                     <i class="fa fa-spinner fa-spin"></i><span data-pf-type="Text" class="addToCartText u17DemiBold_v2">{{ 'products.product.add_to_cart' | t }}</span>
                 </div>
-                <div onclick="testRideTrace('lease_on_jobrad', this)" class="orderTestRideBtn jobrad">
+                <div onclick="showLeasingDialog()" class="orderTestRideBtn jobrad">
                     <img class="oneeee" src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/JobRad_Logo_Anthrazit_RGB_4x_2x_4d61b30b-1ef4-492f-a670-734913ec7b54.png?v=1705477646"/>
                     <span><span class="u17DemiBold_v2">Lease Now</span><span>36 {{ 'order_page.months' | t }}, €30{{ 'checkout_klarna.month' | t }}</span></span>
                   </div>
@@ -1012,3 +1012,5 @@
 </script>
 
 <script src="https://cdn.storepoint.co/api/v1/js/162f21804990ff.js" defer></script>
+
+{% render 'leasing-dialog', config_name: 'chord_order_page_config', size_index: 1, accessories_name: 'chord-leasing-accessories' %}
