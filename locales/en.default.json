@@ -45,7 +45,11 @@
     "Chris": "“Outstanding performance. I love this bike.”",
     "bar": "&lt;span style=color:#FD4B17;&gt;{{ price }} OFF  + 2 Gifts&lt;\/span&gt; with Carbon 1. &lt;a href=\/products\/urtopia-carbon-e-bike&gt;Buy Now&lt;\/a&gt;",
     "reviews": "reviews",
-    "leasing": "You have successfully submit the form. Our expert will contact you soon. &lt;br&gt;&lt;br&gt;If you have any questions, please do not hesitate to contact us: Email: &lt;a class=my-link href=mailto:leasing@newurtopia.de&gt;leasing@newurtopia.de&lt;\/a&gt;"
+    "leasing": "You have successfully submit the form. Our expert will contact you soon. &lt;br&gt;&lt;br&gt;If you have any questions, please do not hesitate to contact us: Email: &lt;a class=my-link href=mailto:leasing@newurtopia.de&gt;leasing@newurtopia.de&lt;\/a&gt;",
+    "leasing_placeholder1": "Enter a 4-digit company code or an 8-digit user ID",
+    "leasing_placeholder2": "Enter a 6 digit order code",
+    "leasing_placeholder3": "Enter a 17-digit transaction number",
+    "leasing_placeholder4": "Enter your registered email address"
   },
   "general": {
     "password_page": {

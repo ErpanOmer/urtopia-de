@@ -541,6 +541,85 @@
   </div>
 </div>
 
+                    {% if true %}
+  <div id="choose">
+   <div class="centeral-content ebike-products">
+    <div class="u36DemiBold_v2">More Urtopia E-bikes</div>
+    <div class="u24Medium_v2"></div>
+    <div class="product-grid">
+        {% assign productt = all_products["urtopia-carbon-e-bike"] %}
+        {% assign product_variants = productt.variants | where: "available" %}
+        {% assign product_tags = settings.carbon_ebike_free_accessories_count | append: ' Freebies'   %}
+        {% render 'product-card',
+            product_variants: product_variants,
+            product_variant_options_find_sort: "M,L",
+            product_name: 'Carbon 1',
+            product_description: 'The ultra-light commuter e-bike provides a clean city riding experience.',
+            product_discount_price: settings.carbon_ebike_discount_price,
+            product_url: productt.url,
+        %}
+     
+      {% assign productt = all_products["urtopia-fusion-carbon-ebike"] %}
+        {% assign product_variants = productt.variants | where: "available" %}
+        {% assign product_discount_price = productt.compare_at_price | minus: productt.price %}
+        {% render 'product-card',
+            product_variants: product_variants,
+            product_name: 'Fusion',
+            product_description: 'A carbon fiber mid-drive e-suv ready to conquer any terrain.',
+            product_url: productt.url,
+        %}
+       <div class="gray-background-color u30DemiBold_v2 lozad mobileHide" data-background-image="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_22829_2x_82531e4b-8b9c-40c7-822f-c58f9db7d477.jpg?v=1695625176">Full Carbon Lightweight Sporty</div>
+    </div>
+</div>
+</div>
+<script>
+    $('.product-card .dots > div').on('click', e => {
+        const target = $(e.target)
+        const product_card = target.closest('.product-card')
+
+        // 先取消 其它兄弟元素的active, 再设置active
+        target.siblings().removeClass('active')
+        target.addClass('active')
+
+        const price = Number(target.attr('data-price'))
+        const compare_at_price = Number(target.attr('data-compare-at-price'))
+        const discount_price = Number(target.attr('data-product-discount-price'))
+        const variant_id = target.attr('data-variant')
+        const variant_image = target.attr('data-img')
+
+        // outlet 车型
+        if (discount_price === 0) {
+            product_card.find('.product_price .u24DemiBold_v2').text(getPriceFormat(price, true)).attr('data-price', getPriceFormat(compare_at_price, true))
+            product_card.find('.tags > span:first-child').text(`${getPriceFormat(compare_at_price - price, true)} OFF`)
+
+            if (price === compare_at_price) {
+                product_card.find('.product_price .u24DemiBold_v2').attr('data-price', '')
+                product_card.find('.tags > span:first-child').hide()
+            }
+        } else {
+            product_card.find('.product_price .u24DemiBold_v2').text(getPriceFormat(price - discount_price, true)).attr('data-price', getPriceFormat(price, true))
+            product_card.find('.product_price .u17Light_v2 > span').text(getPriceFormat((price - discount_price) / 24))
+            product_card.find('.tags > span:first-child').text(`${getPriceFormat(discount_price, true)} OFF`)
+        }
+
+        product_card.find('.variant-image').attr('src', variant_image)
+        product_card.find('.my-button').attr('href', `${product_card.find('.my-button').attr('href').split('?').shift()}?variant=${variant_id}`)
+    })
+
+    setTimeout(() => {
+        $('.product-card .dots > div:first-child').click()
+
+        $('.product-card .variant-image').on('click', e => {
+            const button = $(e.target).closest('.product-card').find('.my-button')
+
+            if (button.length) {
+                button[0].click()
+            }
+        })
+    })
+</script>
+{% endif %}
+
 <div class="professional">
   <div class="centeral-content">
     <h2 class="u36Medium_v2">Professional Reviews</h2>

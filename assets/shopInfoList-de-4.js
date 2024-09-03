@@ -774,6 +774,7 @@ const testRides = [
         testRideSize: "L",
         availableSizes: [
           'Carbon 1 Size L',
+          'Carbon 1 Pro Size M/L',
         ],
         businessHours: [
           "",
@@ -796,6 +797,7 @@ const testRides = [
         testRideSize: "L",
         availableSizes: [
           'Carbon 1 Size L',
+          'Carbon 1 Pro Size L',
         ],
         businessHours: [
           "",

@@ -240,19 +240,19 @@
 
   const partner_items = [
     {
-        placeholder: 'Order code XXXXXX',
+        placeholder: '{{ 'order_page.leasing_placeholder2' | t }}',
         partner: 'Lease a bike',
         required: true,
         img: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20240829-161144.png?v=1724919302&width=300',
     },
     {
-        placeholder: 'Employer code XXXX / Bikeleasing user ID XXXX-XXXX',
+        placeholder: '{{ 'order_page.leasing_placeholder1' | t }}',
         partner: 'Bikeleasing',
         required: true,
         img: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20240829-160851.png?v=1724918947&width=300',
     },
     {
-        placeholder: 'Quickstart',
+        placeholder: '{{ 'order_page.leasing_placeholder3' | t }}',
         partner: 'Businessbike',
         required: true,
         img: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20240829-160842.png?v=1724918947&width=300',
@@ -263,7 +263,7 @@
         img: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20240829-160829.png?v=1724918947&width=300',
     },
     {
-        placeholder: 'Mein-Dienstrad User-email',
+        placeholder: '{{ 'order_page.leasing_placeholder4' | t }}',
         partner: 'Mein-Dienstrad',
         required: true,
         img: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/mdr_logo.svg?v=1724911680&width=300',
@@ -339,10 +339,13 @@
     temp.variant_id = $('#leasing-dialog form').attr('variant')
     temp.submit_id = Date.now().toString().slice(-6)
     temp.url = location.href
+    temp.country = 'Deutschland';
+    temp.offers = temp.partner === 'none' ? 'no' : 'yes';
     temp.page_type = location.pathname.split('/').pop()
 
     {% assign index = size_index | minus: 1 %}
-    temp.bike_{{ product.options_with_values[index].name | downcase }} = `${temp.bike_{{ product.options_with_values[index].name | downcase }}} (${global_config.{{ config_name }}.size_map[temp.bike_{{ product.options_with_values[index].name | downcase }}]})`
+    temp.bike_size = `${temp.bike_{{ product.options_with_values[index].name | downcase }}} (${global_config.{{ config_name }}.size_map[temp.bike_{{ product.options_with_values[index].name | downcase }}]})`
+    temp.bike_style = `${temp.bike_{{ product.options_with_values[size_index].name | downcase }}}`
 
     fetchBuried('leasing', 'submit', temp)
 
@@ -378,6 +381,8 @@
 
 
   function showLeasingDialog () {
+    fetchBuried('websiteclick', location.pathname.split('/').pop(), { button: 'lease_on_jobrad' }, true);
+    
     showDialog(document.getElementById('leasing-dialog'), dialog => {
         for (const option in current_variant_options) {
           $(dialog).find(`form select[name="bike_${option.toLowerCase()}"]`).val(current_variant_options[option])
