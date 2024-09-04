@@ -278,9 +278,9 @@
   $('#leasing-dialog select[name="partner"]').on('change', function () {
       const value = $(this).val()
       const partner = partner_items.find(v => v.partner === value)
-
+    
       $(`#leasing-dialog form .item[name="employer_id"]`).hide()
-      $(`#leasing-dialog form .item[name="employer_id"] input`).attr('required', false).attr('placeholder', '').attr('type', 'hidden')
+      $(`#leasing-dialog form .item[name="employer_id"] input`).attr('required', false).attr('placeholder', '').attr('type', 'hidden').val('')
       $(`#leasing-dialog form .item[name="employer_id"] img`).attr('src', '')
 
       if (value && value !== 'none') {
