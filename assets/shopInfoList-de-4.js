@@ -679,6 +679,37 @@ const testRides = [
     ]
   },
   {
+    city: 'Wolfsburg',
+    cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Dusseldorf.jpg?v=1679406972',
+    series: [
+      'Urtopia Carbon 1',
+      'Urtopia Chord'
+    ],
+    stores: [
+      {
+        name: 'Zweirad-Wichmann',
+        phone: '05361 16399',
+        email: 'mail@zweirad-wichmann.de',
+        timezone: "Düsseldorf, Germany (GMT+1)",
+        add: "Friedrich-Ebert-Straße 29 ，38440 Wolfsburg",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/output_2_0f669aee-82b6-496e-916b-3db01ab2420d.png?v=1725587672",
+        testrideSpot: "Wolfsburg",
+        availableSizes: [
+          'Carbon 1 Pro Size L',
+        ],
+        businessHours: [
+          "",
+          "09:00-18:00",
+          "09:00-18:00",
+          "09:00-18:00",
+          "09:00-18:00",
+          "09:00-18:00",
+          "09:00-14:00",
+        ],
+      }
+    ]
+  },
+  {
     city: 'Trier',
     cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Dusseldorf.jpg?v=1679406972',
     series: [
@@ -3160,6 +3191,39 @@ const testRides = [
   },
   {
     country: 'Denmark',
+    city: 'Aars',
+    cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Fri_bikeshop_Rodovre.jpg?v=1706844827',
+    series: [
+      'Carbon 1',
+      // 'Urtopia Carbon 1'
+    ],
+    stores: [
+      {
+        name: 'BLVD BIKES',
+        phone: '+45(0)93808210',
+        email: 'info@blvdbikes.dk',
+        timezone: "Rodovre, Denmark (GMT+1)",
+        add: "Industrivej 1, 9600 Aars, Denmark",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/output_3_e3b25352-242e-4094-b21c-512ecee4c579.png?v=1725588435",
+        testrideSpot: "Rodovre",
+        testRideSize: "M",
+        availableSizes: [
+          'Carbon 1 Pro Size M',
+        ],
+        businessHours: [
+          "",
+          "10:00-17:30",
+          "10:00-17:30",
+          "10:00-17:30",
+          "10:00-18:00",
+          "10:00-18:00",
+          "09:00-13:00",
+        ],
+      },
+    ]
+  },
+  {
+    country: 'Denmark',
     city: 'Rodovre',
     cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Fri_bikeshop_Rodovre.jpg?v=1706844827',
     series: [
@@ -4034,7 +4098,8 @@ for (const city of testRides) {
         </div>
       `
 
-      store_list.set(store.name.replace(/\s*/g, "").replace(/\'/g, ""), store)
+      store.imgUrl = `${store.imgUrl}&width=500`;
+      store_list.set(store.name.replace(/\s*/g, "").replace(/\'/g, ""), store);
   
   }
 }

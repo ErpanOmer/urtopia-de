@@ -4397,4 +4397,9 @@ dialog + .backdrop {
   top: 0;
   transform: translateY(-200%);
 }
-#0080CD
+
+
+
+.jdgm-histogram__row:not(.jdgm-histogram__clear-filter) {
+  pointer-events: none;
+}

@@ -420,9 +420,9 @@ function submit (forms = {}) {
     // 状态变为已提交
     is_submited = true
 
-    temp.submit_id = Date.now().toString().slice(-6)
-    temp.url = location.href
-    temp.page_type = location.pathname.split('/').pop()
+    forms.submit_id = Date.now().toString().slice(-6)
+    forms.url = location.href
+    forms.page_type = location.pathname.split('/').pop()
 
     fetchBuried('leasing', 'submit', forms)
 
@@ -766,7 +766,7 @@ setTimeout(() => {
     $('.forms form').on("submit", function (event) {
         const values = mergeValues()
 
-        submit(values)
+        submit(values)      
 
         // 隐藏form
         $('.forms .centeral-content').css('max-width', '1280px')
