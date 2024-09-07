@@ -765,9 +765,9 @@ $('.partners .items').html(swiperItems.map(item => `
         */
         chord: {
             background_image: `{{ chord }}`,
-            price: `{{ all_products['urtopia-chord-ebike'].price | minus: settings.chord_ebike_discount_price | money_without_trailing_zeros  }}`,
-            orginal_price: `{{ all_products['urtopia-chord-ebike'].price | money_without_trailing_zeros  }}`,
-            discount_price: `{{ settings.chord_ebike_discount_price | money_without_trailing_zeros }}`,
+            price: `{{ all_products['urtopia-chord-ebike'].price | money_without_trailing_zeros  }}`,
+            orginal_price: `{{ all_products['urtopia-chord-ebike'].compare_at_price | money_without_trailing_zeros  }}`,
+            discount_price: `{{ all_products['urtopia-chord-ebike'].compare_at_price | minus: all_products['urtopia-chord-ebike'].price | money_without_trailing_zeros }}`,
             boxs: [
                 [
                     'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18448_2x_d3fbd8a8-d1e2-4a84-b4eb-ce513f342438.png?v=1683705373',
@@ -804,9 +804,9 @@ $('.partners .items').html(swiperItems.map(item => `
         },
         chordx: {
             background_image: `{{ chordx }}`,
-            price: `{{ all_products['urtopia-chord-ebike'].price | minus: settings.chord_ebike_discount_price | money_without_trailing_zeros  }}`,
-            orginal_price: `{{ all_products['urtopia-chord-ebike'].price | money_without_trailing_zeros  }}`,
-            discount_price: `{{ settings.chord_ebike_discount_price | money_without_trailing_zeros }}`,
+            price: `{{ all_products['urtopia-chord-ebike'].price | money_without_trailing_zeros  }}`,
+            orginal_price: `{{ all_products['urtopia-chord-ebike'].compare_at_price | money_without_trailing_zeros  }}`,
+            discount_price: `{{ all_products['urtopia-chord-ebike'].compare_at_price | minus: all_products['urtopia-chord-ebike'].price | money_without_trailing_zeros }}`,
             boxs: [
                 [
                     'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18448_2x_d3fbd8a8-d1e2-4a84-b4eb-ce513f342438.png?v=1683705373',

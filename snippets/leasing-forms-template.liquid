@@ -516,7 +516,7 @@ const chordBikeChange = (model, size, style) => {
     size = model === 'chord' ? 'High-Step' : 'Step-Through'
     setTimeout(() => $('select[name="bike_size"]').val(size))
 
-    $('.forms form .item .tips').html(`incl. {% unless settings.chord_ebike_discount_price == "0" %}${model === 'chord' ? switch_bike.chord.discount_price + " discount with": switch_bike.chordx.discount_price + " discount with" }{% endunless %} <label>free bike stand and mudguard, ${global_config.leasing.ebike_delivery_time[model]}</label>`)
+    $('.forms form .item .tips').html(`incl. {% unless all_products['urtopia-chord-ebike'].compare_at_price == all_products['urtopia-chord-ebike'].price %}${model === 'chord' ? switch_bike.chord.discount_price + " discount with": switch_bike.chordx.discount_price + " discount with" }{% endunless %} <label>free bike stand and mudguard, ${global_config.leasing.ebike_delivery_time[model]}</label>`)
     
 
     // 通过遍历 判断option 是否可用

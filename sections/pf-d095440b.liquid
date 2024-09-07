@@ -690,7 +690,6 @@
     <div class="product-grid">
         {% assign productt = all_products["urtopia-carbon-1-pro-ebike"] %}
         {% assign product_variants = productt.variants | where: "option1", "L" | where: "available" %}
-        {% assign product_discount_price = productt.compare_at_price | minus: productt.price %}
         {% render 'product-card',
             product_variants: product_variants,
             product_name: 'Carbon 1 Pro',
@@ -704,7 +703,6 @@
             product_variants: product_variants,
             product_name: 'Chord',
             product_description: 'Elegantly zip around town for meet-ups, errands, or Sunday fun.',
-            product_discount_price: settings.chord_ebike_discount_price,
             product_url: productt.url,
         %}
        <div class="gray-background-color u30DemiBold_v2 lozad mobileHide" data-background-image="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_22829_2x_82531e4b-8b9c-40c7-822f-c58f9db7d477.jpg?v=1695625176">Full Carbon Lightweight Sporty</div>
@@ -1528,14 +1526,14 @@
 </div>
 
 
-{% assign installment = product.price | minus: settings.carbon_ebike_discount_price | divided_by: 2400 | floor | times : 100 | money_without_trailing_zeros %}
+{% assign installment = product.price | divided_by: 2400 | floor | times : 100 | money_without_trailing_zeros %}
 <img class="toTop lozad" data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_21049.svg?v=1687267470">
 <div class="top-fixed mobileHide">
     <div class="centeral-content">
         <span class="u20DemiBold_v2">{{ product.title }}</span>
         <span class="flex-1"></span>
         <div>
-            <span class="u17Light_v2"><span class="u20DemiBold_v2 emphasize" style="font-weight: 600;color:var(--sale-order-page-text-color);">{{ product.price | minus: settings.carbon_ebike_discount_price | money }}</span> <span style="text-decoration: line-through;">{{ product.price | money }}</span></span>
+            <span class="u17Light_v2"><span class="u20DemiBold_v2 emphasize" style="font-weight: 600;color:var(--sale-order-page-text-color);">{{ product.price | money }}</span> <span style="text-decoration: line-through;">{{ product.compare_at_price | money }}</span></span>
             <span class="u14Light_v2">{{ 'order_page.installment' | t: installment: installment }}</span>
         </div>
         <a href="#product_form_{{ product.id }}" class="my-button my-button-origin" style="background: var(--sale-order-page-text-color);">Order Now</a>
@@ -1544,7 +1542,7 @@
 <div class="bottom-fixed pcHide">
     <a href="#product_form_{{ product.id }}" class="my-button my-button-origin" style="background: var(--sale-order-page-text-color);">Order Now</a>
     <div>
-        <span class="u14Light_v2"><span class="emphasize" style="font-weight: 600;color:var(--sale-order-page-text-color);">{{ product.price | minus: settings.carbon_ebike_discount_price | money }}</span> <span style="text-decoration: line-through;">{{ product.price | money }}</span></span>
+        <span class="u14Light_v2"><span class="emphasize" style="font-weight: 600;color:var(--sale-order-page-text-color);">{{ product.price | money }}</span> <span style="text-decoration: line-through;">{{ product.compare_at_price | money }}</span></span>
         <span class="u14Light_v2">{{ 'order_page.installment' | t: installment: installment }}</span>
     </div>
 </div>
@@ -1633,29 +1631,6 @@
                 btn.addClass('disabled')
                 $('.product .buttons .orderTestRideBtn').hide()
             }
-
-            let discount = 0
-
-            if (e.value.Model === 'Carbon Belt') {
-              discount = Number('{{ settings.carbon_ebike_discount_price }}')
-              $('.top-fixed .u17Light_v2 > span:not(.u20DemiBold_v2)').show()
-              $('.bottom-fixed > div .u14Light_v2:first-child > span:not(.emphasize)').show()
-            } else {
-              discount = Number('{{ settings.carbon1s_ebike_discount_price }}')
-              $('.top-fixed .u17Light_v2 > span:not(.u20DemiBold_v2)').hide()
-              $('.bottom-fixed > div .u14Light_v2:first-child > span:not(.emphasize)').hide()
-            }
-
-            $('.product .commonComponent > .product-price').text(getPriceFormat(e.value.price - discount)).attr('data-price', `UVP ${getPriceFormat(e.value.price)}`)
-            $('.product .buttons .orderTestRideBtn .stages').text(getPriceFormat((e.value.price - discount) / 24))
-
-            $('.top-fixed .u17Light_v2 .u20DemiBold_v2').text(getPriceFormat(e.value.price - discount))
-            $('.top-fixed .u17Light_v2 > span:not(.u20DemiBold_v2)').text(getPriceFormat(e.value.price))
-            $('.top-fixed .u14Light_v2 .stages').text(getPriceFormat((e.value.price - discount) / 24))
-            
-            $('.bottom-fixed .u14Light_v2 .emphasize').text(getPriceFormat(e.value.price - discount))
-            $('.bottom-fixed > div .u14Light_v2:first-child > span:not(.emphasize)').text(getPriceFormat(e.value.price))
-            $('.bottom-fixed > div .u14Light_v2:last-child .stages').text(getPriceFormat((e.value.price - discount) / 24))
       })
 
     function changeAddToCartText (parse, step = 0) {
