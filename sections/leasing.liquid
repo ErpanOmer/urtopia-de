@@ -55,12 +55,12 @@
       <div>
         <div
           class="product-price u30DemiBold_v2"
-          data-price="{{ all_products['urtopia-carbon-e-bike'].price | money }}"
+          data-price="{{ all_products['urtopia-carbon-e-bike'].compare_at_price | money_without_trailing_zeros }}"
         >
-          {{ all_products['urtopia-carbon-e-bike'].price | minus: settings.carbon_ebike_discount_price | money }}
+          {{ all_products['urtopia-carbon-e-bike'].price | money_without_trailing_zeros }}
         </div>
         <div class="sale-tag u17Medium_v2">
-          {{ settings.carbon_ebike_discount_price | money_without_trailing_zeros }} OFF
+          {{ all_products['urtopia-carbon-e-bike'].compare_at_price | minus: all_products['urtopia-carbon-e-bike'].price | money_without_trailing_zeros }} OFF
         </div>
         <div class="background-image pcHide" style="height: 56.75vw;margin: 24px 0px;"></div>
         <div class="boxs">
@@ -137,7 +137,7 @@
           <a href="#forms" class="my-button my-button-black">Request leasing offer(40% off)</a>
           <a href="/products/urtopia-carbon-e-bike" class="my-button my-button-white"
             >Shop Online(
-            {{- all_products['urtopia-carbon-e-bike'].price | minus: settings.carbon_ebike_discount_price | money -}}
+            {{- all_products['urtopia-carbon-e-bike'].price | money -}}
             )</a
           >
         </div>
@@ -708,9 +708,9 @@ $('.partners .items').html(swiperItems.map(item => `
         },
         carbon1: {
             background_image: `{{ carbon1 }}`,
-            price: `{{ all_products['urtopia-carbon-e-bike'].price | minus: settings.carbon_ebike_discount_price | money_without_trailing_zeros  }}`,
-            orginal_price: `{{ all_products['urtopia-carbon-e-bike'].price | money_without_trailing_zeros  }}`,
-            discount_price: `{{ settings.carbon_ebike_discount_price | money_without_trailing_zeros }}`,
+            price: `{{ all_products['urtopia-carbon-e-bike'].price | money_without_trailing_zeros  }}`,
+            orginal_price: `{{ all_products['urtopia-carbon-e-bike'].compare_at_price | money_without_trailing_zeros  }}`,
+            discount_price: `{{ all_products['urtopia-carbon-e-bike'].compare_at_price | minus: all_products['urtopia-carbon-e-bike'].price | money_without_trailing_zeros }}`,
             link: '/products/urtopia-carbon-e-bike?variant=42615025369304',
             boxs: [
                 [

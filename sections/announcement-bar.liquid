@@ -1,6 +1,6 @@
   <div id="announcement-bar" class="announcement-bar-common" dir="rtl">
     <div class="swiper-wrapper">
-      {% assign price = settings.carbon_ebike_discount_price | money_without_trailing_zeros %}
+      {% assign price = all_products['urtopia-carbon-e-bike'].compare_at_price | minus: all_products['urtopia-carbon-e-bike'].price | money_without_trailing_zeros %}
       <div class="swiper-slide"><p>{{ 'order_page.bar' | t: price: price | replace: '&lt;', '<' | replace: '&gt;', '>' }}</p></div>
       <div class="swiper-slide"><p>Pay in 24 installments with 0 APR. <a href="/products/urtopia-carbon-e-bike">Order now</a></p><img style="width:45px;margin-right:10px;" src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Image_154_2x_a6f60481-bf07-4fd4-93c7-8b9964570bbd.png?v=1685605445"/></div>
       <div class="swiper-slide"><p>Bike leasing 36 months, finance from {{ 5200 | money_without_trailing_zeros }} per month.<a href="/pages/ebike-leasing">Leasing quote</a></p></div>
