@@ -288,7 +288,7 @@ function addToCartInsurance(parse, show = false) {
 
   const cartListNew = {
     // 如果是carbon 页面，自动把配件加进去
-    items: location.href.includes('urtopia-carbon-e-bike') ? global_config.event_accessories_variant_ids.map(id => ({ id, quantity: 1 })) : []
+    items: []
   }
 
   $('.product .accessories .items .active').each((i, item) => {
@@ -299,7 +299,7 @@ function addToCartInsurance(parse, show = false) {
   })
 
   // 加埋点
-  !show && fetchBuried('websiteclick', url_to_page_map[location.pathname], { button: 'ATC' })
+  !show && fetchBuried('websiteclick', location.pathname.split('/').pop(), { button: 'ATC' })
 
   const cart1New =
     document.querySelector("cart-notification") ||

@@ -522,7 +522,6 @@
         %}
         {% assign productt = all_products["urtopia-carbon-1-pro-ebike"] %}
         {% assign product_variants = productt.variants | where: "option1", "L" | where: "available" %}
-        {% assign product_discount_price = productt.compare_at_price | minus: productt.price %}
         {% render 'product-card',
             product_variants: product_variants,
             product_name: 'Carbon 1 Pro',
@@ -535,7 +534,6 @@
             product_variants: product_variants,
             product_name: 'Chord',
             product_description: 'Elegantly zip around town for meet-ups, errands, or Sunday fun.',
-            product_discount_price: settings.chord_ebike_discount_price,
             product_url: productt.url,
         %}
     </div>

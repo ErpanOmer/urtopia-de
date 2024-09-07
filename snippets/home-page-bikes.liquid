@@ -313,6 +313,7 @@
             product_variants: product_variants,
             product_name: 'Chord',
             product_description: 'Elegantly zip around town for meet-ups, errands, or Sunday fun.',
+            product_discount_price: settings.chord_ebike_discount_price,
             product_url: productt.url,
         %}
          {% assign product_variants = productt.variants | where: "option1", "Step-Through" | where: "available" %}
@@ -320,11 +321,13 @@
             product_variants: product_variants,
             product_name: 'Chord X',
             product_description: 'Easily kickstart your ride for workouts, city cruising, and pure enjoyment.',
+            product_discount_price: '0',
             product_url: productt.url,
         %}
       <div class="gray-background-color u30DemiBold_v2 lozad mobileHide" data-background-image="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_22829_2x_82531e4b-8b9c-40c7-822f-c58f9db7d477.jpg?v=1695625176">Full Carbon Lightweight Sporty</div>
         {% assign productt = all_products["urtopia-carbon-1-pro-ebike"] %}
         {% assign product_variants = productt.variants | where: "option1", "L" | where: "available" %}
+        {% assign product_discount_price = productt.compare_at_price | minus: productt.price %}
         {% render 'product-card',
             product_variants: product_variants,
             product_name: 'Carbon 1 Pro',
@@ -333,6 +336,7 @@
         %}
       {% assign productt = all_products["urtopia-fusion-carbon-ebike"] %}
         {% assign product_variants = productt.variants | where: "available" %}
+        {% assign product_discount_price = productt.compare_at_price | minus: productt.price %}
         {% render 'product-card',
             product_variants: product_variants,
             product_name: 'Fusion',
