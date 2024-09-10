@@ -80,7 +80,7 @@
 
 <div class="message-box">
   <div class="u17DemiBold_v2">Don’t Miss Out on Exclusive Updates and Offers!</div>
-  <div class="u14DemiBold_v2 emphasize">UP TO <span class="u24DemiBold_v2">{{ settings.carbon_ebike_discount_price | money_without_trailing_zeros }}</span> OFF NOW</div>
+  <div class="u14DemiBold_v2 emphasize">UP TO <span class="u24DemiBold_v2">{{ all_products['urtopia-carbon-e-bike'].compare_at_price | minus: all_products['urtopia-carbon-e-bike'].price | money_without_trailing_zeros }}</span> OFF NOW</div>
   <div class="u11Light_v2">Limited-time offer with stock flying off the shelves. Subscribe now for the latest updates and instant notifications.</div>
   <form class="email" action="/" target="_blank" method="post" accept-charset="UTF-8">
       <input placeholder="Enter email here" type="email" name="contact[email]" required>
