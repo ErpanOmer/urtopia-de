@@ -1552,7 +1552,7 @@
         }
     
         if (type === 'klarna_check_out') {
-            fetchBuried('websiteclick', `outlet-carbon-order-page`, { button: type, action_type: sessionStorage.carbon_one_a_b_test_flag }, true)
+            fetchBuried('websiteclick', location.pathname.split('/').pop(), { button: type, action_type: sessionStorage.carbon_one_a_b_test_flag }, true)
             window.sessionStorage.clicked_klarna_checkout_button = 'clicked_klarna_checkout_button'
     
             setTimeout(() => {

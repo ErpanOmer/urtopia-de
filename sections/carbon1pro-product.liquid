@@ -1624,7 +1624,7 @@
     }
 
     if (type === 'klarna_check_out') {
-      fetchBuried('websiteclick', `carbon1pro-order-page`, { button: type }, true);
+      fetchBuried('websiteclick', location.pathname.split('/').pop(), { button: type }, true);
       window.sessionStorage.clicked_klarna_checkout_button = 'clicked_klarna_checkout_button';
 
       setTimeout(() => {
