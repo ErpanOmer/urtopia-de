@@ -1467,7 +1467,7 @@ h4 {
     justify-content: center;
     text-align: center;
     background-color: $backround-color;
-    padding: 10vh 0 10vh;
+    padding: 14vh 0;
 
     .u36Medium_v2 {
         margin-bottom: 6vh;
@@ -2012,7 +2012,8 @@ h4 {
 
                 &>img {
                     max-height: 50px;
-                    width: fit-content;
+                    height: 50px;
+                    width: auto;
                     margin-bottom: 2.5vh;
                 }
             }
@@ -2052,7 +2053,7 @@ h4 {
 
                     &>img {
                         max-height: 34px;
-                        width: fit-content;
+                        height: 34px;
                         margin-bottom: 6vw;
                     }
 
@@ -2069,5 +2070,14 @@ h4 {
         }
 
         margin-bottom: 15vw;
+    }
+}
+
+
+.judmeeeeeeeee {
+    @media (max-width: 767px) {
+        .centeral-content {
+            padding: 0 4vw;
+        }
     }
 }

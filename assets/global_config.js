@@ -598,7 +598,7 @@ const global_config = {
     product_media_images: [],
     product_images: {
       'Elegant Grey': [
-          'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18882.png?v=1713323995&width=1000',
+          'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20240913-140756.jpg?v=1726207700&width=1000',
           'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/19398_2x_2f9d7f41-0453-47fd-9945-85218577ba05.jpg?v=1726126593&width=1000',
           'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/19404_2x_c158f72e-fb31-4da4-8202-c80ea6eb9348.jpg?v=1726126604&width=1000',
           'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/DSCF8066.jpg?v=1726126744',
@@ -609,7 +609,7 @@ const global_config = {
           'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/2x_2880e256-371a-4202-84f1-6c84d4bfbc23.jpg?v=1726127494'
         ],
         'Blazing Black': [
-          'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18883.png?v=1713323995&width=1000',
+          'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20240913-140748.jpg?v=1726207699&width=1000',
           'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/19398_2x_2f9d7f41-0453-47fd-9945-85218577ba05.jpg?v=172612659&width=1000',
           'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/19404_2x_c158f72e-fb31-4da4-8202-c80ea6eb9348.jpg?v=1726126604&width=1000',
           'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/DSCF8066.jpg?v=1726126744',
