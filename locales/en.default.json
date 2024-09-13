@@ -49,7 +49,11 @@
     "leasing_placeholder1": "Enter a 4-digit company code or an 8-digit user ID",
     "leasing_placeholder2": "Enter a 6 digit order code",
     "leasing_placeholder3": "Enter a 17-digit transaction number",
-    "leasing_placeholder4": "Enter your registered email address"
+    "leasing_placeholder4": "Enter your registered email address",
+    "suv": "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/24608_2x_af7166a0-2d6b-4af8-9877-052c6821d8fe.png?v=1726108743",
+    "suv1": "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/24611_2x_5d7f335e-06f1-45f8-a321-273d5940edd7.png?v=1726108738",
+    "suv2": "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/24609_2x_1274df4a-e01d-48be-95e3-31fd4c6e2240.png?v=1726133979",
+    "suv3": "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/24616_2x_7dd3aff7-d278-4eea-9b16-7e804a4f2d7f.png?v=1726133984"
   },
   "general": {
     "password_page": {

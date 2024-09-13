@@ -590,34 +590,47 @@ const global_config = {
   },
   fusion_order_page_config: {
     // chord 车默认显示 variant_id, 只有 url 上的 variant 参数为空的时候生效
-    default_variant: 44758960242904,
+    default_variant: 44758960210136,
     ignore_variants_available_false: [],
     size_map: {
       'One Size': 'Fit for 160cm-190cm'
     },
+    product_media_images: [],
     product_images: {
-      'One Size': {
-        'Elegant Grey': [
-          'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18882.png?v=1713323995'
+      'Elegant Grey': [
+          'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18882.png?v=1713323995&width=1000',
+          'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/19398_2x_2f9d7f41-0453-47fd-9945-85218577ba05.jpg?v=1726126593&width=1000',
+          'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/19404_2x_c158f72e-fb31-4da4-8202-c80ea6eb9348.jpg?v=1726126604&width=1000',
+          'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/DSCF8066.jpg?v=1726126744',
+          'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/24613_2x_0da3a3e7-be41-432a-8b92-042ab9a805ca.jpg?v=1726127519',
+          'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/2x_e7ed9f67-2e5e-4f9e-ab95-70c64e56ed61.jpg?v=1726127514',
+          'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/2x_c511bbc0-00fb-47ea-85b5-ba0bbdd3d857.jpg?v=1726127507',
+          'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/2x_1b49e807-7f18-433b-a754-d352a0154ac9.jpg?v=1726127500',
+          'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/2x_2880e256-371a-4202-84f1-6c84d4bfbc23.jpg?v=1726127494'
         ],
         'Blazing Black': [
-          'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18883.png?v=1713323995'
+          'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18883.png?v=1713323995&width=1000',
+          'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/19398_2x_2f9d7f41-0453-47fd-9945-85218577ba05.jpg?v=172612659&width=1000',
+          'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/19404_2x_c158f72e-fb31-4da4-8202-c80ea6eb9348.jpg?v=1726126604&width=1000',
+          'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/DSCF8066.jpg?v=1726126744',
+          'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/24397_2x_7575ba25-8f88-4d54-93b3-7c06f7ed6181.jpg?v=1726126832',
+          'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/2x_c01dea8f-6eb4-43c5-a3ec-40339d924263.jpg?v=1726127019',
+          'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/2x_367b9cdb-4e38-421e-9ebc-13f72d169e63.jpg?v=1726127025',
+          'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/2x_b23227fc-e6e8-4550-8d50-a8c1c24a0fa2.jpg?v=1726127013',
+          'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/2x_195b795e-d831-46a1-a56f-69bb13feffbb.jpg?v=1726127033'
         ],
         'Vital Orange': [
-          'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18879.png?v=1713323995',
-          'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18881.png?v=1713323994',
-          'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18880.png?v=1713323994'
+          'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18879.png?v=1713323995&width=1000',
+          'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/19398_2x_2f9d7f41-0453-47fd-9945-85218577ba05.jpg?v=1726126593&width=1000',
+          'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/19404_2x_c158f72e-fb31-4da4-8202-c80ea6eb9348.jpg?v=1726126604&width=1000',
+          'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/DSCF8066.jpg?v=1726126744',
+          'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/24612_2x_75b439ef-1cdb-4974-823a-f984fb38d381.jpg?v=1726127267',
+          'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/2x_d8f0e61f-9369-4efa-866b-db1fb1c8b9e6.jpg?v=1726127272',
+          'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/2x_9d13e439-9a0d-4373-aa2a-da6347dcd412.jpg?v=1726127277',
+          'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/2x_11082a95-04f4-4320-9d71-e1f2d030ae25.jpg?v=1726127255',
+          'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/2x_f7d5899a-829c-416f-b04d-7962897b9baf.jpg?v=1726127261'
         ],
-        commonSwiper: [
-          'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18884.png?v=1713323995',
-          'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18887.png?v=1713323995',
-          'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18885.png?v=1713323994',
-          'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20231108-untitled-7243.png?v=1713323995',
-          'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/DSCF1752.png?v=1713323995',
-          'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/sssa.png?v=1713323995',
-          'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18886.png?v=1713323995'
-        ]
-      }
+        commonSwiper: []
     },
     // 默认的发货时间 文案
     ebike_default_delivery_time: 'Delivery from 15.09.2024',

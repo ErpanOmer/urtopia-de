@@ -131,7 +131,7 @@
                         <option value="">---</option>
                         <!--<option value="carbonwhiteglow">White Glow</option>-->
                         <option value="carbon1">Carbon 1</option>
-                        <!-- <option value="fusion">Fusion</option> -->
+                        <option value="fusion">Fusion</option>
                         <option value="carbon1pro">Carbon 1 Pro</option>
                         <option value="chord">Chord</option>
                     </select>
@@ -241,7 +241,8 @@ const size_map = {
     'M': 'Fit for 165-185 cm',
     'L': 'Fit for 175-195 cm',
     'High-Step': 'Fit for 170-195 cm',
-    'Step-Through': 'Fit for 160-185 cm'
+    'Step-Through': 'Fit for 160-185 cm',
+    'One Size': 'Fit for 160cm-190cm'
 }
 
 // model map 
@@ -653,6 +654,81 @@ const changeBikeImage = e => {
 
 
         current_model = 'carbon1pro'
+
+        return 
+    }
+
+
+
+    if (model === 'fusion') {
+        $('select[name="bike_size"]')[0].disabled = true
+        const style = $('select[name="bike_style"]').val()
+        const size = 'One Size'
+
+        $('select[name="bike_size"]').html(`<option value="">---</option><option value="One Size">One Size - Fit for 160cm-190cm</option>`)
+
+        $('select[name="bike_style"]').html('<option value="">---</option>' + fusion_style.map(v => {
+            return `<option value="${v}">${v}</option>`
+        }))
+
+        setTimeout(() => {    
+            $('select[name="bike_size"]').val(size)
+            $('select[name="bike_style"]').val(style)
+        })
+
+        // 通过遍历 判断option 是否可用
+        setTimeout(() => {
+            $(`select[name="bike_style"] option`).each((i, item) => {
+            const v = item.value
+    
+            if (i === 0) {
+                return true
+            }
+    
+            const vari = carbon1pro.variants.find(c => c.title === `${size} / ${v}`)
+            item.disabled = !vari ? false : !!!vari.available
+
+            if (item.disabled) {
+                $(item).hide()
+            } else {
+                $(item).show()
+            }
+        })
+        }, 30)
+
+
+        $('.forms form .item .tips').html('Shipping within 3 working days. Includes {{ all_products['urtopia-fusion-carbon-ebike'].compare_at_price | minus: all_products['urtopia-fusion-carbon-ebike'].price | money_without_trailing_zeros }} discount, bike stand, mudguards and 1 year connect service.')
+        // 渲染acc
+        $('select[name="accessories"]').html(`{% for product in collections["fusion-leasing-acc"].products %}
+            <option title="{{product.title}}" value="{{product.id}}">{{product.title}}</option>
+        {% endfor %}`)
+
+        window.selectPlugin.sumo.reload()
+
+        $('select[name="partner"]').val() && setTimeout(() => {
+            partnerForAccessoriesDisable($('select[name="partner"]').val())
+        }, 300)
+
+        if (style && size) {
+            const find = fusion.variants.find(c => c.title === `${size} / ${style}`)
+
+            console.log('find', find)
+            if (!find || !find.available) {
+                $('select[name="bike_style"]').val('')
+                //$('.forms form select[name="bike_size"]').closest('.item').find('.error').html(`<span>Your selection is currently reached our stock limit</span> - {{ 'order_page.size' | t  }}: ${size}, {{ 'order_page.style' | t  }}: ${style}`)
+                
+                return clearBikeImage()
+            }
+
+            $('.forms form .item input[name="bike_image"]').attr('src', `${find.featured_image.src}&width=400`)
+            $('.forms form .item[name="bike_image"]').show()
+            $('select[name="bike_style"]').val(style)
+        } else {
+            clearBikeImage()
+        }
+
+
+        current_model = 'fusion'
 
         return 
     }

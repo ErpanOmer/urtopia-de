@@ -142,7 +142,7 @@
         </span>
         <div class="submitison u17Medium_v2">
           <div>
-            <img name="bike_image" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/3-1.jpg?v=1722064932" alt=""/>
+            <img name="bike_image" src="" alt=""/>
             <div name="bike_model"><span></span><span class="u17Medium_v2"></span></div>
             {% for option in product.options_with_values %}
               {% if forloop.index >= size_index %}
@@ -376,7 +376,9 @@
 
 
   for (const item of partner_items) {
-    new Image().src =item.img;
+    if (item.img) {
+      new Image().src = item.img;
+    }
   }
 
 
