@@ -569,12 +569,14 @@ $sale_background_image: linear-gradient(90deg, #15B79A, #63DED7);
                         }
                     }
 
-                    .oneeee {
+                   .oneeee {
                         width: 90px;
+                        max-width: 90px;
                     }
 
                     .twoooo {
-                        width: 95px;
+                        width: 90px;
+                        max-width: 90px;
                     }
                 }
 
@@ -890,14 +892,6 @@ $sale_background_image: linear-gradient(90deg, #15B79A, #63DED7);
                     .orderTestRideBtn {
                         span {
                             font-size: 14px;
-                        }
-
-                        .oneeee {
-                            width: 80px;
-                        }
-
-                        .twoooo {
-                            width: 85px;
                         }
 
                     }

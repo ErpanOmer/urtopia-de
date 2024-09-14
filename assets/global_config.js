@@ -1,28 +1,36 @@
 const global_config = {
   sale_end_times: [
     {
-      sale_name: 'Pre-Fall Savings',
-      sale_end_time: '2024-8-30'
-    },
-    {
-      sale_name: 'August Finale Sale',
-      sale_end_time: '2024-9-2'
-    },
-    {
-      sale_name: 'Cozy Season Sale',
-      sale_end_time: '2024-9-6'
-    },
-    {
-      sale_name: 'Fall into Savings',
-      sale_end_time: '2024-9-9'
-    },
-    {
-      sale_name: 'Autumn Deals',
-      sale_end_time: '2024-9-13'
-    },
-    {
       sale_name: 'September Steals',
       sale_end_time: '2024-9-16'
+    },
+    {
+      sale_name: 'Fall Frenzy Sale',
+      sale_end_time: '2024-9-20'
+    },
+    {
+      sale_name: 'Oktoberfest Savings',
+      sale_end_time: '2024-9-23'
+    },
+    {
+      sale_name: 'Brew-tiful Discounts',
+      sale_end_time: '2024-9-27'
+    },
+    {
+      sale_name: 'Cheers to Savings',
+      sale_end_time: '2024-9-30'
+    },
+    {
+      sale_name: 'Unity Day Discounts',
+      sale_end_time: '2024-10-4'
+    },
+    {
+      sale_name: 'Unity Day Bargains',
+      sale_end_time: '2024-10-7'
+    },
+    {
+      sale_name: 'Celebrate with Savings ',
+      sale_end_time: '2024-10-11'
     }
   ],
   // 默认活动送配件 variant_id
@@ -595,10 +603,35 @@ const global_config = {
     size_map: {
       'One Size': 'Fit for 160cm-190cm'
     },
-    product_media_images: [],
+    product_media_images: [
+      {
+          text: 'Carbon Fiber Expert',
+          img: "https://newurtopia.com/cdn/shop/files/logo_0707__1.png?v=1684310857"
+      },
+      {
+          text: 'Lightest mid-drive eSUV',
+          img: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/19446_2x_6b79974f-ad63-4300-8509-26515572c1dc.png?v=1726220917"
+      },
+      {
+          text: 'Effortlessly conquers steep hills',
+          img: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/19447_2x_60b10b4a-5ff7-4357-adc0-f31752890bd9.png?v=1726220922"
+      },
+      {
+          text: 'First eBike with ChatGPT',
+          img: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/19448_2x_668271f6-6ac8-4d8f-a29e-710638543268.png?v=1726220928"
+      },
+      {
+          text: 'Excels off-road',
+          img: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/19450_2x_ffca6459-4596-4e24-bc71-225c7efdefc7.png?v=1726220933"
+      },
+      {
+          text: 'AI-Enhanced electric performance',
+          img: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/19451_2x_aa6ca012-04b8-4b6c-a71f-9d6e748e58e7.png?v=1726220895"
+      },
+    ],
     product_images: {
       'Elegant Grey': [
-          'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20240913-140756.jpg?v=1726207700&width=1000',
+          'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20240914-100118.jpg?v=1726279298&width=1000',
           'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/19398_2x_2f9d7f41-0453-47fd-9945-85218577ba05.jpg?v=1726126593&width=1000',
           'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/19404_2x_c158f72e-fb31-4da4-8202-c80ea6eb9348.jpg?v=1726126604&width=1000',
           'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/DSCF8066.jpg?v=1726126744',
@@ -609,7 +642,7 @@ const global_config = {
           'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/2x_2880e256-371a-4202-84f1-6c84d4bfbc23.jpg?v=1726127494'
         ],
         'Blazing Black': [
-          'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20240913-140748.jpg?v=1726207699&width=1000',
+          'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20240914-100102.jpg?v=1726279297si&width=1000',
           'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/19398_2x_2f9d7f41-0453-47fd-9945-85218577ba05.jpg?v=172612659&width=1000',
           'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/19404_2x_c158f72e-fb31-4da4-8202-c80ea6eb9348.jpg?v=1726126604&width=1000',
           'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/DSCF8066.jpg?v=1726126744',

@@ -843,40 +843,6 @@ const testRides = [
     ]
   },
   {
-    city: 'Bedburg',
-    cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Berlin.jpg?v=1679406972',
-    series: [
-      'Urtopia Carbon 1',
-      'Urtopia Chord'
-      // 'Urtopia Carbon 1'
-    ],
-    stores: [
-      {
-        name: `Son's Bike shop`,
-        phone: '022728064483',
-        email: 'justinburggraf@gmail.com',
-        timezone: "Mainz, Germany (GMT+1)",
-        add: "Lindenstraße 10, 50181 Bedburg",
-        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/output_6_d1ad05cd-abde-43a4-b8bb-c3ffebfedc4d.png?v=1717490189",
-        testrideSpot: "Bedburg",
-        testRideSize: "L",
-        availableSizes: [
-          'Carbon 1 Size L',
-          'Chord X'
-        ],
-        businessHours: [
-          "",
-          "10:00-18:00",
-          "10:00-18:00",
-          "",
-          "10:00-18:00",
-          "10:00-18:00",
-          "10:00-14:00",
-        ],
-      },
-    ]
-  },
-  {
     city: 'Hamburg',
     cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Hamburg_19874cca-b8ea-4f39-824a-d987e3410a01.jpg?v=1683867163',
     series: [

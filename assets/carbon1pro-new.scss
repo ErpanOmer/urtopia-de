@@ -799,12 +799,14 @@ h4 {
                         font-weight: 500;
                     }
 
-                    .oneeee {
-                        width: 100px;
+.oneeee {
+                        width: 90px;
+                        max-width: 90px;
                     }
 
                     .twoooo {
-                        max-width: 100px;
+                        width: 90px;
+                        max-width: 90px;
                     }
                 }
 
@@ -1077,14 +1079,6 @@ h4 {
                     .orderTestRideBtn {
                         span {
                             font-size: 13px;
-                        }
-
-                        .oneeee {
-                            width: 85px;
-                        }
-
-                        .twoooo {
-                            width: 85px;
                         }
 
                     }
