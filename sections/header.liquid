@@ -189,7 +189,7 @@
                                             <img src="{{ productttttt.first.featured_image | image_url: width: 300 }}">
                                         </div>
                                       {% assign productttttt = all_products['urtopia-fusion-carbon-ebike'].variants | where: "title", "One Size / Blazing Black" %}
-                                        <div class="by-model" href="/pages/fusion">
+                                        <div class="by-model" href="{{ productttttt.first.url }}">
                                             <div>
                                               <div class="u14DemiBold_v2">Fusion</div>
                                               <div class="u11Light_v2">Form Follows Emotion</div>
@@ -545,7 +545,7 @@
                                           <span class="u17DemiBold_v2 emphasize" data-price="{{ productttttt.first.compare_at_price | money_without_trailing_zeros }}">{{ productttttt.first.price | money_without_trailing_zeros }}</span>
                                       </div>
                                     {% assign productttttt = all_products['urtopia-fusion-carbon-ebike'].variants | where: "title", "One Size / Blazing Black" %}
-                                    <div class="by-model" href="/pages/fusion">
+                                    <div class="by-model" href="{{ productttttt.first.url }}">
                                           
                                           <img src="{{ productttttt.first.featured_image | image_url: width: 500 }}">
                                           <div class="u20DemiBold_v2">Fusion</div>

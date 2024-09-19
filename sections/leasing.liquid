@@ -2,13 +2,13 @@
 {% comment %} {% assign carbon1s = "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18841_2x_d1bd8de1-5910-454a-9271-306815705052.png?v=1694070547" %} {% endcomment %}
 {% assign chord = 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18589_2x_4ca8137f-ac74-49c3-b2c4-a523904d4bf7.png?v=1694070560' %}
 {% comment %} {% assign chordx = "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18840_2x_d185d12d-30c6-4959-8197-bf586c703aae.png?v=1694070555" %} {% endcomment %}
-{% comment %} {% assign fusion = "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20240420-111342.png?v=1713582840" %} {% endcomment %}
+{% assign fusion = "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20240918-114635.png?v=1726631235" %}
 {% assign carbon1pro = 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18873_2x_82da2d81-10d3-4bf9-b398-3da08d1161d1.png?v=1719284392' %}
 
 <link rel="preload" href="{{ chord }}" as="image">
 <link rel="preload" href="{{ carbon1pro }}" as="image">
 {% comment %} <link rel="preload" href="{{ chordx }}" as="image"> {% endcomment %}
-{% comment %} <link rel="preload" href="{{ fusion }}" as="image"> {% endcomment %}
+<link rel="preload" href="{{ fusion }}" as="image">
 
 {{ 'leasing-add.scss.css' | asset_url | stylesheet_tag }}
 
@@ -43,7 +43,7 @@
       <div class="select">
         <select>
           <option value="carbon1">Urtopia Carbon 1</option>
-          <!-- <option value="fusion">Urtopia Fusion</option> -->
+          <option value="fusion">Urtopia Fusion</option>
           <!-- <option value="carbon1s">Urtopia Carbon 1s</option> -->
           <option value="chord">Urtopia Chord</option>
           <option value="carbon1pro">Urtopia Carbon 1 Pro</option>
@@ -671,7 +671,7 @@ $('.partners .items').html(swiperItems.map(item => `
             background_image: `{{ fusion }}`,
             price: `{{ all_products['urtopia-fusion-carbon-ebike'].price | money_without_trailing_zeros  }}`,
             orginal_price: `{{ all_products['urtopia-fusion-carbon-ebike'].price | money_without_trailing_zeros  }}`,
-            discount_price: `€0`,
+            discount_price: `{{ all_products['urtopia-fusion-carbon-ebike'].compare_at_price | minus: all_products['urtopia-fusion-carbon-ebike'].price | money_without_trailing_zeros }}`,
             link: '/products/urtopia-fusion-carbon-ebike',
             boxs: [
                 [
