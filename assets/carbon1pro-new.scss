@@ -1148,19 +1148,22 @@ h4 {
     padding: 10vh 0;
 
     .centeral-content {
+        overflow: hidden;
+
         .u36Medium_v2 {
             margin-bottom: 3.5vh;
         }
 
         .videos {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            grid-column-gap: 30px;
+            // display: grid;
+            // grid-template-columns: repeat(3, 1fr);
+            // grid-column-gap: 30px;
 
             &>div {
                 display: flex;
                 flex-direction: column;
                 cursor: pointer;
+                height: auto;
 
                 img {
                     cursor: pointer;
@@ -1168,18 +1171,66 @@ h4 {
 
 
                 .u17Light_v2 {
-                    margin-top: 2vh;
+                    margin: 12px 0 30px;
+                }
+
+                .u17Medium_v2 {
+                    display: flex;
+                    align-items: center;
+
+                    img {
+                        max-width: 28px;
+                        width: 28px;
+                        margin-right: 10px;
+                    }
                 }
             }
 
 
+        }
+
+
+        .swiper-scrollbar {
+            position: static;
+            margin-top: 5vh;
+            width: 100%;
+            background-color: #DEDEDE;
+            z-index: unset;
+            
+            .swiper-scrollbar-drag {
+                background-color: #FD4B17;
+            }
+        }
+
+
+
+        .buttons {
+            display: flex;
+            justify-content: flex-end;
+            margin-top: 5vh;
+
+            .swiper-button-prev,
+            .swiper-button-next {
+                position: static;
+                color: #fff;
+                background-color: #000;
+                border-radius: 50%;
+                width: 35px;
+                height: 35px;
+                margin-left: 15px;
+                z-index: unset;
+                
+
+                &::after {
+                    font-size: 18px;
+                }
+            }
         }
     }
 
 
     @media (max-width: 767px) {
         padding: 8vw 0 13.5vw;
-        overflow: hidden;
 
         .centeral-content {
 
@@ -1194,21 +1245,9 @@ h4 {
                 &>div {
 
                     .u17Light_v2 {
-                        font-size: 15px;
+                        font-size: 14px;
+                        margin-bottom: 4vw;
                     }
-                }
-            }
-
-
-            .swiper-scrollbar {
-                position: static;
-                margin-top: 10vw;
-                width: 100%;
-                background-color: #DEDEDE;
-                z-index: unset;
-                
-                .swiper-scrollbar-drag {
-                    background-color: #FD4B17;
                 }
             }
         }
@@ -1216,9 +1255,9 @@ h4 {
 }
 
 .build {
-    background: $backround-color url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20240716-171008.jpg?v=1722073622') center center/cover no-repeat;
+    background: $backround-color url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20240904-101642.jpg?v=1725416243') center center/cover no-repeat;
     aspect-ratio: 1920 / 750;
-    color: #fff;
+    color: #000;
     display: flex;
     align-items: center;
 
@@ -1232,7 +1271,7 @@ h4 {
     }
 
     @media (max-width: 767px) {
-        background-image: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20240716-171008_2x_905ed734-67ca-42a9-acc2-5e1d40f2cab6.jpg?v=1721701492');
+        background-image: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20240902-171633_2x_9b6ebad8-391b-403c-b59a-0db593678d0e.jpg?v=1725418305');
         background-size: contain;
         background-position-y: top;
         color: #000;
@@ -2764,4 +2803,46 @@ $product-tags-color: #FFE2D9;
 
 .ebike-products .product-grid .product-card .dots .active[data-stye="Vital Orange"]::after {
   background-color: #FFB100;
+}
+
+
+
+
+.makes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: $backround-color;
+    padding: 10vh 0 14vh;
+
+    .u36Medium_v2 {
+        margin-bottom: 6vh;
+    }
+
+    img {
+        max-width: 950px;
+    }
+
+    img+img {
+        margin-top: 10vh;
+    }
+
+    @media (max-width: 767px) {
+        padding: 13.5vw 0 16vw;
+
+        .centeral-content {
+            padding: 0 4vw;
+
+            .u36Medium_v2 {
+                font-size: 22px;
+                margin-bottom: 10vw;
+            }
+
+            img+img {
+                margin-top: 0;
+            }
+        }
+    }
 }
