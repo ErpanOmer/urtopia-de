@@ -441,7 +441,6 @@ const global_config = {
         'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/1pro-_-_c__1_1_2x_1b9d5dea-a84a-442b-80ec-3fa18757aabd.jpg?v=1721977738',
         'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/1pro-_1_1.jpg?v=1722064932',
         'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/1pro-_c_2x_4d3389e3-6c89-4584-a35d-a7586f6f0dec.jpg?v=1721977750',
-       
       ],
       'Creme': [
         'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18878.jpg?v=1722064932',
@@ -639,7 +638,8 @@ const global_config = {
           'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/2x_e7ed9f67-2e5e-4f9e-ab95-70c64e56ed61.jpg?v=1726127514',
           'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/2x_c511bbc0-00fb-47ea-85b5-ba0bbdd3d857.jpg?v=1726127507',
           'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/2x_1b49e807-7f18-433b-a754-d352a0154ac9.jpg?v=1726127500',
-          'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/2x_2880e256-371a-4202-84f1-6c84d4bfbc23.jpg?v=1726127494'
+          'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/2x_2880e256-371a-4202-84f1-6c84d4bfbc23.jpg?v=1726127494',
+          'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20240924-164942.jpg?v=1727167799'
         ],
         'Blazing Black': [
           'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20240914-100102.jpg?v=1726279297si&width=1000',
@@ -650,7 +650,8 @@ const global_config = {
           'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/2x_c01dea8f-6eb4-43c5-a3ec-40339d924263.jpg?v=1726127019',
           'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/2x_367b9cdb-4e38-421e-9ebc-13f72d169e63.jpg?v=1726127025',
           'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/2x_b23227fc-e6e8-4550-8d50-a8c1c24a0fa2.jpg?v=1726127013',
-          'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/2x_195b795e-d831-46a1-a56f-69bb13feffbb.jpg?v=1726127033'
+          'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/2x_195b795e-d831-46a1-a56f-69bb13feffbb.jpg?v=1726127033',
+          'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20240924-164942.jpg?v=1727167799'
         ],
         'Vital Orange': [
           'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18879.png?v=1713323995&width=1000',

@@ -1220,6 +1220,13 @@
       prevEl: '.leasingggggg .centeral-content .swiper-button-prev',
     },
   });
+
+
+  setTimeout(() => {
+    $('.product .right-swiper .swiper-slide:last').append(`<img onclick="showVideoDialog('https://www.youtube.com/embed/XUhyPzGBd6U?autoplay=1&cc_load_policy=1')" src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/logo-youtube.svg?v=1727171979"/>`)
+  }, 1000)
+
+
     </script>
     <script src="https://cdn.storepoint.co/api/v1/js/162f21804990ff.js" defer></script>
     {% render 'leasing-dialog', config_name: 'fusion_order_page_config', size_index: 1, accessories_name: 'fusion-leasing-acc' %}

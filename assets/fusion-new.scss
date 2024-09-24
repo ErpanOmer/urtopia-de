@@ -1205,6 +1205,21 @@ h4 {
                         img {
                             border-radius: 10px;
                         }
+
+
+
+                        &:last-child {
+                            position: relative;
+
+                            img {
+                                &:last-child {
+                                    position: absolute;
+                                    max-width: 80px;
+                                    transform: translateY(-50%);
+                                    cursor: pointer;
+                                }
+                            }
+                        }
                     }
                 }
             }
@@ -2132,7 +2147,7 @@ $product-tags-color: #FFE2D9;
             background-color: #405364;
         }
 
-      &[data-stye="Matte Black"] {
+        &[data-stye="Matte Black"] {
             border-color: #405364;
             background-color: #000;
         }
@@ -2158,7 +2173,7 @@ $product-tags-color: #FFE2D9;
             background-color: #FA812B;
         }
 
-      &[data-stye="Matte Black"]::after {
+        &[data-stye="Matte Black"]::after {
             background-color: #000;
         }
 
@@ -2196,11 +2211,11 @@ $product-tags-color: #FFE2D9;
     }
 
     @media (max-width: 767px) {
-        & > div {
+        &>div {
             width: 28px;
             height: 28px;
             margin-right: 12px;
-            
+
             &::after {
                 width: 20px;
                 height: 20px;
@@ -2301,7 +2316,7 @@ $product-tags-color: #FFE2D9;
 
 .ebike-products {
     .u24Medium_v2 {
-        margin:10px 0 4vh;
+        margin: 10px 0 4vh;
     }
 
     .product-grid {
@@ -2327,13 +2342,13 @@ $product-tags-color: #FFE2D9;
     }
 
     @media (max-width: 767px) {
-      padding: 0 4vw;
-      
-        & > .u36DemiBold_v2 {
+        padding: 0 4vw;
+
+        &>.u36DemiBold_v2 {
             font-size: 24px;
         }
-        
-        & > .u24Medium_v2 {
+
+        &>.u24Medium_v2 {
             font-size: 17px;
             margin-bottom: 8vw;
         }
@@ -2346,9 +2361,10 @@ $product-tags-color: #FFE2D9;
 }
 
 #choose {
-  background-color: #F7F8FA;
-  padding:100px 0;
-  @media (max-width: 767px) {
+    background-color: #F7F8FA;
+    padding: 100px 0;
+
+    @media (max-width: 767px) {
         padding: 40px 0;
-  }
+    }
 }
