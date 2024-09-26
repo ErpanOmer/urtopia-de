@@ -1,0 +1,12 @@
+{
+  "sections": {
+    "Front_fork": {
+      "type": "Front_fork",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "Front_fork"
+  ]
+}

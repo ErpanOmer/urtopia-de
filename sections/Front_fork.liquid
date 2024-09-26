@@ -1,0 +1,49 @@
+{% render 'accessories-default-template' %}
+
+<div class="centeral-content details" style="--swiper-navigation-color: #fff;--swiper-theme-color: #000;--swiper-pagination-color: #000;">
+  <h2 class="u36Medium_v2">Details</h2>
+  <div class="content">
+    <div class="fuckyou">
+      <div class="details-swiperrrr">
+        <div class="swiper-wrapper">
+          <img
+            src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20240703-153011.jpg?v=1719991848"
+            class="swiper-slide"
+            alt=""
+          >
+          <img
+            src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20240703-153016.jpg?v=1719991848"
+            class="swiper-slide"
+            alt=""
+          >
+        </div>
+      </div>
+      <div class="swiper-button-prev mobileHide"></div>
+      <div class="swiper-button-next mobileHide"></div>
+      <div class="swiper-pagination"></div>
+    </div>
+    <ul class="u17Light_v2">
+      <li>352.8Wh Wh Samsung Li-ion removable</li>
+      <li>Certified to UL-2271</li>
+      <li>2.5-hr quick charge</li>
+      <li>Range: 45-80 miles</li>
+      <li>Weight: 2.8 kg</li>
+      <li>Down tube battery replacement</li>
+      <li>2-year warranty</li>
+    </ul>
+  </div>
+</div>
+<script>
+  new Swiper('.details .fuckyou .details-swiperrrr', {
+    navigation: {
+      nextEl: '.details .fuckyou .swiper-button-next',
+      prevEl: '.details .fuckyou .swiper-button-prev',
+    },
+    pagination: { el: '.details .fuckyou .swiper-pagination' },
+  });
+
+
+  document.addEventListener('onChangeOptions', e => {
+    window.fuckyou.slideTo(e.value.title === 'Matte Black' ? 4 : 5)
+  })
+</script>
