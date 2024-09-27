@@ -150,7 +150,6 @@ h4 {
 .carbon {
     height: 540px;
     margin-top: 11vh;
-    background: #000 url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/19486_2x_27f148f1-8372-417d-8626-578d6f6236f5.jpg?v=1727261601') center center/cover no-repeat;
     box-sizing: border-box !important;
     color: #fff;
     display: flex;
@@ -159,6 +158,21 @@ h4 {
     justify-content: center;
     border-radius: 15px;
     padding-left: 60px;
+    position: relative;
+    background-color: #000;
+
+    video {
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 15px;
+        overflow: hidden;
+    }
 
     .u17Light_v2 {
         max-width: 440px;
