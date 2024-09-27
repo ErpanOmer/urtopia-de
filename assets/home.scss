@@ -21,14 +21,15 @@ h4 {
 
 
 .banner {
-    background: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20221008-untitled-4661_copy_2x_6415ad72-ea0c-476c-81a4-a6b9933e1fa1.jpg?v=1727259130') center center/cover no-repeat;
+    background: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20240926-164938.jpg?v=1727340608') center center/cover no-repeat;
+    height: calc(100vh - 106px);
 
-    .centeral-content {
-        height: calc(100vh - 106px);
+    .centeral-content {    
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: flex-start;
+        padding-top: 22.5vh;
 
 
         .u20Medium_v2 {
@@ -40,9 +41,9 @@ h4 {
     @media (max-width: 767px) {
         background-image: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/19495_2x_2442808a-b50f-4c1f-bd00-744403f8fc68.jpg?v=1727322030');
         color: #fff;
+        height: 500px;
 
         .centeral-content {
-            height: 500px;
             align-items: center;
             justify-content: flex-start;
             text-align: center;
@@ -113,6 +114,7 @@ h4 {
         padding: 30px;
         border-radius: 15px;
         overflow: hidden;
+      box-sizing: border-box;
 
 
         .u24DemiBold_v2 {
@@ -227,6 +229,7 @@ h4 {
         border-radius: 15px;
         overflow: hidden;
         padding: 40px 0;
+      box-sizing: border-box;
         background: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/24792_2x_2408ba49-c33a-486e-affe-b205b3e3214e.jpg?v=1727320177') center center/cover no-repeat;
 
         .u24Medium_v2 {
@@ -282,6 +285,7 @@ h4 {
         background: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/24794_2x_f8650926-0e4c-41e4-91ed-c5d2f27b62b8.jpg?v=1727337926') center center/cover no-repeat;
         display: flex;
         flex-direction: column;
+      box-sizing: border-box;
         color: #fff;
         aspect-ratio: 103 / 140;
         align-items: center;
@@ -289,6 +293,7 @@ h4 {
         padding-bottom: 40px;
         text-align: center;
         border-radius: 15px;
+      cursor: pointer;
 
         .u17Light_v2 {
             margin: 10px 0 25px;

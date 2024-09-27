@@ -1,8 +1,9 @@
 {{ 'home.scss.css' | asset_url | stylesheet_tag: preload: true }}
+<h1 class="visuallyhidden">Urtopia Ebike - Sleek, Full Carbon, Lightweight, Smart</h1>
 
 <div class="banner">
         <div class="centeral-content">
-            <h1 class="u60DemiBold_v2">Carbon 1 Pro</h1>
+            <h2 class="u60DemiBold_v2">Carbon 1 Pro</h2>
             <p class="u20Medium_v2">
                 <span>
                     Full carbon fiber｜50% lighter｜30% more range
@@ -23,15 +24,15 @@
     <div class="centeral-content cards">
         <div>
             <span class="u24DemiBold_v2">Ride outdoors and <br>explore more trails</span>
-            <a class="my-button" target="_blank" href="/collections/e-bikes">E-touring bike</a>
+            <a class="my-button" target="_blank" href="/products/urtopia-fusion-carbon-ebike">E-touring bike</a>
         </div>
         <div>
             <span class="u24DemiBold_v2">Explore the <br>urban landscape</span>
-            <a class="my-button" target="_blank" href="/collections/e-bikes">E-city bike</a>
+            <a class="my-button" target="_blank" href="/products/urtopia-carbon-e-bike">E-city bike</a>
         </div>
         <div>
             <span class="u24DemiBold_v2">All-Terrain Adventure</span>
-            <a class="my-button" target="_blank" href="/collections/e-bikes">E-gravel bikes</a>
+            <a class="my-button" target="_blank" href="/products/urtopia-carbon-1-pro-ebike">E-gravel bikes</a>
         </div>
     </div>
     <div class="centeral-content carbon">
@@ -72,17 +73,17 @@
         </div>
     </div>
     <div class="testride centeral-content">
-        <div>
+        <div href="/pages/test-ride">
             <span class="u36DemiBold_v2">Test Ride Spots</span>
             <span class="u17Light_v2">Experience the bike in real</span>
             <a href="/pages/test-ride" target="_blank">Learn more</a>
         </div>
-        <div>
+        <div href="/pages/care">
             <span class="u36DemiBold_v2">Peace of Mind</span>
             <span class="u17Light_v2">24/7 Support, Full After-Sales</span>
             <a href="/pages/care" target="_blank">Learn more</a>
         </div>
-        <div>
+        <div href="/pages/aboutus">
             <span class="u36DemiBold_v2">About Us</span>
             <span class="u17Light_v2">Ride Smart, Ride Green</span>
             <a href="/pages/aboutus" target="_blank">Learn more</a>
@@ -103,6 +104,13 @@
                 {% endif %}
               {% endfor %}
           {% endfor %}
+          {% assign article = articles['blog/the-smartest-e-bike-youll-never-lose'] %}
+          <div href="{{ article.url }}">
+                      <img class="lozad" data-src="{{ article.image.src | image_url: width: 400 }}" alt="">
+                      <h2 class="u20Medium_v2">{{ article.title }}</h2>
+                      <div class="flex-1"></div>
+                      <a target="_blank" href="{{ article.url }}">Read more</a>
+          </div>
 
           
             <a class="gotooooooo" href="/blogs/blog" target="_blank">
@@ -111,3 +119,14 @@
             </a>
         </div>
     </div>
+
+
+     <script>
+      $('.blogs .centeral-content > div[href]').on('click', function () {
+        window.open($(this).attr('href'))
+      })
+
+      $('.testride > div[href]').on('click', function () {
+        window.open($(this).attr('href'))
+      })
+    </script>
