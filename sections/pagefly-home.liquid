@@ -19,7 +19,7 @@
                 We strive to meet all user needs across various riding scenarios with our lightweight, smart carbon fiber electric bikes.
             </span>
         </p>
-        <a class="my-button my-button-black" target="_blank" href="/products/urtopia-fusion-carbon-ebike">explore our ebikes</a>
+        <a class="my-button my-button-black" target="_blank" href="/collections/e-bikes">explore our ebikes</a>
     </div>
     <div class="centeral-content cards">
         <div>
@@ -36,7 +36,7 @@
         </div>
     </div>
     <div class="centeral-content carbon">
-        <video playsinline loop autoplay muted class="mobileHide" src="https://cdn.shopify.com/videos/c/o/v/3b12afd59783453c89f21ff6821e6187.mp4"></video>
+       <video playsinline loop autoplay muted class="mobileHide" src="https://cdn.shopify.com/videos/c/o/v/3b12afd59783453c89f21ff6821e6187.mp4"></video>
         <h2 class="u36DemiBold_v2">Carbon fiber expert</h2>
         <p class="u17Light_v2">
             <span>
@@ -97,7 +97,7 @@
             {% for article in blogs.blog.articles %}
                 {% if blog == article.handle %}
                   <div href="{{ article.url }}">
-                      <img class="lozad" data-src="{{ article.image.src | image_url: width: 400 }}" alt="">
+                      <img class="lozad" data-src="{{ article.image.src | image_url: width: 800 }}" alt="">
                       <h2 class="u20Medium_v2">{{ article.title }}</h2>
                       <div class="flex-1"></div>
                       <a target="_blank" href="{{ article.url }}">Read more</a>
@@ -107,7 +107,7 @@
           {% endfor %}
           {% assign article = articles['blog/the-smartest-e-bike-youll-never-lose'] %}
           <div href="{{ article.url }}">
-                      <img class="lozad" data-src="{{ article.image.src | image_url: width: 400 }}" alt="">
+                      <img class="lozad" data-src="{{ article.image.src | image_url: width: 800 }}" alt="">
                       <h2 class="u20Medium_v2">{{ article.title }}</h2>
                       <div class="flex-1"></div>
                       <a target="_blank" href="{{ article.url }}">Read more</a>
