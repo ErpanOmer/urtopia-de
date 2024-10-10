@@ -223,6 +223,163 @@ const testRides = [
     ]
   },
   {
+    city: 'Niederkassel-Rheidt',
+    cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/output_5_e5e95421-6975-48c2-b950-ba1bd858744e.png?v=1718328335',
+    series: [
+      'Urtopia Carbon 1',
+      'Urtopia Chord'
+    ],
+    stores: [
+      {
+        name: 'Z-Bike',
+        phone: '022087751339',
+        email: 'eugene.zubko@gmail.com',
+        timezone: "Düsseldorf, Germany (GMT+1)",
+        add: "Oberstraße 56, 53859 Niederkassel-Rheidt",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/output_6_c6a0eaf2-cad7-4ce9-b23e-1dfa5ec46a0d.png?v=1727431908",
+        testrideSpot: "Niederkassel-Rheidt",
+        availableSizes: [
+          'Carbon 1 Size M',
+          'Fusion'
+        ],
+        businessHours: [
+          "",
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-18:00",
+          "11:00-15:00",
+        ],
+      }
+    ]
+  },
+  {
+    city: 'Weinheim',
+    cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/output_5_e5e95421-6975-48c2-b950-ba1bd858744e.png?v=1718328335',
+    series: [
+      'Urtopia Carbon 1',
+      'Urtopia Chord'
+    ],
+    stores: [
+      {
+        name: 'Pedalio',
+        phone: '0176 316 498 44',
+        email: 'info@pedalio.de',
+        timezone: "Düsseldorf, Germany (GMT+1)",
+        add: "Hauptstraße 91, 69469 Weinheim",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/output_6_c6a0eaf2-cad7-4ce9-b23e-1dfa5ec46a0d.png?v=1727431908",
+        testrideSpot: "Weinheim",
+        availableSizes: [
+          'Carbon 1 Size L',
+        ],
+        businessHours: [
+          "",
+          "11:00-18:00",
+          "11:00-18:00",
+          "11:00-18:00",
+          "11:00-18:00",
+          "11:00-18:00",
+          "",
+        ],
+      }
+    ]
+  },
+  {
+    city: 'Otterstadt',
+    cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/output_5_e5e95421-6975-48c2-b950-ba1bd858744e.png?v=1718328335',
+    series: [
+      'Urtopia Carbon 1',
+      'Urtopia Chord'
+    ],
+    stores: [
+      {
+        name: 'MR-CYCLE e-Bikes',
+        phone: '06232 4 99 97 86',
+        email: 'info@mr-cycle.de',
+        timezone: "Düsseldorf, Germany (GMT+1)",
+        add: "Alemannenstraße 5, 67166 Otterstadt",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/output_6_c6a0eaf2-cad7-4ce9-b23e-1dfa5ec46a0d.png?v=1727431908",
+        testrideSpot: "Otterstadt",
+        availableSizes: [
+          'Carbon 1 Pro Size L',
+          'Carbon 1 Size M',
+        ],
+        businessHours: [
+          "",
+          "14:00-18:00",
+          "14:00-18:00",
+          "14:00-18:00",
+          "14:00-18:00",
+          "10:00-15:00",
+          "",
+        ],
+      }
+    ]
+  },
+  {
+    city: 'Bergheim',
+    cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/output_5_e5e95421-6975-48c2-b950-ba1bd858744e.png?v=1718328335',
+    series: [
+      'Urtopia Carbon 1',
+      'Urtopia Chord'
+    ],
+    stores: [
+      {
+        name: 'zweirad-eschweiler',
+        phone: '022714626488',
+        email: 'Zweirad-Eschweiler@t-online.de',
+        timezone: "Düsseldorf, Germany (GMT+1)",
+        add: "Hubertuspl. 4, 50126 Bergheim",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/output_6_c6a0eaf2-cad7-4ce9-b23e-1dfa5ec46a0d.png?v=1727431908",
+        testrideSpot: "Bergheim",
+        availableSizes: [
+          'Carbon 1 Pro Size L',
+        ],
+        businessHours: [
+          "",
+          "10:00-18:00",
+          "10:00-18:00",
+          "",
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-13:00",
+        ],
+      }
+    ]
+  },
+  {
+    city: 'Neckartenzlingen',
+    cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/output_5_e5e95421-6975-48c2-b950-ba1bd858744e.png?v=1718328335',
+    series: [
+      'Urtopia Carbon 1',
+      'Urtopia Chord'
+    ],
+    stores: [
+      {
+        name: 'alles-bike GmbH',
+        phone: '071 27 20 58 41',
+        email: 'info@alles-bike.de',
+        timezone: "Düsseldorf, Germany (GMT+1)",
+        add: "Im Wasen 9, 72654 Neckartenzlingen",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/output_6_c6a0eaf2-cad7-4ce9-b23e-1dfa5ec46a0d.png?v=1727431908",
+        testrideSpot: "Neckartenzlingen",
+        availableSizes: [
+          'Carbon 1 Pro Size L',
+        ],
+        businessHours: [
+          "",
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-15:00",
+        ],
+      }
+    ]
+  },
+  {
     city: 'Bruchsal',
     cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/output_5_e5e95421-6975-48c2-b950-ba1bd858744e.png?v=1718328335',
     series: [
@@ -3846,6 +4003,39 @@ const testRides = [
     ]
   },
   {
+    city: 'Bad Neuenahr-Ahrweiler',
+    cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/output_1.png?v=1713577697',
+    series: [
+      'Urtopia Carbon 1',
+      'Urtopia Carbon 1s',
+    ],
+    stores: [
+      {
+        name: 'BASISLAGER – DAS FAHRRADHAUS',
+        phone: '02641 2227',
+        email: 'info@basislager.com',
+        timezone: "Oberursel, Germany (GMT+1)",
+        add: "Wilhelmstraße 47, 53474 Bad Neuenahr-Ahrweiler",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/output_1.png?v=1713577697",
+        testrideSpot: "Bad Neuenahr-Ahrweiler",
+        testRideSize: "L",
+        // noBook: "Please contact the store directly to arrange test ride",
+        availableSizes: [
+          'Carbon 1 Size L'
+        ],
+        businessHours: [
+          "",
+          "11:00-19:00",
+          "11:00-19:00",
+          "11:00-19:00",
+          "11:00-19:00",
+          "11:00-19:00",
+          "10:00-19:00",
+        ],
+      },
+    ]
+  },
+  {
     city: 'Oberursel',
     cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/output_1.png?v=1713577697',
     series: [
@@ -3888,6 +4078,29 @@ const testRides = [
       'Urtopia Carbon 1s',
     ],
     stores: [
+      {
+        name: 'scooterwerkstatt',
+        phone: '021612955286',
+        email: 'Sascha@scooterwerkstatt.de',
+        timezone: "Mönchengladbach, Germany (GMT+1)",
+        add: "Waldnieler Str. 225, 41068 Mönchengladbach",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/output_2.png?v=1713578059",
+        testrideSpot: "Mönchengladbach",
+        testRideSize: "L",
+        // noBook: "Please contact the store directly to arrange test ride",
+        availableSizes: [
+          'Carbon 1 Pro Size M',
+        ],
+        businessHours: [
+          "",
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-18:00",
+          "11:00-17:00",
+        ],
+      },
       {
         name: 'Fahrradhaus Özdin',
         phone: '+492166 1471576',
