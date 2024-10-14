@@ -174,27 +174,6 @@ const testRides = [
     ],
     stores: [
       {
-        name: 'Fahrrad Laden Wagner',
-        phone: '+496995294844',
-        email: 'info@fahrradwagner.de',
-        timezone: "Mainz, Germany (GMT+1)",
-        add: "Woogstraße 21, 60431 Frankfurt am Main",
-        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Frankfurt_am_Main_dcfbb429-041a-46e8-809c-988adaf41dfd.jpg?v=1680920985",
-        testrideSpot: "Frankfurt am Main",
-        availableSizes: [
-          'Carbon 1 Size L'
-        ],
-        businessHours: [
-          "",
-          "09:00-18:00",
-          "09:00-18:00",
-          "09:00-12:00",
-          "09:00-18:00",
-          "09:00-18:00",
-          "",
-        ],
-      },
-      {
         name: 'IEDAU- Urtopia Service Zentrum',
         phone: '+49 61032076414',
         email: 'probefahrt@iedau.com',
@@ -2419,38 +2398,6 @@ const testRides = [
     ]
   },
   {
-    city: 'Ritterhude',
-    cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Geldern.jpg?v=1691835197',
-    series: [
-      'Urtopia Carbon 1',
-      // 'Urtopia Carbon 1'
-    ],
-    stores: [
-      {
-        name: 'Zweirad Kliem',
-        phone: '042921247',
-        email: 'info@zweirad-kliem.de',
-        timezone: "Mainz, Germany (GMT+1)",
-        add: "Beekstraße 2, 27721 Ritterhude",
-        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/output_3_956ea294-86b9-46da-9c1e-28aa1c3b4b02.png?v=1717489838",
-        testrideSpot: "Ritterhude",
-        testRideSize: "L",
-        availableSizes: [
-          'Carbon 1 Size L',
-        ],
-        businessHours: [
-          "",
-          "08:00-18:00",
-            "08:00-18:00",
-          "08:00-18:00",
-            "08:00-18:00",
-           "08:00-18:00",
-           "08:00-13:00",
-        ],
-      },
-    ]
-  },
-  {
     city: 'Bremerhaven',
     cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Geldern.jpg?v=1691835197',
     series: [
@@ -4084,7 +4031,7 @@ const testRides = [
         email: 'Sascha@scooterwerkstatt.de',
         timezone: "Mönchengladbach, Germany (GMT+1)",
         add: "Waldnieler Str. 225, 41068 Mönchengladbach",
-        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/output_2.png?v=1713578059",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/output_8.png?v=1728873732",
         testrideSpot: "Mönchengladbach",
         testRideSize: "L",
         // noBook: "Please contact the store directly to arrange test ride",

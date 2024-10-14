@@ -21,7 +21,7 @@
         %}
         {% assign product = all_products["urtopia-carbon-1-pro-ebike"] %}
         {% assign product_variants = product.variants | where: "available" %}
-        {% assign product_uhmaya = "17kg<br>lightweight, Full<br>carbon fiber, 130 km<br>range" | split: ", " %}
+        {% assign product_uhmaya = "15kg<br>lightweight, Full<br>carbon fiber, 130 km<br>range" | split: ", " %}
         {% render 'product-card-2',
             product_variants: product_variants,
             product_variant_options_find_sort: "M,L",
