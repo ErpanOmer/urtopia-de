@@ -3,8 +3,9 @@
 
 <div class="banner">
         <div class="centeral-content">
-            <h2 class="u48DemiBold_v2">Electric Bikes</h2>
-            <h3 class="u24Medium_v2">Carbon Fiber Expert</h3>
+            <h3 class="u24Medium_v2">{{ settings.sale_name }}</h3>
+            <h2 class="u48DemiBold_v2">Up to {{ all_products["urtopia-fusion-carbon-ebike"].compare_at_price |  minus: all_products["urtopia-fusion-carbon-ebike"].price | money_without_trailing_zeros }} OFF</h2>
+            {% render 'sale' %}
         </div>
     </div>
     <div class="centeral-content ebike-products">
@@ -73,6 +74,70 @@
             <a class="my-button" target="_blank" href="/products/urtopia-carbon-1-pro-ebike">E-gravel bikes</a>
         </div>
     </div>
+    <div class="professional">
+  <div class="centeral-content">
+    <h2 class="u36DemiBold_v2">Professional Reviews</h2>
+    <div class="videos swiper-wrapper">
+      
+    <div
+    class="swiper-slide"
+    onclick="showVideoDialog('https://www.youtube.com/embed/IWPe6DE1oA0?autoplay=1&cc_load_policy=1')"
+  >
+    <img
+      class="lozad"
+      data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_24471_2x_cbd75553-dafb-46cb-ab39-ceaeecaf12be.jpg?v=1722497296&width=400"
+      alt=""
+    >
+    <span class="u17Light_v2">I like really low weight. It's an e-bike that you always want to have with you in the city. It's very agile and rides very well even without the motor.</span>
+    <span class="flex-1"></span>
+    <div class="u17Medium_v2">
+      <img class="lozad"
+      data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/unnamed.jpg?v=1728895778" alt=""/>
+      <span>HennTech</span>
+    </div>
+  </div>
+  <div
+        class="swiper-slide"
+        onclick="showVideoDialog('https://www.youtube.com/embed/byzovLqrAbY?autoplay=1&cc_load_policy=1')"
+      >
+        <img
+          class="lozad"
+          data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_24470_2x_12bc2e1f-3669-4ccc-a892-031d0a3b4396.jpg?v=1722497392&width=400"
+          alt=""
+        >
+        <span class="u17Light_v2">The torque sensor is latency-free and the great thing is that we have 10 gears.</span>
+        <span class="flex-1"></span>
+        <div class="u17Medium_v2">
+          <img class="lozad"
+          data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/channels4_profile.jpg?v=1728896051" alt=""/>
+          <span>Scooterhelden</span>
+        </div>
+      </div>
+      <div
+        class="swiper-slide"
+        onclick="showVideoDialog('https://www.youtube.com/embed/cjUbb-3zObQ?autoplay=1&cc_load_policy=1')"
+      >
+        <img
+          class="lozad"
+          data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_24388_2x_9946e841-a4f4-41ec-9c2e-fa9526a2b7b3.jpg?v=1722497384&width=400"
+          alt=""
+        >
+        <span class="u17Light_v2">For those who like it futuristic, not only in terms of design but also in terms of all the features.</span>
+        <span class="flex-1"></span>
+        <div class="u17Medium_v2">
+          <img class="lozad"
+          data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/unnamed_1.jpg?v=1728896181" alt=""/>
+          <span>TommysTechReviews</span>
+        </div>
+      </div>
+    </div>
+    <div class="swiper-scrollbar"></div>
+    <div class="buttons mobileHide">
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+    </div>
+  </div>
+</div>
     <div id="compared" class="compared">
   <div class="centeral-content">
       <div class="items">
@@ -84,14 +149,16 @@
               </div>
               <div class="params">
                   <div class="param" name="img">
-                      <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/1_1_2x_c29f513e-3efa-4fb3-a74d-f83107bdd824.png?v=1677639590"
+                      <img class="lozad"
+                      data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/1_1_2x_c29f513e-3efa-4fb3-a74d-f83107bdd824.png?v=1677639590"
                           alt="">
                       <div class="select">
                           <select index="0"></select>
                       </div>
                   </div>
                   <div class="param" name="img">
-                      <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18297_2x_eae075fb-1d14-4217-bbef-0d2f2e476f2e.png?v=1677640028"
+                      <img class="lozad"
+                      data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18297_2x_eae075fb-1d14-4217-bbef-0d2f2e476f2e.png?v=1677640028"
                           alt="">
                       <div class="select">
                           <select index="1"></select>
@@ -125,14 +192,16 @@
               <div class="params params-dimensions">
                   <div class="param u17Medium_v2" name="dimensions">
 
-                      <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/bike_2x_329ad618-2567-4400-ab11-8e01e5ca3abf.png?v=1682065701"
+                      <img class="lozad"
+                      data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/bike_2x_329ad618-2567-4400-ab11-8e01e5ca3abf.png?v=1682065701"
                           alt="">
                       <div class="u14DemiBold_v2 pcHide"></div>
                       <div class="sizes"></div>
                   </div>
                   <div class="param u17Medium_v2" name="dimensions">
 
-                      <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/bike_2x_329ad618-2567-4400-ab11-8e01e5ca3abf.png?v=1682065701"
+                      <img class="lozad"
+                      data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/bike_2x_329ad618-2567-4400-ab11-8e01e5ca3abf.png?v=1682065701"
                           alt="">
                       <div class="u14DemiBold_v2 pcHide"></div>
                       <div class="sizes"></div>
@@ -198,8 +267,10 @@
             </p>
             <a class="my-button my-button-white" target="_blank" href="/pages/care">Learn more</a>
         </div>
-        <img style="--order: 1;" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20230520-untitled-8948_2x_f6b4a856-b689-49c6-bd39-e894a356dd5b.jpg?v=1727343486" alt=""/>
-        <img style="--order: 3;" src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20240927-112700.jpg?v=1727407644" alt=""/>
+        <img style="--order: 1;" class="lozad"
+        data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20230520-untitled-8948_2x_f6b4a856-b689-49c6-bd39-e894a356dd5b.jpg?v=1727343486" alt=""/>
+        <img style="--order: 3;" class="lozad"
+        data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20240927-112700.jpg?v=1727407644" alt=""/>
         <div style="--order: 4;">
             <h3 class="u30Medium_v2">Carbon fiber expert</h3>
             <p class="u17Light_v2">
@@ -214,8 +285,10 @@
             </p>
             <a class="my-button my-button-white" target="_blank" href="/pages/pages-smartest-ebike">Learn more</a>
         </div>
-        <img style="--order: 5;" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/DSCF1581_2x_dcfecbd1-83a7-4f6c-bf7a-14d8b65e3df2.jpg?v=1727343481" alt=""/>
-        <img style="--order: 7;" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/24751_2x_8eff0d7e-b9a8-4429-8309-772edb257630.jpg?v=1727343476" alt=""/>
+        <img style="--order: 5;" class="lozad"
+        data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/DSCF1581_2x_dcfecbd1-83a7-4f6c-bf7a-14d8b65e3df2.jpg?v=1727343481" alt=""/>
+        <img style="--order: 7;" class="lozad"
+        data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/24751_2x_8eff0d7e-b9a8-4429-8309-772edb257630.jpg?v=1727343476" alt=""/>
         <div style="--order: 8;">
             <h3 class="u30Medium_v2">Test ride</h3>
             <p class="u17Light_v2">
@@ -226,6 +299,88 @@
             <a class="my-button my-button-white" target="_blank" href="/pages/test-ride">Learn more</a>
         </div>
     </div>
+    <style>
+        .sale {
+            width: 400px;
+            background-color: transparent;
+            overflow: hidden;
+        }
+
+        .sale > .u14DemiBold_v2 {
+            display: none;
+        }
+
+        .sale > div:not(.u14DemiBold_v2) {
+            display: flex;
+            justify-content: space-between;
+            padding: 0;
+        }
+
+        .sale > div:not(.u14DemiBold_v2) > div {
+            border-left: none !important;
+            place-self: center;
+            width: 65px;
+            align-items: unset;
+            position: relative;
+        }
+
+        .sale .u36DemiBold_v2 {
+            display: block;
+            background-color: #fff;
+            padding: 15px 12px;
+            border-radius: 7px;
+            font-size: 30px;
+            margin-bottom: 7.5px;
+            position: relative;
+        }
+
+
+        .sale .u36DemiBold_v2::after {
+            content: ":";
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translate(25px, -50%);
+    font-size: 25px;
+    font-weight: 300;
+    color: #fff;
+        }
+
+
+        .sale > div:not(.u14DemiBold_v2) > div span:last-child {
+            opacity: 1;
+            font-size: 12px;
+            color: #fff;
+            font-weight: 300;
+        }
+
+
+        @media (max-width: 767px) {
+            .sale {
+                max-width: 260px;
+            }
+
+
+            .sale .u36DemiBold_v2 {
+                font-size: 18px;
+                padding: 10px 8px;
+            }
+
+
+            .sale > div:not(.u14DemiBold_v2) > div {
+                width: 42px;
+
+            }
+
+            .sale > div:not(.u14DemiBold_v2) > div span:last-child {
+                font-size: 9px;
+            }
+
+            .sale .u36DemiBold_v2::after {
+                transform: translate(17px, -50%);
+            }
+        }
+    </style>
 
     <script>
         $('.product-card .dots > div').on('click', e => {
@@ -442,4 +597,20 @@ const parameters = [
     // 默认展示
     changeParameters(0, 'Carbon Fusion')
     changeParameters(1, 'Carbon 1 Pro')
+
+
+    new Swiper('.professional .centeral-content', {
+      slidesPerView: global_config.is_mobile ? 1.25 : 3,
+      spaceBetween: 20,
+      navigation: {
+      nextEl: '.professional .centeral-content .swiper-button-next',
+      prevEl: '.professional .centeral-content .swiper-button-prev',
+    },
+      scrollbar: {
+        el: '.professional .centeral-content .swiper-scrollbar',
+        draggable: true,
+      },
+    });
   </script>
+
+  
