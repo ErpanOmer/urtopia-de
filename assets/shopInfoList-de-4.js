@@ -425,38 +425,6 @@ const testRides = [
     ]
   },
   {
-    city: 'Grevesmuhlen',
-    cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/output_5_e5e95421-6975-48c2-b950-ba1bd858744e.png?v=1718328335',
-    series: [
-      'Urtopia Carbon 1',
-      'Urtopia Chord'
-    ],
-    stores: [
-      {
-        name: 'Fahrrad Thurow',
-        phone: '+493881713678',
-        email: 'info@fahrrad-thurow.de',
-        timezone: "Düsseldorf, Germany (GMT+1)",
-        add: "August-Bebel-Straße 33, 23936 Grevesmühlen",
-        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/output_5_e5e95421-6975-48c2-b950-ba1bd858744e.png?v=1718328335",
-        testrideSpot: "Grevesmuhlen",
-        testRideSize: "L, Chord",
-        availableSizes: [
-          'Carbon 1 Size L'
-        ],
-        businessHours: [
-          "",
-          "09:00-17:00",
-          "09:00-17:00",
-          "09:00-17:00",
-          "09:00-17:00",
-          "09:00-17:00",
-          "",
-        ],
-      }
-    ]
-  },
-  {
     city: 'Wiesbaden',
     cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/output_5_e5e95421-6975-48c2-b950-ba1bd858744e.png?v=1718328335',
     series: [

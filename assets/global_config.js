@@ -650,7 +650,8 @@ const global_config = {
           'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/2x_d8f0e61f-9369-4efa-866b-db1fb1c8b9e6.jpg?v=1726127272',
           'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/2x_9d13e439-9a0d-4373-aa2a-da6347dcd412.jpg?v=1726127277',
           'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/2x_11082a95-04f4-4320-9d71-e1f2d030ae25.jpg?v=1726127255',
-          'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/2x_f7d5899a-829c-416f-b04d-7962897b9baf.jpg?v=1726127261'
+          'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/2x_f7d5899a-829c-416f-b04d-7962897b9baf.jpg?v=1726127261',
+          'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20240924-164942.jpg?v=1727167799'
         ],
         commonSwiper: []
     },

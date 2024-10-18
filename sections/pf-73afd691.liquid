@@ -3,8 +3,8 @@
 
 <div class="banner">
         <div class="centeral-content">
-            <h3 class="u24Medium_v2">{{ settings.sale_name }}</h3>
-            <h2 class="u48DemiBold_v2">Up to {{ all_products["urtopia-fusion-carbon-ebike"].compare_at_price |  minus: all_products["urtopia-fusion-carbon-ebike"].price | money_without_trailing_zeros }} OFF</h2>
+            <h3 class="u24Medium_v2" sale-name>{{ settings.sale_name }}</h3>
+            <h2 class="u48DemiBold_v2">Up to {{ all_products["urtopia-carbon-e-bike"].compare_at_price |  minus: all_products["urtopia-carbon-e-bike"].price | money_without_trailing_zeros }} OFF</h2>
             {% render 'sale' %}
         </div>
     </div>
@@ -22,7 +22,7 @@
         %}
         {% assign product = all_products["urtopia-carbon-1-pro-ebike"] %}
         {% assign product_variants = product.variants | where: "available" %}
-        {% assign product_uhmaya = "15kg<br>lightweight, Full<br>carbon fiber, 130 km<br>range" | split: ", " %}
+        {% assign product_uhmaya = "17kg<br>lightweight, Full<br>carbon fiber, 130 km<br>range" | split: ", " %}
         {% render 'product-card-2',
             product_variants: product_variants,
             product_variant_options_find_sort: "M,L",
@@ -36,7 +36,7 @@
         
         {% assign product = all_products["urtopia-carbon-e-bike"] %}
         {% assign product_variants = product.variants | where: "available" %}
-        {% assign product_uhmaya = "17kg<br>lightweight, Full<br>carbon fiber, 100 km<br>range" | split: ", " %}
+        {% assign product_uhmaya = "15kg<br>lightweight, Full<br>carbon fiber, 100 km<br>range" | split: ", " %}
         {% render 'product-card-2',
             product_variants: product_variants,
             product_variant_options_find_sort: "M,L",

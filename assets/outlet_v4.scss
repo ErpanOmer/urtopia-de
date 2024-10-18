@@ -489,6 +489,24 @@ $product-tags-color: #DEEDFF;
             }
         }
 
+      &[data-stye="Vital Orange"] {
+            &::after {
+                background-color: #ffb100;
+            }
+        }
+
+      &[data-stye="Lyra"] {
+            &::after {
+                background-color: #747474;
+            }
+        }
+
+      &[data-stye="Vanilla"] {
+            &::after {
+                background-color: #faf5e7;
+            }
+        }
+
         &[data-stye="Sirius"] {
             &::after {
                 background-color: #FA812B;
@@ -535,6 +553,30 @@ $product-tags-color: #DEEDFF;
 
             &::after {
                 background-color: #FA812B;
+            }
+        }
+
+      &[data-stye="Vital Orange"] {
+            border-color: #ffb100;
+
+            &::after {
+                background-color: #ffb100;
+            }
+        }
+
+      &[data-stye="Vanilla"] {
+            border-color: #747474;
+
+            &::after {
+                background-color: #faf5e7;
+            }
+        }
+
+      &[data-stye="Lyra"] {
+            border-color: #747474;
+
+            &::after {
+                background-color: #747474;
             }
         }
 

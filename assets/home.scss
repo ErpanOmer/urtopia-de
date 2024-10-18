@@ -230,12 +230,12 @@ h4 {
 
 .reviews {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     grid-column-gap: 20px;
     margin-top: 17vh;
 
     &>div {
-        aspect-ratio: 9/8;
+        aspect-ratio: 412/560;
         display: flex;
         flex-direction: column;
         text-align: center;
@@ -256,8 +256,12 @@ h4 {
         }
 
 
-        &:last-child {
+        &:nth-child(2) {
             background-image: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/24793_2x_5175df36-93f9-4b19-a4c3-6a6917306c6d.jpg?v=1727320491');
+        }
+
+      &:nth-child(3) {
+            background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/24851_2x_27842590-d5e0-412a-8eb1-1ff73d46b47a.jpg?v=1728899300');
         }
     }
 
